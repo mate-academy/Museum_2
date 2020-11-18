@@ -1,4 +1,41 @@
-# Base layout template with Gulp, SCSS and Stylelint
-1. Create a repo using this template
-1. Replace `<your_account>` and `<repo_name>` with your Github username and the new repo name
-    - [DEMO LINK](https://<your_account>.github.io/<repo_name>/)
+# Thrive_talk landing page
+Implement landing page according to [Figma design](https://www.figma.com/file/i8XiqSgs44QEVPHuMbkNO2/museum-prototype?node-id=323%3A1957) - Use BEM and SCSS
+- Large screens 2560px
+- Full HD 1920px
+- The design 1600px
+- Notebook 1280px
+- Tablet 1024
+- Mobile (> 320px)
+
+1. Implement the header with `nav`.
+1. Implement `Helping you thrive in all areas of life` block.
+1. Implement `Why Thrive?` block.
+1. Implement `About us` block.
+1. Implement `We can help you with` block with the card reused 3 times.
+1. Implement block with 6 cards (`Physical Health`, `Mental Health`, `Nutrition`,
+   `Gymnastics`, `Crossfit`, `Aerobics`).
+1. Implement block with 6 text-cards (`Nutritional Plans`, `Weight Loss`, `Mental Peace`,
+   `Home Training`, `Work/Life Balance`, `Cardio`).
+1. Implement `You should also know` block.
+1. Implement `Contact us` block.
+1. Implement blocks: `Some info`, `Enfold health`, `Office hourse`.
+1. Implement footer.
+
+## Instructions
+1. **Fork** the repo.
+2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
+3. Run `npm install` (or just `npm i`).
+4. Run `npm start`.
+5. Open one more terminal window for the next steps.
+6. `git checkout -b develop` - to create new branch and switch on it.
+7. Write you code in `src` folder.
+8. Run `npm run lint` and fix code style errors.
+9. Run `npm run deploy` to deploy your solution to `gh-pages`.
+10. `git add . && git commit -m 'write a short description of the changes you made'` to save your changes.
+11. `git push origin develop` - to send you code for PR.
+12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
+13. Replace `<your_account>` with your Github username in the
+  [DEMO LINK](https://<your_account>.github.io/Museum_2/).
+14. Copy `DEMO LINK` to the PR description.
+
+> To update you PR repeat steps 7-11.
