@@ -3,7 +3,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/i8
 <<<<<<< HEAD
 =======
 
-Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display) [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
+Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
 
 >>>>>>> deaae50 (Update README.md)
 - Large screens 2560px
