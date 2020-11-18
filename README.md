@@ -1,7 +1,7 @@
 # Museum 2 landing page
 Implement landing page according to [Figma design](https://www.figma.com/file/i8XiqSgs44QEVPHuMbkNO2/museum-prototype?node-id=323%3A1957) - Use BEM and SCSS
 
-Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display) [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
+Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
 
 - Large screens 2560px
 - Full HD 1920px
