@@ -1,5 +1,11 @@
 # Thrive_talk landing page
 Implement landing page according to [Figma design](https://www.figma.com/file/i8XiqSgs44QEVPHuMbkNO2/museum-prototype?node-id=323%3A1957) - Use BEM and SCSS
+<<<<<<< HEAD
+=======
+
+Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display) [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
+
+>>>>>>> deaae50 (Update README.md)
 - Large screens 2560px
 - Full HD 1920px
 - The design 1600px
