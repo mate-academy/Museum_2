@@ -1,42 +1,69 @@
 .header {
-  display: flex;
-  flex-direction: column;
   height: $viewportHeight;
-  padding: 0 20px;
   position: relative;
   background-color: #3f5252;
+  padding: 0 20px;
+  z-index: 1;
+
   &::before {
     content: "";
     display: block;
     position: absolute;
+    pointer-events: none;
     right: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    width: 166px;
+    height: 267px;
     background-image: url(../../src/images/166x273px-Girl_from_Podolye_by_V.Tropinin.png);
     background-repeat: no-repeat;
     background-position: bottom right;
   }
 
-  &__menu-block {
-    display: flex;
+  &__menu {
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 135px 65px 65px;
     align-items: center;
     justify-content: space-between;
     height: $headerHeight;
-    z-index: 1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding-left: inherit;
+    padding-right: inherit;
+    background-color: #3f5252;
   }
 
-  &__brand {
+  &__menu-brand {
+    text-decoration: none;
     font-family: "Raleway", serif;
     font-size: 36px;
     color: white;
   }
 
-  &__form-language {
-    justify-self: end;
+  &__menu-form {
+    display: inline;
+  }
+
+  &__menu-select {
+    color: white;
+    width: 48px;
+    font-size: 16px;
+    border: 0;
+    height: 34px;
+    background: url(../../src/images/arrow.png) no-repeat right;
+    -webkit-appearance: none;
+    background-position-x: 30px;
+    cursor: pointer;
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
   }
 
   &__presentation {
-    padding-top: 40px;
+    padding-top: $headerHeight;
   }
 
   &__presentation-paragraph {
@@ -44,17 +71,24 @@
     font-size: 16px;
     line-height: 24px;
     color: #f1f5f4;
+
+    &:nth-child(1) {
+      padding-top: 60px;
+    }
+
+    &:nth-child(3) {
+      padding-top: 30px;
+    }
+  }
+
+  &__presentation-button {
+    margin-top: 50px;
   }
 
   &__presentation-main {
     font-size: 48px;
     font-weight: bold;
     color: #f1f5f4;
-    padding: 20px 0 30px;
-  }
-
-  &__presentation-button {
-    margin-top: 50px;
-    background-color: #cd4d31;
+    padding-top: 20px;
   }
 }
