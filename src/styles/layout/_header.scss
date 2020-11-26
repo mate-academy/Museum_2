@@ -1,37 +1,42 @@
 .header {
-  height: $viewportHeight;
+  display: flex;
+  justify-content: center;
+  min-height: 568px;
+  max-height: $viewportHeight;
   position: relative;
   background-color: #3f5252;
-  padding: 0 20px;
-  z-index: 1;
 
-  &::before {
-    content: "";
-    display: block;
+  &__picture {
     position: absolute;
     pointer-events: none;
-    right: 0;
     bottom: 0;
-    width: 166px;
-    height: 267px;
-    background-image: url(../../src/images/166x273px-Girl_from_Podolye_by_V.Tropinin.png);
+    right: -20px;
+    width: 100vw;
+    height: 268px;
+    background-image: url(../../src/images/166x273px-Girl_from_Podolye_by_V.Tropinin320.png);
     background-repeat: no-repeat;
     background-position: bottom right;
   }
 
-  &__menu {
+  &__menu-wrapper {
     display: grid;
-    column-gap: 10px;
-    grid-template-columns: 135px 65px 65px;
+    column-gap: 20px;
+    grid-template-columns: 160px 100px;
     align-items: center;
     justify-content: space-between;
-    height: $headerHeight;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
     position: fixed;
-    left: 0;
+    height: $headerHeight;
     right: 0;
-    padding-left: inherit;
-    padding-right: inherit;
+    left: 0;
     background-color: #3f5252;
+    z-index: 100;
   }
 
   &__menu-brand {
@@ -39,31 +44,14 @@
     font-family: "Raleway", serif;
     font-size: 36px;
     color: white;
-  }
-
-  &__menu-form {
-    display: inline;
-  }
-
-  &__menu-select {
-    color: white;
-    width: 48px;
-    font-size: 16px;
-    border: 0;
-    height: 34px;
-    background: url(../../src/images/arrow.png) no-repeat right;
-    -webkit-appearance: none;
-    background-position-x: 30px;
-    cursor: pointer;
-
-    &:focus {
-      border: none;
-      outline: none;
-    }
+    height: 40px;
   }
 
   &__presentation {
-    padding-top: $headerHeight;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 280px;
   }
 
   &__presentation-paragraph {
@@ -73,22 +61,121 @@
     color: #f1f5f4;
 
     &:nth-child(1) {
-      padding-top: 60px;
+      padding-top: 140px;
+      padding-bottom: 20px;
     }
 
-    &:nth-child(3) {
+    &:nth-child(2) {
+      width: 240px;
       padding-top: 30px;
     }
   }
 
   &__presentation-button {
+    width: 270px;
     margin-top: 50px;
   }
 
   &__presentation-main {
     font-size: 48px;
-    font-weight: bold;
+    font-weight: 700;
     color: #f1f5f4;
-    padding-top: 20px;
+  }
+
+  &__presentation-span {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    & {
+      min-height: 768px;
+    }
+
+    &__menu-wrapper {
+      padding: 0 40px;
+    }
+
+    &__presentation {
+      width: 570px;
+    }
+
+    &__presentation-paragraph:nth-child(1) {
+      padding-top: 180px;
+      padding-bottom: 10px;
+    }
+
+    &__presentation-paragraph:nth-child(2) {
+      padding-top: 40px;
+    }
+
+    &__presentation-button {
+      margin-top: 80px;
+    }
+
+    &__presentation-main {
+      width: 500px;
+      font-size: 72px;
+    }
+
+    &__picture {
+      right: -98px;
+      height: 445px;
+      background-image: url(../../src/images/399x445px-Girl_from_Podolye_by_V.Tropinin768.png);
+    }
+
+    &__presentation-wrapper > &__presentation-main {
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    & {
+      min-height: 800px;
+    }
+
+    &__menu-wrapper {
+      width: 1170px;
+    }
+
+    &__presentation {
+      width: 1170px;
+    }
+
+    &__presentation-wrapper > &__presentation-main {
+      text-align: left;
+    }
+
+    &__presentation-wrapper {
+      padding-left: 100px;
+    }
+
+    &__presentation-span {
+      display: inline-block;
+      position: relative;
+      margin-top: 110px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #f1f5f4;
+      opacity: 0.7;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: 50%;
+        right: 45%;
+        height: 1px;
+        width: 1070px;
+        transform: translate(50%,0);
+        color: white;
+        background-color: white;
+      }
+    }
+    &__picture {
+      right: -55px;
+      height: 753px;
+      background-image: url(../../src/images/673x753px-Girl_from_Podolye_by_V.Tropinin1280.png);
+      z-index: 1;
+    }
   }
 }
