@@ -6,7 +6,6 @@
 
   &__toggler {
     display: flex;
-    position: relative;
     justify-content: space-between;
     width: 100%;
     height: 27px;
@@ -23,7 +22,6 @@
   &__link {
     text-decoration: none;
     color: #f1f5f4;
-
     transition: color 0.3s ease;
   }
 
@@ -84,21 +82,19 @@
   }
 
   &__list-wrapper {
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
     top: $headerHeight;
-    left: 0;
-    right: 0;
-    padding: 60px 20px;
-    height: 100vh;
-    background-color: #3f5252;
-    opacity: 0.95;
+    left: calc(-#{$viewportWidth} + #{$navbarSectionWidth} + #{$mobilePadding});
+    width: 100vw;
+    height: 584px - $headerHeight;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
-    transform: translate(100%, 0);
+    transform: translate(-100%, 0);
     transition: transform 1s cubic-bezier(0.77,0.2,0.05,1);
+    background-color: #3f5252;
   }
 
   &__notation {
@@ -106,8 +102,11 @@
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     list-style-type: none;
-    width: 100%;
+    width: calc(100% - #{$mobilePadding} * 2);
   }
 
   &__menu-form {
@@ -153,7 +152,7 @@
   &__button {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - #{$mobilePadding} * 2);
   }
 
   &__button-buy {
@@ -181,7 +180,8 @@
     }
 
     &__list-wrapper {
-      padding-top: 0;
+      left: $some;
+      height: 762px - $headerHeight;
     }
 
     &__notation {
@@ -226,6 +226,7 @@
   }
 
   @media (min-width: 1280px) {
+
     &__notation {
       flex-direction: row;
       width: 1170px;
@@ -243,13 +244,14 @@
     }
 
     &__list-wrapper {
+      left: $some2;
+      height: 800px - $headerHeight;
 
       &::before {
         content: "";
         display: block;
         position: absolute;
         pointer-events: none;
-        bottom: 12%;
         right: 0;
         width: 624px;
         height: 100%;
