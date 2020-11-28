@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Museum</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500&display=swap"
       rel="stylesheet"
@@ -14,6 +14,7 @@
     >
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
+
   <body>
     <header class="header">
       <div class="header__wrapper container">
@@ -26,21 +27,31 @@
             <nav class="nav header__nav">
               <section class="burger-menu nav__burger-menu">
                 <article class="burger-menu__schedule">
-                  <div>Розклад сьогодні: 12:00 - 19:00</div>
-                  <div>Адреса: Київ, вул. М. Грушевського, 6</div>
+                  <div class="burger-menu__date">
+                    Розклад сьогодні:
+                    <div class="burger-menu__time">12:00 - 19:00</div>
+                  </div>
+
+                  <div class="burger-menu__date">
+                    Адреса:
+                    <div class="burger-menu__time">
+                      Київ, вул. М. Грушевського, 6
+                    </div>
+                  </div>
                 </article>
                 <article class="burger-menu__links">
                   <a class="burger-menu__link" href="#">Спланувати візит</a>
                   <a class="burger-menu__link" href="#">Виставки та події</a>
                   <a class="burger-menu__link" href="#">Колекція</a>
                 </article>
+
                 <div class="burger-menu__btns">
-                  <a class="burger-menu__btn-buy" href="">Купити квиток</a>
-                  <a class="burger-menu__btn-member" href="">Стати членом</a>
+                  <a class="burger-menu__btn-buy" href="#">Купити квиток</a>
+                  <a class="burger-menu__btn-member" href="#">Стати членом</a>
                 </div>
               </section>
 
-              <button class="nav__btn">
+              <button class="nav__btn" onclick="navToggler()">
                 <span class="nav__btn-item"></span>
                 <span class="nav__btn-item"></span>
                 <span class="nav__btn-item"></span>
@@ -50,6 +61,7 @@
             <div class="language header__language">
               <button class="language__btn">
                 <span class="language__text">UA</span>
+
                 <svg
                   width="8"
                   height="5"
@@ -72,19 +84,21 @@
         <div class="header__bottom">
           <section class="section header__section">
             <div class="section__date">10 серпня - 10 листопада</div>
-
             <h1 class="section__heading">Мистецтво</h1>
 
             <article class="section__article">
               <div>
                 <div class="section__heading">ХІХ - ХХ ст.</div>
+
                 <div class="section__info">
                   Внесок українських митців у світову культуру 19-20ст
                 </div>
+
                 <div class="section__btn">
                   <a class="section__link" href="">Купити квиток</a>
                 </div>
               </div>
+
               <div class="section__description">
                 Дівчина з Поділля В. Тропінін
               </div>
@@ -97,5 +111,15 @@
     </header>
 
     <script type="text/javascript" src="scripts/main.js"></script>
+
+    <script>
+      function navToggler() {
+        const burgerMenu = document.querySelector(".nav__burger-menu");
+        const navBtn = document.querySelector(".nav-btn");
+
+        burgerMenu.classList.toggle("show");
+        console.log("123");
+      }
+    </script>
   </body>
 </html>
