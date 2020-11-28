@@ -21,12 +21,12 @@
 
   &__link {
     text-decoration: none;
-    color: #f1f5f4;
+    color: $mainColorWhite;
     transition: color 0.3s ease;
   }
 
   &__link:hover {
-    color: red;
+    color: $mainColorOrange;
   }
 
   &__input {
@@ -45,7 +45,7 @@
     width: 30px;
     height: 3px;
     margin-bottom: 7px;
-    background-color: #cdcdcd;
+    background-color: $mainColorWhite;
     border-radius: 3px;
     z-index: 1;
     transform-origin: 5px 0;
@@ -69,7 +69,7 @@
   &__input:checked ~ &__toggler-wrapper > &__span {
     opacity: 1;
     transform: rotate(45deg) translate(1px, -2px);
-    background: white;
+    background: $mainColorWhite;
   }
 
   &__input:checked ~ &__toggler-wrapper > &__span:nth-last-child(3) {
@@ -94,7 +94,7 @@
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     transition: transform 1s cubic-bezier(0.77,0.2,0.05,1);
-    background-color: #3f5252;
+    background-color: $mainColorDarkBG;
   }
 
   &__notation {
@@ -116,9 +116,9 @@
   }
 
   &__menu-select {
-    color: white;
+    @include fontRale(16px, 500, 24px);
+    color: $mainColorWhite;
     width: 48px;
-    font-size: 16px;
     border: 0;
     height: 34px;
     background: url(../../src/images/arrow.png) no-repeat right;
@@ -133,10 +133,8 @@
   }
 
   &__item {
+    @include fontFair(24px, 700, 24px);
     padding-top: 40px;
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 24px;
     &:first-child {
       padding-top: 0;
     }
@@ -190,8 +188,7 @@
       flex-direction: column;
       width: 570px;
       padding-top: 10px;
-      font-family: "Raleway", serif;
-      color: #f1f5f4;
+      color: $mainColorWhite;
     }
 
     &__notation-text {
@@ -199,14 +196,17 @@
     }
 
     &__notation-heading {
-      font-weight: 200;
-      font-size: 14px;
+      @include fontRale(14px, 200, 20px);
       padding-right: 10px;
       height: 24px;
     }
 
+    &__notation-span {
+      @include fontRale(16px, 400, 24px);
+    }
+
     &__item {
-      font-size: 48px;
+      @include fontFair(48px, 700, 58px);
       padding-top: 50px;
     }
 
@@ -216,7 +216,7 @@
       align-items: center;
       width: 570px;
       padding-top: 60px;
-      border-top: 1px solid white;
+      border-top: 1px solid $mainColorWhite;
     }
 
     &__button-buy,

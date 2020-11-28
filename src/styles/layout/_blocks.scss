@@ -1,0 +1,327 @@
+.exhibition {
+  display: flex;
+  flex-direction: column;
+
+  &__heading {
+    @include fontFair(36px, 700, 45px);
+    padding-bottom: 60px;
+  }
+
+  &__date {
+    @include fontFair(24px, 700, 30px);
+    color: $mainColorOrange;
+    padding-bottom: 10px;
+  }
+
+  &__announcement {
+    width: 100%;
+    padding-bottom: 60px;
+    position: relative;
+  }
+
+  &__archive {
+    @include fontRale(16px, 400, 16px);
+    align-self: center;
+    position: relative;
+    color: $mainColorBlackFont;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 130px;
+      background-color: $mainColorBlackFont;
+      bottom: -11px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  @media (min-width: 768px) {
+    &__heading {
+      @include fontFair(48px, 700, 58px);
+      align-self: center;
+      padding-bottom: 55px;
+    }
+
+    &__date {
+      @include fontFair(48px, 700, 58px);
+      color: $mainColorOrange;
+      align-self: center;
+      padding-bottom: 20px;
+    }
+
+    &__announcement {
+      padding-bottom: 60px;
+    }
+  }
+}
+
+.announcement {
+  display: flex;
+  flex-direction: column;
+
+  &__block {
+    padding-bottom: 90px;
+
+    &-decoration {
+      opacity: 0;
+    }
+
+    &:nth-child(1) {
+      .announcement__block-img {
+        position: absolute;
+        top: 20px;
+        right: -20px;
+        width: 160px;
+        height: 300px;
+        background-image: url(../../src/images/announcmentImgFirst320.png);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+      }
+    }
+
+    &:nth-child(2) {
+      .announcement__block-img {
+        position: absolute;
+        width: 160px;
+        height: 152px;
+        top: 460px;
+        left: -60px;
+        background-image: url(../../src/images/announcmentImgSecond320.png);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+      }
+    }
+
+    &:nth-child(3) {
+      .announcement__block-img {
+        position: absolute;
+        top: 780px;
+        right: -20px;
+        width: 140px;
+        height: 174px;
+        background-image: url(../../src/images/announcmentImgThird320.png);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+      }
+    }
+  }
+
+  &__block-time {
+    @include fontRale(16px, 400, 24px);
+    color: $mainColorOrange;
+  }
+
+  &__block-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__block-heading {
+    @include fontFair(24px, 700, 30px);
+    letter-spacing: 1px;
+    color: $mainColorBlackFont;
+  }
+
+  &__block-text {
+    width: 135px;
+    color: $mainColorGreyFont;
+    @include fontRale(16px, 400, 24px);
+    padding-top: 30px;
+
+    &--right {
+      display: flex;
+      align-self: flex-end;
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    &__block-wrapper {
+      align-self: flex-end;
+    }
+
+    &__block-text {
+      width: 100%;
+      padding-top: 20px;
+
+      &--right {
+        align-self: flex-start;
+      }
+    }
+
+    &__block {
+      width: 370px;
+      padding-bottom: 140px;
+
+      &-decoration {
+        @include fontFair(72px, 700, 72px);
+        word-wrap: break-word;
+        text-transform: uppercase;
+        color: transparent;
+        opacity: 0.3;
+        -webkit-text-stroke: 1px black;
+      }
+
+      &:nth-child(1) {
+        align-self: flex-end;
+
+        .announcement__block-img {
+          width: 281px;
+          height: 420px;
+          background-image: url(../../src/images/announcmentImgFirst768.png);
+          top: -180px;
+          left: -100px;
+        }
+      }
+
+      &:nth-child(2) {
+
+        .announcement__block-img {
+          width: 298px;
+          height: 288px;
+          background-image: url(../../src/images/announcmentImgSecond768.png);
+          top: 200px;
+          left: auto;
+          right: -100px;
+        }
+      }
+
+      &:nth-child(3) {
+        align-self: flex-end;
+
+        .announcement__block-img {
+          width: 286px;
+          height: 288px;
+          background-image: url(../../src/images/announcmentImgThird768.png);
+          background-position: center 10px;
+          top: 500px;
+          left: -100px;
+        }
+      }
+    }
+  }
+}
+
+.events {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(130px, 2fr));
+  grid-template-rows: auto;
+  column-gap: 20px;
+  row-gap: 20px;
+  align-items: center;
+
+  &__date {
+    @include fontRale(16px, 400, 24px);
+    color: $mainColorOrange;
+  }
+
+  &__type {
+    @include fontRale(14px, 200, 20px);
+  }
+
+  &__heading {
+    @include fontFair(24px, 700, 30px);
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  &__text {
+    @include fontRale(16px, 400, 24px);
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  &__button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 20px;
+  }
+}
+
+.plans {
+  background-color: $mainColorDarkBG;
+
+  &__heading {
+    @include fontFair(48px, 700, 48px);
+    color: $mainColorWhite;
+    padding-bottom: 40px;
+  }
+
+  &__text {
+    @include fontRale(16px, 400, 24px);
+    color: $mainColorWhite;
+    padding-bottom: 60px;
+  }
+}
+
+.news {
+  background-color: $mainColorWhite;
+
+  &__heading {
+    @include fontFair(36px, 700, 36px);
+    padding-bottom: 60px;
+  }
+
+  &__img {
+    height: 280px;
+    background-image: url(../../src/images/280x280newsOne.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__date {
+    @include fontRale(14px, 200, 20px);
+    padding-top: 20px;
+  }
+
+  &__single {
+    @include fontFair(18px, 700, 22px);
+    padding-bottom: 10px;
+  }
+
+  &__text {
+    @include fontRale(16px, 400, 24px);
+    color: $mainColorGreyFont;
+    padding-bottom: 20px;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+
+    &-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $mainColorDarkBG;
+      opacity: 0.3;
+      margin-right: 12px;
+
+      &--active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__all {
+    @include fontRale(16px, 400, 16px);
+    text-align: center;
+    color: $mainColorBlackFont;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      height: 1px;
+      width: 130px;
+      background-color: $mainColorBlackFont;
+      transform: translate(-50%, 0);
+    }
+  }
+}

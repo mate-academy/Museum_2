@@ -1,0 +1,154 @@
+.footer {
+
+  &__subscribe {
+    padding: 80px 20px;
+  }
+
+  &__features {
+    padding: 80px 20px 35px;
+  }
+}
+
+.subscribe {
+  background: $mainColorOrange;
+  color: $mainColorWhite;
+
+  &__heading {
+    @include fontFair(36px, 700, 36px);
+    padding-bottom: 40px;
+  }
+
+  &__text {
+    @include fontRale(16px, 400, 24px);
+    padding-bottom: 60px;
+  }
+
+  &__form {
+    display: grid;
+    width: 100%;
+    column-gap: 10px;
+    grid-template-columns: repeat(auto-fit, 80% 18%);
+    align-items: flex-end;
+
+    &-submit {
+      opacity: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid $mainColorWhite;
+      background-color: inherit;
+      background-image: url(../../src/images/submitArrow.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &-email {
+      @include fontRale(16px, 400, 24px);
+      background-color: inherit;
+      border: none;
+      border-bottom: 1px solid $mainColorWhite;
+      padding-left: 8px;
+
+      &:focus {
+        color: $mainColorWhite;
+        outline: none;
+
+        & ~ .subscribe__form-submit {
+          opacity: 1;
+        }
+      }
+
+      &:valid {
+        color: $mainColorWhite;
+      }
+
+      &::placeholder {
+        color: $mainColorWhite;
+      }
+    }
+  }
+}
+
+.footer-block {
+  display: grid;
+  grid-template-columns: auto;
+  background: $mainColorDarkBG;
+  color: $mainColorWhite;
+
+  &__feature {
+    padding-bottom: 60px;
+
+    &:nth-child(4) {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__privacy {
+    justify-self: center;
+    @include fontRale(14px, 200, 20px);
+  }
+}
+
+.features {
+
+  &__heading {
+    @include fontFair(24px, 700, 30px);
+    padding-bottom: 30px;
+  }
+
+  &__text {
+    @include fontRale(16px, 400, 24px);
+  }
+
+  &__link {
+    @include fontRale(16px, 400, 24px);
+    color: $mainColorWhite;
+    text-decoration: none;
+  }
+
+  &__schedule-date {
+    display: grid;
+    column-gap: 16px;
+    grid-template-columns: 20px 1fr;
+    @include fontRale(16px, 400, 24px);
+  }
+
+  &__schedule-time {
+    font-weight: 400;
+  }
+
+  &__icons {
+    display: flex;
+    padding-top: 20px;
+
+    &-facebook {
+      background-image: url(../../src/images/facebook-icon.png);
+      background-size: 80%;
+      margin-right: 20px;
+    }
+
+    &-twitter {
+      background-image: url(../../src/images/twitter-icon.png);
+      background-size: 80%;
+      margin-right: 20px;
+    }
+
+    &-telegram {
+      background-image: url(../../src/images/telegram-icon.png);
+      background-size: 80%;
+      margin-right: 20px;
+    }
+
+    &-instagram {
+      background-image: url(../../src/images/instagram-icon.png);
+      background-size: 80%;
+    }
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
