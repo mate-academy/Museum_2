@@ -1,6 +1,45 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.4s;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin adaptiveHeader {
+  @media (min-width:1280px) {
+    & {
+      width: 1170px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    & {
+      padding: 0 40px;
+    }
+  }
+
+  @media (min-width: 300px) and (max-width: 767px) {
+    & {
+      padding: 0 20px;
+    }
+  }
+}
+
+@mixin deleteElement($maxWidth) {
+  @media (max-width: $maxWidth) {
+    display: none;
+  }
+}
+
+@mixin fontRegular {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin fontTitle($size: 96px, $lineHeight:100%) {
+  font-size: $size;
+  font-weight: $fontBold;
+  font-family: $secondaryFont;
+  line-height: $lineHeight;
 }
