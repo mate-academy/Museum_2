@@ -2,10 +2,13 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
+  row-gap: 30px;
+
+  &__button {
+    visibility: hidden;
+  }
 
   &__block {
-    padding-bottom: 90px;
-
     &-decoration {
       opacity: 0;
     }
@@ -33,7 +36,7 @@
         position: absolute;
         width: 160px;
         height: 152px;
-        top: 42%;
+        top: 45%;
         left: -20px;
         background-image: url(../../src/images/announcmentImgSecond320.png);
         background-repeat: no-repeat;
@@ -46,7 +49,7 @@
       grid-row: 3 / 4;
       .announcement__block-img {
         position: absolute;
-        top: 72%;
+        top: 75%;
         right: -20px;
         width: 140px;
         height: 174px;
@@ -111,6 +114,9 @@
         color: transparent;
         opacity: 0.3;
         -webkit-text-stroke: 1px black;
+        animation-name: forText;
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
       }
 
       &:nth-child(1) {
@@ -132,7 +138,7 @@
           width: 298px;
           height: 288px;
           background-image: url(../../src/images/announcmentImgSecond768.png);
-          top: 200px;
+          top: 25%;
           left: auto;
           right: -100px;
         }
@@ -146,7 +152,7 @@
           height: 288px;
           background-image: url(../../src/images/announcmentImgThird768.png);
           background-position: center 10px;
-          top: 500px;
+          top: 60%;
           left: -100px;
         }
       }
@@ -156,7 +162,7 @@
   @media (min-width: 1280px) {
     grid-template-columns: repeat(4, 270px);
     column-gap: 30px;
-    row-gap: 300px;
+    row-gap: 140px;
     justify-content: center;
 
     &__block {
@@ -184,9 +190,9 @@
 
         .announcement__block-img {
           width: 544px;
-          height: 880px;
+          height: 650px;
           background-image: url(../../src/images/announcmentImgSecond1280.png);
-          top: 400px;
+          top: 25%;
         }
       }
 
@@ -198,9 +204,27 @@
           width: 570px;
           height: 576px;
           background-image: url(../../src/images/announcmentImgThird1280.png);
-          top: 850px;
+          top: 65%;
         }
       }
     }
+
+    &__button {
+      visibility: visible;
+      width: 270px;
+      margin-top: 50px;
+    }
+  }
+}
+
+@keyframes forText {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0.3;
   }
 }
