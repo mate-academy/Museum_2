@@ -1,0 +1,71 @@
+.exhibition {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+  justify-content: center;
+
+  &__heading {
+    grid-column: 1 / 13;
+    @include fontFair(36px, 700, 45px);
+    padding-bottom: 60px;
+  }
+
+  &__date {
+    grid-column: 1 / 13;
+    @include fontFair(24px, 700, 30px);
+    color: $mainColorOrange;
+    padding-bottom: 10px;
+  }
+
+  &__announcement {
+    grid-column: 1 / 13;
+    width: 100%;
+    padding-bottom: 60px;
+    position: relative;
+  }
+
+  &__archive {
+    grid-column: 1 / 13;
+    @include fontRale(16px, 400, 16px);
+    text-align: center;
+    position: relative;
+    color: $mainColorBlackFont;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 1px;
+      width: 130px;
+      background-color: $mainColorBlackFont;
+      bottom: -11px;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  @media (min-width: 768px) {
+    &__heading {
+      @include fontFair(48px, 700, 58px);
+      text-align: center;
+      padding-bottom: 55px;
+    }
+
+    &__date {
+      grid-column: 4 / 13;
+      @include fontFair(48px, 700, 58px);
+      color: $mainColorOrange;
+      align-self: center;
+      padding-bottom: 20px;
+    }
+
+    &__announcement {
+      padding-bottom: 60px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    &__date {
+      grid-column: 6 / 13;
+    }
+  }
+}
