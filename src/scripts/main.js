@@ -16,7 +16,7 @@ langList.addEventListener('click', function(e) {
   if (e.target.classList.contains('nav__lang-item--ua')) {
     selectedLang.textContent = 'UA';
   } else if (e.target.classList.contains('nav__lang-item--eng')) {
-    selectedLang.textContent = 'ENG';
+    selectedLang.textContent = 'EN';
   }
 });
 
