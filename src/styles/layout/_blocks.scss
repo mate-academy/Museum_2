@@ -87,10 +87,10 @@
         width: 160px;
         height: 152px;
         top: 460px;
-        left: -60px;
+        left: -20px;
         background-image: url(../../src/images/announcmentImgSecond320.png);
         background-repeat: no-repeat;
-        background-position: bottom right;
+        background-position: left center;
       }
     }
 
@@ -206,13 +206,27 @@
 
 .events {
   display: grid;
-  grid-template-columns: repeat(2, minmax(130px, 2fr));
+  grid-template-columns: repeat(2, minmax(130px, auto));
   grid-template-rows: auto;
   column-gap: 20px;
   row-gap: 20px;
   align-items: center;
 
+  &__dates {
+    display: flex;
+    flex-direction: row;
+  }
+
   &__date {
+    @include fontRale(16px, 400, 24px);
+    color: $mainColorOrange;
+
+    &--visibleNotSm {
+      display: none;
+    }
+  }
+
+  &__time {
     @include fontRale(16px, 400, 24px);
     color: $mainColorOrange;
   }
@@ -238,37 +252,156 @@
     grid-column-end: 3;
     margin-top: 20px;
   }
+
+  @media (min-width: 768px) {
+
+    & {
+      column-gap: 30px;
+      align-items: flex-start;
+    }
+
+    &__dates {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+
+    &__date {
+      @include fontFair(36px, 700, 36px);
+      color: transparent;
+      -webkit-text-stroke: 1px $mainColorOrange;
+
+      &--visibleSm {
+        display: none;
+      }
+
+      &--visibleNotSm {
+        display: inline;
+      }
+    }
+
+    &__time {
+      @include fontFair(24px, 700, 24px);
+    }
+
+    &__heading {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    &__text {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    &__button {
+      width: 270px;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
 }
 
 .plans {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-auto-rows: auto;
   background-color: $mainColorDarkBG;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 462px;
+    background-image: url(../../src/images/plans768.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
 
   &__heading {
+    grid-column-start: 1;
+    grid-column-end: 3;
     @include fontFair(48px, 700, 48px);
     color: $mainColorWhite;
     padding-bottom: 40px;
   }
 
   &__text {
+    grid-column-start: 1;
+    grid-column-end: 3;
     @include fontRale(16px, 400, 24px);
     color: $mainColorWhite;
     padding-bottom: 60px;
   }
+
+  &__button {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  @media (min-width: 768px) {
+
+    &::before {
+      display: block;
+    }
+
+    &__heading {
+      @include fontFair(72px, 700, 72px);
+      padding-bottom: 80px;
+    }
+
+    &__text {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    &__button {
+      width: 258px;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
 }
 
 .news {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
   background-color: $mainColorWhite;
 
-  &__heading {
-    @include fontFair(36px, 700, 36px);
-    padding-bottom: 60px;
+  &__wrapper {
+    grid-column-start: 1;
+    grid-column-end: 13;
+
+    &:nth-child(2) {
+      .news__img {
+        height: 270px;
+        background-image: url(../../src/images/280x280newsOne.png);
+        background-repeat: no-repeat;
+        background-position: left center;
+      }
+    }
+
+    &:nth-child(3) {
+      display: none;
+    }
+
+    &:nth-child(4) {
+      display: none;
+    }
   }
 
-  &__img {
-    height: 280px;
-    background-image: url(../../src/images/280x280newsOne.png);
-    background-repeat: no-repeat;
-    background-position: center center;
+  &__heading {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    @include fontFair(36px, 700, 36px);
+    padding-bottom: 60px;
   }
 
   &__date {
@@ -288,6 +421,9 @@
   }
 
   &__controls {
+    grid-column-start: 1;
+    grid-column-end: 13;
+
     display: flex;
     justify-content: center;
     padding-bottom: 60px;
@@ -307,6 +443,9 @@
   }
 
   &__all {
+    grid-column-start: 1;
+    grid-column-end: 13;
+
     @include fontRale(16px, 400, 16px);
     text-align: center;
     color: $mainColorBlackFont;
@@ -322,6 +461,123 @@
       width: 130px;
       background-color: $mainColorBlackFont;
       transform: translate(-50%, 0);
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    & {
+      column-gap: 30px;
+    }
+
+    &__wrapper {
+
+      &:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 7;
+      }
+
+      &:nth-child(3) {
+        display: block;
+        grid-column-start: 7;
+        grid-column-end: 13;
+
+        .news__img {
+          height: 270px;
+          background-image: url(../../src/images/270x270newsTwo.png);
+          background-repeat: no-repeat;
+          background-position: left center;
+        }
+      }
+    }
+
+    &__controls {
+      display: none;
+    }
+
+    &__all {
+      padding-top: 90px;
+    }
+  }
+}
+
+.subscribe {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: auto;
+  background: $mainColorOrange;
+  color: $mainColorWhite;
+
+  &__heading {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    @include fontFair(36px, 700, 36px);
+    padding-bottom: 40px;
+  }
+
+  &__text {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    @include fontRale(16px, 400, 24px);
+    padding-bottom: 60px;
+  }
+
+  &__form {
+    grid-column-start: 1;
+    grid-column-end: 7;
+    display: grid;
+    width: 100%;
+    column-gap: 10px;
+    grid-template-columns: repeat(auto-fit, 80% 18%);
+    align-items: flex-end;
+
+    &-submit {
+      opacity: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid $mainColorWhite;
+      background-color: inherit;
+      background-image: url(../../src/images/submitArrow.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &-email {
+      @include fontRale(16px, 400, 24px);
+      background-color: inherit;
+      border: none;
+      border-bottom: 1px solid $mainColorWhite;
+      padding-left: 8px;
+
+      &:focus {
+        color: $mainColorWhite;
+        outline: none;
+
+        & ~ .subscribe__form-submit {
+          opacity: 1;
+        }
+      }
+
+      &:valid {
+        color: $mainColorWhite;
+      }
+
+      &::placeholder {
+        color: $mainColorWhite;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__heading {
+      @include fontFair(48px, 700, 58px);
+      padding-bottom: 40px;
+    }
+
+    &__form {
+      grid-column-start: 1;
+      grid-column-end: 4;
     }
   }
 }
