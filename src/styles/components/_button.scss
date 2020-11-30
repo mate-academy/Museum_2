@@ -1,5 +1,6 @@
 .button {
   box-sizing: border-box;
+  position: relative;
   display: flex;
   height: 60px;
   justify-content: center;
@@ -7,20 +8,76 @@
   text-decoration: none;
   font-family: "Raleway", serif;
   font-size: 14px;
+  border-radius: 5px;
   color: $mainColorWhite;
   cursor: pointer;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+
+  &:before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 5px;
+    width: 0;
+    height: 60px;
+    border: 1px solid transparent;
+    transition: all 0.4s ease;
+  }
+
+  .button__text {
+    position: relative;
+  }
+
+  &__svg {
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    right: 50px;
+    margin-left: 10px;
+    fill: $mainColorWhite;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: $mainColorWhite;
+    stroke-width: 2;
+    transform: translateX(5px);
+    // transition: all 0.4s ease;
+  }
+
+  &:active {
+    outline: transparent;
+  }
+
+  &:hover {
+    transition: transform 0.6s;
+    box-shadow: 0 20px 28px rgba(33, 43, 43, 0.6);
+    transform: translateY(-7px) scale(1.05);
+
+    &:before {
+      width: 100%;
+      border-color: white;
+      background-color: hsl(180, 13%, 20%);
+    }
+
+    .button__svg {
+      transition: transform 0.6s, opacity 0.6s;
+      transform: translateX(30px);
+      opacity: 1;
+    }
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
 
   &--orange {
     background-color: $mainColorOrange;
-    opacity: 1;
-    transition: opacity 0.5s;
-  }
-
-  &--orange:hover {
-    opacity: 0.7;
   }
 
   &--member {
-    border: 1px solid #f1f5f4;
+    border: 1px solid $mainColorWhite;
   }
 }

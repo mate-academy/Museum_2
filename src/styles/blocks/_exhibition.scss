@@ -45,6 +45,7 @@
     }
   }
   @media (min-width: 768px) {
+
     &__heading {
       @include fontFair(48px, 700, 58px);
       text-align: center;
@@ -52,10 +53,10 @@
     }
 
     &__date {
-      grid-column: 4 / 13;
+      grid-column: 1 / 13;
       @include fontFair(48px, 700, 58px);
       color: $mainColorOrange;
-      align-self: center;
+      justify-self: center;
       padding-bottom: 20px;
     }
 
@@ -65,12 +66,24 @@
   }
 
   @media (min-width: 1280px) {
+
+    & {
+      grid-template-columns: repeat(12, 70px);
+      column-gap: 30px;
+    }
+
+    &__heading {
+      padding-bottom: 100px;
+    }
+
     &__date {
-      grid-column: 6 / 13;
+      grid-column: 1 / 13;
     }
 
     &__announcement {
-      margin-bottom: 160px;
+      row-gap: 140px;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
   }
 }
