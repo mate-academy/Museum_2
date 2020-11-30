@@ -22,13 +22,14 @@ langList.addEventListener('click', function(e) {
 
 //  fade in menu
 
-const hamburgerMenu = document.querySelector('.nav__menu');
+const menuWrap = document.querySelector('.nav__menu-wrap');
 
-hamburgerMenu.addEventListener('click', function(e) {
-  const headerMenu = document.querySelector('.header__menu');
+menuWrap.addEventListener('click', function(e) {
+  const headerMenu = document.querySelector('.menu');
   const hamburger = document.querySelector('.nav__hamburger');
 
   headerMenu.classList.toggle('header__menu--active');
+
   hamburger.classList.toggle('nav__hamburger--active');
 
   if (document.documentElement.clientWidth <= 768) {
