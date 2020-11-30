@@ -1,0 +1,253 @@
+$headerLeftContentGap: 100px;
+$horizontalPaddingLg: 55px;
+$horizontalPaddingMd: 40px;
+$horizontalPaddingSm: 20px;
+
+.header {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  height: 800px;
+
+  background-color: $bgColor;
+  overflow: hidden;
+
+  @include adaptive($breakpointSm) {
+    & {
+      height: 584px;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: -1050px;
+    width: 1170px + 55px * 2;
+
+    z-index: 15;
+
+    background-color: $bgColor;
+    transition: transform 0.7s cubic-bezier(0.87,0.14,0.12,0.85);
+
+    &--active {
+      transform: translateY(1100px);
+    }
+    
+    @include adaptive($breakpointLg) {
+      & {
+        width: 100%;
+      }
+    }
+  
+  }
+
+  &__section {
+    margin-top: 120px;
+  }
+
+  &__top-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+
+    @include maxWidth;
+    @include containerPadding;
+  }
+
+  &__nav {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    z-index: 16;
+  }
+
+  &__content {
+    @include maxWidth;
+    @include containerPadding;
+  
+    color: $primaryColor;
+  }
+
+  &__title {
+    margin-top: 10px;
+
+    @include fontTitle;
+    @include adaptive($breakpointLg) {
+      & {
+        font-size: 72px;
+      }
+    }
+  }
+
+  &__title-gap {
+    margin-top: 10px;
+    padding-left: $headerLeftContentGap;
+
+    @include adaptive($breakpointLg) {
+      & {
+        padding-left: $headerLeftContentGap - 55px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 40px;
+    padding-left: $headerLeftContentGap;
+  }
+
+  &__text {
+    width: 370px;
+    line-height: 150%;
+
+    @include adaptive($breakpointLg) {
+      &__text {
+        width: 265px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 60px;
+
+    @include adaptive($breakpointLg) {
+      & {
+        margin: 80px 0 180px;
+      }
+    }
+  }
+
+  &__footer {
+    position: relative;
+
+    margin: 110px 0 52px;
+
+    @include fontTitle(14px, 125%);
+    @include deleteElement(1279px);
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 100px;
+
+      display: block;
+      height: 1px;
+      width: 492px;
+
+      content: "";
+      opacity: 0.3;
+      background-color: $primaryColor;
+    }
+  }
+
+  &__image-wrap {
+    position: relative;
+  }
+
+  &__image-bg {
+    position: absolute;
+    right: 50%;
+    bottom: -15px;
+
+    transform: translate(650px);
+    z-index: 5;
+
+    @include adaptive($breakpointLg) {
+      & {
+        right: -180px;
+        bottom: -210px;
+        transform: scale(0.59);
+      }
+    }
+  }
+
+  &__figcaption {
+    position: absolute;
+    right: 50%;
+    top: -370px;
+
+    line-height: 150%;
+    color: $primaryColor;
+
+    transform: translate(620px);
+
+    @include deleteElement($breakpointLg);
+  }
+
+  @include adaptive($breakpointLg) {
+    &__action-date,
+    &__title,
+    &__description {
+      padding-left: 60px;
+    }
+  }
+
+  @include adaptive($breakpointSm) {
+    & {
+      height: 584px;
+    }
+
+    &__section {
+      margin-top: 100px;
+    }
+
+    &__menu {
+      width: 100%;
+    }
+
+    &__nav {
+      flex-direction: row-reverse;
+    }
+
+    &__title {
+      margin-top: 20px;
+
+      font-size: 48px;
+    }
+
+    &__title-gap,
+    &__description {
+      padding-left: 0;
+    }
+
+    &__description {
+      margin-top: 30px;
+    }
+
+    &__button {
+      margin: 50px 0 100px;
+    }
+
+    &__image-wrap {
+      position: absolute;
+      top: 310px;
+
+      width: 100%;
+      height: 273px;
+    }
+
+    &__image-bg {
+      right: -60px;
+      bottom: -1px;
+
+      width: 245px;
+      height: 273px;
+
+      transform: none;
+    }
+
+    &__text {
+      width: 265px;
+    }
+
+    &__action-date,
+    &__title {
+      padding-left: 0;
+    }
+  }
+}

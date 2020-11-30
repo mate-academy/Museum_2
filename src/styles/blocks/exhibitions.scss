@@ -1,0 +1,243 @@
+.exhibitions {
+
+  &__title {
+    margin-top: 160px;
+    text-align: center;
+    @include fontTitle(48px, 120%);
+
+    @include adaptive($breakpointLg) {
+      & {
+        margin-top: 115px;
+        text-align: left;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    align-items: center;
+    gap: 80px 25px;
+
+    margin-top: 100px;
+
+    @include adaptive($breakpointLg) {
+      & {
+        margin-top: 55px;
+      }
+    }
+  }
+
+  &__date {
+    @include fontTitle(48px, 120%);
+
+    color: #cd4d31;
+
+    &--always {
+      @include fontRegular;
+      font-family: $primaryFont;
+    }
+
+    &--relevant {
+      position: relative;
+      left: -100px;
+    }
+  }
+
+  &__list-item {
+    &:nth-child(1) {
+      grid-column-start: 2;
+      width: 380px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50px;
+
+        width: 539px;
+        height: 912px;
+
+        background-image: url(../images/234_belm3506_1_large.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      @include adaptive($breakpointLg) {
+        & {
+          width: 300px;
+          justify-self: start;
+          margin-left: -100px;
+        }
+
+        &::before {
+          top: 135px;
+
+          width: 293px;
+          height: 400px;
+
+          background-image: url(../images/angelMd.png);
+          background-position: center 40%;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      width: 380px;
+      grid-row-start: 2;
+      justify-self: end;
+
+      @include adaptive($breakpointLg) {
+        & {
+          width: 300px;
+          justify-self: start;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 790px;
+
+        width: 575px;
+        height: 465px;
+        display: block;
+
+        background-image: url(../images/picture.png);
+        background-repeat: no-repeat;
+      }
+
+      @include adaptive($breakpointLg) {
+        & {
+          width: 290px;
+          justify-self: end;
+          margin-right: -90px;
+        }
+
+        &::after {
+          top: 590px;
+
+          background-image: url(../images/manMd.png);
+          background-position: right 0;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      margin-top: 38px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1440px;
+
+        width: 584px;
+        height: 499px;
+
+        display: block;
+
+        background-image: url(../images/kobzar.png);
+        background-repeat: no-repeat;
+      }
+
+      @include adaptive($breakpointLg) {
+        & {
+          margin-left: -100px;
+        }
+
+        &::after {
+          top: 940px;
+          background-position: 25px 20px;
+          background-image: url(../images/kobzarMd.png);
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      grid-row-start: 3;
+      grid-column-start: 2;
+
+      width: 300px;
+
+      @include adaptive($breakpointLg) {
+        & {
+          margin-left: -100px;
+          width: 300px;
+          justify-self: start;
+        }
+      }
+    }
+  }
+
+  &__name {
+    margin-top: 20px;
+    @include fontTitle(24px, 125%);
+  }
+
+  &__list-text {
+    text-transform: uppercase;
+    @include fontTitle(144px);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(63, 82, 82, 0.3);
+
+    @include adaptive($breakpointLg) {
+      & {
+        font-size: 72px;
+      }
+    }
+  }
+
+  &__desc {
+    margin-top: 20px;
+
+    line-height: 150%;
+  }
+
+  &__button {
+    margin-top: 50px;
+
+    @include deleteElement($breakpointLg);
+  }
+
+  &__archive {
+    position: relative;
+
+    color: $aColor;
+
+    align-self: flex-end;
+    margin-top: 4px;
+    padding: 0 90px 100px 0;
+
+    &::after {
+      position: absolute;
+
+      top: 10px;
+      left: 130px;
+
+      display: block;
+      width: 70px;
+      height: 1px;
+      content: "";
+
+      background-color: $aColor;
+    }
+
+    @include adaptive($breakpointLg) {
+      & {
+        margin-top: 60px;
+        align-self: center;
+      }
+
+      &::after {
+        width: 170px;
+        top: 30px;
+        left: -25px;
+      }
+    }
+  }
+}
