@@ -1,11 +1,25 @@
 .events {
   padding: 0 55px;
-  max-width: 1280px;
+  max-width: 1600px;
   margin: auto;
+
+  @media (max-width: 1199px) {
+    padding: 0 100px;
+  }
+
+  @media (max-width: 759px) {
+    padding: 20px;
+  }
 
   &__text {
     display: flex;
     gap: 30px;
+  }
+
+  &__date {
+    @media (max-width: 759px) {
+      display: none;
+    }
   }
 
   &__day {
@@ -24,18 +38,49 @@
     line-height: 100%;
     color: $color-orange;
     margin: 10px 0 0 82px;
+
+    @media (max-width: 1199px) {
+      margin: 0;
+    }
   }
 
   &__title {
-    margin: 75px 0 63px;
+    padding: 260px 0 63px;
     @include second-title;
     text-align: center;
+
+    @media (max-width: 1199px) {
+      text-align: left;
+      padding: 120px 0 55px;
+    }
+
+    @media (max-width: 759px) {
+      font-size: 36px;
+      padding: 100px 0 60px;
+    }
   }
 
   &__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 60px;
+
+    @media (max-width: 1199px) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__image {
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 1199px) {
+      display: none;
+    }
   }
 
 }

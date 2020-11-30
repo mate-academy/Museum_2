@@ -1,22 +1,89 @@
 .visit-museum {
   background-color: #3f5252;
   height: 800px;
-  display: grid;
-  grid-template-columns: 40% 55%;
-  gap: 0 30px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin-top: 184px;
+
+  @media (max-width: 1199px) {
+    margin-top: 120px;
+  }
+
+  @media (max-width: 759px) {
+    height: 584px;
+    margin-top: 80px;
+    padding: 80px 20px;
+    display: block;
+  }
+
+  &__about {
+    padding-right: 5vw;
+
+    @media (max-width: 759px) {
+      padding: 0;
+      margin: 0;
+    }
+  }
 
   &__title {
     margin-top: 190px;
     @include title;
+
+    @media (max-width: 1199px) {
+      margin-top: 120px;
+      font-size: 72px;
+      transform: translate(-20%);
+    }
+
+    @media (max-width: 759px) {
+      font-size: 48px;
+      padding: 0;
+      margin: 0;
+      transform: none;
+    }
+  }
+
+  &__picture {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @media (max-width: 1199px) {
+      width: 391px;
+      left: -40px;
+    }
+
+    @media (max-width: 759px) {
+      display: none;
+    }
   }
 
   &__block {
-    padding-left: 80px;
+    margin-left: 80px;
+
+    @media (max-width: 1199px) {
+      width: 370px;
+      margin: 120px 0 0 100px;
+    }
+
+    @media (max-width: 759px) {
+      padding: 0;
+      margin: 0;
+    }
   }
 
   &__description {
     max-width: 470px;
     margin: 60px 0;
+
+    @media (max-width: 759px) {
+      width: 280px;
+      margin: 0;
+      padding: 40px 0 60px;
+    }
   }
 
 }

@@ -6,10 +6,28 @@
   padding: 0 180px 0 55px;
   background-color: #cd4d31;
   height: 459px;
+  margin-top: 184px;
+
+  @media (max-width: 1199px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 100px;
+    margin-top: 120px;
+  }
+
+  @media (max-width: 759px) {
+    margin-top: 80px;
+    padding: 0 20px;
+  }
 
   &__title {
     @include second-title;
     color: $main-color;
+
+    @media (max-width: 679px) {
+      font-size: 36px;
+    }
   }
 
   &__text {
@@ -32,8 +50,32 @@
     background-color: #cd4d31;
     outline: none;
 
+    @media (max-width: 679px) {
+      width: 228px;
+    }
+
     &::placeholder {
       color: $main-color;
     }
   }
+
+  &__button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid $main-color;
+    background-color: #cd4d31;
+    background-image: url(../images/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+    cursor: pointer;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  }
+
 }
