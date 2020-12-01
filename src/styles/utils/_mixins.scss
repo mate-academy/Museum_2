@@ -5,12 +5,6 @@
   }
 }
 
-@mixin deleteElement($maxWidth) {
-  @media (max-width: $maxWidth) {
-    display: none;
-  }
-}
-
 @mixin fontRegular {
   font-size: 16px;
   font-weight: 400;
@@ -30,23 +24,30 @@
   line-height: 20px;
 }
 
-@mixin adaptive($breakpoint) {
-  @media (max-width: #{$breakpoint}) {
+@mixin containerWidth($padding: $horizontalPaddingMd) {
+  width: 100%;
+
+  @include forTablet {
+    padding: 0 $padding;
+  }
+
+  @include forMobile {
+    padding: 0 $horizontalPaddingSm;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px - $horizontalPaddingLg * 2;
+  }
+}
+
+@mixin forMobile {
+  @media (max-width: #{$breakpointSm}) {
     @content;
   }
 }
 
-@mixin maxWidth {
-  width: 100%;
-  max-width: 1170px;
-}
-
-@mixin containerPadding($padding: 40px) {
-  @include adaptive($breakpointLg) {
-    padding: 0 $padding;
-  }
-
-  @include adaptive($breakpointSm) {
-    padding: 0 20px;
+@mixin forTablet {
+  @media (max-width: #{$breakpointLg}) {
+    @content;
   }
 }

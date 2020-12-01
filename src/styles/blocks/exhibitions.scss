@@ -5,10 +5,17 @@
     text-align: center;
     @include fontTitle(48px, 120%);
 
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       & {
         margin-top: 115px;
         text-align: left;
+      }
+    }
+
+    @include forMobile {
+      & {
+        margin-top: 60px;
+        @include fontTitle(36px, 125%);
       }
     }
   }
@@ -22,9 +29,17 @@
 
     margin-top: 100px;
 
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       & {
         margin-top: 55px;
+      }
+    }
+
+    @include forMobile {
+      & {
+        margin-top: 60px;
+        grid-template-columns: auto;
+        grid-gap: 90px 0;
       }
     }
   }
@@ -42,13 +57,19 @@
     &--relevant {
       position: relative;
       left: -100px;
+
+      @include forMobile {
+        left: 0;
+        @include fontTitle(24px, 125%);
+      }
     }
   }
 
   &__list-item {
+    width: 70%;
+
     &:nth-child(1) {
       grid-column-start: 2;
-      width: 380px;
 
       &::before {
         content: "";
@@ -64,15 +85,17 @@
         background-size: cover;
       }
 
-      @include adaptive($breakpointLg) {
+      @include forTablet {
         & {
-          width: 300px;
-          justify-self: start;
-          margin-left: -100px;
+          grid-column-start: span 2;
+          justify-self: center;
+          width: 370px;
+          margin-left: 140px;
         }
 
         &::before {
           top: 135px;
+          left: 0;
 
           width: 293px;
           height: 400px;
@@ -81,17 +104,54 @@
           background-position: center 40%;
         }
       }
+
+      @include forMobile {
+        & {
+          grid-column-start: 1;
+          margin-left: 0;
+          width: 85%;
+          justify-self: start;
+        }
+
+        &::before {
+          left: auto;
+          right: -66px;
+          top: 225px;
+          background-image: url(../images/angelSm.png);
+          background-size: 55%;
+        }
+      }
     }
 
     &:nth-child(2) {
-      width: 380px;
       grid-row-start: 2;
       justify-self: end;
 
-      @include adaptive($breakpointLg) {
+      @include forTablet {
         & {
-          width: 300px;
           justify-self: start;
+        }
+      }
+
+      @include forMobile {
+        & {
+          width: 100%;
+          display: grid;
+          position: relative;
+        }
+
+        &::after {
+          position: absolute;
+          top: 90px;
+          left: -20px;
+
+          content: "";
+          width: 200px;
+          height: 200px;
+          display: block;
+  
+          background-image: url(../images/pictureSm.png);
+          background-repeat: no-repeat;
         }
       }
     }
@@ -112,18 +172,23 @@
         background-repeat: no-repeat;
       }
 
-      @include adaptive($breakpointLg) {
+      @include forTablet {
         & {
-          width: 290px;
-          justify-self: end;
-          margin-right: -90px;
+          width: 300px;
+          justify-self: start;
         }
 
         &::after {
-          top: 590px;
+          top: 710px;
 
           background-image: url(../images/manMd.png);
           background-position: right 0;
+        }
+      }
+
+      @include forMobile {
+        & {
+          display: none;
         }
       }
     }
@@ -134,7 +199,7 @@
       &::after {
         content: "";
         position: absolute;
-        top: 1440px;
+        top: 1420px;
 
         width: 584px;
         height: 499px;
@@ -145,15 +210,21 @@
         background-repeat: no-repeat;
       }
 
-      @include adaptive($breakpointLg) {
+      @include forTablet {
         & {
           margin-left: -100px;
         }
 
         &::after {
-          top: 940px;
+          top: 1050px;
           background-position: 25px 20px;
           background-image: url(../images/kobzarMd.png);
+        }
+      }
+
+      @include forMobile {
+        & {
+          display: none;
         }
       }
     }
@@ -162,14 +233,39 @@
       grid-row-start: 3;
       grid-column-start: 2;
 
-      width: 300px;
-
-      @include adaptive($breakpointLg) {
+      @include forTablet {
         & {
-          margin-left: -100px;
-          width: 300px;
-          justify-self: start;
+          justify-self: center;
         }
+      }
+
+      @include forMobile {
+        & {
+          width: 70%;
+          justify-self: start;
+          grid-column-start: 1;
+          margin-left: 0;
+        }
+
+        &::after {
+          position: absolute;
+          top: calc(200px + 60%);
+          right: -66px;
+          content: "";
+
+          width: 203px;
+          height: 174px;
+          display: block;
+
+          background-image: url(../images/kobzarSm.png);
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    @include forTablet {
+      & {
+        width: 370px;
       }
     }
   }
@@ -177,17 +273,28 @@
   &__name {
     margin-top: 20px;
     @include fontTitle(24px, 125%);
+
+    @include forMobile {
+      & {
+        margin-top: 10px;
+      }
+    }
   }
 
   &__list-text {
+    width: 590px;
+    height: 576px;
+
     text-transform: uppercase;
     @include fontTitle(144px);
     color: transparent;
     -webkit-text-stroke: 1px rgba(63, 82, 82, 0.3);
 
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       & {
         font-size: 72px;
+        width: 370px;
+        height: 100%;
       }
     }
   }
@@ -196,12 +303,28 @@
     margin-top: 20px;
 
     line-height: 150%;
+
+    @include forMobile {
+      & {
+        margin-top: 30px;
+        max-width: 65%;
+      }
+
+      &--smright {
+        justify-self: end;
+        margin-right: -15px;
+      }
+    }
   }
 
   &__button {
     margin-top: 50px;
 
-    @include deleteElement($breakpointLg);
+    @include forMobile {
+      & {
+        display: none;
+      }
+    }
   }
 
   &__archive {
@@ -227,16 +350,24 @@
       background-color: $aColor;
     }
 
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       & {
         margin-top: 60px;
         align-self: center;
+        padding: 0 0 100px;
       }
 
       &::after {
         width: 170px;
         top: 30px;
         left: -25px;
+      }
+    }
+
+    @include forMobile {
+      &::after {
+        width: 130px;
+        left: -6%;
       }
     }
   }

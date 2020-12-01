@@ -1,7 +1,4 @@
 $headerLeftContentGap: 100px;
-$horizontalPaddingLg: 55px;
-$horizontalPaddingMd: 40px;
-$horizontalPaddingSm: 20px;
 
 .header {
   position: relative;
@@ -15,7 +12,7 @@ $horizontalPaddingSm: 20px;
   background-color: $bgColor;
   overflow: hidden;
 
-  @include adaptive($breakpointSm) {
+  @include forMobile {
     & {
       height: 584px;
     }
@@ -35,7 +32,7 @@ $horizontalPaddingSm: 20px;
       transform: translateY(1100px);
     }
     
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       & {
         width: 100%;
       }
@@ -53,8 +50,7 @@ $horizontalPaddingSm: 20px;
     justify-content: space-between;
     align-items: center;
 
-    @include maxWidth;
-    @include containerPadding;
+    @include containerWidth;
   }
 
   &__nav {
@@ -67,8 +63,7 @@ $horizontalPaddingSm: 20px;
   }
 
   &__content {
-    @include maxWidth;
-    @include containerPadding;
+    @include containerWidth;
   
     color: $primaryColor;
   }
@@ -77,7 +72,7 @@ $horizontalPaddingSm: 20px;
     margin-top: 10px;
 
     @include fontTitle;
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       & {
         font-size: 72px;
       }
@@ -88,7 +83,7 @@ $horizontalPaddingSm: 20px;
     margin-top: 10px;
     padding-left: $headerLeftContentGap;
 
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       & {
         padding-left: $headerLeftContentGap - 55px;
         margin-top: 0;
@@ -105,7 +100,7 @@ $horizontalPaddingSm: 20px;
     width: 370px;
     line-height: 150%;
 
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       &__text {
         width: 265px;
       }
@@ -115,7 +110,7 @@ $horizontalPaddingSm: 20px;
   &__button {
     margin-top: 60px;
 
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       & {
         margin: 80px 0 180px;
       }
@@ -128,7 +123,6 @@ $horizontalPaddingSm: 20px;
     margin: 110px 0 52px;
 
     @include fontTitle(14px, 125%);
-    @include deleteElement(1279px);
 
     &::after {
       position: absolute;
@@ -142,6 +136,12 @@ $horizontalPaddingSm: 20px;
       content: "";
       opacity: 0.3;
       background-color: $primaryColor;
+    }
+
+    @include forTablet {
+      & {
+        display: none;
+      }
     }
   }
 
@@ -157,10 +157,10 @@ $horizontalPaddingSm: 20px;
     transform: translate(650px);
     z-index: 5;
 
-    @include adaptive($breakpointLg) {
+    @include forTablet {
       & {
         right: -180px;
-        bottom: -210px;
+        bottom: -205px;
         transform: scale(0.59);
       }
     }
@@ -176,10 +176,14 @@ $horizontalPaddingSm: 20px;
 
     transform: translate(620px);
 
-    @include deleteElement($breakpointLg);
+    @include forTablet {
+      & {
+        display: none;
+      }
+    }
   }
 
-  @include adaptive($breakpointLg) {
+  @include forTablet {
     &__action-date,
     &__title,
     &__description {
@@ -187,7 +191,7 @@ $horizontalPaddingSm: 20px;
     }
   }
 
-  @include adaptive($breakpointSm) {
+  @include forMobile {
     & {
       height: 584px;
     }

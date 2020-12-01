@@ -32,7 +32,7 @@ menuWrap.addEventListener('click', function(e) {
 
   hamburger.classList.toggle('nav__hamburger--active');
 
-  if (document.documentElement.clientWidth <= 768) {
+  if (document.documentElement.clientWidth < 768) {
     lang.classList.toggle('nav__select-lang--active');
   }
 });
