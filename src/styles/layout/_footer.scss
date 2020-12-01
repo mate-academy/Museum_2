@@ -50,10 +50,20 @@
     }
 
     &__privacy {
+      grid-column: 2/4;
+
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, auto);
       column-gap: 40px;
       padding-top: 40px;
+
+      &-text {
+        grid-column: 1/2;
+      }
+
+      &-date {
+        grid-column: 2/3;
+      }
     }
   }
 
@@ -73,11 +83,18 @@
 
   &__heading {
     @include fontFair(24px, 700, 30px);
+    text-shadow: $textShadowForBigLightText;
     padding-bottom: 30px;
   }
 
   &__text {
+    font-style: normal;
     @include fontRale(16px, 400, 24px);
+
+    &-link {
+      text-decoration: none;
+      color: $mainColorWhite;
+    }
   }
 
   &__link {
@@ -127,8 +144,8 @@
 }
 
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   background-repeat: no-repeat;
   background-position: center;
 }

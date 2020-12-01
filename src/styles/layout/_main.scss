@@ -6,20 +6,25 @@
   }
 
   &__events {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     padding: 0 20px 90px;
 
     &-heading {
+      grid-column: 1 / 13;
       @include fontFair(36px, 700, 45px);
     }
 
     &-block {
-      padding-top: 60px;
+      grid-column: 1 / 13;
+      padding: 60px 0;
     }
 
     &-calendar {
-      text-align: center;
+      grid-column: 1 / 13;
+      justify-self: center;
       position: relative;
-      padding-top: 60px;
+      @include fontRale(16px, 400, 16px);
 
       &::before {
         content: "";
@@ -86,6 +91,28 @@
 
     &__exhibition {
       padding: 160px 0 100px;
+    }
+
+    &__events-block {
+      padding: 60px 0 80px;
+    }
+
+    &__events {
+      grid-template-columns: repeat(12, 70px);
+      column-gap: 30px;
+      justify-content: center;
+
+      &-calendar {
+        grid-column: 10 / 13;
+        padding-right: 80px;
+
+        &::before {
+          width: 70px;
+          bottom: 50%;
+          left: auto;
+          right: -70px;
+        }
+      }
     }
   }
 }
