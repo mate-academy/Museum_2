@@ -50,6 +50,15 @@
     background-color: #cd4d31;
     outline: none;
 
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-bottom: 1px solid $main-color;
+      -webkit-text-fill-color: $main-color;
+      -webkit-box-shadow: 0 0 0 1000px  #cd4d31 inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
     @media (max-width: 679px) {
       width: 228px;
     }
@@ -60,6 +69,9 @@
   }
 
   &__button {
+    position: relative;
+    top: 10px;
+    left: 25px;
     width: 42px;
     height: 42px;
     border-radius: 50%;
