@@ -6,12 +6,13 @@
   width: calc(100% - 56px);
   height: calc(100% - 90px);
 
-  background: $main-background-color url("../images/Boy_with_paints.png")
+  background: $background-c url("../images/Boy_with_paints.png")
     no-repeat right bottom;
 
   transition: all 1s;
   visibility: hidden;
   opacity: 0;
+  z-index: 1;
 
   &__schedule {
     display: flex;
@@ -20,21 +21,17 @@
   }
 
   &__date {
-    font-weight: 200;
-    font-size: 14px;
-    line-height: 20px;
-    color: $primary-color;
-
     &:first-child {
       margin-right: 30px;
     }
   }
 
-  &__time {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: $primary-color;
+  &__date--text-small {
+    @include text-small;
+  }
+
+  &__time--text-large {
+    @include text-large($white-c);
   }
 
   &__links {
@@ -50,27 +47,22 @@
   &__link {
     margin-bottom: 60px;
 
-    font-family: "Playfair Display", serif;
-    font-size: 48px;
-    line-height: 120%;
+    &--heading-medium {
+      @include heading-medium($white-c);
+    }
   }
 
-  &__btn-buy {
-    margin-right: 30px;
+  &__btn {
+    &:first-child {
+      margin-right: 30px;
+    }
 
-    @include btn-orange;
-  }
+    &--btn-orange {
+      @include btn-orange;
 
-  &__btn-member {
-    display: inline-block;
-
-    width: 270px;
-    height: 60px;
-
-    text-align: center;
-    font-size: 16px;
-    line-height: 60px;
-
-    border: 1px solid $primary-color;
+      &:last-child {
+        @include btn-orange(1px solid $white-c, $background-c);
+      }
+    }
   }
 }

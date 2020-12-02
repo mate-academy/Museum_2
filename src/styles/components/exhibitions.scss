@@ -8,10 +8,13 @@
   background-repeat: no-repeat;
 
   &__container {
+    @include container;
+
     padding-top: 115px;
+    margin-bottom: 260px;
   }
 
-  &__section--center {
+  &__section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,81 +24,80 @@
     margin-bottom: 45px;
 
     transform: translateX(-10%);
-  }
 
-  &__section-heading--size_b {
-    @include text-h2;
+    &--heading-medium {
+      @include heading-medium;
+    }
   }
 
   &__date-number {
     margin-bottom: 20px;
     transform: translateX(10%);
+
+    &--heading-medium {
+      @include heading-medium($orange-c);
+    }
   }
 
-  &__date-number--color_orange {
-    @include text-h2($orange-color);
-  }
-
-  &__article--width {
-    width: 380px;
-  }
-
-  &__article-right {
+  &__article {
     margin-bottom: 225px;
     transform: translateX(50%);
-  }
+    width: 380px;
 
-  &__article-left {
-    margin-bottom: 308px;
-    transform: translateX(-50%);
+    &:nth-child(2n) {
+      margin-bottom: 308px;
+      transform: translateX(-50%);
+    }
   }
 
   &__article-time {
     margin-bottom: 10px;
-  }
 
-  &__article-time--color_orange {
-    @include text-size_b($orange-color);
+    &--text-large {
+      @include text-large($orange-c);
+    }
   }
 
   &__article-heading {
     margin-bottom: 20px;
-  }
 
-  &__article-heading--size_m {
-    @include text-h3;
+    &--heading-small {
+      @include heading-small;
+    }
   }
 
   &__article-paragraph {
     margin-bottom: 50px;
+
+    &--text-large {
+      @include text-large($gray-c);
+    }
   }
 
-  &__article-paragraph--size {
-    @include text-size_b($tertiary-color);
+  &__article-btn {
+    &--color_orange {
+      @include btn-orange;
+    }
   }
 
-  &__article-btn--color_orange {
-    @include btn-orange;
-  }
-
-  &__archive {
+  &__continue {
     display: flex;
 
     transform: translateX(230%);
   }
 
-  &__archive-text {
+  &__continue-text {
     margin-right: 20px;
+
+    &--text-large {
+      @include text-large($black-c, 100%);
+    }
   }
 
-  &__archive-text--size {
-    @include text-size_b($secondary-color, 100%);
-  }
-
-  &__archive-line {
+  &__continue-line {
     width: 70px;
     height: 1px;
 
-    color: $secondary-color;
+    color: $black-c;
   }
 }

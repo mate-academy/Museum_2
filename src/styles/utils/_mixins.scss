@@ -5,7 +5,13 @@
   }
 }
 
-@mixin btn-orange {
+@mixin container {
+  width: calc(100% - 110px);
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+@mixin btn-orange($border: none, $background: $orange-c) {
   display: inline-block;
 
   width: 270px;
@@ -14,41 +20,64 @@
   text-align: center;
   font-size: 16px;
   line-height: 60px;
-  background-color: #cd4d31;
+  background-color: $background;
+  border: $border;
 }
 
-@mixin text-h1 {
+@mixin heading-large {
   font-family: $secondary-font;
   font-weight: 700;
   font-size: 96px;
   line-height: 100%;
-  color: $primary-color;
+  color: $white-c;
 }
 
-@mixin text-h2($color: $secondary-color) {
+@mixin heading-medium($color: $black-c) {
   font-family: $secondary-font;
   font-size: 48px;
   line-height: 120%;
   color: $color;
 }
 
-@mixin text-h3 {
+@mixin heading-small($color: $black-c) {
   font-family: $secondary-font;
   font-size: 24px;
   line-height: 125%;
-  color: $secondary-color;
+  color: $color;
 }
 
-@mixin text-size_b($color: $secondary-color, $lh: 150%) {
+@mixin heading-extra-small {
+  font-family: $secondary-font;
+  font-size: 20px;
+  line-height: 125%;
+  color: $black-c;
+}
+
+@mixin text-large($color: $black-c, $lh: 150%) {
   font-size: 16px;
+  font-weight: 400;
   line-height: $lh;
   color: $color;
 }
 
-@mixin text-size_s($opacity: 1) {
-  font-family: $secondary-font;
+@mixin text-medium(
+  $font: $secondary-font,
+  $opacity: 1,
+  $size: 14px,
+  $lh: 125%,
+  $color: $white-c
+) {
+  font-family: $font;
   font-weight: 700;
+  font-size: $size;
+  line-height: $lh;
+  color: $color;
+  opacity: $opacity;
+}
+
+@mixin text-small($color: $white-c) {
+  font-weight: 200;
   font-size: 14px;
-  line-height: 125%;
-  color: rgba(241, 245, 244, $opacity);
+  line-height: 20px;
+  color: $color;
 }
