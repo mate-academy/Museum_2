@@ -1,0 +1,196 @@
+.upcoming-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    margin-top: 260px;
+
+    @include forTablet {
+      & {
+        margin-top: 127px;
+      }
+    }
+
+    @include forMobile {
+      margin-top: 112px;
+    }
+  }
+
+  &__event-list {
+    display: grid;
+    row-gap: 77px;
+    margin-top: 63px;
+
+    @include forTablet {
+      & {
+        margin-top: 55px;
+      }
+    }
+
+    @include forMobile {
+      & {
+        margin-top: 60px;
+        row-gap: 60px;
+      }
+    }
+  }
+
+  &__item {
+    display: grid;
+    justify-items: start;
+    grid-gap: 30px;
+    align-items: center;
+
+    &:nth-child(1) {
+      grid-template-columns: 1fr 4fr 2fr;
+      @include forTablet {
+        grid-template-columns: 1fr 2fr;
+      }
+
+      @include forMobile {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &:nth-child(2) {
+      grid-template-columns: 2fr 1fr 4fr;
+      @include forTablet {
+        grid-template-columns: 1fr 2fr;
+      }
+
+      @include forMobile {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  &__description {
+    @include forMobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__when {
+    margin-top: -125px;
+
+    @include forTablet {
+      justify-self: end;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &__date {
+    @include fontTitle(55px);
+    color: transparent;
+    -webkit-text-stroke: 1px $redColor;
+  }
+
+  &__time {
+    margin: 10px -30px 0 0;
+
+    @include fontTitle(36px);
+    color: $redColor;
+    text-align: right;
+
+    @include forTablet {
+      margin-right: 0;
+    }
+
+    @include forMobile {
+      @include fontRegular;
+    }
+  }
+
+  &__type {
+    @include fontSmall;
+    color: $aColor;
+
+    @include forMobile {
+      & {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-right: 50px ;
+      }
+
+      &::before {
+        color: $redColor;
+
+        @include fontRegular;
+      }
+
+      &--one {
+        &::before {
+          content: "14 серпня, 13:00";
+        }
+      }
+
+      &--two {
+        &::before {
+          content: "18 серпня, 14:00";
+        }
+      }
+    }
+  }
+
+  &__event-title {
+    margin-top: 10px;
+
+    @include forMobile {
+      & {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 8px;
+
+    @include forTablet {
+      & {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 60px;
+
+    @include forTablet {
+      & {
+        margin-top: 30px;
+      }
+    }
+
+    @include forMobile {
+      margin-top: 40px;
+    }
+  }
+
+  &__reference {
+    margin-top: 60px;
+    padding-bottom: 184px;
+
+    @include forTablet {
+      padding-bottom: 131px;
+    }
+  }
+
+  &__img {
+    @include forTablet {
+      & {
+        display: none;
+      }
+    }
+
+    @include forMobile {
+      padding-bottom: 91px;
+    }
+  }
+}
