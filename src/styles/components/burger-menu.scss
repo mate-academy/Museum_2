@@ -1,9 +1,9 @@
 .burger-menu {
   position: absolute;
-  left: 56px;
+  left: 55px;
   top: 90px;
 
-  width: calc(100% - 56px);
+  width: calc(100% - 55px);
   height: calc(100% - 90px);
 
   background: $background-c url("../images/Boy_with_paints.png") no-repeat right
@@ -17,6 +17,10 @@
   &--show {
     visibility: visible;
     opacity: 1;
+  }
+
+  @media screen and (max-width: 900px) {
+    background-image: none;
   }
 
   &__schedule {
@@ -64,6 +68,7 @@
 
     &--btn-orange {
       @include btn-orange(1px solid $white-c, $background-c);
+      @include btn-hover($white-c, $background-c, 1px solid $background-c);
     }
   }
 }
