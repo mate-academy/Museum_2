@@ -6,13 +6,18 @@
   width: calc(100% - 56px);
   height: calc(100% - 90px);
 
-  background: $background-c url("../images/Boy_with_paints.png")
-    no-repeat right bottom;
+  background: $background-c url("../images/Boy_with_paints.png") no-repeat right
+    bottom;
 
   transition: all 1s;
   visibility: hidden;
   opacity: 0;
   z-index: 1;
+
+  &--show {
+    visibility: visible;
+    opacity: 1;
+  }
 
   &__schedule {
     display: flex;
@@ -54,15 +59,11 @@
 
   &__btn {
     &:first-child {
-      margin-right: 30px;
+      margin-right: 26px;
     }
 
     &--btn-orange {
-      @include btn-orange;
-
-      &:last-child {
-        @include btn-orange(1px solid $white-c, $background-c);
-      }
+      @include btn-orange(1px solid $white-c, $background-c);
     }
   }
 }
