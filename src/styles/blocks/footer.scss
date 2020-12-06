@@ -1,19 +1,36 @@
 .footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 80px;
+  padding-top: 80px;
+  padding-left: 20px;
   margin: 0 auto;
   max-width: 1440px;
-  display: flex;
-  justify-content: space-around;
 
-  color: #fff;
   background-color: $main-color;
+
+  @include for-small-desktops {
+    padding-top: 120px;
+    padding-left: 100px;
+  }
+
+  @include for-laptops {
+    padding-left: 55px;
+  }
 
   &__wrapper {
     background-color: $main-color;
+    color: #fff;
   }
 
   &__title {
+    padding-bottom: 30px;
     font-size: 24px;
     line-height: 125%;
+  }
+
+  &__block {
+    padding-bottom: 60px;
   }
 
   &__link,
@@ -27,7 +44,23 @@
     text-transform: lowercase;
   }
 
-  &__icons {
-    padding: 35px 20px 0 0;
+  &__icon {
+    padding: 20px 20px 0 0;
+  }
+
+  &__copyright {
+    @include second-font-small;
+    line-height: 20px;
+    text-align: center;
+    padding-bottom: 35px;
+
+    @include for-laptops {
+      padding-bottom: 60px;
+    }
+
+    @include for-phone {
+      width: 150px;
+      margin: 0 auto;
+    }
   }
 }
