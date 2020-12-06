@@ -1,0 +1,101 @@
+.news {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding-top: 120px;
+    padding-left: 255px;
+    padding-bottom: 75px;
+    font-size: 48px;
+    line-height: 58px;
+    color: #1c1b29;
+
+    @include for-phone {
+      font-size: 36px;
+      line-height: 36px;
+      padding-left: 20px;
+    }
+  }
+
+  &__blocks {
+    display: flex;
+    justify-content: center;
+
+    gap: 0 30px;
+  }
+
+  &__article {
+    width: 270px;
+
+    @include for-laptops {
+      width: 370px;
+    }
+
+    @include for-phone {
+      width: 280px;
+    }
+
+    &--2 {
+      @include for-phone {
+        display: none;
+      }
+    }
+
+    &--3 {
+      display: none;
+
+      @include for-laptops {
+        display: block;
+      }
+
+    }
+  }
+
+
+  &__img {
+    width: 270px;
+
+    @include for-laptops {
+      width: 370px;
+    }
+
+    @include for-phone {
+      width: 280px;
+    }
+  }
+
+
+  &__date {
+    padding: 30px 0 5px;
+    color: #1c1b29;
+    @include second-font-small;
+    line-height: 20px;
+  }
+
+  &__title {
+    padding-bottom: 15px;
+    color: #1c1b29;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  &__info {
+    color: #504f5e;
+    @include second-font-small;
+  }
+
+  &__subtitle {
+    align-self: flex-end;
+    padding-top: 100px;
+    padding-bottom: 185px;
+    padding-right: 300px;
+    @include second-font-small;
+    line-height: 16px;
+    color: #1c1b29;
+
+    @include for-phone {
+      align-self: center;
+      padding: 60px 0 90px;
+    }
+  }
+}
