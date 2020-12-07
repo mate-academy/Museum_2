@@ -15,15 +15,34 @@
     &--heading-small {
       @include heading-small($white-c);
     }
+
+    @media screen and (max-width: 600px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__container {
+    display: flex;
+
+    width: 100%;
   }
 
   &__article {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 60px;
 
     width: 100%;
 
     margin-bottom: 70px;
+
+    @media screen and (max-width: 950px) {
+      grid-template-columns: repeat(2, auto);
+    }
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: auto;
+    }
   }
 
   &__list {
