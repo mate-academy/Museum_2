@@ -22,6 +22,26 @@
         center right,
         calc(0% + 23px) calc(100% - 100px);
     }
+
+    @media screen and (max-width: 600px) {
+      background-image: url("../images/Angel_small.png"),
+        url("../images/Art_20-21_small.png"),
+        url("../images/Cossack_with_a_bandura_small.png");
+      background-position: 100% 25%,
+        0 60%,
+        100% 97%;
+      background-size: auto, auto 20%, auto;
+    }
+
+    @media screen and (max-width: 600px) {
+      background-image: url("../images/Angel_small.png"),
+        url("../images/Art_20-21_small.png"),
+        url("../images/Cossack_with_a_bandura_small.png");
+      background-position: 100% 20%,
+        0 63%,
+        100% 90%;
+      background-size: auto, auto 20%, auto;
+    }
   }
 
   &__container {
@@ -32,6 +52,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media screen and (max-width: 600px) {
+      align-items: flex-start;
+    }
   }
 
   &__section-heading {
@@ -40,6 +64,11 @@
 
     &--heading-medium {
       @include heading-medium;
+
+      @media screen and (max-width: 725px) {
+        font-size: 36px;
+        line-height: 45px;
+      }
     }
 
     @media screen and (max-width: 900px) {
@@ -57,6 +86,11 @@
 
     &--heading-medium {
       @include heading-medium($orange-c);
+
+      @media screen and (max-width: 725px) {
+        font-size: 24px;
+        line-height: 30px;
+      }
     }
 
     @media screen and (max-width: 780px) {
@@ -65,10 +99,13 @@
   }
 
   &__article {
+    display: flex;
+    flex-direction: column;
+
     margin-bottom: 225px;
     margin-left: 400px;
 
-    width: 380px;
+    max-width: 380px;
 
     &:nth-child(2n) {
       margin-bottom: 308px;
@@ -81,6 +118,14 @@
 
       @media screen and (max-width: 780px) {
         margin-right: 200px;
+        margin-bottom: 100px;
+      }
+
+      @media screen and (max-width: 600px) {
+        align-items: flex-end;
+
+        margin-right: 0;
+        margin-bottom: 112px;
       }
     }
 
@@ -90,6 +135,16 @@
 
     @media screen and (max-width: 780px) {
       margin-left: 300px;
+      margin-bottom: 100px;
+
+      max-width: 270px;
+    }
+
+    @media screen and (max-width: 600px) {
+      margin-left: 0;
+
+      width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -99,6 +154,12 @@
     &--text-large {
       @include text-large($orange-c);
     }
+
+    &:nth-child(1) {
+      @media screen and (max-width: 600px) {
+        align-self: flex-start;
+      }
+    }
   }
 
   &__article-heading {
@@ -107,6 +168,12 @@
     &--heading-small {
       @include heading-small;
     }
+
+    &:nth-child(2) {
+      @media screen and (max-width: 600px) {
+        align-self: flex-start;
+      }
+    }
   }
 
   &__article-paragraph {
@@ -114,6 +181,18 @@
 
     &--text-large {
       @include text-large($gray-c);
+    }
+
+    @media screen and (max-width: 900px) {
+      margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      max-width: 300px;
+    }
+
+    @media screen and (max-width: 460px) {
+      max-width: 130px;
     }
   }
 
@@ -130,7 +209,9 @@
     margin-right: 65px;
 
     @media screen and (max-width: 900px) {
+      flex-direction: column;
       align-self: center;
+
       margin-right: 0;
     }
   }
@@ -141,6 +222,11 @@
     &--text-large {
       @include text-large($black-c, 100%);
     }
+
+    @media screen and (max-width: 900px) {
+      margin-right: 0;
+      text-align: center;
+    }
   }
 
   &__continue-line {
@@ -148,5 +234,9 @@
     height: 1px;
 
     color: $black-c;
+
+    @media screen and (max-width: 900px) {
+      width: 170px;
+    }
   }
 }

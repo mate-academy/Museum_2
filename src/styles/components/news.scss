@@ -40,8 +40,14 @@
   &__article {
     max-width: 380px;
 
-    @media screen and (max-width: 1230px) {
-      &:last-child {
+    &:last-child {
+      @media screen and (max-width: 1230px) {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      @media screen and (max-width: 700px) {
         display: none;
       }
     }
@@ -87,7 +93,10 @@
     margin-right: 65px;
 
     @media screen and (max-width: 900px) {
+      flex-direction: column;
       align-self: center;
+
+      margin-right: 0;
     }
   }
 
@@ -97,6 +106,11 @@
     &--text-large {
       @include text-large($black-c, 100%);
     }
+
+    @media screen and (max-width: 900px) {
+      margin-right: 0;
+      text-align: center;
+    }
   }
 
   &__continue-line {
@@ -104,5 +118,9 @@
     height: 1px;
 
     color: $black-c;
+
+    @media screen and (max-width: 900px) {
+      width: 170px;
+    }
   }
 }

@@ -23,6 +23,11 @@
     background-image: none;
   }
 
+  @media screen and (max-width: 600px) {
+    left: 20px;
+    width: calc(100% - 20px);
+  }
+
   &__schedule {
     display: flex;
 
@@ -51,6 +56,12 @@
     margin-bottom: 60px;
 
     border-bottom: 1px solid rgba(241, 245, 244, 0.3);
+
+    @media screen and (max-width: 675px) {
+      margin-bottom: 40px;
+
+      border-bottom: none;
+    }
   }
 
   &__link {
@@ -59,11 +70,28 @@
     &--heading-medium {
       @include heading-medium($white-c);
     }
+
+    @media screen and (max-width: 675px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__btns {
+    @media screen and (max-width: 675px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__btn {
     &:first-child {
       margin-right: 26px;
+
+      @media screen and (max-width: 675px) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
     }
 
     &--btn-orange {
