@@ -1,8 +1,9 @@
 'use strict';
 
-(function () {
+(function() {
   const burger = document.querySelector('.burger');
+
   burger.addEventListener('click', () => {
-    burger.classList.toggle('burger_active')
-  })
-}())
+    burger.classList.toggle('burger_active');
+  });
+}());
