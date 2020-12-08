@@ -2,7 +2,7 @@
   overflow: hidden;
   
   &--parameters {
-    background-color: #3f5252;
+    background-color: $main-color;
   }
 
   &__content {
@@ -38,12 +38,12 @@
     display: block;
     height: 2px;
     width: 100%;
-    background-color: #f1f5f4;
+    background-color: $background-color;
   }
 
   &__select {
-    background-color: #3f5252;
-    color: #f1f5f4;
+    background-color: $main-color;
+    color: $text-color;
     border: none;
     outline: none;
 
@@ -71,20 +71,20 @@
     position: absolute;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    background-color: #3f5252;
+    background-color: $main-color;
     z-index: 2;
     transition: all 0.5s;
     transform: translate(0, -150%);
   }
 
   &__card-content {
-    padding: 10px 29px 109px 55px;
+    padding: 10px 29px 130px 55px;
   }
 
   &__card-top {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    color: #f1f5f4;
+    color: $text-color;
   }
 
   &__info {
@@ -99,7 +99,7 @@
       display: block;
       height: 1px;
       width: 100%;
-      background-color: #f1f5f4;
+      background-color: $background-color;
     }
   }
 
@@ -178,13 +178,13 @@
   }
 
   &__date {
-    color: #f1f5f4;
+    color: $text-color;
     margin-bottom: 10px;
   }
 
   &__title {
     font-size: 96px;
-    color: #f1f5f4;
+    color: $text-color;
     line-height: 100%;
     margin-bottom: 30px;
   }
@@ -196,13 +196,13 @@
   &__title-part {
     font-family: "Playfair Display", serif;
     font-size: 96px;
-    color: #f1f5f4;
+    color: $text-color;
     line-height: 100%;
     margin-bottom: 40px;
   }
 
   &__description {
-    color: #f1f5f4;
+    color: $text-color;
     margin-bottom: 60px;
   }
 
@@ -215,7 +215,7 @@
   }
 
   &__time {
-    color: #f1f5f4;
+    color: $text-color;
     margin-top: 110px;
     position: relative;
     
@@ -224,7 +224,7 @@
       display: block;
       height: 1px;
       width: 492px;
-      background-color: #f1f5f4;
+      background-color: $text-color;
       position: absolute;
       top: 50%;
       left: 15%;
@@ -237,7 +237,7 @@
   }
 
   &__painting-name {
-    color: #f1f5f4;
+    color: $text-color;
     width: 140px;
     position: absolute;
     top: 50%;
@@ -314,12 +314,17 @@
       display: none;
     }
 
+    &__item {
+      margin-bottom: 50px;
+    }
+
     &__link {
       font-size: 24px;
     }
 
     &__buttons {
       grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
     }
 
     &__main-wrapper {
@@ -337,6 +342,28 @@
 
     &__main-img {
       left: 40%;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+
+    &__description {
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 280px) {
+  .header {
+
+    &__title {
+      font-size: 46px;
+    }
+
+    &__title-part {
+      font-size: 46px;
     }
   }
 }
