@@ -9,6 +9,13 @@
   @include onTablet {
     margin-left: 100px;
   }
+
+  @include onMobile {
+    margin-left: 20px;
+    font-size: 36px;
+    line-height: 125%;
+    width: 280px;
+  }
 }
 
 @mixin h3-style {
@@ -21,6 +28,12 @@
 
 @mixin onTablet {
   @media (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 767px) {
     @content;
   }
 }
