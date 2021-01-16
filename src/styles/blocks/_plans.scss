@@ -1,0 +1,89 @@
+.plans {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+  justify-content: center;
+  background-color: $mainColorDarkBG;
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    content: "";
+    display: none;
+    position: absolute;
+    width: 100%;
+    background-image: url(../../src/images/planImage431x462.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    z-index: -1;
+  }
+
+  &__heading {
+    grid-column: 1 / 13;
+    @include fontFair(48px, 700, 48px);
+    color: $mainColorWhite;
+    text-shadow: $textShadowForBigLightText;
+    padding-bottom: 40px;
+  }
+
+  &__text {
+    grid-column: 1 / 13;
+    @include fontRale(16px, 400, 24px);
+    color: $mainColorWhite;
+    padding-bottom: 60px;
+  }
+
+  &__button {
+    grid-column: 1 / 13;
+  }
+
+  @media (min-width: 768px) {
+
+    &::before {
+      display: block;
+      height: 462px;
+      bottom: 0;
+      left: -120px;
+    }
+
+    &__heading {
+      @include fontFair(72px, 700, 72px);
+      padding-bottom: 80px;
+    }
+
+    &__text {
+      grid-column: 5 / 13;
+    }
+
+    &__button {
+      width: 258px;
+      grid-column: 5 / 13;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    & {
+      grid-template-columns: repeat(12, 70px);
+      column-gap: 30px;
+    }
+
+    &::before {
+      height: 800px;
+      left: -200px;
+      background-image: url(../../src/images/planImage746x800.png);
+    }
+
+    &__heading {
+      grid-column: 5 / 13;
+      @include fontFair(96px, 700, 96px);
+    }
+
+    &__text {
+      grid-column: 6 / 13;
+    }
+
+    &__button {
+      grid-column: 6 / 13;
+    }
+  }
+}
