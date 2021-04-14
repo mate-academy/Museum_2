@@ -1,0 +1,174 @@
+.header {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  color: #fff;
+  background-color: $main-color;
+
+  &__wrapper {
+    position: relative;
+    padding: 0 55px;
+
+    background-color: $main-color;
+    width: 100%;
+    margin: 0 auto;
+
+    height: 800px;
+    max-width: 1440px;
+
+    @include for-phone {
+      padding: 20px;
+      height: 584px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    padding-top: 20px;
+    font-size: 36px;
+    line-height: 43px;
+    text-transform: uppercase;
+
+    @include for-phone {
+      padding: 0;
+    }
+  }
+
+  &__left {
+    display: flex;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    height: 753px;
+
+    @include for-notebook {
+      height: 520px;
+    }
+
+    @include for-small-desktops {
+      height: 445px;
+    }
+
+    @include for-tablet {
+      height: 253px;
+    }
+
+    @include for-phone {
+      height: 253px;
+      right: -79px;
+    }
+  }
+
+  &__img-title {
+    position: absolute;
+    right: 54px;
+    top: 433px;
+    display: none;
+
+    @include second-font-small;
+    line-height: 24px;
+
+    @media (min-width: 1149px) {
+      display: inline;
+    }
+  }
+
+  &__promo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    padding-top: 120px;
+
+    @include for-phone {
+      padding-top: 100px;
+    }
+  }
+
+  &__title {
+    padding-top: 10px;
+
+    font-size: 96px;
+    line-height: 100%;
+
+    @include for-small-desktops {
+      font-size: 72px;
+    }
+
+    @include for-phone {
+      font-size: 48px;
+    }
+
+    &--second {
+      padding-left: 100px;
+
+      @include for-small-desktops {
+        padding-left: 0;
+      }
+
+      @include for-phone {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__subtitle {
+    @include second-font-small;
+    line-height: 150%;
+
+    &--second {
+      padding: 40px  0 0 100px;
+      width: 450px;
+
+      @include for-small-desktops {
+        padding: 40px 0 0;
+      }
+
+      @include for-tablet {
+        width: 350px;
+      }
+
+      @include for-phone {
+        padding-left: 0;
+        width: 250px;
+      }
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 22px 81px;
+    margin: 60px 0 0 100px;
+    transition: 0.3s;
+
+    background-color: $step-color;
+
+    @include second-font-small;
+    line-height: 100%;
+
+    @include for-phone {
+      margin: 50px 0;
+    }
+
+    @include for-small-desktops {
+      margin: 50px 0;
+    }
+
+    &:hover {
+      border: 2px solid rgb(255, 255, 255);
+      background-color: rgb(223, 121, 74);
+    }
+  }
+}
