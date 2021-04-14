@@ -1,0 +1,136 @@
+.event {
+  display: flex;
+  padding: 0 55px;
+  gap: 130px;
+
+  @include onTablet {
+    display: block;
+    padding: 0 0 0 83px;
+  }
+
+  @include onMobile {
+    display: block;
+    padding: 0 0 0 20px;
+  }
+
+  &--second {
+    flex-direction: row-reverse;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  &__container {
+    margin-top: 83px;
+    display: flex;
+    gap: 30px;
+
+    @include onTablet {
+      margin-top: 55px;
+    }
+  }
+
+  &__photo {
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &-container {
+      overflow: hidden;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__info {
+    width: 470px;
+  }
+
+  &__type {
+    font-size: 14px;
+    margin-bottom: 10px;
+
+    &-date {
+      display: none;
+      margin-right: 20px;
+      color: $red-color;
+      font-size: 16px;
+
+      @include onMobile {
+        display: inline;
+      }
+    }
+  }
+
+  &__title {
+    @include h3-style;
+    margin-bottom: 8px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onMobile {
+      width: 280px;
+    }
+
+    &--second {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onMobile {
+      margin-bottom: 40px;
+      width: 260px;
+    }
+  }
+
+  &__date {
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+
+    @include onTablet {
+      width: 86px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__day {
+    font-size: 55px;
+    line-height: 100%;
+    color: transparent;
+    -webkit-text-stroke: 1px $red-color;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+  }
+
+  &__hour {
+    align-self: flex-end;
+    font-size: 36px;
+    line-height: 100%;
+    color: $red-color;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+}

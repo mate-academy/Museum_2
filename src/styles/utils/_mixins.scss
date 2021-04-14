@@ -1,6 +1,39 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin h2-style {
+  margin-left: 355px;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 120%;
+  color: $black-color;
+
+  @include onTablet {
+    margin-left: 100px;
+  }
+
+  @include onMobile {
+    margin-left: 20px;
+    font-size: 36px;
+    line-height: 125%;
+    width: 280px;
+  }
+}
+
+@mixin h3-style {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  line-height: 125%;
+  font-weight: 700;
+  color: $black-color;
+}
+
+@mixin onTablet {
+  @media (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 767px) {
+    @content;
   }
 }

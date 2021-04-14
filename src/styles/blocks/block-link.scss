@@ -1,0 +1,50 @@
+.block-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 210px;
+  margin-left: 955px;
+  color: $black-color;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  @include onTablet {
+    display: block;
+    margin-left: 300px;
+    width: 170px;
+    text-align: center;
+  }
+
+  @include onMobile {
+    margin-left: 95px;
+    width: 130px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 70px;
+    background-color: $black-color;
+    margin-left: 20px;
+    transition: all 0.3s;
+
+    @include onTablet {
+      width: 170px;
+      margin-left: 0;
+    }
+
+    @include onMobile {
+      width: 130px;
+      margin-left: 0;
+    }
+  }
+
+  &:hover {
+    color: $red-color;
+    &::after {
+      background-color: $red-color;
+    }
+  }
+
+}

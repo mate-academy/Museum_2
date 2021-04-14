@@ -1,0 +1,124 @@
+.footer {
+  background-color: $green-color;
+  color: $white-color;
+
+  &__container {
+    position: relative;
+    width: 1280px;
+    margin: 0 auto;
+    padding: 160px 55px 60px;
+
+    @include onTablet {
+      width: 768px;
+      padding: 120px 100px 35px;
+    }
+
+    @include onMobile {
+      width: 320px;
+      padding: 80px 20px 38px;
+    }
+  }
+
+  &__wraper {
+    display: flex;
+    gap: 60px;
+
+    @include onTablet {
+      flex-wrap: wrap;
+      flex-basis: 240px;
+      gap: 60px;
+    }
+  }
+
+  &__block {
+    width: 240px;
+  }
+
+  &__membership {
+    @include onTablet {
+      order: 1;
+    }
+  }
+
+  &__title {
+    @include h3-style;
+    color: inherit;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    transition: all 0.3s;
+
+    &--second {
+      margin-left: 32px;
+    }
+
+    &:hover {
+      transform: translate(-5px);
+    }
+  }
+
+  &__media {
+    display: flex;
+    margin: 35px 0 0 10px;
+    gap: 20px;
+    align-items: center;
+
+    &-link {
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    @include onTablet {
+      margin: 20px 0 0;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    background-color: $green-color;
+    border-color: $green-color;
+    transform: rotate(-90deg);
+    top: 160px;
+    right: 40px;
+
+    @include onTablet {
+      top: 110px;
+      right: 5px;
+    }
+
+    @include onMobile {
+      top: 75px;
+      right: 7px;
+    }
+  }
+
+  &__copyright {
+    margin-top: 77px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    font-weight: 200;
+    font-size: 14px;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
+
+    @include onMobile {
+      margin-top: 40px;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 0;
+    }
+  }
+}

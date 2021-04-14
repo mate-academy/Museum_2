@@ -1,0 +1,116 @@
+.menu {
+  width: 1280px;
+  height: 750px;
+  padding-left: 55px;
+  background-color: $green-color;
+  background-image: url("/images/Girl_with_paints.png");
+  background-repeat: no-repeat;
+  background-size: 624px 801px;
+  background-position: right;
+
+  @include onTablet {
+    width: 768px;
+    height: 705px;
+    padding-left: 100px;
+    background-image: none;
+  }
+
+  @include onMobile {
+    width: 320px;
+    height: 515px;
+    padding-left: 20px;
+    padding-top: 60px;
+    background-image: none;
+  }
+
+  &__info {
+    padding-top: 10px;
+    margin-bottom: 80px;
+    display: flex ;
+    gap: 30px;
+
+    @include onTablet {
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 55px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__shelude {
+    width: 170px;
+
+    @include onTablet {
+      width: 250px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+
+    @include onTablet {
+      display: inline;
+      &-info {
+        display: inline;
+      }
+    }
+  }
+
+  &__link {
+    @include h2-style;
+    display: block;
+    margin: 0 0 60px;
+    color: $white-color;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translate(-20px,0);
+    }
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onMobile {
+      margin: 0 0 40px;
+      font-size: 24px;
+      line-height: 100%;
+    }
+  }
+
+  &__separator {
+    margin-bottom: 60px;
+    height: 1px;
+    width: 570px;
+    background-color: $white-color;
+
+    @include onTablet {
+      margin-top: 55px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 30px;
+
+    @include onMobile {
+      margin-top: 80px;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__button--member {
+    background-color: $green-color;
+    border: 1px solid $white-color;
+  }
+}
