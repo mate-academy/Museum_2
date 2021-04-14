@@ -1,0 +1,84 @@
+.visit {
+  width: 100%;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: $bgColor;
+  background-image: url(../images/visitLg.png);
+  background-repeat: no-repeat;
+
+  @include forTablet {
+    height: 705px;
+
+    background-image: url(../images/visitMd.png);
+    background-position: bottom left;
+  }
+
+  @include forMobile {
+    height: auto;
+
+    background-image: none;
+  }
+
+  &__container {
+    @include containerWidth(100px);
+    margin-top: 190px;
+    display: grid;
+    grid-template-columns: 2.5fr 3fr;
+    grid-template-rows: auto;
+
+    row-gap: 60px;
+
+    color: $primaryColor;
+
+    @include forTablet {
+      margin-top: 115px;
+      grid-template-columns: 2.5fr 5fr;
+    }
+
+    @include forMobile {
+      margin-top: 80px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    @include fontTitle;
+    grid-column-start: 2;
+
+    margin-left: -100px;
+
+    @include forTablet {
+      font-size: 72px;
+
+      margin-left: -200px;
+    }
+
+    @include forMobile {
+      font-size: 48px;
+      margin-left: 0;
+    }
+  }
+
+  &_text {
+    grid-column-start: 2;
+
+    @include forTablet {
+      margin-top: 20px;
+    }
+
+    @include forMobile {
+      margin-top: -20px;
+    }
+  }
+
+  &__button {
+    grid-column-start: 2;
+
+    @include forMobile {
+      margin-bottom: 80px;
+    }
+  }
+}

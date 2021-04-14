@@ -1,0 +1,42 @@
+.reference {
+  position: relative;
+
+  color: $aColor;
+
+  align-self: flex-end;
+  padding-right: 90px;
+
+  &::after {
+    position: absolute;
+
+    top: 10px;
+    left: 130px;
+
+    display: block;
+    width: 70px;
+    height: 1px;
+    content: "";
+
+    background-color: $aColor;
+  }
+
+  @include forTablet {
+    & {
+      align-self: center;
+      padding-right: 0;
+    }
+
+    &::after {
+      width: 170px;
+      top: 30px;
+      left: -25px;
+    }
+  }
+
+  @include forMobile {
+    &::after {
+      width: 130px;
+      left: -6%;
+    }
+  }
+}

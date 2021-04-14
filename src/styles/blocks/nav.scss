@@ -1,0 +1,131 @@
+.nav {
+  
+  &__select-lang {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    grid-gap: 6px;
+
+    color: $primaryColor;
+    @include fontRegular;
+    cursor: pointer;
+
+    z-index: 10;
+
+    &--active {
+      display: grid !important;
+    }
+  }
+
+  &__menu-wrap {
+    width: 25px;
+    height: 20px;
+
+    margin-right: 40px;
+
+    cursor: pointer;
+  }
+
+  &__hamburger {
+    position: relative;
+    z-index: 100;
+
+    width: 100%;
+    height: 2px;
+    background-color: $primaryColor;
+
+    &::after,
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $primaryColor;
+      content: "";
+      transition: transform 0.5s ease-in-out;
+    }
+
+    &::after {
+      top: 7px;
+    }
+
+    &::before {
+      top: 14px;
+    }
+
+    &--active {
+      background-color: rgba(0, 0, 0, 0);
+
+      &::after {
+        transform: rotate(45deg);
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+        top: 7px;
+      }
+    }
+  }
+
+  &__lang-list {
+    position: absolute;
+    top: 30px;
+    left: -110px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    background-color: hsl(180, 13%, 26%);
+    box-shadow: 1px 2px 3px hsl(180, 13%, 15%);
+
+    @keyframes fadeIn {
+      100% {
+        opacity: 1;
+        transform: translate(45px);
+      }
+      
+    }
+
+    &--active {
+      visibility: visible;
+      animation: fadeIn 0.4s ease-in-out forwards;
+    }
+
+  }
+
+  &__selected-lang {
+    font-weight: 500;
+  }
+
+  &__lang-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 14px;
+    padding: 10px 15px;
+
+    @include hover(background-color, $primaryColor);
+    @include hover(color, $bgColor);
+  }
+
+  &__arrow {
+    width: 10px;
+    transition: transform 0.2s ease;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media (max-width: $breakpointSm) {
+    &__menu-wrap {
+      margin-right: 0;
+    }
+
+    &__select-lang {
+      margin-right: 40px;
+      display: none;
+    }
+  }
+}

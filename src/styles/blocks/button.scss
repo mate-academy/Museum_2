@@ -1,0 +1,44 @@
+$button-color: #ee3769;
+
+.button {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 270px;
+  height: 60px;
+
+  overflow: hidden;
+  background-color: $redColor;
+
+  transition: transform 0.4s cubic-bezier(0.39, 0.5, 0.15, 1.36),
+    box-shadow 0.4s cubic-bezier(0.39, 0.5, 0.15, 1.36),
+    background-color 0.7s;
+  box-shadow: $bgColor 0 0 0 inset;
+
+  &:hover {
+    box-shadow: hsl(180, 15%, 25%) 0 0 0 40px inset,
+      1px 1px 5px $aColor;
+    background-color: hsl(180, 15%, 25%);
+
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.9);
+    box-shadow: 1px 1px 15px $aColor;
+  }
+
+  cursor: pointer;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border: 1px solid $primaryColor;
+  }
+}

@@ -1,0 +1,255 @@
+$headerLeftContentGap: 100px;
+
+.header {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  height: 800px;
+
+  background-color: $bgColor;
+  overflow: hidden;
+
+  @include forMobile {
+    & {
+      height: 584px;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: -1050px;
+    width: 1170px + 55px * 2;
+
+    z-index: 15;
+
+    background-color: $bgColor;
+    transition: transform 0.7s cubic-bezier(0.87,0.14,0.12,0.85);
+
+    &--active {
+      transform: translateY(1100px);
+    }
+    
+    @include forTablet {
+      & {
+        width: 100%;
+      }
+    }
+  
+  }
+
+  &__section {
+    margin-top: 120px;
+  }
+
+  &__top-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+
+    @include containerWidth;
+  }
+
+  &__nav {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    z-index: 16;
+  }
+
+  &__content {
+    position: relative;
+
+    @include containerWidth;
+  
+    color: $primaryColor;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      pointer-events: none;
+
+      display: block;
+      width: 673px;
+      height: 753px;
+      background-image: url(../images/girl.png);
+      background-repeat: no-repeat;
+
+      transform: translate(550px);
+      z-index: 5;
+
+      @include forTablet {
+        right: 0;
+        bottom: -47px;
+
+        width: 399px;
+        height: 445px;
+        background-image: url(../images/girlForTablet.png);
+        
+        transform: none;
+      }
+
+      @include forMobile {
+        bottom: -9px;
+
+        width: 166px;
+        height: 273px;
+        background-image: url(../images/girlForMobile.png);
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+
+    @include fontTitle;
+    @include forTablet {
+      & {
+        font-size: 72px;
+      }
+    }
+  }
+
+  &__title-gap {
+    margin-top: 10px;
+    padding-left: $headerLeftContentGap;
+
+    @include forTablet {
+      & {
+        padding-left: $headerLeftContentGap - 55px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 40px;
+    padding-left: $headerLeftContentGap;
+  }
+
+  &__text {
+    width: 370px;
+    line-height: 150%;
+
+    @include forTablet {
+      &__text {
+        width: 265px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 60px;
+
+    @include forTablet {
+      & {
+        margin: 80px 0 180px;
+      }
+    }
+  }
+
+  &__footer {
+    position: relative;
+
+    margin: 110px 0 52px;
+
+    @include fontTitle(14px, 125%);
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 100px;
+
+      display: block;
+      height: 1px;
+      width: 492px;
+
+      content: "";
+      opacity: 0.3;
+      background-color: $primaryColor;
+    }
+
+    @include forTablet {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    right: 50%;
+    top: -370px;
+
+    line-height: 150%;
+    color: $primaryColor;
+
+    transform: translate(620px);
+
+    @include forTablet {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  @include forTablet {
+    &__action-date,
+    &__title,
+    &__description {
+      padding-left: 60px;
+    }
+  }
+
+  @include forMobile {
+    & {
+      height: 584px;
+    }
+
+    &__section {
+      margin-top: 100px;
+    }
+
+    &__menu {
+      width: 100%;
+    }
+
+    &__nav {
+      flex-direction: row-reverse;
+    }
+
+    &__title {
+      margin-top: 20px;
+
+      font-size: 48px;
+    }
+
+    &__title-gap,
+    &__description {
+      padding-left: 0;
+    }
+
+    &__description {
+      margin-top: 30px;
+    }
+
+    &__button {
+      margin: 50px 0 100px;
+    }
+
+    &__text {
+      width: 265px;
+    }
+
+    &__action-date,
+    &__title {
+      padding-left: 0;
+    }
+  }
+}

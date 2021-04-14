@@ -1,0 +1,364 @@
+.exhibitions {
+
+  &__title {
+    margin-top: 160px;
+    text-align: center;
+
+    @include forTablet {
+      & {
+        margin-top: 115px;
+        text-align: left;
+      }
+    }
+
+    @include forMobile {
+      & {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    align-items: center;
+    gap: 80px 25px;
+
+    margin-top: 100px;
+
+    @include forTablet {
+      & {
+        margin-top: 55px;
+      }
+    }
+
+    @include forMobile {
+      & {
+        margin-top: 60px;
+        grid-template-columns: auto;
+        grid-gap: 100px 0;
+      }
+    }
+  }
+
+  &__date {
+    @include fontTitle(48px, 120%);
+
+    color: #cd4d31;
+
+    &--always {
+      @include fontRegular;
+      font-family: $primaryFont;
+    }
+
+    &--relevant {
+      position: relative;
+      left: -100px;
+
+      @include forMobile {
+        left: 0;
+        @include fontTitle(24px, 125%);
+      }
+    }
+  }
+
+  &__list-item {
+    width: 70%;
+
+    &:nth-child(1) {
+      grid-column-start: 2;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50px;
+
+        width: 539px;
+        height: 912px;
+
+        background-image: url(../images/234_belm3506_1_large.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      @include forTablet {
+        & {
+          justify-self: start;
+          width: 370px;
+          margin-left: -140px;
+        }
+
+        &::before {
+          top: 135px;
+          left: 0;
+
+          width: 293px;
+          height: 400px;
+
+          background-image: url(../images/angelMd.png);
+          background-position: center 40%;
+        }
+      }
+
+      @include forMobile {
+        & {
+          grid-column-start: 1;
+          margin-left: 0;
+          width: 85%;
+          justify-self: start;
+        }
+
+        &::before {
+          left: auto;
+          right: -66px;
+          top: 225px;
+          background-image: url(../images/angelSm.png);
+          background-size: 55%;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      grid-row-start: 2;
+      justify-self: end;
+
+      @include forTablet {
+        & {
+          justify-self: start;
+        }
+      }
+
+      @include forMobile {
+        & {
+          width: 100%;
+          display: grid;
+          position: relative;
+        }
+
+        &::after {
+          position: absolute;
+          top: 90px;
+          left: -20px;
+
+          content: "";
+          width: 200px;
+          height: 200px;
+          display: block;
+  
+          background-image: url(../images/pictureSm.png);
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 790px;
+
+        width: 575px;
+        height: 465px;
+        display: block;
+
+        background-image: url(../images/picture.png);
+        background-repeat: no-repeat;
+      }
+
+      @include forTablet {
+        & {
+          width: 300px;
+          justify-self: start;
+        }
+
+        &::after {
+          top: 710px;
+
+          background-image: url(../images/manMd.png);
+          background-position: right 0;
+        }
+      }
+
+      @include forMobile {
+        & {
+          display: none;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      margin-top: 38px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 1420px;
+
+        width: 584px;
+        height: 499px;
+
+        display: block;
+
+        background-image: url(../images/kobzar.png);
+        background-repeat: no-repeat;
+      }
+
+      @include forTablet {
+        & {
+          margin-left: -100px;
+        }
+
+        &::after {
+          top: 1050px;
+          background-position: 25px 20px;
+          background-image: url(../images/kobzarMd.png);
+        }
+      }
+
+      @include forMobile {
+        & {
+          display: none;
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      grid-row-start: 3;
+      grid-column-start: 2;
+
+      @include forTablet {
+        & {
+          margin-left: -140px;
+        }
+      }
+
+      @include forMobile {
+        & {
+          width: 70%;
+          justify-self: start;
+          grid-column-start: 1;
+          margin-left: 0;
+        }
+
+        &::after {
+          position: absolute;
+          top: 25%;
+          right: -10%;
+          content: "";
+
+          width: 203px;
+          height: 174px;
+          display: block;
+
+          background-image: url(../images/kobzarSm.png);
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    @include forTablet {
+      & {
+        width: 370px;
+      }
+    }
+  }
+
+  &__name {
+    margin-top: 20px;
+
+    @include forMobile {
+      & {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__list-text {
+    width: 590px;
+    height: 576px;
+
+    text-transform: uppercase;
+    @include fontTitle(144px);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(63, 82, 82, 0.3);
+
+    @include forTablet {
+      & {
+        font-size: 72px;
+        width: 370px;
+        height: 100%;
+      }
+    }
+  }
+
+  &__desc {
+    margin-top: 20px;
+
+    line-height: 150%;
+
+    @include forMobile {
+      & {
+        margin-top: 30px;
+        max-width: 65%;
+      }
+
+      &--smright {
+        justify-self: end;
+        margin-right: -15px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 50px;
+
+    @include forMobile {
+      & {
+        display: none;
+      }
+    }
+  }
+
+  &__reference {
+    position: relative;
+
+    margin-top: 4px;
+
+    &::after {
+      position: absolute;
+
+      top: 10px;
+      left: 130px;
+
+      display: block;
+      width: 70px;
+      height: 1px;
+      content: "";
+
+      background-color: $aColor;
+    }
+
+    @include forTablet {
+      & {
+        margin-top: 60px;
+      }
+
+      &::after {
+        width: 170px;
+        top: 30px;
+        left: -25px;
+      }
+    }
+
+    @include forMobile {
+      &::after {
+        width: 130px;
+        left: -6%;
+      }
+    }
+  }
+}
