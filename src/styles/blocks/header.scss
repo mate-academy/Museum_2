@@ -1,0 +1,245 @@
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: $c-dark-blue;
+
+  &__conteiner {
+    @extend %container;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 20px 0;
+  }
+  &__main-link-img {
+    height: 40px;
+    width: 123px;
+  }
+  &__menu {
+    display: flex;
+    gap: 40px;
+  }
+  &__menu-icon {
+    height: 25px;
+    width: 25px;
+
+    @include background("../../src/images/icon/Menu.svg");
+
+    &--close {
+      @include background("../../src/images/icon/Close.svg");
+    }
+  }
+
+  &__language {
+    align-items: center;
+
+    @media (min-width: $phone) {
+      display: none;
+    }
+    @media (min-width: $tablet) {
+      display: flex;
+    }
+
+    &-display {
+      height: 25px;
+      width: 25px;
+  
+      @include background("../../src/images/icon/UA.svg");
+      background-size: auto;
+    }
+    &-union {
+      height: 8px;
+      width: 8px;
+      margin-left: 3px;
+
+      @include background("../../src/images/icon/Union.svg");
+      background-size: auto;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    height: 801px;
+    width: 624px;
+
+    @include background("/images/img/Girl_from_Podol.png");
+    background-position: right bottom;
+
+    z-index: 1;
+
+    &--hidden {
+      display: none;
+    }
+
+    @media (min-width: $phone) {
+      height: 273px;
+      width: 245px;
+      right: -30%;
+    }
+    @media (min-width: $tablet) {
+      right: 0;
+      height: 445px;
+      width: 400px;
+    }
+    @media (min-width: $desktop) {
+      height: 730px;
+      width: 650px;
+    }
+
+    &-description {
+      @extend %font-raleway;
+
+      @media (min-width: $phone) {
+        display: none;
+      }
+      @media (min-width: $desktop) {
+        display: block;
+        position: absolute;
+        right: $max-gap;
+        bottom: 319px;
+
+        font-size: 16px;
+        line-height: 150%;
+        color: $c-light-gray;
+      }
+    }
+  }
+
+  &__date {
+    display: block;
+
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      margin-top: 80px;
+    }
+    @media (min-width: $tablet) {
+      margin-top: 100px;
+      margin-left: 60px;
+    }
+    @media (min-width: $desktop) {
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-top: 10px;
+
+    @extend %font-playfair;
+    line-height: 100%;
+    color: $c-light-gray;
+
+    &-second {
+      @media (min-width: $tablet) {
+        margin-left: 40px;
+      }
+      @media (min-width: $desktop) {
+        margin-left: 100px;
+      }
+    }
+
+    @media (min-width: $phone) {
+      margin-top: 20px;
+    }
+    @media (min-width: $tablet) {
+      margin-left: 60px;
+      font-size: 72px;
+    }
+    @media (min-width: $desktop) {
+      margin-left: 0;
+      font-size: 96px;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: 40px;
+    
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      margin-top: 30px;
+      width: 270px;
+    }
+    @media (min-width: $tablet) {
+      margin-left: 60px;
+      width: 270px;
+    }
+    @media (min-width: $desktop) {
+      margin-left: 100px;
+    }
+  }
+
+  &__botton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 270px;
+
+    background-color: $c-dark-red;
+
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 100%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      margin-top: 50px;
+    }
+    @media (min-width: $tablet) {
+      margin-top: 80px;
+      margin-left: 60px;
+    }
+    @media (min-width: $desktop) {
+      margin-top: 60px;
+      margin-left: 100px;
+    }
+  }
+
+  &__date-bottom {
+    @extend %font-playfair;
+
+    @media (min-width: $phone) {
+      display: none;
+    }
+    @media (min-width: $desktop) {
+      display: block;
+      position: absolute;
+
+      bottom: 50px;
+
+      font-size: 14px;
+      line-height: 125%;
+      color: $c-light-gray;
+
+      opacity: 0.7;
+
+      &::after {
+        content: "";
+        z-index: 1;
+        display: inline-block;
+        position: relative;
+        bottom: 4px;
+        margin-left: 20px;
+
+        width: 70vh;
+        height: 1px;
+        background-color: $c-light-gray;
+        opacity: 0.3;
+      }
+    }
+  }
+}

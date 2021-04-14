@@ -1,0 +1,177 @@
+.nav {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+
+  z-index: 2;
+
+  position: absolute;
+  height: calc(100% - #{$header-height});
+  background-color: $c-dark-blue;
+
+  @media (min-width: $phone) {
+    width: calc(100% - (2 * #{$min-gap}));
+  }
+  @media (min-width: $tablet) {
+    padding-left: 60px;
+    width: calc(100% - (2 * #{$middle-gap}));
+  }
+  @media (min-width: $desktop) {
+    padding-left: 0;
+    width: calc(100% - (2 * #{$max-gap}));
+  }
+
+  &__info {
+    gap: 30px;
+
+    margin-top: 10px;
+
+    @media (min-width: $phone) {
+      display: none;
+    }
+    @media (min-width: $tablet) {
+      display: flex;
+    }
+  }
+  &__mode {
+    @extend %font-raleway;
+    color: $c-light-gray;
+
+    &-title {
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &-content {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+  &__adress {
+    @extend %font-raleway;
+    color: $c-light-gray;
+
+    &-title {
+      font-weight: 200;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &-content {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin-top: 80px;
+  }
+
+  &__item {
+    @media (min-width: $phone) {
+      margin-top: 40px;
+    }
+    @media (min-width: $tablet) {
+      margin-top: 60px;
+    }
+  }
+
+  &__link {
+    @extend %font-playfair;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      font-size: 24px;
+      line-height: 100%;
+    }
+    @media (min-width: $tablet) {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__line {
+    
+    height: 1px;
+    width: 570px;
+    background-color: $c-light-gray;
+    opacity: 0.3;
+
+    margin-top: 60px;
+
+    @media (min-width: $phone) {
+      display: none;
+    }
+    @media (min-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &__bottons {
+    display: flex;
+
+    margin-top: 60px;
+
+    @media (min-width: $phone) {
+      flex-direction: column;
+      gap: 20px;
+    }
+    @media (min-width: $tablet) {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__botton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 100%;
+    color: $c-light-gray;
+
+    &--buy {
+      background-color: $c-dark-red;
+    }
+    &--community {
+      background-color: $c-dark-blue;
+      border: 1px solid $c-light-gray;
+    }
+    @media (min-width: $phone) {
+      height: 60px;
+      width: 100%;
+    }
+    @media (min-width: $tablet) {
+      height: 60px;
+      width: 270px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 801px;
+    width: 624px;
+
+    @include background("/images/img/Yang_boy.png");
+    background-position: right bottom;
+
+    @media (min-width: $phone) {
+      display: none;
+    }
+    @media (min-width: $tablet) {
+      display: none;
+    }
+    @media (min-width: $desktop) {
+      display: block;
+    }
+  }
+}
