@@ -1,0 +1,242 @@
+.nav {
+  padding: 20px 55px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    font-family: "Namu", sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  &__wrapper-menu {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-rows: repeat(3, 2px);
+    row-gap: 7px;
+  }
+
+  &__rectangle {
+    width: 25px;
+    background-color: #f1f5f4;
+  }
+
+  &__lang {
+    margin: 0 0 0 40px;
+    border: none;
+    color: #f1f5f4;
+    background-color: #3f5252;
+  }
+
+  &__lang:focus {
+    outline: none;
+  }
+
+  &__nav {
+    visibility: hidden;
+    position: absolute;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__wrapper-info {
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 110px;
+  }
+
+  &__info {
+    color: #f1f5f4;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__colortext {
+    display: block;
+    opacity: 0.3;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(3);
+    row-gap: 60px;
+  }
+
+  &__paragraph {
+    color: #f1f5f4;
+    text-decoration: none;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 120%;
+  }
+
+  &__rectangle-med {
+    margin-top: 60px;
+    width: 570px;
+    height: 1px;
+    background: #f1f5f4;
+    opacity: 0.3;
+  }
+
+  &__buttons {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+  }
+
+  &__wrapper-button {
+    padding: 22px 0;
+  }
+
+  &__button1,
+  &__button2 {
+    padding: 22px 81px;
+    background-color: #cd4d31;
+    color: #f1f5f4;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 100%;
+    transition-property: 0.5s;
+  }
+
+  &__button2 {
+    padding: 22px 83px;
+    outline: 1px solid #f1f5f4;
+    background-color: #3f5252;
+  }
+
+  &__boy {
+    visibility: hidden;
+    position: absolute;
+    width: 624px;
+    height: 751px;
+    background-image: url(../images/boy_nav_max.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    right: 0;
+    bottom: 0;
+  }
+
+  .header__toggler:checked + & &__wrapper-menu &__menu {
+    width: 25px;
+    height: 20px;
+    background-image: url(../images/burgerChecked.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .header__toggler:checked + & &__wrapper-menu &__menu &__rectangle {
+    display: none;
+  }
+
+  .header__toggler:checked + & &__nav {
+    visibility: visible;
+  }
+
+  .header__toggler:checked + & &__boy {
+    visibility: visible;
+  }
+
+  @media (max-width: 1150px) {
+    & {
+      padding: 20px 40px 0;
+    }
+
+    &__nav {
+      left: 100px;
+    }
+
+    &__wrapper-info {
+      flex-direction: column;
+    }
+
+    &__colortext {
+      display: inline;
+    }
+
+    &__links {
+      row-gap: 50px;
+    }
+
+    &__boy {
+      display: none;
+    }
+  }
+
+  @media (max-width: 675px) {
+    & {
+      padding: 20px 20px 0;
+    }
+
+    &__wrapper-menu {
+      flex-direction: row-reverse;
+    }
+
+    &__form {
+      visibility: hidden;
+    }
+
+    &__lang {
+      margin: 0 30px 0 0;
+    }
+
+    &__nav {
+      top: 180px;
+      left: 20px;
+    }
+    
+    &__wrapper-info {
+      display: none;
+    }
+
+    &__links {
+      row-gap: 40px;
+    }
+
+    &__paragraph {
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__rectangle-med {
+      display: none;
+    }
+
+    &__buttons {
+      margin-top: 80px;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    &__button1,
+    &__button2 {
+      padding: 22px 84px;
+    }
+
+    &__button2 {
+      padding: 22px 86px;
+    }
+
+    .header__toggler:checked + & &__wrapper-menu &__form {
+      visibility: visible;
+    }
+  }
+}
