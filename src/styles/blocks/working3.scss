@@ -1,0 +1,111 @@
+.working3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+
+  @media (max-width: $iPhoneSE) {
+    grid-template-columns: 1fr;
+  }
+
+  &__status {
+    @extend %status;
+  }
+
+  &__subtitle {
+    @extend %subtitle;
+  }
+
+  &__text {
+    @extend %event-text;
+  }
+
+  &__btn {
+    @extend %orange-btn;
+    margin-bottom: 170px;
+  }
+
+  &__layout {
+    position: relative;
+
+    @media (max-width: $iPadMini) {
+      visibility: hidden;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      display: none;
+    }
+  }
+
+  &__event {
+    display: grid;
+    align-content: center;
+    padding-top: $verticalPadding;
+    padding-right: $horizontalPaddings;
+
+    @media (max-width: $iPhoneSE) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+  }
+
+  &__letters {
+    position: absolute;
+    width: 576px;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    color: #fff;
+    text-shadow: #3f5252 0 0 1px;
+    font-size: 10vw;
+    line-height: 11vw;
+  }
+
+  &__img {
+    position: absolute;
+    top: 40px;
+  }
+
+  &__link {
+    display: grid;
+    justify-items: end;
+    margin-right: 120px;
+    text-decoration: none;
+    color: #1c1b29;
+    cursor: pointer;
+    transition: color 0.5s linear;
+
+    &::after {
+      content: "";
+      position: relative;
+      left: 78px;
+      top: -9px;
+      width: 70px;
+      height: 1px;
+      background-color: #000;
+
+      @media (max-width: $iPadMini) {
+        content: "";
+        width: 0;
+      }
+    }
+
+    &:hover {
+      color: $mainColor;
+      font-weight: bold;
+    }
+
+    @media (max-width: $iPadMini) {
+      justify-items: start;
+      padding: 0 30px 10px;
+      border-bottom: 1px solid #000;
+      width: 185px;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      justify-items: center;
+      margin: 0;
+    }
+  }
+}

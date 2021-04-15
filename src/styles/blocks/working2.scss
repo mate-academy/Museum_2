@@ -1,0 +1,106 @@
+.working2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+
+  @media (max-width: $iPhoneSE) {
+    grid-template-columns: 1fr;
+
+  }
+
+  &__status {
+    @extend %status;
+  }
+
+  &__subtitle {
+    @extend %subtitle;
+  }
+
+  &__text {
+    @extend %event-text;
+
+    @media (max-width: $iPhoneSE) {
+      justify-self: end;
+    }
+  }
+
+  &__btn {
+    @extend %orange-btn;
+  }
+
+  &__layout {
+    position: relative;
+
+    @media (max-width: $iPadMini) {
+      visibility: hidden;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      display: none;
+    }
+  }
+
+  &__event {
+    display: grid;
+    align-content: center;
+    justify-content: end;
+    margin-right: 40px;
+    padding-top: $verticalPadding;
+    padding-bottom: $verticalPadding;
+    padding-left: $horizontalPaddings;
+
+    @media (max-width: $iPadMini) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      justify-content: start;
+    }
+
+  }
+
+  &__letters {
+    position: absolute;
+    max-width: 576px;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 10vw;
+    line-height: 10vw;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    color: #fff;
+    text-shadow: #3f5252 0 0 1px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 90px;
+    left: 50px;
+  }
+}
+
+//   body {
+//     background: gray url("http://lorempixel.com/200/200");
+//     -webkit-animation: 3s slideBg infinite linear;
+//     -moz-animation: 3s slideBg infinite linear;
+// }
+// @-webkit-keyframes slideBg {
+//     0% {
+//         background-position: 0 0;
+//     }
+//     100% {
+//         background-position: 200px 0;
+//     }
+// }
+// @-moz-keyframes slideBg {
+//     0% {
+//         background-position: 0 0;
+//     }
+//     100% {
+//         background-position: 200px 0;
+//     }
+// }
