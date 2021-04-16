@@ -69,48 +69,50 @@
       width: 123px;
     }
   }
+
   &__menu {
     display: flex;
     gap: 40px;
-  }
-  &__menu-icon {
-    position: relative;
 
-    height: 25px;
-    width: 25px;
-
-    z-index: 2;
-
-    @include background("../../src/images/icon/Menu.svg");
-
-    &--close {
-      @include background("../../src/images/icon/Close.svg");
-    }
-
-    &::before {
-      content: "";
-
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      z-index: 0;
-
-      display: block;
-      height: calc(100% + 20px);
-      width: calc(100% + 20px);
-      border: 1px solid $c-light-gray;
-      opacity: 0;
-
-      cursor: pointer;
-
-      transition: opacity $animation-time-min;
-    }
-
-    &:hover {
-      cursor: pointer;
-      
+    &-icon {
+      position: relative;
+  
+      height: 25px;
+      width: 25px;
+  
+      z-index: 2;
+  
+      @include background("../../src/images/icon/Menu.svg");
+  
+      &--close {
+        @include background("../../src/images/icon/Close.svg");
+      }
+  
       &::before {
-        opacity: 0.5;
+        content: "";
+  
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        z-index: 0;
+  
+        display: block;
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        border: 1px solid $c-light-gray;
+        opacity: 0;
+  
+        cursor: pointer;
+  
+        transition: opacity $animation-time-min;
+      }
+  
+      &:hover {
+        cursor: pointer;
+        
+        &::before {
+          opacity: 0.5;
+        }
       }
     }
   }
