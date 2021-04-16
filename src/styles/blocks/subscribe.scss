@@ -1,0 +1,148 @@
+.subscribe {
+  background-color: $c-dark-red;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__title {
+    @extend %font-playfair;
+    line-height: 120%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      width: 280px;
+      height: 72px;
+
+      margin-top: 80px;
+      margin-left: 0;
+
+      font-size: 36px;
+    }
+    @media (min-width: $tablet) {
+      width: 570px;
+      height: 116px;
+
+      margin-top: 110px;
+      margin-left: 60px;
+
+      font-size: 48px;
+    }
+    @media (min-width: $desktop) {
+      width: 670px;
+      height: 50px;
+
+      margin-top: 160px;
+      margin-left: 0;
+
+      font-size: 48px;
+    }
+  }
+
+  &__description {
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      width: 280px;
+      height: 96px;
+
+      margin-top: 40px;
+      margin-left: 0;
+    }
+    @media (min-width: $tablet) {
+      width: 570px;
+      height: 48px;
+
+      margin-top: 30px;
+      margin-left: 60px;
+    }
+    @media (min-width: $desktop) {
+      margin-top: 40px;
+      margin-left: 0;
+      margin-bottom: 160px;
+    }
+  }
+
+  &__form {
+    display: flex;
+
+    @media (min-width: $phone) {
+      margin-top: 60px;
+      margin-bottom: 80px;
+    }
+    @media (min-width: $tablet) {
+      margin-top: 80px;
+      margin-bottom: 120px;
+      margin-left: 60px;
+    }
+    @media (min-width: $desktop) {
+      position: absolute;
+      top: 252px;
+      left: 755px;
+
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+
+    &-input {
+      padding-left: 10px;
+      border: 0;
+      border-bottom: 1px solid $c-dark-gray;
+      background-color: $c-dark-red;
+
+      &::-webkit-input-placeholder {
+        color: $c-dark-gray;
+      }
+
+      outline: none;
+
+      @extend %font-raleway;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-light-gray;
+
+      transition: border-bottom $animation-time-min;
+
+      &:hover {
+        border-bottom: 1px solid $c-light-gray;
+      }
+
+      @media (min-width: $phone) {
+        width: 230px;
+      }
+      @media (min-width: $tablet) {
+        width: 300px;
+      }
+    }
+
+    &-submit {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background-color: $c-dark-red;
+      @include background("../../src/images/icon/Arrow.svg");
+      background-size: 50%;
+      border: 1px solid $c-dark-red;
+      outline: none;
+
+      margin-left: 10px;
+
+      transition: border $animation-time-min,
+        background-color $animation-time-min;
+
+      &:hover {
+        border: 1px solid $c-light-gray;
+        background-color: $c-hover-red;
+      }
+
+      @media (min-width: $desktop) {
+        position: relative;
+        top: 71px;
+      }
+    }
+  }
+}

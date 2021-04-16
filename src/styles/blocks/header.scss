@@ -1,0 +1,340 @@
+.header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  
+  background-color: $c-dark-blue;
+
+  &__conteiner {
+    @extend %container;
+  }
+
+  @media (min-width: $phone) {
+    height: 100vh;
+    min-height: 568px;
+    max-height: 640px;
+  }
+  @media (min-width: $tablet) {
+    height: 100vh;
+    min-height: 762px;
+    max-height: 864px;
+  }
+  @media (min-width: $desktop) {
+    height: 100vh;
+    min-height: 800px;
+    max-height: 1080px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 20px 0;
+
+    position: absolute;
+
+    z-index: 2;
+    background-color: $c-dark-blue;
+
+    @media (min-width: $phone) {
+      width: calc(100% - #{$min-gap} * 2);
+    }
+    @media (min-width: $tablet) {
+      width: calc(100% - #{$middle-gap} * 2);
+    }
+    @media (min-width: $desktop) {
+      width: calc(100% - #{$max-gap} * 2);
+    }
+  }
+  
+  &__main-link {
+    position: relative;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+
+      display: block;
+      height: 1;
+      width: 100%;
+      border-bottom: 1px solid $c-light-gray;
+      opacity: 0;
+
+      cursor: pointer;
+
+      transition: opacity $animation-time-min;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0.5;
+      }
+    }
+    
+    &-img {
+      height: 40px;
+      width: 123px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 40px;
+
+    &-icon {
+      position: relative;
+  
+      height: 25px;
+      width: 25px;
+  
+      z-index: 2;
+  
+      @include background("../../src/images/icon/Menu.svg");
+  
+      &--close {
+        @include background("../../src/images/icon/Close.svg");
+      }
+  
+      &::before {
+        content: "";
+  
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        z-index: 0;
+  
+        display: block;
+        height: calc(100% + 20px);
+        width: calc(100% + 20px);
+        border: 1px solid $c-light-gray;
+        opacity: 0;
+  
+        cursor: pointer;
+  
+        transition: opacity $animation-time-min;
+      }
+  
+      &:hover {
+        cursor: pointer;
+        
+        &::before {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &__language {
+    height: 25px;
+    border: 0;
+    background-color: $c-dark-blue;
+    outline: none;
+
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      display: none;
+    }
+    @media (min-width: $tablet) {
+      display: block;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    height: 801px;
+    width: 624px;
+
+    @include background("/images/img/Girl_from_Podol.png");
+    background-position: right bottom;
+
+    z-index: 1;
+    
+    @media (min-width: $phone) {
+      height: 273px;
+      width: 245px;
+      left: 52%;
+    }
+    @media (min-width: $tablet) {
+      left: 50%;
+      height: 445px;
+      width: 400px;
+    }
+    @media (min-width: $desktop) {
+      left: 45%;
+      height: 730px;
+      width: 650px;
+    }
+
+    &-description {
+      @extend %font-raleway;
+
+      @media (min-width: $phone) {
+        display: none;
+      }
+      @media (min-width: $desktop) {
+        display: block;
+        position: absolute;
+        right: $max-gap;
+        bottom: 319px;
+
+        font-size: 16px;
+        line-height: 150%;
+        color: $c-light-gray;
+      }
+    }
+  }
+
+  &__date {
+    display: block;
+
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      margin-top: $header-height + 80px;
+    }
+    @media (min-width: $tablet) {
+      margin-top: $header-height + 100px;
+      margin-left: 60px;
+    }
+    @media (min-width: $desktop) {
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-top: 10px;
+
+    @extend %font-playfair;
+    line-height: 100%;
+    color: $c-light-gray;
+
+    &-second {
+      @media (min-width: $tablet) {
+        margin-left: 40px;
+      }
+      @media (min-width: $desktop) {
+        margin-left: 100px;
+      }
+    }
+
+    @media (min-width: $phone) {
+      margin-top: 20px;
+      font-size: 48px;
+    }
+    @media (min-width: $tablet) {
+      margin-left: 60px;
+      font-size: 72px;
+    }
+    @media (min-width: $desktop) {
+      margin-left: 0;
+      font-size: 96px;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    margin-top: 40px;
+    
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      margin-top: 30px;
+      width: 270px;
+    }
+    @media (min-width: $tablet) {
+      margin-left: 60px;
+      width: 270px;
+    }
+    @media (min-width: $desktop) {
+      margin-left: 100px;
+    }
+  }
+
+  &__botton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 270px;
+
+    background-color: $c-dark-red;
+
+    transition: background-color $animation-time-min;
+
+    &:hover {
+      background-color: $c-hover-red;
+    }
+
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 100%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      margin-top: 50px;
+    }
+    @media (min-width: $tablet) {
+      margin-top: 80px;
+      margin-left: 60px;
+    }
+    @media (min-width: $desktop) {
+      margin-top: 60px;
+      margin-left: 100px;
+    }
+  }
+
+  &__date-bottom {
+    @extend %font-playfair;
+
+    @media (min-width: $phone) {
+      display: none;
+    }
+    @media (min-width: $desktop) {
+      display: block;
+      position: absolute;
+
+      bottom: 50px;
+
+      font-size: 14px;
+      line-height: 125%;
+      color: $c-light-gray;
+
+      opacity: 0.7;
+
+      &::after {
+        content: "";
+        z-index: 1;
+        display: inline-block;
+        position: relative;
+        bottom: 4px;
+        margin-left: 20px;
+
+        width: 70vh;
+        height: 1px;
+        background-color: $c-light-gray;
+        opacity: 0.3;
+      }
+    }
+  }
+}

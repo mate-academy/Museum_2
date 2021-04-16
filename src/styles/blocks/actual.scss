@@ -1,0 +1,356 @@
+.actual {
+  display: flex;
+  flex-direction: column;
+
+  background-color: $c-light-gray;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__title {
+    width: 100%;
+
+    @extend %font-playfair;
+    color: $c-dark-black;
+
+    @media (min-width: $phone) {
+      margin-top: 60px;
+      margin-bottom: 60px;
+
+      font-size: 36px;
+      line-height: 125%;
+      text-align: left;
+    }
+    @media (min-width: $tablet) {
+      margin-top: 115px;
+      margin-bottom: 55px;
+
+      font-size: 48px;
+      line-height: 120%;
+      text-align: center;
+    }
+    @media (min-width: $desktop) {
+      margin-top: 160px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__date {
+    @extend %font-playfair;
+    color: $c-dark-red;
+
+    @media (min-width: $phone) {
+      font-size: 24px;
+      line-height: 125%;
+      text-align: left;
+    }
+    @media (min-width: $tablet) {
+      font-size: 48px;
+      line-height: 120%;
+      text-align: center;
+    }
+  }
+
+  &__show-block {
+    position: relative;
+
+    @media (min-width: $phone) {
+      margin-bottom: 90px;
+    }
+    @media (min-width: $tablet) {
+      margin-bottom: 150px;
+    }
+    @media (min-width: $desktop) {
+      margin-bottom: 200px;
+    }
+
+    &--left {
+      @media (min-width: $phone) {
+        margin-left: 0;
+      }
+      @media (min-width: $tablet) {
+        margin-left: 60px;
+      }
+      @media (min-width: $desktop) {
+        margin-left: 200px;
+      }
+    }
+    &--right {
+      @media (min-width: $phone) {
+        margin-left: 0;
+      }
+      @media (min-width: $tablet) {
+        margin-left: 260px;
+      }
+      @media (min-width: $desktop) {
+        margin-left: 600px;
+      }
+    }
+
+    &--1 {
+      @media (min-width: $desktop) {
+        margin-bottom: 226px;
+      }
+    }
+    &--2 {
+      @media (min-width: $desktop) {
+        margin-bottom: 308px;
+      }
+    }
+    &--3 {
+      @media (min-width: $desktop) {
+        margin-bottom: 205px;
+      }
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 5px;
+      left: -20px;
+
+      display: block;
+      height: 100%;
+      width: 1px;
+      background-color: $c-light-blue;
+      opacity: 0;
+
+      transition: opacity $animation-time-min;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &__show-date {
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-dark-red;
+  }
+
+  &__show-title {
+    @media (min-width: $phone) {
+      margin-top: 5px;
+      width: 280px;
+    }
+    @media (min-width: $tablet) {
+      margin-top: 10px;
+      width: 370px;
+    }
+    @media (min-width: $desktop) {
+      width: 470px;
+    }
+  }
+
+  &__show-link {
+    @extend %font-playfair;
+    font-size: 24px;
+    line-height: 125%;
+    color: $c-dark-black;
+  }
+
+  &__show-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-light-blue;
+
+    @media (min-width: $phone) {
+      width: 130px;
+      height: 120px;
+      margin-top: 30px;
+    }
+    @media (min-width: $tablet) {
+      width: 270px;
+      height: min-content;
+      margin-top: 20px;
+    }
+    @media (min-width: $desktop) {
+      width: 370px;
+    }
+
+    &--left {
+      @media (min-width: $phone) {
+        margin-left: 0;
+      }
+    }
+    &--right {
+      @media (min-width: $phone) {
+        margin-left: 150px;
+      }
+      @media (min-width: $tablet) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__show-botton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 60px;
+
+    margin-top: 50px;
+
+    background-color: $c-dark-red;
+
+    transition: background-color $animation-time-min;
+
+    &:hover {
+      background-color: $c-hover-red;
+    }
+
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 100%;
+    color: $c-light-gray;
+
+    @media (min-width: $phone) {
+      display: none;
+    }
+    @media (min-width: $desktop) {
+      display: flex;
+    }
+  }
+
+  &__archive {
+    position: relative;
+    display: block;
+
+    @extend %font-raleway;
+    font-size: 16px;
+    line-height: 100%;
+    color: $c-dark-black;
+
+    transition: color $animation-time-min;
+
+    &:hover {
+      color: $c-hover-red;
+    }
+
+    @media (min-width: $phone) {
+      left: 50%;
+      transform: translate(-50%);
+      width: 130px;
+
+      margin-bottom: 20px;
+
+      text-align: center;
+
+      &::after {
+        content: "";
+  
+        position: relative;
+        left: 0;
+        bottom: -10px;
+  
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $c-dark-black;
+      }
+    }
+    @media (min-width: $tablet) {
+      width: 170px;
+
+      margin-bottom: 15px;
+    }
+    @media (min-width: $desktop) {
+      width: 115px;
+      left: 955px;
+
+      margin-bottom: 160px;
+
+      &::after {
+        content: "";
+  
+        position: relative;
+        left: 140px;
+        bottom: 5px;
+
+        display: block;
+        width: 70px;
+        height: 1px;
+        background: $c-dark-black;
+      }
+    }
+  }
+
+  &__background {
+    display: none;
+    position: relative;
+
+    @media (min-width: $desktop) {
+      display: block;
+
+      &-text-ХХ-ХХI {
+        position: absolute;
+        left: 600px;
+        top: 718px;
+
+        width: 595px;
+        height: 575px;
+
+        opacity: 0.3;
+
+        @include background("/images/img/backgraund_ХХ-ХХI.svg");
+      }
+
+      &-text-old-art {
+        position: absolute;
+        left: -15px;
+        top: 1294px;
+
+        width: 570px;
+        height: 600px;
+
+        opacity: 0.3;
+
+        @include background("/images/img/backgraund_old-art.svg");
+      }
+
+      &-img-angel {
+        position: absolute;
+        left: -185px;
+        top: 60px;
+
+        width: 628px;
+        height: 816px;
+
+        @include background("/images/img/show-angel.png");
+      }
+
+      &-img-people {
+        position: absolute;
+        left: 668px;
+        top: 782px;
+
+        width: 761px;
+        height: 465px;
+
+        @include background("/images/img/show-people.png");
+      }
+
+      &-img-cossack {
+        position: absolute;
+        left: -14px;
+        top: 1332px;
+
+        width: 584px;
+        height: 499px;
+
+        @include background("/images/img/show-cossack.png");
+      }
+    }
+  }
+}  
