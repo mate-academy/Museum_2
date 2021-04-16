@@ -1,26 +1,33 @@
 .nav {
-  display: none;
-
-  &--active {
-    display: block;
+  &__conteiner {
+    @extend %container;
   }
 
-  z-index: 2;
+  position: fixed;
+  top: $header-height;
+  left: 0;
 
-  position: absolute;
+  transform: translateY(calc(-100% - #{$header-height}));
+
+  &--active {
+    transform: translateY(0);
+  }
+
+  width: 100%;
   height: calc(100% - #{$header-height});
   background-color: $c-dark-blue;
+  z-index: 1;
+
+  transition: transform $animation-time-midle ease-out;
 
   @media (min-width: $phone) {
-    width: calc(100% - (2 * #{$min-gap}));
+    padding-left: 0;
   }
   @media (min-width: $tablet) {
     padding-left: 60px;
-    width: calc(100% - (2 * #{$middle-gap}));
   }
   @media (min-width: $desktop) {
     padding-left: 0;
-    width: calc(100% - (2 * #{$max-gap}));
   }
 
   &__info {
@@ -51,8 +58,33 @@
     }
   }
   &__adress {
+    position: relative;
+
     @extend %font-raleway;
     color: $c-light-gray;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 3;
+
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-light-gray;
+      opacity: 0;
+
+      transition: opacity $animation-time-min;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0.5;
+      }
+    }
 
     &-title {
       font-weight: 200;
@@ -60,9 +92,11 @@
       line-height: 24px;
     }
     &-content {
+      @extend %font-raleway;
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
+      color: $c-light-gray;
     }
   }
 
@@ -82,6 +116,8 @@
   }
 
   &__link {
+    position: relative;
+
     @extend %font-playfair;
     color: $c-light-gray;
 
@@ -93,10 +129,36 @@
       font-size: 48px;
       line-height: 120%;
     }
+
+    transition: color $animation-time-min;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-hover-red;
+      opacity: 0;
+
+      transition: opacity $animation-time-min;
+    }
+
+    &:hover {
+      color: $c-hover-red;
+
+      &::before {
+        opacity: 1;
+      }
+    }
   }
 
   &__line {
-    
     height: 1px;
     width: 570px;
     background-color: $c-light-gray;
@@ -139,10 +201,22 @@
 
     &--buy {
       background-color: $c-dark-red;
+
+      transition: background-color $animation-time-min;
+
+      &:hover {
+        background-color: $c-hover-red;
+      }
     }
     &--community {
       background-color: $c-dark-blue;
       border: 1px solid $c-light-gray;
+
+      transition: background-color $animation-time-min;
+
+      &:hover {
+        background-color: $c-hover-blue;
+      }
     }
     @media (min-width: $phone) {
       height: 60px;
@@ -157,7 +231,7 @@
   &__img {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 55px;
     height: 801px;
     width: 624px;
 

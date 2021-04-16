@@ -1,12 +1,15 @@
 'use strict';
 
-const nav = document.querySelector('.nav');
-const icon = document.querySelector('.header__menu-icon');
-const mainImg = document.querySelector('.header__img');
 const toggler = document.querySelector('#toggler-nav');
+const nav = document.querySelector('.nav');
+const page = document.querySelector('.page');
+const icon = document.querySelector('.header__menu-icon');
 
-toggler.addEventListener('click', () => {
+const menuToggler = () => {
   nav.classList.toggle('nav--active');
+  page.classList.toggle('page--fixed');
   icon.classList.toggle('header__menu-icon--close');
-  mainImg.classList.toggle('header__img--hidden');
-});
+};
+
+toggler.addEventListener('click', menuToggler);
+nav.addEventListener('click', menuToggler);
