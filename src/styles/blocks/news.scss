@@ -38,9 +38,6 @@
 
   &__block {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
 
     padding: 10px;
     margin: -10px;
@@ -63,6 +60,40 @@
       padding-right: 12px;
       margin-right: -12px;
       margin-left: -10px;
+    }
+
+    &-scroll {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+
+      transition: transform $animation-time-midle;
+
+      &--1 {
+        @media (min-width: $phone) {
+          transform: translateX(0);
+        }
+        @media (min-width: $tablet) {
+          transform: translateX(0);
+        }
+      }
+      &--2 {
+        @media (min-width: $phone) {
+          transform: translateX(-310px);
+        }
+        @media (min-width: $tablet) {
+          transform: translateX(0);
+        }
+      }
+      &--3 {
+        @media (min-width: $phone) {
+          transform: translateX(-620px);
+        }
+        @media (min-width: $tablet) {
+          transform: translateX(0);
+        }
+      }
     }
 
     &-toggler {
@@ -88,13 +119,23 @@
         height: 8px;
         border-radius: 50%;
         background-color: $c-dark-black;
+        opacity: 0.5;
+
+        &--active {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: $c-dark-black;
+        }
       }
     }
-
   }
 
   &__card {
     position: relative;
+    display: block;
+
+    text-decoration: none;
 
     &::before {
       content: "";
