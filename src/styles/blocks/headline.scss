@@ -1,0 +1,91 @@
+.headline {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: $lightGray;
+  background-color: $headerGreen;
+  left: 0;
+  right: 0;
+  top: 83px;
+  bottom: 0;
+  margin: auto;
+  transform: translateY(-130%);
+  transition: transform 0.6s ease-in-out;
+
+  @media (max-width: $iPadMini) {
+    grid-template-columns: 1fr;
+    align-content: center;
+  }
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__first-line {
+    display: flex;
+
+    justify-content: space-between;
+    max-width: 413px;
+
+    @media (max-width: $iPadMini) {
+      flex-direction: column;
+      padding: 50px 0;
+    }
+  }
+
+  &__details {
+    padding-top: 120px;
+    padding-bottom: 80px;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 20px;
+
+    &-span {
+      font-weight: bold;
+    }
+
+    @media (max-width: $iPadMini) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__btn-buy {
+    @extend %orange-btn;
+    margin-bottom: 20px;
+  }
+
+  &__btn-member {
+    width: 260px;
+    height: 60px;
+    font-family: "Raleway", sans-serif;
+    line-height: 16px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid $lightGray;
+    background-color: transparent;
+    color: $lightGray;
+    transition: all 0.4s linear;
+
+    &:hover {
+      box-shadow: 0 3px 15px rgba(0,0,0,0.4);
+      font-weight: bold;
+    }
+  }
+
+  &__img {
+    display: grid;
+    align-items: end;
+
+    @media (max-width: $iPadMini) {
+      display: none;
+    }
+  }
+}

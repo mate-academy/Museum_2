@@ -1,0 +1,124 @@
+.preview {
+  position: relative;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  color: $lightGray;
+  top: -83px;
+  height: 100%;
+
+  @media (max-width: $iPadMini) {
+    grid-template-columns: 1fr 4fr;
+  }
+
+  @media (max-width: $iPhoneSE) {
+    grid-template-columns: 1fr;
+  }
+
+  &__date {
+    padding-top: 200px;
+    padding-bottom: 10px;
+    line-height: 24px;
+  }
+
+  &__title {
+    margin-right: -300px;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 100%;
+    padding-bottom: 40px;
+
+    @media (max-width: $iPhoneSE) {
+      margin-right: 0;
+    }
+
+    &-span {
+      margin-left: $textShift;
+      
+      @media (max-width: $iPhoneSE) {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: $iPadMini) {
+      font-size: 72px;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      font-size: 48px;
+    }
+  }
+
+  &__details {
+    margin-right: -100px;
+    margin-left: $textShift;
+    line-height: 24px;
+    padding-bottom: 60px;
+
+    @media (max-width: $iPadMini) {
+      margin-left: 0;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      margin-right: 0;
+    }
+  }
+
+  &__btn {
+    @extend %orange-btn;
+    margin-left: $textShift;
+    margin-top: 20px;
+
+    @media (max-width: $iPadMini) {
+      margin-left: 0;
+    }
+  }
+
+  &__date2 {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 150px;
+
+    &-line {
+      position: relative;
+      top: -14px;
+      left: 90px;
+      z-index: -1;
+      max-width: 900px;
+      margin-right: -300px;
+      opacity: 0.3;
+    }
+
+    @media (max-width: $iPadMini) {
+      display: none;
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: -1;
+    display: grid;
+    justify-content: end;
+    align-items: end;
+    margin-right: -50px;
+    overflow: hidden;
+
+    @media (max-width: $iPadMini) {
+      position: relative;
+      margin-right: -100px;
+    }
+
+    &-name {
+      position: absolute;
+      right: 1%;
+      bottom: 30%;
+      
+      @media (max-width: 915px) {
+        visibility: hidden;
+      }
+    }
+  }
+}
