@@ -1,5 +1,8 @@
 .header {
+  position: relative;
   width: 100%;
+  overflow: hidden;
+  
   background-color: $c-dark-blue;
 
   &__conteiner {
@@ -7,10 +10,19 @@
   }
 
   @media (min-width: $phone) {
-    height: 568px;
+    height: 100vh;
+    min-height: 584px;
+    max-height: 640px;
   }
   @media (min-width: $tablet) {
     height: 100vh;
+    min-height: 762px;
+    max-height: 864px;
+  }
+  @media (min-width: $desktop) {
+    height: 100vh;
+    min-height: 800px;
+    max-height: 1080px;
   }
 
   &__top {
@@ -154,14 +166,15 @@
     @media (min-width: $phone) {
       height: 273px;
       width: 245px;
-      right: -30%;
+      left: 55%;
     }
     @media (min-width: $tablet) {
-      right: 0;
+      left: 50%;
       height: 445px;
       width: 400px;
     }
     @media (min-width: $desktop) {
+      left: 45%;
       height: 730px;
       width: 650px;
     }
@@ -194,10 +207,10 @@
     color: $c-light-gray;
 
     @media (min-width: $phone) {
-      margin-top: 80px;
+      margin-top: $header-height + 80px;
     }
     @media (min-width: $tablet) {
-      margin-top: 100px;
+      margin-top: $header-height + 100px;
       margin-left: 60px;
     }
     @media (min-width: $desktop) {
