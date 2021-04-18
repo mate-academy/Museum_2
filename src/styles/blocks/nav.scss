@@ -1,0 +1,114 @@
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateX(-100%);
+  padding: 90px 54px 0 55px;
+  z-index: 2;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0.29, 1.01, 1, -0.68);
+  background-image: url("../images/dude.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-color: #3f5252;
+
+  @media (max-width: $mx-width - 1) {
+    padding: 90px 60px 0 99px;
+    background-image: none;
+  }
+
+  @media (max-width: 400px) {
+    padding: 60px 20px 0;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    max-width: 413px;
+    font-size: 16px;
+    line-height: 24px;
+
+    @media (max-width: $mx-width - 1) {
+      flex-direction: column;
+      max-width: 274px;
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__details-header {
+    display: block;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (max-width: $mx-width - 1) {
+      display: inline-block;
+    }
+  }
+
+  &__menu {
+    margin-top: 80px;
+  }
+
+  &__item {
+    padding-bottom: 60px;
+
+    @media (max-width: 767px) {
+      padding-bottom: 40px;
+    }
+    
+    &:last-child {
+      position: relative;
+      margin-bottom: 60px;
+
+      @media (max-width: 767px) {
+        padding: 0;
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__link {
+    color: $c-white;
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    line-height: 57.6px;
+
+    @media (max-width: 767px) {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__item:last-child > &__link::after {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 573px;
+    height: 1px;
+    background-color: $c-white;
+    opacity: 0.7;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__button-block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 570px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      gap: 20px 0;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 18px 20px 0;
+  color: $c-white;
+
+  @media (max-width: $mx-width - 1) {
+    padding: 20px 0;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 3;
+    font-size: 36px;
+    line-height: 43.2px;
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+  }
+
+  &__toggler-label {
+    position: relative;
+    z-index: 3;
+    content: url(../images/menu-icons/burger.svg);
+    padding: 20px;
+    margin: -20px;
+  }
+
+  &__toggler {
+    display: none;
+
+    &:checked ~ &-label {
+      content: url(../images/menu-icons/burger-exit.svg);
+
+      @media (max-width: 767px) {
+        position: absolute;
+        right: 60px;
+      }
+
+      @media (max-width: 400px) {
+        right: 20px;
+      }
+    }
+
+    &:checked ~ .nav {
+      transform: translateX(0);
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100px;
+    width: 100px;
+
+    @media (max-width: 767px) {
+      width: min-content;
+    }
+  }
+
+  &__select {
+    position: relative;
+    z-index: 3;
+    font-size: 16px;
+    line-height: 24px;
+    border: none;
+    color: $c-white;
+    background-color: #3f5252;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__toggler:checked ~ &__select {
+    display: block;
+
+    @media (max-width: 767px) {
+      margin-right: 55px;
+    }
+  }
+}
