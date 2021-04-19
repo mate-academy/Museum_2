@@ -1,0 +1,70 @@
+.news {
+  @include block-padding;
+  display: grid;
+  justify-content: center;
+
+  &__title {
+    @extend %section-title;
+    padding-top: 120px;
+    padding-bottom: 75px;
+    padding-left: 25%;
+
+    @media (max-width: $iPadMini) {
+      padding-left: 0;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 30px;
+
+    @media (max-width: $iPadMini) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $iPhoneSE) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img {
+    padding-bottom: 30px;
+  }
+
+  &__date {
+    padding-bottom: 5px;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1c1b29;
+  }
+
+  &__subtitle {
+    padding-bottom: 15px;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    color: #1c1b29;
+  }
+
+  &__text {
+    @extend %event-text;
+
+    @media (max-width: $iPhoneSE) {
+      max-width: 370px;
+    }
+  }
+
+  &__link {
+    @extend %block-link;
+    
+    @media (max-width: $iPadMini) {
+      justify-items: center;
+    }
+  }
+}
