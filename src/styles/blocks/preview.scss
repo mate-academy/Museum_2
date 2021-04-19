@@ -8,7 +8,7 @@
   height: 100%;
 
   @media (max-width: $iPadMini) {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3fr;
   }
 
   @media (max-width: $iPhoneSE) {
@@ -19,39 +19,29 @@
     padding-top: 200px;
     padding-bottom: 10px;
     line-height: 24px;
+
+    @media (max-width: $iPhoneSE) {
+      padding-top: 120px;
+      padding-bottom: 20px;
+    }
   }
 
   &__title {
-    margin-right: -300px;
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
-    font-size: 96px;
-    line-height: 100%;
-    padding-bottom: 40px;
-
-    @media (max-width: $iPhoneSE) {
-      margin-right: 0;
-    }
+    position: absolute;
+    z-index: 2;
+    @extend %h1;
 
     &-span {
       margin-left: $textShift;
       
-      @media (max-width: $iPhoneSE) {
+      @media (max-width: 616px) {
         margin-left: 0;
       }
-    }
-
-    @media (max-width: $iPadMini) {
-      font-size: 72px;
-    }
-
-    @media (max-width: $iPhoneSE) {
-      font-size: 48px;
     }
   }
 
   &__details {
-    margin-right: -100px;
+    padding-top: 200px;
     margin-left: $textShift;
     line-height: 24px;
     padding-bottom: 60px;
@@ -61,7 +51,8 @@
     }
 
     @media (max-width: $iPhoneSE) {
-      margin-right: 0;
+  
+      padding-bottom: 50px;
     }
   }
 
@@ -72,6 +63,7 @@
 
     @media (max-width: $iPadMini) {
       margin-left: 0;
+      width: 200px;
     }
   }
 
@@ -99,16 +91,35 @@
 
   &__img {
     position: relative;
-    z-index: -1;
+    z-index: 1;
     display: grid;
     justify-content: end;
     align-items: end;
-    margin-right: -50px;
     overflow: hidden;
 
     @media (max-width: $iPadMini) {
-      position: relative;
-      margin-right: -100px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 400px;
+      overflow: hidden;
+    }
+
+    &-girl {
+      @media (max-width: $iPhoneSE) {
+        width: 250px;
+        padding-bottom: 19px;
+        // position: relative;
+        // bottom: 0;
+        // right: 0;
+        // z-index: 3;
+        // margin-right: 0;
+        // width: 245px;
+
+        // display: none;
+        margin-right: 0;
+
+      }
     }
 
     &-name {
@@ -118,6 +129,7 @@
       
       @media (max-width: 915px) {
         visibility: hidden;
+        background-color: #fff;
       }
     }
   }
