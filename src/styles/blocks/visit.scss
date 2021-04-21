@@ -1,0 +1,85 @@
+.visit {
+  position: relative;
+  background-color: $bgGreenGrey;
+
+  @media (min-width: $screenWidthM) {
+    height: 705px;
+  }
+
+  @media (min-width: $screenWidthL) {
+    height: 800px;
+  }
+
+  &__picture {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    @media (min-width: $screenWidthM) {
+      display: block;
+    }
+  }
+
+  &__container {
+    padding: $paddingArticleS $paddingPageS;
+
+    @media (min-width: $screenWidthM) {
+      padding: $paddingArticleM $paddingPageM 0;
+    }
+
+    @media (min-width: $screenWidthL) {
+      padding: 185px $paddingPageL 0;
+    }
+  }
+
+  &__title {
+    max-width: 395px;
+    margin-bottom: 40px;
+
+    @media (min-width: $screenWidthM) {
+      width: 525px;
+      max-width: none;
+      margin-bottom: 80px;
+    }
+
+    @media (min-width: $screenWidthL) {
+      width: 700px;
+      margin-left: 500px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr minmax(270px, 395px);
+    max-width: 595px;
+
+    @media (min-width: $screenWidthM) {
+      max-width: none;
+      grid-template-columns: 40% minmax(270px, 395px);
+    }
+
+    @media (min-width: 1070px) {
+      grid-template-columns: 460px 395px;
+    }
+
+    @media (min-width: $screenWidthL) {
+      grid-template-columns: 50% 470px;
+    }
+  }
+
+  &__text {
+    grid-column-start: 2;
+    margin-bottom: 60px;
+
+  }
+
+  &__button {
+    grid-column-start: 2;
+
+    @media (min-width: $screenWidthM) {
+      width: 260px;
+    }
+    
+  }
+}
