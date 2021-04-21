@@ -6,7 +6,11 @@
   padding: 20px 20px 0;
   
   @media (min-width: 768px) {
-    padding: 20px 40px 0;
+    padding: 20px 100px 0;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 20px 55px 0;
   }
 
   &__top {
@@ -68,9 +72,12 @@
   }
 
   &__content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
 
-    @media (min-width: 768px) {
-      margin: 0 60px;
+    @media (min-width: 1280px) {
+      
+      grid-template-columns: 8% 92%;
     }
   }
 
@@ -82,6 +89,10 @@
 
     @media (min-width: 768px) {
       margin-bottom: 10px;
+    }
+
+    @media (min-width: 1280px) {
+      grid-area: 1 / 1 / 2 / 3;
     }
   }
 
@@ -98,6 +109,21 @@
       line-height: 72px;
       margin-bottom: 40px;
     }
+
+    @media (min-width: 1280px) {
+      grid-area: 2 / 1 / 3 / 3;
+    }
+  }
+
+  &__heading-second-line {
+    
+    @media (min-width: 768px) {
+      padding-left: 50px;
+    }
+
+    @media (min-width: 1280px) {
+      padding-left: 95px;
+    }
   }
 
   &__heading-description {
@@ -105,6 +131,14 @@
     line-height: 24px;
     color: $light-font-color;
     margin-bottom: 50px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 80px;
+    }
+
+    @media (min-width: 1280px) {
+      grid-area: 3 / 2 / 4 / 3;
+    }
   }
 
   &__buy-button {
@@ -126,6 +160,10 @@
 
     @media (min-width: 768px) {
       width: 270px;
+    }
+
+    @media (min-width: 1280px) {
+      grid-area: 4 / 2 / 5 / 3;
     }
   }
 
@@ -149,6 +187,11 @@
       height: 445px;
       width: 399px;
     }
+
+    @media (min-width: 1280px) {
+      height: 753px;
+      width: 673px;
+    }
   }
 
   &__picture-capture {
@@ -157,16 +200,38 @@
     font-family: Raleway, Arial, sans-serif;
     line-height: 24px;
     color: $light-font-color;
-    top: 140px;
-    right: -80px;
+    top: 386px;
+    right: 54px;
+
+    @media (min-width: 1280px) {
+      display: block;
+    }
   }
 
   &__event-date {
+    position: absolute;
     display: none;
     font-family: "Playfair Display", Arial, sans-serif;
     font-size: 14px;
     font-weight: 700;
     line-height: 18px;
     color: $light-font-color;
+    left: 55px;
+    bottom: 52px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 100px;
+      height: 1px;
+      width: 464px;
+      background: $light-font-color;
+
+    }
+
+    @media (min-width: 1280px) {
+      display: block;
+    }
   }
 }

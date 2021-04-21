@@ -1,5 +1,9 @@
 .events {
   padding: 0 20px;
+
+  @media (min-width: 768px) {
+    padding: 0 100px;
+  }
   
   &__heading {
     font-family: "Playfair Display", Arial, sans-serif;
@@ -9,11 +13,31 @@
     text-align: left;
     color: $black-font-color;
     margin-bottom: 60px;
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+      line-height: 58px;
+      margin-bottom: 55px;
+    }
+  }
+
+  &__first-article {
+    margin-bottom: 60px;
+  }
+
+  &__second-article {
+    margin-bottom: 60px;
   }
 
   &__content-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 17% 63%;
+      column-gap: 30px;
+    }
   }
 
   &__date-time {
@@ -22,6 +46,30 @@
     color: $red-color;
     margin-bottom: 5px;
     grid-area: 1 / 1 / 2 / 2;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__date {
+    margin-left: -30px;
+    grid-area: 1 / 1 / 2 / 2;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__time {
+    
+    align-self: center;
+    justify-self: end;
+    grid-area: 2 / 1 / 3 / 2;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
   &__activity-type {
@@ -42,6 +90,10 @@
     color: $black-font-color;
     margin-bottom: 30px;
     grid-area: 2 / 1 / 3 / 3;
+
+    @media (min-width: 768px) {
+      grid-area: 2 / 2 / 3 / 3;
+    }
   }
 
   &__article-description {
@@ -51,6 +103,9 @@
     margin-bottom: 30px;
     grid-area: 3 / 1 / 4 / 3;
 
+    @media (min-width: 768px) {
+      grid-area: 3 / 2 / 4 / 3;
+    }
   }
 
   &__registration-button {
@@ -64,7 +119,13 @@
     text-align: center;
     text-decoration: none;
     color: $light-font-color;
-    margin-bottom: 60px;
+    
+    grid-area: 4 / 1 / 5 / 3;
+
+    @media (min-width: 768px) {
+      width: 270px;
+      grid-area: 4 / 2 / 5 / 3;
+    }
   }
 
   &__event-calendar-link {

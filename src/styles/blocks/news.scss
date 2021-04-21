@@ -2,6 +2,10 @@
   position: relative;
   padding: 0 20px;
 
+  @media (min-width: 768px) {
+    padding: 0 100px;
+  }
+
   &__heading {
     font-family: "Playfair Display", Arial, sans-serif;
     font-size: 36px;
@@ -9,13 +13,49 @@
     line-height: 36px;
     color: $black-font-color;
     padding-bottom: 60px;
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+      line-height: 58px;
+      margin-bottom: 75px;
+    }
+  }
+
+  &__content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    margin-bottom: 90px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 80px;
+    }
   }
 
   &__first-article {
-    margin-bottom: 90px;
+    grid-area: 1 / 1 / 2 / 3;
+
+    @media (min-width: 768px) {
+      margin-bottom: 80px;
+      grid-area: 1 / 1 / 2 / 2;
+    }
+  }
+  
+  &__second-article {
+    grid-area: 1 / 2 / 2 / 3;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 
-  &__photo-1 {
+  &__third-article {
+    @media (max-width: 1439px) {
+      display: none;
+    }
+  }
+
+  &__photo {
     height: 280px;
     width: 280px;
     padding-bottom: 21px;
@@ -51,6 +91,10 @@
     width: 56px;
     height: 10px;
     line-height: 8px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
   }
 
   &__content-dots-dark {

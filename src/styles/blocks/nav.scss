@@ -7,6 +7,7 @@
   }
 
   &__content {
+    position: relative;
     margin: 18px 0 0;
 
     @media (min-width: 768px) {
@@ -17,10 +18,15 @@
   &__schedule-wrapper {
     visibility: hidden;
     margin-bottom: 55px;
-    // border: 1px solid red;
 
     @media (min-width: 768px) {
       visibility: visible;
+    }
+
+    @media (min-width: 1280px) {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 80px;
     }
   }
   
@@ -39,12 +45,34 @@
   }
 
   &__list {
+    position: relative;
     list-style: none;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 66px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 570px;
+        bottom: -5px;
+        background: #c4c4c4;
+      }
+    }
   }
 
   &__item {
     padding-bottom: 40px;
+
+    @media (min-width: 768px) {
+      padding-bottom: 50px;
+    }
+
+    @media (min-width: 1280px) {
+      padding-bottom: 60px;
+    }
   }
 
   &__link {
@@ -54,6 +82,11 @@
     line-height: 24px;
     color: $light-font-color;
     text-decoration: none;
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+      line-height: 58px;
+    }
   }
 
   &__button-box {
@@ -99,5 +132,18 @@
     @media (min-width: 768px) {
       width: 270px;
     }
+  }
+
+  &__picture {
+    position: absolute;
+    height: 801px;
+    width: 624px;
+    right: -5px;
+    top: 0;
+
+    @media (max-width: 1279px) {
+      display: none;
+    }
+
   }
 }

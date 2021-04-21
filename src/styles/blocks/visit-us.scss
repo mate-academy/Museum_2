@@ -1,15 +1,32 @@
 .visit-us {
+  position: relative;
   background: $dark-green;
   padding: 80px 20px;
+
+  @media (min-width: 768px) {
+    padding: 120px 100px 170px;
+  }
+  
+  &__content {
+    display: grid;
+    grid-template-columns: 33% 67%;
+
+  }
 
   &__heading {
     font-family: "Playfair Display", Arial, sans-serif;
     font-size: 48px;
     font-weight: 700;
     line-height: 48px;
-    text-align: left;
     color: $light-font-color;
     margin-bottom: 30px;
+    grid-area: 1 / 1 / 2 / 3;
+
+    @media (min-width: 768px) {
+      font-size: 72px;
+      line-height: 72px;
+      margin-bottom: 80px;
+    }
   }
 
   &__description {
@@ -17,6 +34,11 @@
     line-height: 24px;
     color: $light-font-color;
     margin-bottom: 60px;
+    grid-area: 2 / 1 / 3 / 3;
+
+    @media (min-width: 768px) {
+      grid-area: 2 / 2 / 3 / 3;
+    }
   }
 
   &__start-visit-button {
@@ -30,5 +52,23 @@
     text-align: center;
     text-decoration: none;
     color: $light-font-color;
+    grid-area: 3 / 1 / 4 / 3;
+
+    @media (min-width: 768px) {
+      grid-area: 3 / 2 / 4 / 3;
+      width: 258px;
+    }
+  }
+
+  &__side-picture {
+    position: absolute;
+    height: 462px;
+    width: 334px;
+    left: -35px;
+    bottom: 0;
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 }
