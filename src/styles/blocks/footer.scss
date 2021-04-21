@@ -1,0 +1,133 @@
+.footer {
+  padding: $paddingArticleS 0 35px;
+
+  background-color: $bgGreenGrey;
+
+  @media (min-width: $screenWidthM) {
+    padding: $paddingArticleM 0 35px;
+  }
+
+  @media (min-width: $screenWidthL) {
+    padding: $paddingArticleL 0 35px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    position: relative;
+    max-width: $screenWidthL;
+    margin: 0 auto;
+    padding: 0 $paddingPageS;
+
+    @media (min-width: 540px) {
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+
+      padding: 0 $paddingPageM;
+    }
+
+    @media (min-width: 1175px) {
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-between;
+      
+
+      padding: 0 $paddingPageL;
+    }
+  }
+
+  &__up-link {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 0;
+  }
+
+  &__up-img {
+    width: 30px;
+    height: 30px;
+
+    object-fit: none;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      border: 1px solid $colorTextLight;
+      transform: scale(1.5);
+    }
+  }
+
+  &__item {
+    padding-bottom: 60px;
+
+    @media (min-width: 1175px) {
+      &--3 {
+        grid-area: 1/4;
+      }
+
+      &--4 {
+        grid-column-start: 1/3;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 27px;
+  }
+
+  &__link {
+    display: block;
+    width: fit-content;
+    transform-origin: left;
+    transition: transform 0.2s linear;
+
+    &:hover {
+      text-decoration: underline;
+      font-weight: 700;
+      transform-origin: left;
+      transform: scale(1.2);
+    }
+
+    &--phone {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &--phone-2 {
+      position: relative;
+      margin-left: 34px;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__sosocial {
+    display: flex;
+    gap: 15px;
+    padding-top: 20px;
+  }
+
+  &__sosocial-link {
+    display: block;
+  }
+
+  &__sosocial-img {
+    width: 22px;
+    height: 22px;
+    object-fit: none;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
