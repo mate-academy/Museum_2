@@ -1,0 +1,116 @@
+.headline {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: $lightGray;
+  background-color: $headerGreen;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: 0 auto;
+  transform: translateY(-130%);
+  transition: transform 0.6s ease-in-out;
+
+  @media (max-width: $iPadMini) {
+    grid-template-columns: 1fr;
+    align-content: center;
+  }
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__first-line {
+    display: flex;
+
+    justify-content: space-between;
+    max-width: 413px;
+
+    @media (max-width: $iPadMini) {
+      flex-direction: column;
+      padding: 50px 0;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      display: none;
+    }
+  }
+
+  &__details,
+  &__details-link {
+    padding-top: 120px;
+    padding-bottom: 50px;
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 20px;
+    text-decoration: none;
+    color: $lightGray;
+
+    &-span,
+    &-span-link {
+      font-weight: bold;
+      transition: color 0.5s ease-in-out;
+    }
+
+    @media (max-width: $iPadMini) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__details-span-link {
+    &:hover {
+      color: $mainColor;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__btn-buy {
+    @extend %orange-btn;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    transition: all 0.4s linear;
+
+    &:hover {
+      border: 1px solid $lightGray;
+    }
+  }
+
+  &__btn-member {
+    width: 260px;
+    height: 60px;
+    font-family: "Raleway", sans-serif;
+    line-height: 16px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid $lightGray;
+    background-color: transparent;
+    color: $lightGray;
+    cursor: pointer;
+    transition: all 0.4s linear;
+
+    &:hover {
+      background-color: rgba(205, 77, 49, 0.8);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__img {
+    display: grid;
+    align-items: end;
+
+    @media (max-width: $iPadMini) {
+      display: none;
+    }
+  }
+}
