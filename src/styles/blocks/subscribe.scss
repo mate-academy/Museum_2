@@ -27,9 +27,15 @@
   }
 
   &__content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    align-items: self-end;
+
+    @media (max-width: $iPadMini) {
+      grid-template-columns: 1fr;
+      justify-items: start;
+    }
   }
 
   &__text {
