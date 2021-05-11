@@ -1,0 +1,214 @@
+.nav {
+  background: $dark-green;
+
+  &__content {
+    position: relative;
+    max-width: 1280px;
+    padding: 140px 20px 0;
+    margin: 0 auto;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (min-width: 768px) {
+      padding: 90px 100px 0;
+      column-gap: 30px;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @media (min-width: 1280px) {
+      padding: 90px 55px 0;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__schedule-wrapper {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: baseline;
+      grid-area: 1 / 1 / 2 / 4;
+    }
+
+    @media (min-width: 1280px) {
+      flex-direction: column;
+      grid-area: 1 / 1 / 2 / 3;
+    }
+  }
+  
+  &__schedule-title {
+    font-family: Raleway, Arial, sans-serif;
+    color: $light-font-color;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+    margin-right: 5px;
+  }
+
+  &__schedule-content {
+    font-family: Raleway, Arial, sans-serif;
+    color: $light-font-color;
+    line-height: 24px;
+  }
+
+  &__address-wrapper {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: baseline;
+      grid-area: 2 / 1 / 3 / 5;
+    }
+
+    @media (min-width: 1280px) {
+      flex-direction: column;
+      margin-bottom: 80px;
+      grid-area: 1 / 3 / 2 / 6;
+    }
+  }
+  
+  &__address-title {
+    font-family: Raleway, Arial, sans-serif;
+    color: $light-font-color;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+    margin-right: 5px;
+  }
+
+  &__address-content {
+    font-family: Raleway, Arial, sans-serif;
+    color: $light-font-color;
+    line-height: 24px;
+  }
+
+  &__list {
+    position: relative;
+    list-style: none;
+    margin-bottom: 40px;
+    grid-area: 1 / 1 / 2 / 3;
+
+    @media (min-width: 768px) {
+      margin-bottom: 60px;
+      grid-area: 3 / 1 / 4 / 6;
+    }
+
+    @media (min-width: 1280px) {
+      grid-area: 2 / 1 / 3 / 6;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 570px;
+      bottom: -5px;
+      background: #c4c4c4;
+    }
+  }
+
+  &__list-item {
+    padding-bottom: 40px;
+
+    @media (min-width: 768px) {
+      padding-bottom: 50px;
+    }
+
+    @media (min-width: 1280px) {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__list-link {
+    font-family: "Playfair Display", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    color: $light-font-color;
+    text-decoration: none;
+
+    @media (min-width: 768px) {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__buy-button {
+    display: block;
+    height: 60px;
+    width: 280px;
+    background: $red-color;
+
+    font-family: Raleway, Arial, sans-serif;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    color: $light-font-color;
+    justify-self: center;
+    margin-bottom: 20px;
+    grid-area: 2 / 1 / 3 / 3;
+
+    @media (min-width: 768px) {
+      width: 270px;
+      margin-bottom: 0;
+      grid-area: 4 / 1 / 5 / 4;
+    }
+
+    @media (min-width: 1280px) {
+      grid-area: 3 / 1 / 4 / 4;
+    }
+
+    @include hover-active();
+  }
+
+  &__membership-button {
+    display: block;
+    height: 60px;
+    width: 280px;
+    background: transparent;
+
+    font-family: Raleway, Arial, sans-serif;
+    line-height: 60px;
+    text-align: center;
+    text-decoration: none;
+    color: $light-font-color;
+    border: 1px solid $light-font-color;
+    justify-self: center;
+    transition: 0.3s;
+    grid-area: 3 / 1 / 4 / 3;
+
+    @media (min-width: 768px) {
+      width: 270px;
+      grid-area: 4 / 4 / 5 / 7;
+    }
+
+    @media (min-width: 1280px) {
+      grid-area: 3 / 4 / 4 / 7;
+    }
+
+    &:hover {
+      transform: scaleX(0.95);
+      background: $light-font-color;
+      color: $dark-green;
+    }
+
+    &:active {
+      transform: scaleX(1.05);
+      background: transparent;
+      color: $light-font-color;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    height: 801px;
+    width: 624px;
+    right: -5px;
+    top: 0;
+
+    @media (max-width: 1279px) {
+      display: none;
+    }
+  }
+}
