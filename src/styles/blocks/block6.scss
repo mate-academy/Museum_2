@@ -1,0 +1,116 @@
+.block6 {
+  max-width: $mx-width;
+  width: 100%;
+  padding: 160px 55px;
+  transition: 1s;
+  background-color: $c-orange;
+
+  @media (max-width: $mx-width - 1) {
+    max-width: 1000px;
+    padding: 110px 99px 124px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 80px 60px 91px 40px;
+  }
+
+  @media (max-width: 400px) {
+    padding: 80px 20px 82px;
+  }
+
+  &__title {
+    @extend %h2;
+    margin-bottom: 41px;
+    color: $c-white;
+
+    @media (max-width: $mx-width - 1) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 768px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__main-text {
+    @extend %small-text;
+    display: inline-block;
+    max-width: 570px;
+    color: $c-white;
+
+    @media (max-width: $mx-width - 1) {
+      margin-bottom: 80px;
+    }
+
+    @media (max-width: 400px) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__form {
+    position: relative;
+  }
+
+  &__email {
+    height: min-content;
+    width: 300px;
+    bottom: 10px;
+    padding-left: 12px;
+    padding-bottom: 8px;
+    margin-left: 130px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $c-white;
+    background-color: $c-orange;
+    color: $c-white;
+
+    @media (max-width: $mx-width - 1) {
+      margin-left: 0;
+    }
+
+    @media (max-width: 400px) {
+      width: 228px;
+    }
+
+    &::placeholder {
+      opacity: 1;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: $c-white;
+    }
+  }
+
+  &__email-button {
+    transition: 1s;
+    position: absolute;
+    right: -40px;
+    bottom: -68px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    text-decoration: none;
+    background-color: inherit;
+    background-image: url(../images/Union.svg);
+    background-repeat: no-repeat;
+
+    @media (max-width: $mx-width - 1) {
+      width: 42px;
+      height: 42px;
+      bottom: 0;
+      right: -52px;
+      background-image: url(../images/email_button.svg);
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: rotate(360deg);
+    }
+  }
+}
