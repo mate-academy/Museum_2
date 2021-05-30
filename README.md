@@ -3,4 +3,4 @@
 
 [DEMO LINK](https://den-bulaev.github.io/Museum/)
 
-[TECHNOLOGIES]: SASS, BEM, HTML 
+TECHNOLOGIES: SASS, BEM, HTML 
