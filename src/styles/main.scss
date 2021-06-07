@@ -1,7 +1,87 @@
-@import "utils";
-@import "fonts";
-@import "typography";
 
-body {
-  background: $c-gray;
+@import "./utils/utils";
+@import "./utils/typography";
+@import "./utils/fonts";
+@import "./utils/mixins";
+@import "./blocks/header.scss";
+@import "./blocks/section.scss";
+@import "./utils/root.scss";
+
+.exhibitions {
+  &__part-1 {
+    display: flex;
+    @media  (max-width:768px) {
+      display: block;
+    }
+    
+  }
+
+  &__statuette-img {
+    width: 40%;
+    @media  (max-width:768px) {
+      display: none;
+      transition: ease 0.5s;
+    }
+  }
+
+  &__container-info {
+
+    justify-content: center;
+    @media  (max-width:768px) {
+      display: flex;
+      flex-direction: column;
+      transition: ease 0.5s;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    margin-top: 15%;
+    @media  (max-width: 768px) {
+      margin: 10% auto;
+      transition: ease 0.5s;
+    }
+  }
+
+  &__title-date {
+    margin-left: 10%;
+    margin-top: 20%;
+    color: $r-color;
+    font-size: 48px;
+    font-family: "Playfair Display", serif;
+
+    @media  (max-width: 768px) {
+      margin: 1% auto;
+      transition: ease 0.5s;
+    }
+
+  }
+
+  &__title-angels {
+    min-width: 420px;
+    margin-left: 20%;
+    font-size: 24px;
+    font-family: "Playfair Display", serif;
+  }
+
+  &__title-angels_text {
+    margin-left: 20%;
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    max-width: 420px;
+  }
+
+  &__button-buy {
+    margin-left: 20%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    background: $r-color;
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+    line-height: 60px;
+    width: 270px;
+    color: $wh-color;
+  }
+
 }
