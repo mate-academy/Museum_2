@@ -1,0 +1,43 @@
+%line {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: $white-c;
+}
+
+.btn-toggler {
+  position: relative;
+  @extend %line;
+  cursor: pointer;
+  transition-duration: 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    transition-duration: 0.3s;
+    @extend %line;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    transition-duration: 0.3s;
+    @extend %line;
+  }
+
+  &--active {
+    transform: rotate(45deg);
+  }
+
+  &--active::before {
+    top: 0;
+    opacity: 0;
+  }
+
+  &--active::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+}
