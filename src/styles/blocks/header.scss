@@ -2,20 +2,22 @@
 @import "../utils/vars";
 
 .header {
-  min-height: 100px;
+
   background: $c-gray;
-  padding: 20px 40px 10px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+
   @media (max-width: 768px) {
     min-height: 60px;
     padding: 10px 20px;
   }
 
   &__icon {
-    min-width: 123px;
-    min-height: 40px;
+    width: 123px;
+    height: 40px;
     background: url("../images/NAMU.svg") center no-repeat;
   }
 
@@ -27,17 +29,77 @@
   &__menu {
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    @media (min-width: 1200px) {
-      display: none;
-    }
-
+    gap: 6px;
+  
     &-rectengle {
       min-width: 25px;
       min-height: 2px;
       background-color: $wh-color;
     }
 
+    @media (min-width: 1200px) {
+      display: none;
+    }
+
+  }
+
+  &__burger {
+    transition: ease 0.5s;
+    font-family: "Raleway", sans-serif;
+    width: 50%;
+    opacity: 95%;
+    border-radius: 0 0 0 20px;
+    position: absolute;
+    border-bottom: 2px solid $t-color;
+    border-left: 2px solid $t-color;
+    display: none;
+    z-index: 3;
+    right: 0;
+    top: 0;
+    background-color: $r-color;
+    padding: 20px;
+    @media (max-width:500px) {
+      width: 40%;
+    }
+  }
+  &__burger-X {
+    position: absolute;
+    right: 100px;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: url(../images/Х.png) center no-repeat;
+    @media (max-width:500px) {
+      right: 50px;
+      
+    }
+  }
+  &__burger-ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__burger-li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__burger-link {
+    margin-top: 40%;
+    line-height: 20px;
+    text-decoration: none;
+    color: $wh-color;
+    transition: ease 0.5s;
+    &:hover {
+      transition: ease 0.5s;
+      transform: scale(0.9);
+      color: rgba($color: #fff, $alpha: 0.3);
+    }
+    @media (max-width:500px) {
+      line-height: 20px;
+      margin-top: 45%;
+    }
   }
 
   &__language {
@@ -46,9 +108,10 @@
       color: $wh-color;
       border-color: $c-gray;
       background-color: $c-gray;
-      @media screen and(max-width: 400px) {
+      @media (max-width: 500px) {
         display: none;
       }
+
     }
 
   }
