@@ -1,0 +1,195 @@
+.nearest {
+  padding: 100px 0;
+  width: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  @include tablet {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  @include desktop {
+    padding: 0 0 300px;
+  }
+
+  &__art {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      transform: translateX(30%);
+
+      &--oposit {
+        @include tablet {
+          transform: translateX(-30%);
+        }
+      }
+    }
+
+    @include desktop {
+      padding-bottom: 90px;
+      transform: translateX(60%);
+      &--oposit {
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__main-title {
+    width: 280px;
+    padding: 60px 0;
+
+    font-size: 36px;
+    line-height: 125%;
+    font-family: $secondary-font;
+
+    @include tablet {
+      width: fit-content;
+    }
+  }
+
+  &__when {
+    @include standart-text;
+    color: $orange;
+    padding-bottom: 5px;
+    display: flex;
+  }
+
+  &__date::after {
+    content: " серпня, ";
+    font-family: inherit;
+  }
+
+  &__event {
+    padding-left: 20px;
+    color: $dark;
+    &--art {
+      display: none;
+    }
+    @include tablet {
+      &--art {
+        display: block;
+      }
+      &--when {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    @include article-title;
+    width: 280px;
+    padding-bottom: 30px;
+
+    @include tablet {
+      width: 370px;
+    }
+
+    @include desktop {
+      width: 460px;
+    }
+  }
+
+  &__about {
+    width: 280px;
+    padding-bottom: 40px;
+
+    @include tablet {
+      width: 270px;
+      padding-bottom: 150px;
+    }
+
+    @include desktop {
+      width: 370px;
+      padding-bottom: 50px;
+    }
+
+    &--oposit {
+      align-self: flex-end;
+
+      @include tablet {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &__button {
+    background-color: $orange;
+    color: $light;
+    @include button;
+
+  }
+
+  &__calendar {
+    align-self: center;
+    font-family: $primary-font;
+    color: $dark;
+    width: 130px;
+    text-align: center;
+    padding-bottom: 11px;
+
+    &-container {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include desktop {
+      padding: 0;
+
+      &-container {
+        align-self: flex-end;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__holder {
+    padding-bottom: 60px;
+
+    @include desktop {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-end;
+      height: $bckg-text-height;
+      padding: 20px 0;
+
+      &--oposit {
+        justify-content: flex-start;
+      }
+
+      &-text {
+        display: block;
+        height: calc($bckg-text-height + 40px);
+        max-width: 590px;
+        font-family: $secondary-font;
+        font-size: 140px;
+        line-height: 144px;
+        text-transform: uppercase;
+        opacity: 0.3;
+        color: $light;
+        -webkit-text-stroke: 1px $gray;
+        position: absolute;
+
+        &--left {
+          left: 55px;
+        }
+
+        &--right {
+          right: 55px;
+        }
+        
+      }
+    }
+
+  }
+}
