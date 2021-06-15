@@ -9,3 +9,9 @@ manu.addEventListener('click', () => {
   manu.classList.toggle('header__manu-opener--active');
   language.classList.toggle('header__lang--active');
 });
+
+window.addEventListener('scroll', () => {
+  navigation.classList.remove('nav--active');
+  manu.classList.remove('header__manu-opener--active');
+  language.classList.remove('header__lang--active');
+});

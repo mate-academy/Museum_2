@@ -1,21 +1,42 @@
 .exhb {
-  width: 100%;
+  width: 320px;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-self: center;
+  margin: 0 auto;
 
   @include tablet {
-    padding: 115px 0 120px;
+    margin: 0;
+    width: 100%;
+    padding-top: 115px;
     align-items: center;
   }
 
   @include desktop {
-    padding: 160px 0 260px;
+    padding: 0 0 300px;
   }
 
   &__art {
     display: flex;
     flex-direction: column;
+    @include tablet {
+      transform: translateX(30%);
+
+      &--oposit {
+        @include tablet {
+          transform: translateX(-30%);
+        }
+      }
+    }
+
+    @include desktop {
+      padding-bottom: 90px;
+      transform: translateX(60%);
+      &--oposit {
+        transform: translateX(-50%);
+      }
+    }
   }
 
   &__main-title {
@@ -42,6 +63,7 @@
 
       @include tablet {
         font-size: 48px;
+        line-height: 50px;
         padding-bottom: 20px;
       }
     }
@@ -51,6 +73,14 @@
     @include article-title;
     width: 240px;
     padding-bottom: 30px;
+
+    @include tablet {
+      width: 370px;
+    }
+
+    @include desktop {
+      width: 460px;
+    }
   }
 
   &__about {
@@ -58,8 +88,33 @@
     min-height: 120px;
     padding-bottom: 90px;
 
-    &--right {
+    @include tablet {
+      width: 270px;
+      padding-bottom: 150px;
+    }
+
+    @include desktop {
+      width: 370px;
+      padding-bottom: 50px;
+    }
+
+    &--oposit {
       align-self: flex-end;
+
+      @include tablet {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &__buy-button {
+    background-color: $orange;
+    color: $light;
+    @include button;
+    display: none;
+
+    @include desktop {
+      display: block;
     }
   }
 
@@ -70,5 +125,114 @@
     width: 130px;
     text-align: center;
     padding-bottom: 11px;
+
+    &-container {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include desktop {
+      padding: 0;
+
+      &-container {
+        align-self: flex-end;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__holder {
+
+    @include desktop {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-end;
+      height: $bckg-text-height;
+      padding: 20px 0;
+
+      &--oposit {
+        justify-content: flex-start;
+      }
+
+      &-text {
+        display: block;
+        height: calc($bckg-text-height + 40px);
+        max-width: 590px;
+        font-family: $secondary-font;
+        font-size: 140px;
+        line-height: 144px;
+        text-transform: uppercase;
+        opacity: 0.3;
+        color: $light;
+        -webkit-text-stroke: 1px $gray;
+        position: absolute;
+
+        &--left {
+          left: 55px;
+        }
+
+        &--right {
+          right: 55px;
+        }
+        
+      }
+
+      &--1::before {
+        content: "";
+
+        background-image: url(../images/art1.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        width: 545px;
+        height: 817px;
+        transform: rotate(12deg);
+        z-index: 1;
+        position: absolute;
+        left: -30px;
+        top: 45px;
+      }
+
+      &--2::before {
+        content: "";
+
+        background-image: url(../images/art2.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        width: 710px;
+        height: 532px;
+        transform: rotate(10deg);
+        position: absolute;
+        right: -100px;
+        top: 905px;
+        z-index: 1;
+      }
+
+      &--3::before {
+        content: "";
+
+        background-image: url(../images/art3.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        width: 584px;
+        height: 499px;
+        position: absolute;
+        left: 0;
+        top: 1432px;
+        z-index: 1;
+      }
+    }
+
   }
 }
