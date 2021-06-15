@@ -1,12 +1,74 @@
-.exhibitions {
+.exhb {
   width: 100%;
-  padding: 60px 20px 80px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   @include tablet {
-    padding: 115px 100px 120px;
+    padding: 115px 0 120px;
+    align-items: center;
   }
 
   @include desktop {
-    padding: 160px 255px 260px;
+    padding: 160px 0 260px;
+  }
+
+  &__art {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main-title {
+    width: 280px;
+    padding: 60px 0;
+
+    font-size: 36px;
+    line-height: 125%;
+    font-family: $secondary-font;
+
+    @include tablet {
+      width: fit-content;
+    }
+  }
+
+  &__date {
+    @include standart-text;
+    color: $orange;
+    padding-bottom: 5px;
+
+    &--nearest {
+      font-family: $secondary-font;
+      padding-bottom: 10px;
+
+      @include tablet {
+        font-size: 48px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  &__title {
+    @include article-title;
+    width: 240px;
+    padding-bottom: 30px;
+  }
+
+  &__about {
+    width: 140px;
+    min-height: 120px;
+    padding-bottom: 90px;
+
+    &--right {
+      align-self: flex-end;
+    }
+  }
+
+  &__archive {
+    align-self: center;
+    font-family: $primary-font;
+    color: $dark;
+    width: 130px;
+    text-align: center;
+    padding-bottom: 11px;
   }
 }
