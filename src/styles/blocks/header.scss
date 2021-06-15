@@ -2,17 +2,13 @@
 @import "../utils/vars";
 
 .header {
-
-  background: $c-gray;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  
-
-  @media (max-width: 768px) {
-    min-height: 60px;
-    padding: 10px 20px;
+ 
+  &__container {
+    padding: 20px;
+    background: $c-gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__icon {
@@ -27,11 +23,31 @@
   }
 
   &__menu {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    
+    transform: rotate(0deg);
+    z-index: 3;
+    position: absolute;
+    right: 100px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: url(../images/Без.png);
+    @media (max-width:500px) {
+      right: 30px;
+      top: 20px;
+      transition: ease 0.5s;
+    }
+    
+    @media (max-width:1200px) {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: ease 0.5s;
+    }
   
     &-rectengle {
+      display: none;
       min-width: 25px;
       min-height: 2px;
       background-color: $wh-color;
@@ -39,67 +55,9 @@
 
     @media (min-width: 1200px) {
       display: none;
-    }
-
-  }
-
-  &__burger {
-    transition: ease 0.5s;
-    font-family: "Raleway", sans-serif;
-    width: 50%;
-    opacity: 95%;
-    border-radius: 0 0 0 20px;
-    position: absolute;
-    border-bottom: 2px solid $t-color;
-    border-left: 2px solid $t-color;
-    display: none;
-    z-index: 3;
-    right: 0;
-    top: 0;
-    background-color: $r-color;
-    padding: 20px;
-    @media (max-width:500px) {
-      width: 40%;
-    }
-  }
-  &__burger-X {
-    position: absolute;
-    right: 100px;
-    top: 30px;
-    width: 20px;
-    height: 20px;
-    background: url(../images/Х.png) center no-repeat;
-    @media (max-width:500px) {
-      right: 50px;
-      
-    }
-  }
-  &__burger-ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__burger-li {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__burger-link {
-    margin-top: 40%;
-    line-height: 20px;
-    text-decoration: none;
-    color: $wh-color;
-    transition: ease 0.5s;
-    &:hover {
       transition: ease 0.5s;
-      transform: scale(0.9);
-      color: rgba($color: #fff, $alpha: 0.3);
     }
-    @media (max-width:500px) {
-      line-height: 20px;
-      margin-top: 45%;
-    }
+
   }
 
   &__language {
@@ -110,10 +68,80 @@
       background-color: $c-gray;
       @media (max-width: 500px) {
         display: none;
+        transition: ease 0.5s;
       }
 
     }
 
   }
 
+}
+
+.burger {
+  transition: ease 0.5s;
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  border-radius: 0 0 30px 30px;
+  position: absolute;
+  border-bottom: 2px solid $t-color;
+  border-left: 2px solid $t-color;
+  box-sizing: border-box;
+  z-index: 3;
+  transform: translateY(-100%);
+  background-color: $r-color;
+
+  &--active {
+    height: 100%;
+    transform: translateY(0%);
+  }
+
+  &-close {
+    position: absolute;
+    right: 100px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    background: url(../images/Х.png) center no-repeat;
+    @media (max-width:500px) {
+      right: 30px;
+      top: 20px;
+      transition: ease 0.5s;
+    }
+
+  }
+  &-ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-link {
+    font-size: 25px;
+    margin: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 20px;
+    text-decoration: none;
+    color: $wh-color;
+    transition: ease 0.5s;
+
+    &:hover {
+      transition: ease 0.5s;
+      transform: scale(0.9);
+      color: rgba($color: #fff, $alpha: 0.3);
+    }
+
+    @media (max-width:500px) {
+      line-height: 20px;
+      transition: ease 0.5s;
+    }
+
+  }
+  
 }

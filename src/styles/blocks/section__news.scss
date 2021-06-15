@@ -1,5 +1,6 @@
 
 .news {
+  position: relative;
   margin: 30px;
 
   @media (max-width: 768px) {
@@ -35,7 +36,13 @@
 
   &__info-block_1 {
     display: flex;
+    cursor: pointer;
     flex-direction: column;
+    transition: ease 0.5s;
+    &:hover {
+      transition: ease 0.5s;
+      transform: scale(1.05);
+    }
   }
 
   &__img-1 {
@@ -68,8 +75,14 @@
   }
 
   &__info-block_2 {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
+    transition: ease 0.5s;
+    &:hover {
+      transition: ease 0.5s;
+      transform: scale(1.05);
+    }
     @media (max-width:500px) {
       display: none;
     }
@@ -107,7 +120,12 @@
   &__info-block_3 {
     display: flex;
     flex-direction: column;
-
+    transition: ease 0.5s;
+    cursor: pointer;
+    &:hover {
+      transition: ease 0.5s;
+      transform: scale(1.05);
+    }
     @media (max-width: 768px) {
       display: none;
     }
@@ -132,6 +150,7 @@
 
     @media (max-width:768px) {
       font-size: 18px;
+      max-width: 200px;
     }
 
   }
@@ -149,6 +168,10 @@
 
     @media (max-width:500px) {
       display: flex;
+      position: absolute;
+      left: 30%;
+      right: 30%;
+      top: 85%;
       justify-content: center;
     }
   }
@@ -156,29 +179,27 @@
     content: "";
     position: relative;
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    left: -1px;
-    bottom: 1px;
+    width: 12px;
+    height: 12px;
+    left: 0;
+    bottom: 0;
     background-color: rgba($color: #747474, $alpha: 0.8);
     border-radius: 15px;
-    border: 2px solid rgba($color: #747474, $alpha: 0.8);
   }
 
   &__input:checked::after {
     content: "";
-    border: 2px solid $c-gray;
     position: relative;
     display: inline-block;
-    width: 10px;
-    left: -1px;
+    width: 12px;
+    height: 12px;
+    left: 0;
+    bottom: 0;
     border-radius: 15px;
-    height: 10px;
     background-color: $c-gray;
   }
 
   &__all-container {
-    position: relative;
     margin-top: 50px;
     margin-bottom: 10px;
     display: flex;
@@ -192,12 +213,12 @@
       padding-bottom: 10px;
     }
     @media (max-width: 550px) {
-      margin: 50px 26%;
+      margin: 100px 26%;
       transition: ease 0.5s;
     }
   
     @media (max-width: 350px) {
-      margin: 10px 15%;
+      margin: 100px 15%;
       transition: ease 0.5s;
     }
 

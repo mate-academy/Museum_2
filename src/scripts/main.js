@@ -3,57 +3,74 @@
 
 const logo = document.getElementById('logo');
 const burger = document.getElementById('burger');
-const close = document.getElementById('close');
-const header = document.getElementById('link-1');
-const exhibitions = document.getElementById('link-2');
 const events = document.getElementById('link-3');
 const visit = document.getElementById('link-4');
 const news = document.getElementById('link-5');
 const dijest = document.getElementById('link-6');
 const info = document.getElementById('link-7');
 
-logo.onclick = function changeColor() {
-  burger.style.display = 'inline-block';
-  logo.style.display = 'none';
+logo.addEventListener('click', () => {
+  burger.classList.toggle('burger--active');
+  logo.classList.toggle('burger-close');
+});
+
+events.addEventListener('click', () => {
+  burger.classList.toggle('burger--active');
+  logo.classList.toggle('burger-close');
+});
+
+visit.addEventListener('click', () => {
+  burger.classList.toggle('burger--active');
+  logo.classList.toggle('burger-close');
+});
+
+news.addEventListener('click', () => {
+  burger.classList.toggle('burger--active');
+  logo.classList.toggle('burger-close');
+});
+
+dijest.addEventListener('click', () => {
+  burger.classList.toggle('burger--active');
+  logo.classList.toggle('burger-close');
+});
+
+info.addEventListener('click', () => {
+  burger.classList.toggle('burger--active');
+  logo.classList.toggle('burger-close');
+});
+
+const input1 = document.getElementById('input__radio-1');
+const input2 = document.getElementById('input__radio-2');
+const input3 = document.getElementById('input__radio-3');
+const newsBlock1 = document.getElementById('news__block-1');
+const newsBlock2 = document.getElementById('news__block-2');
+const newsBlock3 = document.getElementById('news__block-3');
+const mediaQuery1 = window.matchMedia('(max-width: 500px)');
+
+input2.onclick = function ChangeDisplay() {
+  if (mediaQuery1) {
+    newsBlock1.style.display = 'none';
+    newsBlock2.style.display = 'inline-block';
+    newsBlock3.style.display = 'none';
+  }
 };
 
-close.onclick = function changeColor() {
-  burger.style.display = 'none';
-  logo.style.display = 'flex';
-  burger.style.transition = '1s';
+input1.onclick = function ChangeDisplay() {
+  newsBlock1.style.display = 'inline-block';
+  newsBlock2.style.display = 'none';
+  newsBlock3.style.display = 'none';
 };
 
-header.onclick = function changeColor() {
-  burger.style.display = 'none';
-  logo.style.display = 'flex';
+input3.onclick = function ChangeDisplay() {
+  newsBlock1.style.display = 'none';
+  newsBlock2.style.display = 'none';
+  newsBlock3.style.display = 'inline-block';
 };
 
-exhibitions.onclick = function changeColor() {
-  burger.style.display = 'none';
-  logo.style.display = 'flex';
-};
+const input = document.querySelector('.subscribe__button-submit');
 
-events.onclick = function changeColor() {
-  burger.style.display = 'none';
-  logo.style.display = 'flex';
-};
-
-visit.onclick = function changeColor() {
-  burger.style.display = 'none';
-  logo.style.display = 'flex';
-};
-
-news.onclick = function changeColor() {
-  burger.style.display = 'none';
-  logo.style.display = 'flex';
-};
-
-dijest.onclick = function changeColor() {
-  burger.style.display = 'none';
-  logo.style.display = 'flex';
-};
-
-info.onclick = function changeColor() {
-  burger.style.display = 'none';
-  logo.style.display = 'flex';
-};
+input.addEventListener('submit', () => {
+  input.forEach(inp => {
+    inp.value = '';
+  });
+});
