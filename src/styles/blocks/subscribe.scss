@@ -1,4 +1,6 @@
 .subscribe {
+  max-width: 1440px;
+  margin: 0 auto;
   background-color: #cd4d31;
   padding: 160px 225px 160px 55px;
   @media (max-width: 768px) {
@@ -36,6 +38,10 @@
 .email-form {
   position: relative;
   align-self: start;
+
+  @media (max-width: 530px) {
+    align-self: center;
+  }
   
   &__email {
     color: white;
@@ -48,6 +54,11 @@
     &::placeholder {
       color: white;
     }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus, {
+      background-color: transparent;
+    }
   }
 
   &__button {
@@ -55,21 +66,22 @@
     height: 40px;
     border: 1px solid transparent;
     border-radius: 50%;
-    position: absolute;
     bottom: -60px;
     right: -90px;
     background-color: transparent;
     transition: border 0.3s;
-    &:hover {
-      border: 1px solid white;
+    opacity: 0;
+
+    &--active {
+      opacity: 1;
+      &:hover {
+        border: 1px solid white;
+      }
     }
+
     @media (max-width: 768px) {
-      transform: translateY(50%);
       bottom: 50%;
       right: -50px;
-    }
-    @media (max-width: 530px) {
-      border-color: white;
     }
   }
 }

@@ -1,9 +1,16 @@
 .header {
+  max-width: 1440px;
+  margin: 0 auto;
   position: relative;
   background-color: #3f5252;
   padding: 0 55px;
   line-height: 150%;
   overflow: hidden;
+
+  &__info-container {
+    max-width: 1280px;
+    border: 1px solid red;
+  }
 
   @media (max-width: 768px) {
     padding: 0 40px;
@@ -93,7 +100,6 @@
 
   &__picture {
     position: absolute;
-    display: inline-block;
     bottom: 0;
     right: -55px;
     z-index: 1;
@@ -126,10 +132,10 @@
     right: 0;
     top: 0;
     z-index: 2;
-    transform: translateY(-100%);
-    transition: transform 0.3s;
+    transform: translateY(-200%);
+    transition: transform 2s;
 
-    &:target {
+    &--active {
       transform: translateY(0);
     }
   }
