@@ -52,6 +52,9 @@ input2.onclick = function ChangeDisplay() {
     newsBlock1.style.display = 'none';
     newsBlock2.style.display = 'inline-block';
     newsBlock3.style.display = 'none';
+    input2.classList.toggle('news__input--active');
+    input1.classList.remove('news__input--active');
+    input3.classList.remove('news__input--active');
   }
 };
 
@@ -59,12 +62,18 @@ input1.onclick = function ChangeDisplay() {
   newsBlock1.style.display = 'inline-block';
   newsBlock2.style.display = 'none';
   newsBlock3.style.display = 'none';
+  input1.classList.toggle('news__input--active');
+  input2.classList.remove('news__input--active');
+  input3.classList.remove('news__input--active');
 };
 
 input3.onclick = function ChangeDisplay() {
   newsBlock1.style.display = 'none';
   newsBlock2.style.display = 'none';
   newsBlock3.style.display = 'inline-block';
+  input3.classList.toggle('news__input--active');
+  input1.classList.remove('news__input--active');
+  input2.classList.toggle('news__input--active');
 };
 
 const input = document.querySelector('.subscribe__button-submit');
