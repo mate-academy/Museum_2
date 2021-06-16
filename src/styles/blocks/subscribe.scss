@@ -1,18 +1,30 @@
 .subscribe {
   background-color: $orange;
+  height: 516px;
   padding: 80px 20px;
 
   @include tablet {
     padding: 110px 100px 120px;
+    height: 532px;
   }
 
   @include desktop {
     padding: 160px 55px;
+    height: 459px;
   }
 
   &__container {
+    position: relative;
     display: flex;
     flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__title {
@@ -45,6 +57,7 @@
 
     width: 280px;
     height: 96px;
+    display: block;
 
     padding-top: 40px;
 
@@ -53,6 +66,7 @@
       height: 48px;
 
       padding-top: 30px;
+      
     }
 
     @include desktop {
@@ -65,56 +79,72 @@
   &__form {
     padding-top: 60px;
     display: flex;
+    justify-content: baseline;
+    gap: 10px;
 
     @include tablet {
-      padding-top: 80px;
+      padding-top: 66px;
     }
 
-    &-input {
-      padding-left: 10px;
-      border: none;
-      background-color: $orange;
-      width: 230px;
+    @include desktop {
+      padding: 0;
+    }
+  }
 
-      &::-webkit-input-placeholder {
-        color: $light;
-      }
+  &__label {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  &__input {
+    padding-left: 10px;
+    outline: none;
+    background-color: $orange;
+    width: 230px;
 
-      outline: none;
+    font-family: $primary-font;
+    font-size: 16px;
+    line-height: 150%;
+    color: $light;
+    border: none;
+    border-bottom: 1px solid $light;
 
-      font-family: $primary-font;
-      font-size: 16px;
-      line-height: 150%;
+    &::-webkit-input-placeholder {
       color: $light;
-
-      transition: border-bottom 0.4s;
-
-      &:hover {
-        border-bottom: 1px solid $light;
-      }
-
-      @include tablet {
-        width: 300px;
-      }
     }
 
-    &-submit {
-      width: 42px;
-      height: 42px;
-      background-color: $orange;
+    @include tablet {
+      width: 300px;
+    }
+  }
+
+  &__submit {
+    width: 42px;
+    height: 42px;
+    background-color: $orange;
+    background-image: url(../images/mail-tabl.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: transform 0.4s;
+    outline: none;
+    border: none;
+    opacity: 0;
+    transform: scale(0);
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      transform: scale(100%);
+    }
+
+    @include desktop {
       background-image: url(../images/mail.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      transition: transform 0.4s;
-      outline: none;
-      border: none;
-
-      padding-left: 10px;
-
-      &:hover {
-        transform: scale(120%);
-      }
+      width: 20px;
+      height: fit-content;
+      position: absolute;
+      bottom: 50px;
+      right: -40px;
     }
   }
 }
