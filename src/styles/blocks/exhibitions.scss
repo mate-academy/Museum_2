@@ -5,16 +5,17 @@
   flex-direction: column;
   align-self: center;
   margin: 0 auto;
+  padding: 0 20px;
 
   @include tablet {
     margin: 0;
     width: 100%;
-    padding-top: 115px;
+    padding: 0 100px 115px;
     align-items: center;
   }
 
   @include desktop {
-    padding: 0 0 300px;
+    padding: 0 55px 300px;
   }
 
   &__art {
@@ -161,7 +162,7 @@
       }
 
       &-text {
-        display: block;
+        display: none;
         height: $bckg-exhb-height;
         max-width: 590px;
         font-family: $secondary-font;
@@ -172,15 +173,18 @@
         color: $light;
         -webkit-text-stroke: 1px $gray;
         position: absolute;
-
-        &--left {
-          left: 55px;
-        }
-
-        &--right {
-          right: 55px;
-        }
         
+        @include desktop {
+          display: block;
+          
+          &--left {
+            left: 55px;
+          }
+  
+          &--right {
+            right: 55px;
+          }
+        }
       }
 
       &--1::before {

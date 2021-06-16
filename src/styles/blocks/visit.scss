@@ -1,0 +1,94 @@
+.visit {
+  margin-top: 80px;
+  background-color: $background;
+  padding: 80px 20px;
+  min-height: 584px;
+  width: 100%;
+  color: $light;
+  min-width: 320px;
+  position: relative;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include tablet {
+    min-height: 705px;
+    min-width: none;
+    &::before {
+      content: "";
+      width: 431px;
+      height: 462px;
+  
+      background-image: url(../images/visit.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+  
+      position: absolute;
+      left: -63px;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    @include desktop {
+      min-height: 800px;
+      &::before {
+        width: 745px;
+        height: 800px;
+        left: -112px;
+      }
+    }
+  }
+
+  &__title {
+    @include article-title;
+    width: 280px;
+    font-size: 48px;
+    line-height: 100%;
+    padding-bottom: 40px;
+
+    @include tablet {
+      width: 530px;
+      font-size: 72px;
+      padding-bottom: 80px;
+    }
+
+    @include desktop {
+      transform: translateX(50%);
+    }
+  }
+
+  &__about {
+    display: block;
+    width: 280px;
+    padding-bottom: 60px;
+    @include standart-text;
+
+    @include tablet {
+      width: 370px;
+      transform: translateX(50%);
+    }
+
+    @include desktop {
+      width: 470px;
+      transform: translateX(70%);
+    }
+  }
+
+  &__button {
+    @include button;
+    background-color: $orange;
+    color: $light;
+
+    @include tablet {
+
+      transform: translateX(50%);
+    }
+    @include desktop {
+      transform: translateX(85%);
+    }
+  }
+}
