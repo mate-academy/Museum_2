@@ -1,0 +1,139 @@
+.events {
+  max-width: $section-width;
+  overflow: hidden;
+  color: $c-black;
+  padding: 200px 55px 184px;
+
+  @include onPad {
+    padding: 125px 99px 120px 81px;
+  }
+  @include onMobile {
+    padding: 112px 20px 90px;
+  }
+
+  &__title {
+    margin: 0 0 63px;
+    text-align: center;
+    @include onMobile {
+      font-size: 2.25rem;
+      margin-bottom: 55px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include onPad {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info-block {
+    display: flex;
+  }
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+    color: $c-red;
+    margin-right: 30px;
+    @include onPad {
+      align-items: flex-end;
+    }
+    @include onMobile {
+      display: none;
+    }
+    
+  }
+  &__day {
+    font-size: 3.4rem;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+
+    @include onPad {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__time {
+    align-self: flex-end;
+    font-size: 1.5rem;
+  }
+
+  &__info {
+    max-width: 470px;
+  }
+
+  &__type {
+    margin-bottom: 10px;
+
+    @include onMobile {
+      &::after {
+        content: "14 серпня, 13:00";
+        padding: 0 20px;
+        color: $c-red;
+        
+      }
+    }
+  }
+
+  &__description {
+    margin: 8px 0 60px;
+  }
+  
+
+  &__photo {
+    max-width: 370px;
+    flex-shrink: 1;
+    
+    @include onPad {
+      display: none;
+    }
+  }
+
+  &__deviding-line {
+    color: $c-black;
+    position: relative;
+    margin-right: 200px;
+    margin-top: 60px;
+    text-align: right;
+
+    @include onPad {
+      text-align: center;
+      margin: auto;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      background-color: $c-black;
+      line-height: 100%;
+      height: 1px;
+      width: 70px;
+      top: 50%;
+      right: -8%;
+
+      @include onPad {
+        top: 120%;
+        right: 50%;
+        transform: translate(50%);
+        width: 170px;
+      }
+    }
+  }
+
+  &__button {
+    @include onMobile {
+      margin: 0 auto;
+    }
+  }
+}
