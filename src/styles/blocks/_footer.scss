@@ -1,31 +1,31 @@
 .footer {
+  position: relative;
   display: grid;
+  height: 1134px;
+  padding: 20px 20px 120px;
+  color: $white-text;
 
   @media (min-width: 768px) {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    height: 751px;
+    padding: 60px 100px 36px;
   }
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
     column-gap: 30px;
+    height: 548px;
+    padding: 100px 55px 60px;
   }
 
-  height: 548px;
-  padding: 160px 55px;
-
-  // @media (max-width: 1024px) {
-
-  // }
-
   &__section {
-    color: #f1f5f4;
-    // background-color: yellowgreen;
+    // color: #f1f5f4;
   }
 
   &__title {
-    margin-bottom: 40px;
-    font-family: "Playfair Display", sans-serif;
+    margin: 60px 0 30px;
+    font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -39,7 +39,7 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 150%;
-    color: #f1f5f4;
+    // color: #f1f5f4;
 
     &:first-of-type {
       margin-right: 16px;
@@ -66,7 +66,54 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 150%;
-    // color: #F1F5F4;
+    color: $white-text;
+  }
+
+  &__down {
+    position: absolute;
+    bottom: 36px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    @media (min-width: 1024px) {
+      bottom: 60px;
+    }
+
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
     color: #f1f5f4;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    height: 20px;
+    width: 16px;
+    transition: transform 500ms;
+
+    @media (min-width: 768px) {
+      top: 120px;
+    }
+
+    @media (min-width: 1024px) {
+      top: 160px;
+      right: 40px;
+    }
+
+    &:hover {
+      transform: scale(2);
+    }
   }
 }

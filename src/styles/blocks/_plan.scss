@@ -1,0 +1,111 @@
+.plan {
+  position: relative;
+  height: 584px;
+  padding: 80px 20px;
+  color: $white-text;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    height: 144px;
+    margin-bottom: 40px;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+  }
+
+  &__info {
+    margin-bottom: 60px;
+    height: 120px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 280px;
+    background-color: $color-red;
+    text-decoration: none;
+    color: $white-text;
+    line-height: 100%;
+  }
+
+  &__image {
+    display: none;
+  }
+
+  @include tablet {
+    height: 705px;
+    padding: 120px 100px 0;
+
+    &__title {
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 72px;
+      line-height: 100%;
+    }
+
+    &__info {
+      width: 370px;
+      align-self: flex-end;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -50px;
+      background-image: url(../images/к.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      width: 431px;
+      height: 462px;
+
+    }
+
+    &__button {
+      width: 258px;
+      margin-bottom: 170px;
+      margin-right: 110px;
+      align-self: flex-end;
+    }
+  }
+
+  @include desktop {
+    padding: 190px 0 160px 580px;
+    height: 800px;
+    &::before {
+      width: 745px;
+      height: 800px;
+      left: -100px;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 96px;
+      line-height: 100%;
+      margin-bottom: 60px;
+      height: 200px;
+      width: 700px;
+    }
+
+    &__info {
+      margin-bottom: 60px;
+      align-self: center;
+    }
+
+    &__button {
+      align-self: center;
+    }
+
+  }
+}
