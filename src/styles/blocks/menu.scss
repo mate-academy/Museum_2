@@ -1,15 +1,13 @@
 .menu {
-  margin: 0 auto;
-  max-width: 1440px;
+  max-width: $section-width;
   position: relative;
-  background-color: #3f5252;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   height: 80px;
   padding: 30px 55px;
 
-  @media (max-width: 530px) {
+  @include onMobile {
     padding: 20px;
   }
 
@@ -22,7 +20,7 @@
     justify-content: space-between;
     gap: 40px;
 
-    @media (max-width: 530px) {
+    @include onMobile {
       flex-direction: row-reverse;
     }
   }
@@ -32,12 +30,12 @@
     background-color: transparent;
     border: 1px solid transparent;
     text-transform: uppercase;
+    transition: background-color 0.3s, opacity 0.3s;
     &:hover {
-      background-color: #fff;
-      border-radius: 5px;
+      background-color: transparent;
     }
-    
-    @media (max-width: 530px) {
+        
+    @include onMobile {
       opacity: 0;
     }
 

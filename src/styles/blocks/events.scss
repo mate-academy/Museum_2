@@ -1,22 +1,20 @@
 .events {
-  max-width: 1440px;
-  margin: 0 auto;
+  max-width: $section-width;
   overflow: hidden;
-  color: #1c1b29;
+  color: $c-black;
   padding: 200px 55px 184px;
 
-  @media (max-width: 768px) {
+  @include onPad {
     padding: 125px 99px 120px 81px;
-
-    @media (max-width: 530px) {
-      padding: 112px 20px 90px;
-    }
+  }
+  @include onMobile {
+    padding: 112px 20px 90px;
   }
 
   &__title {
     margin: 0 0 63px;
     text-align: center;
-    @media (max-width: 530px) {
+    @include onMobile {
       font-size: 2.25rem;
       margin-bottom: 55px;
     }
@@ -27,7 +25,7 @@
     flex-direction: column;
     gap: 70px;
 
-    @media (max-width: 768px) {
+    @include onPad {
       margin-bottom: 60px;
     }
   }
@@ -45,12 +43,12 @@
   &__date {
     display: flex;
     flex-direction: column;
-    color: #cd4d31;
+    color: $c-red;
     margin-right: 30px;
-    @media (max-width: 768px) {
+    @include onPad {
       align-items: flex-end;
     }
-    @media (max-width: 530px) {
+    @include onMobile {
       display: none;
     }
     
@@ -60,7 +58,7 @@
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
 
-    @media (max-width: 768px) {
+    @include onPad {
       font-size: 2.25rem;
     }
   }
@@ -77,11 +75,11 @@
   &__type {
     margin-bottom: 10px;
 
-    @media (max-width: 530px) {
+    @include onMobile {
       &::after {
         content: "14 серпня, 13:00";
         padding: 0 20px;
-        color: #cd4d31;
+        color: $c-red;
         
       }
     }
@@ -96,19 +94,19 @@
     max-width: 370px;
     flex-shrink: 1;
     
-    @media (max-width: 768px) {
+    @include onPad {
       display: none;
     }
   }
 
   &__deviding-line {
-    color: #1c1b29;
+    color: $c-black;
     position: relative;
     margin-right: 200px;
     margin-top: 60px;
     text-align: right;
 
-    @media (max-width: 768px) {
+    @include onPad {
       text-align: center;
       margin: auto;
     }
@@ -117,14 +115,14 @@
       position: absolute;
       content: "";
       display: block;
-      background-color: #1c1b29;
+      background-color: $c-black;
       line-height: 100%;
       height: 1px;
       width: 70px;
       top: 50%;
       right: -8%;
 
-      @media (max-width: 768px) {
+      @include onPad {
         top: 120%;
         right: 50%;
         transform: translate(50%);
@@ -134,7 +132,7 @@
   }
 
   &__button {
-    @media (max-width: 530px) {
+    @include onMobile {
       margin: 0 auto;
     }
   }

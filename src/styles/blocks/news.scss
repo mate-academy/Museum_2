@@ -1,25 +1,24 @@
 .news {
-  max-width: 1440px;
-  margin: 0 auto;
+  max-width: $section-width;
   overflow: hidden;
-  color: #1c1b29;
+  color: $c-black;
   padding: 120px 55px 184px;
 
-  @media (max-width: 768px) {
+  @include onPad {
     padding: 115px 99px 130px;
   }
 
-  @media (max-width: 530px) {
+  @mixin onMobile {
     padding: 80px 20px 91px;
   }
 
   &__title {
     margin-left: 255px;
     margin-bottom: 75px;
-    @media (max-width: 768px) {
+    @include onPad {
       margin-left: 0;
     }
-    @media (max-width: 530px) {
+    @mixin onMobile {
       margin-bottom: 60px;
     }
   }
@@ -27,15 +26,14 @@
   &__main {
     display: flex;
     justify-content: space-between;
-    gap: 50px;
+    gap: 80px;
     padding-bottom: 104px;
 
-    @media (max-width: 768px) {
+    @include onPad {
       gap: 30px;
-      justify-content: center;
     }
 
-    @media (max-width: 530px) {
+    @mixin onMobile {
       padding-bottom: 60px;
     }
   }
@@ -45,12 +43,13 @@
     flex-direction: column;
     flex-basis: 370px;
 
-    @media (max-width: 768px) {
+    @include onPad {
+
       &:last-child {
         display: none;
       }
     }
-    @media (max-width: 530px) {
+    @mixin onMobile {
       &:nth-child(n+2) {
         display: none;
       }
@@ -61,11 +60,11 @@
     max-width: 370px;
     margin-bottom: 30px;
 
-    @media (max-width: 768px) {
+    @include onPad {
       max-width: 270px;
     }
 
-    @media (max-width: 530px) {
+    @mixin onMobile {
       max-width: 280px;
       align-self: center;
     }
@@ -89,13 +88,13 @@
   }
 
   &__deviding-line {
-    color: #1c1b29;
+    color: $c-black;
     position: relative;
     margin-right: 200px;
     margin-top: 60px;
     text-align: right;
   
-    @media (max-width: 768px) {
+    @include onPad {
       text-align: center;
       margin: auto;
     }
@@ -105,14 +104,14 @@
       position: absolute;
       content: "";
       display: block;
-      background-color: #1c1b29;
+      background-color: $c-black;
       line-height: 100%;
       height: 1px;
       width: 70px;
       top: 50%;
       right: -8%;
   
-      @media (max-width: 768px) {
+      @include onPad {
         top: 120%;
         right: 50%;
         transform: translate(50%);

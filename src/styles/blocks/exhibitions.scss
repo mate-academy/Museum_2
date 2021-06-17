@@ -1,18 +1,16 @@
 .exhibitions {
-  max-width: 1440px;
-  margin: 0 auto;
-  color: #1c1b29;
-  
+  max-width: $section-width;
+  color: $c-black;
 
   &__title {
     margin-top: 160px;
     text-align: center;
 
-    @media (max-width: 768px) {
+    @include onPad {
       margin-top: 115px;
     }
 
-    @media (max-width: 530px) {
+    @include onMobile {
       padding: 0 20px ;
       text-align: start;
     }
@@ -26,7 +24,7 @@
     overflow: hidden;
     align-items: center;
 
-    @media (max-width: 768px) {
+    @include onPad {
       padding: 55px 100px 140px;
       display: flex;
       flex-direction: column;
@@ -34,7 +32,7 @@
       gap: 150px;
     }
 
-    @media (max-width: 530px) {
+    @include onMobile {
       padding: 60px 20px 100px;
       text-align: start;
       gap: 90px;
@@ -45,14 +43,14 @@
   &__duration {
     margin-bottom: 20px;
     margin-left: -15%;
-    color: #cd4d31;
+    color: $c-red;
 
-    @media (max-width: 768px) {
+    @include onPad {
       margin: 0 0 20px -80%;
       text-align: center;
     }
 
-    @media (max-width: 530px) {
+    @include onMobile {
       font-size: 1.5rem;
       margin: 0 0 10px;
       text-align: start;
@@ -61,24 +59,24 @@
   }
 
   &__date {
-    color: #cd4d31;
+    color: $c-red;
   }
 
   &__description {
     max-width: 370px;
     margin: 20px 0 50px;
 
-    @media (max-width: 768px) {
+    @include onPad {
       margin: 20px 0 0;
     }
 
-    @media (max-width: 530px) {
+    @include onMobile {
       max-width: 170px;
     }
   }
 
   &__button {
-    @media (max-width: 768px) {
+    @include onPad {
       display: none;
     }
   }
@@ -86,13 +84,13 @@
   &__angels {
     margin-bottom: 92px;
 
-    @media (max-width: 768px) {
+    @include onPad {
       margin-bottom: 0;
       max-width: 370px;
       align-self: flex-end;
     }
 
-    @media (max-width: 530px) {
+    @include onMobile {
       margin: 0;
       align-self: start;
     }
@@ -101,12 +99,12 @@
   &__art {
     justify-self: flex-end;
 
-    @media (max-width: 530px) {
+    @include onMobile {
       align-self: flex-end;
     }
 
     & .exhibitions__description {
-      @media (max-width: 530px) {
+      @include onMobile {
         margin-left: 40%;
       }
     }
@@ -115,7 +113,7 @@
   &__ancient-art {
     align-self: flex-end;
 
-    @media (max-width: 530px) {
+    @include onMobile {
       align-self: flex-start;
     }
   }
@@ -127,7 +125,6 @@
     text-transform: uppercase;
     font-family: "Playfair Display", serif;
     color: rgba(63,82,82, 0.3);
-
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
     font-weight: bold;
@@ -136,7 +133,7 @@
     &:last-child {
       margin-left: 40px;
     }
-    @media (max-width: 768px) {
+    @include onPad {
       display: none;
     }
   }
@@ -157,13 +154,13 @@
   }
 
   &__deviding-line {
-    color: #1c1b29;
+    color: $c-black;
     position: relative;
     margin-right: 200px;
     margin-top: 60px;
     text-align: right;
   
-    @media (max-width: 768px) {
+    @include onPad {
       text-align: center;
       margin: auto;
     }
@@ -173,14 +170,14 @@
       position: absolute;
       content: "";
       display: block;
-      background-color: #1c1b29;
+      background-color: $c-black;
       line-height: 100%;
       height: 1px;
       width: 70px;
       top: 50%;
       right: -8%;
   
-      @media (max-width: 768px) {
+      @include onPad {
         top: 120%;
         right: 50%;
         transform: translate(50%);
