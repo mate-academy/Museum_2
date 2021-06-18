@@ -1,0 +1,137 @@
+.footer {
+  position: relative;
+  background-color: $background;
+  color: $light;
+  @include standart-text;
+
+  &__container {
+    width: 320px;
+    padding: 80px 20px 38px;
+    margin: 0 auto;
+
+    @include tablet {
+      width: 768px;
+      padding: 120px 100px 35px;
+    }
+
+    @include desktop {
+      width: 1280px;
+      padding: 160px 55px 60px;
+    }
+  }
+
+  &__wraper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-basis: 240px;
+      gap: 60px;
+    }
+
+    @include desktop {
+      gap: 0;
+    }
+  }
+
+  &__block {
+    width: 240px;
+
+    &--membership {
+      order: 1;
+      @include desktop {
+        order: 0;
+      }
+    }
+  }
+
+  &__title {
+    @include article-title;
+    color: inherit;
+    padding-bottom: 40px;
+
+    @include tablet {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    transition: translate 0.4s;
+
+    &--second {
+      padding-left: 32px;
+    }
+
+    &:hover {
+      transform: translate(-5px);
+    }
+  }
+
+  &__media {
+    display: flex;
+    padding: 20px 0 0;
+    gap: 20px;
+    align-items: center;
+
+    &-link {
+      transition: scale 0.4s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    @include desktop {
+      padding: 35px 0 0 10px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    height: 20px;
+    width: 16px;
+    object-fit: contain;
+    top: 75px;
+    right: 7px;
+
+    @include tablet {
+      top: 110px;
+      right: 5px;
+    }
+
+    @include desktop {
+      top: 160px;
+      right: 40px;
+    }
+  }
+
+  &__copyright {
+    padding-top: 40px;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0;
+
+    font-weight: 200;
+    font-size: 14px;
+
+    @include tablet {
+      padding-top: 100px;
+    }
+
+    @include desktop {
+      padding-top: 77px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+    }
+  }
+
+  &__timetable {
+    display: flex;
+    gap: 16px;
+  }
+}

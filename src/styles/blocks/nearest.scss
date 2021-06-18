@@ -1,0 +1,204 @@
+.nearest {
+  width: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+
+  @include tablet {
+    padding: 0 100px 120px;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  @include desktop {
+    padding: 0 55px 180px;
+  }
+
+  &__art {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main-title {
+    width: 280px;
+    padding: 60px 0;
+
+    font-size: 36px;
+    line-height: 125%;
+    font-family: $secondary-font;
+
+    @include tablet {
+      width: fit-content;
+    }
+  }
+
+  &__when {
+    @include standart-text;
+    color: $orange;
+    padding-bottom: 5px;
+    display: flex;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-end;
+      padding-right: 30px;
+    }
+  }
+
+  &__date {
+
+    @include tablet {
+      font-family: $secondary-font;
+      font-size: 36px;
+      color: transparent;
+      -webkit-text-stroke: 1px $orange;
+      padding-bottom: 10px;
+    }
+
+    @include desktop {
+      font-size: 55px;
+      transform: translateX(-20px);
+    }
+    
+    &::after {
+      content: " серпня, ";
+      font-family: inherit;
+  
+      @include tablet {
+        content: ".08";
+      }
+    }
+  }
+
+  &__time {
+    @include tablet {
+      font-family: $secondary-font;
+      font-size: 24px;
+      color: $orange;
+    }
+
+    @include desktop {
+      font-size: 36px;
+    }
+
+  }
+
+  &__event {
+    padding-left: 20px;
+    color: $dark;
+    &--art {
+      display: none;
+    }
+    @include tablet {
+      &--art {
+        padding: 0 0 10px;
+        display: block;
+        color: $gray;
+      }
+      &--when {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    @include article-title;
+    width: 280px;
+    padding-bottom: 30px;
+
+    @include tablet {
+      width: 470px;
+    }
+  }
+
+  &__about {
+    width: 280px;
+    padding-bottom: 40px;
+
+    @include tablet {
+      width: 470px;
+    }
+
+    @include desktop {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__button {
+    background-color: $orange;
+    color: $light;
+    @include button;
+  }
+
+  &__photo {
+    display: none;
+
+    @include desktop {
+      display: block;
+      width: 370px;
+      height: 475px;
+      padding: 20px 0;
+      object-fit: cover;
+
+      &--right {
+        padding-left: 60px;
+      }
+
+      &--left {
+        padding-right: 60px;
+      }
+    }
+  }
+
+  &__holder {
+    padding-bottom: 60px;
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+    }
+  }
+  
+  &__container {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  &__calendar {
+    align-self: center;
+    font-family: $primary-font;
+    color: $dark;
+    width: 130px;
+    text-align: center;
+    padding-bottom: 11px;
+
+    &-container {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include desktop {
+      padding: 0;
+
+      &-container {
+        align-self: flex-end;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

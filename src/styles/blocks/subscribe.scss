@@ -1,0 +1,150 @@
+.subscribe {
+  background-color: $orange;
+  height: 516px;
+  padding: 80px 20px;
+
+  @include tablet {
+    padding: 110px 100px 120px;
+    height: 532px;
+  }
+
+  @include desktop {
+    padding: 160px 55px;
+    height: 459px;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    font-family: $secondary-font;
+    line-height: 120%;
+    color: $light;
+
+    width: 280px;
+    height: 72px;
+
+    font-size: 36px;
+  
+    @include tablet {
+      width: 570px;
+      height: 116px;
+
+      font-size: 48px;
+    }
+    @include desktop {
+      width: 670px;
+      height: 50px;
+    }
+  }
+
+  &__about {
+    font-family: $primary-font;
+    font-size: 16px;
+    line-height: 150%;
+    color: $light;
+
+    width: 280px;
+    height: 96px;
+    display: block;
+
+    padding-top: 40px;
+
+    @include tablet {
+      width: 570px;
+      height: 48px;
+
+      padding-top: 30px;
+      
+    }
+
+    @include desktop {
+      padding-top: 40px;
+      padding-left: 0;
+      padding-bottom: 160px;
+    }
+  }
+
+  &__form {
+    padding-top: 60px;
+    display: flex;
+    justify-content: baseline;
+    gap: 10px;
+
+    @include tablet {
+      padding-top: 66px;
+    }
+
+    @include desktop {
+      padding: 0;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  &__input {
+    padding-left: 10px;
+    outline: none;
+    background-color: $orange;
+    width: 230px;
+
+    font-family: $primary-font;
+    font-size: 16px;
+    line-height: 150%;
+    color: $light;
+    border: none;
+    border-bottom: 1px solid $light;
+
+    &::-webkit-input-placeholder {
+      color: $light;
+    }
+
+    @include tablet {
+      width: 300px;
+    }
+  }
+
+  &__submit {
+    width: 42px;
+    height: 42px;
+    background-color: $orange;
+    background-image: url(../images/mail-tabl.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: transform 0.4s;
+    outline: none;
+    border: none;
+    opacity: 0;
+    transform: scale(0);
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      transform: scale(100%);
+    }
+
+    @include desktop {
+      background-image: url(../images/mail.png);
+      width: 20px;
+      height: fit-content;
+      position: absolute;
+      bottom: 50px;
+      right: -40px;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+
+  @include tablet {
+    padding: 115px 100px 120px;
+  }
+
+  @include desktop {
+    padding: 120px 55px 190px;
+  }
+
+  &__main-title {
+    font-size: 36px;
+    line-height: 125%;
+    font-family: $secondary-font;
+    padding-bottom: 60px;
+
+    @include tablet {
+      width: fit-content;
+      font-size: 48px;
+      line-height: 120%;
+      padding-bottom: 75px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  &__art {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    padding-bottom: 21px;
+
+    &--2,
+    &--3 {
+      display: none;
+    }
+
+    @include tablet {
+      width: 270px;
+      padding-bottom: 70px;
+
+      &--2 {
+        display: flex;
+      }
+    }
+    @include desktop {
+      padding-bottom: 100px;
+
+      &--3 {
+        display: flex;
+      }
+    }
+  }
+
+  &__photo {
+    height: 280px;
+    width: 280px;
+    object-fit: cover;
+
+    @include tablet {
+      height: 270px;
+      width: 270px;
+    }
+  }
+
+  &__date {
+    font-family: $primary-font;
+    font-size: 14px;
+    line-height: 20px;
+    color: $gray;
+  }
+
+  &__title {
+    font-family: $secondary-font;
+    font-size: 18px;
+    line-height: 150%;
+    color: $dark;
+    padding-bottom: 13px;
+
+    @include desktop {
+      font-size: 20px;
+    }
+  }
+
+  &__about {
+    @include standart-text;
+    color: $dark;
+  }
+
+  &__dots {
+    width: 48px;
+    height: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  &__all {
+    align-self: center;
+    font-family: $primary-font;
+    color: $dark;
+    width: 130px;
+    text-align: center;
+    padding-bottom: 11px;
+
+    &-container {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include desktop {
+      padding: 0;
+
+      &-container {
+        align-self: flex-end;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

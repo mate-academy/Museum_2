@@ -4,3 +4,65 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin standart-text {
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin article-title {
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+@mixin lang {
+  background-color: $background;
+  border: none;
+  font-family: $primary-font;
+  font-size: 16px;
+  color: $light;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+@mixin button {
+  width: 280px;
+  height: 60px;
+  font-size: 16px;
+  transition: background-color 0.4s;
+
+  @include tablet {
+    width: 270px;
+  }
+
+  &:hover {
+    font-weight: 700;
+
+    color: $orange;
+    background-color: $light;
+    border: 1px solid $orange;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
