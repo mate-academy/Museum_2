@@ -3,6 +3,21 @@
   flex-direction: column;
   margin-bottom: 100px;
 
+  @include onTablet {
+    width: 55%;
+    align-self: flex-end;
+    margin-bottom: 150px;
+  }
+
+  &--left-position {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      align-self: flex-start;
+    }
+  }
+
   &__title {
     margin-bottom: 30px;
     font-family: "Playfair Display", sans-serif;
@@ -21,8 +36,18 @@
     line-height: 150%;
     color: $dark-gray;
 
+    @include onTablet {
+      width: 100%;
+      align-self: flex-end;
+    }
+
     &--right-position {
       align-self: flex-end;
+
+      @include onTablet {
+
+        align-self: flex-start;
+      }
     }
 
   }

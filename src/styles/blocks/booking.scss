@@ -1,8 +1,31 @@
 .booking {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   min-width: 320px;
   height: 100vh;
   padding: 80px 20px;
   background-color: $dark-green;
+
+  @include onTablet {
+    position: relative;
+    padding: 120px 100px 170px;
+    height: 72vh;
+
+  }
+
+  &__photo {
+    display: none;
+    position: absolute;
+    max-width: 320px;
+    bottom: 0;
+    left: 0;
+
+    @include onTablet {
+      display: inline-block;
+
+    }
+  }
 
   &__title {
     margin-bottom: 40px;
@@ -12,6 +35,22 @@
     line-height: 100%;
     color: $c-gray;
 
+    @include onTablet {
+      font-size: 72px;
+      margin-bottom: 80px;
+
+    }
+
+  }
+
+  &__wrapper {
+
+    @include onTablet {
+      display: flex;
+      max-width: 370px;
+      flex-direction: column;
+      align-self: flex-end;
+    }
   }
 
   &__info {

@@ -1,12 +1,21 @@
 .header {
   min-width: 320px;
   height: 100vh;
-  padding: 30px 20px;
+  padding: 20px;
   background-color: $dark-green;
+
+  @include onTablet {
+    padding: 30px 40px 80px;
+    height: 75vh;
+  }
 
   &__content {
     display: flex;
     flex-direction: column;
+
+    @include onTablet {
+      padding: 0 60px;
+    }
   }
 
   &__date {
@@ -26,8 +35,20 @@
     line-height: 100%;
     color: $c-gray;
 
+    @include onTablet {
+      font-size: 72px;
+      width: 500px;
+    }
+
     &--last {
       margin-bottom: 30px;
+      text-align: center;
+
+      @include onTablet {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
     }
 
   }
@@ -39,6 +60,10 @@
     line-height: 150%;
     color: $c-gray;
     margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
 
   }
 
@@ -55,6 +80,10 @@
     line-height: 60px;
     transition: $trnstn300ms;
 
+    @include onTablet {
+      width: 270px;
+    }
+
     &-text {
       color: $c-gray;
       text-decoration: none;
@@ -63,6 +92,12 @@
       font-size: 16px;
       line-height: 60px;
       margin-left: 64px;
+
+      @include onTablet {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+      }
 
     }
 
@@ -74,10 +109,30 @@
 
   &__photo {
     position: absolute;
-    width: 50%;
+    max-height: 273px;
     bottom: 0;
     right: 0;
     z-index: 1;
+
+    @include onTablet {
+      display: none;
+    }
+
+  }
+
+  &__photo-tablet {
+    display: none;
+    object-fit: cover;
+    position: absolute;
+    bottom: 25%;
+    right: 0;
+    height: 420px;
+
+    @include onTablet {
+      display: block;
+
+    }
+
   }
 
 }

@@ -1,44 +1,86 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   margin-bottom: 100px;
+
+  @include onTablet {
+    margin-bottom: 120px;
+  }
 
   &__logo {
     display: block;
     background-image: url(../images/NAMU.png);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
     width: 123px;
     height: 40px;
 
   }
 
-  &__toggler {
-    display: none;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+  &__menu {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 40px;
 
-    &-label {
-      background-image: url(../images/menu.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      height: 34px;
-      width: 34px;
-      transition: 0.1s linear;
-
-    }
-
-    &:checked + &-label {
-
-      background: url(../images/cross.svg) center no-repeat;
-      background-size: contain;
-      width: 30px;
-      height: 30px;
-      transform: translateY(-4px) rotate(180deg);
+    @include onTablet {
+      flex-direction: row;
     }
   }
 
+  &__menu-icon {
+    display: block;
+    width: 25px;
+    height: 20px;
+    background-image: url(../images/menu.svg);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+
+    &--active {
+      // background-image: url(../image/cross.svg);
+    }
+  }
+
+  // &__toggler {
+  //   display: none;
+  //   position: absolute;
+  //   width: 1px;
+  //   height: 1px;
+  //   margin: -1px;
+
+  //   &-label {
+  //     background-image: url(../images/menu.svg);
+  //     background-size: contain;
+  //     background-repeat: no-repeat;
+  //     height: 34px;
+  //     width: 34px;
+  //     transition: 0.1s linear;
+
+  //   }
+
+  //   &:checked + &-label {
+
+  //     background: url(../images/cross.svg) center no-repeat;
+  //     background-size: contain;
+  //     width: 30px;
+  //     height: 30px;
+  //     transform: translateY(-4px) rotate(180deg);
+  //   }
+  // }
+
+  &__language {
+    opacity: 0;
+    background-color: #3f5252;
+    border: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: #f1f5f4;
+
+    @include onTablet {
+      opacity: 1;
+    }
+  }
 }
