@@ -1,9 +1,27 @@
 @import "utils";
 @import "typography";
 @import "./blocks/normalize";
+@import "./blocks/top-actions";
+@import "./blocks/header";
+@import "./blocks/navigation";
 @import "./blocks/plan";
 @import "./blocks/subscribe";
 @import "./blocks/footer";
+
+.page {
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 300ms;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
 
 .container {
   background-color: #3f5252;
@@ -26,5 +44,35 @@
 
   &--grey {
     background-color: $color-grey;
+  }
+
+  &--white {
+    background-color: $white-background;
+  }
+}
+
+.exposition {
+  height: 300px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 280px;
+  background-color: $color-red;
+  text-decoration: none;
+  color: $white-text;
+  line-height: 100%;
+  border: 1px solid $color-red;
+
+  &--grey {
+    background-color: $color-grey;
+    border-color: $white-text;
+  }
+
+  @include tablet {
+    width: 270px;
   }
 }
