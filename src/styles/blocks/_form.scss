@@ -1,0 +1,59 @@
+.form {
+  position: relative;
+
+  &__email {
+    color: #fff;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #fff;
+    font-size: inherit;
+    line-height: inherit;
+    outline-color: #cd4d31;
+
+    &::placeholder {
+      color: $primary-color;
+      opacity: 1;
+    }
+    ::-ms-input-placeholder {
+      color: $primary-color;
+    }
+    :-ms-input-placeholder {
+      color: $primary-color;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 60px;
+    right: -40px;
+    background-color: inherit;
+    border-radius: 50%;
+    border: 1px solid #cd4d31;
+    transform: rotate(90deg);
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .form {
+    &__button {
+      display: none;
+      top: -10px;
+      right: -55px;
+    }
+
+    &__email:hover ~ &__button {
+      display: block;
+      border: 1px solid$primary-color;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .form {
+    &__email {
+      width: 228px;
+    }
+  }
+}

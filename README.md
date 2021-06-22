@@ -5,8 +5,8 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 
 - Large screens 2560px
 - Full HD 1920px
-- The design 1600px
-- Notebook 1280px
+- The design 1700px
+- Notebook 1200px;
 - Tablet 1024
 - Mobile (> 320px)
 

@@ -1,0 +1,55 @@
+.header {
+  position: relative;
+  height: 800px;
+  background: url(../images/girl.png), url(../images/header.jpg);
+  background-repeat: no-repeat, repeat;
+  background-position: bottom right, 100%;
+  width: 100%;
+  overflow: hidden;
+
+  &__hidden {
+    height: 800px;
+    background: url(../images/boy.png), url(../images/header.jpg);
+    background-repeat: no-repeat, repeat;
+    background-position: bottom right, 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.7s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    height: 762px;
+    background-size: 399px 455px, auto;
+
+    &__hidden {
+      background: url(../images/header.jpg);
+      background-repeat: repeat;
+      background-position: 100%;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    height: 584px;
+    background: url(../images/header.jpg);
+
+    &__hidden {
+      z-index: 2;
+    }
+  }
+}
