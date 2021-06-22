@@ -1,11 +1,24 @@
 .subscribe {
+  display: flex;
+  flex-direction: column;
   min-width: 320px;
   padding: 80px 20px;
   background-color: $c-orng;
 
   @include onTablet {
     padding: 110px 100px 120px;
+  }
+  @include onDesktop {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding: 160px 55px;
+  }
 
+  &__info {
+    @include onDesktop {
+      max-width: 670px;
+    }
   }
 
   &__title {
@@ -24,7 +37,7 @@
     }
   }
 
-  &__info {
+  &__text {
     margin-bottom: 60px;
     font-family: "Raleway", sans-serif;
     font-weight: normal;
@@ -34,7 +47,9 @@
 
     @include onTablet {
       margin-bottom: 80px;
-
+    }
+    @include onDesktop {
+      margin: 0;
     }
   }
 
@@ -83,6 +98,5 @@
       opacity: 1;
       transform: rotate(360deg) scale(100%);
     }
-
   }
 }

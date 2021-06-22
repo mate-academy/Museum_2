@@ -1,11 +1,16 @@
 .event {
   display: flex;
   flex-direction: column;
-  margin-bottom: 60px;
+  gap: 30px;
+  padding-bottom: 60px;
+  align-self: center;
 
   @include onTablet {
     flex-direction: row;
     align-items: flex-start;
+  }
+  @include onDesktop {
+    padding: 0 100px 77px;
   }
 
   &__details {
@@ -48,6 +53,10 @@
     font-size: 24px;
     line-height: 100%;
     color: $c-orng;
+
+    @include onDesktop {
+      padding-left: 54px;
+    }
   }
 
   &__type {
@@ -80,6 +89,7 @@
 
   }
   &__info {
+    max-width: 470px;
     font-family: "Raleway", sans-serif;
     font-weight: normal;
     font-size: 16px;
@@ -87,6 +97,15 @@
     color: $dark-gray;
     margin-bottom: 40px;
 
+  }
+  &__photo {
+    display: none;
+    width: 370px;
+    height: 475px;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 
 }

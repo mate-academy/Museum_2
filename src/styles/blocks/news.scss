@@ -7,14 +7,17 @@
 
   @include onTablet {
     padding: 120px 100px;
-
+  }
+  @include onDesktop {
+    padding: 120px 55px 0;
   }
 
   &__wrapper {
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
 
   }
 
@@ -33,6 +36,9 @@
 
     &--3 {
       display: none;
+      @include onDesktop {
+        display: flex;
+      }
     }
 
   }
@@ -47,11 +53,15 @@
 
     @include onTablet {
       font-size: 48px;
+    }
+    @include onDesktop {
+      margin-left: 280px;
 
     }
   }
 
   &__picture {
+    align-self: center;
     margin-bottom: 20px;
     width: 280px;
     height: 280px;
@@ -95,6 +105,10 @@
     display: flex;
     margin-bottom: 60px;
     align-self: center;
+
+    @include onTablet {
+      display: none;
+    }
   }
   &__dot {
     width: 8px;

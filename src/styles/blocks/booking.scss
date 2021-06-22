@@ -3,27 +3,30 @@
   flex-direction: column;
   position: relative;
   min-width: 320px;
-  height: 100vh;
   padding: 80px 20px;
   background-color: $dark-green;
 
   @include onTablet {
     position: relative;
-    padding: 120px 100px 170px;
-    height: 72vh;
-
+    padding: 0;
+  }
+  @include onDesktop {
+    padding: 190px 0 160px;
   }
 
   &__photo {
     display: none;
     position: absolute;
-    max-width: 320px;
     bottom: 0;
     left: 0;
 
     @include onTablet {
       display: inline-block;
-
+      height: 60%;
+    }
+    @include onDesktop {
+      height: 800px;
+      display: flex;
     }
   }
 
@@ -38,21 +41,39 @@
     @include onTablet {
       font-size: 72px;
       margin-bottom: 80px;
-
     }
 
+    @include onDesktop {
+      display: flex;
+      font-size: 96px;
+      align-self: flex-start;
+    }
   }
 
   &__wrapper {
 
     @include onTablet {
       display: flex;
-      max-width: 370px;
+      padding: 100px 120px 170px;
       flex-direction: column;
       align-self: flex-end;
     }
+    @include onDesktop {
+      max-width: 60%;
+      padding: 0;
+    }
   }
 
+  &__info-wrapper {
+
+    @include onTablet {
+      width: 370px;
+      align-self: flex-end;
+    }
+    @include onDesktop {
+      width: 100%;
+    }
+  }
   &__info {
     margin-bottom: 60px;
     font-family: "Raleway", sans-serif;
@@ -61,5 +82,9 @@
     font-size: 16px;
     line-height: 150%;
     color: $c-gray;
+
+    @include onDesktop {
+      max-width: 50%;
+    }
   }
 }
