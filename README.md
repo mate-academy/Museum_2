@@ -8,7 +8,7 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 - The design 1600px
 - Notebook 1280px
 - Tablet 1024
-- Mobile (> 320px)
+- Mobile (> $minScreenWidth)
 
 1. Implement the header with menu.
 1. Implement `Актуальтні виставки` block.

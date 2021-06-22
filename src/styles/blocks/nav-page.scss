@@ -3,11 +3,17 @@
   display: flex;
   position: absolute;
   padding: 80px 20px 72px;
-  min-width: 320px;
+  min-width: $minScreenWidth;
   flex-direction: column;
   background-color: $dark-green;
-  transform: translateX(0);
+  transform: translateX(-100%);
   z-index: 3;
+  transition: $trnstn300ms;
+
+  &--active {
+    transform: translateX(0%);
+
+  }
 
   @include onTablet {
     padding: 0 57px 109px;
@@ -31,20 +37,18 @@
     margin-right: 30px;
   }
   &__details-title {
-    font-family: "Raleway", sans-serif;
     font-weight: 200;
     font-size: 14px;
     line-height: 20px;
-    color: #f1f5f4;
+    color: $c-gray;
 
   }
 
   &__details-value {
-    font-family: "Raleway", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #f1f5f4;
+    color: $c-gray;
   }
 
   &__list {
@@ -74,8 +78,7 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 120%;
-    color: #f1f5f4;
-    text-decoration: none;
+    color: $c-gray;
 
     @include onTablet {
       font-size: 48px;
@@ -96,7 +99,7 @@
       width: 570px;
       height: 1px;
       position: absolute;
-      background: #f1f5f4;
+      background: $c-gray;
       opacity: 0.3;
       bottom: 250px;
 
@@ -121,14 +124,12 @@
     width: 280px;
     height: 60px;
     background-color: $dark-green;
-    border: 1px solid #f1f5f4;
+    border: 1px solid $c-gray;
     color: $c-gray;
-    text-decoration: none;
-    font-family: "Raleway", sans-serif;
+
     font-weight: normal;
     font-size: 16px;
     line-height: 60px;
-    transition: $trnstn300ms;
   }
   &__picture {
     display: none;
