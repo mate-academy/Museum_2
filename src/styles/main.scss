@@ -1,7 +1,397 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway&display=swap");
 
-body {
-  background: $c-gray;
+@mixin onIpad {
+  @media (min-width: 768px) and (max-width: 1380px) {
+    @content;
+  }
+}
+@mixin onPhone {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+.page {
+  &__body {
+    margin: 0;
+    font-family: "Playfair Display", "Raleway", sans-serif;
+  }
+}
+
+.header {
+  background-color: #3f5252;
+
+  &__wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1500px;
+    max-height: 100vh;
+
+    @include onIpad {
+      max-width: 700px;
+    }
+    @include onPhone {
+      max-width: 320px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 55px;
+    padding-left: 55px;
+
+    @include onIpad {
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+    @include onPhone {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+
+  &__icon {
+    width: 123px;
+    height: 40px;
+    background: url("/images/NAMU.svg") 50% no-repeat;
+  }
+  &__right-part {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    &-rectengle {
+      background: url("/images/menu.jpg") 50% no-repeat;
+      width: 25px;
+      height: 2px;
+    }
+  }
+  &__language-select {
+    color: #f1f5f4;
+    border-color: #3f5252;
+    background-color: #3f5252;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    @include onPhone {
+      display: none;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    padding-left: 55px;
+    position: relative;
+    @include onIpad {
+      flex-wrap: nowrap;
+    }
+    @include onPhone {
+      flex-wrap: nowrap;
+      padding-left: 20px;
+    }
+  }
+
+  &__date {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+    margin-top: 120px;
+    @include onPhone {
+      margin-top: 100px;
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    margin: 0;
+    margin-top: 10px;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 100%;
+    color: #f1f5f4;
+    @include onIpad {
+      font-size: 72px;
+      width: 500px;
+    }
+    @include onPhone {
+      font-size: 48px;
+      width: 279px;
+      height: 48px;
+      margin-top: 0;
+    }
+  }
+  &__title--second {
+    @include onIpad {
+      padding-left: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+    word-wrap: break-word;
+    margin-top: 40px;
+    width: 370px;
+    height: 48px;
+    margin-bottom: 60px;
+    @include onIpad {
+      width: 338px;
+      height: 48px;
+    }
+    @include onPhone {
+      margin-bottom: 50px;
+      width: 267px;
+      height: 48px;
+      margin-top: 30px;
+    }
+  }
+
+  &__date-numeral {
+    margin-top: 70px;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 125%;
+    color: #f1f5f4;
+    opacity: 0.7;
+    @include onIpad {
+      visibility: hidden;
+    }
+    @include onPhone {
+      visibility: hidden;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      background-color: #f1f5f4;
+      width: 110%;
+      height: 1px;
+      opacity: 0.3;
+      @include onIpad {
+        visibility: hidden;
+      }
+      @include onPhone {
+        visibility: hidden;
+      }
+    }
+  }
+  &__info-shifted {
+    padding-left: 100px;
+    @include onIpad {
+      padding-left: 0;
+    }
+    @include onPhone {
+      padding-left: 0;
+    }
+  }
+  &__image {
+    position: relative;
+    top: -30px;
+    right: 0;
+    width: 673px;
+    height: 724px;
+    object-fit: contain;
+    z-index: 1;
+    @include onIpad {
+      position: absolute;
+      z-index: 1;
+      width: 360px;
+      height: 445px;
+      right: -5%;
+      top: 29%;
+    }
+    @include onPhone {
+      height: 40%;
+      width: 50%;
+      top: 348px;
+      right: 43%;
+    }
+  }
+}
+
+.link {
+  width: 270px;
+  max-height: 60px;
+  background-color: #cd4d31;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+.button {
+  color: #f1f5f4;
+  text-decoration: none;
+  margin-left: 81px;
+  width: 270px;
+  background: #cd4d31;
+  font-family: "Raleway", sans-serif;
+}
+
+.exhibitions {
+  background-color: #f1f5f4;
+  width: 100%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1500px;
+  }
+
+  &__wrapper-1 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 360px;
+    margin-bottom: 70px;
+  }
+  &__part-1 {
+    margin-right: 180px;
+  }
+  &__angel {
+    position: relative;
+    width: 544.6px;
+    height: 816.12px;
+    top: -300px;
+  }
+  &__title {
+    margin: 0;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 120%;
+    display: flex;
+    justify-content: center;
+    padding-top: 160px;
+    margin-bottom: 100px;
+  }
+  &__date {
+    margin: 0;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 120%;
+    color: #cd4d31;
+    margin-bottom: 20px;
+    &-always {
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: #cd4d31;
+    }
+  }
+  &__name {
+    margin: 0;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 125%;
+    color: #1c1b29;
+    margin-bottom: 20px;
+  }
+  &__paragraph {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #504f5e;
+    margin-bottom: 50px;
+    width: 370px;
+    height: 70px;
+    word-wrap: break-word;
+  }
+
+  &__wrapper-2 {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: #f1f5f4;
+    margin-bottom: 70px;
+  }
+  &__part-2 {
+    margin-left: 20%;
+    z-index: 1;
+  }
+
+  &__modern-art {
+    width: 568px;
+    height: 576px;
+    margin: 0;
+    margin-left: 170px;
+    position: relative;
+    font-size: 9rem;
+    text-transform: uppercase;
+    font-family: Playfair Display, serif;
+    color: rgba(63, 82, 82, 0.3);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  &__old-art {
+    width: 568px;
+    height: 576px;
+    margin: 0;
+    position: relative;
+    font-size: 9rem;
+    text-transform: uppercase;
+    font-family: Playfair Display, serif;
+    color: rgba(63, 82, 82, 0.3);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    font-weight: 700;
+    line-height: 100%;
+  }
+  &__image-2 {
+    position: absolute;
+    width: 560px;
+    height: 600px;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    opacity: 1;
+  }
+  &__image-3 {
+    position: absolute;
+    width: 584px;
+    height: 499px;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+    opacity: 1;
+  }
+  &__wrapper-3 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 70px;
+  }
 }
