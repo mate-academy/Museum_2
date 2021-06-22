@@ -1,16 +1,29 @@
 .header {
   position: relative;
   height: 100vh;
+  overflow: hidden;
   padding: 20px 20px 100px;
 
-  color: #f1f5f4;
-  background-color: #3f5252;
+  @include onTablet {
+    padding: 20px 40px 180px;
+  }
+
+  color: $text-color-white;
+  background-color: $dark-green-blue-color;
 
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__burger-wrapper {
+    display: flex;
   }
 
   &__menu-opener {
@@ -24,9 +37,36 @@
     background-repeat: no-repeat;
   }
 
+  &__language {
+    display: none;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    padding-left: 40px;
+
+    @include onTablet {
+      display: block;
+    }
+
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  // &__logo {
+
+  // }
+
   &__logo-image {
     height: 40px;
     width: 123px;
+  }
+
+  &__content {
+    @include onTablet {
+      padding-left: 60px;
+    }
   }
 
   &__text {
@@ -36,37 +76,49 @@
   &__title {
     margin-bottom: 30px;
 
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 48px;
-    color: inherit;
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    &-text {
+      @include onTablet {
+        padding-left: 42px;
+      }
+    }
   }
 
   &__subtitle {
+    max-width: 220px;
     margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
   }
 
-  &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: $btn-height;
+  // &__link {
 
-    background-color: $theme-color-orange;
-    line-height: 16px;
-    text-decoration: none;
-    color: inherit;
-  }
+  // }
 
   &__image {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 245px;
-    height: 273px;
+    width: 230px;
+    height: 260px;
 
-    background-image: url(../images/girl_phone.png);
-    background-position: right center;
+    background-image: url(../images/girl_photo.png);
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+
+    transform: translateX(33.33%);
+
+    @include onTablet {
+      width: 399px;
+      height: 408px;
+
+      transform: translateY(0);
+    }
   }
 }
