@@ -4,7 +4,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/HL
 Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
 
 - Large screens 2560px
-- Full HD 1920px
+- Full HD 1440px
 - The design 1700px
 - Notebook 1200px;
 - Tablet 1024
