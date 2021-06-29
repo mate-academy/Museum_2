@@ -2,14 +2,27 @@
   position: relative;
   height: 100vh;
   overflow: hidden;
-  padding: 20px 20px 100px;
+  padding: 30px 20px 100px;
 
   @include onTablet {
-    padding: 20px 40px 180px;
+    padding: 30px 60px 180px 40px;
+  }
+
+  @include onDesktop {
+    padding: 30px 72px 58px 55px;
   }
 
   color: $text-color-white;
   background-color: $dark-green-blue-color;
+
+  &__container {
+    margin: 0 auto;
+
+    @include onDesktop {
+      position: relative;
+      max-width: 1200px;
+    }
+  }
 
   &__nav {
     display: flex;
@@ -31,7 +44,7 @@
     width: 25px;
     height: 20px;
 
-    background-image: url(../images/Group5.svg);
+    background-image: url(../images/burger-opener.svg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,7 +55,7 @@
     background-color: inherit;
     border: none;
     outline: none;
-    padding-left: 40px;
+    margin-left: 40px;
 
     @include onTablet {
       display: block;
@@ -67,10 +80,18 @@
     @include onTablet {
       padding-left: 60px;
     }
+
+    @include onDesktop {
+      padding-left: 0;
+    }
   }
 
   &__text {
     margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
   }
 
   &__title {
@@ -84,6 +105,36 @@
       @include onTablet {
         padding-left: 42px;
       }
+
+      @include onDesktop {
+        padding-left: 93px;
+      }
+    }
+  }
+
+  &__subtitle-button-wrapper {
+    position: relative;
+
+    @include onDesktop {
+      margin-left: 93px;
+      border-bottom: 1px solid $text-color-white;
+      padding-bottom: 121px;
+    }
+
+    &::before {
+      @include onDesktop {
+        content: "10.08 - 10.10";
+        position: absolute;
+        top: 96.5%;
+        transform: translateX(-100%);
+        padding-right: 20px;
+
+        font-family: "Playfair Display", serif;
+        opacity: 0.7;
+        font-size: 14px;
+        line-height: 17.5px;
+        color: $text-color-white;
+      }
     }
   }
 
@@ -93,6 +144,10 @@
 
     @include onTablet {
       margin-bottom: 80px;
+    }
+
+    @include onTablet {
+      margin-bottom: 60px;
     }
   }
 
@@ -119,6 +174,25 @@
       height: 408px;
 
       transform: translateY(0);
+    }
+
+    @include onDesktop {
+      width: 673px;
+      height: 753px;
+
+      transform: translate(11%, 10%);
+    }
+  }
+
+  &__image-title {
+    display: none;
+    max-width: 140px;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      top: 60%;
+      right: -2%;
     }
   }
 }

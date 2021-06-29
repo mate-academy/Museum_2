@@ -1,0 +1,125 @@
+.burger-menu {
+  height: 100vh;
+  padding: 30px 20px 72px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @include onTablet {
+    padding: 30px 40px 119px;
+  }
+
+  background-color: $dark-green-blue-color;
+
+  transform: translateX(100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__container {
+    margin: 0 auto;
+
+    @include onDesktop {
+      max-width: 1200px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  // &__logo {
+  // }
+
+  // &__logo-image {
+  // }
+
+  &__burger-wrapper {
+    display: flex;
+  }
+
+  &__menu-closer {
+    display: block;
+    width: 25px;
+    height: 20px;
+
+    background-image: url(../images/burger-closer.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__language {
+    display: none;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    margin-left: 40px;
+
+    @include onTablet {
+      display: block;
+    }
+
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: $text-color-white;
+  }
+
+  &__additional-info {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &-item {
+      display: flex;
+      color: $text-color-white;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    color: $text-color-white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  &__button-wrapper {
+
+    & > :first-child {
+      margin-bottom: 20px;
+    }
+  }
+}
