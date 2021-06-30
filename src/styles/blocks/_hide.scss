@@ -1,0 +1,117 @@
+.hide {
+  position: relative;
+  top: 30px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  &__scheduele {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $primary-color;
+  }
+
+  &__location {
+    color: $primary-color;
+  }
+
+  &__list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 570px;
+      height: 1px;
+      background: $primary-color;
+      bottom: -60px;
+    }
+  }
+ 
+  &__link {
+    text-decoration: none;
+    @extend %playfair-bold;
+    color: $primary-color;
+    font-size: 48px;
+    line-height: 57px;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+  }
+
+  &__active,
+  &__passive {
+    color: $primary-color;
+  }
+
+  &__passive {
+    border: 1px solid $primary-color;
+    background-color: #3f5252;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hide {
+    padding-left: 55px;
+    padding-right: 55px;
+  
+    &__item {
+      flex-direction: row;
+      gap: 5px;
+    }
+
+    &__list {
+      
+      gap: 50px;
+  
+    
+    }
+   
+    
+  }
+}
+
+@media (max-width: 700px) {
+  .hide {
+    top: 100px;
+    padding-left: 0;
+    padding-right: 0;
+  
+    &__item {
+      flex-direction: row;
+      gap: 5px;
+    }
+
+    &__list {
+      
+      gap: 40px;
+  
+      &:after {
+        display: none;
+      }
+    }
+   
+    &__link {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    &__buttons {
+      flex-direction: column;
+      gap: 20px;
+      
+    }
+    
+  }
+}

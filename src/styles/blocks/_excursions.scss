@@ -1,0 +1,93 @@
+.excursions {
+  @extend %flex-between;
+
+  &__day {
+    align-self: flex-start;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    @extend %playfair-bold;
+    font-size: 55px;
+    color: #cd4d31;
+    margin-left: 30px;
+    margin-right: 30px;
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__time {
+    @extend %playfair-bold;
+    font-size: 36px;
+    line-height: 36px;
+    color: #cd4d31;
+    align-self: flex-end;
+  }
+
+  &__btn {
+    right: 212px;
+
+    &:after {
+      width: 70px;
+      left: 120px;
+      top: 10px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .excursions {
+    &__day {
+      font-size: 36px;
+    }
+
+    &__time {
+      font-size: 24px;
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__btn {
+      right: 45%;
+
+      &:after {
+        width: 170px;
+        left: -35px;
+        top: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .excursions {
+    flex-direction: column;
+    justify-content: flex-start;
+    &__day {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0;
+    }
+
+    &__time {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__btn {
+      right: 32%;
+
+      &:after {
+        width: 130px;
+        left: -12%;
+        top: 25px;
+      }
+    }
+  }
+}
