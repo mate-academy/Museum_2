@@ -2,37 +2,47 @@
 .exhibitions {
   overflow: hidden;
   &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
     max-width: 1200px;
     margin: 0 auto;
+    @media (max-width:550px) {
+      gap: 50px;
+      transition: ease 0.5s;
+      
+    }
   }
   &__part-1 {
     display: flex;
     @media  (max-width: 768px) {
       display: flex;
-      flex-direction: row-reverse;
+      flex-direction: row;
     }
 
     @media  (max-width: 500px) {
-      display: flex;
-      flex-direction: column;
+      flex-direction: row;
     }
     
   }
 
   &__statuette-img {
-    width: 50%;
+    width: 40%;
     object-fit: contain;
  
     @media  (max-width: 768px) {
-      display: none;
       transition: ease 0.5s;
+      width: 40%;
     }
   }
 
   &__container-info {
     @media  (max-width: 768px) {
-      margin: 0;
-      margin-right: 20%;
+      transition: ease 0.5s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
     }
     @media  (max-width: 500px) {
       margin: 0;
@@ -44,6 +54,10 @@
     display: flex;
     position: relative;
     justify-content: center;
+    @media (max-width: 400px) {
+      margin-left: 20px;
+      
+    }
   }
 
   &__title {
@@ -63,7 +77,6 @@
   }
   &__title-date_2 {
     margin-top: 200px;
-    margin-bottom: 50px;
     margin-left: -100px;
     color: $r-color;
     font-size: 48px;
@@ -71,7 +84,6 @@
 
     @media  (max-width: 768px) {
       margin: 0;
-      padding-top: 30px;
       transition: ease 0.5s;
     }
 
@@ -153,7 +165,6 @@
 
     @media  (max-width:768px) {
       max-width: 270px;
-      margin-left: 0;
       transition: ease 0.5s;
     }
 
@@ -203,21 +214,14 @@
     display: flex;
 
     @media (max-width:1270px) {
-      margin-top: 50px;
-    }
-
-    @media (max-width:786px) {
       margin-top: 0;
     }
-
-    @media (max-width:500px) {
-      display: flex;
-      flex-direction: column-reverse;
-    }
-
   }
 
   &__container-art {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: 15%;
 
     @media  (max-width:768px) {
@@ -228,17 +232,21 @@
 
     @media  (max-width: 500px) {
       transition: ease 0.5s;
-      margin-left: 0;
+      margin-left: 5%;
+      margin-right: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
   }
   &__date-art {
-    padding-top: 100px;
     color: $r-color;
     margin: 0;
     @media  (max-width: 500px) {
       transition: ease 0.5s;
       margin-left: 20px;
+      padding: 0;
     }
   }
   &__title-art {
@@ -253,7 +261,6 @@
 
     @media  (max-width: 500px) {
       transition: ease 0.5s;
-      margin-left: 20px;
       max-width: 260px;
     }
 
@@ -337,7 +344,6 @@
     @media (max-width: 1030px) {
       font-size: 90px;
       line-height: 90px;
-      margin-top: 10%;
       transition: ease 0.5s;
     }
 
@@ -350,20 +356,35 @@
     @media (max-width: 845px) {
       font-size: 65px;
       line-height: 65px;
-      margin-top: 15%;
       transition: ease 0.5s;
     }
 
     @media (max-width: 790px) {
       font-size: 60px;
       line-height: 60px;
-      margin-top: 15%;
       transition: ease 0.5s;
     }
 
     @media  (max-width: 768px) {
-      display: none;
+
       transition: ease 0.5s;
+    }
+    @media  (max-width: 500px) {
+      font-size: 50px;
+      line-height: 50px;
+      margin-left: 5%;
+      transition: ease 0.5s;
+      display: flex;
+      align-items: center;
+
+    }
+    @media  (max-width: 400px) {
+      font-size: 35px;
+      line-height: 35px;
+      transition: ease 0.5s;
+      display: flex;
+      align-items: center;
+      margin: 0;
     }
   }
 
@@ -372,111 +393,174 @@
     position: absolute;
     width: 90%;
     right: 0;
+    @media  (max-width: 400px) {
+      top: 30%;
+    }
   }
 
   &__part-3 {
-    margin-top: 100px;
     display: flex;
-
     @media  (max-width: 768px) {
       display: flex;
-      margin-top: 0;
-      flex-direction: row-reverse;
+      flex-direction: row;
     }
 
     @media  (max-width: 500px) {
       display: flex;
-      flex-direction: column;
   
     }
 
   }
   
   &__old-bg_text {
-    text-transform: uppercase;
-    line-height: 144px;
     margin-top: 0;
-    margin-left: 30px ;
-    width: 40%;
-    font-size: 144px;
+    z-index: -1;
+    height: auto;
     position: relative;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-transform: uppercase;
+    width: 80%;
     color: white;
+    font-size: 144px;
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: rgba(63, 82, 82, 1);
-    
-    @media (max-width: 1350px) {
-      font-size: 140px;
-      line-height: 140px;
+
+    @media (max-width: 1300px) {
+      font-size: 134px;
+      line-height: 134px;
+    }
+
+    @media (max-width: 1160px) {
+      font-size: 104px;
+      line-height: 104px;
       transition: ease 0.5s;
     }
 
-    @media (max-width: 1260px) {
-      font-size: 120px;
-      line-height: 120px;
-      transition: ease 0.5s;
-    }
-
-    @media (max-width: 1200px) {
-      font-size: 110px;
-      line-height: 110px;
-      transition: ease 0.5s;
-    }
-
-    @media (max-width: 1100px) {
+    @media (max-width: 1030px) {
       font-size: 100px;
       line-height: 100px;
       transition: ease 0.5s;
     }
 
-    @media (max-width: 1100px) {
-      font-size: 90px;
-      line-height: 90px;
+    @media (max-width: 935px) {
+      font-size: 95px;
+      line-height: 95px;
       transition: ease 0.5s;
     }
 
-    @media (max-width: 960px) {
-      font-size: 80px;
-      line-height: 80px;
+    @media (max-width: 845px) {
+      font-size: 85px;
+      line-height: 85px;
       transition: ease 0.5s;
     }
 
-    @media (max-width: 960px) {
-      font-size: 80px;
-      line-height: 80px;
+    @media (max-width: 790px) {
+      font-size: 70px;
+      line-height: 70px;
       transition: ease 0.5s;
     }
 
     @media  (max-width: 768px) {
-      display: none;
+
       transition: ease 0.5s;
     }
-
+    @media  (max-width: 500px) {
+      font-size: 55px;
+      line-height: 55px;
+      transition: ease 0.5s;
+    }
+    @media  (max-width: 400px) {
+      font-size: 35px;
+      display: flex;
+      align-items: center;
+      margin-right: 0;
+      line-height: 35px;
+      transition: ease 0.5s;
+    }
   }
 
   &__old-bg_img {
-    top: 15%;
+    top: 10%;
     position: absolute;
     width: 80%;
+    @media (max-width:1160px) {
+      top: 5%;
+      width: 65%;
+      transition: ease 0.5s;
+    }
+    @media (max-width:1000px) {
+      top: 5%;
+      width: 70%;
+      transition: ease 0.5s;
+    }
+    @media (max-width:900px) {
+      top: 5%;
+      width: 80%;
+      transition: ease 0.5s;
+    }
+    @media (max-width:800px) {
+      top: 5%;
+      width: 75%;
+      transition: ease 0.5s;
+    }
+    @media (max-width:770px) {
+      top: 5%;
+      width: 60%;
+      transition: ease 0.5s;
+    }
+    @media (max-width:670px) {
+      top: 5%;
+      width: 70%;
+      transition: ease 0.5s;
+    }
+    @media (max-width:670px) {
+      top: 5%;
+      width: 80%;
+      transition: ease 0.5s;
+    }
+    @media (max-width:500px) {
+      top: 5%;
+      width: 90%;
+      transition: ease 0.5s;
+    }
+    @media (max-width:400px) {
+      top: 20%;
+      width: 70%;
+      transition: ease 0.5s;
+    }
+    @media (max-width:320px) {
+      top: 20%;
+      width: 100%;
+      transition: ease 0.5s;
+    }
   }
 
   &__old-container {
-
-    @media (max-width: 768px) {
-      margin: 0;
-      margin-right: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin-right: 15%;
+  
+    @media (max-width:768px) {
+      margin-right: 10%;
+      align-items: center;
+      transition: ease 0.5s;
     }
-
-    @media (max-width: 500px) {
-      margin: 0;
+  
+    @media  (max-width: 500px) {
+      transition: ease 0.5s;
+      margin-right: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-
   }
 
   &__old-date {
-    padding-top: 100px;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 20%;
     color: $r-color;
     @media  (max-width: 768px) {
       transition: ease 0.5s;
@@ -490,7 +574,7 @@
 
   &__old-title {
     margin-bottom: 15px;
-    margin-left: 20%;
+
     font-size: 24px;
     font-family: "Playfair Display", serif;
     @media  (max-width:768px) {
@@ -506,7 +590,6 @@
 
   &__old-title_text {
     max-width: 370px;
-    margin-left: 20%;
     font-size: 16px;
     font-family: "Raleway", sans-serif;
     @media  (max-width: 768px) {
@@ -523,7 +606,6 @@
 
   &__part-buy-3 {
     text-decoration: none;
-    margin-left: 20%;
     display: flex;
     justify-content: center;
     background: $r-color;
