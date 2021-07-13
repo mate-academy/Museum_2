@@ -1,0 +1,174 @@
+.footer {
+  position: relative;
+  color: $text-color-white;
+  background-color: $dark-green-blue-color;
+
+  &__container {
+    display: grid;
+    row-gap: 60px;
+    padding: 80px 20px 0;
+
+    @include onTablet {
+      margin: 0 auto;
+      padding: 120px 100px 100px;
+      column-gap: 60px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onDesktop {
+      padding: 160px 55px 80px;
+      max-width: 1280px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "column-1 column-2 column-4 column-3";
+    }
+  }
+
+  &__arrow {
+    display: block;
+    width: 17px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 90px;
+
+    @include onTablet {
+      top: 125px;
+    }
+
+    @include onDesktop {
+      top: 163px;
+      right: 41px;
+    }
+
+    background-image: url(../images/footer-arrow.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__contacts {
+    @include onDesktop {
+      grid-area: column-1;
+    }
+  }
+
+  &__contacts-title {
+    color: inherit;
+    margin-bottom: 27px;
+  }
+
+  &__contacts-info {
+    margin-bottom: 20px;
+  }
+
+  &__contacts-info-aligned {
+    padding-left: 34px;
+  }
+
+  &__contacts-icons-item {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__schedule {
+    @include onDesktop {
+      grid-area: column-2;
+    }
+  }
+
+  &__schedule-title {
+    color: inherit;
+    margin-bottom: 30px;
+  }
+
+  &__schedule-container {
+    display: flex;
+  }
+
+  &__schedule-day {
+    display: flex;
+    flex-direction: column;
+    margin-right: 16px;
+  }
+
+  &__about-us {
+    @include onDesktop {
+      grid-area: column-3;
+    }
+  }
+
+  &__about-us-title {
+    color: inherit;
+    margin-bottom: 30px;
+  }
+
+  &__about-us-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__about-us-item {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__membership-programme {
+    @include onDesktop {
+      grid-area: column-4;
+    }
+  }
+
+  &__membership-programme-title {
+    color: inherit;
+    margin-bottom: 30px;
+  }
+
+  &__membership-programme-items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__membership-programme-item {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__privacy-terms {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: center;
+
+      & > :first-child {
+        margin-right: 40px;
+      }
+    }
+
+    @include onDesktop {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__privacy-terms-item {
+    display: block;
+
+    font-size: 14px;
+    line-height: 20px;
+    color: inherit;
+    font-weight: 200;
+    text-decoration: none;
+    text-align: center;
+  }
+}

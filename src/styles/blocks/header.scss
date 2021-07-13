@@ -1,0 +1,198 @@
+.header {
+  position: relative;
+  height: 800px;
+  overflow: hidden;
+  padding: 30px 20px 100px;
+
+  @include onTablet {
+    padding: 30px 60px 180px 40px;
+  }
+
+  @include onDesktop {
+    position: static;
+    padding: 30px 72px 58px 55px;
+  }
+
+  color: $text-color-white;
+  background-color: $dark-green-blue-color;
+
+  &__container {
+    margin: 0 auto;
+
+    @include onDesktop {
+      position: relative;
+      max-width: 1200px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__burger-wrapper {
+    display: flex;
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 25px;
+    height: 20px;
+    z-index: 2;
+
+    background-image: url(../images/burger-opener.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__language {
+    display: none;
+    background-color: $dark-green-blue-color;
+    border: none;
+    outline: none;
+    margin-left: 40px;
+    z-index: 2;
+
+    @include onTablet {
+      display: block;
+    }
+
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__logo-image {
+    height: 40px;
+    width: 123px;
+  }
+
+  &__content {
+    @include onTablet {
+      padding-left: 60px;
+    }
+
+    @include onDesktop {
+      padding-left: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    &-text {
+      @include onTablet {
+        padding-left: 42px;
+      }
+
+      @include onDesktop {
+        padding-left: 93px;
+      }
+    }
+  }
+
+  &__subtitle-button-wrapper {
+    position: relative;
+
+    @include onDesktop {
+      margin-left: 93px;
+      border-bottom: 1px solid $text-color-white;
+      padding-bottom: 121px;
+    }
+
+    &::before {
+      @include onDesktop {
+        content: "10.08 - 10.10";
+        position: absolute;
+        top: 96.5%;
+        transform: translateX(-100%);
+        padding-right: 20px;
+
+        font-family: "Playfair Display", serif;
+        opacity: 0.7;
+        font-size: 14px;
+        line-height: 17.5px;
+        color: $text-color-white;
+      }
+    }
+  }
+
+  &__subtitle {
+    max-width: 220px;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 230px;
+    height: 260px;
+
+    background-image: url(../images/girl_photo.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: translateX(33.33%);
+
+    @include onTablet {
+      width: 399px;
+      height: 408px;
+
+      transform: translateY(0);
+    }
+
+    @include onDesktop {
+      right: 6%;
+      width: 673px;
+      height: 730px;
+
+      transform: translate(12%, 10%);
+    }
+  }
+
+  &__image-title {
+    display: none;
+    max-width: 140px;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      top: 65%;
+      right: 3%;
+    }
+  }
+}

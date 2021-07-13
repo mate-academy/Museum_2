@@ -1,0 +1,214 @@
+.burger-menu {
+  height: 100vh;
+  padding: 30px 20px 72px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  @include onTablet {
+    padding: 30px 60px 119px 40px;
+  }
+
+  @include onDesktop {
+    padding: 30px 72px 109px 55px;
+  }
+
+  background-color: $dark-green-blue-color;
+
+  transform: translateX(100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__container {
+    position: relative;
+    margin: 0 auto;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__burger-wrapper {
+    display: flex;
+  }
+
+  &__menu-closer {
+    display: block;
+    width: 25px;
+    height: 20px;
+
+    background-image: url(../images/burger-closer.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__language {
+    display: none;
+    background-color: $dark-green-blue-color;
+    border: none;
+    outline: none;
+    margin-left: 40px;
+
+    @include onTablet {
+      display: block;
+    }
+
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: $text-color-white;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--on-mobile {
+      display: block;
+      margin-right: 30px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      padding: 0 60px;
+    }
+
+    @include onDesktop {
+      padding-left: 0;
+      max-width: 570px;
+    }
+  }
+
+  &__additional-info {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      margin-bottom: 80px;
+
+      & > :first-child {
+        margin-right: 30px;
+      }
+    }
+
+    &-container {
+
+      @include onTablet {
+        margin-bottom: 60px;
+        border-bottom: 1px solid #c4c4c4;
+      }
+    }
+
+    &-item {
+      display: flex;
+      color: $text-color-white;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &-text {
+      font-weight: 200;
+      margin-right: 4px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 80px;
+
+      @include onTablet {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    color: $text-color-white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__button-wrapper {
+
+    @include onTablet {
+      display: flex;
+    }
+
+    & > :first-child {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 0;
+        margin-right: 29px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 624px;
+    height: 720px;
+
+    transform: translate(11.5%, 15%);
+
+    background-image: url(../images/burger-image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
