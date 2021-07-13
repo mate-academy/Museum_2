@@ -1,5 +1,5 @@
 .news-card {
-  max-width: 270px;
+  max-width: 271px;
   margin-left: 30px;
 
   &:nth-child(n + 2) {
@@ -13,6 +13,7 @@
   }
 
   @include onDesktop {
+    max-width: 371px;
     &:nth-child(3) {
       display: block;
     }
@@ -26,6 +27,11 @@
     height: 280px;
     width: 280px;
     margin-bottom: 20px;
+
+    @include onDesktop {
+      height: 370px;
+      width: 370px;
+    }
   }
 
   &__image {
@@ -50,6 +56,19 @@
     color: $color-black;
   }
 
-  // &__description {
-  // }
+  &__description {
+    &-mobile {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &-desktop {
+      display: none;
+
+      @include onDesktop {
+        display: inline;
+      }
+    }
+  }
 }
