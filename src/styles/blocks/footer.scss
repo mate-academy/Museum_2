@@ -3,13 +3,42 @@
   color: $text-color-white;
   background-color: $dark-green-blue-color;
 
+  &__container {
+    display: grid;
+    row-gap: 60px;
+    padding: 80px 20px 0;
+
+    @include onTablet {
+      margin: 0 auto;
+      padding: 120px 100px 100px;
+      column-gap: 60px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onDesktop {
+      padding: 160px 55px 80px;
+      max-width: 1280px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "column-1 column-2 column-4 column-3";
+    }
+  }
+
   &__arrow {
     display: block;
     width: 17px;
     height: 20px;
     position: absolute;
     right: 20px;
-    top: 80px;
+    top: 90px;
+
+    @include onTablet {
+      top: 125px;
+    }
+
+    @include onDesktop {
+      top: 163px;
+      right: 41px;
+    }
 
     background-image: url(../images/footer-arrow.svg);
     background-size: cover;
@@ -17,8 +46,11 @@
     background-repeat: no-repeat;
   }
 
-  // &__contacts {
-  // }
+  &__contacts {
+    @include onDesktop {
+      grid-area: column-1;
+    }
+  }
 
   &__contacts-title {
     color: inherit;
@@ -44,12 +76,15 @@
     }
   }
 
-  // &__schedule {
-  // }
+  &__schedule {
+    @include onDesktop {
+      grid-area: column-2;
+    }
+  }
 
   &__schedule-title {
     color: inherit;
-    margin: 30px 0;
+    margin-bottom: 30px;
   }
 
   &__schedule-container {
@@ -65,12 +100,15 @@
   // &__schedule-time {
   // }
 
-  // &__about-us {
-  // }
+  &__about-us {
+    @include onDesktop {
+      grid-area: column-3;
+    }
+  }
 
   &__about-us-title {
     color: inherit;
-    margin: 30px 0;
+    margin-bottom: 30px;
   }
 
   &__about-us-items {
@@ -86,12 +124,15 @@
     }
   }
 
-  // &__membership-programme {
-  // }
+  &__membership-programme {
+    @include onDesktop {
+      grid-area: column-4;
+    }
+  }
 
   &__membership-programme-title {
     color: inherit;
-    margin: 60px 0 30px;
+    margin-bottom: 30px;
   }
 
   &__membership-programme-items {
@@ -108,15 +149,32 @@
   }
 
   &__privacy-terms {
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px;
 
-    font-size: 14px;
-    font-weight: 200;
-    line-height: 20px;
-    color: inherit;
+    @include onTablet {
+      flex-direction: row;
+      justify-content: center;
+
+      & > :first-child {
+        margin-right: 40px;
+      }
+    }
+
+    @include onDesktop {
+      padding-bottom: 60px;
+    }
   }
 
   &__privacy-terms-item {
+    display: block;
+
+    font-size: 14px;
+    line-height: 20px;
+    color: inherit;
+    font-weight: 200;
+    text-decoration: none;
     text-align: center;
   }
 }

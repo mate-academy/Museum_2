@@ -1,13 +1,108 @@
 .visit {
+  position: relative;
   background-color: $dark-green-blue-color;
+
+  &__container {
+    margin: 0 auto;
+    padding: 80px 20px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      padding: 120px 99px 170px;
+    }
+
+    @include onDesktop {
+      max-width: 1280px;
+      padding: 190px 20px 160px;
+      align-items: flex-end;
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      align-items: center;
+    }
+  }
 
   &__title {
     margin-bottom: 40px;
+
+    @include onTablet {
+      max-width: 510px;
+    }
+
+    @include onDesktop {
+      max-width: 680px;
+    }
+  }
+
+  &__description-wrapper {
+    @include onTablet {
+      align-self: flex-end;
+    }
+
+    @include onDesktop {
+      align-self: auto;
+    }
   }
 
   &__description {
     margin-bottom: 60px;
 
     color: $text-color-white;
+
+    @include onTablet {
+      max-width: 380px;
+    }
+
+    @include onDesktop {
+      max-width: 470px;
+    }
+  }
+
+  &__image-on-tablet {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 290px;
+    height: 410px;
+
+    background-image: url(../images/visit_image-tablet.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__image-on-desktop {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 590px;
+    height: 100%;
+
+    background-image: url(../images/visit_image-desktop.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 }

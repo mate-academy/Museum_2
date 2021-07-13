@@ -1,4 +1,26 @@
 .news-card {
+  max-width: 270px;
+  margin-left: 30px;
+
+  &:nth-child(n + 2) {
+    display: none;
+  }
+
+  @include onTablet {
+    &:nth-child(2) {
+      display: block;
+    }
+  }
+
+  @include onDesktop {
+    &:nth-child(3) {
+      display: block;
+    }
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
 
   &__image-container {
     height: 280px;
@@ -19,6 +41,7 @@
   }
 
   &__title {
+    display: block;
     margin-bottom: 10px;
 
     font-size: 18px;

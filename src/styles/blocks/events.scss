@@ -3,8 +3,68 @@
   flex-direction: column;
   padding: 60px 0 30px;
 
+  &:nth-child(3) {
+    padding: 0 0 30px;
+  }
+
+  &--padding {
+    &:nth-child(4) {
+      padding-top: 10px;
+    }
+
+    @include onTablet {
+      padding-top: 150px;
+
+      &:nth-child(4) {
+        padding-top: 20px;
+      }
+    }
+
+    @include onDesktop {
+      padding-top: 226px;
+
+      &:nth-child(10) {
+        padding-top: 308px;
+      }
+    }
+  }
+
+  &__coming-events {
+    & > :last-child {
+      padding-bottom: 60px;
+
+      @include onDesktop {
+        padding-bottom: 200px;
+      }
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+    }
+
+    @include onDesktop {
+      max-width: 580px;
+    }
+  }
+
   &__top-subsection {
     display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__top-subsection-tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: 30px;
+    }
   }
 
   &__time {
@@ -21,12 +81,32 @@
     color: $color-black;
   }
 
-  &__time--date-bold {
+  &__top-subsection-tablet-text {
     font-family: "Playfair Display", serif;
-    font-weight: bold;
-    font-size: 30px;
-    line-height: 125%;
+    font-size: 24px;
+    line-height: 24px;
     color: $theme-color-orange;
+  }
+
+  &__top-subsection-tablet-maintext {
+    font-size: 36px;
+    line-height: 36px;
+
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px $theme-color-orange;
+  }
+
+  &__category-tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      font-size: 14px;
+      font-weight: 200;
+      line-height: 20px;
+      color: $color-black;
+    }
   }
 
   &__title {
@@ -37,11 +117,44 @@
     }
   }
 
+  &__main-text {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
   &__description-container {
-    width: 131px;
+    max-width: 131px;
+
+    @include onTablet {
+      max-width: 250px;
+    }
+
+    @include onDesktop {
+      max-width: 360px;
+    }
 
     &--align-right {
       align-self: flex-end;
+
+      @include onTablet {
+        align-self: auto;
+      }
+    }
+  }
+
+  &__button {
+    display: none;
+    margin-top: 50px;
+
+    @include onDesktop {
+      display: flex;
     }
   }
 }

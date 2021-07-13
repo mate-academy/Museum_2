@@ -2,6 +2,12 @@
   line-height: 16px;
   text-align: center;
 
+  @include onDesktop {
+    text-align: left;
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &:after {
     content: "";
     display: block;
@@ -10,5 +16,32 @@
     height: 1px;
 
     background-color: $color-black;
+
+    @include onTablet {
+      width: 170px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    @include onDesktop {
+      margin-right: 19px;
+    }
+  }
+
+  &__line {
+    @include onDesktop {
+      display: block;
+      width: 70px;
+      height: 1px;
+      // margin-left: 19px;
+
+      background-color: #1c1b29;
+
+      transform: translateY(800%);
+    }
   }
 }
