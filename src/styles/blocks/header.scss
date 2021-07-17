@@ -1,0 +1,198 @@
+.header {
+  min-width: $minScreenWidth;
+
+  background-color: $dark-green;
+
+  @include onTablet {
+    padding: 0;
+  }
+
+  @include onDesktop {
+    padding: 0;
+    max-height: 870px;
+  }
+
+  &__content {
+    position: relative;
+    padding: 0 20px 80px;
+
+    @include onTablet {
+      padding: 90px 100px 180px;
+
+    }
+    @include onDesktop {
+      padding: 90px 55px 60px;
+    }
+
+  }
+
+  &__date {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-gray;
+    margin: 80px 0 20px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+    color: $c-gray;
+
+    @include onTablet {
+      font-size: 72px;
+      width: 500px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      width: 570px;
+    }
+
+    &--last {
+      margin-bottom: 30px;
+      text-align: center;
+
+      @include onTablet {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      @include onDesktop {
+        margin-bottom: 40px;
+        margin-left: 100px;
+      }
+
+    }
+
+  }
+
+  &__subtitle {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+    @include onDesktop {
+      margin: 0 0 60px 100px ;
+    }
+
+  }
+
+  &__button {
+    display: inline-block;
+    width: 280px;
+    height: 60px;
+    background-color: $c-orng;
+    color: $c-gray;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 60px;
+
+    @include onTablet {
+      width: 270px;
+    }
+    @include onDesktop {
+      margin: 0 0 110px 100px;
+    }
+
+    &-text {
+      color: $c-gray;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 60px;
+      margin-left: 64px;
+
+      @include onTablet {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+      }
+
+    }
+
+  }
+
+  &__photo {
+    position: absolute;
+    max-height: 260px;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+    @include onTablet {
+      display: none;
+    }
+
+  }
+
+  &__photo-tablet {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+    @include onTablet {
+      display: block;
+      height: 440px;
+
+    }
+    @include onDesktop {
+      height: 740px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__photo-info {
+    display: none;
+    position: absolute;
+    width: 150px;
+    bottom: 50%;
+    right: 32px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__photo-footnote {
+    display: none;
+    align-items: baseline;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 125%;
+    color: $c-gray;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 800px;
+      background-color: $c-gray;
+      position: relative;
+      left: 20px;
+    }
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+}
