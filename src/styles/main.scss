@@ -23,14 +23,13 @@
 
 .header {
   background-color: #3f5252;
-
   &__wrapper {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     max-width: 1500px;
-
+    height: 722px;
     @include onIpad {
       max-width: 700px;
     }
@@ -577,6 +576,8 @@
     flex-direction: column;
     padding-bottom: 185px;
     justify-content: center;
+    max-width: 1500px;
+    margin: 0 auto;
   }
   &__content {
     display: flex;
@@ -698,13 +699,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  padding: 0;
   width: fit-content;
-  position: relative;
+  margin-top: 60px;
   list-style-type: none;
   height: 300px;
-  top: 60px;
-  padding-bottom: 55px;
+
+  padding-bottom: 40px;
 }
 
 .navigation__today,
@@ -715,10 +716,10 @@
   font-size: 16px;
   line-height: 24px;
   display: inline;
-  position: relative;
-  top: 90px;
+
   color: #f1f5f4;
-  margin-left: 40px;
+
+  padding: 0;
 
   &--bold {
     font-weight: 400;
@@ -731,50 +732,66 @@
   letter-spacing: 0.5mm;
   text-decoration: none;
   color: #f1f5f4;
+
 }
 
 .navigation__line {
   width: 570px;
   height: 1px;
-  color: #fff;
-  display: block;
-  content: "";
+  background-color: #fff;
+  z-index: 10;
+  margin-bottom: 40px;
 }
 
 .navigation__image {
   display: block;
-  height: 800px;
-  position: absolute;
-  bottom: 0;
-  right: 50px;
-  object-fit: contain;
+  width: 673px;
+  height: 700px;
+  position: relative;
+  top: -30px;
+  right: 0;
+  object-fit: scale-down;
 }
 
 .navigation {
-  transform: translateX(100%);
+  transform: translateY(-100%);
   background-color: #3f5252;
-  height: 100%;
-  width: 100%;
   z-index: 2;
   position: fixed;
   top: 0;
   left: 0;
   transition: transform 0.4s;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding-left: 55px;
+  width: 100%;
+  &__wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1500px;
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 55px;
+    position: relative;
+  }
+
   &--active {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
   &__info {
     display: flex;
     gap: 30px;
+
   }
   &__element {
     display: flex;
     flex-direction: column;
+    margin-top: 30px;
+
   }
 
   &__today {
@@ -792,8 +809,8 @@
 .footer {
   background: #3f5252;
   &__container {
-    padding: 160px 55px 60px;
-    width: 1380px;
+    padding: 160px 55px 40px;
+    max-width: 1500px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -834,6 +851,7 @@
   &__contacts-logo {
     display: flex;
     gap: 20px;
+    margin-top: 25px;
   }
   &__schedule-content {
     display: flex;
@@ -879,7 +897,7 @@
       font-size: 14px;
       line-height: 20px;
       color: #f1f5f4;
-      margin-bottom: 4px;
+
     }
   }
 }
