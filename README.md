@@ -5,5 +5,5 @@
 
 Technologies: HTML5, CSS3, JS, Sass, BEM methodology, Figma;
 
-npm start in consol to run this code;
+npm start in consol to run this code
 
