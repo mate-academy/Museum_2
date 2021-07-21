@@ -75,11 +75,3 @@ input3.onclick = function ChangeDisplay() {
   input1.classList.remove('news__input--active');
   input2.classList.toggle('news__input--active');
 };
-
-const input = document.querySelector('.subscribe__button-submit');
-
-input.addEventListener('submit', () => {
-  input.forEach(inp => {
-    inp.value = '';
-  });
-});
