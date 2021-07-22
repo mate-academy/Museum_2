@@ -12,3 +12,14 @@ window.addEventListener('scroll', () => {
   navigation.classList.remove('navigation--active');
   menu.classList.remove('header__manu-opener--active');
 });
+
+const form = document.querySelector('.form');
+const inputs = document.querySelectorAll('.subsribe__input');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  for (const input of inputs) {
+    input.value = '';
+  }
+});
