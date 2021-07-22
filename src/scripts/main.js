@@ -13,7 +13,7 @@ window.addEventListener('scroll', () => {
   menu.classList.remove('header__manu-opener--active');
 });
 
-const form = document.querySelector('.form');
+const form = document.querySelector('.subsribe__form');
 const inputs = document.querySelectorAll('.subsribe__input');
 
 form.addEventListener('submit', (event) => {
