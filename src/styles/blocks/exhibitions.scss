@@ -1,5 +1,14 @@
 .exhibitions {
+  position: relative;
   padding: 60px 0 100px;
+
+  @include onTablet {
+    padding: 115px 0;
+  }
+
+  @include onTablet {
+    padding: 162px 0 260px;
+  }
 
   &__title {
     margin-bottom: 60px;
@@ -13,9 +22,14 @@
     @include onTablet {
       text-align: center;
     }
+
+    @include onDesktop {
+      margin-bottom: 100px;
+    }
   }
 
   &__archive {
+    margin-top: 100px;
     font-family: Raleway, sans-serif;
     text-align: center;
     font-weight: normal;
@@ -23,13 +37,80 @@
     line-height: 100%;
     color: #1c1b29;
 
+    @include onTablet {
+      margin-top: 142px;
+    }
+
+    @include onDesktop {
+      margin-top: 205px;
+      text-align: right;
+    }
+
     &::after {
       content: "";
       display: block;
       margin: 11px auto 0;
-      width: 170px;
+      width: 130px;
       height: 1px;
       background: #1c1b29;
+
+      @include onTablet {
+        width: 170px;
+      }
+
+      @include onDesktop {
+        display: inline-block;
+        position: relative;
+        bottom: 5px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__button {
+    display: none;
+    margin-top: 50px;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+    }
+
+    &--1 {
+      left: 0;
+      top: 45px;
+    }
+
+    &--2 {
+      right: 0;
+      top: 805px;
+    }
+
+    &--2-text {
+      right: 0;
+      top: 720px;
+    }
+
+    &--3 {
+      left: 0;
+      top: 1332px;
+    }
+
+    &--3-text {
+      left: 0;
+      top: 1294px;
     }
   }
 }

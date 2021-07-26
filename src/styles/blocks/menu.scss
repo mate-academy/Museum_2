@@ -1,5 +1,6 @@
 .menu {
   background-color: #3f5252;
+  overflow: hidden;
 
   &__top-actions {
     margin: 0 auto;
@@ -42,14 +43,20 @@
     &:last-child {
       margin-bottom: 0;
 
-      @include onTablet {
-        &::after {
-          content: "";
+      &::after {
+        content: "";
+        display: none;
+        margin-top: 55px;
+        height: 1px;
+        width: 100%;
+        background-color: #f1f5f4;
+
+        @include onTablet {
           display: block;
-          margin-top: 55px;
-          height: 1px;
-          width: 100%;
-          background-color: #f1f5f4;
+        }
+
+        @include onDesktop {
+          width: 50%;
         }
       }
     }
@@ -76,7 +83,6 @@
     display: none;
     height: 90%;
     left: 50%;
-    max-height: 720px;
     bottom: 0;
 
     @include onDesktop {
