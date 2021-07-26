@@ -1,0 +1,93 @@
+.news {
+  padding-top: 80px;
+
+  @include tablet {
+    padding-top: 115px;
+  }
+
+  &__title {
+    @include weight-size-height(700,36px,36px);
+    color: $black-color;
+    padding-bottom: 60px;
+
+    @include tablet {
+      padding-bottom: 75px;
+      @include weight-size-height(700, 48px, 58px);
+    }
+  }
+}
+
+.news-card {
+  padding-bottom: 100px;
+
+  &--tablet {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+  
+  &--desktop {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+  
+  &__image {
+    height: 270px;
+    width: 270px;
+
+    @media (min-width:1280px) {
+      height: 370px;
+      width: 370px;
+    }
+  }
+
+  &__date {
+    font-family: "Raleway", sans-serif;
+    color: $red-color;
+    @include weight-size-height(200,14px,20px);
+    padding-top: 10px;
+  }
+
+  &__title {
+    @include weight-size-height(700,18px,22px);
+    padding-bottom: 10px;
+  }
+
+  &__description {
+    @extend %secondary-text;
+    color:$background-color;
+    width: 280px;
+    
+    @include tablet {
+
+    }
+  }
+}
+
+.news-swipe {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap:12px;
+  padding: 20px 0 60px;
+
+  &__dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: $background-color;
+
+    &:nth-child(n + 2){
+      opacity: 0.3;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
