@@ -1,5 +1,5 @@
 .page {
-  font-family: "Raleway", sans-serif;
+  font-family: $raleway;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -7,6 +7,23 @@
 
   &__body {
     margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: transform 0.5s;
+    transform: translateX(-100%);
+
+    @include onDesktop {
+      transition-duration: 0.7s;
+    }
+    &:target {
+      transform: translateX(0);
+    }
   }
 }
 
