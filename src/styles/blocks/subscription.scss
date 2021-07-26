@@ -42,10 +42,27 @@
     max-width: 600px;
     margin: 0;
   }
+
+  &__button {
+    background-color: inherit;
+    border: none;
+    transform: translateY(10px);
+    visibility: hidden;
+    transition: visibility 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
   
   &__email {
     width: 300px;
-    padding: 3px;
+    padding: 0 6px;
+    line-height: 24px;
     color: $colorFontWhite;
     background-color: inherit;
     border: none;
@@ -59,18 +76,9 @@
     &::placeholder {
       color: $colorFontWhite;
     }
-  }
 
-  &__button {
-    background-color: inherit;
-    border: none;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &:active {
-      transform: scale(0.9);
+    &:focus ~ .subscription__button {
+      visibility: visible;
     }
   }
 }
