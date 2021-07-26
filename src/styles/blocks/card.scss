@@ -1,0 +1,60 @@
+.card {
+  color: $colorFontDark;
+  max-width: 370px;
+
+  &__image-box {
+    padding: 0 0 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__date {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 125%;
+  }
+
+  &__info {
+    line-height: 150%;
+    color: $colorFontGray;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+
+  &--hidden {
+    @include onTablet {
+      display: none;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &--none {
+    @include onPhone {
+      display: none;
+    }
+  }
+}
