@@ -1,0 +1,70 @@
+.button {
+  @extend %flex-center;
+  @extend %secondary-text;
+  
+  box-sizing: border-box;
+  height: 60px;
+  width: 280px;
+
+  color: $primary-color;
+  background-color: $red-color;
+  text-decoration: none;
+  line-height: 16px;
+  border-radius: 2px;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-5%);
+    box-shadow: 0 15px 20px rgba(202, 18, 18, 0.4);
+  }
+
+  &--header {
+    margin: 0;
+    padding-right: 10%;
+
+    @media (min-width:420px) {
+      padding: 0;
+    }
+
+    @include desktop {
+      margin-left: 100px;
+    }
+  }
+
+  &--menu {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-top: 60px;
+    }
+  }
+
+  &--secondary {
+    background-color: $background-color;
+    border: $border;
+
+    @include tablet {
+      margin-top: 60px;
+    }
+  }
+
+  &--exhibitions {
+    display: none;
+
+    @include desktop {
+      display: block;
+      text-align: center;
+      line-height: 60px;
+      margin-top: 50px;
+    }
+  }
+
+  &--events {
+    margin-bottom: 60px;
+
+    @include desktop {
+      margin-bottom: 150px;
+    }
+  }
+}

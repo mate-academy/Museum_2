@@ -1,0 +1,104 @@
+.header {
+  background-color: $background-color;
+  position: relative;
+
+  &__content {
+    @extend %content;
+  }
+
+  &__date {
+    @extend %secondary-text;
+    color: $primary-color;
+    padding-bottom: 20px;
+
+    @include tablet {
+      padding-bottom: 10px;
+    }
+  }
+
+  &__title {
+    @include title-properties(48px);
+    padding-bottom: 30px;
+
+    @include tablet {
+      @include title-properties(72px);
+    }
+
+    @include desktop {
+      @include title-properties(96px);
+      padding-bottom: 40px;
+    }
+
+  }
+
+  &__subtitle {
+
+    &-2 {
+      padding-left: 0;
+
+      @include tablet {
+        padding-left: 50px;
+      }
+      @include desktop {
+        padding-left: 100px;
+      }
+    }
+  }
+
+  &__description {
+    @extend %secondary-text;
+    color: $primary-color;
+    max-width: 240px;
+    padding-bottom: 50px;
+
+    @include tablet {
+      max-width: 370px;
+      padding-bottom: 80px;
+    }
+
+    @include desktop {
+      padding: 0 0 60px 100px;
+    }
+  }
+
+  &__image {
+    @extend %image;
+    background-position: bottom right;
+    
+    background-image: url(../images/girl_mob.png);
+    height: 250px;
+
+    @include tablet {
+      background-image: url(../images/girl_desk.png);
+      height: 400px;
+    }
+    
+    @include desktop {
+      height: 680px;
+    }
+    
+    &--girl {
+      @extend %image-position;
+    }
+
+    &-description {
+      display: none;
+      @extend %secondary-text;
+      font-size: 14px;
+
+      @include desktop {
+        display: block;
+        position: absolute;
+        right: 55px;
+        top: 50%;
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__timeframe {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+  }
+}
