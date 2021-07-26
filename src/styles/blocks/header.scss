@@ -3,7 +3,7 @@
 
   box-sizing: border-box;
   padding: 20px 0 100px;
-  background-color: #3f5252;
+  background-color: $page-dark;
 
   @include onTablet {
     padding-bottom: 180px;
@@ -23,6 +23,14 @@
 
     @include onTablet() {
       padding: 0 40px;
+    }
+  }
+
+  &__nav-container {
+    display: flex;
+
+    @include onTablet {
+      gap: 40px;
     }
   }
 
@@ -84,9 +92,16 @@
     }
   }
 
+  &__data-range-container{
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
   &__date-range-bottom {
-    display: block;
-    width: 100%;
     font-family: "Playfair Display";
     font-style: normal;
     font-weight: bold;
@@ -95,15 +110,16 @@
     color: $font-color-white;
 
     opacity: 0.7;
+  }
 
-    &::after {
-      content: "_________________";
+  &__hr {
+    margin-left: 20px;
+    height: 1px;
+    width: 492px;
 
-      position: relative;
-      top: 0;
-      right: 0;
-      border-top: 1px solid white;
-    }
+    background-color: $font-color-white;
+
+    opacity: 0.3;
   }
 
   &__image {
@@ -111,6 +127,7 @@
     bottom: 0;
     right: 0;
 
+    margin: 0;
     width: 50%;
     height: 46%;
 
@@ -119,6 +136,32 @@
     @include onTablet {
       width: 50%;
       height: 58%;
+    }
+
+    @include onDesktop {
+      width: 673px;
+      height: 753px;
+
+      right: 0;
+    }
+  }
+
+  &__image-caption {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 319px;
+      right: 54px;
+  
+      display: block;
+      font-size: 16px;
+      line-height: 150%;
+      color: $font-color-white;
+    }
+
+    & cite {
+      font-style: normal;
     }
   }
 
