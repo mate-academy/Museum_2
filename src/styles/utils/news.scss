@@ -1,0 +1,139 @@
+@import "_mixins.scss";
+
+.news {
+  background: #f1f5f4;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 185px;
+    justify-content: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    @include onIpad {
+      max-width: 695px;
+    }
+    @include onPhone {
+      padding-bottom: 80px;
+      max-width: 320px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+    @include onIpad {
+      gap: 30px;
+    }
+    @include onPhone {
+      max-width: 320px;
+    }
+  }
+  &__second,
+  &__third {
+    @include onPhone {
+      display: none;
+      overflow: hidden;
+    }
+  }
+  &__title {
+    max-width: 1280px;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 120%;
+    color: #1c1b29;
+    padding-right: 660px;
+    padding-top: 120px;
+    padding-bottom: 75px;
+    margin: 0 auto;
+    @include onIpad {
+      padding-right: 500px;
+      margin-right: 0;
+    }
+    @include onPhone {
+      font-size: 36px;
+      padding-top: 80px;
+      padding-bottom: 60px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &__image {
+    width: 370px;
+    height: 370px;
+    transition-duration: 1000ms;
+    @include onIpad {
+      width: 270px;
+      height: 270px;
+    }
+    @include onPhone {
+      width: 270px;
+      height: 270px;
+    }
+  }
+  &__third {
+    @include onIpad {
+      display: none;
+    }
+    @include onPhone {
+      display: none;
+    }
+  }
+  &__date {
+    font-family: "Raleway", sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1c1b29;
+    margin-top: 30px;
+    margin-bottom: 5px;
+  }
+  &__name {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 125%;
+    color: #1c1b29;
+    margin-bottom: 15px;
+  }
+  &__info {
+    font-family: "Raleway", sans-serif;
+    width: 370px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #504f5e;
+    margin-bottom: 95px;
+    @include onIpad {
+      height: 48px;
+      width: 272px;
+    }
+    @include onPhone {
+      display: none;
+    }
+  }
+  &__dots {
+    display: none;
+    @include onPhone {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      gap: 12px;
+      margin-top: 7px;
+      margin-bottom: 60px;
+    }
+  }
+  &__dot {
+    display: none;
+    @include onPhone {
+      display: block;
+      height: 8px;
+      width: 8px;
+    }
+  }
+}

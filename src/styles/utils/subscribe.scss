@@ -1,0 +1,110 @@
+@import "_mixins.scss";
+
+.subsribe {
+  background-color: #cd4d31;
+  height: 630px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @include onPhone {
+    height: 610px;
+  }
+  &__wrapper {
+    max-width: 1380px;
+    @include onIpad {
+      max-width: 695px;
+      width: auto;
+    }
+    @include onPhone {
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+  &__main {
+    max-width: 1380px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 200px;
+    padding-top: 41px;
+    padding-left: 55px;
+    padding-right: 225px;
+    @include onIpad {
+      flex-direction: column;
+      padding-right: 125px;
+      gap: 80px;
+      justify-content: space-around;
+      align-items: baseline;
+      padding-top: 0;
+    }
+    @include onPhone {
+      gap: 60px;
+      flex-direction: column;
+      justify-content: baseline;
+      padding: 0;
+      margin-left: 20px;
+    }
+  }
+  &__title {
+    padding-left: 55px;
+    max-width: 1380px;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 120%;
+    font-family: "Playfair Display", serif;
+    color: #f1f5f4;
+    @include onIpad {
+      width: 570px;
+      margin-bottom: 30px;
+    }
+    @include onPhone {
+      padding-left: 0;
+      margin: 0 auto;
+      margin-bottom: 40px;
+      font-size: 36px;
+      width: 250px;
+      height: auto;
+    }
+  }
+  &__subtitle {
+    font-family: "Raleway", sans-serif;
+    width: 570px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+    @include onPhone {
+      align-self: center;
+      display: flex;
+      justify-content: center;
+      width: 280px;
+      height: 96px;
+      margin: 0 auto;
+      margin-left: 20px;
+    }
+  }
+  &__input {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+    border: none;
+    border-bottom: 1px solid #f1f5f4;
+    padding-left: 10px;
+    outline: none;
+    background-color: #cd4d31;
+    width: 230px;
+  }
+  &__button {
+    background-color: #cd4d31;
+    border: 0;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+    &-container {
+      background-color: #cd4d31;
+      border: 0;
+    }
+  }
+}
