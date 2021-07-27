@@ -1,10 +1,23 @@
 .menu {
   background-color: $colorBG;
-  background-image: url("../images/menu_bg.png");
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  height: 100vh;
   z-index: 2;
+  height: 100vh;
+
+  &__container {
+    background-image: url("../images/menu_bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    height: 100vh;
+    
+
+    @include onTablet {
+      background-image: none;
+    }
+
+    @include onPhone {
+      background-image: none;
+    }
+  }
 
   @include onTablet {
     background-image: none;
@@ -120,7 +133,7 @@
     gap: 30px;
     width: max-content;
     margin-top: 60px;
-
+    padding-bottom: 144px;
     @include onPhone {
       margin: 80px auto 0;
       flex-direction: column;
