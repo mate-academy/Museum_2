@@ -1,25 +1,110 @@
 .article {
+  &--angel {
+    @include onDesktop {
+      position: relative;
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        top: -270px;
+        left: 0;
+
+        width: 544px;
+        height: 816px;
+
+        background-image: url("../images/angel.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &--art {
+    @include onDesktop {
+      position: relative;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        top: -48px;
+        right: 0;
+        width: 575px;
+        height: 465px;
+        
+
+        background-image: url("../images/XX-century-art.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &::before {
+        content: "Мистецтво ХХ ст. - ХХі ст.";
+
+       position: absolute;
+       top: -134px;
+       right: 39px;
+
+       width: 576px;
+       height: 576px;
+
+        overflow-wrap: break-word;
+        font-family: $playfair-display;
+        font-weight: bold;
+        font-size: 144px;
+        line-height: 100%;
+        text-transform: uppercase;
+        
+        opacity: 0.3;
+        border: 1px solid #3F5252;
+      }
+    }
+  }
+
   &__date-special {
-    margin-bottom: 10px;
+    margin: 0 0 10px;
 
     font-family: $playfair-display;
     font-weight: bold;
     font-size: 24px;
     line-height: 125%;
     color: $page-color-red;
+
+    @include onTablet {
+      margin-bottom: 20px;
+
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__date {
+    margin-bottom: 5px;
+    color: $page-color-red;
   }
 
   &__title {
-    margin-bottom: 30px;
+    margin: 0 0 30px;
 
     font-family: $playfair-display;
     font-weight: bold;
     font-size: 24px;
     line-height: 125%;
     color: $font-color-black;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
   }
 
   &__content {
     line-height: 150%;
+
+    order: 2;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
   }
 }
