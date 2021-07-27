@@ -1,0 +1,392 @@
+.header {
+  height: 730px;
+  position: relative;
+  overflow: hidden;
+  background-color: #3f5252;
+
+  @media (max-width: 520px) {
+    height: 570px;
+  }
+
+  &__container {
+    max-width: 1520px;
+    width: calc(100% - 110px);
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    @media (max-width: 850px) {
+      width: calc(100% - 80px);
+    }
+
+    @media (max-width: 555px) {
+      width: calc(100% - 40px);
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    height: 730px;
+    padding-top: 90px;
+    position: absolute;
+    left: -100vw;
+    z-index: 2;
+    overflow-y: auto;
+    background: #3f5252;
+    transition: left 500ms;
+
+    @media (min-width: 1366px) {
+      height: 800px;
+    }
+
+    @media (max-width: 520px) {
+      height: 570px;
+    }
+
+    &.animate {
+      left: 0;
+    }
+
+    &-img {
+      width: 624px;
+      height: 801px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background-image: url("../images/boy.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @media (max-width: 1236px) {
+        display: none;
+      }
+    }
+
+    @media (max-width: 403px) {
+      padding-top: 150px;
+    }
+  }
+
+  &__top {
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+
+  &__logo {
+    width: 123px;
+    height: 40px;
+    z-index: 2;
+    fill: #f1f5f4;
+    text-decoration: none;
+
+    &:hover {
+      fill: #cd4d31;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__burger {
+    width: 45px;
+    height: 45px;
+    padding: 20px;
+    position: relative;
+
+    &-icon {
+      display: flex;
+      width: 25px;
+      height: 2px;
+
+      background-color: #fff;
+      border-radius: 2px;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+
+      &:before,
+      &:after {
+        content: "";
+        width: 25px;
+        height: 2px;
+
+        background-color: #fff;
+        border-radius: 2px;
+
+        position: absolute;
+        left: 0;
+        z-index: 2;
+      }
+
+      &:before {
+        top: 8px;
+      }
+
+      &:after {
+        top: -8px;
+      }
+    }
+
+    & &-icon.active {
+      background: rgba(255, 255, 255, 0);
+
+      &:before {
+        content: "";
+        top: 0;
+        transform: rotate(45deg) translateX(-2px) translateY(-2px);
+        transition: top 300ms,
+          transform 300ms 300ms
+          cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      }
+
+      &:after {
+        content: "";
+        bottom: 0;
+        transform: rotate(-45deg) translateX(-4px) translateY(4px);
+        transition: bottom 300ms,
+          transform 300ms 300ms
+          cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__select {
+    outline: none;
+    background-color: transparent;
+    color: #f1f5f4;
+    border: none;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 2;
+
+    &-option {
+      border: none;
+      background-color: #3f5252;
+    }
+
+    @media (max-width: 320px) {
+      display: none;
+    }
+  }
+
+  &__content {
+
+    @media (max-width: 850px) {
+      margin-left: 59px;
+    }
+
+    @media (max-width: 612px) {
+      margin-left: 0;
+    }
+  }
+
+  &__date {
+    font-size: 16px;
+    line-height: 150%;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    color: #f1f5f4;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-family: "Playfair Display", serif;
+    font-size: 96px;
+    line-height: 100%;
+    color: #f1f5f4;
+
+    @media (max-width: 1100px) {
+      font-size: 72px;
+    }
+
+    @media (max-width: 850px) {
+      font-size: 72px;
+    }
+
+    @media (max-width: 800px) {
+      font-size: 60px;
+    }
+
+    @media(max-width: 550px) {
+      font-size: 40px;
+      line-height: 40px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 48px;
+      margin: 20px 0 30px;
+    }
+
+    &-century {
+      display: flex;
+      margin: 10px 0 40px 45px;
+
+      @media (max-width: 700px) {
+        margin-left: 0;
+      }
+
+      @media (max-width: 320px) {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__description {
+    width: 370px;
+    height: 48px;
+    font-size: 16px;
+    line-height: 150%;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    color: #f1f5f4;
+    margin-bottom: 60px;
+    margin-left: 45px;
+
+    @media (max-width: 850px) {
+      width: 267px;
+      margin-left: 0;
+    }
+
+    @media (max-width: 320px) {
+      width: 267px;
+      height: 47px;
+      margin-bottom: 50px;
+      margin-left: 0;
+    }
+  }
+
+  &__img {
+    width: 620px;
+    height: 670px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: 500ms;
+
+    @media (max-width: 1100px) {
+      width: 473px;
+      height: 529px;
+    }
+
+    @media (max-width: 850px) {
+      width: 399px;
+      height: 445px;
+    }
+
+    @media (max-width: 700px) {
+      width: 358px;
+      height: 400px;
+    }
+
+    @media (max-width: 555px) {
+      width: 300px;
+      height: 300px;
+      right: -70px;
+      bottom: -50px;
+    }
+
+    @media (max-width: 375px) {
+      width: 245px;
+      height: 273px;
+    }
+
+    &-girl {
+      object-fit: contain;
+      overflow: hidden;
+    }
+
+    &-text {
+      font-size: 16px;
+      line-height: 150%;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      color: #f1f5f4;
+      position: absolute;
+      top: 50%;
+      right: 55px;
+
+      @media (max-width: 1100px) {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    width: 270px;
+    height: 60px;
+    font-size: 16px;
+    line-height: 100%;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #f1f5f4;
+    background-color: #cd4d31;
+    margin-left: 45px;
+    margin-bottom: 55px;
+    transition: 500ms;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #772917;
+    }
+
+    @media (max-width: 850px) {
+      margin-left: 0;
+    }
+
+    @media (max-width: 320px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__event-date {
+    width: 81px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 125%;
+    position: relative;
+    color: #f1f5f4;
+
+    &:after {
+      content: "";
+      width: 492px;
+      border: 1px solid #f1f5f4;
+      position: absolute;
+      left: 121px;
+      top: 50%;
+      opacity: 30%;
+    }
+
+    @media (max-width: 1100px) {
+      display: none;
+    }
+  }
+}
