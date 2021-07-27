@@ -12,7 +12,7 @@
     }
   }
 
-  &__title {
+  &-title {
     @include title-properties(48px);
     padding-bottom: 30px;
 
@@ -24,20 +24,15 @@
       @include title-properties(96px);
       padding-bottom: 40px;
     }
+    
+    &__century {
 
-  }
-
-  &__subtitle {
-
-    &-2 {
-      padding-left: 0;
-
-      @include tablet {
-        padding-left: 50px;
-      }
-      @include desktop {
-        padding-left: 100px;
-      }
+  @include tablet {
+          padding-left: 50px;
+        }
+        @include desktop {
+          padding-left: 100px;
+        }
     }
   }
 
@@ -56,9 +51,18 @@
     }
   }
 
+  &__button {
+    margin: 0;
+
+    @include desktop {
+      margin-left: 100px;
+    }
+  }
+
   &__image {
     @extend %image;
     background-position: bottom right;
+    @extend %image-position;
     
     background-image: url(../images/girl_mob.png);
     height: 250px;
@@ -76,10 +80,6 @@
       height: 680px;
     }
     
-    &--girl {
-      @extend %image-position;
-    }
-
     &-description {
       display: none;
       @extend %secondary-text;

@@ -1,6 +1,6 @@
 .menu {
   background-color: $background-color;
-  z-index: 3;
+  z-index: 2;
 
   &__top {
     padding-bottom: 80px;
@@ -50,6 +50,7 @@
 
   &__image {
     @extend %image;
+    @extend %image-position;
     
     display: none;
     background-image: url(/images/boy.png);
@@ -59,9 +60,14 @@
     @include desktop {
       display: block;
     }
+  }
 
-    &--boy {
-      @extend %image-position;
+  &__buttons {
+    display: block;
+
+    @include tablet {
+      display: flex;
+      gap: 30px;
     }
   }
 }
