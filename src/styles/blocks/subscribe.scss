@@ -1,0 +1,97 @@
+.subscribe {
+  @include block-padding;
+  display: grid;
+  align-content: center;
+  margin-top: 130px;
+  width: 100vw;
+  height: 450px;
+  background-color: $mainColor;
+  color: $lightGray;
+
+  @media (max-width: $iPadMini) {
+    height: 530px;
+  }
+
+  @media (max-width: $iPhoneSE) {
+    height: 515px;
+  }
+
+  &__title {
+    @extend %section-title;
+    color: $lightGray;
+    padding-bottom: 30px;
+
+    @media (max-width: $iPadMini) {
+      margin-top: 100px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: end;
+    align-items: self-end;
+
+    @media (max-width: $iPadMini) {
+      grid-template-columns: 1fr;
+      justify-items: start;
+    }
+  }
+
+  &__text {
+    max-width: 550px;
+    font-weight: lighter;
+  }
+
+  &__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &-input {
+      width: 280px;
+      padding: 10px;
+      padding-top: 80px;
+      background-color: $mainColor;
+      border: none;
+      border-bottom: 1px solid $lightGray;
+      outline: none;
+      color: $lightGray;
+
+      &::placeholder {
+        font-family: "Raleway", sans-serif;
+        font-weight: lighter;
+        font-size: 16px;
+        line-height: 24px;
+        color: #f1f5f4;
+      }
+
+      @media (max-width: $iPadMini) {
+        padding-top: 50px;
+        margin-bottom: 120px;
+      }
+    }
+
+    &-submit {
+      position: absolute;
+      top: 125px;
+      right: 0;
+      width: 42px;
+      height: 42px;
+      background-image: url(/images/arrow.png);
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      background-color: transparent;
+      background-position: center center;
+      border: 1px solid $lightGray;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      transition: transform 0.5s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.working1 {
+  @include block-padding;
+
+  &__title {
+    @extend %section-title;
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 160px;
+
+    @media (max-width: $iPhoneSE) {
+      padding-bottom: 60px;
+      padding-top: 115px;
+      text-align: left;
+    }
+  }
+
+  &__event {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $iPhoneSE) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__img {
+    position: relative;
+    top: -260px;
+    z-index: -1;
+    max-height: 400px;
+
+    @media (max-width: $iPadMini) {
+      visibility: hidden;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      display: none;
+    }
+  }
+
+  &__details {
+    padding-right: $horizontalPaddings;
+    padding-bottom: $verticalPadding;
+
+    @media (max-width: $iPhoneSE) {
+      padding-bottom: 90px;
+      padding-right: 0;
+    }
+  }
+  
+  &__date {
+    padding-bottom: 20px;
+    margin-left: -95px;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 58px;
+    color: $mainColor;
+
+    @media (max-width: $iPhoneSE) {
+      font-size: 24px;
+      line-height: 30px;
+      margin-left: 0;
+    }
+  }
+
+  &__subtitle {
+    @extend %subtitle;
+  }
+
+  &__text {
+    @extend %event-text;
+  }
+
+  &__btn {
+    @extend %orange-btn;
+  }
+}

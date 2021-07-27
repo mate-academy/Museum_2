@@ -1,0 +1,130 @@
+.footer {
+  @include block-padding;
+  position: relative;
+  width: 100vw;
+  max-height: max-content;
+  background-color: $headerGreen;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: space-between;
+    padding-top: 150px;
+
+    @media (max-width: $iPadMini) {
+      grid-template-columns: 1fr 1fr;
+      padding-top: 100px;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      grid-template-columns: 1fr;
+      padding-top: 50px;
+    }
+  }
+
+  &__segment {
+    max-width: 250px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: $lightGray;
+    padding-bottom: 40px;
+  }
+
+  &__text,
+  &__text-link,
+  &__text-span {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 30px;
+    color: $lightGray;
+    text-decoration: none;
+    transition: color 0.5s ease-in-out;
+
+    &-span {
+      padding-left: 33px;
+    }
+
+    &-span2 {
+      padding-left: 15px;
+    }
+  }
+
+  &__text-link,
+  &__text-span {
+    &:hover {
+      color: $mainColor;
+    }
+  }
+
+  &__networks {
+    margin: 0 -10px;
+    &-facebook {
+      @include social-networks;
+      content: url(/images/facebook.svg);
+    }
+
+    &-twitter {
+      @include social-networks;
+      content: url(/images/Twitter.svg);
+    }
+
+    &-telegram {
+      @include social-networks;
+      content: url(/images/telegram.svg);
+    }
+
+    &-instagram {
+      @include social-networks;
+      content: url(/images/instagram.svg);
+    }
+  }
+
+  &__copyright {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: lighter;
+    text-align: center;
+    color: $lightGray;
+  }
+
+  &__btn-up {
+    position: absolute;
+    right: 140px;
+    top: 50px;
+    width: 42px;
+    height: 42px;
+    background-image: url(/images/arrow.png);
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center center;
+    border: 1px solid $lightGray;
+    border-radius: 50%;
+    transform: rotate(270deg);
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: rotate(270deg) scale(1.2);
+    }
+
+    @media (max-width: $iPadMini) {
+      right: 30px;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      right: 60px;
+    }
+  }
+}

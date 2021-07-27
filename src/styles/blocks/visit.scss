@@ -1,0 +1,68 @@
+.visit {
+  @include block-padding;
+  max-width: 100vw;
+  min-height: 100vh;
+  background-image: url(/images/к.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-color: $headerGreen;
+  color: $lightGray;
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr 2fr;
+
+  @media (max-width: 1400px) {
+    padding-top: 180px;
+    justify-items: end;
+    background-size: 450px;
+  }
+
+  @media (max-width: $iPadMini) {
+    background-size: 260px;
+    padding-top: 0;
+  }
+
+  @media (max-width: $iPhoneSE) {
+    background-image: none;
+    grid-template-columns: 1fr;
+  }
+
+  &__title {
+    @extend %h1;
+
+    @media (max-width: 1400px) {
+      padding-bottom: 100px;
+    }
+
+    @media (max-width: $iPadMini) {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__subtitle {
+    @extend %event-text;
+    padding-left: $textShift;
+    color: $lightGray;
+    max-width: 470px;
+
+    @media (max-width: 1400px) {
+      justify-content: end;
+    }
+
+    @media (max-width: $iPhoneSE) {
+      padding-left: 0;
+      padding-bottom: 60px;
+    }
+
+  }
+
+  &__btn {
+    @extend %orange-btn;
+    margin-left: $textShift;
+
+    @media (max-width: $iPhoneSE) {
+      margin-left: 0;
+      max-width: 260px;
+    }
+  }
+}
