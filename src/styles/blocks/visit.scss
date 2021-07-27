@@ -1,0 +1,47 @@
+.visit {
+  max-width: $section-width;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include onPad {
+    padding: 120px 99px 170px;
+  }
+  @mixin onMobile {
+    flex-direction: column;
+    padding: 80px 20px;
+  }
+
+  &__shift {
+    padding-left: 90px;
+    @include onPad {
+      padding-left: 200px;
+    }
+    @mixin onMobile {
+      padding: 0;
+    }
+  }
+
+  &__text {
+    max-width: 470px;
+    margin: 60px 0;
+    @mixin onMobile {
+      margin: 40px 0 60px;
+    }
+  }
+
+  &__picture {
+    max-width: 600px;
+    @include onPad {
+      position: absolute;
+      max-width: 320px;
+      bottom: -10px;
+      left: 0;
+    }
+    @mixin onMobile {
+      display: none;
+    }
+  }
+}

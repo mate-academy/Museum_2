@@ -1,0 +1,85 @@
+.subscribe {
+  max-width: $section-width;
+  padding: 160px 55px;
+  @media (max-width: 768px) {
+    padding: 256px 99px 228px;
+  }
+  @mixin onMobile {
+    padding: 80px 20px;
+  }
+
+  &__title {
+    margin-bottom: 41px;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 140px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+    @mixin onMobile {
+      gap: 60px;
+    }
+  }
+
+  &__text {
+    max-width: 470px;
+    @media (max-width: 768px) {
+      max-width: none;
+    }
+  }
+}
+
+.email-form {
+  position: relative;
+  align-self: start;
+
+  @mixin onMobile {
+    align-self: center;
+  }
+  
+  &__email {
+    color: white;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid white;
+    font-size: inherit;
+    line-height: inherit;
+    outline-color: white;
+    &::placeholder {
+      color: white;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus, {
+      background-color: transparent;
+    }
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    bottom: -60px;
+    right: -90px;
+    background-color: transparent;
+    transition: border 0.3s;
+    opacity: 0;
+
+    &--active {
+      opacity: 1;
+      &:hover {
+        border: 1px solid white;
+      }
+    }
+
+    @media (max-width: 768px) {
+      bottom: 50%;
+      right: -50px;
+    }
+  }
+}

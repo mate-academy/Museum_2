@@ -1,0 +1,122 @@
+.news {
+  max-width: $section-width;
+  overflow: hidden;
+  color: $c-black;
+  padding: 120px 55px 184px;
+
+  @include onPad {
+    padding: 115px 99px 130px;
+  }
+
+  @mixin onMobile {
+    padding: 80px 20px 91px;
+  }
+
+  &__title {
+    margin-left: 255px;
+    margin-bottom: 75px;
+    @include onPad {
+      margin-left: 0;
+    }
+    @mixin onMobile {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    padding-bottom: 104px;
+
+    @include onPad {
+      gap: 30px;
+    }
+
+    @mixin onMobile {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 370px;
+
+    @include onPad {
+
+      &:last-child {
+        display: none;
+      }
+    }
+    @mixin onMobile {
+      &:nth-child(n+2) {
+        display: none;
+      }
+    }
+  }
+
+  &__picture {
+    max-width: 370px;
+    margin-bottom: 30px;
+
+    @include onPad {
+      max-width: 270px;
+    }
+
+    @mixin onMobile {
+      max-width: 280px;
+      align-self: center;
+    }
+  }
+
+  &__date {
+    font-size: 0.8rem;
+    font-weight: 200;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    line-height: 125%;
+    font-weight: bold;
+  }
+
+  &__description {
+    color: #504f5e;
+  }
+
+  &__deviding-line {
+    color: $c-black;
+    position: relative;
+    margin-right: 200px;
+    margin-top: 60px;
+    text-align: right;
+  
+    @include onPad {
+      text-align: center;
+      margin: auto;
+    }
+    
+  
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      background-color: $c-black;
+      line-height: 100%;
+      height: 1px;
+      width: 70px;
+      top: 50%;
+      right: -8%;
+  
+      @include onPad {
+        top: 120%;
+        right: 50%;
+        transform: translate(50%);
+        width: 170px;
+      }
+    }
+  }
+}

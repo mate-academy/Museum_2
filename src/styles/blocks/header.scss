@@ -1,0 +1,136 @@
+.header {
+  max-width: $section-width;
+  position: relative;
+
+  padding: 0 55px;
+  line-height: 150%;
+  overflow: hidden;
+
+  &__info-container {
+    max-width: 1280px;
+  }
+
+  @include onPad {
+    padding: 0 40px;
+  }
+
+  @include onMobile {
+    padding: 0 20px 100px;
+  }
+
+  &__info {
+    position: relative;
+
+    @include onPad {
+      margin-left: 60px;
+    }
+
+    @include onMobile {
+      margin: 0 auto;
+    }
+  }
+
+  &__date {
+    margin-top: 100px;
+
+    @include onMobile {
+      margin-top: 50px;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+
+    @include onPad {
+      font-size: 76px;
+    }
+
+    @include onMobile {
+      font-size: 48px;
+    }
+    
+  }
+
+  &__block-shift {
+    margin-top: 10px;
+    margin-left: 100px;
+
+    @include onPad {
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    margin: 40px 0 60px;
+
+    @include onMobile {
+      width: 250px;
+    }
+  }
+
+  &__line {
+    position: relative;
+    padding: 110px 0 52px;
+
+    @include onPad {
+      visibility: hidden;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__line::after {
+    content: "";
+    display: block;
+    background-color: #f1f5f4;
+    width: 150%;
+    height: 1px;
+    position: absolute;
+    bottom: 35%;
+    left: 10%;
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+    right: -55px;
+    z-index: 1;
+
+    @include onPad {
+      width: 59%;
+      right: -40px;
+    }
+
+    @include onMobile {
+      width: 90%;
+      bottom: -100px;
+      right: -40%;
+    }
+  }
+  &__picture-description {
+    position: absolute;
+    width: 150px;
+    bottom: 50%;
+    right: -30px;
+
+    @include onPad {
+      visibility: hidden;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    transform: translateY(-200%);
+    transition: transform 2s;
+
+    &--active {
+      transform: translateY(0);
+    }
+  }
+}

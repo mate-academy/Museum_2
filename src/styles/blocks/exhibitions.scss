@@ -1,0 +1,188 @@
+.exhibitions {
+  max-width: $section-width;
+  color: $c-black;
+
+  &__title {
+    margin-top: 160px;
+    text-align: center;
+
+    @include onPad {
+      margin-top: 115px;
+    }
+
+    @include onMobile {
+      padding: 0 20px ;
+      text-align: start;
+    }
+  }
+
+  &__main {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 30px;
+    overflow: hidden;
+    align-items: center;
+
+    @include onPad {
+      padding: 55px 100px 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 150px;
+    }
+
+    @include onMobile {
+      padding: 60px 20px 100px;
+      text-align: start;
+      gap: 90px;
+    }
+
+  }
+
+  &__duration {
+    margin-bottom: 20px;
+    margin-left: -15%;
+    color: $c-red;
+
+    @include onPad {
+      margin: 0 0 20px -80%;
+      text-align: center;
+    }
+
+    @include onMobile {
+      font-size: 1.5rem;
+      margin: 0 0 10px;
+      text-align: start;
+      
+    }
+  }
+
+  &__date {
+    color: $c-red;
+  }
+
+  &__description {
+    max-width: 370px;
+    margin: 20px 0 50px;
+
+    @include onPad {
+      margin: 20px 0 0;
+    }
+
+    @include onMobile {
+      max-width: 170px;
+    }
+  }
+
+  &__button {
+    @include onPad {
+      display: none;
+    }
+  }
+
+  &__angels {
+    margin-bottom: 92px;
+
+    @include onPad {
+      margin-bottom: 0;
+      max-width: 370px;
+      align-self: flex-end;
+    }
+
+    @include onMobile {
+      margin: 0;
+      align-self: start;
+    }
+  }
+
+  &__art {
+    justify-self: flex-end;
+
+    @include onMobile {
+      align-self: flex-end;
+    }
+
+    & .exhibitions__description {
+      @include onMobile {
+        margin-left: 40%;
+      }
+    }
+  }
+
+  &__ancient-art {
+    align-self: flex-end;
+
+    @include onMobile {
+      align-self: flex-start;
+    }
+  }
+
+  &__picture-text {
+    position: relative;
+
+    font-size: 9rem;
+    text-transform: uppercase;
+    font-family: "Playfair Display", serif;
+    color: rgba(63,82,82, 0.3);
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    font-weight: bold;
+    line-height: 100%;
+
+    &:last-child {
+      margin-left: 40px;
+    }
+    @include onPad {
+      display: none;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+
+    &:first-child {
+      width: 80%;
+      top: -350px;
+    }
+
+    &:nth-child(n+2) {
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &__deviding-line {
+    color: $c-black;
+    position: relative;
+    margin-right: 200px;
+    margin-top: 60px;
+    text-align: right;
+  
+    @include onPad {
+      text-align: center;
+      margin: auto;
+    }
+   
+  
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      background-color: $c-black;
+      line-height: 100%;
+      height: 1px;
+      width: 70px;
+      top: 50%;
+      right: -8%;
+  
+      @include onPad {
+        top: 120%;
+        right: 50%;
+        transform: translate(50%);
+        width: 170px;
+      }
+    }
+  }
+}
