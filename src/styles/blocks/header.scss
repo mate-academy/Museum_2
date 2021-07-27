@@ -1,10 +1,8 @@
 .header {
   background-color: $colorBG;
-  background-image: url("../images/header_bg.png");
   background-repeat: no-repeat;
   background-position: bottom right;
-  height: 100vh;
-  position: relative;
+  padding-bottom: 60px;
 
   @include onTablet {
     background-image: url("../images/header_bg_tablet.png");
@@ -17,6 +15,20 @@
       position: absolute;
       bottom: -4px;
       right: 0;
+    }
+  }
+
+  &__container {
+    background-image: url("../images/header_bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+
+    @include onTablet {
+      background-image: none;
+    }
+
+    @include onPhone {
+      background-image: none;
     }
   }
 
@@ -92,13 +104,17 @@
     }
   }
 
+  &__backgroundName-box {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   &__backgroundName {
     font-size: 16px;
     line-height: 150%;
     color: $colorFontWhite;
     position: absolute;
-    right: 55px;
-    bottom: 320px;
+    top: 350px;
 
     @include onTablet {
       display: none;
@@ -110,7 +126,7 @@
   }
 
   &__dateSmall {
-    margin-top: 110px;
+    margin: 110px 0 0;
     font-family: $titleFont;
     font-weight: bold;
     font-size: 14px;
