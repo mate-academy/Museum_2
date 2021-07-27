@@ -1,8 +1,8 @@
 .event {
-  padding-top: 100px;
+  padding-top: 10px;
 
   @include tablet {
-    padding-bottom: 120px;
+    padding-bottom: 30px;
   }
 
   &__title {
@@ -13,8 +13,13 @@
       @include weight-size-height(700, 48px, 58px);
     }
     @include desktop {
+      padding-top: 80px;
       padding-bottom: 150px;
     }
+  }
+
+  &__bottom-text {
+    margin-bottom: 90px;
   }
 }
 
@@ -129,12 +134,20 @@
   &__image {
     display: none;
 
-    @media (min-width: 1280px) {
-      display: inline-block;
+    @media (min-width:1380px) {
+      display: block;
     }
 
     &-person {
       height: 475px;
+
+      transition: transform 0.3s, border-radius 0.2s;
+
+      &:hover {
+        border-radius: 20px;
+        transform: translateY(-10px);
+        opacity: 0.8;
+      }
 
       &--pavlo {
         position: absolute;
