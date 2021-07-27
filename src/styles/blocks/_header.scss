@@ -1,0 +1,150 @@
+.header {
+  position: relative;
+  height: 584px;
+  padding: 20px;
+  color: $white-text;
+  overflow: hidden;
+
+  &__announcement {
+    margin-top: 100px;
+  }
+
+  &__title {
+    height: 96px;
+    margin-top: 20px;
+    @extend %biggest-m;
+  }
+
+  &__content {
+    height: 48px;
+    width: 260px;
+    margin-top: 30px;
+  }
+
+  &__button {
+    margin-top: 50px;
+  }
+
+  &__img {
+    height: 273px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    object-fit: cover;
+
+    &-description {
+      display: none;
+    }
+
+    @media (min-width: 600px) {
+      height: 330px;
+    }
+  }
+
+  &__date {
+    display: none;
+  }
+
+  @include tablet {
+    height: 762px;
+    padding: 20px 40px;
+
+    &__container {
+      padding: 0 60px;
+    }
+
+    &__announcement {
+      margin-top: 120px;
+    }
+
+    &__title {
+      margin-top: 10px;
+      font-size: 72px;
+      line-height: 100%;
+      height: 144px;
+
+      &-1 {
+        display: block;
+      }
+
+      &-2 {
+        display: block;
+        padding-left: 50px;
+      }
+    }
+
+    &__content {
+      margin-top: 40px;
+    }
+
+    &__button {
+      margin-top: 80px;
+    }
+
+    &__img {
+      height: 445px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    height: 800px;
+    padding: 20px 55px;
+
+    &__container {
+      padding: 0;
+    }
+
+    &__title {
+      font-size: 96px;
+      line-height: 100%;
+      height: 202px;
+
+      &-2 {
+        margin-top: 10px;
+        padding-left: 100px;
+      }
+    }
+
+    &__content {
+      width: 370px;
+      margin-left: 100px;
+    }
+
+    &__button {
+      margin-top: 60px;
+      margin-left: 100px;
+    }
+
+    &__img {
+      height: 753px;
+    }
+
+    &__date {
+      position: relative;
+      display: block;
+      height: 18px;
+      margin-top: 110px;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 100px;
+        bottom: 25%;
+        height: 1px;
+        background-color: $white-text;
+        opacity: 0.3;
+        width: 492px;
+      }
+    }
+  }
+
+  @include desktop {
+    &__img-description {
+      display: block;
+      position: absolute;
+      left: 85%;
+      bottom: 320px;
+    }
+  }
+}

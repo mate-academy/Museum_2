@@ -1,0 +1,163 @@
+.news {
+  padding: 80px 20px;
+
+  &__block {
+    position: relative;
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  &__title {
+    width: max-content;
+    margin: 0 auto 60px;
+    @extend %h2-m;
+  }
+
+  &__card-2:target + &__card-3 {
+    opacity: 0;
+  }
+
+  &__card-1:target ~ &__card-3 {
+    opacity: 0;
+  }
+
+  &__card-1 {
+    display: none;
+
+    &:target {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__card-2 {
+    display: none;
+
+    &:target {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__togglers {
+    width: 48px;
+    display: flex;
+    gap: 12px;
+    margin: 10px auto 0;
+  }
+
+  &__toggle {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: $color-grey;
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    text-decoration: none;
+    line-height: 100%;
+    text-align: center;
+    color: #1c1b29;
+    margin: 60px auto 10px;
+
+    &::after {
+      content: "";
+      display: block;
+      transform: translateY(10px);
+      height: 1px;
+      width: 130px;
+      background-color: #1c1b29;
+    }
+  }
+
+  @include tablet {
+    padding: 115px 100px;
+
+    &__block {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    &__card-2 {
+      display: block;
+    }
+
+    &__title {
+      font-size: 48px;
+      line-height: 120%;
+      margin-bottom: 75px;
+    }
+
+    &__togglers {
+      display: none;
+    }
+
+    &__link {
+      margin-top: 90px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: 120px 55px;
+
+    &__title {
+      margin-left: 200px;
+    }
+
+    &__card-1 {
+      display: block;
+    }
+  }
+}
+
+.card {
+  width: 280px;
+  max-width: 370px;
+
+  @include tablet {
+    width: 270px;
+  }
+
+  @include desktop {
+    width: 370px;
+  }
+
+  &__img {
+    width: 100%;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+  }
+
+  &__date {
+    margin-top: 20px;
+    @extend %smallest;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 125%;
+    color: #1c1b29;
+  }
+
+  &__description {
+    margin-top: 10px;
+    color: #504f5e;
+  }
+}
