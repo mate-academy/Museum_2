@@ -1,6 +1,41 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin for-laptops {
+  @media (min-width: 1200px) {
+    @content;
   }
+}
+
+@mixin for-notebook {
+  @media (min-width: 992px) and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-small-desktops {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin for-phone {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin for-iphone5 {
+  @media (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin second-font-small {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
 }
