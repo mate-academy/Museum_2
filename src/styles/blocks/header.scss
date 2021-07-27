@@ -1,34 +1,33 @@
 .header {
-  box-sizing: border-box;
   position: relative;
-  background-color: #3f5252;
+
+  background-color: $main-bg-color;
   overflow: hidden;
 
   &__top-actions {
     margin: 0 auto;
   }
 
-  .select {
+  &__select {
     @include onTablet {
       display: block;
     }
   }
 
   &__content {
-    position: relative;
     height: calc(100vh - 63px);
     box-sizing: border-box;
     padding: 100px 0;
   }
   &__date {
-    @extend %font-styles-mobile;
-    color: #f1f5f4;
+    @extend %article-font-styles;
+    color: $main-font-color;
     margin-bottom: 20px;
   }
 
   &__text {
-    @extend %font-styles-mobile;
-    color: #f1f5f4;
+    @extend %article-font-styles;
+    color: $main-font-color;
     margin-bottom: 50px;
 
     @include onTablet {
@@ -41,12 +40,11 @@
   }
 
   &__title {
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 100%;
-    color: #f1f5f4;
     margin-bottom: 30px;
+
+    @extend %title-font-styles;
+    font-size: 48px;
+    color: $main-font-color;
 
     @include onTablet {
       font-size: 72px;
@@ -89,15 +87,12 @@
   &__image-caption {
     position: absolute;
     display: none;
-    font-family: Raleway, sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: #f1f5f4;
+    @extend %article-font-styles;
+    color: $main-font-color;
 
     @media (min-width: 1200px) {
       display: block;
-      right: 54px;
+      right: 45px;
       top: 50%;
     }
   }
@@ -107,11 +102,9 @@
     position: absolute;
     bottom: 50px;
 
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
+    @extend %title-font-styles;
     font-size: 14px;
-    line-height: 125%;
-    color: #f1f5f4;
+    color: $main-font-color;
     opacity: 0.7;
 
     &::after {
@@ -124,7 +117,7 @@
       width: 45vw;
       height: 1px;
 
-      background: #f1f5f4;
+      background: $main-font-color;
       opacity: 0.3;
     }
 

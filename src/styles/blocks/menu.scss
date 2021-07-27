@@ -1,6 +1,7 @@
 .menu {
-  background-color: #3f5252;
+  background-color: $main-bg-color;
   overflow: hidden;
+  z-index: 1;
 
   &__top-actions {
     margin: 0 auto;
@@ -21,11 +22,26 @@
   }
 
   &__text {
-    font-family: Raleway, sans-serif;
-    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 50px;
+    }
+  }
+
+  &__address {
+    display: flex;
+    gap: 5px;
+
+    @extend %article-font-styles;
     font-size: 14px;
-    line-height: 20px;
-    color: #f1f5f4;
+    color: $main-font-color;
+
+    @include onDesktop {
+      flex-direction: column;
+    }
 
     &--thin {
       font-weight: 200;
@@ -49,7 +65,7 @@
         margin-top: 55px;
         height: 1px;
         width: 100%;
-        background-color: #f1f5f4;
+        background-color: $main-font-color;
 
         @include onTablet {
           display: block;
@@ -64,13 +80,16 @@
 
   &__link {
     display: inline-block;
-    text-decoration: none;
+    transition: all 0.3s;
 
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    @extend %title-font-styles;
+    text-decoration: none;
     font-size: 24px;
-    line-height: 100%;
-    color: #f1f5f4;
+    color: $main-font-color;
 
     @include onTablet {
       font-size: 48px;
@@ -82,7 +101,7 @@
     position: absolute;
     display: none;
     height: 90%;
-    left: 50%;
+    right: 0;
     bottom: 0;
 
     @include onDesktop {

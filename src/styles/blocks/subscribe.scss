@@ -1,6 +1,6 @@
 .subscribe {
   padding: 80px 0;
-  background-color: #cd4d31;
+  background-color: $button-bg-color;
 
   @include onTablet {
     padding: 110px 0 120px;
@@ -13,11 +13,9 @@
   &__title {
     margin-bottom: 40px;
 
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
+    @extend %title-font-styles;
     font-size: 36px;
-    line-height: 100%;
-    color: #f1f5f4;
+    color: $main-font-color;
 
     @include onTablet {
       margin-bottom: 30px;
@@ -33,11 +31,8 @@
   &__description {
     margin-bottom: 62px;
 
-    font-family: Raleway, sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: #f1f5f4;
+    @extend %article-font-styles;
+    color: $main-font-color;
 
     @include onTablet {
       margin-bottom: 66px;
@@ -56,21 +51,20 @@
     margin-right: 10px;
     width: 228px;
 
-    background-color: #cd4d31;
+    background-color: $button-bg-color;
     border: none;
-    border-bottom: 1px solid #f1f5f4;
+    border-bottom: 1px solid $main-font-color;
     outline: none;
-    color: #f1f5f4;
-    font-family: Raleway, sans-serif;
-    font-weight: normal;
-    font-size: 16px;
+
+    @extend %article-font-styles;
+    color: $main-font-color;
 
     @include onTablet {
       width: 300px;
     }
 
     &::placeholder {
-      color: #f1f5f4;
+      color: $main-font-color;
     }
   }
 

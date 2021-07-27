@@ -18,6 +18,11 @@
   &__image {
     margin-bottom: 20px;
     width: 100%;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
 
     @include onDesktop {
       margin-bottom: 30px;
@@ -25,11 +30,10 @@
   }
 
   &__date {
-    font-family: Raleway, sans-serif;
+    @extend %article-font-styles;
     font-weight: 200;
     font-size: 14px;
-    line-height: 20px;
-    color: #1c1b29;
+    color: $title-color;
 
     @include onDesktop {
       margin-bottom: 2px;
@@ -39,11 +43,9 @@
   &__title {
     margin-bottom: 10px;
 
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
+    @extend %title-font-styles;
     font-size: 18px;
-    line-height: 125%;
-    color: #1c1b29;
+    color: $title-color;
 
     @include onDesktop {
       margin-bottom: 13px;
@@ -53,10 +55,7 @@
   }
 
   &__description {
-    font-family: Raleway, sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: #504f5e;
+    @extend %article-font-styles;
+    color: $secondary-font-color;
   }
 }

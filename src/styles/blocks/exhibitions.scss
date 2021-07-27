@@ -6,8 +6,8 @@
     padding: 115px 0;
   }
 
-  @include onTablet {
-    padding: 162px 0 260px;
+  @include onDesktop {
+    padding: 162px 0;
   }
 
   &__exposition {
@@ -29,11 +29,9 @@
   &__title {
     margin-bottom: 60px;
 
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
+    @extend %title-font-styles;
     font-size: 36px;
-    line-height: 125%;
-    color: #1c1b29;
+    color: $title-color;
 
     @include onTablet {
       text-align: center;
@@ -56,9 +54,14 @@
   &__image {
     position: absolute;
     display: none;
+    transition: all 0.3s;
 
     @include onDesktop {
       display: inline;
+    }
+
+    &:hover {
+      transform: scale(1.03);
     }
 
     &--1 {

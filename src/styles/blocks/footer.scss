@@ -1,6 +1,6 @@
 .footer {
   padding: 80px 0 38px;
-  background-color: #3f5252;
+  background-color: $main-bg-color;
 
   @include onTablet {
     padding: 120px 0 35px;
@@ -10,14 +10,16 @@
     padding: 160px 0 60px;
   }
 
+  &__grid {
+    row-gap: 60px;
+  }
+
   &__title {
     margin-bottom: 27px;
 
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
+    @extend %title-font-styles;
     font-size: 24px;
-    line-height: 125%;
-    color: #f1f5f4;
+    color: $main-font-color;
 
     @include onTablet {
       margin-bottom: 30px;
@@ -28,21 +30,26 @@
     }
   }
 
-  &__link {
+  &__link,
+  &__text {
     display: block;
-    font-family: Raleway, sans-serif;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: #f1f5f4;
+    transition: all 0.3s;
+
+    @extend %article-font-styles;
+    color: $main-font-color;
     text-decoration: none;
+  }
+
+  &__link:hover {
+    transform: scale(1.01);
+    text-shadow: 2px 2px 3px rgba(147, 150, 150, 0.65);
   }
 
   &__tel {
     margin-left: 33px;
   }
 
-  &__social-networks {
+  &__soc-networks {
     margin-top: 20px;
     width: 130px;
     display: flex;
@@ -60,7 +67,55 @@
     }
   }
 
-  &__day {
-    margin-right: 20px;
+  &__network-link {
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__timetable {
+    display: flex;
+  }
+
+  &__list {
+    list-style: none;
+
+    &--day {
+      margin-right: 20px;
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 5px;
+  }
+
+  &__privacy {
+    margin: 40px auto 0;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      margin-top: 100px;
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    @include onDesktop {
+      margin-top: 76px;
+    }
+  }
+
+  &__privacy-link {
+    text-decoration: none;
+  }
+
+  &__bottom-text {
+    @extend %article-font-styles;
+    font-weight: 200;
+    font-size: 14px;
+    color: $main-font-color;
   }
 }
