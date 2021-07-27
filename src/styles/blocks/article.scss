@@ -102,8 +102,6 @@
         opacity: 0.3;
         color: #fff;
         text-shadow: -1px 0 $page-dark, 0 1px $page-dark, 1px 0 $page-dark, 0 -1px $page-dark;
-        
-        opacity: 0.3;
         overflow-wrap: break-word;
       }
     }
@@ -126,9 +124,66 @@
     }
   }
 
+  &__date-tablet {
+    display: none;
+
+    font-family: $playfair-display;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 100%;
+
+    color: #fff;
+    text-shadow: -1px 0 $page-color-red, 0 1px $page-color-red, 1px 0 $page-color-red, 0 -1px $page-color-red;
+
+    @include onTablet {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @include onDesktop {
+      justify-content: flex-start;
+      font-size: 55px;
+    }
+  }
+
+  &__date-time {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: flex-end;
+
+      padding-top: 10px;
+
+      font-family: $playfair-display;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 100%;
+      color: $page-color-red;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+  }
+
   &__date {
     margin-bottom: 5px;
     color: $page-color-red;
+
+    &--tablet {
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__trip {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
   }
 
   &__title {
@@ -148,10 +203,37 @@
   &__content {
     line-height: 150%;
 
-    order: 2;
-
     @include onDesktop {
       margin-bottom: 50px;
     }
+
+    &--events {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+    }
   }
+
+  &--gudimov {
+    @include onDesktop {
+      position: relative;
+
+      padding-top: 87px;
+
+      &:after {
+        content: "";
+
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 370px;
+        height: 475px;
+
+        background-image: url("../images/pavlo_gudimov.png");
+      }
+    }
+  } 
 }
