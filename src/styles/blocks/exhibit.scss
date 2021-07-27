@@ -1,0 +1,139 @@
+.exhibit {
+  display: flex;
+  align-items: center;
+
+  &:nth-child(1) {
+    margin: -50px 0 0 -56px;
+  }
+
+  &__image {
+    width: 570px;
+    height: 576px;
+
+    &--backgroung {
+      width: 568px;
+      word-wrap: break-word;
+      @include bold-font(700);
+      font-size: 144px;
+      line-height: 100%;
+      text-transform: uppercase;
+      opacity: 0.3;
+      color: $main-color-light;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #3f5252;
+    }
+  }
+
+  &__date {
+    @include bold-font(700);
+    font-size: 48px;
+    line-height: 120%;
+    color: #cd4d31;
+  }
+
+  &__constant {
+    @include main-font(400);
+    color: #cd4d31;
+  }
+
+  &__title {
+    @include bold-font(700);
+    font-size: 24px;
+    line-height: 125%;
+    color: $main-color-dark;
+    margin: 20px 0 0 100px;
+  }
+
+  &__description {
+    @include main-font(400);
+    color: #504f5e;
+    width: 370px;
+    margin-left: 100px;
+  }
+
+  &__button {
+    margin: 50px 0 92px 100px;
+
+    &:hover {
+      color: $main-color-dark;
+      border: 1px solid $main-color-dark;
+    }
+  }
+
+  &__archive {
+    text-decoration: none;
+    color: $main-color-dark;
+    margin-right: 100px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 70px;
+      height: 1px;
+      display: block;
+      background-color: $main-color-dark;
+      position: absolute;
+      right: -70%;
+      top: 50%;
+    }
+  }
+
+  &:nth-child(n+2) {
+
+    & .exhibit__image {
+
+      &--backgroung {
+        position: absolute;
+      }
+
+      &--img {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    & .exhibit__title {
+      margin: 20px 0 0;
+    }
+
+    & .exhibit__description {
+      margin-left: 0;
+    }
+
+    & .exhibit__button {
+      margin: 50px 0 92px;
+    }
+  }
+
+  &:nth-child(2n) {
+    flex-direction: row-reverse;
+    position: relative;
+
+    & .exhibit__image--img {
+      position: absolute;
+      right: -56px;
+      top: 50%;
+
+      transform: translateY(-50%);
+    }
+
+    & .exhibit__info {
+      margin-right: 130px;
+    }
+  }
+
+  &:nth-child(2n+1) {
+    position: relative;
+
+    & .exhibit__info {
+      margin-left: 130px;
+    }
+
+    & .exhibit__image--img {
+      position: absolute;
+      top: 50%;
+
+      transform: translateY(-50%);
+    }
+  }
+}
