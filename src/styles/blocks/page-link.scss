@@ -1,0 +1,39 @@
+.page-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: $link-color;
+  margin-right: 122px;
+  transition: all 0.5s;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 70px;
+    background-color: $link-color;
+    margin-left: 20px;
+    transition: all 0.5s;
+    
+    @media (max-width: 768px) {
+      position: absolute;
+      top: 140%;
+      width: 170px;
+      margin-left: 0;
+    }
+  }
+
+  &:hover {
+    color: $highlight-color;
+  }
+  &:hover::after {
+    background-color: $highlight-color;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
