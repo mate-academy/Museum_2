@@ -1,4 +1,6 @@
 .logo {
+  position: relative;
+
   display: block;
   width: fit-content;
 
@@ -8,4 +10,34 @@
   color: $font-color-white;
   text-decoration: none;
   text-transform: uppercase;
+
+  &::before {
+    position: absolute;
+	  top: 0;
+	  left: -75%;
+	  z-index: 2;
+	  display: block;
+	  content: '';
+	  width: 50%;
+	  height: 100%;
+	  background: -webkit-linear-gradient(left, rgba(63, 82, 82,0) 0%, rgba(63, 82, 82,.3) 100%);
+	  background: linear-gradient(to right, rgba(63, 82, 82,0) 0%, rgba(63, 82, 82,.3) 100%);
+	  -webkit-transform: skewX(-25deg);
+	  transform: skewX(-25deg);
+  }
+
+  &:hover::before {
+    -webkit-animation: shine 1s;
+    animation: shine 1s;
+  }
+  @-webkit-keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+  @keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
 }
