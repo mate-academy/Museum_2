@@ -1,0 +1,37 @@
+.divider-link {
+  display: block;
+  text-align: center;
+
+  @extend %article-font-styles;
+  color: $title-color;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  @include onDesktop {
+    text-align: right;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    margin: 11px auto 0;
+    width: 130px;
+    height: 1px;
+    background: $title-color;
+
+    @include onTablet {
+      width: 170px;
+    }
+
+    @include onDesktop {
+      display: inline-block;
+      position: relative;
+      bottom: 5px;
+      margin-left: 20px;
+    }
+  }
+}

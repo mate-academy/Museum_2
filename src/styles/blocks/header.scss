@@ -1,0 +1,128 @@
+.header {
+  position: relative;
+
+  background-color: $main-bg-color;
+  overflow: hidden;
+
+  &__top-actions {
+    margin: 0 auto;
+  }
+
+  &__select {
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__content {
+    height: calc(100vh - 63px);
+    box-sizing: border-box;
+    padding: 100px 0;
+  }
+  &__date {
+    @extend %article-font-styles;
+    color: $main-font-color;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    @extend %article-font-styles;
+    color: $main-font-color;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px 100px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @extend %title-font-styles;
+    font-size: 48px;
+    color: $main-font-color;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 120%;
+    }
+
+    &--2nd-part {
+      @include onTablet {
+        margin-left: 43px;
+      }
+
+      @include onDesktop {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/top-image-1.png);
+    left: 53%;
+    right: -25%;
+    bottom: 0;
+    background-position: bottom right;
+    height: 90%;
+
+    @include onTablet {
+      right: 0;
+      left: 45%;
+    }
+  }
+
+  &__image-caption {
+    position: absolute;
+    display: none;
+    @extend %article-font-styles;
+    color: $main-font-color;
+
+    @media (min-width: 1200px) {
+      display: block;
+      right: 45px;
+      top: 50%;
+    }
+  }
+
+  &__bottom-date {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+
+    @extend %title-font-styles;
+    font-size: 14px;
+    color: $main-font-color;
+    opacity: 0.7;
+
+    &::after {
+      content: "";
+      position: relative;
+      bottom: 7px;
+      left: 80px;
+      display: block;
+      margin-left: 20px;
+      width: 45vw;
+      height: 1px;
+
+      background: $main-font-color;
+      opacity: 0.3;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

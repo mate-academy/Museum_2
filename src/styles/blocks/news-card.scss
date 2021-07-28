@@ -1,0 +1,61 @@
+.news-card {
+  &--second {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--third {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+    width: 100%;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__date {
+    @extend %article-font-styles;
+    font-weight: 200;
+    font-size: 14px;
+    color: $title-color;
+
+    @include onDesktop {
+      margin-bottom: 2px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @extend %title-font-styles;
+    font-size: 18px;
+    color: $title-color;
+
+    @include onDesktop {
+      margin-bottom: 13px;
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+
+  &__description {
+    @extend %article-font-styles;
+    color: $secondary-font-color;
+  }
+}

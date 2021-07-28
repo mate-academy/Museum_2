@@ -1,0 +1,123 @@
+.menu {
+  background-color: $main-bg-color;
+  overflow: hidden;
+  z-index: 1;
+
+  &__top-actions {
+    margin: 0 auto;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__select {
+    display: block;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    padding: 20px 0 72px;
+    height: calc(100vh - 63px);
+
+    @include onTablet {
+      padding: 30px 0 119px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 50px;
+    }
+  }
+
+  &__address {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      gap: 5px;
+    }
+
+    @extend %article-font-styles;
+    font-size: 14px;
+    color: $main-font-color;
+
+    @include onDesktop {
+      flex-direction: column;
+    }
+
+    &--thin {
+      font-weight: 200;
+    }
+  }
+
+  &__list {
+    padding: 80px 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+
+      &::after {
+        content: "";
+        display: none;
+        margin-top: 55px;
+        height: 1px;
+        width: 100%;
+        background-color: $main-font-color;
+
+        @include onTablet {
+          display: block;
+        }
+
+        @include onDesktop {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    @extend %title-font-styles;
+    text-decoration: none;
+    font-size: 24px;
+    color: $main-font-color;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    display: none;
+    height: 90%;
+    right: 0;
+    bottom: 0;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+}

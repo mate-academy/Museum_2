@@ -1,0 +1,101 @@
+.event {
+
+  &__time {
+    @extend %article-font-styles;
+    font-size: 16px;
+    color: $button-bg-color;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+
+      @extend %title-font-styles;
+      font-size: 24px;
+      color: $button-bg-color;
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__date {
+    display: none;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 100%;
+    color: $button-bg-color;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-fill-color: transparent;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      font-size: 55px;
+    }
+  }
+
+  &__type {
+    margin-bottom: 20px;
+
+    font-family: Raleway, sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $title-color;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: $title-color;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+
+    font-family: Raleway, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $secondary-font-color;
+  }
+
+  &__image {
+    display: none;
+    position: absolute;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    &--1 {
+      right: 0;
+      top: 63px;
+    }
+
+    &--2 {
+      left: 0;
+      top: 615px;
+    }
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+}
