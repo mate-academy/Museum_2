@@ -5,9 +5,17 @@
 
   &__top-actions {
     margin: 0 auto;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 
-  .select {
+  &__select {
     display: block;
   }
 
@@ -32,8 +40,12 @@
   }
 
   &__address {
-    display: flex;
-    gap: 5px;
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      gap: 5px;
+    }
 
     @extend %article-font-styles;
     font-size: 14px;
