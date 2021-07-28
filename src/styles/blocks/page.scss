@@ -1,8 +1,22 @@
 .page {
-  font-family: 'Playfair Display', sans-serif;
+  font-family: "Playfair Display", sans-serif;
 
   &__body {
     background-color: #fff;
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -13,10 +27,22 @@
 }
 
 .logo {
-  font-family: 'NAMU', sans-serif;
+  font-family: "NAMU", sans-serif;
   font-size: 36px;
   line-height: 43px;
   width: #{$logoWidth};
   text-decoration: none;
   color: #{$primaryColor};
+}
+
+.button {
+  width: $buttonWidth;
+
+  background-color: #cd4d31;
+  font-family: $fontRaleway, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: $buttonHeight;
+  text-align: center;
+  color: $primaryColor;
 }
