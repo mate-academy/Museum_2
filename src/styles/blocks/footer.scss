@@ -1,3 +1,197 @@
 .footer {
+  position: relative;
 
+  padding: 80px 0 38px;
+
+  background-color: $page-dark;
+
+  @include onTablet {
+    padding: 120px 0 35px;
+  }
+
+  @include onDesktop {
+    padding: 160px 0 60px;
+  }
+
+  &__top {
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    z-index: 5;
+
+    display: block;
+    width: 40px;
+    height: 17px;
+
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+
+    background-image: url("../images/arrow.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:hover {
+      transform: rotate(-90deg) translateX(10px);
+    }
+
+    @include onTablet {
+      top: 120px;
+    }
+
+    @include onDesktop {
+      top: 160px;
+      right: 40px;
+    }
+  }
+
+  &__article {
+    margin-bottom: 60px;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--mobile {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__article-title {
+    margin-bottom: 30px;
+
+    font-family: $playfair-display;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: $font-color-white;
+  }
+
+  &__address {
+    margin-bottom: 20px;
+    font-family: $raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $font-color-white;
+  }
+
+  &__link {
+    transition: color 0.3s;
+    color: $font-color-white;
+
+    &:visited {
+      color: $font-color-white;;
+    }
+
+    &:hover {
+      color: $page-color-red;
+    }
+  }
+
+  &__media {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__medium {
+    display: block;
+
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &--facebook {
+      width: 10px;
+      height: 20px;
+
+      background-image: url("../images/facebook.svg");
+    }
+
+    &--twitter {
+      width: 20px;
+      height: 16px;
+
+      background-image: url("../images/twitter.svg");
+    }
+
+    &--telegram {
+      width: 22px;
+      height: 19px;
+
+      background-image: url("../images/telegram.svg");
+    }
+
+    &--instagram {
+      width: 17px;
+      height: 17px;
+
+      background-image: url("../images/instagram.svg");
+    }
+
+    &:hover {
+      transform: scale(0.8);
+    }
+  }
+
+  &__schedule {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    column-gap: 16px;
+
+    font-family: $raleway;
+    font-size: 16px;
+    line-height: 150%;
+    color: $font-color-white;
+  }
+
+  &__day {
+    text-align: right;
+  }
+
+  &__bread {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: $raleway;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $font-color-white;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+    }
+  }
+
+  &__privacy {
+    color: inherit;
+
+    transition: color 0.3s;
+
+    &:visited {
+      color: $font-color-white;
+    }
+    &:hover {
+      color: $page-color-red;
+    }
+  } 
 }
