@@ -1,29 +1,75 @@
 .subscribe {
   &__container {
     background-color: #cd4d31;
-    padding: 50px 55px 190px;
     color: $main-color-light;
+
     display: flex;
-    gap: 40px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px 100px;
+    text-align: center;
+
+    @include onScreen769 {
+      gap: 40px;
+      padding: 50px 55px 190px;
+      text-align: unset;
+    }
   }
 
   &__text {
     width: max-content;
     align-items: flex-start;
+    margin: 0 auto;
+
+    @include onScreen1025 {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    color: $main-color-light;
+    text-align: unset;
+    width: 260px;
+
+    @include onScreen769 {
+      width: 570px;
+    }
+  }
+
+  &__subtext {
+    width: 260px;
+
+    @include onScreen769 {
+      width: 570px;
+    }
   }
 
   &__form {
     justify-content: flex-end;
     align-items: stretch;
     transform: translateY(30%);
+    margin: 0 auto;
+
+    @include onScreen769 {
+      width: 570px;
+    }
+
+    @include onScreen1025 {
+      margin: 0;
+    }
   }
 
   &__email {
     background-color: transparent;
     border: none;
-    width: 300px;
+    width: 260px;
     height: 48px;
     border-bottom: 1px solid $main-color-light;
+    outline: none;
+
+    @include onScreen769 {
+      width: 300px;
+    }
 
     &::placeholder {
       @include main-font(400);
@@ -34,15 +80,6 @@
       cursor: pointer;
       border: 1px solid $main-color-light;
     }
-  }
-
-  &__title {
-    color: $main-color-light;
-    text-align: unset;
-  }
-
-  &__subtext {
-    width: 570px;
   }
 
   &__email-button {

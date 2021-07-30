@@ -2,25 +2,44 @@
   background-color: #3f5252;
 
   &__container {
-    box-sizing: border-box;
     height: 100vh;
-    padding: 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    padding: 3px 0 0;
+
+    @include onScreen769 {
+      padding: 20px 0 0;
+    }
   }
 
   &__info {
-    margin: 30px 0 80px;
+    margin: 20px 10px 5px;
     display: flex;
     gap: 30px;
     color: $main-color-light;
+    width: max-content;
+
+    @include onScreen769 {
+      margin: 50px 0 20px;
+    }
 
     &--add-text {
       @include main-font(200);
-      font-size: 14px;
+      font-size: 10px;
       line-height: 20px;
+      @include onScreen769 {
+        font-size: 14px;
+        line-height: 20px;
+      }
     }
 
     &--main-text {
       @include main-font(400);
+      font-size: 14px;
+
+      @include onScreen769 {
+        font-size: 16px;
+      }
 
       &--adress {
         text-decoration: none;
@@ -37,22 +56,38 @@
     padding: 0;
     list-style: none;
     @include bold-font(700);
-    font-size: 48px;
-    line-height: 57px;
     position: relative;
+    font-size: 14px;
+    line-height: 15px;
+    margin: 10px 0;
+    width: max-content;
+
+    @include onScreen769 {
+      font-size: 48px;
+      line-height: 57px;
+    }
 
     &::after {
       content: "";
+      display: none;
       width: 570px;
       height: 1px;
       background-color: $main-color-light;
       opacity: 0.3;
       position: absolute;
+
+      @include onScreen769 {
+        display: block;
+      }
     }
   }
 
   &__item {
-    margin-bottom: 40px;
+    margin-bottom: 3px;
+
+    @include onScreen769 {
+      margin-bottom: 20px;
+    }
   }
 
   &__link {
@@ -67,19 +102,30 @@
   }
 
   &__buttons {
-    margin-top: 90px;
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 3px;
+    margin: 3px 10px;
     width: max-content;
 
     button:hover {
       border: 1px solid $main-color-light;
     }
+
+    @include onScreen769 {
+      flex-direction: row;
+      gap: 30px;
+    }
   }
 
   &__painting {
-    background-image: url("../images/header_hover.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+
+    background-image: none;
+    right: -45px;
+    @include onScreen1025 {
+      background-image: url("../images/header_hover.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 }

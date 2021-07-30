@@ -1,12 +1,20 @@
 .exhibit {
   display: flex;
   align-items: center;
+  width: 80%;
+  padding: 0 20px 0;
 
-  &:nth-child(1) {
-    margin: -50px 0 0 -56px;
+  @include onScreen769 {
+    margin-bottom: 60px;
+  }
+
+  @include onScreen1025 {
+    padding: 0;
+    width: 100%;
   }
 
   &__image {
+    display: none;
     width: 570px;
     height: 576px;
 
@@ -22,13 +30,26 @@
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #3f5252;
     }
+
+    @include onScreen1025 {
+      display: block;
+    }
+  }
+
+  &__info {
+    width: max-content;
   }
 
   &__date {
     @include bold-font(700);
-    font-size: 48px;
     line-height: 120%;
     color: #cd4d31;
+    font-size: 21px;
+    line-height: 120%;
+
+    @include onScreen769 {
+      font-size: 48px;
+    }
   }
 
   &__constant {
@@ -41,29 +62,51 @@
     font-size: 24px;
     line-height: 125%;
     color: $main-color-dark;
-    margin: 20px 0 0 $margin-100;
+    margin: 20px 0 0 0;
+
+    @include onScreen769 {
+      margin: 20px 0 0 $margin-100 / 2;
+    }
+
+    @include onScreen1025 {
+      margin: 20px 0 0 $margin-100;
+    }
   }
 
   &__description {
     @include main-font(400);
     color: #504f5e;
-    width: 370px;
-    margin-left: $margin-100;
+    width: 250px;
+    margin: 5px 0 0 0;
+
+    @include onScreen769 {
+      width: 370px;
+      margin: 20px 0 0 $margin-100 / 2;
+    }
+
+    @include onScreen1025 {
+      margin: 20px 0 0 $margin-100;
+    }
   }
 
   &__button {
-    margin: 0 0 92px $margin-100;
+    margin: 10px 0 30px;
+    display: none;
 
     &:hover {
       color: $main-color-dark;
       border: 1px solid $main-color-dark;
+    }
+
+    @include onScreen1025 {
+      display: block;
+      margin: 30px 0 92px $margin-100;
     }
   }
 
   &:nth-child(n+2) {
 
     & .exhibit__image {
-
       &--backgroung {
         position: absolute;
       }
@@ -93,14 +136,18 @@
 
     & .exhibit__image--img {
       position: absolute;
-      right: -56px;
+      right: -55px;
       top: 50%;
 
       transform: translateY(-50%);
     }
 
     & .exhibit__info {
-      margin-right: 130px;
+      margin: 0;
+
+      @include onScreen1025 {
+        margin-right: 130px;
+      }
     }
   }
 
@@ -108,12 +155,17 @@
     position: relative;
 
     & .exhibit__info {
-      margin-left: 130px;
+      margin: 0;
+
+      @include onScreen1025 {
+        margin-left: 130px;
+      }
     }
 
     & .exhibit__image--img {
       position: absolute;
       top: 50%;
+      left: -55px;
 
       transform: translateY(-50%);
     }

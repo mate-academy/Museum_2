@@ -1,18 +1,34 @@
 .painting {
   position: absolute;
-  right: -55px;
   bottom: 0;
 
+  @include onScreen769 {
+    width: 399px;
+    height: 445px;
+  }
+
+  @include onScreen1025 {
+    width: 495px;
+    height: 553px;
+  }
+
   &--img {
-    width: 583px;
-    height: 653px;
     position: relative;
   }
 
   &--title {
     position: absolute;
     width: max-content;
+    font-size: 14px;
     right: 34px;
     top: 50%;
+
+    @include onScreen769 {
+      display: none;
+    }
+
+    @include onScreen1025 {
+      display: block;
+    }
   }
 }

@@ -3,16 +3,23 @@
 
   &__content {
     display: flex;
-    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   &__column {
     color: $main-color-light;
-    margin: 160px 0 70px;
-    width: 240px;
+    margin: 20px;
+    width: 230px;
+
+    @include onScreen769 {
+      margin: 140px auto 70px;
+    }
   }
 
   &__up {
+    display: none;
+
     margin-top: 160px;
     width: 16px;
     height: 20px;
@@ -26,6 +33,10 @@
     &--img {
       width: 100%;
     }
+
+    @include onScreen769 {
+      display: flex;
+    }
   }
 
   &__title {
@@ -36,7 +47,11 @@
   }
 
   &__info {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+
+    @include onScreen769 {
+      margin-bottom: 40px;
+    }
 
     &--text-tell {
       margin-left: 33px;

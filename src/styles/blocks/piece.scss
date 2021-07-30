@@ -1,5 +1,23 @@
 .piece {
-  width: 370px;
+  width: 260px;
+  margin: 0 auto;
+
+  &__image--img {
+    width: 100%;
+  }
+
+  @include onScreen769 {
+    width: 370px;
+    margin: 0;
+  }
+
+  &:nth-child(n+2) {
+    display: none;
+
+    @include onScreen769 {
+      display: flex;
+    }
+  }
 
   &__link {
     text-decoration: none;
