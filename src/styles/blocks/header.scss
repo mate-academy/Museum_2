@@ -2,32 +2,16 @@
   position: relative;
 
   box-sizing: border-box;
-  padding: 20px 0 100px;
+  padding: 20px 0 0;
   background-color: $page-dark;
 
-  @include onTablet {
-    padding-bottom: 180px;
-  }
-
-  @include onDesktop() {
-    padding-bottom: 52px;
-  }
-
-  &--nav {
-    padding-bottom: 54px;
-
-    @include onTablet {
-      padding-bottom: 133px;
-    }
-
-    @include onDesktop {
-      padding-bottom: 144px;
-
-      background-image: url(../images/1359385793.png);
-      background-position: right bottom;
-      background-size: 624px 801px;
-      background-repeat: no-repeat;
-    }
+  &__container {
+    position: relative;
+    
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1920px;
+    min-width: 320px;
   }
 
   &__empty {
@@ -43,6 +27,31 @@
 
       @include onTablet {
         margin-bottom: 30px;
+      }
+    }
+
+    &--2 {
+      padding-bottom: 100px;
+      margin: 0;
+
+      @include onTablet {
+        padding-bottom: 180px;
+      }
+
+      @include onDesktop {
+        padding: 0;
+      }
+    }
+
+    &--3 {
+      margin: 0;
+padding-bottom: 51px;
+      @include onTablet {
+        padding-bottom: 134px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 119px;
       }
     }
   }
@@ -150,10 +159,13 @@
     @include onDesktop {
       display: flex;
       align-items: center;
+
+      padding-bottom: 52px;
     }
   }
 
   &__date-range-bottom {
+    width: 90px;
     font-family: $playfair-display;
     font-style: normal;
     font-weight: bold;
@@ -178,6 +190,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    z-index: 1;
 
     margin: 0;
     width: 50%;
@@ -200,6 +213,16 @@
       height: 753px;
 
       right: 0;
+    }
+
+    &--menu {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        width: 624px;
+        height: 801px;
+      }
     }
   }
 
