@@ -10,18 +10,9 @@
     position: relative;
 
     &::before {
-      position: absolute;
-      top: 0;
-      left: -75%;
-      z-index: 2;
-      display: block;
-      content: '';
-      width: 50%;
-      height: 100%;
+      @extend %button-blink;
       background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
       background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
-      -webkit-transform: skewX(-25deg);
-      transform: skewX(-25deg);
     }
   
     &:hover::before {
@@ -32,18 +23,9 @@
 
   &--upon-dark {
     &::before {
-      position: absolute;
-      top: 0;
-      left: -75%;
-      z-index: 2;
-      display: block;
-      content: '';
-      width: 50%;
-      height: 100%;
+      @extend %button-blink;
       background: -webkit-linear-gradient(left, rgba(63, 82, 82,0) 0%, rgba(63, 82, 82,.3) 100%);
       background: linear-gradient(to right, rgba(63, 82, 82,0) 0%, rgba(63, 82, 82,.3) 100%);
-      -webkit-transform: skewX(-25deg);
-      transform: skewX(-25deg);
     }
   
     &:hover::before {
