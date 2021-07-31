@@ -9,7 +9,7 @@
 
       position: absolute;
       left: -30px;
-      top: -80px;
+      top: 0;
       transform: rotate(12.06deg);
     }
   }
@@ -21,8 +21,8 @@
       display: block;
 
       position: absolute;
-      right: 0px;
-      top: 550px;
+      right: 0;
+      top: 650px;
     }
   }
 
@@ -33,8 +33,8 @@
       display: block;
 
       position: absolute;
-      left: -30px;
-      bottom: 100px;
+      left: 30px;
+      top: 1100px;
     }
   }
 
@@ -46,7 +46,7 @@
 
       position: absolute;
       right: 0;
-      bottom: 400px;
+      top: 600px;
       z-index: -1;
     }
   }
@@ -59,67 +59,139 @@
 
       position: absolute;
       left: 0;
-      bottom: 0;
+      top: 1100px;
       z-index: -1;
     }
   }
 
-  &__actual-exhib {
-    position: relative;
+  &__person-1-image {
+    display: none;
 
-    &--bottom-sign {
+    @include onDesktop {
+      display: block;
+
       position: absolute;
+      right: 30px;
+      top: 2050px;
+    }
+  }
+
+  &__person-2-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      position: absolute;
+      left: 30px;
+      top: 2600px;
+    }
+  }
+
+  &__title {
+    font-family: $fontPlayfair, sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 125%;
+    color: $secondaryColor;
+
+    padding-bottom: 60px;
+
+    @include onTablet {
+      font-size: 48px;
+
+      padding-bottom: 55px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 100px;
+    }
+
+    &--text {
+      @include onDesktop {
+        padding-bottom: 150px;
+      }
+    }
+  }
+
+  &__primary-text {
+    font-family: $fontPlayfair, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 125%;
+    color: $secondaryColor;
+
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__secondary-text {
+    font-family: $fontRaleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #504f5e;
+
+    @include onDesktop {
+      padding-bottom: 50px;
+    }
+
+    &--padding {
+      padding-bottom: 40px;
+
+      @include onTablet {
+        padding-bottom: 30px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 60px;
+      }
+    }
+  }
+
+  &__bottom-sign {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: $fontRaleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: $secondaryColor;
+
+    padding-bottom: 11px;
+
+    @include onDesktop {
+      left: 85%;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
 
-      font-family: $fontRaleway, sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 100%;
-      color: $secondaryColor;
-
-      padding-bottom: 11px;
+      content: "";
+      width: 130px;
+      height: 1px;
+      background-color: $secondaryColor;
 
       @include onDesktop {
-        left: 100%;
-      }
-
-      &::after {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-
-        content: "";
-        width: 130px;
-        height: 1px;
-        background-color: $secondaryColor;
-
-        @include onDesktop {
-          bottom: 50%;
-          left: 150px;
-        }
+        bottom: 60%;
+        left: 200px;
       }
     }
+  }
 
-    &--title {
-      font-family: $fontPlayfair, sans-serif;
-      font-weight: 700;
-      font-size: 36px;
-      line-height: 125%;
-      color: $secondaryColor;
+  &__actual-exhib {
+    margin-bottom: 130px;
 
-      padding-bottom: 60px;
-
-      @include onTablet {
-        font-size: 48px;
-
-        padding-bottom: 55px;
-      }
-
-      @include onDesktop {
-        
-      }
+    @include onDesktop {
+      margin-bottom: 260px;
     }
 
     &--date {
@@ -138,37 +210,15 @@
       }
     }
 
-    &--primary-text {
-      font-family: $fontPlayfair, sans-serif;
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 125%;
-      color: $secondaryColor;
-
-      padding-bottom: 30px;
-
-      @include onTablet {
-        padding-bottom: 20px;
-      }
-    }
-
-    &--secondary-text {
-      font-family: $fontRaleway, sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 150%;
-      color: #504f5e;
-
-      @include onDesktop {
-        padding-bottom: 50px;
-      }
-    }
-
     &--status-temporary {
       padding-bottom: 90px;
 
       @include onTablet {
         padding-bottom: 150px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 250px;
       }
     }
 
@@ -177,6 +227,10 @@
 
       @include onTablet {
         padding-bottom: 140px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 250px;
       }
 
       &--sign {
@@ -192,6 +246,10 @@
   }
 
   &__buttons {
+    &--mobile-button {
+      background-color: $orangeColor;
+    }
+
     &--ticket {
       display: none;
 
@@ -200,6 +258,340 @@
 
         background-color: $orangeColor;
         width: $buttonWidth;
+      }
+    }
+  }
+
+  &__upcoming-events {
+    margin-bottom: 100px;
+
+    &--event {
+      padding-bottom: 60px;
+  
+      @include onDesktop {
+        padding-bottom: 280px;
+      }
+  
+      &--date {
+        font-family: $fontRaleway, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $orangeColor;
+  
+        padding-bottom: 20px;
+  
+        @include onTablet {
+          display: none;
+        }
+  
+        &--tablet-desktop {
+          display: none;
+  
+          @include onTablet {
+            display: block;
+  
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 3;
+  
+            font-family: $fontPlayfair, sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 100%;
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $orangeColor;
+          }
+  
+          @include onDesktop {
+            font-size: 55px;
+          }
+  
+          &--smaller-text {
+            font-family: $fontPlayfair, sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
+            color: $orangeColor;
+  
+            @include onDesktop {
+              font-size: 36px;
+            }
+          }
+        }
+      }
+  
+      &--type {
+        font-family: $fontRaleway, sans-serif;
+        font-weight: 200;
+        font-size: 14px;
+        line-height: 20px;
+        color: $secondaryColor;
+  
+        padding-bottom: 20px;
+  
+        @include onTablet {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__plan-visit {
+    position: relative;
+
+    background-color: $greenColor;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      padding-top: 120px;
+    }
+
+    &--title {
+      font-family: $fontPlayfair, sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+      color: $primaryColor;
+
+      padding-bottom: 40px;
+
+      z-index: 1;
+
+      @include onTablet {
+        font-size: 48px;
+
+        padding-bottom: 80px;
+      }
+
+      @include onDesktop {
+        font-size: 72px;
+
+        padding-bottom: 60px;
+      }
+    }
+
+    &--secondary-text {
+      color: $primaryColor;
+
+      padding-bottom: 60px;
+    }
+
+    &--img {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+
+        left: 0;
+        bottom: 0;
+      }
+
+      @include onDesktop {
+        width: 480px;
+      }
+    }
+  }
+
+  &__news {
+    margin-bottom: 80px;
+
+    &--1-image {
+      width: 280px;
+      padding-bottom: 21px;
+
+      @include onTablet {
+        width: 270px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+      }
+    }
+
+    &--2-image {
+      display: none;
+
+      @include onTablet {
+        display: block;
+
+        width: 270px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+      }
+    }
+
+    &--3-image {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+
+        width: 370px;
+      }
+    }
+
+    &--date-1,
+    &--date-2,
+    &--date-3 {
+      font-family: $fontRaleway, sans-serif;
+      font-weight: 200;
+      font-size: 14px;
+      line-height: 20px;
+      color: $secondaryColor;
+
+      @include onDesktop {
+        padding-bottom: 5px;
+      }
+    }
+
+    &--primary-text-1,
+    &--primary-text-2,
+    &--primary-text-3 {
+      font-family: $fontPlayfair, sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 125%;
+      color: $secondaryColor;
+
+      padding-bottom: 10px;
+
+      @include onDesktop {
+        padding-bottom: 15px;
+      }
+    }
+
+    &--date-2,
+    &--primary-text-2,
+    &--secondary-text-2 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &--date-3,
+    &--primary-text-3,
+    &--secondary-text-3 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--secondary-text-1,
+    &--secondary-text-2,
+    &--secondary-text-3 {
+      font-family: $fontRaleway, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #504f5e;
+
+      padding-bottom: 20px;
+    }
+
+    &--carousel {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+
+      padding-bottom: 60px;
+
+      @include onTablet {
+        display: none;
+      }
+
+      &--dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $greenColor;
+        opacity: 0.3;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--bottom-sign {
+      bottom: 0;
+    }
+  }
+
+  &__digest {
+    background-color: $orangeColor;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @include onTablet {
+      padding-top: 90px;
+      padding-bottom: 20px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 60px;
+    }
+
+    &--title {
+      color: $primaryColor;
+
+      padding-bottom: 40px;
+
+      @include onTablet {
+        padding-bottom: 30px;
+      }
+    }
+
+    &--secondary-text {
+      color: $primaryColor;
+
+      padding-bottom: 60px;
+
+      @include onTablet {
+        padding-bottom: 65px;
+      }
+    }
+
+    &--form {
+      &--input {
+        background-color: transparent;
+        border: 0 solid;
+        border-bottom: 1px solid $primaryColor;
+        width: 230px;
+        outline: none;
+        color: $primaryColor;
+  
+        &::placeholder {
+          color: $primaryColor;
+          font-family: $fontRaleway, sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+        }
+  
+        &-button {
+          cursor: pointer;
+          background-color: transparent;
+          border: 1px solid $primaryColor;
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          color: $primaryColor;
+          transition: transform 0.3s;
+        }
       }
     }
   }
