@@ -1,13 +1,19 @@
 .header {
+  box-sizing: border-box;
   background-color: #3f5252;
 
   &__container {
+    max-width: 1200px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
     padding: 3px 0 0;
+    height: 100vh;
+
+    @include onScreen820 {
+      justify-content: space-evenly;
+    }
 
     @include onScreen769 {
       padding: 20px 0 0;

@@ -1,5 +1,6 @@
 .menu {
   background-color: #3f5252;
+  width: 100vw;
 
   &__container {
     height: 100vh;
@@ -12,15 +13,21 @@
     }
   }
 
-  &__info {
-    margin: 20px 10px 5px;
+  &__text {
+    box-sizing: border-box;
+    height: 80%;
     display: flex;
-    gap: 30px;
-    color: $main-color-light;
-    width: max-content;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &__info {
+    display: none;
 
     @include onScreen769 {
       margin: 50px 0 20px;
+      gap: 30px;
+      color: $main-color-light;
     }
 
     &--add-text {
@@ -53,14 +60,25 @@
   }
 
   &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     padding: 0;
+
     list-style: none;
     @include bold-font(700);
+    font-size: 24px;
+
     position: relative;
-    font-size: 14px;
-    line-height: 15px;
-    margin: 10px 0;
-    width: max-content;
+
+    @include onScreen400 {
+      font-size: 36px;
+    }
+
+    @include onScreen820 {
+      gap: 15px;
+      font-size: 24px;
+    }
 
     @include onScreen769 {
       font-size: 48px;
@@ -78,15 +96,12 @@
 
       @include onScreen769 {
         display: block;
+        bottom: -50px;
       }
-    }
-  }
 
-  &__item {
-    margin-bottom: 3px;
-
-    @include onScreen769 {
-      margin-bottom: 20px;
+      @include onScreen820 {
+        display: none;
+      }
     }
   }
 
@@ -104,12 +119,14 @@
   &__buttons {
     display: flex;
     flex-direction: column;
-    gap: 3px;
-    margin: 3px 10px;
-    width: max-content;
 
     button:hover {
       border: 1px solid $main-color-light;
+    }
+
+    @include onScreen820 {
+      flex-direction: row;
+      gap: 10px;
     }
 
     @include onScreen769 {
@@ -119,13 +136,13 @@
   }
 
   &__painting {
-
-    background-image: none;
-    right: -45px;
+    display: none;
     @include onScreen1025 {
+      display: block;
       background-image: url("../images/header_hover.png");
-      background-size: contain;
       background-repeat: no-repeat;
+      background-size: contain;
+      right: 0;
     }
   }
 }

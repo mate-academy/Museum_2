@@ -1,25 +1,26 @@
 .intro {
   color: $main-color-light;
   position: relative;
-  height: 90%;
-
-  @include onScreen769 {
-    display: flex;
-  }
+  height: 100%;
 
   &__text {
-    width: max-content;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    gap: 30px;
+
+    @include onScreen400 {
+      font-size: 18px;
+    }
 
     @include onScreen769 {
-      align-self: center;
-      align-items: unset;
-      height: max-content;
       margin-left: $margin-100 - 55px;
+    }
+
+    @include onScreen820 {
+      margin: 0;
+      gap: 2px;
     }
 
     @include onScreen1025 {
@@ -27,41 +28,53 @@
     }
   }
 
+  &__event-dates {
+    @include onScreen820 {
+      font-size: 18px;
+    }
+  }
+
   &__event-title {
     @include bold-font(700);
     line-height: 100%;
-    margin-top: 10px;
-    font-size: 24px;
+    margin-top: 0.1em;
+    font-size: 42px;
 
     &--year {
-      margin-left: 0;
+      margin-left: 0.5em;
+    }
+
+    @include onScreen400 {
+      font-size: 56px;
     }
 
     @include onScreen769 {
       font-size: 72px;
-      &--year {
-        margin-left: 50px;
-      }
+    }
+
+    @include onScreen820 {
+      margin: 10px 0 0;
+      font-size: 40px;
     }
 
     @include onScreen1025 {
       margin-top: 5px;
       font-size: 96px;
-      &--year {
-        margin-left: $margin-100;
-      }
     }
   }
 
   &__event-subtitle {
     margin: 10px 0 20px;
-    width: 100vw;
-    text-align: center;
+    width: 260px;
 
     @include onScreen769() {
       width: 267px;
       margin: 40px 0 0;
-      text-align: unset;
+    }
+
+    @include onScreen820 {
+      margin: 10px 0 0;
+      font-size: 18px;
     }
 
     @include onScreen1025 {
@@ -71,7 +84,7 @@
   }
 
   &__event-button {
-    margin: 0 0 40px;
+    margin: 0 0 10px;
 
     &:hover {
       border: 1px solid $main-color-light;
@@ -81,12 +94,17 @@
       margin: 40px 0 0;
     }
 
+    @include onScreen820 {
+      margin: 10px 0 0;
+    }
+
     @include onScreen1025 {
       margin: 0 0 0 $margin-100;
     }
   }
 
   &__event-bottom {
+    display: none;
     @include bold-font(700);
     font-size: 17px;
     opacity: 0.7;
@@ -95,7 +113,7 @@
     &::after {
       display: none;
       content: "";
-      width: 100%;
+      width: 70%;
       height: 1px;
       background-color: $main-color-light;
       opacity: 0.3;
@@ -119,15 +137,22 @@
   }
 
   &__painting {
-    @include onScreen769 {
       background-image: url("../images/header.png");
-      background-size: contain;
+      background-size: cover;
       background-repeat: no-repeat;
-      right: -45px;
-    }
 
-    @media (max-width: 820px) {
-      background-image: none;
-    }
+      right: -21px;
+
+      @include onScreen769 {
+        right: -41px;
+      }
+
+      @include onScreen820 {
+        right: -21px;
+      }
+
+      @include onScreen1025 {
+        right: -56px;
+      }
   }
 }
