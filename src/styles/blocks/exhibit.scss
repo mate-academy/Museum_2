@@ -1,9 +1,13 @@
 .exhibit {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
-  width: 80%;
   max-height: 576px;
-  padding: 0 20px 0;
+
+  @include onScreen400 {
+    padding: 0 20px 0;
+    width: 100%;
+  }
 
   @include onScreen769 {
     margin-bottom: 60px;
@@ -36,10 +40,6 @@
     @include onScreen1025 {
       display: block;
     }
-  }
-
-  &__info {
-    width: max-content;
   }
 
   &__date {

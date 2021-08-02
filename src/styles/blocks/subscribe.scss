@@ -17,9 +17,12 @@
   }
 
   &__text {
-    width: max-content;
     align-items: flex-start;
     margin: 0 auto;
+
+    @include onScreen400 {
+      width: max-content;
+    }
 
     @include onScreen1025 {
       margin: 0;
@@ -28,8 +31,12 @@
 
   &__title {
     color: $main-color-light;
-    text-align: unset;
-    width: 260px;
+    text-align: left;
+    width: 90%;
+
+    @include onScreen400 {
+      width: 260px;
+    }
 
     @include onScreen769 {
       width: 570px;
@@ -37,7 +44,11 @@
   }
 
   &__subtext {
-    width: 260px;
+    width: 90%;
+
+    @include onScreen400 {
+      width: 260px;
+    }
 
     @include onScreen769 {
       width: 570px;
@@ -62,10 +73,13 @@
   &__email {
     background-color: transparent;
     border: none;
-    width: 260px;
     height: 48px;
     border-bottom: 1px solid $main-color-light;
     outline: none;
+
+    @include onScreen400 {
+      width: 260px;
+    }
 
     @include onScreen769 {
       width: 300px;

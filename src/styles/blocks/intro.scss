@@ -1,6 +1,7 @@
 .intro {
   color: $main-color-light;
   position: relative;
+  box-sizing: border-box;
   height: 100%;
 
   &__text {
@@ -8,14 +9,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
 
     @include onScreen400 {
       font-size: 18px;
     }
 
     @include onScreen769 {
-      margin-left: $margin-100 - 55px;
+      padding-left: 55px;
     }
 
     @include onScreen820 {
@@ -24,7 +25,7 @@
     }
 
     @include onScreen1025 {
-      margin: 0;
+      margin-top: 10px;
     }
   }
 
@@ -37,7 +38,7 @@
   &__event-title {
     @include bold-font(700);
     line-height: 100%;
-    margin-top: 0.1em;
+    margin-top: 2px;
     font-size: 42px;
 
     &--year {
@@ -46,10 +47,7 @@
 
     @include onScreen400 {
       font-size: 56px;
-    }
-
-    @include onScreen769 {
-      font-size: 72px;
+      margin-top: 5px;
     }
 
     @include onScreen820 {
@@ -57,15 +55,22 @@
       font-size: 40px;
     }
 
+    @include onScreen769 {
+      font-size: 72px;
+    }
+
     @include onScreen1025 {
-      margin-top: 5px;
-      font-size: 96px;
+      margin-top: 3px;
+      font-size: 82px;
     }
   }
 
   &__event-subtitle {
     margin: 10px 0 20px;
-    width: 260px;
+
+    @include onScreen400 {
+      width: 260px;
+    }
 
     @include onScreen769() {
       width: 267px;
@@ -79,7 +84,7 @@
 
     @include onScreen1025 {
       width: 370px;
-      margin: 20px 0 20px $margin-100;
+      margin: 10px 0 10px 50px;
     }
   }
 
@@ -99,7 +104,7 @@
     }
 
     @include onScreen1025 {
-      margin: 0 0 0 $margin-100;
+      margin: 0 0 0 50px;
     }
   }
 
@@ -131,7 +136,7 @@
     }
 
     @include onScreen1025 {
-      margin: 55px 0 0;
+      margin: 10px 0 0;
       display: block;
     }
   }
@@ -141,7 +146,11 @@
       background-size: cover;
       background-repeat: no-repeat;
 
-      right: -21px;
+      right: -5px;
+
+      @include onScreen400 {
+        right: -21px;
+      }
 
       @include onScreen769 {
         right: -41px;
