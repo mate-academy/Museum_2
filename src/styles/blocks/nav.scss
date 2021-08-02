@@ -1,6 +1,8 @@
 .nav {
   height: 100vh;
+  position: absolute;
   background-color: $greenColor;
+  z-index: 2;
 
   &__bg-image {
     display: none;
@@ -37,6 +39,11 @@
       font-size: 24px;
       line-height: 100%;
       color: $primaryColor;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scaleY(1.2);
+      }
 
       @include onTablet {
         font-size: 48px;
@@ -78,6 +85,11 @@
       border: 1px solid $primaryColor;
       box-sizing: border-box;
 
+      &:hover {
+        background-color: $primaryColor;
+        color: $secondaryColor;
+      }
+
       @include onTablet {
         width: $buttonWidth;
       }
@@ -106,6 +118,7 @@
       font-size: 14px;
       line-height: 20px;
       color: $primaryColor;
+      text-decoration: none;
     }
 
     &--schedule {
