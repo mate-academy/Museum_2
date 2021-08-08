@@ -1,0 +1,148 @@
+.nav {
+  transform: translateX(100%);
+  background-color: $background;
+  min-height: 584px;
+  min-width: 320px;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 20px;
+  transition: transform 0.4s;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  @include tablet {
+    padding: 0 100px;
+    min-height: 762px;
+  }
+
+  @include desktop {
+    padding: 0 55px;
+    min-height: 800px;
+
+    &__info {
+      display: flex;
+      gap: 30px;
+    }
+    &__block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__today {
+      width: 180px;
+    }
+  }
+
+  &__today,
+  &__adress {
+    display: none;
+    width: fit-content;
+    font-weight: 200;
+
+    &--bold {
+      font-weight: 400;
+    }
+
+    @include standart-text;
+    color: $light;
+    white-space: nowrap;
+
+    @include tablet {
+      display: inline;
+      position: relative;
+      top: 90px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: fit-content;
+    height: 152px;
+    position: relative;
+    top: 40px;
+
+    @include tablet {
+      height: 300px;
+      top: 60px;
+      padding-bottom: 55px;
+    }
+  }
+
+  &__link {
+    font-family: $secondary-font;
+    font-size: 24px;
+    text-decoration: none;
+
+    @include tablet {
+      font-size: 48px;
+      letter-spacing: 0.5mm;
+    }
+  }
+
+  &__line {
+    @include tablet {
+      height: 1px;
+      background-color: $light;
+    }
+
+    @include desktop {
+      width: 570px;
+    }
+  }
+
+  &__buttons {
+    position: relative;
+    padding-top: 60px;
+    bottom: 72px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    @include desktop {
+      width: 570px;
+    }
+  }
+
+  &__button {
+    color: $light;
+    background-color: $orange;
+    @include button;
+
+    &--member {
+      background-color: inherit;
+      border: 1px solid $light;
+    }
+  }
+
+  &__img {
+    display: none;
+    height: 800px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}
