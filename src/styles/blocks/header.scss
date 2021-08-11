@@ -1,0 +1,141 @@
+
+@import "../utils/vars";
+
+.header {
+ 
+  &__container {
+    padding: 20px;
+    background: $c-gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    width: 123px;
+    height: 40px;
+    background: url("../images/NAMU.svg") center no-repeat;
+  }
+
+  &__right-part {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__menu {
+    
+    transform: rotate(0deg);
+    z-index: 3;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: url(../images/Без.png);
+    @media (max-width:500px) {
+      transition: ease 0.5s;
+    }
+    
+    @media (max-width:1200px) {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: ease 0.5s;
+    }
+  
+    &-rectengle {
+      display: none;
+      min-width: 25px;
+      min-height: 2px;
+      background-color: $wh-color;
+    }
+
+    @media (min-width: 1200px) {
+
+      transition: ease 0.5s;
+    }
+
+  }
+
+  &__language {
+
+    &-sel {
+      margin-top: 6px;
+      color: $wh-color;
+      border-color: $c-gray;
+      background-color: $c-gray;
+      @media (max-width: 500px) {
+        display: none;
+        transition: ease 0.5s;
+      }
+
+    }
+
+  }
+
+}
+
+.burger {
+  position: absolute;
+  left: 0;
+  transition: ease 0.5s;
+  font-family: "Raleway", sans-serif;
+  width: 100%;
+  border-radius: 0 0 30px 30px;
+  border-bottom: 2px solid $t-color;
+  border-left: 2px solid $t-color;
+  box-sizing: border-box;
+  z-index: 3;
+  transform: translateY(-100%);
+  background-color: $r-color;
+
+  &--active {
+    height: 100%;
+    transform: translateY(0%);
+  }
+
+  &-close {
+    width: 30px;
+    height: 30px;
+    background: url(../images/Х.png) center no-repeat;
+    @media (max-width:500px) {
+      right: 30px;
+      top: 20px;
+      transition: ease 0.5s;
+    }
+
+  }
+  &-ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-li {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-link {
+    font-size: 25px;
+    margin: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 20px;
+    text-decoration: none;
+    color: $wh-color;
+    transition: ease 0.5s;
+
+    &:hover {
+      transition: ease 0.5s;
+      transform: scale(0.9);
+      color: rgba($color: #fff, $alpha: 0.3);
+    }
+
+    @media (max-width:500px) {
+      line-height: 20px;
+      transition: ease 0.5s;
+    }
+
+  }
+  
+}
