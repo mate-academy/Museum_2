@@ -1,0 +1,42 @@
+@import "_mixins.scss";
+
+.additional-info {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  @include onIpad {
+    align-self: center;
+    flex-direction: column;
+
+  }
+  @include onPhone {
+    align-self: center;
+    flex-direction: column;
+  }
+  &__content {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 100%;
+  }
+  &__line {
+    content: "";
+    display: block;
+    background-color: #1c1b29;
+    line-height: 100%;
+    height: 1px;
+    width: 70px;
+    align-self: center;
+    margin-left: 20px;
+    margin-right: 160px;
+    @include onIpad {
+      margin: 0 auto;
+      width: 170px;
+    }
+    @include onPhone {
+      margin: 0 auto;
+      width: 130px;
+    }
+  }
+}

@@ -1,0 +1,203 @@
+@import "_mixins.scss";
+
+.navigation {
+  transform: translateY(-100%);
+  background-color: #3f5252;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.4s;
+  width: 100%;
+  @include onIpad {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  @include onPhone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  &__wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1500px;
+    min-height: 722px;
+    max-height: 800px;
+    height: 75vh;
+    @include onIpad {
+      min-height: 677px;
+      height: 80vh;
+      max-width: 655px;
+      display: block;
+    }
+    @include onPhone {
+      min-height: 676px;
+      justify-content: flex-start;
+      max-width: 320px;
+
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-right: 55px;
+    padding-left: 55px;
+
+    @include onIpad {
+      padding-right: 40px;
+      padding-left: 0;
+    }
+    @include onPhone {
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-bottom: 80px;
+    }
+  }
+  &__right-part {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    opacity: 1;
+  }
+  &__content-wrapper {
+    height: 300px;
+  }
+  &__language-select {
+    color: #f1f5f4;
+    border-color: #3f5252;
+    background-color: #3f5252;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    &--active {
+      opacity: 1;
+    }
+
+  }
+  &__icon {
+    width: 123px;
+    height: 40px;
+    background: url("/images/NAMU.svg") 50% no-repeat;
+  }
+  &__image {
+    display: block;
+    width: 673px;
+    height: 720px;
+    position: relative;
+    right: 120px;
+    bottom: 60px;
+    object-fit: scale-down;
+    @include onIpad {
+      display: none;
+    }
+    @include onPhone {
+      display: none;
+    }
+  }
+  &__line {
+    width: 570px;
+    height: 1px;
+    background-color: #fff;
+    z-index: 10;
+    margin-bottom: 40px;
+    @include onPhone {
+      display: none;
+    }
+  }
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    letter-spacing: 0.5mm;
+    text-decoration: none;
+    color: #f1f5f4;
+    @include onPhone {
+      font-size: 24px;
+    }
+
+  }
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 55px;
+    position: relative;
+    @include onIpad {
+      margin-left: 0;
+    }
+    @include onPhone {
+      margin-left: 0;
+      justify-content: center;
+    }
+  }
+
+  &--active {
+    transform: translateY(0);
+  }
+  &__today,
+  &__adress {
+    width: fit-content;
+    font-weight: 200;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    display: inline;
+    color: #f1f5f4;
+    padding: 0;
+
+    &--bold {
+      font-weight: 400;
+    }
+  }
+  &__info {
+    display: flex;
+    gap: 30px;
+    @include onPhone {
+      display: none;
+    }
+  }
+  &__element {
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    text-decoration: none;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    width: fit-content;
+    margin-top: 60px;
+    list-style-type: none;
+    height: 300px;
+    padding-bottom: 40px;
+    @include onPhone {
+      justify-content: none;
+      height: 152px;
+      margin-bottom: 0;
+    }
+  }
+  &__today {
+    width: 180px;
+    color: #f1f5f4;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 100px;
+    @include onPhone {
+      flex-direction: column;
+    }
+  }
+}

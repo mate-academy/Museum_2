@@ -1,0 +1,130 @@
+@import "_mixins.scss";
+
+.footer {
+  background: #3f5252;
+  &__container {
+    padding: 160px 55px 40px;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 55px;
+    margin-right: 250px;
+    position: relative;
+    @include onIpad {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(100px,1fr));
+      gap: 60px;
+      margin-right: 0;
+    }
+    @include onPhone {
+      flex-direction: column;
+      margin-left: 0;
+      margin-right: 0;
+      gap: 60px;
+    }
+  }
+
+  &__contacts-content {
+    font-family: "Raleway", sans-serif;
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 24px;
+    line-height: 125%;
+    font-weight: bold;
+    color: #f1f5f4;
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+  &__contacts-adress {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+    text-decoration: none;
+  }
+  &__contacts-link {
+    text-decoration: none;
+    color: #f1f5f4;
+  }
+  &__contacts-logo {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+  }
+  &__schedule-content {
+    display: flex;
+    flex-direction: row;
+  }
+  &__days,
+  &__workdays {
+    margin-right: 16px;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+  }
+  &__membership-text {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+    margin-bottom: 4px;
+  }
+  &__about-links {
+    display: flex;
+    flex-direction: column;
+  }
+  &__about-link {
+    text-decoration: none;
+    color: #f1f5f4;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 5px;
+  }
+
+  &__bottom {
+    margin-top: 77px;
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    @include onPhone {
+      flex-direction: column-reverse;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+    &-item {
+      font-family: "Raleway", sans-serif;
+      font-weight: 200;
+      font-size: 14px;
+      line-height: 20px;
+      color: #f1f5f4;
+    }
+  }
+  &__arrow {
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+    left: 110%;
+    top: 10px;
+    transform: rotate(-90deg);
+    z-index: 1;
+    @include onIpad {
+      left: 100%;
+    }
+    @include onPhone {
+      left: 100%;
+    }
+  }
+}
