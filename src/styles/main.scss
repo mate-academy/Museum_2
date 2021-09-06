@@ -1,7 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Playfair+Display:wght@700&family=Raleway&display=swap");
 @import "utils";
 @import "fonts";
 @import "typography";
 
+* {
+  margin: 0;
+}
+
 body {
+  width: 100%;
   background: $c-gray;
+
+  --firstBgColor: #3f5252;
+  --secondBgColor: #e5e5e5;
+  --textColor: #f1f5f4;
+}
+
+.icon {
+  margin: auto 0;
+  display: block;
+  width: 22px;
+  height: 22px;
+ 
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.header {
+  background-color: var(--firstBgColor);
+  height: 584px;
+
+  &-first-text {
+    margin-bottom: 20px;
+  }
+
+  &-second-text {
+    margin-bottom: 30px;
+  }
+
+  &-third-text {
+    margin-bottom: 72px;
+  }
+
+  &__image {
+    z-index: 1;
+    position: absolute;
+    top: 311px;
+    left: 154px;
+    height: 273px;
+  }
+
+  &__content {
+    margin-bottom: 100px;
+  }
+
+  &__icon {
+    background-image: url("../images/menu.png");
+  }
+}
+
+.button {
+  display: block;
+  width: 280px;
+  height: 60px;
+  background-color: #cd4d31;
+  color: var(--textColor);
+  margin: 0 auto;
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  padding: auto;
+}
+
+.another-button {
+  display: block;
+  width: 280px;
+  height: 60px;
+  background-color: transparent;
+  border: 1px solid #f1f5f4;
+  color: var(--textColor);
+  margin: 0 auto;
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  padding: auto;
+}
+
+.container {
+  padding: 0 20px;
+  padding-top: 20px;
+  height: 100%;
+}
+
+.logo {
+  font-family: Nanum Gothic Coding, sans-serif;
+  color: var(--textColor);
+  width: 123px;
+}
+
+.description-text {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--textColor);
+}
+
+.title-text {
+  font-family: Playfair, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 100%;
+  color: var(--textColor);
+}
+
+.menu {
+  background-color: var(--firstBgColor);
+  height: 584px;
+
+  &__select {
+    background-color: var(--firstBgColor);
+    color: var(--textColor);
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 40px;
+    font-family: Playfair, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    color: var(--textColor);
+    text-decoration: none;
+  }
+  
+  &__button {
+    margin-bottom: 20px;
+    margin-top: 80px;
+  }
+
+  &__icon {
+    background-image: url("../images/cross.png");
+  }
+}
+
+.page {
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
 }
