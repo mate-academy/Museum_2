@@ -1,7 +1,32 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils/variables";
+@import "./utils/mixins";
 
-body {
-  background: $c-gray;
+
+@import "./blocks/page";
+@import "./blocks/container";
+@import "./blocks/header";
+@import "./blocks/logo";
+@import "./blocks/top-actions";
+@import "./blocks/nav";
+@import "./blocks/menu";
+
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 60px;
+  line-height: 100%;
+  text-decoration: none;
+  color: $lightColor;
+  background-color: $foxyColor;
+
+  @include onIpad {
+    width: 270px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
 }

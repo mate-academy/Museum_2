@@ -1,0 +1,111 @@
+.menu {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+  background-color: $mainColor;
+  color: $lightColor;
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__lang {
+    display: block;
+    border: none;
+    background-color: $mainColor;
+    color: $lightColor;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+
+    margin-right: 30px;
+  }
+
+  &__cross {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+
+    &-button {
+      position: relative;
+      width: 30px;
+      height: 2px;
+      background-color: $lightColor;
+      transform: rotate(-45deg);
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        background-color: $lightColor;
+      }
+    }
+    &-button::after {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__list {
+    margin: 80px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-top: 40px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    color: $lightColor;
+  }
+
+  &__button-buy {
+    margin: 80px auto 0;;
+  }
+
+  
+  &__button-participant {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 60px;
+    line-height: 100%;
+    text-decoration: none;
+    color: $lightColor;
+    background-color: transparent;
+    border: 1px solid $lightColor;
+  
+    @include onIpad {
+      width: 270px;
+    }
+  
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}
