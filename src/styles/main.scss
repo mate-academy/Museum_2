@@ -1,7 +1,219 @@
-@import "utils";
-@import "fonts";
-@import "typography";
-
-body {
-  background: $c-gray;
+@mixin oniPad {
+  @media (min-width: 768px) {
+    @content;
+  }
 }
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+.page {
+  font-family: "Playfair Display", "Raleway", serif;
+  // font-family: 'Raleway', sans-serif;
+
+  &__body {
+    margin: 0;
+  }
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include oniPad {
+    padding: 0 40px;
+  }
+}
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+
+  @include oniPad {
+    margin-bottom: 120px;
+  }
+}
+
+.icon {
+  display: block;
+  width: 25px;
+  height: 20px;
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--cross {
+    background-image: url(../images/cross.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
+.header {
+  background-color: #3f5252;
+  position: relative;
+  overflow: hidden;
+
+  &__contain {
+
+    @include oniPad {
+      padding: 0 60px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+
+      &::after {
+        content: "10.08-10.10";
+        color: #f1f5f4;
+        opacity: 0.7;
+        font-size: 14px;
+        line-height: 18px;
+        display: block;
+        height: 1px;
+        background-color: #f1f5f4;
+        margin-top: 110px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 0 80px;
+  }
+  
+  &__image {
+    position: fixed;
+    display: block;
+    width: 245px;
+    height: 273px;
+    bottom: -30px;
+    right: -90px;
+    float: right;
+    object-fit: cover;
+
+    @include oniPad {
+      width: 400px;
+      height: 445px;
+      right: -10px;
+    }
+
+    @include onDesktop {
+      width: 673px;
+      height: 753px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    font-style: bold;
+    font-size: 48px;
+    line-height: 48px;
+    color: #f1f5f4;
+
+    &:nth-child(2) {
+      margin-bottom: 0;
+    }
+
+    @include oniPad {
+      font-size: 72px;
+      line-height: 72px;
+      margin: 0 0 40px;
+
+      &:nth-child(3) {
+        margin-left: 50px;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+
+      &:nth-child(3) {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__par {
+    margin: 0 0 20px;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #f1f5f4;
+    width: 270px;
+
+    &:nth-child(4) {
+      margin-bottom: 50px;
+    }
+
+    @include oniPad {
+      margin: 0 0 10px;
+
+      &:nth-child(4) {
+        margin-bottom: 80px;
+      }
+    }
+
+    @include onDesktop {
+      width: 370px;
+      &:nth-child(4) {
+        margin-bottom: 60px;
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    background-color: #cd4d31;
+    padding-left: 64px;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    color: #f1f5f4;
+    text-decoration: none;
+
+    @include oniPad {
+      width: 270px;
+      padding-left: 0;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      margin-left: 100px;
+    }
+  }
+}
+
+.menu {
+  background-color: #3f5252;
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 24px 0 80px;
+  }
+}
+// .logo {
+//   &__image {
+//   }
+// }
