@@ -1,7 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Playfair+Display:wght@700&family=Raleway&display=swap");
 @import "utils";
 @import "fonts";
 @import "typography";
+
+@mixin onTablet {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
 
 * {
   margin: 0;
@@ -30,31 +35,48 @@ body {
 .top-actions {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
 }
 
 .header {
+  position: relative;
   background-color: var(--firstBgColor);
   height: 584px;
 
   &-first-text {
     margin-bottom: 20px;
+    
+    @include onTablet {
+      margin-bottom: 10px;
+    }
   }
 
   &-second-text {
     margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
   }
 
   &-third-text {
     margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
   }
 
   &__image {
-    z-index: 1;
     position: absolute;
     top: 311px;
-    left: 154px;
+    right: 0;
     height: 273px;
+
+    @include onTablet {
+      height: 445px;
+      top: 139px;
+    }
   }
 
   &__content {
@@ -64,6 +86,11 @@ body {
   &__icon {
     background-image: url("../images/menu.png");
   }
+
+  &__button {
+    margin: 0 auto;
+    margin-bottom: 72px;
+  }
 }
 
 .button {
@@ -72,13 +99,13 @@ body {
   height: 60px;
   background-color: #cd4d31;
   color: var(--textColor);
-  margin: 0 auto;
   font-family: Raleway, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 100%;
   padding: auto;
+  border: none;
 }
 
 .another-button {
@@ -88,7 +115,6 @@ body {
   background-color: transparent;
   border: 1px solid #f1f5f4;
   color: var(--textColor);
-  margin: 0 auto;
   font-family: Raleway, sans-serif;
   font-style: normal;
   font-weight: normal;
@@ -97,10 +123,22 @@ body {
   padding: auto;
 }
 
+.top-actions-container {
+  padding: 0 20px;
+  padding-top: 20px;
+  height: 100%;
+}
+
 .container {
   padding: 0 20px;
   padding-top: 20px;
   height: 100%;
+
+  @include onTablet {
+    padding: 0 100px;
+    padding-top: 20px;
+
+  }
 }
 
 .logo {
@@ -119,7 +157,7 @@ body {
 }
 
 .title-text {
-  font-family: Playfair, sans-serif;
+  font-family: Playfair Display, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
@@ -139,27 +177,55 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
+    border: none;
   }
 
   &__link {
     display: block;
     margin-bottom: 40px;
-    font-family: Playfair, sans-serif;
-    font-style: normal;
-    font-weight: bold;
     font-size: 24px;
     line-height: 100%;
     color: var(--textColor);
     text-decoration: none;
+
+    &:last-child {
+      margin-bottom: 1px;
+    }
+
+    @include onTablet {
+      margin-bottom: 55px;
+      &:last-child {
+        margin-bottom: 1px;
+      }
+    }
   }
-  
-  &__button {
-    margin-bottom: 20px;
-    margin-top: 80px;
+
+  &__links {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
   }
 
   &__icon {
     background-image: url("../images/cross.png");
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-top: 0;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1px solid #c4c4c4;
+      gap: 10px;
+      padding-top: 60px;
+    }
   }
 }
 
