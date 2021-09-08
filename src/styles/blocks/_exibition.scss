@@ -1,0 +1,84 @@
+.exhibition {
+  display: flex;
+  flex-direction: column;
+  max-width: 385px;
+
+  &__duration {
+    color: #cd4d31;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    @extend %playfair-bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: #1c1b29;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    line-height: 150%;
+    color: #504f5e;
+    margin-bottom: 50px;
+  }
+}
+
+.exhibition:first-child,
+.exhibition:nth-child(3) {
+  align-self: flex-end;
+}
+
+@media (max-width: 1200px) {
+  .exhibition {
+    &__name {
+      max-width: 370px;
+    }
+
+    &__description {
+      max-width: 270px;
+    }
+
+    &__button {
+      display: none;
+    }
+  }
+
+  .exhibition:first-child,
+  .exhibition:nth-child(3) {
+    align-self: flex-start;
+    margin-left: 300px;
+  }
+
+  .exhibition:nth-child(2) {
+    margin-left: 100px;
+  }
+}
+
+@media (max-width: 700px) {
+  .exhibition {
+    &__name {
+      max-width: 270px;
+    }
+
+    &__description {
+      max-width: 150px;
+
+      &--end {
+        align-self: flex-end;
+      }
+    }
+
+    &__button {
+      display: none;
+    }
+  }
+
+  .exhibition:first-child,
+  .exhibition:nth-child(3) {
+    margin-left: 0;
+  }
+
+  .exhibition:nth-child(2) {
+    margin-left: 0;
+  }
+}

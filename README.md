@@ -4,9 +4,9 @@ Implement landing page according to [Figma design](https://www.figma.com/file/HL
 Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
 
 - Large screens 2560px
-- Full HD 1920px
-- The design 1600px
-- Notebook 1280px
+- Full HD 1440px
+- The design 1700px
+- Notebook 1200px;
 - Tablet 1024
 - Mobile (> 320px)
 
@@ -32,7 +32,7 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 11. `git push origin develop` - to send you code for PR.
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Museum_2/).
+  [DEMO LINK](https://pavlo1983.github.io/Museum_2/).
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.
