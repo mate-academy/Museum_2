@@ -1,71 +1,101 @@
 .menu {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  box-sizing: border-box;
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   background-color: $mainColor;
   color: $lightColor;
 
-  &__content {
-    box-sizing: border-box;
-    height: 100vh;
-  }
+  &__image {
+    display: none;
+    width: 624px;
+    height: 800px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    z-index: -1;
 
-  &__buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__lang {
-    display: block;
-    border: none;
-    background-color: $mainColor;
-    color: $lightColor;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 150%;
-
-    margin-right: 30px;
-  }
-
-  &__cross {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-
-    &-button {
-      position: relative;
-      width: 30px;
-      height: 2px;
-      background-color: $lightColor;
-      transform: rotate(-45deg);
-
-      &::after {
-        content: "";
-        position: absolute;
-        width: 30px;
-        height: 2px;
-        background-color: $lightColor;
-      }
+    @include onDesktop {
+      display: block;
     }
-    &-button::after {
-      transform: rotate(-90deg);
+  }
+
+  &__info-container {
+    display: none;
+
+    @include onTablet {
+      margin: 30px 0 0;
+      display: block;
+    }
+  }
+
+  &__time-text,
+  &__address-text {
+    font-weight: 200;
+    font-size: 14px;
+    opacity: 0.5;
+  }
+
+  &__address-address {
+    text-decoration: none;
+    color: $lightColor;
+  }
+
+  &__time-time,
+  &__address-address {
+    transition: all 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      color: $foxyColor;
+      transition: all 0.5s;
+    }
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__nav-container {
+    margin: 80px 0;
+
+    @include onTablet {
+      margin: 56px 0 60px;
+    }
+
+    @include onDesktop {
+      margin-top: 80px;
     }
   }
 
   &__list {
-    margin: 80px 0 0;
+    margin: 0;
     padding: 0;
     list-style: none;
+
+    @include onTablet {
+      border-bottom: 1px solid #c4c4c4;
+      padding-bottom: 55px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 60px;
+    }
   }
 
   &__item {
     margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
 
     &:first-child {
       margin-top: 0;
@@ -75,37 +105,65 @@
   &__link {
     display: inline-block;
     text-decoration: none;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 100%;
     color: $lightColor;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $foxyColor;
+      transition: all 0.5s;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
   }
 
   &__button-buy {
-    margin: 80px auto 0;;
-  }
+    display: block;
+    margin: 0 auto;
+    background-color: $foxyColor;
+    transition: all 0.5s;
 
-  
-  &__button-participant {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 280px;
-    height: 60px;
-    line-height: 100%;
-    text-decoration: none;
-    color: $lightColor;
-    background-color: transparent;
-    border: 1px solid $lightColor;
-  
-    @include onIpad {
-      width: 270px;
+    &:hover {
+      box-shadow: 0 0.5em 1em -0.4em $foxyColor;
+      transform: translateY(-0.25em);
+      transition: all 0.5s;
+    }
+    
+    @include onTablet {
+      width: 100%;
     }
   
     @include onDesktop {
-      width: 270px;
+      width: 100%;
+    }
+  }
+
+  &__button-participant {
+    display: block;
+    margin: 0 auto;
+    background: transparent;
+    border: 1px solid $lightColor;
+
+    transition: all 0.5s;
+
+    &:hover {
+      box-shadow: 0 0.5em 1em -0.4em $lightColor;
+      transform: translateY(-0.25em);
+      transition: all 0.5s;
+    }
+  
+    @include onTablet {
+      width: 100%;
+    }
+  
+    @include onDesktop {
+      width: 100%;
     }
   }
 }

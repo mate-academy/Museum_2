@@ -1,57 +1,43 @@
 .header {
+  position: relative;
   box-sizing: border-box;
   height: 100vh;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   background-color: $mainColor;
   color: $lightColor;
+  overflow: hidden;
 
-  &__image {
+  &__image-girl {
     position: absolute;
+    display: block;
+    height: 45%;
     bottom: 0;
-    right: 0;
-    width: 235px;
-    height: 273px;
+    right: -25%;
 
-    @include onIpad {
-      width: 360px;
-      height: 410px;
-
-      @media (max-height: 740px) {
-        width: 300px;
-        height: 330px;
-      }
+    @include onTablet {
+      right: 0;
+      height: 55%;
     }
 
     @include onDesktop {
-      width: 673px;
-      height: 753px;
-    }
-  }
-
-  &__image-girl {
-    width: 100%;
-    height: 100%;
-    object-position: 79px 0;
-
-    @include onIpad {
-      object-position: unset;
+      height: 90%;
     }
   }
 
   &__image-description {
     display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $lightColor;
+    margin-right: 54px;
+    margin-top: 35%;
 
     @include onDesktop {
       display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      color: $lightColor;
-      margin-right: 54px;
-      margin-top: 386px;
     }
   }
 
@@ -60,7 +46,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @include onIpad {
+    @include onTablet {
       margin-right: -60px;
       margin-left: -60px;
     }
@@ -80,93 +66,40 @@
     height: 40px;
   }
 
-  &__nav-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__menu-opener {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20px;
-    width: 25px;
-    cursor: pointer;
-
-    @include onIpad {
-      margin-right: 40px;
-    }
-  }
-
-  &__menu-button {
-    width: 25px;
-    height: 2px;
-    background-color: $lightColor;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 25px;
-      height: 2px;
-      background-color: $lightColor;
-    }
-  }
-
-  &__menu-button::before {
-    transform: translateY(-7px);
-  }
-
-  &__menu-button::after {
-    transform: translateY(7px);
-  }
-
-  &__lang-menu {
-    display: none;
-
-    @include onIpad {
-      display: block;
-      border: none;
-      background-color: $mainColor;
-      color: $lightColor;
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 150%;
-    }
-  }
-
   &__paragraph-first {
     margin: 100px 0 0;
 
-    @include onIpad {
+    @include onTablet {
       margin: 120px 0 0;
     }
   }
 
   &__title-1,
   &__title-2 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-weight: 700;
     font-size: 48px;
     line-height: 100%;
 
-    @include onIpad {
-      font-size: 72px;    
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
     }
   }
 
   &__title-1 {
     margin: 20px 0 0;
-    @include onIpad {
+    @include onTablet {
       margin: 10px 0 0;
     }
   }
 
   &__title-2 {
     margin: 0;
-    @include onIpad {
+    @include onTablet {
       text-align: center;
       width: 500px;
     }
@@ -175,26 +108,37 @@
       margin-top: 10px;
       text-align: unset;
       margin-left: 55px;
+      width: 100%;
     }
   }
 
   &__paragraph-second {
-    width: 270px;
+    width: 260px;
     margin: 30px 0 0;
 
-    @include onIpad {
+    @include onTablet {
       margin: 40px 0 0;
     }
 
     @include onDesktop {
       width: 370px;
+      margin: 60px 55px 0;
     }
   }
 
   &__button {
     margin: 50px 0 0;
+    width: 280px;
+    background-color: $foxyColor;
+    transition: all 0.5s;
 
-    @include onIpad {
+    &:hover {
+      box-shadow: 0 0.5em 1em -0.4em $foxyColor;
+      transform: translateY(-0.25em);
+      transition: all 0.5s;
+    }
+
+    @include onTablet {
       margin: 80px 0 0;
     }
 
@@ -215,7 +159,7 @@
 
   &__paragraph-third {
     display: block;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     font-weight: 700;
     font-size: 14px;
     line-height: 125%;
