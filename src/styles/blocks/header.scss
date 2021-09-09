@@ -1,5 +1,4 @@
 .header {
-  position: relative;
   box-sizing: border-box;
   height: 100vh;
   padding: 20px 0 100px;
@@ -19,34 +18,61 @@
     padding-bottom: 52px;
   }
 
+  &__container {
+    position: relative;
+    height: 100vh;
+  }
+
   &__image-girl {
     position: absolute;
     display: block;
     height: 45%;
     bottom: 0;
     right: -25%;
+    transition: all 0.3s;
+
+    @media (min-width: 350px) {
+      height: 50%;
+      right: -10%;
+    }
+
+    @media (min-width: 500px) {
+      height: 60%;
+      right: 0;
+    }
 
     @include onTablet {
       right: 0;
       height: 55%;
     }
 
+    @media (min-width: 950px) {
+      height: 80%;
+    }
+
     @include onDesktop {
-      height: 90%;
+      height: 80%;
+    }
+
+    @media (min-width: 1600px) {
+      right: -10%;
     }
   }
 
   &__image-description {
     display: none;
     position: absolute;
-    top: 0;
+    top: 60%;
     right: 0;
     color: $lightColor;
-    margin-right: 54px;
-    margin-top: 35%;
+    margin-right: 3%;
 
     @include onDesktop {
       display: block;
+    }
+
+    @media (min-width: 1600px) {
+      right: -10%;
     }
   }
 

@@ -1,11 +1,25 @@
 .page {
   font-family: "Playfair Display", serif;
+  font-weight: 700;
   scroll-behavior: smooth;
+  color: $darkColor;
 
   &__body {
     margin: 0;
     padding: 0;
     color: $darkColor;
+  }
+
+  &__header {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 116px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 160px;
+    }
   }
 
   &__menu {
@@ -20,6 +34,30 @@
     &:target {
       transform: translateY(0);
       transition: transform 0.3s;
+    }
+  }
+
+  &__section {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 160px;
+    }
+
+    &-title {
+      margin: 0 0 60px;
+      font-size: 36px;
+      line-height: 125%;
+
+      @include onTablet {
+        margin: 0 0 55px;
+        font-size: 48px;
+        line-height: 120%;
+      }
     }
   }
 }

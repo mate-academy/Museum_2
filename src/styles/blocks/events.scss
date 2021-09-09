@@ -1,0 +1,191 @@
+.events {
+  font-family: $fontRaleway;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  &__title {
+    font-family: $fontPlayfair;
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__article {
+    margin-bottom: 60px;
+    position: relative;
+
+    @include onDesktop {
+      margin-bottom: 280px;
+    }
+
+    &--excursion::after {
+      @include onDesktop {
+        content: "";
+        position: absolute;
+        top: -20%;
+        right: 0;
+        width: 370px;
+        height: 475px;
+        background-image: url(../images/event-1.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &--master-class::before {
+      @include onDesktop {
+        content: "";
+        position: absolute;
+        top: -30%;
+        width: 370px;
+        height: 475px;
+        background-image: url(../images/event-2.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__date {
+    color: $foxyColor;
+
+    &--mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+      font-family: $fontPlayfair;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 100%;
+      color: #fff;
+      -webkit-text-stroke: 0.5px $foxyColor;
+      text-shadow: -0.5px 0 $foxyColor,
+        0 0.5px $foxyColor,
+        0.5px 0 $foxyColor,
+        0 -0.5px $foxyColor;
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        font-size: 55px;
+      }
+    }
+  }
+
+  &__type {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__time {
+    display: none;
+    font-family: $fontPlayfair;
+    font-weight: 700;
+    font-size: 24px;
+    color: $foxyColor;
+    padding-top: 10px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+  }
+
+  &__name {
+    font-family: $fontPlayfair;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 125%;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__description {
+    color: #504f5e;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: $fontRaleway;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 100%;
+    background-color: $foxyColor;
+    transition: all 0.5s;
+
+    &:hover {
+      box-shadow: 0 0.5em 1em -0.4em $foxyColor;
+      transform: translateY(-0.25em);
+      transition: all 0.5s;
+    }
+  }
+
+  &__archive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+      transition: transform 0.5s;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    &-text {
+      display: block;
+      position: relative;
+
+      font-family: $fontRaleway;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      text-decoration: none;
+      color: #1c1b29;
+    }
+
+    &-line {
+      width: 130px;
+      height: 1px;
+      background-color: #1c1b29;
+
+      @include onTablet {
+        width: 170px;
+      }
+
+      @include onDesktop {
+        width: 70px;
+      }
+    }
+  }
+}
