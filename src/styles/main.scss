@@ -57,17 +57,7 @@ body {
 }
 
 .header {
-  position: relative;
   background-color: var(--firstBgColor);
-  height: 585px;
-
-  @include onTablet {
-    height: 762px;
-  }
-
-  @include onDesktop {
-    height: 800px;
-  }
 
   &-first-text {
     margin-bottom: 20px;
@@ -98,50 +88,56 @@ body {
     }
   }
 
-  &__image {
-    position: absolute;
-    top: 355px;
-    right: -40px;
+  &__background-image {
     height: 273px;
+    width: 245px;
+    background-image: url(../images/ukrainian-girl.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 60px 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
     z-index: 1;
 
     @include onTablet {
-      top: 320px;
+      width: 400px;
       height: 445px;
-      right: 30px;
     }
 
     @include onDesktop {
-      height: 730px;
-      top: 70px;
+      width: 673px;
+      height: 753px;
+    }
+
+    &-description {
+      display: none;
+      position: absolute;
+      right: 15px;
+      top: 400px;
+
+      @include onDesktop {
+        display: block;
+      }
     }
   }
 
   &__content {
-    margin-bottom: 100px;
-    margin-top: 120px;
+    padding-top: 100px;
   }
 
   &__icon {
+    z-index: 2;
     background-image: url("../images/menu.png");
   }
 
   &__button {
     margin: 0 auto;
+    margin-bottom: 100px;
 
     @include onTablet {
       margin: 0;
-    }
-  }
-
-  &__image-description {
-    display: none;
-
-    @include onDesktop {
-      display: block;
-      position: absolute;
-      right: 30px;
-      top: 400px;
+      margin-bottom: 180px;
     }
   }
 
@@ -174,7 +170,12 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
-    margin-top: 121px;
+    position: relative;
+    bottom: 50px;
+
+    @include onDesktop {
+      margin-top: 121px;
+    }
   }
 }
 
@@ -191,6 +192,13 @@ body {
   line-height: 100%;
   padding: auto;
   border: none;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5em 1em -0.4em #cd4d31;
+    transition: all 0.4s;
+  }
 }
 
 .another-button {
@@ -206,6 +214,13 @@ body {
   font-size: 16px;
   line-height: 100%;
   padding: auto;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5em 1em -0.4em grey;
+    transition: all 0.4s;
+  }
 }
 
 .top-actions-container {
@@ -215,12 +230,13 @@ body {
 }
 
 .container {
+  position: relative;
   padding: 0 20px;
-  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 
   @include onTablet {
     padding: 0 100px;
-    padding-top: 20px;
   }
 
   @include onDesktop {
@@ -318,6 +334,7 @@ body {
   }
 
   &__icon {
+    z-index: 2;
     background-image: url("../images/cross.png");
     display: block;
   }
@@ -403,19 +420,5 @@ body {
     &:target {
       transform: translateX(0);
     }
-  }
-}
-
-.main {
-  position: relative;
-  background-color: var(--textColor);
-  z-index: 2;
-
-  &__header-one {
-    padding: 60px 20px;
-    font-family: Playfair Display, sans-serif ;
-    font-style: bold;
-    font-size: 36px;
-    line-height: 45px;
   }
 }
