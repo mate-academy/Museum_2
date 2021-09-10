@@ -177,6 +177,29 @@ body {
       margin-top: 121px;
     }
   }
+
+  &__top-actions__right {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__select {
+    display: none;
+    background-color: var(--firstBgColor);
+    color: var(--textColor);
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    border: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
 }
 
 .button {
@@ -281,21 +304,21 @@ body {
   height: 100vh;
   z-index: 3;
 
-  &__select {
-    display: block;
-    background-color: var(--firstBgColor);
-    color: var(--textColor);
-    font-family: Raleway, sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-    border: none;
+  // &__select {
+  //   display: block;
+  //   background-color: var(--firstBgColor);
+  //   color: var(--textColor);
+  //   font-family: Raleway, sans-serif;
+  //   font-style: normal;
+  //   font-weight: 500;
+  //   font-size: 16px;
+  //   line-height: 150%;
+  //   border: none;
 
-    @include onTablet {
-      order: 2;
-    }
-  }
+  //   @include onTablet {
+  //     order: 2;
+  //   }
+  // }
 
   &__link {
     display: block;
@@ -321,6 +344,22 @@ body {
       &:last-child {
         margin-bottom: 1px;
       }
+    }
+  }
+
+  &__select {
+    display: block;
+    background-color: var(--firstBgColor);
+    color: var(--textColor);
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    border: none;
+  
+    @include onTablet {
+      order: 2;
     }
   }
 
@@ -392,6 +431,15 @@ body {
         display: flex;
         flex-direction: column;
       }
+
+      &__text {
+        font-family: Raleway, sans-serif;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--textColor);
+      }
     }
   }
 
@@ -421,4 +469,91 @@ body {
       transform: translateX(0);
     }
   }
+}
+
+.footer {
+  background-color: var(--firstBgColor);
+
+  &__title {
+    font-family: Playfair Display, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: var(--textColor);
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--textColor);
+    text-decoration: none;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--textColor);
+    padding-bottom: 38px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 15px;
+      padding-bottom: 60px;
+    }
+
+    &--1 {
+      @include onTablet {
+        order: 1;
+      }
+    }
+  }
+
+  //надо реализовать ссылками, я знаю. но у меня не получается почему-то
+  &__internet-medias {
+    margin-top: 20px;
+    width: 130px;
+    height: 20px;
+    background-image: url("../images/medias.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.section {
+  padding-bottom: 65px;
+  
+  &s {
+    padding-top: 80px;
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.arrow {
+  height: 20px;
+  width: 16px;
+  position: absolute;
+  right: 20px;
+  background-image: url(../images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: right;
 }
