@@ -12,6 +12,14 @@
       crossorigin=""
     >
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <script
+      type="text/javascript"
+      src="scripts/main.js"
+      defer
+    >
+    </script>
+
   </head>
   <body class="page__body">
     <header class="page__header header">
@@ -45,26 +53,24 @@
 
         <a href="#" class="header__button button">Купити квиток</a>
 
+        <div class="header__image-girl">
+          <p class="header__image-description">
+            Дівчина з Поділля
+            <br>
+            В. Тропінін
+          </p>
+        </div>
+
         <div class="header__elements-below">
           <p class="header__paragraph-third">10.08 - 10.10</p>
           <div class="header__line"></div>
         </div>
 
-        <img
-          class="header__image-girl"
-          src="./images/header_girl.png"
-          alt="Girl from Podolye by V.Tropinin"
-        >
-        <p class="header__image-description">
-          Дівчина з Поділля
-          <br>
-          В. Тропінін
-        </p>
       </div>
     </header>
 
     <nav class="page__menu menu" id="menu">
-      <div class="container">
+      <div class="menu__container container">
         <div class="menu__top-actions top-actions">
           <a class="logo" href="#">
             <img
@@ -82,12 +88,6 @@
             <a href="#" class="icon icon--closer"></a>
           </div>
         </div>
-
-        <img
-          class="menu__image"
-          src="./images/menu__boy.png"
-          alt="Portrait by H.Vasko"
-        >
 
         <div class="menu__info-container">
           <div class="grid">
@@ -114,13 +114,13 @@
             <div class="grid__item--1-2 grid__item--tablet-1-6">
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a href="#" class="menu__link">Спланувати візит</a>
+                  <a href="#visit" class="menu__link">Спланувати візит</a>
                 </li>
                 <li class="menu__item">
-                  <a href="#" class="menu__link">Виставки та події</a>
+                  <a href="#exhibitions" class="menu__link">Виставки та події</a>
                 </li>
                 <li class="menu__item">
-                  <a href="#" class="menu__link">Колеція</a>
+                  <a href="#news" class="menu__link">Колекція</a>
                 </li>
               </ul>
             </div>
@@ -137,15 +137,16 @@
             </div>
           </div>
         </div>
+        <div class="menu__image"></div>
       </div>
     </nav>
 
-    <main >
-      <section class="page__section exhibitions">
+    <main class="page__sections">
+      <section class="exhibitions" id="exhibitions">
         <div class="container">
           <div class="grid">
             <div class="grid__item--1-2 grid__item--tablet-1-6 grid__item--desktop-4-9">
-              <h2 class="page__section-title exhibitions__title">Актуальні виставки</h2>
+              <h2 class="exhibitions__title">Актуальні виставки</h2>
             </div>
           </div>
           <article class="exhibitions__article exhibitions__article--angel">
@@ -170,7 +171,7 @@
               </div>
             </div>
           </article>
-          <article class="exhibitions__article exhibitions__article--art">
+          <article class="exhibitions__article exhibitions__article--art exhibitions__article--word">
             <div class="grid">
               <div class="grid__item--1-2 grid__item--tablet-1-2 grid__item--desktop-3-4">
                 <div class="exhibitions__date exhibitions__date-first">Діє постійно</div>
@@ -225,17 +226,17 @@
         </div>
       </section>
 
-      <section class="page__section events">
+      <section class="events">
         <div class="container">
           <div class="grid">
             <div class="grid__item--1-2 grid__item--tablet-1-6 grid__item--desktop-4-8">
-              <h2 class="page__section-title events__title">Найближчі події</h2>
+              <h2 class="events__title">Найближчі події</h2>
             </div>
           </div>
 
           <article class="events__article events__article--excursion">
-            <div class="grid">
-              <div class="grid__item--tablet-1-2 grid__item--desktop-1-2">
+            <div class="grid events__grid">
+              <div class="grid__item--tablet-1-1 grid__item--desktop-1-2">
                 <div class="events__date events__date--tablet">14.08</div>
               </div>
               <div class="grid__item--1-1 events__date--mobile">
@@ -260,7 +261,7 @@
           </article>
 
           <article class="events__article events__article--master-class">
-            <div class="grid">
+            <div class="grid events__grid">
               <div class="grid__item--tablet-1-1 grid__item--desktop-5-6">
                 <div class="events__date events__date--tablet">18.08</div>
               </div>
@@ -291,9 +292,149 @@
           </div>
         </div>
       </section>
+
+      <section class="visit" id="visit">
+        <div class="container">
+          <div class="grid">
+            <div class="grid__item--1-2 grid__item--tablet-1-6 grid__item--desktop-6-12">
+              <h2 class="visit__title">Сплануйте візит до музею</h2>
+            </div>
+          </div>
+
+          <article class="visit__article">
+            <div class="grid">
+              <div class="grid__item--1-2 grid__item--tablet-3-6 grid__item--desktop-7-11">
+                <div class="visit__description">Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом</div>
+              </div>
+
+              <div class="grid__item--1-2 grid__item--tablet-3-5 grid__item--desktop-7-9">
+                <a class="button visit__button" href="#">Почати</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="news" id="news">
+        <div class="container">
+          <div class="grid">
+            <div class="grid__item--1-2 grid__item--tablet-1-3 grid__item--desktop-3-5">
+              <h2 class="news__title">Новини</h2>
+            </div>
+          </div>
+
+          <article class="news__article--tablet">
+            <div class="grid">
+              <div class="grid__item--tablet-1-3 grid__item--desktop-1-4">
+                <img
+                  src="./images/news__winners.png"
+                  alt="Winners"
+                  class="news__image"
+                >
+                <div class="news__date">9 серпня 2019</div>
+                <a href="#" class="news__name">Оголошення переможця</a>
+                <div class="news__description">Друзі, сьогодні п'ятниця! А це означає, що час оголосити переможця розіграшу...</div>
+              </div>
+              <div class="grid__item--tablet-4-6 grid__item--desktop-5-8">
+                <img
+                  src="./images/news__cat.png"
+                  alt="Cat"
+                  class="news__image"
+                >
+                <div class="news__date">9 серпня 2019</div>
+                <a href="#" class="news__name">Міжнародний день котів</a>
+                <div class="news__description">Музей з левами не може просто так взяти і пропустити Міжнародний день котів!</div>
+              </div>
+              <div class="news--kozak grid__item--1-2 grid__item--desktop-9-12">
+                <img
+                  src="./images/news__kozak.png"
+                  alt="P. Kulish"
+                  class="news__image"
+                >
+                <div class="news__date">9 серпня 2019</div>
+                <a href="#" class="news__name">200 років П.Кулішу</a>
+                <div class="news__description">Поруч із Тарасом Шевченком це найважливіша постать в українській культурі ХІХ століття...</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="news__article--mobile news__container">
+            <div class="news__slider">
+              <div class="news__item">
+                <img
+                  src="./images/news__winners.png"
+                  alt="Winners"
+                  class="news__image"
+                >
+                <div class="news__date">9 серпня 2019</div>
+                <div class="news__name">Оголошення переможця</div>
+                <div class="news__description">Друзі, сьогодні п'ятниця! А це означає, що час оголосити переможця розіграшу...</div>
+              </div>
+              <div class="news__item">
+                <img
+                  src="./images/news__cat.png"
+                  alt="Cat"
+                  class="news__image"
+                >
+                <div class="news__date">9 серпня 2019</div>
+                <div class="news__name">Міжнародний день котів</div>
+                <div class="news__description">Музей з левами не може просто так взяти і пропустити Міжнародний день котів!</div>
+              </div>
+              <div class="news__item news--kozak">
+                <img
+                  src="./images/news__kozak.png"
+                  alt="P. Kulish"
+                  class="news__image"
+                >
+                <div class="news__date">9 серпня 2019</div>
+                <div class="news__name">200 років П. Кулішу</div>
+                <div class="news__description">Поруч із Тарасом Шевченком це найважливіша постать в українській культурі ХІХ століття...</div>
+              </div>
+            </div>
+            <div class="news__toggler-container">
+              <a class="news__toggler selected"></a>
+              <a class="news__toggler"></a>
+              <a class="news__toggler"></a>
+            </div>
+          </article>
+
+          <div class="news__archive">
+            <a href="#" class="news__archive-text">Усі новини</a>
+            <div class="news__archive-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="subscription">
+        <div class="container">
+          <div class="grid">
+            <div class="grid__item--1-2 grid__item--tablet-1-6 grid__item--desktop-1-7">
+              <h2 class="subscription__title">Підпишіться на дайджест</h2>
+            </div>
+          </div>
+
+          <article class="subscription__article">
+            <div class="grid">
+              <div class="grid__item--1-2 grid__item--tablet-1-6 grid__item--desktop-1-6">
+                <div class="subscription__description">Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів</div>
+              </div>
+              <div class="grid__item--1-2 grid__item--tablet-1-4 grid__item--desktop-8-11">
+                <form action="" class="subscription__form">
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="e-mail"
+                    class="subscription__mail"
+                    required
+                  >
+                  <button type="submit" class="subscription__button"></button>
+                </form>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
     </main>
-
-
 
     <footer class="footer">
       <a href="#" class="footer__top"></a>
@@ -416,9 +557,15 @@
             </div>
           </div>
         </div>
+
+        <div class="footer__copyright copyright">
+          <div class="footer__date">© 2010 — 2020</div>
+          <div class="footer__terms">
+            <a href="#" class="footer__link">Privacy — Terms</a>
+          </div>
+        </div>
       </div>
     </footer>
 
-    <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>

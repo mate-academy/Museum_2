@@ -1,15 +1,30 @@
 .events {
-  font-family: $fontRaleway;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
+  padding-top: 100px;
+  @include fontRaleway;
+
+  @include onTablet {
+    padding-top: 115px;
+  }
 
   &__title {
+    margin: 0 0 60px;
     font-family: $fontPlayfair;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 125%;
+
+    @include onTablet {
+      margin-bottom: 55px;
+      font-size: 48px;
+    }
 
     @include onDesktop {
       margin-bottom: 150px;
     }
+  }
+
+  &__grid {
+    grid-row-gap: 0;
   }
 
   &__article {
@@ -18,19 +33,29 @@
 
     @include onDesktop {
       margin-bottom: 280px;
+      display: flex;
     }
 
-    &--excursion::after {
+    &:last-of-type {
       @include onDesktop {
-        content: "";
-        position: absolute;
-        top: -20%;
-        right: 0;
-        width: 370px;
-        height: 475px;
-        background-image: url(../images/event-1.png);
-        background-repeat: no-repeat;
-        background-size: contain;
+        margin-bottom: 200px;
+      }
+    }
+
+    &--excursion {
+      &::after {
+        @include onDesktop {
+          content: "";
+          position: absolute;
+          top: -20%;
+          right: 0;
+          width: 370px;
+          height: 475px;
+          background-image: url(../images/event-1.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          transition: transform 0.5s;
+        }
       }
     }
 
@@ -50,6 +75,7 @@
 
   &__date {
     color: $foxyColor;
+    margin-bottom: 20px;
 
     &--mobile {
       @include onTablet {
@@ -63,7 +89,7 @@
       font-weight: 700;
       font-size: 36px;
       line-height: 100%;
-      color: #fff;
+      color: $lightColor;
       -webkit-text-stroke: 0.5px $foxyColor;
       text-shadow: -0.5px 0 $foxyColor,
         0 0.5px $foxyColor,
@@ -72,6 +98,7 @@
 
       @include onTablet {
         display: block;
+        margin-bottom: 0;
       }
 
       @include onDesktop {
@@ -84,6 +111,11 @@
     font-weight: 200;
     font-size: 14px;
     line-height: 20px;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 
   &__time {
@@ -100,19 +132,17 @@
     }
 
     @include onDesktop {
+      margin-left: -20px;
       font-size: 36px;
     }
   }
 
   &__name {
-    font-family: $fontPlayfair;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 125%;
+    @include fontPlayfair;
     margin-bottom: 20px;
 
     @include onDesktop {
-      margin-bottom: 8px;
+      margin: -20px 0 8px;
     }
   }
 
@@ -123,6 +153,10 @@
     @include onTablet {
       margin-bottom: 30px;
     }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
   }
 
   &__button {
@@ -130,7 +164,7 @@
     justify-content: center;
     text-align: center;
     font-family: $fontRaleway;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 16px;
     line-height: 100%;
     background-color: $foxyColor;
@@ -144,6 +178,7 @@
   }
 
   &__archive {
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,7 +192,12 @@
       transition: transform 0.5s;
     }
 
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+
     @include onDesktop {
+      margin-bottom: 180px;
       flex-direction: row;
       justify-content: flex-end;
     }

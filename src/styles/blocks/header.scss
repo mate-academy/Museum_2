@@ -2,10 +2,7 @@
   box-sizing: border-box;
   height: 100vh;
   padding: 20px 0 100px;
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
+  @include fontRaleway;
   background-color: $mainColor;
   color: $lightColor;
   overflow: hidden;
@@ -21,59 +18,6 @@
   &__container {
     position: relative;
     height: 100vh;
-  }
-
-  &__image-girl {
-    position: absolute;
-    display: block;
-    height: 45%;
-    bottom: 0;
-    right: -25%;
-    transition: all 0.3s;
-
-    @media (min-width: 350px) {
-      height: 50%;
-      right: -10%;
-    }
-
-    @media (min-width: 500px) {
-      height: 60%;
-      right: 0;
-    }
-
-    @include onTablet {
-      right: 0;
-      height: 55%;
-    }
-
-    @media (min-width: 950px) {
-      height: 80%;
-    }
-
-    @include onDesktop {
-      height: 80%;
-    }
-
-    @media (min-width: 1600px) {
-      right: -10%;
-    }
-  }
-
-  &__image-description {
-    display: none;
-    position: absolute;
-    top: 60%;
-    right: 0;
-    color: $lightColor;
-    margin-right: 3%;
-
-    @include onDesktop {
-      display: block;
-    }
-
-    @media (min-width: 1600px) {
-      right: -10%;
-    }
   }
 
   &__nav {
@@ -171,6 +115,7 @@
       box-shadow: 0 0.5em 1em -0.4em $foxyColor;
       transform: translateY(-0.25em);
       transition: all 0.5s;
+      cursor: pointer;
     }
 
     @include onTablet {
@@ -188,7 +133,11 @@
     @include onDesktop {
       display: flex;
       align-items: center;
-      margin-top: 110px;
+
+      position: absolute;
+      width: 1170px;
+      bottom: 0;
+      margin-bottom: 50px;
     }
   }
 
@@ -209,5 +158,42 @@
     height: 1px;
     margin-left: 20px;
     opacity: 0.3;
+  }
+
+  &__image-girl {
+    position: absolute;
+    height: 280px;
+    width: 160px;
+    background-image: url(../images/header__girl-mob.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    bottom: 0;
+    right: 0;
+
+    @include onTablet {
+      background-image: url(../images/header_girl.png);
+      height: 400px;
+      width: 400px;
+    }
+
+    @include onDesktop {
+      height: 680px;
+      width: 680px;
+      z-index: 1;
+    }
+  }
+
+  &__image-description {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    color: $lightColor;
+    margin-right: 3%;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 }

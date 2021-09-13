@@ -1,0 +1,68 @@
+.visit {
+  margin: 0;
+  padding: 80px 0;
+  background-color: $mainColor;
+  color: $lightColor;
+
+  @include onTablet {
+    padding: 120px 0 170px;
+
+    background-image: url(../images/visit.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
+
+  @media (min-width: 1000px) {
+    background-size: 30%;
+  }
+
+  @media (min-width: 1150px) {
+    background-size: 25%;
+  }
+
+  @include onDesktop {
+    padding: 190px 0 160px;
+    background-size: auto auto;
+  }
+
+  &__title {
+    margin: 0 0 40px;
+    font-size: 48px;
+    line-height: 100%;
+
+    @include onTablet {
+      margin-bottom: 80px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+      font-size: 92px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 60px;
+
+    @include fontRaleway;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: $fontRaleway;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    background-color: $foxyColor;
+    transition: all 0.5s;
+
+    &:hover {
+      box-shadow: 0 0.5em 1em -0.4em $foxyColor;
+      transform: translateY(-0.25em);
+      transition: all 0.5s;
+    }
+  }
+}
