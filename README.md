@@ -19,18 +19,19 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 1. Implement footer.
 
 ## HR important moments
-- Скорость анимаций на всем лендинге одинаковая (например увеличение при наведении или выезд блоков при скроле)
-- Placeholder в формах подсказывают что именно ввести, а если стоит валидация формы, то понятно в каком формате вводить номер телефона
-- Убедитесь, что с мобильных выглядит все аккуратно и без горизонтальной прокрутки
-- Добавьте favicon
-- Добавьте мягкий скролл при клике на меню до соответствующих блоков страницы
-- Кнопки "купити квиток" и "зареєструватися" должны вести на блок "Сплануйте візит до музею"
-- Кнопки в футер меню также должны быть кликабельны и вести на блоки в лендинге.
-- Чтобы рекрутеру было понятно что именно это за лендинг, лучше назвать вкладку NAMU
-- На мобильной версии в блок "Новини" нужно добавить слайдер
-- Все иконки соц сетей в футере должны быть кликабельны с hover-стилями и открывать в новой вкладке социальные сети музею NAMU
-- Для того чтобы оживить лендинг можно анимировать "Дівчину з Поділля" (например, чтобы при открытии страницы она плавно выезжала сбоку)
-- Тоже самое касается картинок в блоках "Актуальні виставки", "Найближчі події", "Новини" (например, они могут как-то двигаться при ховере или при прокрутке страницы вниз)
+- The speed of animations is the same throughout the landing page (for example, increasing when hovering or moving blocks when scrolling)
+- Placeholders in the forms suggest what to enter, and if there is a validation of the form, then it is clear in what format to enter the phone number
+- Make sure everything looks neat on mobile and without horizontal scrolling
+- Add favicon
+- Add a smooth scroll for the whole page
+- When you try to send the form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
+- The buttons "buy a ticket" and "register" should lead to the block "Plan a visit to the museum"
+- Pictures in the blocks "Exhibitions", "Events", "News" should be animated and somehow move on hover or when scrolling down the page
+- Buttons in the footer of the menu should also be clickable and lead to blocks on the landing page.
+- To make it clear to the recruiter what exactly this landing page is, it is better to give the whole web page the title NAMU
+- On the mobile version, add a slider to the "News" block
+- All the social icons in the footer should be clickable and open the museum's social networks in a new tab
+
 
 ## Github flow
 1. **Fork** the repo.
