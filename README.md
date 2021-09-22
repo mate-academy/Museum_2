@@ -21,7 +21,8 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 1. Implement `Підпишіться на дайджест` block.
 1. Implement footer.
 
-## HR important moments
+## Checklist for preparing a portfolio project for HR review
+
 - The speed of animations is the same throughout the landing page (for example, increasing when hovering or moving blocks when scrolling)
 - Placeholders in the forms suggest what to enter, and if there is a validation of the form, then it is clear in what format to enter the phone number
 - Make sure everything looks neat on mobile and without horizontal scrolling
