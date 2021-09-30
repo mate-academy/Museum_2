@@ -7,19 +7,74 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 80px;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__schedule {
+    color: $text-c-white;
+    margin-bottom: 40px;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &-top {
+      font-weight: 200;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &-bottom {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__adress {
+    color: $text-c-white;
+    margin-bottom: 40px;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &-top {
+      font-weight: 200;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &-bottom {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
   }
 
   &__list {
     list-style: none;
     padding: 0;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 570px;
+        background-color: $text-c-white;
+      }
+    }
   }
 
   &__item {
     margin-bottom: 40px;
-
-    &:last-child {
-      margin-bottom: 80px;
-    }
   }
 
   &__link {
@@ -28,6 +83,11 @@
     line-height: 100%;
     text-decoration: none;
     color: $text-c-white;
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+    }
   }
 
   &__button-buy {
