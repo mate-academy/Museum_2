@@ -12,8 +12,34 @@
     align-items: center;
   }
 
+  &__menu-lang {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__right {
+    margin-right: 30px;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+  
   &__lang {
     color: #f1f5f4;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  &__lang-icon {
+    margin-left: 3px;
+    width: 8px;
   }
 
   &__icon-cross {
@@ -28,13 +54,30 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+  
+  &__content-container {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+  }
 
   &__content {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    margin: auto;
+    height: 100%;
+    
 
     padding: 80px 0;
+
+    @include onDesktop {
+      width: 50%;
+      
+    }
   }
 
   &__list {
@@ -77,11 +120,32 @@
     color: #f1f5f4;
   }
 
-  &__button-main {
-    margin: 0;
+  &__container-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+
+    @include onTablet {
+    flex-direction: row;
+      gap: 24px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      flex-direction: row;
+      gap: 30px;
+    }
   }
 
-  &__button-next {
-    margin: 20px 0 0;
+  &__photo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 50%;
+      
+    }
   }
 }
