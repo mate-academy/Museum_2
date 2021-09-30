@@ -1,11 +1,23 @@
 .subscription {
-  height: 100vh;
   background: #cd4d31;
 
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  &__container {
+    height: 100vh;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    @extend %max-width-page-content;
+
+    @include onTablet {
+      padding: 0 90px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      align-content: center;
+    }
+  }
 
   &__title {
     font-family: "Playfair Display", serif;
@@ -14,6 +26,15 @@
     font-size: 36px;
     line-height: 100%;
     color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @include onDesktop {
+      margin: auto 0 40px;
+    }
   }
 
   &__about {
@@ -43,6 +64,14 @@
 
     &::placeholder {
       color: #f1f5f4;
+    }
+
+    @include onTablet {
+      width: 300px;
+    }
+
+    @include onDesktop {
+      margin-top: 26px;
     }
   }
 }

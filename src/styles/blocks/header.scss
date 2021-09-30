@@ -1,12 +1,21 @@
 .header {
-  box-sizing: border-box;
-  height: 100vh;
-  padding: 20px 20px 0;
   background-color: $c-green;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+  &__container {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 20px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @extend %max-width-page-content;
+
+    @include onTablet {
+      padding: 20px 50px 0;
+    }
+  }
 
   &__nav {
     display: flex;
@@ -39,7 +48,7 @@
 
   &__right {
     display: none;
-    margin-left: 40px;
+    margin-right: 30px;
 
     @include onTablet {
       display: flex;
@@ -61,10 +70,14 @@
     width: 8px;
   }
 
-
   &__exhibition {
     padding: 160px 0 100px;
     position: relative;
+
+    // height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
   }
 
   &__time-exhibition {
@@ -85,6 +98,14 @@
     font-size: 48px;
     line-height: 100%;
     color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
   }
 
   &__about-exhibition {
@@ -109,12 +130,13 @@
     max-width: 245px;
     max-height: auto;
 
-    @media (min-width: 768px) {
+    @include onTablet {
       max-width: 424px;
+      right: -20px;
     }
 
-    @media (min-width:1280px) {
+    @include onDesktop {
       max-width: 600px;
     }
-  }
+  } 
 }

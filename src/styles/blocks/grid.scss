@@ -14,11 +14,20 @@
     column-gap: 30px;
   }
 
+  &--tablet {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 24px;
+    }
+  }
+
   &--desktop {
-    display: block;
 
     @include onDesktop {
       display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
     }
   }
 
@@ -27,6 +36,12 @@
       @for $endCell from $startCell through 12 {
         &--#{$startCell}-#{$endCell} {
           grid-column: #{$startCell} / #{$endCell + 1};
+        }
+
+        &--tablet-#{$startCell}-#{$endCell} {
+          @include onTablet {
+            grid-column: #{$startCell} / #{$endCell + 1};
+          }
         }
 
         &--desktop-#{$startCell}-#{$endCell} {

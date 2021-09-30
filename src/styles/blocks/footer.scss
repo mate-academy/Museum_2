@@ -1,6 +1,14 @@
 .footer {
   background-color: #3f5252;
-  padding: 80px 20px 32px;
+
+  &__container {
+    padding: 80px 20px 32px;
+    @extend %max-width-page-content;
+
+    @include onTablet {
+      padding: 80px 50px 32px;
+    }
+  }
 
   &__section-name {
     font-family: "Playfair Display", serif;
@@ -81,5 +89,13 @@
     font-size: 14px;
     line-height: 20px;
     color: #f1f5f4;
+
+    @include onTablet {
+      display: inline-block;
+
+      &:last-child {
+        margin-left: 40px;
+      }
+    }
   }
 }

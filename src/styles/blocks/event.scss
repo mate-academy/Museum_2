@@ -1,9 +1,9 @@
 .event {
   padding: 20px 20px 60px;
 
-  &__container-time {
-    display: flex;
-  }
+  // &__container-time {
+  //   display: flex;
+  // }
 
   &__data-time {
     margin: 0 0 20px;
@@ -13,6 +13,52 @@
     font-size: 16px;
     line-height: 150%;
     color: #cd4d31;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__data {
+    display: none;
+
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 100%;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #cd4d31;
+    margin: 0;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      font-size: 55px;
+    }
+  }
+
+  &__time {
+    display: none;
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    color: #cd4d31;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      font-size: 55px;
+    }
   }
 
   &__kind {
@@ -43,5 +89,13 @@
     font-size: 16px;
     line-height: 150%;
     color: #504f5e;
+  }
+
+  &__photo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 }

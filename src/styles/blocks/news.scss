@@ -1,6 +1,27 @@
 .news {
   padding: 0 20px 72px;
 
+  @include onTablet {
+    display: flex;
+    padding: 0 50px 72px;
+  }
+
+  &__second {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__third {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
   &__photo {
     display: flex;
   }
@@ -9,6 +30,11 @@
     margin: auto;
     max-width: 280px;
     max-height: 280px;
+
+    @include onDesktop {
+      max-width: 370px;
+      max-height: 370px;
+    }
   }
 
   &__time {

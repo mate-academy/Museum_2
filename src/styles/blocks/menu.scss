@@ -1,10 +1,14 @@
 .menu {
-  box-sizing: border-box;
-  height: 100vh;
-  padding: 20px 20px 0;
   background-color: $c-green;
-  display: flex;
-  flex-direction: column;
+
+  &__container {
+    @extend %max-width-page-content;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
 
   &__nav {
     display: flex;
@@ -60,7 +64,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      
+      height: 100%;
     }
   }
 
@@ -70,13 +74,11 @@
     justify-content: start;
     margin: auto;
     height: 100%;
-    
 
-    padding: 80px 0;
+    padding: 40px 0;
 
     @include onDesktop {
       width: 50%;
-      
     }
   }
 
@@ -90,6 +92,7 @@
       margin-bottom: 80px;
     }
   }
+  
 
   &__link {
     font-family: "Playfair Display", serif;
@@ -99,6 +102,20 @@
     line-height: 100%;
     align-items: center;
     color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+
+  &__about-container {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
   }
 
   &__about {
@@ -112,6 +129,7 @@
   }
 
   &__about-item {
+    display: block;   
     font-family: "Raleway", sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -121,6 +139,7 @@
   }
 
   &__container-buttons {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,14 +147,17 @@
     gap: 20px;
 
     @include onTablet {
-    flex-direction: row;
+      flex-direction: row;
       gap: 24px;
+      border-top: 1px solid #f1f5f4;
+      padding-top: 60px;
     }
 
     @include onDesktop {
       width: 100%;
       flex-direction: row;
       gap: 30px;
+      padding-bottom: 100px;
     }
   }
 
@@ -143,9 +165,13 @@
     display: none;
 
     @include onDesktop {
-      display: block;
-      width: 50%;
-      
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      max-width: 50%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
