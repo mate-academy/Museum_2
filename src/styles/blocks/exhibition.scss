@@ -1,23 +1,74 @@
 .exhibition {
+  @include onTablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__container {
+    padding: 20px 20px 0;
+  }
+
   &__photo {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    transition: all $transition-duration;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__image {
     max-height: 280px;
 
     &--small {
-      height: 224px;
-      width: 150px;
+      height: 239px;
+      width: 165px;
+
+      @include onTablet {
+        width: 282px;
+        height: 423px;
+      }
+
+      @include onDesktop {
+        width: 465px;
+        height: 698px;
+      }
     }
 
     &--right {
       align-self: flex-end;
+
+      @include onTablet {
+        margin: 0;
+        height: 301px;
+      }
+
+      @include onDesktop {
+        height: 485px;
+      }
     }
 
     &--center {
       margin: auto;
+
+      @include onTablet {
+        align-self: flex-start;
+        margin: 0;
+        height: 329px;
+      }
+
+      @include onDesktop {
+        height: 546px;
+      }
     }
   }
 
@@ -30,6 +81,11 @@
     font-size: 24px;
     line-height: 125%;
     color: #cd4d31;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
 
     &--always {
       font-family: "Raleway", sans-serif;
@@ -61,10 +117,5 @@
     font-size: 16px;
     line-height: 150%;
     color: #504f5e;
-
   }
-
-  // &__button-main {
-  //   grid-column: 1 / 3;
-  // }
 }
