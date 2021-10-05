@@ -3,6 +3,7 @@
   box-sizing: border-box;
   height: 100vh;
   overflow-y: auto;
+  transition: transform $transition-duration;
 
   &__top {
     display: flex;
@@ -14,6 +15,14 @@
 
     @include onMobile {
       padding: 20px 20px 80px;
+    }
+
+    &-icon {
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     &-actions {
@@ -56,6 +65,11 @@
       font-size: 14px;
       line-height: 20px;
       color: $color-white;
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: translateX(5%);
+      }
     }
 
     &-text {
@@ -64,6 +78,11 @@
       font-size: 16px;
       line-height: 24px;
       color: $color-white;
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: translateX(5%);
+      }
     }
   }
 
@@ -88,6 +107,11 @@
 
   &__item {
     margin-bottom: 60px;
+    transition: transform $transition-duration;
+    
+    &:hover {
+      transform: translateX(2%);
+    }
 
     &-link {
       font-family: "Playfair Display", sans-serif;
@@ -114,15 +138,27 @@
 
     &-buy {
       margin-right: 30px;
+      transition: all $transition-duration;
 
       @include onMobile {
         margin: 0 0 20px;
+      }
+
+      &:hover {
+        background-color: #2f3b3b;
+        border: 1px solid $color-white;
       }
     }
 
     &-partner {
       background-color: $color-green;
       border: 1px solid $color-white;
+      transition: all $transition-duration;
+
+      &:hover {
+        background-color: #2f3b3b;
+        border: 1px solid $color-white;
+      }
     }
   }
 
