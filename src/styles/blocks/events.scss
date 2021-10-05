@@ -1,39 +1,333 @@
 .events {
   &__title {
-    @extend %text-title;
-    font-size: 36px;
-    line-height: 125%;
-    margin-bottom: 60px;
-    color: $title-text-c;
+    grid-column: 4 / 9;
+
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    line-height: 120%;
+    color: $color-title;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
   }
 
-  &__date {
-    font-size: 16px;
-    line-height: 150%;
-    color: $text-c-orange;
+  &__excursion {
+
+    &-image {
+      grid-column: 9 / 12;
+      grid-row: 1 / 6;
+
+      background-image: url(../images/pictures/events_pavlo.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-date {
+      grid-column: 1 / 2;
+      margin: 0 0 10px;
+
+      font-family: "Playfair Display", sans-serif;
+      font-size: 55px;
+      line-height: 100%;
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $color-orange;
+
+      @include onTablet {
+        grid-column: 1 / 1;
+        font-size: 36px;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+
+      &--mobile {
+        display: none;
+
+        @include onMobile {
+          display: block;
+          grid-column: 1 / 2;
+          font-family: "Raleway", sans-serif;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 150%;
+          color: $color-orange;
+        }
+      }
+    }
+
+    &-time {
+      grid-column: 1 / 2;
+      padding-left: 80px;
+      margin: 0;
+
+      font-family: "Playfair Display", sans-serif;
+      font-size: 36px;
+      line-height: 100%;
+      color: $color-orange;
+
+      @include onTablet {
+        grid-column: 1 / 1;
+        padding-left: 40px;
+        font-size: 24px;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    &-type {
+      grid-column: 3 / 4;
+      grid-row: 1;
+      margin: 0 0 10px;
+
+      font-family: "Raleway", sans-serif;
+      font-weight: 200;
+      font-size: 14px;
+      line-height: 20px;
+      color: $color-title;
+
+      @include onTablet {
+        grid-column: 2 / 3;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &-name {
+      grid-column: 3 / 8;
+      margin: 0 0 8px;
+
+      font-family: "Playfair Display", sans-serif;
+      font-size: 24px;
+      line-height: 125%;
+      color: $color-title;
+
+      @include onTablet {
+        grid-column: 2 / 6;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &-text {
+      grid-column: 3 / 8;
+      margin: 0 0 60px;
+
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-text;
+
+      @include onTablet {
+        grid-column: 2 / 6;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &-button {
+      grid-column: 3 / 5;
+      margin: 0 0 200px;
+
+      @include onTablet {
+        grid-column: 2 / 4;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 2;
+        margin: 0 0 60px;
+      }
+    }
   }
 
-  &__type {
-    color: $title-text-c;
-    font-weight: 200;
-    font-size: 14px;
-    line-height: 200%;
+  &__trip {
+
+    &-image {
+      grid-column: 1 / 4;
+      grid-row: 1 / 6;
+
+      background-image: url(../images/pictures/events_avstrailya.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-date {
+      grid-column: 5 / 6;
+      margin: 0 0 10px;
+
+      font-family: "Playfair Display", sans-serif;
+      font-size: 55px;
+      line-height: 100%;
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $color-orange;
+
+      @include onTablet {
+        grid-column: 1 / 1;
+        font-size: 36px;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+
+      &--mobile {
+        display: none;
+
+        @include onMobile {
+          display: block;
+          grid-column: 1 / 2;
+          font-family: "Raleway", sans-serif;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 150%;
+          color: $color-orange;
+        }
+      }
+    }
+
+    &-time {
+      grid-column: 5 / 6;
+      padding-left: 80px;
+      margin: 0;
+
+      font-family: "Playfair Display", sans-serif;
+      font-size: 36px;
+      line-height: 100%;
+      color: $color-orange;
+
+      @include onTablet {
+        grid-column: 1 / 1;
+        padding-left: 40px;
+        font-size: 24px;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    &-type {
+      grid-column: 7 / 8;
+      grid-row: 1;
+      margin: 0 0 10px;
+
+      font-family: "Raleway", sans-serif;
+      font-weight: 200;
+      font-size: 14px;
+      line-height: 20px;
+      color: $color-title;
+
+      @include onTablet {
+        grid-column: 2 / 3;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &-name {
+      grid-column: 7 / 11;
+      margin: 0 0 8px;
+
+      font-family: "Playfair Display", sans-serif;
+      font-size: 24px;
+      line-height: 125%;
+      color: $color-title;
+
+      @include onTablet {
+        grid-column: 2 / 6;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &-text {
+      grid-column: 7 / 11;
+      margin: 0 0 60px;
+
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-text;
+
+      @include onTablet {
+        grid-column: 2 / 6;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &-button {
+      grid-column: 7 / 9;
+      margin: 0 0 200px;
+
+      @include onTablet {
+        grid-column: 2 / 4;
+        margin: 0 0 60px;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 2;
+        margin: 0 0 60px;
+      }
+    }
   }
 
-  &__name {
-    @extend %text-title;
-    font-size: 24px;
-    line-height: 125%;
-    margin-bottom: 20px;
-    color: $title-text-c;
-  }
+  &__note {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
-  &__text {
-    margin: 0 0 40px;
-    color: $normal-text-c;
-  }
+    @include onTablet {
+      justify-content: center;
+    }
 
-  &__button {
-    margin-bottom: 60px;
+    &-link {
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 100%;
+      color: $color-title;
+
+      &::after {
+        content: "";
+        display: block;
+        max-width: 100%;
+        height: 1px;
+        background-color: $color-title;
+        margin: 10px 0 150px;
+
+        @include onTablet {
+          margin: 10px 0 100px;
+        }
+
+        @include onMobile {
+          margin: 10px 0 60px;
+        }
+      }
+    }
   }
 }

@@ -1,36 +1,82 @@
 .digest {
-  background-color: $back-c-orange;
+  background-color: $color-orange;
 
   &__title {
-    margin-bottom: 40px;
-    @extend %text-title;
-    color: $text-c-white;
-    font-size: 36px;
-    line-height: 100%;
+    margin: 160px 0 40px;
+    grid-column: 1 / 8;
+
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    line-height: 120%;
+    color: $color-white;
+
+    @include onTablet {
+      margin: 110px 0 30px;
+    }
+
+    @include onMobile {
+      margin: 80px 0 40px;
+    }
   }
 
   &__description {
+    grid-column: 1 / 7;
+    margin: 0 0 160px;
+
+    font-family: "Raleway", sans-serif;
     font-size: 16px;
     line-height: 150%;
-    color: $text-c-white;
-    margin-bottom: 60px;
-  }
+    color: $color-white;
 
-  &__email {
-    width: 80%;
-    padding: 4px;
-    background-color: $back-c-orange;
-    border: 2px solid transparent;
-    border-radius: 4px;
-
-    &::placeholder {
-      color: $text-c-white;
-      font-size: 16px;
-      line-height: 150%;
+    @include onTablet {
+      margin: 0 0 80px;
     }
 
-    &:hover {
-      border-color: $text-c-white;
+    @include onTablet {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__form {
+    grid-column: 8 / 11;
+    margin: 0 0 160px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin: 0 0 120px;
+    }
+
+    @include onTablet {
+      margin: 0 0 80px;
+    }
+
+    &-input {
+      box-sizing: border-box;
+      width: 80%;
+      padding: 4px;
+      background-color: $color-orange;
+      border: 1px solid transparent;
+      border-bottom: 1px solid $color-white;
+      color: $color-white;
+      font-size: 16px;
+      line-height: 150%;
+
+      &:hover {
+        border: 1px solid $color-white;
+        border-radius: 4px;
+      }
+
+      &:focus {
+        border: 1px solid $color-white;
+        border-radius: 4px;
+      }
+
+      &::placeholder {
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        line-height: 150%;
+        color: $color-white;
+      }
     }
   }
 }

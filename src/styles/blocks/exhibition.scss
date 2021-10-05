@@ -1,64 +1,287 @@
 .exhibition {
-
-  &__header {
-    margin: 60px 0;
-    @extend %text-title;
-    font-size: 36px;
-    line-height: 125%;
-    color: $title-text-c;
-
-    @include onDesktop {
-      margin: 160px 0 100px;
-      font-size: 48px;
-      line-height: 120%;
-    }
-  }
-
-  &__date {
-    margin-bottom: 5px;
-    @extend %text-normal;
-    font-size: 16px;
-    line-height: 150%;
-    color: $text-c-orange;
-  }
-
-  &__date-first {
-    margin-bottom: 10px;
-    @extend %text-title;
-    font-size: 24px;
-    line-height: 125%;
-
-    @include onDesktop {
-      font-size: 48px;
-      line-height: 120%;
-    }
-  }
-
   &__title {
-    margin-bottom: 30px;
-    @extend %text-title;
-    color: $title-text-c;
-    font-size: 24px;
-    line-height: 125%;
+    grid-column: 4 / 10;
+    margin: 160px 0 100px;
+
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    line-height: 120%;
+    color: $color-title;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+      margin: 115px 0 55px;
+    }
+
+    @include onMobile {
+      grid-column: 1 / 2;
+      margin: 60px 0;
+    }
   }
 
-  &__description {
-    color: $normal-text-c;
-    font-size: 16px;
-    line-height: 150%;
-    margin-bottom: 100px;
+  &__angels {
+
+    &-image {
+      grid-column: 1 / 5;
+      grid-row: 1 / 5;
+      background-image: url(../images/pictures/exhibition_angel.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-date {
+      grid-column: 6 / 9;
+      margin: 0 0 20px;
+  
+      font-family: "Playfair Display", sans-serif;
+      font-size: 48px;
+      line-height: 120%;
+      color: $color-orange;
+
+      @include onTablet {
+        grid-column: 2 / 5;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 2;
+        font-size: 24px;
+        line-height: 125%;
+      }
+    }
+
+    &-name {
+      grid-column: 7 / 11;
+      margin: 0 0 20px;
+  
+      font-family: "Playfair Display", sans-serif;
+      font-size: 24px;
+      line-height: 125%;
+      color: $color-title;
+
+      @include onTablet {
+        grid-column: 3 / 6;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &-text {
+      grid-column: 7 / 11;
+      margin: 0 0 50px;
+
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-text;
+
+      @include onTablet {
+        grid-column: 3 / 6;
+        margin: 0 0 100px;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 1;
+        margin: 0 0 90px;
+      }
+    }
+
+    &-button {
+      grid-column: 7 / 9;
+      margin: 0 0 150px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
   }
 
-  &__button {
-    display: none;
+  &__newArt {
 
-    @include onDesktop {
-      display: flex;
+    &-image {
+      grid-column: 8 / 13;
+      grid-row: 1 / 5;
+      background-image: url(../images/pictures/exhibition_pair_background.png),
+        url(../images/pictures/exhibition_pair.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-date {
+      grid-column: 1 / 2;
+      margin: 0 0 20px;
+  
+      font-family: "Raleway", sans-serif;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-orange;
+
+      @include onMobile {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &-name {
+      grid-column: 1 / 4;
+      margin: 0 0 20px;
+  
+      font-family: "Playfair Display", sans-serif;
+      font-size: 24px;
+      line-height: 125%;
+      color: $color-title;
+
+      @include onMobile {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &-text {
+      grid-column: 1 / 4;
+      margin: 0 0 50px;
+
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-text;
+
+      @include onTablet {
+        margin: 0 0 100px;
+      }
+
+      @include onMobile {
+        grid-column: 2 / 2;
+        grid-row: 3 / 3;
+      }
+    }
+
+    &-button {
+      grid-column: 3 / 7;
+      margin: 0 0 150px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__ancientArt {
+
+    &-image {
+      grid-column: 1 / 5;
+      grid-row: 1 / 5;
+      background-image: url(../images/pictures/exhibition_kobza_background.png),
+        url(../images/pictures/exhibition_kobza.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-date {
+      grid-column: 7 / 9;
+      margin: 0 0 20px;
+  
+      font-family: "Raleway", sans-serif;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-orange;
+
+      @include onTablet {
+        grid-column: 3 / 5;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &-name {
+      grid-column: 7 / 11;
+      margin: 0 0 20px;
+  
+      font-family: "Playfair Display", sans-serif;
+      font-size: 24px;
+      line-height: 125%;
+      color: $color-title;
+
+      @include onTablet {
+        grid-column: 3 / 6;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 2;
+      }
+    }
+
+    &-text {
+      grid-column: 7 / 11;
+      margin: 0 0 50px;
+
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-text;
+
+      @include onTablet {
+        grid-column: 3 / 6;
+        margin: 0 0 100px;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 1;
+      }
+    }
+
+    &-button {
+      grid-column: 7 / 9;
+      margin: 0 0 150px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__note {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include onTablet {
       justify-content: center;
-      align-items: center;
-      height: 60px;
-      margin-bottom: 200px;
-      background-color: $back-c-orange;
+    }
+
+    &-link {
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 100%;
+      color: $color-title;
+
+      &::after {
+        content: "";
+        display: block;
+        max-width: 100%;
+        height: 1px;
+        background-color: $color-title;
+        margin: 10px 0 150px;
+
+        @include onTablet {
+          margin: 10px 0 100px;
+        }
+      }
     }
   }
 }

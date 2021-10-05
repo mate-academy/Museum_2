@@ -1,116 +1,139 @@
 .nav {
+  background-color: $color-green;
   box-sizing: border-box;
-  background-color: $back-c-green;
-  padding-top: 20px;
+  height: 100vh;
+  overflow-y: auto;
 
-  &__container {
+  &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 80px;
+    padding: 20px 55px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 
-    @include onDesktop {
-      margin-bottom: 30px;
+    @include onMobile {
+      padding: 20px 20px 80px;
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-menu {
+      padding: 5px 10px;
+    }
+
+    &-lang {
+      padding: 5px 10px;
+      color: $color-white;
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      font-weight: 500;
     }
   }
 
-  &__schedule {
-    color: $text-c-white;
-    margin-bottom: 40px;
-    display: none;
+  &__info {
+    display: flex;
+    margin: 0 0 80px;
 
-    @include onDesktop {
-      display: block;
+    @include onMobile {
+      display: none;
     }
 
-    &-top {
+    &-block {
+      display: flex;
+      flex-direction: column;
+      padding: 0 60px 0 0;
+    }
+
+    &-name {
+      font-family: "Raleway", sans-serif;
       font-weight: 200;
       font-size: 14px;
       line-height: 20px;
+      color: $color-white;
     }
 
-    &-bottom {
+    &-text {
+      font-family: "Raleway", sans-serif;
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
-    }
-  }
-
-  &__adress {
-    color: $text-c-white;
-    margin-bottom: 40px;
-    display: none;
-
-    @include onDesktop {
-      display: block;
-    }
-
-    &-top {
-      font-weight: 200;
-      font-size: 14px;
-      line-height: 20px;
-    }
-
-    &-bottom {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
+      color: $color-white;
     }
   }
 
   &__list {
     list-style: none;
+    margin: 0;
     padding: 0;
-    margin-bottom: 40px;
 
-    @include onDesktop {
-      &::after {
-        content: "";
-        display: block;
-        height: 1px;
-        width: 570px;
-        background-color: $text-c-white;
+    &::after {
+      content: "";
+      display: block;
+      width: 570px;
+      height: 1px;
+      background-color: $color-white;
+      opacity: 0.3;
+
+      @include onMobile {
+        display: none;
       }
     }
   }
 
   &__item {
-    margin-bottom: 40px;
-  }
+    margin-bottom: 60px;
 
-  &__link {
-    @extend %text-title;
-    font-size: 24px;
-    line-height: 100%;
-    text-decoration: none;
-    color: $text-c-white;
-
-    @include onDesktop {
+    &-link {
+      font-family: "Playfair Display", sans-serif;
       font-size: 48px;
       line-height: 120%;
+      color: $color-white;
+
+      @include onMobile {
+        font-size: 24px;
+        line-height: 24px;
+      }
     }
   }
 
-  &__button-buy {
-    height: 60px;
+  &__bottom {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $back-c-orange;
-    margin-bottom: 100px;
+    padding: 60px 0 108px;
+
+    @include onMobile {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0 72px;
+    }
+
+    &-buy {
+      margin-right: 30px;
+
+      @include onMobile {
+        margin: 0 0 20px;
+      }
+    }
+
+    &-partner {
+      background-color: $color-green;
+      border: 1px solid $color-white;
+    }
   }
 
-  &__button-partner {
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid $text-c-white;
-    margin-bottom: 100px;
-  }
+  &__image {
+    max-height: 700px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 
-  &__button-link {
-    color: $text-c-white;
-    text-decoration: none;
+    @include onTablet {
+      display: none;
+    }
   }
 }
