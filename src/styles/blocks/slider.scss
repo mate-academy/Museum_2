@@ -1,0 +1,88 @@
+.slider {
+
+  &__wrapper {
+    position: relative;
+    height: 470px;
+    width: 280px;
+  }
+
+  &__slider {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
+  }
+
+  &__slides {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    opacity: 0;
+    z-index: 0;
+
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+
+    -webkit-transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
+    -moz-transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
+    -o-transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
+    transition: transform ease-in-out 0.5s, opacity ease-in-out 0.5s;
+  }
+
+  #slide1:checked ~ &__slider > &__slides--slide1,
+  #slide2:checked ~ &__slider > &__slides--slide2,
+  #slide3:checked ~ &__slider > &__slides--slide3 {
+    opacity: 1;
+    z-index: 1;
+
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  &__wrapper > input {
+    display: none;
+  }
+
+  &__wrapper &__controls {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__wrapper label {
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    margin: 25px 8px 4px;
+    opacity: 0.3;
+    z-index: 1;
+    cursor: pointer;
+
+    background-color: $bgGreenGrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-transition: opacity ease-in-out 0.5s;
+    -moz-transition: opacity ease-in-out 0.5s;
+    -o-transition: opacity ease-in-out 0.5s;
+    transition: opacity ease-in-out 0.5s;
+  }
+
+  &__wrapper label:hover,
+  #slide1:checked ~ &__controls label:nth-of-type(1),
+  #slide2:checked ~ &__controls label:nth-of-type(2),
+  #slide3:checked ~ &__controls label:nth-of-type(3) {
+    opacity: 1;
+    background: $bgGreenGrey;
+  }
+}
