@@ -4,6 +4,7 @@ The main purpose of this project is mastering HTML & CSS with minimum JS involvi
 
 
 Stack: HTML5, SASS, BEM, JS.
+
 Fully responsive layout was made by using CSS Grid and Flexbox.
 
 Click the link to see [DEMO](https://oksana-onopa.github.io/Museum_2/).
