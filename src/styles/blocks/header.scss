@@ -1,0 +1,207 @@
+.header {
+  background-color: #3f5252;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  z-index: 2;
+
+  &__contain {
+
+    @include oniPad {
+      padding: 0 60px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 0 80px;
+  }
+  
+  &__image {
+    position: absolute;
+    display: block;
+    height: 55%;
+    bottom: -7%;
+    right: -35%;
+    animation: move 2s linear;
+
+    @keyframes move {
+      from {
+        right: -100%;
+      }
+    
+      to {
+        right: -35%;
+      }
+    }
+
+    @media (min-width: 350px) {
+      height: 55%;
+      right: -25%;
+    }
+
+    @media (min-width: 450px) {
+      height: 55%;
+      right: -20%;
+    }
+
+    @media (min-width: 600px) {
+      height: 60%;
+      right: -15%;
+    }
+
+    @include oniPad {
+      height: 60%;
+      right: 0;
+      bottom: -7%;
+
+      @keyframes move {
+        from {
+          right: -100%;
+        }
+      
+        to {
+          right: 0%;
+        }
+      }
+    }
+
+    @include onDesktop {
+      height: 90%;
+    }
+
+    @media (min-width: 1600px) {
+      right: -10%;
+    }
+  }
+
+  &__image-description {
+    display: none;
+    position: absolute;
+    top: 60%;
+    right: 0;
+    font-family: "Raleway", serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #f1f5f4;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    @media (min-width: 1600px) {
+      right: -10%;
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    font-style: bold;
+    font-size: 48px;
+    line-height: 48px;
+    color: #f1f5f4;
+
+    &:nth-child(2) {
+      margin-bottom: 0;
+    }
+
+    @include oniPad {
+      font-size: 72px;
+      line-height: 72px;
+      margin: 0 0 40px;
+
+      &:nth-child(3) {
+        margin-left: 50px;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+
+      &:nth-child(3) {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__par {
+    margin: 0 0 20px;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #f1f5f4;
+    width: 270px;
+
+    &:nth-child(4) {
+      margin-bottom: 50px;
+    }
+
+    @include oniPad {
+      margin: 0 0 10px;
+
+      &:nth-child(4) {
+        margin-bottom: 80px;
+      }
+    }
+
+    @include onDesktop {
+      width: 370px;
+      &:nth-child(4) {
+        margin-bottom: 60px;
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      margin-left: 100px;
+    }
+  }
+
+  &__element {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      margin-top: 110px;
+    }
+  }
+
+  &__date {
+    display: block;
+    width: 90px;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #f1f5f4;
+    margin: 0;
+  }
+
+  &__line {
+    background-color: #f1f5f4;
+    width: 100%;
+    height: 1px;
+    margin-left: 20px;
+    opacity: 0.3;
+  }
+
+  &--icon {
+    visibility: hidden;
+
+    @include oniPad {
+      visibility: visible;
+    }
+  }
+}

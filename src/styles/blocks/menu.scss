@@ -1,0 +1,140 @@
+.menu {
+  background-color: #3f5252;
+  z-index: 3;
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 0 80px;
+  }
+
+  &__contain {
+
+    @include oniPad {
+      padding: 0 60px;
+    }
+
+    @include onDesktop {
+      max-width: 570px;
+      padding: 0;
+    }
+  }
+
+  &__top {
+    margin-bottom: 80px;
+
+    @include oniPad {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    margin: 0 0 80px;
+    padding: 0;
+    list-style: none;
+
+    @include oniPad {
+      margin: 55px 0 60px;
+
+      &::after {
+        margin-top: 55px;
+        display: block;
+        content: "";
+        height: 1px;
+        background-color: #c4c4c4;
+
+        @include onDesktop {
+          margin-top: 60px;
+        }
+      }
+
+      @include onDesktop {
+        margin: 80px 0 60px;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    @include oniPad {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: #f1f5f4;
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 24px;
+    transition: 0.3s;
+
+    &:hover {
+      color: #cd4d31;
+    }
+
+    @include oniPad {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__buttons {
+
+    @include oniPad {
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      justify-items: center;
+    }
+
+    @include onDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__box {
+
+    @include onDesktop {
+      display: flex;
+      width: 400px;
+      justify-content: space-between;
+    }
+  }
+
+  &__time {
+    display: none;
+    margin: 0;
+    font-family: "Raleway", serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #f1f5f4;
+
+    @include oniPad {
+      display: flex;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+    }
+
+    &--text {
+      font-weight: 200;
+      margin: 0 2px;
+      opacity: 0.6;
+    }
+  
+    &--data {
+      margin: 0;
+    }
+  }
+}
