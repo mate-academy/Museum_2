@@ -1,0 +1,104 @@
+.subscription {
+  padding: 80px 0;
+  background-color: $foxyColor;
+  color: $lightColor;
+
+  @include onTablet {
+    padding: 110px 0 120px;
+  }
+
+  @include onDesktop {
+    padding: 160px 0;
+  }
+
+  &__title {
+    margin: 0 0 40px;
+    font-size: 36px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      font-size: 48px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    @include fontRaleway;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  &__mail {
+    width: 80%;
+    padding-bottom: 5px;
+    background-color: $foxyColor;
+    color: $lightColor;
+    border: 0;
+    border-bottom: 1px solid $lightColor;
+    @include fontRaleway;
+
+    @include onDesktop {
+      height: 100%;
+    }
+
+    &::placeholder {
+      color: $lightColor;
+    }
+
+    &:focus {
+      outline-width: 0;
+      background-color: $foxyColor;
+    }
+  }
+
+  &__button {
+    width: 42px;
+    height: 42px;
+    background-image: url(../images/Union.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: transparent;
+    border: 1px solid $lightColor;
+    border-radius: 50%;
+    cursor: pointer;
+    visibility: hidden;
+    transition: transform 0.5s;
+
+    @include onDesktop {
+      border: none;
+      margin-top: 50px;
+      transition: transform 0.5s;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      transition: all 0.5s;
+
+      @include onDesktop {
+        transform: scale(1.5);
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+.subscription__mail:focus + .subscription__button {
+  visibility: visible;
+  transition: all 0.5s;
+}
+
+input[type="email"] {
+  padding-left: 10px;
+}

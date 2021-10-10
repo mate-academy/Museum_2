@@ -1,0 +1,179 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  @include fontRaleway;
+  background-color: $mainColor;
+  color: $lightColor;
+  overflow-y: scroll;
+  z-index: 2;
+
+  &__container {
+    position: relative;
+    padding-top: 20px;
+
+    
+    @include onTablet {
+      padding-bottom: 119px;
+    }
+  
+    @include onDesktop {
+      padding-bottom: 109px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    display: none;
+    background-image: url(../images/menu__boy.png);
+    width: 100%;
+    height: 700px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__info-container {
+    display: none;
+
+    @include onTablet {
+      margin: 30px 0 0;
+      display: block;
+    }
+  }
+
+  &__time-text,
+  &__address-text {
+    font-weight: 200;
+    font-size: 14px;
+    opacity: 0.5;
+  }
+
+  &__address-address {
+    text-decoration: none;
+    color: $lightColor;
+  }
+
+  &__time-time,
+  &__address-address {
+    transition: all 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      color: $foxyColor;
+      transition: all 0.5s;
+    }
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__nav-container {
+    margin: 80px 0;
+
+    @include onTablet {
+      margin: 56px 0 60px;
+    }
+
+    @include onDesktop {
+      margin-top: 80px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      border-bottom: 1px solid #c4c4c4;
+      padding-bottom: 55px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    @include fontPlayfair;
+    color: $lightColor;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $foxyColor;
+      transition: all 0.5s;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__button-buy {
+    margin: 0 auto;
+    background-color: $foxyColor;
+    transition: all 0.5s;
+
+    &:hover {
+      box-shadow: 0 0.5em 1em -0.4em $foxyColor;
+      transform: translateY(-0.25em);
+      transition: all 0.5s;
+    }
+    
+    @include onTablet {
+      width: 100%;
+    }
+  
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__button-participant {
+    margin: 0 auto;
+    background: transparent;
+    border: 1px solid $lightColor;
+
+    transition: all 0.5s;
+
+    &:hover {
+      box-shadow: 0 0.5em 1em -0.4em $lightColor;
+      transform: translateY(-0.25em);
+      transition: all 0.5s;
+    }
+  
+    @include onTablet {
+      width: 100%;
+    }
+  
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,225 @@
+.exhibitions {
+  position: relative;
+
+  &__title {
+    margin: 0 0 60px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 125%;
+    
+    @include onTablet {
+      margin: 0 0 55px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @include onDesktop {
+      margin: 0 0 100px;
+    }
+  }
+
+  &__article {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 150px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 220px;
+    }
+
+    &--angel {
+      &::after {
+
+        @include onDesktop {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          background-image: url(../images/angel.png);
+          width: 500px;
+          height: 716px;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    &--art {
+      &::after {
+        @include onDesktop {
+          content: "";
+          position: absolute;
+          right: 70px;
+          top: 40%;
+          background-image: url(../images/art.png);
+          width: 440px;
+          height: 460px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          transform: scale(1.3);
+        }
+      }
+
+      &::before {
+        @include onDesktop {
+          content: "Мистецтво ХХ ст. - ХХі ст.";
+          position: absolute;
+          width: 568px;
+          height: 576px;
+          right: 5%;
+          top: 33%;
+          color: $lightColor;
+          font-size: 130px;
+          line-height: 100%;
+          overflow-wrap: break-word;
+          text-transform: uppercase;
+          opacity: 0.3;
+          -webkit-text-stroke: 0.3px black;
+          text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+      }
+    }
+
+    &--kozak {
+      &::before {
+        @include onDesktop {
+          content: "Стародавнє мистецтво";
+          position: absolute;
+          width: 500px;
+          height: 576px;
+          left: 8%;
+          top: 64%;
+          color: $lightColor;
+          font-size: 132px;
+          line-height: 100%;
+          overflow-wrap: break-word;
+          text-transform: uppercase;
+          opacity: 0.3;
+          -webkit-text-stroke: 0.3px black;
+          text-shadow: -1px 0 black,
+            0 1px black,
+            1px 0 black,
+            0 -1px black;
+        }
+      }
+
+      &::after {
+        @include onDesktop {
+          content: "";
+          position: absolute;
+          left: 5%;
+          top: 64%;
+          background-image: url(../images/kozak.png);
+          width: 584px;
+          height: 499px;
+        }
+      }
+    }
+  }
+
+  &__date {
+    margin-bottom: 5px;
+    color: $foxyColor;
+    @include fontRaleway;
+
+    &--first {
+      margin-bottom: 10px;
+      @include fontPlayfair;
+
+      @include onTablet {
+        margin-bottom: 20px;
+        font-size: 48px;
+      }
+    }
+  }
+
+  &__name {
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 125%;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    @include fontRaleway;
+    color: #504f5e;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    display: none;
+    font-family: $fontRaleway;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 100%;
+    background-color: $foxyColor;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.5s;
+
+      &:hover {
+        box-shadow: 0 0.5em 1em -0.4em $foxyColor;
+        transform: translateY(-0.25em);
+        transition: all 0.5s;
+      }
+    }
+  }
+
+  &__archive {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: transform 0.5s;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    &-text {
+      display: block;
+      position: relative;
+
+      font-family: $fontRaleway;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      text-decoration: none;
+      color: #1c1b29;
+    }
+
+    &-line {
+      width: 130px;
+      height: 1px;
+      background-color: #1c1b29;
+
+      @include onTablet {
+        width: 170px;
+      }
+
+      @include onDesktop {
+        width: 70px;
+      }
+    }
+  }
+}

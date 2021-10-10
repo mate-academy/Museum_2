@@ -1,0 +1,231 @@
+.events {
+  padding-top: 100px;
+  @include fontRaleway;
+
+  @include onTablet {
+    padding-top: 115px;
+  }
+
+  &__title {
+    margin: 0 0 60px;
+    font-family: $fontPlayfair;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 125%;
+
+    @include onTablet {
+      margin-bottom: 55px;
+      font-size: 48px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__grid {
+    grid-row-gap: 0;
+  }
+
+  &__article {
+    margin-bottom: 60px;
+    position: relative;
+
+    @include onDesktop {
+      margin-bottom: 280px;
+      display: flex;
+    }
+
+    &:last-of-type {
+      @include onDesktop {
+        margin-bottom: 200px;
+      }
+    }
+
+    &--excursion {
+      &::after {
+        @include onDesktop {
+          content: "";
+          position: absolute;
+          top: -20%;
+          right: 0;
+          width: 370px;
+          height: 475px;
+          background-image: url(../images/event-1.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          transition: transform 0.5s;
+        }
+      }
+    }
+
+    &--master-class::before {
+      @include onDesktop {
+        content: "";
+        position: absolute;
+        top: -30%;
+        width: 370px;
+        height: 475px;
+        background-image: url(../images/event-2.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__date {
+    color: $foxyColor;
+    margin-bottom: 20px;
+
+    &--mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+      font-family: $fontPlayfair;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 100%;
+      color: $lightColor;
+      -webkit-text-stroke: 0.5px $foxyColor;
+      text-shadow: -0.5px 0 $foxyColor,
+        0 0.5px $foxyColor,
+        0.5px 0 $foxyColor,
+        0 -0.5px $foxyColor;
+
+      @include onTablet {
+        display: block;
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        font-size: 55px;
+      }
+    }
+  }
+
+  &__type {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__time {
+    display: none;
+    font-family: $fontPlayfair;
+    font-weight: 700;
+    font-size: 24px;
+    color: $foxyColor;
+    padding-top: 10px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @include onDesktop {
+      margin-left: -20px;
+      font-size: 36px;
+    }
+  }
+
+  &__name {
+    @include fontPlayfair;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin: -20px 0 8px;
+    }
+  }
+
+  &__description {
+    color: #504f5e;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: $fontRaleway;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    background-color: $foxyColor;
+    transition: all 0.5s;
+
+    &:hover {
+      box-shadow: 0 0.5em 1em -0.4em $foxyColor;
+      transform: translateY(-0.25em);
+      transition: all 0.5s;
+    }
+  }
+
+  &__calendar {
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      transition: transform 0.5s;
+    }
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 180px;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    &-text {
+      display: block;
+      position: relative;
+
+      font-family: $fontRaleway;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 100%;
+      text-decoration: none;
+      color: #1c1b29;
+    }
+
+    &-line {
+      width: 130px;
+      height: 1px;
+      background-color: #1c1b29;
+
+      @include onTablet {
+        width: 170px;
+      }
+
+      @include onDesktop {
+        width: 70px;
+      }
+    }
+  }
+}

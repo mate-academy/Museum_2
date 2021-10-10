@@ -1,0 +1,39 @@
+.page {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  scroll-behavior: smooth;
+  color: $darkColor;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateY(0);
+      transition: transform 0.3s;
+    }
+  }
+
+  &__sections {
+    padding-top: 60px;
+    background-color: $lightColor;
+
+    @include onTablet {
+      padding-top: 115px;
+    }
+  }
+}

@@ -1,0 +1,156 @@
+.footer {
+  position: relative;
+  padding: 80px 0 40px;
+  background-color: $mainColor;
+
+  @include fontRaleway;
+  color: $lightColor;
+
+  @include onTablet {
+    padding: 120px 0 35px;
+  }
+
+  @include onDesktop {
+    padding: 160px 0 60px;
+  }
+
+  &__top {
+    position: absolute;
+    display: block;
+    background-image: url(../images/Union.svg);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 20px;
+    right: 0;
+    transform: rotate(-90deg);
+
+    @include onTablet {
+      right: 40px;
+    }
+    
+    @include onDesktop {
+      right: 20px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      &:nth-child(3) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    @include fontPlayfair;
+  }
+
+  &__tel {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $lightColor;
+    transition: all 0.5s;
+
+    &:hover {
+      cursor: pointer;
+      color: $foxyColor;
+      transition: all 0.5s;
+    }
+
+    &--gap {
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__networks {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  &__network {
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &--facebook {
+      background-image: url(../images/facebook.svg);
+      width: 10px;
+      height: 20px;
+    }
+
+    &--twitter {
+      background-image: url(../images/twitter.svg);
+      width: 20px;
+      height: 16px;
+    }
+
+    &--telegram {
+      background-image: url(../images/telegram.svg);
+      width: 22px;
+      height: 20px;
+    }
+
+    &--instagram {
+      background-image: url(../images/insta.svg);
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  &__schedule {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__copyright {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 200;
+
+    @include onTablet {
+      margin-top: 100px;
+      flex-direction: row;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    @include onDesktop {
+      margin-top: 80px;
+    }
+  }
+
+  &__terms {
+    order: -1;
+  }
+
+  &__date {
+    @include onTablet {
+      order: -2;
+    }
+  }
+}
