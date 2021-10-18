@@ -1,0 +1,37 @@
+.archive {
+  text-decoration: none;
+  color: $main-color-dark;
+  position: relative;
+  padding: 5px;
+  margin: 0 auto;
+
+  transition: border 0.5s;
+
+  @include onScreen769 {
+    margin: 0;
+  }
+
+  &::after {
+    content: "";
+    height: 1px;
+    display: block;
+    background-color: $main-color-dark;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: unset;
+    bottom: 0;
+    width: 150px;
+
+    @include onScreen769 {
+      right: -80%;
+      top: 50%;
+      width: 70px;
+      transform: none;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $main-color-dark;
+  }
+}

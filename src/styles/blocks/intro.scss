@@ -1,0 +1,167 @@
+.intro {
+  color: $main-color-light;
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+
+  &__text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    @include onScreen400 {
+      font-size: 18px;
+    }
+
+    @include onScreen769 {
+      padding-left: 55px;
+    }
+
+    @include onScreen820 {
+      margin: 0;
+      gap: 2px;
+    }
+
+    @include onScreen1025 {
+      margin-top: 10px;
+    }
+  }
+
+  &__event-dates {
+    @include onScreen820 {
+      font-size: 18px;
+    }
+  }
+
+  &__event-title {
+    @include bold-font(700);
+    line-height: 100%;
+    margin-top: 2px;
+    font-size: 42px;
+
+    &--year {
+      margin-left: 0.5em;
+    }
+
+    @include onScreen400 {
+      font-size: 56px;
+      margin-top: 5px;
+    }
+
+    @include onScreen820 {
+      margin: 10px 0 0;
+      font-size: 40px;
+    }
+
+    @include onScreen769 {
+      font-size: 72px;
+    }
+
+    @include onScreen1025 {
+      margin-top: 3px;
+      font-size: 82px;
+    }
+  }
+
+  &__event-subtitle {
+    margin: 10px 0 20px;
+
+    @include onScreen400 {
+      width: 260px;
+    }
+
+    @include onScreen769() {
+      width: 267px;
+      margin: 40px 0 0;
+    }
+
+    @include onScreen820 {
+      margin: 10px 0 0;
+      font-size: 18px;
+    }
+
+    @include onScreen1025 {
+      width: 370px;
+      margin: 10px 0 10px 50px;
+    }
+  }
+
+  &__event-button {
+    margin: 0 0 10px;
+
+    &:hover {
+      border: 1px solid $main-color-light;
+    }
+
+    @include onScreen769 {
+      margin: 40px 0 0;
+    }
+
+    @include onScreen820 {
+      margin: 10px 0 0;
+    }
+
+    @include onScreen1025 {
+      margin: 0 0 0 50px;
+    }
+  }
+
+  &__event-bottom {
+    display: none;
+    @include bold-font(700);
+    font-size: 17px;
+    opacity: 0.7;
+    position: relative;
+
+    &::after {
+      display: none;
+      content: "";
+      width: 70%;
+      height: 1px;
+      background-color: $main-color-light;
+      opacity: 0.3;
+      position: absolute;
+      top: 50%;
+      left: 18%;
+
+      @include onScreen1025 {
+        display: block;
+      }
+    }
+
+    @include onScreen769 {
+      display: none;
+    }
+
+    @include onScreen1025 {
+      margin: 10px 0 0;
+      display: block;
+    }
+  }
+
+  &__painting {
+      background-image: url("../images/header.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      right: -5px;
+
+      @include onScreen400 {
+        right: -21px;
+      }
+
+      @include onScreen769 {
+        right: -41px;
+      }
+
+      @include onScreen820 {
+        right: -21px;
+      }
+
+      @include onScreen1025 {
+        right: -56px;
+      }
+  }
+}

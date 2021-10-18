@@ -1,0 +1,149 @@
+.menu {
+  background-color: #3f5252;
+  width: 100%;
+  // width: 100vw;
+
+  &__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 3px 0 0;
+
+    @include onScreen769 {
+      padding: 20px 0 0;
+    }
+  }
+
+  &__text {
+    box-sizing: border-box;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &__info {
+    display: none;
+
+    @include onScreen769 {
+      margin: 50px 0 20px;
+      gap: 30px;
+      color: $main-color-light;
+    }
+
+    &--add-text {
+      @include main-font(200);
+      font-size: 10px;
+      line-height: 20px;
+      @include onScreen769 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    &--main-text {
+      @include main-font(400);
+      font-size: 14px;
+
+      @include onScreen769 {
+        font-size: 16px;
+      }
+
+      &--adress {
+        text-decoration: none;
+        color: $main-color-light;
+
+        &:hover {
+          border-bottom: 1px dotted $main-color-light;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0;
+
+    list-style: none;
+    @include bold-font(700);
+    font-size: 24px;
+
+    position: relative;
+
+    @include onScreen400 {
+      font-size: 36px;
+    }
+
+    @include onScreen820 {
+      gap: 15px;
+      font-size: 24px;
+    }
+
+    @include onScreen769 {
+      font-size: 48px;
+      line-height: 57px;
+    }
+
+    &::after {
+      content: "";
+      display: none;
+      width: 570px;
+      height: 1px;
+      background-color: $main-color-light;
+      opacity: 0.3;
+      position: absolute;
+
+      @include onScreen769 {
+        display: block;
+        bottom: -50px;
+      }
+
+      @include onScreen820 {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-color-light;
+
+    transition: border-bottom 0.5s;
+
+    &:hover {
+      border-bottom: 1px dotted $main-color-light;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+
+    button:hover {
+      border: 1px solid $main-color-light;
+    }
+
+    @include onScreen820 {
+      flex-direction: row;
+      gap: 10px;
+    }
+
+    @include onScreen769 {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__painting {
+    display: none;
+    @include onScreen1025 {
+      display: block;
+      background-image: url("../images/header_hover.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      right: 0;
+    }
+  }
+}

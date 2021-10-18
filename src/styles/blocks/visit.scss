@@ -1,0 +1,84 @@
+.visit {
+  background-color: #3f5252;
+  margin-bottom: 40px;
+
+  @include onScreen769 {
+    margin-bottom: 100px;
+  }
+
+  &__container {
+    background-image: none;
+    height: 100vh;
+    position: relative;
+
+    @include onScreen769 {
+      background-image: url("../images/visit.png");
+      background-position: left;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__text {
+    color: $main-color-light;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+    width: max-content;
+    margin: 0 auto;
+
+    @include onScreen769 {
+      position: absolute;
+      right: 0;
+      text-align: unset;
+    }
+
+    @include onScreen1025 {
+      width: 700px;
+    }
+  }
+
+  &__title {
+    @include bold-font(700);
+    width: 260px;
+    font-size: 48px;
+    line-height: 100%;
+
+    @include onScreen769 {
+      font-size: 64px;
+      line-height: 100%;
+      width: 523px;
+    }
+
+    @include onScreen1025 {
+      font-size: 96px;
+      width: 700px;
+    }
+  }
+
+  &__instruction {
+    @include main-font(400);
+    width: 260px;
+    margin: 30px 0 0 0;
+
+    @include onScreen769 {
+      width: 470px;
+      margin: 30px 0;
+    }
+
+    @include onScreen1025 {
+      margin: 60px 0 0 $margin-100;
+    }
+  }
+
+  &__button {
+    margin: 20px 0;
+    &:hover {
+      border: 1px solid $main-color-light;
+    }
+
+    @include onScreen1025 {
+      margin-left: $margin-100;
+    }
+  }
+}

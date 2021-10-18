@@ -1,0 +1,96 @@
+.event {
+  display: flex;
+  align-items: center;
+
+  &:nth-child(2n + 1) {
+    @include onScreen1025 {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onScreen1025 {
+      display: block;
+      width: auto;
+      &--img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    height: max-content;
+    @include bold-font(700);
+  }
+
+  &__date {
+    position: relative;
+    margin: 0 10px;
+
+    @include onScreen769 {
+      margin: 0 30px;
+    }
+  }
+
+  &__day {
+    font-size: 24px;
+    margin-bottom: 3px;
+    width: max-content;
+    color: $main-color-light;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #cd4d31;
+
+    @include onScreen769 {
+      width: 170px;
+      font-size: 55px;
+      line-height: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__time {
+    position: absolute;
+    right: 0;
+    color: #cd4d31;
+    font-size: 18px;
+
+    @include onScreen769 {
+      font-size: 36px;
+      line-height: 100%;
+    }
+  }
+
+  &__info {
+    @include onScreen769 {
+      width: 470px;
+    }
+  }
+
+  &__type {
+    @include main-font(200);
+    font-size: 14px;
+    line-height: 20px;
+    color: $main-color-dark;
+  }
+
+  &__name {
+    margin: 10px 0 20px;
+    font-size: 24px;
+    line-height: 125%;
+  }
+
+  &__details {
+    @include main-font(400);
+    color: #504f5e;
+  }
+
+  &__button {
+    &:hover {
+      color: $main-color-dark;
+      border: 1px solid $main-color-dark;
+    }
+  }
+}

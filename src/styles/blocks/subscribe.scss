@@ -1,0 +1,118 @@
+.subscribe {
+  &__container {
+    background-color: #cd4d31;
+    color: $main-color-light;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px 100px;
+    text-align: center;
+
+    @include onScreen769 {
+      gap: 40px;
+      padding: 50px 55px 190px;
+      text-align: unset;
+    }
+  }
+
+  &__text {
+    align-items: flex-start;
+    margin: 0 auto;
+
+    @include onScreen400 {
+      width: max-content;
+    }
+
+    @include onScreen1025 {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    color: $main-color-light;
+    text-align: left;
+    width: 90%;
+
+    @include onScreen400 {
+      width: 260px;
+    }
+
+    @include onScreen769 {
+      width: 570px;
+    }
+  }
+
+  &__subtext {
+    width: 90%;
+
+    @include onScreen400 {
+      width: 260px;
+    }
+
+    @include onScreen769 {
+      width: 570px;
+    }
+  }
+
+  &__form {
+    justify-content: flex-end;
+    align-items: stretch;
+    transform: translateY(30%);
+    margin: 0 auto;
+
+    @include onScreen769 {
+      width: 570px;
+    }
+
+    @include onScreen1025 {
+      margin: 0;
+    }
+  }
+
+  &__email {
+    background-color: transparent;
+    border: none;
+    height: 48px;
+    border-bottom: 1px solid $main-color-light;
+    outline: none;
+    font-size: 18px;
+
+    @include onScreen400 {
+      width: 260px;
+    }
+
+    @include onScreen769 {
+      width: 300px;
+    }
+
+    &::placeholder {
+      @include main-font(400);
+      color: $main-color-light;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border: 1px solid $main-color-light;
+    }
+  }
+
+  &__email-button {
+    background-color: transparent;
+    border: none;
+    align-self: flex-end;
+
+    margin-top: 50px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    &--img {
+      transform: rotate(90deg);
+    }
+  }
+}
