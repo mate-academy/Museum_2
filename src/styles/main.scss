@@ -2,6 +2,558 @@
 @import "fonts";
 @import "typography";
 
+@mixin onTablet {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+}
+
 body {
+  width: 100%;
   background: $c-gray;
+  overflow-x: hidden;
+
+  --firstBgColor: #3f5252;
+  --secondBgColor: #e5e5e5;
+  --textColor: #f1f5f4;
+}
+
+.icon {
+  margin: auto 0;
+  display: block;
+  width: 22px;
+  height: 22px;
+ 
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.top-actions {
+  padding: 30px 20px 0;
+  display: flex;
+  justify-content: space-between;
+
+  @include onDesktop {
+    padding: 30px 56px 0;
+  }
+
+  &__right {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    gap: 40px;
+  }
+}
+
+.header {
+  background-color: var(--firstBgColor);
+
+  &-first-text {
+    margin-bottom: 20px;
+    
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &-second-text-two {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+      padding-left: 40px;
+    }
+
+    @include onDesktop {
+      padding-left: 80px;
+    }
+  }
+
+  &-third-text {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__background-image {
+    height: 273px;
+    width: 245px;
+    background-image: url(../images/ukrainian-girl.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 60px 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    @include onTablet {
+      width: 400px;
+      height: 445px;
+    }
+
+    @include onDesktop {
+      width: 673px;
+      height: 753px;
+    }
+
+    &-description {
+      display: none;
+      position: absolute;
+      right: 15px;
+      top: 400px;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    padding-top: 100px;
+  }
+
+  &__icon {
+    z-index: 2;
+    background-image: url("../images/menu.png");
+  }
+
+  &__button {
+    margin: 0 auto;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin: 0;
+      margin-bottom: 180px;
+    }
+  }
+
+  &__line-text {
+    display: none;
+    font-family: Playfair Display, sans-serif;
+    font-style: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--textColor);
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__line {
+    display: none;
+    width: 1000px;
+    height: 1px;
+    background-color: var(--textColor);
+    z-index: 0;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    bottom: 50px;
+
+    @include onDesktop {
+      margin-top: 121px;
+    }
+  }
+
+  &__top-actions__right {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__select {
+    display: none;
+    background-color: var(--firstBgColor);
+    color: var(--textColor);
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    border: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}
+
+.button {
+  display: block;
+  width: 280px;
+  height: 60px;
+  background-color: #cd4d31;
+  color: var(--textColor);
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  padding: auto;
+  border: none;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5em 1em -0.4em #cd4d31;
+    transition: all 0.4s;
+  }
+}
+
+.another-button {
+  display: block;
+  width: 280px;
+  height: 60px;
+  background-color: transparent;
+  border: 1px solid #f1f5f4;
+  color: var(--textColor);
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  padding: auto;
+  transition: all 0.4s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5em 1em -0.4em grey;
+    transition: all 0.4s;
+  }
+}
+
+.top-actions-container {
+  padding: 0 20px;
+  padding-top: 20px;
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include onTablet {
+    padding: 0 100px;
+  }
+
+  @include onDesktop {
+    padding: 0 56px;
+  }
+}
+
+.logo {
+  font-family: Nanum Gothic Coding, sans-serif;
+  color: var(--textColor);
+  width: 123px;
+}
+
+.description-text {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--textColor);
+}
+
+.title-text {
+  font-family: Playfair Display, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 100%;
+  color: var(--textColor);
+
+  @include onTablet {
+    font-size: 72px;
+  }
+
+  @include onDesktop {
+    font-size: 96px;
+  }
+}
+
+.menu {
+  background-color: var(--firstBgColor);
+  height: 100vh;
+  z-index: 3;
+
+  // &__select {
+  //   display: block;
+  //   background-color: var(--firstBgColor);
+  //   color: var(--textColor);
+  //   font-family: Raleway, sans-serif;
+  //   font-style: normal;
+  //   font-weight: 500;
+  //   font-size: 16px;
+  //   line-height: 150%;
+  //   border: none;
+
+  //   @include onTablet {
+  //     order: 2;
+  //   }
+  // }
+
+  &__link {
+    display: block;
+    margin-bottom: 40px;
+    font-size: 24px;
+    line-height: 100%;
+    text-decoration: none;
+    font-family: Playfair Display, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--textColor);
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+    &:last-child {
+      margin-bottom: 1px;
+    }
+
+    @include onTablet {
+      margin-bottom: 55px;
+      &:last-child {
+        margin-bottom: 1px;
+      }
+    }
+  }
+
+  &__select {
+    display: block;
+    background-color: var(--firstBgColor);
+    color: var(--textColor);
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    border: none;
+  
+    @include onTablet {
+      order: 2;
+    }
+  }
+
+  &__links {
+    margin-bottom: 80px;
+    margin-top: 80px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__icon {
+    z-index: 2;
+    background-image: url("../images/cross.png");
+    display: block;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-top: 0;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1px solid #c4c4c4;
+      gap: 10px;
+      padding-top: 60px;
+    }
+
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  &__hidden-text {
+    display: none;
+    color: var(--textColor);
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    margin-top: 30px;
+    margin-bottom: 55px;
+
+    @include onTablet {
+      display: flex;
+      gap: 5px;
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 120px;
+      flex-direction: row;
+    }
+
+    &-section {
+      @include onTablet {
+        display: flex;
+        flex-direction: row;
+      }
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__text {
+        font-family: Raleway, sans-serif;
+        font-style: normal;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 150%;
+        color: var(--textColor);
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 20px;
+    }
+  }
+}
+
+.page {
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
+
+.footer {
+  background-color: var(--firstBgColor);
+
+  &__title {
+    font-family: Playfair Display, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: var(--textColor);
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--textColor);
+    text-decoration: none;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 30px;
+    color: var(--textColor);
+    padding-bottom: 38px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 15px;
+      padding-bottom: 60px;
+    }
+
+    &--1 {
+      @include onTablet {
+        order: 1;
+      }
+    }
+  }
+
+  //надо реализовать ссылками, я знаю. но у меня не получается почему-то
+  &__internet-medias {
+    margin-top: 20px;
+    width: 130px;
+    height: 20px;
+    background-image: url("../images/medias.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.section {
+  padding-bottom: 65px;
+  
+  &s {
+    padding-top: 80px;
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.arrow {
+  height: 20px;
+  width: 16px;
+  position: absolute;
+  right: 20px;
+  background-image: url(../images/arrow.png);
+  background-repeat: no-repeat;
+  background-position: right;
 }
