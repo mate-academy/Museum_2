@@ -1,0 +1,73 @@
+.menu {
+  background-color: $background-color;
+  z-index: 2;
+
+  &__top {
+    padding-bottom: 80px;
+
+    @include tablet {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding-bottom: 80px;
+    max-width: 590px;
+    
+    @include tablet {
+      border-bottom: $border;
+      padding-bottom: 60px;
+    }
+
+  }
+
+  &__item {
+    padding-bottom: 40px;
+     
+    &:last-child {
+      padding-bottom: 0;
+    }
+    
+    @include desktop {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__link {
+    color: $primary-color;
+    @include weight-size-height(700,24px,24px);
+    text-decoration: none;
+
+    @include tablet {
+      @include weight-size-height(700, 48px, 58px);
+    }
+
+    &:hover {
+      border-bottom: 1px solid $primary-color;
+    }
+  }
+
+  &__image {
+    @extend %image;
+    @extend %image-position;
+    
+    display: none;
+    background-image: url(/images/boy.png);
+    background-position: right bottom;
+    height: 680px;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__buttons {
+    display: block;
+
+    @include tablet {
+      display: flex;
+      gap: 30px;
+    }
+  }
+}

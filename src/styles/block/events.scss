@@ -1,0 +1,163 @@
+.event {
+  padding-top: 10px;
+
+  @include tablet {
+    padding-bottom: 30px;
+  }
+
+  &__title {
+    @include weight-size-height(700, 36px, 45px);
+    color: $black-color;
+
+    @include tablet {
+      @include weight-size-height(700, 48px, 58px);
+    }
+
+    @include desktop {
+      padding-bottom: 120px;
+    }
+  }
+
+}
+
+.event-info {
+  @extend %secondary-text;
+  display: flex;
+  gap: 20px;
+
+  &__date {
+    color: $red-color;
+    @include weight-size-height(200, 16px, 20px);
+  }
+
+  &__category {
+    @include weight-size-height(200,14px,20px);
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  &--tablet {
+    display: none;
+    font-family: "Playfair Display", serif;
+
+    @include tablet {
+      display: inline-block;
+      position: absolute;
+      left:-25%;
+    }
+
+    @include desktop {
+      position: absolute;
+      top: 15%;
+      left:-40%;
+    }
+
+    &-day {
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-fill-color: transparent;
+      @include weight-size-height(700,36px,36px);
+      width: 300px;
+      color: $red-color;
+
+      @include desktop {
+        @include weight-size-height(700,55px,55px);
+      }
+    }
+
+    &-hour {
+      @include weight-size-height(700,24px,24px);
+      color: $red-color;
+      transform: translate(5%,25%);
+
+      @include desktop {
+        @include weight-size-height(700,36px,36px);
+        transform: translate(25%,0%);
+      }
+    }
+  }
+}
+
+.event-card {
+  position: relative;
+  padding-top: 60px;
+
+  @include tablet {
+    padding-bottom: 30px;
+    width: 450px;
+  }
+
+  @include desktop {
+    padding-bottom: 60px;
+  }
+
+  &--desktop {
+    @include desktop {
+      margin-top: 130px;
+    }
+  }
+
+  &__category {
+    display: none;
+
+    @include tablet {
+      display: block;
+      font-family: "Raleway", sans-serif;
+      @include weight-size-height(200, 14px, 20px);
+      color: $background-color;
+    }
+  }
+  &__title {
+    @include weight-size-height(700,24px,30px);
+    padding: 20px 0;
+    color: $black-color;
+
+    @include tablet {
+      padding-top: 10px;
+      width: 450px;
+    }
+    @include desktop {
+      padding-bottom: 8px;
+    }
+  }
+
+  &__info {
+    @extend %secondary-text;
+    color: $background-color;
+    padding-bottom: 40px;
+  }
+
+  &__image {
+    display: none;
+
+    @media (min-width:1380px) {
+      display: block;
+    }
+
+    &-person {
+      height: 475px;
+
+      transition: transform 0.3s, border-radius 0.2s;
+
+      &:hover {
+        border-radius: 20px;
+        transform: translateY(-10px);
+        opacity: 0.8;
+      }
+
+      &--pavlo {
+        position: absolute;
+        left: 160%;
+        right: 0;
+        bottom: 0;
+      }
+
+      &--travel {
+        position: absolute;
+        right: 180%;
+        bottom: 0;
+      }
+    }
+  }
+}

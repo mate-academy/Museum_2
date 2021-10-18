@@ -1,0 +1,110 @@
+.exhibitions {
+  position: relative;
+
+  &__title {
+    padding: 60px 0;
+    @include weight-size-height(700, 36px, 45px);
+    color: $black-color;
+    
+    @include tablet {
+      text-align: center;
+    }
+
+    @include desktop {
+      padding: 100px 0;
+    }
+  }
+
+  &__date {
+    color: $red-color;
+    @include weight-size-height(700, 24px, 30px);
+
+    @include tablet {
+      text-align: center;
+      @include weight-size-height(700, 48px, 58px);
+    }
+  }
+
+  &__image {
+    @extend %image;
+
+    display: none;
+    padding-bottom: 20px;
+
+    &--belm {
+      background-image: url(/images/Belm.png);
+      background-position: left center;
+      height: 815px;
+  
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__bottom-text {
+    margin-bottom: 90px;
+  }
+}
+
+.image-box {
+  display: none;
+  height: 1px;
+
+  @include desktop {
+    display: block;
+  }
+
+  &__image {
+    @extend %image;
+    z-index: 1;
+
+    &--first {
+      background-image: url(/images/girl_and_man.png);
+      background-position: right;
+      height: 400px;
+
+      position: absolute;
+      left: 50%;
+      right: 0;
+      bottom: 35%;
+    }
+
+    &--second {
+      background-image: url(/images/kobzar.png);
+      background-position: left;
+      height: 400px;
+
+      position: absolute;
+      top: 65%;
+      left: 5%;
+      right: 0;
+    }
+  }
+
+  &__text {
+    @include weight-size-height(700, 135px, 1);
+    width: 550px;
+    z-index: -1;
+    pointer-events: none;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+
+    &--first {
+      position: absolute;
+      right: 0;
+      bottom: 35%;
+    }
+
+    &--second {
+      position: absolute;
+      top: 60%;
+      left: 5%;
+    }
+  }
+}

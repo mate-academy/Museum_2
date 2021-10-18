@@ -1,0 +1,105 @@
+.header {
+  background-color: $background-color;
+  position: relative;
+
+  &__date {
+    @extend %secondary-text;
+    color: $primary-color;
+    padding-bottom: 20px;
+
+    @include tablet {
+      padding-bottom: 10px;
+    }
+  }
+
+  &-title {
+    @include title-properties(48px);
+    padding-bottom: 30px;
+
+    @include tablet {
+      @include title-properties(72px);
+    }
+
+    @include desktop {
+      @include title-properties(96px);
+      padding-bottom: 40px;
+    }
+    
+    &__century {
+
+  @include tablet {
+          padding-left: 50px;
+        }
+        @include desktop {
+          padding-left: 100px;
+        }
+    }
+  }
+
+  &__description {
+    @extend %secondary-text;
+    color: $primary-color;
+    padding-bottom: 50px;
+    max-width: 250px;
+
+    @include tablet {
+      max-width: 370px;
+      padding-bottom: 80px;
+    }
+
+    @include desktop {
+      padding: 0 0 60px 100px;
+    }
+  }
+
+  &__button {
+    margin: 0;
+
+    @include desktop {
+      margin-left: 100px;
+    }
+  }
+
+  &__image {
+    @extend %image;
+    background-position: bottom right;
+    @extend %image-position;
+    
+    background-image: url(../images/girl_mob.png);
+    height: 250px;
+
+    @include tablet {
+      background-image: url(../images/girl_desk.png);
+      height: 400px;
+    }
+    
+    @include desktop {
+      height: 400px;
+    }
+
+    @media (min-width: 1280px){
+      height: 680px;
+      z-index: 1;
+    }
+    
+    &-description {
+      display: none;
+      @extend %secondary-text;
+      font-size: 14px;
+
+      @media (min-width: 1280px) {
+        display: block;
+        position: absolute;
+        right: 55px;
+        top: 50%;
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__timeframe {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+  }
+}

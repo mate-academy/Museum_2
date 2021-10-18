@@ -1,6 +1,24 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin tablet {
+  @media (min-width:768px) {
+    @content;
   }
+}
+
+@mixin desktop {
+  @media (min-width: 1124px) {
+    @content;
+  }
+}
+
+@mixin title-properties($size) {
+  line-height: $size;
+  font-size: $size;
+  font-weight: 700;
+  color: $primary-color;
+}
+
+@mixin weight-size-height ($weight, $size, $height) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
 }

@@ -1,0 +1,70 @@
+.visit {
+  position: relative;
+  box-sizing: border-box;
+  background-color: $background-color;
+  padding-top: 80px;
+
+  @include tablet {
+    padding-top: 120px;
+  }
+
+  @include desktop {
+    padding-top: 170px;
+  }
+
+  &__title {
+    @include weight-size-height(700,48px,48px);
+    color: $primary-color;
+    padding-bottom: 40px;
+    
+    @include tablet {
+      @include weight-size-height(700,72px,72px);
+      min-width: 525px;
+      padding-bottom: 80px;
+    }
+
+    @include desktop {
+      @include weight-size-height(700,96px,96px);
+      max-width: 700px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__description {
+    @extend %secondary-text;
+    color: $primary-color;
+    padding-bottom: 60px;
+
+    @include tablet {
+      max-width: 400px;
+    }
+
+    @include desktop {
+      max-width: 470px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__image {
+    @extend %image;
+
+    display: none;
+    background-position: left bottom;
+
+    @include tablet {
+      display: block;
+      background-image: url(../images/visit.png);
+      height: 465px;
+    }
+    @include desktop {
+      background-image: url(../images/к.png);
+      height: 750px;
+    }
+    &--tablet {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

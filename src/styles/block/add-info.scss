@@ -1,0 +1,52 @@
+.add-info {
+  display: none;
+  @extend %secondary-text;
+  color: $primary-color;
+  padding-bottom: 50px;
+
+  @include desktop {
+    padding-bottom: 80px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $primary-color;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__schedule {
+    &::before {
+      content: "Розклад сьогодні:";
+      @extend %before;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__adress {
+    &::before {
+      content: "Адреса:";
+      @extend %before;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    gap: 200px;
+  }
+}

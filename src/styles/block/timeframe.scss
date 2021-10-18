@@ -1,0 +1,23 @@
+.timeframe {
+  color: $primary-color;
+  @include weight-size-height(700, 14px, 17px);
+
+  display: none;
+
+  @include desktop {
+    & {
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 60%;
+      width: calc(1480px - 700px);
+      margin-left: 20px;
+      opacity: 0.3;
+      display: inline-block;
+      border-bottom: $border;
+    }
+  }
+}

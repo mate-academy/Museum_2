@@ -1,0 +1,61 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 90px;
+  
+  @include desktop {
+    padding-top: 130px;
+  }
+
+  &--desktop {
+    @include desktop {
+      padding-top: 40px;
+    }
+  }
+
+  &--news {
+    width: max-content;
+    margin: 0 auto;
+   }
+
+  &__add {
+    font-family: "Raleway", sans-serif;
+    color: $red-color;
+    @include weight-size-height(200, 16px, 24px);
+  }
+
+  &__title {
+    color: $black-color;
+    padding: 10px 0 30px;
+    @include weight-size-height(700, 24px, 30px);
+
+    @include desktop {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__description {
+    @extend %secondary-text;
+    color: $background-color;
+    width: 130px;
+
+    &--second {
+      align-self: center;
+      @include tablet {
+        align-self: flex-start;
+      }
+    }
+
+    @include tablet {
+      min-width: 250px;
+    }
+    @include desktop {
+      width: 400px;
+    }
+
+    &--events {
+      min-width: 250px;
+      padding-bottom: 40px;
+    }
+  }
+}
