@@ -1,0 +1,103 @@
+.event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+
+  @include onPhone {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__date-box {
+    &:hover {
+      transform: rotate(-2deg);
+    }
+
+    @include onPhone {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+  }
+
+  &__date {
+    margin: 0;
+    font-weight: bold;
+    font-size: 55px;
+    color: #fff;
+    text-shadow: -1px 0 #cd4d31, 0 1px #cd4d31, 1px 0 #cd4d31, 0 -1px #cd4d31;
+
+    @include onPhone {
+      text-shadow: none;
+      color: $colorOrange;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__time {
+    margin: 10px 0 0 90px;
+    font-weight: bold;
+    font-size: 36px;
+    color: $colorOrange;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    @include onPhone {
+      margin: 0;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__info {
+    max-width: 470px;
+  }
+
+  &__type {
+    font-weight: 200;
+    font-size: 14px;
+    color: $colorFontDark;
+    margin: 0 0 10px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 125%;
+    color: $colorFontDark;
+    margin: 0 0 10px;
+  }
+
+  &__about {
+    color: $colorFontGray;
+    line-height: 150%;
+    margin: 0 0 60px;
+
+    @include onTablet {
+      margin: 0 0 30px;
+    }
+
+    @include onPhone {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__image {
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: rotate(2deg);
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,160 @@
+.header {
+  background-color: $colorBG;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  height: 100vh;
+
+  @include onTablet {
+    background-image: url("../images/header_bg_tablet.png");
+  }
+
+  @include onPhone {
+    background-image: none;
+    &::after {
+      content: url(../images/header_bg_phone.png);
+      position: absolute;
+      bottom: -4px;
+      right: 0;
+    }
+  }
+
+  &__container {
+    background-image: url("../images/header_bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    height: 100vh;  
+
+    @include onTablet {
+      background-image: none;
+    }
+
+    @include onPhone {
+      background-image: none;
+    }
+  }
+
+  &__date {
+    margin: 120px 0 0 ;
+    line-height: 150%;
+    color: $colorFontWhite;
+
+    @include onPhone {
+      margin: 100px 0 0;
+      height: 20px;
+    }
+  }
+
+  &__title {
+    margin: 10px 0 0;
+    font-family: $titleFont;
+    font-weight: bold;
+    font-size: 96px;
+    color: $colorFontWhite;
+    
+    &--margin {
+      margin: 10px 0 0 100px;
+
+      @include onTablet {
+        margin: 0 0 0 50px;
+      }
+
+      @include onPhone {
+        margin: 0;
+      }
+    }
+    
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include onPhone {
+      font-size: 48px;
+      line-height: 48px;
+      margin: 20px 0 0;
+    }
+  }
+
+  &__subtitle {
+    margin: 40px 0 0 100px;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorFontWhite;
+
+    @include onTablet {
+      margin: 40px 0 0;
+      max-width: 250px;
+    }
+
+    @include onPhone {
+      margin: 30px 0 0;
+      max-width: 230px;
+    }
+  }
+
+  &__button {
+    margin: 60px 0 0 100px;
+
+    @include onTablet {
+      margin: 80px 0 0;
+    }
+
+    @include onPhone {
+      margin: 50px 0 0;
+      z-index: -50;
+    }
+  }
+
+  &__backgroundName-box {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__backgroundName {
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorFontWhite;
+    position: absolute;
+    bottom: 300px;
+
+    @include onTablet {
+      display: none;
+    }
+    
+    @include onPhone {
+      display: none;  
+    }
+  }
+
+  &__dateSmall {
+    margin: 110px 0 0;
+    font-family: $titleFont;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 125%;
+    color: $colorFontWhite;
+    opacity: 0.7;
+    position: relative;
+    margin-bottom: 60px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 100px;
+      top: 50%;
+      transform: translateY(50%);
+      width: 490px;
+      height: 1px;
+      background-color: $colorFontWhite;
+      opacity: 0.3;
+    }
+
+    @include onTablet {
+      display: none; 
+    }
+
+    @include onPhone {
+      display: none;  
+    }
+  }
+}

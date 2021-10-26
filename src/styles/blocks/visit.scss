@@ -1,0 +1,76 @@
+.visit {
+  background-color: $colorBG;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+
+  &__container {
+    background-image: url(../images/visit_bg.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    height: 100vh;
+
+    @include onTablet {
+      background-image: url(../images/visit_bg_tablet.png);
+      height: 700px;
+    }
+  
+    @include onPhone {
+      background-image: none;
+      height: 600px;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    @include onTablet {
+      align-items: flex-start;
+    }
+
+    @include onPhone {
+      align-items: flex-start;
+      background-image: none;
+    }
+  }
+
+  &__title {
+    margin: 220px 0 60px;
+    width: max-content;
+    font-family: "Playfair" Display, serif;
+    font-weight: bold;
+    font-size: 96px;
+    line-height: 100%;
+
+    @include onTablet {
+      font-size: 72px;
+      margin: 110px 0 80px;
+    }
+
+    @include onPhone {
+      max-width: 280px;
+      font-size: 48px;
+      margin: 80px 0 40px;
+    }
+  }
+
+  &__info {
+    padding-left: 80px;
+
+    @include onTablet {
+      padding-left: 200px;
+    }
+
+    @include onPhone {
+      padding-left: 0;
+    }
+  }
+
+  &__info-text {
+    max-width: 500px;
+    line-height: 150%;
+    margin: 0 0 60px;
+  }
+}

@@ -1,0 +1,68 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  
+  &__logo {
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__container {
+    min-width: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onPhone {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__hamburger {
+    display: block;
+    width: 25px;
+    height: 20px;
+      
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/menu.svg);
+    
+    &:hover {
+      background-image: url(../images/menu_hover.svg);
+    }
+
+    &--cross {
+      background-image: url(../images/cross.svg);
+
+      &:hover {
+        background-image: url(../images/cross.svg);
+        transform: scale(115%);
+        transition: transform 0.3s;
+      }
+
+      &:active {
+        transform: scale(95%);
+        transition: transform 0.1s;
+      }
+    }
+  }
+
+  &__language {
+    background-color: inherit;
+    border: none;
+    color: $colorFontWhite;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+
+    @include onPhone {
+      display: none;
+    }
+  }
+}

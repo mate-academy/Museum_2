@@ -1,0 +1,143 @@
+.menu {
+  background-color: $colorBG;
+  z-index: 2;
+  height: 100vh;
+
+  &__container {
+    background-image: url("../images/menu_bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    height: 100vh;
+    
+
+    @include onTablet {
+      background-image: none;
+    }
+
+    @include onPhone {
+      background-image: none;
+    }
+  }
+
+  @include onTablet {
+    background-image: none;
+  }
+
+  @include onPhone {
+    background-image: none;
+  }
+
+  &__info-box {
+    margin-top: 30px;
+    max-width: 410px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      flex-direction: column;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__info {
+    margin: 0;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $colorFontWhite;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__info--opacity {
+    opacity: 0.5;
+    display: block;
+    margin-right: 5px;
+  }
+
+  &__nav {
+    margin-top: 80px;
+
+    @include onTablet {
+      margin-top: 55px;
+    }
+
+    @include onPhone {
+      margin-top: 80px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 570px;
+      height: 1px;
+      background-color: $colorFontWhite;
+      opacity: 0.3;
+      margin-top: 60px;
+
+      @include onPhone {
+        display: none;
+      }
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  &__nav-item {
+    margin-top: 50px;
+    width: max-content;
+    height: 58px;
+    transition: transform 0.1s;
+
+    @include onPhone {
+      margin-top: 40px;
+      height: 24px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:hover {
+      transform: scale(102%);
+    }
+
+    &:active {
+      transform: scale(98%);
+    }
+  }
+
+  &__nav-link {
+    font-family: $titleFont;
+    font-weight: bold;
+    font-size: 48px;
+    text-decoration: none;
+    color: $colorFontWhite;
+
+    @include onPhone {
+      font-size: 24px;
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    margin-top: 60px;
+    padding-bottom: 144px;
+    @include onPhone {
+      margin: 80px auto 0;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
