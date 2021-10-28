@@ -1,0 +1,73 @@
+.hamburger {
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: filter;
+
+  &__box {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__inner,
+  &__inner::before,
+  &__inner::after {
+    position: absolute;
+
+    width: 25px;
+    height: 2px;
+
+    background-color: $c-white;
+
+    transition: transform;
+  }
+
+  &__inner::before,
+  &__inner::after {
+    content: "";
+
+    display: block;
+  }
+
+  &__inner {
+    top: 50%;
+
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition-duration: 0.22s;
+
+    &::before {
+      top: -8px;
+
+      transition: top 0.1s ease-in 0.25s, opacity 0.1s ease-in;
+    }
+
+    &::after {
+      bottom: -8px;
+
+      transition: bottom 0.1s ease-in 0.25s,
+        transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+  }
+
+  &--active &__inner {
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: rotate(225deg);
+  }
+
+  &--active &__inner::before {
+    top: 0;
+    transition: top 0.1s ease-out, opacity 0.1s ease-out 0.12s;
+    opacity: 0;
+  }
+
+  &--active &__inner::after {
+    bottom: 0;
+    transition: bottom 0.1s ease-out,
+      transform 0.22s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+    transform: rotate(-90deg);
+  }
+}

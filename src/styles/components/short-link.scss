@@ -1,0 +1,29 @@
+.short-link {
+  @include btn;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  color: $c-black;
+
+  &:hover::after {
+    width: 50%;
+  }
+
+  &__content {
+    flex-shrink: 0;
+  }
+
+  &::after {
+    content: "";
+
+    width: 25%;
+    height: 1px;
+
+    background-color: $c-black;
+    opacity: 50%;
+
+    transition: width #{$animation-duration * 2};
+  }
+}

@@ -1,0 +1,30 @@
+.btn {
+  @include btn;
+
+  display: flex;
+  justify-content: center;
+  padding: $ptb-24 0;
+  width: 100%;
+  border: 1px solid transparent;
+
+  background-color: $c-orange;
+  color: $c-white;
+
+  transition: background-color $animation-duration ease-in-out,
+    color $animation-duration ease-in-out;
+
+  &:hover {
+    background-color: darken($c-orange, 5%);
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border-color: $c-white;
+
+    &:hover {
+      background-color: $c-white-transparent;
+      border-color: $c-white-transparent;
+      color: $c-black;
+    }
+  }
+}

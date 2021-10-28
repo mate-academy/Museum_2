@@ -1,0 +1,59 @@
+.article {
+  color: $c-black;
+
+  &__img-container {
+    position: relative;
+
+    width: 100%;
+    margin-bottom: $mb-30;
+
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      
+      display: block;
+      margin-bottom: 100%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform $animation-duration ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__date {
+    @include overline;
+    
+    margin-bottom: $mb-2;
+  }
+
+  &__link-title {
+    @include h2-small;
+
+    display: inline-block;
+    margin-bottom: $mb-12;
+
+    color: inherit;
+
+    transition: color $animation-duration ease-in-out;
+
+    &:hover {
+      color: $c-granit;
+    }
+  }
+
+  &__description {
+    @include main-text;
+
+    color: $c-granit;
+  }
+}

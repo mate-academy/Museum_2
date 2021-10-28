@@ -1,0 +1,58 @@
+.newsletter {
+  padding: $ptb-160 0;
+
+  background-color: $c-orange;
+  color: $c-white;
+
+  &__title {
+    @include h1;
+
+    margin-bottom: $mb-40;
+  }
+
+  &__info {
+    @include main-text;
+  }
+
+  &__form {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__input-field {
+    @include main-text;
+
+    align-self: flex-end;
+    flex-grow: 1;
+    padding: 0 $pl-8 0 $pb-4;
+    border: 0;
+    border-bottom: 1px solid $c-white;
+    border-radius: 0;
+    
+    background-color: transparent;
+    color: inherit;
+    outline: 0;
+
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+
+  &__sumbit-btn {
+    @extend %background-base;
+
+    width: 46px;
+    height: 46px;
+    border: 1px solid $c-white;
+    border-radius: 50%;
+
+    background-color: transparent;
+    background-image: url(../images/newsletter/submit-arrow.svg);
+
+    transition: background-position $animation-duration ease-in-out;
+
+    &:hover {
+      background-position: 14px center;
+    }
+  }
+}

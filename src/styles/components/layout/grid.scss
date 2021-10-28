@@ -1,0 +1,26 @@
+.grid {
+  $xl-columns: 12;
+
+  display: grid;
+  column-gap: 30px;
+
+  @media (min-width: #{resolution(md)}) {
+    grid-template-columns: repeat($xl-columns, 1fr);
+  }
+
+  &__item {
+    @media (min-width: #{resolution(md)}) {
+      @for $start from 1 through $xl-columns {
+        @for $end from $start through $xl-columns {
+          &--column-xl-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    &--row-1-3 {
+      grid-row: 1 / 3;
+    }
+  }
+}

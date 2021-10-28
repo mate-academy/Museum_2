@@ -1,0 +1,86 @@
+.header {
+  position: relative;
+
+  color: $c-white;
+
+  &__nav {
+    position: relative;
+    z-index: 100;
+
+    margin-bottom: $mb-100;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    animation: slide-in-from-left #{$animation-duration * 3} ease-out;
+  }
+
+  &__date {
+    @include main-text;
+
+    margin-bottom: $mb-10;
+  }
+
+  &__title {
+    @include style-1;
+
+    &--1 {
+      margin-bottom: $mb-10;
+    }
+
+    &--2 {
+      margin-bottom: $mb-40;
+    }
+  }
+
+  &__paragraph {
+    @include main-text;
+
+    margin-bottom: $mb-60;
+  }
+
+  &__btn {
+    margin-bottom: $mb-120;
+  }
+
+  &__short-date {
+    @include caption-small;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    color: $c-white-transparent;
+
+    transition: color $animation-duration ease-in-out;
+
+    &:hover {
+      color: $c-white;
+    }
+
+    &::after {
+      content: "";
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $c-white-transparent;
+    }
+  }
+
+  &__short-date-text {
+    flex-shrink: 0;
+
+    user-select: none;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    animation: slide-in-from-right #{$animation-duration * 3} ease-out;
+  }
+}

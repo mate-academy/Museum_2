@@ -1,0 +1,68 @@
+.menu {
+  padding-top: $pt-90;
+
+  background-color: $c-green;
+  color: $c-white;
+
+  transition: transform #{$animation-duration * 2} ease-in-out;
+
+  &__info {
+    display: flex;
+    gap: $spacing-80;
+    margin-bottom: $mb-80;
+  }
+
+  &__schedule-date,
+  &__address-label {
+    @include overline;
+  }
+
+  &__schedule-time,
+  &__address {
+    @include main-text;
+  }
+
+  &__address {
+    color: inherit;
+
+    transition: color $animation-duration ease-in-out;
+
+    &:hover {
+      @extend %link-hover;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-60;
+
+    margin-bottom: $mb-60;
+  }
+
+  &__link {
+    @include h1;
+
+    color: inherit;
+
+    transition: color $animation-duration ease-in-out;
+
+    &:hover {
+      @extend %link-hover;
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    margin-bottom: $mb-60;
+
+    background-color: $c-white;
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+}
