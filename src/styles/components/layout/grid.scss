@@ -1,18 +1,37 @@
 .grid {
-  $xl-columns: 12;
+  $lg-columns: 12;
+  $sm-columns: 6;
+
+  $lg-column-gap: 30px;
+  $sm-column-gap: 24px;
 
   display: grid;
-  column-gap: 30px;
 
-  @media (min-width: #{resolution(md)}) {
-    grid-template-columns: repeat($xl-columns, 1fr);
+  @media (min-width: #{resolution(sm)}) {
+    grid-template-columns: repeat($lg-columns, 1fr);
+    column-gap: 30px;
+  }
+
+  @media (min-width: #{resolution(xs)}) and (max-width: #{resolution(sm)}) {
+    grid-template-columns: repeat($sm-columns, 1fr);
+    column-gap: 24px;
   }
 
   &__item {
-    @media (min-width: #{resolution(md)}) {
-      @for $start from 1 through $xl-columns {
-        @for $end from $start through $xl-columns {
-          &--column-xl-#{$start}-#{$end} {
+    @media (min-width: #{resolution(sm)}) {
+      @for $start from 1 through $lg-columns {
+        @for $end from $start through $lg-columns {
+          &--column-lg-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @media (min-width: #{resolution(xs)}) and (max-width: #{resolution(sm)}) {
+      @for $start from 1 through $sm-columns {
+        @for $end from $start through $sm-columns {
+          &--column-sm-#{$start}-#{$end} {
             grid-column: #{$start} / #{$end + 1};
           }
         }

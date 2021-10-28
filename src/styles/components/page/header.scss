@@ -1,19 +1,19 @@
 .header {
   position: relative;
 
+  padding: $ptb-160 0 $ptb-160;
+
   color: $c-white;
 
   &__nav {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
-
-    margin-bottom: $mb-100;
   }
 
   &__content {
-    position: relative;
-    z-index: 1;
-
     animation: slide-in-from-left #{$animation-duration * 3} ease-out;
   }
 
@@ -41,16 +41,14 @@
     margin-bottom: $mb-60;
   }
 
-  &__btn {
-    margin-bottom: $mb-120;
-  }
-
   &__short-date {
     @include caption-small;
 
+    position: absolute;
+    bottom: 52px;
+
     display: flex;
     align-items: center;
-    gap: 20px;
 
     color: $c-white-transparent;
 
@@ -63,11 +61,15 @@
     &::after {
       content: "";
 
-      width: 100%;
+      position: absolute;
+      left: 100px;
+
+      width: 500px;
       height: 1px;
 
       background-color: $c-white-transparent;
     }
+
   }
 
   &__short-date-text {
@@ -76,11 +78,32 @@
     user-select: none;
   }
 
-  &__img {
+  &__illustration {
     position: absolute;
     right: 0;
     bottom: 0;
+    
+    width: 660px;
 
     animation: slide-in-from-right #{$animation-duration * 3} ease-out;
+
+    @include onTablets {
+      width: 380px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__illustration-caption {
+    @include main-text;
+
+    position: absolute;
+    left: 487px;
+    top: 386px;
+
+    user-select: none;
   }
 }
