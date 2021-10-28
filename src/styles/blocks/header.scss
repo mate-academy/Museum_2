@@ -1,0 +1,106 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 666;
+
+	width: 100%;
+
+	background-color: $backgorundColor;
+
+	@media (max-width: $md3+px) {
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	}
+
+	// .header__container
+	&__container {
+	}
+
+	// .header__body
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		height: 60px;
+	}
+
+	// .header__logo
+	&__logo {
+		font-size: 36px;
+		color: $mainColor;
+
+		position: relative;
+		z-index: 5;
+	}
+
+	// .header__actions
+	&__actions {
+		display: flex;
+		align-items: center;
+
+		position: relative;
+		z-index: 5;
+	}
+
+	// .header__lang
+	&__lang {
+		color: $mainColor;
+
+		padding-right: 12px;
+
+		background-position: right;
+		background-repeat: no-repeat;
+		background-image: url(../img/icons/arrow-down.svg);
+	}
+}
+
+//Burger
+.icon-menu {
+	display: block;
+	width: 25px;
+	height: 18px;
+
+	cursor: pointer;
+	z-index: 5;
+	position: relative;
+
+	margin-right: 40px;
+	span {
+		transition: all 0.3s ease 0s;
+
+		top: calc(50% - 1px);
+		left: 0px;
+		position: absolute;
+
+		width: 100%;
+		height: 2px;
+
+		background-color: $mainColor;
+
+		&:first-child {
+			top: 0px;
+		}
+
+		&:last-child {
+			top: auto;
+			bottom: 0px;
+		}
+	}
+
+	&._active {
+		span {
+			transform: scale(0);
+
+			&:first-child {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			
+			&:last-child {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}

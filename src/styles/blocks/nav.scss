@@ -1,0 +1,146 @@
+.nav {
+	padding: 90px 0px 20px;
+
+	@media (min-width: 1200px) {
+		background-image: url(../img/mainblock/main-nav.png);
+		background-repeat: no-repeat;
+		background-position: bottom right;
+	}
+
+	// .nav__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+
+		max-width: 570px;
+
+		@media (max-width: $md3+px) {
+			margin: 0 auto;
+		}
+	}
+
+	// .nav__info
+	&__info {
+		margin-bottom: 80px;
+
+		display: flex;
+
+		@media (max-width: $md3+px) {
+			margin-bottom: 55px;
+
+			display: block;
+		}
+	}
+
+	// .nav__item
+	&__item {
+		&:first-child {
+			margin-right: 70px;
+		}
+
+		@media (max-width: $md3+px) {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	// .nav__item-one
+	&__item-one {
+		font-weight: 200;
+		font-size: 14px;
+		line-height: 20px;
+
+		@media (max-width: $md3+px) {
+			margin-right: 5px;
+		}
+	}
+
+	// .nav__item-two
+	&__item-two {
+		line-height: 24px;
+
+		transition: color 0.3s ease 0s;
+
+		&--link {
+			color: $mainColor;
+
+			&:hover {
+				color: #97a5a2;
+			}
+		}
+	}
+
+	// .nav__list
+	&__list {
+		border-bottom: 1px solid rgba(241, 245, 244, 0.3);
+		margin-bottom: 60px;
+
+		@media (max-width: 600px) {
+			margin-bottom: 40px;
+		}
+	}
+
+	// .nav__link
+	&__link {
+		display: inline-block;
+		margin-bottom: 60px;
+
+		font-family: $PlayfairFont;
+		font-weight: 700;
+		font-size: 48px;
+		line-height: 120%;
+		color: $mainColor;
+
+		transition: color 0.3s ease 0s;
+
+		&:hover {
+			color: #97a5a2;
+		}
+
+		@media (max-width: $md3+px) {
+			margin-bottom: 50px;
+		}
+
+		@media (max-width: $md2+px) {
+			font-size: 24px;
+			line-height: 100%;
+		}
+	}
+
+	// .nav__buttons
+	&__buttons {
+		display: flex;
+		justify-content: space-between;
+
+		@media (max-width: 600px) {
+			flex-direction: column;
+		}
+	}
+
+	// .nav__button
+	&__button {
+		@media (max-width: 600px) {
+			&:first-child {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}
+
+.menu__body {
+	position: fixed;
+	z-index: 4;
+
+	width: 100%;
+	height: 100%;
+
+	overflow: auto;
+
+	background-color: $backgorundColor;
+	transform: translateY(-100%);
+	transition: transform 0.5s ease 0s;
+
+	&._active {
+		transform: translateY(0%);
+	}
+}
