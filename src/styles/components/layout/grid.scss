@@ -1,20 +1,20 @@
 .grid {
+  @include column-gap;
+
   $lg-columns: 12;
   $sm-columns: 6;
-
-  $lg-column-gap: 30px;
-  $sm-column-gap: 24px;
+  $xs-columns: 2;
 
   display: grid;
+  grid-template-columns: 1fr;
 
   @media (min-width: #{resolution(sm)}) {
     grid-template-columns: repeat($lg-columns, 1fr);
-    column-gap: 30px;
+
   }
 
   @media (min-width: #{resolution(xs)}) and (max-width: #{resolution(sm)}) {
     grid-template-columns: repeat($sm-columns, 1fr);
-    column-gap: 24px;
   }
 
   &__item {
@@ -27,7 +27,7 @@
         }
       }
     }
-
+    
     @media (min-width: #{resolution(xs)}) and (max-width: #{resolution(sm)}) {
       @for $start from 1 through $sm-columns {
         @for $end from $start through $sm-columns {

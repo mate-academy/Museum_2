@@ -1,9 +1,13 @@
 .header {
   position: relative;
 
-  padding: 160px 0;
+  padding-top: 180px;
 
   color: $c-white;
+
+  @include onMobile {
+    padding-top: 160px;
+  }
 
   &__nav {
     position: absolute;
@@ -14,7 +18,14 @@
   }
 
   &__content {
+    position: relative;
+    z-index: 1;
+
     animation: slide-in-from-left #{$animation-duration * 3} ease-out;
+
+    @include onMobile {
+      z-index: 0;
+    }
   }
 
   &__date {
@@ -32,6 +43,10 @@
 
     &--2 {
       margin-bottom: 40px;
+
+      @include onMobile {
+        margin-bottom: 30px;
+      }
     }
   }
 
@@ -39,6 +54,14 @@
     @include main-text;
 
     margin-bottom: 60px;
+
+    @include onTablets {
+      margin-bottom: 80px;
+    }
+
+    @include onMobile {
+      margin-bottom: 50px;
+    }
   }
 
   &__short-date {
@@ -58,6 +81,10 @@
       color: $c-white;
     }
 
+    @include onMobile {
+      display: none;
+    }
+
     &::after {
       content: "";
 
@@ -69,7 +96,6 @@
 
       background-color: $c-white-transparent;
     }
-
   }
 
   &__short-date-text {

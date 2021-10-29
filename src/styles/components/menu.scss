@@ -10,6 +10,13 @@
     display: flex;
     gap: 80px;
     margin-bottom: 80px;
+
+    @include onTablets {
+      flex-direction: column;
+      gap: 4px;
+
+      margin-bottom: 52px
+    }
   }
 
   &__schedule-date,
@@ -38,6 +45,14 @@
     gap: 60px;
 
     margin-bottom: 60px;
+
+    @include onTablets {
+      gap: 52px;
+    }
+
+    @include onMobile {
+      gap: 50px;
+    }
   }
 
   &__link {
@@ -59,10 +74,22 @@
     background-color: $c-white;
   }
 
+  &__buttons {
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
   &__img {
     position: absolute;
     right: 0;
     bottom: 0;
     z-index: -1;
+
+    @include onTablets {
+      display: none;
+    }
   }
 }

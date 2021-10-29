@@ -7,23 +7,31 @@
 
   color: $c-black;
 
-  &:hover::after {
-    width: 50%;
-  }
-
-  &__content {
-    flex-shrink: 0;
+  @include onMobile {
+    flex-direction: column;
   }
 
   &::after {
     content: "";
 
-    width: 25%;
+    width: 70px;
     height: 1px;
 
     background-color: $c-black;
     opacity: 0.5;
 
     transition: width #{$animation-duration * 2};
+
+    @include onMobile {
+      width: 130px;
+    }
+  }
+  
+  &:hover::after {
+    width: 100px;
+
+    @include onMobile {
+      width: 160px;
+    }
   }
 }
