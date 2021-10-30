@@ -1,6 +1,111 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin container-large {
+  max-width: 1610px;
+  margin: 0 auto;
+}
+
+@mixin container {
+  width: calc(100% - 110px);
+  max-width: 1500px;
+  margin: 0 auto;
+
+  @media screen and (max-width: 600px) {
+    width: calc(100% - 40px);
   }
+}
+
+@mixin btn-orange($border: 1px solid $orange-c, $background: $orange-c) {
+  display: inline-block;
+
+  width: 270px;
+  height: 60px;
+
+  text-align: center;
+  font-size: 16px;
+  line-height: 60px;
+  background-color: $background;
+  border: $border;
+}
+
+@mixin btn-hover(
+  $background-color: $white-c,
+  $color: $orange-c,
+  $border: 1px solid $orange-c
+) {
+  transition: 0.3s;
+  &:hover {
+    background-color: $background-color;
+    color: $color;
+    border: $border;
+  }
+}
+
+@mixin heading-large {
+  font-family: $secondary-font;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 100%;
+  color: $white-c;
+
+  @media screen and (max-width: 950px) {
+    font-size: 72px;
+  }
+
+  @media screen and (max-width: 500px) {
+    font-size: 48px;
+  }
+}
+
+@mixin heading-medium($color: $black-c) {
+  font-family: $secondary-font;
+  font-size: 48px;
+  line-height: 120%;
+  color: $color;
+
+  @media screen and (max-width: 500px) {
+    font-size: 36px;
+    line-height: 125%;
+  }
+}
+
+@mixin heading-small($color: $black-c) {
+  font-family: $secondary-font;
+  font-size: 24px;
+  line-height: 125%;
+  color: $color;
+}
+
+@mixin heading-extra-small {
+  font-family: $secondary-font;
+  font-size: 20px;
+  line-height: 125%;
+  color: $black-c;
+}
+
+@mixin text-large($color: $black-c, $lh: 150%) {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: $lh;
+  color: $color;
+}
+
+@mixin text-medium(
+  $font: $secondary-font,
+  $opacity: 1,
+  $size: 14px,
+  $lh: 125%,
+  $color: $white-c
+) {
+  font-family: $font;
+  font-weight: 700;
+  font-size: $size;
+  line-height: $lh;
+  color: $color;
+  opacity: $opacity;
+}
+
+@mixin text-small($color: $white-c) {
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color;
 }

@@ -1,0 +1,130 @@
+.news {
+  &__container {
+    @include container;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__section-container {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 95px;
+
+    @media screen and (max-width: 1230px) {
+      & {
+        justify-content: space-around;
+      }
+    }
+  }
+
+  &__section-heading {
+    align-self: center;
+
+    margin-right: 600px;
+    margin-bottom: 75px;
+
+    &--heading-medium {
+      @include heading-medium;
+    }
+
+    @media screen and (max-width: 780px) {
+      align-self: center;
+      margin-right: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      align-self: flex-start;
+    }
+  }
+
+  &__article {
+    max-width: 380px;
+
+    &:last-child {
+      @media screen and (max-width: 1230px) {
+        display: none;
+      }
+    }
+
+    &:nth-child(2) {
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 850px) {
+      max-width: 280px;
+    }
+  }
+
+  &__article-img {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 30px;
+  }
+
+  &__article-date {
+    margin-bottom: 5px;
+
+    &--text-small {
+      @include text-small($black-c);
+    }
+  }
+
+  &__article-heading {
+    margin-bottom: 15px;
+
+    &--heading-extra-small {
+      @include heading-extra-small;
+    }
+  }
+
+  &__article-paragraph {
+    &--text-large {
+      @include text-large($gray-c);
+    }
+  }
+
+  &__continue {
+    display: flex;
+    align-self: flex-end;
+
+    margin-right: 65px;
+
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+      align-self: center;
+
+      margin-right: 0;
+    }
+  }
+
+  &__continue-text {
+    margin-right: 20px;
+
+    &--text-large {
+      @include text-large($black-c, 100%);
+    }
+
+    @media screen and (max-width: 900px) {
+      margin-right: 0;
+      text-align: center;
+    }
+  }
+
+  &__continue-line {
+    width: 70px;
+    height: 1px;
+
+    color: $black-c;
+
+    @media screen and (max-width: 900px) {
+      width: 170px;
+    }
+  }
+}
