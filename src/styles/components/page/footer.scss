@@ -73,15 +73,21 @@
   }
 
   &__data {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 64px;
     margin-bottom: 80px;
 
-    row-gap: 64px;
+    @include onLaptops {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @include onTablets {
       margin-bottom: 100px;
     }
 
     @include onMobile {
+      grid-template-columns: 1fr;
       row-gap: 60px;
       margin-bottom: 40px;
     }

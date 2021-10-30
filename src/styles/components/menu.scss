@@ -1,10 +1,17 @@
 .menu {
-  padding-top: 90px;
+  $menu-pb-desktop: 100px;
+
+  padding: 90px 0 $menu-pb-desktop;
 
   background-color: $c-green;
   color: $c-white;
 
   transition: transform #{$animation-duration * 2} ease-in-out;
+  overflow: auto;
+
+  @include onMobile {
+    padding: 140px 0 80px;
+  }
 
   &__info {
     display: flex;
@@ -16,6 +23,10 @@
       gap: 4px;
 
       margin-bottom: 52px
+    }
+
+    @include onMobile {
+      display: none
     }
   }
 
@@ -51,7 +62,8 @@
     }
 
     @include onMobile {
-      gap: 50px;
+      gap: 40px;
+      margin-bottom: 80px;
     }
   }
 
@@ -72,6 +84,10 @@
     margin-bottom: 60px;
 
     background-color: $c-white;
+
+    @include onMobile {
+      display: none;
+    }
   }
 
   &__buttons {
@@ -85,7 +101,7 @@
   &__img {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -$menu-pb-desktop;
     z-index: -1;
 
     @include onTablets {

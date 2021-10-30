@@ -3,6 +3,10 @@
 
   &__body {
     overflow-x: hidden;
+
+    &--with-menu {
+      overflow-y: hidden;
+    }
   }
 
   &__alert {
@@ -10,6 +14,9 @@
     bottom: 50px;
     right: 100px;
     z-index: 1000;
+
+    width: 368px;
+    height: 100px;
     
     visibility: hidden;
     opacity: 0;
@@ -19,6 +26,14 @@
     &--show {
       visibility: revert;
       opacity: 1;
+    }
+
+    @include onTablets {
+      bottom: 20px;
+      right: 50px;
+      
+      width: 328px;
+      height: 130px;
     }
   }
 
@@ -35,7 +50,6 @@
   }
 
   &__header {
-    height: 800px;
     margin-bottom: 160px;
 
     background-color: $c-green;
@@ -46,12 +60,13 @@
   }
 
   &__menu {
-    position: absolute;
+    position: fixed;
+    top: 0;
     transform: translateY(-100%);
     z-index: 10;
     
     width: 100%;
-    height: 800px;
+    height: 100vh;
 
     &--show {
       transform: translateY(0);
@@ -66,7 +81,7 @@
     }
 
     @include onMobile {
-      margin-bottom: 90px;
+      margin-bottom: 80px;
     }
   }
 
