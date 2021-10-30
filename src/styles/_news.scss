@@ -1,0 +1,132 @@
+.news-section {
+  padding: 0 55px;
+  margin: auto;
+
+  @media (max-width: 1199px) {
+    padding: 0 100px;
+  }
+
+  @media (max-width: 759px) {
+    padding: 0 20px;
+  }
+
+  &__title {
+    padding: 120px 0 75px 200px;
+    @include second-title;
+
+    @media (max-width: 1199px) {
+      padding-left: 0;
+    }
+
+    @media (max-width: 759px) {
+      font-size: 36px;
+      padding: 80px 0 60px;
+    }
+
+  }
+
+  &__all-news {
+    display: block;
+    max-width: 1280px;
+    padding-right: 200px;
+    position: relative;
+    text-align: right;
+    line-height: 100%;
+
+    @media (max-width: 1199px) {
+      padding-right: 0;
+      text-align: center;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      background-color: $second-color;
+      width: 70px;
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      right: 100px;
+
+      @media (max-width: 1199px) {
+        width: $belowed-line;
+        top: 150%;
+        left: 50%;
+        transform: translate(-50%);
+        right: 0;
+      }
+
+    }
+  }
+
+  &__link {
+    color: $second-color;
+  }
+}
+
+.news {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(370px, 1fr));
+  gap: 0 30px;
+  justify-content: center;
+  margin-bottom: 95px;
+
+  @media (max-width: 1199px) {
+    grid-template-columns: repeat(2, 270px);
+    justify-content: start;
+  }
+
+  @media (max-width: 759px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  &__image {
+    width: 100%;
+  }
+
+  &__date {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 30px;
+    color: $second-color;
+  }
+
+  &__title {
+    margin-top: 5px;
+    font-family: Playfair Display, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 125%;
+    color: $second-color;
+  }
+
+  &__text {
+    line-height: 150%;
+    margin-top: 15px;
+    color: #504f5e;
+
+    @media (max-width: 1199px) {
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+  }
+
+  &--2 {
+    @media (max-width: 759px) {
+      display: none;
+    }
+  }
+
+  &--3 {
+    @media (max-width: 1199px) {
+      display: none;
+    }
+  }
+}
