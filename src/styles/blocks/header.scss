@@ -1,0 +1,221 @@
+.header {
+  background-color: $colorDarkGrey;
+
+  &__background {
+    position: relative;
+
+    &::after {
+      display: block;
+
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 50%;
+      height: 50%;
+
+      background: url(../images/header-girl.png) no-repeat;
+      background-size: auto 100%;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      background: url(../images/header-girl.png) no-repeat right bottom;
+      background-size: auto 60%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 52px;
+  }
+
+  &__btn {
+    padding: 5px;
+    background: inherit;
+    border: none;
+    cursor: pointer;
+  }
+
+  %line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: $textColorGrey;
+  }
+
+  &__btn-toggler {
+    position: relative;
+    @extend %line;
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -7px;
+      transition-duration: 0.3s;
+      @extend %line;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -7px;
+      transition-duration: 0.3s;
+      @extend %line;
+    }
+
+    &--active {
+      transform: rotate(45deg);
+    }
+
+    &--active::before {
+      top: 0;
+      opacity: 0;
+    }
+
+    &--active::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+  }
+
+  &__event-info {
+    color: $textColorGrey;
+
+    @include onIPad {
+      margin-left: 60px;
+    }
+
+    @include onDesktop {
+      margin-left: 0;
+    }
+  }
+
+  &__event-date {
+    margin-bottom: 20px;
+
+    @include onIPad {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__event-title {
+    margin-bottom: 30px;
+
+    font-family: $secondary-font;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+
+    @include onIPad {
+      margin-bottom: 40px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+  }
+
+  &__title-part {
+    display: block;
+
+    @include onIPad {
+      margin-left: 30px;
+    }
+
+    @include onDesktop {
+      margin-left: 100px;
+      margin-top: 10px;
+    }
+  }
+
+  &__about {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__buy {
+    margin-bottom: 100px;
+
+    @include onDesktop {
+      margin-bottom: 110px;
+      margin-left: 100px;
+    }
+  }
+
+  &__event-about {
+    margin-bottom: 50px;
+
+    @include onIPad {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__picture-description {
+    display: none;
+
+    @include onDesktop {
+      display: inline-block;
+      width: 136px;
+    }
+  }
+
+  &__date-number {
+    display: none;
+
+    @include onDesktop {
+      display: inline-block;
+      margin-right: 20px;
+    }
+  }
+
+  &__part-line {
+    display: flex;
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      align-self: center;
+      width: 70%;
+      height: 1px;
+      margin: 0;
+      border: 0;
+      background-color: $textColorGrey;
+      opacity: 0.3;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    height: calc(100% - 90px);
+
+    @include onIPad {
+      left: 60px;
+      width: calc(100% - 60px);
+    }
+
+    @include onDesktop {
+      left: 0;
+      width: 100%;
+      background: $colorDarkGrey url(../images/header-boy.png) no-repeat 100%
+        100%;
+    }
+  }
+}

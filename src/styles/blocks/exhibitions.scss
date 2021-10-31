@@ -1,0 +1,141 @@
+.exhibitions {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  background-color: $textColorGrey;
+
+  @include onIPad {
+    padding-top: 115px;
+  }
+
+  @include onDesktop {
+    padding-top: 160px;
+
+    background-image: url("../images/exhibitions-picture-1.png"),
+      url("../images/exhibitions-picture-2.png"),
+      url("../images/exhibitions-picture-3.png"),
+      url("../images/exhibitions-text-2.png"),
+      url("../images/exhibitions-text-3.png");
+
+    background-position: top left,
+      100% 55%,
+      calc(0% + 30px) 92%,
+      100% 54%,
+      calc(0% + 30px) 95%;
+
+    background-repeat: no-repeat;
+  }
+
+  &__date-number {
+    margin-bottom: 10px;
+
+    font-family: $secondary-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: $colorOrange;
+
+    @include onIPad {
+      margin-bottom: 20px;
+      
+      font-size: 48px;
+      line-height: 120%;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      margin-top: 100px;
+    }
+  }
+
+  &__article {
+    margin-bottom: 100px;
+
+    &:nth-child(2n + 2) {
+      @include onIPad {
+        margin-left: 50%;
+      }
+    }
+
+    @include onIPad {
+      margin-bottom: 150px;
+
+      &:nth-child(4) {
+        margin-bottom: 142px;
+      }
+    }
+
+    @include onDesktop {
+      &:nth-child(2) {
+        margin-bottom: 225px;
+      }
+
+      &:nth-child(3) {
+        margin-bottom: 310px;
+      }
+    }
+  }
+
+  &__article-time {
+    color: $colorOrange;
+    margin-bottom: 5px;
+
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__article-heading {
+    margin-bottom: 30px;
+
+    font-family: $secondary-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: #1c1b29;
+
+    @include onIPad {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__article-paragraph {
+    width: 130px;
+    height: 120px;
+    overflow: hidden;
+
+    &--right-side {
+      @include onIPad {
+        margin-left: 50%;
+      }
+    }
+
+    @include onIPad {
+      width: 270px;
+      height: 70px;
+      margin-left: 0;
+    }
+
+    @include onDesktop {
+      width: 370px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    display: none;
+    margin-bottom: 200px;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__continue {
+    @include onDesktop {
+      margin-left: calc(100% - 340px);
+    }
+  }
+}
