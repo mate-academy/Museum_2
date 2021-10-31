@@ -1,0 +1,201 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: relative;
+  height: max-content;
+  padding: 20px 20px 100px;
+  background-color: $backgroundColor;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--margin-bottom {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    height: 30px;
+  }
+
+  &__date {
+    margin-bottom: 20px;
+    color: $text-color-light;
+  }
+
+  &__title {
+    color: $text-color-light;
+    z-index: 1;
+
+    &--part-2 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+    color: $text-color-light;
+
+    & > span {
+      display: block;
+    }
+  }
+
+  &__wrapper-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__language {
+    display: none;
+  }
+
+  &__short-date {
+    display: none;
+  }
+
+  &__bottom-line {
+    display: none;
+  }
+
+  &__image {
+    width: 150px;
+    height: 260px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    background-image: url(../images/women.png);
+    background-size: cover;
+    background-position: left bottom;
+
+    z-index: 0;
+
+    &::before {
+      content: "Дівчина з Поділля \0a В. Тропінін";
+
+      position: absolute;
+      top: 50%;
+      right: 54px;
+
+      display: none;
+      white-space: pre;
+      color: $text-color-light;
+    }
+  }
+
+  @include onTablet {
+    padding: 20px 40px 180px;
+
+    &__language {
+      display: block;
+      margin-left: 40px;
+    }
+
+    &__nav {
+      &--margin-bottom {
+        margin-bottom: 120px;
+      }
+    }
+
+    &__grid {
+      display: grid;
+    }
+
+    &__date {
+      margin-bottom: 10px;
+    }
+
+    &__title {
+      &--part-2 {
+        display: block;
+        width: 500px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__image {
+      height: 420px;
+      width: 370px;
+    }
+  }
+
+  @include onDesktop {
+    display: block;
+    padding: 20px 55px 52px;
+
+    &__title {
+      margin-bottom: 10px;
+
+      &--part-2 {
+        width: max-content;
+        margin-bottom: 40px;
+      }
+    }
+
+    &__description {
+      & > span {
+        display: inline;
+      }
+    }
+
+    &__button {
+      margin-bottom: 110px;
+    }
+
+    &__short-date {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 125%;
+      color: $text-color-light;
+      opacity: 0.7;
+    }
+
+    &__bottom-line {
+      display: block;
+      height: 1px;
+      width: 500px;
+      margin: 0;
+      background: $text-color-light;
+      opacity: 0.3;
+    }
+
+    &__bottom-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__image {
+      width: 673px;
+      height: 753px;
+
+      &::before {
+        display: block;
+      }
+    }
+  }
+}
+
+/////////
+
+// .section {
+//   height: 100vh;
+//   &__block {
+//     height: 60px;
+//     background-color: #000;
+//   }
+// }
