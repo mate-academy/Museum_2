@@ -1,13 +1,13 @@
 'use strict';
 
-const body = document.querySelector('.page__body');
+const page = document.querySelector('.page');
 const menuIcon = document.querySelector('#menuIcon');
 const menu = document.querySelector('#menu');
 
 menuIcon.addEventListener('click', () => {
   menuIcon.classList.toggle('hamburger--active');
   menu.classList.toggle('page__menu--show');
-  body.classList.toggle('page__body--with-menu');
+  page.classList.toggle('page--with-menu');
 });
 
 const buyButtons = document.querySelectorAll('.btn');
