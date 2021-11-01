@@ -1,0 +1,31 @@
+.section-footer {
+  position: relative;
+  @include font-properties("Raleway", 16px, 16px, 400);
+  color: #1c1b29;
+  text-align: center;
+
+  @include onDesktop {
+    text-align: start;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    margin: 11px auto 0;
+    height: 1px;
+    max-width: 130px;
+    background-color: #1c1b29;
+
+    @include onTablet {
+      max-width: none;
+    }
+
+    @include onDesktop {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 65%;
+      right: 0;
+    }
+  }
+}

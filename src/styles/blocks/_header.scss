@@ -1,0 +1,119 @@
+.header {
+  height: 100vh;
+  background-color: #3f5252;
+
+  &__content {
+    position: relative;
+  }
+
+  &__top {
+    position: relative;
+    z-index: 1;
+
+    max-width: 1280px;
+    margin: 0 auto 100px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__paragraph {
+    display: block;
+    margin-bottom: 20px;
+    max-width: 275px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+      max-width: none;
+    }
+
+    &--last {
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 80px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__image-container {
+    overflow: hidden;
+    position: absolute;
+    max-width: 50%;
+    height: 40%;
+    bottom: 0;
+    right: 0;
+
+    @include onTablet {
+      max-width: 55%;
+      height: 56%;
+    }
+
+    @include onDesktop {
+      height: 90%;
+    }
+  }
+
+  &__image {
+    height: 100%;
+  }
+
+  &__image-description {
+    opacity: 0;
+
+    @include onDesktop {
+      font-weight: 200;
+      opacity: 0.7;
+      position: absolute;
+      right: 56px;
+      top: 50%;
+    }
+  }
+
+  &__button-container {
+    max-width: 270px;
+
+    @include onTablet {
+      max-width: none;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__date {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+      position: relative;
+      @include font-properties("Playfair Display", 14px, 17px, 700);
+      opacity: 0.7;
+  
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 500px;
+        top: 50%;
+        left: calc(100% + 20px);
+        background-color: #f1f5f4;
+      }
+    }
+  }
+}

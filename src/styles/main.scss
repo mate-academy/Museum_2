@@ -1,7 +1,61 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils/mixins.scss";
+@import "./utils/reset.scss";
 
-body {
-  background: $c-gray;
+@import "./blocks/container";
+@import "./blocks/grid";
+@import "./blocks/page";
+@import "./blocks/title";
+@import "./blocks/section-footer";
+@import "./blocks/date";
+@import "./blocks/button";
+@import "./blocks/header";
+@import "./blocks/top-actions";
+@import "./blocks/menu";
+@import "./blocks/section-title";
+@import "./blocks/article";
+@import "./blocks/exhibitions";
+@import "./blocks/events";
+@import "./blocks/visit";
+
+@font-face {
+  font-family: Namu;
+  src: url(../fonts/Web/NAMU-1960.woff);
+}
+
+.news {
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__article {
+    width: 280px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 270px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+
+    &--last {
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__card-container {
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+  }
 }

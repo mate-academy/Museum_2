@@ -1,0 +1,73 @@
+.menu {
+  height: 100vh;
+  background-color: #3f5252;
+
+  @include onDesktop {
+    background: #3f5252 url(../images/header/Boy.png) right / contain no-repeat;
+    background-position-y: -100px;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &--first {
+      margin-bottom: 0;
+    }
+    
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    &--big-indent {
+      margin-bottom: 80px;
+
+      @include onTablet {
+        margin-bottom: 0;
+
+        &::after {
+          content: "";
+          display: block;
+          height: 1px;
+          margin: 55px 0 60px;
+          background-color: #c4c4c4;
+
+          @include onDesktop {
+            max-width: 570px;
+          }
+        }
+      }
+    }
+
+    &--button {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    @include font-properties("Playfair Display", 24px, 24px, 700);
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    &--small {
+      @include font-properties("Raleway", 14px, 20px, 400);
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__text-light {
+    font-weight: 200;
+  }
+
+  &__text-new-line {
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
