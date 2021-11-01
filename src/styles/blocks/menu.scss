@@ -1,0 +1,135 @@
+.menu {
+  height: 100vh;
+  background-color: #3f5252;
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 24px 0 20px;
+  }
+
+  &__logo {
+    display: block;
+    align-items: center;
+  }
+
+  &__list {
+    margin-bottom: 60px;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      padding-bottom: 55px;
+      border-bottom: 1px solid $c-light-gray;
+    }
+
+    @include onDesktop {
+      padding-bottom: 30px;
+      border-bottom: 1px solid $c-light-gray;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    color: $c-light-gray;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+    transition-duration: 0.5s;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__button {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-top: 10px;
+    }
+  }
+
+  &__poster {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 244px;
+
+    @include onTablet {
+      width: 440px;
+      right: 0;
+    }
+
+    @include onDesktop {
+      width: 460px;
+      right: 0;
+    }
+
+    transition-duration: 0.5s;
+
+    &:hover {
+      transform: scale(103%);
+    }
+  }
+
+  &__image {
+    display: none;
+    width: 100%;
+    object-position: 100px 0;
+
+    @include onTablet {
+      object-position: 0 0;
+      display: none;
+    }
+    @include onDesktop {
+      object-position: 0 0;
+      display: block;
+    }
+  }
+  
+  &__info {
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $c-light-gray;
+
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 80px;
+    }
+
+    &--strong {
+      font-weight: 500;
+    }
+  }
+}

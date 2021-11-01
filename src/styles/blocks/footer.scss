@@ -1,0 +1,124 @@
+.footer {
+  position: relative;
+  background-color: $c-background-grey;
+  color: $c-light-gray;
+
+  &__section {
+    padding: 80px 0 40px;
+  }
+
+  &__article {
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 60px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, auto);
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(4, auto);
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+
+    @include onDesktop {
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__link {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-light-gray;
+
+    &:hover {
+      color: $c-hover-orange;
+    }
+  }
+
+  &__img {
+    &:hover {
+      transition-duration: $hover-time;
+      transform: scale(111%);
+    }
+  }
+
+  &__img-link {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__email {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    display: block;
+  }
+
+  &__item {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item-phone {
+    margin-left: 33px;
+  }
+
+  &__privacy {
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__privacy-item {
+    display: block;
+    text-align: center;
+
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include onTablet {
+      &:first-child {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 20px;
+    top: 85px;
+  }
+
+  &__day {
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-light-gray;
+  }
+}
