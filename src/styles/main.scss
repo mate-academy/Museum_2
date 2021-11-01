@@ -4,37 +4,59 @@
 @import "./blocks/menu.scss";
 @import "./utils/mixins";
 
-body {
-  margin: 0;
-  padding: 0;
+
+* {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+}
+
 .header {
+
   &__wrapper {
-    position: relative;
     display: flex;
+    position: relative;
   }
 
   &__museum {
     position: absolute;
     top: 0;
-    width: 320px;
-    height: 300px;
+    width: 100%;
     object-fit: cover;
+
+    @include forIpad {
+      width: 66%;
+      right: 0;
+    }
+
+    @include forPC {
+      width: 56%;
+    }
+
+    @include forFull {
+      width: 66%;
+    }
   }
 
   &__logo {
     position: absolute;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    object-fit: cover;
+    width: 58px;
+    height: 63px;
     margin-top: 9px;
-    font-family: Montserrat;
-    font-weight: 700;
-    height: 61px;
-    color: #0F0E08;
-    text-decoration: none;
-    font-size: 30px;
-    width: 100%;
-    text-align: center;
+    margin-left: 132px;
+
+    @include forIpad {
+      right: 350px;
+      margin-top: 15px;
+    }
   }
 
   &__opener {
@@ -57,38 +79,83 @@ body {
     color: #000000;
     width: 100%;
     text-align: center;
-  }
 
-  &__tickets {
-    display: flex;
-    flex-direction: row;
-
-    &-box {
-      box-sizing: border-box;
-      margin-left: 20px;
-      border: 1px solid #1A5A4C;
-      width: 230px;
-      height: 50px;
-      font-family: IBM Plex Sans;
+    @include forIpad {
+      margin-top: 134px;
+      margin-left: 34px;
+      font-size: 55px;
+      width: 360px;
+      height: 114px;
+      position: absolute;
       font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      text-align: center;
-      line-height: 50px;
+      font-weight: bold;
+      text-align: start;
+      line-height: 56px;
     }
 
-    &-arrow {
-      width: 50px;
-      height: 50px;
-      background-color: #1A5A4C;
-
-      &--img {
-        width: 7px;
-        height: 12px;
-        padding-top: 19px;
-        padding-left: 21px;
-
+    &--transparent {
+      @include forIpad {
+        color: transparent;
+        -webkit-text-stroke: 1px #000000;
       }
     }
+  }
+}
+
+.ticket-area {
+  position: relative;
+  display: flex;
+  margin-left: 20px;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  border: 1px solid #1A5A4C;
+  width: 280px;
+  height: 50px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+
+  @include forIpad {
+    position: absolute;
+    top: 289px;
+    width: 220px;
+    height: 70px;
+    line-height: 70px;
+    margin-left: 34px;
+  }
+}
+
+.green-area {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #1A5A4C;
+  background-image: url(../images/arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include forIpad {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.white-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  height: 50px;
+
+  @include forIpad {
+    width: 150px;
+    height: 70px;
   }
 }
