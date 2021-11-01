@@ -1,0 +1,43 @@
+.icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+    margin-right: 40px;
+
+    &:hover {
+      background-image: url(../images/menu_hover.svg);
+    }
+
+    @include onMobile {
+      margin-right: 0;
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/cross.svg);
+  }
+
+  &--lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: $c-light-gray;
+
+    &::after {
+      content: "˅";
+      margin-left: 3px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+}

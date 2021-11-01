@@ -1,0 +1,113 @@
+.header {
+  background-size: cover;
+  background-position: center;
+  background-color: $c-dark-cerulean;
+
+  color: $c-light-gray;
+
+  padding: 0 $padding-side-desktop;
+
+  @include onTablet {
+    padding: 0 $padding-side-tablet;
+  }
+
+  @include onMobile {
+    padding: 0 $padding-side-mobile;
+  }
+  
+  &__content {
+    height: 800px;
+    margin-bottom: 160px;
+
+    @include onTablet {
+      height: 762px;
+      margin-bottom: 115px;
+    }
+
+    @include onMobile {
+      height: 584px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 100px;
+
+    @include onMobile() {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    color: $c-light-gray;
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 760px;
+    width: 680px;
+    z-index: 1;
+
+    background: center / cover no-repeat url("../images/header-img-desktop.png");
+    transform: translateX($padding-side-desktop);
+
+    @include onTablet {
+      height: 420px;
+      width: 380px;
+      background: center / cover no-repeat url("../images/header-img-tab.png");
+      transform: translateX($padding-side-tablet);
+    }
+
+    @include onMobile {
+      height: 280px;
+      width: 160px;
+      background: center / cover no-repeat url("../images/header-img-mob.png");
+      transform: translateX($padding-side-mobile);
+    }
+
+    &::after {
+      @include onDesktop {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-right: $padding-side-desktop;
+        width: 136px;
+        height: 48px;
+        content: "Дівчина з Поділля В. Тропінін";
+      }
+    }
+  }
+
+  &__underline {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      margin-top: 110px;
+      align-items: center;
+      font-family: "Playfair Display", serif;
+      font-size: 14px;
+      font-weight: 700;
+  
+      &::after {
+        content: "";
+        height: 1px;
+        width: 500px;
+        margin-left: 20px;
+        background-color: $c-light-gray;
+      }
+    }
+  }
+}
