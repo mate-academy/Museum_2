@@ -14,7 +14,7 @@
     }
 
     @include onDesktop {
-      width: 520px;
+      width: 600px;
       right: 0;
     }
   }
@@ -97,17 +97,19 @@
     }
   }
 
-  &__logo {
-    display: block;
-    align-items: center;
-  }
+  // &__logo {
+  //   display: block;
+  //   align-items: center;
+  // }
   
   &__date-bottom {
     display: none;
 
     @include onDesktop {
-      display: inline-block;
-      margin-right: 20px;
+      display: flex;
+      // margin-right: 20px;
+      margin-top: 110px;
+      align-items: center;
 
       font-family: "Playfair Display", serif;
       font-style: normal;
@@ -115,30 +117,15 @@
       font-size: 14px;
       line-height: 125%;
       color: $c-light-grey;
+
+      &::after {
+        content: "";
+        height: 1px;
+        width: 900px;
+        margin-left: 20px;
+        opacity: 30%;
+        background-color: $c-light-grey;
+      }
     }
-  }
-
-  &__bottom-line {
-    display: flex;
-  }
-
-  &__line {
-    display: none;
-
-    @include onDesktop {
-      display: block;
-      align-self: center;
-      width: 80%;
-      height: 1px;
-      border: 0;
-      margin: 0;
-      
-      background-color: $c-light-grey;
-      opacity: 50%;
-    }
-  }
-
-  &__button {
-    margin-bottom: 80px;
   }
 }
