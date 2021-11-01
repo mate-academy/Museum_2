@@ -1,7 +1,94 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./blocks/menu.scss";
+@import "./utils/mixins";
 
 body {
-  background: $c-gray;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  &__wrapper {
+    position: relative;
+    display: flex;
+  }
+
+  &__museum {
+    position: absolute;
+    top: 0;
+    width: 320px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  &__logo {
+    position: absolute;
+    margin-top: 9px;
+    font-family: Montserrat;
+    font-weight: 700;
+    height: 61px;
+    color: #0F0E08;
+    text-decoration: none;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__opener {
+    position: absolute;
+    height: 12px;
+    width: 18px;
+    margin-left: 23px;
+    margin-top: 33px;
+    cursor: pointer;
+  }
+}
+
+.page {
+  &__title {
+    margin-top: 320px;
+    margin-bottom: 20px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 45px;
+    color: #000000;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__tickets {
+    display: flex;
+    flex-direction: row;
+
+    &-box {
+      box-sizing: border-box;
+      margin-left: 20px;
+      border: 1px solid #1A5A4C;
+      width: 230px;
+      height: 50px;
+      font-family: IBM Plex Sans;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    &-arrow {
+      width: 50px;
+      height: 50px;
+      background-color: #1A5A4C;
+
+      &--img {
+        width: 7px;
+        height: 12px;
+        padding-top: 19px;
+        padding-left: 21px;
+
+      }
+    }
+  }
 }
