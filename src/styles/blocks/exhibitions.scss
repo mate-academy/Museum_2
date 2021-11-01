@@ -22,15 +22,16 @@
 
     @media (max-width: $md2+px) {
       margin: 0 auto 45px;
-      max-width: 260px;
+      max-width: none;
+    }
+
+    @media (max-width: $md3+px) {
+      text-align: center;
+      max-width: none;
     }
 
     @media (max-width: $md4+px) {
       font-size: 36px;
-
-      margin-bottom: 264px;
-
-      text-align: left;
     }
   }
 
@@ -42,14 +43,11 @@
     text-align: center;
     color: $orangeColor;
 
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
-    @media (max-width: $md4+px) {
-      font-size: 24px;
-
-      margin-bottom: 10px;
-
-      text-align: left;
+    @media (max-width: $md3+px) {
+      font-size: 34px;
+      margin-bottom: 16px;
     }
   }
 
@@ -87,106 +85,8 @@
     }
 
     @media (max-width: $md3+px) {
-      &:not(:last-child) {
-        margin-bottom: 370px;
-      }
-
-      &:last-child {
-        margin-bottom: 100px;
-      }
-    }
-
-    &--image-first {
-      &:after {
-        content: "";
-
-        position: absolute;
-        left: 0;
-        top: 7%;
-
-        display: block;
-        width: 544px;
-        height: 816px;
-
-        background-image: url(../img/exhibitions/exhibitions_01.webp);
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        @media (max-width: $md2+px) {
-          width: 280px;
-          height: 420px;
-        }
-
-        @media (max-width: $md3+px) {
-          width: 150px;
-          height: 224px;
-          top: 7%;
-        }
-      }
-    }
-
-    &--image-second {
-      &:after {
-        content: "";
-
-        position: absolute;
-        right: 0;
-        top: 41%;
-
-        display: block;
-        width: 500px;
-        height: 709px;
-
-        background-image: url(../img/exhibitions/exhibitions_02.webp);
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        @media (max-width: $md2+px) {
-          width: 286px;
-          height: 300px;
-        }
-
-        @media (max-width: $md3+px) {
-          top: 30%;
-        }
-
-        @media (max-width: $md4+px) {
-          top: 37%;
-        }
-      }
-    }
-
-    &--image-third {
-      &:after {
-        content: "";
-
-        position: absolute;
-        left: 3%;
-        top: 66%;
-
-        display: block;
-        width: 585px;
-        height: 500px;
-
-        background-image: url(../img/exhibitions/exhibitions_03.webp);
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        @media (max-width: $md2+px) {
-          width: 312px;
-          height: 268px;
-
-          top: 68%;
-        }
-
-        @media (max-width: $md3+px) {
-          top: 64%;
-        }
-
-        @media (max-width: $md4+px) {
-          top: 67%;
-        }
-      }
+      margin: 0 auto 70px;
+      text-align: center;
     }
   }
 }
@@ -194,8 +94,8 @@
 .row-exhibitions {
   max-width: 370px;
 
-  @media (max-width: $md4+px) {
-    max-width: 100%;
+  @media (max-width: $md3+px) {
+    max-width: none;
   }
 
   // .row-exhibitions__subtitle
@@ -239,7 +139,51 @@
     }
   }
 
-  // .row-exhibitions__big-text
-  &__big-text-left {
+  // .row-exhibitions__img
+  &__img {
+    position: absolute;
+
+    &--first {
+      left: 0;
+      top: 3%;
+
+      transform: rotate(5deg) translateX(-50px);
+
+      @media (max-width:$md2+px){
+        width: 282px;
+        height: 420px;
+
+        transform: rotate(5deg) translateX(-10px);
+      }
+    }
+
+    &--second {
+      right: 0;
+      top: 34%;
+
+      @media (max-width:$md2+px){
+        width: 400px;
+        height: 420px;
+      }
+    }
+
+    &--third {
+
+      left: 2%;
+      bottom: 12%;
+
+      @media (max-width:$md2+px){
+        width: 350px;
+        height: 420px;
+      }
+    }
+
+    @media (max-width: $md3+px) {
+      display: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
   }
 }
