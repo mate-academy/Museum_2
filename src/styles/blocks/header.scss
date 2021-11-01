@@ -17,22 +17,33 @@
       background: url(../images/header-girl.png) no-repeat;
       background-size: auto 100%;
 
-      @include onDesktop {
+      @include onIPad {
         display: none;
       }
     }
 
-    @include onDesktop {
+    @include onIPad {
       background: url(../images/header-girl.png) no-repeat right bottom;
-      background-size: auto 60%;
+      background-size: auto 59%;
+    }
+
+    @include onDesktop {
+      background-size: auto 95%;
     }
   }
 
   &__content {
     position: relative;
     box-sizing: border-box;
-    padding-top: 20px;
-    padding-bottom: 52px;
+    padding: 20px 0 100px;
+
+    @include onIPad {
+      padding-bottom: 180px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 52px;
+    }
   }
 
   &__btn {
@@ -140,13 +151,14 @@
   &__about {
     display: flex;
     justify-content: space-between;
+
+    @include onDesktop {
+      padding-bottom: 110px;
+    }
   }
 
   &__buy {
-    margin-bottom: 100px;
-
     @include onDesktop {
-      margin-bottom: 110px;
       margin-left: 100px;
     }
   }
@@ -191,7 +203,7 @@
     @include onDesktop {
       display: block;
       align-self: center;
-      width: 70%;
+      width: 480px;
       height: 1px;
       margin: 0;
       border: 0;
