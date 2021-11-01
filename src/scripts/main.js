@@ -10,6 +10,14 @@ menuIcon.addEventListener('click', () => {
   page.classList.toggle('page--with-menu');
 });
 
+const menuLinks = document.querySelectorAll('.menu__link');
+
+menuLinks.forEach(link => link.addEventListener('click', () => {
+  menuIcon.classList.toggle('hamburger--active');
+  menu.classList.remove('page__menu--show');
+  page.classList.remove('page--with-menu');
+}));
+
 const buyButtons = document.querySelectorAll('.btn');
 const alertBox = document.querySelector('#alert');
 const alertCloseBtn = document.querySelector('.alert__close-btn');
