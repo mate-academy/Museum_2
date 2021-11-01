@@ -55,9 +55,16 @@
     }
 
     &:-webkit-autofill,
-    &:-webkit-autofill:hover,
-    &:-webkit-autofill:focus {
-     background-color: transparent; 
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active {
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: $c-white;
+    }
+
+    &:-webkit-autofill::first-line {
+      @include main-text;
     }
   }
 
