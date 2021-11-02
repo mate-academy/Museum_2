@@ -12,10 +12,6 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
-  // .header__container
-  &__container {
-  }
-
   // .header__body
   &__body {
     display: flex;
@@ -31,8 +27,8 @@
     z-index: 5;
     transition: transform 0.3s;
 
-    @media (any-hover: hover){
-      &:hover{
+    @media (any-hover: hover) {
+      &:hover {
         transform: scale(1.05);
       }
     }
@@ -56,10 +52,20 @@
     background-position: right;
     background-repeat: no-repeat;
     background-image: url(../img/icons/arrow-down.svg);
+
+    transition-property: background-position, color;
+    transition: 0.3s ease-in-out;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #cd4d31;
+        background-position: top 5px right;
+      }
+    }
   }
 }
 
-//Burger
+// Burger
 .icon-menu {
   display: block;
   width: 25px;
@@ -71,9 +77,17 @@
 
   margin-right: 40px;
 
+  @media (any-hover: hover) {
+    &:hover {
+      span {
+        background-color: #cd4d31;
+      }
+    }
+  }
+
   span {
     transition-property: transform, top, bottom;
-    transition-duration: 0.3s;
+    transition: 0.3s ease-in-out;
 
     top: calc(50% - 1px);
     left: 0px;
