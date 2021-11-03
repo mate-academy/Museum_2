@@ -7,6 +7,18 @@ let menuOpen = false;
 
 window.location.hash = '#';
 
+const animContentHeader = document.querySelector('.header__content');
+const animImageHeader = document.querySelector('.header__image');
+const animImageDscrptn = document.querySelector('.header__image-description');
+
+function animHeader() {
+  animContentHeader.classList.add('header__content--anim');
+  animImageHeader.classList.add('header__image--anim');
+  animImageDscrptn.classList.add('header__image-description--anim');
+}
+
+setTimeout(animHeader, 200);
+
 menuButton.addEventListener('click', () => {
   if (!menuOpen) {
     window.location.hash = '#menu';
