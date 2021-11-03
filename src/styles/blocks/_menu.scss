@@ -1,21 +1,33 @@
 .menu {
-  height: 100vh;
-  background-color: #3f5252;
+  overflow: hidden;
+  background-color: $color-dark-gray;
 
   @include onDesktop {
-    background: #3f5252 url(../images/header/Boy.png) right / contain no-repeat;
-    background-position-y: -100px;
+    background: $color-dark-gray url(../images/header/Boy.png) right / contain no-repeat;
   }
 
   &__item {
     margin-bottom: 40px;
 
-    &--first {
-      margin-bottom: 0;
-    }
-    
     @include onTablet {
       margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  
+    &--first {
+      margin-bottom: 0;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+        margin-top: 120px;
+      }
     }
 
     &--big-indent {
@@ -29,7 +41,7 @@
           display: block;
           height: 1px;
           margin: 55px 0 60px;
-          background-color: #c4c4c4;
+          background-color: $color-light-gray-1;
 
           @include onDesktop {
             max-width: 570px;
@@ -58,6 +70,12 @@
       @include onTablet {
         display: block;
       }
+    }
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-light-gray-1;
     }
   }
 

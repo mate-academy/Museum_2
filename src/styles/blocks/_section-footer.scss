@@ -1,11 +1,15 @@
 .section-footer {
+  display: block;
+  width: max-content;
+  margin: 0 auto;
   position: relative;
   @include font-properties("Raleway", 16px, 16px, 400);
-  color: #1c1b29;
-  text-align: center;
+  color: $color-black;
 
-  @include onDesktop {
-    text-align: start;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateY(-10px);
   }
 
   &::after {
@@ -14,7 +18,11 @@
     margin: 11px auto 0;
     height: 1px;
     max-width: 130px;
-    background-color: #1c1b29;
+    background-color: $color-black;
+
+    &:hover {
+      max-width: 150px;
+    }
 
     @include onTablet {
       max-width: none;
@@ -23,9 +31,9 @@
     @include onDesktop {
       content: "";
       position: absolute;
-      top: 0;
-      left: 65%;
-      right: 0;
+      top: -10%;
+      left: 120%;
+      right: -90px;
     }
   }
 }

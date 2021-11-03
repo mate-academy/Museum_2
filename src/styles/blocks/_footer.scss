@@ -1,0 +1,51 @@
+.footer {
+  padding: 80px 0 38px;
+  background-color: $color-dark-gray;
+
+  @include onTablet {
+    padding: 120px 0 35px;
+  }
+
+  @include onDesktop {
+    padding: 160px 0 60px;
+  }
+
+  &__privacy-terms {
+    @include font-properties("Raleway", 14px, 20px, 200);
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &--right {
+      justify-self: end;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__arrow-link {
+    position: absolute;
+    top: 5px;
+    right: 40px;
+  
+    width: 20px;
+    height: 20px;
+
+    background-image: url(../images/footer/arrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}

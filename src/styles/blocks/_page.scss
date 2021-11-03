@@ -1,12 +1,15 @@
 .page {
+  scroll-behavior: smooth;
+
   @include font-properties("Raleway", 16px, 24px, 200);
-  color: #f1f5f4;
+  color: $color-dark-white;
 
   &__body--with-menu {
     overflow: hidden;
   }
 
   &__header {
+    position: relative;
     margin-bottom: 60px;
 
     @include onTablet {
@@ -47,7 +50,12 @@
     margin-bottom: 80px;
   }
 
+  &__news {
+    margin-bottom: 80px;
+  }
+
   &__menu {
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -57,11 +65,7 @@
     transition: transform 0.5s;
 
     &--open {
-      transform: translateY(135px);
-
-      @include onTablet {
-        transform: translateY(105px);
-      }
+      transform: translateY(0);
     }
   }
 }
