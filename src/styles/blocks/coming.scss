@@ -1,0 +1,185 @@
+.coming {
+  padding: 100px 0 80px;
+
+  position: relative;
+
+  &__flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__grid {
+    display: block;
+  }
+
+  &__title {
+    @include title;
+
+    font-size: 36px;
+  }
+
+  &__date {
+    @include description;
+
+    display: inline-block;
+    margin: 0 20px 20px 0;
+    color: $decorative-color;
+  }
+
+  &__day {
+    &--text {
+      &::after {
+        content: ",";
+      }
+    }
+    &--number {
+      display: none;
+    }
+  }
+
+  &__type-event {
+    display: inline-block;
+
+    @include description;
+
+    font-weight: 200;
+    font-size: 14px;
+    color: $title-color-dark;
+  }
+
+  &__subtitle {
+    @include title;
+
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  &__description {
+    @include description;
+
+    margin-bottom: 40px;
+    color: $description-color-dark;
+  }
+
+  &__separator-wrapper {
+    margin: 0 auto;
+    width: 130px;
+  }
+
+  &__image-block {
+    display: none;
+  }
+
+  @include onTablet {
+    padding: 115px 60px 120px;
+
+    &__flex-wrapper {
+      display: block;
+    }
+
+    &__grid {
+      display: grid;
+    }
+
+    &__title {
+      font-size: 48px;
+
+      &--m {
+        margin-bottom: 55px;
+      }
+    }
+
+    &__event {
+      &--1-mb {
+        margin-bottom: 60px;
+      }
+
+      &--2-mb {
+        margin-bottom: 60px;
+      }
+    }
+
+    &__date {
+      margin: 0;
+
+      grid-row: 1 / 3;
+
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    &__day {
+      &--text {
+        display: none;
+      }
+      
+      &--number {
+        display: block;
+
+        margin: 0 0 10px -17px;
+
+        font-size: 36px;
+        color: $whiteColor;
+        text-shadow: -1px 1px 0 $decorative-color,
+          1px 1px 0 $decorative-color,
+          1px -1px 0 $decorative-color,
+          -1px -1px 0 $decorative-color;
+      }
+    }
+
+    &__type-event {
+      margin-bottom: 10px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+    }
+
+    &__separator-wrapper {
+      width: 100%;
+    }
+  }
+
+  @include onDesktop {
+    padding: 260px 0 184px;
+    &__grid {
+      display: grid;
+    }
+
+    &__event {
+      position: relative;
+
+      &--1-mb {
+        margin-bottom: 282px;
+      }
+
+      &--2-mb {
+        margin-bottom: 200px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 180px;
+    }
+
+    &__description {
+      margin-bottom: 60px;
+    }
+
+    &__image-block {
+      display: block;
+      position: absolute;
+
+      &--1 {
+        top: -117px;
+        right: 0;
+      }
+
+      &--2 {
+        left: 0;
+        bottom: -200px;
+      }
+    }
+  }
+}
