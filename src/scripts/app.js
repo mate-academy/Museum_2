@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const iconMenu = document.querySelector(".icon-menu");
-const menuBody = document.querySelector(".menu__body");
+const menuBody = document.querySelector(".menu-body");
 const body = document.querySelector("body");
 
 const navLinks = document.querySelectorAll('.nav__link');
