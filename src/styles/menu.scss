@@ -1,0 +1,175 @@
+.menu {
+  height: 100vh;
+  padding: 20px 0 72px;
+  background-color: $backgroundColor;
+
+  z-index: 2;
+  overflow: auto;
+
+  &__wrapper {
+    padding-bottom: 72px;
+  }
+
+  &__cross {
+    display: block;
+  }
+
+  &__nav {
+    margin-bottom: 80px;
+    z-index: 3;
+  }
+
+  &__grid {
+    display: block;
+  }
+
+  &__info {
+    display: none;
+  }
+
+  &__list {
+    margin-bottom: 80px;
+
+    list-style: none;
+  }
+
+  &__list-item:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    color: $text-color-light;
+    text-decoration: none;
+  }
+
+  &__line {
+    display: none;
+  }
+
+  &__buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    & > :first-child {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__image {
+    display: none;
+  }
+
+  @include onTablet {
+    &__nav {
+      margin-bottom: 30px;
+    }
+
+    &__wrapper {
+      padding: 0 60px 120px;
+    }
+
+    &__grid {
+      display: block;
+      width: 100%;
+    }
+
+    &__info {
+      display: block;
+      font-family: "Raleway", sans-serif;
+      font-weight: 200;
+      font-size: 14px;
+      line-height: 20px;
+      color: $text-color-light;
+
+      margin-bottom: 55px;
+    }
+
+    &__time-today > span {
+      font-weight: 400;
+    }
+
+    &__address > span {
+      font-weight: 400;
+    }
+
+    &__list {
+      margin-bottom: 55px;
+    }
+
+    &__list-item:not(:last-child) {
+      margin-bottom: 50px;
+    }
+
+    &__link {
+      font-size: 48px;
+    }
+
+    &__line {
+      display: block;
+      height: 1px;
+      border: none;
+      margin-bottom: 60px;
+      background-color: $lineColor;
+    }
+
+    &__buttons-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+
+      & > :first-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include onDesktop {
+    &__grid {
+      display: grid;
+    }
+
+    &__info {
+      margin-bottom: 80px;
+    }
+
+    &__wrapper {
+      padding: 0 0 109px;
+    }
+
+    &__list {
+      margin-bottom: 60px;
+    }
+
+    &__line {
+      margin-bottom: 60px;
+    }
+
+    &__buttons-wrapper {
+      & > :first-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__image {
+      display: block;
+      height: 606px;
+      width: 475px;
+
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      background-image: url("../images/boy.png");
+
+      background-size: contain;
+      background-position: left top;
+      background-repeat: no-repeat;
+
+      z-index: -1;
+    }
+  }
+}

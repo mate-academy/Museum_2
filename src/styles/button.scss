@@ -1,4 +1,8 @@
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 100%;
   height: 60px;
   border: 1px solid transparent;
@@ -15,10 +19,20 @@
   cursor: pointer;
 
   transition: border-color $transitionDuration,
-      background-color $transitionDuration;
+  background-color $transitionDuration;
 
   &:hover {
-    border-color: $text-color-light;
+    border-color: $buttonHoverCollor_1;
+    background-color: $buttonHoverCollor_1;
+  }
+
+  &--transparent {
     background-color: transparent;
+    border: 1px solid $text-color-light;
+
+    &:hover {
+      background-color: $buttonHoverCollor_2;
+      border-color: $buttonHoverCollor_2;
+    }
   }
 }
