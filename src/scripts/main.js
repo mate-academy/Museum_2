@@ -5,6 +5,8 @@ const menuPage = document.querySelector('.page__menu');
 const menuPageBody = document.querySelector('.page__body');
 let menuOpen = false;
 
+window.location.hash = '#';
+
 menuButton.addEventListener('click', () => {
   if (!menuOpen) {
     window.location.hash = '#menu';
