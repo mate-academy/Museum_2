@@ -1,22 +1,33 @@
 .digest {
+  padding: 160px 0;
+
   background-color: $orangeColor;
   color: $whiteColor;
-  padding: 80px 20px;
+
+  @include onTablets {
+    padding: 110px 0 120px;
+  }
+
+  @include onMobile {
+    padding: 80px 0;
+  }
 
   &__title {
-    font-family: Playfair Display, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 36px;
-    padding-bottom: 40px;
+    @include h1;
+
+    margin-bottom: 40px;
   }
 
   &__info {
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    padding-bottom: 40px;
+    @include main-text;
+
+    @include onTablets {
+      margin-bottom: 60px;
+    }
+
+    @include onMobile {
+      margin-bottom: 40px;
+    }
   }
 
   &__form {
@@ -25,9 +36,7 @@
   }
 
   &__input-field {
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
+    @include main-text;
 
     align-self: flex-end;
     flex-grow: 1;
@@ -54,21 +63,24 @@
       -webkit-text-fill-color: $whiteColor;
     }
 
+    &:-webkit-autofill::first-line {
+      @include main-text;
+    }
   }
+
   &__sumbit-btn {
-    background-position: center center;
-    background-repeat: no-repeat;
+    @extend %background-base;
 
     width: 46px;
     height: 46px;
     border: 1px solid $whiteColor;
     border-radius: 50%;
-  
+
     background-color: transparent;
     background-image: url(../images/submit.svg);
-  
-    transition: background-position 0.2s ease-in-out;
-  
+
+    transition: background-position $animation-duration ease-in-out;
+
     cursor: pointer;
 
     &:hover {

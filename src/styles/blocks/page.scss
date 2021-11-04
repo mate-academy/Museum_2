@@ -1,31 +1,90 @@
 .page {
-  font-family: "Raleway", sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  background-color: $whiteColor;
+
+  &--with-menu {
+    overflow-y: hidden;
+  }
 
   &__body {
-    font-family: "Playfair Display", serif;
+    overflow-x: hidden;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  &__bottom-link {
+    justify-self: end;
+
+    @include onMobile {
+      justify-self: center;
+    }
+  }
+
+  &__header {
+    margin-bottom: 160px;
+
+    background-color: $greengrayColor;
+
+    @include onTablets {
+      margin-bottom: 116px;
+    }
   }
 
   &__menu {
     position: fixed;
-    z-index: 1;
     top: 0;
-    left: 0;
-    right: 0;
+    transform: translateY(-100%);
+    z-index: 10;
 
-    transform: translateX(100%);
-    transition: transform 0.1s;
+    width: 100%;
+    height: 100vh;
 
-    &:target {
-      transform: translateX(0);
+    &--show {
+      transform: translateY(0);
+    }
+  }
+
+  &__exhibitions {
+    margin-bottom: 260px;
+
+    @include onTablets {
+      margin-bottom: 140px;
     }
 
-    &__section {
-      // margin-bottom: 64px;
-  
-      @include onDesktop {
-        // margin-bottom: 104px;
-      }
+    @include onMobile {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__events {
+    margin-bottom: 184px;
+
+    @include onTablets {
+      margin-bottom: 140px;
+    }
+
+    @include onMobile {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__visit {
+    margin-bottom: 120px;
+  }
+
+  &__news {
+    margin-bottom: 184px;
+
+    @include onTablets {
+      margin-bottom: 120px;
+    }
+
+    @include onMobile {
+      margin-bottom: 80px;
     }
   }
 }

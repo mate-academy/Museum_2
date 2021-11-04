@@ -1,5 +1,35 @@
-@mixin onDesktop {
-  @media (min-width: 1024px) {
+@mixin onSmallPhones {
+  @media (max-width: 420px) {
     @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: #{resolution(xs)}) {
+    @content;
+  }
+}
+
+@mixin onTablets {
+  @media (max-width: #{resolution(sm)}) {
+    @content;
+  }
+}
+
+@mixin onLaptops {
+  @media (max-width: #{resolution(md)}) {
+    @content;
+  }
+}
+
+@mixin column-gap {
+  column-gap: 30px;
+
+  @include onTablets {
+    column-gap: 24px;
+  }
+
+  @include onMobile {
+    column-gap: 20px;
   }
 }

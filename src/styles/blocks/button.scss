@@ -1,28 +1,29 @@
-.button {
-  max-width: 100%;
-  height: 60px;
+.btn {
+  @include btn;
+
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 24px 0;
+  width: 100%;
+  border: 1px solid transparent;
+
   background-color: $orangeColor;
-
-  text-decoration: none;
-  text-align: center;
   color: $whiteColor;
-  font-family: Raleway, sans-serif;
-  font-size: 16px;
-  line-height: 16px;
 
-  &__menu {
-    bottom: 170px;
-    left: 20px;
-    right: 20px;
-    position: absolute;
+  transition: background-color $animation-duration ease-in-out;
 
-    &-2 {
-      margin-top: 20px;
-      background-color: $greengrayColor;
-      border: 1px solid $whiteColor;
+  &:hover {
+    background-color: darken($orangeColor, 5%);
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border-color: $whiteColor;
+
+    &:hover {
+      background-color: $whiteTransparent;
+      border-color: $whiteTransparent;
+      color: $darkColor;
     }
   }
 }

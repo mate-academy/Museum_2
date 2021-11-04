@@ -1,0 +1,45 @@
+.grid {
+  @include column-gap;
+
+  $lg-columns: 12;
+  $sm-columns: 6;
+  $xs-columns: 2;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: #{resolution(sm)}) {
+    grid-template-columns: repeat($lg-columns, 1fr);
+
+  }
+
+  @media (min-width: #{resolution(xs)}) and (max-width: #{resolution(sm)}) {
+    grid-template-columns: repeat($sm-columns, 1fr);
+  }
+
+  &__item {
+    @media (min-width: #{resolution(sm)}) {
+      @for $start from 1 through $lg-columns {
+        @for $end from $start through $lg-columns {
+          &--column-lg-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @media (min-width: #{resolution(xs)}) and (max-width: #{resolution(sm)}) {
+      @for $start from 1 through $sm-columns {
+        @for $end from $start through $sm-columns {
+          &--column-sm-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    &--row-1-3 {
+      grid-row: 1 / 3;
+    }
+  }
+}
