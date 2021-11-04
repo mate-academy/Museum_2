@@ -3,40 +3,35 @@
   overflow: hidden;
   background-color: $colorDarkGrey;
 
-  &__illustration {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 0;
+  &__background {
+    background: url("../images/header-girl.png") no-repeat 164px bottom;
+    background-size: 245px auto;
 
-    width: 245px;
-    transform: translateX(100px);
-
-    @media screen and (min-width: 400px) {
-      transform: translateX(30px);
+    @media screen and (min-width: 500px) {
+      background: url("../images/header-girl.png") no-repeat right bottom;
+      background-size: 300px auto;
     }
 
     @include onIPad {
-      transform: translateX(40px);
-      width: 399px;
+      background-size: 399px auto;
     }
 
-    @media screen and (min-width: 1280px) {
-      width: 673px;
+    @include onDesktop {
+      background-size: 470px auto;
     }
-  }
 
-  &__img {
-    display: block;
-    width: 100%;
+    @media screen and (min-width: 1200px) {
+      background-size: 673px auto;
+    }
   }
 
   &__illustration-caption {
-    position: absolute;
-    left: 487px;
-    top: 386px;
+    display: none;
 
-    user-select: none;
+    @media screen and (min-width: 1200px) {
+      display: block;
+      user-select: none;
+    }
   }
 
   &__content {

@@ -9,37 +9,13 @@
     }
 
     @include onDesktop {
-      padding: 130px 0 184px;
+      padding: 80px 0 184px;
     }
   }
 
   &__section-container {
-    display: flex;
-
-    @include onIPad {
-      justify-content: center;
-    }
-
     @include onDesktop {
-      justify-content: space-between;
-      align-items: center;
       margin-bottom: 77px;
-    }
-  }
-
-  &__info {
-    @include onIPad {
-      display: flex;
-    }
-
-    @include onDesktop {
-      &:first-child {
-        margin-right: 30px;
-      }
-
-      &:last-child {
-        margin-left: 30px;
-      }
     }
   }
 
@@ -49,15 +25,12 @@
     @include onIPad {
       display: flex;
       flex-direction: column;
-      align-items: end;
-
-      margin-right: 30px;
     }
   }
 
   &__date-number {
     display: flex;
-    justify-content: flex-end;
+    align-self: end;
     margin-bottom: 10px;
 
     font-family: $secondary-font;
@@ -65,18 +38,28 @@
     font-size: 36px;
     line-height: 100%;
     color: $colorOrange;
+
+    @include onDesktopLg {
+      align-self: start;
+      font-size: 55px;
+    }
   }
 
   &__time-number {
+    align-self: end;
     font-family: $secondary-font;
     font-weight: bold;
     font-size: 24px;
     line-height: 100%;
     color: $colorOrange;
+
+    @include onDesktopLg {
+      align-self: end;
+      font-size: 36px;
+    }
   }
 
   &__article {
-    max-width: 470px;
     margin-bottom: 60px;
   }
 
