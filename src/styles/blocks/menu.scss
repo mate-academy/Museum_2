@@ -1,0 +1,131 @@
+.menu {
+  overflow-y: auto;
+  background-color: $c-dark-cerulean;
+  color: $c-light-gray;
+
+  &__content {
+    max-width: 1280px;
+    height: 800px;
+    margin: 0 auto;
+
+    @include onTablet {
+      height: 762px;
+    }
+
+    @include onMobile {
+      height: 584px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 28px;
+
+    @include onMobile() {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    color: $c-light-gray;
+  }
+
+  &__actions {
+    display: flex;
+    z-index: 10;
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  &__info {
+    display: flex;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      flex-direction: column;
+      margin-bottom: 56px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+
+    @include sectionTitle;
+
+    color: $c-light-gray;
+
+    @include onMobile {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onMobile {
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__underline {
+    content: "";
+    height: 1px;
+    background-color: $c-light-gray;
+
+    margin-bottom: 60px;
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__buy-button {
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__member-button {
+    background-color: transparent;
+    border: 1px solid $c-light-gray;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 748px;
+    width: 680px;
+
+    background: center / cover no-repeat url("../images/menu-img.png");
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+}

@@ -1,16 +1,7 @@
 .actual-events {
-  padding: 0 $padding-side-desktop;
-
-  @include onTablet {
-    padding: 0 $padding-side-tablet;
-  }
-
-  @include onMobile {
-    padding: 0 $padding-side-mobile;
-  }
-
   &__content {
-    margin-bottom: 260px;
+    max-width: 1280px;
+    margin: 0 auto 260px;
 
     @include onTablet {
       margin-bottom: 140px;
@@ -27,14 +18,15 @@
 
   &__img--event--1 {
     background: left / contain no-repeat url("../images/event-1-desktop.png");
-    transform: translate(-$padding-side-desktop, -240px);
+    transform: translateY(-240px);
+    left: 0;
 
     width: 544px;
     height: 816px;
 
     @include onTablet {
       background-image: url("../images/event-1-tab.png");
-      transform: translate(-$padding-side-tablet, -140px);
+      transform: translateY(-140px);
 
       width: 260px;
       height: 420px;
@@ -54,13 +46,13 @@
   &__img--event--2 {
     background: right / contain no-repeat url("../images/event-2-T.png");
     right: 0;
-    transform: translate($padding-side-desktop, -140px);
+    transform: translateY(-140px);
 
     width: 624px;
     height: 576px;
 
     @include onTablet {
-      transform: translate($padding-side-tablet, -40px);
+      transform: translateY(-40px);
 
       width: 362px;
       height: 320px;
@@ -68,7 +60,7 @@
 
     @include onMobile {
       position: static;
-      margin-bottom: 20px;
+      margin: 0 0 20px auto;
       transform: translate($padding-side-mobile, 0);
 
       width: 280px;
@@ -78,13 +70,14 @@
 
   &__img--event--3 {
     background: left / contain no-repeat url("../images/event-3-T.png");
-    transform: translate(0, -130px);
+    left: 0;
+    transform: translate($padding-side-desktop, -130px);
 
     width: 624px;
     height: 576px;
 
     @include onTablet {
-      transform: translate(0, -60px);
+      transform: translate($padding-side-tablet, -60px);
 
       width: 312px;
       height: 328px;
@@ -92,7 +85,7 @@
 
     @include onMobile {
       position: static;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
       transform: translate(0, 0);
 
       width: 280px;

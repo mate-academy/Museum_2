@@ -1,6 +1,7 @@
 .news {
   &__content {
-    margin-bottom: 184px;
+    max-width: 1280px;
+    margin: 0 auto 184px;
 
     @include onTablet {
       margin-bottom: 120px;
@@ -53,18 +54,28 @@
       height: 270px;
       margin-bottom: 20px;
     }
+
+    transition: transform $transitionDuration;
+
+    &:hover {
+      @include hoverEffect;
+    }
+  
+    &:active {
+      @include activeEffect;
+    }
   }
 
   &__img--news--1 {
-    background: center / cover no-repeat url("../images/news-1.png");
+    background: center / contain no-repeat url("../images/news-1.png");
   }
 
   &__img--news--2 {
-    background: center / cover no-repeat url("../images/news-2.png");
+    background: center / contain no-repeat url("../images/news-2.png");
   }
 
   &__img--news--3 {
-    background: center / cover no-repeat url("../images/news-3.png");
+    background: center / contain no-repeat url("../images/news-3.png");
   }
 
   &__date {

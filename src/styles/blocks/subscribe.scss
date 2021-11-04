@@ -2,17 +2,15 @@
   background-color: $c-orange;
 
   &__content {
-    height: 460px;
+    max-width: 1280px;
+    margin: 0 auto;
     padding: 160px 0;
 
     @include onTablet {
-      display: block;
-      height: 532px;
-      padding: 110px 100px 120px;
+      padding: 120px 40px;
     }
 
     @include onMobile {
-      height: 516px;
       padding: 80px 0;
     }
   }
@@ -79,18 +77,18 @@
     align-items: center;
     height: 42px;
     width: 42px;
-    border-radius: 50%;
-    border: 1px solid $c-light-gray;
+    border: none;
 
     background-color: transparent;
 
+    transition: transform $transitionDuration;
+
     &:hover {
-      cursor: pointer;
-      border-width: 2px;
+      @include hoverEffect;
     }
 
     &:active {
-      transform: translate(1px, 2px);
+      @include activeEffect;
     }
   }
 }
