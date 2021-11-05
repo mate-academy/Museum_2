@@ -1,0 +1,105 @@
+.news {
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__card-container {
+    grid-template-columns: repeat(2, 120px);
+    justify-content: center;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 300px);
+      column-gap: 30px;
+    }
+  
+    @include desktop {
+      grid-template-columns: repeat(3, 370px);
+      column-gap:30px;
+    }
+  }
+
+  &__card {
+    padding-bottom: 10px;
+    margin: 0 auto;
+
+    &:nth-child(2) {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &:nth-child(3) {
+      display: none;
+
+      @include desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__date {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $colorSecond;
+  }
+
+  &__caption {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    line-height: 125%;
+  }
+
+  &__description {
+    
+    font-size: 16px;
+    line-height: 150%;
+    color: #504F5E;
+  }
+
+  &__navigation {
+    margin: 0 auto;
+  }
+
+  &__button {
+    width: 10px;
+    height: 12px;
+
+    cursor: pointer;
+    background-color: $colorBackround;
+    border-radius: 50%;
+    opacity: 0.3;
+
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+    
+    &:hover {
+      opacity: 1;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__more {
+    font-size: 16px;
+    line-height: 100%;
+    color: $colorSecond;
+  }
+}
