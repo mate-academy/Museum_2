@@ -1,7 +1,16 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hoverLink {
+  transition: color $transitionDuration;
+
   &:hover {
-    #{$_property}: $_toValue;
+    color: $text-color-hover;
+  }
+}
+
+@mixin hoverElemScale {
+  transition: transform $transitionDuration;
+
+  &:hover {
+    transform: scale(1.2);
   }
 }
 

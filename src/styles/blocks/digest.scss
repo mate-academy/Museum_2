@@ -36,8 +36,10 @@
   &__input {
     padding: 3px 8px;
     border: none;
+    outline: none;
     border-bottom: 1px solid $text-color-light;
     background-color: $decorative-color;
+    
 
     @include description;
 
@@ -54,8 +56,20 @@
     }
   }
 
+  &__submit {
+    border: none;
+    background-color: transparent;
+  }
+
   &__arrow {
     margin-left: 10px;
+    cursor: pointer;
+
+    transition: transform $transitionDuration;
+
+    &:hover {
+      transform: translateX(50%);
+    }
   }
 
   @include onTablet {
