@@ -1,10 +1,6 @@
 .menu {
-  overflow: hidden;
+  overflow: auto;
   background-color: $color-dark-gray;
-
-  @include onDesktop {
-    background: $color-dark-gray url(../images/header/Boy.png) right / contain no-repeat;
-  }
 
   &__item {
     margin-bottom: 40px;
@@ -39,8 +35,10 @@
         &::after {
           content: "";
           display: block;
-          height: 1px;
+
           margin: 55px 0 60px;
+          height: 1px;
+
           background-color: $color-light-gray-1;
 
           @include onDesktop {
@@ -87,5 +85,24 @@
     @include onDesktop {
       display: block;
     }
+  }
+
+  &__image-container {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
   }
 }

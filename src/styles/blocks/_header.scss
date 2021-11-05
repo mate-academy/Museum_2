@@ -1,32 +1,35 @@
 .header {
-  background-color: $color-dark-gray;
   padding-bottom: 58px;
+  background-color: $color-dark-gray;
 
   &__content {
     position: relative;
     z-index: 1;
 
-    transition: transform 0.5s, opacity 0.5s;
-    transition-timing-function: ease-out;
-    transform: translateX(-50px);
     opacity: 0;
+    transform: translateX(-50px);
 
     &--anim {
       opacity: 1;
       transform: translateX(0);
     }
+
+    transition: transform 0.5s, opacity 0.5s;
+    transition-timing-function: ease-out;
   }
 
   &__top-wrapper {
-    background-color: inherit;
     position: relative;
     z-index: 2;
+
+    background-color: inherit;
   }
 
   &__top {
-    max-width: 1280px;
     margin: 0 auto;
     margin-bottom: 100px;
+
+    max-width: 1280px;
   }
 
   &__title {
@@ -39,6 +42,7 @@
 
   &__paragraph {
     display: block;
+  
     margin-bottom: 20px;
     max-width: 275px;
 
@@ -63,11 +67,13 @@
   &__image-container {
     position: absolute;
     z-index: 0;
-    width: 100%;
-    height: 60%;
     right: 0;
     bottom: 0;
+
     overflow: hidden;
+
+    width: 100%;
+    height: 60%;
 
     @include onTablet {
       height: 53%;
@@ -81,10 +87,11 @@
   &__image {
     position: absolute;
     right: 0;
-    height: 100%;
 
-    transition: transform 0.5s, opacity 0.5s;
-    transition-timing-function: ease-out;
+    @media (max-width: 350px) {
+      right: -50px;
+    }
+
     transform: translateX(50px);
     opacity: 0;
 
@@ -92,21 +99,18 @@
       transform: translateX(0);
       opacity: 1;
     }
+    
+    height: 100%;
 
-    @media (max-width: 350px) {
-      right: -50px;
-    }
+    transition: transform 0.5s, opacity 0.5s;
+    transition-timing-function: ease-out;
   }
 
   &__image-description {
-    transition: transform 0.5s, opacity 0.5s;
-    transition-timing-function: ease-out;
     transform: translateX(50px);
     opacity: 0;
 
     @include onDesktop {
-      width: max-content;
-      font-weight: 200;
       position: absolute;
       right: 70px;
       top: 50%;
@@ -115,7 +119,14 @@
         transform: translateX(0);
         opacity: 1;
       }
+
+      width: max-content;
+
+      font-weight: 200;
     }
+
+    transition: transform 0.5s, opacity 0.5s;
+    transition-timing-function: ease-out;
   }
 
   &__button-container {
@@ -134,19 +145,24 @@
     display: none;
 
     @include onDesktop {
-      display: inline;
       position: relative;
-      @include font-properties("Playfair Display", 14px, 17px, 700);
       opacity: 0.7;
-  
+      display: inline;
+      
+      @include font-properties("Playfair Display", 14px, 17px, 700);
+
       &::after {
         content: "";
+
         position: absolute;
-        display: block;
-        height: 1px;
-        width: 500px;
         top: 50%;
         left: calc(100% + 20px);
+
+        display: block;
+
+        width: 500px;
+        height: 1px;
+
         background-color: $color-dark-white;
       }
     }

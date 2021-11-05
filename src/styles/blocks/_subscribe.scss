@@ -49,14 +49,14 @@
   }
 
   &__input {
-    @include font-properties("Raleway", 16px, 16px, 400);
-  
-    color: $color-dark-white;
-    background-color: $color-orange;
-
+    border-bottom: 1px $color-dark-white solid;
     width: 228px;
     padding-bottom: 3px;
-    border-bottom: 1px $color-dark-white solid;
+
+    background-color: $color-orange;
+
+    @include font-properties("Raleway", 16px, 16px, 400);
+    color: $color-dark-white;
 
     @include onTablet {
       width: 300px;
@@ -80,19 +80,15 @@
     top: -50%;
     left: calc(90%);
 
+    transition: transform 0.3s;
+
     border: none;
-    background-color: $color-orange;
-
-    background-image: url(../images/subscribe/button.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-
     width: 42px;
     height: 42px;
-
+    
+    background: url(../images/subscribe/button.png) no-repeat center / contain;
+    background-color: $color-orange;
     cursor: pointer;
-
-    transition: transform 0.3s;
 
     &:hover {
       transform: translateX(5px);
