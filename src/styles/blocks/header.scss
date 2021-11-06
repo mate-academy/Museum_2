@@ -1,6 +1,21 @@
 .header {
   position: relative;
   background-color: $c-background-grey;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0 20px;
+    height: 584px;
+
+    @include onTablet {
+      height: 762px;
+    }
+
+    @include onDesktop {
+      height: 800px;
+    }
+  }
   
   &__poster {
     position: absolute;
@@ -17,6 +32,17 @@
       width: 600px;
       right: 0;
     }
+    
+    &::after {
+      @include onDesktop {
+        position: absolute;
+        top: 50%;
+        right: 40px;
+        width: 136px;
+        content: "Дівчина з Поділля В. Тропінін";
+        color: $c-light-grey;
+      }
+    }
   }
 
   &__image {
@@ -32,15 +58,6 @@
     }
   }
   
-  &__content {
-    display: flex;
-    flex-direction: column;
-
-    box-sizing: border-box;
-    // height: 100vh;
-    padding: 24px 0 20px;
-  }
-
   &__title {
     font-family: $second-font;
     font-style: normal;
@@ -76,7 +93,6 @@
 
     @include onDesktop {
       margin-bottom: 10px;
-      
     }
 
     @include onTablet {
@@ -85,8 +101,8 @@
   }
 
   &__info {
-    color: $c-light-grey;
     margin-bottom: 50px;
+    color: $c-light-grey;
 
     @include onTablet {
       margin-bottom: 80px;
@@ -96,19 +112,13 @@
       margin-bottom: 60px;
     }
   }
-
-  // &__logo {
-  //   display: block;
-  //   align-items: center;
-  // }
   
   &__date-bottom {
     display: none;
 
     @include onDesktop {
       display: flex;
-      // margin-right: 20px;
-      margin-top: 110px;
+      margin-top: 80px;
       align-items: center;
 
       font-family: $second-font;
