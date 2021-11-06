@@ -1,0 +1,128 @@
+.digest {
+  padding: 80px 0;
+
+  background-color: $decorative-color;
+
+  &__title-wrapper {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    @include title;
+
+    font-size: 36px;
+    color: $text-color-light;
+  }
+
+  &__content-wrapper {
+    display: block;
+  }
+
+  &__description {
+    @include description;
+
+    color: $text-color-light;
+
+    &--mb {
+      margin-bottom: 46px;
+    }
+  }
+
+  &__form {
+    display: flex;
+  }
+
+  &__input {
+    padding: 3px 8px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $text-color-light;
+    background-color: $decorative-color;
+
+    @include description;
+
+    color: $text-color-light;
+
+    &::placeholder {
+      @include description;
+
+      color: $text-color-light;
+    }
+
+    &--w {
+      width: 228px;
+    }
+  }
+
+  &__submit {
+    border: none;
+    background-color: transparent;
+  }
+
+  &__arrow {
+    margin-left: 10px;
+    cursor: pointer;
+
+    transition: transform $transitionDuration;
+
+    &:hover {
+      transform: translateX(50%);
+    }
+  }
+
+  @include onTablet {
+    padding: 110px 60px 120px;
+
+    &__title-wrapper {
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      font-size: 48px;
+    }
+
+    &__description {
+      &--mb {
+        margin-bottom: 66px;
+      }
+    }
+
+    &__input {
+      &--w {
+        width: 300px;
+      }
+    }
+  }
+
+  @include onDesktop {
+    padding: 160px 0;
+
+    &__title-wrapper {
+      margin-bottom: 41px;
+    }
+
+    &__content-wrapper {
+      display: flex;
+    }
+
+    &__description {
+      &--mb {
+        margin-bottom: 0;
+      }
+    }
+
+    &__form {
+      display: block;
+      position: relative;
+      padding-right: 170px;
+    }
+
+    &__arrow {
+      position: absolute;
+      margin: 0;
+      right: 108px;
+      bottom: -50px;
+    }
+  }
+}

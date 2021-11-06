@@ -1,28 +1,26 @@
 .button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  $button-hight: 60px;
 
   width: 100%;
-  height: 60px;
+  height: $button-hight;
   border: 1px solid transparent;
 
   padding: 0;
   background-color: $decorative-color;
-
-  font-family: "Raleway", "Helvetica", sans-serif;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 100%;
-  color: $text-color-light;
-
-  cursor: pointer;
 
   transition: border-color, background-color $transitionDuration;
 
   &:hover {
     border-color: $buttonHoverCollor_1;
     background-color: $buttonHoverCollor_1;
+    box-shadow: 0 5px 61px -22px rgba(0, 0, 0, 0.8);
+  }
+
+  &:active,
+  &:focus {
+    background: darken($buttonHoverCollor_1, 10%);
+    border: 5px outset transparent;
+    outline: none;
   }
 
   &--transparent {
@@ -33,5 +31,27 @@
       background-color: $buttonHoverCollor_2;
       border-color: $buttonHoverCollor_2;
     }
+
+    &:active,
+    &:focus {
+      background: darken($buttonHoverCollor_2, 30%);
+      outline: none;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    font-family: "Raleway", "Helvetica", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: $button-hight;
+    color: $text-color-light;
+    text-decoration: none;
+    text-align: center;
   }
 }
