@@ -1,7 +1,14 @@
 .news {
-
   &__title {
     margin-bottom: 60px;
+    font-size: 36px;
+    line-height: 100%;
+
+    @include tablet {
+      margin-bottom: 75px;
+      font-size: 48px;
+      line-height: 120%;
+    }
   }
 
   &__card-container {
@@ -21,7 +28,7 @@
 
   &__card {
     padding-bottom: 10px;
-    margin: 0 auto;
+    margin: 0 auto 10px auto;
 
     &:nth-child(2) {
       display: none;
@@ -38,16 +45,29 @@
         display: block;
       }
     }
+
+    @include tablet {
+      margin-bottom: 79px;
+    }
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
   }
 
   &__image-container {
     width: 100%;
 
     margin-bottom: 20px;
+    overflow: hidden;
   }
 
   &__image {
     width: 100%;
+    transition: transform $transitionDuration;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__date {
@@ -62,6 +82,10 @@
 
     font-size: 18px;
     line-height: 125%;
+
+    @include tablet {
+      font-size: 20px;
+    }
   }
 
   &__description {
@@ -76,6 +100,8 @@
   }
 
   &__button {
+    margin-bottom: 60px;
+
     width: 10px;
     height: 12px;
 
@@ -98,8 +124,33 @@
   }
 
   &__more {
+    position: relative;
+    margin: 0 auto;
     font-size: 16px;
     line-height: 100%;
     color: $colorSecond;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      height: 1px;
+      width: 130px;
+
+      background-color: $colorBackround;
+
+      @include tablet {
+        width: 170px;
+      }
+
+      @include desktop {
+        bottom: 50%;
+        left: 130px;
+        transform: translateX(-50%) translateY(50%);
+        width: 70px;
+      }
+    }
   }
 }

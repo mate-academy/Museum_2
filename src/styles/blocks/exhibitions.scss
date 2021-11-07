@@ -1,3 +1,184 @@
 .exhibitions {
+  position: relative;
 
+  padding-top: 50px;
+  overflow: hidden;
+
+  @include tablet {
+    padding-top: 116px;
+  }
+
+  @include desktop {
+    padding-top: 160px;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    font-size: 36px;
+    line-height: 125%;
+
+    @include tablet {
+      font-size: 48px;
+    }
+  }
+
+  &__event {
+    margin-bottom: 90px;
+
+    &:last-child {
+      margin-bottom: 100px;
+    }
+
+    @include tablet {
+      margin-bottom: 150px;
+
+      &:last-child {
+        margin-bottom: 140px;
+      }
+    }
+
+    @include desktop {
+      margin-bottom: 300px;
+      &:nth-child(4){
+        margin-bottom: 205px;
+      }
+    }
+  }
+
+  &__date {
+    margin-bottom: 5px;
+
+    color: $secondBackground;
+    font-size: 16px;
+    line-height: 150%;
+    &-numbers {
+      margin-bottom: 10px;
+
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      line-height: 125%;
+
+      @include tablet {
+        margin-bottom: 20px;
+
+        font-size: 48px;
+      }
+    }
+  }
+
+  &__caption {
+    margin-bottom: 30px;
+
+    font-size: 24px;
+    line-height: 125%;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorSecond;
+
+    @include desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__more {
+    position: relative;
+    margin: 0 auto;
+
+    font-size: 16px;
+    line-height: 100%;
+    color: $colorSecond;
+
+    @include desktop {
+      margin: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      width: 130px;
+      background-color: $colorSecond;
+
+      @include tablet {
+        width: 170px;
+      }
+
+      @include desktop {
+        bottom: 50%;
+        transform: translateY(50%);
+        left: 80%;
+        width: 70px;
+      }
+    }
+  }
+
+  &__image {
+      display: none;
+      position: absolute;
+      transition: transform $transitionDuration;
+    &:hover {
+      transform: scale(1.2);
+    }
+      @include desktop {
+        display: block;
+      }
+
+    &-1 {
+      width: 545px;
+      height: 816px;
+
+      top: 45px;
+    }
+
+    &-2 {
+      width: 709px;
+      height: 332px;
+      top: 805px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+      right: -160px;
+      transform: rotate(15deg);
+      z-index: 1;
+    }
+
+    &-BG2 {
+      width: 570px;
+      height: 576px;
+      right: 57px;
+      top: 670px;
+      z-index: -1;
+    }
+
+    &-3 {
+      width: 584px;
+      height: 499px;
+      bottom: 110px;
+      left: 41px;
+      z-index: 1;
+    }
+
+    &-BG3 {
+      width: 570px;
+      height: 576px;
+      bottom: 60px;
+      left: 41px;
+    }
+  }
 }
