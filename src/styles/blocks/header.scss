@@ -2,20 +2,14 @@
   position: relative;
   min-height: 100vh;
 
-  padding: 180px 0;
-
   color: $whiteColor;
 
-  @include onMobile {
-    padding: 160px 0 100px;
-  }
-
   &__nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+    margin-bottom: 120px;
+
+    @include onMobile {
+      margin-bottom: 100px;
+    }
   }
 
   &__content {
@@ -43,7 +37,6 @@
 
       @include onMobile {
         margin-bottom: 30px;
-        z-index: 3;
       }
     }
   }
@@ -62,11 +55,21 @@
     }
   }
 
+  &__btn {
+    @include onMobile {
+      transform: translateY(50px);
+    }
+
+    @include onMobile {
+      flex-shrink: 1;
+    }
+  }
+
   &__short-date {
     @include caption-small;
 
     position: absolute;
-    bottom: 52px;
+    bottom: -200px;
 
     display: flex;
     align-items: center;
@@ -117,7 +120,6 @@
 
     @include onMobile {
       transform: translateX(120px);
-      z-index: 1;
     }
 
     @media (max-width: 440px) {

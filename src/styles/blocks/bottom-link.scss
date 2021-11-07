@@ -1,0 +1,37 @@
+.bottom-link {
+  @include btn;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  color: $darkColor;
+
+  @include onMobile {
+    flex-direction: column;
+  }
+
+  &::after {
+    content: "";
+
+    width: 70px;
+    height: 1px;
+
+    background-color: $darkColor;
+    opacity: 0.5;
+
+    transition: width #{$animation-duration * 2};
+
+    @include onMobile {
+      width: 130px;
+    }
+  }
+
+  &:hover::after {
+    width: 100px;
+
+    @include onMobile {
+      width: 160px;
+    }
+  }
+}
