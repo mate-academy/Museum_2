@@ -21,9 +21,11 @@
 
   &__image {
     position: absolute;
-    z-index: -1;
-
+    z-index: 0;
+  
     display: none;
+
+    transition: 0.3s transform;
 
     @include onDesktop {
       display: block;
@@ -44,6 +46,9 @@
       right: calc((100vw - 1280px) / 2 + 57px);
       top: -60px;
       background: url(../images/exhibitions/art_ancient.png) no-repeat left /contain;
+    }
+    &:hover {
+      transform: translateY(-5%);
     }
   }
 }
