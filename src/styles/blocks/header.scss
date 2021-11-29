@@ -1,0 +1,141 @@
+.header {
+  position: relative;
+  background-color: $c-background-grey;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0 20px;
+    height: 584px;
+
+    @include onTablet {
+      height: 762px;
+    }
+
+    @include onDesktop {
+      height: 800px;
+    }
+  }
+  
+  &__poster {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 244px;
+
+    @include onTablet {
+      width: 440px;
+      right: 0;
+    }
+
+    @include onDesktop {
+      width: 600px;
+      right: 0;
+    }
+    
+    &::after {
+      @include onDesktop {
+        position: absolute;
+        top: 50%;
+        right: 40px;
+        width: 136px;
+        content: "Дівчина з Поділля В. Тропінін";
+        color: $c-light-grey;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    object-position: 100px 0;
+
+    @include onTablet {
+      object-position: 0 0;
+    }
+    @include onDesktop {
+      object-position: 0 0;
+    }
+  }
+  
+  &__title {
+    font-family: $second-font;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+    color: $c-light-grey;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+    
+    &--second {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__date {
+    color: $c-light-grey;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 50px;
+    color: $c-light-grey;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+  
+  &__date-bottom {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      margin-top: 80px;
+      align-items: center;
+
+      font-family: $second-font;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 125%;
+      color: $c-light-grey;
+
+      &::after {
+        content: "";
+        height: 1px;
+        width: 900px;
+        margin-left: 20px;
+        opacity: 0.3;
+        background-color: $c-light-grey;
+      }
+    }
+  }
+}
