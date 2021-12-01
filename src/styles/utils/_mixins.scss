@@ -26,6 +26,12 @@
   }
 }
 
+@mixin onMobile{
+  @media (min-width: 0) {
+    @content;
+  }
+}
+
 @mixin title {
   font-family: "Playfair Display", serif;
   font-style: normal;
@@ -40,6 +46,15 @@
   @include onDesktop {
     font-size: 96px;
   }
+}
+@mixin font-properties ($font-family,
+$font-size,
+$line-height,
+$font-weight: normal) {
+  font-family: $font-family, sans-serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
 }
 
 @mixin description {
