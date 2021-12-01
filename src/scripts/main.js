@@ -1,7 +1,7 @@
 'use strict';
 
-const menuButton = document.querySelector('.top-action__menu-btn');
 const menuPage = document.querySelector('.page__menu');
+const menuButton = document.querySelector('.top-action__menu-btn');
 const menuPageBody = document.querySelector('.page__body');
 let menuOpen = false;
 
