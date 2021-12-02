@@ -15,4 +15,3 @@
 13. Pictures in the blocks "Exhibitions", "Events", "News" should be animated and somehow move on hover or when scrolling down the page
 14. Buttons in the footer of the menu should also be clickable and lead to blocks on the landing page.
 16. All the social icons in the footer should be clickable and open the museum's social networks in a new tab
-17. OPTIONAL: After everything is done, you can add a slider to the "News" block (for mobile version)
