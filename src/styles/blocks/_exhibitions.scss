@@ -1,0 +1,54 @@
+.exhibitions {
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__date {
+    margin-bottom: 5px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    &--bold {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: 0;
+  
+    display: none;
+
+    transition: 0.3s transform;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--angel {
+      top: -200px;
+      right: calc((100vw - 1280px) / 2 - 100px);
+    }
+
+    &--kiss {
+      top: -90px;
+      left: calc((100vw - 1280px) / 2 - 57.7px);
+      background: url(../images/exhibitions/art_XX-XXI.png) no-repeat left / contain;
+    }
+
+    &--mamay {
+      right: calc((100vw - 1280px) / 2 + 57px);
+      top: -60px;
+      background: url(../images/exhibitions/art_ancient.png) no-repeat left /contain;
+    }
+    &:hover {
+      transform: translateY(-5%);
+    }
+  }
+}

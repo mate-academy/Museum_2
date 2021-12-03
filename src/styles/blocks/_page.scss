@@ -1,0 +1,77 @@
+.page {
+  scroll-behavior: smooth;
+
+  @include font-properties("Raleway", 16px, 24px, 200);
+  color: $color-dark-white;
+
+  &__body--with-menu {
+    overflow: hidden;
+  }
+
+  &__header {
+    position: relative;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 115px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 160px;
+    }
+  }
+
+  &__exhibitions {
+    position: relative;
+    z-index: 0;
+
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 115px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 265px;
+    }
+  }
+
+  &__events {
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 180px;
+    }
+  }
+
+  &__visit {
+    position: relative;
+    margin-bottom: 80px;
+  }
+
+  &__news {
+    margin-bottom: 80px;
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+
+    &--open {
+      transform: translateY(0);
+    }
+
+    transition: transform 0.5s;
+
+    height: 100vh;
+  }
+}

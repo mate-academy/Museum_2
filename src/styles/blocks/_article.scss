@@ -1,0 +1,105 @@
+.article {
+  &__title {
+    @include font-properties("Playfair Display", 24px, 30px, 700);
+    color: $color-black;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    &--block {
+      display: block;
+
+      @include onTablet {
+        display: inline;
+      }
+    }
+
+    &-events {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__paragraph {
+    @include font-properties("Raleway", 16px, 24px, 200);
+    color: $color-gray;
+
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    &-events {
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__image-container {
+    overflow: hidden;
+  }
+
+  &__button {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 220px;
+      max-width: 270px;
+    }
+  }
+
+  &__event-name {
+    @include font-properties("Raleway", 14px, 24px, 200);
+    color: $color-black;
+
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__event-time {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__image-news {
+    transition: transform 0.3s;
+
+    width: 100%;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__title-news {
+    margin-bottom: 10px;
+
+    @include font-properties("Playfair Display", 18px, 22px, 700);
+    color: $color-black;
+  }
+}

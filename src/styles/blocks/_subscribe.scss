@@ -1,0 +1,101 @@
+.subscribe {
+  background-color: $color-orange;
+  padding: 80px 0;
+
+  @include onTablet {
+    padding: 110px 0 120px;
+  }
+
+  @include onDesktop {
+    padding: 160px 0;
+  }
+
+  &__title {
+    color: $color-dark-white;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 60px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form-field {
+    @include onDesktop {
+      padding-top: 25px;
+    }
+
+    ::placeholder {
+      @include font-properties("Raleway", 16px, 24px, 200);
+      color: $color-dark-white;
+    }
+  }
+
+  &__input-section {
+    position: relative;
+    max-width: 300px;
+
+    @include onDesktop {
+      max-width: 350px;
+    }
+  }
+
+  &__input {
+    border-bottom: 1px $color-dark-white solid;
+    width: 228px;
+    padding-bottom: 3px;
+
+    background-color: $color-orange;
+
+    @include font-properties("Raleway", 16px, 16px, 400);
+    color: $color-dark-white;
+
+    @include onTablet {
+      width: 300px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $color-dark-white;
+      -webkit-box-shadow: 0 0 0 30px $color-orange inset;
+      caret-color: $color-dark-white;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: -50%;
+    right: 0;
+
+    transition: transform 0.3s;
+
+    border: none;
+    width: 42px;
+    height: 42px;
+    
+    background: url(../images/subscribe/button.png) no-repeat center / contain;
+    background-color: $color-orange;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+}

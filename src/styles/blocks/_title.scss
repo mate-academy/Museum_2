@@ -1,0 +1,35 @@
+.title {
+  @include font-properties("Playfair Display", 48px, 48px, 700);
+
+  @include onTablet {
+    font-size: 72px;
+    line-height: 72px;
+  }
+
+  @include onDesktop {
+    font-size: 96px;
+    line-height: 96px;
+  }
+
+  &__block {
+    display: block;
+  }
+
+  &__block--center {
+    @include onTablet {
+      max-width: 500px;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      max-width: none;
+      text-align: start;
+    }
+  }
+
+  &__block--first {
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+  }
+}

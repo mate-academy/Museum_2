@@ -1,0 +1,108 @@
+.menu {
+  overflow: auto;
+  background-color: $color-dark-gray;
+
+  &__item {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  
+    &--first {
+      margin-top: 120px;
+      margin-bottom: 0;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+
+    &--big-indent {
+      margin-bottom: 80px;
+
+      @include onTablet {
+        margin-bottom: 0;
+
+        &::after {
+          content: "";
+          display: block;
+
+          margin: 55px 0 60px;
+          height: 1px;
+
+          background-color: $color-light-gray-1;
+
+          @include onDesktop {
+            max-width: 570px;
+          }
+        }
+      }
+    }
+
+    &--button {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    @include font-properties("Playfair Display", 24px, 24px, 700);
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    &--small {
+      @include font-properties("Raleway", 14px, 20px, 400);
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-light-gray-1;
+    }
+  }
+
+  &__text-light {
+    font-weight: 200;
+  }
+
+  &__text-new-line {
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__image-container {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    overflow: hidden;
+  }
+
+  &__image {
+    display: block;
+  }
+}
