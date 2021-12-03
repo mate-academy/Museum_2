@@ -1,0 +1,46 @@
+.more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include onDesktop {
+    justify-content: flex-start;
+  }
+
+  &__link {
+    padding: 0 10px 11px;
+
+    text-decoration: none;
+    line-height: 100%;
+    color: $font-color-black;
+
+    border-bottom: 1px solid $font-color-black;
+
+    transition: transform .3s;
+
+    @include onDesktop {
+      border: none;
+      padding: 0 20px 0 0;
+    }
+
+    &:visited {
+      color: $font-color-black;
+    }
+
+    &:hover {
+      transform: translateX(-10px);
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 70px;
+      height: 1px;
+    
+      background-color: $font-color-black;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.lang-toggler {
+  display: none;
+  position: relative;
+  z-index: 2;
+
+  font-family: $raleway;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  color: $font-color-white;
+
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+
+  &__option {
+    background-color: $page-dark;
+  }
+
+  &--mobile {
+    display: block;
+    order: -1;
+
+    margin-right: 30px;
+
+    @include onTablet {
+      display: none;
+      margin-right: 0;
+    }
+  }
+
+  @include onTablet {
+    display: block;
+    order: 1;
+    margin-right: 0;
+  }
+}

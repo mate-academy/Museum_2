@@ -1,0 +1,106 @@
+.button {
+  display: flex;
+  justify-content: center;
+
+  padding: 22px 0;
+
+  cursor: pointer;
+
+  &--upon-white {
+    position: relative;
+
+    &::before {
+      @extend %button-blink;
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+    }
+  
+    &:hover::before {
+      -webkit-animation: shine 1s;
+      animation: shine 1s;
+    }
+  }
+
+  &--upon-dark {
+    &::before {
+      @extend %button-blink;
+      background: -webkit-linear-gradient(left, rgba(63, 82, 82,0) 0%, rgba(63, 82, 82,.3) 100%);
+      background: linear-gradient(to right, rgba(63, 82, 82,0) 0%, rgba(63, 82, 82,.3) 100%);
+    }
+  
+    &:hover::before {
+      -webkit-animation: shine 1s;
+      animation: shine 1s;
+    }
+    @-webkit-keyframes shine {
+      100% {
+        left: 125%;
+      }
+    }
+    @keyframes shine {
+      100% {
+        left: 125%;
+      }
+    }
+  }
+
+  @-webkit-keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+  @keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+
+  &--header {
+    @media (max-width: 767px) {
+      box-sizing: border-box;
+      display: block;
+      
+      width: 280px;
+      padding-left: 64px;
+    }
+  }
+
+  text-decoration: none;
+  color: $font-color-white;
+
+  border: 1px solid $page-color-red;
+  background-color: $page-color-red;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &--register {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 22px 0;
+  }
+
+  &--member {
+    border: 1px solid $font-color-white;
+    background-color: transparent;
+  }
+
+  &--angels {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  @include onTablet {
+    width: 100%;
+    padding-left: 0;
+
+    text-align: center;
+  }
+}
