@@ -17,6 +17,22 @@
     font-size: 16px;
     line-height: 150%;
     color: $sec-text-c;
+
+    &--no-desktop {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--on-desktop {
+      @include onTablet {
+        display: none;
+      }
+
+      @include onPhone {
+        display: none;
+      }
+    }
   }
 
   &__form-field {
@@ -27,6 +43,18 @@
     line-height: 150%;
     border: none;
     border-bottom: 1px solid;
+
+    &:hover {
+      color: $sec-background-c;
+
+      &::placeholder {
+        color: $sec-background-c;
+      }
+    }
+
+    &:focus {
+      color: $sec-background-c;
+    }
   }
 
   &__button {

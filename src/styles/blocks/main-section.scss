@@ -6,22 +6,58 @@
   }
 
   &__title {
-    display: block;
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
-    font-size: 28px;
-    line-height: 125%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    &--title {
+
+      font-family: "Playfair Display", serif;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 125%;
+
+      @include onTablet {
+        font-size: 40px;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+      }
+
+    }
   }
 
   &__block {
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
   }
 
   &__picture {
-    margin-top: 60px;
-    height: 356px;
-    width: 280px;
+    padding-bottom: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &--no-phone {
+
+      @include onPhone {
+        display: none;
+      }
+    }
+
+    &--on-phone {
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
 
     &--1 {
       background-image: url(../images/2.png);

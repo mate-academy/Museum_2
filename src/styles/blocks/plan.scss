@@ -2,7 +2,21 @@
   padding: 50px 20px;
   background-color: $background-c;
 
+  @include onDesktop {
+    padding: 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   &__title {
+    @include onDesktop {
+      margin-top: 40%;
+    }
+
     display: block;
     font-family: "Playfair Display", serif;
     font-weight: bold;
@@ -22,5 +36,18 @@
 
   &__button {
     margin-top: 30px;
+  }
+
+  &__photo {
+    display: none;
+    padding-bottom: 100%;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/8.png);
+
+    @include onDesktop {
+      display: block;
+    }
   }
 }

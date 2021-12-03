@@ -1,15 +1,26 @@
 .header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: $background-c;
-  padding: 0 20px;
+  padding: 20px 20px 0;
 
   &__title {
     font-size: 36px;
     line-height: 43px;
+    font-weight: bold;
     color: $main-text-c;
     padding-top: 10px;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 100%;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 100%;
+    }
   }
 
   &__top {
@@ -57,5 +68,15 @@
     height: 273px;
     background-position: center;
     background-size: cover;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include onDesktop {
+      width: 625px;
+      height: 663px;
+    }
   }
 }

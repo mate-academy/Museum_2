@@ -6,11 +6,24 @@
   }
 
   &__title {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
     font-family: "Playfair Display", serif;
     font-weight: bold;
     font-size: 28px;
     line-height: 125%;
+
+    &--title {
+
+      @include onTablet {
+        font-size: 40px;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+      }
+    }
   }
 
   &__block {
@@ -20,8 +33,11 @@
 
   &__picture {
     margin-top: 60px;
-    height: 356px;
-    width: 280px;
+    padding-bottom: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &--1 {
       background-image: url(../images/6.png);

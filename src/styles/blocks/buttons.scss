@@ -8,9 +8,21 @@
     line-height: $main-button-height;
     text-align: center;
     height: $main-button-height;
-    width: 100%;
+    width: 270px;
     background-color: $sec-background-c;
     color: $main-text-c;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+
+    &:active {
+      background-color: $button-pressed;
+    }
+
+    &:disabled {
+      background-color: $button-disabled;
+    }
   }
 
   &--join {
@@ -21,7 +33,7 @@
     line-height: $main-button-height;
     text-align: center;
     height: $main-button-height;
-    width: 100%;
+    width: 270px;
     background-color: transparent;
     border: 1px solid $main-text-c;
     color: $main-text-c;
@@ -35,7 +47,7 @@
     line-height: $main-button-height;
     text-align: center;
     height: $main-button-height;
-    width: 100%;
+    width: 270px;
     background-color: transparent;
     border: 1px solid $sec-background-c;
     color: $sec-background-c;
@@ -44,6 +56,51 @@
       content: "123";
       -webkit-mask-box-image: url(../images/arrow.png);
       background-color: $sec-background-c;
+    }
+
+    &:hover {
+      border-color: $button-hover;
+      color: $button-hover;
+
+      &::after {
+        background-color: $button-hover;
+      }
+    }
+
+    &:active {
+      border-color: $button-pressed;
+      color: $button-pressed;
+
+      &::after {
+        background-color: $button-pressed;
+      }
+    }
+
+    &:disabled {
+      border-color: $button-disabled;
+      color: $button-disabled;
+
+      &::after {
+        background-color: $button-disabled;
+      }
+    }
+  }
+
+  &--no-phone {
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &--on-phone {
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
     }
   }
 }
