@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAMU</title>
-    <link rel="icon" href="images/logo.png">
+    <link rel="icon" href="images/icon1.png">
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@100;400;600;700&display=swap" rel="stylesheet">
+    <script src="scripts/main.js"></script>
   </head>
   <body class="page__body">
 
@@ -36,7 +37,7 @@
             Внесок українських митців у світову культуру 19-20 ст.
           </span>
 
-          <a href="#" class="header__button buttons--buy link">Купити квиток</a>
+          <a href="#plan" class="header__button buttons--buy link">Купити квиток</a>
 
         </div>
         <div class="grid__item--1-2 grid__item--tablet-2-5 grid__item--desktop-7-12">
@@ -53,16 +54,27 @@
           <div class="logo__image"></div>
         </a>
 
-        <select
-          name="language"
-          id="language"
-          class="menu__language"
-        >
-        </select>
+        <div class="menu__top-container">
+          <select
+            name="language"
+            class="menu__select select select--on-phone"
+          >
+            <option value="en" class="select__option">EN</option>
+            <option value="ua" class="select__option">UA</option>
+          </select>
 
-        <a href="#" class="icon">
-          <div class="icon__close"></div>
-        </a>
+          <a href="#" class="icon">
+            <div class="icon__close"></div>
+          </a>
+
+          <select
+            name="language"
+            class="menu__select select select--no-phone"
+          >
+            <option value="en" class="select__option">EN</option>
+            <option value="ua" class="select__option">UA</option>
+          </select>
+        </div>
       </div>
 
       <div class="grid">
@@ -75,20 +87,27 @@
 
             <div class="menu__address">
               <span class="menu__address--title">Адреса:</span>
-              <span class="menu__address--address">Київ, вул. М. Грушевського, 6</span>
+              <a
+                href="https://goo.gl/maps/EC3mHgh3WEAp1p8d6"
+                class="menu__address--address link"
+                target="_blank"
+                rel="noopener"
+              >
+                Київ, вул. М. Грушевського, 6
+              </a>
             </div>
           </div>
 
-          <a href="#" class="menu__plan-visit link">Актуальні виставки</a>
+          <a href="#current-exhibitions" class="menu__plan-visit link">Актуальні виставки</a>
 
-          <a href="#" class="menu__events link">Найближчі події</a>
+          <a href="#nearest-events" class="menu__events link">Найближчі події</a>
 
-          <a href="#" class="menu__collection link">Новини</a>
+          <a href="#news" class="menu__collection link">Новини</a>
 
           <div class="menu__spacer"></div>
 
           <div class="menu__buttons">
-            <a href="#" class="menu__button buttons--buy link">Купити квиток</a>
+            <a href="#plan" class="menu__button buttons--buy link">Купити квиток</a>
           </div>
         </div>
 
@@ -98,85 +117,10 @@
       </div>
     </nav>
 
-
-
-    <!-- <header class="header">
-      <div class="header__top">
-        <a href="#" class="logo">
-          <div class="logo__image"></div>
-        </a>
-        <a href="#menu" class="icon">
-          <div class="icon__menu"></div>
-        </a>
-      </div>
-
-      <span class="header__date">
-        10 серпня - 10 листопада
-      </span>
-
-      <span class="header__exhibit">
-        Мистецтво ХІХ - ХХ ст.
-      </span>
-
-      <span class="header__description">
-        Внесок українських митців у світову культуру 19-20 ст.
-      </span>
-
-      <a href="#" class="header__button buttons--buy link">Купити квиток</a>
-
-      <div class="header__image"></div>
-    </header> -->
-
-
-    <!-- <nav class="page__menu menu" id="menu">
-      <div class="menu__top">
-        <a href="#" class="logo">
-          <div class="logo__image"></div>
-        </a>
-
-        <select
-          name="language"
-          id="language"
-          class="menu__language"
-        >
-        </select>
-
-        <a href="#" class="icon">
-          <div class="icon__close"></div>
-        </a>
-      </div>
-
-      <div class="menu__schedule">
-        <span class="menu__schedule--title">Розклад сьогодні:</span>
-        <span class="menu__schedule--time">12:00 - 19:00</span>
-      </div>
-
-      <div class="menu__address">
-        <span class="menu__address--title">Адреса:</span>
-        <span class="menu__address--address">Київ, вул. М. Грушевського, 6</span>
-      </div>
-
-      <a href="#" class="menu__plan-visit link">Спланувати візит</a>
-
-      <a href="#" class="menu__events link">Виставки та події</a>
-
-      <a href="#" class="menu__collection link">Колекція</a>
-
-      <div class="menu__spacer"></div>
-
-      <div class="menu__buttons">
-        <a href="#" class="menu__button buttons--buy link">Купити квиток</a>
-
-        <a href="#" class="menu__button buttons--join link">Купити квиток</a>
-      </div>
-
-      <div class="menu__image"></div>
-    </nav> -->
-
     <main>
       <section class="page__section main-section">
         <div class="main-section__title">
-          <h2 class="main-section__title--title">Актуальні виставки</h2>
+          <h2 class="main-section__title--title" id="current-exhibitions">Актуальні виставки</h2>
           <a href="#" class="main-section__button buttons--info buttons--no-phone link">Архів виставок</a>
         </div>
 
@@ -187,7 +131,7 @@
               <span class="main-section__date">11.07 - 22.09</span>
               <h3 class="main-section__block-title">Кураторська виставка “Ангели”</h3>
               <p class="main-section__block-paragraph">Виставковий проект «Ангели» – знакова подія для української культури і водночас наймасштабніший...</p>
-              <a href="#" class="main-section__button buttons--buy link">Купити квиток</a>
+              <a href="#plan" class="main-section__button buttons--buy link">Купити квиток</a>
             </div>
           </div>
 
@@ -197,7 +141,7 @@
               <span class="main-section__date">Діє постійно</span>
               <h3 class="main-section__block-title">Мистецтво ХХ ст. — XXI ст.</h3>
               <p class="main-section__block-paragraph">Знакові роботи Алли Горської, Миколи Самокиша, Федора Кричевського та інших митців.</p>
-              <a href="#" class="main-section__button buttons--buy link">Купити квиток</a>
+              <a href="#plan" class="main-section__button buttons--buy link">Купити квиток</a>
             </div>
           </div>
 
@@ -209,7 +153,7 @@
 
       <section class="page__section main-section">
         <div class="main-section__title">
-          <h2 class="main-section__title--title">Найближчі події</h2>
+          <h2 class="main-section__title--title" id="nearest-events">Найближчі події</h2>
           <a href="#" class="main-section__button buttons--info buttons--no-phone link">Календар подій</a>
         </div>
 
@@ -220,7 +164,7 @@
               <span class="main-section__date">14.08 о 13:00</span>
               <h3 class="main-section__block-title">Кураторські екскурсії від Павла Гудімова</h3>
               <p class="main-section__block-paragraph">Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...</p>
-              <a href="#" class="main-section__button buttons--buy link">Зареєструватись</a>
+              <a href="#plan" class="main-section__button buttons--buy link">Зареєструватись</a>
             </div>
 
             <div class="grid__item--1-2 grid__item--tablet-4-6 grid__item--desktop-9-12">
@@ -239,7 +183,7 @@
               <span class="main-section__date">16.08 о 13:00</span>
               <h3 class="main-section__block-title">Майстер-клас “Подорож до Австралії”</h3>
               <p class="main-section__block-paragraph">Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт кругосвітньої подорожі - Австралія.</p>
-              <a href="#" class="main-section__button buttons--buy link">Зареєструватись</a>
+              <a href="#plan" class="main-section__button buttons--buy link">Зареєструватись</a>
             </div>
           </div>
         </div>
@@ -248,7 +192,7 @@
 
       </section>
 
-      <section class="page__section plan">
+      <section class="page__section plan" id="plan">
         <div class="grid">
           <div class="grid__item--1-2 grid__item--tablet-1-4 grid__item--desktop-1-6">
             <div class="plan__photo"></div>
@@ -266,7 +210,7 @@
 
       <section class="page__section news">
         <div class="news__title">
-          <h2 class="news__title--title">Новини</h2>
+          <h2 class="news__title--title" id="news">Новини</h2>
           <a href="#" class="news__button buttons--info buttons--no-phone link">Усі новини</a>
         </div>
 
@@ -300,7 +244,11 @@
           <div class="grid__item--1-2 grid__item--tablet-1-4 grid__item--desktop-1-5">
             <h3 class="subscribe__title">Підпишіться на дайджест</h3>
             <p class="subscribe__paragraph subscribe__paragraph--no-desktop">Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів</p>
-            <form action="#" method="post">
+            <form
+              action="#"
+              method="post"
+              onclick="event.preventDefault()"
+            >
               <input
                 class="subscribe__form-field"
                 name="email"
@@ -316,71 +264,6 @@
           </div>
         </div>
       </section>
-
-      <!-- <section class="page__section main-section">
-        <h2 class="main-section__title">Найближчі події</h2>
-
-        <div class="main-section__block">
-          <div class="main-section__picture main-section__picture--3"></div>
-          <span class="main-section__date">14.08 о 13:00</span>
-          <h3 class="main-section__block-title">Кураторські екскурсії від Павла Гудімова</h3>
-          <p class="main-section__block-paragraph">Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...</p>
-          <a href="#" class="main-section__button buttons--buy link">Зареєструватись</a>
-        </div>
-
-        <div class="main-section__block">
-          <div class="main-section__picture main-section__picture--4"></div>
-          <span class="main-section__date">16.08 о 13:00</span>
-          <h3 class="main-section__block-title">Майстер-клас “Подорож до Австралії”</h3>
-          <p class="main-section__block-paragraph">Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт кругосвітньої подорожі - Австралія.</p>
-          <a href="#" class="main-section__button buttons--buy link">Зареєструватись</a>
-        </div>
-
-        <a href="#" class="main-section__button buttons--info link">Календар подій</a>
-      </section> -->
-
-      <!-- <section class="page__section plan">
-        <h2 class="plan__title">Сплануйте
-          візит до музею
-        </h2>
-        <p class="plan__paragraph">Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом.</p>
-        <a href="#" class="plan__button buttons--buy link">Почати</a>
-      </section> -->
-
-      <!-- <section class="page__section news">
-        <h2 class="news__title">Новини</h2>
-
-        <div class="news__block">
-          <div class="news__picture news__picture--1"></div>
-          <span class="news__date">9 серпня 2019</span>
-          <h3 class="news__block-title">Оголошення переможця</h3>
-          <p class="news__block-paragraph">Друзі, сьогодні п'ятниця! А це означає, що час оголосити переможця розіграшу...</p>
-        </div>
-
-        <div class="news__block">
-          <div class="news__picture news__picture--2"></div>
-          <span class="news__date">9 серпня 2019</span>
-          <h3 class="news__block-title">Міжнародний день котів</h3>
-          <p class="news__block-paragraph">Музей з левами не може просто так взяти і пропустити Міжнародний день котів!</p>
-        </div>
-
-        <a href="#" class="news__button buttons--info link">Усі новини</a>
-      </section> -->
-
-      <!-- <section class="page__section subscribe">
-        <h3 class="subscribe__title">Підпишіться на дайджест</h3>
-        <p class="subscribe__paragraph">Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів</p>
-        <form action="#" method="post">
-          <input
-            class="subscribe__form-field"
-            name="email"
-            placeholder="e-mail"
-            type="email"
-            required
-          >
-          <button class="subscribe__button buttons--buy link">Підписатись</button>
-        </form>
-      </section> -->
     </main>
 
     <footer class="footer">
@@ -388,7 +271,12 @@
         <div class="grid__item--1-2 grid__item--tablet-1-2 grid__item--desktop-1-3">
           <h2 class="footer__title">Контакти</h2>
           <div class="footer__contacts">
-            <a href="https://goo.gl/maps/EC3mHgh3WEAp1p8d6" class="footer__contact link">
+            <a
+              href="https://goo.gl/maps/EC3mHgh3WEAp1p8d6"
+              class="footer__contact link"
+              target="_blank"
+              rel="noopener"
+            >
               Київ,
               <br>
               вул. М. Грушевського, 6
@@ -399,10 +287,37 @@
             <a href="mailto:info@namu.kiev.ua" class="footer__contact link">info@namu.kiev.ua</a>
           </div>
           <div class="footer__soc-media">
-            <a href="#" class="footer__facebook link"></a>
-            <a href="#" class="footer__twitter link"></a>
-            <a href="#" class="footer__telegram link"></a>
-            <a href="#" class="footer__instagram link"></a>
+            <a
+              href="https://www.facebook.com/namu.museum/"
+              class="footer__facebook link"
+              target="_blank"
+              rel="noopener"
+            >
+            </a>
+
+            <a
+              href="https://twitter.com/namu_120"
+              class="footer__twitter link"
+              target="_blank"
+              rel="noopener"
+            >
+            </a>
+
+            <a
+              href="https://t.me/namuofficial"
+              class="footer__telegram link"
+              target="_blank"
+              rel="noopener"
+            >
+            </a>
+
+            <a
+              href="https://www.instagram.com/namu.museum/?hl=en"
+              class="footer__instagram link"
+              target="_blank"
+              rel="noopener"
+            >
+            </a>
           </div>
         </div>
 
@@ -425,16 +340,16 @@
           <div class="footer__links">
             <ul>
               <li>
-                <a href="" class="footer__links-link link">Головна</a>
+                <a href="#" class="footer__links-link link">Головна</a>
               </li>
               <li>
-                <a href="" class="footer__links-link link">Виставки</a>
+                <a href="#current-exhibitions" class="footer__links-link link">Виставки</a>
               </li>
               <li>
-                <a href="" class="footer__links-link link">Події</a>
+                <a href="#nearest-events" class="footer__links-link link">Події</a>
               </li>
               <li>
-                <a href="" class="footer__links-link link">Новини</a>
+                <a href="#news" class="footer__links-link link">Новини</a>
               </li>
             </ul>
           </div>
@@ -451,79 +366,5 @@
         </div>
       </div>
     </footer>
-
-    <!-- <footer class="footer">
-      <h2 class="footer__title">Контакти</h2>
-
-      <div class="footer__contacts">
-        <a href="https://goo.gl/maps/EC3mHgh3WEAp1p8d6" class="footer__contact link">
-          Київ,
-          <br>
-          вул. М. Грушевського, 6
-        </a>
-        <a href="tel:+38044278-13-57" class="footer__contact link">тел. 278-13-57, 278-74-54</a>
-        <a href="mailto:info@namu.kiev.ua" class="footer__contact link">info@namu.kiev.ua</a>
-      </div>
-
-      <div class="footer__soc-media">
-        <a href="#" class="footer__facebook link"></a>
-        <a href="#" class="footer__twitter link"></a>
-        <a href="#" class="footer__telegram link"></a>
-        <a href="#" class="footer__instagram link"></a>
-      </div>
-
-      <div class="footer__working-hours">
-        <h3 class="footer__working-hours-title">Розклад роботи</h3>
-        <ul class="footer__schedule">
-          <li>ПН: вихідний</li>
-          <li>ВТ: вихідний</li>
-          <li>СР: 10:00 - 17:00</li>
-          <li>ЧТ: 10:00 - 17:00</li>
-          <li>ПТ: 12:00 - 19:00</li>
-          <li>СБ: 11:00 - 18:00</li>
-          <li>НД: 10:00 - 17:00</li>
-        </ul>
-      </div>
-
-      <div class="footer__members-programs">
-        <h3 class="footer__members-programs-title">Членські програми</h3>
-        <ul>
-          <li>
-            <a href="" class="footer__members-program link">Зробити разовий внесок</a>
-          </li>
-          <li>
-            <a href="" class="footer__members-program link">Індивідуальна</a>
-          </li>
-          <li>
-            <a href="" class="footer__members-program link">Корпоративна</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer__about-us">
-        <h3 class="footer__about-us-title">Про нас</h3>
-        <ul>
-          <li>
-            <a href="" class="footer__about-us-link link">Історія</a>
-          </li>
-          <li>
-            <a href="" class="footer__about-us-link link">Обличчя музею</a>
-          </li>
-          <li>
-            <a href="" class="footer__about-us-link link">Вакансії</a>
-          </li>
-          <li>
-            <a href="" class="footer__about-us-link link">Новини</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer__bottom">
-        <span class="footer__bottom-years">© 2010 — 2020</span>
-        <span class="footer__bottom-terms">Privacy — Terms</span>
-        <a class="footer__go-up link" href="#"></a>
-      </div>
-    </footer> -->
-
   </body>
 </html>
