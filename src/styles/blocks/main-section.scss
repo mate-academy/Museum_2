@@ -1,8 +1,16 @@
 .main-section {
   padding: 0 20px 90px;
 
+  @include onTablet {
+    padding: 0 40px 90px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px 90px;
+  }
+
   &:first-child {
-    padding: 90px 20px;
+    margin-top: 90px;
   }
 
   &__title {
@@ -12,7 +20,7 @@
 
     &--title {
 
-      font-family: "Playfair Display", serif;
+      font-family: $secondary-font;
       font-weight: bold;
       font-size: 28px;
       line-height: 125%;
@@ -88,7 +96,7 @@
 
   &__date {
     margin-top: 20px;
-    font-family: "Raleway", sans-serif;
+    font-family: $main-font;
     font-size: 16px;
     line-height: 150%;
     color: $sec-background-c;
@@ -96,15 +104,23 @@
 
   &__block-title {
     margin-top: 10px;
-    font-family: "Playfair Display", serif;
+    font-family: $secondary-font;
     font-weight: bold;
     font-size: 20px;
     line-height: 125%;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
   }
 
   &__block-paragraph {
     margin-top: 20px;
-    font-family: "Raleway", sans-serif;
+    font-family: $main-font;
     font-weight: normal;
     font-size: 16px;
     line-height: 150%;
