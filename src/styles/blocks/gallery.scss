@@ -1,0 +1,87 @@
+.gallery {
+  &-title {
+    text-align: center;
+
+    @include forPC {
+      text-align: left;
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+    height: 410px;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    @include forIpad {
+      height: 543px;
+    }
+
+    @include forPC {
+      height: 600px;
+    }
+
+
+    &:nth-child(3) {
+      display: none;
+      
+      @include forPC  {
+        display: block;
+      }
+    }
+
+    &:nth-child(4) {
+      display: none;
+
+      @include forIpad {
+        display: block;
+      }
+
+      @include forPC {
+        display: none;
+      }
+
+      @include forFull {
+        display: block;
+      }
+    }
+
+    &:nth-child(5) {
+      display: none;
+
+      @include forPC {
+        display: block;
+        height: 360px;
+      }
+    }
+
+    &:nth-child(6) {
+      display: none;
+
+      @include forPC {
+        height: 360px;
+        display: block;
+      }
+    }
+
+    &:nth-child(7) {
+      display: none;
+
+      @include forFull {
+        display: block;
+        height: 360px;
+      }
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+}

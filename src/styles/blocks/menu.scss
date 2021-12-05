@@ -1,0 +1,95 @@
+.menu {
+
+  width: 100vw;
+  height: 100vh;
+  color: $black-color;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  @include forPC {
+    height: 100px;
+  }
+
+  &__page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__nav {
+
+    &--closer {
+      left: 100px;
+      top: 80px;
+      height: 20px;
+
+      @include forPC {
+        display: none;
+      }
+
+      @include smallScreenForLandscape {
+        height: 14px;
+      }
+    }
+
+    &--logo {
+      @include montserrat700;
+      font-size: 28px;
+      line-height: 100%;
+      text-decoration: none;
+
+      @include smallScreenForLandscape {
+        font-size: 16px;
+      }
+    }
+
+    &--item {
+      padding: 10px 0;
+
+      @include smallScreenForLandscape {
+        padding: 5px 0;
+      }
+    }
+
+    &--link {
+      @include ibm500;
+      font-size: 16px;
+      line-height: 100%;
+      color: $black-color;
+      text-decoration: none;
+
+      @include smallScreenForLandscape {
+        font-size: 14px;
+      }
+    }
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 18px;
+      list-style: none;
+
+      @include forPC {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+li {
+  transition-duration: 300ms;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
