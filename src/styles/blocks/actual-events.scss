@@ -1,0 +1,212 @@
+.actual-events {
+  &__content {
+    max-width: 1280px;
+    margin: 0 auto 260px;
+
+    @include onTablet {
+      margin-bottom: 140px;
+    }
+
+    @include onMobile {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+  }
+
+  &__img--event--1 {
+    background: left / contain no-repeat url("../images/event-1-desktop.png");
+    transform: translateY(-240px);
+    left: 0;
+
+    width: 544px;
+    height: 816px;
+
+    @include onTablet {
+      background-image: url("../images/event-1-tab.png");
+      transform: translateY(-140px);
+
+      width: 260px;
+      height: 420px;
+    }
+
+    @include onMobile {
+      position: static;
+      margin-bottom: 20px;
+      background-image: url("../images/event-1-mob.png");
+      transform: translate(-$padding-side-mobile, 0);
+
+      width: 152px;
+      height: 224px;
+    }
+  }
+
+  &__img--event--2 {
+    background: right / contain no-repeat url("../images/event-2-T.png");
+    right: 0;
+    transform: translateY(-140px);
+
+    width: 624px;
+    height: 576px;
+
+    @include onTablet {
+      transform: translateY(-40px);
+
+      width: 362px;
+      height: 320px;
+    }
+
+    @include onMobile {
+      position: static;
+      margin: 0 0 20px auto;
+      transform: translate($padding-side-mobile, 0);
+
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  &__img--event--3 {
+    background: left / contain no-repeat url("../images/event-3-T.png");
+    left: 0;
+    transform: translate($padding-side-desktop, -130px);
+
+    width: 624px;
+    height: 576px;
+
+    @include onTablet {
+      transform: translate($padding-side-tablet, -60px);
+
+      width: 312px;
+      height: 328px;
+    }
+
+    @include onMobile {
+      position: static;
+      margin: 0 auto 20px;
+      transform: translate(0, 0);
+
+      width: 280px;
+      height: 280px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 100px;
+
+    @include sectionTitle;
+
+    @include onTablet {
+      margin-bottom: 45px;
+    }
+
+    @include onMobile {
+      margin-bottom: 20px;
+
+      font-size: 36px;
+      line-height: 45px;
+    }
+  }
+
+  &__event {
+    position: relative;
+  }
+
+  &__event--1 {
+    margin-bottom: 228px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onMobile {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__event--2 {
+    margin-bottom: 308px;
+
+    @include onTablet {
+      margin-bottom: 224px;
+    }
+
+    @include onMobile {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__period {
+    margin-bottom: 20px;
+    @include sectionTitle;
+    color: $c-orange;
+
+    @include onMobile {
+      margin-bottom: 10px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__period--infinite {
+    margin-bottom: 10px;
+    color: $c-orange;
+
+    @include onTablet {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    @include eventTitle;
+
+    @include onMobile {
+      margin-bottom: 30px;
+
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onMobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__buy-button {
+    text-decoration: none;
+  }
+
+  &__underline {
+    display: flex;
+    margin-top: 204px;
+    align-items: center;
+
+    line-height: 16px;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 70px;
+      margin-left: 20px;
+      background-color: $c-dark-blue;
+    }
+
+    @include onTablet {
+      margin-top: 108px;
+      justify-content: end;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+}

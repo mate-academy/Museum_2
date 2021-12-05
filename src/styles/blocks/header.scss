@@ -1,0 +1,121 @@
+.header {
+  background-color: $c-dark-cerulean;
+
+  color: $c-light-gray;
+
+  &__content {
+    max-width: 1280px;
+    height: 800px;
+    margin: 0 auto 160px;
+
+    @include onTablet {
+      height: 762px;
+      margin-bottom: 116px;
+    }
+
+    @include onMobile {
+      height: 584px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    margin-bottom: 100px;
+
+    @include onMobile() {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    color: $c-light-gray;
+
+    transition: transform $transitionDuration;
+
+    &:hover {
+      @include hoverEffect;
+    }
+
+    &:active {
+      @include activeEffect;
+    }
+  }
+
+  &__actions {
+    display: flex;
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+
+    transition: transform $transitionDuration;
+
+    &:hover {
+      @include hoverEffect;
+    }
+
+    &:active {
+      @include activeEffect;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 748px;
+    width: 680px;
+
+    background: center / cover no-repeat url("../images/header-img-desktop.png");
+
+    @include onTablet {
+      height: 420px;
+      width: 380px;
+      background: center / cover no-repeat url("../images/header-img-tab.png");
+    }
+
+    @include onMobile {
+      height: 280px;
+      width: 160px;
+      background: center / cover no-repeat url("../images/header-img-mob.png");
+    }
+
+    &::after {
+      @include onDesktop {
+        position: absolute;
+        top: 50%;
+        right: $padding-side-desktop;
+        width: 136px;
+        content: "Дівчина з Поділля В. Тропінін";
+      }
+    }
+  }
+
+  &__underline {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      margin-top: 110px;
+      align-items: center;
+      font-family: "Playfair Display", serif;
+      font-size: 14px;
+      font-weight: 700;
+  
+      &::after {
+        content: "";
+        height: 1px;
+        width: 500px;
+        margin-left: 20px;
+        background-color: $c-light-gray;
+      }
+    }
+  }
+}

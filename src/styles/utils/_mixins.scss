@@ -4,3 +4,46 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: 768px) and (max-width: 1279.98px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin sectionTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58px;
+  color: $c-dark-blue;
+}
+
+@mixin eventTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  color: $c-dark-blue;
+}
+
+@mixin activeEffect {
+  transform: translate(2px, 4px) scale($transformScale);
+}
+
+@mixin hoverEffect {
+  transform: scale($transformScale);
+  cursor: pointer;
+}

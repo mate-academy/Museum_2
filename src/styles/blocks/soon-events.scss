@@ -1,0 +1,257 @@
+.soon-events {
+  &__content {
+    max-width: 1280px;
+    margin: 0 auto 184px;
+
+    @include onTablet {
+      margin-bottom: 140px;
+    }
+
+    @include onMobile {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 64px;
+
+    @include sectionTitle;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onMobile {
+      margin-bottom: 60px;
+
+      font-size: 36px;
+      line-height: 45px;
+    }
+  }
+
+  &__event--1 {
+    margin-bottom: 78px;
+
+    @include onTablet {
+      margin-bottom: 90px;
+    }
+
+    @include onMobile {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__event--2 {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__img {
+    width: 370px;
+    height: 476px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__event-info {
+    display: grid;
+    column-gap: 30px;
+    align-self: center;
+    grid-template-columns: repeat(7, 1fr);
+
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 24px;
+    }
+  
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__date-type-mob {
+    display: none;
+
+    @include onMobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__date-mob {
+    grid-column: 1/2;
+    color: $c-orange;
+  }
+
+  &__type-mob {
+    grid-column: 2/3;
+    color: $c-dark-blue;
+  }
+
+  &__date-info {
+    grid-column: 1/3;
+    
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    color: $c-orange;
+
+    @include onTablet {
+      grid-column: 1/2;
+    }
+  
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__date {
+    font-size: 55px;
+    line-height: 55px;
+    text-align: left;
+    color: transparent;
+    -webkit-text-stroke: 1px $c-orange;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 36px;
+    }
+  
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__time {
+    font-size: 36px;
+    line-height: 36px;
+    text-align: right;
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__description {
+    grid-column: 3/8;
+
+    @include onTablet {
+      grid-column: 2/7;
+    }
+  
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__type {
+    margin-bottom: 10px;
+
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $c-dark-blue;
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+
+    @include eventTitle;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__description-content {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onMobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__reg-button-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 24px;
+    }
+  
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__reg-button {
+    grid-column: 1/4;
+    text-decoration: none;
+
+    @include onTablet {
+      grid-column: 1/3;
+    }
+  }
+
+  &__underline {
+    display: flex;
+    align-items: center;
+
+    line-height: 16px;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 70px;
+      margin-left: 20px;
+      background-color: $c-dark-blue;
+    }
+
+    @include onTablet {
+      justify-content: end;
+    }
+
+    @include onMobile {
+      position: relative;
+      justify-content: center;
+      align-items: start;
+      width: 130px;
+      height: 28px;
+      margin: 0 auto;
+
+      &::after {
+        position: absolute;
+        margin: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
