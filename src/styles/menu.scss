@@ -1,0 +1,355 @@
+.page__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s;
+  transform: translateX(-100%);
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  @include Mobile {
+    width: 320px;
+  }
+  @include SmallPhone {
+    max-width: 640px;
+  }
+}
+
+.page__menu:target {
+  transform: translateX(0);
+}
+
+.menu--top {
+  margin-left: 932px;
+  z-index: 1;
+  @include Mobile {
+    margin-left: 30px;
+  }
+  @include SmallPhone {
+    margin-left: 310px;
+  }
+  @include Tablet {
+    margin-left: 449px;
+  }
+  @include Laptop {
+    margin-left: 740px;
+  }
+}
+
+.menu__content {
+  background: #3f5252;
+  height: 100vh;
+  padding-left: 20px;
+  z-index: 1;
+  flex-direction: row;
+  overflow: hidden;
+  @include Mobile {
+    width: 100%;
+  }
+  @include Tablet {
+    max-width: 98%;
+  }
+  @include Notebook {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 10% 80%;
+    grid-template-areas: "content__top content__top"
+      "menu__schedule menu__image"
+      "menu__list menu__image";
+  }
+  @include t1440 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 10% 80%;
+    grid-template-areas: "content__top content__top"
+      "menu__schedule menu__image"
+      "menu__list menu__image";
+  }
+  @include TheDesign {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 10% 10% 80%;
+    grid-template-areas: "content__top content__top"
+      "menu__schedule menu__image"
+      "menu__list menu__image";
+  }
+  @include FullHD {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 20% 20% 60%;
+    grid-template-areas: "content__top content__top"
+      "menu__schedule menu__image"
+      "menu__list menu__image";
+  }
+  @include LargeScreens {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 10% 80%;
+    grid-template-areas: "content__top content__top"
+      "menu__schedule menu__image"
+      "menu__list menu__image";
+    // padding: 0 400px;
+    width: 100vw;
+  }
+}
+
+.menu__image_container {
+  grid-area: menu__image;
+  @include LargeScreens {
+    width: 60%;
+    height: 60%;
+  }
+}
+
+.menu__content_top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 32px;
+  @include Mobile {
+    width: 320px;
+  }
+}
+
+.icon--cross {
+  justify-content: center;
+  align-items: center;
+  @include Mobile {
+    order: 2;
+  }
+}
+
+.menu__schedule_container {
+  display: flex;
+  grid-area: menu__schedule;
+
+  @include Mobile {
+    display: none;
+  }
+  @include FullHD {
+    margin-top: 100px;
+  }
+  @include LargeScreens {
+    margin-top: 100px;
+  }
+}
+
+.header__language_switcher {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  /* identical to box height, or 24px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* t */
+  color: #f1f5f4;
+  margin-left: 40px;
+  &::after {
+    content: "";
+    background-image: url(/images/Union.svg);
+    width: 8px;
+    height: 5px;
+    margin-left: 3px;
+  }
+  @include Mobile {
+    order: 1;
+    margin-left: 69px;
+  }
+  @include SmallPhone {
+    margin-left: 20px;
+  }
+}
+
+.menu__switcher {
+  @include SmallPhone {
+    margin-left: 210px;
+  }
+}
+
+.burger__schedule {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 20px;
+
+  /* or 143% */
+  display: flex;
+  align-items: center;
+
+  color: #f1f5f4;
+  margin-top: 30px;
+}
+
+.menu__adress {
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.menu__link {
+  font-family: "Halyard", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all 0.3s;
+  margin-right: 48px;
+  text-decoration: none;
+  width: 100vh;
+}
+
+.menu__list {
+  margin-top: 80px;
+  width: 100vh;
+  grid-area: menu__list;
+  @include FullHD {
+    margin-top: 200px;
+  }
+  @include LargeScreens {
+    height: 40%;
+    margin-top: 200px;
+  }
+}
+
+.menu__item {
+  padding-top: 50px;
+  list-style: none;
+  width: 100vh;
+  &:first-child {
+    padding-top: 0;
+  }
+  @include Mobile {
+    padding-top: 40px;
+  }
+}
+
+.menu-btn {
+  cursor: pointer;
+  position: relative;
+  height: 15px;
+  width: 20px;
+  box-sizing: border-box;
+  margin-left: 931px;
+  margin-top: 14px;
+  @include Tablet {
+    margin-left: 436px;
+  }
+  @include Laptop {
+    margin-left: 700px;
+  }
+}
+@media (min-width: 320px) and (max-width: 639px) {
+  .menu-btn {
+    display: block;
+    margin-left: 40px;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .menu-btn {
+    display: block;
+    margin-left: 170px;
+  }
+}
+
+.menu-btn .menu {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+}
+
+.menu-btn .menu:nth-child(2) {
+  margin-top: 4px;
+  opacity: 1;
+}
+
+.menu-btn .menu:nth-child(3) {
+  margin-top: 4px;
+}
+
+.menu__button_container {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 60px;
+  @include Mobile {
+    flex-direction: column;
+  }
+}
+
+.menu__button_red {
+  width: 270px;
+  height: 60px;
+  background: #cd4d31;
+
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+
+  /* identical to box height, or 16px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #f1f5f4;
+
+  justify-content: center;
+}
+
+.menu__button_transparent {
+  border: 1px solid #f1f5f4;
+  box-sizing: border-box;
+  width: 270px;
+  height: 60px;
+
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+
+  /* identical to box height, or 16px */
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* t */
+  color: #f1f5f4;
+
+  justify-content: center;
+
+  margin-left: 30px;
+  @include Mobile {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+.button--hover {
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    box-shadow: 1px 3px 4px 3px rgb(85, 85, 105);
+  }
+}
+
+.image--hover {
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
