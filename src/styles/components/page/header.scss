@@ -1,0 +1,139 @@
+.header {
+  position: relative;
+
+  padding: 180px 0 180px;
+
+  color: $c-white;
+
+  @include onMobile {
+    padding: 160px 0 100px;
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    animation: slide-in-from-left #{$animation-duration * 3} ease-out;
+  }
+
+  &__date {
+    @include main-text;
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include style-1;
+
+    &--1 {
+      margin-bottom: 10px;
+    }
+
+    &--2 {
+      margin-bottom: 40px;
+
+      @include onMobile {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__paragraph {
+    @include main-text;
+
+    margin-bottom: 60px;
+
+    @include onTablets {
+      margin-bottom: 80px;
+    }
+
+    @include onMobile {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__short-date {
+    @include caption-small;
+
+    position: absolute;
+    bottom: 52px;
+
+    display: flex;
+    align-items: center;
+
+    color: $c-white-transparent;
+
+    transition: color $animation-duration ease-in-out;
+
+    &:hover {
+      color: $c-white;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: 100px;
+
+      width: 500px;
+      height: 1px;
+
+      background-color: $c-white-transparent;
+    }
+  }
+
+  &__short-date-text {
+    flex-shrink: 0;
+
+    user-select: none;
+  }
+
+  &__illustration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    
+    width: 660px;
+
+    animation: slide-in-from-right #{$animation-duration * 3} ease-out;
+
+    @include onTablets {
+      width: 380px;
+    }
+
+    @include onMobile {
+      transform: translateX(120px);
+    }
+
+    @media (max-width: 440px) {
+      transform: translateX(200px);
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__illustration-caption {
+    @include main-text;
+
+    position: absolute;
+    left: 487px;
+    top: 386px;
+
+    user-select: none;
+  }
+}

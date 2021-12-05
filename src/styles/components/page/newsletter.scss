@@ -1,0 +1,90 @@
+.newsletter {
+  padding: 160px 0;
+
+  background-color: $c-orange;
+  color: $c-white;
+
+  @include onTablets {
+    padding: 110px 0 120px;
+  }
+
+  @include onMobile {
+    padding: 80px 0;
+  }
+
+  &__title {
+    @include h1;
+
+    margin-bottom: 40px;
+  }
+
+  &__info {
+    @include main-text;
+
+    @include onTablets {
+      margin-bottom: 60px;
+    }
+    
+    @include onMobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__input-field {
+    @include main-text;
+
+    align-self: flex-end;
+    flex-grow: 1;
+    padding: 0 8px 0 4px;
+    border: 0;
+    border-bottom: 1px solid $c-white;
+    border-radius: 0;
+    
+    color: $c-white;
+    background-color: transparent;
+    outline: 0;
+
+    &::placeholder {
+      color: inherit;
+      opacity: 1;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover, 
+    &:-webkit-autofill:focus, 
+    &:-webkit-autofill:active {
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: $c-white;
+    }
+
+    &:-webkit-autofill::first-line {
+      @include main-text;
+    }
+  }
+
+  &__sumbit-btn {
+    @extend %background-base;
+
+    width: 46px;
+    height: 46px;
+    border: 1px solid $c-white;
+    border-radius: 50%;
+
+    background-color: transparent;
+    background-image: url(../images/newsletter/submit-arrow.svg);
+
+    transition: background-position $animation-duration ease-in-out;
+    
+    cursor: pointer;
+
+    &:hover {
+      background-position: 14px center;
+    }
+  }
+}
