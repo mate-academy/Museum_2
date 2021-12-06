@@ -1,0 +1,107 @@
+.menu {
+  background-color: #3f5252;
+  height: max-content;
+
+  @include onTablet {
+    height: max-content;
+  }
+
+  @include onDeskTop {
+    min-height: 688px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    padding: 20px 20px 0;
+
+    @include onTablet {
+      padding: 26px 40px 0;
+    }
+
+    @include onDeskTop {
+      padding: 32px 56px 0;
+    }
+  }
+
+  &__top-second {
+    margin-bottom: 30px;
+  }
+
+  &__language {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #fff;
+    text-transform: uppercase;
+    align-self: center;
+    padding-top: 5px;
+
+    &::after {
+      display: block;
+      content: url(../images/Union.png);
+      width: 8px;
+      height: 4px;
+      transform: translate(350%, -700%);
+      cursor: pointer;
+    }
+  }
+
+  &__list {
+    padding-left: 0;
+  }
+
+  &__item {
+    font-family: Playfair Display, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    list-style-type: none;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+      padding-bottom: 30px;
+    }
+
+    @include onDeskTop {
+      font-size: 48px;
+      line-height: 120%;
+      padding-bottom: 40px;
+    }
+
+    &:last-child {
+      padding-bottom: 40px;
+
+      &::after {
+        display: block;
+        content: "";
+        min-width: 280px;
+        height: 1px;
+        transform: translateY(40px);
+
+        background-color: $colorTextWhite;
+
+        @include onTablet {
+          width: 550px;
+        }
+
+        @include onDeskTop {
+          width: 570px;
+          opacity: 0.3;
+          transform: translateY(60px);
+        }
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $colorTextWhite;
+  }
+}
