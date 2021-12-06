@@ -1,0 +1,175 @@
+.nav {
+  background-color: $color-green;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+  transition: transform $transition-duration;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 55px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include onMobile {
+      padding: 20px 20px 80px;
+    }
+
+    &-icon {
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-menu {
+      padding: 5px 10px;
+    }
+
+    &-lang {
+      padding: 5px 10px;
+      color: $color-white;
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      font-weight: 500;
+    }
+  }
+
+  &__info {
+    display: flex;
+    margin: 0 0 80px;
+
+    @include onMobile {
+      display: none;
+    }
+
+    &-block {
+      display: flex;
+      flex-direction: column;
+      padding: 0 60px 0 0;
+    }
+
+    &-name {
+      font-family: "Raleway", sans-serif;
+      font-weight: 200;
+      font-size: 14px;
+      line-height: 20px;
+      color: $color-white;
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: translateX(5%);
+      }
+    }
+
+    &-text {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-white;
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: translateX(5%);
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 570px;
+      height: 1px;
+      background-color: $color-white;
+      opacity: 0.3;
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 60px;
+    transition: transform $transition-duration;
+    
+    &:hover {
+      transform: translateX(2%);
+    }
+
+    &-link {
+      font-family: "Playfair Display", sans-serif;
+      font-size: 48px;
+      line-height: 120%;
+      color: $color-white;
+
+      @include onMobile {
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    padding: 60px 0 108px;
+
+    @include onMobile {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0 72px;
+    }
+
+    &-buy {
+      margin-right: 30px;
+      transition: all $transition-duration;
+
+      @include onMobile {
+        margin: 0 0 20px;
+      }
+
+      &:hover {
+        background-color: #2f3b3b;
+        border: 1px solid $color-white;
+      }
+    }
+
+    &-partner {
+      background-color: $color-green;
+      border: 1px solid $color-white;
+      transition: all $transition-duration;
+
+      &:hover {
+        background-color: #2f3b3b;
+        border: 1px solid $color-white;
+      }
+    }
+  }
+
+  &__image {
+    max-height: 700px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

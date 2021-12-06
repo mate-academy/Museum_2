@@ -1,0 +1,174 @@
+.header {
+  background-color: $color-green;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 55px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include onMobile {
+      padding: 20px 20px 80px;
+    }
+
+    &-logo {
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-menu {
+      padding: 5px 10px;
+      transition: transform $transition-duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &-lang {
+      padding: 5px 10px;
+      color: $color-white;
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      font-weight: 500;
+    }
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-white;
+
+    &--date {
+      margin: 0 0 10px;
+
+      @include onMobile {
+        margin: 0 0 20px;
+      }
+    }
+
+    &--description {
+      margin: 0 0 60px;
+      grid-column: 2 / 4;
+
+      @include onTablet {
+        margin: 0 0 80px;
+      }
+
+      @include onMobile {
+        grid-column: 1 / 2;
+        margin: 0 0 50px;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 96px;
+    line-height: 100%;
+    color: $color-white;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 100%;
+    }
+
+    @include onMobile {
+      font-size: 48px;
+      line-height: 100%;
+    }
+
+    &--top {
+      margin: 0 0 10px;
+
+      @include onTablet {
+        margin: 0;
+      }
+    }
+
+    &--bottom {
+      margin: 0 0 40px;
+      grid-column: 2 / 8;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+
+      @include onMobile {
+        margin: 0 0 30px;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0 0 110px;
+    grid-column: 2 / 4;
+    transition: all $transition-duration;
+
+    @include onMobile {
+      grid-column: 1 / 2;
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: #2f3b3b;
+      border: 1px solid $color-white;
+    }
+  }
+
+  &__decoration {
+    position: relative;
+    color: $color-white;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 14px;
+    line-height: 125%;
+    padding: 0 0 52px;
+    margin: 0;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      transform: translate(20%, -6px);
+      width: 500px;
+      height: 1px;
+      opacity: 0.3;
+      background-color: $color-white;
+    }
+  }
+
+  &__image {
+    max-height: 700px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    object-position: 50px 0;
+
+    @include onTablet {
+      max-height: 450px;
+      max-width: 400px;
+    }
+
+    @include onMobile {
+      max-height: 180px;
+      max-width: 180px;
+    }
+  }
+}
