@@ -3,6 +3,8 @@ Implement landing page according to [Figma design](https://www.figma.com/file/HL
 
 Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
 
+- [DEMO LINK](https://jhesher.github.io/Museum_2/)
+
 - Large screens 2560px
 - Full HD 1920px
 - The design 1600px
