@@ -1,0 +1,63 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    font-family: Raleway, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__section {
+    &--margin-bottom--90 {
+      margin-bottom: 90px;
+    }
+
+    &--margin-bottom--120 {
+      margin-bottom: 120px;
+    }
+
+    &--theme--dark {
+      background-color: $c-background;
+    }
+
+    &-title {
+      margin-bottom: 60px;
+
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 35px;
+      color: $c-black;
+
+      @include onTablet {
+        margin-bottom: 75px;
+
+        font-size: 40px;
+        line-height: 50px;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+        line-height: 58px;
+      }
+
+      &--subscribe {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

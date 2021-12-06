@@ -1,0 +1,41 @@
+.button {
+  display: block;
+  height: 60px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  font-weight: bold;
+
+  &--mobile {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--primary {
+    color: #f1f5f4;
+    background-color: $c-red;
+
+    &--submit {
+      border: none;
+      padding: 0;
+      width: 100%;
+      font-family: Raleway, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+  }
+
+  &--secondary {
+    border: 1px solid $c-red;
+    color: $c-red;
+    background-color: #fff;
+  }
+}
