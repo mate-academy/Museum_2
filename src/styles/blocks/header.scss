@@ -21,29 +21,21 @@
 
   &__title {
     margin: 0;
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 100%;
+    @extend %h1;
     color: $colorWhite;
     margin-bottom: 40px;
 
     @include onTablet {
-      font-size: 72px;
       margin-bottom: 48px;
     }
 
     @include onDesktop {
-      font-size: 96px;
       margin-bottom: 80px;
     }
 
     &::before {
       content: "10 серпня - 10 листопада";
-      font-family: "Raleway", sans-serif;
-      font-weight: normal;
-      font-size: 14px;
-      line-height: 140%;
+      @extend %additional;
 
       display: block;
       margin-bottom: 8px;
@@ -51,11 +43,9 @@
 
     &::after {
       content: "Внесок українських митців у світову культуру 19-20 ст.";
+      @extend %main;
+
       display: block;
-      font-family: "Raleway", sans-serif;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 150%;
       margin-top: 28px;
     }
   }
@@ -64,10 +54,8 @@
     display: none;
     width: fit-content;
     margin-right: 20px;
-    font-family: "Playfair Display", serif;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 125%;
+
+    @extend %h6;
     color: $colorWhite;
 
     &::after {
