@@ -1,19 +1,39 @@
 .icon {
-  display: block;
   width: 25px;
   height: 20px;
 
-  &--menu {
-    background-image: url(../images/icons/menu.svg);
-    // background-size: contain;
-    // background-position: center;
+  &--burger {
+    justify-self: end;
+    grid-row: 1 / 1;
+
+    background: url(../images/icons/menu.svg);
+
+    @include onTablet {
+      justify-self: start;
+      transform: translateX(-50%);
+    }
+
+    @include onDesktop {
+      transform: translateX(-100%);
+    }
 
     &:hover {
-      // height: 22px;
-      background-image: url(../images/icons/cross.svg);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
+      background: url(../images/icons/cross.svg) center no-repeat;
     }
+  }
+
+  &--cross {
+    justify-self: end;
+    grid-row: 1 / 1;
+
+    width: 25px;
+    height: 20px;
+
+    @include onTablet {
+      justify-self: start;
+      transform: translateX(-50%);
+    }
+
+    background: url(../images/icons/cross.svg) center no-repeat;
   }
 }
