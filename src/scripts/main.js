@@ -19,3 +19,11 @@ window.addEventListener('hashchange', () => {
     };
   }
 });
+
+const form = document.querySelector('.subscribe__form');
+const input = document.querySelector('.subscribe__form-field');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  input.value = '';
+});
