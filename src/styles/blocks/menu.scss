@@ -5,15 +5,20 @@
     background-image: url(../images/header-2.png);
     background-repeat: no-repeat;
     background-position: bottom;
+    background-size: 55vh;
+    height: auto;
   }
 
   @include onDesktop {
+    height: 100vh;
     background-position: bottom right;
-    background-size: 40vw;
+    background-size: 80vh;
   }
 
   &__content {
-    height: 100vh;
+    @include onTablet {
+      height: 100vh;
+    }
   }
 
   &__info {
@@ -26,7 +31,12 @@
     line-height: 20px;
 
     @include onTablet {
+      margin: 100px 0 50px;
       flex-direction: row;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
     }
 
     &--bold {
@@ -40,6 +50,14 @@
     margin-bottom: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid $c-gray;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
   }
 
   &__item {
@@ -47,6 +65,14 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
     }
   }
 
@@ -57,5 +83,10 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 30px;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
   }
 }

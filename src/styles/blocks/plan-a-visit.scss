@@ -1,13 +1,13 @@
 .plan-a-visit {
-  padding: 50px 0;
+  padding: 50px 20px;
 
   @include onTablet {
-    padding: 80px 0;
+    padding: 80px 40px;
   }
 
   @include onDesktop {
-    display: flex;
-    padding: 204px 0;
+    height: 100vh;
+    padding: 0;
   }
 
   &__title {
@@ -37,14 +37,26 @@
     line-height: 24px;
   }
 
-  &__img {
-    display: none;
+  &__content {
+    @include onTablet {
+      width: 500px;
+    }
 
     @include onDesktop {
-      display: block;
+      width: 610px;
+      padding: 30vh 0;
     }
+
   }
-  &__content {
-    display: flex;
+
+  &__background {
+    @include onDesktop {
+      height: 100vh;
+      width: 620px;
+      background-image: url(../images/plan-a-visit.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left;
+    }
   }
 }
