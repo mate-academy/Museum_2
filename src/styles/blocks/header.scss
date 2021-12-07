@@ -1,0 +1,95 @@
+.header {
+  background-image: url(../images/header_image.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-color: $colorBG;
+
+  @include onDesktop {
+    background-size: auto 90%;
+    background-position: bottom right;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 0 300px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+    color: $colorWhite;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      font-size: 72px;
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      margin-bottom: 80px;
+    }
+
+    &::before {
+      content: "10 серпня - 10 листопада";
+      font-family: "Raleway", sans-serif;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 140%;
+
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    &::after {
+      content: "Внесок українських митців у світову культуру 19-20 ст.";
+      display: block;
+      font-family: "Raleway", sans-serif;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 150%;
+      margin-top: 28px;
+    }
+  }
+
+  &__dates {
+    display: none;
+    width: fit-content;
+    margin-right: 20px;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 125%;
+    color: $colorWhite;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 460px;
+      opacity: 0.3;
+      background-color: $colorWhite;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      margin-bottom: 2em;
+    }
+  }
+}

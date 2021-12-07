@@ -1,0 +1,128 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 20px 0;
+  background-color: $colorBG;
+  color: $colorWhite;
+
+  @include onTablet {
+    background-image: url(../images/img_menu.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/img_menu.png);
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+
+  &__top {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__timetable {
+    display: block;
+    width: max-content;
+    margin-bottom: 20px;
+
+    font-family: "Raleway", sans-serif;
+
+    &--name {
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &--time {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__adress {
+    display: block;
+    width: max-content;
+    margin-bottom: 40px;
+
+    font-family: "Raleway", sans-serif;
+
+    &--name {
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &--link {
+      font-size: 16px;
+      line-height: 150%;
+      color: $colorWhite;
+      text-decoration: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    border-bottom: 1px solid $colorWhite;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    color: $colorWhite;
+    text-decoration: none;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $colorWhite;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+}
