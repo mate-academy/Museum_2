@@ -26,14 +26,78 @@
     right: 0;
 
     transform: translateX(-100%);
-    transition: transform 0.3s;
+    transition: transform 0.8s;
 
     &:target {
       transform: translateX(0);
     }
 
-    // &:target + main {
-    //   visibility: hidden;
-    // }
+    &:target + main {
+      visibility: hidden;
+    }
+  }
+
+  &__section-top {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__section-title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 35px;
+    color: $c-black;
+
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__section-cards {
+    display: block;
+    gap: 30px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      display: flex;
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__section-cards--events {
+    display: block;
+    gap: 30px;
+  }
+
+  &__section-card {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
   }
 }

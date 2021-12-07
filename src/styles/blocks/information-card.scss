@@ -1,5 +1,19 @@
-.exhibition {
+.information-card {
   display: block;
+  width: 100%;
+
+  &--events {
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 30px
+    }
+  }
 
   &__image-container {
     position: relative;
@@ -10,11 +24,20 @@
     height: 356px;
     overflow: hidden;
 
-    // &::after {
-    //   content: "";
-    //   display: block;
-    //   padding-bottom: 100%;
-    // }
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+
+    &--events {
+      @include onDesktop {
+        max-width: 370px;
+        max-height: 475px;
+      }
+    }
   }
 
   &__image {
@@ -24,6 +47,10 @@
 
     object-fit: cover;
     object-position: center;
+  }
+
+  &__title-caontainer {
+    width: 100%;
   }
 
   &__subtitle {
@@ -41,6 +68,14 @@
     font-size: 20px;
     line-height: 25px;
     color: $c-black;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
   }
 
   &__text {
