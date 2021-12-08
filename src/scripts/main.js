@@ -9,10 +9,12 @@ window.addEventListener('hashchange', () => {
 });
 
 const form = document.querySelector('.subscription__form');
-const input = document.querySelectorAll('.subscription__form-field');
+const inputs = document.querySelectorAll('.subscription__form-field');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  input.value = '';
+  for (const input of inputs) {
+    input.value = '';
+  }
 });
