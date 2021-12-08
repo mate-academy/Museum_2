@@ -1,16 +1,45 @@
 .main-event {
-  // max-height: 100%;
+  // width: 1700px;
 
   &__date {
     font-size: 14px;
     line-height: 140%;
+
+    &--numbers {
+      width: 20%;
+      // grid-row: 5 / 6;
+      margin-right: 20px;
+
+      font-family: "Playfair Display", serif;
+      font-size: 14px;
+      line-height: 125%;
+      opacity: 0.7;
+    }
+  }
+
+  &__date-line {
+    display: none;
+    grid-row: 4 / 5;
+    margin-bottom: 56px;
+    align-self: end;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__line {
+    width: 80%;
+    height: 1px;
+    background-color: $c-white;
+    opacity: 0.3;
   }
 
   &__title {
     margin-top: 10px;
 
-    font-family: "Playfair Display", "Times New Roman", serif;
-    // font-weight: bold;
+    font-family: "Playfair Display", serif;
     font-size: 48px;
     line-height: 100%;
 
@@ -29,25 +58,42 @@
     line-height: 150%;
   }
 
-  &__button {
-    margin-right: auto;
-  }
+  // &__button {
+
+  // }
 
   &__image {
-    width: 100%;
     margin-top: 40px;
+
+    // width: 625px;
+    // height: 708px;
+    // height: 100%;
+    width: 100%;
+    object-position: bottom;
+    object-fit: contain;
+
+    @include onTablet {
+      width: 625px;
+      // height: 708px;
+    }
+
+    @include onDesktop {
+      grid-row: 1 / 5;
+      // margin-top: 0;
+      // height: 100%;
+    }
   }
 
   &__buy {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    grid-row: 4 / 5;
     margin-top: 40px;
-  }
 
-  &__wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include onDesktop {
+      align-self: start;
+      margin-bottom: 50%;
+    }
   }
 }
