@@ -6,25 +6,33 @@
   color: $c-white;
 
   &__title {
-    display: block;
     margin-bottom: 10px;
 
     font-family: "Playfair Display", "Times New Roman", serif;
     font-weight: bold;
     font-size: 20px;
     line-height: 30px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
   }
 
   &__description {
     margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
   }
 
   &__socials {
     margin-bottom: 50px;
-    display: flex;
-    gap: 20px;
-    &-link {
-      text-decoration: none;
+
+    @include onTablet {
+      margin-bottom: 70px;
     }
   }
 
@@ -40,10 +48,6 @@
   }
 
   &__top-arrow {
-    position: absolute;
-    bottom: 30px;
-    right: 20px;
-
     @include onTablet {
       right: 40px;
     }
@@ -54,6 +58,8 @@
   }
 
   &__additional-info {
-    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

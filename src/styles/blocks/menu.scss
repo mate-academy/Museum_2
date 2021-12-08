@@ -2,21 +2,34 @@
   background-color: $c-background;
   overflow-y: auto;
   height: 100vh;
-  z-index: 1;
+  overflow: hidden;
+
+  @include onDesktop {
+    height: 800px;
+  }
 
   &__content {
-    margin-top: 10px;
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      height: 760px;
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__text-field {
+    margin-top: 10px;
 
     @include onTablet {
       margin-top: 30px;
     }
 
     @include onDesktop {
-      // margin-top: 56px;
-      flex-direction: row;
-      justify-content: space-between;
+      margin-top: 56px;
     }
   }
 
@@ -90,7 +103,6 @@
     visibility: hidden;
 
     @include onTablet {
-      margin-top: 30px;
       visibility: visible;
       align-self: center;
       width: 422px;
@@ -98,7 +110,6 @@
     }
 
     @include onDesktop {
-      margin-top: 0;
       width: 624px;
       height: 697px;
     }
