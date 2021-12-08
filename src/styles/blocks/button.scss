@@ -1,10 +1,17 @@
 .button {
   display: block;
+  position: relative;
   height: 60px;
   text-decoration: none;
   text-align: center;
   line-height: 60px;
   font-weight: bold;
+
+  &__arrow {
+    width: 20px;
+    height: 20px;
+    transform: translate(10px, 4px);
+  }
 
   &--mobile {
     @include onTablet {
@@ -31,12 +38,40 @@
       font-family: Raleway, Helvetica, sans-serif;
       font-size: 16px;
     }
+
+    &--disabled {
+      background: #dd836f;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
   }
 
   &--secondary {
     border: 1px solid $c-red;
     color: $c-red;
     background-color: #fff;
+
+    &--disabled {
+      background: #dd836f;
+      pointer-events: none;
+    }
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+    }
+
+    &:active {
+      color: #ea340d;
+      border-color: #ea340d;
+    }
   }
 
   @include onTablet {

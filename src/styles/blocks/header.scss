@@ -1,29 +1,33 @@
 .header {
-  height: 100vh;
-  color: $c-gray;
-  overflow: hidden;
-  position: relative;
+  color: $c-white;
+  background-color: $c-background;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   &__content {
-    @include onTablet {
-      height: 100vh;
-    }
+    margin-top: 50px;
 
-    margin: 60px 0 40px;
+    display: flex;
+    flex-direction: column;
 
     @include onTablet {
-      margin: 100px 0 50px;
-      width: 550px;
+      margin-top: 100px;
     }
 
     @include onDesktop {
-      margin: 25vh 0 80px;
+      margin-top: 90px;
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 
   &__date {
     display: block;
-    color: $c-gray;
+    color: $c-white;
     line-height: 20px;
     margin-bottom: 10px;
   }
@@ -39,6 +43,7 @@
     @include onTablet {
       font-size: 72px;
       line-height: 72px;
+      width: 550px;
     }
 
     @include onDesktop {
@@ -62,10 +67,9 @@
   }
 
   &__exhibition-duration {
-    position: absolute;
+    position: relative;
+    margin-bottom: 80px;
     display: none;
-    bottom: 50px;
-    left: 55px;
     font-size: 14px;
     line-height: 17px;
     opacity: 0.7;
@@ -76,13 +80,13 @@
   }
 
   &__divider {
-    position: absolute;
+    position: relative;
     display: none;
-    bottom: 58px;
-    left: 156px;
+    bottom: 8px;
+    left: 110px;
     height: 1px;
-    width: 25vw;
-    background: $c-gray;
+    width: 80%;
+    background: $c-white;
     opacity: 0.3;
 
     @include onDesktop {
@@ -90,20 +94,22 @@
     }
   }
 
-  background-color: #3f5252;
-  background-image: url(../images/header.png);
-  background-size: contain;
-  background-position: bottom;
-  background-repeat: no-repeat;
+  &__image {
+    margin-top: 40px;
+    width: 245px;
+    height: 273px;
+    align-self: center;
 
-  @include onTablet {
-    background-size: 55vh;
-    height: auto;
-  }
+    @include onTablet {
+      margin-top: 70px;
+      width: 443px;
+      height: 494px;
+    }
 
-  @include onDesktop {
-    height: 100vh;
-    background-position: bottom right;
-    background-size: 80vh;
+    @include onDesktop {
+      margin-top: 0;
+      width: 625px;
+      height: 663px;
+    }
   }
 }

@@ -1,37 +1,36 @@
 .menu {
-  background-color: #3f5252;
-
-  @include onTablet {
-    background-image: url(../images/header-2.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: 55vh;
-    height: auto;
-  }
-
-  @include onDesktop {
-    height: 100vh;
-    background-position: bottom right;
-    background-size: 80vh;
-  }
+  background-color: $c-background;
+  overflow-y: auto;
+  height: 100vh;
+  z-index: 1;
 
   &__content {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
     @include onTablet {
-      height: 100vh;
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      // margin-top: 56px;
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 
   &__info {
-    margin: 30px 0 40px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    color: $c-gray;
+    color: $c-white;
     font-size: 14px;
     line-height: 20px;
 
     @include onTablet {
-      margin: 100px 0 50px;
+      margin-bottom: 50px;
       flex-direction: row;
     }
 
@@ -49,14 +48,11 @@
   &__list {
     margin-bottom: 40px;
     padding-bottom: 40px;
-    border-bottom: 1px solid $c-gray;
+    border-bottom: 1px solid $c-white;
 
     @include onTablet {
       margin-bottom: 50px;
-    }
-
-    @include onTablet {
-      margin-bottom: 60px;
+      padding-bottom: 60px;
     }
   }
 
@@ -79,7 +75,7 @@
   &__link {
     text-decoration: none;
     font-family: "Playfair Display", "Times New Roman", serif;
-    color: $c-gray;
+    color: $c-white;
     font-weight: bold;
     font-size: 20px;
     line-height: 30px;
@@ -87,6 +83,24 @@
     @include onTablet {
       font-size: 48px;
       line-height: 58px;
+    }
+  }
+
+  &__image {
+    visibility: hidden;
+
+    @include onTablet {
+      margin-top: 30px;
+      visibility: visible;
+      align-self: center;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+      width: 624px;
+      height: 697px;
     }
   }
 }

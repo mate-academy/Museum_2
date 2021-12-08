@@ -1,7 +1,35 @@
 .subscribe {
+  &__content {
+
+    &-container {
+      @include onTablet {
+        width: 570px;
+      }
+    }
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__description {
     color: $c-black;
     margin-bottom: 50px;
+
+    &--mobile-and-tablet {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        width: 570px;
+      }
+    }
   }
 
   &__field {
@@ -13,12 +41,38 @@
     outline: none;
     border: none;
     border-bottom: 1px solid $c-black;
+    color: $c-black;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+      width: 470px;
+    }
+
+    &:hover {
+      border-color: #cd4d31;
+    }
+
+    &:focus {
+      color: #cd4d31;
+      border-color: #cd4d31;
+    }
 
     &::placeholder {
       font-family: Raleway, Helvetica, sans-serif;
       font-size: 16px;
       line-height: 24px;
       color: $c-black;
+    }
+
+    &:hover::placeholder {
+      color: #cd4d31;
     }
   }
 }
