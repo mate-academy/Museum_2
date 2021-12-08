@@ -7,13 +7,64 @@
 @import "../styles/blocks/menu.scss";
 @import "../styles/blocks/text.scss";
 @import "../styles/blocks/current-exhibition.scss";
+@import "../styles/blocks/visit.scss";
 
 .block {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+
+  &__dev {
+    flex-direction: row;
+    width: 800px;
+  }
 }
 
 .cont {
-  display: flex;
+
+  &__photo-container {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+
+    @include onTablet {
+      margin-top: 75px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.image {
+  &--no-on-big-screen {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--yes-on-big-screen {
+    @include onTablet {
+      display: block;
+
+    }
+  }
+  &--no-on-phone {
+    @include onPhone {
+      display: none;
+    }
+  }
+}
+
+.big-screen {
+  @include onTablet {
+    margin-top: 76px;
+  }
+  @include onDesktop {
+    margin-top: 70px;
+  }
 }
