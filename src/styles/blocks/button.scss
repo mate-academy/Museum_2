@@ -14,7 +14,15 @@
   color: $c-white;
 
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $c-orangeHover;
+  }
+
+  &:active {
+    background-color: $c-orangePresed;
+  }
 
   &--secondary {
     display: flex;
@@ -33,6 +41,7 @@
     color: $c-orangeDefault;
 
     cursor: pointer;
+    transition: color 0.3s;
 
     &::after {
       content: url(../images/svg/arrow__right--default.svg);
@@ -41,6 +50,16 @@
       top: 4px;
       left: 10px;
       align-items: center;
+    }
+
+    &:hover {
+      color: $c-orangeHover;
+      border-color: $c-orangeHover;
+    }
+
+    &:active {
+      color: $c-orangePresed;
+      border-color: $c-orangePresed;
     }
   }
 
@@ -61,7 +80,7 @@
   &--desktop {
     width: 100%;
     margin-bottom: 120px;
-    
+
     @include onTablet {
       display: none;
     }

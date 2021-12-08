@@ -3,6 +3,13 @@
   width: 100%;
 
   &--events {
+    &:first-child {
+      @include onMobile {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+
     @include onTablet {
       display: flex;
       gap: 30px;
@@ -33,6 +40,7 @@
     }
 
     &--events {
+
       @include onDesktop {
         max-width: 370px;
         max-height: 475px;
@@ -47,6 +55,12 @@
 
     object-fit: cover;
     object-position: center;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__title-caontainer {
@@ -57,6 +71,11 @@
     display: block;
     color: $c-orangeDefault;
     margin-bottom: 10px;
+
+    &--news {
+      color: $c-gray;
+      margin-bottom: 0;
+    }
   }
 
   &__title {
@@ -81,5 +100,15 @@
   &__text {
     color: $c-darkGreen;
     margin-bottom: 40px;
+
+    &--news {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      width: 50%;
+    }
   }
 }
