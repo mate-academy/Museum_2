@@ -1,0 +1,193 @@
+.menu {
+  background-color: $c-green;
+
+  &__container {
+    @extend %max-width-page-content;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu-lang {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__right {
+    margin-right: 30px;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+  
+  &__lang {
+    color: #f1f5f4;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+  }
+
+  &__lang-icon {
+    margin-left: 3px;
+    width: 8px;
+  }
+
+  &__icon-cross {
+    background-image: url(../images/menu-cross.svg);
+
+    display: block;
+
+    width: 25px;
+    height: 20px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: all $transition-duration;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  
+  &__content-container {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin: auto;
+    height: 100%;
+
+    padding: 40px 0;
+
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    margin: 0 0 40px;
+
+    &:last-child {
+      margin-bottom: 80px;
+    }
+  }
+  
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    align-items: center;
+    color: #f1f5f4;
+    transition: all $transition-duration;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+
+  &__about-container {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__about {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: #f1f5f4;
+  }
+
+  &__about-item {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+  }
+
+  &__container-buttons {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 24px;
+      border-top: 1px solid #f1f5f4;
+      padding-top: 60px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      flex-direction: row;
+      gap: 30px;
+      padding-bottom: 100px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      max-width: 50%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

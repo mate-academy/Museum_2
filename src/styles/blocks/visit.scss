@@ -1,0 +1,91 @@
+.visit {
+  background-color: #3f5252;
+  position: relative;
+
+  &__container {
+    height: 100vh;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @extend %max-width-page-content;
+
+    @include onTablet {
+      margin-left: 100px;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      gap: 60px;
+    }
+
+    @include onDesktop {
+      margin-left: 600px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+    color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      margin-right: 100px;
+    }
+  }
+
+  &__about {
+    margin: 0;
+
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+
+    @include onTablet {
+      max-width: 370px;
+    }
+
+    @include onDesktop {
+      max-width: 470px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      width: 258px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      max-height: 431px;
+      bottom: 0;
+      left: 0;
+    }
+
+    @include onDesktop {
+      max-height: 100%;
+    }
+  }
+
+  &__image {
+    display: block;
+  }
+}
