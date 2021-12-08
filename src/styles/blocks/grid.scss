@@ -3,11 +3,6 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
 
-  @include onTablet {
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 30px;
-  }
-
   @include onDesktop {
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
@@ -17,10 +12,6 @@
     display: block;
 
     @include onDesktop {
-      display: grid;
-    }
-
-    @include onTablet {
       display: grid;
     }
   }
@@ -34,10 +25,6 @@
 
         &--non-mobile-#{$start}--#{$end} {
           @include onDesktop {
-            grid-column: #{$start} / #{$end + 1};
-          }
-
-          @include onTablet {
             grid-column: #{$start} / #{$end + 1};
           }
         }

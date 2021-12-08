@@ -4,8 +4,50 @@
   &__card {
     margin-bottom: 60px;
 
-    &:last-child {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--last {
       margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+
+    &--container {
+      @include onDesktop {
+        height: 472px;
+        width: 372px;
+      }
+
+      &--one {
+        @include onDesktop {
+          order: 1;
+        }
+      }
+    }
+
+    &--content {
+      &--two {
+        @include onDesktop {
+          justify-items: flex-end;
+        }
+      }
+    }
+
+    &--button {
+      @include onDesktop {
+        width: 40%;
+      }
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      transform: translateY(-1940%);
     }
   }
 }

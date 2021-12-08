@@ -1,12 +1,20 @@
 .subscribe {
   padding: 120px 0 80px;
 
+  @include onDesktop {
+    padding: 200px 0;
+  }
+
   &__title {
     display: block;
     margin-bottom: 20px;
 
     @extend %h3;
     color: $colorBlack;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
   }
 
   &__text {
@@ -14,6 +22,11 @@
     margin-bottom: 50px;
 
     @extend %main;
+
+    @include onDesktop {
+      padding-top: 10px;
+      margin-bottom: 0;
+    }
   }
 
   &__email {
@@ -25,6 +38,7 @@
 
     @extend %main;
     font-weight: bold;
+    background-color: #e5e5e5;
 
     border: none;
     border-bottom: 1px solid $colorBlack;
@@ -49,6 +63,14 @@
       &::placeholder {
         visibility: hidden;
       }
+    }
+  }
+
+  &__button {
+    border: none;
+
+    @include onDesktop {
+      width: 60%;
     }
   }
 }
