@@ -1,7 +1,139 @@
 @import "utils";
-@import "fonts";
 @import "typography";
+@import "./utils/variables";
+@import "./blocks/page.scss";
+@import "./utils/mixins";
+@import "./blocks/button.scss";
 
-body {
-  background: $c-gray;
+.nav {
+  // background-color: green;
+}
+
+.container {
+  padding: 20px 20px 0;
+}
+
+.header {
+  color: $c-white;
+  background-color: $c-background;
+
+  position: relative;
+
+  &__top {
+    margin-bottom: 70px;
+  }
+
+  &__date {
+    font-family: "Raleway", serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 400%;
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+
+    margin: 0 0 30px;
+  }
+
+  &__info {
+    font-family: "Raleway", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    margin: 0 0 40px;
+  }
+
+  &__button {
+    height: 60px;
+    margin: 0 0 40px;
+  }
+
+  &__date-small {
+    display: none;
+  }
+
+  &__line {
+    display: none;
+  }
+
+  &__picture {
+    height: 273px;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  // &__logo {
+  //   height: 40px;
+  //   width: 123px;
+  // }
+
+  // &__menu-opener {
+  //   height: 30px;
+  // }
+
+  &__right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+
+    @include desktop(768px) {
+      gap: 40px;
+    }
+  }
+
+  &__lang {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 34px;
+
+    font-family: "Raleway", serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #f1f5f4;
+
+    &--main {
+      visibility: hidden;
+    }
+
+    @media (min-width: 768px) {
+      order: 1;
+
+      &--main {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__menu-opener {
+    &--main {
+      order: 1;
+
+      @media (min-width: 768px) {
+        order: 0;
+      }
+    }
+  }
 }
