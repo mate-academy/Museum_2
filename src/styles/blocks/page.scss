@@ -1,21 +1,10 @@
 .page {
   font-family: "Raleway", serif;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 
   &__body {
     background: $c-gray;
-  }
-
-  &__header {
-    height: 747px;
-
-    @include desktop(768px) {
-      height: 1092px;
-    }
-
-    @include desktop(1280px) {
-      height: 820px;
-    }
   }
 
   &__container {
@@ -23,5 +12,41 @@
 
     min-width: 320px;
     max-width: 1170px;
+  }
+
+  &__header {
+    height: 780px;
+
+    @include desktop(768px) {
+      height: 1092px;
+    }
+
+    @include desktop(1280px) {
+      height: 800px;
+    }
+  }
+
+  &__menu {
+    height: 780px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include desktop(768px) {
+      height: 1092px;
+    }
+
+    @include desktop(1280px) {
+      height: 800px;
+    }
   }
 }
