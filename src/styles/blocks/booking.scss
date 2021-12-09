@@ -1,0 +1,88 @@
+.booking {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: $minScreenWidth;
+  padding: 80px 20px;
+
+  @include onTablet {
+    position: relative;
+    padding: 0;
+  }
+  @include onDesktop {
+    padding: 190px 0 160px;
+  }
+
+  &__photo {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @include onTablet {
+      display: inline-block;
+      height: 60%;
+    }
+    @include onDesktop {
+      height: 800px;
+      display: flex;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 100%;
+    color: $c-gray;
+
+    @include onTablet {
+      font-size: 72px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      font-size: 96px;
+      align-self: flex-start;
+    }
+  }
+
+  &__wrapper {
+
+    @include onTablet {
+      display: flex;
+      padding: 100px 120px 170px;
+      flex-direction: column;
+      align-self: flex-end;
+    }
+    @include onDesktop {
+      max-width: 60%;
+      padding: 0;
+    }
+  }
+
+  &__info-wrapper {
+
+    @include onTablet {
+      width: 370px;
+      align-self: flex-end;
+    }
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+  &__info {
+    margin-bottom: 60px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray;
+
+    @include onDesktop {
+      max-width: 50%;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.event {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 60px;
+  align-self: center;
+
+  @include onTablet {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  @include onDesktop {
+    padding: 0 100px 77px;
+  }
+
+  &__details {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+  }
+
+  &__date {
+    display: none;
+    margin-right: 20px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-orng;
+
+    @include onTablet {
+      display: block;
+    }
+
+  }
+
+  &__day {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 100%;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+
+  }
+
+  &__time {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    color: $c-orng;
+
+    @include onDesktop {
+      padding-left: 54px;
+    }
+  }
+
+  &__type {
+    font-style: normal;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $c-darkText;
+
+    &::after {
+      content: "14 серпня, 13:00";
+      padding: 0 20px;
+      color: $c-orng;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: $c-darkText;
+    margin-bottom: 20px;
+
+  }
+  &__info {
+    max-width: 470px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $dark-gray;
+    margin-bottom: 40px;
+
+  }
+  &__photo {
+    display: none;
+    width: 370px;
+    height: 475px;
+    cursor: pointer;
+    transition: all $trnstnFast;
+
+    &:hover {
+      transform: scale(1.1);
+      border-radius: 5%;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+}

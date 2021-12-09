@@ -1,0 +1,70 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  min-width: $minScreenWidth;
+  max-width: 1400px;
+
+  @include onTablet {
+    padding: 20px 40px 30px;
+  }
+
+  @include onDesktop {
+    padding: 20px 55px 30px;
+  }
+
+  &__logo {
+    display: block;
+    background-image: url(../images/NAMU.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 123px;
+    height: 40px;
+
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 40px;
+    z-index: 4;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__menu-icon {
+    display: block;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    background-image: url(../images/menu.svg);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+
+    &--active {
+      background-image: url(../images/cross.svg);
+    }
+  }
+
+  &__language {
+    opacity: 0;
+    background-color: $dark-green;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: $c-gray;
+
+    @include onTablet {
+      opacity: 1;
+    }
+  }
+
+  &__language-option {
+    cursor: pointer;
+  }
+}

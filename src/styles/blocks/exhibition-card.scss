@@ -1,0 +1,66 @@
+.exhibition-card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+
+  @include onTablet {
+    width: 300px;
+    align-self: flex-end;
+    padding-bottom: 150px;
+  }
+
+  @include onDesktop {
+    max-width: 370px;
+
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: $c-darkText;
+
+  }
+
+  &__info {
+    width: 50%;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $dark-gray;
+
+    @include onTablet {
+      width: 100%;
+      align-self: flex-end;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+
+    }
+
+    &--right-position {
+      align-self: flex-end;
+
+      @include onTablet {
+        align-self: flex-start;
+      }
+    }
+
+  }
+
+  &--permanent {
+
+    &:before {
+      margin-bottom: 5px;
+      content: "Діє постійно";
+      color: $c-orng;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+}

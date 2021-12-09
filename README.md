@@ -8,7 +8,7 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 - The design 1600px
 - Notebook 1280px
 - Tablet 1024
-- Mobile (> 320px)
+- Mobile (> $minScreenWidth)
 
 1. Implement the header with menu.
 1. Implement `Актуальтні виставки` block.
@@ -51,7 +51,7 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 11. `git push origin develop` - to send you code for PR.
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Museum_2/).
+  [DEMO LINK](https://yehormerzlenko.github.io/Museum_2/).
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.

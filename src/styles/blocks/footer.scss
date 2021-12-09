@@ -1,0 +1,41 @@
+.footer {
+  min-width: $minScreenWidth;
+  padding: 80px 20px 40px;
+
+  @include onTablet {
+    padding: 120px 100px 35px;
+  }
+
+  &__wrapper {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+
+    @media (min-width:600px) {
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    @include onTablet {
+      grid-template-columns: repeat(2,1fr);
+    }
+    @include onDesktop {
+      grid-template-columns: repeat(4,1fr);
+    }
+  }
+
+  &__signature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    color: $c-gray;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+}

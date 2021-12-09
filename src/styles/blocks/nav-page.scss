@@ -1,0 +1,149 @@
+.nav-page {
+  width: 100vw;
+  display: flex;
+  position: absolute;
+  padding: 80px 20px 72px;
+  min-width: $minScreenWidth;
+  flex-direction: column;
+  background-color: $dark-green;
+  transform: translateY(-120%);
+  z-index: 2;
+  transition: transform $trnstnFast;
+
+  &--active {
+    transform: translateY(0%);
+
+  }
+
+  @include onTablet {
+    padding: 0 57px 62px;
+    max-width: 1400px;
+  }
+
+  &__info {
+    display: none;
+    padding: 24px 0 80px;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      padding-bottom: 80px;
+
+    }
+
+  }
+  &__details {
+    margin-right: 30px;
+  }
+  &__details-title {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $c-gray;
+
+  }
+
+  &__details-value {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-gray;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @include onTablet {
+      margin-bottom: 60px;
+
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+  &__link {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    color: $c-gray;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 30px;
+    padding-bottom: 20px;
+    justify-content: space-around;
+
+    &::before {
+      display: none;
+      content: "";
+      width: 570px;
+      height: 1px;
+      position: absolute;
+      background: $c-gray;
+      opacity: 0.3;
+      bottom: 250px;
+
+      @include onTablet {
+        display: block;
+      }
+
+    }
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: unset;
+    }
+    @include onDesktop {
+      justify-content: unset;
+    }
+
+  }
+  &__button {
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    height: 60px;
+    background-color: $dark-green;
+    border: 1px solid $c-gray;
+    color: $c-gray;
+
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 60px;
+  }
+  &__picture {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    height: 800px;
+
+    @include onDesktop {
+      display: block;
+
+    }
+  }
+}

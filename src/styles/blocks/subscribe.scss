@@ -1,0 +1,100 @@
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  min-width: $minScreenWidth;
+  padding: 80px 20px;
+
+  @include onTablet {
+    padding: 110px 100px 120px;
+  }
+  @include onDesktop {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    padding: 160px 55px;
+  }
+
+  &__info {
+    @include onDesktop {
+      max-width: 670px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 100%;
+    color: $c-gray;
+
+    @include onTablet {
+      font-size: 48px;
+      margin-bottom: 30px;
+
+    }
+  }
+
+  &__text {
+    margin-bottom: 60px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-content: center;
+  }
+
+  &__input {
+    min-width: 230px;
+    background-color: $c-orng ;
+    padding-left: 10px;
+    outline: none;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray;
+    border: none;
+    border-bottom: 1px solid $c-gray;
+
+    &::-webkit-input-placeholder {
+      color: $c-gray;
+
+      @include onTablet {
+        min-width: 300px;
+
+      }
+    }
+  }
+  &__button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: $c-orng;
+    border: none;
+    outline: none;
+    background-image: url(../images/submit_btn.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform $trnstnFast;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      transform: rotate(360deg) scale(100%);
+    }
+  }
+}
