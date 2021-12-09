@@ -1,0 +1,615 @@
+.main {
+  position: relative;
+
+  &__bg1-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      position: absolute;
+      left: -30px;
+      top: 0;
+      transform: rotate(12.06deg);
+    }
+  }
+
+  &__bg2-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      position: absolute;
+      right: 0;
+      top: 650px;
+    }
+  }
+
+  &__bg3-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      position: absolute;
+      left: 30px;
+      top: 1100px;
+    }
+  }
+
+  &__transparent-text-1-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      position: absolute;
+      right: 0;
+      top: 600px;
+      z-index: -1;
+    }
+  }
+
+  &__transparent-text-2-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      position: absolute;
+      left: 0;
+      top: 1100px;
+      z-index: -1;
+    }
+  }
+
+  &__person-1-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      position: absolute;
+      right: 30px;
+      top: 2050px;
+    }
+  }
+
+  &__person-2-image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      position: absolute;
+      left: 30px;
+      top: 2600px;
+    }
+  }
+
+  &__title {
+    font-family: $fontPlayfair, sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 125%;
+    color: $secondaryColor;
+
+    padding-bottom: 60px;
+
+    @include onTablet {
+      font-size: 48px;
+
+      padding-bottom: 55px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 100px;
+    }
+
+    &--text {
+      @include onDesktop {
+        padding-bottom: 150px;
+      }
+    }
+  }
+
+  &__primary-text {
+    font-family: $fontPlayfair, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 125%;
+    color: $secondaryColor;
+
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__secondary-text {
+    font-family: $fontRaleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #504f5e;
+
+    @include onDesktop {
+      padding-bottom: 50px;
+    }
+
+    &--padding {
+      padding-bottom: 40px;
+
+      @include onTablet {
+        padding-bottom: 30px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 60px;
+      }
+    }
+  }
+
+  &__bottom-sign {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: $fontRaleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: $secondaryColor;
+    text-decoration: none;
+
+    padding-bottom: 11px;
+
+    &:hover {
+      color: $orangeColor;
+    }
+
+    @include onDesktop {
+      left: 85%;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      content: "";
+      width: 100px;
+      height: 1px;
+      background-color: $secondaryColor;
+    }
+  }
+
+  &__actual-exhib {
+    margin-bottom: 130px;
+
+    @include onDesktop {
+      margin-bottom: 260px;
+    }
+
+    &--date {
+      font-family: $fontPlayfair, sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 125%;
+      color: $orangeColor;
+
+      padding-bottom: 10px;
+
+      @include onTablet {
+        font-size: 48px;
+
+        padding-bottom: 20px;
+      }
+    }
+
+    &--status-temporary {
+      padding-bottom: 90px;
+
+      @include onTablet {
+        padding-bottom: 150px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 250px;
+      }
+    }
+
+    &--status-permanent {
+      padding-bottom: 100px;
+
+      @include onTablet {
+        padding-bottom: 140px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 250px;
+      }
+
+      &--sign {
+        font-family: $fontRaleway, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $orangeColor;
+
+        padding-bottom: 5px;
+      }
+    }
+  }
+
+  &__buttons {
+    &--mobile-button {
+      background-color: $orangeColor;
+    }
+
+    &--ticket {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+
+        background-color: $orangeColor;
+        width: $buttonWidth;
+      }
+    }
+  }
+
+  &__upcoming-events {
+    margin-bottom: 100px;
+
+    &--event {
+      padding-bottom: 60px;
+  
+      @include onDesktop {
+        padding-bottom: 280px;
+      }
+  
+      &--date {
+        font-family: $fontRaleway, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $orangeColor;
+  
+        padding-bottom: 20px;
+  
+        @include onTablet {
+          display: none;
+        }
+  
+        &--tablet-desktop {
+          display: none;
+  
+          @include onTablet {
+            display: block;
+  
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 3;
+  
+            font-family: $fontPlayfair, sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 100%;
+            color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: $orangeColor;
+          }
+  
+          @include onDesktop {
+            font-size: 55px;
+          }
+  
+          &--smaller-text {
+            font-family: $fontPlayfair, sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 100%;
+            color: $orangeColor;
+  
+            @include onDesktop {
+              font-size: 36px;
+            }
+          }
+        }
+      }
+  
+      &--type {
+        font-family: $fontRaleway, sans-serif;
+        font-weight: 200;
+        font-size: 14px;
+        line-height: 20px;
+        color: $secondaryColor;
+  
+        padding-bottom: 20px;
+  
+        @include onTablet {
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &__plan-visit {
+    position: relative;
+
+    background-color: $greenColor;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      padding-top: 120px;
+    }
+
+    &--title {
+      font-family: $fontPlayfair, sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+      color: $primaryColor;
+
+      padding-bottom: 40px;
+
+      z-index: 1;
+
+      @include onTablet {
+        font-size: 48px;
+
+        padding-bottom: 80px;
+      }
+
+      @include onDesktop {
+        font-size: 72px;
+
+        padding-bottom: 60px;
+      }
+    }
+
+    &--secondary-text {
+      color: $primaryColor;
+
+      padding-bottom: 60px;
+    }
+
+    &--img {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+
+        left: 0;
+        bottom: 0;
+      }
+
+      @include onDesktop {
+        width: 480px;
+      }
+    }
+  }
+
+  &__news {
+    margin-bottom: 80px;
+
+    &--1,
+    &--2,
+    &--3 {
+      transition: transform 0.3s;
+      text-decoration: none;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--1-image {
+      width: 280px;
+      padding-bottom: 21px;
+
+      @include onTablet {
+        width: 270px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+      }
+    }
+
+    &--2-image {
+      display: none;
+      padding-bottom: 21px;
+
+      @include onTablet {
+        display: block;
+
+        width: 270px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+      }
+    }
+
+    &--3-image {
+      display: none;
+      padding-bottom: 21px;
+
+      @include onDesktop {
+        display: block;
+
+        width: 370px;
+      }
+    }
+
+    &--date-1,
+    &--date-2,
+    &--date-3 {
+      font-family: $fontRaleway, sans-serif;
+      font-weight: 200;
+      font-size: 14px;
+      line-height: 20px;
+      color: $secondaryColor;
+
+      @include onDesktop {
+        padding-bottom: 5px;
+      }
+    }
+
+    &--primary-text-1,
+    &--primary-text-2,
+    &--primary-text-3 {
+      font-family: $fontPlayfair, sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 125%;
+      color: $secondaryColor;
+
+      padding-bottom: 10px;
+
+      @include onDesktop {
+        padding-bottom: 15px;
+      }
+    }
+
+    &--date-2,
+    &--primary-text-2,
+    &--secondary-text-2 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &--date-3,
+    &--primary-text-3,
+    &--secondary-text-3 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--secondary-text-1,
+    &--secondary-text-2,
+    &--secondary-text-3 {
+      font-family: $fontRaleway, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #504f5e;
+
+      padding-bottom: 20px;
+    }
+
+    &--carousel {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+
+      padding-bottom: 60px;
+
+      @include onTablet {
+        display: none;
+      }
+
+      &--dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $greenColor;
+        opacity: 0.3;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &--bottom-sign {
+      bottom: 0;
+    }
+  }
+
+  &__digest {
+    background-color: $orangeColor;
+
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @include onTablet {
+      padding-top: 90px;
+      padding-bottom: 20px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 60px;
+    }
+
+    &--title {
+      color: $primaryColor;
+
+      padding-bottom: 40px;
+
+      @include onTablet {
+        padding-bottom: 30px;
+      }
+    }
+
+    &--secondary-text {
+      color: $primaryColor;
+
+      padding-bottom: 60px;
+
+      @include onTablet {
+        padding-bottom: 65px;
+      }
+    }
+
+    &--form {
+      &--input {
+        background-color: transparent;
+        border: 0 solid;
+        border-bottom: 1px solid $primaryColor;
+        width: 230px;
+        outline: none;
+        color: $primaryColor;
+  
+        &::placeholder {
+          color: $primaryColor;
+          font-family: $fontRaleway, sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+        }
+  
+        &-button {
+          cursor: pointer;
+          background-color: transparent;
+          border: 1px solid $primaryColor;
+          height: 35px;
+          width: 35px;
+          border-radius: 50%;
+          color: $primaryColor;
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,158 @@
+.nav {
+  height: 100vh;
+  position: absolute;
+  background-color: $greenColor;
+  z-index: 2;
+
+  &__bg-image {
+    display: none;
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    @include onDesktop {
+      display: block;
+
+      width: 630px;
+      height: 800px;
+    }
+  }
+
+  &__anchors {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    padding-bottom: 80px;
+
+    @include onTablet {
+      gap: 50px;
+
+      padding-bottom: 60px;
+    }
+
+    &--link {
+      font-family: "Playfair Display", sans-serif;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+      color: $primaryColor;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scaleY(1.2);
+      }
+
+      @include onTablet {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+
+    &::after {
+      @include onTablet {
+        content: "";
+        width: 570px;
+        height: 1px;
+        background: #c4c4c4;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+
+    &--ticket {
+      width: 100%;
+      background-color: $orangeColor;
+
+      @include onTablet {
+        width: $buttonWidth;
+      }
+    }
+
+    &--membership {
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid $primaryColor;
+      box-sizing: border-box;
+
+      &:hover {
+        background-color: $primaryColor;
+        color: $secondaryColor;
+      }
+
+      @include onTablet {
+        width: $buttonWidth;
+      }
+    }
+  }
+
+  &__info {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      padding-bottom: 55px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 30px;
+
+      padding-bottom: 80px;
+    }
+
+    &--schedule,
+    &--address {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: $primaryColor;
+      text-decoration: none;
+    }
+
+    &--schedule {
+      &::before {
+        @include onTablet {
+          content: "Розклад сьогодні: ";
+          font-weight: 200;
+        }
+
+        @include onDesktop {
+          display: block;
+          content: "Розклад сьогодні: ";
+          font-weight: 200;
+        }
+      }
+    }
+
+    &--address {
+      &:hover {
+        color: $orangeColor;
+      }
+
+      &::before {
+        @include onTablet {
+          content: "Адреса: ";
+          font-weight: 200;
+        }
+
+        @include onDesktop {
+          display: block;
+          content: "Адреса: ";
+          font-weight: 200;
+        }
+      }
+    }
+  }
+}
