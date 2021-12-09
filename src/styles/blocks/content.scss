@@ -4,6 +4,18 @@
     width: 100%;
     transition: transform 0.5s;
 
+    &-container {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+    }
+
     &--events {
       @include onTablet {
         width: 330px;
@@ -23,11 +35,27 @@
     }
 
     &--news {
+      width: 100%;
+      padding-bottom: 100%;
+      transition: transform 0.5s;
+
+      &--first {
+        background: url(../images/news-1.png) 50% 50% no-repeat;
+        background-size: cover;
+      }
+
+      &--second {
+        background: url(../images/news-2.png) 50% 50% no-repeat;
+        background-size: cover;
+      }
+
       @include onDesktop {
-        width: 100%;
+        padding-bottom: 0;
         height: 370px;
-        object-fit: cover;
-        object-position: top;
+      }
+
+      &:hover {
+        transform: scale(1.05);
       }
     }
 
@@ -67,6 +95,10 @@
 
     line-height: 24px;
     color: $c-gray;
+
+    &--news {
+      width: 330px;
+    }
 
     @include onTablet {
       margin-bottom: 40px;
