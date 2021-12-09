@@ -3,11 +3,14 @@
 @import "../styles/utils/mixins";
 @import "../styles/blocks/grid.scss";
 @import "../styles/blocks/page.scss";
+@import "../styles/blocks/link.scss";
+@import "../styles/blocks/icon.scss";
 @import "../styles/blocks/header.scss";
 @import "../styles/blocks/menu.scss";
 @import "../styles/blocks/text.scss";
 @import "../styles/blocks/current-exhibition.scss";
 @import "../styles/blocks/visit.scss";
+@import "../styles/blocks/footer.scss";
 
 .block {
   margin-top: 20px;
@@ -66,5 +69,71 @@
   }
   @include onDesktop {
     margin-top: 70px;
+  }
+}
+
+.digest {
+  &__email {
+    width: 100%;
+    margin-top: 50px;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    border: hidden;
+    border-bottom: solid 1px;
+  }
+
+  &__button {
+    margin-top: 30px;
+    padding: 22px 112px;
+    background-color: #cd4d31;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: #f1f5f4;
+    outline: none;
+    border: none;
+    margin-bottom: 80px;
+
+  }
+
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.select {
+
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  color: $main-text-c;
+
+  &__option {
+
+    background-color: $c-gray;
+    border: none;
+    outline: none;
+  }
+
+  &--no-phone {
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &--on-phone {
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
   }
 }
