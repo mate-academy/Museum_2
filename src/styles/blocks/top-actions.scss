@@ -24,8 +24,10 @@
   }
 
   &__nav {
+    display: flex;
+    gap: 0 30px;
+
     @include onTablet {
-      display: flex;
       gap: 0 40px;
     }
   }
@@ -45,6 +47,10 @@
     @include onTablet {
       display: block;
     }
+
+    &--menu {
+      display: block;
+    }
   }
 
   &__menu {
@@ -56,6 +62,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   &__cross {
@@ -67,5 +79,11 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
+    transition: transform 0.3s linear;
+
+    &:hover {
+      transform: scale(1.2) rotate(180deg);
+    }
   }
 }
