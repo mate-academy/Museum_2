@@ -1,17 +1,31 @@
 .grid {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
 
   @include onDesktop {
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
   }
 
-  &--non-mobile {
+  &--desktop {
     display: block;
 
     @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &--tablet {
+    display: block;
+
+    @include onTablet {
       display: grid;
     }
   }
@@ -23,7 +37,13 @@
           grid-column: #{$start} / #{$end + 1};
         }
 
-        &--non-mobile-#{$start}--#{$end} {
+        &--tablet-#{$start}--#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--desktop-#{$start}--#{$end} {
           @include onDesktop {
             grid-column: #{$start} / #{$end + 1};
           }

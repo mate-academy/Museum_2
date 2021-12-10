@@ -1,38 +1,54 @@
 .events {
   padding: 120px 0 90px;
 
-  &__card {
-    margin-bottom: 60px;
+  @include onTablet {
+    padding-top: 80px;
+  }
 
-    @include onDesktop {
+  &__card {
+    @include onTablet {
+      height: max-content;
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
+      gap: 20px;
+
+      margin-bottom: 0;
     }
 
     &--last {
+      padding-top: 60px;
       margin-bottom: 30px;
 
-      @include onDesktop {
+      @include onTablet {
         margin-bottom: 0;
       }
     }
 
     &--container {
+      @include onTablet {
+        height: 420px;
+      }
+
       @include onDesktop {
         height: 472px;
         width: 372px;
       }
 
       &--one {
-        @include onDesktop {
+        @include onTablet {
           order: 1;
         }
       }
     }
 
     &--content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      
       &--two {
-        @include onDesktop {
+        @include onTablet {
           justify-items: flex-end;
         }
       }
@@ -46,8 +62,12 @@
   }
 
   &__button {
+    @include onTablet {
+      transform: translateY(-1680%);
+    }
+
     @include onDesktop {
-      transform: translateY(-1940%);
+      transform: translateY(-1880%);
     }
   }
 }

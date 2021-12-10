@@ -2,7 +2,20 @@
   padding-top: 60px;
 
   &__card {
+    height: 440px;
     margin-bottom: 50px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+
+    @include onTablet {
+      height: 480px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      height: 508px;
+    }
 
     &--last {
       margin-bottom: 30px;
@@ -10,8 +23,12 @@
   }
 
   &__button {
+    @include onTablet {
+      transform: translateY(-1050%);
+    }
+
     @include onDesktop {
-      transform: translateY(-1180%);
+      transform: translateY(-1130%);
     }
   }
 }

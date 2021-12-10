@@ -1,4 +1,17 @@
 .card {
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include onTablet {
+    height: 736px;
+  }
+
+  @include onDesktop {
+    height: 748px;
+  }
+
   &__image-container {
     position: relative;
 
@@ -7,7 +20,11 @@
     height: 356px;
     overflow: hidden;
 
-    margin-bottom: 20px;
+    transition: transform 0.3s, border-radius 0.3s;
+
+    @include onTablet {
+      height: 420px;
+    }
 
     @include onDesktop {
       height: 484px;
@@ -16,9 +33,19 @@
     &--news {
       height: 280px;
 
+      @include onTablet {
+        height: 330px;
+      }
+
       @include onDesktop {
         height: 370px;
       }
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      border-radius: 5%;
+      z-index: 1;
     }
   }
 
@@ -33,7 +60,6 @@
 
   &__period {
     display: block;
-    margin-bottom: 10px;
 
     @extend %main;
     color: $colorMain;
@@ -47,7 +73,6 @@
 
   &__title {
     display: block;
-    margin-bottom: 20px;
 
     @extend %h4;
     color: $colorBlack;
@@ -55,7 +80,6 @@
 
   &__text {
     display: block;
-    margin-bottom: 30px;
 
     @extend %main;
     color: $colorBlack;
