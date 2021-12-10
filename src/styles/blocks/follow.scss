@@ -25,10 +25,13 @@
   }
 
   &__form-input {
-    border: none;
+    border: 1px solid transparent;
     border-bottom: 1px solid #1c1b29;
     width: 100%;
     margin-top: 50px;
+    height: 30px;
+
+    transition: color 0.3s border-bottom 0.3s;
 
     @include onTablet {
       width: 450px;
@@ -46,6 +49,15 @@
     }
 
     &:hover {
+      border-bottom: 1px solid $colorMain;
+
+      &::placeholder {
+        color: $colorMain;
+      }
+    }
+
+    &:focus {
+      outline: none;
       border-bottom: 1px solid $colorMain;
 
       &::placeholder {
