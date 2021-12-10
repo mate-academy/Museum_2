@@ -1,10 +1,12 @@
 .header {
-  display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
   background-color: $c-gray;
   padding: 20px 20px 0;
-  overflow-y: auto;
-  overflow: hidden;
+
+  @include onPhone {
+    overflow-y: auto;
+    overflow: hidden;
+  }
 
   @include onTablet {
     padding: 26px 39px 0;
@@ -59,7 +61,6 @@
 
   &__title {
     display: block;
-    width: 279px;
     font-family: Playfair Display, sans-serif;
     font-weight: bold;
     font-size: 48px;
@@ -69,14 +70,12 @@
     margin-bottom: 30px;
 
     @include onTablet {
-      width: 569px;
       font-size: 72px;
       line-height: 72px;
       margin-bottom: 20px;
     }
 
     @include onDesktop {
-      width: 596px;
       font-size: 96px;
       line-height: 96px;
     }
@@ -84,7 +83,6 @@
   }
 
   &__info2 {
-    width: 267px;
     font-family: Raleway, sans-serif;
     font-weight: normal;
     font-size: 16px;
@@ -93,29 +91,24 @@
     margin-bottom: 40px;
 
     @include onTablet {
-      width: 330px;
       margin-bottom: 50px;
     }
 
     @include onDesktop {
-      width: 569px;
       margin-bottom: 81px;
     }
   }
 
   &__logo {
     height: 273px;
-    width: 245px;
     object-fit: cover;
     object-position: top;
 
     @include onTablet {
-      width: 443px;
       height: 494px;
     }
 
     @include onDesktop {
-      width: 625px;
       height: 700px;
     }
   }
