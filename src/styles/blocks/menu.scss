@@ -5,6 +5,7 @@
   
   &__navigation {
     margin-bottom: 60px;
+
     @include tablet {
       margin-bottom: 10px;
     }
@@ -21,12 +22,10 @@
   }
 
   &__wrapper {
-    display: none;
+    margin-bottom: 55px;
 
     @include tablet {
       display: block;
-
-      margin-bottom: 55px;
     }
 
     @include desktop {
@@ -40,9 +39,15 @@
   &__schedule {
     display: flex;
     
+    @media (max-width: 610px) {
+      display: flex;
+      flex-direction:column;
+    }
+
     @include tablet {
       align-items: center;
     }
+
     @include desktop {
       align-items:flex-start;
       flex-direction: column;
@@ -51,7 +56,13 @@
 
   &__adress {
     display: flex;
-    align-items: center;
+
+    @media (max-width: 610px) {
+      text-align: left;
+      display: flex;
+      flex-direction:column;
+    }
+
     @include desktop {
       align-items:flex-start;
       flex-direction: column;
@@ -118,6 +129,10 @@
 
   &__link {
     color: $colorMain;
+
+    &:hover {
+      color: $secondBackground;
+    }
   }
 
   &__button { 
