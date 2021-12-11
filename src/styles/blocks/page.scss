@@ -1,0 +1,117 @@
+.page {
+  &__section {
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__body {
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.8s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section-top {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__section-title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 35px;
+    color: $c-black;
+
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__section-cards {
+    display: block;
+    gap: 30px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      display: flex;
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__section-cards--events {
+    display: block;
+    gap: 30px;
+  }
+
+  &__section-card {
+    @include onMobile {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}
+
+select option {
+  margin: 50px;
+
+  font-size: 16px;
+  background: $c-darkGreen;
+  color: #fff;
+  border: 1px solid transparent;
+}
+
+select {
+  font-size: 20px;
+  background: $c-darkGreen;
+  color: #fff;
+  border: 1px solid transparent;
+}
