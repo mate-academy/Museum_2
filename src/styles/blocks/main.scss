@@ -1,20 +1,10 @@
 .main {
   padding-bottom: 80px;
   color: $c-black;
-
   overflow: auto;
 
-  // &__content {
-
-  // }
-
   &__current-exhibitions {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-
     margin: 0 20px;
-    // margin: 0 auto;
   }
 
   &__subtitle {
@@ -29,13 +19,18 @@
       font-size: 40px;
       grid-row: 1 / 1;
     }
+
+    &--email {
+      grid-row: 5 / 5;
+
+      @include onDesktop {
+        margin-top: 200px;
+      }
+    }
   }
 
   &__exhibition {
-    // display: block;
-    // max-width: 330px;
-    // display: flex;
-    // flex-direction: column;
+
     &--flex {
       margin-top: 76px;
 
@@ -43,10 +38,20 @@
         display: flex;
         justify-content: space-between;
       }
+
+      @include onDesktop {
+        justify-content: start;
+      }
     }
 
     &--info {
       max-width: 330px;
+
+      @include onDesktop {
+        margin-left: 30px;
+
+        max-width: 100%;
+      }
     }
   }
 
@@ -72,15 +77,33 @@
 
     line-height: 150%;
     color: $c-gray;
+
+    &--email {
+      grid-row: 5 / 5;
+
+      @include onDesktop {
+        margin-top: 180px;
+      }
+    }
   }
 
   &__button {
     margin-top: 30px;
 
     &--archive {
+      margin-top: 52px;
+
       @include onTablet {
         grid-row: 1 / 1;
         align-self: end;
+      }
+    }
+
+    &--archive-news {
+      grid-row: 4 / 4;
+
+      @include onTablet {
+        grid-row: 1 / 1;
       }
     }
   }
@@ -89,16 +112,13 @@
     margin-top: 60px;
     align-self: center;
 
-    // width: 280px;
-    // &--grid {
-    //   @include onTablet {
-    //     grid-row: 1 / 1;
-    //   }
-    // }
-
     &--flex {
       order: 1;
       margin-top: 0;
+
+      @include onDesktop {
+        order: 0;
+      }
     }
 
     &--flex-2 {
@@ -108,10 +128,15 @@
   }
 
   &__promo {
+    position: relative;
     margin-top: 90px;
     padding: 50px 20px;
 
     background-color: $c-background;
+
+    @include onDesktop {
+      min-height: 800px;
+    }
   }
 
   &__title {
@@ -123,6 +148,12 @@
     @include onTablet {
       font-size: 62px;
     }
+
+    &--promo {
+      @include onDesktop {
+        margin-top: 30%;
+      }
+    }
   }
 
   &__text-promo {
@@ -130,6 +161,17 @@
 
     line-height: 150%;
     color: $c-white;
+  }
+
+  &__promo-image {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 
   &__news {
@@ -149,6 +191,10 @@
     margin-top: 20px;
   }
 
+  &__form {
+    grid-row: 6 / 6;
+  }
+
   &__input {
     margin-top: 50px;
 
@@ -158,6 +204,10 @@
     border: none;
     border-bottom: 1px solid $c-black;
     color: $c-black;
+
+    @include onDesktop {
+      max-width: 100%;
+    }
 
     &::-webkit-input-placeholder {
       color: $c-black;
@@ -175,6 +225,7 @@
     }
 
     &:valid {
+      color: $c-black;
       font-weight: bold;
     }
   }
