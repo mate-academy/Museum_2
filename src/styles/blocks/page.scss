@@ -1,0 +1,58 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__main {
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+  &__button {
+    margin-top: 115px;
+
+    @include onDesktop {
+      margin-top: 115px;
+    }
+  }
+
+  &__button-mobile {
+    margin-top: 30px;
+  }
+
+  &--mobile {
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__title {
+    margin-top: 90px;
+    font-family: Playfair Display, sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 125%;
+    color: #1c1b29;
+
+    @include onTablet {
+      margin-top: 105px;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin-top: 110px;
+      font-size: 48px;
+    }
+  }
+}
