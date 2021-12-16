@@ -3,7 +3,7 @@
 
 ## Tech review
 
-1. Add favicon
+1. Add [favicon](http://joxi.ru/l2ZoZGJulwX3yA)
 2. Add a smooth scroll for the whole page (`scroll-behavior: smooth;`)
 3. All interactive elements(*links, buttons, pictures, icons*) ***should have a hover effect and cursor pointer***. User must intuitively understand that he can interact with them
 4. Pictures in the blocks "Exhibitions", "Events", "News" should be ***animated*** and somehow move on hover or when scrolling down the page
