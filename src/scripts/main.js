@@ -7,3 +7,14 @@ window.addEventListener('hashchange', () => {
     document.body.classList.remove('page--with-menu');
   }
 });
+
+const form = document.querySelector('.subscription__form');
+const inputs = document.querySelectorAll('.subscription__form-field');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  for (const input of inputs) {
+    input.value = '';
+  }
+});
