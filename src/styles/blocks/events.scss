@@ -1,0 +1,161 @@
+.events {
+  padding-bottom:80px;
+
+  &__title {
+    margin-bottom: 60px;
+
+    font-size: 36px;
+    line-height: 125%;
+
+    @include tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__event {
+    margin-bottom: 60px;
+  }
+
+  &__date {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $secondBackground;
+
+    &::after {
+      content: " 13:00";
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__date-number {
+    position: relative;
+    display: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    line-height: 100%;
+    -webkit-text-stroke: 1px $secondBackground;
+    color: #fff;
+
+    &::after {
+      content: "13:00";
+
+      position: absolute;
+      top: 50px;
+      left: 25px;
+
+      font-size: 24px;
+      line-height: 100%;
+      color: $secondBackground;
+
+      @include desktop {
+        font-size: 36px;
+        top: 65px;
+        left: 75px;
+      }
+    }
+
+    @include desktop {
+      display: inline-block;
+
+      font-size: 55px;
+    }
+  }
+
+  &__activity {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $colorSecond;
+
+    @include tablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__caption {
+    margin-bottom: 20px;
+    
+    font-size: 1em;
+    line-height: 125%;
+
+    @include desktop {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorDescription;
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__image-container {
+    display: none;
+
+    width: 370px;
+    height: 475px;
+    overflow: hidden;
+    @include desktop {
+      display: block;
+    }
+
+    &:first-child {
+      margin-bottom: 77px;
+    }
+  }
+
+  &__image {
+    transition: transform $transitionDuration;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__more {
+    position: relative;
+    display: block;
+
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 100%;
+    color: $colorSecond;
+
+    transition: transform $transitionDuration;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      
+      width: 130px;
+      height: 1px;
+      background-color: $colorSecond;
+      left: 50%;
+      top: 25px;
+      transform: translateX(-50%);
+
+      @include desktop{
+        width: 70px;
+        margin-left: 20px;
+        left: 100%;
+        top: 50%;
+        transform: translateX(0);
+      }
+    }
+  }
+}

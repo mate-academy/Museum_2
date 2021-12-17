@@ -1,0 +1,162 @@
+.menu {
+  height: 100vh;
+
+  background-color: $colorBackround;
+  
+  &__navigation {
+    margin-bottom: 60px;
+
+    @include tablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__content {
+    @include tablet {
+      padding: 0 100px;
+    }
+
+    @include desktop {
+      padding: 0;
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 55px;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include desktop {
+      margin-bottom: 80px;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 55px;
+    }
+  }
+
+  &__schedule {
+    display: flex;
+    
+    @media (max-width: 610px) {
+      display: flex;
+      flex-direction:column;
+    }
+
+    @include tablet {
+      align-items: center;
+    }
+
+    @include desktop {
+      align-items:flex-start;
+      flex-direction: column;
+    }
+  }
+
+  &__adress {
+    display: flex;
+
+    @media (max-width: 610px) {
+      text-align: left;
+      display: flex;
+      flex-direction:column;
+    }
+
+    @include desktop {
+      align-items:flex-start;
+      flex-direction: column;
+    }
+  }
+
+  &__caption {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+  }
+
+  &__value {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__list {
+    position: relative;
+
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+
+    @include tablet {
+      font-size: 48px;
+      line-height: 120%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 55px;
+
+        width: 100%;
+        height: 1px;
+        background-color: $colorMain;
+      }
+    } 
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 80px;
+    }
+
+    @include tablet {
+      margin-bottom: 50px;
+      &:last-child {
+        margin-bottom: 118px;
+      }
+    }
+
+    @include desktop {
+      margin-bottom: 60px;
+      &:last-child {
+        margin-bottom: 122px;
+      }
+    }
+  }
+
+  &__link {
+    color: $colorMain;
+
+    &:hover {
+      color: $secondBackground;
+    }
+  }
+
+  &__button { 
+    margin-bottom: 20px;
+  
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-container {
+    display: none;
+    width: 624px;
+    height: 801px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
