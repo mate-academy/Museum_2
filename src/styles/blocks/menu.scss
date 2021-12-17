@@ -1,0 +1,119 @@
+.menu {
+  padding: 0 20px;
+  background-color: $c-background;
+  z-index: 1;
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 1px;
+    color: $c-white;
+
+    transition: text-decoration 0.3s;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      text-decoration-color: $c-white;
+    }
+  }
+
+  &__content {
+    height: 100vh;
+    max-width: 1150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__subtext {
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &__link-adress {
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $c-white;
+
+    @include hover(color, $c-main);
+  }
+
+  &__time {
+    margin-top: 30px;
+
+    @include onTablet {
+      grid-row: 1 / 1;
+    }
+  }
+
+  &__address {
+    margin-top: 30px;
+
+    @include onTablet {
+      grid-row: 1 / 1;
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+
+    &-item {
+      margin-top: 30px;
+
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+
+  &__line {
+    margin-top: 40px;
+
+    height: 1px;
+    background: $c-white;
+    opacity: 0.3;
+  }
+
+  &__button {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+
+  &__image {
+    display: none;
+    width: 400px;
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      grid-row: 2 / 6;
+      width: 625px;
+    }
+  }
+}
