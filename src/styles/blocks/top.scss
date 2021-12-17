@@ -1,0 +1,57 @@
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+
+    @include desktop(768px) {
+      gap: 40px;
+    }
+  }
+
+  &__lang {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 34px;
+
+    font-family: "Raleway", serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #f1f5f4;
+
+    &--main {
+      visibility: hidden;
+    }
+
+    @media (min-width: 768px) {
+      order: 1;
+
+      &--main {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__menu-opener {
+    margin-right: 16px;
+
+    &--main {
+      order: 1;
+      margin-right: 0;
+
+      @media (min-width: 768px) {
+        order: 0;
+      }
+    }
+  }
+}

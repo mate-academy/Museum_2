@@ -1,0 +1,37 @@
+.select {
+  color: $c-white;
+  background-color: $c-background;
+  outline: none;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: "Raleway", serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  &--main {
+    visibility: hidden;
+  }
+
+  @media (min-width: 768px) {
+    order: 1;
+
+    &--main {
+      visibility: visible;
+    }
+  }
+
+  &--header {
+    visibility: hidden;
+
+    @include desktop(768px) {
+      order: 1;
+
+      visibility: visible;
+    }
+  }
+}
