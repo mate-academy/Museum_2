@@ -1,0 +1,114 @@
+.information-card {
+  display: block;
+  width: 100%;
+
+  &--events {
+    &:first-child {
+      @include onMobile {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: $gap;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 356px;
+    overflow: hidden;
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+
+    &--events {
+
+      @include onDesktop {
+        max-width: 370px;
+        max-height: 475px;
+      }
+    }
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__title-caontainer {
+    width: 100%;
+  }
+
+  &__subtitle {
+    display: block;
+    color: $c-orangeDefault;
+    margin-bottom: 10px;
+
+    &--news {
+      color: $c-gray;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    color: $c-black;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    color: $c-darkGreen;
+    margin-bottom: 40px;
+
+    &--news {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+}
