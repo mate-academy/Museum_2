@@ -1,0 +1,92 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  background-color: $c-orangeDefault;
+  border: 1px solid transparent;
+  width: 100%;
+  height: 60px;
+
+  text-decoration: none;
+  font: inherit;
+  color: $c-white;
+
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $c-orangeHover;
+  }
+
+  &:active {
+    background-color: $c-orangePresed;
+  }
+
+  &--secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid $c-orangeDefault;
+    width: 100%;
+    height: 60px;
+
+    text-decoration: none;
+    font: inherit;
+    font-weight: bold;
+    color: $c-orangeDefault;
+
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &::after {
+      content: url(../images/svg/arrow__right--default.svg);
+      position: relative;
+
+      top: 4px;
+      left: 10px;
+      align-items: center;
+    }
+
+    &:hover {
+      color: $c-orangeHover;
+      border-color: $c-orangeHover;
+    }
+
+    &:active {
+      color: $c-orangePresed;
+      border-color: $c-orangePresed;
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 210px;
+    }
+
+    @include onDesktop {
+      display: block;
+      width: 270px;
+    }
+  }
+
+  &--desktop {
+    width: 100%;
+    margin-bottom: 120px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

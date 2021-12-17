@@ -1,0 +1,72 @@
+.subscription {
+
+  &__description {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      display: flex;
+      margin-bottom: 20px;
+      gap: $gap;
+    }
+  }
+
+  &__section {
+    width: 100%;
+
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__title {
+    padding-bottom: 20px;
+    grid-column: 1 / 7;
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+
+      padding-bottom: 50px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    &--mobile {
+      display: block;
+
+      grid-column: 1 / 5;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+
+        grid-column: 1 / 7;
+      }
+    }
+  }
+
+  &__form {
+    display: block;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / 4;
+  }
+}
