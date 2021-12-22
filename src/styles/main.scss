@@ -1,7 +1,61 @@
 @import "utils";
-@import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
+@import "blocks/header";
+@import "blocks/front-page";
+@import "blocks/slider";
+@import "blocks/first-page";
+@import "blocks/events";
+@import "blocks/planning";
+@import "blocks/news";
+@import "blocks/subscribe";
+@import "blocks/contact";
+@import "blocks/footer";
+
+@import "blocks/button";
+@import "utils/mixins";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  margin: 0 auto;
+  font-family: Raleway, sans-serif;
+  overflow-x: hidden;
+  width: 100vw;
+
+  &__slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-110%);
+
+    &:target {
+      transform: translateX(0);
+      position: sticky;
+    }
+  }
+}
+
+section {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0 55px;
+
+  @include onTablet {
+    margin: 0 39px;
+    padding: 0;
+  }
+
+  @include onMobile {
+    margin: 0 20px;
+    padding: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #f1f5f4;
 }
