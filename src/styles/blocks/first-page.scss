@@ -57,122 +57,122 @@
       display: flex;
       margin: 110px auto 60px;
     }
+  }
+
+  &__block {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+ 
+    padding: 0 55px;
+    gap: 30px;
+    
   
+    @include onTablet {
+      margin: 0 39px;
+      padding: 0;
+    }
+  
+    @include onMobile {
+      flex-direction: column;
+      margin: 0 20px;
+      padding: 0;
+    }
 
-    &__block {
-      max-width: 1170px;
-      margin: 0 auto;
-      display: flex;
+    &-1,
+    &-2 {
+      max-width: 570px;
+      transition: transform 0.3s;
 
-      padding: 0 55px;
-      gap: 30px;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &--date {
+      margin: 20px 0;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: #cd4d31;
+    }
+
+    &--title {
+      min-height: 30px;
+      margin: 0 0 20px;
+      font-family: Playfair Display, sans-serif;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 125%;
+      color: #1c1b29;
+  
+      @include onTablet {
+        height: 60px;
+      }
+    }
+
+    &--text {
+      min-height: 70px;
+      max-height: 70px;
+      margin-bottom: 50px;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: #504f5e;
 
       @include onTablet {
-        margin: 0 39px;
-        padding: 0;
-      }
-
-      @include onMobile {
-        flex-direction: column;
-        margin: 0 20px;
-        padding: 0;
-      }
-
-      &-1,
-      &-2 {
-        max-width: 570px;
-        transition: transform 0.3s;
-
-        &:hover {
-          transform: scale(1.05);
-        }
-      }
-
-      &--date {
-        margin: 20px 0;
-        font-family: Raleway, sans-serif;
-        font-size: 16px;
-        line-height: 150%;
-
-        color: #cd4d31;
-      }
-
-      &--title {
-        min-height: 30px;
-        margin: 0 0 20px;
-        font-family: Playfair Display, sans-serif;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 125%;
-        color: #1c1b29;
-  
-        @include onTablet {
-          height: 60px;
-        }
-      }
-
-      &--text {
-        min-height: 70px;
-        max-height: 70px;
-        margin-bottom: 50px;
-        font-family: Raleway, sans-serif;
-        font-size: 16px;
-        line-height: 150%;
-
-        color: #504f5e;
-    
-        @include onTablet {
-          min-height: 80px;
-        }
+        min-height: 80px;
       }
     }
   }
+}
 
-  .first-page__buy-button {
-    transition: transform 0.3s, box-shadow 0.3s;
+.first-page__buy-button {
+  transition: transform 0.3s, box-shadow 0.3s;
 
-    @include onTablet {
-      width: 100%;
-    }
-
-    @include onMobile {
-      width: 100%;
-    }
-
-    &:hover {
-      transform: scale(1.1);
-      box-shadow: #c47c6c 0 0 10px;
-    }
-  }
-
-  .block--image {
+  @include onTablet {
     width: 100%;
-    height: 484px;
-    object-fit: cover;
-  
-    @include onTablet {
-      width: 100%;
-      height: 420px;
-    }
-  
-    @include onMobile {
-      height: 356px;
-      margin-top: 40px;
-    }
   }
-  
-  .mobileVersion {
+   
+  @include onMobile {
+    width: 100%;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: #c47c6c 0 0 10px;
+  }
+}
+
+.block--image {
+  width: 100%;
+  height: 484px;
+  object-fit: cover;
+
+  @include onTablet {
+    width: 100%;
+    height: 420px;
+  }
+
+  @include onMobile {
+    height: 356px;
+    margin-top: 40px;
+  }
+}
+
+.mobileVersion {
+  display: none;
+
+  @include onMobile {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.onDesktop {
+  @include onMobile {
     display: none;
-  
-    @include onMobile {
-      display: flex;
-      width: 100%;
-    }
-  }
-  
-  .onDesktop {
-    @include onMobile {
-      display: none;
-    }
   }
 }
