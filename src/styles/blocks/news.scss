@@ -1,0 +1,140 @@
+.news {
+  max-width: 100%;
+  background: #e5e5e5;
+  padding-bottom: 200px;
+  position: relative;
+  z-index: 2;
+
+  @include onTablet {
+    padding-bottom: 160px;
+  }
+
+  @include onMobile {
+    padding-bottom: 120px;
+  }
+
+  &__button {
+    @include onTablet {
+      padding: 0 40px;
+    }
+  }
+
+  &__header {
+    max-width: 1170px;
+    margin: 0 auto 70px;
+    display: flex;
+    padding: 0 55px;
+    justify-content: space-between;
+
+    @include onTablet {
+      margin: 0 auto;
+      padding: 0 39px;
+    }
+
+    @include onMobile {
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  }
+
+  &__title {
+    margin-top: 110px;
+    font-family: Playfair Display, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 120%;
+
+    color: #1c1b29;
+
+    @include onMobile {
+      font-size: 28px;
+      display: flex;
+      margin: 90px 0 60px;
+    }
+  }
+
+  &__block {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+
+    padding: 0 55px;
+    gap: 30px;
+
+    @include onTablet {
+      margin: 0 39px;
+      padding: 0;
+    }
+
+    @include onMobile {
+      flex-direction: column;
+      margin: 0 20px;
+      padding: 0;
+    }
+
+    &-1,
+    &-2 {
+      max-width: 570px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &--date {
+      margin: 20px 0;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: #cd4d31;
+    }
+
+    &--title {
+      min-height: 30px;
+      margin: 0 0 20px;
+      font-family: Playfair Display, sans-serif;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 125%;
+      color: #1c1b29;
+
+      @include onTablet {
+        height: 60px;
+      }
+    }
+
+    &--text {
+      margin-top: 20px;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: #504f5e;
+    }
+  }
+}
+
+.news--image {
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  object-position: top;
+
+  @include onTablet {
+    max-width: 100%;
+    max-height: 330px;
+  }
+
+  @include onMobile {
+    height: 230px;
+  }
+}
+
+.onDesktop {
+  @include onMobile {
+    display: none;
+  }
+}

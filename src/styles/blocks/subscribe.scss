@@ -1,0 +1,111 @@
+.subscribe {
+  margin: -22px 0;
+  background: #e5e5e5;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+
+  &__block {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 55px;
+
+    @include onTablet {
+      margin: 0 auto;
+      padding: 0 39px;
+    }
+  
+    @include onMobile {
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+  }
+
+  &__text-block {
+
+    @include onDesktop {
+      display: flex;
+      columns: 2;
+    }
+  }
+
+  &__title {
+    max-width: 570px;
+    margin: 0;
+    font-family: Playfair Display, sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 120%;
+    color: #1c1b29;
+
+    @include onTablet {
+      padding-bottom: 20px;
+      font-size: 40px;
+    }
+
+    @include onMobile {
+      padding-bottom: 20px;
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    max-width: 570px;
+    font-family: Raleway, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b29;
+  }
+
+  &__button {
+    margin-bottom: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+
+    @include onMobile {
+      margin-bottom: 80px;
+    }
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: #c47c6c 0 0 10px;
+    }
+  }
+}
+
+.email-input {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px #1c1b29 solid;
+  margin-top: 50px;
+  width: 50%;
+  margin-bottom: 40px;
+  outline: none;
+  transition: border-bottom 0.3s;
+
+  @include onTablet {
+    width: 75%;
+  }
+
+  @include onMobile {
+    width: 100%;
+  }
+
+  &:hover {
+    border-bottom: 1px #cd4d31 solid;
+  }
+  &:focus {
+    border-bottom: 1px #04cf26 solid;
+    color: #04cf26;
+    font-weight: bold;
+
+  }
+}
+
+.email-input::placeholder {
+  color: #1c1b29;
+}
