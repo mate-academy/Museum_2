@@ -1,0 +1,173 @@
+body {
+  color: $mainColor;
+  background-color: $mainColor;
+
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  &._loaded {
+    .mainblock__title,
+    .mainblock__under-title,
+    .mainblock__text,
+    .mainblock__button {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+.container {
+  max-width: $maxWidthContainer + px;
+
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  min-height: 60px;
+  padding: 5px 15px;
+  min-width: 270px;
+
+  color: $mainColor;
+  background-color: $orangeColor;
+  border: 1px solid transparent;
+
+  transition-property: box-shadow, background-color;
+  transition: 0.3s ease-in-out;
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      background-color: #cf3f1e;
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border-color: $mainColor;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.title {
+  font-family: $PlayfairFont;
+  font-weight: 700;
+  font-size: 48px;
+  color: $blackColor;
+}
+
+.bottom-block {
+  position: relative;
+
+  &__link {
+    color: $blackColor;
+
+    @media (max-width: $md3+px) {
+      padding-bottom: 10px;
+    }
+
+    transition: color 0.3s ease-in-out;
+
+    @media (any-hover: hover){
+      &:hover{
+        color: #4e8a8a;
+      }
+    }
+  }
+
+  &:after {
+    content: "";
+
+    position: relative;
+    top: -3px;
+
+    display: inline-block;
+    width: 70px;
+    height: 1px;
+    margin-left: 20px;
+
+    background-color: $blackColor;
+    opacity: 0.5;
+  }
+
+  @media (max-width: $md3+px) {
+    display: flex;
+    align-items: center;
+
+    flex-direction: column;
+
+    &:after {
+      width: 170px;
+      margin: 0;
+      top: 0;
+    }
+  }
+
+  @media (max-width: $md4+px) {
+    &:after {
+      width: 130px;
+    }
+  }
+}
+
+._ibg {
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0px 10px;
+  width: 100%;
+  color: $mainColor;
+
+  &::placeholder {
+    color: $mainColor;
+  }
+}
+
+.img-second {
+  &-main {
+  }
+
+  &-words {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+  }
+}
+
+.img {
+  max-width: 100%;
+}

@@ -1,0 +1,74 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100%;
+
+  background-color: #3f5252;
+
+  @media (max-width: $md3+px) {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  @media (width: 1024px) and (height: 1366px){
+    padding-top: 10px;
+  }
+
+  // .header__body
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 60px;
+  }
+
+  // .header__logo
+  &__logo {
+    position: relative;
+    z-index: 5;
+    transition: transform 0.3s;
+
+    @media (width: 1024px) and (height: 1366px){
+      width: 144px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  // .header__actions
+  &__actions {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    z-index: 5;
+  }
+
+  // .header__lang
+  &__lang {
+    color: $mainColor;
+
+    padding-right: 12px;
+
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url(../img/icons/arrow-down.svg);
+
+    transition-property: background-position, color;
+    transition: 0.3s ease-in-out;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #cd4d31;
+        background-position: top 5px right;
+      }
+    }
+  }
+}
