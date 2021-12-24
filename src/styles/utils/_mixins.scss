@@ -1,6 +1,83 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hoverLink {
+  transition: color $transitionDuration;
+
   &:hover {
-    #{$_property}: $_toValue;
+    color: $text-color-hover;
+  }
+}
+
+@mixin hoverElemScale {
+  transition: transform $transitionDuration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onMobile{
+  @media (min-width: 0) {
+    @content;
+  }
+}
+
+@mixin title {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 125%;
+
+  @include onTablet {
+    font-size: 72px;
+  }
+
+  @include onDesktop {
+    font-size: 96px;
+  }
+}
+@mixin font-properties ($font-family,
+$font-size,
+$line-height,
+$font-weight: normal) {
+  font-family: $font-family, sans-serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+@mixin description {
+  font-family: "Raleway", "Helvetica", sans-serif ;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin link {
+  color: $text-color-light;
+  text-decoration: none;
+
+  &:visited {
+    color: $text-color-light;
+  }
+
+  &:hover {
+    color: $text-color-hover;
+  }
+
+  &:active {
+    color: $text-color-hover;
   }
 }
