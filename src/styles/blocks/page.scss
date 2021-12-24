@@ -1,0 +1,77 @@
+.page {
+  font-family: "Playfair Display", serif;
+  scroll-behavior: smooth;
+  background-color: $c-white;
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s linear;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__element-disabled {
+    display: none;
+  }
+
+  &__section {
+    margin-top: 90px;
+
+    @include onTablet {
+      margin-top: 105px;
+    }
+
+    @include onDesktop {
+      margin-top: 110px;
+    }
+
+    &--margin-big {
+      margin-top: 120px;
+
+      @include onTablet {
+        margin-top: 164px;
+      }
+
+      @include onDesktop {
+        margin-top: 200px;
+      }
+    }
+
+  }
+
+  &__section-title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: #1c1b29;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 125%;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__footer {
+    margin-top: 80px;
+
+    @include onTablet {
+      margin-top: 128px;
+    }
+
+    @include onDesktop {
+      margin-top: 200px;
+    }
+  }
+}

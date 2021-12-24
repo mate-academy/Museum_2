@@ -1,0 +1,89 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+
+  @include onTablet {
+    height: 77px;
+  }
+
+  @include onDesktop {
+    height: 90px;
+  }
+
+  &__logo {
+    display: block;
+    width: 120px;
+    height: 28px;
+
+    background-image: url(../images/NAMU.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 0 30px;
+
+    @include onTablet {
+      gap: 0 40px;
+    }
+  }
+
+  &__select {
+    display: none;
+
+    background-color: #3f5252;
+    border: none;
+    outline: none;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--menu {
+      display: block;
+    }
+  }
+
+  &__menu {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    background-image: url(../images/menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__cross {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    background-image: url(../images/cross.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transition: transform 0.3s linear;
+
+    &:hover {
+      transform: scale(1.2) rotate(180deg);
+    }
+  }
+}
