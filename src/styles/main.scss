@@ -100,8 +100,16 @@ $bgColor: #3f5252;
   }
 
   &__menu {
-    position: absolute;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -202,12 +210,11 @@ $bgColor: #3f5252;
   }
 
   &__content {
-    position: relative;
-    display: block;
+    display: flex;
+    flex-direction: column;
 
     @include onTablet {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
     }
 
@@ -223,20 +230,18 @@ $bgColor: #3f5252;
   }
 
   &__photo {
-    display: block;
-    margin: 0 auto;
-    width: 245px;
+    max-width: 245px;
+    height: auto;
     object-fit: contain;
+    align-self: center;
 
     @include onTablet {
-      width: 400px;
+      max-width: 443px;
     }
 
     @include onDesktop {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 600px;
+      max-width: 625px;
+      align-self: flex-end;
     }
   }
 }
@@ -283,6 +288,14 @@ $bgColor: #3f5252;
     background-image: url(../images/menu.svg);
     background-position: center;
     background-repeat: no-repeat;
+
+    @include onTablet {
+      order: 1;
+    }
+
+    @include onDesktop() {
+      order: 1;
+    }
   }
 
   &__lang {
@@ -329,12 +342,20 @@ $bgColor: #3f5252;
 
 .menu {
   box-sizing: border-box;
-  position: relative;
   background-color: $bgColor;
   min-height: 100vh;
+  overflow: hidden;
 
   &__combine {
-    gap: 45px;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 45px;
+    }
+
+    @include onDesktop() {
+      gap: 45px;
+    }
   }
 
   &__menu {
@@ -462,7 +483,6 @@ $bgColor: #3f5252;
     }
 
     @include onDesktop {
-      width: 50%;
       margin-bottom: 60px;
     }
   }
@@ -481,21 +501,33 @@ $bgColor: #3f5252;
   }
 
   &__photo {
+
     display: none;
-    margin: 0 auto;
-    object-fit: contain;
 
     @include onTablet {
-      display: block;
-      width: 400px;
+      display: flex;
+      object-fit: contain;
+      align-self: center;
+      width: 422px;
+      height: auto;
     }
 
     @include onDesktop {
-      display: block;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 500px;
+      display: flex;
+      object-fit: contain;
+      align-self: flex-end;
+      width: 625px;
+      height: auto;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
     }
   }
 }
