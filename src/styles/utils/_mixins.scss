@@ -1,6 +1,53 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.4s ease-in-out;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin fontRegular {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin fontTitle($size: 96px, $lineHeight:100%) {
+  font-size: $size;
+  font-weight: $fontBold;
+  font-family: $secondaryFont;
+  line-height: $lineHeight;
+}
+
+@mixin fontSmall {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 20px;
+}
+
+@mixin containerWidth($padding: $horizontalPaddingMd) {
+  width: 100%;
+
+  @include forTablet {
+    padding: 0 $padding;
+  }
+
+  @include forMobile {
+    padding: 0 $horizontalPaddingSm;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 1280px - $horizontalPaddingLg * 2;
+  }
+}
+
+@mixin forMobile {
+  @media (max-width: #{$breakpointSm}) {
+    @content;
+  }
+}
+
+@mixin forTablet {
+  @media (max-width: #{$breakpointLg}) {
+    @content;
   }
 }

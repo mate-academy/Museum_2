@@ -1,0 +1,148 @@
+.menu {
+  &__board {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-gap: 70px;
+
+    margin-top: 30px;
+
+    color: $primaryColor;
+  }
+
+  &__board-title {
+    @include fontSmall;
+  }
+
+  &__board-caption {
+    line-height: 24px;
+  }
+
+  &__nav {
+    position: relative;
+
+    margin-top: 80px;
+
+    &::after {
+      position: absolute;
+      bottom: -60px;
+
+      content: "";
+      width: 570px;
+      height: 1px;
+      display: block;
+
+      opacity: 0.3;
+      background-color: $primaryColor;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 60px;
+  }
+
+  &__list-link {
+    color: $primaryColor;
+
+    @include fontTitle(48px, 120%);
+  }
+
+  &__button-group {
+    margin: 121px 0 124px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 30px;
+  }
+
+  &__image-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    right: -60px;
+  }
+
+  @include forTablet {
+    & {
+      padding-left: 59px;
+    }
+
+    &__image-wrap {
+      display: none;
+    }
+
+    &__board {
+      grid-gap: 0;
+      grid-template-columns: max-content;
+      grid-template-rows: repeat(2, max-content);
+    }
+
+    &__board-date,
+    &__board-address {
+      display: flex;
+      align-items: center;
+    }
+
+    &__board-title {
+      margin-right: 7px;
+    }
+
+    &__nav {
+      margin-top: 55px;
+    }
+
+    &__list {
+      row-gap: 50px;
+    }
+
+    &__button-group {
+      margin: 116px 0 170px;
+      column-gap: 29px;
+
+      padding-right: 20px;
+    }
+  }
+
+  @include forMobile {
+    & {
+      padding-left: 0;
+    }
+
+    &__board {
+      display: none;
+    }
+
+    &__nav {
+      margin-top: 80px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__list {
+      row-gap: 40px;
+    }
+
+    &__button-group {
+      margin: 72px 0 87px;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 20px;
+    }
+
+    &__list-link {
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    &__button {
+      width: calc(100% - 20px);
+    }
+  }
+}
