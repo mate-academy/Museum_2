@@ -1,0 +1,130 @@
+.promo {
+  position: relative;
+  width: 1280px;
+  height: 750px;
+  padding-left: 55px;
+
+  @include onTablet {
+    width: 768px;
+    height: 705px;
+    padding-left: 100px;
+  }
+
+  @include onMobile {
+    width: 320px;
+    height: 515px;
+    padding-left: 20px;
+  }
+
+  display: flex;
+  justify-content: space-between;
+
+  &__description {
+    margin-top: 120px;
+
+    @include onMobile {
+      margin-top: 70px;
+    }
+  }
+
+  &__container {
+    padding-left: 100px;
+
+    @include onTablet {
+      padding-left: 0;
+      & > .promo__title {
+        padding-left: 40px;
+      }
+    }
+
+    @include onMobile {
+      & > .promo__title {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__date {
+    margin-top: 10px;
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      font-size: 72px;
+      margin-bottom: 0;
+    }
+
+    @include onMobile {
+      font-size: 48px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    margin: 40px 0 60px;
+    width: 370px;
+
+    @include onTablet {
+      width: 267px;
+      margin-bottom: 80px;
+    }
+
+    @include onMobile {
+      margin: 30px 0 50px;
+    }
+
+  }
+
+  &__button {
+    margin-bottom: 110px;
+    @include onTablet {
+      margin-bottom: 180px;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include onTablet {
+      height: 445px;
+      width: 399px;
+    }
+
+    @include onMobile {
+      right: -85px;
+      height: 273px;
+      width: 245px;
+    }
+  }
+
+  &__date-decoration {
+    position: relative;
+    margin-bottom: 52px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      transform: translate(20px, 12px);
+      width: 492px;
+      height: 1px;
+      background-color: $white-color ;
+      opacity: 0.3;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

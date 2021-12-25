@@ -1,0 +1,222 @@
+.exhibition {
+  display: flex;
+  gap: 30px;
+
+  @include onTablet {
+    gap: 0;
+
+    &--first {
+      margin-top: 0;
+    }
+  }
+
+  @include onMobile {
+    flex-direction: row-reverse;
+  }
+
+  &--second {
+    flex-direction: row-reverse;
+
+    @include onMobile {
+      flex-direction: row;
+    }
+  }
+
+  &__container {
+
+    &--second {
+      @include onMobile {
+        margin-left: -180px;
+      }
+    }
+  }
+
+  &__period {
+    color: $red-color;
+    margin: 130px 0 10px;
+
+    @include onTablet {
+      margin: 70px 0 5px;
+    }
+
+    @include onMobile {
+      margin: 0 0 5px;
+    }
+
+    &--second {
+      @include onMobile {
+        margin-left: -180px;
+      }
+    }
+
+    &--active {
+      margin: 100 0 20px;
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      line-height: 120%;
+      font-weight: 700;
+      transform: translate(-100px);
+
+      @include onTablet {
+        margin: 55px 0 20px;
+      }
+
+      @include onMobile {
+        margin: 60px 0 10px;
+        font-size: 24px;
+        line-height: 125%;
+        transform: translate(0);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @include h3-style;
+
+    @include onTablet {
+      width: 370px;
+    }
+
+    @include onMobile {
+      width: 230px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__details {
+    margin-bottom: 50px;
+    width: 370px;
+
+    @include onTablet {
+      width: 270px;
+
+      &--first {
+        width: 300px;
+        margin-bottom: 80px;
+      }
+    }
+
+    @include onMobile {
+      width: 130px;
+      margin-bottom: 100px;
+    }
+
+    &--second {
+      @include onMobile {
+        margin-left: 150px;
+      }
+    }
+  }
+
+  &__button--angels {
+    margin-bottom: 92px;
+  }
+
+  &__photo {
+    position: relative;
+    padding-left: 60px;
+
+    @include onTablet {
+      padding-left: 0;
+      width: 300px;
+    }
+
+    @include onMobile {
+      width: 180px;
+    }
+  }
+
+  &__photo-text {
+    width: 570px;
+    font-family: "Playfair Display", serif;
+    font-size: 144px;
+    line-height: 100%;
+    font-weight: 700;
+    color: transparent;
+    opacity: 0.3;
+    -webkit-text-stroke: 1px $green-color;
+    text-transform: uppercase;
+
+    @include onTablet {
+      width: 300px;
+      font-size: 72px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    z-index: 1;
+
+    &--angel {
+      left: 0;
+      top: -170px;
+
+      @include onTablet {
+        width: 300px;
+        top: -50px;
+      }
+
+      @include onMobile {
+        left: -170px;
+        top: -50px;
+        width: 360px;
+        transform: scaleX(-1) rotate(-8deg);
+      }
+    }
+
+    &--hugs {
+      width: 82%;
+      right: 0;
+      top: 94px;
+
+      @include onTablet {
+        width: 285px;
+        top: 60px;
+      }
+
+      @include onMobile {
+        left: -210px;
+        top: 50px;
+        width: 360px;
+        transform: rotate(180deg);
+      }
+    }
+
+    &--kobzar {
+      left: 60px;
+      top: 40px;
+
+      @include onTablet {
+        height: 255px;
+        top: 10px;
+        left: -15px;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+
+      &-mini {
+        display: none;
+        position: absolute;
+
+        @include onMobile {
+          display: block;
+          top: 110px;
+          left: -70px;
+        }
+      }
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      display: none;
+    }
+  }
+}
