@@ -1,0 +1,91 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  margin: 40px 0  0;
+
+  width: 260px;
+  height: 60px;
+  background-color: $colorMain;
+  color: $colorTextWhite;
+  border-color: $colorMain;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+
+  @include onTablet {
+    margin-top: 50px;
+  }
+
+  @include onDeskTop {
+    margin: 81px 0 50px;
+  }
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  &__appear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    width: 260px;
+    height: 60px;
+    background-color: #fff;
+    color: $colorMain;
+    border: 1px solid $colorMain;
+    font-weight: 600;
+    font-size: 16px;
+    opacity: 1;
+    cursor: pointer;
+    margin-top: 30px;
+
+    @include onTablet {
+      opacity: 0;
+    }
+
+    @include onDeskTop {
+      opacity: 0;
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+
+    &::after {
+      display: block;
+      content: url(../images/Vector.png);
+      width: 4px;
+      height: 12px;
+      transform: translate(350%, 0%);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}

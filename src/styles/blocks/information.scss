@@ -1,0 +1,86 @@
+.information {
+  &__date {
+    font-weight: normal;
+    font-size: 14px;
+    color: $colorTextWhite;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    font-family: Playfair Display, sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    color: $colorTextWhite;
+    line-height: 100%;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      padding-bottom: 20px;
+    }
+
+    @include onDeskTop {
+      font-size: 96px;
+      width: 569px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorTextWhite;
+  }
+
+  &__date-number {
+    font-family: Playfair Display, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 125%;
+    color: $colorTextWhite;
+
+    margin-top: 50px;
+    opacity: 0;
+
+    @include onDeskTop {
+      opacity: 0.7;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 469px;
+      height: 1px;
+      background-color: $colorTextWhite;
+      transform: translate(20%, -800%);
+      opacity: 0;
+
+      @include onDeskTop {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    bottom: 0;
+    width: 245px;
+    height: 273px;
+    padding-top: 40px;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include onDeskTop {
+      width: 625px;
+      height: 663px;
+
+      position: absolute;
+      right: 0;
+      top: 70px;
+    }
+  }
+}

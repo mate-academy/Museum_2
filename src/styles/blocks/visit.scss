@@ -1,0 +1,113 @@
+.visit {
+  height: max-content;
+  background-color: #3f5252;
+  position: relative;
+
+  @include onTablet {
+    height: max-content;
+  }
+
+  @include onDeskTop {
+    height: max-content;
+  }
+
+  &__block {
+    z-index: 1;
+    @include onDeskTop {
+      &::before {
+        content: url(../images/img_07.png);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 33px;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+  }
+
+  &__title {
+    font-family: Playfair Display, sans-serif;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 100%;
+    color: $colorTextWhite;
+
+    @include onTablet {
+      font-size: 62px;
+      max-width: 450px;
+    }
+
+    @include onDeskTop {
+      font-size: 70px;
+      max-width: 550px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    padding-top: 20px;
+    color: $colorTextWhite;
+
+    @include onTablet {
+      max-width: 450px;
+    }
+
+    @include onDeskTop {
+      max-width: 470px;
+    }
+  }
+
+  &__container {
+    padding: 50px 20px;
+
+    @include onTablet {
+      padding: 80px 40px;
+    }
+
+    @include onDeskTop {
+      padding: 205px 55px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    margin: 40px 0  0;
+
+    width: 260px;
+    height: 60px;
+    background-color: $colorMain;
+    color: $colorTextWhite;
+    border-color: $colorMain;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDeskTop {
+      margin: 81px 0 50px;
+    }
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+  }
+}

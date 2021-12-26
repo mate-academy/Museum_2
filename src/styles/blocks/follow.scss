@@ -1,0 +1,68 @@
+.follow {
+  margin-top: 90px;
+
+  @include onTablet {
+    margin-top: 0;
+  }
+
+  @include onDeskTop {
+    margin-top: 0;
+  }
+  &__subtitle {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b29;
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 0;
+    }
+
+    @include onDeskTop {
+      padding-top: 0;
+    }
+  }
+
+  &__form-input {
+    border: 1px solid transparent;
+    border-bottom: 1px solid #1c1b29;
+    width: 100%;
+    margin-top: 50px;
+    height: 30px;
+
+    transition: color 0.3s border-bottom 0.3s;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDeskTop {
+      width: 470px;
+    }
+
+    &::placeholder {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 150%;
+      color: #1c1b29;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $colorMain;
+
+      &::placeholder {
+        color: $colorMain;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $colorMain;
+
+      &::placeholder {
+        color: $colorMain;
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.page {
+  font-family: Raleway, sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  &__body {
+    margin: 0;
+    overflow-x: hidden;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__information {
+    margin-top: 70px;
+
+    @include onTablet {
+      margin-top: 124px;
+    }
+
+    @include onDeskTop {
+      margin-top: 122px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 90px;
+  }
+
+  &__section-title {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 125%;
+    color: #1c1b29;
+
+    @include onTablet {
+      font-size: 40px;
+      padding-left: 0;
+      text-align: left;
+    }
+
+    @include onDeskTop {
+      font-size: 48px;
+      line-height: 120%;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    width: 280px;
+    height: 60px;
+    background-color: #fff;
+    color: $colorMain;
+    border: 1px solid $colorMain;
+    font-weight: 600;
+    font-size: 16px;
+    opacity: 0;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      content: url(../images/Vector.png);
+      width: 4px;
+      height: 12px;
+      transform: translate(350%, 0%);
+    }
+
+    @include onTablet {
+      opacity: 1;
+    }
+
+    @include onDeskTop {
+      opacity: 1;
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
