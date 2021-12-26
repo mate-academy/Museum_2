@@ -1,0 +1,105 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 20px 0;
+  background-color: $colorBG;
+  color: $colorWhite;
+
+  overflow-y: auto;
+
+  @include onTablet {
+    background-image: url(../images/img_menu.png);
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/img_menu.png);
+    background-size: auto 90%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+
+  &__top {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__timetable {
+    display: block;
+    width: max-content;
+    margin-bottom: 20px;
+
+    &--name {
+      @extend %additional;
+    }
+
+    &--time {
+      @extend %main;
+      font-weight: 600;
+    }
+  }
+
+  &__adress {
+    display: block;
+    width: max-content;
+    margin-bottom: 40px;
+
+    &--name {
+      @extend %additional;
+    }
+
+    &--link {
+      @extend %main;
+      font-weight: 600;
+      color: $colorWhite;
+      text-decoration: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    border-bottom: 1px solid $colorWhite;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+
+    @extend %h3;
+    color: $colorWhite;
+    text-decoration: none;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $colorWhite;
+    }
+  }
+}

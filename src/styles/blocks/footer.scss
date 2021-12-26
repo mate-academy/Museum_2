@@ -1,0 +1,129 @@
+.footer {
+  background-color: $colorBG;
+  color: $colorWhite;
+  padding: 32px 0;
+
+  @include onDesktop {
+    justify-content: start;
+    padding: 50px 55px 30px;
+    height: 400px;
+  }
+
+  &__contacts {
+    @extend %main;
+
+    &--title {
+      display: block;
+      @extend %h5;
+      margin-bottom: 10px;
+    }
+
+    &--mail {
+      display: block;
+      margin-bottom: 30px;
+    }
+
+    &--adress,
+    &--phone,
+    &--mail {
+      color: $colorWhite;
+      text-decoration: none;
+
+      &:hover {
+        color: $colorMain;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 140px;
+    margin-bottom: 50px;
+
+    &--link {
+      text-decoration: none;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__timetable {
+    @extend %main;
+
+    margin-bottom: 50px;
+
+    &--title {
+      @extend %h5;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 60px;
+  }
+
+  &__item {
+    &--main {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link {
+    color: $colorWhite;
+    text-decoration: none;
+
+    &--main {
+      @extend %h5;
+    }
+
+    &--not-main {
+      @extend %main;
+    }
+
+    &:hover {
+      color: $colorMain;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @extend %additional;
+
+    @include onDesktop {
+      display: grid;
+      padding-top: 60px;
+    }
+
+    &--copyright {
+      display: inline-block;
+      width: max-content;
+    }
+
+    &--privacy {
+      display: inline-block;
+      width: max-content;
+      text-decoration: none;
+      color: $colorWhite;
+
+      &:hover {
+        color: $colorMain;
+      }
+    }
+
+    &--back-link {
+      text-decoration: none;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.header {
+  background-image: url(../images/header_image.png);
+  background-size: auto 40%;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-color: $colorBG;
+
+  @include onTablet {
+    height: 100vh;
+    background-size: auto 50%;
+  }
+
+  @include onDesktop {
+    height: max-content;
+    background-size: auto 90%;
+    background-position: bottom right;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    padding: 20px 0 300px;
+
+    @include onDesktop {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    @extend %h1;
+    color: $colorWhite;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    &::before {
+      content: "10 серпня - 10 листопада";
+      @extend %additional;
+
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    &::after {
+      content: "Внесок українських митців у світову культуру 19-20 ст.";
+      @extend %main;
+
+      display: block;
+      margin-top: 28px;
+    }
+  }
+
+  &__dates {
+    display: none;
+    width: fit-content;
+    margin-right: 20px;
+
+    @extend %h6;
+    color: $colorWhite;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 460px;
+      opacity: 0.3;
+      background-color: $colorWhite;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      margin-bottom: 156px;
+    }
+  }
+}

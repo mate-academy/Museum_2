@@ -1,0 +1,80 @@
+.subscribe {
+  padding: 120px 0 80px;
+
+  @include onDesktop {
+    padding: 180px 0;
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 20px;
+
+    @extend %h3;
+    color: $colorBlack;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin-bottom: 50px;
+
+    @extend %main;
+
+    @include onDesktop {
+      padding-top: 10px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__email {
+    height: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3px;
+    margin-bottom: 30px;
+
+    @extend %main;
+    font-weight: bold;
+    background-color: #e5e5e5;
+
+    border: none;
+    border-bottom: 1px solid $colorBlack;
+
+    &::placeholder {
+      @extend %main;
+      color: $colorBlack;
+    }
+
+    &:hover {
+      border-color: $colorMain;
+
+      &::placeholder {
+        color: $colorMain;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $colorMain;
+
+      &::placeholder {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__button {
+    border: none;
+
+    @include onTablet {
+      width: 80%;
+    }
+    
+    @include onDesktop {
+      width: 60%;
+    }
+  }
+}
