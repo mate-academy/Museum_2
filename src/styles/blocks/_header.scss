@@ -1,9 +1,17 @@
 .header {
   box-sizing: border-box;
-  min-height: 100vh;
+  min-height: min-content;
   color: $whiteColor;
   background-color: $bgColor;
   position: relative;
+
+  @include onTablet {
+    min-height: min-content;
+  }
+
+  @include onDesktop {
+    min-height: 100vh;
+  }
 
   &__navbar {
     margin-bottom: 70px;
@@ -103,7 +111,8 @@
 
     @include onTablet {
       display: block;
-      position: relative;
+      // position: absolute;
+      bottom: 0;
       width: 443px;
       height: 100%;
     }
