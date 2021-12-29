@@ -1,0 +1,86 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+
+  @include onTablet {
+    padding: 26px 0;
+  }
+
+  @include onDesktop() {
+    padding: 32px 0;
+  }
+
+  &__logo {
+    height: 40px;
+
+    @include onTablet {
+      height: 26px;
+    }
+
+    @include onDesktop {
+      height: 26px;
+    }
+  }
+
+  &__menu {
+    cursor: pointer;
+    display: block;
+    width: 25px;
+    height: 20px;
+    color: $whiteColor;
+    background-image: url(../images/menu.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      order: 1;
+    }
+
+    @include onDesktop() {
+      order: 1;
+    }
+  }
+
+  &__lang {
+    background-color: $bgColor;
+    border: none;
+    color: $whiteColor;
+    display: none;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 500;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop() {
+      display: block;
+    }
+  }
+
+  &__combine {
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      gap: 45px;
+    }
+
+    @include onDesktop() {
+      gap: 45px;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    display: none;
+    width: 22px;
+    height: 22px;
+    background-image: url(../images/cross.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
