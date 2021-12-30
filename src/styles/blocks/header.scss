@@ -1,0 +1,151 @@
+.header {
+  position: relative;
+  min-height: 100vh;
+
+  color: $whiteColor;
+  overflow: hidden;
+
+  &__nav {
+    margin-bottom: 120px;
+    z-index: 100;
+
+    @include onMobile {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    animation: slide-in-from-left #{$animation-duration * 3} ease-out;
+  }
+
+  &__date {
+    @include main-text;
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include style-1;
+
+    &--1 {
+      margin-bottom: 10px;
+    }
+
+    &--2 {
+      margin-bottom: 40px;
+
+      @include onMobile {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__paragraph {
+    @include main-text;
+
+    margin-bottom: 60px;
+
+    @include onTablets {
+      margin-bottom: 80px;
+    }
+
+    @include onMobile {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 50px;
+    @include onMobile {
+      transform: translateY(50px);
+    }
+
+    @include onMobile {
+      flex-shrink: 1;
+    }
+  }
+
+  &__short-date {
+    @include caption-small;
+
+    position: absolute;
+    bottom: -180px;
+
+    display: flex;
+    align-items: center;
+
+    color: $whiteTransparent;
+
+    transition: color $animation-duration ease-in-out;
+
+    &:hover {
+      color: $whiteColor;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: 100px;
+
+      width: 500px;
+      height: 1px;
+
+      background-color: $whiteTransparent;
+    }
+  }
+
+  &__short-date-text {
+    flex-shrink: 0;
+
+    user-select: none;
+  }
+
+  &__illustration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 580px;
+
+    animation: slide-in-from-right #{$animation-duration * 3} ease-out;
+
+    @include onLaptops {
+      width: 420px;
+    }
+
+    @include onTablets {
+      width: 380px;
+    }
+
+    @include onMobile {
+      transform: translateX(120px);
+    }
+
+    @media (max-width: 440px) {
+      transform: translateX(200px);
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__illustration-caption {
+    @include main-text;
+
+    position: absolute;
+    left: 487px;
+    top: 386px;
+
+    user-select: none;
+  }
+}

@@ -1,0 +1,115 @@
+.menu {
+  background-color: $greengrayColor;
+  color: $whiteColor;
+  min-height: 100vh;
+  position: relative;
+
+  transition: transform #{$animation-duration * 2} ease-in-out;
+  overflow: hidden;
+
+  &__nav {
+    z-index: 20;
+  }
+
+  &__info {
+    display: flex;
+    gap: 80px;
+    margin-bottom: 80px;
+
+    @include onTablets {
+      flex-direction: column;
+      gap: 4px;
+
+      margin-bottom: 52px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__schedule-date,
+  &__address-label {
+    @include overline;
+  }
+
+  &__schedule-time,
+  &__address {
+    @include main-text;
+  }
+
+  &__address {
+    color: inherit;
+
+    transition: color $animation-duration ease-in-out;
+
+    &:hover {
+      @extend %link-hover;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    margin-bottom: 60px;
+
+    @include onTablets {
+      gap: 52px;
+    }
+
+    @include onMobile {
+      gap: 40px;
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__link {
+    @include h1;
+
+    color: inherit;
+
+    transition: color $animation-duration ease-in-out;
+
+    &:hover {
+      @extend %link-hover;
+    }
+
+    @include onMobile {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    margin-bottom: 60px;
+
+    background-color: $whiteColor;
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+    @include onTablets {
+      display: none;
+    }
+  }
+}

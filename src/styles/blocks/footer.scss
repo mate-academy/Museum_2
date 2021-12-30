@@ -1,0 +1,121 @@
+.footer {
+  padding: 160px 0 60px;
+
+  background-color: $greengrayColor;
+  color: $whiteColor;
+
+  @include onTablets {
+    padding: 120px 0 36px;
+  }
+
+  @include onMobile {
+    padding: 80px 0 40px;
+  }
+
+  &__subtitle {
+    @include h2;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__subtitle,
+  &__list {
+    margin-bottom: 40px;
+  }
+
+  &__list-item {
+    @include main-text;
+  }
+
+  &__link {
+    color: inherit;
+
+    transition: color $animation-duration ease-in-out;
+
+    &:hover {
+      @extend %link-hover;
+    }
+  }
+
+  &__weekday {
+    margin-right: 16px;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+  }
+
+  &__icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+    transition: transform #{$animation-duration * 2} ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__socialy-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__data {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 64px;
+    margin-bottom: 80px;
+
+    @include onLaptops {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onTablets {
+      margin-bottom: 100px;
+    }
+
+    @include onMobile {
+      grid-template-columns: 1fr;
+      row-gap: 60px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__copyright {
+    @include overline;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  &__link-up {
+    @extend %background-base;
+
+    position: absolute;
+    right: 40px;
+
+    width: 24px;
+    height: 24px;
+
+    background-image: url(../images/strelka.svg);
+
+    transition: transform $animation-duration ease-in-out;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+  }
+}
