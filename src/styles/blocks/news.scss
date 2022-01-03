@@ -1,0 +1,93 @@
+.news {
+  padding: 80px 0;
+  background: $textColorGrey;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+  &__section-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 90px;
+
+    @include onIPad {
+      margin: 0 auto 90px;
+      min-width: 570px;
+      justify-content: space-around;
+    }
+
+    @include onDesktop {
+      margin-bottom: 95px;
+      justify-content: space-between;
+    }
+
+    @include onDesktopLg {
+      min-width: 1170px;
+    }
+  }
+
+  &__article {
+    max-width: 280px;
+
+    &:not(:first-child) {
+      display: none;
+    }
+
+    @include onIPad {
+      max-width: 270px;
+
+      &:nth-child(2) {
+        display: block;
+      }
+    }
+
+    @include onDesktopLg {
+      max-width: 370px;
+
+      &:nth-child(3) {
+        display: block;
+      }
+    }
+  }
+
+  &__article-img {
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 20px;
+
+    @include onIPad {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__article-date {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $textColorPrimary;
+
+    @include onDesktop {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__article-heading {
+    margin-bottom: 10px;
+
+    font-family: $secondary-font;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 125%;
+
+    color: $textColorPrimary;
+
+    @include onDesktop {
+      margin-bottom: 13px;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.continue {
+  &--exhibitions {
+    @include onDesktop {
+      margin-left: calc(100% - 340px);
+    }
+  }
+
+  &__text {
+    color: $textColorPrimary;
+    transition: transform $transition-time ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__line {
+    width: 130px;
+    height: 1px;
+    margin: inherit;
+    border: none;
+    background-color: $textColorPrimary;
+
+    @include onIPad {
+      width: 170px;
+    }
+
+    @include onDesktop {
+      width: 70px;
+      margin-left: 20px;
+    }
+  }
+}

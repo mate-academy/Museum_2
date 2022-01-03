@@ -1,0 +1,109 @@
+.menu {
+  background-color: $colorDarkGrey;
+  transition: visibility 1s, opacity 1s;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1;
+
+  &--show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__about {
+    width: max-content;
+  }
+
+  &__schedule {
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 20px;
+    color: $textColorGrey;
+    display: none;
+
+    @include onIPad {
+      display: block;
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__info-title {
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__info {
+    font-weight: 400;
+    display: inline;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    margin-bottom: 80px;
+
+    @include onIPad {
+      width: 570px;
+      border-bottom: 1px solid rgba(241, 245, 244, 0.3);
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onIPad {
+      margin-bottom: 50px;
+
+      &:last-child {
+        margin-bottom: 55px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    font-family: $secondary-font;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 100%;
+    color: $textColorGrey;
+
+    @include onIPad {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__buttons {
+    @include onIPad {
+      display: flex;
+    }
+  }
+
+  &__button {
+    &:first-child {
+      margin-bottom: 20px;
+    }
+
+    @include onIPad {
+      &:first-child {
+        margin-right: 30px;
+      }
+    }
+  }
+}

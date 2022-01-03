@@ -1,0 +1,104 @@
+.digest {
+  background-color: $colorOrange;
+  color: $textColorGrey;
+
+  &__section {
+    padding: 80px 0;
+
+    @include onIPad {
+      padding: 110px 0 120px;
+    }
+
+    @include onDesktop {
+      padding: 160px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+
+  &__article {
+    @include onIPad {
+      width: 570px;
+    }
+  }
+
+  &__article-heading {
+    margin-bottom: 40px;
+
+    font-family: $secondary-font;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 100%;
+
+    @include onIPad {
+      padding-bottom: 30px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__article-paragraph {
+    padding-bottom: 62px;
+
+    @include onIPad {
+      padding-bottom: 80px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__mail {
+    display: flex;
+  }
+
+  &__placeholder {
+    box-sizing: border-box;
+    width: 228px;
+    padding-bottom: 0;
+
+    color: $textColorGrey;
+    background-color: $colorOrange;
+
+    border: none;
+    border-bottom: 1px solid $textColorGrey;
+
+    @include onIPad {
+      width: 300px;
+    }
+
+    &::placeholder {
+      color: $textColorGrey;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    &:hover {
+      border-color: #ccd0e0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button {
+    width: 42px;
+    height: 42px;
+    margin-left: 10px;
+
+    background: bottom / contain url(../images/email-button.png) no-repeat;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform $transition-time ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
