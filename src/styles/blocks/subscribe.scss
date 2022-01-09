@@ -1,0 +1,83 @@
+.subscribe {
+
+  padding: 90px 20px 80px;
+
+  @include onTablet {
+    padding: 90px 40px 80px;
+  }
+
+  @include onDesktop {
+    padding: 90px 55px 80px;
+  }
+
+  &__title {
+    display: block;
+    font-family: $secondary-font;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 125%;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__paragraph {
+    margin-top: 20px;
+    font-family: $main-font;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $sec-text-c;
+
+    &--no-desktop {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--on-desktop {
+      margin-top: 0;
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onPhone {
+        display: none;
+      }
+    }
+  }
+
+  &__form-field {
+    width: 100%;
+    margin-top: 50px;
+    font-family: $main-font;
+    font-size: 16px;
+    line-height: 150%;
+    border: none;
+    border-bottom: 1px solid;
+
+    &:hover {
+      color: $sec-background-c;
+
+      &::placeholder {
+        color: $sec-background-c;
+      }
+    }
+
+    &:focus {
+      color: $sec-background-c;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    border: none;
+    outline: none;
+  }
+}

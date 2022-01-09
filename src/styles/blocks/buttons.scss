@@ -1,0 +1,86 @@
+.buttons {
+
+  &--buy {
+    @include button;
+
+    background-color: $sec-background-c;
+    color: $main-text-c;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+
+    &:active {
+      background-color: $button-pressed;
+    }
+
+    &:disabled {
+      background-color: $button-disabled;
+    }
+  }
+
+  &--info {
+    @include button;
+
+    background-color: transparent;
+    border: 1px solid $sec-background-c;
+    color: $sec-background-c;
+
+    &::after {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      content: "";
+
+      -webkit-mask-box-image: url(../images/arrow.svg);
+      mask-image: url(../images/arrow.svg);
+      background-color: $sec-background-c;
+      transform: translate(10px, 25%);
+    }
+
+    &:hover {
+      border-color: $button-hover;
+      color: $button-hover;
+
+      &::after {
+        background-color: $button-hover;
+      }
+    }
+
+    &:active {
+      border-color: $button-pressed;
+      color: $button-pressed;
+
+      &::after {
+        background-color: $button-pressed;
+      }
+    }
+
+    &:disabled {
+      border-color: $button-disabled;
+      color: $button-disabled;
+
+      &::after {
+        background-color: $button-disabled;
+      }
+    }
+  }
+
+  &--no-phone {
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &--on-phone {
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

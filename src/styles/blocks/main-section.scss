@@ -1,0 +1,133 @@
+.main-section {
+  padding: 0 20px 90px;
+
+  @include onTablet {
+    padding: 0 40px 90px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px 90px;
+  }
+
+  &:first-child {
+    margin-top: 90px;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    &--title {
+
+      font-family: $secondary-font;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 125%;
+
+      @include onTablet {
+        font-size: 40px;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+      }
+
+    }
+  }
+
+  &__block {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__picture {
+    padding-bottom: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      border-radius: 10px;
+    }
+
+    &--no-phone {
+
+      @include onPhone {
+        display: none;
+      }
+    }
+
+    &--on-phone {
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--1 {
+      background-image: url(../images/2.png);
+      align-self: center;
+    }
+
+    &--2 {
+      background-image: url(../images/3.png);
+      align-self: center;
+    }
+
+    &--3 {
+      background-image: url(../images/4.png);
+      align-self: center;
+    }
+
+    &--4 {
+      background-image: url(../images/5.png);
+      align-self: center;
+    }
+  }
+
+  &__date {
+    margin-top: 20px;
+    font-family: $main-font;
+    font-size: 16px;
+    line-height: 150%;
+    color: $sec-background-c;
+  }
+
+  &__block-title {
+    margin-top: 10px;
+    font-family: $secondary-font;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 125%;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__block-paragraph {
+    margin-top: 20px;
+    font-family: $main-font;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: $sec-text-c;
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+}
