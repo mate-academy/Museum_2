@@ -1,0 +1,104 @@
+.button {
+  display: block;
+  position: relative;
+  height: 60px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  font-weight: bold;
+
+  &--mobile {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__primary {
+    color: $c-white;
+    background-color: $c-red;
+    transition: background-color 0.5s;
+
+    &--submit {
+      border: none;
+      padding: 0;
+      width: 100%;
+
+      @include RalewayLanguage;
+      font-size: 16px;
+    }
+
+    &--disabled {
+      background: $c-red-disabled;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background-color: $c-red-hover;
+    }
+
+    &:active {
+      background-color: $c-red-active;
+    }
+  }
+
+  &__secondary {
+    border: 1px solid $c-red;
+    color: $c-red;
+    transition: color 0.5s, border-color 0.5s;
+
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      -webkit-mask-box-image: url(../images/arrow.svg);
+      background-repeat: no-repeat;
+      transform: translate(4px, 4px);
+      background-color: $c-red;
+    }
+
+    &--disabled {
+      color: $c-red-disabled;
+      border-color: $c-red-disabled;
+      pointer-events: none;
+
+      &::after {
+        background-color: $c-red-disabled;
+      }
+    }
+
+    &:hover {
+      color: $c-red-hover;
+      border-color: $c-red-hover;
+    }
+
+    &:hover::after {
+      background-color: $c-red-hover;
+    }
+
+    &:active {
+      color: $c-red-active;
+      border-color: $c-red-active;
+    }
+
+    &:active::after {
+      background-color: $c-red-active;
+    }
+  }
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+}

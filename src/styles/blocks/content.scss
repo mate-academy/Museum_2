@@ -1,0 +1,114 @@
+.content {
+  &__img {
+    margin-bottom: 20px;
+    width: 100%;
+    transition: transform 0.5s;
+
+    &-container {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--events {
+      @include onTablet {
+        width: 330px;
+      }
+
+      @include onDesktop {
+        width: 330px;
+      }
+    }
+
+    &--exhibitions {
+      @include onDesktop {
+        width: 570px;
+        height: 484px;
+        object-fit: cover;
+      }
+    }
+
+    &--news {
+      width: 100%;
+      padding-bottom: 100%;
+      transition: transform 0.5s;
+
+      &--first {
+        background: url(../images/news-1.png) 50% 50% no-repeat;
+        background-size: cover;
+      }
+
+      &--second {
+        background: url(../images/news-2.png) 50% 50% no-repeat;
+        background-size: cover;
+      }
+
+      @include onDesktop {
+        padding-bottom: 0;
+        height: 370px;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    line-height: 24px;
+    color: $c-red;
+
+    &--news {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 20px;
+      color: $c-black;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include PlayfairDisplayLanguage;
+    font-size: 20px;
+    line-height: 25px;
+    color: $c-black;
+
+    @include onDesktop {
+      width: 570px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    line-height: 24px;
+    color: $c-gray;
+
+    &--news {
+      @include onTablet {
+        width: 330px;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      width: 570px;
+    }
+  }
+}
