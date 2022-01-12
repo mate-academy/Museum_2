@@ -1,0 +1,84 @@
+.hero {
+  padding-top: $header-height + 53px;
+  padding-bottom: 95%;
+  background-color: $c-background;
+  background-image: url(../images/img_01.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 75%;
+  color: $c-white;
+
+  @include onTablet() {
+    height: 100vh;
+    padding-top: $header-height + 99px;
+    padding-bottom: 0;
+    background-size: 50%;
+  }
+
+  @include onDesctop() {
+    padding-top: 0;
+    background-position: right bottom;
+    background-size: 78vmin;
+  }
+
+  &__content {
+    position: relative;
+    row-gap: 0;
+
+    @include onDesctop() {
+      height: 100vh;
+      padding-top: $header-height-desctop;
+      padding-bottom: 56px;
+
+      &::after {
+        content: "10.08 - 10.10";
+        position: absolute;
+        bottom: 56px;
+        left: 0;
+        display: block;
+        padding-right: 15px;
+        background-color: $c-background;
+        @include text("Raleway", 14px, 140%, 400);
+        transform: translateY(50%);
+      }
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    @extend %additional-text;
+
+    @include onDesctop() {
+      margin-bottom: 0;
+      align-self: flex-end;
+      transform: translateY(100%);
+    }
+  }
+
+  &__title {
+    @include marginOnScreens(30px, 20px, 0);
+
+    @include onDesctop() {
+      align-self: center;
+    }
+  }
+
+  &__description {
+    @include marginOnScreens(40px, 50px, 0);
+
+    @include onDesctop() {
+      transform: translateY(-10%);
+    }
+  }
+
+  &__line {
+    align-self: end;
+    background-color: $c-white;
+    transform: translateY(50%);
+    opacity: 0.3;
+
+    @include onDesctop() {
+      height: 1px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.select {
+  padding-right: 15px;
+  @include text("Raleway", 16px, 150%, 500);
+  color: $c_white;
+  text-transform: uppercase;
+
+  &__current-leng {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      display: block;
+      @include icon("dropdown", 10px);
+      transform: translateY(-40%);
+    }
+  }
+
+  &__list {
+    position: absolute;
+    display: none;
+    background-color: $c-background;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__leng {
+    transition-duration: $anim-time;
+
+    &:hover {
+      color: $c-main-hover;
+    }
+
+    &:active {
+      color: $c-main-active;
+    }
+  }
+}

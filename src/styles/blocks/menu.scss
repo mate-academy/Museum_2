@@ -1,0 +1,121 @@
+.menu {
+  height: 100vh;
+  padding-top: $header-height + 13px;
+  background-color: $c-background;
+  color: $c-white;
+  transition-duration: $anim-time;
+  transform: translateX(100%);
+
+  @include onTablet() {
+    padding-top: $header-height + 30px;
+
+    background-image: url(../images/img_menu.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 45%;
+  }
+
+  @include onDesctop() {
+    padding-top: $header-height-desctop + 13px;
+
+    background-position: right bottom;
+    background-size: 78vmin;
+  }
+
+  &--visible {
+    transform: translateX(0);
+  }
+
+  &__content {
+    row-gap: 0;
+    margin-bottom: 40px;
+
+    @include onLandscape() {
+      margin-bottom: 25px;
+      border-bottom: 1px solid $c-white;
+    }
+
+    @include onTablet() {
+      margin-bottom: 50px;
+    }
+
+    @include onDesctop() {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 20px;
+
+    &:nth-child(2) {
+      margin-bottom: 40px;
+    }
+
+    @include onLandscape() {
+      margin-bottom: 0;
+
+      &:nth-child(2) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onTablet() {
+      margin-bottom: 50px;
+    }
+
+    @include onDesctop() {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__subtitle {
+    @extend %additional-text;
+    white-space: nowrap;
+  }
+
+  &__nav {
+    border-bottom: 1px solid $c-white;
+
+    @include onLandscape() {
+      grid-row: 1 / 3;
+      border: none;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+
+    @include onLandscape() {
+      display: grid;
+      margin-bottom: 0;
+      height: 40vh;
+    }
+
+    @include onTablet() {
+      display: grid;
+      margin-bottom: 20px;
+      height: 27vh;
+    }
+
+    @include onDesctop() {
+      margin-bottom: 0;
+      height: 45vh;
+    }
+  }
+
+  &__list-item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onLandscape() {
+      margin-bottom: 0;
+    }
+
+    @include onTablet() {
+      margin-bottom: 0;
+    }
+  }
+}

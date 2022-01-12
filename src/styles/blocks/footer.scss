@@ -1,0 +1,80 @@
+.footer {
+  padding: 30px 0;
+  background-color: $c-background;
+  color: $c-white;
+
+  @include onTablet() {
+    padding-top: 50px;
+  }
+
+  &__info {
+    @include marginOnScreens(55px, 55px, 65px);
+    row-gap: 50px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include marginOnScreens(10px, 30px, 30px);
+  }
+
+  &__list {
+    flex-grow: 1;
+    margin-bottom: 30px;
+  }
+
+  &__list-item {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    margin-right: 20px;
+    @include iconWithConditions("facebook");
+    transition-duration: $anim-time;
+
+    &:hover {
+      transform: scale($anim-scale-icon);
+    }
+
+    &--twitter {
+      @include iconWithConditions("twitter");
+    }
+
+    &--telegram {
+      @include iconWithConditions("telegram");
+    }
+
+    &--instagram {
+      @include iconWithConditions("instagram");
+    }
+
+    &--scroll-up {
+      justify-self: end;
+      margin-right: 0;
+      @include iconWithConditions("scroll-up", 30px);
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @extend %additional-text;
+
+    @include onTablet() {
+      display: grid;
+
+      & :nth-child(1) {
+        white-space: nowrap;
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.header {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  background-color: $c-background;
+  font-weight: 500;
+  color: $c-white;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $header-height;
+
+    @include onDesctop() {
+      height: $header-height-desctop;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 116px;
+    height: 26px;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+  }
+
+  &__select {
+    position: relative;
+    margin-right: 30px;
+    transition-duration: $anim-time;
+    transform: translateY(-50px);
+    cursor: pointer;
+
+    &--visible {
+      transform: translateY(0);
+    }
+
+    @include onTablet() {
+      order: 1;
+      margin-right: 0;
+      transform: translateY(0);
+    }
+  }
+
+  &__burger-menu {
+    @include onTablet() {
+      margin-right: 40px;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.subscribe {
+  &__content {
+    margin-bottom: 50px;
+    row-gap: 20px;
+  }
+
+  &__form {
+    row-gap: 40px;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $c-black;
+    outline: none;
+    caret-color: $c-main;
+    @include text("Raleway", 16px, 150%, 700);
+    color: $c-black;
+    transition-duration: $anim-time;
+
+    &::placeholder {
+      @extend %main-text;
+      color: $c-black;
+      transition-duration: $anim-time;
+    }
+
+    &:hover {
+      border-color: $c-main;
+
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:focus {
+      border-color: $c-main;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  &__error {
+    display: none;
+    color: red;
+
+    &--visible {
+      display: block;
+    }
+  }
+}

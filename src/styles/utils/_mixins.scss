@@ -1,6 +1,56 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onTablet () {
+  @media (min-width: 640px) and (min-height: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesctop() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onLandscape() {
+  @media (orientation: landscape) and (max-height: 640px) {
+    @content;
+  }
+}
+
+@mixin text($_family, $_size, $l-heigth, $_weight) {
+  font-family: $_family;
+  font-size: $_size;
+  line-height: $l-heigth;
+  font-weight: $_weight;
+}
+
+@mixin marginOnScreens($_mobile-margin, $_tablet_margin, $_desctop_margin) {
+  margin-bottom: $_mobile-margin;
+
+  @include onTablet() {
+    margin-bottom: $_tablet_margin;
+  }
+
+  @include onDesctop() {
+    margin-bottom: $_desctop_margin;
+  }
+}
+
+@mixin icon($_url, $_size: 20px) {
+  width: $_size;
+  height: $_size;
+  background-image: url(../images/icons/#{$_url}.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@mixin iconWithConditions($_url, $_size: 20px) {
+  @include icon($_url, $_size);
+
   &:hover {
-    #{$_property}: $_toValue;
+    background-image: url(../images/icons/#{$_url}-hover.svg);
+  }
+
+  &:active {
+    background-image: url(../images/icons/#{$_url}-active.svg);
   }
 }

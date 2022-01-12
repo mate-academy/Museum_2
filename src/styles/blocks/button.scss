@@ -1,0 +1,58 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  border: none;
+  color: $c-white;
+  background-color: $c-main;
+  transition-duration: $anim-time;
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 5px;
+    background-color: $c-main-hover;
+    transform: scale($anim-scale);
+  }
+
+  &:active {
+    background-color: $c-main-active;
+  }
+
+  &:disabled {
+    background-color: $c-main-disabled;
+  }
+
+  &--section {
+    border: 1px solid $c-main;
+    background-color: transparent;
+    color: $c-main;
+
+    &::after {
+      content: "";
+      margin-left: 11px;
+      @include icon("arrow", 16px);
+      transition-duration: $anim-time;
+    }
+
+    &:hover {
+      border-color: $c-main-hover;
+      background-color: transparent;
+      color: $c-main-hover;
+
+      &::after {
+        background-image: url(../images/icons/arrow-hover.svg);
+      }
+    }
+
+    &:active {
+      border-color: $c-main-active;
+      color: $c-main-active;
+
+      &::after {
+        background-image: url(../images/icons/arrow-active.svg);
+      }
+    }
+  }
+}

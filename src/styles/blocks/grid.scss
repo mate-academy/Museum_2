@@ -1,0 +1,50 @@
+.grid {
+  display: grid;
+
+  &--landscape {
+    @include onLandscape() {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+
+      .grid__item {
+        @for $start from 1 through 2 {
+          @for $end from $start through 2 {
+            &--landscape-#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include onTablet() {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+    row-gap: 70px;
+
+    &__item {
+      @for $start from 1 through 6 {
+        @for $end from $start through 6 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  @include onDesctop() {
+    grid-template-columns: repeat(12, 1fr);
+
+    &__item {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--desctop-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
