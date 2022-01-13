@@ -1,0 +1,59 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
+
+  background-color: $colorBackground;
+
+  transform: translateX(100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__top {
+    margin-bottom: 30px;
+  }
+
+  &__info {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__subtitle {
+    @extend %text-add;
+    color: $colorWhite;
+  }
+
+  &__text {
+    color: $colorWhite;
+  }
+
+  &__line {
+    margin-bottom: 40px;
+    width: 100%;
+
+    border-bottom: 1px solid $colorWhite;
+  }
+
+  &__image {
+    display: none;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @include onTablet {
+      display: block;
+      max-width: 100%;
+    }
+  }
+}

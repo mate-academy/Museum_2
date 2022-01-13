@@ -3,162 +3,52 @@
 @import "./blocks/page.scss";
 @import "./blocks/container.scss";
 @import "./blocks/link.scss";
-@import "./blocks/nav.scss";
+@import "./blocks/top.scss";
 @import "./blocks/button.scss";
 @import "./blocks/header.scss";
+@import "./blocks/menu.scss";
+@import "./blocks/nav.scss";
+@import "./blocks/content.scss";
+@import "./blocks/main.scss";
+@import "./blocks/cta.scss";
+@import "./blocks/news.scss";
+@import "./blocks/subscribe.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/more.scss";
 
-.content {
-  display: flex;
-  flex-direction: column;
+.grid {
+  display: grid;
+  column-gap: 20px;
 
-  &__image {
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &--desktop {
     display: block;
-    max-width: 100%;
-    margin-bottom: 20px;
+
+    @include onDesktop {
+      display: grid;
+    }
   }
 
-  &__date {
-    margin-bottom: 10px;
-    color: $colorMain;
-  }
+  &__item {
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
 
-  &__title {
-    margin-bottom: 20px;
-  }
-
-  &__info {
-    margin-bottom: 30px;
-  }
-
-  &__container {
-    margin-bottom: 60px;
-  }
-}
-
-.main {
-  background-color: $colorWhite;
-  padding-top: 90px;
-
-  &__actual {
-    margin-bottom: 120px;
-  }
-
-  &__events {
-    margin-bottom: 90px;
-  }
-
-  &__title {
-    margin-bottom: 60px;
-    display: flex;
-    justify-content: center;
-  }
-
-  &__button:nth-child(2n) {
-    margin-top: 30px;
-
-    color: $colorMain;
-    background-color: $colorWhite;
-    border: 1px solid $colorMain;
-  }
-
-  &__cta {
-    margin: 0 -20px  90px;
-  }
-
-  &__news {
-    margin-bottom: 120px;
-  }
-
-}
-
-//call-to-action
-.cta {
-  background-color: $colorBackground;
-
-  &__container {
-    padding: 50px 20px;
-  }
-
-  &__title {
-    margin-bottom: 20px;
-    color: $colorWhite;
-  }
-
-  &__text {
-    margin-bottom: 40px;
-    color: $colorWhite;
-  }
-}
-
-.news {
-
-  &__card {
-    margin-bottom: 50px;
-  }
-
-  &__title {
-    margin-bottom: 60px;
-  }
-
-  &__date {
-    color: $colorBlack;
-  }
-
-  &__subtitle {
-    margin-bottom: 20px;
-  }
-
-  &__image {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-}
-
-.subscribe {
-
-  &__title {
-    margin-bottom: 20px;
-  }
-
-  &__text {
-    margin-bottom: 50px;
-  }
-}
-
-.footer {
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  color: $colorWhite;
-
-  background-color: $colorBackground;
-
-  &__subtitle {
-    color: $colorWhite;
-    margin-bottom: 10px;
-  }
-
-  &__list {
-    @extend p;
-    color: $colorWhite;
-    list-style: none;
-  }
-
-  &__schedule {
-    margin-bottom: 50px;
-  }
-}
-
-.more {
-  display: flex;
-  justify-content: space-between;
-  &__years {
-    color: $colorWhite;
-    @extend %text-add;
-  }
-
-  &__link {
-    @extend %text-add;
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
   }
 }
