@@ -7,6 +7,10 @@
     padding-top: 50px;
   }
 
+  @include onDesctop() {
+    padding-top: 50px;
+  }
+
   &__info {
     @include marginOnScreens(55px, 55px, 65px);
     row-gap: 50px;
@@ -70,6 +74,14 @@
     @extend %additional-text;
 
     @include onTablet() {
+      display: grid;
+
+      & :nth-child(1) {
+        white-space: nowrap;
+      }
+    }
+
+    @include onDesctop() {
       display: grid;
 
       & :nth-child(1) {

@@ -1,5 +1,6 @@
 .menu {
   height: 100vh;
+  max-height: 1300px;
   padding-top: $header-height + 13px;
   background-color: $c-background;
   color: $c-white;
@@ -18,8 +19,10 @@
   @include onDesctop() {
     padding-top: $header-height-desctop + 13px;
 
+    background-image: url(../images/img_menu.png);
+    background-repeat: no-repeat;
     background-position: right bottom;
-    background-size: 78vmin;
+    background-size: auto 78%;
   }
 
   &--visible {
@@ -95,26 +98,25 @@
       display: grid;
       margin-bottom: 20px;
       height: 27vh;
+      max-height: 470px;
     }
 
     @include onDesctop() {
+      display: grid;
       margin-bottom: 0;
       height: 45vh;
+      max-height: 800px;
     }
   }
 
   &__list-item {
-    margin-bottom: 20px;
+    @include marginOnScreens(20px, 0, 0);
 
     &:last-child {
       margin-bottom: 0;
     }
 
     @include onLandscape() {
-      margin-bottom: 0;
-    }
-
-    @include onTablet() {
       margin-bottom: 0;
     }
   }

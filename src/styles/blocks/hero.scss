@@ -9,16 +9,18 @@
   color: $c-white;
 
   @include onTablet() {
-    height: 100vh;
+    height: clamp(900px, 100vh, 1300px);
     padding-top: $header-height + 99px;
     padding-bottom: 0;
-    background-size: 50%;
+    background-size: 55% auto;
   }
 
   @include onDesctop() {
+    height: clamp(700px, 100vh, 1100px);
+    padding-bottom: 0;
     padding-top: 0;
     background-position: right bottom;
-    background-size: 78vmin;
+    background-size: auto 78%;
   }
 
   &__content {
@@ -26,7 +28,7 @@
     row-gap: 0;
 
     @include onDesctop() {
-      height: 100vh;
+      height: clamp(700px, 100vh, 1100px);
       padding-top: $header-height-desctop;
       padding-bottom: 56px;
 
