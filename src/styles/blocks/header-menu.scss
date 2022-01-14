@@ -1,0 +1,125 @@
+.head {
+  background: $background;
+  height: max-content;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+
+  @include onTablet {
+    padding: 26px 40px 0;
+  }
+
+  @include onDesktop {
+    padding: 32px 55px 0;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-link {
+      @include sizer(23px, 22px);
+      background: url("../images/menu.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include onTablet {
+        margin-right: 42px;
+      }
+
+      @include onDesktop {
+        margin-right: 42px;
+      }
+    }
+
+    &-select {
+      display: none;
+      background: $background;
+      font-family: "Raleway", serif;
+      border: none;
+      line-height: 24px;
+      font-weight: 500;
+      color: $white;
+      height: 24px;
+      cursor: pointer;
+      text-align: center;
+
+      &:focus {
+        outline: none;
+        text-align: start;
+      }
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding-top: 70px;
+
+  @include onTablet {
+    padding: 0 40px;
+    padding-top: 123px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px;
+    margin-top: 80px;
+  }
+
+  &__text {
+    grid-column: 1 / 4;
+    color: $white;
+    padding-bottom: 40px;
+
+    &-one {
+      font-size: 14px;
+      line-height: 20px;
+      padding-bottom: 10px;
+    }
+
+    &-gen {
+      font-size: 48px;
+      font-weight: 700;
+      padding-bottom: 30px;
+      line-height: 48px;
+    }
+
+    &-two {
+      line-height: 24px;
+      padding-bottom: 40px;
+      padding-right: 13px;
+    }
+
+    &-buy {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__photobox {
+    grid-column: 1 / 4;
+    @include sizer(245px, 273px);
+
+    &-photo {
+      height: 100%;
+    }
+  }
+}
