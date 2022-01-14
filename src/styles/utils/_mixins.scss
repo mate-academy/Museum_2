@@ -16,3 +16,20 @@
     @content;
   }
 }
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 20px;
+  padding: 0 20px;
+
+  @include onTablet() {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+  }
+
+  @include onDesktop() {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+  }
+}
