@@ -11,13 +11,40 @@
   color: $colorWhite;
   background-color: $colorMain;
 
+  @extend %button-colors;
+
   @include onTablet {
     margin: 0;
   }
 
-  &--white {
+  &--white-mobile {
+    margin-top: 30px;
+
     color: $colorMain;
     background-color: $colorWhite;
     border: 1px solid $colorMain;
+
+    @include onTablet {
+      display: none;
+      margin-top: 0;
+    }
+
+    @extend %button-white-colors;
   }
+
+  &--white {
+    @extend .button--white-mobile;
+    display: none;
+    width: 100%;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      width: 280px;
+    }
+  }
+
+  @extend %button-white-colors;
 }

@@ -1,11 +1,23 @@
 .link {
   font-family: "Raleway", serif;
   text-decoration: none;
-  color: $colorMain;
+  color: $colorWhite;
+
+  &--privacy {
+    @extend .link;
+  }
 
   &--special {
     @extend .link;
+    margin-bottom: 4px;
     font-size: 14px;
-    color: $colorWhite;
+
+    &:nth-child(4n) {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
   }
 }
