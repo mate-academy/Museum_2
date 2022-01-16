@@ -1,0 +1,68 @@
+.upcoming {
+  padding: 100px 20px 0;
+  max-width: 1020px;
+  margin: 0 auto;
+
+  &__heading {
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+
+    &-gen {
+      font-size: 28px;
+      font-weight: 700;
+    }
+  }
+
+  &__box:last-child {
+    margin-top: 60px;
+  }
+}
+
+.box {
+  margin-top: 60px;
+  display: block;
+  width: 100%;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  &__photo {
+    grid-column: 1 / 4;
+    width: 100%;
+    max-height: 475px;
+
+    &-img {
+      height: 100%;
+      width: 100%;
+      max-height: 475px;
+      object-fit: cover;
+    }
+  }
+  &__desc {
+    grid-column: 4 / 7;
+    &-date {
+      margin-top: 20px;
+      color: $btn-bckg;
+
+      @include onTablet {
+        margin: 0;
+      }
+    }
+
+    &-head {
+      margin-top: 10px;
+    }
+
+    &-txt {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+  }
+}

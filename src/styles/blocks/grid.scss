@@ -1,34 +1,60 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 20px;
+.event {
+  display: block;
+  width: 100%;
 
-  @include onDesktop {
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: 24px;
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
   }
 
-  &--desktop {
-    display: block;
-
-    @include onDesktop {
-      display: grid;
+  &__content {
+    @include onTablet {
+      grid-column: 1 / 4;
     }
-  }
 
-  &__item {
-    @for $start from 1 through 12 {
-      @for $end from $start through 12 {
-        &--#{$start}-#{$end} {
-          grid-column: #{$start} / #{$end + 1};
-        }
+    &:last-child {
+      margin-top: 60px;
 
-        &--desktop-#{$start}-#{$end} {
-          @include onDesktop {
-            grid-column: #{$start} / #{$end + 1};
-          }
-        }
+      @include onTablet {
+        margin-top: 0;
+        grid-column: 4 / 7;
       }
+
+      @include onDesktop {
+        margin-top: 0;
+      }
+    }
+
+    &-photo {
+      width: 100%;
+      max-height: 484px;
+      box-sizing: border-box;
+
+      &--image {
+        height: 100%;
+        max-height: 484px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &-date {
+      margin-top: 20px;
+      color: $btn-bckg;
+    }
+
+    &-desc {
+      margin-top: 10px;
+    }
+
+    &-text {
+      margin-top: 20px;
+    }
+
+    &-button {
+      margin-top: 30px;
     }
   }
 }
