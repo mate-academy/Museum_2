@@ -1,18 +1,21 @@
 .cta {
-  position: relative;
-
   background-color: $colorBackground;
 
   @include onDesktop {
     height: 100vh;
-    background-image: url(../images/ctalady.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left bottom;
   }
 
   &__image {
-    height: 100vh;
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      left: -10vh;
+      bottom: 0;
+
+      display: block;
+      height: 80vh;
+    }
   }
 
   &__title {
