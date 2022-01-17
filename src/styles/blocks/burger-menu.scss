@@ -17,16 +17,27 @@
     background-position: bottom center;
   }
 
+  @include onDesktop {
+    background-position: right bottom;
+    background-size: 75vh;
+  }
+
   &__transition {
     padding: 30px 20px 0;
 
     @include onTablet {
       padding: 55px 39px 0;
     }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
   }
 }
 
 .representation {
+  grid-column: 1 / 6;
   &__schedule {
     @include onDesktop {
       display: flex;
@@ -65,6 +76,11 @@
     flex-direction: column;
     gap: 20px;
 
+    @include onDesktop {
+      margin-top: 70px;
+      gap: 60px;
+    }
+
     &-link {
       text-decoration: none;
       color: $white;
@@ -88,6 +104,10 @@
     width: 100%;
     background: $white;
     margin: 40px 0;
+
+    @include onDesktop {
+      margin: 60px 0;
+    }
   }
 }
 
