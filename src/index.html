@@ -7,18 +7,18 @@
     <link rel="shortcut icon" href="./images/icon.svg">
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
-  <body>
+  <body id="page">
     <header class="head">
-      <nav class="navigation">
+      <div class="navigation">
         <img src="./images/logo.svg" alt="namu logo" class="navigation__logo">
         <div class="navigation__items">
-          <a class="navigation__items-link" href="#"></a>
+          <a class="navigation__items-link" href="#" id="link"></a>
           <select class="navigation__items-select">
             <option class="navigation__items-select--1" value="1">UA</option>
             <option class="navigation__items-select--1" value="2">EN</option>
           </select>
         </div>
-      </nav>
+      </div>
       <section class="content">
         <div class="content__text">
           <p class="content__text-one">10 серпня - 10 листопада</p>
@@ -33,12 +33,55 @@
               <a href="#" class="button__link">Купити квиток</a>
             </div>
           </div>
+          <div class="content__text-line">
+            <p class="content__text-line--date">
+              10.08 - 10.10
+            </p>
+            <div class="content__text-line--thing"></div>
+          </div>
         </div>
         <div class="content__photobox">
           <img src="./images/head-photo/1.png" alt="lady" class="content__photobox-photo">
         </div>
       </section>
     </header>
+    <nav class="burger" id="burger-menu">
+      <div class="burger__navigation navigation">
+        <img src="./images/logo.svg" alt="namu logo" class="navigation__logo">
+        <div class="navigation__items">
+          <a class="navigation__items-cross" id="cross" href="#"></a>
+          <select class="navigation__items-select">
+            <option class="navigation__items-select--1" value="1">UA</option>
+            <option class="navigation__items-select--1" value="2">EN</option>
+          </select>
+        </div>
+      </div>
+      <div class="burger__transition">
+        <div class="burger__transition-representation representation">
+          <div class="representation__schedule">
+            <div class="representation__schedule-place place">
+              <p class="place__head">Розклад сьогодні</p>
+              <p class="place__txt">12:00 - 19:00</p>
+            </div>
+            <div class="representation__schedule-place place">
+              <p class="place__head">Адреса</p>
+              <p class="place__txt">Київ, вул. М. Грушевського, 6</p>
+            </div>
+          </div>
+          <div class="representation__go">
+            <a class="representation__go-link" href="#">Актуальні виставки</a>
+            <a class="representation__go-link" href="#">Найближчі події</a>
+            <a class="representation__go-link" href="#">Новини</a>
+          </div>
+          <div class="representation__line"></div>
+          <div class="representation__button">
+            <div class="representation__button-item button">
+              <a href="#" class="button__link">Купити квиток</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <main class="general">
       <section class="actual">
         <div class="actual__heading heading">
@@ -76,8 +119,8 @@
         </div>
       </section>
       <section class="upcoming">
-        <div class="upcoming__heading">
-          <p class="upcoming__heading-gen">Найближчі події</p>
+        <div class="upcoming__heading heading">
+          <p class="upcoming__heading-gen heading__first">Найближчі події</p>
           <div class="upcoming__archive archive__one archive">
             <a class="archive__two-link">Календар подій</a>
           </div>
@@ -114,7 +157,7 @@
       </section>
       <section class="visit">
         <div class="visit__picture">
-          <img src="./images/main-mobile/05.png" alt="picture">
+          <img class="visit__picture-photo" src="./images/main-mobile/05.png" alt="picture">
         </div>
         <div class="visit__info">
           <p class="visit__info-gen">Сплануйте візит до музею</p>
@@ -125,8 +168,8 @@
         </div>
       </section>
       <section class="news">
-        <div class="news__heading">
-          <p class="news__heading-gen">Новини</p>
+        <div class="news__heading heading">
+          <p class="news__heading-gen heading__first">Новини</p>
           <div class="news__heading-text archive__one archive">
             <a class="archive__one-link">Архів виставок</a>
           </div>
@@ -167,7 +210,11 @@
           </div>
           <div class="container__follow">
             <label class="container__follow-input">
-              <input class="container__follow-input--general">
+              <input
+              required
+              placeholder="e-mail"
+              class="container__follow-input--general"
+              >
             </label>
             <div class="container__follow-click">
               <div class="container__follow-click--button button">

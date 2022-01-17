@@ -7,8 +7,22 @@
     grid-template-columns: repeat(6, 1fr);
   }
 
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
   &__picture {
     display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 1 / 7;
+    }
+
+    &-photo {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__info {
@@ -20,6 +34,11 @@
       grid-column: 1 / 6;
     }
 
+    @include onDesktop {
+      padding: 205px 0;
+      grid-column: 7 / 12;
+    }
+
     &-gen {
       font-weight: 700;
       font-size: 38px;
@@ -29,6 +48,11 @@
         font-size: 62px;
         line-height: 62px;
       }
+
+      @include onDesktop {
+        font-size: 80px;
+        line-height: 80px;
+      }
     }
 
     &-words {
@@ -37,11 +61,16 @@
     }
 
     &-button {
+      margin-top: 40px;
+
       @include onTablet {
         width: 75%;
         margin-top: 60px;
       }
-      margin-top: 40px;
+
+      @include onDesktop {
+        width: 70%;
+      }
     }
   }
 }

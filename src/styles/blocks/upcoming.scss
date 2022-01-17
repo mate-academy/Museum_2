@@ -1,10 +1,14 @@
 .upcoming {
   padding: 100px 20px 0;
-  max-width: 1020px;
+  max-width: 2600px;
   margin: 0 auto;
 
   @include onTablet {
     padding: 124px 39px 0;
+  }
+
+  @include onDesktop {
+    padding: 200px 55px 0;
   }
 
   &__heading {
@@ -13,16 +17,6 @@
 
     @include onTablet {
       justify-content: space-between;
-    }
-
-    &-gen {
-      font-size: 28px;
-      font-weight: 700;
-
-      @include onTablet {
-        font-size: 40px;
-        line-height: 50px;
-      }
     }
   }
 
@@ -37,19 +31,24 @@
   width: 100%;
 
   @include onTablet {
-    margin-top: 66px;
-  }
-
-  @include onTablet {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     column-gap: 30px;
+    margin-top: 66px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
   }
 
   &__photo {
     grid-column: 1 / 4;
     width: 100%;
     max-height: 475px;
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
 
     &-img {
       height: 100%;
@@ -58,8 +57,14 @@
       object-fit: cover;
     }
   }
+
   &__desc {
     grid-column: 4 / 7;
+
+    @include onDesktop {
+      grid-column: 5 / 11;
+    }
+
     &-date {
       margin-top: 20px;
       color: $btn-bckg;
@@ -81,6 +86,10 @@
     &-button {
       @include onTablet {
         margin-top: 50px;
+      }
+
+      @include onDesktop {
+        width: 48%;
       }
     }
   }

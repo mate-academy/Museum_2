@@ -1,0 +1,104 @@
+.burger {
+  background: $background;
+  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+
+  @include onTablet {
+    background-image: url(".././images/head-photo/2.png");
+    background-size: 27vh;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+
+  &__transition {
+    padding: 30px 20px 0;
+
+    @include onTablet {
+      padding: 55px 39px 0;
+    }
+  }
+}
+
+.representation {
+  &__schedule {
+    @include onDesktop {
+      display: flex;
+      gap: 100px;
+    }
+    &-place {
+      display: flex;
+      flex-direction: column;
+
+      &:last-child {
+        margin-top: 20px;
+
+        @include onDesktop {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &-item {
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+    }
+  }
+
+  &__go {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-link {
+      text-decoration: none;
+      color: $white;
+      font-size: 20px;
+      line-height: 30px;
+
+      @include onTablet {
+        font-size: 48px;
+        line-height: 57px;
+        font-weight: 700;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background: $white;
+    margin: 40px 0;
+  }
+}
+
+.place {
+  color: $white;
+  &__head {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &__text {
+    line-height: 24px;
+  }
+}

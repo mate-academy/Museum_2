@@ -1,5 +1,5 @@
 .follow {
-  max-width: 1020px;
+  max-width: 2600px;
   margin: 0 auto;
   padding: 112px 20px 0;
 
@@ -7,6 +7,11 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     padding: 160px 39px 0;
+  }
+
+  @include onTablet {
+    display: block;
+    padding: 200px 55px 0;
   }
 }
 
@@ -16,13 +21,25 @@
   }
 
   &__text {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
     &-head {
+      grid-column: 1 / 6;
       font-size: 28px;
       line-height: 35px;
       font-weight: 700;
+
+      @include onDesktop {
+        font-size: 48px;
+        line-height: 57px;
+      }
     }
 
     &-item {
+      grid-column: 7 / 13;
       line-height: 24px;
       margin-top: 20px;
       font-weight: 400;
@@ -32,19 +49,35 @@
   &__follow {
     margin-top: 20px;
 
+    @include onDesktop {
+      margin-top: 50px;
+    }
+
     &-input {
       @include onTablet {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
+      }
+
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
       }
     }
 
     &-input--general {
       width: 100%;
       box-sizing: border-box;
+      border: none;
+      border-bottom: 1px solid $black;
+      color: $black;
 
       @include onTablet {
         grid-column: 1 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 6;
       }
     }
 
@@ -54,6 +87,12 @@
       @include onTablet {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
+      }
+
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        margin-top: 40px;
       }
 
       &--button {

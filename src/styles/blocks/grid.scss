@@ -9,22 +9,30 @@
     column-gap: 30px;
   }
 
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
   &__content {
     box-sizing: border-box;
     @include onTablet {
       grid-column: 1 / 4;
     }
 
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+
     &:last-child {
-      margin-top: 60px;
+      padding-top: 60px;
 
       @include onTablet {
-        margin-top: 0;
+        padding-top: 0;
         grid-column: 4 / 7;
       }
 
       @include onDesktop {
-        margin-top: 0;
+        grid-column: 7 / 13;
       }
     }
 
@@ -38,19 +46,19 @@
         max-height: 484px;
         width: 100%;
         object-fit: cover;
-        object-position: center;
       }
     }
 
     &-date {
-      margin-top: 20px;
+      padding-top: 20px;
       color: $btn-bckg;
     }
 
     &-desc {
-      margin-top: 10px;
+      padding-top: 10px;
       font-size: 20px;
       line-height: 25px;
+      height: 80px;
 
       @include onTablet {
         font-size: 24px;
@@ -59,15 +67,12 @@
     }
 
     &-text {
-      margin-top: 20px;
+      padding-top: 20px;
+      padding-bottom: 30px;
       line-height: 20px;
       @include onTablet {
         line-height: 24px;
       }
-    }
-
-    &-button {
-      margin-top: 30px;
     }
   }
 }
