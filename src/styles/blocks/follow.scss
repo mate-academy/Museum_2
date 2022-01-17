@@ -6,10 +6,15 @@
   @include onTablet {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    padding: 160px 39px 0;
   }
 }
 
 .container {
+  @include onTablet {
+    grid-column: 1 / 6;
+  }
+
   &__text {
     &-head {
       font-size: 28px;
@@ -27,13 +32,33 @@
   &__follow {
     margin-top: 20px;
 
+    &-input {
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
     &-input--general {
       width: 100%;
       box-sizing: border-box;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
     }
 
-    &-button {
+    &-click {
       margin-top: 30px;
+
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      &--button {
+        grid-column: 1 / 4;
+      }
     }
   }
 }

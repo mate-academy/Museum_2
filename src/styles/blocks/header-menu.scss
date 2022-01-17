@@ -67,9 +67,6 @@
 }
 
 .content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
   max-width: 1020px;
   margin: 0 auto;
   padding: 0 20px;
@@ -86,7 +83,6 @@
   }
 
   &__text {
-    grid-column: 1 / 4;
     color: $white;
     padding-bottom: 40px;
 
@@ -101,25 +97,58 @@
       font-weight: 700;
       padding-bottom: 30px;
       line-height: 48px;
+
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      &--item {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 48px;
+        @include onTablet {
+          font-size: 72px;
+          line-height: 72px;
+          grid-column: 1 / 6;
+        }
+      }
     }
 
     &-two {
-      line-height: 24px;
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
       padding-bottom: 40px;
       padding-right: 13px;
+      &--item {
+        line-height: 24px;
+        grid-column: 1 / 4;
+      }
     }
 
-    &-buy {
-      grid-column: 1 / 4;
+    &-button {
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+
+      &--item {
+        grid-column: 1 / 5;
+      }
     }
   }
 
   &__photobox {
-    grid-column: 1 / 4;
-    @include sizer(245px, 273px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
 
     &-photo {
       height: 100%;
+      width: 80%;
+      grid-column: 1 / 3;
     }
   }
 }

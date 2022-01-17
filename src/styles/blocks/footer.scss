@@ -10,10 +10,23 @@
   flex-direction: column;
   gap: 50px;
 
+  @include onTablet {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 50px 39px 0;
+  }
+
   &__contacts {
+    grid-column: 1 / 3;
     &-head {
       font-size: 18px;
       line-height: 27px;
+
+      @include onTablet {
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
 
     &-location {
@@ -24,9 +37,15 @@
   }
 
   &__schedule {
+    grid-column: 3 / 5;
     &-head {
       font-size: 18px;
       line-height: 27px;
+
+      @include onTablet {
+        font-size: 20px;
+        line-height: 30px;
+      }
     }
 
     &-hours {
@@ -53,10 +72,23 @@
   }
 }
 
+.networks {
+  margin-top: 31px;
+  &__network-1 {
+    @include sizer(20px, 20px);
+    background: url(".././images/facebook.svg");
+  }
+}
+
 .privacy {
   padding: 60px 20px 30px;
   display: flex;
   justify-content: space-between;
+
+  @include onTablet {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
 
   &__contents {
     display: flex;
