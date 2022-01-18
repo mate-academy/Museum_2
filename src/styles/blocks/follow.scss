@@ -52,53 +52,92 @@
     @include onDesktop {
       margin-top: 50px;
     }
+  }
+}
 
-    &-input {
-      @include onTablet {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-      }
+.form {
 
-      @include onDesktop {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-      }
+  &__input {
+    display: block;
+    width: 100%;
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
     }
 
-    &-input--general {
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    &-general {
       width: 100%;
       box-sizing: border-box;
       border: none;
       border-bottom: 1px solid $black;
       color: $black;
       background: $white;
+      cursor: pointer;
+
+      &::placeholder {
+        color: $black;
+      }
+
+      &:hover {
+        border-color: $btn-bckg;
+      }
+
+      &:hover::placeholder {
+        color: $btn-bckg;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $btn-bckg;
+        color: $btn-bckg;
+      }
+
+      &:valid {
+        font-weight: 700;
+        color: $black;
+        border-color: $black;
+      }
+
+      &:focus::-webkit-input-placeholder {
+        opacity: 0;
+      }
 
       @include onTablet {
         grid-column: 1 / 5;
       }
+    }
+  }
 
-      @include onDesktop {
-        grid-column: 1 / 6;
-      }
+  &__click {
+    margin-top: 30px;
+
+    & > label {
+      grid-column: 1 / 4;
+      height: 60px;
     }
 
-    &-click {
-      margin-top: 30px;
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
 
-      @include onTablet {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-      }
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      margin-top: 40px;
+    }
 
-      @include onTablet {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        margin-top: 40px;
-      }
-
-      &--button {
-        grid-column: 1 / 4;
-      }
+    &-button {
+      height: 60px;
+      width: 100%;
+      background: $btn-bckg;
+      border: 1px solid $btn-bckg;
+      color: $white;
+      font-weight: 600;
     }
   }
 }

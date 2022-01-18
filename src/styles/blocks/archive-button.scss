@@ -1,33 +1,78 @@
 .archive {
   &__one {
     display: none;
-    color: $btn-bckg;
+    cursor: pointer;
+    height: 60px;
+    width: 200px;
+    border: 1px solid $btn-bckg;
+
+    &:hover {
+      border-color: $btn-hov;
+    }
+
+    &:active {
+      border-color: $bth-press;
+    }
+
+    &:active > a {
+      color: $bth-press;
+    }
+
+    &:hover > a {
+      color: $btn-hov;
+    }
 
     @include onTablet {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 60px;
-      width: 200px;
-      border: 1px solid $btn-bckg;
+      display: block;
     }
 
     @include onDesktop {
       width: 270px;
     }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: $btn-bckg;
+      height: 100%;
+    }
   }
 
   &__two {
     color: $btn-bckg;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border: 1px solid $btn-bckg;
     height: 60px;
     margin-top: 30px;
 
+    &:hover {
+      border-color: $btn-hov;
+    }
+
+    &:hover > a {
+      color: $btn-hov;
+    }
+
+    &:active {
+      border-color: $bth-press;
+    }
+
+    &:active > a {
+      color: $bth-press;
+    }
+
     @include onTablet {
       display: none;
+    }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      color: $btn-bckg;
+      text-decoration: none;
     }
   }
 }
