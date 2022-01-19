@@ -1,8 +1,15 @@
 .menu {
   // width: 100%;
   // background-color: #3f5252;
+  @include onTablet {
+    position: relative;
+  }
 
-  &__content {
+  @include onDesktop {
+    position: relative;
+  }
+
+  &__parts {
     height: 100vh;
     background-color: #3f5252;
     padding: 20px;
@@ -11,7 +18,15 @@
   &__list {
     margin: 0;
     padding: 0;
+    margin-top: 40px;
     list-style: none;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: #f1f5f4;
+    }
   }
 
   // &__item {
@@ -28,5 +43,34 @@
     font-weight: bold;
     font-size: 20px;
     line-height: 150%;
+  }
+
+  &__title {
+    color: #f1f5f4;
+  }
+
+  &__content {
+    color: #f1f5f4;
+  }
+
+  &__full {
+    margin-top: 40px;
+  }
+
+  &__img-place {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+
+    }
+  }
+
+  &__img {
+    max-width: 422px;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
