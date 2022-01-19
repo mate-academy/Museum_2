@@ -1,12 +1,14 @@
 .menu {
   // width: 100%;
   // background-color: #3f5252;
+  max-width: 1280px;
+  margin: 0 auto;
   @include onTablet {
-    position: relative;
+    position: fixed;
   }
 
   @include onDesktop {
-    position: relative;
+    position: fixed;
   }
 
   &__parts {
@@ -62,15 +64,31 @@
 
     @include onTablet {
       display: block;
+      margin: 0 auto;
+    }
+    @include onDesktop {
+      display: block;
       position: absolute;
-
+      right: 0;
+      bottom: 0;
     }
   }
 
   &__img {
-    max-width: 422px;
-    top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    // margin-left: auto;
+    // margin-right: auto;
+    @include onTablet {
+      margin: 0 auto;
+      width: 422px;
+      height: 466px;
+    }
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 624px;
+      height: 697px;
+    }
   }
 }
