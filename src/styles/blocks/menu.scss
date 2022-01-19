@@ -1,0 +1,96 @@
+.menu {
+  background-color: $greyBgColor;
+  height: 100vh;
+  min-width: 320px;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    margin-bottom: 48px;
+  }
+
+  &__name {
+    font-size: 36px;
+    line-height: 43px;
+    color: #f1f5f4;
+  }
+
+  &__action {
+    display: grid;
+    grid-template-columns: 30px 30px;
+    column-gap: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__menu {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    background-image: url("../images/cross.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__country {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+    height: 100%;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+      padding-bottom: 110px;
+    }
+  }
+
+  &__image {
+    display: none;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: calc(100% - 90px);
+      max-height: 910px;
+    }
+
+    &--photo {
+      display: block;
+      margin: 0 auto;
+      width: auto;
+      height: 100%;
+    }
+  }
+}

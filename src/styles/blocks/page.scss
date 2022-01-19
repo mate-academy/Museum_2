@@ -1,0 +1,146 @@
+.page {
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    min-width: 320px;
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    &--title {
+      font-family: "Playfair Display", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 28px;
+      line-height: 125%;
+      color: #1c1b29;
+
+      @include onTablet {
+        font-size: 40px;
+        line-height: 125%;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+
+    &--link {
+      display: none;
+      @include onTablet {
+        display: flex;
+        border: 1px solid #cd4d31;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+
+        font-family: "Raleway", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        color: #cd4d31;
+
+      }
+
+      &:hover {
+        color: #af3419;
+        border-color: #af3419;
+      }
+
+      &:active {
+        color: #ea340d;
+        border-color: #ea340d;
+      }
+
+      &:disabled {
+        color: #dd836f;
+        border-color: #dd836f;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        background-image: url("../images/Vector.png");
+      }
+    }
+
+    &--top {
+      margin-bottom: 60px;
+
+      @include onTablet {
+        margin-bottom: 75px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 70px;
+      }
+    }
+
+    &--bottom {
+      & a {
+        display: flex;
+        border: 1px solid #cd4d31;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+
+        font-family: "Raleway", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        color: #cd4d31;
+
+        &:hover {
+          color: #af3419;
+          border-color: #af3419;
+        }
+
+        &:active {
+          color: #ea340d;
+          border-color: #ea340d;
+        }
+
+        &:disabled {
+          color: #dd836f;
+          border-color: #dd836f;
+        }
+      }
+
+      margin-top: 30px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}
