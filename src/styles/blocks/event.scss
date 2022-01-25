@@ -1,0 +1,54 @@
+.event {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  column-gap: 30px;
+
+  &__image-container {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__right {
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+    @include onDesktop {
+      grid-column: 5 / 13;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 356px;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      height: 422px;
+    }
+
+    @include onDesktop {
+      height: 475px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+}

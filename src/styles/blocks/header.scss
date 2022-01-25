@@ -1,0 +1,135 @@
+.header {
+  background-color: $bgColor;
+  height: 747px;
+  background-image: url("../images/ukainianWomen.png");
+  background-size: 245px auto;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding-top: 20px;
+  box-sizing: border-box;
+
+  @include onTablet {
+    padding-top: 26px;
+    height: 1092px;
+    background-size: 443px auto;
+  }
+
+  @include onDesktop {
+    padding-top: 32px;
+    height: 100vh;
+    background-position: 100% 100%;
+    background-size: 625px 663px;
+  }
+
+  &--close {
+    background-position: -130% 100%;
+  }
+
+  &__flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 124px;
+    }
+  }
+
+  &__logo {
+    flex-grow: 1;
+    margin-right: 10px;
+    order: 1;
+  }
+
+  &__title {
+    color: $whiteColor;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__data {
+    color: $whiteColor;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    color: $whiteColor;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 40px;
+    max-width: 330px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__info-block {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+
+    &--close {
+      transform: translateX(-100%);
+    }
+  }
+
+  &__language {
+    margin-right: 30px;
+    transform: translateY(-100px);
+    transition: all 0.3s ease;
+    order: 2;
+
+    &--open {
+      transform: translateY(0);
+    }
+
+    @include onTablet {
+      transform: translateY(0);
+      order: 3;
+      margin-right: 0;
+    }
+  }
+
+  &__deco-line {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      font-family: "Playfair Display", sans-serif;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 17px;
+      color: $whiteColor;
+      opacity: 0.7;
+      position: absolute;
+      bottom: 50px;
+
+      @media (max-height:750px) {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        margin-left: 20px;
+        display: block;
+        width: 38vw;
+        height: 2px;
+        opacity: 0.3;
+        background-color: $whiteColor;
+      }
+    }
+  }
+}

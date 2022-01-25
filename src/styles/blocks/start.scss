@@ -1,0 +1,66 @@
+.start {
+  background-color: $bgColor;
+  padding: 50px 0;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 80px 0;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background: url("../images/lady.png") center left no-repeat, $bgColor;
+    padding: 205px 0;
+  }
+
+  &__container {
+    
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 13;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 38px;
+    color: $whiteColor;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 62px;
+      line-height: 62px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    color: $whiteColor;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+      max-width: 470px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.second-button {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: $mainColor;
+  display: flex;
+  border: 1px solid $mainColor;
+  text-align: center;
+  padding: 22px 0;
+  max-width: 330px;
+  justify-content: center;
+  text-decoration: none;
+  
+  &::after {
+    content: "";
+    margin-left: 8px;
+    display: block;
+    background-image: url("../images/arrow.svg");
+    width: 14px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    @include hover (transform, translateX(6px));
+  }
+
+  &:hover {
+    border: 1px solid $mainColorHover;
+    color: $mainColorHover;
+
+    &::after {
+      background-image: url("../images/arrowHover.svg");
+      transform: translateX(6px);
+    }
+  }
+}

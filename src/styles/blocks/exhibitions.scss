@@ -1,0 +1,41 @@
+.exhibitions {
+  &__exhibition {
+    &--1 {
+      @include onTablet {
+        order: 3;
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+      }
+    }
+    &--2 {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        order: 3;
+        grid-column: 4 / 7;
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 13;
+      }
+    }
+  }
+
+  &__grid-container {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 2;
+      column-gap: 30px;
+      row-gap: 60px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}
