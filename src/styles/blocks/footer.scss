@@ -1,0 +1,78 @@
+.footer {
+  background-color: $bgColor;
+  padding-top: 34px;
+  padding-bottom: 30px;
+
+  &__footer-block {
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--1 {
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-column: 3 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 8;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        grid-column: 5 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 9 / 13;
+      }
+    }
+  }
+
+  &__grid-container {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__arrow {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/icons/scrollUp.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    @include onTablet {
+      justify-self: flex-end;
+    }
+  }
+
+  &__copyright {
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 13;
+    }
+  }
+}

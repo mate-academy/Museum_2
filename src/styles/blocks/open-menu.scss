@@ -1,0 +1,131 @@
+.open-menu {
+  position: absolute;
+  top: 90px;
+  left: 100%;
+  width: 100%;
+  z-index: 3;
+  background-color: $bgColor;
+  height: 747px;
+  transition: left 0.3s ease;
+
+  @include onTablet {
+    top: 107px;
+    height: 1092px;
+    background-image: url("../images/artist.png");
+    background-size: 422px 466px;
+    background-position: 50% 546px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+    background-size: 624px auto;
+    background-position: 100% 0;
+  }
+
+  &--open {
+    left: 0;
+  }
+
+  &__info {
+    color: $whiteColor;
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      margin-right: 123px;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      margin-right: 83px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__info-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__info-text {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      width: inherit;
+      height: 1px;
+      background-color: $whiteColor;
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        max-width: 38vw;
+      }
+    }
+  }
+
+  &__item {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    text-decoration: 0;
+    color: $whiteColor;
+    @extend %menuItems;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-bottom: 1px solid $whiteColor;
+    }
+  }
+
+  &__flex {
+    @include onTablet {
+      display: flex;
+      margin-bottom: 50px;
+    }
+  }
+}

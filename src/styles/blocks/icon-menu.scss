@@ -1,0 +1,37 @@
+.icon-menu {
+  display: block;
+  width: 25px;
+  order: 3;
+
+  @include onTablet {
+    order: 2;
+    margin-right: 40px;
+  }
+
+  &__line {
+    display: block;
+    width: inherit;
+    height: 2px;
+    background-color: $whiteColor;
+    margin-bottom: 7px;
+    transition: transform 0.3s ease;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__active {
+    & :nth-child(2) {
+      opacity: 0;
+    }
+
+    & :first-child {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    & :last-child {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+}
