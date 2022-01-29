@@ -1,0 +1,247 @@
+.burgerMenu {
+  background-color: $color_background;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 2;
+  overflow-y: auto;
+  background-repeat: no-repeat;
+  background-size: auto 39%;
+  background-position: 50% 100%;
+  // height: 747px;
+  height: 100%;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include tablet {
+    // height: 1092px;
+    height: 100%;
+    background-image: url(../images/burger_menu.svg);
+  }
+
+  @include desctop {
+    // height: 800px;
+    height: 100%;
+    background-size: 80% 80%;
+    background-position: 200% 100%;
+    background-image: url(../images/burger_menu.svg);
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  
+    @include tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      grid-column: 1 / 7;
+    }
+  
+    @include desctop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      grid-column: 1 / 13;
+    }
+
+    &--data {
+      grid-column: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+
+      @include tablet {
+        margin-top: 20px;
+      }
+
+      @include desctop {
+        margin-top: 10px;
+      }
+
+      &-1 {
+        font-size: 14px;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        color: $color_white;
+      }
+
+      &-2 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        display: flex;
+        align-items: center;
+        color: $color_white;
+      }
+    }
+
+    &--adress {
+      grid-column: 1 / 3;
+      margin-top: 20px;
+
+      @include tablet {
+        grid-column: 3 / 6;
+        margin-top: 20px;
+      }
+
+      @include desctop {
+        grid-column: 3 / 7;
+        margin-top: 10px;
+      }
+
+      &-1 {
+        font-size: 14px;
+        line-height: 140%;
+        display: flex;
+        align-items: center;
+        color: $color_white;
+      }
+
+      &-2 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        display: flex;
+        align-items: center;
+        color: $color_white;
+      }
+    }
+
+    &--exhibition {
+      grid-column: 1 / 3;
+      font-family: "Playfair Display", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      color: $color_white;
+      text-decoration: none;
+      margin-top: 40px;
+
+      @include tablet {
+        margin-top: 50px;
+        font-size: 48px;
+        line-height: 120%;
+        grid-column: 1 / 7;
+      }
+
+      @include desctop {
+        margin-top: 70px;
+        font-size: 48px;
+        line-height: 120%;
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--events {
+      grid-column: 1 / 3;
+      font-family: "Playfair Display", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      color: $color_white;
+      text-decoration: none;
+      margin-top: 20px;
+
+      @include tablet {
+        margin-top: 30px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+      }
+
+      @include desctop {
+        margin-top: 60px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+
+    &--news {
+      grid-column: 1 / 3;
+      font-family: "Playfair Display", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 150%;
+      display: flex;
+      align-items: center;
+      color: $color_white;
+      text-decoration: none;
+      margin-top: 20px;
+
+      @include tablet {
+        margin-top: 30px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+      }
+
+      @include desctop {
+        margin-top: 60px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+
+    &--line {
+      grid-column: 1 / 3;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $color_white;
+      margin: 40px 0;
+
+      @include tablet {
+        margin: 50px 0;
+        grid-column: 1 / 7;
+      }
+
+      @include desctop {
+        margin: 60px 0;
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--button {
+      grid-column: 1 / 3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #af3419;
+      }
+
+      &:focus {
+        background-color: #ea340d;
+      }
+
+      &:disabled {
+        background-color: #dd836f;
+      }
+
+      @include desctop {
+        grid-column: 1 / 4;
+      }
+
+      @include tablet {
+        grid-column: 1 / 4;
+      }
+    }
+  }
+}
