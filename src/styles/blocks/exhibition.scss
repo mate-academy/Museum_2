@@ -1,5 +1,6 @@
 .exhibition {
   &__element {
+
     &:first-of-type {
       margin-bottom: 60px;
 
@@ -9,19 +10,25 @@
     }
 
     &--photo {
+      height: 100%;
       width: 100%;
 
       object-fit: cover;
       object-position: center;
 
-      margin-bottom: 20px;
-
-      @include onTablet {
-        margin-bottom: 30px;
-      }
-
-      @include onDesktop {
+      &-container {
+        height: 356px;
         margin-bottom: 20px;
+
+        @include onTablet {
+          height: 420px;
+          margin-bottom: 30px;
+        }
+
+        @include onDesktop {
+          height: 484px;
+          margin-bottom: 20px;
+        }
       }
     }
 
