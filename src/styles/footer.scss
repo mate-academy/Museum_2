@@ -13,6 +13,16 @@
     padding-bottom: 30px;
   }
 
+  &__contact {
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
   &__content {
     // width: 100vw;
     // padding: 0 20px;
@@ -24,6 +34,18 @@
     grid-column: 1 / 3;
 
     &-contact {
+      text-decoration: none;
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &-adress {
+      text-decoration: none;
       @include onTablet {
         grid-column: 1 / 3;
       }
@@ -60,6 +82,16 @@
       }
     }
 
+    &-main {
+      @include onTablet {
+        grid-column: 5 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 9 / 13;
+      }
+    }
+
     &-timetable {
       @include onTablet {
         grid-column: 3 / 5;
@@ -67,6 +99,19 @@
 
       @include onDesktop {
         grid-column: 5 / 7;
+      }
+    }
+
+    &-ul {
+      list-style-type: none;
+      padding-inline-start: 0;
+
+      @include onTablet {
+        grid-column: 5 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 9 / 13;
       }
     }
   }
@@ -124,12 +169,13 @@
     color: #f1f5f4;
     margin-bottom: 5px;
 
-    &:last-child {
-      margin-bottom: 60px;
-    }
+    // &:last-child {
+    //   // margin-bottom: 60px;
+    // }
   }
 
   &__bottom {
+    display: inline-block;
     font-size: 14px;
     color: #f1f5f4;
   }
