@@ -1,0 +1,45 @@
+.grid {
+
+  @include onMobile {
+    display: block;
+  }
+
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: repeat(6, 1fr);
+  
+  &--onDesktop {
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+  }
+
+  &__item {
+
+    @for $start from 1 through 6 {
+      @for $end from 1 through 6 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+
+    &--onDesktop {
+
+      @include onDesktop {
+
+        @for $start from 1 through 12 {
+          @for $end from 1 through 12 {
+            &--#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}
