@@ -1,0 +1,116 @@
+.button {
+  width: 280px;
+  height: 60px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+
+  color: #f1f5f4;
+
+  margin-top: 40px;
+    
+  background-color:  #cd4d31;
+
+  @include onTablet {
+    margin-top: 50px;
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &:hover {
+    background-color:  #af3419;
+  }
+  
+  &:focus {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  &__secondary {
+    
+    width: 100%;
+    height: 60px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+   
+    cursor: pointer;
+    border: 1px solid #cd4d31;
+    background-color:  #fff;
+
+    &--arrow {
+
+      display: flex;
+
+      &--right {
+        width: 9px;
+        height: 12px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 15px;
+        height: 2px;
+        background-color: #cd4d31;
+        border-radius: 5px;
+        transform: translateX(7px) translateY(6px);
+      }
+    }
+
+    &--text {
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+            
+      color: #cd4d31;
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:focus {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+  }
+
+  &-5 {
+
+    @include onDesktop {
+      transform: translateY(-50px);
+    }
+  }
+
+}
