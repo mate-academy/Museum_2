@@ -1,11 +1,11 @@
 .header {
   background-color: #3f5252;
   box-sizing: border-box;
-  height: 738px;
+  height: 747px;
   position: relative;
 
   @include onTablet {
-    height: 1092px;
+    height: 1094px;
   }
 
   @include onDesktop {
@@ -143,42 +143,39 @@
     }
   }
 
-  &__photo {
+  &__photo-container {
 
-    text-align: center;
-    margin-top: 40px;
+    position: absolute;
+    top: 474px;
+    left:50%;
+    transform:translateX(-50%);
 
     @include onTablet {
-      display: flex;
-      justify-content: center;
-      transform: translateY(11px);
-  
+      top: 600px;
     }
 
     @include onDesktop {
-      position: absolute;
       right: 0;
       top: 137px;
-      transform: translateY(-40px);
-    }
-
-    &--photo {
-      height: 273px;
-      width: 245px;
-      object-position: center;
-      object-fit: cover;
-
-      @include onTablet {
-        width: 443px;
-        height: 494px;
-      }
-
-      @include onDesktop {
-        width: 625px;
-        height: 663px;
-        
-      }
     }
     
+  }
+
+  &__photo {
+    height: 273px;
+    width: 245px;
+    object-position: center;
+    object-fit: cover;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include onDesktop {
+      width: 625px;
+      height: 663px;
+      
+    }
   }
 }
