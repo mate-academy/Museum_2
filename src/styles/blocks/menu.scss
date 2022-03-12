@@ -1,0 +1,249 @@
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 747px;
+  background-color: $backgroudGrey;
+
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+
+  @include onTablet {
+    height: 1092px;
+    background-size: 444px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-image: url(../images/img_menu.png);
+  }
+
+  @include onDesktop {
+    height: 780px;
+    background-size: 600px;
+    background-position: bottom right;
+  }
+
+  @include onLarge {
+    height: 800px;
+    background-size: 625px;
+    background-position: bottom right;
+  }
+
+  &:target {
+    transform: translateY(0);
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 80px;
+
+    @include onDesktop {
+      height: 90px;
+    }
+  }
+
+  &__close {
+    display: flex;
+  }
+
+  &__lang {
+    order: 1;
+    margin-right: 30px;
+
+    @include onTablet {
+      order: 2;
+      margin: 0 0 0 45px;
+    }
+  }
+
+  &__lang-select {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  &__lang-option {
+    background-color: $backgroudGrey;
+  }
+
+  &__shedule-container {
+    margin: 30px 0 0;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 13px;
+    }
+  }
+
+  &__shedule {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $secondaryTextColor;
+  }
+
+  &__shedule-strong {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $secondaryTextColor;
+  }
+
+  &__adress-container {
+    margin: 20px 0 0;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 13px;
+    }
+  }
+
+  &__adress {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $secondaryTextColor;
+  }
+
+  &__adress-strong {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $secondaryTextColor;
+  }
+
+  &__list-container {
+    margin: 40px 0 0;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+    }
+
+    @include onLarge {
+      margin-top: 70px;
+    }
+  }
+
+  &__list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid $secondaryTextColor;
+      margin-top: 40px;
+    }
+
+    @include onTablet {
+      &::after {
+        margin-top: 50px;
+      }
+    }
+
+    @include onDesktop {
+      &::after {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $secondaryTextColor;
+    transition: all 0.3s;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @include onDesktop {
+      font-size: 42px;
+      line-height: 120%;
+
+      &:hover {
+        border-bottom: 1px solid $secondaryTextColor;
+      }
+    }
+
+    @include onLarge {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__button-container {
+    margin: 80px 0 0;
+
+    @include onTablet {
+      margin: 100px 0 0;
+    }
+
+    @include onDesktop {
+      margin: 120px 0 0;
+    }
+  }
+}
+
+.cross-link {
+  height: 22px;
+  width: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../images/icons/cross.svg);
+
+  order: 2;
+
+  @include onTablet {
+    order: 1;
+  }
+}

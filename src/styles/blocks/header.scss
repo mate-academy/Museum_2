@@ -1,49 +1,216 @@
 .header {
+  height: 747px;
+
   background-color: $backgroudGrey;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 245px;
+  background-image: url(../images/img_header.png);
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    height: max-content;
+  @include onTablet {
+    height: 1092px;
+    background-size: 444px;
+  }
 
-    @include onDesktop {
-      height: 100vh;
-    }
+  @include onDesktop {
+    height: 780px;
+    background-size: 600px;
+    background-position: bottom right;
+  }
+
+  @include onLarge {
+    height: 800px;
+    background-size: 625px;
+    background-position: bottom right;
   }
 
   &__nav {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0 0;
+    align-items: center;
+
+    height: 80px;
+
+    @include onDesktop {
+      height: 90px;
+    }
   }
 
-  &__cover {
+  &__menu {
     display: flex;
-    flex-direction: column;
-    justify-content: end;
-    height: 100%;
-    color: $secondaryTextColor;
+    align-items: center;
+  }
+
+  &__lang {
+    @include onTablet {
+      margin-left: 40px;
+    }
+  }
+
+  &__lang-select {
+    display: none;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__lang-option {
+    background-color: $backgroudGrey;
+  }
+
+  &__title-container {
+    margin-top: 70px;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
+
+    @include onDesktop {
+      margin-top: 90px;
+    }
   }
 
   &__date {
-    margin-top: 70px;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $secondaryTextColor;
+
+    margin: 0;
   }
 
   &__title {
-    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $secondaryTextColor;
+
+    margin: 10px 0 0;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+    }
+
+    @include onLarge {
+      font-size: 96px;
+    }
+  }
+
+  &__description-container {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
   }
 
   &__description {
-    margin: 30px 0 40px;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $secondaryTextColor;
+
+    margin: 0;
   }
 
-  &__image {
-    margin-top: 40px;
+  &__button-container {
     width: 100%;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onTablet {
+      margin-top: 80px;
+    }
+  }
+
+  &__bottom-container {
+    display: none;
+    margin: 165px 0 0;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    @include onLarge {
+      margin-top: 135px;
+    }
+  }
+
+  &__bottom-date {
+    position: relative;
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    opacity: 0.7;
+    color: $secondaryTextColor;
+
+    &::after {
+      display: block;
+      width: 100%;
+      content: "";
+      position: absolute;
+      border-bottom: 1px solid $secondaryTextColor;
+      top: 53%;
+      left: 100px;
+      opacity: 0.7;
+
+      @include onDesktop {
+        width: 70%;
+      }
+
+      @include onLarge {
+        width: 100%;
+      }
+    }
   }
 }
 
+.logo-link {
+  display: block;
+}
+
 .logo-img {
-  height: 26px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.menu-link {
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../images/icons/menu.svg);
 }

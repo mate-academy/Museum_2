@@ -1,15 +1,15 @@
 .grid {
-  grid-template-columns: repeat(2, 130px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
 
   @include onTablet {
-    display: grid;
-    grid-template-columns: repeat(6, 90px);
+    grid-template-columns: repeat(6, 1fr);
     column-gap: 30px;
   }
 
   @include onDesktop {
-    grid-template-columns: repeat(12, 70px);
+    grid-template-columns: repeat(12, 1fr);
   }
 
   &__item {
@@ -27,6 +27,12 @@
 
         &--desktop-#{$start}-#{$end} {
           @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+
+        &--large-#{$start}-#{$end} {
+          @include onLarge {
             grid-column: #{$start} / #{$end + 1};
           }
         }
