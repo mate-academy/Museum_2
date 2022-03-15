@@ -1,0 +1,75 @@
+.form-field {
+
+  @include onDesktop {
+    transform: translateY(200%);
+  }
+
+  &-email {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    width: 100%;
+    color: #1c1b29;
+  
+    border: none;
+    margin-top: 50px;
+  
+    &:hover {
+      color: #cd4d31;
+    }
+
+    &:focus {
+      outline: none;
+      color: #cd4d31;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      transform: translateY(-200%);
+    }
+
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    margin-top: 3px;
+    height: 1px;
+    width: 100%;
+    background-color: #1c1b29;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      transform: translateY(-50px);
+    }
+
+    &:hover {
+      color: #cd4d31;
+    }
+
+    &:focus {
+      color: #cd4d31;
+    }
+  }
+
+  &::placeholder {
+    color: #1c1b29;
+
+    &:hover {
+      color: #cd4d31;
+    }
+
+    &:focus {
+      color: #cd4d31;
+    }
+  }
+
+}
