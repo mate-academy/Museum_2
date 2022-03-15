@@ -202,6 +202,7 @@
   }
 
   &__link {
+    position: relative;
     text-decoration: none;
     font-family: "Playfair Display", serif;
     font-style: normal;
@@ -209,7 +210,6 @@
     font-size: 20px;
     line-height: 150%;
     color: $secondaryTextColor;
-    transition: all 0.3s;
 
     @include onTablet {
       font-size: 48px;
@@ -220,8 +220,19 @@
       font-size: 42px;
       line-height: 120%;
 
-      &:hover {
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 7px;
         border-bottom: 1px solid $secondaryTextColor;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
       }
     }
 
