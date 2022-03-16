@@ -1,0 +1,44 @@
+.event {
+  transition: $transition-main;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+  &__date {
+    margin-bottom: 10px;
+    @extend %main;
+    color: $color-main;
+  }
+  &__title {
+    margin-bottom: 20px;
+    @extend %h4;
+    color: $color-black;
+
+    @include onTablet {
+      min-height: 60px;
+    }
+
+    @include onPhone {
+      min-height: auto;
+    }
+  }
+
+  &__about {
+    margin-bottom: 50px;
+    @extend %main;
+    color: $color-gray;
+
+    &--mb {
+      margin-bottom: 40px;
+    }
+
+    @include onPhone {
+      margin-bottom: 30px;
+    }
+  }
+}

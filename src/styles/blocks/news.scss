@@ -1,0 +1,49 @@
+.news {
+  &__button {
+    @include onPhone {
+      margin-top: 30px;
+      order: 4;
+    }
+  }
+
+  &--mb {
+    @include onPhone {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__img {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      height: 330px;
+    }
+
+    @include onPhone {
+      margin-bottom: 20px;
+      height: 280px;
+    }
+  }
+  &__date {
+    @extend %additional;
+    color: $color-black;
+  }
+  &__title {
+    margin-bottom: 18px;
+    @extend %h5;
+    color: $color-black;
+
+    @include onPhone {
+      margin-bottom: 20px;
+    }
+  }
+  &__about {
+    @extend %main;
+    color: $color-gray;
+  }
+}

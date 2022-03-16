@@ -1,0 +1,65 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+
+  @include onTablet {
+    height: 77px;
+  }
+
+  &__logo {
+    padding: 15px 0;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include onPhone {
+      gap: 20px;
+    }
+  }
+
+  &__button {
+    @include onPhone {
+      order: 2;
+    }
+
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    transition: $transition-fast;
+    background: no-repeat center / 30px url(../images/icons/menu.svg) ;
+
+    &:hover {
+      background-image: url(../images/icons/menu-hover.svg);
+    }
+  }
+
+  &__language {
+    padding: 5px;
+    @extend %main;
+    color: $color-white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding-right: 0;
+    cursor: pointer;
+    transition: $transition-main;
+
+    @include onPhone {
+      display: none;
+    }
+
+    &:hover {
+      color: $color-main;
+    }
+
+    &-option {
+      color: $color-white;
+      background-color: $color-background;
+    }
+  }
+}
