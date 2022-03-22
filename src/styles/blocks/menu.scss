@@ -1,0 +1,108 @@
+.menu {
+  background-color: $backgroundDarkColor;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    min-height: 749px;
+    
+    @include onTablet {
+      min-height: 1093px;
+    }
+
+    @include onDesktop {
+      min-height: 800px;
+    }
+  }
+
+  &__top {
+    height: 80px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      height: 77px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 0 40px;
+    list-style: none;
+    border-bottom: 1px solid $whiteMainColor;
+
+    @include onTablet {
+      gap: 30px;
+      padding: 0 0 50px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      gap: 60px;
+      padding: 0 0 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    @extend %h5;
+    text-decoration: none;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @include hover (border-bottom, 1px solid $whiteMainColor);
+  }
+
+  &__buy-link {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__art {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin: 0 auto;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: calc(100% - 90px);
+      object-fit: contain;
+      object-position: bottom right;
+    }
+  }
+}

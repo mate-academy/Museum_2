@@ -1,0 +1,67 @@
+.sign-up {
+  &__describtion {
+    @extend %main-text;
+    margin-top: 20px;
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
+  &__email {
+    margin-top: 50px;
+  }
+
+  &__field {
+    border: 0;
+    padding-bottom: 3px;
+    border-bottom: 1px solid $blackColor;
+    width: 100%;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $blackColor;
+
+    transition: 0.3s;
+
+    &::placeholder {
+      @extend %main-text;
+      color: $blackColor;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      border-color: $redColor;
+    }
+
+    &:hover::placeholder,
+    &:focus::placeholder {
+      color: $redColor;
+    }
+
+    &:active {
+      outline: 0;
+      outline-offset: 0;
+      border-color: $redColor;
+      color: $blackColor;
+    }
+
+    &:focus {
+      outline: 0;
+      outline-offset: 0;
+      border-color: $redColor;
+      caret-color: $redColor;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    padding: 0;
+    border: 0;
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+}
