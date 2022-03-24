@@ -1,0 +1,19 @@
+.grid {
+  &__item {
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--#{$start}-#{$start} {
+          grid-column: #{$start} / #{$start + 1};
+        }
+
+        &-tablet--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+
+        &-desktop--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+}
