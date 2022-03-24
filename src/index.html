@@ -12,10 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.scss">
+    <script src="scripts/main.js" defer></script>
   </head>
   <body>
     <header class="header">
-      <div class="container">
+      <div class="container container__header">
         <div class="top-actions">
           <a href="#" class="logo">
             <img 
@@ -47,7 +48,7 @@
     </header>
 
     <nav class="page__menu menu" id="menu">
-      <div class="container">
+      <div class="container container__menu">
         <div class="top-actions">
           <a href="#" class="logo">
             <img 
@@ -114,7 +115,13 @@
         <section class="page__section exhibitions" id="exhibitions">
           <h2 class="section__title exhibitions__title">Актуальні виставки</h2>
           <article class="section__article exhibitions__article1">
-            <img src="images/image 1.svg" alt="Exhibition1" class="section__image">
+            <picture>
+              <source media="(min-width: 1280px)" srcset="images/image1-desktop.png">
+              <img 
+                src="images/image1-tablet.png" 
+                alt="Exhibition1" 
+                class="section__image">
+            </picture>
             <p class="section__date">11.07 - 22.09</p>
             <h3 class="section__name">Кураторська виставка “Ангели”</h3>
             <p class="section__describe">
@@ -124,7 +131,13 @@
           </article>
 
           <article class="section__article exhibitions__article2">
-            <img src="images/image 2.svg" alt="Exhibition2" class="section__image">
+            <picture>
+              <source media="(min-width: 1280px)" srcset="images/image2-desktop.png">
+              <img 
+                src="images/image2-tablet.png" 
+                alt="Exhibition2" 
+                class="section__image">
+            </picture>
             <p class="section__date">Діє постійно</p>
             <h3 class="section__name">Мистецтво ХХ ст. — XXI ст.</h3>
             <p class="section__describe">
@@ -173,7 +186,7 @@
       <section class="plans">
         <div class="container">
           <div class="plans__content">
-            <h2 class="plans__title">Сплануйте візит до музею</h2>
+            <h2 class="plans__title">Сплануйте <br> візит до музею</h2>
             <p class="plans__details">
               Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом.
             </p>
@@ -186,7 +199,13 @@
         <section class="news" id="news">
           <h2 class="section__title news__title">Новини</h2>
           <article class="news__article1">
-            <img src="images/img_08.svg" alt="News1" class="section__image">
+            <picture>
+              <source media="(min-width: 1280px)" srcset="images/img_08-desktop.png">
+              <img 
+                src="images/img_08-tablet.png" 
+                alt="News1" 
+                class="section__image">
+            </picture>
             <p class="news__date">9 серпня 2019</p>
             <h3 class="section__name news__name">Оголошення переможця</h3>
             <p class="news__describe">
@@ -195,7 +214,13 @@
           </article>
 
           <article class="news__article2">
-            <img src="images/img_09.svg" alt="News2" class="section__image">
+            <picture>
+              <source media="(min-width: 1280px)" srcset="images/img_09-desktop.png">
+              <img 
+                src="images/img_09-tablet.png" 
+                alt="News1" 
+                class="section__image">
+            </picture>
             <p class="news__date">9 серпня 2019</p>
             <h3 class="section__name news__name">Міжнародний день котів</h3>
             <p class="news__describe news__describe--2">
@@ -215,10 +240,11 @@
                 type="email" 
                 placeholder="e-mail"
                 class="subscribe__input"
+                required
               >
             </label>
+            <button href="#" class="button subscribe__button">Підписатись</button>
           </form>
-          <a href="#" class="button subscribe__button">Підписатись</a>
         </section>
       </div>
     </main>
