@@ -1,0 +1,103 @@
+.top-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0;
+  width: 100%;
+
+  @include onDesktop {
+    margin: 32px 0;
+  }
+
+  &__logo {
+    height: auto;
+    width: 123px;
+    align-content: center;
+    justify-content: center;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+    }
+
+    &--open {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 20px;
+      margin-right: 0;
+
+      &-line {
+        width: 25px;
+        height: 2px;
+        background-color: #fff;
+      }
+    }
+
+    &--close {
+      &-one {
+        transform: rotate(45deg) translateY(1.5px);
+        width: 29px;
+        height: 2px;
+        background-color: #fff;
+      }
+
+      &-two {
+        transform: rotate(135deg) translateY(1.5px);
+        width: 29px;
+        height: 2px;
+        background-color: #fff;
+      }
+    }
+
+    &--language {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-text {
+        font-family: Raleway, sans-serif;
+        font-style: medium;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: $colorFooterText;
+      }
+
+      @include onTablet {
+        margin-left: 42px;
+      }
+
+      @include onDesktop {
+        margin-right: 45px;
+      }
+
+      &-union {
+        width: 8px;
+        height: 5px;
+        margin: 0 30px 0 3px;
+
+        @include onTablet {
+          margin: 0 0 0 3px;
+        }
+
+        @include onTablet {
+          margin-right: -20px;
+        }
+      }
+    }
+
+    &--hidden {
+      visibility: hidden;
+
+      @include onTablet {
+        visibility: visible;
+      }
+    }
+  }
+}

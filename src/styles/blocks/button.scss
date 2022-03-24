@@ -1,0 +1,50 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include onTablet {
+    justify-content: start;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 280px;
+    background-color: $colorMainRed;
+    margin-bottom: 0;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: $colorHoverRed;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      background-color: $colorActivRed;
+    }
+
+    &:disabled {
+      background-color: $colorDisabledRed;
+    }
+
+    @include onTablet {
+      margin-bottom: 70px;
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+    &--text {
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 16px;
+      color: #f1f5f4;
+    }
+  }
+}

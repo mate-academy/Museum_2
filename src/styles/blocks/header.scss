@@ -1,0 +1,137 @@
+.header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+
+  background-color: $colorBG;
+
+  @include onTablet {
+    padding: 0 40px;
+    min-height: 1092px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px;
+    min-height: 900px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__content {
+    &-calendar {
+      font-family: Raleway, sans-serif;
+      font-style: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: $colorFooterText;
+      margin: 70px 0 10px;
+
+      @include onTablet {
+        margin-top: 104px;
+      }
+
+      @include onDesktop {
+        margin-top: 90px;
+      }
+    }
+
+    &-title {
+      font-family: Playfair Display, serif;
+      font-style: 700;
+      font-size: 48px;
+      line-height: 48px;
+      color: $colorFooterText;
+      margin-bottom: 30px;
+      max-width: auto;
+
+      @include onTablet {
+        font-size: 72px;
+        line-height: 72px;
+        margin-bottom: 20px;
+        max-width: 570px;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+        line-height: 96px;
+        margin-bottom: 30px;
+        max-width: 570px;
+      }
+    }
+
+    &-description {
+      font-family: Raleway, sans-serif;
+      font-style: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $colorFooterText;
+      margin-bottom: 40px;
+      width: 330px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 81px;
+      }
+    }
+
+    &-line {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        align-items: center;
+        margin-top: 65px;
+      }
+
+      &--text {
+        font-family: Playfair Display, serif;
+        font-style: 700;
+        font-size: 14px;
+        line-height: 18px;
+        opacity: 70%;
+        color: $colorFooterText;
+      }
+
+      &--string {
+        height: 1px;
+        width: 470px;
+        opacity: 30%;
+        background-color: $colorFooterText;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: auto;
+
+    &-container {
+      width: 280px;
+
+      @include onTablet {
+        width: 443px;
+      }
+
+      @include onDesktop {
+        width: 625px;
+        margin-right: -55px;
+      }
+    }
+  }
+}
