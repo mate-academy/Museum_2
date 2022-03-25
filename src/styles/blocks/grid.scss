@@ -1,4 +1,15 @@
 .grid {
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 30px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
   &__item {
     @for $start from 1 through 12 {
       @for $end from $start through 12 {

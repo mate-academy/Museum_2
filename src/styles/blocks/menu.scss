@@ -1,6 +1,9 @@
 .menu {
   z-index: 2;
   background-color: rgba(63, 82, 82, 1);
+  overflow: hidden;
+
+  position: fixed;
 
   &__top-actions {
     margin-bottom: 10px;
@@ -27,12 +30,6 @@
   &__header {
     display: flex;
     flex-direction: column;
-
-    @include tablet {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      grid-column-gap: 30px;
-    }
   }
 
   &__description {
@@ -71,6 +68,10 @@
       display: block;
       border-bottom: 1px solid #fff;
       width: 100%;
+
+      @include desktop {
+        width: 570px;
+      }
     }
 
     @include tablet {
@@ -103,8 +104,30 @@
     line-height: 150%;
     color: #f1f5f4;
 
+    position: relative;
+
+    transition: border-bottom 1s;
+
     @include tablet {
       font-size: 48px;
+    }
+
+    @include desktop {
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 10px;
+        border-bottom: 1px solid #fff;
+        transform: scaleX(0);
+        transition: transform 0.5s;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
     }
   }
 
@@ -120,6 +143,7 @@
 
   &__img {
     visibility: hidden;
+    display: none;
 
     margin: 0 auto;
 
@@ -127,6 +151,16 @@
       visibility: visible;
       width: 422px;
       height: 466px;
+      display: block;
+    }
+
+    @include desktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      width: 624px;
+      height: 697px;
     }
   }
 }
