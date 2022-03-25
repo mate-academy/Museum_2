@@ -12,28 +12,35 @@
   line-height: 100%;
   color: $c-white;
 
-  @include On768 {
-    margin: 0 auto;
-  }
-
-  &--transparent {
+  &-transparent {
     position: relative;
     background-color: transparent;
     border: 1px solid $c-brown;
     color: $c-brown;
     margin-top: 20px;
 
-    @include On768 {
-      display: none;
+    &--disabled {
+      @include On768 {
+        display: none;
+      }
     }
 
-    // &--disabled {
-    //   display: none;
+    &--shown {
+      display: none;
 
-    //   @include On768 {
-    //     display: block;
-    //   }
-    // }
+      @include On768 {
+        display: grid;
+        border-width: 1.5px;
+        width: 100%;
+        transform: translateY(-20px);
+      }
+
+      @include On1280 {
+        width: 320px;
+        height: 70px;
+        font-size: 20px;
+      }
+    }
 
     &__arrow {
       position: absolute;
@@ -42,12 +49,24 @@
       height: 2px;
       transform: translate(70px, 0);
 
+      @include On1280 {
+        width: 15.3px;
+        height: 4px;
+        transform: translate(90px, 0);
+      }
+
       &-2 {
         position: absolute;
         background-image: url(../images/Vector_arrow2.png);
         width: 8px;
         height: 11.6px;
         transform: translate(75px);
+
+        @include On1280 {
+          width: 15.3px;
+          height: 14px;
+          transform: translate(95px, 0);
+        }
       }
     }
   }
