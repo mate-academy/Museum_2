@@ -1,14 +1,21 @@
 .top-actions {
-  display: flex;
-  justify-content: space-between;
+  --menu-width: 22px;
+  --lang-width: 26px;
+
+  display: grid;
+  grid-template-columns: 1fr var(--menu-width);
+  justify-content: end;
   align-items: center;
+
   margin-bottom: 70px;
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-
   @include onTablet {
+    // grid-template-columns: 1fr var(--menu-width) var(--lang-width);
     margin-bottom: 125px;
+  }
+
+  @include onDesktop {
+    // grid-template-columns: 1fr var(--menu-width) var(--lang-width);
+    margin-bottom: 123px;
   }
 }

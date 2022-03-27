@@ -1,6 +1,9 @@
 .header {
-  background-color: #3f5252;
+  background-color: $main-color;
   position: relative;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
 
   &__content {
     box-sizing: border-box;
@@ -18,7 +21,7 @@
     }
 
     @include onDesktop {
-      max-width: 1200px;
+      max-width: 1280px;
       padding: 32px 0 0;
     }
   }
@@ -106,15 +109,16 @@
   }
 
   &__bottom-date {
-    display: flex;
+    display: none;
     visibility: hidden;
-    margin: 0;
 
     @include onDesktop {
+      display: flex;
       visibility: visible;
     }
 
     &-digit {
+      margin: 0;
       font-family: "Playfair Display", sans-serif;
       font-weight: 700;
       font-size: 14px;
