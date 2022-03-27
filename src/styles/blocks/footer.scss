@@ -7,6 +7,11 @@
 
   @include onTablet {
     max-height: 400px;
+    padding: 0 38px;
+  }
+
+  @include onDesktop {
+    padding: 0 50px;
   }
 
   &__contacts {
@@ -39,12 +44,52 @@
   }
 
   &__paragraph {
+    margin-bottom: 10px;
+
     font-family: Raleway, serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
-    color: $colorFooterText;
-    margin-bottom: 10px;
+
+    &-adress {
+      color: $colorFooterText;
+      transition: 0.3s;
+      &:hover {
+        color: $colorLinkHover;
+      }
+    }
+
+    &-tel {
+      color: $colorFooterText;
+      transition: 0.3s;
+
+      &:hover {
+        color: $colorLinkHover;
+      }
+    }
+
+    &-email {
+      color: $colorFooterText;
+      transition: 0.3s;
+
+      &:hover {
+        color: $colorLinkHover;
+      }
+    }
+
+    &-sched {
+      color: $colorFooterText;
+    }
+
+    &-link {
+      color: $colorFooterText;
+      transition: 0.3s;
+
+      &:hover {
+        color: $colorLinkHover;
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__media {
@@ -55,6 +100,18 @@
 
     @include onTablet {
       margin-top: 50px;
+    }
+
+    &-link {
+      display: block;
+      transition: 0.3s;
+      color: $colorFooterText;
+
+      &:hover {
+        transform: scale(1.3)
+      }
+
+      @include hover(stroke, $colorLinkHover);
     }
   }
 
@@ -75,11 +132,21 @@
 
     &-text {
       display: flex;
+
       font-family: Raleway, serif;
       font-weight: 400;
       font-size: 14px;
       line-height: 20px;
       color: $colorFooterText;
+    }
+
+    &-link {
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: $colorLinkHover;
+        transform: scale(1.2)
+      }
     }
 
     &-data {
@@ -93,8 +160,13 @@
       stroke: $colorFooterText;
       width: 30px;
       height: 30px;
+      transition: 0.3s;
 
-      @include hover(stroke, #000);
+      &:hover {
+        transform: scale(1.2)
+      }
+
+      @include hover(stroke, $colorLinkHover);
     }
   }
 }

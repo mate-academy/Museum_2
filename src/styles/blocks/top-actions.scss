@@ -15,6 +15,12 @@
     width: 123px;
     align-content: center;
     justify-content: center;
+
+    :hover {
+      transform: scale(1.1);
+      border: 2px solid $colorLinkHover;
+      border-radius: 4px;
+    }
   }
 
   &__menu {
@@ -26,15 +32,24 @@
     }
 
     &--open {
+      display: flex;
       stroke: $colorFooterText;
 
-      @include hover(stroke, #000);
+      @include hover(stroke, $colorLinkHover);
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
 
     &--close {
       stroke: $colorFooterText;
 
-      @include hover(stroke, #000);
+      @include hover(stroke, $colorLinkHover);
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
 
     &--language {
@@ -42,35 +57,12 @@
       justify-content: center;
       align-items: center;
 
-      &-text {
-        font-family: Raleway, sans-serif;
-        font-style: medium;
-        font-size: 16px;
-        line-height: 24px;
-        text-align: center;
-        color: $colorFooterText;
-      }
-
       @include onTablet {
         margin-left: 42px;
       }
 
       @include onDesktop {
-        margin-right: 45px;
-      }
-
-      &-union {
-        width: 8px;
-        height: 5px;
-        margin: 0 30px 0 3px;
-
-        @include onTablet {
-          margin: 0 0 0 3px;
-        }
-
-        @include onTablet {
-          margin-right: -20px;
-        }
+        margin-right: 0;
       }
     }
 

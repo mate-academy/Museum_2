@@ -1,12 +1,26 @@
 .menu {
   height: 100vh;
-  background-color: $colorBG;
+  display: flex;
+  flex-direction: column;
   padding: 0 20px;
+
+  background-color: $colorBG;
+
+  @include onTablet {
+    padding: 0 40px;
+    min-height: 1092px;
+    min-width: 768px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px;
+    min-height: 800px;
+    min-width: 1280px;
+  }
 
   &__container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     height: 100%;
 
@@ -18,6 +32,7 @@
   &__content {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   @include onTablet {
@@ -38,6 +53,10 @@
       align-items: center;
       margin: 56px 0 50px;
     }
+
+    @include onDesktop {
+      margin: 12px 0 70px;
+    }
   }
 
   &__schedule {
@@ -55,12 +74,13 @@
     }
 
     &-time {
+      margin-bottom: 20px;
+
       font-family: Raleway, sans-serif;
       font-weight: 600;
       font-size: 16px;
       line-height: 24px;
       color: $colorFooterText;
-      margin-bottom: 20px;
 
       @include onTablet {
         margin: 0;
@@ -76,13 +96,14 @@
     }
 
     &--text {
-      box-sizing: border-box;
+      // box-sizing: border-box;
+      margin-bottom: 0;
+
       font-family: Raleway, sans-serif;
       font-weight: 400;
       font-size: 14px;
       line-height: 20px;
       color: $colorFooterText;
-      margin-bottom: 0;
     }
 
     &--link {
@@ -92,6 +113,10 @@
       line-height: 24px;
       color: $colorFooterText;
 
+      &:hover {
+        transform: scale(1.1);
+        color: $colorLinkHover;
+      }
     }
   }
 
@@ -108,6 +133,13 @@
     @include onTablet {
       padding-bottom: 30px;
     }
+
+    @include onDesktop {
+      padding-bottom: 60px;
+      &:last-child {
+        padding-bottom: 60px;
+      }
+    }
   }
 
   &__line {
@@ -120,6 +152,10 @@
     @include onTablet {
       margin-bottom: 50px;
     }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
   }
 
   &__link {
@@ -129,6 +165,11 @@
     line-height: 30px;
     color: $colorFooterText;
 
+    &:hover {
+      transform: scale(1.1);
+      color: $colorLinkHover;
+    }
+    
     @include onTablet {
       font-size: 48px;
       line-height: 58px;
