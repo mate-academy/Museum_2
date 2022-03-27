@@ -1,0 +1,255 @@
+@import "../utils/_mixins.scss";
+@import "../utils/_vars.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+
+  background: $background;
+
+  &__wrapper {
+    padding: 32px 55px 50px;
+    position: relative;
+    height: 100%;
+
+    background-image: url(../images/header1.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+
+    @include tablet {
+      padding: 26px 39px 570px;
+      background-size: 443px 494px;
+      background-position: bottom center;
+    }
+
+    @include mobile {
+      padding: 20px 20px 325px;
+      background-size: 245px 273px;
+      background-position: bottom center;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    margin-bottom: 122px;
+
+    @include tablet {
+      grid-column: 1 / 7;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &__img {
+    transition: $transition;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    transition: $transition;
+
+    &:hover .header__img {
+      fill: $main;
+    }
+
+    &:active .header__img {
+      fill: #ea340d;
+    }
+
+    &--menu {
+      &:hover .header__img--menu {
+        fill: $main;
+      }
+    }
+  }
+
+  
+
+  &__lang {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__suptitle {
+    color: $white;
+    font-size: 14px;
+    line-height: 140%;
+    margin-bottom: 10px;
+
+    @include tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+    }
+
+  }
+
+  &__title {
+    color: $white;
+    margin-bottom: 30px;
+
+    @include tablet {
+      grid-column: 1 / 6;
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    color: $white;
+    margin-bottom: 81px;
+
+    @include tablet {
+      margin-bottom: 50px;
+      grid-column: 1 / 3;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__button {
+    margin-bottom: 135px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 0;
+    }
+  }
+
+  &__date {
+    color: $white;
+    font-size: 14px;
+    align-self: end;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      height: 1px;
+      background-color: $white;
+      position: relative;
+      margin-right: -100%;
+      right: -24px;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+}
+
+// .menu {
+
+//   &__btn {
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+//     top: 0;
+//     width: 26px;
+//     height: 26px;
+//     cursor: pointer;
+//     z-index: 11;
+
+//     & > span {
+//       display: block;
+//       position: absolute;
+//       width: 100%;
+//       height: 2px;
+//       background-color: $white;
+//       transition: $transition;
+//     }
+
+//     & > span::before {
+//       display: block;
+//       position: absolute;
+//       width: 100%;
+//       height: 2px;
+//       background-color: $white;
+//       transition: $transition;
+//       content: "";
+//       top: -8px;
+//     }
+
+//     & > span::after {
+//       display: block;
+//       position: absolute;
+//       width: 100%;
+//       height: 2px;
+//       background-color: $white;
+//       transition: $transition;
+//       content: "";
+//       top: 8px;
+//     }
+//   }
+
+//   &__toggle {
+//     opacity: 0;
+//   }
+// }
+
+// .menu-opened {
+
+//   .menu__btn {
+//     position: relative;
+//     top: 0;
+//   }
+
+//   .menu__btn > span {
+//     transform: rotate(45deg);
+//   }
+
+//   .menu__btn > span::before {
+//     top: 0;
+//     transform: rotate(0);
+//   }
+
+//   .menu__btn > span::after {
+//     top: 0;
+//     transform: rotate(90deg);
+//   }
+
+//   .menu__box {
+//     visibility: visible;
+//     right: 0;
+//   }
+// }
