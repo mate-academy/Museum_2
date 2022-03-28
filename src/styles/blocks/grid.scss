@@ -46,4 +46,26 @@
       }
     }
   }
+
+  &__row {
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--#{$start}-#{$end} {
+          grid-row: #{$start} / #{$end + 1};
+        }
+
+        &-desktop--#{$start}-#{$end} {
+          @include onDesktop {
+            grid-row: #{$start} / #{$end + 1};
+          }
+        }
+
+        &-tablet--#{$start}-#{$end} {
+          @include onTablet {
+            grid-row: #{$start} / #{$end};
+          }
+        }
+      }
+    }
+  }
 }
