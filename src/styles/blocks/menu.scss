@@ -1,0 +1,153 @@
+.menu {
+  position: relative;
+  background-color: $colorDarkGreen;
+  color: #f1f5f4;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    min-height: 100vh;
+    height: 747px;
+    padding: $hadderTopPadding 0 0;
+
+    @include onTablet {
+      min-height: 1092px;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      min-height: 800px;
+    }
+  }
+
+  &__exhibitions {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @include onDesktop {
+      margin-top: 45px;
+      gap: 83px;
+    }
+  }
+
+  &__shedule-address {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__address {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__time,
+  &__location {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__list {
+    margin: 40px 0;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      margin: 50px 0;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    text-decoration: none;
+    color: #f1f5f4;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &-news {
+      &::after {
+        content: "";
+        display: block;
+        margin-top: 40px;
+        width: 275px;
+        border-bottom: 1px solid #f1f5f4;
+
+        @include onTablet {
+          content: "";
+          margin: 50px 0;
+          width: 690px;
+        }
+
+        @include onDesktop {
+          content: "";
+          margin: 60px 0;
+          width: 570px;
+        }
+      }
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      margin: 0;
+      width: 330px;
+      height: 60px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin: 0 auto;
+      width: 422px;
+      height: 466px;
+      bottom: 0;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 624px;
+      height: 697px;
+      bottom: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
+}
