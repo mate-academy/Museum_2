@@ -1,13 +1,18 @@
 .grid {
+  display: block;
 
-  @include tablet {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 30px;
+  &--tablet {
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 30px;
+    }
   }
 
-  @include desktop {
-    grid-template-columns: repeat(12, 1fr);
+  &--desktop {
+    @include desktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
   }
 
   &__item {
@@ -23,6 +28,24 @@
 
         &-desktop--#{$start}-#{$end} {
           grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+
+  &__row {
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--#{$start}-#{$start} {
+          grid-row: #{$start} / #{$start + 1};
+        }
+
+        &-tablet--#{$start}-#{$end} {
+          grid-row: #{$start} / #{$end + 1};
+        }
+
+        &-desktop--#{$start}-#{$end} {
+          grid-row: #{$start} / #{$end + 1};
         }
       }
     }
