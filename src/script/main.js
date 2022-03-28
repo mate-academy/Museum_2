@@ -1,6 +1,14 @@
 'use strict';
 
 window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#burger') {
+    document.body.classList.add('burgerMenu--close-menu-scroll');
+  } else {
+    document.body.classList.remove('burgerMenu--close-menu-scroll');
+  }
+});
+
+window.addEventListener('hashchange', () => {
   if (window.location.hash === '#scroll-up') {
     document.body.classList.add('overflow');
   } else {
