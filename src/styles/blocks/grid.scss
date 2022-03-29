@@ -11,26 +11,36 @@
 
   &--desktop {
     @include desktop {
+      display: grid;
       grid-template-columns: repeat(12, 1fr);
     }
   }
 
   &__item {
-    @for $start from 1 through 12 {
-      @for $end from $start through 12 {
-        &--#{$start}-#{$start} {
-          grid-column: #{$start} / #{$start + 1};
-        }
-
-        &-tablet--#{$start}-#{$end} {
-          grid-column: #{$start} / #{$end + 1};
-        }
-
-        &-desktop--#{$start}-#{$end} {
-          grid-column: #{$start} / #{$end + 1};
+    &-tablet {
+      @include tablet() {
+        @for $start from 1 through 12 {
+          @for $end from $start through 12 {
+            &--#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
         }
       }
     }
+
+    &-desktop {
+      @include desktop() {
+        @for $start from 1 through 12 {
+          @for $end from $start through 12 {
+            &--#{$start}-#{$end} {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
+    }
+
   }
 
   &__row {

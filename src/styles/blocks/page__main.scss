@@ -28,11 +28,66 @@
       margin: 0 0 75px;
       font-size: 40px;
     }
+
+    @include desktop {
+      font-size: 48px;
+    }
   }
 
   &-img-container {
     display: flex;
     justify-content: center;
+
+    position: relative;
+
+    width: 280px;
+    height: 356px;
+    overflow: hidden;
+
+    @include tablet {
+      width: 330px;
+      height: 420px;
+    }
+
+    @include desktop {
+      width: 370px;
+      height: 484px;
+      justify-content: left;
+    }
+
+    &__angel {
+      @include desktop {
+        width: 570px;
+        height: 484px;
+      }
+    }
+
+    &__art {
+      @include desktop {
+        width: 570px;
+        height: 484px;
+      }
+    }
+
+    &__person {
+      margin-bottom: 70px;
+    }
+
+    &__pictueres,
+    &__cat {
+      width: 280px;
+      height: 280px;
+
+      @include tablet {
+        width: 330px;
+        height: 330px;
+      }
+
+      @include desktop {
+        width: 570px;
+        height: 370px;
+      }
+    }
   }
 
   &-img {
@@ -41,6 +96,29 @@
     @include tablet {
       margin-bottom: 30px;
     }
+
+    &__angel {
+      transform: translateX(10%);
+
+      @include desktop {
+        transform: translateX(0);
+      }
+    }
+
+    &__person,
+    &__woman {
+
+      @include tablet {
+        width: 330px;
+        height: 420px;
+      }
+
+      @include desktop {
+        width: 370px;
+        height: 475px;
+      }
+    }
+
   }
 
   &-date {
@@ -129,6 +207,25 @@
     width: 280px;
 
     height: 60px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      color: rgba(175, 52, 25, 1);
+      border-color: rgba(175, 52, 25, 1);
+    }
+
+    &:active {
+      color: rgba(234, 52, 13, 1);
+      border-color: rgba(234, 52, 13, 1);
+    }
+
+    &:disabled {
+      color: rgba(221, 131, 111, 1);
+      border-color: rgba(221, 131, 111, 1);
+    }
   }
 
   &-plain {
@@ -140,6 +237,15 @@
     padding: 50px 0;
 
     margin-bottom: 90px;
+
+    @include desktop {
+      height: 800px;
+
+      background-image: url(../images/plain_1280.svg);
+      background-repeat: no-repeat;
+      background-size: 573px;
+      background-position: left bottom 0;
+    }
 
     &__title {
       font-weight: 700;
@@ -186,6 +292,8 @@
       width: 450px;
     }
 
+    outline: none;
+
     margin-bottom: 30px;
 
     background-color: transparent;
@@ -194,10 +302,29 @@
     border-bottom: 1px solid rgba(28, 27, 41, 1);
 
     font-family: "Raleway", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 150%;
     color: rgba(28, 27, 41, 1);
+
+    &:hover {
+      color: rgba(205, 77, 49, 1);
+      border-bottom: 1px solid rgba(205, 77, 49, 1);
+    }
+
+    &:focus {
+      font-weight: 600;
+      color: rgba(205, 77, 49, 1);
+      border-bottom: 1px solid rgba(205, 77, 49, 1);
+    }
+
+    &-title {
+      margin-bottom: 77px;
+
+      @include desktop {
+        height: 116px;
+      }
+    }
   }
 
 }
