@@ -1,0 +1,149 @@
+.header {
+  background-color: $background;
+  position: relative;
+  height: 100vh;
+  margin: 0 0 90px;
+
+  background-image: url(../images/header_1.svg);
+  background-repeat: no-repeat;
+  background-size: 34vh;
+  background-position: bottom;
+
+  @include onMedium {
+    background-position: bottom center;
+    background-size: 40vh;
+  }
+
+  @include onDesktop {
+    background-size: 626px;
+    background-position: bottom left 50vw;
+  }
+
+  // @include onMedium {
+  //   margin: 0 0 105px;
+  // }
+
+  // @include onDesktop {
+  //   background-image: url(../images/header.png);
+  //   background-repeat: no-repeat;
+  //   background-size: 626px;
+  //   background-position: bottom left 50vw;
+  //   margin: 0 0 105px;
+  // }
+
+  // @include onDesktop {
+  //   background-image: url(../images/header.png);
+  //   background-repeat: no-repeat;
+  //   height: 780px;
+  //   background-size: 600px;
+  //   background-position: bottom right;
+  // }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    // height: 100vh;
+    padding: 26px 0 0;
+  }
+
+  &__title {
+    color: $white;
+
+    &--subtitle {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      margin: 0 0 10px;
+    }
+
+    &--title {
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+      margin: 0 0 30px;
+
+      @include onMedium {
+        font-size: 72px;
+        margin: 0 0 20px;
+      }
+      @include onDesktop {
+        font-size: 92px;
+        margin: 0 0 30px;
+      }
+    }
+  }
+
+  &__text {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white;
+    margin: 0 0 40px;
+
+    @include onMedium {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__portret {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    height: 273px;
+    width: 245px;
+
+    @include onMedium {
+      height: 494px;
+      width: 443px
+    }
+
+    @include onDesktop {
+      display: none;
+      // position: absolute;
+      // width: 625px;
+      // height: 663px;
+      // bottom: 0;
+      // right: 0;
+    }
+  }
+
+  &__day {
+    display: none;
+    @include onDesktop {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      white-space: nowrap;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      color: $white;
+      margin: 0 0 50px;
+
+      opacity: 0.7;
+
+      &::after {
+        content: "";
+        display: block;
+        background-color: #f1f5f4;
+        height: 1px;
+        width: 100%;
+        opacity: .3;
+      }
+    }
+  }
+}

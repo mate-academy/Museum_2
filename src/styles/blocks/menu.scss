@@ -1,0 +1,146 @@
+.menu {
+  background-color: $background;
+  z-index: 10;
+  position: fixed;
+
+  // @include onDesktop {
+  //   background-image: url(../images/menu__img.svg);
+  //   background-repeat: no-repeat;
+  //   // background-repeat: no-repeat;
+  //   height: 697px;
+  //   // background-size: 624px;
+  //   background-position: bottom right;
+  // }
+
+  &__content {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 26px 0 0;
+  }
+
+  &__top {
+    margin-bottom: 30px;
+
+    @include onMedium {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__style-one {
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $white;
+    margin: 0;
+
+  }
+
+  &__style-two {
+    font-family: 'Raleway';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white;
+
+    &--time {
+      margin: 0 0 20px;
+
+      @include onMedium {
+        margin: 0 0 50px;
+      }
+    }
+
+    &--address {
+      margin: 0 0 40px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $main;
+      }
+
+      @include onMedium {
+        margin: 0 0 50px;
+      }
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style-type: none;
+    margin: 0 0 40px;
+
+    @include onMedium {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onMedium {
+      margin-bottom: 30px;
+    }
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $white;
+    transition: all 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+
+    @include onMedium {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__line {
+    margin: 0 0 40px;
+
+    @include onMedium {
+      margin: 0 0 50px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $white;
+
+      opacity: 0.3;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onMedium {
+      display: block;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      // display: none;
+      display: block;
+      width: 624px;
+      height: 697px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
