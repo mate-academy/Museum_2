@@ -1,8 +1,18 @@
 .menu {
   background-color: $c-gray-green;
+  width: 100%;
+  
+  display: none;
+
+  &:target {
+    display: block;
+  }
+
+  &:target ~ .header {
+    display: none;
+  }
 
   &__content {
-    width: 100%;
     padding-top: 20px;
     padding-bottom: 240px;
 
@@ -65,6 +75,7 @@
       font-size: 16px;
       line-height: 150%;
       opacity: 1;
+      color: $c-white;
     }
   }
 
@@ -156,7 +167,7 @@
   &__image {
     display: none;
     width: 422px;
-    height: 466px;
+    height: 100%;
 
     @include On768 {
       display: block;
@@ -164,8 +175,7 @@
     }
 
     @include On1280 {
-      width: 624px;
-      height: 697px;
+      width: 616px;
       margin: 0;
     }
   }

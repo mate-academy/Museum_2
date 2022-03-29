@@ -11,13 +11,33 @@
   font-size: 16px;
   line-height: 100%;
   color: $c-white;
+  @include hover(transform, scale);
+  @include hover(color, $c-brown);
+  @include hover(background-color, $c-gray);
+
+  &:hover {
+    transform: scale(1.02);
+    background-color: $c-gray;
+    color: $c-brown;
+    border: 1px solid $c-brown;
+    border-radius: 2px;
+  }
 
   &-transparent {
     position: relative;
     background-color: transparent;
     border: 1px solid $c-brown;
     color: $c-brown;
-    margin-top: 20px;
+    @include hover(transform, scale);
+
+    &:hover {
+      transform: scale(1.02);
+      background-color: transparent;
+    }
+
+    &--news {
+      padding-right: 40px;
+    }
 
     &--disabled {
       @include On768 {
@@ -27,16 +47,14 @@
 
     &--shown {
       display: none;
+      padding-right: 40px;
 
       @include On768 {
         display: grid;
-        border-width: 1.5px;
         width: 100%;
-        transform: translateY(-20px);
       }
 
       @include On1280 {
-        width: 320px;
         height: 70px;
         font-size: 20px;
       }
@@ -48,6 +66,10 @@
       width: 13.3px;
       height: 2px;
       transform: translate(70px, 0);
+
+      &--news {
+        transform: translate(50px, 0);
+      }
 
       @include On1280 {
         width: 15.3px;
@@ -61,6 +83,10 @@
         width: 8px;
         height: 11.6px;
         transform: translate(75px);
+
+        &--news {
+          transform: translate(55px, 0);
+        }
 
         @include On1280 {
           width: 15.3px;
