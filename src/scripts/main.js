@@ -9,7 +9,8 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
 
   if (inputField.value !== '' && inputField.value.match(regEx)) {
-    button.disabled = true;
     button.classList.toggle('button--disabled');
+    button.disabled = true;
+    inputField.disabled = true;
   }
 });
