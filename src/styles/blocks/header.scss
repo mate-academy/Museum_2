@@ -60,6 +60,8 @@
   &__link {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: $white;
     gap: 3px;
     transition: $transition;
 
@@ -78,9 +80,37 @@
     }
   }
 
-  
+  &__dropdown {
+    display: none;
+    position: absolute;
+    background-color: $gray;
+    padding: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 100%;
+    transition: $transition;
+    font-family: "Raleway", serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+
+    & a:hover {
+      color: $main;
+    }
+
+  }
 
   &__lang {
+
+    position: relative;
+    text-align: center;
+    transition: $transition;
+
+    &:hover .header__dropdown {
+      display: block;
+    }
+
     @include mobile {
       display: none;
     }

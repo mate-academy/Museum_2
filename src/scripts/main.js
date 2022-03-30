@@ -1,7 +1,15 @@
 'use strict';
 
-const icon = document.getElementById('header-burger');
+const button = document.getElementById('button');
+const inputField = document.getElementById('email');
+const form = document.getElementById('form');
+const regEx = /[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}/;
 
-icon.addEventListener('click', () => {
-  document.getElementById('menu-container').classList.toggle('menu-opened');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  if (inputField.value !== '' && inputField.value.match(regEx)) {
+    button.disabled = true;
+    button.classList.toggle('button--disabled');
+  }
 });
