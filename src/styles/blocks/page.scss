@@ -1,0 +1,49 @@
+.page {
+  font-family: "Playfair Display", sans-serif;
+  background-color: #e5e5e5;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    box-sizing: border-box;
+
+    background: $c-gray;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 120px;
+
+    @include tablet {
+      margin-bottom: 164px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 80px;
+
+      @include tablet {
+        margin-bottom: 128px;
+      }
+    }
+  }
+
+  &__footer {
+    box-sizing: border-box;
+  }
+}
