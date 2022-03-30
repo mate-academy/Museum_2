@@ -1,0 +1,119 @@
+@import "../utils/_mixins.scss";
+@import "../utils/_vars.scss";
+
+.didgest {
+  background: #e5e5e5;
+
+  &__wrapper {
+    padding: 100px 55px 200px;
+
+    @include tablet {
+      padding: 80px 39px 128px;
+    }
+
+    @include mobile {
+      padding: 50px 20px 80px;
+    }
+
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    @include tablet {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    @include tablet {
+      grid-column: 1 / 6;
+      margin-bottom: 50px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__form {
+
+    margin-bottom: 40px;
+
+    @include tablet {
+      grid-column: 1 / 5;
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+      margin-bottom: 30px;
+    }
+
+  }
+
+  &__input {
+    font-family: "Raleway", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $black;
+    background: none;
+    border: none;
+    padding: 3px 0;
+    width: 100%;
+    border-bottom: 1px solid $black;
+    outline: none;
+    transition: $transition;
+
+    &::placeholder {
+      transition: $transition;
+    }
+
+    &:hover {
+      color: $main;
+      border-bottom: 1px solid $main;
+
+      &::placeholder {
+        color: $main;
+      }
+    }
+
+    &:valid {
+      color: $black;
+      font-weight: 600;
+    }
+
+    &:focus {
+      color: $main;
+      border-bottom: 1px solid $main;
+      font-weight: 600;
+
+      &::placeholder {
+        color: $main;
+      }
+    }
+  }
+
+  &__button {
+    border: none;
+
+    @include tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include mobile {
+      grid-column: 1 / 3;
+    }
+  }
+
+}
