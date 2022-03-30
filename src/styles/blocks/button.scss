@@ -7,21 +7,40 @@
   box-sizing: border-box;
   width: 100%;
   height: 60px;
-  border: 2px solid #cd4d31;
-  padding: 22px 73px;
+  border: 1px solid $redLightColor;
+  gap: 10px;
 
   font-weight: 600;
   line-height: 100%;
-  color: #cd4d31;
+  color: $redLightColor;
   text-decoration: none;
 
   cursor: pointer;
 
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 210px;
+    }
+  }
+
+  &--bottom {
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
   &--primary {
     margin: 0;
-    color: #f1f5f4;
-    border: 2px solid #cd4d31;
-    background-color: #cd4d31;
+    color: $whiteColor;
+    border: 2px solid $redLightColor;
+    background-color: $redLightColor;
     transition: transform 0.3s;
     margin-bottom: 40px;
 
@@ -40,24 +59,22 @@
     }
 
     &:hover {
-      border-color: #af3419;
-      background-color: #af3419;
+      border-color: $redColorHover;
+      background-color: $redColorHover;
       transform: scale(1.05);
     }
 
     &:active {
-      border-color: #ea340d;
-      background-color: #ea340d;
+      border-color: $redColorActive;
+      background-color: $redColorActive;
     }
   }
 
   &:hover {
-    border-color: #af3419;
-    background-color: #af3419;
+    border-color: $redColorHover;
   }
 
   &:active {
-    border-color: #ea340d;
-    background-color: #ea340d;
+    border-color: $redColorActive;
   }
 }

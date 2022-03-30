@@ -6,13 +6,10 @@
   background-color: $colorDarkGreen;
   box-sizing: border-box;
 
-  color: #f1f5f4;
+  color: $whiteColor;
 
   @include onTablet {
-    padding: 50px 0 30px;
-  }
-
-  @include onDesktop {
+    height: 388px;
     padding: 50px 0 30px;
   }
 
@@ -21,10 +18,6 @@
 
     @include onTablet {
       margin-bottom: 0;
-    }
-
-    @include onDesktop {
-      margin-bottom: 74px;
     }
   }
 
@@ -59,13 +52,17 @@
 
   &__section-mail {
     cursor: pointer;
-    color: #f1f5f4;
+    color: $whiteColor;
     text-decoration: none;
   }
 
   &__link {
     text-decoration: none;
-    color: #f1f5f4;
+    color: $whiteColor;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__icons {
@@ -74,6 +71,8 @@
     justify-content: start;
     align-items: center;
     gap: 22px;
+
+    transition: transform 0.3s;
 
     @include onDesktop {
       margin-bottom: 0;
@@ -94,18 +93,34 @@
 
     &-facebook {
       background-image: url(../images/svg/facebook.svg);
+
+      &:hover {
+        transform: scale(1.5);
+      }
     }
 
     &-twitter {
       background-image: url(../images/svg/twitter.svg);
+
+      &:hover {
+        transform: scale(1.5);
+      }
     }
 
     &-telegram {
       background-image: url(../images/svg/telegram.svg);
+
+      &:hover {
+        transform: scale(1.5);
+      }
     }
 
     &-instagram {
       background-image: url(../images/svg/instagram.svg);
+
+      &:hover {
+        transform: scale(1.5);
+      }
     }
 
     &-copyright {
@@ -117,10 +132,13 @@
       height: 16px;
       width: 106px;
     }
+  }
+  &__icon-arrow {
+    width: 25px;
+    height: 20px;
 
-    &-arrow {
-      width: 20px;
-      height: 17px;
+    &:hover {
+      transform: scale(1.5);
     }
   }
 }
