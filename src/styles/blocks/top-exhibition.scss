@@ -1,0 +1,79 @@
+.top-exhibition {
+  background-color: $d-gray;
+
+  padding-top: 50px;
+
+  @include onTablet {
+    padding-top: 100px;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+  }
+
+  &__date-buttom {
+    margin: 0;
+
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 470px;
+      height: 1px;
+      background-color: $white;
+
+      margin-left: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &--date-bottom {
+    &::after {
+      content: "";
+      display: inline-flex;
+      align-items: center;
+      width: 469px;
+      height: 1px;
+      background-color: $white;
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    &--pict {
+      width: 245px;
+
+      @include onTablet {
+        width: 445px;
+      }
+
+      @include onDesktop {
+        width: 625px;
+      }
+    }
+  }
+}
