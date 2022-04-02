@@ -1,0 +1,134 @@
+.footer {
+  background-color: $background;
+
+  &__conteiner {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    height: max-content;
+    @include flex-column;
+    gap: 70px;
+
+    @include small {
+      padding-top: 34px;
+      padding-bottom: 30px;
+      gap: 60px;
+    }
+  }
+
+  &__blocks {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+
+    @include small {
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+
+  &__block {
+    width: 370px;
+
+    @include tablet {
+      width: 210px;
+    }
+
+    @include mobile {
+      width: 280px;
+    }
+  }
+
+  &__block-title {
+    @include h5;
+    color: $white;
+    padding-bottom: 30px;
+
+    @include small {
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__contact {
+    display: block;
+    @include text;
+    color: $white;
+    cursor: pointer;
+    @include link;
+  }
+
+  &__net-links {
+    display: flex;
+    gap: 20px;
+    padding-top: 50px;
+
+    @media (max-width: 670px) {
+      padding-top: 30px;
+    }
+  }
+
+  &__link {
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+  }
+
+  &__shedule {
+    @include text;
+    color: $white;
+  }
+
+  &__nav-list {
+    list-style: none;
+    @include flex-column;
+    gap: 10px;
+
+    @include mobile {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav-item {
+    @include link;
+    @include text;
+    color: $white;
+  }
+
+  &__copyright-block {
+    position: relative;
+    display: flex;
+  }
+
+  &__copyright-text {
+    @include additional-text;
+    color: $white;
+  }
+
+  &__copyright-privacy {
+    @include additional-text;
+    color: $white;
+    padding-left: 102px;
+
+    @media (max-width: 670px) {
+      padding-left: 40px;
+    }
+  }
+
+  &__link-header {
+    position: absolute;
+    right: 0;
+    @include link;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+    object-position: center;
+  }
+}

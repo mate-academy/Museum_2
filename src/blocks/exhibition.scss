@@ -1,0 +1,88 @@
+.exhibition {
+  @include flex-column;
+  width: $widthBlock;
+  flex: 0 1 auto;
+
+  &:first-child {
+    padding-right: 30px;
+
+    @media (max-width: 768px) {
+      padding-right: 0;
+    }
+  }
+
+  @include tablet {
+    width: 330px;
+  }
+
+  @include mobile {
+    width: 330px;
+  }
+
+  @include small {
+    width: 280px;
+  }
+
+  &__poster {
+    width: 100%;
+    height: 484px;
+    object-fit: cover;
+    object-position: center;
+
+    @include tablet {
+      height: 420px;
+    }
+
+    @include small {
+      height: 356px;
+    }
+  }
+
+  &__period {
+    @include text;
+    color: $main;
+    padding-top: 20px;
+
+    @include tablet {
+      padding-top: 30px;
+    }
+  }
+
+  &__title {
+    @include h4;
+    color: $black;
+    padding-top: 10px;
+  }
+
+  &__description {
+    @include text;
+    color: $gray;
+    padding-top: 20px;
+    
+    &--2 {
+      @include tablet {
+        padding-top: 50px;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 50px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    @include mobile {
+      align-self: center;
+    }
+
+    @include mobile {
+      margin-top: 30px;
+    }
+
+    @include small {
+      margin-top: 30px;
+    }
+  }
+}

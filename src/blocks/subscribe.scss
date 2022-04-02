@@ -1,0 +1,90 @@
+.subscribe {
+  &__conteiner {
+    @include flex-column;
+  }
+
+  &__main-block {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    @include h3;
+    color: $black;
+    width: $widthBlock;
+    flex-shrink: 0;
+    padding-right: 30px;
+
+    @media (max-width: 1024px) {
+      padding-right: 0;
+      font-size: 40px;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      font-style: 28px;
+      width: 100%;
+    }
+  }
+
+  &__note {
+    max-width: $widthBlock;
+    @include text;
+    color: $black;
+    flex-shrink: 1;
+
+    @media (max-width: 1024px) {
+      padding-top: 20px;
+    }
+  }
+
+  &__email {
+    margin-top: 50px;
+    border: none;
+    @include text;
+    color: $black;
+    border-bottom: 1px solid $black;
+    width: $widthBlock;
+
+    @media (max-width: 1024px) {
+      width: 450px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      color: $main;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid $main;
+    }
+
+    &--invalid {
+      color: $main;
+      border-color: $main;
+    }
+  }
+
+  &__label {
+    display: none;
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @media (max-width: 1024px) {
+      margin-top: 30px;
+    }
+
+    @media (max-width: 670px) {
+      align-self: center;
+    }
+  }
+}

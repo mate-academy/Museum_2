@@ -1,6 +1,111 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+// media //
+@mixin large {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: 360px) and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
+// button //
+@mixin button {
+  height: 60px;
+  width: 270px;
+  background-color: $main;
+  color: $white;
+  @include button-text;
+}
+
+@mixin hover-button {
+  background-color: #af3419;
+}
+
+@mixin pressed-button {
+  background-color: #ea340d;
+}
+
+@mixin disabled-button {
+  background-color: #dd836f;
+}
+
+@mixin secondary-button {
+  height: 60px;
+  width: 270px;
+  background-color: #fff;
+  border: 1px solid $main;
+  color: $main;
+}
+
+@mixin secondary-hover {
+  border-color: #af3419;
+  color: #af3419;
+}
+
+@mixin secondary-pressed {
+  border-color: #ea340d;
+  color: #ea340d;
+}
+
+@mixin secondary-disabled {
+  border-color: #dd836f;
+  color: #dd836f;
+}
+
+// link //
+@mixin link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+// flex //
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin page-standart {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: max-content;
+}
+
+@mixin page-hidden {
+  .page__body {
+    overflow: hidden;
   }
 }
