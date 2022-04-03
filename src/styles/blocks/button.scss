@@ -1,0 +1,144 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  width: 280px;
+  height: 60px;
+  background-color: $colorMain;
+  color: $colorSecond;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &__secondary {
+    display: none;
+    transition: all 0.5s;
+
+    @include onTablet {
+      display: flex;
+      gap: 11px;
+      width: 210px;
+      height: 60px;
+      color: $colorMain;
+      border: 1px solid $colorMain;
+      background-color: transparent;
+      
+      &--img {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/Museum_photos/icons/arrow-right.png);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 11px;
+      width: 270px;
+      height: 60px;
+      color: $colorMain;
+      border: 1px solid $colorMain;
+      background-color: transparent;
+      
+      &--img {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/Museum_photos/icons/arrow-right.png);
+        background-repeat: no-repeat;
+      }
+
+    }
+
+    &:hover {
+      background-color: transparent;
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:hover div {
+      background-image: url(../images/Museum_photos/icons/arrow-hover.png);
+      background-repeat: no-repeat;
+    }
+
+    &:active {
+      background-color: transparent;
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &:active div {
+      background-image: url(../images/Museum_photos/icons/arrow-active.png);
+      background-repeat: no-repeat;
+    }
+
+    &--phone {
+      display: flex;
+      gap: 11px;
+      width: 280px;
+      height: 60px;
+      color: $colorMain;
+      border: 1px solid $colorMain;
+      background-color: transparent;
+      margin-top: 30px;
+
+      &-img {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/Museum_photos/icons/arrow-right.png);
+        background-repeat: no-repeat;
+      }
+
+      &:hover {
+        background-color: transparent;
+        border-color: #af3419;
+        color: #af3419;
+      }
+    
+      &:hover div {
+        background-image: url(../images/Museum_photos/icons/arrow-hover.png);
+        background-repeat: no-repeat;
+      }
+    
+      &:active {
+        background-color: transparent;
+        border-color: #ea340d;
+        color: #ea340d;
+      }
+    
+      &:active div {
+        background-image: url(../images/Museum_photos/icons/arrow-active.png);
+        background-repeat: no-repeat;
+      }
+      
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}

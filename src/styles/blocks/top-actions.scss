@@ -1,0 +1,115 @@
+.top-actions {
+  --icon-width: 22px;
+  display: grid;
+  grid-template-columns: var(--icon-width) var(--icon-width);
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 70px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: var(--icon-width);
+    gap: 42px;
+    align-items: center;
+    margin-left: -50%;
+
+    @include onTablet {
+      grid-template-columns: var(--icon-width) var(--icon-width);
+      margin-left: -350%;
+    }
+
+    @include onDesktop {
+      grid-template-columns: var(--icon-width) var(--icon-width);
+      margin-left: -350%;
+    }
+
+    &--menu {
+      display: grid;
+      grid-template-columns: var(--icon-width) var(--icon-width);
+      grid-auto-flow: dense;
+      direction: rtl;
+      gap: 30px;
+      align-items: center;
+      margin-left: -300%;
+
+      @include onTablet {
+        grid-template-columns: var(--icon-width) var(--icon-width);
+        direction: ltr;
+        gap: 42px;
+        margin-left: -350%;
+      }
+
+      @include onDesktop {
+        grid-template-columns: var(--icon-width) var(--icon-width);
+        direction: ltr;
+        gap: 42px;
+        margin-left: -350%;
+      }
+    }
+  }
+
+  @include onTablet {
+    --icon-width: 22px;
+    padding-bottom: 122px;
+  }
+
+  @include onDesktop {
+    --icon-width: 30px;
+    padding-bottom: 50px;
+  }
+
+  &--menu {
+    padding-bottom: 30px;
+    
+    @include onTablet {
+      --icon-width: 22px;
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      --icon-width: 30px;
+      padding-bottom: 45px;
+    }
+
+  }
+}
+
+.language {
+  display: none;
+  
+  &__select {
+    background-color: transparent;
+    color: $colorSecond;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    height: 24px;
+    border: none;
+  }
+
+  @include onTablet {
+    display: block;
+  }
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &__menu {
+    display: block;
+
+    &--select {
+      background-color: transparent;
+      color: $colorSecond;
+      font-family: "Raleway", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      height: 24px;
+      border: none;
+    }
+  }
+}

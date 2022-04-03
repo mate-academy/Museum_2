@@ -1,0 +1,74 @@
+.page {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $colorText;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__section {
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(200%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+      z-index: 1;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 60px;
+
+    @include onTablet {
+      padding-bottom: 75px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 70px;
+    }
+
+    &--title {
+      font-family: "Playfair Display", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 125%;
+      color: #1c1b29;
+
+      @include onTablet {
+        font-size: 40px;
+        line-height: 125%;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+        line-height: 125%;
+      }
+    }
+  }
+}
