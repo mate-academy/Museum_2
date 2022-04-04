@@ -16,14 +16,22 @@
   height: 60px;
   width: 100%;
   border: none;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 
-  &:hover {
-    background-color: #af3419;
+  @include onDesktop {
+    width: 270px;
   }
 
-  &:active {
-    background-color: #ea340d;
+  &--red {
+
+    &:hover {
+      background-color: #af3419;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
   }
 
   &--header {
@@ -31,10 +39,6 @@
 
     @include onTablet {
       margin-bottom: 92px;
-    }
-
-    @include onDesktop {
-      width: 270px;
     }
   }
 
@@ -46,5 +50,11 @@
     @include onTablet {
       margin-bottom: 30px;
     }
+  }
+
+  &--white {
+    background-color: $white;
+    color: $main;
+    border: 1px solid $main;
   }
 }
