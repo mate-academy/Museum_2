@@ -8,12 +8,19 @@
     height: 100vh;
     transition: all 0.3s ease 0s;
     background: url(../images/burger__img.png) right bottom no-repeat;
+    background-size: contain;
     background-color: $background;
     overflow: auto;
 
     @include tablet {
       background: url(../images/burger__img.png) center bottom no-repeat;
       background-size: 422px 466px;
+      background-color: $background;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) and (max-height: 1000px) {
+      background: url(../images/burger__img.png) right bottom no-repeat;
+      background-size: 388px auto;
       background-color: $background;
     }
 
@@ -26,10 +33,17 @@
     box-sizing: border-box;
     @include page-standart;
     width: 53vw;
+    height: 90vh;
     @include flex-column;
+    padding-bottom: 108px;
 
     @include tablet {
       width: 100%;
+      justify-content: flex-start;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) and (max-height: 790px) {
+      width: 74vw;
     }
 
     @include mobile {
@@ -82,13 +96,16 @@
 
   &__nav {
     padding-top: 70px;
+    height: 50vh;
 
     @include tablet {
       padding-top: 50px;
+      height: 40vh;
     }
 
     @media (max-width: 767px) {
       padding-top: 40px;
+      height: 40vh;
     }
   }
 
