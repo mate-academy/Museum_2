@@ -1,0 +1,38 @@
+.navigation {
+
+  &__link {
+    @extend h3;
+    display: inline-block;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 60px;
+
+    &::after {
+      content: "";
+      bottom: 3px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      opacity: 0;
+      background-color: $colorWhite;
+      transition: opacity 250ms;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+  &__info-block {
+    margin-bottom: 70px;
+    color: $colorWhite;
+  }
+  &__info {
+    display: inline-block;
+  }
+
+  &__info-important {
+    font-weight: bold;
+  }
+}

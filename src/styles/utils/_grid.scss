@@ -10,24 +10,11 @@
     display: block;
   }
   &__item {
-
-    &--1-6 {
-      grid-column-start: 1;
-      grid-column-end: 7;
-
-      @include onTablet {
-        grid-column-start: 1;
-        grid-column-end: 4;
-      }
-    }
-
-    &--7-13 {
-      grid-column-start: 8;
-      grid-column-end: 13;
-
-      @include onTablet {
-        grid-column-start: 4;
-        grid-column-end: 7;
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end+1};
+        }
       }
     }
   }
