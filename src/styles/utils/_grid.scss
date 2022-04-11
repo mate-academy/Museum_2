@@ -1,0 +1,34 @@
+.grid {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(12, 1fr);
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  @include onMobile {
+    display: block;
+  }
+  &__item {
+
+    &--1-6 {
+      grid-column-start: 1;
+      grid-column-end: 7;
+
+      @include onTablet {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+    }
+
+    &--7-13 {
+      grid-column-start: 8;
+      grid-column-end: 13;
+
+      @include onTablet {
+        grid-column-start: 4;
+        grid-column-end: 7;
+      }
+    }
+  }
+}

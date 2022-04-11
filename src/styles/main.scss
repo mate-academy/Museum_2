@@ -2,6 +2,48 @@
 @import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
+@import "./blocks/page.scss";
+@import "./blocks/container.scss";
+@import "./blocks/header.scss";
+@import "./blocks/header-action.scss";
+@import "./blocks/button.scss";
+
+html {
+  font-family: $fontRaleway;
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-font {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.additional-font {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140px;
+}
+
+.select-menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.language-selector {
+  border: none;
+  background-color: transparent;
+  color: $colorWhite;
+
+  &:focus-visible {
+    outline: none;
+    border: none;
+  }
+  @include onMobile {
+    display: none;
+  }
 }
