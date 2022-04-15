@@ -2,7 +2,7 @@
 
   &__container {
     height: 90px;
-    margin-bottom: 47px;
+    margin-bottom: 48px;
     padding: 32px 0;
     display: flex;
     align-items: center;
@@ -13,7 +13,7 @@
       padding: 26px 0;
     }
 
-    @include onMobile {
+    @include onDesktop {
       padding: 20px 0;
       height: 80px;
     }
@@ -34,6 +34,11 @@
       margin-bottom: 30px;
     }
 
+    &--image {
+      width: 100%;
+      height: 100%;
+    }
+
     &--parag {
       margin-bottom: 81px;
     }
@@ -42,18 +47,27 @@
       margin-bottom: 135px;
     }
 
-    &--lined-date {
+    &--lined {
       margin-bottom: 50px;
       position: relative;
-      &::after {
-        content: "";
-        width: 80%;
-        height: 1px;
-        top: 50%;
-        margin-left: 20px;
-        position: absolute;
-        background-color: $colorWhite;
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+
+      &-line {
+        &::after {
+          content: "";
+          width: 80%;
+          height: 1px;
+          top: 50%;
+          margin-left: 20px;
+          position: absolute;
+          background-color: $colorWhite;
+        }
       }
     }
+
   }
 }

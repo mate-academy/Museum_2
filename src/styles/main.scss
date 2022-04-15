@@ -4,6 +4,7 @@
 
 @import "./blocks/page.scss";
 @import "./blocks/container.scss";
+
 @import "./blocks/header.scss";
 @import "./blocks/header-action.scss";
 @import "./blocks/button.scss";
@@ -38,15 +39,40 @@ html {
 }
 
 .language-selector {
+  width: 42px;
   border: none;
   background-color: transparent;
   color: $colorWhite;
+  margin-right: 30px;
+  font-size: 16px;
+  line-height: 24px;
 
   &:focus-visible {
     outline: none;
     border: none;
   }
-  @include onMobile {
+
+  &-desktop {
     display: none;
+  }
+  @include onDesktop {
+    display: block;
+    margin-right: 0;
+  }
+
+  @include onTablet {
+    display: block;
+    margin-right: 0;
+  }
+}
+
+.no-mobile {
+  display: none;
+
+  @include onTablet {
+    display: block;
+  }
+  @include onDesktop {
+    display: block;
   }
 }
