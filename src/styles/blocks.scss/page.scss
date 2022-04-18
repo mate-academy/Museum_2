@@ -31,11 +31,38 @@
     font-size: 48px;
     line-height: 48px;
 
+    max-width: 279px;
+
     color: #f1f5f4;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 72px;
+
+      max-width: 569px;
+    }
+
+    @include onDesktop {
+      font-weight: 700;
+      font-size: 96px;
+      line-height: 96px;
+
+      max-width: 569px;
+    }
   }
 
   &-section__description {
     margin: 0 0 40px;
+    max-width: 267px;
+
+    @include onTablet {
+      max-width: 330px;
+    }
+
+    @include onDesktop {
+      max-width: 569px;
+    }
 
     font-weight: 400;
     font-size: 16px;
@@ -48,8 +75,25 @@
     margin: 0 0 40px;
 
     display: block;
-    width: 100%;
+    max-width: 330px;
     height: 60px;
+  }
+
+  &__menu {
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
   }
 
 }
