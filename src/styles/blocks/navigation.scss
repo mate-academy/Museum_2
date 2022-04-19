@@ -1,12 +1,15 @@
 .navigation {
-
+  display: flex;
+  flex-direction: column;
   &__link {
-    @extend h3;
     display: inline-block;
     position: relative;
     color: white;
     text-decoration: none;
-    margin-bottom: 60px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    margin-right: auto;
 
     &::after {
       content: "";
@@ -18,6 +21,16 @@
       opacity: 0;
       background-color: $colorWhite;
       transition: opacity 250ms;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      margin-bottom: 60px;
     }
 
     &:hover::after {
