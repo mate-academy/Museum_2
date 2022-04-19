@@ -6,8 +6,34 @@
   font-family: $fontRaleway;
 
   &:hover {
-    background-color: $colorPrimaryHover;
     cursor: pointer;
+  }
+
+  &:hover .button-svg {
+    filter: invert(21%)
+      sepia(62%)
+      saturate(3069%)
+      hue-rotate(356deg)
+      brightness(91%)
+      contrast(86%);
+  }
+
+  &:focus .button-svg {
+    filter: invert(30%)
+      sepia(87%)
+      saturate(4257%)
+      hue-rotate(356deg)
+      brightness(93%)
+      contrast(97%);
+  }
+
+  &:disabled .button-svg {
+    filter: invert(83%)
+      sepia(18%)
+      saturate(7070%)
+      hue-rotate(311deg)
+      brightness(94%)
+      contrast(82%);
   }
 
   @include onTablet {
@@ -22,15 +48,42 @@
     color: $colorWhite;
     background-color: $colorMain;
     border: none;
+
+    &:hover {
+      background-color: $colorPrimaryHover;
+    }
+
+    &:focus {
+      background-color: $colorPrimaryPressed;
+    }
+    &:disabled {
+      background-color: $colorPrimaryDisabled;
+    }
   }
 
   &-secondary {
     border: 1px solid $colorMain;
     color: $colorMain;
     background-color: $colorWhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @include onTablet {
       width: 210px;
+    }
+
+    &:hover {
+      color: $colorPrimaryHover;
+      border-color: $colorPrimaryHover;
+    }
+    &:focus {
+      color: $colorPrimaryPressed;
+      border-color: $colorPrimaryPressed;
+    }
+    &:disabled {
+      color: $colorPrimaryDisabled;
+      border-color: $colorPrimaryDisabled;
     }
   }
 }
