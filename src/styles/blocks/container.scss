@@ -1,19 +1,24 @@
 .container {
   max-width: 280px;
   margin: 0 auto;
-  justify-content: space-between;
-  flex-direction: column;
-  flex-wrap: wrap;
 
   @include onTablet {
     max-width: 690px;
-    flex-direction: row;
   }
   @include onDesktop {
     max-width: 1170px;
-    flex-direction: row;
   }
   &--flex {
     display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+    @include onDesktop {
+      flex-direction: row;
+    }
   }
 }

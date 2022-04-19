@@ -4,6 +4,7 @@
 
 @import "./blocks/page.scss";
 @import "./blocks/container.scss";
+@import "./blocks/section.scss";
 
 @import "./blocks/header.scss";
 @import "./blocks/header-action.scss";
@@ -12,6 +13,7 @@
 @import "./blocks/navigation.scss";
 @import "./blocks/actual.scss";
 @import "./blocks/card.scss";
+@import "./blocks/events.scss";
 
 html {
   font-family: $fontRaleway;
@@ -92,5 +94,45 @@ html {
   }
   @include onDesktop {
     display: none;
+  }
+}
+
+@each $section in $sections {
+  .section--#{$section} {
+    &__heading {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 70px;
+
+      @include onTablet {
+        font-size: 40px;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+      }
+    }
+    &__card {
+      width: 280px;
+
+      @include onTablet {
+        width: 330px;
+
+      }
+
+      @include onDesktop {
+        width: 570px;
+      }
+    }
+    &__button-calendar {
+      order: 1;
+
+      @include onTablet {
+        order: initial;
+      }
+      @include onDesktop {
+        order: initial;
+      }
+    }
   }
 }
