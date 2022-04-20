@@ -1,6 +1,5 @@
 .grid {
-  display: inherit;
-  grid-template-columns: repeat(2, 1fr);
+  display: grid;
   gap: 20px;
   @include onDesktop {
     display: grid;
@@ -12,11 +11,13 @@
     column-gap: 30px;
     grid-template-columns: repeat(6, 1fr);
   }
-  &__desktop {
-    @for $start from 1 through 12 {
-      @for $end from $start through 12 {
-        &--#{$start}-#{$end} {
-          grid-column: #{($start)} / #{($end+1)};
+  @include onDesktop {
+    &__desktop {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--#{$start}-#{$end} {
+            grid-column: #{($start)} / #{($end+1)};
+          }
         }
       }
     }
