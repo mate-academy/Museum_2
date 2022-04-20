@@ -12,7 +12,13 @@
       margin: 0 auto 70px;
       grid-template-columns: repeat(6,1fr);
       column-gap: 30px;
-      min-width: 768px;
+      min-width: 690px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12,1fr);
+      column-gap: 30px;
+      min-width: 1280px;
     }
   }
 
@@ -24,16 +30,23 @@
       max-width: 768px;
       margin: 0 auto;
     }
-  }
 
+    @include onDesktop {
+      max-width: 1280px;
+    }
+  }
 
   &__bottom {
     @include onTablet {
       max-width: 330px;
       grid-column: 4 / 7;
+      // padding-right: 39px;
+    }
+    @include onDesktop {
+      max-width: 330px;
+      grid-column: 5 / 13;
     }
   }
-
 
   &__events {
     margin: 0 0 60px;
@@ -45,7 +58,7 @@
     color: #1C1B29;
 
     @include onTablet {
-      // grid-column: 1 / 4;
+      margin-left: 39px;
       font-weight: 700;
       font-size: 40px;
       line-height: 50px;
@@ -57,8 +70,14 @@
 
     @include onTablet {
       margin: 0;
-      grid-column: 1 / 4;;
+      grid-column: 1 / 4;
     }
+
+    @include onDesktop {
+      margin: 0;
+      grid-column: 1 / 5;
+    }
+
   }
 
   &__photo {
@@ -71,6 +90,11 @@
       margin: 0;
       min-width: 100%;
       min-height: 422px;
+    }
+    @include onDesktop {
+      margin: 0;
+      min-width: 370px;
+      min-height: 475px;
     }
   }
 
