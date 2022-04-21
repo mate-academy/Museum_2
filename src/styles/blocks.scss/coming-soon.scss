@@ -1,7 +1,6 @@
 .coming-soon {
   &__item {
     display: block;
-    // max-width: 280px;
     margin: 0 auto;
   }
 
@@ -40,7 +39,6 @@
     @include onTablet {
       max-width: 330px;
       grid-column: 4 / 7;
-      // padding-right: 39px;
     }
     @include onDesktop {
       max-width: 330px;
@@ -55,7 +53,7 @@
     font-size: 28px;
     line-height: 35px;
 
-    color: #1C1B29;
+    color: $colorBlack;
 
     @include onTablet {
       margin-left: 39px;
@@ -90,6 +88,14 @@
     max-width: 280px;
     max-height: 356px;
 
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.48);
+      z-index: 1;
+    }
+
     @include onTablet {
       margin: 0;
       min-width: 100%;
@@ -105,11 +111,12 @@
   &__date {
     display: block;
     margin: 0 0 10px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
+    // font-weight: 400;
+    // font-size: 16px;
+    // line-height: 150%;
+    @extend %textSize;
 
-    color: #CD4D31;
+    color: $mainColor;
   }
 
   &__subtitle {
