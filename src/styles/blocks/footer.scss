@@ -18,9 +18,10 @@
         font-size: 20px;
       }
     }
-    &-text {
+    &-link {
       line-height: 150%;
       font-size: 16px;
+      color: $colorWhite;
     }
   }
 
@@ -59,12 +60,29 @@
       }
     }
     &-link {
+      position: relative;
+      display: table;
       line-height: 150%;
       font-size: 16px;
       color: $colorWhite;
       text-decoration: none;
-      display: block;
       margin-bottom: 5px;
+
+      &::after {
+        content: "";
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        opacity: 0;
+        background-color: $colorWhite;
+        transition: opacity 250ms;
+        bottom: 3px;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
     }
   }
 
@@ -88,6 +106,10 @@
       display: inline-block;
     }
   }
+}
+
+.footer__extras-link:hover > svg > path {
+  stroke: $colorPrimaryHover;
 }
 
 .link:hover > .link-svg > path {
