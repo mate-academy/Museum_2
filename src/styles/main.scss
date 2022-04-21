@@ -1,7 +1,554 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "general";
 
-body {
+.page {
   background: $c-gray;
+
+  &__body {
+    margin: 0;
+    background-color: #eee;
+    font-family: Raleway, sans-serif;
+  }
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 20px 20px 0;
+
+  @include Tablet {
+    padding: 20px 39px 0;
+  }
+
+  @include Desktop {
+    padding: 32px 55px 0;
+  }
+
+}
+
+.header {
+  background-color: #3f5252;
+  position: relative;
+
+  &__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    @include Tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__lang {
+    visibility: hidden;
+    background-color: rgba(5, 5, 5, 0);
+    outline: none;
+    @include Tablet {
+      visibility: visible;
+    }
+  }
+
+  &__menu {
+    /*    visibility: hidden;*/
+    display: none;
+    /*    position: absolute;*/
+    /*    top: 50px;
+        right: 0;
+        bottom: 0;
+        left: 0;*/
+    background-color: #3f5252;
+
+    @include Tablet {
+      /*  top: 70px;
+        padding: 20px 39px 0;*/
+    }
+
+    @include Desktop {
+      /*      top: 85px;*/
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    /*    padding-bottom: 70px;*/
+  }
+
+  &__info {
+    display: flex;
+
+    @include DesktopMax {
+      flex-direction: column;
+    }
+
+    &--text {
+      @include Desktop {
+        width: 76%;
+      }
+    }
+
+  }
+
+  .header__info--text {
+    @include Desktop {
+      width: 56%;
+    }
+  }
+
+  &__data-text {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #f1f5f4;
+    margin: 0 0 10px;
+  }
+
+  &__title {
+    font-family: Playfair Display, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: #f1f5f4;
+    padding: 0 0 30px;
+
+    @include Tablet {
+      margin-bottom: 20px;
+      font-size: 72px;
+      width: 80%;
+    }
+
+    @include Desktop {
+      font-size: 96px;
+      width: 89%;
+    }
+  }
+
+  &__subtitle {
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+    margin-bottom: 40px;
+
+    @include Tablet {
+      margin-bottom: 50px;
+    }
+
+    @include Desktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  &__button {
+    max-width: 330px;
+    width: 100%;
+    background-color: #cd4d31;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+    color: #f1f5f4;
+    border: 0;
+    padding: 22px;
+    margin-bottom: 40px;
+
+    &--menu {
+      position: relative;
+    }
+
+    @include Tablet {
+      margin-bottom: 30px;
+    }
+
+    @include Desktop {
+      margin-bottom: 133px;
+    }
+  }
+
+  &__mini-text {
+    display: none;
+    font-family: Playfair Display, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    margin-bottom: 50px;
+    position: relative;
+
+    @include Desktop {
+      display: block;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 469px;
+      height: 1px;
+      background: #f1f5f4;
+      opacity: 0.3;
+      top: 9px;
+      left: 110px;
+    }
+  }
+
+  &__girl {
+    margin: 0 auto;
+    width: 87.5%;
+    @include Tablet {
+      width: 60.3%;
+
+    }
+
+    @include Desktop {
+      width: 50.7%;
+    }
+  }
+}
+
+.action-top {
+  display: flex;
+  justify-content: space-between;
+  /*  padding-bottom: 70px;*/
+
+  @include Tablet {
+    /*    padding-bottom: 100px;*/
+  }
+
+  @include Desktop {
+    /*    padding-bottom: 90px;*/
+  }
+}
+
+.header--active .header {
+  &__menu,
+  &__lang {
+    /*    visibility: visible;*/
+    display: block;
+  }
+
+}
+
+.logo {
+  height: 40px;
+}
+
+.icon {
+  border: 0;
+  width: 30px;
+  height: 30px;
+
+  &--menu {
+    background-color: #3f5252;
+    background-image: url("../images/menu.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &--cancel {
+    background-color: #3f5252;
+    background-image: url("../images/cross.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.header--active .icon--menu {
+  background-image: url("../images/cross.svg");
+}
+
+.menu__container {
+  display: flex;
+
+  @include DesktopMax {
+    flex-direction: column;
+  }
+}
+
+.menu {
+  display: none;
+
+  &__schedule-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include Tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__schedule-container-item {
+    @include Tablet {
+      margin-right: 123px;
+    }
+  }
+
+  &__schedule {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #f1f5f4;
+
+    &--num {
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      color: #f1f5f4;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0 0 40px;
+
+    @include Tablet {
+      margin: 0 0 50px;
+    }
+
+    @include Desktop {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-family: Playfair Display, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: #f1f5f4;
+    text-decoration: none;
+
+    @include Tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__line {
+    margin-bottom: 50px;
+  }
+
+  &__address {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #f1f5f4;
+
+    &--text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      color: #f1f5f4;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    display: none;
+    margin: 0 auto;
+  }
+}
+
+.header--active .menu__image {
+  @include Tablet {
+    display: block;
+  }
+}
+
+.header--active .header__info {
+  display: none;
+
+  .header--active .menu {
+    display: flex;
+  }
+}
+
+main {
+  background-color: #eee;
+
+}
+
+.section {
+
+  @include Desktop {
+    padding: 0 55px;
+  }
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include Tablet {
+    position: relative;
+    padding: 0 39px;
+  }
+
+  &__title {
+    margin-top: 90px;
+    margin-bottom: 60px;
+    text-align: center;
+
+    @include Tablet {
+      text-align: left;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 60px;
+    @include Tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+  }
+
+  &__buy-tickets {
+    width: 100%;
+    margin-top: 30px;
+    @include Tablet {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: auto;
+      margin-top: 0;
+    }
+
+    @include Desktop {
+      margin-top: 0;
+    }
+  }
+
+  .section {
+    &__name {
+      text-align: left;
+      margin: 0 0 20px;
+    }
+
+    &__date {
+      color: #cd4d31;
+      margin: 0 0 10px;
+    }
+
+    &__description {
+      text-align: left;
+      margin: 0 0 30px;
+
+      @include Desktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &__image {
+      margin: 0 0 40px;
+      width: 100%;
+      max-height: 475px;
+      object-fit: cover;
+    }
+
+    &__tickets {
+      width: 100%;
+    }
+  }
+}
+
+.event__item {
+  display: grid;
+  gap: 30px;
+  margin-bottom: 60px;
+
+  @include Tablet {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 0;
+  }
+  @include Desktop {
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 0;
+  }
+}
+
+.events__sign-up {
+  @include Desktop {
+    max-width: 270px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.header--active ~ main {
+  display: none;
+}
+
+.visit {
+  display: grid;
+  padding: 50px 20px 0;
+  background-color: #3f5252;
+
+  @include Tablet {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  @include Desktop {
+    grid-template-columns: 1fr 2fr;
+    padding-left: 0;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    color: #f1f5f4;
+
+    @include Tablet {
+      text-align: left;
+    }
+  }
+
+  &__description {
+    color: #f1f5f4;
+    margin-bottom: 40px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include Tablet {
+      text-align: left;
+    }
+  }
+
+  &__start {
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 330px;
+  }
+
+  &__image {
+    max-height: 800px;
+    display: none;
+
+    @include Desktop {
+      display: block;
+    }
+  }
 }
