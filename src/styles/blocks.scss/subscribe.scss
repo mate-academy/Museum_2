@@ -5,11 +5,8 @@
     max-width: 280px;
     margin: 0 auto 20px;
 
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 35px;
-
-    color: #1C1B29;
+    @extend %titlePhoneSize ;
+    color: $colorBlack;
 
     @include onTablet {
       margin: 0 0 20px;
@@ -39,7 +36,7 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       max-width: 1170px;
-      padding: 50px 0 50px;
+      padding: 50px 0;
     }
   }
 
@@ -52,11 +49,9 @@
   &__description {
     display: block;
     margin: 0 0 50px;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    @extend %textSize;
 
-    color: #1C1B29;
+    color: $colorBlack;
 
     @include onTablet {
       max-width: 450px;
@@ -68,7 +63,7 @@
   }
 
   &__description--desktop {
-    display:none;
+    display: none;
 
     @include onDesktop {
       display: initial;
@@ -81,20 +76,17 @@
     margin: 0 0 30px;
     width: 100%;
     border: none;
-    border-bottom: 1px solid #1C1B29 ;
-    background-color: #F1F5F4;
+    border-bottom: 1px solid $colorBlack;
+    background-color: $colorWhite;
 
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-
-    color: #1C1B29;
+    @extend %textSize ;
+    color: $colorBlack;
 
     &:hover {
       border-bottom: 1px solid $mainColor;
-        &::placeholder {
-          color: $mainColor;
-        }
+      &::placeholder {
+        color: $mainColor;
+      }
     }
 
     &:focus {
@@ -102,14 +94,14 @@
       outline: none;
       border-bottom: 1px solid $mainColor;
       &::placeholder {
-        color: #F1F5F4;
+        color: $colorWhite;
         font-weight: 700;
       }
     }
 
     &:active {
       &::placeholder {
-        color: #1C1B29;
+        color: $colorBlack;
         font-weight: 700;
       }
     }
@@ -119,5 +111,3 @@
     }
   }
 }
-
-
