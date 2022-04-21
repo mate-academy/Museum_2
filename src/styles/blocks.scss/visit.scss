@@ -11,6 +11,31 @@
     @include onTablet {
       width: 690px;
     }
+
+    @include onDesktop {
+      height: 800px;
+      width: 1170px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__photo-container {
+    display: none;
+
+    @include onDesktop {
+      display: initial;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__item {
+    @include onDesktop {
+      padding-top: 155px;
+      grid-column: 6 / 13;
+    }
   }
 
   &__title {
@@ -29,6 +54,11 @@
       font-weight: 700;
       font-size: 62px;
       line-height: 62px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+      line-height: 80px;
     }
   }
 
