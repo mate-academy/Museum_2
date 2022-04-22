@@ -9,13 +9,14 @@
   }
 
   @include onDesktop {
-
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
   }
 
   &--desktop {
     display: block;
 
-    @include onDesktop {
+    @include onTablet {
       display: grid;
     }
   }
@@ -29,7 +30,7 @@
         }
 
         &--desktop-#{$start}-#{$end} {
-          @include onDesktop {
+          @include onTablet {
             grid-column: #{$start} / #{$end + 1}
           }
           ;
