@@ -20,8 +20,8 @@ if (window.innerWidth > 991) {
   burgerImage.style.width = decorationWrapper.clientHeight * 0.89 + 'px';
 }
 
-/* Тоже самое для демонстрации измненений при смене ширины экрана */
-window.addEventListener('resize', function() {
+// Тоже самое для демонстрации измненений при смене ширины экрана
+/* window.addEventListener('resize', function() {
   decorationWrapper.style.height = headerBody.clientHeight + 'px';
 
   decorationWrapper.style.width = decorationWrapper.clientHeight
@@ -31,7 +31,7 @@ window.addEventListener('resize', function() {
   burgerImage.style.height = headerBody.clientHeight + 'px';
   burgerImage.style.width = decorationWrapper.clientHeight * 0.89 + 'px';
 });
-
+ */
 document.addEventListener('click', function(el) {
   /* Код выпадающего списка с выбором языка */
   const langItems = document.querySelectorAll('.nav__lang-items');
