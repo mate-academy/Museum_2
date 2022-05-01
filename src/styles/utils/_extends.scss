@@ -1,4 +1,90 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
+%h-base {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  size: 48px;
+  line-height: 100%;
+}
+
+%main {
+  font-family: 'Raleway', sans-serif;
   font-weight: 400;
+  size: 16px;
+  line-height: 150%;
+}
+
+%additional {
+  @extend %main;
+  size: 14px;
+  line-height: 140%;
+}
+
+%icon {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+%image {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &:hover {
+    transform: scale(1.05);
+    @include hover(transition, 0.3);
+  }
+}
+
+%button {
+  @extend %main;
+  font-weight: 700;
+  line-height: 100%;
+  min-height: 60px;
+  min-width: 270px;
+  color: $white;
+  border: 1px solid $main;
+  background-color: $main;
+
+  &:hover {
+    border: 1px solid $btn-hover;
+    background-color: $btn-hover;
+  }
+
+  &:active {
+    border: 1px solid $btn-active;
+    background-color: $btn-active;
+  }
+
+  &:disabled {
+    border: 1px solid $btn-disabled;
+    background-color: $btn-disabled;
+  }
+}
+
+%button-white {
+    @extend %main;
+    line-height: 100%;
+    min-width: 270px;
+    min-height: 60px;
+    color: $main;
+    border: 1px solid $main;
+    background-color: $white;
+
+    &:hover {
+      border: 1px solid $btn-hover;
+      background-color: $white;
+      color: $btn-hover;
+    }
+
+    &:active {
+      border: 1px solid $btn-active;
+      color: $btn-active;
+    }
+
+    &:disabled {
+      border: 1px solid $btn-disabled;
+      color: $btn-disabled;
+    }
 }

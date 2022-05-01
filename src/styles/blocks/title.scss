@@ -1,0 +1,66 @@
+
+.title {
+
+  &__content {
+
+  }
+
+  &__info {
+    @extend %additional;
+  }
+
+  &__name {
+    padding: 10px 0 30px 0;
+  }
+
+  &__description {
+
+    &--bold {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    margin: 40px 0;
+    min-width: 280px;
+  }
+
+  &__image {
+
+    @include onTablet {
+      background-position: center;
+    }
+  }
+
+
+  &__img {
+    margin: 0 auto;
+    @extend %image;
+
+
+
+    &--menu {
+      min-width: 0;
+      min-height: 0;
+      @extend %image;
+      margin: 0 auto;
+      background-position: center;
+
+
+      @include onDesktop {
+        background-position: right;
+      }
+    }
+
+    @include onDesktop {
+      height: 100%;
+      width: 100%;
+      background-position: right;
+    }
+  }
+}

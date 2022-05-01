@@ -1,4 +1,5 @@
 # Museum 2 landing page
+
 Implement landing page according to [Figma design](https://www.figma.com/file/HL3XGt5ZatvJoYBhOaWY5x/museum-prototype?node-id=323%3A1957) - Use BEM and SCSS
 
 Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
@@ -18,8 +19,8 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 1. Implement `Підпишіться на дайджест` block.
 1. Implement footer.
 
-
 ## Github flow
+
 1. **Fork** the repo.
 2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
 3. Run `npm install` (or just `npm i`).
