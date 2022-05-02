@@ -1,20 +1,11 @@
 .footer {
   background-color: #3f5252;
-  height: 811px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  padding: 30px 0;
 
   &__content {
     width: 100%;
     padding: 30px 20px;
-
-    @include onTablet {
-      display: flex;
-      flex-direction: row;
-      gap: 30px;
-    }
+    margin: 0 auto;
   }
 
   &__contacts {
@@ -32,6 +23,14 @@
   &__contacts-adress {
     @include fontRalewayBig;
     color: #f1f5f4;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: #f1f5f4;
+    }
   }
 
   &__contacts-phone {
@@ -39,6 +38,8 @@
     color: #f1f5f4;
     text-decoration: none;
     border-bottom: 1px solid transparent;
+    display: inline-block;
+    transition: all 0.3s;
 
     &:hover {
       border-color: #f1f5f4;
@@ -50,6 +51,8 @@
     color: #f1f5f4;
     text-decoration: none;
     border-bottom: 1px solid transparent;
+    display: inline-block;
+    transition: all 0.3s;
 
     @include onTablet {
       margin-bottom: 50px;
@@ -75,15 +78,27 @@
     color: #f1f5f4;
     text-decoration: none;
     margin-bottom: 10px;
-    display: block;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: #f1f5f4;
+    }
   }
 
   &__menu-sub {
     @include fontRalewayBig;
     color: #f1f5f4;
     text-decoration: none;
-    display: block;
+    display: inline-block;
     margin-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: #f1f5f4;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -92,14 +107,7 @@
 
   &__sub {
     display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-
-    @include onTablet {
-      justify-content: space-between;
-    }
-
+    justify-content: space-between;
     &-copyright {
       font-weight: 400;
       font-size: 14px;
@@ -117,7 +125,6 @@
       color: #f1f5f4;
       text-decoration: none;
       display: inline-block;
-      margin-right: 15px;
       white-space: nowrap;
     }
 

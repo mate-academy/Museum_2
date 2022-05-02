@@ -1,9 +1,12 @@
 .container {
-  max-width: 100%;
+  max-width: 280px;
   margin: 0 auto;
 
   @include onTablet {
-    max-width: 100%;
+    max-width: 690px;
+  }
+  @include onDesktop {
+    max-width: 1170px;
   }
 
   &__menu {
@@ -17,12 +20,22 @@
       display: flex;
       flex-direction: row;
     }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+    }
   }
 
   &__header-menu--form {
     display: none;
+    margin-top: 0;
 
     @include onTablet {
+      display: inline-block;
+    }
+
+    @include onDesktop {
       display: inline-block;
     }
   }

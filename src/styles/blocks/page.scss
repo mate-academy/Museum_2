@@ -1,9 +1,15 @@
 .page {
   font-family: "Playfair Display", serif;
   scroll-behavior: smooth;
-  
+
   &__body {
     margin: 0;
+  }
+
+  &__header {
+    height: 100vh;
+    background-color: #3f5252;
+    margin-bottom: 110px;
   }
 
   &__menu {
@@ -17,6 +23,69 @@
 
     &:target {
       transform: translateX(0);
+    }
+  }
+
+  &__actual {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include onTablet {
+      padding: 0 40px;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      padding: 0 55px;
+      flex-direction: row;
+      gap: 30px;
+      justify-content: center;
+      align-items: top;
+    }
+  }
+
+  &__events {
+    padding: 0 20px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include onTablet {
+      padding: 0 40px;
+      gap: 30px;
+      justify-content: center;
+      align-items: top;
+    }
+
+    @include onDesktop {
+      padding: 0 55px;
+      gap: 30px;
+      justify-content: center;
+      align-items: top;
+    }
+  }
+
+  &__announce {
+    margin-bottom: 90px;
+  }
+
+  &__news {
+    padding: 0 20px;
+  }
+
+  &__subscription {
+    padding: 0 20px;
+    margin-bottom: 50px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
     }
   }
 }
