@@ -1,0 +1,40 @@
+.header--active .header {
+  &__menu,
+  &__lang {
+    visibility: visible;
+    display: block;
+    transition: 0.3s;
+  }
+
+}
+
+.header--active .icon--menu {
+  margin-left: 30px;
+  background-image: url("../images/cross.svg");
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.header--active .menu__image {
+  @include Tablet {
+    display: block;
+  }
+}
+
+.header--active .header__info {
+  display: none;
+
+  .header--active .menu {
+    display: flex;
+  }
+}
+
+.header--active ~ footer {
+  display: none;
+}
+
+.header--active ~ main {
+  display: none;
+}
