@@ -1,15 +1,25 @@
 .page {
   font-family: "Playfair Display", serif;
   scroll-behavior: smooth;
+  background-color: #f1f5f4;
+  max-width: 1280px;
 
   &__body {
     margin: 0;
   }
 
   &__header {
-    height: 100vh;
+    height: 775px;
     background-color: #3f5252;
     margin-bottom: 110px;
+
+    @include onTablet {
+      height: 1092px;
+    }
+
+    @include onDesktop {
+      height: 775px;
+    }
   }
 
   &__menu {
@@ -20,6 +30,15 @@
     bottom: 0;
     transform: translateX(100%);
     transition: transform 0.3s;
+    padding: 0 20px;
+
+    @include onTablet {
+      padding: 0 39px;
+    }
+
+    @include onDesktop {
+      padding: 0 45px;
+    }
 
     &:target {
       transform: translateX(0);
@@ -44,33 +63,44 @@
       gap: 30px;
       justify-content: center;
       align-items: top;
+      margin-bottom: 135px;
     }
   }
 
   &__events {
     padding: 0 20px;
-    margin-bottom: 60px;
+    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 60px;
 
     @include onTablet {
-      padding: 0 40px;
+      padding: 0 39px;
       gap: 30px;
       justify-content: center;
       align-items: top;
+      margin-bottom: 60px;
     }
 
     @include onDesktop {
-      padding: 0 55px;
+      padding: 0 45px;
       gap: 30px;
       justify-content: center;
       align-items: top;
+      margin-bottom: 60px;
     }
   }
 
   &__announce {
     margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 121px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 106px;
+    }
   }
 
   &__news {
@@ -78,11 +108,18 @@
   }
 
   &__subscription {
-    padding: 0 20px;
     margin-bottom: 50px;
-
     display: flex;
     flex-direction: column;
+    padding: 0 20px;
+
+    @include onTablet {
+      padding: 0 39px;
+    }
+
+    @include onDesktop {
+      padding: 0 45px;
+    }
 
     @include onDesktop {
       flex-direction: row;
