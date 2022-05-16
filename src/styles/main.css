@@ -12,6 +12,7 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-y: hidden;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -133,6 +134,8 @@ h1 {
 
 .container__ua::after {
   content: url("../images/header/arrow_down.jpg");
+  display: block;
+  margin-top: -5px;
 }
 
 @media (max-width: 455px) and (min-width: 320px) {
@@ -508,7 +511,23 @@ h1 {
 }
 
 .slider__ua::after {
+  display: block;
+  float: right;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   content: url("../images/header/arrow_down.jpg");
+  margin-top: -5px;
+  margin-left: 5px;
+}
+
+@media (max-width: 455px) and (min-width: 320px) {
+  .slider__ua::after {
+    margin-top: -2px;
+  }
 }
 
 @media (max-width: 455px) and (min-width: 320px) {
@@ -793,6 +812,9 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container2__header {
@@ -935,7 +957,10 @@ h1 {
 
 .container2__photo {
   display: block;
-  width: 570px;
+  max-width: 570px;
+  max-height: 484px;
+  height: 100%;
+  width: 100%;
   margin-bottom: 20px;
 }
 
