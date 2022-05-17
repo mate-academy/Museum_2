@@ -1,0 +1,43 @@
+.language {
+  display: none;
+
+  &-menu {
+    display: flex;
+    position: absolute;
+    right: 85px;
+
+    @include onTablet {
+      right: 50px;
+    }
+
+    @include onDesktop {
+      right: 68px;
+    }
+  }
+
+  @include onTablet {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    height: 24px;
+    width: 34px;
+    color: $whiteColor;
+    margin-left: 40px;
+  }
+
+  &__text {
+    &::after {
+      content: "";
+      position: absolute;
+      padding-left: 3px;
+      height: 16px;
+      width: 8px;
+      background-image: url(../images/dropdown.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
