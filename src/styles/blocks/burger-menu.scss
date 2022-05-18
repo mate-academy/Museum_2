@@ -1,0 +1,225 @@
+.burgerMenu {
+  &--close-menu-scroll {
+    overflow: hidden;
+  }
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  &:target {
+    transform: translateX(0);
+  }
+
+  background-color: #3f5252;
+  background-repeat: no-repeat;
+
+  min-height: 747px;
+  height: 100%;
+
+  transition: all 0.3s;
+
+  @include tablet {
+    min-height: 1092px;
+    height: 100%;
+    background-image: url(../images/burger_menu.svg);
+    background-size: auto 422px;
+    background-position: center bottom;
+  }
+  @include desktop {
+    min-height: 800px;
+    height: 100%;
+    background-image: url(../images/burger_menu.svg);
+    background-size: auto 624px;
+    background-position: right bottom;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      grid-column: 1 / 7;
+    }
+    @include desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      grid-column: 1 / 13;
+    }
+
+    &--data {
+      grid-column: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      @include tablet {
+        margin-top: 20px;
+      }
+      @include desktop {
+        margin-top: 10px;
+      }
+      &-title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #f1f5f4;
+      }
+      &-text {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
+        color: #f1f5f4;
+      }
+    }
+
+    &--address {
+      grid-column: 1 / 3;
+      margin-top: 20px;
+
+      @include tablet {
+        grid-column: 3 / 6;
+        margin-top: 20px;
+      }
+      @include desktop {
+        grid-column: 3 / 7;
+        margin-top: 10px;
+      }
+      &-title {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #f1f5f4;
+      }
+      &-text {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
+        color: #f1f5f4;
+      }
+    }
+
+    &--exhibition {
+      grid-column: 1 / 3;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: #f1f5f4;
+
+      margin-top: 40px;
+      @include tablet {
+        margin-top: 50px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+      }
+      @include desktop {
+        margin-top: 70px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+        &:hover {
+          text-decoration-line: underline;
+        }
+      }
+    }
+
+    &--events {
+      grid-column: 1 / 3;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: #f1f5f4;
+
+      margin-top: 20px;
+      @include tablet {
+        margin-top: 30px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+      }
+      @include desktop {
+        margin-top: 60px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+        &:hover {
+          text-decoration-line: underline;
+        }
+      }
+    }
+
+    &--news {
+      grid-column: 1 / 3;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: #f1f5f4;
+
+      margin-top: 20px;
+      @include tablet {
+        margin-top: 30px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+      }
+      @include desktop {
+        margin-top: 60px;
+        grid-column: 1 / 7;
+        font-size: 48px;
+        line-height: 120%;
+        &:hover {
+          text-decoration-line: underline;
+        }
+      }
+    }
+
+    &--line {
+      grid-column: 1 / 3;
+      height: 1px;
+      width: 100%;
+      background-color: #f1f5f4;
+
+      margin: 40px 0;
+      @include tablet {
+        margin: 60px 0;
+        grid-column: 1 / 7;
+      }
+      @include desktop {
+        margin: 40px 0;
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--button {
+      grid-column: 1 / 3;
+
+      @include tablet {
+        grid-column: 1 / 4;
+      }
+      @include desktop {
+        grid-column: 1 / 4;
+      }
+    }
+  }
+}
