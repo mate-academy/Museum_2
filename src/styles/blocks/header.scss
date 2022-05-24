@@ -1,103 +1,118 @@
-.header {
+* {
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  background-color: $dark-grey;
-  color: $white;
-  height: 800px;
+}
 
-  &__container {
-    margin: 0 55px;
-    width: 1280px;
-    justify-content: center;
-  }
+.header {
+  background-color: $background;
+  color: $white;
 
   &__content {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    align-items: flex-end;
+    width: 100%;
+    height: 100vh;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 
-  &__content-box {
-    width: 596px;
-    margin-top: 90px;
+  &__nav {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onTablet {
+      margin-bottom: 90px;
+    }
   }
 
-  &__additional-info {
+  &__info {
+    width: 280px;
+
+    @include onTablet {
+      width: 570px;
+    }
+  }
+
+  &__additional {
     font-size: 14px;
     line-height: 20px;
+    margin-bottom: 10px;
   }
 
   &__title {
-    margin-top: 10px;
-    font-size: 96px;
-    line-height: 96px;
+    margin-bottom: 30px;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      font-size: 96px;
+    }
   }
 
-  &__main-info {
-    margin: 30px 0 80px;
-    font-size: 16px;
-    line-height: 20px;
+  &__main {
+    margin-bottom: 40px;
+    width: 267px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      width: 330px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 81px;
+      width: max-content;
+    }
   }
 
   &__dates {
-    margin-top: 135px;
+    bottom: 50px;
+    display: none;
     font-family: "Playfair Display", serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 24px;
+    font-weight: 700;
+    line-height: 125%;
+    color: $white;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 570px;
+    }
 
     &::after {
-      position: relative;
-      top: -10px;
-      margin-left: 105px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      display: block;
       content: "";
-      background-color: $white;
+      width: 85%;
       height: 1px;
+      background-color: $white;
+
     }
   }
 
-  &__picture {
-    margin-top: 47px;
-    margin-right: -55px;
-    height: 663px;
-    object-fit: contain;
-  }
-
-  @media (max-width: 768px) {
-    & {
-      margin: 0 39px;
+  &__image {
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: -55px;
     }
-  }
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-  width: 100%;
-
-  &__interactive {
-    display: flex;
-    align-items: center;
-  }
-
-  &--open {
-    background-image: url(../images/menu.svg);
-    background-repeat: no-repeat;
-    height: 30px;
-    width: 30px;
-  }
-
-  &__language {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 42px;
-    width: 35px;
-    height: 24px;
   }
 }
