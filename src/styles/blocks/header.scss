@@ -1,10 +1,7 @@
-* {
-  box-sizing: border-box;
-}
-
 .header {
   background-color: $background;
   color: $white;
+  width: 100%;
 
   &__content {
     position: relative;
@@ -47,8 +44,6 @@
 
   &__title {
     margin-bottom: 30px;
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
     font-size: 48px;
     line-height: 100%;
 
@@ -78,11 +73,15 @@
     }
   }
 
+  &__button {
+    @include onTablet {
+      width: 330px;
+    }
+  }
+
   &__dates {
     bottom: 50px;
     display: none;
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
     line-height: 125%;
     color: $white;
 
@@ -98,16 +97,20 @@
     }
 
     &::after {
-      display: block;
+      position: relative;
+      right: 40px;
+      display: flex;
+      justify-content: space-between;
       content: "";
-      width: 85%;
+      width: 450px;
       height: 1px;
       background-color: $white;
-
     }
   }
 
   &__image {
+    margin-right: 0;
+
     @include onDesktop {
       position: absolute;
       bottom: 0;
