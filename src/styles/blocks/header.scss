@@ -1,0 +1,98 @@
+.header {
+  position: relative;
+  background-color: $colorBackground;
+
+  @include onDesktop {
+    height: 800px;
+  }
+
+  &__top-actions {
+    margin-bottom: 50px;
+
+    @include onIpad {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+
+    @extend %additionalText;
+  }
+
+  &__text {
+    margin: 0 0 40px;
+    @extend %mainText;
+
+    @include onIpad {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onIpad {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 136px;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    width: 245px;
+    height: 273px;
+
+    @include onIpad {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 625px;
+      height: 663px;
+    }
+  }
+
+  &__date-on-desktop {
+    position: relative;
+    display: none;
+    margin: 0;
+
+    @extend %h6;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 75%;
+      display: inline-block;
+      width: 470px;
+      height: 1px;
+      margin-left: 20px;
+      background-color: $colorWhite;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 70px;
+
+  @include onIpad {
+    height: 77px;
+  }
+
+  @include onDesktop {
+    height: 90px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+
+    &--mobail-menu {
+      flex-direction: row-reverse;
+      column-gap: 30px;
+
+      @include onIpad {
+        flex-direction: row;
+        column-gap: 44px;
+      }
+    }
+  }
+
+  &__language {
+    display: none;
+
+    @extend %mainText;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::after {
+      content: url(../images/union.svg);
+      display: inline-block;
+      padding-left: 3px;
+    }
+
+    @include onIpad {
+      display: block;
+    }
+
+    &--mobail-menu {
+      display: block;
+    }
+  }
+}

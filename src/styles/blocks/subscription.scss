@@ -1,0 +1,63 @@
+.subscription {
+  &__title {
+    margin: 0 0 20px;
+
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 50px;
+    @extend %mainText;
+    color: $colorBlack;
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__form {
+    &-field {
+      width: 100%;
+      margin: 0 0 30px;
+
+      @extend %mainText;
+      font-weight: 700;
+
+      background-color: $colorWhite;
+      border: 1px solid transparent;
+      border-bottom: 1px solid $colorBlack;
+      color: $colorBlack;
+
+      &::placeholder {
+        @extend %mainText;
+        color: $colorBlack;
+      }
+
+      &:focus {
+        outline: none;
+        color: $colorMain;
+        border: 1px solid transparent;
+        border-bottom: 1px solid $colorMain;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $colorMain;
+      }
+
+      &:hover::placeholder {
+        color: $colorMain;
+      }
+
+      @include onDesktop {
+        margin: 0 0 40px;
+      }
+    }
+
+    &-button {
+      box-sizing: border-box;
+      border: 1px solid $colorMain;
+    }
+  }
+}
