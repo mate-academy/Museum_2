@@ -8,7 +8,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  
+
   scroll-behavior: smooth;
 
   &__title {
@@ -19,6 +19,25 @@
   &__body {
     margin: 0;
     background-color: $white;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
   }
 
   &__section {
