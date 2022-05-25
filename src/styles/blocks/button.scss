@@ -7,15 +7,22 @@
   line-height: 100%;
   width: 100%;
   height: 60px;
-  background-color: $main;
 
-  &--secondary {
-    background-color: transparent;
-    border: 1px solid $main;
-  }
+  &--primary {
+    background-color: $main;
 
-  @include onDesktop {
-    width: 270px;
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      background-color: #dd836f;
+    }
   }
 
   &__link {
@@ -30,5 +37,29 @@
     &--secondary {
       color: $main;
     }
+  }
+  
+  &--secondary {
+    background-color: $white;
+    border: 1px solid $main;
+
+    &:hover .button__link--secondary {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active .button__link--secondary {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled .button__link--secondary {
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+  }
+
+  @include onDesktop {
+    width: 270px;
   }
 }
