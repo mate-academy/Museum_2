@@ -8,15 +8,18 @@
   }
 }
 
-.header {
-  background-color: $color-bcg-block;
-  height: 100vh;
-}
-
 .container {
   margin: 0 auto;
   max-width: 2560px;
   padding: 0 20px;
+
+  @include onTablet {
+    padding: 0 40px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px;
+  }
 }
 
 .icon {
@@ -30,5 +33,54 @@
 
   &--menu {
     background-image: url(../images/menu.svg);
+  }
+
+  &--cross {
+    background-image: url(../images/cross.svg);
+  }
+}
+
+.top-actions {
+  --icon-width: 18px;
+
+  display: grid;
+  grid-template-columns: var(--icon-width) 1fr var(--icon-width);
+  justify-items: center;
+  align-items: center;
+
+  @include onTablet {
+    --icon-width: 24px;
+  }
+
+  @include onDesktop {
+    --icon-width: 30px;
+  }
+}
+
+.header {
+  background-color: $color-bcg-block;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+    padding: 20px 20px 0;
+  }
+
+  &__title {
+    font-family: $font-title;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 40px;
+    color: $color-bcg;
+    letter-spacing: -1px;
+
+    @include onDesktop {
+      font-size: 80px;
+      line-height: 80px;
+      letter-spacing: -1.5px;
+    }
   }
 }
