@@ -1,6 +1,12 @@
+.header__fon-picture {
+  height: 273px;
+  width: 245px;
+}
+
 .logo {
   &__image {
-    height: 36px;
+    display: flex;
+    height: 26px;
 
     @include onTablet {
       height: 40px;
@@ -9,8 +15,9 @@
 }
 
 .container {
+  background-color: $color-bcg-block;
   margin: 0 auto;
-  max-width: 2560px;
+  max-width: 1260px;
   padding: 0 20px;
 
   @include onTablet {
@@ -22,10 +29,25 @@
   }
 }
 
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  margin-bottom: 50px;
+}
+
+.event__data {
+  font-size: 14px;
+  line-height: 140%;
+  color: $color-bcg;
+  margin-bottom: 10px;
+}
+
 .icon {
   display: block;
-  width: 100%;
-  padding-bottom: 100%;
+  height: 25px;
+  width: 25px;
 
   background-size: contain;
   background-position: center;
@@ -40,47 +62,64 @@
   }
 }
 
-.top-actions {
-  --icon-width: 18px;
-
-  display: grid;
-  grid-template-columns: var(--icon-width) 1fr var(--icon-width);
-  justify-items: center;
-  align-items: center;
-
-  @include onTablet {
-    --icon-width: 24px;
-  }
+.header__title {
+  font-family: $font-title;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 40px;
+  color: $color-bcg;
+  letter-spacing: -1px;
 
   @include onDesktop {
-    --icon-width: 30px;
+    font-size: 80px;
+    line-height: 80px;
+    letter-spacing: -1.5px;
   }
 }
 
-.header {
-  background-color: $color-bcg-block;
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    height: 100vh;
-    padding: 20px 20px 0;
-  }
-
-  &__title {
-    font-family: $font-title;
-    font-size: 48px;
-    font-weight: bold;
-    line-height: 40px;
-    color: $color-bcg;
-    letter-spacing: -1px;
-
-    @include onDesktop {
-      font-size: 80px;
-      line-height: 80px;
-      letter-spacing: -1.5px;
-    }
-  }
+.header__link {
+  color: $color-bcg;
+  line-height: 150%;
+  text-decoration: none;
 }
+
+// .top-actions {
+//   --icon-width: 18px;
+
+//   display: grid;
+//   grid-template-columns: var(--icon-width) 1fr var(--icon-width);
+//   justify-items: center;
+//   align-items: center;
+
+//   @include onTablet {
+//     --icon-width: 24px;
+//   }
+
+//   @include onDesktop {
+//     --icon-width: 30px;
+//   }
+// }
+
+//   &__content {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+
+//     height: 100vh;
+//   }
+
+//   &__title {
+//     font-family: $font-title;
+//     font-size: 48px;
+//     font-weight: bold;
+//     line-height: 40px;
+//     color: $color-bcg;
+//     letter-spacing: -1px;
+
+//     @include onDesktop {
+//       font-size: 80px;
+//       line-height: 80px;
+//       letter-spacing: -1.5px;
+//     }
+//   }
+// }
