@@ -2,11 +2,32 @@
   &__photo-container {
     margin-top: 60px;
     position: relative;
+    width: 100%;
+    max-height: 326px;
+    
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+  @include onTablet {
+    max-height: 420px;
+  }
+
+  @include onTablet {
+    max-height: 484px;
+  }
   }
 
   &__photo {
+    position: absolute;
+    height: 100%;
     width: 100%;
-    max-width: 570px;
+
+    object-fit: cover;
+    object-position: cover;
+    
   }
 
   &__date {

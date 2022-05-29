@@ -1,20 +1,40 @@
 .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 20px 0;
   height: 100vh;
   background-color: #3f5252;
-  background-image: url("../images/woman-header.png");
-  background-position: bottom;
-  background-size: contain;
-  background-repeat: no-repeat;
+  box-sizing: content-box;
+  overflow: hidden;
 
   @include onTablet {
-    background-position: right;
+    justify-content: start;
   }
 
-   &__nav {
+  
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 30px;
+  }
+
+  &__wrapper {
+    display: block;
+    box-sizing: content-box;
+  }
+
+  &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 40px;
+
+    @include onTablet {
+      width: 100%;
+      grid-column: 1 / 7;
+    }
+
   }
 
   &__menu-opener {
@@ -28,13 +48,16 @@
 
   &__date {
     display: block;
-    margin-top: 70px;
     font-family: "Raleway", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 140%;
     color: #f1f5f4;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
   }
 
   &__title {
@@ -44,7 +67,11 @@
     font-weight: 700;
     font-size: 48px;
     line-height: 100%;
-    color: #F1F5F4;
+    color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 72px;
+    }
   }
 
   &__description {
@@ -59,6 +86,7 @@
   }
 
   &__number {
+    display: none;
     margin-top: 135px;
     font-family: "Playfair Display", sans-serif;
     font-style: normal;
@@ -66,10 +94,31 @@
     font-size: 14px;
     line-height: 125%;
     color: #f1f5f4;
-    opacity: 0.7;
+    opacity: 0;
+
+
+    @include onTablet {
+      opacity: 0.7;
+    }
   }
 
   &__buyticket {
     height: 60px;
+    display: block;
+  }
+
+  &__image-container {
+    box-sizing: content-box;
+    position: relative;
+
+    @include onTablet {
+      max-width: 440px;
+    }
+
+  }
+
+  &__image {
+    width: 100%;
+    position: relative;
   }
 }
