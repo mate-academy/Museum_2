@@ -1,7 +1,472 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./blocks/page";
 
-body {
-  background: $c-gray;
+$header-text-color: #f1f5f4;
+$cection-title-color: #1c1b29;
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin theDesign {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin fullHD {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin LargeScreens {
+  @media (min-width: 2560px) {
+    @content;
+  }
+}
+
+
+
+.container {
+  margin: 0 auto;
+  max-width: 2560px;
+  padding: 0 20px;
+
+  @include onTablet {
+    padding: 0 40px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px;
+  }
+
+  @include theDesign {
+    padding: 0 70px;
+  }
+
+  @include fullHD {
+    padding: 0 85px;
+  }
+
+  @include LargeScreens {
+    padding: 0 105px;
+  }
+}
+
+.header {
+  box-sizing: border-box;
+  padding: 20px 0 0;
+  background-color: #3f5252;
+
+  @include onTablet {
+    padding: 26px 0 0;
+  }
+
+  @include onDesktop {
+    padding: 32px 0 0;
+  }
+
+  @include theDesign {
+    padding: 40px 0 0;
+  }
+
+  @include fullHD {
+    padding: 50px 0 0;
+  }
+
+  @include LargeScreens {
+    padding: 65px 0 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+    height: 100vh;
+
+    @include onDesktop {
+      margin-bottom: 46px;
+    }
+  }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__event-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 70px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__event {
+
+    @include onTablet {
+      width: 570px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+    }
+  }
+
+  &__icon-menu {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/menu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__icon-language {
+    display: none;
+    margin-left: 40px;
+    height: 24px;
+    width: 36px;
+    background-image: url(../images/language.png);
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__event-date {
+    margin: 0 0 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $header-text-color;
+  }
+
+  &__event-title {
+    margin: 0 0 30px;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $header-text-color;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+  }
+
+  &__event-text {
+    margin: 0 0 40px;
+    color: $header-text-color;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__img-container {
+    display: flex;
+    justify-content: center;
+
+    // @include onDesktop {
+    // }
+  }
+
+  &__img {
+    height: 273px;
+
+    // @include onDesktop {
+    // }
+  }
+}
+
+.logo-container {
+  height: 40px;
+  width: 124px;
+
+  @include onTablet {
+    height: 26px;
+    width: 116px;
+  }
+
+  @include onDesktop {
+    height: 26px;
+    width: 116px;
+  }
+
+  @include theDesign {
+    height: 40px;
+  }
+
+  @include fullHD {
+    height: 60px;
+  }
+
+  @include LargeScreens {
+    height: 90px;
+  }
+}
+
+.logo {
+  width: 124px;
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+
+  @include onTablet {
+    height: 26px;
+    width: 116px;
+  }
+
+  @include onDesktop {
+    height: 26px;
+    width: 116px;
+  }
+
+  // @include theDesign {
+  //   height: 40px;
+  // }
+
+  // @include fullHD {
+  //   height: 60px;
+  // }
+
+  // @include LargeScreens {
+  //   height: 90px;
+  // }
+}
+
+.menu {
+  box-sizing: border-box;
+
+  padding: 20px 0 0;
+  background-color: #3f5252;
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100vh;
+  }
+
+  &__top-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icon-container {
+    @extend .header__icon-container;
+  }
+
+  &__language {
+    height: 24px;
+    width: 36px;
+    background-image: url(../images/language.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__cross {
+    margin-left: 30px;
+    height: 22px;
+    width: 22px;
+    background-image: url(../images/cross.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
+
+  &__announce-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__announce {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 123px;
+    }
+  }
+
+  &__secondary-text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $header-text-color;
+  }
+
+  &__main-text {
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $header-text-color;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $header-text-color;
+  }
+
+  &__line {
+    display: block;
+    height: 1px;
+    width: 100%;
+    max-width: 570px;
+    background-color: $header-text-color;
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  background-color: #cd4d31;
+  border: none;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: $header-text-color;
+  cursor: pointer;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  @include theDesign {
+    width: 330px;
+  }
+
+  @include fullHD {
+    width: 330px;
+  }
+
+  @include LargeScreens {
+    width: 480px;
+  }
+}
+
+.exhibitions {
+
+  &__content {
+    display: grid;
+    row-gap: 60px;
+  }
+}
+
+.exhibition {
+
+  &__photo-container {
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 356px;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+  }
+
+  &__terms {
+    margin-bottom: 10px;
+    color: #cd4d31;
+  }
+
+  &__name {
+    margin: 0 0 20px;
+  }
+
+  &__about {
+    margin: 0 0 30px;
+  }
 }
