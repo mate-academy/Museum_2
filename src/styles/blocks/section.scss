@@ -1,0 +1,82 @@
+.section {
+
+  &__title {
+    grid-column: 1 / 5;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+
+    @extend %h1;
+    font-size: 28px;
+    line-height: 125%;
+    color: $color-black;
+  }
+
+  &__item {
+    width: 100%;
+
+    &--odd {
+      grid-column: 1 / 4;
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--even {
+      grid-column: 4 / -1;
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    @extend %h1;
+    font-size: 24px;
+    line-height: 125%;
+    color: $color-black;
+  }
+
+  &__info {
+    margin-bottom: 30px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-gray;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__duraction {
+    margin-bottom: 10px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-red;
+  }
+
+  &__button {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      order: -1;
+    }
+  }
+}

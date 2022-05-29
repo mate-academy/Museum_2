@@ -1,6 +1,52 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
   }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onPhone {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+
+@mixin bg-center($size) {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: $size;
+}
+
+@mixin img-container {
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin img($size) {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  object-fit: $size;
+  object-position: center;
+}
+
+@mixin flex-row-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin adaptive-property($property, $min-size, $max-size, $max-width ) {
+  #{$property}: calc(#{$min-size + px} + (#{$max-size} - #{$min-size}) *
+  ((100vw - 320px) / #{$max-width - 320}));
+}
+
+@mixin transition {
+  transition: all 0.4s;
 }
