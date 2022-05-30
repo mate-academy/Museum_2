@@ -3,13 +3,17 @@
     scroll-behavior: smooth;
   }
 
+  &__body--with-menu {
+    overflow: hidden;
+  }
+
   &__menu {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     transition: transform 0.3s;
-    transform: translateX(-100%);
+    transform: translateX(-120%);
 
     &:target {
       transform: translateX(0);
@@ -31,6 +35,19 @@
     padding: 50px 20px;
     background-color: #3f5252;
 
+    @include onDesktop {
+      display: flex;
+      padding: 0;
+    }
+
+    &-image {
+      display: none;
+      height: 800px;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
   }
 
   &__invite-title {
@@ -43,6 +60,16 @@
     display: flex;
     align-items: center;
     color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 62px;
+      margin-top: 80px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+      margin-top: 200px;
+    }
   }
 
   &__invite-text {
@@ -59,6 +86,5 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    
   }
 }

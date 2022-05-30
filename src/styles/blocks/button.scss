@@ -2,6 +2,7 @@
   display: inline-block;
   text-align: center;
   margin-top: 40px;
+  width: 100%;
   background-color: #cd4d31;
   font-family: "Raleway", serif;
   font-style: normal;
@@ -10,16 +11,40 @@
   line-height: 60px;
   height: 60px;
   color: #f1f5f4;
+
+  @include onDesktop {
+    max-width: 270px;
+  }
 }
-
-
 
 .button-arhive {
   color: #cd4d31;
   background-color: #fff;
   border: 1px solid #cd4d31;
 
-  &::after{
+  &::after {
     content: "\2192";
+  }
+
+  &--low {
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--high {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
   }
 }
