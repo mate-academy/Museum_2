@@ -1,10 +1,28 @@
 .header {
   background-color: $color-bcg-block;
+  width: 100%;
+  height: 100vh;
+
+  &__content {
+    position: relative;
+    display: grid;
+
+  }
 }
 
 .header__fon-picture {
+  display: block;
+  justify-content: center;
   height: 273px;
   width: 245px;
+
+  @include onDesktop {
+    position: relative;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    margin-right: -50px;
+  }
 }
 
 .logo {
@@ -26,11 +44,20 @@
   margin-bottom: 50px;
 }
 
+.event-actions {
+  margin-top: 40px;
+}
+
 .event__data {
   font-size: 14px;
   line-height: 140%;
   color: $color-bcg;
   margin-bottom: 10px;
+}
+
+.picture-actions {
+  position: relative;
+  display: grid;
 }
 
 .icon {
@@ -52,6 +79,8 @@
 }
 
 .header__title {
+  margin-bottom: 30px;
+
   font-family: $font-title;
   font-size: 48px;
   font-weight: bold;
@@ -59,9 +88,15 @@
   color: $color-bcg;
   letter-spacing: -1px;
 
-  @include onDesktop {
+  @include onTablet {
     font-size: 80px;
     line-height: 80px;
+    letter-spacing: -1.5px;
+  }
+
+  @include onDesktop {
+    font-size: 96px;
+    line-height: 96px;
     letter-spacing: -1.5px;
   }
 }
