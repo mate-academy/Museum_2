@@ -1,0 +1,95 @@
+.plan-visit {
+  display: flex;
+  align-items: center;
+
+  background-color: $c-green;
+  padding: 50px 0;
+  overflow: hidden;
+  min-height: 416px;
+  
+  position: relative;
+  
+  @include media-768 {
+    padding: 80px 0;
+    min-height: 515px;
+  }
+  
+  @include media-1280 {
+    height: 800px;
+    padding: 205px 0;
+  }
+
+  &__photo {
+    display: none;
+    
+    width: 580px;
+
+    position: absolute;
+    left: -5px;
+    bottom: -5px;
+
+    @include media-1280 {
+      display: block;
+    }
+
+    transition: transform $transition-speed;
+  }
+
+  &:hover &__photo {
+    animation: 1s linear 0s infinite alternate smooth-shake;
+  }
+
+  @keyframes smooth-shake {
+    from {
+      transform: rotate(-1deg);
+    }
+    
+    to {
+      transform: rotate(1deg);
+    }
+  }
+
+  &__grid {
+    @include media-1280 {
+      display: grid;
+      grid-template-columns: repeat(24, 1fr);
+    }
+  }
+
+  &__content {
+    grid-column: 11 / 24;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+
+    color: $c-white;
+
+    @include media-768 {
+      font-size: 62px;
+    }
+
+    @include media-1280 {
+      font-size: 80px;
+    }
+  }
+  
+  &__text {
+    margin-bottom: 40px;
+    max-width: 450px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    
+    color: $c-white;
+
+    @include media-768 {
+      margin-bottom: 60px;
+    }
+  }
+}

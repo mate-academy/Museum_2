@@ -1,6 +1,34 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 300ms;
+
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin make-orange-hover {
+  transition: filter 300ms;
+
+  &:hover {
+    filter: brightness(0)
+      saturate(100%)
+      invert(32%)
+      sepia(30%)
+      saturate(3322%)
+      hue-rotate(343deg)
+      brightness(102%)
+      contrast(83%);
+  }
+}
+
+@mixin media-768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-1280 {
+  @media (min-width: 1280px) {
+    @content;
   }
 }

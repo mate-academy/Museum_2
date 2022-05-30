@@ -1,0 +1,97 @@
+.page {
+  position: relative;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    position: relative;
+
+    background-color: $c-white;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: transform $transition-speed;
+
+    transform: translateY(-200%);
+    
+    &:target {
+      transform: translateY(0);
+    }
+  }
+  
+  &__section {
+    position: relative;
+    margin-bottom: 90px;
+
+    @include media-768 {
+      margin-bottom: 120px;
+    }
+
+    @include media-1280 {
+      margin-bottom: 110px;
+    }
+
+    &--margin-bottom-big {
+      @include media-1280 {
+        margin-bottom: 194px;
+      }
+    }
+  }
+  
+  &__section-content {
+    margin-bottom: 30px;
+  }
+  
+  &__section-title {
+    margin-bottom: 60px;
+    
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    
+    color: $c-black;
+    
+    @include media-768 {
+      font-size: 40px;
+      line-height: 125%;
+    }
+    
+    @include media-1280 {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__section-wrap {
+    position: relative;
+  }
+
+  &__section-button {
+    width: 100%;
+    padding-top: 30px;
+    
+    @include media-768 {
+      padding-top: 0;
+      width: 210px;
+      position: absolute;
+
+      top: 0;
+      right: 39px;
+    }
+    
+    @include media-1280 {
+      width: 270px;
+      right: 54px;
+    }
+  }
+}

@@ -1,0 +1,157 @@
+.footer {
+  background-color: $c-green;
+  
+  &__content {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+
+    color: $c-white;
+  }
+
+  &__copy {
+    margin-right: 22px;
+
+    @include media-1280 {
+      margin-right: 102px;
+    }
+  }
+
+  &__button-top {
+    cursor: pointer;
+    width: 30px;
+  }
+
+  &__info-blocks {
+    padding-top: 34px;
+    align-items: start;
+
+    @include media-768 {
+      padding-top: 50px;
+    }
+  }
+
+  &__info-block {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+  
+    color: $c-white;
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+
+      @include media-1280 {
+        margin-bottom: 36px;
+      }
+    }
+  }
+
+  &__info-title {
+    margin-bottom: 10px;
+
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    color: $c-white;
+    
+    @include media-768 {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+  }
+
+  &__info-links {
+    margin-bottom: 30px;
+
+    @include media-768 {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__info-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $c-white;
+    text-decoration: none;
+
+    @include hover(color, $c-main);
+  }
+  
+  &__info-icons {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    column-gap: 20px;
+    align-items: center;
+  }
+
+  &__info-icon {
+    position: relative;
+    
+    &::after {
+      content: attr(data-tooltip);
+      display: flex;
+      align-items: center;
+      width: max-content;
+      pointer-events: none;
+      padding: 8px;
+
+      position: absolute;
+      left: -25px;
+      
+      background-color: $c-white;
+      height: 20px;
+      border-radius: 5px;
+      opacity: 0;
+      
+      text-decoration: none;
+      color: $c-black;
+
+      transition: transform $transition-speed, opacity $transition-speed;
+    }
+    
+    &:hover {
+      filter: unset;
+
+      &::after {
+        transform: translateY(-30px);
+        opacity: 1;
+      }
+    }
+  }
+
+  &__nav-links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__nav-link {
+    &:first-child {
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+    }
+
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    
+    color: $c-white;
+
+    &:not(:first-child) {
+      margin-bottom: 5px;
+    }
+    
+    @include hover(color, $c-main);
+  }
+}
