@@ -1,0 +1,68 @@
+.nav {
+  background-color: $headerColor;
+  overflow-y: auto;
+  transition: transform 0.3s;
+
+  @include onTablet {
+    background-image: url(../images/photo/menu.png);
+    background-size: 60%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/photo/menu.png);
+    background-size: contain;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__top {
+    margin-bottom: 30px;
+  }
+
+  &__time {
+    display: block;
+    &-title {
+      
+    }
+  }
+
+  &__list {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 40px;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid $whiteColor;
+    }
+  }
+
+  &__item {
+    margin: 0 0 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 8px;
+    color: $whiteColor;
+
+    text-transform: uppercase;
+
+    @include hover(border-color, $mainColor);
+  }
+
+}
