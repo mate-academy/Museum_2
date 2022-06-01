@@ -1,11 +1,9 @@
 .menu {
   display: flex;
   justify-content: center;
-  padding: 30px 20px 0;
-  height: 100vh;
+  padding: 30px 0;
   background-color: #3f5252;
-  box-sizing: content-box;
-  overflow: hidden;
+  height: 100vh;
 
   &__content {
     padding-top: 30px;
@@ -13,12 +11,16 @@
   }
 
   &__wrapper {
-    display: block;
-    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
 
     @include onDesktop {
-      display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
     }
   }
 
@@ -32,15 +34,13 @@
 
   &__image-container {
     display: none;
-    margin: 0 auto;
     box-sizing: content-box;
-    position: relative;
     width: 100%;
     max-width: 440px;
+    margin: 0 auto;
 
     @include onTablet {
       display: block;
-      max-width: 660px;
     }
 
     @include onDesktop {

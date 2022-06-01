@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,8 +16,9 @@
     <script src="./scripts/main.js"></script>
   </head>
   <body class="page__body">
-    <div class="container-header">
-      <header class="header">
+
+    <header class="header">
+      <div class="container-header">
         <div class="header__nav">
           <a href="#">
             <img
@@ -26,7 +27,10 @@
               class="header__logo"
             >
           </a>
-          <a href="#menu" class="header__menu-opener"></a>
+          <div class="menu__control">
+            <a href="#" class="menu__language"></a>
+            <a href="#menu" class="header__menu-opener"></a>
+          </div>
         </div>
         <div class="header__wrapper">
           <div class="header__content">
@@ -37,6 +41,7 @@
             </p>
             <a href="#invite" class="header__buyticket button">Купити квиток</a>
             <p class="header__number">10.08 - 10.10</p>
+            <span class="header__line"></span>
           </div>
           <div class="header__image-container">
             <img
@@ -45,11 +50,12 @@
               class="header__image">
           </div>
         </div>
-      </header>
-    </div>
+      </div>
+    </header>
+
 
     <nav class="page__menu menu" id="menu">
-      <div class="container container--menu">
+      <div class="container-header">
         <div class="menu__nav">
           <img
             src="./images/namuWhite.svg"
@@ -184,17 +190,20 @@
       </div>
     </section>
 
-    <div class="container">
-      <div class="page__invite">
-        <img
-          src="./images/invite.png"
-          alt="invite man"
-          class="page__invite-image"
-        >
-        <div class="page__invite-content">
-          <div class="page__invite-title">Сплануйте візит до музею</div>
-          <p class="page__invite-text">Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом.</p>
-          <a href="#" class="button">Почати</a>
+
+    <div class="page__invite" id="invite">
+      <div class="container">
+        <div class="page__invite-wrapper">
+          <img
+            src="./images/invite.png"
+            alt="invite man"
+            class="page__invite-image"
+          >
+          <div class="page__invite-content">
+            <div class="page__invite-title">Сплануйте візит до музею</div>
+            <p class="page__invite-text">Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом.</p>
+            <a href="#" class="button">Почати</a>
+          </div>
         </div>
       </div>
     </div>
@@ -242,20 +251,31 @@
       <div class="page__suscribe subscribe subscribe--position grid">
         <h3 class="subscribe__title grid--tablet-1-6 grid--desktop-1-4">Підпишіться на дайджест</h3>
         <p class="subscribe__text grid--tablet-1-6 grid--desktop-7-12">Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів</p>
-        <input
+        <form
+          action="#"
+          class="subscribe__form grid--tablet-1-4 grid--desktop-1-6"
+          id="form"
+        >
+          <input
             type="email"
             name="email"
             id="email"
             required
             class="subscribe__input grid--tablet-1-4 grid--desktop-1-6"
             placeholder="e-mail"
-        >
-        <a href="#email" class="button  grid--tablet-1-4 grid--desktop-1-4">Підписатись</a>
+            autocomplete="email"
+          >
+          <button
+            class="button grid--tablet-1-4 grid--desktop-1-4"
+            type="submit">
+              Підписатись
+          </button>
+        </form>
       </div>
     </div>
 
     <footer class="footer">
-      <div class="container container--footer">
+      <div class="container">
         <div class="footer__content">
           <div class="footer__contacts">
             <h2 class="footer__title">Контакти</h2>
@@ -267,7 +287,7 @@
             <div class="footer__logos">
               <a
                 href="https://www.facebook.com/namu.museum/"
-                target="_blank" 
+                target="_blank"
               >
                 <img src="./images/facebook.svg" alt="fb">
               </a>
@@ -285,13 +305,13 @@
               >
                 <img src="./images/telegram.svg" alt="fb">
               </a>
-              
+
               <a
                 href="https://www.instagram.com/namu.museum/"
                 target="_blank"
               >
                 <img src="./images/instagram.svg" alt="fb">
-              </a> 
+              </a>
             </div>
           </div>
 

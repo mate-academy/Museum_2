@@ -1,7 +1,6 @@
 .header {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 30px 20px 0;
   height: 100vh;
   background-color: #3f5252;
@@ -87,8 +86,21 @@
     color: #f1f5f4;
     opacity: 0;
 
-    @include onTablet {
+    @include onDesktop {
+      display: inline-block;
       opacity: 0.7;
+    }
+  }
+
+  &__line {
+    display: none;
+    width: 470px;
+    height: 4px;
+    border-top: 1px solid #f1f5f4;
+
+    @include onDesktop {
+      display: inline-block;
+      opacity: 0.3;
     }
   }
 
@@ -104,10 +116,10 @@
     position: relative;
     width: 100%;
     max-width: 440px;
-    
+
 
     @include onDesktop {
-      max-width: 660px;
+      max-width: 700px;
     }
   }
 
