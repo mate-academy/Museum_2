@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Museum 2</title>
+    <title>NAMU</title>
+    <link
+      rel="icon"
+      href="./images/img_menu.png"
+      type="image/png"
+    >
     <link rel="stylesheet" href="./styles/main.scss">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,12 +37,17 @@
             <div class="header__icon-container">
               <a class="header__icon-menu" href="#menu"></a>
 
-              <a class="header__icon-language" href="#language" ></a>
+              <label class="page__language">
+                <select class="page__language-selector" name="language">
+                  <option value="Ukrainian">UA</option>
+                  <option value="English">EN</option>
+                  <option value="Deutsch">DE</option>
+                </select>
+              </label>
             </div>
           </div>
 
           <div class="header__event-container">
-            <!-- <div class="header__event"> -->
             <p class="header__event-date">
               10 серпня - 10 листопада
             </p>
@@ -51,36 +61,20 @@
             </p>
 
             <button class="header__button button">
-              Купити квиток
+              <a class="button__link" href="#visit">
+                Купити квиток
+              </a>
             </button>
 
             <p class="header__event-low-date">
               10.08 - 10.10
             </p>
-
-            <!-- <div class="header__date-container">
-              <div class="header__event-low-line"></div>
-            </div> -->
-
           </div>
-
-          <!-- <div class="header__img-container">
-            <img
-              class="header__img"
-              src="./images/img_01.png"
-              alt="event_image"
-            >
-          </div> -->
-
-          <!-- </div> -->
         </div>
       </div>
     </div>
 
-    <nav hidden
-      class="page__menu menu"
-      id="menu"
-    >
+    <nav class="page__menu menu" id="menu">
       <div class="container">
         <div class="menu__content">
           <div class="menu__top-actions">
@@ -93,7 +87,13 @@
             </a>
 
             <div class="menu__icon-container">
-              <a class="menu__language" href="#"></a>
+              <label class="page__language">
+                <select class="page__language-selector" name="language">
+                  <option value="Ukrainian">UA</option>
+                  <option value="English">EN</option>
+                  <option value="Deutsch">DE</option>
+                </select>
+              </label>
 
               <a class="menu__cross" href="#"></a>
             </div>
@@ -123,19 +123,19 @@
 
               <ul class="menu__list">
                 <li class="menu__item">
-                  <a class="menu__link" href="#">
+                  <a class="menu__link" href="#exhibitions">
                     Актуальні виставки
                   </a>
                 </li>
 
                 <li class="menu__item">
-                  <a class="menu__link" href="#">
+                  <a class="menu__link" href="#events">
                     Найближчі події
                   </a>
                 </li>
 
                 <li class="menu__item">
-                  <a class="menu__link" href="#">
+                  <a class="menu__link" href="#news">
                     Новини
                   </a>
                 </li>
@@ -144,24 +144,26 @@
               <div class="menu__line"></div>
 
               <button class="button">
-                Купити квиток
+                <a class="button__link" href="#visit">
+                  Купити квиток
+                </a>
               </button>
             </div>
 
-            <div class="menu__img-container">
+            <!-- <div class="menu__img-container">
               <img
               class="header__img"
               src="./images/img_menu.png"
               alt="menu_image"
             >
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </nav>
 
     <mein>
-      <section class="page__section exhibitions">
+      <section class="page__section exhibitions" id="exhibitions">
         <div class="container">
           <h2 class="page__section-title">
             Актуальні виставки
@@ -190,7 +192,9 @@
               </p>
 
               <button class="button">
-                Купити квиток
+                <a class="button__link" href="#visit">
+                  Купити квиток
+                </a>
               </button>
             </div>
 
@@ -219,14 +223,15 @@
               </p>
 
               <button class="button">
-                Купити квиток
+                <a class="button__link" href="#visit">
+                  Купити квиток
+                </a>
               </button>
             </div>
 
             <button class="button button--secondary">
-              <span class="button__archive">
-                Архів виставок
-              </span>
+              Архів виставок
+
               <div class="button__arrow-container">
                 <img
                 class="button__arrow"
@@ -238,7 +243,7 @@
         </div>
       </section>
 
-      <section class="page__section events">
+      <section class="page__section events" id="events">
         <div class="container">
           <h2 class="page__section-title">
             Найближчі події
@@ -268,7 +273,9 @@
                 </p>
 
                 <button class="button">
-                  Зареєструватись
+                  <a class="button__link" href="#visit">
+                    Зареєструватись
+                  </a>
                 </button>
               </div>
             </div>
@@ -296,13 +303,16 @@
                 </p>
 
                 <button class="button">
-                  Зареєструватись
+                  <a class="button__link" href="#visit">
+                    Зареєструватись
+                  </a>
                 </button>
               </div>
             </div>
 
             <button class="button button--secondary">
-              <span class="button__archive">Архів виставок</span>
+              Архів виставок
+
               <div class="button__arrow-container">
                 <img
                 class="button__arrow"
@@ -314,7 +324,7 @@
         </div>
       </section>
 
-      <section class="page__section visit">
+      <section class="page__section visit" id="visit">
         <div class="container">
           <div class="visit__content">
             <div class="visit__about-container">
@@ -329,14 +339,16 @@
               </p>
 
               <button class="button">
-                Почати
+                <a class="button__link" href="#visit">
+                  Почати
+                </a>
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="page__section news">
+      <section class="page__section news" id="news">
         <div class="container">
           <h2 class="page__section-title">
             Новини
@@ -400,9 +412,8 @@
             </div>
 
             <button class="button button--secondary">
-              <span class="button__archive">
-                Усі новини
-              </span>
+              Усі новини
+
               <div class="button__arrow-container">
                 <img
                 class="button__arrow"
@@ -433,7 +444,12 @@
               </p>
             </div>
 
-            <div class="subscription__input-container">
+            <form
+              class="subscription__input-container"
+              id="my-form"
+              action="/"
+              method="post"
+            >
               <label class="subscription__input">
                 <input
                   type="email"
@@ -444,10 +460,12 @@
                 >
               </label>
 
-              <button class="button">
-                Підписатись
+              <button class="button" type="submit">
+                <a class="button__link" href="#visit">
+                  Підписатись
+                </a>
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </section>
@@ -466,7 +484,7 @@
                   <br>
                   тел. 278-13-57, 278-74-54
                   <br>
-                  info@namu.kiev.ua
+                  <a class="footer__email" href="#">info@namu.kiev.ua</a>
                 </div>
 
                 <div class="footer__social-network">

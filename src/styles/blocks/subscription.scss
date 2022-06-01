@@ -1,0 +1,100 @@
+.subscription {
+  margin-bottom: 80px;
+
+  @include onTablet {
+    margin-bottom: 128px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    display: grid;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 130px;
+    }
+  }
+
+  &__title-container {
+    display: block;
+    width: 100%;
+
+    @include onDesktop {
+      max-width: 500px;
+    }
+  }
+
+  &__about-container {
+    display: block;
+    width: 100%;
+
+    @include onTablet {
+      max-width: 550px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 50px;
+  }
+
+  &__email {
+    box-sizing: border-box;
+    display: block;
+    margin: 0 0 30px;
+    padding: 0;
+    width: 100%;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: $section-title-color;
+    border: transparent;
+    border-bottom: 1px solid $section-title-color;
+    transition: box-shadow 0.3s;
+
+    &::placeholder {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    &:hover {
+      color: $main-red-color;
+      border-bottom: 1px solid $main-red-color;
+      box-shadow: 0 8px 14px rgba(163, 10, 2, 0.48);
+
+      &::placeholder {
+        color: $main-red-color;
+      }
+    }
+
+    &:focus {
+      font-weight: 700;
+      color: $main-red-color;
+      border-bottom: 1px solid $main-red-color;
+      outline: 0;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    @include onTablet {
+      max-width: 500px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 40px;
+      max-width: 500px;
+    }
+  }
+}
