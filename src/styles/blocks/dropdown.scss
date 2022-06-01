@@ -1,0 +1,50 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  @include onTablet {
+    display: none;
+  }
+
+  &--high-res {
+    display: none;
+
+    @include onTablet {
+      display: inline-block;
+    }
+  }
+
+  &__button {
+    background-color: $colorBackground;
+    color: $colorWhite;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__link {
+    color: $colorWhite;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+    &:hover {
+      color: $colorMain;
+    }
+  }
+
+  &__content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+
+    background-color: $colorBackground;
+    box-shadow: 0 8px 16px 0 #0003;
+  }
+
+  &:hover {
+    .dropdown__content {
+      display: block;
+    }
+  }
+}

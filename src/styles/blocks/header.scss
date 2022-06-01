@@ -1,0 +1,76 @@
+.header {
+  background-color: $colorBackground;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
+
+  background-image: url(../images/menuLady.png);
+  background-repeat: no-repeat;
+  background-size: 30vh;
+  background-position: bottom center;
+
+  @include onDesktop {
+    background-position: bottom right;
+    background-size: 65vh;
+  }
+
+  &__content {
+    margin-bottom: 10px;
+  }
+
+  &__additional {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      display: block;
+      bottom: 50px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    color: $colorWhite;
+
+    &--line {
+      border-top: none;
+      width: 100%;
+      height: 1px;
+    }
+  }
+  &__top {
+    height: max-content;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    color: $colorWhite;
+  }
+
+  &__info {
+    margin-bottom: 40px;
+    color: $colorWhite;
+  }
+
+}
+
+@include onDesktop {
+  .header {
+    &__button {
+      margin-bottom: 130px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+
+    &__date--mini {
+      margin-bottom: 0;
+      min-width: 81px;
+    }
+  }
+}

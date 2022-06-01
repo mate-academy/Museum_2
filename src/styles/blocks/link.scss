@@ -1,0 +1,65 @@
+.link {
+  font-family: "Raleway", serif;
+  text-decoration: none;
+  color: $colorWhite;
+
+  &__nav {
+    @extend h5;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    transition: color 0.3s, border-color 0.3s;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $colorMain;
+      color: $colorMain;
+    }
+  }
+
+  &--privacy {
+    @extend .link;
+
+    transition: color 0.3s  ;
+
+    &:hover {
+      color: $colorMain;
+    }
+  }
+
+  &--adress {
+    @extend .link;
+    font-size: 16px;
+
+  }
+  &--special {
+    @extend .link;
+    margin-bottom: 4px;
+    font-size: 14px;
+
+    transition: color 0.3s  ;
+
+    &:nth-child(4n) {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &:hover {
+      color: $colorMain;
+    }
+  }
+
+  &--svg {
+    transition: fill 0.3s;
+
+    &:hover {
+      --color-fill: #cd4d31;
+    }
+  }
+}
