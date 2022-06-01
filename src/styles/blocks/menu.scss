@@ -1,5 +1,6 @@
 .menu {
   background-color: #3f5252;
+  z-index: 1;
 
   &__content {
     position: relative;
@@ -20,8 +21,6 @@
 
   &__info {
     display: flex;
-    align-items: center;
-    text-align: center;
     flex-direction: column;
     gap: 20px;
     width: 100%;
@@ -50,18 +49,36 @@
     font-size: 16px;
     line-height: 24px;
     color: $white;
+    text-decoration: none;
+
+    &--link {
+      font-family: "Raleway", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px solid $white;
+      }
+    }
   }
 
   &__list {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    margin: 150px 0;
+    margin: 40px 0;
     padding: 0;
     list-style: none;
 
     @include onTablet {
+      margin: 50px 0 40px;
       align-items: flex-start;
+    }
+
+    @include onDesktop {
+      margin: 70px 0;
     }
 
   }
@@ -88,6 +105,11 @@
     transition: border-color 0.3s;
 
     @include onTablet {
+      font-size: 28px;
+      line-height: 28px;
+    }
+
+    @include onDesktop {
       font-size: 48px;
       line-height: 58px;
     }
