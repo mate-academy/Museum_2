@@ -3,42 +3,104 @@
   background-color: $color-bcg;
 
   &__title {
+    padding-top: 90px;
     font-family: $font-title;
-  }
-
-  &__container {
-    padding: 90px 0 80px;
+    font-size: $size-text-title;
+    line-height: 125%;
+    color: $color-text-title;
 
     @include onTablet {
-      padding: 125px 0 130px;
+      font-size: 40px;
+      padding-top: 110px;
     }
 
     @include onDesktop {
-      padding: 110px 0 200px;
+      font-size: 48px;
+      line-height: 120%;
+      padding-top: 120px;
     }
   }
 
   &__exhibitions {
-    color: $color-text-content;
+    color: $color-text-title;
   }
 
   &__events {
-    color: $color-text-content;
+    color: $color-text-title;
   }
 
   &__news {
-    color: $color-text-content;
+    color: $color-text-title;
+  }
+}
+
+.picture__photo-container {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-height: 356px;
+  padding-bottom: 100%;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+
+  }
+
+  @include onTablet {
+    max-height: 420px;
+  }
+
+  @include onDesktop {
+    max-height: 485px;
+    margin-bottom: 0;
   }
 }
 
 .picture__photo {
+  margin-top: 60px;
+  display: block;
+  position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 
-  &-container {
-    width: 100%;
-    max-height: 356px;
+  @include onTablet {
+    margin-top: 70px;
+  }
+}
+
+.place__photo {
+  &-date {
+    margin-top: 20px;
+    line-height: 24px;
+    color: $color-button;
+  }
+
+  &-title {
+    margin-top: 10px;
+
+    font-family: $font-title;
+    font-size: $size-text-article;
+    font-weight: bold;
+    line-height: 25px;
+    color: $color-text-title;
+  }
+
+  &-description {
+    margin-top: 20px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+
+    color: $color-text-content;
+    line-height: 24px;
   }
 }
