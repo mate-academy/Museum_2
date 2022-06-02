@@ -2,18 +2,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 50px;
-
   height: 80px;
+
+  &--menu {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 13px;
+    }
+  }
+
+  &--main {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 99px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 90px;
+    }
+  }
+
+
 
   @include onTablet {
     height: 77px;
-    margin-bottom: 99px;
   }
 
   @include onDesktop {
     height: 90px;
-    margin-bottom: 90px;
   }
 
   &__menu-container {
@@ -22,8 +44,12 @@
     align-items: center;
     column-gap: 40px;
 
-    @include onTablet {
-      gap: 40px;
+    &--active {
+      flex-direction: row-reverse;
+
+      @include onTablet {
+        flex-direction: row;
+      }
     }
   }
 
@@ -31,6 +57,10 @@
     content: url(../images/menu-namu.svg);
     width: 25px;
     height: 20px;
+
+    &--active {
+      content: url(../images/cross-namu.svg);
+    }
 
   }
 
@@ -48,6 +78,10 @@
     cursor: pointer;
 
     @include onTablet {
+      display: block;
+    }
+
+    &--active {
       display: block;
     }
   }

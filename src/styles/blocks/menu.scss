@@ -1,0 +1,170 @@
+.menu {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: $background;
+  height: 747px;
+
+  @include onTablet {
+    height: 1092px;
+  }
+
+  @include onDesktop {
+    height: 800px;
+  }
+
+  &__button {
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__image-container {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--wide {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 624px;
+        height: 697px;
+      }
+    }
+  }
+
+  &__image-wrap {
+    display: flex;
+    justify-content: center;
+  }
+
+
+  &__line {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 70px;
+      }
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @include onDesktop {
+      gap: 83px;
+    }
+
+    &-rozklad {
+      display: flex;
+      flex-direction: column;
+
+      &--title {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        width: 117px;
+        height: 20px;
+        color: $white;
+      }
+
+      &--time {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        color: $white;
+        width: 95px;
+        height: 24px;
+      }
+
+    }
+
+    &-adress {
+      display: flex;
+      flex-direction: column;
+
+      &--title {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        width: 53px;
+        height: 20px;
+        color: $white;
+      }
+
+      &--link {
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        color: $white;
+        width: 224px;
+        height: 24px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
