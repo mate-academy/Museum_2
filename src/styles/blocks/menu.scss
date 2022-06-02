@@ -54,20 +54,10 @@
     @extend .header__icon-container;
   }
 
-  &__language {
-    height: 24px;
-    width: 36px;
-    background-image: url(../images/language.png);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
   &__cross {
-    margin-left: 30px;
     height: 22px;
     width: 22px;
-    background-image: url(../images/cross.png);
+    background-image: url(../images/cross.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -127,12 +117,28 @@
     font-size: 16px;
     line-height: 150%;
     color: $header-text-color;
+
+    &--addres {
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px solid $header-text-color;
+      }
+    }
   }
 
   &__list {
     margin: 0;
     padding: 0;
     list-style: none;
+
+    &--contacts {
+      margin-bottom: 28px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
   }
 
   &__item {
@@ -160,6 +166,10 @@
       @include onDesktop {
         margin-bottom: 10px;
       }
+    }
+
+    &--contacts {
+      margin-bottom: 1px;
     }
   }
 
