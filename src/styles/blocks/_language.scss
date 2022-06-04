@@ -1,39 +1,33 @@
 .language {
   display: none;
+  @include onTablet {
+    display: block;
+    margin-left: 40px;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    color: $whiteColor;
+  }
 
   &-menu {
-    display: flex;
     position: absolute;
     right: 85px;
-
     @include onTablet {
       right: 50px;
     }
-
     @include onDesktop {
       right: 68px;
     }
   }
 
-  @include onTablet {
-    position: relative;
+  &__text {
     display: flex;
     align-items: center;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    height: 24px;
-    width: 34px;
-    color: $whiteColor;
-    margin-left: 40px;
-  }
-
-  &__text {
     &::after {
       content: "";
-      transform: translate(11%, 21%);
-      position: absolute;
-      padding-left: 3px;
-      height: 16px;
+      display: block;
+      margin-left: 4px;
+      height: 8px;
       width: 8px;
       background-image: url(../images/dropdown.svg);
       background-size: contain;
