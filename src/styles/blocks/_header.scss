@@ -1,0 +1,149 @@
+.header {
+  background-color: $backgroundColor;
+  color: $whiteColor;
+  height: 747px;
+  @include onTablet {
+    height: 1092px;
+  }
+
+  @include onDesktop {
+    height: 800px;
+  }
+
+  &__nav {
+    max-width: 1280px;
+    height: 90px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    @include onTablet {
+      padding: 0 40px;
+      height: 77px;
+      margin: auto;
+    }
+      
+    @include onDesktop {
+      height: 90px;
+      padding: 0 55px;
+    }
+  }
+  &__logo {
+    &:hover {
+      transition: transform 0.3s;
+      transform: scale(1.2);
+    }
+  }
+  &__about {
+    width: 280px;
+    margin-top: 40px;
+    margin-left: 20px;
+
+    @include onTablet {
+      margin-top: 99px;
+      margin-left: 39px;
+    }
+
+    @include onDesktop {
+      margin-left: 56px;
+      margin-top: 90px;
+    }
+
+    &-title {
+      margin-top: 10px;
+    }
+
+    &-date {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &-paragraph {
+      margin-top: 28px;
+      max-width: 267px;
+    
+      @include onTablet {
+        max-width: 330px;
+        margin-top: 19px;
+      }
+
+      @include onDesktop {
+        max-width: 570px;
+        margin-top: 28px;
+      }
+    }
+
+    &-button {
+      margin-top: 42px;
+
+      @include onTablet {
+        margin-top: 50px;
+      }
+
+      @include onDesktop {
+        margin-top: 82px;
+      }
+    }
+
+    @include onTablet {
+      width: 570px;
+    }
+
+    &-info {
+      display: none;
+      position: relative;
+      margin-top: 137px;
+      font-size: 14px;
+      line-height: 20px;
+      &:after {
+        content: "";
+        position: absolute;
+        margin-left: 100px;
+        height: 1px;
+        width: 469px;
+        background-color: $whiteColor;
+      }
+
+      @include onDesktop {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__image {
+    height: 257px;
+    width: 245px;
+    margin: 28px auto;
+
+    @include onTablet {
+      height: 470px;
+      width: 443px;
+      margin: 47px auto;
+    }
+
+    @include onDesktop {
+      height: 663px;
+      width: 625px;
+      margin: 23px;
+    }
+  }
+
+  .container {
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      margin: auto;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}

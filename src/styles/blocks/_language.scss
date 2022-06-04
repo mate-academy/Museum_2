@@ -1,0 +1,38 @@
+.language {
+  display: none;
+  @include onTablet {
+    display: block;
+    margin-left: 40px;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    color: $whiteColor;
+  }
+
+  &-menu {
+    position: absolute;
+    right: 85px;
+    @include onTablet {
+      right: 50px;
+    }
+    @include onDesktop {
+      right: 68px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    &::after {
+      content: "";
+      display: block;
+      margin-left: 4px;
+      height: 8px;
+      width: 8px;
+      background-image: url(../images/dropdown.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
