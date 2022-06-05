@@ -1,25 +1,15 @@
 .nav {
-  background-color: $headerColor;
+  background-color: $backgroundColor;
+  color: $whiteColor;
   overflow-y: auto;
   transition: transform 0.3s;
 
-  @include onTablet {
-    background-image: url(../images/photo/menu.png);
-    background-size: 60%;
-    background-position: bottom;
-    background-repeat: no-repeat;
-  }
-
-  @include onDesktop {
-    background-image: url(../images/photo/menu.png);
-    background-size: contain;
-    background-position: bottom right;
-    background-repeat: no-repeat;
-  }
-
   &__content {
-    box-sizing: border-box;
+    position: relative;
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
   }
 
   &__top {
@@ -27,28 +17,27 @@
   }
 
   &__time {
-    display: block;
-    &-title {
-      
+    margin-bottom: 20px;
+  }
+
+  &__adress {
+    margin-bottom: 40px;
+
+    &-link {
+      line-height: 24px;
     }
   }
 
   &__list {
-    margin: 0 0 40px;
-    padding: 0;
-    list-style: none;
     margin-bottom: 40px;
+    padding: 0 0 40px;
+    list-style: none;
 
-    &::after {
-      content: "";
-      width: 100%;
-      height: auto;
-      border-bottom: 1px solid $whiteColor;
-    }
+    border-bottom: 1px solid $whiteColor;
   }
 
   &__item {
-    margin: 0 0 20px;
+    margin-bottom: 20px;
 
     &:last-child {
       margin-bottom: 0;
@@ -56,13 +45,25 @@
   }
 
   &__link {
-    display: inline-block;
-    padding-bottom: 8px;
-    color: $whiteColor;
-
-    text-transform: uppercase;
-
-    @include hover(border-color, $mainColor);
+    font-size: 20px;
   }
 
+  &__button-container {
+    margin-bottom: calc(55vh - 466px);
+  }
+
+  &__photo-container {
+    display: flex;
+    align-self: end;
+    margin-right: 0;
+    position: absolute;
+    top: 20%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
 }

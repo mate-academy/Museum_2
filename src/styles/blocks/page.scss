@@ -19,6 +19,7 @@
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
 
     transform: translateX(100%);
     transition: transform 0.3s;
@@ -29,6 +30,36 @@
   }
 
   &__section {
-    margin-bottom: 110px;
+    margin-bottom: $mbPhoneSmall;
+
+    @include onTablet {
+      margin-bottom: $mbTabletSmall;
+    }
+
+    @include onDesktop {
+      margin-bottom: $mbDesktopSmall;
+    }
+
+    &--medium {
+      @include onTablet {
+        margin-bottom: $mbTabletMedium;
+      }
+    }
+
+    &--large {
+      margin-bottom: $mbPhoneLarge;
+
+      @include onTablet {
+        margin-bottom: $mbTabletLarge;
+      }
+
+      @include onDesktop {
+        margin-bottom: $mbDesktopLarge;
+      }
+    }
+
+    &--footer {
+      margin-bottom: 0;
+    }
   }
 }
