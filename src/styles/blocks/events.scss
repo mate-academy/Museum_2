@@ -9,6 +9,29 @@
     padding: 100px 0 110px;
   }
 
+  &__item--odd {
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__item--even {
+    grid-column: 4 / -1;
+
+    @include onDesktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__info {
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
   &__body-img {
     width: 100%;
     @include adaptive-property(height, 358, 475, 1280);
@@ -25,7 +48,12 @@
   }
 
   &__img {
+    @include adaptive-property(height, 358, 475, 1280);
+    @include img(container);
+  }
 
-    @include img(contain);
+  &__button {
+    margin-bottom: 30px;
+
   }
 }

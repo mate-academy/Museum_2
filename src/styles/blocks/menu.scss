@@ -1,8 +1,117 @@
 .menu {
+  background-color: $color-bg;
+
+  &--burger {
+    height: 100vh;
+
+    // @include onDesktop {
+    //   display: grid;
+    //   grid-template-columns: repeat(12, 1fr);
+    // }
+
+  }
+
+  &__top-action {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    color: $color-white;
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text-top {
+    display: block;
+    @include onTablet {
+      display: flex;
+      width: 70%;
+      justify-content: space-between;
+    }
+  }
+
+  &__info {
+    margin-bottom: 20px;
+  }
+
+  &__info-text {
+    font-size: 14px;
+    line-height: 140%;
+
+  }
+
+  &__info-link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 40px;
+
+    background-color: $color-white;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__body-img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 2 / 6;
+
+      width: 100%;
+      height: 466px;
+      @include adaptive-property(height, 466, 697, 1280);
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 624px;
+    }
+
+    margin: 0 auto;
+
+    background-image: url("../images/photos/menu.png");
+    @include bg-center(contain);
+  }
 
   &__list {
     display: flex;
     flex-flow: column wrap;
+
+    &--burger {
+      padding-top: 20px;
+      margin-bottom: 20px;
+
+      @include onDesktop {
+        grid-column: 1 / -1;
+      }
+    }
   }
 
   &__item {
@@ -20,5 +129,20 @@
     line-height: 150%;
     color: $color-white;
     text-decoration: none;
+
+    &--burger {
+      @extend %h1;
+      margin-bottom: 20px;
+      font-size: 20px;
+
+      @include onTablet {
+        font-size: 48px;
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
   }
 }

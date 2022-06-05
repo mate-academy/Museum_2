@@ -16,10 +16,6 @@
     max-width: 270px;
   }
 
-  &--none {
-    display: none;
-  }
-
   &--primary {
     color: $color-white;
     background-color: $color-red;
@@ -79,4 +75,25 @@
     }
   }
 
+  &--hidden {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      display: flex;
+      grid-column: 10 / -1;
+    }
+  }
+
+  &--visibility {
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+  }
 }

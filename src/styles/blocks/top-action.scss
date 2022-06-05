@@ -1,16 +1,24 @@
 .top-action {
-  padding: 20px 0;
+  grid-column: 1 / -1;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  padding: 20px 0;
+
+  @include onTablet {
+    max-height: 77px;
+  }
+
   @include onDesktop {
     padding: 32px 0;
+    max-height: 90px;
   }
 
   &__logo {
     width: 123px;
-    height: 25px;
+    height: 40px;
     @include img-container;
   }
 
@@ -18,8 +26,14 @@
     @include img(contain);
   }
 
-  // &__icons {
-  // }
+  &__icons {
+    display: flex;
+    column-gap: 45px;
+
+    &--menu {
+      flex-direction: row-reverse;
+    }
+  }
 
   &__menu {
     display: inline-block;
@@ -27,12 +41,45 @@
     width: 25px;
     height: 20px;
     @include img-container;
+
+    &--cross {
+      width: 22px;
+      height: 22px;
+    }
   }
 
   &__menu-icon {
-    @include img(contain);
+    @include img(cover);
   }
 
-  // &__lang {
-  // }
+  &__lang {
+    display: none;
+
+    &--menu {
+      display: flex;
+      align-items: center;
+    }
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+    }
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-white;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      background-image: url("../images/icons/Union.svg");
+      margin-left: 3px;
+      display: block;
+      width: 8px;
+      height: 5px;
+
+      @include bg-center(contain);
+    }
+  }
 }
