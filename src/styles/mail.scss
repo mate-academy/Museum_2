@@ -28,39 +28,53 @@
     border-right: none;
     border-left: none;
     border-top: none;
-    background-color: rgba(241, 245, 244, 1);
+    outline: none;
+    background-color: $textColorMain;
     margin-bottom: 30px;
     border-color: #1c1b29;
     border-width: 1px;
+    @include hover ($_property: border-color, $_toValue: $firstColor);
 
     &::placeholder {
       color: black;
+      transition: color 1s;
+
     }
 
     &:hover::placeholder {
-      color: #cd4d31;
+      color: $firstColor;
     }
 
-    // &:focus {
-    //   border-top: none;
-    //   border-color: #cd4d31;
-    // }
+    &:focus::placeholder {
+      color: #f1f5f4;
+    }
+
+    &:focus {
+      border-right: none;
+      border-left: none;
+      border-top: none;
+      border-color: #cd4d31;
+      outline: none;
+    }
 
     @include onTablet {
       grid-column: 1 / 5;
+      margin-bottom: 40px;
     }
   }
 
   &__full {
     margin-bottom: 80px;
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
   }
 
   &__lable {
     grid-column: 1 / 3;
-
-    // &:focus {
-    //   border: none;
-    // }
 
     @include onTablet {
       grid-column: 1 / 5;
