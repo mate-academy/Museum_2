@@ -1,9 +1,14 @@
 .header {
   position: relative;
   background-color: $background;
+  width: 100%;
 
   @include onDesktop {
     height: 800px;
+  }
+
+  @media (min-width: 1600px) {
+    height: 100vh;
   }
 
   &__subtitle {
@@ -72,20 +77,21 @@
   }
 
   &__date {
+    position: relative;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
     color: $white;
-    display: block;
-    width: 81px;
-    height: 18px;
+
 
     &::after {
-      content: "";
-      position: absolute;
-      top: 92.8%;
-      display: inline-block;
-      width: 470px;
-      height: 1px;
       margin-left: 20px;
-      background-color: $white;
+      display: block;
+      position: absolute;
+      top: -17%;
+      left: 12%;
+      content: url(../images/divider.svg);
     }
   }
 
