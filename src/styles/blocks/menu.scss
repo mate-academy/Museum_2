@@ -1,12 +1,29 @@
 .menu {
   z-index: 10;
-  display: flex;
   flex-direction: column;
   box-sizing: border-box;
   overflow-y: auto;
   background-color: $background;
-  // height: 747px;
-  height: 100vh;
+  height: 747px;
+  min-width: 320px;
+  flex-shrink: 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @include onTablet {
+    height: 1092px;
+  }
+
+  @include onDesktop {
+    height: 800px;
+  }
+
+  @media (min-width: 1600px) {
+    height: 100vh;
+  }
 
   &__block {
     min-width: 280px;
@@ -20,18 +37,6 @@
     }
   }
 
-
-  // @include onTablet {
-  //   height: 1092px;
-  // }
-
-  // @include onDesktop {
-  //   height: 800px;
-  // }
-
-  @media (min-width: 1600px) {
-    height: 100vh;
-  }
 
   &__button {
     @include onTablet {
@@ -58,6 +63,17 @@
       display: flex;
       width: 422px;
       height: 466px;
+      position: fixed;
+      bottom: 0;
+    }
+
+    @media (min-width:1024px) {
+      display: block;
+      position: fixed;
+      right: 0;
+      bottom: -30px;
+      width: 424px;
+      height: 497px;
     }
 
     @include onDesktop {
@@ -66,6 +82,8 @@
 
     &--wide {
       display: none;
+
+
 
       @include onDesktop {
         display: block;
