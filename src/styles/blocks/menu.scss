@@ -2,17 +2,15 @@
   background-color: $color-bg;
 
   &--burger {
-    height: 100vh;
-
-    // @include onDesktop {
-    //   display: grid;
-    //   grid-template-columns: repeat(12, 1fr);
-    // }
-
+    min-height: 100vh;
   }
 
   &__top-action {
-    margin-bottom: 30px;
+    @include adaptive-property(margin-bottom, 10, 30, 768);
+
+    @include onDesktop {
+      margin-bottom: 12px;
+    }
   }
 
   &__text {
@@ -34,7 +32,10 @@
   }
 
   &__info {
-    margin-bottom: 20px;
+    @include adaptive-property(margin-bottom, 20, 30, 768);
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
   }
 
   &__info-text {
@@ -80,9 +81,9 @@
       display: block;
       grid-column: 2 / 6;
 
-      width: 100%;
+      width: 422px;
       height: 466px;
-      @include adaptive-property(height, 466, 697, 1280);
+      background-size: contain;
     }
 
     @include onDesktop {
@@ -92,6 +93,7 @@
       bottom: 0;
 
       width: 624px;
+      height: 697px;
     }
 
     margin: 0 auto;
@@ -121,14 +123,24 @@
   &__link {
     display: inline-block;
     margin-bottom: 5px;
+
     @include onDesktop {
       margin-bottom: 10px;
+    }
+
+    &--title {
+      font-size: 20px;
     }
 
     font-size: 16px;
     line-height: 150%;
     color: $color-white;
     text-decoration: none;
+    @include transition;
+
+    &:hover {
+      text-decoration: underline;
+    }
 
     &--burger {
       @extend %h1;

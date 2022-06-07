@@ -1,6 +1,10 @@
 .news {
   padding: 90px 0 60px;
 
+  &__title {
+    margin-bottom: 55px;
+  }
+
   &__item {
     margin-bottom: 0;
   }
@@ -14,8 +18,15 @@
   }
 
   &__body-img {
-    margin-bottom: 20px;
+    @include adaptive-property(margin-bottom, 20, 30, 768);
     @include img-container;
+
+    @include transition;
+
+    &:hover {
+      border-radius: 50px;
+      transform: scale(1.05);
+    }
   }
 
   &__img {

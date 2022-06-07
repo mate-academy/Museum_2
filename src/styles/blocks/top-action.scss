@@ -20,6 +20,13 @@
     width: 123px;
     height: 40px;
     @include img-container;
+
+    @include transition;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: brightness(0);
+    }
   }
 
   &__logo-img {
@@ -32,6 +39,10 @@
 
     &--menu {
       flex-direction: row-reverse;
+
+      @include onTablet {
+        flex-direction: row;
+      }
     }
   }
 
@@ -49,7 +60,13 @@
   }
 
   &__menu-icon {
-    @include img(cover);
+    @include img(contain);
+    @include transition;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: brightness(0);
+    }
   }
 
   &__lang {

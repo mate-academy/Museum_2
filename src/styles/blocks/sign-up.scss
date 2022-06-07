@@ -20,13 +20,13 @@
   }
 
   &__text {
-    grid-column: 1 / -2;
+    grid-column: 1 / 6;
+    margin-bottom: 50px;
+    color: $color-black;
 
     @include onDesktop {
       grid-column: 7 / -1;
     }
-    margin-bottom: 50px;
-    color: $color-black;
   }
 
   &__form {
@@ -40,15 +40,34 @@
     height: 28px;
     margin-bottom: 30px;
     padding: 3px 0;
-    border: none;
+
     background-color: inherit;
+    border: none;
+    outline: none;
     border-bottom: 1px solid $color-black;
+
+    &:hover {
+      border-color: $color-red;
+    }
+
+    &:focus {
+      border-color: $color-red;
+    }
 
     &::placeholder {
       font-weight: 400;
       font-size: 16px;
       line-height: 150%;
       color: $color-black;
+    }
+
+    &:hover::placeholder {
+      color: $color-red;
+    }
+
+    &:focus::placeholder {
+      font-weight: 600;
+      color: $color-red;
     }
   }
 
