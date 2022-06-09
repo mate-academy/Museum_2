@@ -14,3 +14,12 @@ form.addEventListener('submit', (event) => {
   event.preventDefault();
   form.reset();
 });
+
+// const form = document.querySelector('.form');
+
+// form.addEventListener('submit', handleEvent);
+
+// function handleEvent(event) {
+//   event.preventDefault();
+//   form.reset();
+// }
