@@ -8,7 +8,10 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-document.getElementById('form-message').addEventListener(
+const signUp = document.getElementById('sign-up');
+
+signUp.addEventListener(
   'click', function(event) {
     event.preventDefault();
+    signUp.reset();
   });
