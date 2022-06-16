@@ -11,7 +11,7 @@ window.addEventListener('hashchange', () => {
 const signUp = document.getElementById('sign-up');
 
 signUp.addEventListener(
-  'click', function(event) {
+  'submit', function(event) {
     event.preventDefault();
     signUp.reset();
   });
