@@ -1,13 +1,9 @@
 'use strict';
 
-document.getElementById('form').addEventListener('click', function(event) {
-  event.preventDefault();
-});
+const form = document.getElementById('form');
 
-// window.addEventListener('hashchange', () => {
-//   if (window.location.hash === '#menu') {
-//     document.body.classList.add('page__body--with-menu');
-//   } else {
-//     document.body.classList.remove('page__body--with-menu');
-//   }
-// });
+form.onsubmit = function() {
+  document.getElementById('form').reset();
+
+  return false;
+};
