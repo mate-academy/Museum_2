@@ -1,0 +1,108 @@
+.button {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $main-orange;
+  color: $white;
+  @extend %button;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $main-orange-hover;
+  }
+
+  &:disabled {
+    background-color: $main-orange-disabled;
+  }
+
+  &:active {
+    background-color: $main-orange-pressed;
+  }
+
+  &--secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    border: 1px solid $main-orange;
+    text-decoration: none;
+    color: $main-orange;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s;
+
+    &-mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-tablet {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    &::after {
+      margin-left: 10px;
+      content: url(../images/arrow.svg);
+      display: block;
+      transform: translateY(2px);
+      width: 20px;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      border: 1px solid $main-orange-hover;
+      color: $main-orange-hover;
+      transition: all 0.3s;
+
+      &::after {
+        content: url(../images/arrow-hover.svg);
+        transition: all 0.3s;
+      }
+    }
+
+    &:active {
+      border: 1px solid $main-orange-pressed;
+      color: $main-orange-pressed;
+      transition: all 0.3s;
+
+      &::after {
+        content: url(../images/arrow-pressed.svg);
+        transition: all 0.3s;
+      }
+    }
+
+    &:disabled {
+      border: 1px solid $main-orange-disabled;
+      color: $main-orange-disabled;
+      transition: all 0.3s;
+
+      &::after {
+        content: url(../images/arrow-disbled.svg);
+        transition: all 0.3s;
+      }
+    }
+  }
+}
+
+
+
+
+
+
