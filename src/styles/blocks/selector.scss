@@ -1,0 +1,102 @@
+.select-box {
+  position: relative;
+  display: block;
+
+  width: 76px;
+
+  font-family: "Raleway", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: $c-white;
+
+  transition: color $transition-time;
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    height: 8px;
+    opacity: 1;
+    transition: filter 0.2s, transform $transition-time;
+
+    filter: brightness(5);
+  }
+
+  &__list {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+
+    animation-name: HideList;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: step-start;
+  }
+
+  &__option {
+    display: block;
+    padding: 15px;
+
+    transition: color $transition-time;
+
+    &:hover,
+    &:focus {
+      color: $c-main;
+    }
+  }
+
+  &__input-text {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+  }
+
+  &__current {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+
+    &:focus {
+      & + .select-box__list {
+        opacity: 1;
+
+        animation-name: none;
+
+        .select-box__option {
+          cursor: pointer;
+        }
+      }
+
+      .select-box__icon {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &:hover &__current {
+    color: $c-main;
+  }
+
+  &:hover &__icon {
+    filter: brightness(1);
+  }
+
+  &__value {
+    display: flex;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .select-box__input-text {
+      display: block;
+    }
+  }
+}
