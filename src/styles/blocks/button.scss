@@ -1,0 +1,83 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  background-color: $colorMain;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: $colorWhite;
+  cursor: pointer;
+
+  &--primary {
+    @include hover(background-color #af3419);
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+  }
+
+  &__header {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__menu {
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &--secondary {
+    background-color: $colorWhite;
+    border: 1px solid;
+    color: $colorMain;
+    gap: 12px;
+
+    background-image: url(../images/logo&icons/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center right 25%;
+
+    @include hover(
+      color #af3419,
+      background-image url(../images/logo&icons/arrow-right-hover.svg));
+
+    &:active {
+      color: #ea340d;
+      background-image: url(../images/logo&icons/arrow-right-active.svg);
+    }
+  
+    &:disabled {
+      color: #dd836f;
+      background-image: url(../images/logo&icons/arrow-right-disabled.svg);
+    }
+  
+    @include onTablet {
+      grid-row: 1 / 2;
+    }
+  }
+
+  &--input {
+    border: transparent;
+  }
+}

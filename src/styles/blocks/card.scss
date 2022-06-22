@@ -1,0 +1,160 @@
+.card {
+
+  &__photo {
+    width: 100%;
+    height: 356px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 20px;
+
+    @include hover(transform scale(1.05));
+
+    @include onTablet {
+      grid-row: 1 / 4;
+    }
+
+    &--exhibition {
+      @include onTablet {
+        height: 420px;
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        height: 484px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &--exhibition-1 {
+      background-image: url(../images/exhibition-1.jpg);
+    }
+
+    &--exhibition-2 {
+      background-image: url(../images/exhibition-2.jpg);
+    }
+
+    &--event {
+      @include onTablet {
+        height: 422px;
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        height: 474px;
+      }
+    }
+
+    &--event-1 {
+      background-image: url(../images/event-1.jpg);
+    }
+
+    &--event-2 {
+      background-image: url(../images/event-2.jpg);
+    }
+
+    &--news {
+      height: 281px;
+
+      @include onTablet {
+        height: 330px;
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        height: 370px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &--news-1 {
+      background-image: url(../images/news-1.jpg);
+    }
+
+    &--news-2 {
+      background-image: url(../images/news-2.jpg);
+    }
+  }
+
+  &__date {
+    color: $colorMain;
+    margin-bottom: 10px;
+
+    &--news {
+      color: $colorBlack;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    color: $colorBlack;
+    margin-bottom: 20px;
+
+    @include hover(color $colorMain);
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 30px;
+    flex: 1;
+
+    &--exhibitions {
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--events {
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--news {
+      margin-bottom: 0;
+    }
+  }
+
+  &:nth-child(even) {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &:nth-child(odd) {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &--events {
+    @include onTablet {
+      &:first-child {
+        margin-bottom: 70px;
+      }
+
+      @include onDesktop {
+        &:first-child {
+          margin-bottom: 60px;
+        }
+      }
+    }
+  }
+}

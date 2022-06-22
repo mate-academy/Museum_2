@@ -1,0 +1,74 @@
+.subscribe {
+  padding: 90px 0 80px;
+
+  @include onTablet {
+    padding: 100px 0 128px;
+  }
+
+  @include onDesktop {
+    padding: 110px 0 200px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $colorBlack;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__paragraph {
+    color: $colorBlack;
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    padding: 0 0 3px;
+    width: 100%;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid $colorBlack;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    @include hover(color $colorMain, border-color $colorMain);
+
+    &::placeholder {
+      color: inherit;
+      font-weight: 400;
+    }
+
+    &:focus {
+      outline: none;
+      color: $colorMain;
+      border-color: $colorMain;
+    }
+
+    &:-webkit-autofill {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: $colorBlack !important;
+    }
+  }
+}
