@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: $c-background;
+  height: $header-height;
+  padding: 20px;
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__language {
+    margin-right: 30px;
+    opacity: 0;
+
+    transition: opacity 1s;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__burger {
+    &-line {
+      background-color: $c-white;
+      width: 25px;
+      height: 2px;
+
+      transition: transform $transition-time,
+        opacity $transition-time,
+        background-color $transition-time;
+
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+
+    &:hover &-line {
+      background-color: $c-main;
+    }
+
+    &.active &-line:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    &.active &-line:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    &.active &-line:nth-child(2) {
+      opacity: 0;
+    }
+  }
+}

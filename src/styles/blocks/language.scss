@@ -1,8 +1,8 @@
-.select-box {
+.language {
   position: relative;
   display: block;
 
-  width: 76px;
+  width: 48px;
 
   font-family: "Raleway", serif;
   font-style: normal;
@@ -16,11 +16,11 @@
   &__icon {
     position: absolute;
     top: 50%;
-    right: 15px;
+    right: 0;
     transform: translateY(-50%);
     height: 8px;
     opacity: 1;
-    transition: filter 0.2s, transform $transition-time;
+    transition: filter $transition-time, transform $transition-time;
 
     filter: brightness(5);
   }
@@ -41,7 +41,7 @@
 
   &__option {
     display: block;
-    padding: 15px;
+    padding: 4px;
 
     transition: color $transition-time;
 
@@ -55,7 +55,7 @@
     display: none;
     width: 100%;
     margin: 0;
-    padding: 15px;
+    padding: 4px;
   }
 
   &__current {
@@ -63,18 +63,20 @@
     cursor: pointer;
     outline: none;
 
+    transition: color $transition-time;
+
     &:focus {
-      & + .select-box__list {
+      & + .language__list {
         opacity: 1;
 
         animation-name: none;
 
-        .select-box__option {
+        .language__option {
           cursor: pointer;
         }
       }
 
-      .select-box__icon {
+      .language__icon {
         transform: translateY(-50%) rotate(180deg);
       }
     }
@@ -95,7 +97,7 @@
   &__input {
     display: none;
 
-    &:checked + .select-box__input-text {
+    &:checked + .language__input-text {
       display: block;
     }
   }
