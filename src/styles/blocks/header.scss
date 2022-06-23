@@ -7,14 +7,32 @@
   height: $header-height;
   padding: 20px;
 
+  @include onTablet {
+    padding: 26px 40px;
+  }
+
+  @include onDesktop {
+    padding: 32px 60px;
+  }
+
   &__buttons {
     display: flex;
     align-items: center;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+    }
   }
 
   &__language {
     margin-right: 30px;
     opacity: 0;
+
+    @include onTablet {
+      opacity: 1;
+      pointer-events: all;
+      margin: 0;
+    }
 
     transition: opacity 1s;
 
@@ -29,6 +47,10 @@
   }
 
   &__burger {
+    @include onTablet {
+      margin-right: 45px;
+    }
+
     &-line {
       background-color: $c-white;
       width: 25px;
