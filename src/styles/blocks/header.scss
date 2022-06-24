@@ -1,18 +1,41 @@
 .header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
 
   background-color: $c-background;
-  height: $header-height;
-  padding: 20px;
+
+  min-height: 100vh;
+  height: max-content;
+
+  padding-top: 20px;
 
   @include onTablet {
-    padding: 26px 40px;
+    padding-top: 26px;
   }
 
   @include onDesktop {
-    padding: 32px 60px;
+    padding-top: 32px;
+  }
+
+  &__top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      padding: 0 42px;
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      padding: 0 60px;
+      margin-bottom: 90px;
+    }
+
+    z-index: 2;
   }
 
   &__buttons {
@@ -79,6 +102,119 @@
 
     &.active &-line:nth-child(2) {
       opacity: 0;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 40px;
+
+    @include onTablet {
+      margin: 0 0 30px;
+
+      width: 330px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+
+      width: 270px;
+    }
+
+    width: 100%;
+    height: 60px;
+    background-color: $c-main;
+
+    @include button-text;
+    color: $c-white;
+    text-decoration: none;
+
+    transition: background-color $transition-time;
+
+    &:hover {
+      background-color: #af3419;
+    }
+  }
+
+  &__time {
+    margin-bottom: 10px;
+
+    @include additional-text;
+    color: $c-white;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    color: $c-white;
+
+    z-index: 1;
+  }
+
+  &__info {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include main-text;
+    color: $c-white;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    margin: 0;
+  }
+
+  &__picture {
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-grow: 1;
+
+      @include onDesktop {
+        position: relative;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+      }
+    }
+
+    width: 90%;
+
+    @media (min-width: 500px) {
+      width: 50%;
+    }
+
+    @include onTablet {
+      width: 65%;
+    }
+  }
+
+  &__space {
+    height: 30vh;
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 50px;
+
     }
   }
 }
