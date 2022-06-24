@@ -1,6 +1,7 @@
 .header {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
 
   background-color: $c-background;
 
@@ -174,7 +175,15 @@
     flex-direction: column;
     flex-grow: 1;
 
-    margin: 0;
+    margin: 0 auto;
+
+    max-width: none;
+
+    width: 100%;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
   }
 
   &__picture {
@@ -185,11 +194,7 @@
       flex-grow: 1;
 
       @include onDesktop {
-        position: relative;
-        bottom: 0;
-        left: 0;
-
-        width: 100%;
+        flex-grow: 1;
       }
     }
 
@@ -202,19 +207,57 @@
     @include onTablet {
       width: 65%;
     }
+
+    @include onDesktop {
+      width: 100%;
+    }
   }
 
   &__space {
+    display: none;
     height: 30vh;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
   }
 
   &__line {
     display: none;
 
     @include onDesktop {
-      display: block;
+      position: relative;
+
+      display: flex;
+      align-items: flex-end;
+
       margin-bottom: 50px;
 
+      flex-grow: 1;
+
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      color: $c-white;
+
+      &::after {
+        position: absolute;
+        bottom: 6px;
+        left: 100px;
+        right: 30px;
+
+        content: "";
+
+        height: 1px;
+        background-color: $c-white;
+      }
     }
   }
 }
