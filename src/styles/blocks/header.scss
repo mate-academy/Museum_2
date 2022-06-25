@@ -1,7 +1,8 @@
 .header {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
 
   background-color: $c-background;
 
@@ -37,6 +38,9 @@
     }
 
     z-index: 2;
+
+    max-width: 1440px;
+    width: 100%;
   }
 
   &__buttons {
@@ -62,7 +66,7 @@
 
     pointer-events: none;
 
-    z-index: 3;
+    z-index: 4;
 
     &.active {
       opacity: 1;
@@ -115,18 +119,17 @@
 
     @include onTablet {
       margin: 0 0 30px;
-
       width: 330px;
     }
 
     @include onDesktop {
       margin: 0;
-
-      width: 270px;
+      width: 100%;
     }
 
     width: 100%;
-    height: 60px;
+    min-height: 60px;
+    max-height: 60px;
     background-color: $c-main;
 
     @include button-text;
@@ -155,8 +158,6 @@
     }
 
     color: $c-white;
-
-    z-index: 1;
   }
 
   &__info {
@@ -170,38 +171,25 @@
     color: $c-white;
   }
 
-  &__container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-
-    margin: 0 auto;
-
-    max-width: none;
-
-    width: 100%;
-
-    @include onDesktop {
-      flex-direction: row;
-    }
-  }
-
   &__picture {
     &-container {
       display: flex;
       justify-content: center;
       align-items: flex-end;
+
       flex-grow: 1;
 
+      height: 100%;
+
       @include onDesktop {
-        flex-grow: 1;
+        grid-row: 1 / 12;
       }
     }
 
     width: 90%;
 
     @media (min-width: 500px) {
-      width: 50%;
+      width: 65%;
     }
 
     @include onTablet {
@@ -233,6 +221,8 @@
     @include onDesktop {
       position: relative;
 
+      grid-row: 11;
+
       display: flex;
       align-items: flex-end;
 
@@ -259,5 +249,14 @@
         background-color: $c-white;
       }
     }
+  }
+
+  &__grid {
+    min-height: 100%;
+  }
+
+  &__container {
+    display: flex;
+    min-height: calc(100vh - 120px);
   }
 }
