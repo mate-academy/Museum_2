@@ -28,6 +28,12 @@
         margin-bottom: 0;
       }
     }
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__title {
@@ -48,7 +54,7 @@
   }
 
   &__description {
-    margin-bottom: 0;
+    margin-bottom: 30px;
 
     @include onTablet {
       margin-bottom: 50px;
@@ -120,11 +126,17 @@
 
     &-icon {
       margin-left: 10px;
+
+      transition: transform $transition-time;
     }
 
     &:hover {
       color: $c-dark-orange;
       border-color: $c-dark-orange;
+    }
+
+    &:hover &-icon {
+      transform: translateX(50%);
     }
   }
 }

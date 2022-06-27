@@ -16,6 +16,12 @@
   &__image {
     width: 100%;
     margin-bottom: 20px;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__title {
@@ -99,11 +105,17 @@
 
     &-icon {
       margin-left: 10px;
+
+      transition: transform $transition-time;
     }
 
     &:hover {
       color: $c-dark-orange;
       border-color: $c-dark-orange;
+    }
+
+    &:hover &-icon {
+      transform: translateX(50%);
     }
   }
 }

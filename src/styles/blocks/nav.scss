@@ -65,6 +65,8 @@
   }
 
   &__link {
+    position: relative;
+
     font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: 700;
@@ -85,6 +87,27 @@
 
       &:first-child {
         margin-left: -10px;
+      }
+    }
+
+    @include onDesktop {
+      &::after {
+        position: absolute;
+        bottom: -10px;
+
+        content: "";
+        height: 2px;
+        background-color: $c-main;
+      }
+    }
+
+    transition: color $transition-time;
+
+    &:hover {
+      color: $c-main;
+
+      &::after {
+        animation: line $transition-time linear forwards;
       }
     }
   }
