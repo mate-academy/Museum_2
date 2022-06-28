@@ -1,0 +1,109 @@
+.header {
+  background-color: $c-background;
+  height: 100vh;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      padding: 25px 0;
+      margin-bottom: 100px;
+    }
+
+    @include onDescktop {
+      padding: 32px 0;
+      margin-bottom: 90px;
+    }
+  }
+
+  &__pic {
+    height: 40px;
+    width: 123px;
+
+    @include onTablet {
+      height: 26px;
+      width: 117px;
+    }
+
+    @include onDescktop {
+      height: 26px;
+      width: 117px;
+    }
+  }
+
+  &__box-buttons {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+  }
+
+  &__language-button {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDescktop {
+      display: block;
+    }
+
+    @include square(25px);
+
+    background-image: url(../images/UA.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::after {
+      content: url(../images/Union.svg);
+      display: block;
+      position: relative;
+      // @include square(5px);
+      left: 120%;
+      transform: translate(0, -120%);
+    }
+
+    &::before {
+      content: "EN";
+      display: block;
+      position: relative;
+      top: 150%;
+      transform: translateY(-50%);
+      font-family: "Raleway", sans-serif;
+      font-style: normal;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 18px;
+      color: $c-white;
+      text-align: end;
+      width: max-content;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 2s;
+    }
+
+    &:hover::before {
+      opacity: 1;
+      transition: 500ms;
+      pointer-events: all;
+    }
+  }
+
+  &__menu-button {
+    display: block;
+    @include square(25px);
+    background-image: url(../images/menu.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+
+    &:hover {
+      background-image: url(../images/menu_hover.svg);
+    }
+  }
+}
