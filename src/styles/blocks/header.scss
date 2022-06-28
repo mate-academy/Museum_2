@@ -1,0 +1,166 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: $background-color;
+
+  @include onTablet {
+
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    // margin-bottom: 70px;
+
+    .language-icon {
+      display: none;
+    }
+    @include onTablet {
+      margin-bottom: 124px;
+      .language-icon {
+       width: 23px;
+       height: 24px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 47px;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 20px;
+
+    @include onDesktop {
+      justify-content: space-between;
+      flex-direction: row;
+      height: 100%;
+    }
+  }
+
+  .text {
+    &__container {
+      @include onDesktop {
+        display: flex;
+        justify-content: space-between;
+      }
+      &--title {
+        font-family: "Playfair Display", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: $white-color;
+        margin-bottom: 30px;
+
+        @include onTablet {
+          font-size: 72px;
+          margin-bottom: 20px;
+        }
+
+        @include onDesktop {
+          font-size: 96px;
+        }
+      }
+
+      &--data {
+        text-align: start;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: $white-color;
+        margin-bottom: 10px;
+
+        @include onTablet {
+          margin-bottom: 10px;
+        }
+
+      }
+
+      &--description {
+        text-align: start;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: $white-color;
+        margin-bottom: 40px;
+
+        @include onTablet {
+          font-size: 16px;
+          margin-bottom: 50px;
+        }
+
+        @include onDesktop {
+          margin-bottom: 80px;
+        }
+      }
+
+      &--button {
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: $white-color;
+        width: 100%;
+        background-color: $main-color;
+        border: none;
+        padding: 20px 0;
+        cursor: pointer;
+        margin-bottom: 40px;
+        transition: color $duration,
+          border-color $duration,
+          background-color $duration;
+
+          @include onTablet {
+            width: 330px;
+            margin-bottom: 70px;
+          }
+
+          @include onDesktop {
+            width: 270px;
+          }
+      }
+    }
+  }
+
+
+
+  &__image {
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
+
+    .tablet-image,
+    .desktop-image {
+      display: none;
+    }
+    @include onTablet {
+      .phone-image,
+      .desktop-image {
+        display: none;
+      }
+      .tablet-image {
+        display: flex;
+        margin-top: auto;
+        justify-content: center;
+      }
+    }
+
+    @include onDesktop {
+      .phone-image,
+      .tablet-image {
+        display: none;
+      }
+      .desktop-image {
+        display: flex;
+        margin-top: auto;
+        justify-content: flex-end;
+      }
+    }
+  }
+}
