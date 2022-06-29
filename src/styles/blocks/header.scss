@@ -2,8 +2,19 @@
   background-color: $c-background;
   height: 100vh;
   color: $c-white;
+  background-image: url("../images/1.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto 35%;
 
-  /* Nav */
+  @include onTablet {
+    background-size: auto 45%;
+  }
+
+  @include onDescktop {
+    background-position: right bottom;
+    background-size: auto 80%;
+  }
 
   &__nav {
     display: flex;
@@ -22,7 +33,7 @@
     }
   }
 
-  &__pic {
+  &__logo {
     height: 40px;
     width: 123px;
 
@@ -45,14 +56,6 @@
 
   &__language-button {
     display: none;
-
-    @include onTablet {
-      display: block;
-    }
-
-    @include onDescktop {
-      display: block;
-    }
 
     @include square(25px);
 
@@ -92,6 +95,14 @@
       transition: 500ms;
       pointer-events: all;
     }
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDescktop {
+      display: block;
+    }
   }
 
   &__menu-button {
@@ -125,6 +136,15 @@
     line-height: 100%;
     margin-bottom: 30px;
 
+    @include onTablet {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include onDescktop {
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
   }
 
   &__down-title {
@@ -133,6 +153,18 @@
     font-size: 16px;
     line-height: 150%;
     margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDescktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__buy-button {
+    margin-bottom: 313px;
   }
 }
 
