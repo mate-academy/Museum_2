@@ -5,25 +5,20 @@
   width: 100%;
   background-color: $background-color;
 
-  @include onTablet {
-
-  }
-
   &__nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 20px;
-    // margin-bottom: 70px;
+    padding: 20px;
 
     .language-icon {
       display: none;
     }
     @include onTablet {
-      margin-bottom: 124px;
+      margin-bottom: 99px;
       .language-icon {
-       width: 23px;
-       height: 24px;
+        width: 23px;
+        height: 24px;
       }
     }
 
@@ -39,9 +34,24 @@
     padding: 0 20px;
 
     @include onDesktop {
-      justify-content: space-between;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(6, 1fr);
       height: 100%;
+
+      .text {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        // grid-row-start: 1;
+        // grid-row-end: 1;
+      }
+
+      .header__image {
+        grid-column-start: 7;
+        grid-column-end: 13;
+        // grid-row-start: 1;
+        // grid-row-end: 1;
+      }
     }
   }
 
@@ -60,11 +70,13 @@
 
         @include onTablet {
           font-size: 72px;
+          line-height: 72px;
           margin-bottom: 20px;
         }
 
         @include onDesktop {
           font-size: 96px;
+          line-height: 96px;
         }
       }
 
@@ -116,19 +128,16 @@
           border-color $duration,
           background-color $duration;
 
-          @include onTablet {
-            width: 330px;
-            margin-bottom: 70px;
-          }
+        @include onTablet {
+          width: 330px;
+        }
 
-          @include onDesktop {
-            width: 270px;
-          }
+        @include onDesktop {
+          width: 270px;
+        }
       }
     }
   }
-
-
 
   &__image {
     display: flex;
@@ -160,6 +169,7 @@
         display: flex;
         margin-top: auto;
         justify-content: flex-end;
+        
       }
     }
   }
