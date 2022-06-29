@@ -2,6 +2,7 @@
   height: 100vh;
   background-color: $header-color;
   position: fixed;
+  overflow: auto;
   top: 0;
   left: 0;
   right: 0;
@@ -9,7 +10,65 @@
   transition: transform 0.3s;
   transform: translateX(-100%);
 
+  &__top-bar {
+    max-width: 1500px;
+    margin: 0 auto 30px;
+  }
+
   &:target {
     transform: translateY(0);
+  }
+
+  &__content {
+    max-width: 1500px;
+    margin: auto;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+
+    @include paddings;
+  }
+
+  &__info {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: flex;
+      gap: 123px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      gap: 80px;
+      margin-bottom: 70px;
+    }
+
+    &_shedule {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin: 0;
+      }
+    }
+
+    &-title {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      font-family: Raleway, sans-serif;
+    }
+
+    &-value {
+      font-weight: 600;
+      line-height: 24px;
+      font-family: Raleway, sans-serif;
+      text-decoration: none;
+      color: $main-acc;
+      cursor: pointer;
+
+      @include hover16;
+    }
   }
 }
