@@ -1,9 +1,9 @@
 .header {
-  // height: 100vh;
   position: relative;
   overflow: hidden;
   width: 100%;
   background-color: $header-color;
+  margin-bottom: 90px;
 
   @include onDesktop {
     max-height: 800px;
@@ -35,6 +35,10 @@
     display: grid;
     grid-template-rows: max-content 1fr;
     @include paddings;
+
+    &-main {
+      animation: left-appearance 1s ease-in;
+    }
 
     &-date {
       font-family: Raleway, sans-serif;
@@ -119,8 +123,13 @@
   }
 
   &__image {
+    // position: absolute;
+    // left: 20%;
+    bottom: 0;
+    width: 100%;
     max-width: 280px;
     max-height: 273px;
+    animation: right-appearance 1s ease-in;
 
     @include onTablet {
       max-width: 443px;
