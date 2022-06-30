@@ -2,7 +2,13 @@
   background-color: $c-background-dark;
 
   &__content {
+    position: relative;
+
     padding: 40px 0;
+
+    @include onTablet {
+      padding: 100px 0 70px;
+    }
   }
 
   &__date {
@@ -20,6 +26,20 @@
 
     font-size: 48px;
     line-height: 48px;
+
+    @include onTablet {
+      max-width: 570px;
+
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include onDesctop {
+      max-width: 100%;
+
+      font-size: 96px;
+      line-height: 96px;
+    }
   }
 
   &__title-description {
@@ -27,10 +47,58 @@
     margin-bottom: 40px;
 
     line-height: 24px;
+
+    @include onTablet {
+      max-width: 330px;
+    }
+
+    @include onDesctop {
+      max-width: 100%;
+      margin-bottom: 80px;
+    }
   }
 
   &__image {
     display: block;
     margin: 0 auto;
+
+    @include onDesctop {
+      margin-right: -20px;
+    }
+  }
+
+  &__bottom-date {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+
+    width: 100%;
+
+    @extend %playfair-bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    opacity: 0;
+  }
+
+  &__bottom-line {
+    display: inline-block;
+    width: 470px;
+    height: 1px;
+    margin-left: 20px;
+    margin-bottom: 4px;
+
+    background-color: $c-white;
+    opacity: 0.3;
+  }
+  @include onDesctop {
+    &__desctop-wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__bottom-date {
+      opacity: 0.7;
+    }
   }
 }
