@@ -1,37 +1,44 @@
 .header {
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include onTablet {
+      gap: 100px;
+    }
+  }
+
   background-color: $c-background;
   background-image: url("../images/1.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: auto 35%;
+  min-height: 675px;
   height: 100vh;
   color: $c-white;
 
   @include onTablet {
     background-size: auto 45%;
+    gap: 100px;
   }
 
-  @include onDescktop {
+  @include onDescktopgi {
     background-position: right bottom;
     background-size: auto 80%;
   }
-
-  /* Nav */
 
   &__nav {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
-    margin-bottom: 50px;
 
     @include onTablet {
       padding: 25px 0;
-      margin-bottom: 100px;
     }
 
     @include onDescktop {
       padding: 32px 0;
-      margin-bottom: 90px;
     }
   }
 
@@ -121,9 +128,6 @@
     }
   }
 
-  /* Nav - end */
-  /* Box-infirmation */
-
   &__upper-title {
     @extend %font-Raleway;
     font-weight: 400;
@@ -165,19 +169,20 @@
     }
   }
 
-  // &__buy-button {
-  //   margin-bottom: 313px;
-  // }
+  &__buy-button {
+    @include onTablet {
+      width: 300px;
+    }
 
-  // &__box-pic {
-  //   display: block;
-  //   // position: relative;
-  // }
+    @include onDescktop {
+      margin-bottom: 80px;
+    }
+  }
 
-  // &__pic {
-  //   height: 100%;
-  // }
-
+  &__down-line {
+    display: none;
+    @include onDescktop {
+      display: block;
+    }
+  }
 }
-
-/* Box-infirmation */
