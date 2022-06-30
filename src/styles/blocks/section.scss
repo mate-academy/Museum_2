@@ -2,103 +2,199 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 60px 20px 20px;
+  padding: 0 20px 20px;
 
-  &__title {
-    text-align: center;
-    margin-top: 90px;
-    margin-bottom: 60px;
-    font-family: "Playfair Display", sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 35px;
-    color: black;
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+
+    &-title {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 35px;
+      color: black;
+    }
+
+    &-button {
+      display: none;
+      width: 100%;
+
+      @include onTablet {
+        display: block;
+        width: 270px;
+      }
+    }
   }
-  &__container {
+
+  &__exhibition {
     @include onDesktop {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
-  }
 
-  .card {
-    &__container {
-      &-image {
-        min-height: 356px;
-        width: 100%;
-        padding-bottom: 20px;
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+      flex-basis: 50%;
+
+      .archive-button {
+        margin-top: 30px;
+
+        @include onTablet {
+          display: none;
+        }
       }
 
-      &-data {
-        padding-bottom: 10px;
-        font-family: "Raleway", sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        color: $main-color;
+      &__container {
+        @include onTablet {
+          flex-basis: 50%;
+        }
+        &-image {
+          min-height: 438px;
+          width: 100%;
+          padding-bottom: 20px;
+        }
 
-      }
+        &__button {
+          display: block;
 
-      &-title {
-        padding-bottom: 20px;
-        font-family: "Playfair Display", sans-serif;
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 25px;
-        color: $black-color;
+          @include onTablet {
+            display: none;
+            width: 270px;
+          }
+        }
 
-      }
-
-      &-description {
-        padding-bottom: 30px;
-        font-family: "Raleway", sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        color: $gray-color;
-
-      }
-
-      &-button {
+        &-data {
+          padding-bottom: 10px;
           font-family: "Raleway", sans-serif;
           font-size: 16px;
-          font-weight: 600;
-          text-align: center;
-          color: $white-color;
-          width: 100%;
-          background-color: $main-color;
-          border: none;
-          padding: 20px 0;
-          cursor: pointer;
-          margin-bottom: 40px;
-          transition: color $duration,
-            border-color $duration,
-            background-color $duration;
+          font-weight: 400;
+          line-height: 24px;
+          color: $main-color;
+
+        }
+
+        &-title {
+          padding-bottom: 20px;
+          font-family: "Playfair Display", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 25px;
+          color: $black-color;
+
+        }
+
+        &-description {
+          padding-bottom: 30px;
+          font-family: "Raleway", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          color: $gray-color;
+        }
       }
     }
   }
-  &__button {
-      font-family: "Raleway", sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      text-align: center;
-      color: $main-color;
-      width: 100%;
-      background-color: $white-color;
-      border: 2px solid $main-color;
-      padding: 20px 0;
-      cursor: pointer;
-      transition: color $duration,
-        border-color $duration,
-        background-color $duration;
+
+  &__events {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+      margin-bottom: 30px;
+
+        @include onTablet {
+          flex-direction: row;
+          gap: 30px;
+        }
+
+        &__image {
+          min-height: 438px;
+          padding-bottom: 20px;
+
+          @include onTablet {
+          max-width: 330px;
+          }
+        }
+
+        &__button {
+          display: block;
+
+          @include onTablet {
+            display: none;
+            width: 270px;
+          }
+        }
+
+       &__content {
+        max-width: 570px;
+        &-data {
+          padding-bottom: 10px;
+          font-family: "Raleway", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          color: $main-color;
+
+        }
+
+        &-title {
+          padding-bottom: 20px;
+          font-family: "Playfair Display", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 25px;
+          color: $black-color;
+
+        }
+
+        &-description {
+          padding-bottom: 30px;
+          font-family: "Raleway", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          color: $gray-color;
+
+        }
+       }
+     }
   }
-}
 
-
-
-.section {
   &__pay {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
     .card {
       display: flex;
       justify-content: center;
@@ -113,6 +209,10 @@
         line-height: 38px;
         color: $white-color;
         padding-bottom: 20px;
+
+        @include onTablet {
+          max-width: 300px;
+        }
       }
 
       &__description {
@@ -122,43 +222,31 @@
         line-height: 24px;
         color: $white-color;
         padding-bottom: 40px;
-      }
 
-      &__button {
-        font-family: "Raleway", sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        text-align: center;
-        color: $white-color;
-        width: 100%;
-        background-color: $main-color;
-        border: none;
-        padding: 20px 0;
-        cursor: pointer;
-        margin-bottom: 40px;
-        transition: color $duration,
-          border-color $duration,
-          background-color $duration;
+        @include onTablet {
+          max-width: 450px;
+        }
       }
     }
   }
-}
 
-.news {
-  &__title {
-    font-family: "Playfair Display", sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 35px;
-    color: $black-color;
-    padding: 60px 20px 20px;
-  }
-  &__section {
+  &__news {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+    
     .card {
       display: flex;
-      justify-content: center;
       flex-direction: column;
-      padding: 60px 20px 20px;
+      flex-basis: 50%;
 
       &__image {
         min-height: 356px;
@@ -176,7 +264,7 @@
       }
 
       &__title {
-        font-family: Playfair Display;
+        font-family: "Playfair Display", sans-serif;
         font-size: 20px;
         font-weight: 700;
         line-height: 25px;
@@ -185,7 +273,7 @@
       }
 
       &__description {
-        font-family: Raleway;
+        font-family: "Raleway", sans-serif;
         font-size: 16px;
         font-weight: 400;
         line-height: 24px;
@@ -194,66 +282,11 @@
       }
 
       &__button {
-        font-family: "Raleway", sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        text-align: center;
-        color: $main-color;
-        width: 100%;
-        background-color: $white-color;
-        border: 2px solid $main-color;
-        padding: 20px 0;
-        cursor: pointer;
-        transition: color $duration,
-          border-color $duration,
-          background-color $duration;
+        @include onTablet {
+          display: none;
+        }
       }
     }
   }
 }
 
-.form {
-  padding: 60px 20px 20px;
-
-  &__title {
-    font-family: "Playfair Display", sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 35px;
-    color: $black-color;
-    padding-bottom: 20px;
-  }
-
-  &__description {
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: $gray-color;
-    padding-bottom: 50px;
-  }
-
-  &__input {
-    margin-bottom: 30px;
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    width: 280px;
-  }
-
-  &__button {
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    color: $main-color;
-    width: 100%;
-    background-color: $white-color;
-    border: 2px solid $main-color;
-    padding: 20px 0;
-    cursor: pointer;
-    transition: color $duration,
-      border-color $duration,
-      background-color $duration;
-  }
-}
