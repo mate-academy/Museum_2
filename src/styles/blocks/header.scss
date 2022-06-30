@@ -1,5 +1,9 @@
 .header {
-  position: relative;
+  min-height: 100vh;
+  // height: max-content;
+  // display: flex;
+  flex-direction: column;
+  // position: relative;
   overflow: hidden;
   width: 100%;
   background-color: $header-color;
@@ -123,12 +127,11 @@
   }
 
   &__image {
-    // position: absolute;
-    // left: 20%;
-    bottom: 0;
     width: 100%;
-    max-width: 280px;
-    max-height: 273px;
+    object-position: bottom;
+    // height: 100%;
+    // max-width: 280px;
+    // max-height: 273px;
     animation: right-appearance 1s ease-in;
 
     @include onTablet {
@@ -140,6 +143,14 @@
       object-fit: cover;
       max-width: 625px;
       max-height: 663px;
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-grow: 1;
+      height: 100%;
     }
   }
 }
