@@ -21,6 +21,10 @@
       font-weight: 700;
       line-height: 35px;
       color: black;
+
+      @include onDesktop {
+        font-size: 48px;
+      }
     }
 
     &-button {
@@ -98,6 +102,9 @@
           line-height: 25px;
           color: $black-color;
 
+          @include onDesktop {
+            font-size: 24px;
+          }
         }
 
         &-description {
@@ -107,6 +114,10 @@
           font-weight: 400;
           line-height: 24px;
           color: $gray-color;
+
+          @include onTablet {
+            max-width: 570px;
+          }
         }
       }
     }
@@ -131,30 +142,30 @@
       flex-basis: 50%;
       margin-bottom: 30px;
 
+      @include onTablet {
+        flex-direction: row;
+        gap: 30px;
+      }
+
+      &__image {
+        min-height: 438px;
+        padding-bottom: 20px;
+
         @include onTablet {
-          flex-direction: row;
-          gap: 30px;
-        }
-
-        &__image {
-          min-height: 438px;
-          padding-bottom: 20px;
-
-          @include onTablet {
           max-width: 330px;
-          }
         }
+      }
 
-        &__button {
-          display: block;
+      &__button {
+        display: block;
 
-          @include onTablet {
-            display: none;
-            width: 270px;
-          }
+        @include onTablet {
+          display: none;
+          width: 270px;
         }
+      }
 
-       &__content {
+      &__content {
         max-width: 570px;
         &-data {
           padding-bottom: 10px;
@@ -174,6 +185,9 @@
           line-height: 25px;
           color: $black-color;
 
+          @include onDesktop {
+            font-size: 24px;
+          }
         }
 
         &-description {
@@ -185,8 +199,8 @@
           color: $gray-color;
 
         }
-       }
-     }
+      }
+    }
   }
 
   &__pay {
@@ -242,7 +256,7 @@
       flex-direction: row;
       gap: 30px;
     }
-    
+
     .card {
       display: flex;
       flex-direction: column;
@@ -289,4 +303,3 @@
     }
   }
 }
-
