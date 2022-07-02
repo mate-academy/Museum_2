@@ -2,9 +2,12 @@
   @include onTablet {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
   }
 
+  @include onDesctop {
+    grid-template-columns: repeat(12, 1fr);
+  }
   &--actions {
     @include onTablet {
       display: block;
@@ -19,6 +22,18 @@
       flex-direction: column;
       justify-content: space-between;
     }
+
+    &--1-6 {
+      @include onDesctop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--7-12 {
+      @include onDesctop {
+        grid-column: 7 / 13;
+      }
+    }
   }
 
   &__item--actions {
@@ -26,6 +41,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+    }
+
+    @include onDesctop {
+      grid-template-columns: repeat(12, 1fr);
     }
   }
 
@@ -35,6 +54,18 @@
     margin-bottom: 20px;
 
     object-fit: cover;
+
+    &--actions {
+      @include onDesctop {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  &__flex-wrap--actions {
+    @include onDesctop {
+      grid-column: 5 / 11;
+    }
   }
 
   &__date {
