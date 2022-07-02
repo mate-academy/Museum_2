@@ -1,0 +1,64 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+
+  &--primary {
+    border: none;
+    background-color: $color-orange-main;
+
+    @extend %button;
+    text-decoration: none;
+    color: $color-white;
+    transition: 300ms;
+
+    &:hover {
+      background-color: $color-orange-hover;
+    }
+
+    &:active {
+      background-color: $color-orange-active;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-white;
+    border: 1px solid $color-orange-main;
+
+    @extend %button;
+    text-decoration: none;
+    color: $color-orange-main;
+    transition: 300ms;
+
+    &::after {
+      margin-left: 8px;
+      content: "";
+      display: block;
+      height: 20px;
+      width: 20px;
+      background-image: url(../images/icons/arrow_orange_main.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:hover::after {
+      background-image: url(../images/icons/arrow_orange_hover.svg);
+    }
+
+    &:active::after {
+      background-image: url(../images/icons/arrow_orange_active.svg);
+    }
+
+    &:hover {
+      color: $color-orange-hover;
+      border-color: $color-orange-hover;
+    }
+
+    &:active {
+      color: $color-orange-active;
+      border-color: $color-orange-active;
+    }
+  }
+}

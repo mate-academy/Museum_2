@@ -1,0 +1,71 @@
+.exhibition {
+  margin-bottom: 60px;
+
+  @include onTablet {
+    height: 736px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  &:last-of-type {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-container {
+    margin-bottom: 20px;
+    position: relative;
+    height: 356px;
+    width: 100%;
+    overflow: hidden;
+
+    transition: 300ms;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      height: 420px;
+    }
+
+    &:hover {
+      transform: scale(102%);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    color: $color-orange-main;
+    @extend %main;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @extend %h4;
+    color: $color-black;
+
+    flex-grow: 1;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    @extend %main;
+    color: $color-gray;
+
+    @include onTablet {
+      margin-bottom: 40px;
+      justify-self: end;
+    }
+  }
+}

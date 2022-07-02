@@ -1,0 +1,110 @@
+.side-menu {
+  height: 100vh;
+  background-color: $color-background;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(100%);
+
+  transition: 500ms;
+
+  @include onTablet {
+    background-image: url(../images/side_menu.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 422px;
+  }
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &_wrapper {
+    padding-top: 10px;
+
+    @include onTablet {
+      padding-top: 30px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    @extend %additional;
+    color: $color-white;
+  }
+
+  &__link {
+    @extend %main;
+    color: $color-white;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: 300ms;
+
+    &:hover {
+      color: $color-orange-active;
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $color-white;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__nav-item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    @extend %h3;
+    color: $color-white;
+
+    transition: 300ms;
+
+    &:hover {
+      color: $color-orange-active;
+    }
+  }
+}
