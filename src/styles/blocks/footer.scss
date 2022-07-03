@@ -1,0 +1,100 @@
+.footer {
+  @include paddings;
+  height: 100vh;
+  background-color: $header-color;
+  display: flex;
+  flex-direction: column;
+  max-width: 2000px;
+
+  @include onTablet {
+    height: 388px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 50px 100px 0 0;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__content {
+    // margin-bottom: 30px;
+    line-height: 24px;
+    font-family: Raleway, sans-serif;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    color: $main-acc;
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+    @include hover16;
+  }
+
+  &__contacts {
+    &__social {
+      display: flex;
+      gap: 25px;
+      margin-top: 30px;
+
+      &__link {
+        transition: 0.2s;
+
+        &:hover {
+          transform: scale(120%);
+          filter: invert(38%) sepia(34%) saturate(2773%)
+            hue-rotate(342deg) brightness(86%) contrast(85%);
+        }
+      }
+    }
+  }
+
+  &__nav {
+    &__items {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  &__lower {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      gap: 102px;
+    }
+
+    &__content {
+      font-size: 14px;
+      font-weight: 400;
+      font-family: Raleway, sans-serif;
+      line-height: 20px;
+    }
+  }
+}

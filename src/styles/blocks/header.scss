@@ -2,7 +2,7 @@
   min-height: 100vh;
   // height: max-content;
   // display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   // position: relative;
   overflow: hidden;
   width: 100%;
@@ -100,6 +100,7 @@
 
     &-lower {
       display: none;
+      margin-bottom: 50px;
 
       @include onDesktop {
         display: flex;
@@ -128,7 +129,7 @@
 
   &__image {
     width: 100%;
-    object-position: bottom;
+    // object-position: bottom;
     // height: 100%;
     // max-width: 280px;
     // max-height: 273px;
@@ -137,6 +138,8 @@
     @include onTablet {
       max-width: 443px;
       max-height: 494px;
+      position: absolute;
+      bottom: 0;
     }
 
     @include onDesktop {
@@ -146,11 +149,16 @@
     }
 
     &-container {
+      // position: relative;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       flex-grow: 1;
       height: 100%;
+
+      @include onDesktop {
+        position: relative;
+      }
     }
   }
 }
