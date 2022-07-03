@@ -9,8 +9,6 @@
   line-height: 16px;
   color: $c-white;
 
-  background-color: $c-main;
-
   &--tablet-half {
     @include onTablet {
       width: 50%;
@@ -23,6 +21,12 @@
     }
   }
 
+  &--primary {
+    background-color: $c-main;
+
+    @include hover(background-color, $c-hover);
+  }
+
   &--secondary {
     display: flex;
     align-content: center;
@@ -33,6 +37,13 @@
     background-color: $c-white;
 
     color: $c-main;
+
+    transition: border-color 0.3s, color 0.3s;
+
+    &:hover {
+      border-color: $c-hover;
+      color: $c-hover;
+    }
   }
 
   &__icon-arrow {
