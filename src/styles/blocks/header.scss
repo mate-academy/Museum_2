@@ -1,0 +1,145 @@
+.header {
+  background-image: url(../images/img01.png);
+  background-size: 245px 273px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  @include onTablet {
+    // background-size: contain;
+    background-size: 443px 494px;
+  }
+  @include onLaptop {
+    background-size: 625px 663px;
+    background-position: bottom right;
+  }
+  @include onDecktop {
+    background-size: calc(max(30%, 755px));
+    background-position: bottom right;
+  }
+  &__container {
+    position: relative;
+    max-height: 747px;
+    padding-bottom: 313px;
+    @include onTablet {
+      max-height: 1092px;
+      padding-bottom: 564px;
+    }
+    @include onLaptop {
+      max-height: 800px;
+      padding-bottom: 50px;
+      height: 800px;
+    }
+  }
+  &__nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    @include onTablet {
+      margin-bottom: 99px;
+    }
+    @include onLaptop {
+      margin-bottom: 90px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo {
+    width: 124px;
+    height: 37px;
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    -webkit-mask-image: url(../images/icon/logo.svg);
+    mask-image: url(../images/icon/logo.svg);
+    &:hover {
+      background-color: $hover;
+    }
+  }
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include onTablet {
+      width: 105px;
+    }
+  }
+  &__select {
+    display: none;
+    @include onTablet {
+      display: inline-block;
+    }
+  }
+  &__anonse {
+    margin-bottom: 10px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $white;
+  }
+  &__title {
+    font-size: 48px;
+    line-height: 100%;
+    color: $white;
+    @include onTablet {
+      font-size: 72px;
+      line-height: 100%;
+    }
+    @include onDecktop {
+      font-size: 96px;
+      line-height: 100%;
+    }
+  }
+  &__discription {
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onLaptop {
+      margin-bottom: 81px;
+    }
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white;
+  }
+  &__button {
+    margin-top: auto;
+  }
+  &__date {
+    display: none;
+    position: absolute;
+    left: 55px;
+    bottom: 50px;
+    width: 300px;
+    text-align: left;
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: $white;
+    opacity: 0.7;
+    & span {
+      display: inline-block;
+      vertical-align: middle;
+      // width: 133px;
+    }
+    &:before {
+      content: "";
+      display: inline-block;
+      vertical-align: bottom;
+      width: 80%;
+      height: 1px;
+      background-color: $white;
+      position: relative;
+      margin-right: 50%;
+      left: 100px;
+      bottom: -13px;
+    }
+    @include onLaptop {
+      display: inline-block;
+    }
+  }
+}

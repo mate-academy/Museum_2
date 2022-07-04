@@ -1,0 +1,75 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 60px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: $white;
+  border: 1px solid transparent;
+  background-color: $main;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: $hover;
+  }
+  &:active,
+  &:focus {
+    background-color: $active;
+  }
+  &:disabled {
+    background-color: $disabled;
+  }
+  // &--last {
+  //   margin-bottom: 32px;
+  //   @include onTablet {
+  //     margin-bottom: 0;
+  //   }
+  &__icon {
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    background-color: $main;
+    background-size: cover;
+    background-position: center;
+    -webkit-mask-image: url(../images/icon/arrow.svg);
+    mask-image: url(../images/icon/arrow.svg);
+  }
+  &--secondary {
+    background-color: $white;
+    color: $main;
+    border-color: $main;
+    &:hover {
+      color: $hover;
+      background-color: $white;
+      border: 1px solid $hover;
+    }
+    &:active,
+    &:focus {
+      color: $active;
+      background-color: $white;
+      border: 1px solid $active;
+    }
+    &:disabled {
+      color: $disabled;
+      background-color: $white;
+      border: 1px solid $disabled;
+    }
+    &:hover .button__icon {
+      margin-left: 16px;
+      background-color: $hover;
+    }
+    &:active .button__icon,
+    &:focus .button__icon {
+      margin-left: 16px;
+      background-color: $active;
+    }
+    &:disabled .button__icon {
+      background-color: $disabled;
+    }
+  }
+
+}

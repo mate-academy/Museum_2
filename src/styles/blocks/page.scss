@@ -1,0 +1,54 @@
+.page {
+  scroll-behavior: smooth;
+  &__body {
+    font-family: "Raleway", sans-serif;
+    background-color: $white;
+    color: $grey;
+    @extend %text;
+  }
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
+
+    &:target {
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 90px;
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+    @include onLaptop {
+      margin-bottom: 110px;
+    }
+    &-title {
+      margin-bottom: 60px;
+      font-size: 28px;
+      line-height: 125%;
+      display: flex;
+      align-items: center;
+      color: $black;
+      @include onTablet {
+        margin-bottom: 70px;
+        font-size: 40px;
+        line-height: 125%;
+      }
+      @include onLaptop {
+        margin-bottom: 56px;
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+    &--black {
+      background-color: $background;
+    }
+  }
+}
