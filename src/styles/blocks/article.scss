@@ -27,8 +27,13 @@
       margin-bottom: 30px;
     }
 
+    @include onDesktop {
+      height: 370px;
+    }
+
     &:hover {
       transform: scale(102%);
+      box-shadow: 0 20px 35px #555;
     }
   }
 
@@ -39,6 +44,13 @@
 
     object-fit: cover;
     object-position: center;
+
+    &--position-top {
+
+      @include onDesktop {
+        object-position: top;
+      }
+    }
   }
 
   &__date {
@@ -52,6 +64,10 @@
     @include onTablet {
       margin-bottom: 18px;
     }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 
   &__description {
@@ -62,7 +78,9 @@
     @include onTablet {
       margin-bottom: 0;
     }
-  }
 
-  
+    @include onDesktop {
+      margin-bottom: 18px;
+    }
+  }
 }
