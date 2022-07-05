@@ -1,8 +1,11 @@
 # Museum 2 landing page
-Implement landing page according to [Figma design](https://www.figma.com/file/HL3XGt5ZatvJoYBhOaWY5x/museum-prototype?node-id=323%3A1957) - Use BEM and SCSS
+
 
 [DEMOLINK](https://samaev.github.io/Museum_2/)
 
+
+
+Implement landing page according to [Figma design](https://www.figma.com/file/HL3XGt5ZatvJoYBhOaWY5x/museum-prototype?node-id=323%3A1957) - Use BEM and SCSS
 Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
 
 - Large screens 2560px
