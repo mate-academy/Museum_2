@@ -1,0 +1,135 @@
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px 0;
+  height: 100vh;
+  background-color: #3f5252;
+  box-sizing: content-box;
+  overflow: hidden;
+
+  &__wrapper {
+    display: block;
+    box-sizing: content-box;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+
+    @include onTablet {
+      width: 100%;
+      grid-column: 1 / 7;
+    }
+
+  }
+
+  &__menu-opener {
+    height: 25px;
+    width: 25px;
+    background-image: url("../images/menuWhite.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__date {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #f1f5f4;
+
+  }
+
+  &__title {
+    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+  }
+
+  &__description {
+    display: block;
+    margin-top: 30px;
+    font-family: "Raleway", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+  }
+
+  &__number {
+    display: none;
+    margin-top: 135px;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: #f1f5f4;
+    opacity: 0;
+
+    @include onDesktop {
+      display: inline-block;
+      opacity: 0.7;
+    }
+  }
+
+  &__line {
+    display: none;
+    width: 470px;
+    height: 4px;
+    border-top: 1px solid #f1f5f4;
+
+    @include onDesktop {
+      display: inline-block;
+      opacity: 0.3;
+    }
+  }
+
+  &__buyticket {
+    height: 60px;
+    display: block;
+    max-width: 330px;
+  }
+
+  &__image-container {
+    margin: 0 auto;
+    box-sizing: content-box;
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+
+    @include onDesktop {
+      max-width: 700px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    position: relative;
+    bottom: -4px;
+
+    @include onTablet {
+      width: 95%;
+
+    }
+  }
+}

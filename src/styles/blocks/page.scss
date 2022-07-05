@@ -1,0 +1,104 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    scroll-behavior: smooth;
+  }
+
+  &__body--with-menu {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.3s;
+    transform: translateX(-120%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section-title {
+    margin-top: 90px;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: #1c1b29;
+  }
+
+  &__invite {
+    margin-top: 90px;
+    padding: 50px 20px;
+    background-color: #3f5252;
+
+    @include onDesktop {
+      display: flex;
+      padding: 0;
+    }
+
+    &-image {
+      display: none;
+      height: 800px;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__invite-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__invite-title {
+    margin-bottom: 20px;
+    max-width: 450px;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 62px;
+      margin-top: 80px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+      margin-top: 200px;
+      max-width: 660px;
+    }
+  }
+
+  &__invite-text {
+    margin-bottom: 40px;
+    max-width: 450px;
+    font-family: "Raleway", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+
+    @include onDesktop {
+      max-width: 470px;
+    }
+  }
+
+  &__section--news-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
