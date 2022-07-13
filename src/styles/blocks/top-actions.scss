@@ -1,0 +1,86 @@
+.top-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+
+  &__logo {
+    height: 38px;
+    width: 124px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/logo/logo-white.svg);
+
+    @include hover(transform scale(1.2), background-image url(../images/logo/logo-red.svg));
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 24px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__action {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--menu {
+      background-image: url(../images/icons/menu-white.svg);
+
+      @include hover(transform scale(1.2), background-image url(../images/icons/menu-red.svg));
+    }
+
+    &--cross {
+      background-image: url(../images/icons/cross-white.svg);
+
+      @include hover(transform scale(1.2), background-image url(../images/icons/cross-red.svg));
+    }
+  }
+
+  &__language {
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &--header {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 10px;
+      width: 10px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url(../images/icons/dropdown-white.svg);
+      margin-left: 4px;
+    }
+
+    &:hover {
+      color: $c-main;
+      transform: scale(1.2);
+
+      &::after {
+        background-image: url(../images/icons/dropdown-red.svg);
+      }
+    }
+  }
+}

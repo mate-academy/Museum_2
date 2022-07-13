@@ -1,0 +1,104 @@
+.footer {
+  background-color: $c-background;
+  color: $c-white;
+  padding: 32px 0;
+
+  @include onTablet {
+    padding-top: 52px;
+  }
+
+  &__content {
+    margin-bottom: 56px;
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 52px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 52px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__title {
+    @extend %h5;
+    margin-bottom: 12px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__link {
+    &--phone {
+      display: inline-block;
+    }
+
+    &--menu {
+      margin-bottom: 4px;
+
+      @include onTablet {
+        margin-bottom: 12px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__copyrights {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+
+    @include onDesktop {
+      gap: 100px;
+    }
+  }
+
+  &__copyright {
+    @extend %additional-text;
+  }
+
+  &__scroll-up {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/icons/scroll-up-white.svg);
+
+    @include hover(transform scale(1.2), background-image url(../images/icons/scroll-up-red.svg));
+
+  }
+}

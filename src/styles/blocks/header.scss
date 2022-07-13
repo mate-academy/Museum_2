@@ -1,0 +1,89 @@
+.header {
+  background-color: $c-background;
+  height: 748px;
+  padding-top: 20px;
+  color: $c-white;
+  background-image: url(../images/backgrounds/header.png);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 280px auto;
+
+  @include onTablet {
+    height: 1092px;
+    background-size: 450px auto;
+  }
+
+  @include onDesktop {
+    padding-top: 28px;
+    height: 800px;
+    background-size: 625px auto;
+    background-position: calc(50% + 328px) bottom;
+  }
+
+  &__top-actions {
+    margin-bottom: 72px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 116px;
+    }
+  }
+
+  &__date {
+    @extend %additional-text;
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    @extend %h1;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      margin-bottom: 136px;
+    }
+  }
+
+  &__line {
+    @extend %h6;
+    display: none;
+    opacity: 0.7;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 470px;
+      background-color: $c-white;
+      margin: 0 0 4px 16px;
+    }
+  }
+}
