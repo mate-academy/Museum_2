@@ -3,11 +3,9 @@ Implement landing page according to [Figma design](https://www.figma.com/file/HL
 
 Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
 
-- Large screens 2560px
-- Full HD 1920px
-- The design 1600px
-- Notebook 1280px
-- Tablet 1024
+- The design 1440px
+- Desktop 1280px
+- Tablet 640px
 - Mobile (> 320px)
 
 1. Implement the header with menu.
