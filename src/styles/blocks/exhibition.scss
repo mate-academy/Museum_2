@@ -1,0 +1,87 @@
+.exhibition {
+  margin-bottom: 60px;
+
+  @include onTablet {
+    height: 736px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  &:last-of-type {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-container {
+    margin-bottom: 20px;
+    position: relative;
+    height: 356px;
+    width: 100%;
+    overflow: hidden;
+
+    transition: 300ms;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      transform: scale(102%);
+      box-shadow: 0 20px 35px #555;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    color: $color-orange-main;
+    @extend %main;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @extend %h4;
+    color: $color-black;
+
+    flex-grow: 1;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    @extend %main;
+    color: $color-gray;
+
+    @include onTablet {
+      margin-bottom: 40px;
+      justify-self: end;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      width: calc(50% - 15px);
+    }
+  }
+}

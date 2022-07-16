@@ -1,0 +1,86 @@
+.article {
+  margin-bottom: 50px;
+
+  @include onTablet {
+    margin-bottom: 0;
+  }
+
+  &:last-of-type {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-container {
+    margin-bottom: 20px;
+    position: relative;
+    height: 280px;
+    width: 100%;
+    overflow: hidden;
+
+    transition: 300ms;
+
+    @include onTablet {
+      height: 330px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+    }
+
+    &:hover {
+      transform: scale(102%);
+      box-shadow: 0 20px 35px #555;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    &--position-top {
+
+      @include onDesktop {
+        object-position: top;
+      }
+    }
+  }
+
+  &__date {
+    @extend %main;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @extend %h4;
+
+    @include onTablet {
+      margin-bottom: 18px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    @extend %main;
+    color: $color-gray;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 18px;
+    }
+  }
+}

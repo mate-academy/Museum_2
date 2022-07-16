@@ -1,0 +1,60 @@
+.top-actions {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onTablet {
+    height: 77px;
+  }
+
+  @include onDesktop {
+    height: 90px;
+  }
+
+  &__buttons-wrapper {
+    display: flex;
+  }
+
+  &__lang-select {
+
+    &--header {
+      display: none;
+
+      @include onTablet {
+        order: 1;
+        display: block;
+        margin-left: 40px;
+        margin-right: 0;
+      }
+    }
+
+    margin-right: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-white;
+    transition: 300ms;
+
+    @include onTablet {
+      order: 1;
+      margin-left: 40px;
+      margin-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-orange-active;
+      outline: none;
+    }
+  }
+
+  &__lang-option {
+    color: $color-orange-active;
+  }
+}

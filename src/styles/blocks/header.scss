@@ -1,0 +1,86 @@
+.header {
+  height: 100vh;
+  background: $color-background;
+
+  background-image: url(../images/header.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 245px;
+
+  @include onTablet {
+    background-size: 443px;
+  }
+
+  @include onDesktop {
+    background-position: bottom right;
+    background-size: 625px;
+  }
+
+  &__wrapper {
+    padding-top: 50px;
+    height: calc(100vh - 230px);
+    position: relative;
+
+    @include onTablet {
+      padding-top: 100px;
+    }
+
+    @include onDesktop {
+      padding: 90px 0 50px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    @extend %additional;
+    color: $color-white;
+
+    &--desktop {
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+
+      display: none;
+
+      @include onDesktop {
+        display: inline;
+        position: absolute;
+        bottom: 50px;
+        grid-column: 1/2;
+        margin-bottom: auto;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    color: $color-white;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    @extend %main;
+    color: $color-white;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      content: "";
+      display: block;
+      background-color: $color-white;
+      width: 35%;
+      height: 1px;
+      position: absolute;
+      bottom: 56px;
+      left: 156px;
+    }
+  }
+}
