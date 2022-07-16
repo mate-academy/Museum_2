@@ -1,0 +1,65 @@
+.button {
+  font-family: "Raleway", sans-serif;
+  height: 60px;
+  width: 100%;
+
+  @include onTablet {
+    max-width: 330px;
+  }
+
+  &__full {
+    background-color: $firstColor;
+    color: #f1f5f4;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    // grid-column: 1 / 3;
+    @include hover ($_property: background, $_toValue: #af3419);
+
+    // &:hover {
+    //   background: #af3419;
+    // }
+
+    &:active {
+      background: #ea340d;
+    }
+
+    &:disabled {
+      background: #dd836f;
+    }
+
+    // @include onTablet {
+    //   grid-column: 1 / 4;
+    // }
+
+    // @include onDesktop {
+    //   grid-column: 1 / 7;
+    // }
+  }
+
+  &__empty {
+    border: 1px solid $firstColor;
+    color: $firstColor;
+
+    background-color: $textColorMain;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border: 1px solid #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border: 1px solid #dd836f;
+      color: #dd836f;
+    }
+  }
+}

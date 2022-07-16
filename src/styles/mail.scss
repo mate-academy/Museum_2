@@ -1,0 +1,83 @@
+.mail {
+
+  &__title {
+    grid-column: 1 / 3;
+    margin-bottom: 20px;
+    color: #1c1b29;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__content {
+    margin-bottom: 30px;
+    grid-column: 1 / 3;
+    font-size: 16px;
+    line-height: 150%;
+    color: #504f5e;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    grid-column: 1 / 3;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    outline: none;
+    background-color: $textColorMain;
+    margin-bottom: 30px;
+    border-color: #1c1b29;
+    border-width: 1px;
+    @include hover ($_property: border-color, $_toValue: $firstColor);
+
+    &::placeholder {
+      color: black;
+      transition: color 1s;
+
+    }
+
+    &:hover::placeholder {
+      color: $firstColor;
+    }
+
+    &:focus::placeholder {
+      color: #f1f5f4;
+    }
+
+    &:focus {
+      border-right: none;
+      border-left: none;
+      border-top: none;
+      border-color: #cd4d31;
+      outline: none;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__full {
+    margin-bottom: 80px;
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+  }
+
+  &__lable {
+    grid-column: 1 / 3;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+}

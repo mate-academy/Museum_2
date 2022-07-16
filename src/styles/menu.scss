@@ -1,0 +1,145 @@
+.menu {
+  // max-width: 1280px;
+  // height: 100vh;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+
+  @include onTablet {
+    position: fixed;
+
+  }
+
+  @include onDesktop {
+    position: fixed;
+  }
+
+  &__nav {
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__parts {
+    height: 100vh;
+    padding: 20px;
+    background-color: $BGC;
+
+    @include onTablet {
+      padding: 40px;
+    }
+
+    @include onDesktop {
+      padding: 55px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    margin-top: 40px;
+    list-style: none;
+
+    &:after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: $textColorMain;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 20px;
+
+    font-family: "Playfair Display", sans-serif;
+    color: $textColorMain;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include onTablet {
+      padding-bottom: 30px;
+      font-size: 48px;
+
+    }
+
+    @include onDesktop {
+      padding-bottom: 60px;
+      font-size: 48px;
+    }
+
+    &:hover {
+      text-shadow: 0 0 10px black;
+    }
+  }
+
+  &__title {
+    color: $textColorMain;
+  }
+
+  &__content {
+    color: $textColorMain;
+  }
+
+  &__full {
+    margin-top: 40px;
+  }
+
+  &__img-place {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin: 0 auto;
+    }
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__img {
+    background-color: #3f5252;
+
+    @include onTablet {
+      margin: 0 auto;
+      width: 422px;
+      height: 466px;
+    }
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 624px;
+      height: 697px;
+    }
+  }
+
+  &__map {
+    text-decoration: none;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      font-size: 16px;
+    }
+
+    &:hover {
+      text-shadow: 0 0 10px black;
+    }
+  }
+}
