@@ -50,37 +50,35 @@
     }
   }
 
-  &__language {
-    font-weight: 500;
+  &__languages {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    background-color: $c-background;
+    color: $c-white;
     cursor: pointer;
-    transition: all 0.3s;
+    padding: 4px 16px 4px 4px;
+    background-image: url(../images/icons/dropdown-white.svg);
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    background-position: right center;
 
-    &--header {
+    @extend %main-text;
+
+    &::-ms-expand {
       display: none;
-
-      @include onTablet {
-        display: block;
-      }
-    }
-
-    &::after {
-      content: "";
-      display: inline-block;
-      height: 10px;
-      width: 10px;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-image: url(../images/icons/dropdown-white.svg);
-      margin-left: 4px;
     }
 
     &:hover {
       color: $c-main;
-      transform: scale(1.2);
+      background-image: url(../images/icons/dropdown-red.svg);
+    }
 
-      &::after {
-        background-image: url(../images/icons/dropdown-red.svg);
-      }
+    &:focus {
+      color: $c-main;
+      background-image: url(../images/icons/dropdown-red.svg);
     }
   }
 }

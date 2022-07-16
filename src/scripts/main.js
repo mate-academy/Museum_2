@@ -2,8 +2,9 @@
 
 const body = document.querySelector('.page__body');
 const form = document.querySelector('.subscribe__form');
-const email = document.querySelector('#email');
 const menu = document.querySelector('.menu__overflow');
+const headerLenguage = document.querySelector('#header-lenguage');
+const menuLenguage = document.querySelector('#menu-lenguage');
 
 function scrollChange() {
   if (window.location.hash === '#menu') {
@@ -16,9 +17,17 @@ function scrollChange() {
   }
 }
 
-form.addEventListener('submit', () => {
-  window.location.hash = '';
-  email.value = '';
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.reset();
+});
+
+headerLenguage.addEventListener('change', () => {
+  menuLenguage.selectedIndex = headerLenguage.selectedIndex;
+});
+
+menuLenguage.addEventListener('change', () => {
+  headerLenguage.selectedIndex = menuLenguage.selectedIndex;
 });
 
 window.onhashchange = scrollChange;
