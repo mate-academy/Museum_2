@@ -1,0 +1,81 @@
+.button {
+  width: 280px;
+  height: 60px;
+
+  @include on768 {
+    width: 330px;
+  }
+
+  @include on1280 {
+    width: 270px;
+  }
+
+  &--primary {
+    background-color: $main-color;
+    outline: none;
+    border: none;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background: #ea340d;
+    }
+
+    &:disabled {
+      background: #dd836f;
+    }
+  
+    &-text {
+      @include buttonText;
+      color: $white-color;
+      text-decoration: none;
+    }
+  }
+  &--secondary {
+    outline: none;
+    border: 1px solid $main-color;
+  
+    @include on768 {
+      width: 210px;
+    }
+    
+    &:hover {
+      border: 1px solid #af3419;
+    }
+
+    &:active {
+      border: 1px solid #ea340d;
+    }
+  
+    &:disabled {
+      border: 1px solid #dd836f;
+    }
+
+    &-text {
+      @include buttonText;
+      color: $main-color;
+      text-decoration: none;
+      padding-right: 30px;
+      background-image: url(../images/arrowdefault.svg);
+      background-repeat: no-repeat;
+      background-position: right 25%;
+
+      &:hover {
+        color: #af3419;
+        background-image: url(../images/arrowhover.svg);
+      }
+
+      &:active {
+        color: #ea340d;
+        background-image: url(../images/arrowactive.svg);
+      }
+    
+      &:disabled {
+        color: #dd836f;
+        background-image: url(../images/arrowdiasbled.svg);
+      }
+    }
+  }
+}

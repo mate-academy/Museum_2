@@ -1,0 +1,78 @@
+.visit {
+  background-color: $background-color;
+  display: flex;
+  align-items: center;
+  
+  &__photo {
+    display: none;
+    @include on1280 {
+      display: block;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: flex-start;
+    align-content: center;
+    padding: 0 20px;
+  
+    @include on768 {
+      padding: 0 39px;
+    }
+  
+    @include on1280 {
+      padding: 0;
+    }
+  
+    &--title {
+      @include h2;
+      padding-top: 50px;
+      flex-basis: 100%;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    
+      @include on768 {
+        padding-top: 80px;
+      }
+    }
+  
+    &--text {
+      @include mainText;
+      color: $white-color;
+      padding-top: 20px;
+      flex-basis: 100%;
+      max-width: 280px;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    
+      @include on768 {
+        max-width: 450px;
+      }
+    
+      @include on1280 {
+        padding-top: 10px;
+      }
+    }
+  
+    &--button {
+      margin-top: 40px;
+      margin-bottom: 50px;
+    
+      @include on768 {
+        margin-top: 60px;
+        margin-bottom: 80px;
+      }
+    
+      @include on1280 {
+        margin-top: 50px;
+      }
+    
+    }
+  }
+}

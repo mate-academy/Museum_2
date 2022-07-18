@@ -1,0 +1,92 @@
+.news {
+  background-color: $white-color;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 90px 20px 0;
+
+  @include on768 {
+    padding: 125px 39px 0;
+  }
+
+  @include on1280 {
+    padding: 110px 55px 0;
+  }
+
+  &__title {
+    @include h2; 
+    color: $black-color;
+
+    &:hover {
+      color: $main-color;
+    }
+  
+    @include on1280 {
+      flex-basis: 50%;
+    }
+  }
+
+  &__button {
+    order: 1;
+    margin-top: 30px;
+    
+    @include on768 {
+      order: unset;
+      margin-top: unset;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 280px;
+    padding-top: 50px;
+  
+    @include on768 {
+      width: 330px;
+      padding-top: 75px;
+    }
+  
+    @include on1280 {
+      width: 570px;
+      padding-top: 55px;
+  
+    }
+
+    &--photo {
+      &:hover {
+        border-radius: 15%;
+      }
+    }
+  
+    &--date {
+      @include additionalText;
+      color: $black-color;
+      padding-top: 20px;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  
+    &--title {
+      @include h4;
+      color: $black-color;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  
+    &--text {
+      padding-top: 20px;
+      @include mainText;
+      color: $gray-color;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}

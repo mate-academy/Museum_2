@@ -1,0 +1,103 @@
+.subscribe {
+
+  background-color: $white-color;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 120px 20px 0;
+
+  @include on768 {
+    padding: 160px 39px 0;
+  }
+
+  @include on1280 {
+    padding: 200px 55px 0;
+  }
+
+  &__title {
+    @include h3;
+    flex-basis: 100%;
+
+    &:hover {
+      color: $main-color;
+    }
+  
+    @include on1280 {
+      flex-basis: 50%;
+    }
+  }
+
+  &__text {
+    @include mainText;
+    padding-top: 20px;
+    max-width: 280px;
+    flex-basis: 100%;
+
+    &:hover {
+      color: $main-color;
+    }
+  
+    @include on768 {
+      max-width: 570px;
+    }
+  
+    @include on1280 {
+      flex-basis: 50%;
+    }
+  }
+
+  &__form {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    
+    &--input {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $black-color;
+      @include mainText;
+      color: $black-color;
+      background: transparent;
+    
+    
+      &::placeholder {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: $black-color;
+      }
+    
+      &:hover,
+      &:focus {
+        color: $main-color;
+        border-bottom: 1px solid $main-color;
+    
+        &::placeholder {
+          color: $main-color;
+        }
+      }
+    
+      @include on768 {
+        width: 450px;
+      }
+    
+      @include on768 {
+        width: 470px;
+      }
+    }
+
+    &--button {
+      margin-top: 30px;
+      margin-bottom: 80px;
+    
+      @include on768 {
+        margin-bottom: 128px;
+      }
+    
+      @include on1280 {
+        margin-top: 40px;
+        margin-bottom: 200px;
+      }
+    }
+  }
+}
