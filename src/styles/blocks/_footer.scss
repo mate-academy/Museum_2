@@ -1,0 +1,94 @@
+.footer {
+  padding: 30px 0;
+  background-color: $c-background-dark;
+
+  &__title {
+    margin-bottom: 10px;
+
+    @extend %playfair-bold;
+
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &__link {
+    line-height: 24px;
+
+    color: $c-white;
+    text-decoration: none;
+
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-bottom, 1px solid $c-white);
+
+    &--privacy {
+      line-height: 20px;
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    padding: 20px 0 40px;
+  }
+
+  &__social-item:first-child {
+    margin-left: -10px;
+  }
+
+  &__social-link {
+    display: block;
+    padding: 10px;
+  }
+
+  &__social-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    @include hover(transform, translateY(-5px));
+  }
+
+  &__work-days-list {
+    margin-bottom: 50px;
+  }
+
+  &__work-day-item {
+    line-height: 24px;
+  }
+
+  &__menu {
+    margin-bottom: 60px;
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__grid {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__col--tablet-1-2 {
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__col--tablet-3-4 {
+    @include onTablet {
+      grid-column: 3 / 5;
+    }
+  }
+
+  &__col--tablet-5-6 {
+    @include onTablet {
+      grid-column: 5 / 7;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.btn {
+  display: block;
+  width: 100%;
+  padding: 22px 0;
+
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 16px;
+  color: $c-white;
+
+  &--tablet-half {
+    @include onTablet {
+      width: 50%;
+    }
+  }
+
+  &--desctop-half {
+    @include onDesctop {
+      width: 50%;
+    }
+  }
+
+  &--primary {
+    background-color: $c-main;
+
+    @include hover(background-color, $c-hover);
+  }
+
+  &--secondary {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    margin-top: 30px;
+    border: 1px solid $c-main;
+    background-color: $c-white;
+
+    color: $c-main;
+
+    transition: border-color 0.3s, color 0.3s;
+
+    &:hover {
+      border-color: $c-hover;
+      color: $c-hover;
+    }
+  }
+
+  &__icon-arrow {
+    display: inline-block;
+
+    width: 16px;
+    height: 14px;
+    margin-left: 10px;
+
+    background-image: url(../images/arrow.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 30%;
+      margin: 0;
+
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+  &--tablet-hidden {
+    @include onTablet {
+      display: none;
+    }
+  }
+}

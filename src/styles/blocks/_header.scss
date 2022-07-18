@@ -1,0 +1,130 @@
+.header {
+  position: relative;
+  background-color: $c-background-dark;
+
+  &__content {
+    position: relative;
+
+    padding: 40px 0;
+
+    @include onTablet {
+      padding: 100px 0 70px;
+    }
+
+    @include onDesctop {
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__title {
+    max-width: 280px;
+    margin-bottom: 30px;
+
+    @extend %playfair-bold;
+
+    font-size: 48px;
+    line-height: 48px;
+
+    @include onTablet {
+      max-width: 570px;
+
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include onDesctop {
+      max-width: 100%;
+
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__title-description {
+    max-width: 270px;
+    margin-bottom: 40px;
+
+    line-height: 24px;
+
+    @include onTablet {
+      max-width: 330px;
+    }
+
+    @include onDesctop {
+      max-width: 100%;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+
+    display: block;
+    max-width: 460px;
+    margin: 0 auto;
+    transform: translateX(50%);
+
+    @include onDesctop {
+      right: 20px;
+      transform: none;
+      margin-right: -20px;
+    }
+  }
+
+  &__bottom-date {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+
+    width: 100%;
+    display: none;
+
+    @extend %playfair-bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    opacity: 0.7;
+
+    @include onDesctop {
+      display: block;
+    }
+  }
+
+  &__bottom-line {
+    display: inline-block;
+    width: 470px;
+    height: 1px;
+    margin-left: 20px;
+    margin-bottom: 4px;
+
+    background-color: $c-white;
+    opacity: 0.3;
+  }
+
+  &__content-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 71px);
+    min-height: 630px;
+
+    @include onTablet {
+      min-height: 1020px;
+    }
+
+    @include onDesctop {
+      min-height: 650px;
+      flex-direction: row;
+    }
+  }
+}

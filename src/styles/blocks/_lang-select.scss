@@ -1,0 +1,64 @@
+.lang-select {
+  position: relative;
+
+  cursor: pointer;
+
+  &--sm-hidden {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__value {
+    display: none;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .lang-select__value {
+      display: block;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 999;
+    left: 0;
+    top: 24px;
+
+    height: 0;
+
+    overflow: hidden;
+
+    transition: height 0.3s;
+  }
+
+  &__option {
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 8px;
+    height: 5px;
+    background-image: url(../images/arrow-down.svg);
+
+    transition: transform 0.3s;
+  }
+
+  &__current:focus + &__list {
+    height: 100px;
+  }
+
+  &__current:focus &__icon {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}

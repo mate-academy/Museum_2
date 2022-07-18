@@ -1,0 +1,111 @@
+.cards {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  @include onDesctop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  &--actions {
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__item {
+    padding: 30px 0;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &--1-6 {
+      @include onDesctop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--7-12 {
+      @include onDesctop {
+        grid-column: 7 / 13;
+      }
+    }
+  }
+
+  &__item--actions {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @include onDesctop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 430px;
+    margin-bottom: 20px;
+
+    object-fit: cover;
+
+    &--actions {
+      @include hover(transform, scale(1.1));
+
+      @include onDesctop {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  &__flex-wrap--actions {
+    @include onDesctop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+
+    line-height: 24px;
+    color: $c-main;
+
+    &--news {
+      font-size: 14px;
+      line-height: 20px;
+      color: $c-black;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @extend %playfair-bold;
+    font-size: 20px;
+    line-height: 25px;
+    color: $c-black;
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    line-height: 24px;
+    color: $c-grey;
+
+    &--news {
+      margin-bottom: 0;
+    }
+  }
+}

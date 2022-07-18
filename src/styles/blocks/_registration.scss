@@ -1,0 +1,87 @@
+.registration {
+  position: relative;
+  padding: 50px 0;
+
+  background-color: $c-background-dark;
+
+  @include onTablet {
+    padding: 80px 0;
+  }
+
+  @include onDesctop {
+    padding: 205px 0;
+  }
+
+  &__grid {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include onDesctop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @extend %playfair-bold;
+    font-size: 38px;
+    line-height: 38px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+
+      font-size: 62px;
+      line-height: 62px;
+    }
+
+    @include onDesctop {
+      grid-column: 6 / 12;
+      margin-bottom: 10px;
+
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    line-height: 24px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 60px;
+    }
+
+    @include onDesctop {
+      grid-column: 6 / 11;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__btn {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesctop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    display: none;
+    width: 555px;
+
+    @include onDesctop {
+      display: block;
+    }
+  }
+}
