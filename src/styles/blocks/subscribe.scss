@@ -1,0 +1,89 @@
+.subscribe {
+  &__title {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    @include main-text;
+    margin-bottom: 50px;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 3px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $c-black;
+
+    &::placeholder {
+      color: $c-black;
+      font-family: "Raleway", serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 60px;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    border: none;
+
+    width: 100%;
+    height: 60px;
+
+    background-color: $c-main;
+
+    @include button-text;
+    color: $c-white;
+    text-decoration: none;
+
+    transition: background-color $transition-time;
+
+    &:hover {
+      background-color: $c-dark-orange;
+    }
+
+    outline: none;
+
+    @include onTablet {
+      width: 75%;
+    }
+
+    @include onDesktop {
+      width: 60%;
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus {
+    -webkit-text-fill-color: $c-black;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}

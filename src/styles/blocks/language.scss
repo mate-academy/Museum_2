@@ -1,0 +1,104 @@
+.language {
+  position: relative;
+  display: block;
+
+  width: 48px;
+
+  font-family: "Raleway", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: $c-white;
+
+  transition: color $transition-time;
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: 8px;
+    opacity: 1;
+    transition: filter $transition-time, transform $transition-time;
+
+    filter: brightness(5);
+  }
+
+  &__list {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    opacity: 0;
+
+    animation-name: HideList;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: step-start;
+  }
+
+  &__option {
+    display: block;
+    padding: 4px;
+
+    transition: color $transition-time;
+
+    &:hover,
+    &:focus {
+      color: $c-main;
+    }
+  }
+
+  &__input-text {
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 4px;
+  }
+
+  &__current {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+
+    transition: color $transition-time;
+
+    &:focus {
+      & + .language__list {
+        opacity: 1;
+
+        animation-name: none;
+
+        .language__option {
+          cursor: pointer;
+        }
+      }
+
+      .language__icon {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+
+  &:hover &__current {
+    color: $c-main;
+  }
+
+  &:hover &__icon {
+    filter: brightness(1);
+  }
+
+  &__value {
+    display: flex;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .language__input-text {
+      display: block;
+    }
+  }
+}

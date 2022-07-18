@@ -1,0 +1,274 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $c-background;
+
+  min-height: 100vh;
+  height: max-content;
+
+  padding-top: 20px;
+
+  @include onTablet {
+    padding-top: 26px;
+  }
+
+  @include onDesktop {
+    padding-top: 32px;
+  }
+
+  &__top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 20px;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      padding: 0 42px;
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      padding: 0 60px;
+      margin-bottom: 90px;
+    }
+
+    z-index: 2;
+
+    max-width: 1440px;
+    width: 100%;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__language {
+    margin-right: 30px;
+    opacity: 0;
+
+    @include onTablet {
+      opacity: 1;
+      pointer-events: all;
+      margin: 0;
+    }
+
+    transition: opacity 1s;
+
+    pointer-events: none;
+
+    z-index: 4;
+
+    &.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__burger {
+    @include onTablet {
+      margin-right: 45px;
+    }
+
+    &-line {
+      background-color: $c-white;
+      width: 25px;
+      height: 2px;
+
+      transition: transform $transition-time,
+        opacity $transition-time,
+        background-color $transition-time;
+
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+
+    &:hover &-line {
+      background-color: $c-main;
+    }
+
+    &.active &-line:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    &.active &-line:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    &.active &-line:nth-child(2) {
+      opacity: 0;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto 40px;
+
+    @include onTablet {
+      margin: 0 0 30px;
+      width: 330px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      width: 100%;
+    }
+
+    width: 100%;
+    min-height: 60px;
+    max-height: 60px;
+    background-color: $c-main;
+
+    @include button-text;
+    color: $c-white;
+    text-decoration: none;
+
+    transition: background-color $transition-time;
+
+    &:hover {
+      background-color: $c-dark-orange;
+    }
+  }
+
+  &__time {
+    margin-bottom: 10px;
+
+    @include additional-text;
+    color: $c-white;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    color: $c-white;
+
+    animation: slideFromLeft 0.7s linear 1;
+  }
+
+  &__info {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include main-text;
+    color: $c-white;
+  }
+
+  &__picture {
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      flex-grow: 1;
+
+      height: 100%;
+
+      @include onDesktop {
+        grid-row: 1 / 12;
+      }
+    }
+
+    width: 90%;
+
+    @media (min-width: 500px) {
+      width: 65%;
+    }
+
+    @include onTablet {
+      width: 65%;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+
+    animation: slideFromRight 0.7s linear 1;
+  }
+
+  &__space {
+    display: none;
+    height: 30vh;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      position: relative;
+
+      grid-row: 11;
+
+      display: flex;
+      align-items: flex-end;
+
+      margin-bottom: 50px;
+
+      flex-grow: 1;
+
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      color: $c-white;
+
+      &::after {
+        position: absolute;
+        bottom: 6px;
+        left: 100px;
+        right: 30px;
+
+        content: "";
+
+        height: 1px;
+        background-color: $c-white;
+      }
+    }
+  }
+
+  &__grid {
+    min-height: 100%;
+  }
+
+  &__container {
+    display: flex;
+    min-height: calc(100vh - 120px);
+  }
+
+  &__logo {
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

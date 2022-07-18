@@ -1,0 +1,65 @@
+.plan {
+  position: relative;
+  padding: 50px 0;
+  background-color: $c-background;
+
+  &__title {
+    margin-bottom: 20px;
+    align-self: flex-start;
+
+    color: $c-white;
+  }
+
+  &__description {
+    @include main-text;
+    color: $c-white;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 60px;
+
+    background-color: $c-main;
+
+    @include button-text;
+    color: $c-white;
+    text-decoration: none;
+
+    transition: background-color $transition-time;
+
+    &:hover {
+      background-color: $c-dark-orange;
+    }
+  }
+
+  &__image {
+    display: none;
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      display: block;
+      height: 800px;
+      z-index: 0;
+    }
+  }
+
+  @include onDesktop {
+    height: 800px;
+  }
+}
