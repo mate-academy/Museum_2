@@ -1,0 +1,305 @@
+.section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 20px 20px;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+
+    &-title {
+      margin-top: 60px;
+      margin-bottom: 60px;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 35px;
+      color: black;
+
+      @include onDesktop {
+        font-size: 48px;
+      }
+    }
+
+    &-button {
+      display: none;
+      width: 100%;
+
+      @include onTablet {
+        display: block;
+        width: 270px;
+      }
+    }
+  }
+
+  &__exhibition {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+      flex-basis: 50%;
+
+      .archive-button {
+        margin-top: 30px;
+
+        @include onTablet {
+          display: none;
+        }
+      }
+
+      &__container {
+        @include onTablet {
+          flex-basis: 50%;
+        }
+        &-image {
+          min-height: 438px;
+          width: 100%;
+          padding-bottom: 20px;
+        }
+
+        &__button {
+          display: block;
+
+          @include onTablet {
+            display: none;
+            width: 270px;
+          }
+        }
+
+        &-data {
+          padding-bottom: 10px;
+          font-family: "Raleway", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          color: $main-color;
+
+        }
+
+        &-title {
+          padding-bottom: 20px;
+          font-family: "Playfair Display", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 25px;
+          color: $black-color;
+
+          @include onDesktop {
+            font-size: 24px;
+          }
+        }
+
+        &-description {
+          padding-bottom: 30px;
+          font-family: "Raleway", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          color: $gray-color;
+
+          @include onTablet {
+            max-width: 570px;
+          }
+        }
+      }
+    }
+  }
+
+  &__events {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        flex-direction: row;
+        gap: 30px;
+      }
+
+      &__image {
+        min-height: 438px;
+        padding-bottom: 20px;
+
+        @include onTablet {
+          max-width: 330px;
+        }
+      }
+
+      &__button {
+        display: block;
+
+        @include onTablet {
+          display: none;
+          width: 270px;
+        }
+      }
+
+      &__content {
+        max-width: 570px;
+        &-data {
+          padding-bottom: 10px;
+          font-family: "Raleway", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          color: $main-color;
+
+        }
+
+        &-title {
+          padding-bottom: 20px;
+          font-family: "Playfair Display", sans-serif;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 25px;
+          color: $black-color;
+
+          @include onDesktop {
+            font-size: 24px;
+          }
+        }
+
+        &-description {
+          padding-bottom: 30px;
+          font-family: "Raleway", sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          color: $gray-color;
+
+        }
+      }
+    }
+  }
+
+  &__pay {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .card {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 60px 20px 20px;
+      background-color: $background-color;
+
+      &__title {
+        font-family: "Playfair Display", sans-serif;
+        font-size: 38px;
+        font-weight: 700;
+        line-height: 38px;
+        color: $white-color;
+        padding-bottom: 20px;
+
+        @include onTablet {
+          max-width: 300px;
+        }
+      }
+
+      &__description {
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: $white-color;
+        padding-bottom: 40px;
+
+        @include onTablet {
+          max-width: 450px;
+        }
+      }
+    }
+  }
+
+  &__news {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 50%;
+
+      &__image {
+        min-height: 356px;
+        width: 100%;
+        padding-bottom: 20px;
+      }
+
+      &__data {
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: $black-color;
+
+      }
+
+      &__title {
+        font-family: "Playfair Display", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 25px;
+        color: $black-color;
+        padding-bottom: 20px;
+      }
+
+      &__description {
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        padding-bottom: 30px;
+        color: $gray-color;
+      }
+
+      &__button {
+        @include onTablet {
+          display: none;
+        }
+      }
+    }
+  }
+}

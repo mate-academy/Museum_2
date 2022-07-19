@@ -1,0 +1,138 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: $background-color;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+
+    .language-icon {
+      display: none;
+    }
+    @include onTablet {
+      margin-bottom: 99px;
+      .language-icon {
+        width: 23px;
+        height: 24px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 47px;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 20px;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  .text {
+    &__container {
+      @include onDesktop {
+        display: flex;
+        justify-content: space-between;
+      }
+      &--title {
+        font-family: "Playfair Display", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: $white-color;
+        margin-bottom: 30px;
+
+        @include onTablet {
+          font-size: 72px;
+          line-height: 72px;
+          margin-bottom: 20px;
+        }
+
+        @include onDesktop {
+          font-size: 96px;
+          line-height: 96px;
+        }
+      }
+
+      &--data {
+        text-align: start;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: $white-color;
+        margin-bottom: 10px;
+
+        @include onTablet {
+          margin-bottom: 10px;
+        }
+
+      }
+
+      &--description {
+        text-align: start;
+        font-family: "Raleway", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: $white-color;
+        margin-bottom: 40px;
+
+        @include onTablet {
+          font-size: 16px;
+          margin-bottom: 50px;
+        }
+
+        @include onDesktop {
+          margin-bottom: 80px;
+        }
+      }
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-grow: 1;
+    height: 100%;
+
+    .tablet-image,
+    .desktop-image {
+      display: none;
+    }
+    @include onTablet {
+      .phone-image,
+      .desktop-image {
+        display: none;
+      }
+      .tablet-image {
+        display: flex;
+        margin-top: auto;
+        justify-content: center;
+      }
+    }
+
+    @include onDesktop {
+      .phone-image,
+      .tablet-image {
+        display: none;
+      }
+      .desktop-image {
+        display: flex;
+        margin-top: auto;
+        justify-content: flex-end;
+        object-fit: contain;
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
