@@ -1,0 +1,80 @@
+.exhibition {
+  &__photo-wrap {
+    display: block;
+    max-width: 400px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    
+    position: relative;
+
+    @include media-768 {
+      height: 420px;
+    }
+
+    @include media-1280 {
+      height: 484px;
+      max-width: unset;
+    }
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+
+    @include media-1280 {
+      position: absolute;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    @include hover(transform, scale(1.03));
+  }
+  
+  &__date {
+    margin-bottom: 10px;
+    
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    
+    color: $c-main;
+  }
+  
+  &__title {
+    height: 60px;
+    
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    
+    color: $c-black;
+
+    @include media-768 {
+      font-size: 20px;
+    }
+
+    @include media-1280 {
+      font-size: 20px;
+    }
+  }
+  
+  &__text {
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $c-gray;
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include media-1280 {
+      margin: 0;
+    }
+  }
+}

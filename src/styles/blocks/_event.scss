@@ -1,0 +1,69 @@
+.event {
+  &__photo-wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 358px;
+    margin: 0 auto 20px;
+    max-width: 320px;
+    
+    @include media-768 {
+      max-width: unset;
+      margin-bottom: 0;
+      height: 422px;
+    }
+    
+    @include media-1280 {
+      height: 475px;
+    }
+  }
+
+  &__photo {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    @include hover(transform, scale(1.05));
+  }
+
+  &__content {
+    align-self: start;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $c-main;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+
+    color: $c-black;
+
+    @include media-768 {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $c-gray;
+  }
+}

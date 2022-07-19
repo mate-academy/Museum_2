@@ -1,0 +1,114 @@
+.button {
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 100%;
+  height: 60px;
+  
+  @include media-768 {
+    max-width: 330px;
+  }
+
+  @include media-1280 {
+    max-width: 270px;
+  }
+  
+  text-decoration: none;
+  background-color: $c-main;
+  
+  position: relative;
+  overflow: hidden;
+  
+  &__text {
+    position: relative;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+  
+    color: $c-white;
+    
+    z-index: 10;
+    transition: color 300ms;
+  }
+  
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: $c-main-dark;
+    transform: scaleX(0);
+    transition: transform 300ms, background-color 300ms;
+    z-index: 0;
+  }
+
+  &::before {
+    left: 0;
+    transform-origin: left;
+  }
+
+  &::after {
+    right: 0;
+    transform-origin: right;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &:active::before,
+  &:active::after {
+    background-color: $c-main-light;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+  
+  &--secondary {
+    display: flex;
+    background-color: unset;
+    color: $c-main;
+    border: 1px solid $c-main;
+
+    @include media-1280 {
+      max-width: 270px;
+    }
+  }
+  
+  &--secondary &__text {
+    color: $c-main;
+    margin-right: 30px;
+    
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 12px;
+      z-index: 10000;
+      position: absolute;
+      background-image: url(../images/icon/arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transform: translateY(-2px);
+    }
+  }
+
+  &--secondary:hover &__text::after {
+    filter: brightness(0) invert(1);
+  }
+
+  &--secondary:hover &__text {
+    color: $c-white;
+  }
+}
