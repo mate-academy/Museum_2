@@ -8,7 +8,7 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-const formClass = document.querySelector('.form-class');
+const formClass = document.querySelector('.form');
 
 function submitForm(event) {
   event.preventDefault();
