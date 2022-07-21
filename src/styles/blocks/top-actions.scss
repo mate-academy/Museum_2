@@ -1,0 +1,84 @@
+.top-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+
+  &__logo {
+    height: 38px;
+    width: 124px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/logo/logo-white.svg);
+
+    @include hover(transform scale(1.2), background-image url(../images/logo/logo-red.svg));
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    gap: 24px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__action {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--menu {
+      background-image: url(../images/icons/menu-white.svg);
+
+      @include hover(transform scale(1.2), background-image url(../images/icons/menu-red.svg));
+    }
+
+    &--cross {
+      background-image: url(../images/icons/cross-white.svg);
+
+      @include hover(transform scale(1.2), background-image url(../images/icons/cross-red.svg));
+    }
+  }
+
+  &__languages {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    background-color: $c-background;
+    color: $c-white;
+    cursor: pointer;
+    padding: 4px 16px 4px 4px;
+    background-image: url(../images/icons/dropdown-white.svg);
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    background-position: right center;
+
+    @extend %main-text;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:hover {
+      color: $c-main;
+      background-image: url(../images/icons/dropdown-red.svg);
+    }
+
+    &:focus {
+      color: $c-main;
+      background-image: url(../images/icons/dropdown-red.svg);
+    }
+  }
+}

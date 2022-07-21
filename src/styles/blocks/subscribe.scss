@@ -1,0 +1,71 @@
+.subscribe {
+  &__title {
+    @extend %h3;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 52px;
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 1px solid $c-black;
+    background-color: $c-white;
+    color: $c-black;
+    @extend %main-text;
+    font-weight: 700;
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:hover {
+      color: $c-main;
+      border-color: $c-main;
+
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      color: $c-main;
+      border-color: $c-main;
+
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:active {
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      -webkit-text-fill-color: $c-black;
+      -webkit-box-shadow: 0 0 0 1000px $c-white inset;
+      box-shadow: 0 0 0 1000px $c-white inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-font-feature-settings: normal;
+      font-feature-settings: normal;
+      -webkit-text-fill-color: $c-main;
+      -webkit-box-shadow: 0 0 0 1000px $c-white inset;
+      box-shadow: 0 0 0 1000px $c-white inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+}

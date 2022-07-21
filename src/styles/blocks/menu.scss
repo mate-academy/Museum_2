@@ -1,0 +1,115 @@
+.menu {
+  background-color: $c-background;
+  color: $c-white;
+
+  &__overflow {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    min-width: 320px;
+    overflow-y: auto;
+  }
+
+  &__menu {
+    height: 748px;
+    padding-top: 20px;
+    background-image: url(../images/backgrounds/menu.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 180px auto;
+
+    @include onTablet {
+      height: 1092px;
+      background-size: 450px auto;
+    }
+
+    @include onDesktop {
+      height: 800px;
+      padding-top: 28px;
+      background-size: 625px auto;
+      background-position: calc(50% + 328px) bottom;
+    }
+  }
+
+  &__top-actions {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__text {
+    &--additional-text {
+      @extend %additional-text;
+    }
+
+    &--mine-text {
+      @extend %main-text;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @extend %h3;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: $c-white;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+}
