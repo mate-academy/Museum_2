@@ -1,0 +1,48 @@
+.new {
+  &__image {
+    width: 100%;
+    height: 280px;
+    margin-bottom: 20px;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include hover(transform, scale(1.05));
+
+    @include onIpad {
+      height: 330px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+      margin-bottom: 20px;
+    }
+
+    &--position-top {
+      object-position: top;
+    }
+  }
+
+  &__date {
+    @extend %additionalText;
+    color: $colorBlack;
+  }
+
+  &__subtitle {
+    margin: 0 0 20px;
+    @extend %h5;
+    color: $colorBlack;
+
+    @include onIpad {
+      margin: 0 0 18px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+
+    @extend %mainText;
+    color: $colorGray;
+  }
+}

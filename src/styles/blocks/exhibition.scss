@@ -1,0 +1,56 @@
+.exhibition {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+
+  &__image {
+    width: 100%;
+    height: 356px;
+    margin-bottom: 20px;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include hover(transform, scale(1.05));
+
+    @include onIpad {
+      height: 420px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__date {
+    margin: 0 0 10px;
+
+    @extend %mainText;
+    color: $colorMain;
+  }
+
+  &__subtitle {
+    margin: 0 0 20px;
+
+    @extend %h4;
+  }
+
+  &__paragraph {
+    margin: 0 0 30px;
+
+    @extend %mainText;
+    color: $colorGray;
+
+    @include onIpad {
+      margin: 0 0 40px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+  }
+}

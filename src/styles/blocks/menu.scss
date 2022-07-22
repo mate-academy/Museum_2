@@ -1,0 +1,110 @@
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 747px;
+  background-color: $colorBackground;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onIpad {
+    height: 1092px;
+  }
+
+  @include onDesktop {
+    height: 800px;
+  }
+
+  &__top-actions {
+    margin-bottom: 30px;
+
+    @include onIpad {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__subtitle {
+    @extend %additionalText;
+  }
+
+  &__info {
+    margin-bottom: 20px;
+
+    @extend %mainText;
+    font-weight: 600;
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onIpad {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &--address {
+      text-decoration: none;
+
+      @include hover(text-decoration, underline);
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 40px;
+
+    background-color: $colorWhite;
+
+    @include onIpad {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    @include onIpad {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    display: none;
+
+    @include onIpad {
+      display: block;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 624px;
+      height: 697px;
+    }
+  }
+}
