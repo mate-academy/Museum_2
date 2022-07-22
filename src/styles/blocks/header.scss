@@ -1,6 +1,6 @@
 .header {
-  min-height: 100vh;
-  // height: max-content;
+  //min-height: 100vh;
+  height: max-content;
   // display: flex;
   // flex-direction: column;
   // position: relative;
@@ -10,7 +10,13 @@
   margin-bottom: 90px;
 
   @include onDesktop {
-    max-height: 800px;
+    height: 100vh;
+
+    //max-height: 800px;
+  }
+
+  @include onTablet {
+    height: 100vh;
   }
 
   &__top-bar {
@@ -34,6 +40,7 @@
   }
 
   &__content {
+    height: 100vh;
     max-width: 1500px;
     margin: auto;
     display: grid;
@@ -128,37 +135,41 @@
   }
 
   &__image {
+    //position: relative;
     width: 100%;
-    // object-position: bottom;
-    // height: 100%;
+    object-position: bottom;
+    //bottom: 20px;
+    //height: 100%;
     // max-width: 280px;
     // max-height: 273px;
     animation: right-appearance 1s ease-in;
 
     @include onTablet {
-      max-width: 443px;
-      max-height: 494px;
-      position: absolute;
-      bottom: 0;
+      max-width: 50vh;
+      max-height: 50vh;
+      //position: absolute;
+      //bottom: 0;
+      //right: 25%;
     }
 
     @include onDesktop {
       object-fit: cover;
-      max-width: 625px;
-      max-height: 663px;
+      max-width: max-content;
+      max-height: max-content;
+      right: 0;
     }
 
-    &-container {
-      // position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      flex-grow: 1;
-      height: 100%;
-
-      @include onDesktop {
-        position: relative;
-      }
-    }
+    //&-container {
+    //  // position: relative;
+    //  display: flex;
+    //  justify-content: center;
+    //  align-items: flex-end;
+    //  flex-grow: 1;
+    //  height: 100%;
+    //
+    //  @include onDesktop {
+    //    position: relative;
+    //  }
+    //}
   }
 }
