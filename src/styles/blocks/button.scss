@@ -1,0 +1,96 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: $g-color-second-accent;
+  color: $g-color-light;
+  text-decoration: none;
+
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  @include lg-device {
+    max-width: 270px;
+  }
+
+  &--second {
+    color: $g-color-second-accent;
+    background-color: transparent;
+    border: 1px solid $g-color-second-accent;
+
+    transition: all 0.3s;
+
+    & svg path {
+      stroke: $g-color-second-accent;
+      transition: stroke 0.3s;
+    }
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+      background-color: transparent;
+
+      & svg {
+        animation: 0.6s ease arrow-move forwards;
+      }
+
+      & svg path {
+        stroke: #af3419;
+      }
+    }
+  
+    &:active {
+      color: #ea340d;
+      border-color: #ea340d;
+
+      & svg path {
+        stroke: #ea340d;
+      }
+    }
+  
+    &:disabled {
+      color: #dd836f;
+      border-color: #dd836f;
+
+      & svg path {
+        stroke: #dd836f;
+      }
+    }
+
+    @include md-device {
+      max-width: 210px;
+    }
+
+    @include lg-device {
+      max-width: 270px;
+    }
+  }
+}
+
+@keyframes arrow-move {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
