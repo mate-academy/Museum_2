@@ -1,0 +1,67 @@
+.tittle {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  gap: 20px;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 90px);
+    gap: 30px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 70px);
+    gap: 30px;
+  }
+
+  &__main {
+    grid-column: 1 / 3;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+    margin: -20px 0 10px;
+
+    @include onTablet {
+      font-size: 72px;
+      grid-column: 1 / 6;
+      margin: -20px 0 0;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+
+    &--first {
+      grid-column: 1 / 3;
+      font-size: 14px;
+      line-height: 140%;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &--last {
+      grid-column: 1 / 3;
+      font-size: 16px;
+      line-height: 150%;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+      }
+    }
+  }
+
+  &__caption {
+    margin-top: 135px;
+  }
+}
