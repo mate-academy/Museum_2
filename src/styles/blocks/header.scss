@@ -35,7 +35,20 @@
     margin-right: 8px;
   }
 
+  &__list {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 100%;
+    z-index: 1;
+
+    :hover {
+      @include hoverScale120;
+    }
+  }
+
   &__languages {
+    display: block;
     position: relative;
     @include fontRaleway400;
     font-weight: 500;
@@ -43,11 +56,28 @@
     color: $mainColor;
 
     text-transform: uppercase;
+    cursor: pointer;
+
+    &--menu {
+      display: none;
+    }
+
+    @include on320px {
+      display: none;
+      &--menu {
+        display: block;
+      }
+    }
+
+    &:hover .header__list {
+      display: block;
+    }
   }
 
   &__lang {
     padding-right: 8px;
     margin-right: 2px;
+    transition: all 0.5s;
   }
 
   &__arrow {
