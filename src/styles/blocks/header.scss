@@ -1,25 +1,28 @@
+.logo {
+  &__image {
+    padding-top: 4px;
+  }
+}
+
+.content {
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  color: #f1f5f4;
+}
+
 .header {
-  height: 100vh;
-  background-color: #3f5252;
-  position: relative;
 
-  &__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px 20px 70px 0;
-  }
-
-  &__logo {
-    height: 40px;
-    width: 120px;
-  }
   &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     &--img {
       color: white;
-    }
-    &--logo {
-      padding-top: 3px;
+      @include onTablet {
+        margin-right: 40px;
+      }
     }
   }
 
@@ -32,6 +35,20 @@
     font-size: 48px;
     line-height: 100%;
     color: #f1f5f4;
+    margin-bottom: 30px;
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+    }
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+
+  }
+  &__text {
+    margin-bottom: 40px;
+    font-size: 16px;
   }
   &__btn {
     display: flex;
@@ -39,6 +56,12 @@
     align-items: center;
     height: 60px;
     width: 100%;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      width: 330px;
+      margin-bottom: 40px;
+    }
 
     background-color: #cd4d31;
     &--link {
@@ -50,19 +73,35 @@
       color: #f1f5f4;
     }
   }
-  &__content {
-    margin-bottom: 40px;
-  }
-  &__image {
-    height: 270px;
-    width: 245px;
-  }
-}
 
-.content {
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 140%;
-  color: #f1f5f4;
+  &__image {
+    width: 245px;
+    justify-self: center;
+    position: absolute;
+    bottom: 0;
+    @include onTablet {
+      width: 500px;
+    }
+    @include onDesktop {
+      width: 663px;
+      right: 0;
+    }
+  }
+  &__languages {
+    display: flex;
+
+    &--lang {
+      color: white;
+      font-size: 16px;
+      line-height: 24px;
+      margin-right: 3px;
+    }
+    &--label {
+      display: none;
+      cursor: pointer;
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
 }
