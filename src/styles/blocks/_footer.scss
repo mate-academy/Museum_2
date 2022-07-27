@@ -36,9 +36,28 @@
     line-height: 150%;
 
     display: block;
-
+    
     &--link-page {
       padding-bottom: 5px;
+      position: relative;
+      width: max-content;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        display: block;
+        background-color: rgb(241, 245, 244);
+        
+        position: absolute;
+        bottom: 5px;
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
     }
   }
 
@@ -90,5 +109,8 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
+
+    @include hover (transform, scale(1.2));
   }
+
 }

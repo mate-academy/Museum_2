@@ -79,6 +79,23 @@
       font-family: Raleway, sans-serif;
       color: rgb(241, 245, 244);
       cursor: pointer;
+      position: relative;
+      width: max-content;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(241, 245, 244);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
     }
   }
 
@@ -176,26 +193,6 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 125%;
-  }
-
-  &__date-line {
-    margin-left: 20px;
-    height: 1px;
-    opacity: 0.3;
-    background-color: rgb(241, 245, 244);
-    width: 100%;
-
-    &--menu-line {
-      margin: 40px 0 0;
-
-      @include desk-768 {
-        margin: 50px 0 0;
-      }
-
-      @include desk-1280 {
-        margin: 60px 0 0;
-      }
-    }
   }
 
   &__img-container {
