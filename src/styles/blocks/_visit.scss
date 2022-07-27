@@ -1,0 +1,78 @@
+.visit {
+  background-color: $green-color;
+
+  &__content {
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 7fr 8fr;
+      gap: 40px;
+    }
+  }
+
+  &__info {
+    padding: 50px 0;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      margin-top: 110px;
+    }
+  }
+
+  &__photo {
+    @extend %bg-center;
+
+    display: none;
+    background-image: url(/images/img_05.png);
+
+    @include onDesktop {
+      display: flex;
+      height: 800px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 38px;
+    font-family: "Playfair Display", sans-serif;
+    line-height: 38px;
+    color: $white-color;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      font-size: 62px;
+      line-height: 62px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+
+  &__description {
+    margin: 20px 0 40px;
+    color: $white-color;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+  }
+
+  &__button {
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.subscribe {
+
+  &__info {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      width: 570px;
+    }
+  }
+
+  &__email {
+    @extend %font;
+
+    width: 100%;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    color: $dark-color;
+    border-bottom: 1px solid $dark-color;
+    margin-bottom: 30px;
+    padding-bottom: 3px;
+
+    &:hover {
+      border-color: $orange-color;
+    }
+
+    &:focus {
+      color: $orange-color;
+      border-color: $orange-color;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    &::placeholder {
+      @extend %font;
+
+      color: $dark-color;
+    }
+
+    &:hover::placeholder {
+      color: $orange-color;
+    }
+  }
+}

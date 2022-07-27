@@ -1,0 +1,139 @@
+.header {
+  height: 100vh;
+  color: $white-color;
+  background-color: $green-color;
+
+  &__content {
+    @extend %front;
+
+    position: relative;
+  }
+
+  &__top {
+    @extend %top;
+
+    margin-bottom: 75px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__icons {
+    @extend %icons;
+  }
+
+  &__language {
+    @extend %language;
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 30px;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+
+    @include onTablet {
+      width: 570px;
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+
+    &::before {
+      content: "10 серпня - 10 листопада";
+      position: absolute;
+      top: -30px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__info {
+    z-index: 1;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    transition: 0.4s;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 80px;
+    }
+  }
+
+  &__photo {
+    height: 273px;
+    width: 245px;
+    margin: 0 auto;
+    z-index: 0;
+
+    &-inner {
+      @extend %bg-center;
+
+      height: 273px;
+      width: 245px;
+      position: absolute;
+      bottom: 0;
+      background-image: url("/images/header.png");
+
+      @include onTablet {
+        height: 494px;
+        width: 443px;
+      }
+
+      @include onDesktop {
+        height: 663px;
+        width: 625px;
+        right: 0;
+      }
+    }
+  }
+
+  &__post-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+      color: $white-color;
+      opacity: 0.7;
+
+      &::after {
+        content: "";
+        width: 350px;
+        position: absolute;
+        left: 110px;
+        bottom: 40%;
+        border: 1px solid $white-color;
+        opacity: 0.3;
+      }
+    }
+  }
+}

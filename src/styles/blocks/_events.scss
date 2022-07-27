@@ -1,0 +1,74 @@
+.events__inner {
+
+  @include onTablet {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+
+  @include onTablet {
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+  }
+
+  &__title {
+    @extend %section-title;
+    
+    position: relative;
+    margin: 30px 0 20px;
+
+    &::before {
+      @extend %before-title;
+
+      content: "14.08 о 13:00";
+      position: absolute;
+      top: -30px;
+    }
+
+    &--last {
+      &::before {
+        content: "16.08 о 13:00";
+      }
+    }
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__photo {
+    @extend %photo;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      width: 330px;
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    @extend %button-margin;
+  }
+}
