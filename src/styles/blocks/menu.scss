@@ -1,0 +1,119 @@
+.menu {
+  background-color: $color-bcg-block;
+  height: 100vh;
+
+  &__nav {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__var {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 25px;
+  }
+
+  &__nav-info {
+    margin-bottom: 40px;
+    display: block;
+
+    &--title {
+      font-size: 14px;
+      line-height: 20px;
+
+      &:first-child {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__list {
+    display: block;
+
+    border-bottom: 1px solid $color-bcg;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__element {
+    font-family: $font-title;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    &:hover {
+      border-bottom: 1px solid $color-bcg;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      margin-top: 60px;
+    }
+
+    @include onTablet {
+      &::after {
+        bottom: 0;
+        margin-top: 30px;
+        content: url(../images/pictures/boy-painter.png);
+      }
+    }
+
+    @include onDesktop {
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 30px;
+        content: url(../images/pictures/boy-painter.png);
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    background-image: url(../images/pictures/boy-painter.png);
+  }
+}

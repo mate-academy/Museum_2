@@ -1,0 +1,59 @@
+.button {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 270px;
+  color: $color-bcg;
+  background-color: $color-button;
+  cursor: pointer;
+  transition: 0.3s;
+
+  @include onDesktop {
+    margin-top: 80px;
+  }
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+}
+
+.button-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 270px;
+  color: $color-button;
+  background-color: transparent;
+  border: 1px solid $color-button;
+
+  &::after {
+    margin-left: 12px;
+    height: 30px;
+    width: 30px;
+    content: url(../images/scroll-up.png);
+    transform: rotate(90deg);
+  }
+
+  &:hover {
+    border-color: #af3419;
+  }
+
+  &:active {
+    border-color: #ea340d;
+  }
+
+  &:disabled {
+    border-color: #dd836f;
+  }
+}

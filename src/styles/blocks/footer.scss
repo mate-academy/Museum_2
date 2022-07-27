@@ -1,0 +1,139 @@
+.footer {
+  background-color: $color-bcg-block;
+
+  &__container {
+    padding: 30px 0;
+
+    @include onTablet {
+      padding: 50px 0 30px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 50px;
+    line-height: 24px;
+
+    &--adress-type {
+      color: $color-bcg;
+      text-decoration: none;
+    }
+
+    &-adress {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__mesengers {
+    display: flex;
+
+    &-item {
+      display: block;
+      height: 20px;
+      width: 20px;
+
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+
+    &--facebook {
+      background-image: url(../images/facebook.svg);
+    }
+
+    &--twitter {
+      background-image: url(../images/twitter.svg);
+    }
+
+    &--telegram {
+      background-image: url(../images/telegram.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/instagram.svg);
+    }
+  }
+
+  &__work-shedule {
+    margin-bottom: 50px;
+    line-height: 24px;
+
+    @each $day, $time in $work-shedule {
+      &--#{$day}::before {
+        content: "#{$day}: #{$time}";
+      }
+    }
+  }
+
+  &__menu {
+    margin-bottom: 55px;
+
+    &-title {
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      font-family: $font-title;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 150%;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-element {
+      line-height: 20px;
+      color: $color-bcg;
+      text-decoration: none;
+    }
+
+  }
+
+  &__privacy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    &-wrapper {
+      span:first-child {
+        margin-right: 22px;
+
+        @include onDesktop {
+          margin-right: 102px;
+        }
+      }
+    }
+
+    &-button {
+      padding: 5px;
+      height: 30px;
+      width: 30px;
+
+      background-color: transparent;
+      border: 1px solid transparent;
+
+      background-image: url(../images/scroll-up.png);
+
+      &:hover {
+        cursor: pointer;
+        border-color: $color-bcg;
+      }
+    }
+  }
+}
