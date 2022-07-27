@@ -1,0 +1,232 @@
+.section {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 90px);
+    grid-template-rows: repeat (2, auto);
+    gap: 0 30px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 70px);
+    grid-template-rows: repeat (2, auto);
+    gap: 0 30px;
+  }
+
+  &__tittle {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: #1c1b29;
+    margin: 0;
+    padding-top: 90px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+      padding-top: 110px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      grid-row: 1 / 2;
+      padding-top: 110px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 100px;
+      grid-column: 4 / 7;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      margin-top: 110px;
+      grid-column: 10 / 13;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__card {
+
+    &--first {
+      @include onTablet {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+        grid-row: 2 / 3;
+      }
+    }
+
+    &--second {
+      @include onTablet {
+        grid-column: 4 / 7;
+        grid-row: 2 / 3;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 13;
+        grid-row: 2 / 3;
+      }
+    }
+  }
+
+  &--2 {
+    padding-bottom: 90px;
+
+    @include onTablet {
+      padding-bottom: 100px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 110px;
+    }
+  }
+
+  &--3 {
+    position: relative;
+    background-color: #3f5252;
+    color: #f1f5f4;
+    padding: 50px 20px;
+
+    @include onTablet {
+      padding: 80px 38px;
+    }
+
+    @include onDesktop {
+      padding: 205px 55px;
+    }
+
+    &__tittle {
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 100%;
+      margin: 0;
+
+      @include onTablet {
+        font-size: 62px;
+        grid-column: 1 / 5;
+      }
+
+      @include onDesktop {
+        font-size: 80px;
+        grid-column: 6 / 13;
+        padding: 10px 20px 28px 0;
+      }
+    }
+
+    &__paragraph {
+      margin: 20px 0 40px;
+
+      @include onTablet {
+        margin: 20px 0 60px;
+        grid-column: 1 / 5;
+      }
+
+      @include onDesktop {
+        margin: 10px 0 50px;
+        grid-column: 6 / 11;
+      }
+    }
+
+    &__button {
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 6 / 9;
+      }
+    }
+
+    &__image {
+      position: absolute;
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+  }
+
+  &--5 {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-rows: none;
+    }
+
+    &__tittle {
+      font-size: 28px;
+
+      @include onTablet {
+        font-size: 40px;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+        padding: 200px 100px 50px 0;
+      }
+    }
+
+    &__paragraph {
+      color: #1c1b29;
+      margin: 20px 0 50px;
+
+      @include onTablet {
+        padding-right: 160px;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 13;
+        padding: 200px 0 0;
+        margin: 0;
+      }
+    }
+
+    &__email {
+      color: #1c1b29;
+      border-bottom: 1px solid #1c1b29;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      outline: none;
+      background-color: #f1f5f4;
+      width: 100%;
+
+      @include onTablet {
+        width: 450px;
+      }
+    }
+
+    &__button {
+      outline: none;
+      border: none;
+      width: 100%;
+      margin: 30px 0 80px;
+
+      @include onTablet {
+        width: 330px;
+        margin: 30px 0 128px;
+      }
+
+      @include onDesktop {
+        width: 270px;
+        margin: 40px 0 200px;
+      }
+    }
+  }
+}
