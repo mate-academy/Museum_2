@@ -1,4 +1,6 @@
 .section {
+  justify-content: center;
+
   @include onTablet {
     display: grid;
     grid-template-columns: repeat(6, 90px);
@@ -23,12 +25,14 @@
     padding-top: 90px;
 
     @include onTablet {
+      font-size: 40px;
       grid-column: 1 / 4;
       grid-row: 1 / 2;
       padding-top: 110px;
     }
 
     @include onDesktop {
+      font-size: 48px;
       grid-column: 1 / 7;
       grid-row: 1 / 2;
       padding-top: 110px;
@@ -40,7 +44,7 @@
 
     @include onTablet {
       margin-top: 100px;
-      grid-column: 4 / 7;
+      grid-column: 5 / 7;
       grid-row: 1 / 2;
     }
 
@@ -79,6 +83,7 @@
   }
 
   &--2 {
+    grid-template-rows: auto auto auto;
     padding-bottom: 90px;
 
     @include onTablet {
@@ -87,6 +92,46 @@
 
     @include onDesktop {
       padding-bottom: 110px;
+    }
+
+    &__card--first {
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(6, 90px);
+        gap: 0 30px;
+
+        grid-column: 1 / 7;
+        grid-row: 2 / 3;
+      }
+
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(12, 70px);
+        gap: 0 30px;
+
+        grid-column: 1 / 13;
+        grid-row: 2 / 3;
+      }
+    }
+
+    &__card--second {
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(6, 90px);
+        gap: 0 30px;
+
+        grid-column: 1 / 7;
+        grid-row: 3 / 4;
+      }
+
+      @include onDesktop {
+        display: grid;
+        grid-template-columns: repeat(12, 70px);
+        gap: 0 30px;
+
+        grid-column: 1 / 13;
+        grid-row: 3 / 4;
+      }
     }
   }
 
