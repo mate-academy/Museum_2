@@ -4,6 +4,14 @@
     display: block;
     height: 356px;
     margin-top: 60px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
 
     &--1 {
       background-image: url(../images/photo/section1-photo1.svg);
@@ -114,11 +122,29 @@
     line-height: 125%;
     color: #1c1b29;
     margin: 0 0 20px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
   }
 
   &__description {
     margin: 0;
     color: #504f5e;
+
+    &--second {
+      @include onTablet {
+        padding-top: 29px;
+      }
+
+      @include onDesktop {
+        padding-top: 0;
+      }
+    }
   }
 
   &__button {
