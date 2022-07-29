@@ -1,0 +1,125 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  background-color: $main-red-color;
+  border: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    background-color: $hover-red-color;
+    box-shadow: 0 8px 14px rgba(163, 10, 2, 0.48);
+  }
+
+  &:active {
+    background-color: $activ-red-color;
+  }
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  @include theDesign {
+    width: 330px;
+  }
+
+  @include fullHD {
+    width: 330px;
+  }
+
+  @include LargeScreens {
+    width: 480px;
+  }
+
+  &__link {
+    padding: 20px 107px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: $header-text-color;
+    text-decoration: none;
+
+    @include onTablet {
+      padding: 20px 107px;
+      width: 330px;
+    }
+
+    @include onDesktop {
+      padding: 20px 76px;
+      width: 270px;
+    }
+
+    @include theDesign {
+      padding: 20px 106px;
+      width: 330px;
+    }
+  }
+
+  &--secondary {
+    position: absolute;
+    bottom: -90px;
+    background-color: #fff;
+    border: 2px solid $main-red-color;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: $main-red-color;
+
+    @include onTablet {
+      top: -125px;
+      right: 0;
+      width: 270px;
+    }
+
+    @include onDesktop {
+      top: -125px;
+      right: 0;
+      width: 270px;
+    }
+
+    &:hover {
+      background-color: #fff;
+      border-color: $hover-red-color;
+      color: $hover-red-color;
+    }
+
+    &:active {
+      background-color: #fff;
+      border-color: $activ-red-color;
+      color: $activ-red-color;
+    }
+  }
+
+  &__arrow-container {
+    height: 16px;
+    width: 26px;
+  }
+
+  &__arrow {
+    margin-left: 10px;
+    height: 18px;
+    width: 18px;
+    background-image: url(../images/button_arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+
+  &--secondary:hover .button__arrow {
+    background-image: url(../images/button_arrow_hover.svg);
+  }
+
+  &--secondary:active .button__arrow {
+    background-image: url(../images/button_arrow_active.svg);
+  }
+}

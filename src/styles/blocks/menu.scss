@@ -1,0 +1,231 @@
+.menu {
+  padding: 20px 0 0;
+  background-color: $background-color;
+  z-index: 1;
+
+  @include onTablet {
+    padding: 24px 0 0;
+    background-image: url(../images/img_menu.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 30%;
+    background-position-x: right;
+  }
+
+  @media (min-width: 840px) and (max-width: 1279px) {
+    background-size: 45%;
+  }
+
+  @include onDesktop {
+    padding: 32px 0 0;
+    background-size: 48%;
+  }
+
+  @include theDesign {
+    padding: 40px 0 0;
+    background-size: 38%;
+  }
+
+  @include fullHD {
+    padding: 50px 0 0;
+    background-size: 39%;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100vh;
+    overflow-y: auto;
+
+    @include onTablet {
+      gap: 55px;
+    }
+
+    @include onDesktop {
+      gap: 43px;
+    }
+  }
+
+  &__top-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icon-container {
+    @extend .header__icon-container;
+  }
+
+  &__cross {
+    height: 22px;
+    width: 22px;
+    background-image: url(../images/cross.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s;
+
+    @include onTablet {
+      height: 30px;
+      width: 30px;
+    }
+
+    @include onDesktop {
+      height: 30px;
+      width: 30px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__announce-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+
+    @include onDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__announce {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 83px;
+    }
+  }
+
+  &__secondary-text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $header-text-color;
+  }
+
+  &__main-text {
+    margin: 0;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $header-text-color;
+
+    &--addres {
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px solid $header-text-color;
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &--contacts {
+      margin-bottom: 28px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &--footer {
+      margin-bottom: 5px;
+
+      @include onTablet {
+        margin-bottom: 10px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 10px;
+      }
+    }
+
+    &--contacts {
+      margin-bottom: 1px;
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $header-text-color;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 140%;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 140%;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $header-text-color;
+    }
+
+    &--footer {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__line {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $header-text-color;
+    opacity: 0.3;
+
+    @include onTablet {
+      max-width: 570px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      opacity: 0.3;
+    }
+  }
+}
