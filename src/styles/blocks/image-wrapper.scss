@@ -1,0 +1,63 @@
+.image-wrapper {
+  position: absolute;
+  height: 273px;
+  margin-top: auto;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-image: url(../images/header-image.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (max-height: 690px) {
+    height: 30vh;
+  }
+
+  @include onTablet {
+    height: 50vh;
+    background-image: url(../images/header-image-tablet-1.svg);
+
+    @media (max-height: 1050px) {
+      height: 40vh;
+    }
+
+    @media (max-height: 890px) {
+      height: 30vh;
+    }
+  }
+
+  @include onDesktop {
+    height: 80vh;
+    background-image: url(../images/header-image-dekstop-1.svg);
+    left: 51%;
+  }
+
+  &--second {
+    display: none;
+    background-image: url(../images/header-image-tablet-2.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onTablet {
+      display: block;
+      height: 45vh;
+
+      @media (max-height: 1065px) {
+        height: 30vh;
+      }
+
+      @media (max-height: 840px) {
+        height: 20vh;
+      }
+    }
+
+    @include onDesktop {
+      display: block;
+      height: 90vh;
+      background-image: url(../images/header-image-desktop-2.svg);
+      left: 51%;
+    }
+  }
+}

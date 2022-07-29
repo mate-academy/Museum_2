@@ -1,0 +1,85 @@
+.button {
+  box-sizing: border-box;
+  height: 60px;
+  background-color: #cd4d31;
+  color: #f1f5f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  &--white {
+    border: 1px solid #cd4d31;
+    background-color: #f1f5f4;
+    color: #cd4d31;
+
+    &__arrow {
+      display: block;
+      height: 20px;
+      width: 20px;
+      margin-left: 10px;
+      background-image: url(../images/arrow-right.svg);
+    }
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+    &:hover {
+      border-color: #af3419;
+      background-color: #f1f5f4;
+      color: #af3419;
+
+      .button--white__arrow {
+        background-image: url(../images/arrow-right-hover.svg);
+      }
+    }
+
+    &:active {
+      border-color: #ea340d;
+      background-color: #f1f5f4;
+      color: #ea340d;
+
+      .button--white__arrow {
+        background-image: url(../images/arrow-right-active.svg);
+      }
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+      background-color: #f1f5f4;
+      color: #dd836f;
+
+      .button--white__arrow {
+        background-image: url(../images/arrow-right-disabled.svg);
+      }
+    }
+  }
+}
