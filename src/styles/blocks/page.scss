@@ -1,5 +1,106 @@
 .page {
   font-family: Raleway, sans-serif;
   font-size: 16px;
+  line-height: 100%;
   scroll-behavior: smooth;
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform $transition-time;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__body--with-menu {
+    overflow: hidden;
+  }
+
+  &__section {
+    margin-bottom: 90px;
+
+    @include onIpad {
+      margin-bottom: 0;
+    }
+  }
+
+  &__header {
+
+    @include onIpad {
+      margin-bottom: 85px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__actual-exhibition-section {
+    margin-bottom: 120px;
+
+    @include onIpad {
+      margin-bottom: 150px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 190px;
+    }
+  }
+
+  &__events-section {
+
+    @include onIpad {
+      margin-bottom: 115px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__banner-section {
+    margin-bottom: 110px;
+  }
+
+  &__news-section {
+    margin-bottom: 120px;
+  }
+
+  &__subscribe-section {
+    margin-bottom: 80px;
+
+    @include onIpad {
+      margin-bottom: 128px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 60px;
+
+    &--position {
+      margin-bottom: 20px;
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    @include onIpad {
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
 }

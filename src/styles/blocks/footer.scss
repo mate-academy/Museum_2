@@ -1,0 +1,81 @@
+.footer {
+  padding: 34px 0 30px;
+  background-color: $dark-green-color;
+
+  &__contacts-block {
+    margin-bottom: 50px;
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    @include font-play(150%, 18px);
+
+    @include onIpad {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 32px;
+
+    @include onIpad {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__icons-list {
+
+    @include onIpad {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__nav-block {
+    margin-bottom: 60px;
+  }
+
+  &__item,
+  &__link,
+  &__nav-link,
+  &__copyright,
+  &__privacy {
+    @extend %lh-150;
+  }
+
+  &__copyright-block {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__copyright,
+  &__privacy {
+    font-size: 14px;
+  }
+
+  &__copyright {
+    margin-right: 22px;
+
+    @include onDesktop {
+      margin-right: 100px;
+    }
+  }
+
+  &__link {
+    @include hover(text-shadow, $text-shadow);
+  }
+
+  &__nav-link {
+    @include hover(text-shadow, $text-shadow);
+  }
+
+  &__nav-link:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  &__up-button {
+    @include height-width ($footer-up-button, $footer-up-button);
+    margin-left: auto;
+    background-image: url("/images/icons/scroll-up.svg");
+    @include hover(transform, scale($icons-scale));
+  }
+}

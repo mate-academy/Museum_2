@@ -1,50 +1,130 @@
 .header {
-  height: 100vh;
-  background-color: $menu-background-color;
+  @extend %container-100vh;
+  background-color: $dark-green-color;
+
+  @include onDesktop {
+    margin-bottom: 100px;
+  }
 
   &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    grid-template-rows: 1fr, 1fr, 60px, 1fr;
-    height: 100vh;
+    @extend %container-100vh;
+    position: relative;
   }
 
   &__nav {
-    padding-top: 20px;
-    margin-bottom: 70px;
-  }
+    height: 80px;
+    margin-bottom: 17%;
 
-  &__burger-menu {
-    @include height-width(20px, 25px);
-    background-image: url("/images/icons/menu.svg");
-    @extend %bg-img;
-    cursor: pointer;
+    @include onIpad {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+      margin-bottom: 90px;
+    }
   }
 
   &__description {
     width: 240px;
-    @extend %rel-400;
+    @extend %lh-150;
+
+    @include onIpad {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
   }
 
   &__title {
-    font-family: Playfair, serif;
     margin: 10px 0 30px;
-    @extend %playfair-700;
+    @include font-play(100%, 48px, $white-color);
+
+    @include onIpad {
+      width: 90%;
+      margin: 10px 0 20px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      margin: 10px 0 30px;
+      width: 100%;
+      font-size: 96px;
+    }
   }
 
-  &__button {
+  &__primary-button {
     margin: 40px 0;
+
+    @include onIpad {
+      margin: 50px 0 0;
+    }
+
+    @include onDesktop {
+      margin: 81px 0 120px;
+    }
   }
 
-  &__img-container {
+  &__date-wrapper {
     display: flex;
-    justify-content: center;
-    min-height: 275px;
-    width: 100%;
+    align-items: center;
+    justify-items: end;
+    margin-bottom: 50px;
   }
 
-  &__img {
-    width: 89%;
+  &__date {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 17%;
+      margin-right: 20px;
+
+      @include font-play(175%, 14px, $white-color);
+      opacity: 0.7;
+    }
+  }
+
+  &__decorative-line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+      opacity: 0.3;
+    }
+  }
+
+  &__picture-wrapper {
+    width: 265px;
+    margin: 0 auto;
+
+    @include onIpad {
+      width: 0;
+      right: 5%;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+
+    @include height-width (270px, 265px);
+    @extend %bg-img;
+    background-image: url("/images/content-photo/header-img.png");
+
+    @include onIpad {
+      @include height-width (386px, 376px);
+      right: 3%;
+    }
+
+    @include onDesktop {
+      @include height-width (630px, 610px);
+      right: 0;
+    }
   }
 }

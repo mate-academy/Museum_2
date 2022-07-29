@@ -1,0 +1,68 @@
+.banner-section {
+  margin-bottom: 140px;
+  padding: 50px 0;
+  background-color: $dark-green-color;
+
+  @include onIpad {
+    padding: 80px 0;
+  }
+
+  @include onDesktop {
+    padding: 0;
+  }
+
+  &__container {
+    position: relative;
+
+    @include onDesktop {
+      height: 800px;
+    }
+  }
+
+  &__picture-wrapper {
+    display: none;
+    width: 0;
+    height: 0;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+
+    @extend %bg-img;
+    background-image: url("/images/content-photo/board-img.png");
+
+    @include onDesktop {
+      @include height-width (800px, 578px);
+      left: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @include font-play(100%, 38px);
+
+    @include onIpad {
+      font-size: 62px;
+    }
+
+    @include onDesktop {
+      margin-top: 205px;
+      margin-bottom: 10px;
+      font-size: 80px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 40px;
+    @extend %lh-150;
+
+    @include onIpad {
+      margin-bottom: 60px;
+    }
+  }
+}

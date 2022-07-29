@@ -1,8 +1,11 @@
 .logo {
   display: block;
-  @include height-size($logo-h, $logo-w);
 
-  &.logo__img {
-    @include height-size($logo-h, $logo-w);
+  &__img {
+    @include height-width($logo-h-mob, $logo-w-mob);
+
+    @include onIpad {
+      @include height-width($logo-h-ipad, $logo-w-ipad);
+    }
   }
 }

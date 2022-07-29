@@ -1,5 +1,26 @@
 .nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+
+  &__burger-menu {
+    @include height-width($burger-height, $burger-width);
+    margin-left: auto;
+
+    @extend %bg-img;
+    cursor: pointer;
+    background-image: url("/images/icons/menu.svg");
+    @include hover(transform, scale($icons-scale));
+
+    @include onIpad {
+      margin-right: 42px;
+    }
+  }
+
+  &__label {
+    display: none;
+
+    @include onIpad {
+      display: block;
+    }
+  }
 }
