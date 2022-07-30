@@ -1,9 +1,25 @@
+.container {
+  box-sizing: border-box;
+  max-width: 1170px;
+  // padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+
+  @include onDesktop {
+    padding: 32px 55px;
+  }
+}
 
 .header {
-  // height: 100vh;
   box-sizing: border-box;
   padding: 20px;
   background-color: #3f5252;
+
+  @include onDesktop {
+    padding: 0;
+    height: 100vh;
+  }
+
 
   &__nav {
     display: flex;
@@ -40,6 +56,11 @@
     color: #f1f5f4;
 
     margin-top: 10px;
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
   }
 
   &__theme {
@@ -50,19 +71,49 @@
     color: #f1f5f4;
 
     margin-top: 30px;
+
+
+    &::after {
+      content: "";
+      display: block;
+      background-image: url(../images/duration.svg);
+      background-repeat: no-repeat;
+      height: 18px;
+      width: 81px;
+      color: #F1F5F4;
+    }
   }
 
   &__button-container {
     margin-top: 40px;
+
+    @include onDesktop {
+      margin-top: 81px;
+    }
   }
 
   &__image-container {
     margin-top: 40px;
 
+    @include onDesktop {
+      height: 550px;
+
+    }
+
     &__img {
       height: 273px;
-      width: 100%;
+      // width: 100%;
       object-fit: contain;
+      object-position: center;
+
+      @include onDesktop {
+        height: 90vh;
+        width: 625px;
+        position: absolute;
+        width: 100%;
+        top: 10%;
+        left: 26%;
+      }
     }
   }
 }
