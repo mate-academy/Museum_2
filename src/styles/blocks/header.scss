@@ -8,29 +8,26 @@
   @include onDesktop {
     padding: 32px 55px;
   }
+
+  &--first {
+    margin-bottom: 40px;
+  }
+
+  &--second {
+    margin-bottom: 40px;
+  }
 }
 
-.header {
-  box-sizing: border-box;
-  padding: 20px;
-  background-color: #3f5252;
+.icon {
+  display: block;
+  width: 100%;
+  padding-bottom: 100%;
 
-  @include onDesktop {
-    padding: 0;
-    height: 100vh;
-  }
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 
-
-  &__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  &__menu-opener {
-    display: block;
-    width: 25px;
-    height: 30px;
+  &--menu {
     background-image: url(../images/menu.svg);
 
     &:hover {
@@ -38,12 +35,42 @@
     }
   }
 
+  &--cross {
+    background-image: url(../images/cross.svg);
+  }
+}
+
+.top-actions {
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  justify-items: auto;
+  align-items: flex-start;
+}
+
+.header {
+  box-sizing: border-box;
+  padding: $headerTopPadding;
+  background-color: $mainColor;
+
+  @include onDesktop {
+    padding: 0;
+    height: 100vh;
+  }
+
+  // &__nav {
+
+  // }
+
+  // &__menu-opener {
+
+  // }
+
   &__schedule {
     font-family: "Raleway", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: #f1f5f4;
+    color: $textColor;
 
     margin-top: 70px;
   }
@@ -53,7 +80,7 @@
     font-weight: 700;
     font-size: 48px;
     line-height: 48px;
-    color: #f1f5f4;
+    color: $textColor;
 
     margin-top: 10px;
 
@@ -68,20 +95,24 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #f1f5f4;
+    color: $textColor;
 
     margin-top: 30px;
 
-
-    &::after {
-      content: "";
-      display: block;
-      background-image: url(../images/duration.svg);
-      background-repeat: no-repeat;
-      height: 18px;
-      width: 81px;
-      color: #F1F5F4;
+    @include onDesktop {
+      &__theme {
+        &::after {
+          content: "";
+          display: block;
+          background-image: url(../images/duration.svg);
+          background-repeat: no-repeat;
+          height: 18px;
+          width: 81px;
+          color: $textColor;
+        }
+      }
     }
+
   }
 
   &__button-container {
@@ -103,14 +134,15 @@
     &__img {
       height: 273px;
       // width: 100%;
-      object-fit: contain;
+      object-fit: fill;
       object-position: center;
 
       @include onDesktop {
         height: 90vh;
         width: 625px;
         position: absolute;
-        width: 100%;
+        // object-fit: scale-down;
+        // width: 100%;
         top: 10%;
         left: 26%;
       }

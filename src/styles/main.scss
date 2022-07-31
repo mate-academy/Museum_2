@@ -1,8 +1,10 @@
+@import "./utils/variables";
 @import "./blocks/mixin";
 @import "./blocks/header.scss";
 @import "./blocks/reset.scss";
 @import "./blocks/button.scss";
 @import "./blocks/grid.scss";
+@import "./blocks/menu.scss";
 
 .page {
   font-family: "Raleway", sans-serif, "Playfair Display", serif;
@@ -11,6 +13,20 @@
   &__body {
     // box-sizing: border-box;
     margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
   }
 }
 
