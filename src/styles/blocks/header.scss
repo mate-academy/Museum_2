@@ -1,0 +1,291 @@
+.header {
+  height: 100vh;
+  padding: $headerTopPadding 0 0;
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: $bg-color;
+  background-image: url(../images/bg1-phone.png);
+
+  @include onTablet {
+    background-image: url(../images/bg1-tablet.png);
+  }
+
+  @include onDesktop {
+    background-position: right bottom;
+    background-image: url(../images/bg1-desktop.png);
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__language-opener {
+    display: none;
+    text-decoration: none;
+
+    @include onTablet {
+      display: block;
+    }
+    @include onTablet {
+      &::before {
+        content: "EN";
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+
+        color: $color-light;
+
+        // white-space: pre-wrap;
+        display: block;
+        width: max-content;
+        transform: translateY(150%);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__text-container {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $color-light;
+    letter-spacing: 0;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      width: 569px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $color-light;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 10px;
+    color: $color-light;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    height: 60px;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1 / 3;
+    text-align: center;
+    align-items: center;
+    color: $color-light;
+    background: $color-red;
+
+    cursor: pointer;
+  }
+
+  &__date {
+    position: absolute;
+    bottom: 50px;
+    display: none;
+    align-items: center;
+
+    &::after {
+      content: "";
+      width: max-content;
+      height: 1px;
+      margin-left: 20px;
+
+      background: $color-light;
+      opacity: 0.3;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}
+.header {
+  height: 100vh;
+  padding: $headerTopPadding 0 0;
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: $bg-color;
+  background-image: url(../images/bg1-phone.png);
+
+  @include onTablet {
+    background-image: url(../images/bg1-tablet.png);
+  }
+
+  @include onDesktop {
+    background-position: right bottom;
+    background-image: url(../images/bg1-desktop.png);
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__language-opener {
+    display: none;
+    text-decoration: none;
+
+    @include onTablet {
+      display: block;
+    }
+    @include onTablet {
+      &::before {
+        content: "EN";
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+
+        color: $color-light;
+
+        display: block;
+        width: max-content;
+        transform: translateY(150%);
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &:hover::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+
+  &__text-container {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $color-light;
+    letter-spacing: 0;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      width: 569px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $color-light;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 10px;
+    color: $color-light;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__date {
+    position: absolute;
+    bottom: 50px;
+    display: none;
+    align-items: center;
+
+    &::after {
+      content: "";
+      width: 400px;
+      height: 1px;
+      margin-left: 20px;
+
+      background: $color-light;
+      opacity: 0.3;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}
+
+.button {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  height: 60px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 1 / 3;
+  text-align: center;
+  align-items: center;
+  color: $color-light;
+  background: $color-red;
+
+  cursor: pointer;
+}
