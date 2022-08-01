@@ -1,15 +1,27 @@
 .menu {
   background-color: $mainColor;
-  overflow: scroll;
+
+  @include onDesktop {
+    height: 100vh;
+  }
 
   &__content {
     box-sizing: border-box;
     // height: 100%vh;
     padding: $headerTopPadding;
+
+    @include onDesktop {
+      padding: 0;
+
+    }
   }
 
   &__top {
     margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
   }
 
   &__list {
@@ -17,17 +29,10 @@
     padding: 0;
     list-style: none;
 
-    &--first {
-      &::before {
-        display: block;
-        content: "Розклад сьогодні:";
-        font-family: "Raleway", sans-serif;
-
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
-
-        color: $textColor;
+    &__first {
+      @include onDesktop {
+        display: flex;
+        gap: 105px;
       }
     }
 
@@ -40,6 +45,11 @@
         border-bottom: 1px solid $textColor;
 
         padding-bottom: 40px;
+
+        @include onDesktop {
+          padding-bottom: 60px;
+          width: 570px;
+        }
       }
     }
   }
@@ -48,10 +58,18 @@
 
     &__second:not(:last-child) {
       padding-bottom: 20px;
+
+      @include onDesktop {
+        padding-bottom: 60px;
+      }
     }
 
     &__first {
       padding-bottom: 20px;
+
+      @include onDesktop {
+        padding-bottom: 0;
+      }
     }
 
     &--adress {
@@ -68,6 +86,19 @@
       }
     }
 
+    &--rozklad {
+      &::before {
+        display: block;
+        content: "Розклад сьогодні:";
+        font-family: "Raleway", sans-serif;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+
+        color: $textColor;
+      }
+    }
   }
 
   &__link {
@@ -81,7 +112,6 @@
       font-weight: 600;
       font-size: 16px;
       line-height: 24px;
-
     }
 
     &--second {
@@ -89,11 +119,12 @@
       font-weight: 700;
       font-size: 20px;
       line-height: 30px;
+
+      @include onDesktop {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+      }
     }
   }
-
-  // &__button {
-  //   position: fixed;
-  //   top: 85%;
-  // }
 }
