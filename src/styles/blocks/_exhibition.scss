@@ -1,0 +1,72 @@
+.exhibitions__inner {
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gap;
+  }
+}
+
+.exhibition {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @extend %section-title;
+
+    position: relative;
+    margin-bottom: 20px;
+
+    &::before {
+      @extend %before-title;
+
+      content: "11.07 - 22.09";
+      position: absolute;
+      top: -30px;
+    }
+
+    &--last {
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @media (min-width: 865px) {
+        margin-bottom: 20px;
+      }
+
+      &::before {
+        content: "Діє постійно";
+      }
+    }
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__photo {
+    @extend %photo;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__button {
+    @extend %button-margin;
+  }
+}

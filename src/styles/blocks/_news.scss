@@ -1,0 +1,68 @@
+.news__inner {
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $gap;
+  }
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @extend %section-title;
+
+    position: relative;
+    margin-bottom: 20px;
+
+    &::before {
+      content: "9 серпня 2019";
+      position: absolute;
+      top: -25px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: $dark-color;
+    }
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 40px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+      object-fit: cover;
+      margin-bottom: 40px;
+
+      &--fit {
+        object-position: top;
+      }
+    }
+  }
+}

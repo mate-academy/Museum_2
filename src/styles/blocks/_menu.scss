@@ -1,0 +1,131 @@
+.menu {
+  color: $white-color;
+  background-color: $green-color;
+  z-index: 2;
+
+  &__content {
+    height: 100vh;
+    position: relative;
+  }
+
+  &__top {
+    @extend %top;
+    margin-bottom: 30px;
+  }
+
+  &__icons {
+    @extend %icons;
+  }
+
+  &__language {
+    @extend %language;
+  }
+
+  &__info {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__info-section {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__description {
+    font-weight: 600;
+    font-size: 16px;
+
+    &-address {
+      @extend %link;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    @extend %link;
+
+    &:hover {
+      @extend %border;
+    }
+  }
+
+  &__line {
+    margin: 40px 0;
+    border-bottom: 1px solid $white-color;
+
+    @include onTablet {
+      margin: 50px 0;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      margin: 60px 0;
+    }
+  }
+
+  &__button {
+    margin-bottom: 30px;
+  }
+
+  &__photo {
+    @extend %bg-center;
+
+    display: none;
+    height: 466px;
+    background-image: url("/images/menu.png");
+    z-index: -1;
+
+    @include onTablet {
+      display: flex;
+      width: 330px;
+      height: 350px;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 0;
+      left: 30%;
+    }
+
+    @include onDesktop {
+      width: 624px;
+      height: 697px;
+      position: absolute;
+      left: auto;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
