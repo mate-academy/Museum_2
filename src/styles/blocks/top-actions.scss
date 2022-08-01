@@ -5,16 +5,20 @@
   &__logo {
     height: 40px;
     width: 123px;
-    background-image: url(../images/logo/logo.svg);
+    background-image: url(../images/logo/NAMU.svg);
     background-repeat: no-repeat;
     background-position: 50%;
   }
 
   &__actions {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     align-items: center;
     gap: 42px;
+
+    @include onTablet {
+      flex-direction: row;
+    }
   }
 
   &__action {
@@ -31,6 +35,7 @@
   }
 
   &__languages {
+    visibility: hidden;
     font-style: "Raleway", sans-serif;
     font-weight: 100;
     font-size: 16px;
@@ -39,6 +44,22 @@
     outline: none;
     color: $c-white;
     background-color: $c-bg;
+
+    @include onTablet {
+      visibility: visible;
+    }
+
+    &--menu {
+      display: block;
+      font-style: "Raleway", sans-serif;
+      font-weight: 100;
+      font-size: 16px;
+      line-height: 24px;
+      border: 0;
+      outline: none;
+      color: $c-white;
+      background-color: $c-bg;
+    }
   }
 
   &__language {
