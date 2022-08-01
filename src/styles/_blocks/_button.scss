@@ -1,0 +1,49 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-decoration: none;
+  color: $c-white;
+
+  background-color: $c-main;
+  width: 100%;
+  height: 60px;
+
+  transition: background-color 0.3s ;
+
+  &--opasity {
+    display: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid $c-main;
+    color: $c-main;
+
+    @include onTablet {
+      display: flex;
+    }
+    &::after {
+      content: "";
+      background-repeat: no-repeat;
+      background-image: url(/images/museum_icons/GroupArow.svg);
+      height: 14px;
+      width: 16px;
+      margin-left: 12px;
+      object-position: center;
+    }
+
+  }
+
+  &:hover {
+    background-color: $c-hover;
+  }
+
+  &:active {
+    background-color: $c-pressed;
+    transition: background-color 0s;
+  }
+}

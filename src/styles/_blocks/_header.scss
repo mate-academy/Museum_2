@@ -1,0 +1,104 @@
+.header {
+  position: relative;
+  height: 100vh;
+  background-color: $c-bg;
+  color: $c-white;
+
+  &__contant {
+    margin-top: 70px;
+    @include onTablet {
+      margin-top: 120px;
+    }
+
+  }
+
+  &__bg-imge {
+    position: absolute;
+    bottom: 0;
+    height: 60%;
+    right: 50%;
+    transform: translateX(50%);
+    @include onTablet {
+      height: 67%;
+    }
+    @include onDesktop {
+      height: 90%;
+      right: 0;
+      transform: translateX(0);
+    }
+  }
+
+  &__additional-text {
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-family: Playfair Display, "Times New Roman", serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+      margin-bottom: 30px;
+      max-width: 569px;
+    }
+  }
+
+  &__date {
+    position: absolute;
+    bottom: 50px;
+    font-family: Playfair Display, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $c-white;
+    opacity: 0.7;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      position: relative;
+      margin-left: 20px;
+      top: -3px;
+      display: inline-block;
+      width: 469px;
+      border-bottom: 1px solid white ;
+    }
+  }
+
+  &__main-text {
+    margin-bottom: 40px;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    max-width: 267px;
+
+    @include onTablet {
+      max-width: 330px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      max-width: 569px;
+      margin-bottom: 80px;
+    }
+  }
+}
