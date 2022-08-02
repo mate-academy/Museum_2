@@ -1,26 +1,23 @@
 .header {
   position: relative;
-  height: 100vh;
-  background-color: $c-bg;
-  color: $c-white;
+  min-height: 670px ;
+  @extend %start-page;
 
   &__contant {
     margin-top: 70px;
+
     @include onTablet {
       margin-top: 120px;
     }
-
   }
 
   &__bg-imge {
-    position: absolute;
-    bottom: 0;
-    height: 60%;
-    right: 50%;
-    transform: translateX(50%);
+    @extend %bg-img;
+
     @include onTablet {
       height: 67%;
     }
+
     @include onDesktop {
       height: 90%;
       right: 0;
@@ -29,19 +26,13 @@
   }
 
   &__additional-text {
-    font-family: Raleway, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
+    @extend %additional-text;
     margin-bottom: 10px;
   }
 
   &__title {
+    @include font-FSWL($f-serif, 48px, 700, 48px);
     margin-bottom: 30px;
-    font-family: Playfair Display, "Times New Roman", serif;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 48px;
 
     @include onTablet {
       font-size: 72px;
@@ -58,13 +49,11 @@
   }
 
   &__date {
+    @include font-FSWL($f-serif, 14px, 700, 17px );
+    color: $c-white;
     position: absolute;
     bottom: 50px;
-    font-family: Playfair Display, "Times New Roman", serif;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 18px;
-    color: $c-white;
+
     opacity: 0.7;
     display: none;
 
@@ -84,11 +73,9 @@
   }
 
   &__main-text {
+    @extend %main-text;
+
     margin-bottom: 40px;
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
     max-width: 267px;
 
     @include onTablet {

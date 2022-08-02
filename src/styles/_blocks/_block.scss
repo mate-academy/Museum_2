@@ -1,0 +1,87 @@
+.block {
+  &--current {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__photo-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 127%;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      padding-bottom: 80%;
+    }
+
+    &--ratio {
+      @include onDesktop {
+        padding-bottom: 128%;
+      }
+    }
+
+    &--news {
+      padding-bottom: 100%;
+      @include onDesktop {
+        padding-bottom: 65%;
+      }
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    &--position-left {
+      object-position: -20px;
+
+      @include onDesktop {
+        object-position: 0;
+      }
+    }
+
+    &--position-top {
+      @include onDesktop {
+        object-position: top;
+      }
+    }
+  }
+
+  &__date {
+    @extend %main-text;
+    color: $c-main;
+    margin-bottom: 10px;
+
+    &--news {
+      margin-bottom: 0;
+      color: $c-black;
+    }
+  }
+
+  &__subtitle {
+    @include font-FSWL($f-serif, 20px, 700, 25px);
+    color: $c-black;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+  }
+
+  &__main-text {
+    @extend %main-text;
+    color: $c-gray;
+    margin-bottom: 30px;
+    max-width: 570px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}

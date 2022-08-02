@@ -12,14 +12,11 @@
   }
 
   &__contant {
-    padding: 50px  0 30px ;
+    padding: 50px 0 30px ;
   }
 
   &__subtitle {
-    font-family: "Playfair Display", "Times New Roman", serif;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 30px;
+    @include font-FSWL($f-serif, 20px, 700, 30px);
     margin-bottom: 10px;
 
     @include onTablet {
@@ -27,11 +24,10 @@
     }
   }
 
-  &__main-text {
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+  &__link {
+    @extend %main-text;
+    color: $c-white;
+    text-decoration: none;
   }
 
   &__social {
@@ -56,12 +52,10 @@
   }
 
   &__nav-link {
+    @extend %main-text;
+
     color: $c-white;
     text-decoration: none;
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
     letter-spacing: 0;
     text-align: left;
   }
@@ -72,10 +66,7 @@
     margin-top: 60px;
 
     &-text {
-      font-family: Raleway, sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 20px;
+      @include font-FSWL($f-sans-serif, 14px, 400, 20px);
     }
   }
 }

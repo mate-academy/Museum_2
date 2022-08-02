@@ -1,4 +1,10 @@
 .page {
+  scroll-behavior: smooth;
+
+  &__body {
+    background: $c-bg-gray;
+  }
+
   &__menu {
     position: fixed;
     top: 0;
@@ -21,93 +27,27 @@
     margin-bottom: 90px;
 
     &-title {
+      @include font-FSWL($f-serif, 28px, 700, 35px);
       color: $c-black;
-      font-family: Playfair Display, "Times New Roman", Times, serif;
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 35px;
       margin-bottom: 60px;
 
       @include onTablet {
         font-size: 40px;
         font-weight: 700;
         line-height: 50px;
-
       }
-    }
-  }
-}
 
-.block {
-  height: 100%;
+      &--last {
+        margin-bottom: 20px;
+        @include onTablet {
+          margin-bottom: 50px;
+        }
 
-  &__photo-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 127%;
-    margin-bottom: 20px;
-
-    @include onDesktop {
-      padding-bottom: 80%;
-    }
-
-    &--ratio {
-      @include onDesktop {
-        padding-bottom: 128%;
+        @include onDesktop {
+          font-size: 48px;
+          line-height: 58px;
+        }
       }
-    }
-  }
-
-  &__photo {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-
-    &--position {
-      object-position: -20px;
-
-      @include onDesktop {
-        object-position: 0;
-      }
-    }
-  }
-
-  &__date {
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: $c-main;
-    margin-bottom: 10px;
-  }
-
-  &__subtitle {
-    font-family: Playfair Display, "Times New Roman", Times, serif;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 25px;
-    color: $c-black;
-    margin-bottom: 20px;
-
-    @include onTablet {
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 30px;
-    }
-  }
-
-  &__main-text {
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: $c-gray;
-    margin-bottom: 30px;
-    max-width: 570px;
-
-    @include onDesktop {
-      margin-bottom: 50px;
     }
   }
 }
