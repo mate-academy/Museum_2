@@ -1,7 +1,454 @@
 @import "utils";
-@import "fonts";
-@import "typography";
 
-body {
-  background: $c-gray;
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+.page {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #504F5E;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1170px;
+  padding: 0 20px;
+
+  @include onTablet {
+    padding: 0 39px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px;
+  }
+}
+
+.top-actions {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons {
+  width: 125px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:last-child {
+    margin-left: 30px;
+
+    @include onTablet {
+      margin-right: 40px;
+    }
+  }
+}
+
+.icon {
+
+  position: relative;
+  display: block;
+  width: 30px;
+
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat ;
+
+  &--menu {
+    background-image: url('../images/menu.svg');
+    height: 30px;
+  }
+
+  &--cross {
+    background-image: url('../images/cross.svg');
+    height: 30px;
+  }
+
+  &--language {
+    color: #F1F5F4;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &--language:after {
+    content: '>';
+    display: inline-block;
+    position: absolute;
+    transform: rotate(90deg);
+    right: -5px;
+  }
+}
+
+.header {
+
+  box-sizing: border-box;
+  height: fit-content;
+  background: $c-background;
+  position: relative;
+
+  &__top-actions {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap:30px;
+    }
+  }
+
+  &__info {
+    max-width: 570px;
+
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    color: $c-white;
+
+    &-duration {
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      margin: 0 0 30px;
+      font-weight: 700;
+      font-size: 48px;
+      color: $c-white;
+
+      @include onTablet {
+        font-size: 73px;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+      }
+    }
+
+    &-subtitle {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+
+    &-date {
+      font-family: 'Playfair Display',sans-serif;
+      font-weight: 700;
+      opacity: 0.7;
+
+    }
+  }
+
+  &__line {
+    height: 1px;
+    margin-top: 5px;
+    background-color: $c-white;
+    opacity: 0.3;
+    flex-grow: 1;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__image{
+    max-width: 75%;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  &__bottom {
+    display: none;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__image > img {
+    width: 100%;
+    object-position: center;
+    object-fit: contain;
+  }
+
+}
+
+.button {
+  display: block;
+  text-decoration: none;
+  color: $c-white;
+  font-weight: 600;
+  background-color: $c-main;
+  text-align: center;
+  padding: 22px 0;
+  width:  100%;
+
+  @include onTablet {
+    width: 330px;
+  }
+  @include onDesktop {
+    width: 270px;
+  }
+}
+
+.menu {
+  background-color: $c-background;
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 24px;
+    }
+  }
+
+  &__top-actions {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 /13;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      flex-direction: row;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-bottom: 70px;
+    }
+
+    &-title {
+      color: $c-white;
+      line-height: 20px;
+    }
+
+    &-value {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: $c-white;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+
+    @include  onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    color: $c-white;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 300ms;
+
+    &:hover {
+      border-color: $c-white;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: $c-white;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+}
+
+.block-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  color: $c-black;
+  font-family: "Playfair Display", sans-serif;
+  @include onTablet{
+    justify-content: space-between;
+    margin-bottom: 70px;
+  }
+
+  &__title  {
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    margin: 0;
+
+    @include onTablet{
+      font-size: 40px;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include onTablet{
+      display: inline-block;
+    }
+  }
+}
+
+.exhibitions {
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+}
+
+.exhibition {
+  width: 100%;
+
+  @include onTablet {
+    max-width: 330px;
+  }
+
+  @include  onDesktop {
+    max-width: 470px;
+  }
+  &__image {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  &__duration {
+    color: $c-main;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 125%;
+    color: $c-black;
+    margin: 0 0 20px;
+  }
+
+  &__description {
+    line-height: 150%;
+    color: $c-gray;
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    margin-bottom: 60px;
+  }
 }
