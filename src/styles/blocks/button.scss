@@ -1,0 +1,75 @@
+.button {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  min-width: 280px;
+  text-decoration: none;
+
+  transition: 0.3s;
+  position: relative;
+  z-index: 1;
+
+  &__primary {
+    background-color: $color-red;
+    color: $color-lightGray;
+    border: 1px solid transparent;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+  }
+
+  &__secondary {
+    color: $color-red;
+    border: 1px solid $color-red;
+    transition: 0.3s;
+    position: relative;
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+    }
+
+    &:active {
+      color: #ea340d;
+      border-color: #ea340d;
+    }
+
+    &:disabled {
+      color: #dd836f;
+      border-color: #dd836f;
+    }
+
+    &--arrow {
+      display: flex;
+    }
+  }
+
+  @include onTablet {
+    max-width: 330px;
+    min-width: 220px;
+  }
+
+  @include onDesktop {
+    max-width: 270px;
+  }
+
+  &--hidden {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+
+  }
+}
