@@ -1,15 +1,15 @@
 .container {
-  box-sizing: border-box;
+  // box-sizing: border-box;
   max-width: 1170px;
-  // padding: 20px;
   margin: 0 auto;
-  width: 100%;
+  padding: 20px 0;
 
   @include onDesktop {
     padding: 32px 55px;
   }
 
   &__first {
+
     margin-bottom: 40px;
 
     @include onDesktop {
@@ -18,20 +18,32 @@
   }
 
   &__second {
+
     margin-bottom: 40px;
 
     @include onDesktop {
       margin-bottom: 60px;
     }
   }
+
+  &--main {
+
+    @include onDesktop {
+      padding-top: 0;
+    }
+  }
 }
 
 .header {
   box-sizing: border-box;
-  padding: $headerTopPadding;
+  padding: $headerTopPadding $headerTopPadding 0;
   background-color: $mainColor;
 
   @include onDesktop {
+    background-image: url(../images/img.png);
+    background-repeat: no-repeat;
+    background-position: top 100% left 100%;
+
     padding: 0;
     height: 100%;
   }
@@ -60,6 +72,8 @@
     margin-top: 10px;
 
     @include onDesktop {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
       font-size: 96px;
       line-height: 96px;
     }
@@ -96,27 +110,22 @@
 
   &__image-container {
     margin-top: 40px;
+    width: 245px;
+    height: 273px;
 
     @include onDesktop {
-      height: 0;
-      width: 0;
+      display: none;
     }
+  }
+  &__image {
+    margin-top: 40px;
+    height: 273px;
+    width: 245px;
+    object-fit: cover;
+    object-position: center;
 
-    &__img {
-      height: 273px;
-      // width: 100%;
-      object-fit: fill;
-      object-position: center;
-
-      @include onDesktop {
-        height: 663px;
-        width: 625px;
-        position: absolute;
-        // object-fit: scale-down;
-        // width: 100%;
-        top: 41%;
-        left: 45%;
-      }
+    @include onDesktop {
+      display: none;
     }
   }
 }
