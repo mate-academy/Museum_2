@@ -3,6 +3,10 @@
   height: 100vh;
   width: 100%;
 
+  @include landscapeTablet {
+    height: 1000px;
+  }
+
   @include onTablet {
     background-image: url(../images/backgrounds/menu.png);
     background-position: bottom;
@@ -41,7 +45,7 @@
 
   &__item {
     padding-bottom: 20px;
-    @extend %h3;
+
 
     @include onDesktop {
       margin-bottom: 10px;
@@ -50,6 +54,10 @@
     &--border {
       padding-bottom: 40px;
       border-bottom: 1px solid $c-white;
+    }
+
+    &__link {
+      @extend %h3;
     }
   }
 }
