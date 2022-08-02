@@ -27,14 +27,34 @@
 
   &__input {
     margin-bottom: 30px;
+    width: 100%;
+    @extend %main-text;
     outline: none;
     border: none;
     background-color: $c-white;
     border-bottom: 1px solid $c-black;
     color: $c-black;
 
-    &::placeholder {
-      @extend %main-text
+    &:hover {
+      color: $c-main;
+      border-color: $c-main;
+      cursor: text;
+
+      &::placeholder {
+        color: $c-main;
+      }
     }
+
+    &:focus {
+      color: $c-main;
+
+      &::placeholder {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__button {
+    cursor: pointer;
   }
 }

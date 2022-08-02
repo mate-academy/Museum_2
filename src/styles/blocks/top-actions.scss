@@ -1,9 +1,10 @@
 .top-actions {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 
   @include onTablet {
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
   &__logo {
@@ -31,10 +32,24 @@
 
     &--menu {
       background-image: url(../images/icons/menu.svg);
+
+      transition: transform 0.2s, background-image 0.2s;
+
+      &:hover {
+        background-image: url(../images/icons/menu-red.svg);
+        transform: scale(1.1);
+      }
     }
 
     &--cross {
       background-image: url(../images/icons/cross.svg);
+
+      transition: transform 0.2s, background-image 0.2s;
+
+      &:hover {
+        background-image: url(../images/icons/cross-red.svg);
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -48,6 +63,12 @@
     outline: none;
     color: $c-white;
     background-color: $c-bg;
+
+    transition: color 0.2s;
+
+    &:hover {
+      color: $c-main;
+    }
 
     @include onTablet {
       visibility: visible;
@@ -63,6 +84,12 @@
       outline: none;
       color: $c-white;
       background-color: $c-bg;
+
+      transition: color 0.2s;
+
+      &:hover {
+        color: $c-main;
+      }
     }
   }
 }
