@@ -1,0 +1,84 @@
+.event {
+  &__section-title {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__section-button {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__person {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__photo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    margin-bottom: 20px;
+
+    @include hover (transform, scale(1.05));
+    @include hover (box-shadow, 5px 10px 8px $grayColor);
+  }
+
+  &__photo {
+    grid-column: 1 / 3;
+    height: 356px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 25%;
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 475px;
+    }
+
+    &-man {
+      object-position: 50%;
+    }
+  }
+
+  &__time {
+    margin-bottom: 10px;
+    color: $mainColor;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+  }
+
+  &__button-container {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__block-button {
+    @include onTablet {
+      display: none;
+    }
+  }
+}

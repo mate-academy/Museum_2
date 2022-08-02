@@ -1,0 +1,39 @@
+.visit {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 50px;
+  background-color: $backgroundColor;
+  color: $whiteColor;
+
+  @include onTablet {
+    padding: 80px 0;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+  }
+
+  &__image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: -10%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+  }
+}

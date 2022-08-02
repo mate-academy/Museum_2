@@ -1,0 +1,54 @@
+.article {
+  &__photo-container {
+    position: relative;
+
+    box-sizing: border-box;
+    max-height: 370px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      height: 330px;
+      padding-bottom: 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include hover (transform, scale(1.05));
+    @include hover (box-shadow, 5px 10px 8px $grayColor);
+
+  }
+
+  &__photo {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    &-cat {
+      object-position: top;
+    }
+  }
+
+  &__info {
+    margin-bottom: 50px;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    color: $mainColor;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      min-height: 60px;
+    }
+  }
+}

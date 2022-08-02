@@ -1,0 +1,90 @@
+.header {
+  background-color: $backgroundColor;
+  color: $whiteColor;
+
+  &__content{
+    position: relative;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      justify-content: space-between;
+    }
+  }
+
+  &__date {
+    padding-top: 50px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      padding-top: 90px;
+    }
+
+    @include onDesktop {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+  }
+
+  @include onTablet {
+    margin-bottom: 50px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 100px;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+  }
+
+  &__photo-container {
+    display: flex;
+    margin-right: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+
+  &__bottom {
+    display: none;
+    align-items: center;
+    opacity: 0.7;
+    margin-bottom: 50px;
+
+    &-date {
+      margin-right: 20px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      height: 2px;
+      width: 45%;
+      background-color: $whiteColor;
+      opacity: 0.3;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}

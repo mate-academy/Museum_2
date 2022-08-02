@@ -1,0 +1,44 @@
+.exhibition {
+  &__photo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    margin-bottom: 20px;
+
+    @include hover (transform, scale(1.05));
+    @include hover (box-shadow, 5px 10px 8px $grayColor);
+  }
+
+  &__photo {
+    grid-column: 1 / 3;
+    height: 356px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 25%;
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 475px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 50px;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    color: $mainColor;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      min-height: 60px;
+    }
+  }
+}

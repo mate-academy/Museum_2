@@ -1,0 +1,38 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 60px;
+
+  &--primary {
+    border: 1px solid transparent;
+    background-color: $mainColor;
+    color: $whiteColor;
+
+    @include hover(background-color, #af3419);
+    @include active(background-color, #ea340d);
+  }
+
+  &--secondary {
+    border: 1px solid $mainColor;
+    color: $mainColor;
+
+    &::after {
+      content: url(../images/arrow-default.svg);
+      padding-left: 10px;
+      justify-content: center;
+      align-items: bottom;
+
+      @include hover(content, url(../images/arrow-hover.svg));
+      @include hover(content, url(../images/arrow-active.svg));
+    }
+
+    @include hover(border-color, #af3419);
+    @include hover(color, #af3419);
+    @include active(border-color, #ea340d);
+    @include active(color, #ea340d);
+  }
+
+}

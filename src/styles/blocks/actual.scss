@@ -1,0 +1,52 @@
+.actual {
+  &__title {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+
+    &-button {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__exhibition {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--last {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__block-button {
+    @include onTablet {
+      display: none;
+    }
+  }
+}

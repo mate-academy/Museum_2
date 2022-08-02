@@ -1,0 +1,65 @@
+.page {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $grayColor;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: $mbPhoneSmall;
+
+    @include onTablet {
+      margin-bottom: $mbTabletSmall;
+    }
+
+    @include onDesktop {
+      margin-bottom: $mbDesktopSmall;
+    }
+
+    &--medium {
+      @include onTablet {
+        margin-bottom: $mbTabletMedium;
+      }
+    }
+
+    &--large {
+      margin-bottom: $mbPhoneLarge;
+
+      @include onTablet {
+        margin-bottom: $mbTabletLarge;
+      }
+
+      @include onDesktop {
+        margin-bottom: $mbDesktopLarge;
+      }
+    }
+
+    &--footer {
+      margin-bottom: 0;
+    }
+  }
+}

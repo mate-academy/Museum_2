@@ -1,0 +1,46 @@
+.form {
+  &__field-container {
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 65%);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(2, 80%);
+    }
+  }
+
+  &__field {
+    outline: none;
+    border-style: none;
+    border-bottom: 1px solid $blackColor;
+
+    margin-bottom: 30px;
+
+    &:hover {
+      border-color: $mainColor;
+      color: $mainColor;
+    }
+
+    &:focus {
+      font-weight: 700;
+      color: $blackColor;
+    }
+
+    &:-webkit-autofill,
+    :-webkit-autofill:hover,
+    :-webkit-autofill:focus {
+      -webkit-animation-name: autofill;
+      -webkit-animation-fill-mode: both;
+    }
+  }
+
+  &__button-container {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
+}
