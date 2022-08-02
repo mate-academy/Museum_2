@@ -8,6 +8,7 @@
 @import "./blocks/top.scss";
 @import "./blocks/menu.scss";
 @import "./blocks/button.scss";
+@import "./blocks/section.scss";
 
 body,
 h1,
@@ -27,289 +28,95 @@ html {
   scroll-behavior: smooth;
 }
 
-.section {
+.footer {
   &__title {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-
-    @include onDesktop {
-      margin-bottom: 71px;
-    }
-
-    @include onTablet {
-      margin-bottom: 75px;
-    }
+    margin-bottom: 30px;
+    @extend %h2;
+    color: $color-white;
+    font-size: 20px;
 
     @include onMobile {
-      justify-content: center;
-    }
-
-    &-item {
-
-      font-size: 28px;
-
-      @include onTablet {
-        font-size: 40px;
-
-      }
-
-      @include onDesktop {
-        font-size: 48px;
-      }
-
-      @include onMobile {
-        text-align: center;
-      }
+      font-size: 18px;
     }
   }
 
-  &__photo {
-    position: relative;
-    width: 100%;
-    max-height: 356px;
-
-    &-1 {
-      @include onMobile {
-        margin-bottom: 370px;
-      }
-    }
-
-    &-2 {
-      margin-bottom: 469px;
-    }
-
-    &-3 {
-      position: relative;
-      width: 100%;
-      max-height: 281px;
-
-      @include onDesktop {
-        max-height: 370px;
-        height: 370px;
-      }
-
-      @include onTablet {
-        max-height: 330px;
-        height: 330px;
-      }
-
-      @include onMobile {
-        margin-bottom: 207px;
-      }
-    }
-
-    &-cat-small {
-      @include onDesktop {
-        display: none;
-      }
-    }
-
-    &-cat {
-      @include onMobile {
-        display: none;
-      }
-
-      @include onTablet {
-        display: none;
-      }
-
-    }
-
-    &::after {
-      content: "";
-      display: block;
-    }
-
-    @include onDesktop {
-      max-height: 484px;
-      height: 484px;
-    }
-
-    @include onTablet {
-      max-height: 420px;
-      height: 420px;
-    }
-
-    &-item {
-      position: relative;
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-      object-position: center;
-
-      margin-bottom: 20px;
-
-      @include onTablet {
-        margin-bottom: 30px;
-        object-position: center;
-      }
-    }
-
-    &-absolute {
-      position: absolute;
-      left: 0;
-      width: auto;
-    }
-
-    &-between {
-      @include onDesktop {
-        max-height: 800px;
-        height: 800px;
-      }
-    }
+  &__left {
+    margin-bottom: 50px;
   }
 
-  &__date {
-    @extend %default;
-    color: $color-red;
-    margin-bottom: 10px;
-
-    &--black {
-      color: $color-black;
-    }
+  &__center {
+    margin-bottom: 50px;
   }
 
-  &__subtitle {
-    @extend %h3;
-    color: $color-black;
-    font-size: 20px;
-    margin-bottom: 20px;
+  &__text-left {
+    margin-bottom: 50px;
 
-    @include onTablet {
-      font-size: 24px;
-      height: 70px;
-      margin-bottom: 20;
+    @include onMobile {
+      margin-bottom: 30px;
     }
-
-    @include onDesktop {
-      font-size: 24px;
-    }
-
-    // &-2 {
-    //   @include onTablet {
-    //     margin-bottom: 50px;
-    //   }
-    // }
   }
 
   &__text {
     @extend %default;
-    color: $color-black;
-    margin-bottom: 30px;
+    color: $color-white;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-white;
+    transition: color 0.3s ease;
+
+    &:hover {
+      @include linkHover;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
 
     @include onTablet {
-      margin-bottom: 40px;
-      height: 70px;
+      width: 60%;
     }
 
     @include onDesktop {
-      margin-bottom: 50px;
+      width: 40%;
     }
 
-  }
-
-  &__container {
-    background-color: $background-c;
-  }
-
-  &__between {
-    position: relative;
-    &-title {
-      margin-top: 50px;
-
-      @include onTablet {
-        margin-top: 80px;
-      }
-
-      color: $color-white;
-      @extend %h2;
-      font-size: 38px;
-      margin-bottom: 20px;
-
-      @include onTablet {
-        font-size: 62px;
-      }
-
-      @include onDesktop {
-        margin-top: 205px;
-        font-size: 80px;
-      }
-
-      line-height: 100%;
-      letter-spacing: 0;
+    &-facebook {
+      background-image: url("../images/facebook.svg");
+      @include icon;
     }
 
-    &-text {
-      color: $color-white;
-      @extend %default;
-      margin-bottom: 40px;
-
-      @include onTablet {
-        margin-bottom: 60px;
-      }
-
-      @include onDesktop {
-        margin-bottom: 50px;
-      }
+    &-twitter {
+      background-image: url("../images/twitter.svg");
+      @include icon;
     }
 
-    &--none {
+    &-telegram {
+      background-image: url("../images/telegram.svg");
+      @include icon;
+    }
 
-      @include onMobile {
-        display: none;
-      }
-
-      @include onTablet {
-        display: none;
-      }
-
+    &-instagram {
+      background-image: url("../images/instagram.svg");
+      @include icon;
     }
   }
 
-  &__news {
-    margin-bottom: 190px;
-    @include onDesktop {
-      margin-bottom: 400px;
-    }
-
-    @include onTablet {
-      margin-bottom: 360px;
-    }
+  &__right {
+    margin-bottom: 10px;
   }
 
-  &__digest {
+  &__arrow-position {
+    display: grid;
+    justify-items: end;
+  }
 
-    margin-bottom: 80px;
-
-    @include onDesktop {
-      margin-bottom: 200px;
-    }
-
-    @include onTablet {
-      margin-bottom: 128px;
-    }
-
-    &-title {
-      margin-bottom: 50px;
-      @include onMobile {
-        text-align: start;
-      }
-    }
-
-    &-input {
-      margin-bottom: 30px;
-      width: 100%;
-      border-top: transparent ;
-      border-left: transparent ;
-      border-right: transparent ;
-      color: $color-black;
-      border-width: 1px;
-
-      @include onTablet {
-        width: 80%;
-      }
-    }
+  &__arrow {
+    background-image: url("../images/arrow-top.svg");
+    @include icon;
   }
 }
