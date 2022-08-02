@@ -42,7 +42,7 @@
     justify-content: center;
     align-items: center;
     border: 1px solid $mainRed;
-    width: 250px;
+    width: 0;
     height: 60px;
 
     font-weight: 600;
@@ -55,17 +55,18 @@
 
     @include onTablet {
       opacity: 1;
+      width: 250px;
     }
 
     &::after {
-      position: absolute;
-      font-size: 16px;
-      font-weight: 600;
-      line-height: 16px;
-      text-align: center;
+      content: "";
+      width: 60px;
+      height: 60px;
+      background-repeat: no-repeat;
 
       background-image: url(../images/arrow.svg);
       margin-left: 10px;
+      margin-top: 40px;
     }
   }
 
