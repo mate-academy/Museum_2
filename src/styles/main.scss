@@ -39,6 +39,20 @@
     grid-column: 7 / 13;
   }
 }
+@mixin header-styles {
+  min-height: 747px;
+  box-sizing: border-box;
+
+  background: $c-background;
+
+  @include onTablet {
+    min-height: 1092px;
+  }
+
+  @include onDesktop {
+    min-height: 100vh;
+  }
+}
 
 .page {
   font-family: "Raleway", sans-serif;
@@ -50,6 +64,10 @@
 
   &__body {
     margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
   }
 
   &__section {
@@ -61,6 +79,22 @@
 
     @include onDesktop {
       margin-bottom: 110px;
+    }
+
+    &-footer {
+      margin: 0;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    inset: 0;
+
+    transform: translateX(100%);
+    transition: transform 300ms;
+
+    &:target {
+      transform: translateX(0);
     }
   }
 
@@ -95,18 +129,14 @@ h5 {
 }
 
 .icons {
-  width: 125px;
   display: flex;
+  gap: 30px;
   justify-content: space-between;
   align-items: center;
 
-  &:last-child {
-    margin-left: 30px;
-
     @include onTablet {
-      margin-right: 40px;
+      gap: 40px;
     }
-  }
 }
 
 .icon {
@@ -130,10 +160,15 @@ h5 {
   }
 
   &--language {
+    display: none;
     color: $c-white;
     text-decoration: none;
     font-style: normal;
     font-weight: 500;
+
+    @include onTablet {
+      display: block;
+    }
   }
 
   &--language:after {
@@ -146,17 +181,14 @@ h5 {
 }
 
 .header {
-
-  box-sizing: border-box;
-  height: fit-content;
-  background: $c-background;
+  @include header-styles;
   position: relative;
 
   &__top-actions {
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 
     @include onTablet {
-      margin-bottom: 120px;
+      margin-bottom: 90px;
     }
   }
 
@@ -175,6 +207,7 @@ h5 {
     max-width: 570px;
 
   }
+
   &__text {
     font-weight: 400;
     font-size: 14px;
@@ -196,6 +229,7 @@ h5 {
 
       @include onDesktop {
         font-size: 96px;
+        line-height: 100%;
       }
     }
 
@@ -207,7 +241,7 @@ h5 {
       }
 
       @include onDesktop {
-        margin-bottom: 80px;
+        margin-bottom: 60px;
       }
     }
 
@@ -231,34 +265,50 @@ h5 {
     margin-bottom: 40px;
 
     @include onTablet {
+      width: 70%;
       margin-bottom: 70px;
     }
 
     @include onDesktop {
+      width: 50%;
       margin-bottom: 135px;
     }
   }
 
   &__image {
+    position: absolute;
+    right: 12%;
+    bottom: 0;
     max-width: 75%;
     display: flex;
-    margin: 0 auto;
+
+    &-photo {
+      width: 100%;
+      object-position: center;
+      object-fit: contain;
+    }
+
+    @include onTablet {
+      max-width: 60%;
+      right: 20%;
+    }
+
+    @include onDesktop {
+      max-width: 40%;
+      right: 0;
+    }
   }
 
   &__bottom {
     display: none;
     align-items: center;
     gap: 20px;
-  }
 
-  &__image > img {
-    width: 100%;
-    object-position: center;
-    object-fit: contain;
+    @include onDesktop {
+      display: block;
+    }
   }
-
 }
-
 .button {
   display: flex;
   justify-content: center;
@@ -285,10 +335,18 @@ h5 {
 }
 
 .menu {
-  background-color: $c-background;
+  @include header-styles;
 
   &__content {
     @include grid;
+  }
+
+  &__icons {
+    flex-direction: row-reverse;
+
+    @include onTablet {
+      flex-direction: row;
+    }
   }
 
   &__top-actions {
@@ -311,17 +369,6 @@ h5 {
     justify-content: space-between;
     margin-bottom: 40px;
 
-    @include onTablet {
-      grid-column: 1 / 4;
-      flex-direction: row;
-      margin-bottom: 50px;
-    }
-
-    @include onDesktop {
-      grid-column: 1 / 7;
-      margin-bottom: 70px;
-    }
-
     &-title {
       color: $c-white;
       line-height: 20px;
@@ -333,21 +380,32 @@ h5 {
       line-height: 24px;
       color: $c-white;
     }
-  }
 
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 40px;
-
-    @include  onTablet {
+    @include onTablet {
       grid-column: 1 / 4;
+      flex-direction: row;
       margin-bottom: 50px;
     }
 
     @include onDesktop {
       grid-column: 1 / 7;
       margin-bottom: 60px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+
+    @include  onTablet {
+      grid-column: 1 / 7;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-bottom: 10px;
     }
   }
 
@@ -363,7 +421,7 @@ h5 {
     }
 
     @include onDesktop {
-      margin-bottom: 70px;
+      margin-bottom: 40px;
     }
   }
 
@@ -387,11 +445,11 @@ h5 {
     margin-bottom: 40px;
 
     @include onTablet {
+      grid-column: 1 / 7;
       margin-bottom: 50px;
     }
 
     @include onDesktop {
-      grid-column: 1 / 7;
       margin-bottom: 60px;
     }
   }
@@ -402,9 +460,23 @@ h5 {
     @include onTablet {
       grid-column: 1 / 4;
     }
+  }
+
+  &__image {
+    display: none;
+
+    &-photo {
+      width: 100%;
+      object-position: center;
+      object-fit: contain;
+    }
 
     @include onDesktop {
-      grid-column: 1 / 7;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 35%;
+      display: flex;
     }
   }
 }
@@ -759,7 +831,7 @@ h5 {
 
 .digest {
   &__title {
-    font-family: "Playfair Display",sans-serif;
+    font-family: "Playfair Display", sans-serif;
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 28px;
@@ -851,6 +923,163 @@ h5 {
     outline: none;
     &::placeholder {
       font-weight: 600;
+    }
+  }
+}
+
+.footer {
+  background-color: $c-background;
+
+  &__content {
+    padding: 34px 0 30px;
+    color: $c-white;
+    @include grid;
+  }
+
+  &__contacts {
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__schedule {
+    @include onTablet {
+      grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__nav {
+    @include onTablet {
+      grid-column: 5 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 9 / 13;
+    }
+  }
+
+  &__part {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &-last {
+      margin-bottom: 60px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    @include onDesktop {
+
+    }
+
+    &-link {
+      display: inline-block;
+      text-decoration: none;
+      color: $c-white;
+    }
+  }
+
+  &__info {
+    margin-bottom: 32px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+
+    }
+  }
+
+  &__icons {
+    display: inline-flex;
+    gap: 20px;
+    position: relative;
+  }
+
+  &__icon {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__link {
+    margin-bottom: 5px;
+    display: inline-block;
+    text-decoration: none;
+    color: $c-white;
+  }
+
+  &__bottom {
+    line-height: 100%;
+    grid-column: 1 / 13;
+    display: flex;
+    justify-content: space-between;
+
+    @include grid;
+
+      &-date {
+        padding-top: 5px;
+        color: $c-white;
+        text-decoration: none;
+        @include onTablet {
+          grid-column: 1 / 2;
+        }
+
+        @include onDesktop {
+          grid-column: 1 / 3;
+        }
+      }
+
+    &-privacy {
+      padding-top: 5px;
+      color: $c-white;
+      text-decoration: none;
+      @include onTablet {
+        grid-column: 2 / 3;
+      }
+
+      @include onDesktop {
+        grid-column: 3 / 5;
+      }
+    }
+
+    &-arrow {
+      @include onTablet {
+        grid-column: 6 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 12 / 13;
+      }
     }
   }
 }
