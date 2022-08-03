@@ -36,6 +36,8 @@
     width: 100%;
     object-fit: cover;
 
+    transition: transform, box-shadow, 0.3s;
+
     &--position-left {
       object-position: -20px;
 
@@ -48,6 +50,11 @@
       @include onDesktop {
         object-position: top;
       }
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: rgba(100, 100, 111, 0.4) 0 7px 29px 0;
     }
   }
 
@@ -65,7 +72,12 @@
   &__subtitle {
     @include font-FSWL($f-serif, 20px, 700, 25px);
     color: $c-black;
+    text-decoration: none;
     margin-bottom: 20px;
+
+    &--link {
+      @include link-animation($c-black);
+    }
 
     @include onTablet {
       font-size: 24px;

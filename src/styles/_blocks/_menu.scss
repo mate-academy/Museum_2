@@ -46,10 +46,15 @@
 
   &__additional-value {
     @extend %main-text;
+
     font-weight: 600;
     color: $c-white;
     text-decoration: none;
     margin-bottom: 20px ;
+
+    &--link {
+      @include link-animation;
+    }
   }
 
   &__list {
@@ -75,11 +80,8 @@
 
     text-decoration: none;
     color: $c-white;
-    border-bottom: 1px solid transparent;
 
-    &:hover {
-      border-color: $c-white;
-    }
+    @include link-animation;
 
     @include onTablet {
       font-size: 48px;
