@@ -1,3 +1,93 @@
 .events {
-  padding: 150px 56px;
+  padding: 100px 56px;
+
+  @include tablet {
+    padding: 100px 40px;
+  }
+
+  @include mobile {
+    padding: 100px 20px;
+  }
+
+  &__gallery {
+    display: flex;
+    padding-top: 50px;
+    flex-direction: column;
+    gap: 60px;
+  }
+  &__first-box {
+    max-width: 570px;
+    display: flex;
+    gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+  &__second-box {
+    max-width: 570px;
+    display: flex;
+    gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  &__date {
+    font-family: "raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #cd4d31;
+
+    margin: 10px 0 10px;
+  }
+
+  &__image {
+    transition: transform .4s, box-shadow .4s ;
+
+    &:hover {
+      transform: scale(103%);
+      box-shadow: 2px 2px 2px #1c1b29;
+    }
+    @include mobile {
+      max-width: 400px;
+    }
+  }
+
+  &__name {
+    font-family: "Playfair display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #1c1b29;
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__description {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #504f5e;
+    width: max-content;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+    margin: 20px 0 50px;
+  }
 }

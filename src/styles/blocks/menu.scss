@@ -6,15 +6,34 @@
   background-color: #3f5252;
   height: 100vh;
 
+  @include mobile {
+    justify-content: flex-start;
+  }
+
+  @include tablet {
+    justify-content: flex-start;
+  }
   &__content {
     display: flex;
     justify-content: space-between;
     padding-left: 55px;
+
+    @include tablet {
+      padding-left: 40px;
+    }
+    @include mobile {
+      padding-left: 20px;
+    }
   }
 
   &__info {
     display: flex;
     gap: 80px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
   &__schedule {
     display: flex;
@@ -24,6 +43,7 @@
   &__address {
     display: flex;
     flex-direction: column;
+
   }
 
   &__text--small {
@@ -40,14 +60,25 @@
     color: #f1f5f4;
   }
 
-  &__image-warpper {
-    display: flex;
-    max-width: 500px;
-    max-height: 100%;
-  }
   &__image {
-    width: 100%;
-    height: 100%;
+    display: block;
+    width: 520px;
+    height: 560px;
+    position: absolute;
+    background-repeat: no-repeat;
+    right: 0;
+    bottom: 0;
+    background-image: url(/images/img_2.png);
+    background-size:cover;
+
+    @include tablet {
+      width: 420px;
+      height: 460px;
+    }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__list {
@@ -60,6 +91,12 @@
   &__item {
     margin-bottom: 40px;
 
+    @include tablet {
+      margin-bottom: 30px;
+    }
+    @include mobile {
+      margin-bottom: 20px;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -73,6 +110,9 @@
     color: #f1f5f4;
     transition: border-bottom ease 0.9s;
 
+    @include mobile {
+      font-size: 20px;
+    }
     &:hover {
       border-bottom: 1px solid #f1f5f4;
     }
