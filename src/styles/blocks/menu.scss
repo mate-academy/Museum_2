@@ -1,23 +1,27 @@
 .menu {
   background-color: $mainColor;
+  height: 100vh;
+  overflow-y: auto;
 
   @include onDesktop {
-    background-color: $mainColor;
     height: 100vh;
-    background-image: url(../images/img_menu.png);
-    background-repeat: no-repeat;
-    background-position: top 100% left 100%;
+    overflow-y: auto;
+  }
 
+  &__container {
+    padding: 20px 20px 0;
+
+    @include onDesktop {
+      padding: 34px 55px 0;
+    }
   }
 
   &__content {
     box-sizing: border-box;
-    // height: 100%vh;
     padding: $headerTopPadding;
 
     @include onDesktop {
       padding: 0;
-
     }
   }
 
@@ -104,6 +108,7 @@
         color: $textColor;
       }
     }
+
   }
 
   &__link {
@@ -111,6 +116,13 @@
 
     color: $textColor;
     text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    transition: border-bottom 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid #f1f5f4;
+    }
 
     &--first {
       font-family: "Raleway", sans-serif;
@@ -130,6 +142,24 @@
         font-size: 48px;
         line-height: 48px;
       }
+    }
+  }
+
+  &__image {
+
+    @include onDesktop {
+      height: 663px;
+    }
+  }
+
+  &__img {
+    visibility: hidden;
+
+    @include onDesktop {
+      visibility: visible;
+      display: block;
+      object-fit: cover;
+      height: 693px;
     }
   }
 }

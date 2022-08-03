@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>Namu</title>
+    <link rel="icon" href="./images/icon.png">
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway&display=swap" rel="stylesheet">
   </head>
   <body class="page__body">
-    <header class="header page__section--header">
+    <header class="header page__section--header" id="head">
       <div class="header__container">
         <div class="top-actions">
-          <a href="#" class="logo">
+          <a href="#menu" class="logo">
             <img
               class="logo__image"
               src="./images/NAMU.svg"
@@ -27,7 +28,6 @@
               icon--menu
             ">
           </a>
-
         </div>
 
         <div class="grid grid--desktop">
@@ -58,19 +58,16 @@
                 alt="girl_ukranian"
               >
             </div>
-
           </div>
-
         </div>
       </div>
-
     </header>
 
-    <nav class="page__menu menu" id="menu">
-      <div class="container">
+    <nav class="page__menu menu page__body--with-menu" id="menu">
+      <div class="menu__container">
         <div class="menu__content">
           <div class="top-actions menu__top">
-            <a href="#" class="logo">
+            <a href="#head" class="logo">
               <img
                 class="logo__image"
                 src="./images/NAMU.svg"
@@ -99,7 +96,7 @@
                     menu__item--rozklad
                   ">
                 <a
-                  href="#"
+                  href="#events"
                   class="menu__link menu__link--first">
                   12:00 - 19:00
                 </a>
@@ -107,42 +104,52 @@
               <li class="menu__item menu__item--adress">
                 <a
                   href="https://goo.gl/maps/djPMLXob4BTBZxCq8"
-                  class="menu__link menu__link--first">
-                  Київ, вул. М. Грушевського, 6
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="container__second">
-            <ul class="
-                    menu__list
-                    menu__list__second
-                    menu__list--second
-                  ">
-              <li class="menu__item menu__item__second">
-                <a href="#perfomances" class="menu__link menu__link--second">
-                  Актуальні виставки
-                </a>
-              </li>
-              <li class="menu__item menu__item__second">
-                <a href="#events" class="menu__link menu__link--second">
-                  Найближчі події
-                </a>
-              </li>
-              <li class="menu__item menu__item__second">
-                <a href="#news" class="menu__link menu__link--second">
-                  Новини
+                  class="menu__link menu__link--first"
+                  target="_blank">
+                    Київ, вул. М. Грушевського, 6
                 </a>
               </li>
             </ul>
           </div>
 
           <div class="grid grid--desktop">
-            <div class="grid__item grid__item--desktop-1-3">
-              <button class="menu__button button">
-                Купити
+            <div class="grid__item grid__item--1-6">
+              <div class="container__second">
+                <ul class="
+                        menu__list
+                        menu__list__second
+                        menu__list--second
+                      ">
+                  <li class="menu__item menu__item__second">
+                    <a href="#perfomances" class="menu__link menu__link--second">
+                      Актуальні виставки
+                    </a>
+                  </li>
+                  <li class="menu__item menu__item__second">
+                    <a href="#events" class="menu__link menu__link--second">
+                      Найближчі події
+                    </a>
+                  </li>
+                  <li class="menu__item menu__item__second">
+                    <a href="#news" class="menu__link menu__link--second">
+                      Новини
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <button class="button">
+                Купити квиток
               </button>
+            </div>
+
+            <div class="grid__item grid__item--7-12">
+              <div class="menu__image">
+                <img
+                  class="menu__img"
+                  src="./images/boy_menu.png"
+                  alt="boy_ukranian"
+                >
+              </div>
             </div>
           </div>
 
@@ -153,11 +160,6 @@
     <main class="main">
       <section class="page__section recommend section" id="perfomances">
         <div class="container container--main">
-
-          <!-- <h2 class="page__section-title section__title">
-            Актуальні виставки
-          </h2> -->
-
           <div class="grid grid--desktop">
             <div class="grid__item grid__item--1-6">
               <h2 class="page__section-title section__title">
@@ -436,9 +438,14 @@
               <p class="daidjest__text daidjest__text--mobile">
                 Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів
               </p>
-              <p class="daidjest__email">
-                e-mail
-              </p>
+              <form action="#">
+                <input
+                  name="email"
+                  type="email"
+                  class="daidjest__field form"
+                  placeholder="e-mail"
+                >
+              </form>
               <button class="button daidjest__button">
                 Підписатись
               </button>
@@ -452,7 +459,6 @@
 
         </div>
       </section>
-
     </main>
 
     <footer class="footer">
@@ -465,32 +471,38 @@
                 <div class="contact__info-title">
                   Контакти
                 </div>
-                <a href="https://goo.gl/maps/u4zAERLW2h76HCDWA" class="contact__info-link">
-                  Київ,
+                <a
+                  href="https://goo.gl/maps/u4zAERLW2h76HCDWA"
+                  class="contact__info-link"
+                  target="_blank">
+                    Київ,
                   <br>
-                  вул. М. Грушевського, 6
+                    вул. М. Грушевського, 6
                 </a>
                 <br>
                 <a href="tel: 278-13-57, 278-74-54" class="contact__info-link">
                   тел. 278-13-57, 278-74-54
                 </a>
                 <br>
-                <a href="https://mail.google.com/" class="contact__info-link">
-                  info@namu.kiev.ua
+                <a
+                  href="https://mail.google.com/"
+                  class="contact__info-link"
+                  target="_blank">
+                    info@namu.kiev.ua
                 </a>
               </div>
 
               <div class="icons contact__images">
-                <a href="https://www.facebook.com/">
+                <a href="https://www.facebook.com/" target="_blank">
                   <img src="./images/facebook.svg" alt="facebook">
                 </a>
-                <a href="https://twitter.com/?lang=en">
+                <a href="https://twitter.com/?lang=en" target="_blank">
                   <img src="./images/twitter.svg" alt="twitter">
                 </a>
-                <a href="https://web.telegram.org/k/">
+                <a href="https://web.telegram.org/k/" target="_blank">
                   <img src="./images/telegram.svg" alt="telegram">
                 </a>
-                <a href="https://www.instagram.com/?hl=en">
+                <a href="https://www.instagram.com/?hl=en" target="_blank">
                   <img src="./images/instagram.svg" alt="instagram">
                 </a>
 
@@ -558,16 +570,22 @@
           </div>
 
           <div class="scroll">
-            <img
-              class="scroll__scroll-up"
-              src="./images/scroll_up.svg"
-              alt="scroll_up"
-            >
+            <a href="#head">
+              <img
+                class="scroll__scroll-up"
+                src="./images/scroll_up.svg"
+                alt="scroll_up"
+              >
+            </a>
           </div>
 
         </div>
       </div>
     </footer>
+
+    <script src="./scripts/main.js">
+
+    </script>
 
   </body>
 </html>
