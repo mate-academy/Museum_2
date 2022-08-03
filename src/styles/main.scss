@@ -40,7 +40,6 @@
   }
 }
 
-
 .page {
   font-family: "Raleway", sans-serif;
   font-style: normal;
@@ -69,7 +68,7 @@
 
 p,
 h2,
-h5{
+h5 {
   margin: 0;
 }
 
@@ -689,15 +688,14 @@ h5{
   }
 
   &__part-digest {
-    margin-bottom: 80px;
     @include grid;
 
     @include onTablet {
-      margin-bottom: 128px;
+      margin-bottom: 23px;
     }
 
     @include onDesktop {
-      margin-bottom: 200px;
+      margin-bottom: 90px;
     }
   }
 }
@@ -761,58 +759,98 @@ h5{
 
 .digest {
   &__title {
+    font-family: "Playfair Display",sans-serif;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+
     @include onTablet {
       grid-column: 1 / 7;
+      font-size: 40px;
     }
 
     @include onDesktop {
-      grid-column: 1 / 5;
+      margin-bottom: 50px;
+      grid-column: 1 / 6;
+      font-size: 48px;
+      line-height: 120%;
     }
   }
 
   &__description {
+    margin-bottom: 50px;
+
     @include onTablet {
       grid-column: 1 / 6;
     }
 
     @include onDesktop {
+      margin-bottom: 0;
       grid-column: 7 / 14;
     }
   }
 
   &__form {
+
+    @include grid;
+
     @include onTablet {
-      grid-column: 1 / 5;
+      grid-column: 1 / 7;
     }
 
     @include onDesktop {
-      grid-column: 1 / 6;
+      grid-column: 1 / 13;
+    }
+
+    &-field {
+      margin-bottom: 30px;
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+        grid-column: 1 / 6;
+      }
     }
   }
 
   &__button {
-    width: 73%;
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
   }
 }
 
 .form-field {
+  padding: 0 0 3px;
   box-sizing: border-box;
   display: block;
   width: 100%;
+  border: 0;
   border-bottom: 1px solid $c-black;
 
+  font-weight: 700;
+  font-size: 16px;
+
   &::placeholder {
-    font-size: 14px;
-    line-height: 20px;
-    color: #7e7e83;
+    color: $c-black;
+    font-weight: 400;
   }
 
   &:hover {
-    border-color: #d5d7de;
+    border-color: $c-main;
+
+    &::placeholder {
+      color: $c-main;
+    }
   }
 
   &:focus {
-    border-color: #292929;
     outline: none;
+    &::placeholder {
+      font-weight: 600;
+    }
   }
 }
