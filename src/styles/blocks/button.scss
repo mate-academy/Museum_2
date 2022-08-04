@@ -14,15 +14,15 @@
     color: $c-white;
 
     &:hover {
-      background-color: #af3419;
+      background-color: $c-hover;
     }
 
     &:active {
-      background-color: #ea340d;
+      background-color: $c-active;
     }
 
     &:disabled {
-      background-color: #dd836f;
+      background-color: $c-disabled;
     }
   }
 
@@ -32,70 +32,61 @@
     color: $c-main;
     border: 1px solid $c-main;
 
+    &::after {
+      content: url(../images/button/arrow-default.svg);
+      padding-top: 4px;
+    }
+
     @include onTablet {
       display: flex;
+      gap: 10px;
     }
 
     &:hover {
-      color: #af3419;
-      border-color: #af3419;
+      color: $c-hover;
+      border-color: $c-hover;
     }
 
     &:active {
-      color: #ea340d;
-      border-color: #ea340d;
+      color: $c-active;
+      border-color: $c-active;
     }
 
     &:disabled {
-      color: #dd836f;
-      border-color: #dd836f;
+      color: $c-disabled;
+      border-color: $c-disabled;
     }
   }
 
   &--secondary-2 {
+    display: flex;
+    gap: 10px;
     background-color: $c-white;
     color: $c-main;
     border: 1px solid $c-main;
+
+    &::after {
+      content: url(../images/button/arrow-default.svg);
+      padding-top: 5px;
+    }
 
     @include onTablet {
       display: none;
     }
 
     &:hover {
-      color: #af3419;
-      border-color: #af3419;
+      color: $c-hover;
+      border-color: $c-hover;
     }
 
     &:active {
-      color: #ea340d;
-      border-color: #ea340d;
+      color: $c-active;
+      border-color: $c-active;
     }
 
     &:disabled {
-      color: #dd836f;
-      border-color: #dd836f;
-    }
-  }
-
-  &__arrow {
-    margin-left: 8px;
-    width: 20px;
-    height: 20px;
-    background-image: url(../images/button/arrow-default.svg);
-
-    &:hover {
-      border-color:  #af3419;
-      background-image: url(../images/button/arrow-hover.svg);
-    }
-    
-    &:active {
-      border-color: #ea340d;
-      background-image: url(../images/button/arrow-active.svg);
-    }
-
-    &:disabled {
-      background-image: url(../images/button/arrow-disabled.svg);
-      border-color: #dd836f;
+      color: $c-disabled;
+      border-color: $c-disabled;
     }
   }
 }
