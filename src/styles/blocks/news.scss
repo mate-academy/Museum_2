@@ -7,6 +7,9 @@
 
   @include mobile {
     padding: 90px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   &__gallery {
     display: flex;
@@ -16,6 +19,8 @@
 
     @include mobile {
       flex-direction: column;
+      max-width: 400px;
+
     }
   }
   &__first-box {
@@ -45,7 +50,7 @@
   &__image {
     height: 480px;
     width: 100%;
-    transition: transform .4s, box-shadow .4s ;
+    transition: transform 0.4s, box-shadow 0.4s ;
 
     &:hover {
       transform: scale(103%);
@@ -68,5 +73,90 @@
     color: #504f5e;
 
     margin: 20px 0 50px;
+  }
+
+  &__button {
+    position: relative;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+
+    display: flex;
+    width: 270px;
+    height: 60px;
+    background-color: #f1f5f4;
+    border: 1px solid #cd4d31;
+    color: #cd4d31;
+
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: ease 0.3s;
+
+    &::after {
+      content: "→";
+      position: absolute;
+      right: 20px;
+      top: 12px;
+      transform: scale(2,3);
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__button--botomm {
+    position: relative;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+
+    display: none;
+    width: 270px;
+    height: 60px;
+    background-color: #f1f5f4;
+    border: 1px solid #cd4d31;
+    color: #cd4d31;
+
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: ease 0.3s;
+
+    &::after {
+      content: "→";
+      position: absolute;
+      right: 20px;
+      top: 12px;
+      transform: scale(2,3);
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    @include mobile {
+      display: flex;
+      align-self: center;
+    }
   }
 }

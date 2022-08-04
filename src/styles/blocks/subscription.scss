@@ -2,10 +2,17 @@
   position: relative;
   padding: 50px 55px 260px;
   display: flex;
+  flex-direction: row;
   gap: 30px;
 
   @include tablet {
     flex-direction: column;
+    padding: 50px 40px 260px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    padding: 50px 20px 260px;
   }
 
   &__block {
@@ -29,18 +36,34 @@
     }
 
   }
+
   &__text {
+    display: block;
+    @include smallText;
+    color: #1c1b29;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__text--mobile {
+    display: none;
     @include smallText;
     color: #1c1b29;
 
     @include tablet {
+      display: block;
       order: -1;
       margin-bottom: 20px;
     }
   }
 
   &__input {
-
     border: none;
     font-family: "raleway", sans-serif;
     font-style: normal;
@@ -65,7 +88,27 @@
   }
 
   &__button {
-    position: absolute;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #f1f5f4;
+    cursor: pointer;
+    display: flex;
+    width: 230px;
+    height: 60px;
+    background-color: #cd4d31;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: ease 0.3s;
     bottom: 200px;
+    outline: none;
+    border: none;
+    align-self: center;
+
+    @include mobile {
+      width: 70%;
+      align-self: center;
+    }
   }
 }
