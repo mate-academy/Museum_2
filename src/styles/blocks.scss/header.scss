@@ -11,17 +11,25 @@
     box-sizing: border-box;
   }
 
+  &__info-container {
+    padding-bottom: 280px;
+
+    @include onDesktop {
+      padding-bottom: 0;
+    }
+  }
+
   &__title {
     display: block;
     align-items: center;
     position: relative;
-    margin-bottom: 30px;
     font-family: "Playfair Display", sans-serif;
     font-weight: 700;
     font-size: 48px;
     line-height: 100%;
     color: $textColor;
     max-width: 700px;
+    padding: 10px;
 
     @include onTablet {
       font-weight: 700;
@@ -98,35 +106,22 @@
   }
 
   &__photo {
-    height: 273px;
-    width: 245px;
-    margin: 0 auto;
-    z-index: 0;
+    position: absolute;
+    height: 250px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../images/1.svg");
 
-    &-inner {
-      position: absolute;
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      height: 273px;
-      width: 245px;
-
-      margin: 0 auto;
-      z-index: 0;
-
-      @include onTablet {
-        height: 494px;
-        width: 443px;
-      }
-
-      @include onDesktop {
-        right: 0;
-        height: 663px;
-        width: 625px;
-      }
-
-      bottom: 0;
-      background-image: url("../images/1.svg");
+    @include onTablet {
+      height: 60vh;
+      left: 60%;
+    }
+    @include onDesktop {
+      height: 80vh;
     }
   }
 
