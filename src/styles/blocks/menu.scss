@@ -10,6 +10,7 @@
   }
 
   &__container {
+    max-width: 1170px;
     padding: 20px 20px 0;
 
     @include onDesktop {
@@ -147,20 +148,30 @@
   }
 
   &__image {
-
-    @include onDesktop {
-      height: 663px;
-    }
-  }
-
-  &__img {
     visibility: hidden;
 
     @include onDesktop {
       visibility: visible;
+      position: relative;
+      height: 697px;
+    }
+  }
+
+  &__img {
+    display: block;
+    height: 273px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center bottom 20%;
+
+    @include onDesktop {
       display: block;
-      object-fit: cover;
+      position: absolute;
+      object-fit: contain;
+      top: 10%;
+      right: 0;
       height: 663px;
+      width: 100%;
     }
   }
 }
