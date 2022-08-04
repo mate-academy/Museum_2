@@ -1,0 +1,44 @@
+.block-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+  color: $c-black;
+  font-family: "Playfair Display", sans-serif;
+
+  @include grid;
+
+  @include onTablet {
+    margin-bottom: 70px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+    margin: 0;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      font-size: 40px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include onTablet {
+      display: inline-flex;
+      grid-column: 5 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.visit {
+  position: relative;
+  background-color: $c-background;
+
+  @include onDesktop {
+    height: 100vh;
+  }
+
+  &__content {
+    @include grid;
+    padding: 50px 0;
+
+    @include onTablet {
+      padding: 80px 0;
+    }
+
+    @include onDesktop {
+      padding-top: 205px;
+    }
+  }
+
+  &__image {
+    display: none;
+    position: absolute;
+    height: 100vh;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+    color: $c-white;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+      font-size: 62px;
+    }
+    @include onDesktop {
+      margin-bottom: 10px;
+      grid-column: 6 / 13;
+      font-size: 80px;
+    }
+  }
+
+  &__description {
+    color: $c-white;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 60px;
+    }
+    @include onDesktop {
+      margin-bottom: 50px;
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__button {
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+    @include onDesktop {
+      grid-column: 6 / 10;
+    }
+  }
+}

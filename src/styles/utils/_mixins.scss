@@ -1,6 +1,76 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin grid {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 24px;
+  }
+}
+@mixin gridFirst {
+  @include onTablet {
+    grid-column: 1 / 4;
+  }
+
+  @include onDesktop {
+    grid-column: 1 / 7;
+  }
+}
+@mixin gridSecond {
+  @include onTablet {
+    grid-column: 4 / 7;
+  }
+
+  @include onDesktop {
+    grid-column: 7 / 13;
+  }
+}
+@mixin header-styles {
+  min-height: 747px;
+  box-sizing: border-box;
+
+  background: $c-background;
+
+  @include onTablet {
+    min-height: 1092px;
+  }
+
+  @include onDesktop {
+    min-height: 100vh;
+  }
+}
+@mixin scale {
+  transition: all 300ms;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: scale(1.3);
+  }
+}
+@mixin background-hover {
+  transition: all 300ms;
+
+  &:hover {
+    transform: scale(0.95);
+    background-color: #f8efef;
+  }
+}
+@mixin link-hover {
+  border-bottom: 1px solid transparent;
+  transition: border-color 300ms;
+
+  &:hover {
+    border-color: $c-white;
   }
 }

@@ -1,0 +1,62 @@
+.article {
+  @include background-hover;
+  text-decoration: none;
+  &--first {
+    @include gridFirst;
+  }
+
+  &--second {
+    @include gridSecond;
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 100%;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--first {
+      background-image: url("../images/content/image6.2.png");
+
+      @include onDesktop {
+        background-image: url("../images/content/image6.png");
+        padding-bottom: 65%;
+      }
+    }
+
+    &--second {
+      background-image: url("../images/content/image7.2.png");
+
+      @include onDesktop {
+        background-image: url("../images/content/image7.png");
+        padding-bottom: 65%;
+      }
+    }
+  }
+
+  &__duration {
+    color: $c-black;
+    font-size: 14px;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 20px;
+    color: $c-black;
+    margin: 0 0 20px;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+}

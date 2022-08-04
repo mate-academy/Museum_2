@@ -1,0 +1,143 @@
+.menu {
+  @include header-styles;
+
+  &__content {
+    @include grid;
+  }
+
+  &__icons {
+    flex-direction: row-reverse;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__top-actions {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 /13;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    &--title {
+      color: $c-white;
+      line-height: 20px;
+    }
+
+    &--value {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: $c-white;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      flex-direction: row;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+
+    @include  onTablet {
+      grid-column: 1 / 7;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__item {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    color: $c-white;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    @include link-hover;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: $c-white;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    &--photo {
+      width: 100%;
+      object-position: center;
+      object-fit: contain;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 35%;
+      display: flex;
+    }
+  }
+}
