@@ -103,6 +103,14 @@
     }
 
     &-item {
+      transition: transform 0.3s ease;
+      border: 3px solid transparent;
+
+      &:hover {
+        transform: scale(110%);
+        border-color: aqua;
+      }
+
       position: relative;
       width: 100%;
       height: 100%;
@@ -129,6 +137,15 @@
         max-height: 800px;
         height: 800px;
       }
+    }
+
+    &--noscale {
+      border: none;
+
+      &:hover {
+        transform: none;
+      }
+
     }
   }
 
@@ -181,6 +198,7 @@
 
   &__between {
     position: relative;
+
     &-title {
       margin-top: 50px;
 
@@ -235,6 +253,7 @@
 
   &__news {
     margin-bottom: 190px;
+
     @include onDesktop {
       margin-bottom: 300px;
     }
@@ -258,22 +277,47 @@
 
     &-title {
       margin-bottom: 50px;
+
       @include onMobile {
         text-align: start;
       }
     }
 
     &-input {
+      @extend %default;
+      color: $color-black;
       margin-bottom: 30px;
       width: 100%;
-      border-top: transparent ;
-      border-left: transparent ;
-      border-right: transparent ;
-      color: $color-black;
+      border-top: transparent;
+      border-left: transparent;
+      border-right: transparent;
       border-width: 1px;
 
       @include onTablet {
         width: 80%;
+      }
+
+      &:hover {
+        border-color: $color-red;
+        color: $color-red;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $color-red;
+        color: $color-red;
+      }
+
+      &:not(:placeholder-shown) {
+        font-weight: 700;
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        -webkit-text-fill-color: $color-black;
+        box-shadow: 0 1000px aqua inset;
+        -webkit-box-shadow: 0 0 0 1000px aqua inset;
       }
     }
   }

@@ -1,4 +1,5 @@
 .button {
+  cursor: pointer;
   background-color: $color-red;
   color: $color-white;
   @extend %font-button;
@@ -48,6 +49,10 @@
     @include onTablet {
       width: 30%;
       background-position: right 5% top 50%;
+    }
+
+    &--white {
+      width: 100%;
     }
   }
 
@@ -115,6 +120,27 @@
 
     @include onTablet {
       width: 70%;
+    }
+  }
+
+  &__link {
+    @include onDesktop {
+      width: 25%;
+    }
+    @include onMobile {
+      display: none;
+    }
+    @include onTablet {
+      width: 30%;
+    }
+  }
+  &__link-mobile {
+    width: 100%;
+    @include onDesktop {
+      display: none;
+    }
+    @include onTablet {
+      display: none;
     }
   }
 }

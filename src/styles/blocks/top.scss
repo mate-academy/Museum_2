@@ -16,7 +16,6 @@
       max-height: 663px;
       max-width: 625px;
       padding-bottom: 0;
-
     }
 
     @include onTablet {
@@ -27,9 +26,28 @@
   }
 
   &__image {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    z-index: -1;
+    position: absolute;
+
+    min-width: 250px;
+    width: 40%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    @include onDesktop {
+      bottom: 0;
+      right: 0;
+      left: auto;
+      margin: 0;
+    }
+
+    @include onTablet {
+      width: 20%;
+      left: 30%;
+    }
+    
     object-fit: fill;
     object-position: center;
   }
@@ -111,6 +129,7 @@
   }
 
   &__language {
+    cursor: pointer;
     display: block;
     width: 60px;
     height: 30px;
@@ -133,6 +152,7 @@
     }
 
     &--visible {
+      cursor: pointer;
       @extend %default;
       display: block;
       width: 60px;
