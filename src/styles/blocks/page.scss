@@ -1,0 +1,65 @@
+.page {
+  font-family: "Playfair Display", serif;
+  background: $c-gray;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 120px;
+
+    @include tablet {
+      margin-bottom: 160px;
+    }
+
+    @include desktop {
+      margin-bottom: 200px;
+    }
+
+    &--90 {
+      margin-bottom: 90px;
+
+      @include tablet {
+        margin-bottom: 120px;
+      }
+  
+      @include desktop {
+        margin-bottom: 110px;
+      }
+    }
+  
+
+    &--80 {
+      margin-bottom: 80px;
+
+      @include tablet {
+        margin-bottom: 128px;
+      }
+
+      @include desktop {
+        margin-bottom: 200px;
+      }
+    }
+  }
+}
