@@ -6,9 +6,9 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-const form = document.getElementById('form');
+const form = document.getElementById('formID');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  form.requestFullscreen();
+  event.reset();
 });
