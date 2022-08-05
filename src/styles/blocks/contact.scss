@@ -23,6 +23,11 @@
         @include onDesktop {
           margin-top: 0;
         }
+
+        @include onMokup {
+          margin-top: 0;
+        }
+
       }
     }
 
@@ -36,15 +41,12 @@
       color: #f1f5f4;
       text-decoration: none;
 
-      transition: color 0.3s;
+      border-bottom: 1px solid transparent;
+
+      transition: border-bottom 0.3s;
 
       &:hover {
-        color: red;
-
-        @include onDesktop {
-          color: #f1f5f4;
-
-        }
+        border-bottom: 1px solid #f1f5f4;
       }
 
       @include onDesktop {
@@ -58,13 +60,14 @@
 
         &:first-child {
           padding: 0;
+          padding-bottom: 5px;
         }
 
         @include onDesktop {
           padding: 10px 0;
 
           &:first-child {
-            padding: 0;
+            padding: 0 0 10px;
           }
         }
       }
