@@ -10,10 +10,15 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  @include hover (transform, scale(1.2));
+  transition: background-image 0.3s;
 
   @include desk-768 {
     margin-right: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    background-image: url(/images/hover_menu.svg);
   }
 
   &--cross {
@@ -24,6 +29,11 @@
     @include desk-768 {
       margin: 0 20px 0 0;
       transform: translateX(0);
+    }
+
+    &:hover,
+    &:focus {
+      background-image: url(/images/cross-hover.svg);
     }
   }
 }

@@ -193,16 +193,14 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 125%;
+
+    @include desk-1280 {
+      position: absolute;
+      bottom: 50px;
+    }
   }
 
   &__img-container {
-    margin: 70px 18px 0;
-    max-height: 493px;
-    box-sizing: border-box;
-    padding-bottom: 90%;
-    height: 0;
-
-    position: relative;
 
     @include desk-768 {
       padding-bottom: 0;
@@ -227,21 +225,22 @@
 
   &__img {
     display: block;
-    object-position: center bottom;
+    object-position: bottom;
     object-fit: cover;
-    width: 100%;
+    height: 273px;
     position: absolute;
-    top: 0;
     bottom: 0;
+    left: calc((100vw - 273px) / 2);
 
     @include desk-768 {
       height: 494px;
+      left: calc((100vw - 494px) / 2);
     }
 
     @include desk-1280 {
-      top: 137px;
       right: 0;
       bottom: 0;
+      left: auto;
       height: 663px;
       width: 625px;
     }
