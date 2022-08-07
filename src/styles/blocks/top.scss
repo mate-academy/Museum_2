@@ -1,0 +1,27 @@
+.top {
+  display: flex;
+  align-items: center;
+
+  &__burger-menu {
+    @include width-height (25px, 20px);
+    margin-left: auto;
+
+    background-image: url("/images/menu.svg");
+    @extend %bg-img;
+
+    @include hover(transform, scale($icon-scale));
+
+    @include onTablet {
+      @include width-height (30px, 30px);
+      margin-right: 40px;
+    }
+  }
+
+  &__label {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

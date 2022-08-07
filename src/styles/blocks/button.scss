@@ -1,0 +1,71 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 330px;
+  height: 60px;
+
+  @extend %rale-600;
+
+  &--primary {
+    background-color: $main-color;
+    @include hover(background-color, $hover-color);
+
+    &:active {
+      background-color: $active-color;
+    }
+  
+    &:disabled {
+      background-color: $disabled-color;
+    }
+  }
+
+  &--secondary {
+    color: $main-color;
+    border: 1px solid $main-color;
+    
+    transition: stroke $transition-time,
+      border-color $transition-time,
+      color $transition-time;
+
+    & svg {
+      margin-left: 11px;
+    }
+
+    & path {
+      transition: stroke $transition-time;
+    }
+
+    &:hover,
+    &:hover path {
+      border-color: $hover-color;
+      color: $hover-color;
+      stroke: $hover-color;
+    }
+
+    &:active,
+    &:active path {
+      border-color: $active-color;
+      color: $active-color;
+      stroke: $active-color;
+    }
+
+    &:disabled,
+    &:disabled path {
+      border-color: $disabled-color;
+      color: $disabled-color;
+      stroke: $disabled-color;
+    }
+  }
+
+  &--subscribe {
+    border: none;
+    cursor: pointer;
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}

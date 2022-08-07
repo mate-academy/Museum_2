@@ -1,6 +1,55 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-time;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin width-height ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include onTablet {
+    padding: 0 39px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px;
+  }
+}
+
+@mixin grid-cycle ($screen, $columns) {
+  @for $start from 1 through $columns {
+    @for $end from $start through $columns {
+      &--#{$screen}-#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}
+
+@mixin font-play($size, $height, $color:$white-color) {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
 }

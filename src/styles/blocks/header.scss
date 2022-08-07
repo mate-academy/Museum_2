@@ -1,0 +1,141 @@
+.header {
+  @extend %container-100vh;
+  background-color: $dark-green-color;
+
+  &__container {
+    position: relative;
+    @include container;
+    @extend %container-100vh;
+  }
+  
+  &__top {
+    height: 80px;
+    margin-bottom: 17%;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+      margin-bottom: 90px;
+    }
+  }
+
+  &__description-smaller {
+    @extend %lh-140;
+
+    &--margin-bottom {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    width: 240px;
+    @extend %lh-150;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+
+    &--margin-bottom {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @include font-play(48px, 100%);
+
+    @include onTablet {
+      margin-bottom: 20px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      font-size: 96px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 134px;
+    }
+  }
+
+  &__date-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__date {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 18%;
+      margin-right: 20px;
+
+      @include font-play(14px, 125%);
+      opacity: 0.7;
+    }
+  }
+
+  &__decorative-line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+      opacity: 0.3;
+    }
+  }
+
+  &__picture-wrapper {
+    width: 246px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 0;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+
+    @include width-height(246px, 270px);
+    background-image: url("/images/photos/header-img.png");
+    @extend %bg-img;
+
+    @include onTablet {
+      @include width-height(444px, 494px);
+      right: 0;
+    }
+
+    @include onDesktop {
+      @include width-height(624px, 664px);
+    }
+  }
+}

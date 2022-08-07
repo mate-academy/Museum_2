@@ -1,0 +1,51 @@
+.article {
+
+  &__img-wrapper {
+    height: 356px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+  }
+
+  &__content-photo {
+    @extend %object-fit;
+    box-shadow: $img-shadow;
+    @include hover(transform, scale($img-scale));
+  }
+
+  &__event-info {
+    margin-bottom: 10px;
+    @extend %lh-150;
+    color: $main-color;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    @include font-play(20px, 125%, $black-color);
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    line-height: 150%;
+    color: $gray-color;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}
