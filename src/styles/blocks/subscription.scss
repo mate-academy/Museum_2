@@ -1,0 +1,120 @@
+.subscription {
+  position: relative;
+  padding: 50px 55px 260px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+
+  @include tablet {
+    flex-direction: column;
+    padding: 50px 40px 260px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    padding: 50px 20px 260px;
+  }
+
+  &__block {
+    @include tablet {
+      order: -1;
+    }
+  }
+  &__title {
+    font-family: "playfair display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: #1c1b29;
+    margin-bottom: 50px;
+
+    @include mobile {
+      font-size: 40px;
+    }
+
+    @include mobile {
+      font-size: 28px;
+    }
+
+  }
+
+  &__text {
+    display: block;
+    @include smallText;
+    color: #1c1b29;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__text--mobile {
+    display: none;
+    @include smallText;
+    color: #1c1b29;
+
+    @include tablet {
+      display: block;
+      order: -1;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__input {
+    border: none;
+    font-family: "raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b29;
+    margin-bottom: 5px;
+    outline: none;
+    background-color: $white-background;
+  }
+  &__wrap {
+    &::after {
+      content: "";
+      margin: 3px 0 20px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: #1c1b29;
+      opacity: 0.3;
+    }
+  }
+
+  &__button {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: $white-background;
+    cursor: pointer;
+    display: flex;
+    width: 230px;
+    height: 60px;
+    background-color: #cd4d31;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+    bottom: 200px;
+    outline: none;
+    border: none;
+    align-self: center;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    @include mobile {
+      width: 70%;
+      align-self: center;
+    }
+  }
+}

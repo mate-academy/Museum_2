@@ -1,0 +1,158 @@
+.news {
+  padding: 150px 56px;
+
+  @include tablet {
+    padding: 100px 40px;
+  }
+
+  @include mobile {
+    padding: 90px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__gallery {
+    display: flex;
+    padding-top: 50px;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+      max-width: 400px;
+
+    }
+  }
+  &__first-box {
+    max-width: 570px;
+  }
+  &__second-box {
+    max-width: 570px;
+  }
+
+  &__date {
+    font-family: "raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+
+    margin: 20px 0 10px;
+  }
+
+  &__name {
+    font-family: "Playfair display", serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #1c1b29;
+  }
+
+  &__image {
+    height: 480px;
+    width: 100%;
+    transition: transform 0.4s, box-shadow 0.4s ;
+
+    &:hover {
+      transform: scale(103%);
+      box-shadow: 2px 2px 2px #1c1b29;
+    }
+    @include tablet {
+      height: 420px;
+    }
+    @include mobile {
+      height: 350px;
+      max-width: 400px;
+    }
+  }
+
+  &__description {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #504f5e;
+
+    margin: 20px 0 50px;
+  }
+
+  &__button {
+    position: relative;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+
+    display: flex;
+    width: 270px;
+    height: 60px;
+    background-color: $white-background;
+    border: 1px solid #cd4d31;
+    color: #cd4d31;
+
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+
+    &::after {
+      content: "→";
+      position: absolute;
+      right: 20px;
+      top: 12px;
+      transform: scale(2,3);
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__button--botomm {
+    position: relative;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+
+    display: none;
+    width: 270px;
+    height: 60px;
+    background-color: $white-background;
+    border: 1px solid #cd4d31;
+    color: #cd4d31;
+
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+
+    &::after {
+      content: "→";
+      position: absolute;
+      right: 20px;
+      top: 12px;
+      transform: scale(2,3);
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    @include mobile {
+      display: flex;
+      align-self: center;
+    }
+  }
+}
