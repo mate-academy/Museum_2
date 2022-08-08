@@ -1,17 +1,21 @@
 .subscribe {
-
+  padding-top: 120px;
+  width: 280px;
+  margin: 0 auto;
   background-color: $white-color;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 120px 20px 0;
+  
 
   @include on768 {
-    padding: 160px 39px 0;
+    width: 690px;
+    padding-top: 160px;
   }
 
   @include on1280 {
-    padding: 200px 55px 0;
+    width: 1170px;
+    padding-top: 200px;
   }
 
   &__title {
@@ -59,13 +63,24 @@
       color: $black-color;
       background: transparent;
     
-    
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover, 
+      &:-webkit-autofill:focus {
+        @include mainText;
+        border-bottom: 1px solid $main-color;
+        -webkit-text-fill-color: $main-color;
+        -webkit-box-shadow: 0 0 0px 1000px $main-color inset;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+
       &::placeholder {
         font-weight: 400;
         font-size: 14px;
         line-height: 100%;
         color: $black-color;
       }
+
+     
     
       &:hover,
       &:focus {
