@@ -1,0 +1,190 @@
+.menu {
+  background-color: $bg-color;
+  background-repeat: no-repeat;
+  z-index: 1;
+  overflow-y: auto;
+
+  @include onTablet {
+    background-position: bottom;
+    background-image: url(../images/bg-menu-tablet.png);
+  }
+
+  @include onDesktop {
+    background-position: right bottom;
+    background-image: url(../images/bg-menu-desktop.png);
+  }
+
+  &__content {
+    height: 100vh;
+    padding: $headerTopPadding 0 0;
+  }
+
+  &__icon--mobile {
+    text-decoration: none;
+    &::before {
+      content: "EN";
+      font-family: "Raleway", sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: $color-light;
+
+      display: block;
+      width: max-content;
+      transform: translateY(150%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &:hover::before {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  @include onMobile {
+    .menu__icon-default {
+      display: none;
+    }
+    .menu__icon--mobile-block {
+      display: block;
+    }
+    .top-action {
+      display: grid;
+      grid-template-columns: 1fr $icon-width-mobile $icon-width-mobile;
+      column-gap: 30px;
+      align-items: center;
+    }
+  }
+
+  @include onTablet {
+    .menu__icon--mobile-hidden {
+      display: block;
+    }
+    .menu__icon--mobile-block {
+      display: none;
+    }
+  }
+
+  &__top {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__text-container {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+  &__shadual {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+  &__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+
+    color: $color-light;
+
+    &-important {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: $color-light;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-margin {
+      margin-bottom: 20px;
+    }
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin: 0;
+      padding-bottom: 40px;
+      border-bottom: 1px solid $color-light;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+        width: 500px;
+      }
+    }
+
+  }
+
+  &__title {
+    border-bottom: 1px solid transparent;
+
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: $color-light;
+    margin-bottom: 20px;
+    text-decoration: none;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $color-light;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+}
