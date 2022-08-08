@@ -1,0 +1,94 @@
+.visit {
+  background-color: $background-color;
+  
+
+  @include on1280 {
+    background-image: url(../images/visitPhoto.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+  }
+
+  &__container {
+    margin: 0 auto;
+    margin-top: 90px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    justify-items: center;
+  
+    @include on768 {
+      width: 690px;
+      padding: 0;
+      margin-top: 100px;
+      grid-template-columns: repeat(6,1fr);
+      column-gap: 30px;
+      justify-items: start;
+    }
+  
+    @include on1280 {
+      margin-top: 110px;
+      width: 1170px;
+      grid-template-columns: repeat(12,1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__title {
+    @include h2; 
+    grid-column: 1/-1;
+    margin-top: 50px;
+  
+    @include on768 {
+      margin-top: 80px;
+      grid-column: 1/6;
+    }
+  
+    @include on1280 {
+      margin-top: 205px;
+      grid-column: 6/-1;
+    }
+  }
+
+  &__text {
+    width: 280px;
+    @include mainText;
+    color: $white-color;
+    grid-column: 1/-1;
+    margin-top: 20px;
+  
+    @include on768 {
+      width: unset;
+      grid-column: 1/5;
+    }
+  
+    @include on1280 {
+      grid-column: 6/-3;
+      margin-top: 10px;
+    }
+    
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    grid-column: 1/-1;
+  
+    @include on768 {
+      margin-top: 60px;
+      margin-bottom: 80px;
+      grid-column: 1/-4;
+    }
+  
+    @include on1280 {
+      grid-column: 6/-5;
+      margin-top: 50px;
+      margin-bottom: 205px;
+    }
+  }
+}
+
