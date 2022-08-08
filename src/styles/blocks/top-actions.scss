@@ -1,0 +1,77 @@
+.top-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 0;
+  width: 100%;
+
+  @include onDesktop {
+    margin: 32px 0;
+  }
+
+  &__logo {
+    height: auto;
+    width: 123px;
+    align-content: center;
+    justify-content: center;
+
+    :hover {
+      transform: scale(1.1);
+      border: 2px solid $colorLinkHover;
+      border-radius: 4px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+    }
+
+    &--open {
+      display: flex;
+      stroke: $colorFooterText;
+
+      @include hover(stroke, $colorLinkHover);
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &--close {
+      stroke: $colorFooterText;
+
+      @include hover(stroke, $colorLinkHover);
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &--language {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include onTablet {
+        margin-left: 42px;
+      }
+
+      @include onDesktop {
+        margin-right: 0;
+      }
+    }
+
+    &--hidden {
+      visibility: hidden;
+
+      @include onTablet {
+        visibility: visible;
+      }
+    }
+  }
+}

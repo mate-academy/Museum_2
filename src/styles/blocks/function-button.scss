@@ -1,0 +1,68 @@
+.function-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid $colorMainRed;
+  height: 60px;
+  width: 100%;
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: $colorMainRed;
+  transition: 0.3s;
+
+  &:hover {
+    border-color: $colorHoverRed;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    border-color: $colorActivRed;
+  }
+
+  &:disabled {
+    border-color: $colorDisabledRed;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &__arrow {
+    stroke: $colorMainRed;
+    width: 15px;
+    height: 15px;
+
+    &:hover {
+      border-color: $colorHoverRed;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      border-color: $colorActivRed;
+    }
+
+    &:disabled {
+      border-color: $colorDisabledRed;
+    }
+  }
+
+  &__hidden {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__mobile {
+    display: flex;
+    margin-top: 20px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

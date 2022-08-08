@@ -1,0 +1,86 @@
+.visit {
+  margin-top: 90px;
+  padding: 0 20px;
+  min-height: 416px;
+
+  background-color: $colorBG;
+
+  @include onTablet {
+    padding: 80px 38px;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+    padding: 205px 0;
+    background-image: url(../images/BG-visit.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+  }
+
+  &__content {
+    padding-top: 50px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 20px;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 38px;
+    color: $colorFooterText;
+
+    @include onTablet {
+      font-size: 62px;
+      line-height: 62px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+      line-height: 80px;
+      grid-column: 6 / 13;
+    }
+  }
+
+  &__description {
+    padding-bottom: 40px;
+
+    font-family: Raleway, sans-serif;
+    font-style: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $colorFooterText;
+
+    @include onTablet {
+      padding-bottom: 60px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      padding-bottom: 50px;
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+}
