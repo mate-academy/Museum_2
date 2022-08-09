@@ -1,0 +1,60 @@
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 26px;
+
+  @include onDesktop {
+    padding-top: 32px;
+  }
+
+  &__logo {
+    height: 35px;
+    @include onTablet {
+      height: 20px;
+    }
+  }
+
+  &__nav-block {
+    display: flex;
+    flex-direction: end;
+  }
+
+  &__lang {
+    @extend %main-text;
+
+    color: $c-white;
+    background-color: transparent;
+    border: transparent;
+    margin-right: 40px ;
+    display: none;
+
+    :focus {
+      overflow: hidden;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--menu {
+      margin-right: 43px;
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      position: relative;
+      top: -3px;
+      display: inline-block;
+      margin-left: 3px;
+      background-image: url(/images/museum_icons/Union.svg);
+      width: 8px;
+      height: 5px;
+      background-repeat: no-repeat;
+      background-position: center;
+      object-fit: cover;
+    }
+  }
+}

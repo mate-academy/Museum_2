@@ -1,0 +1,60 @@
+.plan {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $c-bg;
+  color: $c-white;
+
+  height: 55vh;
+  min-height: 420px;
+
+  @include onTablet {
+    height: 515px;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+  }
+
+  &__bg-img {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__contant {
+    justify-content: center;
+  }
+
+  &__title {
+    @include font-FSWL($f-serif, 38px, 700, 38px);
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 62px;
+      line-height: 62px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+
+  &__main-text {
+    @extend %main-text;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+}

@@ -1,6 +1,35 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// font-FSWL : Family, Size, Weight, Line-height.
+
+@mixin font-FSWL($font-family, $font-size, $font-weight, $line-height) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+// sizeHW : Height, Width.
+
+@mixin sizeHW($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin link-animation($color: $c-white) {
+  border-bottom: 1px solid transparent;
+
   &:hover {
-    #{$_property}: $_toValue;
+    border-color: $color;
   }
 }

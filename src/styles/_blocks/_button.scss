@@ -1,0 +1,55 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include font-FSWL($f-sans-serif, 16px, 600, 16px);
+
+  text-decoration: none;
+  color: $c-white;
+  border: none;
+
+  background-color: $c-main;
+  width: 100%;
+  height: 60px;
+
+  transition: background-color 0.3s ;
+
+  &--opasity {
+    display: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid $c-main;
+    color: $c-main;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &::after {
+      content: "";
+      @extend %icon-property;
+      @include sizeHW(14px, 16px);
+      background-image: url(/images/museum_icons/GroupArow.svg);
+      margin-left: 12px;
+    }
+  }
+
+  &--opasity-bottom {
+    margin-top: 30px ;
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &:hover {
+    background-color: $c-hover;
+  }
+
+  &:active {
+    background-color: $c-pressed;
+    transition: background-color 0s;
+  }
+}
