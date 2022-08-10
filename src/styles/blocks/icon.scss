@@ -1,0 +1,40 @@
+.icon {
+  @include scale;
+  position: relative;
+  display: block;
+  width: 30px;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url("../images/icons/menu.svg");
+    height: 30px;
+  }
+
+  &--cross {
+    background-image: url("../images/icons/cross.svg");
+    height: 30px;
+  }
+
+  &--language {
+    display: none;
+    color: $c-white;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--language:after {
+    content: ">";
+    display: inline-block;
+    position: absolute;
+    transform: rotate(90deg);
+    right: -5px;
+  }
+}

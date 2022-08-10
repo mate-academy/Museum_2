@@ -1,0 +1,176 @@
+.footer {
+  background-color: $c-background;
+
+  &__content {
+    padding: 34px 0 30px;
+    color: $c-white;
+    @include grid;
+
+    @include onTablet {
+      gap: 0;
+    }
+  }
+
+  &__contacts {
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__schedule {
+    @include onTablet {
+      grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__nav {
+    @include onTablet {
+      grid-column: 5 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 9 / 13;
+    }
+  }
+
+  &__part {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--last {
+      margin-bottom: 60px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    &--link {
+      display: inline-block;
+      text-decoration: none;
+      color: $c-white;
+
+    }
+  }
+
+  &__info {
+    margin-bottom: 32px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    &__link {
+      color: $c-white;
+      text-decoration: none;
+      @include link-hover;
+    }
+  }
+
+  &__icons {
+    display: inline-flex;
+    gap: 20px;
+    position: relative;
+  }
+
+  &__icon {
+    @include scale;
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__link {
+    margin-bottom: 5px;
+    display: inline-block;
+    text-decoration: none;
+    color: $c-white;
+
+    @include link-hover;
+  }
+
+  &__bottom {
+    line-height: 100%;
+    grid-column: 1 / 13;
+    display: flex;
+    gap: 5%;
+    justify-content: left;
+
+    @include grid;
+
+    @include onTablet {
+      gap: 0;
+    }
+
+    &--date {
+      padding-top: 5px;
+      color: $c-white;
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &--privacy {
+      display: inline-block;
+      padding-top: 5px;
+      color: $c-white;
+      text-decoration: none;
+
+      &-text {
+        @include link-hover;
+      }
+      @include onTablet {
+        grid-column: 3 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 3 / 5;
+      }
+    }
+
+    &--arrow {
+      position: absolute;
+      right: 20px;
+      @include onTablet {
+        grid-column: 6 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 12 / 13;
+      }
+    }
+
+    &--scroll-up {
+      @include scale;
+    }
+  }
+}
