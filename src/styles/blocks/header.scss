@@ -1,0 +1,152 @@
+.header {
+  position: relative;
+  background-color: $background-color;
+  height: 748px;
+  margin-bottom: 90px;
+
+  @include onTablet {
+    height: 1092px;
+    margin-bottom: 105px;
+  }
+
+  @include onDesktop {
+    height: 800px;
+    margin-bottom: 110px;
+  }
+
+  &__right-side {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__select-language {
+    color: $white-color;
+    background-color: inherit;
+    display: none;
+    border: none;
+    font-weight: 500;
+    line-height: none;
+
+    &--is-visible {
+      display: block;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--menu {
+      display: block;
+    }
+
+  }
+
+  &__title-datas {
+    color: $white-color;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      padding-top: 90px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-bottom: 30px;
+    color: $white-color;
+
+    @include onTablet {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__title-nowrap {
+    @include onTablet {
+      white-space: nowrap;
+    }
+  }
+
+  &__subtitle {
+    color: $white-color;
+    line-height: 24px;
+    margin-bottom: 40px;
+
+
+    @include onTablet {
+      margin-bottom: 50px;
+      max-width: 330px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+      max-width: max-content;
+    }
+  }
+
+  &__img-container {
+    display: flex;
+    height: 272px;
+    justify-content: center;
+
+    @include onTablet {
+      height: 494px;
+    }
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 662px;
+      justify-content: end;
+
+    }
+  }
+
+  &__img {
+    height: 100%;
+    object-fit: contain;
+    object-position: right;
+
+  }
+
+  &__event-data {
+    display: none;
+    color: $white-color;
+
+    @include onDesktop{
+      display: flex;
+      align-items: center;
+      width: 50%;
+      gap: 20px;
+    }
+  }
+
+  &__line {
+    flex: 1;
+    display: block;
+    height: 1px;
+    background-color: $white-color;
+    opacity: 0.3;
+
+    &--menu {
+      opacity: 1;
+      margin: 40px 0;
+    }
+    @include onDesktop {
+      opacity: 0.3;
+      width: 50%;
+      margin: 60px 0;
+    }
+    @include onDesktop {
+      margin: 50px 0;
+    }
+  }
+}
