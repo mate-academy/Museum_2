@@ -1,0 +1,44 @@
+.lang-picker {
+  align-items: center;
+  gap: 5px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: $c-l-grey;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    width: 8px;
+    height: 5px;
+    background-image: url(../images/lang-arrow.svg);
+  }
+
+  @include on768 {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &--header {
+    display: none;
+
+    @include on768 {
+      display: flex;
+    }
+  }
+
+  &--footer {
+    margin: 0 30px 0 auto;
+    display: flex;
+
+    @include on768 {
+      margin: unset;
+      order: 1;
+    }
+  }
+}
