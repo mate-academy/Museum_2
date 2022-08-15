@@ -1,13 +1,5 @@
 'use strict';
 
-// window.addEventListener('hashchange', () => {
-//   if (window.location.hash === '#menu') {
-//     document.body.classList.add('page__body--with-menu');
-//   } else {
-//     document.body.classList.remove('page__body--with-menu');
-//   }
-// });
-
 document.addEventListener('DOMContentLoaded', function() {
   const burgerMenuIcon = document.querySelector('.burger-button');
   const languageSelect = document.querySelector('.header__select-language');
@@ -43,4 +35,17 @@ document.addEventListener('DOMContentLoaded', function() {
       burgerMenuIcon.click();
     }
   }
+
+  const form = document.querySelector('.last-section__email-form');
+
+  document.querySelector('#button-follow')
+    .addEventListener('click', function(event) {
+      event.preventDefault();
+
+      const result = form.reportValidity();
+
+      if (result === true) {
+        form.reset();
+      }
+    }, false);
 });
