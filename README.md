@@ -1,5 +1,5 @@
 # Museum 2 landing page
-Implementation of landing page, using BEM, SCSS, HTML3 and Figma.  
+Implementation of landing page, using BEM, SCSS, Flexbox, CSS Grid, HTML3 and Figma.  
 
 Optimized for:
 - Large screens 2560px
