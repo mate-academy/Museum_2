@@ -1,4 +1,4 @@
-Еhe landing page was written using HTML and CSS (SCSS) and BEM methodology.
+The landing page was written using HTML and CSS (SCSS) and BEM methodology.
 Implemented according to [Figma design](https://www.figma.com/file/HL3XGt5ZatvJoYBhOaWY5x/museum-prototype?node-id=323%3A1957).
 
 In landing using this font styles [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
