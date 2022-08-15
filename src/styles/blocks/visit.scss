@@ -1,0 +1,42 @@
+.visit {
+  background-color: $green-background;
+  display: flex;
+  justify-content: center;
+  @include onDesktop {
+    position: relative;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font-size: 2.4rem;
+    color: $white-text;
+    line-height: 100%;
+
+    @include onTablet {
+      font-size: 3.9rem;
+    }
+
+    @include onDesktop {
+      font-size: 5rem;
+    }
+  }
+
+  &__description {
+    margin: 0 0 40px;
+    @extend %description;
+    color: $white-text;
+    line-height: 150%;
+  }
+
+  &__image {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      display: block;
+      height: 95%;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}

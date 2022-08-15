@@ -1,0 +1,87 @@
+.page {
+  font-family: "Raleway", sans-serif;
+  color: $white-text;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: $white-background;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    box-sizing: border-box;
+    
+    @include onTablet {
+      padding-top: 110px;
+      margin-bottom: 1px;
+    }
+  }
+
+  &__section-exhibitions {
+    padding-top: 90px;
+    @include onDesktop {
+    }
+  }
+
+  &__section-next-events {
+    padding: 90px 0;
+  }
+  &__section-visit {
+    padding: 50px 0;
+
+    @include onTablet {
+      padding: 80px 0;
+    }
+
+    @include onDesktop {
+      padding: 205px 0;
+    }
+  }
+
+  &__section-news {
+    padding: 90px 0;
+
+    @include onTablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__section-subscribe {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 128px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__section-title {
+    margin: 0 0 60px;
+    @extend %title;
+    grid-area: title;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transform: translateX(-100%);
+    transition: all 0.3s;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__button-show-more {
+    grid-area: button-show-more;
+  }
+}

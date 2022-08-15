@@ -1,0 +1,63 @@
+.exhibitions {
+
+  &__wrapper {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto auto;
+      column-gap: 30px;
+      
+      justify-items: start;
+      align-items: center;
+    }
+
+  }
+
+  &__exhibition {
+    margin: 0 auto 60px;
+    display: block;
+    box-sizing: border-box;
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin: 0 0 20px;
+
+    @include onDesktop {
+      height: 484px;
+      object-fit: cover;
+    }
+  }
+
+  &__date {
+    display: block;
+    @extend %date;
+    margin: 0 0 10px;
+  }
+
+  &__subtitle {
+    margin: 0 0 20px;
+    @extend %subtitle;
+  }
+
+  &__description {
+    margin: 0 0 30px;
+    @extend %description; 
+  }
+
+  &__button-wrapper {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__button-grid {
+    grid-column: 1 / 4;
+  }
+}

@@ -1,0 +1,120 @@
+.header {
+  background-color: $green-background;
+
+  &__top {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin: 0 0 100px;
+    }
+    @include onDesktop {
+      margin: 0 0 47px;
+    }
+  }
+
+  &__language {
+    display: none;
+    position: relative;
+    align-items: center;
+    padding-right: 13px;
+    color: $white-text;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    
+    &::after {
+      position: absolute;
+      right: 0;
+      content: "";
+      background-image: url(../images/Union.svg);
+      background-repeat: no-repeat;
+      width: 8px;
+      height: 5px;
+    }
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__datetable {
+    display: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: $white-text;
+    opacity: 0.7;
+    margin-bottom: 50px;
+    
+    &::after {
+      content: "";
+      display: block;
+      width: 470px;
+      height: 1px;
+      background-color: $white-text;
+      margin: -7px 100px;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__meeting {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 40px;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__button {
+    margin: 0 0 40px;
+
+    @include onDesktop {
+      margin: 0 0 135px;
+
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__image {
+    min-width: 245px;
+  }
+}
