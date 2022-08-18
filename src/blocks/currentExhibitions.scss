@@ -1,0 +1,58 @@
+.currentExhibitions {
+  position: relative;
+
+  @media (max-width: 650px) {
+    padding-bottom: 90px;
+  }
+
+  &__conteiner {
+    box-sizing: border-box;
+    @include flex-column;
+  }
+
+  &__top-block {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__title {
+    display: block;
+    @include h3;
+    color: $black;
+
+    @include tablet {
+      font-size: 40px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+
+  &__exhibitions {
+    padding-top: 70px;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet {
+      padding-top: 75px;
+    }
+
+    @media (max-width: 768px) {
+      padding-top: 60px;
+      flex-direction: column;
+      gap: 60px;
+      align-items: center;
+    }
+  }
+
+  &__button {
+    @media (max-width: 650px) {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

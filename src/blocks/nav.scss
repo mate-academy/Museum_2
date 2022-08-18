@@ -1,0 +1,44 @@
+.nav {
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(241, 245, 244, 0.3);
+  width: 570px;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+
+  &__list {
+    list-style: none;
+    @include flex-column;
+    justify-content: space-around;
+    height: 100%;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__item {
+    @include link;
+    @include h3;
+    color: $white;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+  }
+}

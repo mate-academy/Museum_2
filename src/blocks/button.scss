@@ -1,0 +1,79 @@
+.button {
+  @include button;
+  @include button-text;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 0;
+
+  &:hover {
+    @include hover-button;
+  }
+
+  &:active {
+    @include pressed-button;
+  }
+
+  &:disabled {
+    @include disabled-button;
+  }
+
+  @include tablet {
+    width: 330px;
+  }
+
+  @include mobile {
+    width: 280px;
+  }
+
+  @include small {
+    width: 280px;
+  }
+
+  &--secondary {
+    position: relative;
+    @include secondary-button;
+    @include button-text;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0;
+
+    &::after {
+      content: url(../images/arrow-orange.svg);
+      position: absolute;
+      width: 13px;
+      height: 11px;
+      right: 50px;
+      bottom: 50%;
+
+      @include tablet {
+        right: 24px;
+      }
+    }
+
+    &:hover {
+      @include secondary-hover;
+    }
+
+    &:active {
+      @include secondary-pressed;
+    }
+
+    &:disabled {
+      @include secondary-disabled;
+    }
+
+    @include tablet {
+      width: 210px;
+    }
+
+    @include mobile {
+      width: 280px;
+    }
+
+    @include small {
+      width: 280px;
+    }
+  }
+}

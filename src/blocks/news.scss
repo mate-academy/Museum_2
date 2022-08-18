@@ -1,0 +1,111 @@
+.news {
+  &__conteiner {
+    @include flex-column;
+    position: relative;
+
+    @media (max-width: 670px) {
+      padding-bottom: 90px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include h3;
+    color: $black;
+
+    @include tablet {
+      font-style: 40px;
+    }
+
+    @include mobile {
+      font-size: 40px;
+    }
+
+    @include small {
+      font-size: 28px;
+    }
+  }
+
+  &__button {
+    @media (max-width: 670px) {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__news-block {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 55px;
+
+    @include tablet {
+      padding-top: 75px;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 60px;
+      gap: 50px;
+    }
+  }
+
+  &__article {
+    @include flex-column;
+    width: 570px;
+
+    @include tablet {
+      width: 330px;
+    }
+
+    @include mobile {
+      width: 330px;
+    }
+
+    @include small {
+      width: 280px;
+    }
+  }
+
+  &__article-image {
+    height: 370px;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+
+    @include tablet {
+      height: 330px;
+    }
+
+    @include mobile {
+      height: 330px;
+    }
+
+    @include small {
+      height: 280px;
+    }
+  }
+
+  &__date {
+    padding-top: 20px;
+    @include additional-text;
+    color: $black;
+  }
+
+  &__article-title {
+    @include h5;
+    color: $black;
+  }
+
+  &__about-new {
+    padding-top: 18px;
+    @include text;
+    color: $gray;
+  }
+}

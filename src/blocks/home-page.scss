@@ -1,0 +1,104 @@
+.home-page {
+  height: calc(800px - 90px);
+  background: url(../images/home-page__img.png) right bottom no-repeat;
+  background-color: $background;
+  z-index: 1;
+
+  @media (max-width: 1024px) {
+    background: url(../images/home-page__img.png) center bottom no-repeat;
+    background-color: $background;
+  }
+  @include tablet {
+    height: calc(1092px - 90px);
+    background-size: 443px 494px;
+  }
+
+  @media (max-width: 767px) {
+    height: calc(747px - 80px);
+    background-size: 245px 273px;
+  }
+
+  &__conteiner {
+    @include flex-column;
+    @include page-standart;
+    box-sizing: border-box;
+    padding-top: 90px;
+    width: 53vw;
+
+    @include tablet {
+      padding-top: 100px;
+      width: 100%;
+    }
+
+    @media (max-width: 767px) {
+      padding-top: 50px;
+      width: 100%;
+    }
+  }
+
+  &__period {
+    @include additional-text;
+    color: $white;
+  }
+
+  &__title {
+    padding-top: 10px;
+    @include h1;
+    color: $white;
+    width: 570px;
+
+    @media (min-width: 490px) and (max-width: 1024px) {
+      font-size: 72px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
+    @media (max-width: 490px) {
+      font-size: 48px;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    @include text;
+    color: $white;
+    padding-top: 30px;
+
+    @include tablet {
+      display: block;
+      width: 330px;
+    }
+  }
+
+  &__button {
+    margin-top: 80px;
+
+    @media (max-width: 767px) {
+      margin: 40px auto 0;
+    }
+  }
+
+  &__footer {
+    position: relative;
+    padding-top: 135px;
+    @include h6;
+    color: $white;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 468px;
+      height: 1px;
+      right: 0;
+      bottom: 7px;
+      background-color: rgba(241, 245, 244, 0.3);
+    }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+}
