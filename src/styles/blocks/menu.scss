@@ -40,11 +40,6 @@
     font-size: 14px;
     line-height: 140%;
   }
-
-  &__time {
-    font-weight: 600;
-    line-height: 150%;
-  }
   
   &__list {
     margin: 0;
@@ -61,7 +56,7 @@
 
       &::after {
         margin: 20px 0 40px;
-        content: '';
+        content: "";
         display: block;
         width: 100%;
         height: 1px;
@@ -71,12 +66,32 @@
   }
 
   &__link {
+    position: relative;
     color: $white-text;
-    font-family: 'Playfair Display';
+    font-family: "Playfair Display", serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
     text-decoration: none;
+
+    &::after {
+      position: absolute;
+      top: 15px;
+      content: "";
+      display: block;
+      width: 2px;
+      height: 40px;
+      background-color: $color-orange;
+      transition: all 0.3s;
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    &:hover {
+      &::after {
+        transform: translateX(-10px);
+        opacity: 1;
+      }
+    }
 
     @include onTablet {
       font-size: 48px;
