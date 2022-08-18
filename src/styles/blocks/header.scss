@@ -1,0 +1,89 @@
+.header {
+  background-color: $backgroundDarkColor;
+  position: relative;
+
+  &__info {
+    margin-top: 50px;
+
+    @include onTablet {
+      margin-top: 99px;
+    }
+
+    @include onDesktop {
+      margin-top: 90px;
+    }
+  }
+
+  &__content {
+    min-height: 100vh;
+    height: 749px;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      min-height: 100vh;
+      height: 1093px;
+    }
+
+    @include onDesktop {
+      height: 800px;
+    }
+  }
+
+  &__top {
+    height: 80px;
+
+    @include onTablet {
+      height: 77px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    align-self: center;
+    width: 245px;
+    height: 275px;
+
+    @include onTablet {
+      width: 445px;
+      height: 495px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: calc(100% - 90px);
+      object-fit: contain;
+      object-position: bottom right;
+    }
+  }
+
+  &__event-date {
+    display: none;
+    @extend %h6;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 135px;
+
+      &:after {
+        content: "";
+        transform: translateY(100%);
+        background-color: $whiteMainColor;
+        width: 70%;
+        overflow: hidden;
+        height: 1px;
+        opacity: 0.3;
+      }
+    }
+  }
+}

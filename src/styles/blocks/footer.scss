@@ -1,0 +1,85 @@
+.footer {
+  padding: 34px 0 30px;
+  width: 100%;
+  background-color: $backgroundDarkColor;
+  color: $whiteMainColor;
+
+  @include onTablet {
+    padding: 50px 0 30px;
+  }
+
+  &__section:not(:first-child) {
+    margin-top: 50px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__section-title {
+    @extend %h5;
+  }
+
+  &__section-content {
+    margin-top: 10px;
+    @extend %main-text;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    &--main {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      @include onTablet {
+        gap: 10px;
+      }
+    }
+  }
+
+  &__social-media {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $whiteMainColor;
+
+    @include hover(color, $redColor);
+  }
+
+  &__bottom {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: 22px;
+    @extend %additional-text;
+
+    @include onDesktop {
+      gap: 102px;
+    }
+  }
+
+  &__scroll-up {
+    stroke: $whiteMainColor;
+    width: 30px;
+    height: 30px;
+
+    @include hover(stroke, $redColor);
+  }
+}

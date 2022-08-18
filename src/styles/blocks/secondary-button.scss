@@ -1,0 +1,59 @@
+.secondary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: $button-height;
+  border: 1px solid $redColor;
+
+  @extend %button-text;
+  line-height: $button-height;
+  color: $redColor;
+  text-decoration: none;
+  text-align: center;
+
+  &__arrow {
+    stroke: $redColor;
+  }
+
+  &:focus {
+    border: 1px solid #ea340d;
+    color: #ea340d;
+  }
+
+  &:focus &__arrow {
+    stroke: #ea340d;
+  }
+
+  &:disabled {
+    border: 1px solid #dd836f;
+    color: #dd836f;
+  }
+
+  &:disabled &__arrow {
+    stroke: #dd836f;
+  }
+
+  &:hover {
+    border: 1px solid #af3419;
+    color: #af3419;
+  }
+
+  &:hover &__arrow {
+    stroke: #af3419;
+  }
+
+  &--phone {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+}
