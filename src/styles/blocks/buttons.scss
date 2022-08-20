@@ -1,0 +1,110 @@
+.button {
+
+  text-decoration: none;
+
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 60px;
+  width: 280px;
+
+  transition: background-color 0.3s;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &--mobile {
+
+    @include onMobile {
+      display: flex;
+    }
+    @include onTablet {
+      display: none;
+    }
+
+  }
+
+  &--tablet {
+
+    @include onMobile {
+      display: none;
+    }
+    @include onTablet {
+      display: flex;
+    }
+
+  }
+
+}
+
+.button-1 {
+
+  background-color: $c-button;
+
+  color: $c-white;
+
+  &:hover {
+    background-color: $c-hover;
+  }
+
+  &:focus {
+    background-color: $c-focus;
+  }
+
+  &:disabled {
+    background-color: $c-disabled;
+  }
+
+}
+
+.button-2 {
+
+  border: 1px solid $c-button;
+  background-color: $c-white;
+  color: $c-button;
+  stroke: $c-button;
+
+  @include onTablet {
+    width: 200px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &:hover {
+
+    border-color: $c-hover;
+    color: $c-hover;
+    stroke: $c-hover;
+
+  }
+
+  &:focus {
+
+    border-color: $c-focus;
+    color: $c-focus;
+    stroke: $c-focus;
+
+  }
+
+  &:disabled {
+
+    border-color: $c-disabled;
+    color: $c-disabled;
+    stroke: $c-disabled;
+
+  }
+
+}
