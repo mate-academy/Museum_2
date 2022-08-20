@@ -1,0 +1,90 @@
+.menu {
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include desctop {
+    height: 90px;
+  }
+
+  &__logo {
+    background-image: url(../images/logo.svg);
+    width: 124px;
+    height: 37px;
+    background-repeat: no-repeat;
+  }
+
+  &__button {
+    order: 2;
+
+    &--line {
+      height: 2px;
+      width: 25px;
+      background-color: $color_white;
+      margin-top: 7px;
+
+      &:first-child {
+        margin-top: -5px;
+      }
+    }
+
+    &__link {
+
+      &:first-child {
+        width: 30px;
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        width: 30px;
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__lang {
+    margin-left: 10px;
+    order: 1;
+    margin-right: 30px;
+
+    @include tablet {
+      order: 3;
+      margin-right: 0;
+      margin-left: 40px;
+    }
+
+    @include desctop {
+      order: 3;
+      margin-right: 0;
+      margin-left: 40px;
+    }
+
+    &--select {
+      font-family: "Raleway", sans-serif;
+      width: 44px;
+      height: 24px;
+      background-color: $color_background;
+      font-size: 16px;
+      color: $color_white;
+      border: none;
+      border-color: $color_background;
+      outline: none;
+
+      &-item {
+        font-size: 14px;
+        border: none;
+        border-color: $color_background;
+      }
+    }
+  }
+}
