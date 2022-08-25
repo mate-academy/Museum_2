@@ -1,0 +1,144 @@
+.menu {
+  background-color: #3f5252;
+  z-index: 1;
+
+  &__content {
+    position: relative;
+    box-sizing: border-box;
+    height: $headerHeight;
+    padding: 32px 0;
+  }
+
+  &__image {
+    @include onTablet {
+      background-image: url(../images/menuTab.png);
+    }
+
+    @include onDesktop {
+      background-image: url(../images/menuDesk.png);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+
+    @include onTablet {
+      flex-direction: row;
+      text-align: start;
+      align-items: flex-start;
+      gap: 120px;
+      margin-top: 45px;
+    }
+  }
+
+  &__first {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $white;
+  }
+
+  &__second {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: $white;
+    text-decoration: none;
+
+    &--link {
+      font-family: "Raleway", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      margin: 50px 0 40px;
+      align-items: flex-start;
+    }
+
+    @include onDesktop {
+      margin: 70px 0;
+    }
+
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 45px;
+    }
+
+  }
+
+  &__link {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    color: $white;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    transition: border-color 0.3s;
+
+    @include onTablet {
+      font-size: 28px;
+      line-height: 28px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    &:hover {
+      border-color: $white;
+    }
+  }
+
+  &__line {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $white;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      width: 50%;
+      opacity: 0.3;
+    }
+
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      justify-content: flex-start;
+    }
+  }
+}

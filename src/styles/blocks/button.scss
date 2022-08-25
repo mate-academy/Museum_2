@@ -1,0 +1,82 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  background-color: $red;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: $white;
+
+    width: 245px;
+    height: 60px;
+  }
+
+  &__img {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $redHover;
+  }
+
+  &:active {
+    background-color: $redActive;
+  }
+
+  &--secondary {
+    border: 1px solid $red;
+    background-color: #e5e5e5;
+
+    @include onTablet {
+      order: 0;
+    }
+
+    .button__link {
+      color: $red;
+    }
+
+    .button__img {
+      display: block;
+      stroke: $red;
+    }
+
+    &:hover {
+      border: 1px solid $redHover;
+      background-color: #e5e5e5;
+
+      .button__link {
+        color: $redHover;
+      }
+
+      .button__img {
+        stroke: $redHover;
+      }
+    }
+
+    &:active {
+      border: 1px solid $redActive;
+      background-color: #e5e5e5;
+
+      .button__link {
+        color: $redActive;
+      }
+
+      .button__img {
+        stroke: #ea340d;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.feedback {
+  display: flex;
+  flex-direction: column;
+
+  &__head {
+    display: grid;
+
+    @include onDesktop {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+    color: $black;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $black;
+  }
+
+  &__form {
+    min-width: 40%;
+    height: 28px;
+    margin-top: 50px;
+    background-color: $c-gray;
+    border: none;
+    border-bottom: 1px solid $black;
+    align-self: stretch;
+    outline: none;
+
+    &:hover {
+      border-bottom: 1px solid $red;
+    }
+
+    &:focus {
+      border: none;
+      color: $black;
+      border-bottom: 1px solid $red;
+    }
+
+    &::placeholder {
+      font-family: "Raleway", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__button {
+    margin-top: 60px;
+  }
+}
