@@ -1,0 +1,165 @@
+.menu {
+  background-color: $colorBg;
+
+  &__image {
+    @include on768 {
+      background-image: url("../images/menu.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+      width: 422px;
+      height: 466px;
+      transform: translateX(50%);
+    }
+
+    @include on1280 {
+      right: 0;
+      transform: translate(0);
+      width: 624px;
+      height: 697px;
+    }
+  }
+
+  &__content {
+    padding-top: 20px;
+    height: 100vh;
+
+    @include on768 {
+      padding-top: 26px;
+      padding-bottom: 496px;
+      height: auto;
+    }
+
+    @include on1280 {
+      padding-bottom: 108px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include on768 {
+      flex-direction: row;
+    }
+  }
+
+  &__info-box {
+    display: block;
+    margin-bottom: 40px;
+
+    @include on768 {
+      display: grid;
+    }
+  }
+
+  &__info-block {
+    @include additionalText;
+
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include on768 {
+      margin-bottom: 0;
+
+    }
+  }
+
+  &__info {
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $colorWhite;
+    text-decoration: none;
+  }
+
+  &__list-block {
+    display: block;
+
+    @include on1280 {
+      display: grid;
+    }
+  }
+
+  &__list {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 40px;
+    margin: 0;
+    margin-bottom: 81px;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $colorWhite;
+
+    }
+
+    @include on768 {
+      padding-bottom: 50px;
+    }
+
+    @include on1280 {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__item {
+    width: max-content;
+    margin-bottom: 20px;
+    border-bottom: 1px solid transparent;
+    transition: 300ms;
+
+    &:hover {
+      border-bottom: 1px solid $colorWhite;
+    }
+
+    @include on768 {
+      margin-bottom: 30px;
+    }
+
+    @include on1280 {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @include h5;
+
+    @include on768 {
+      @include h3;
+      color: $colorWhite;
+    }
+  }
+
+  &__button-block {
+    display: block;
+
+    @include on768 {
+      display: grid;
+
+    }
+  }
+}

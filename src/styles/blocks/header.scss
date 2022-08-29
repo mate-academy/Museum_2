@@ -1,0 +1,133 @@
+.header {
+  background-color: $colorBg;
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 245px;
+    height: 273px;
+    background-image: url("../images/header.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateX(50%);
+
+    @include on768 {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include on1280 {
+      right: 0;
+      width: 625px;
+      height: 623px;
+      transform: translateX(0);
+    }
+  }
+  &__content {
+    height: 100vh;
+    padding-top: 20px;
+    //padding-bottom: 313px;
+
+    @include on768 {
+      height: auto;
+      padding-bottom: 0;
+    }
+
+    @include on1280 {
+      height: 100vh;
+      padding-top: 26px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 70px;
+
+    @include on768 {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+
+  &__center {
+    display: block;
+
+    @include on768 {
+      display: grid;
+    }
+  }
+
+  &__add-text {
+    @include additionalText;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include h1;
+    margin-bottom: 30px;
+
+    @include on768 {
+      margin-bottom: 20px;
+    }
+
+    @include on1280 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__main-text {
+    @include mainText;
+    margin-bottom: 40px;
+
+    @include on768 {
+      margin-bottom: 50px;
+    }
+
+    @include on1280 {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    @include on768 {
+      margin-bottom: 564px;
+    }
+
+    @include on1280 {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__date {
+    display: none;
+
+    @include on1280 {
+      position: relative;
+      display: block;
+
+      margin-bottom: 50px;
+      @include h6;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 60%;
+        height: 1px;
+        width: 90%;
+        background-color: $colorWhite;
+
+        opacity: 0.3;
+      }
+    }
+  }
+}

@@ -1,6 +1,134 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin on320 {
+  @media (min-width: 320px) {
+    @content;
   }
+}
+
+@mixin on768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on1280 {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 100%;
+
+  color: $colorWhite;
+  margin: 0;
+
+  @include on768 {
+    font-size: 72px;
+  }
+
+  @include on1280 {
+    font-size: 96px;
+  }
+}
+
+@mixin h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 100%;
+
+  color: $colorWhite;
+  margin: 0;
+
+  @include on768 {
+    font-size: 62px;
+  }
+
+  @include on1280 {
+    font-size: 80px;
+  }
+}
+
+@mixin h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 125%;
+
+  color: $colorBlack;
+  margin: 0;
+
+  @include on768 {
+    font-size: 40px;
+  }
+
+  @include on1280 {
+    font-size: 48px;
+    line-height: 120%;
+  }
+}
+
+@mixin h4 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 125%;
+
+  color: $colorBlack;
+  margin: 0;
+
+  @include on768 {
+    font-size: 24px;
+  }
+}
+
+@mixin h5 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+
+  color: $colorWhite;
+  margin: 0;
+}
+
+@mixin h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 125%;
+
+  color: $colorWhite;
+  opacity: 0.7;
+  margin: 0;
+}
+
+@mixin additionalText {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: $colorWhite;
+}
+
+@mixin mainText {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: $colorWhite;
+}
+
+@mixin buttonsText {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+
+  color: $colorWhite;
 }

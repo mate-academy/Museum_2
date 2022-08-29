@@ -1,0 +1,95 @@
+.page {
+  scroll-behavior: smooth;
+  font-family: "Playfair Display", "Raleway", serif, sans-serif;
+  font-weight: 200, 400, 500, 600, 700;
+
+  &__body {
+    margin: 0;
+    background-color: $colorWhite;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+    transition: transform 300ms;
+
+    &:target {
+      transform: translate(0);
+    }
+  }
+
+  &__header {
+    position: relative;
+    margin-bottom: 90px;
+  }
+
+  &__actual {
+    margin-bottom: 120px;
+
+    @include on768 {
+      margin-bottom: 160px;
+    }
+
+    @include on1280 {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__events {
+    margin-bottom: 90px;
+
+    @include on768 {
+      margin-bottom: 100px;
+    }
+
+    @include on1280 {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__plan-visit {
+    position: relative;
+
+    margin-bottom: 90px;
+
+    @include on768 {
+      margin-bottom: 120px;
+    }
+
+    @include on1280 {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__news {
+    margin-bottom: 120px;
+
+    @include on768 {
+      margin-bottom: 160px;
+    }
+
+    @include on1280 {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__digest {
+    margin-bottom: 80px;
+
+    @include on768 {
+      margin-bottom: 142px;
+    }
+
+    @include on1280 {
+      margin-bottom: 200px;
+    }
+  }
+}

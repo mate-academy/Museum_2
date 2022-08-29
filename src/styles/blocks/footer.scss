@@ -1,0 +1,153 @@
+.footer {
+  background-color: $colorBg;
+
+  &__content {
+    padding-top: 34px;
+    padding-bottom: 30px;
+
+    @include on768 {
+      display: flex;
+      flex-direction: column;
+      padding-top: 50px;
+    }
+  }
+
+  &__box {
+    display: block;
+
+    @include on768 {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 120px;
+    }
+
+    @include on1280 {
+      display: grid;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+
+    color: $colorWhite;
+    margin-bottom: 10px;
+  }
+
+  &__contacts-info {
+    margin-bottom: 30px;
+
+    @include on768 {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__contacts-socials {
+    display: flex;
+
+    margin-bottom: 50px;
+  }
+
+  &__socials {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 300ms;
+
+    margin-right: 20px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &--face {
+      background-image: url("../images/svg/facebook.svg");
+    }
+
+    &--twi {
+      background-image: url("../images/svg/twitter.svg");
+    }
+
+    &--tg {
+      background-image: url("../images/svg/telegram.svg");
+    }
+
+    &--inst {
+      background-image: url("../images/svg/instagram.svg");
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__info {
+    display: block;
+    text-decoration: none;
+    @include mainText;
+    transition: transform 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__schedule-block {
+    margin-bottom: 50px;
+  }
+
+  &__main-block {
+    margin-bottom: 60px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__coop {
+    display: flex;
+  }
+
+  &__coop-item {
+    @include additionalText;
+    margin-right: 22px;
+
+    @include on1280 {
+      margin-right: 102px;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__top-link {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-image: url("../images/svg/scroll-up.svg");
+    background-position: center;
+    background-size: contain;
+  }
+}
