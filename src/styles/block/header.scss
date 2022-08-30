@@ -1,0 +1,94 @@
+.header {
+  background-color: $colorGrey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 30px;
+
+  &__logo {
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__opener {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+
+    &--lang {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        margin-left: 42px;
+      }
+
+      &-ua {
+        font-family: "Raleway", sans-serif ;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: $colorWhite;
+        margin-right: 3px;
+        transition: 0.5s;
+
+        &:hover {
+          color: $colorWhite;
+          border: solid color $colorOrange;
+          background-color: $colorOrange;
+          border-radius: 20%;
+          transform: scale(2);
+          cursor: pointer;
+        }
+      }
+
+      &-arrow {
+        transition: 0.5s;
+
+        &:hover {
+          transform: scale(2);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &--menu {
+      position: relative;
+      display: block;
+      background-image: url(../images/menu.svg);
+      background-repeat: no-repeat;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    &--cross {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url(../images/cross.svg);
+      background-repeat: no-repeat;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
