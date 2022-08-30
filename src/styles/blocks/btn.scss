@@ -1,0 +1,83 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 60px;
+
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 600;
+
+  &--primary {
+    color: $c-white;
+    background-color: $c-main;
+
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $c-hover;
+    }
+  
+    &:active {
+      background-color: $c-active;
+    }
+
+    @include tablet {
+      width: 330px;
+    }
+  }
+
+  &--secondary {
+    color: $c-main;
+    border: 1px solid $c-main;
+
+    transition: color 0.3s, border-color 0.3s;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+
+      transform: translateX(8px);
+
+      background-image: url(../images/icons/arrow-right-btn.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      color: $c-hover;
+      border-color: $c-hover;
+
+      &::after {
+        transform: translateX(16px);
+      }
+    }
+
+    &:active {
+      color: $c-active;
+      border-color: $c-active;
+    }
+
+    @include tablet {
+      width: 210px;
+    }
+  }
+  
+  &--disabled,
+  &:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  @include desktop {
+    width: 270px;
+  }
+}

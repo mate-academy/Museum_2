@@ -1,0 +1,50 @@
+.top-action {
+  max-width: $w-container - 2 * $padding-desk;
+  height: $h-top;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__interact {
+    display: flex;
+  }
+
+  &__lang {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    margin-right: 30px;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+
+    @include tablet {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+      margin-right: 0;
+    }
+
+    @include tablet {
+      order: 1;
+    }
+  }
+
+  &__burger {
+    @include tablet {
+      margin-right: 40px;
+    }
+  }
+
+  @include tablet {
+    height: $h-top-tab;
+  }
+
+  @include desktop {
+    height: $h-top-desk;
+  }
+}

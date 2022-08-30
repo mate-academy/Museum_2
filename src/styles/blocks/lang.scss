@@ -1,0 +1,48 @@
+.lang {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 36px;
+  height: 24px;
+  
+  color: $c-white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+
+  overflow: hidden;
+
+  &__item {
+    order: 1;
+    &--active {
+      order: 0;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 11px;
+    right: 4px;
+
+    width: 6px;
+    height: 1px;
+
+    background-color: $c-white;
+  }
+
+  &::before {
+    transform: translateX(3px) rotate(315deg);
+  }
+
+  &::after {
+    transform: rotate(-315deg);
+  }
+
+  &--active {
+    height: auto;
+  }
+}

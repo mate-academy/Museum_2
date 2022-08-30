@@ -1,0 +1,71 @@
+.menu {
+  min-height: 100vh;
+  padding-top: $h-top + 10px;
+  background: $c-background;
+
+  color: $c-white;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+  
+  &--active {
+    transform: translateX(0);
+    overflow: auto;
+  }
+
+  &__top {
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-right: 123px;
+    }
+
+    @include desktop{
+      margin-right: 83px;
+    }
+  }
+
+  &__schedule-time {
+    font-weight: 600;
+  }
+
+  &__text {
+    @extend %additional;
+  }
+
+  &__address {
+    margin-bottom: 40px;
+  }
+
+  &__address-place {
+    color: inherit;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+  }
+  
+  @include tablet {
+    padding-top: $h-top-tab + 30px;
+
+    background: $c-background url(../images/promo/menu.png);
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  @include desktop {
+    padding-top: $h-top-desk + 40px;
+
+    background-size: 625px;
+    background-position: bottom right;
+  }
+}
