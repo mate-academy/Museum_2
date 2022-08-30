@@ -6,6 +6,8 @@
 
     padding-top: 20px;
 
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
@@ -39,6 +41,8 @@
   }
 
   &__info {
+    display: block;
+
     font-size: 14px;
     line-height: 140%;
     color: $c-white;
@@ -46,6 +50,8 @@
 
   &__info-description {
     margin-bottom: 20px;
+
+    display: block;
 
     font-weight: 600;
     line-height: 150%;
@@ -62,6 +68,10 @@
   &__item {
     &:not(:last-child) {
       margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
     }
 
     &:last-child {
@@ -69,6 +79,11 @@
       margin-bottom: 40px;
 
       border-bottom: 1px solid $c-white;
+
+      @include onTablet {
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+      }
     }
   }
 
@@ -80,5 +95,23 @@
     color: $c-white;
 
     text-decoration: none;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include onTablet {
+      display: block;
+    }
   }
 }
