@@ -10,6 +10,10 @@
     flex-direction: column;
 
     position: relative;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
   }
 
   &__top {
@@ -18,6 +22,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+
+    @include onTablet {
+      gap: 44px + 25px;
+    }
+  }
+
+  &__language {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      order: 1;
+    }
   }
 
   &__date {
@@ -34,18 +57,27 @@
     font-family: "Playfair Display", sans-serif;
     font-weight: bold;
     font-size: 48px;
+
     color: $c-white;
+
+    @include onTablet {
+      margin-bottom: 20px;
+
+      font-size: 72px;
+    }
   }
 
   &__subtitle {
     margin-bottom: 40px;
 
+    display: block;
+
     line-height: 150%;
     color: $c-white;
-  }
 
-  &__button {
-    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
   }
 
   &__image {
