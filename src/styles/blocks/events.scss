@@ -1,0 +1,227 @@
+.events {
+  width: 100%;
+  background-color: $color_white;
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 125%;
+    align-items: center;
+    color: $color_black;
+    display: flex;
+    margin-top: 120px;
+
+    @include tablet {
+      grid-column: 1 / 5;
+      margin-top: 164px;
+      font-size: 40px;
+    }
+
+    @include desctop {
+      grid-column: 1 / 6;
+      margin-top: 200px;
+    }
+  }
+
+  &__button {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: $color_red;
+    background-color: $color_white;
+    order: 3;
+    border: 1px solid $color_red;
+    height: 70px;
+    margin: 30px 0 90px;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      background-image: url(../images/strelka.svg);
+      display: inline-block;
+      width: 14px;
+      height: 12px;
+      margin-left: 8px;
+      background-size: contain;
+    }
+
+    @include tablet {
+      grid-column: 5 / 7;
+      margin: 164px 0 0;
+      order: 0;
+    }
+
+    @include desctop {
+      grid-column: 10 / 13;
+      order: 0;
+      margin: 200px 0 0;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      grid-column: 1 / 7;
+      margin-bottom: 100px;
+    }
+
+    @include desctop {
+      grid-column: 1 / 13;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      margin-bottom: 110px;
+    }
+  }
+
+  &__event {
+    margin-top: 60px;
+    grid-column: 1 / 3;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      margin-top: 70px;
+    }
+
+    @include desctop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      margin-top: 70px;
+    }
+
+    &--data {
+      font-size: 16px;
+      line-height: 150%;
+      color: $color_red;
+      margin: 20px 0 10px;
+      grid-column: 4 / 7;
+
+      @include tablet {
+        margin: 0 0 10px;
+      }
+
+      @include desctop {
+        margin: 0 0 10px;
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--name {
+      font-family: "Playfair Display", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 125%;
+      color: $color_black;
+
+      @include tablet {
+        font-size: 24px;
+      }
+
+      @include desctop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--text {
+      font-size: 16px;
+      line-height: 150%;
+      color: $color_grey;
+      margin: 20px 0 30px;
+
+      @include tablet {
+        margin: 20px 0 50px;
+      }
+
+      @include desctop {
+        margin: 20px 0 50px;
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--button {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: $color_white;
+      text-decoration: none;
+      transition-duration: 0.3s;
+
+      &:hover {
+        background-color: #af3419;
+      }
+
+      &:focus {
+        background-color: #ea340d;
+      }
+
+      &:disabled {
+        background-color: #dd836f;
+      }
+
+      @include desctop {
+        grid-column: 1 / 4;
+      }
+    }
+
+    &--1 {
+
+      @include tablet {
+        grid-column: 1 / 7;
+      }
+
+      @include desctop {
+        grid-column: 1 / 13;
+      }
+    }
+
+    &--2 {
+
+      @include tablet {
+        grid-column: 1 / 7;
+      }
+
+      @include desctop {
+        grid-column: 1 / 13;
+      }
+    }
+
+    &--container {
+
+      @include tablet {
+        grid-column: 4 / 7;
+      }
+
+      @include desctop {
+        grid-column: 5 / 11;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 30px;
+        align-self: start;
+      }
+    }
+  }
+
+  &__image {
+
+    @include tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include desctop {
+      grid-column: 1 / 5;
+    }
+  }
+}

@@ -1,0 +1,191 @@
+.exhibition {
+  background-color: $color_white;
+  width: 100%;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      grid-column: 1 / 7;
+    }
+
+    @include desctop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      grid-column: 1 / 13;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 3;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 125%;
+    display: flex;
+    align-items: center;
+    color: $color_black;
+    padding-top: 90px;
+    height: 60px;
+
+    @include tablet {
+      grid-column: 1 / 5;
+      padding-top: 105px;
+    }
+
+    @include desctop {
+      grid-column: 1 / 5;
+      padding-top: 110px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / 3;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: $color_red;
+    order: 3;
+    border: 1px solid $color_red;
+    background-color: $color_white;
+    margin: 30px 0 0;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      background-image: url(../images/strelka.svg);
+      display: inline-block;
+      width: 14px;
+      height: 12px;
+      margin-left: 8px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    @include tablet {
+      grid-column: 5 / 7;
+      order: 0;
+      margin: 105px 0 0;
+    }
+
+    @include desctop {
+      grid-column: 10 / 13;
+      order: 0;
+      margin-top: 110px;
+    }
+  }
+
+  &__event {
+    grid-column: 1 / 3;
+    margin-top: 60px;
+
+    @include tablet {
+      margin-top: 75px;
+    }
+
+    @include desctop {
+      margin-top: 110px;
+    }
+
+    &--angel {
+
+      @include tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include desctop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--art {
+
+      @include tablet {
+        grid-column: 4 / 7;
+      }
+
+      @include desctop {
+        grid-column: 7 / 13;
+      }
+    }
+
+    &--image {
+      grid-column: 1 / 3;
+    }
+
+    &--data {
+      grid-column: 1 / 3;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color_red;
+      margin: 20px 0 10px;
+
+      @include tablet {
+        margin: 30px 0 10px;
+      }
+    }
+
+    &--name {
+      grid-column: 1 / 3;
+      font-family: "Playfair Display", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 125%;
+      color: $color_black;
+
+      @include tablet {
+        min-height: 60px;
+        font-size: 24px;
+      }
+    }
+
+    &--text {
+      grid-column: 1 / 3;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color_grey;
+      margin: 20px 0 30px;
+
+      @include tablet {
+        margin: 20px 0 40px;
+        min-height: 70px;
+      }
+
+      @include desctop {
+        margin: 20px 0 50px;
+      }
+    }
+
+    &--button {
+      grid-column: 1 / 3;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: $color_white;
+      text-decoration: none;
+      transition-duration: 0.3s;
+
+      &:hover {
+        background-color: #af3419;
+      }
+
+      &:focus {
+        background-color: #ea340d;
+      }
+
+      &:disabled {
+        background-color: #dd836f;
+      }
+    }
+  }
+}
