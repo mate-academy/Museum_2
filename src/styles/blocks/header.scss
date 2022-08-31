@@ -22,6 +22,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include onTablet {
+      margin-bottom: 124px;
+    }
   }
 
   &__icons {
@@ -30,7 +34,7 @@
     gap: 44px;
 
     @include onTablet {
-      gap: 44px + 25px;
+      gap: 70px;
     }
   }
 
@@ -46,17 +50,15 @@
   &__date {
     margin-bottom: 10px;
 
-    font-size: 14px;
-    line-height: 140%;
+    @extend %additional;
+
     color: $c-white;
   }
 
   &__title {
     margin-bottom: 30px;
 
-    font-family: "Playfair Display", sans-serif;
-    font-weight: bold;
-    font-size: 48px;
+    @extend %h1;
 
     color: $c-white;
 
@@ -72,7 +74,8 @@
 
     display: block;
 
-    line-height: 150%;
+    @extend %main;
+
     color: $c-white;
 
     @include onTablet {

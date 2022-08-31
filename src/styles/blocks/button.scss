@@ -7,13 +7,25 @@
   align-items: center;
 
   border: none;
-  
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: 600;
+
+  @extend %button;
 
   cursor: pointer;
   text-decoration: none;
+
+  &--mobile {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
 
   &--primary {
     color: $c-white;
@@ -36,7 +48,7 @@
   }
 
   &--secondary {
-    font-weight: 600;
+    @extend %button;
 
     color: $c-main;
 

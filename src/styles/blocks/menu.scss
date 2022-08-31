@@ -22,6 +22,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include onTablet {
+      margin-bottom: 54px;
+    }
   }
 
   &__icons {
@@ -30,7 +34,7 @@
     gap: 44px;
 
     @include onTablet {
-      gap: 44px + 25px;
+      gap: 70px;
     }
   }
 
@@ -43,8 +47,8 @@
   &__info {
     display: block;
 
-    font-size: 14px;
-    line-height: 140%;
+    @extend %additional;
+
     color: $c-white;
   }
 
@@ -53,15 +57,19 @@
 
     display: block;
 
-    font-weight: 600;
-    line-height: 150%;
+    font-weight: bold;
+    @extend %main;
 
     color: $c-white;
 
     text-decoration: none;
 
-    &:last-of-type {
+    &--last {
       margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
     }
   }
 
@@ -88,10 +96,8 @@
   }
 
   &__link {
-    font-family: "Playfair Display", sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 150%;
+    @extend %h5;
+
     color: $c-white;
 
     text-decoration: none;
