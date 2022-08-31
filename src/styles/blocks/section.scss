@@ -1,4 +1,4 @@
-.upcoming-events {
+.section {
   &__title {
     margin-bottom: 60px;
 
@@ -16,21 +16,36 @@
   &__place {
     margin-bottom: 60px;
 
+    &--current-exhibitions-last,
+    &--upcoming-events-last {
+      margin-bottom: 30px;
+    }
+
+    &--news {
+      margin-bottom: 50px;
+    }
+
     @include onTablet {
       margin-bottom: 0;
     }
   }
 
   &__image {
-    margin-bottom: 20px;
-
     width: 100%;
 
+    margin-bottom: 20px;
+
     @include onTablet {
-      margin-bottom: 70px;
+      margin-bottom: 30px;
     }
 
-    &--last {
+    &--upcoming-events {
+      @include onTablet {
+        margin-bottom: 70px;
+      }
+    }
+
+    &--upcoming-events-last {
       @include onTablet {
         margin-bottom: 0;
       }
@@ -45,6 +60,14 @@
     @extend %main;
 
     color: $c-main;
+
+    &--news {
+      margin-bottom: 0;
+
+      @extend %additional;
+
+      color: $c-black;
+    }
   }
 
   &__subtitle {
@@ -57,6 +80,12 @@
     @include onTablet {
       font-size: 24px;
     }
+
+    &--news {
+      @include onTablet {
+        margin-bottom: 18px;
+      }
+    }
   }
 
   &__description {
@@ -67,7 +96,11 @@
     color: $c-gray;
 
     @include onTablet {
-      margin-bottom: 50px;
+      margin-bottom: 40px;
+    }
+
+    &--news {
+      margin: 0;
     }
   }
 }
