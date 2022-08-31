@@ -1,0 +1,161 @@
+.footer {
+  min-height: 100%;
+  background: #3f5252;
+
+  &__wrapper {
+    display: block;
+
+    @include onTable {
+      display: flex;
+      gap: 130px;
+    }
+  }
+
+  &__contact {
+    padding-top: 34px;
+    display: flex;
+    flex-direction: column;
+
+    &--last-child {
+      margin-bottom: 60px;
+
+      @include onDesctop {
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 150%;
+    color: $color-weight;
+    padding-bottom: 10px;
+  }
+
+  &__address {
+    @extend %text;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $color-weight;
+    transition: color 1s;
+
+    &:hover {
+      color: #cd4d31;
+    }
+    
+    &--last-child {
+      padding-bottom: 30px;
+
+      @include onTable() {
+        padding-bottom: 82px;
+      }
+
+      @include onDesctop {
+        padding-bottom: 82px;
+      }
+    }
+  }
+
+  &__app {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__image {
+    width: 10px;
+    height: 20px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &--twitter {
+      width: 20px;
+      height: 16px;
+
+      &:hover {
+        background: #1c1b29;
+      }
+    }
+
+    &--tel {
+      width: 20px;
+      height: 19.05px;
+    }
+
+    &--insta {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  &__day {
+    @extend %text;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $color-weight;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include onTable {
+      gap: 10px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @extend %text;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-weight;
+    transition: color 1s;
+
+    &:hover {
+      color: #cd4d31;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 22px;
+    padding-bottom: 30px;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 22px;
+
+    @include onDesctop {
+      gap: 100px;
+    }
+  }
+
+  &__content {
+    @extend %text;
+    font-size: 14px;
+    line-height: 140%;
+    color: $color-weight;
+  }
+
+  &__arrow {
+    width: 20px;
+    height: 2px;
+    transform: rotate(90deg);
+  }
+}

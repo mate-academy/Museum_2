@@ -1,0 +1,93 @@
+.nav {
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #3f5252;
+  transition: transform 1s;
+
+  @include onTable {
+    padding: 26px 40px;
+  }
+
+  @include onDesctop {
+    padding: 12px 56px;
+  }
+
+  &__menu {
+    display: block;
+
+    @include onDesctop {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid $color-weight;
+
+    @include onTable {
+      gap: 30px;
+    }
+
+    @include onDesctop {
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    @include onDesctop {
+      &:nth-child(2n) {
+        text-decoration-line: underline;
+      }
+    }
+  }
+
+  &__link {
+    @extend %nav;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 150%;
+    color: $color-weight;
+    transition: color 1s;
+
+    &:hover {
+      color: #cd4d31;
+    }
+
+    @include onTable {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__picture {
+    display: none;
+    width: 100%;
+    background: #3f5252;
+
+    @include onTable {
+      display: flex;
+      margin: auto;
+      width: 96%;
+    }
+
+    @include onDesctop {
+      width: 54%;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

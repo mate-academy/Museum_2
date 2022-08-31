@@ -1,0 +1,172 @@
+.event-soon {
+
+  &__content {
+    display: block;
+    margin-bottom: 60px;
+
+    @include onTable {
+      display: flex;
+      gap: 30px;
+    }
+
+    &:last-child {
+      margin-bottom: 90px;
+
+      @include onTable {
+        margin-bottom: 125px;
+      }
+
+      @include onDesctop {
+        margin-bottom: 110px;
+      }
+    }
+
+    &--last-child {
+      margin-top: 120px;
+      padding: 50px 20px;
+      background-color: #3f5252;
+
+      @include onTable {
+        display: block;
+      }
+
+      @include onDesctop {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+      }
+    }
+  }
+
+  &__wrapper {
+
+    &--first-child {
+      display: flex;
+      justify-content: space-between;
+      
+      @include onTable {
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  &__title {
+    @extend %nav;
+    font-size: 28px;
+    line-height: 125%;
+    color: $color-title-main;
+    padding-bottom: 60px;
+
+    @include onTable {
+      font-size: 40px;
+    }
+
+    @include onDesctop {
+      font-size: 48px;
+    }
+
+    &--last-child {
+      font-size: 38px;
+      line-height: 100%;
+      color: $color-weight;
+
+      @include onTable {
+        font-size: 62px;
+      }
+  
+      @include onDesctop {
+        font-size: 80px;
+      }
+    }
+  }
+
+  &__button {
+    display: none;
+    width: 100%;
+    height: 60px;
+    @extend %subtitle;
+    font-size: 16px;
+    line-height: 100%;
+    border: 1px solid $background-button;
+    color: $background-button;
+    margin-top: 40px;
+
+    @include onTable {
+      width: 30%;
+      display: block;
+      margin-top: 0;
+    }
+
+    &--phone {
+      display: block;
+
+      @include onTable {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding-bottom: 10px;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  &__date {
+    @extend %text;
+    font-size: 16px;
+    line-height: 150%;
+    color: $background-button;
+    padding-bottom: 10px;
+  }
+
+  &__subtitle {
+    @extend %subtitle;
+    font-size: 20px;
+    line-height: 125%;
+    color: $color-title-main;
+    padding-bottom: 20px;
+
+    @include onTable {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    @extend %text;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-text-main;
+    padding-bottom: 30px;
+
+    &--last-child {
+      color: $color-weight;
+
+      @include onDesctop {
+        width: 90%;
+      }
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+    }
+  }
+
+  &__visit {
+
+    @include onDesctop {
+      width: 80%;
+    }
+  }
+}
