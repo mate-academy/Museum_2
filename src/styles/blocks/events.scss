@@ -1,0 +1,75 @@
+.events {
+
+  &__title {
+    @include h3;
+  }
+
+  &__block {
+    display: block;
+    margin-bottom: 60px;
+
+    @include on768 {
+      display: grid;
+      margin-bottom: 70px;
+    }
+
+    @include on1280 {
+      margin-bottom: 60px;
+    }
+
+    &--last {
+      margin-bottom: 30px;
+
+      @include on768 {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__photo {
+    object-fit: cover;
+    width: 100%;
+    transition: 300ms;
+
+    margin-bottom: 20px;
+
+    @include on768 {
+      height: 422px;
+      margin-bottom: 0;
+    }
+
+    @include on1280 {
+      height: 475px;
+    }
+
+    &:hover {
+      box-shadow: 3px 2px 2px #1c1b29;
+      transform: scale(1.05);
+      border-radius: 10px;
+    }
+  }
+
+  &__date {
+    @include mainText;
+    color: $colorMain;
+
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    @include h4;
+
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    @include mainText;
+    color: $colorGray;
+
+    margin-bottom: 30px;
+
+    @include on768 {
+      margin-bottom: 50px;
+    }
+  }
+}
