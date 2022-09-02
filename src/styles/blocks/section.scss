@@ -1,0 +1,324 @@
+.section {
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+    @include onDesktop {
+      margin-bottom: 71px;
+    }
+
+    @include onTablet {
+      margin-bottom: 75px;
+    }
+
+    @include onMobile {
+      justify-content: center;
+    }
+
+    &-item {
+
+      font-size: 28px;
+
+      @include onTablet {
+        font-size: 40px;
+
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+      }
+
+      @include onMobile {
+        text-align: center;
+      }
+    }
+  }
+
+  &__photo {
+    position: relative;
+    width: 100%;
+    max-height: 356px;
+
+    &-1 {
+      @include onMobile {
+        margin-bottom: 370px;
+      }
+    }
+
+    &-2 {
+      margin-bottom: 469px;
+    }
+
+    &-3 {
+      position: relative;
+      width: 100%;
+      max-height: 281px;
+
+      @include onDesktop {
+        max-height: 370px;
+        height: 370px;
+      }
+
+      @include onTablet {
+        max-height: 330px;
+        height: 330px;
+      }
+
+      @include onMobile {
+        margin-bottom: 207px;
+      }
+    }
+
+    &-cat-small {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &-cat {
+      @include onMobile {
+        display: none;
+      }
+
+      @include onTablet {
+        display: none;
+      }
+
+    }
+
+    &::after {
+      content: "";
+      display: block;
+    }
+
+    @include onDesktop {
+      max-height: 484px;
+      height: 484px;
+    }
+
+    @include onTablet {
+      max-height: 420px;
+      height: 420px;
+    }
+
+    &-item {
+      transition: transform 0.3s ease;
+      border: 3px solid transparent;
+
+      &:hover {
+        transform: scale(110%);
+        border-color: aqua;
+      }
+
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+        object-position: center;
+      }
+    }
+
+    &-absolute {
+      position: absolute;
+      left: 0;
+      width: auto;
+    }
+
+    &-between {
+      @include onDesktop {
+        max-height: 800px;
+        height: 800px;
+      }
+    }
+
+    &--noscale {
+      border: none;
+
+      &:hover {
+        transform: none;
+      }
+
+    }
+  }
+
+  &__date {
+    @extend %default;
+    color: $color-red;
+    margin-bottom: 10px;
+
+    &--black {
+      color: $color-black;
+    }
+  }
+
+  &__subtitle {
+    @extend %h3;
+    color: $color-black;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 24px;
+      height: 70px;
+      margin-bottom: 20;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    @extend %default;
+    color: $color-black;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+      height: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+  }
+
+  &__container {
+    background-color: $background-c;
+  }
+
+  &__between {
+    position: relative;
+
+    &-title {
+      margin-top: 50px;
+
+      @include onTablet {
+        margin-top: 80px;
+      }
+
+      color: $color-white;
+      @extend %h2;
+      font-size: 38px;
+      margin-bottom: 20px;
+
+      @include onTablet {
+        font-size: 62px;
+      }
+
+      @include onDesktop {
+        margin-top: 205px;
+        font-size: 80px;
+      }
+
+      line-height: 100%;
+      letter-spacing: 0;
+    }
+
+    &-text {
+      color: $color-white;
+      @extend %default;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 60px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--none {
+
+      @include onMobile {
+        display: none;
+      }
+
+      @include onTablet {
+        display: none;
+      }
+
+    }
+  }
+
+  &__news {
+    margin-bottom: 190px;
+
+    @include onDesktop {
+      margin-bottom: 300px;
+    }
+
+    @include onTablet {
+      margin-bottom: 300px;
+    }
+  }
+
+  &__digest {
+
+    margin-bottom: 80px;
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+
+    @include onTablet {
+      margin-bottom: 128px;
+    }
+
+    &-title {
+      margin-bottom: 50px;
+
+      @include onMobile {
+        text-align: start;
+      }
+    }
+
+    &-input {
+      @extend %default;
+      color: $color-black;
+      margin-bottom: 30px;
+      width: 100%;
+      border-top: transparent;
+      border-left: transparent;
+      border-right: transparent;
+      border-width: 1px;
+
+      @include onTablet {
+        width: 80%;
+      }
+
+      &:hover {
+        border-color: $color-red;
+        color: $color-red;
+      }
+
+      &:focus {
+        outline: none;
+        border-color: $color-red;
+        color: $color-red;
+      }
+
+      &:not(:placeholder-shown) {
+        font-weight: 700;
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        -webkit-text-fill-color: $color-black;
+        box-shadow: 0 1000px aqua inset;
+        -webkit-box-shadow: 0 0 0 1000px aqua inset;
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+.header {
+
+  margin-bottom: 90px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 110px;
+  }
+
+  padding: 20px 0 0;
+  max-height: min-content;
+  background: $background-c;
+  color: $color-white;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      height: 77px;
+      margin-bottom: 99px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+      margin-bottom: 47px;
+
+    }
+  }
+
+  &__logo {
+    &-item {
+      width: 123px;
+      height: 40px;
+    }
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    background-image: url(../images/menu.svg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__elements {
+    display: flex;
+    align-items: center;
+  }
+
+  &__language {
+    display: block;
+    width: 33px;
+    height: 24px;
+
+    background-image: url(../images/language.svg);
+    background-size: cover;
+    background-position: center;
+    margin-right: 30px;
+
+    @include onMobile {
+      display: none;
+    }
+
+  }
+
+  &__text {
+    @extend %default;
+  }
+
+  &__text-1 {
+    margin-bottom: 10px;
+  }
+
+  &__text-2 {
+    @include onMobile {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text-opacity {
+    position: relative;
+    color: $color-white;
+    opacity: 0.7;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 120px;
+      border-top: 2px solid $color-white;
+      opacity: inherit;
+      width: 173%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__image-container {
+
+    position: relative;
+    width: 100%;
+    max-height: 494px;
+    max-width: 443px;
+
+    &::after {
+      content: "";
+      display: block;
+    }
+
+    @include onDesktop {
+      max-height: 663px;
+      max-width: 625px;
+      padding-bottom: 0;
+
+    }
+
+    @include onTablet {
+      max-height: 494px;
+      max-width: 443px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    object-position: center;
+  }
+}

@@ -1,0 +1,89 @@
+.menu {
+  &__nav {
+    margin-bottom: 45px;
+  }
+
+  padding: 20px 0 0;
+  background: $background-c;
+  color: $color-white;
+
+  &__text {
+    @extend %default;
+  }
+
+  &__text--mini {
+    @extend %mini;
+  }
+
+  &__text-2 {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__item {
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 40px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 60px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-top: 2px solid $color-white;
+      opacity: 0.3;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    list-style: none;
+    position: relative;
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    @extend %h1;
+    line-height: 150%;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 20px;
+    transition: color 0.3s ease;
+
+    @include linkHover;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}

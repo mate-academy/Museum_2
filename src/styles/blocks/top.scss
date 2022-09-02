@@ -1,0 +1,176 @@
+.top {
+
+  &__image-container {
+
+    position: relative;
+    width: 100%;
+    max-height: 494px;
+    max-width: 443px;
+
+    &::after {
+      content: "";
+      display: block;
+    }
+
+    @include onDesktop {
+      max-height: 663px;
+      max-width: 625px;
+      padding-bottom: 0;
+    }
+
+    @include onTablet {
+      max-height: 494px;
+      max-width: 443px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    z-index: -1;
+    position: absolute;
+
+    min-width: 250px;
+    width: 40%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    @include onDesktop {
+      bottom: 0;
+      right: 0;
+      left: auto;
+      margin: 0;
+    }
+
+    @include onTablet {
+      width: 20%;
+      left: 30%;
+    }
+    
+    object-fit: fill;
+    object-position: center;
+  }
+
+  &__position {
+    max-height: min-content;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  &__image-position {
+
+    display: flex;
+    justify-content: center;
+
+    @include onDesktop {
+      justify-content: flex-end;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      height: 77px;
+      margin-bottom: 99px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+    }
+  }
+
+  &__logo {
+    &-item {
+      width: 123px;
+      height: 40px;
+    }
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-right: 30px;
+
+    background-image: url(../images/menu.svg);
+    background-size: cover;
+    background-position: center;
+
+    @include onMobile {
+      margin-right: 0;
+    }
+
+    &-close {
+      display: block;
+      width: 30px;
+      height: 30px;
+
+      background-image: url(../images/cross.svg);
+      background-size: cover;
+      background-position: center;
+      margin-right: 30px;
+
+      @include onMobile {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__elements {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__language {
+    cursor: pointer;
+    display: block;
+    width: 60px;
+    height: 30px;
+    border: none;
+    background-color: $background-c;
+    appearance: none;
+    outline: none;
+    background-image: url("../images/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right 20% top 50%;
+    background-size: 20%;
+
+    color: $color-white;
+    @extend %default;
+
+    @include onMobile {
+      display: none;
+      position: absolute;
+      transform: translateX(-150%);
+    }
+
+    &--visible {
+      cursor: pointer;
+      @extend %default;
+      display: block;
+      width: 60px;
+      height: 30px;
+      border: none;
+      background-color: $background-c;
+      appearance: none;
+      outline: none;
+      background-image: url("../images/arrow.svg");
+      background-repeat: no-repeat;
+      background-position: right 20% top 50%;
+      background-size: 20%;
+      color: $color-white;
+
+      @include onMobile {
+        position: absolute;
+        transform: translateX(-150%);
+      }
+    }
+  }
+}

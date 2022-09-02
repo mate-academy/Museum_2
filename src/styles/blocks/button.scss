@@ -1,0 +1,146 @@
+.button {
+  cursor: pointer;
+  background-color: $color-red;
+  color: $color-white;
+  @extend %font-button;
+  width: 100%;
+  height: 60px;
+  border: transparent;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  &__section {
+    width: 25%;
+    background-color: $color-white;
+    border: 1px solid $color-red;
+    color: $color-red;
+
+    background-image: url("../../src/images/arrow_red.svg");
+    background-repeat: no-repeat;
+    background-position: right 20% top 50%;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: #af3419;
+      background-color: $color-white;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      background-color: $color-white;
+    }
+
+    @include onMobile {
+      display: none;
+      background-position: right 20% top 50%;
+    }
+
+    @include onTablet {
+      width: 30%;
+      background-position: right 5% top 50%;
+    }
+
+    &--white {
+      width: 100%;
+    }
+  }
+
+  &__menu {
+    @include onDesktop {
+      width: 50%;
+    }
+
+    @include onTablet {
+      margin-bottom: 20px;
+      width: 50%;
+    }
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-position {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-top: 40px;
+      margin-bottom: 55px;
+    }
+  }
+
+  &--desktop {
+
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  &--mobile {
+    display: none;
+    width: 100%;
+
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &--between {
+
+    margin-bottom: 50px;
+
+    @include onTablet {
+      width: 80%;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      width: 40%;
+    }
+  }
+
+  &--digest {
+
+    @include onDesktop {
+      width: 70%;
+    }
+
+    @include onTablet {
+      width: 70%;
+    }
+  }
+
+  &__link {
+    @include onDesktop {
+      width: 25%;
+    }
+    @include onMobile {
+      display: none;
+    }
+    @include onTablet {
+      width: 30%;
+    }
+  }
+  &__link-mobile {
+    width: 100%;
+    @include onDesktop {
+      display: none;
+    }
+    @include onTablet {
+      display: none;
+    }
+  }
+}
