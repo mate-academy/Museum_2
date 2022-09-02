@@ -1,0 +1,162 @@
+.header {
+  background-color: #3f5252;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+    padding: 24px 0;
+    box-sizing: border-box;
+  }
+
+  &__info-container {
+    padding-bottom: 280px;
+
+    @include onDesktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    display: block;
+    align-items: center;
+    position: relative;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $textColor;
+    max-width: 700px;
+    padding: 10px;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 72px;
+
+      @include onDesktop {
+        font-weight: 700;
+        font-size: 96px;
+      }
+    }
+
+    &::before {
+      content: "10 серпня - 10 листопада";
+      position: absolute;
+      top: -30px;
+      font-family: "Raleway", serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+
+    }
+  }
+
+  &__subtitle {
+    font-family: "Raleway", serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #fff;
+    padding-bottom: 20px;
+  }
+
+  &__nav {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin-bottom: 75px;
+
+    &--icons {
+      display: flex;
+      font-display: row;
+
+      &--choose {
+        opacity: 0;
+        background-color: $mainRed;
+        border: none;
+
+        @include onTablet {
+          opacity: 1;
+        }
+
+        @include onTablet {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__menu-opener {
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../images/menu.svg);
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 20px;
+    margin-left: 40px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    height: 250px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../images/1.svg");
+
+    @include onTablet {
+      height: 60vh;
+      left: 60%;
+    }
+    @include onDesktop {
+      height: 85vh;
+    }
+  }
+
+  &__button {
+    background-color: $mainRed;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: row;
+
+    &--line {
+      @include onDesktop {
+        position: relative;
+        margin: 40px 0;
+        border-bottom: 1px solid #f1f5f4;
+        width: 469px;
+        bottom: 0;
+        opacity: 0.3;
+      }
+    }
+
+    &--date {
+      opacity: 0;
+
+      @include onDesktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $textColor;
+        margin-right: 20px;
+        opacity: 0.3;
+      }
+    }
+  }
+}

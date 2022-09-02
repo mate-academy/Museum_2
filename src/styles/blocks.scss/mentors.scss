@@ -1,0 +1,48 @@
+.mentors {
+  display: flex;
+  flex-direction: column;
+
+  &__cards {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__info {
+    @include onDesktop {
+      width: 470px;
+    }
+  }
+
+  &__photo {
+    padding: 20px 0;
+
+    &--configuration {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 370px;
+      height: 356px;
+      margin-right: 0;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onDesktop {
+        width: 370px;
+        height: 484px;
+      }
+    }
+  }
+}
