@@ -1,6 +1,10 @@
 .menu {
   background-color: $c-background;
 
+  background-image: url("/images/menu.png");
+  background-repeat: no-repeat;
+  background-size: 0;
+
   &__content {
     height: 100vh;
 
@@ -14,6 +18,10 @@
     @include onTablet {
       padding-top: 26px;
     }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
   }
 
   &__top {
@@ -26,21 +34,40 @@
     @include onTablet {
       margin-bottom: 54px;
     }
+
+    @include onDesktop {
+      margin-bottom: 44px;
+    }
   }
 
   &__icons {
     display: flex;
     align-items: center;
-    gap: 44px;
-
-    @include onTablet {
-      gap: 70px;
-    }
   }
 
   &__language {
     @include onTablet {
       order: 1;
+    }
+
+    @include onDesktop {
+      margin-right: 10px;
+
+      order: 1;
+    }
+  }
+
+  &__cross {
+    margin-left: 44px;
+
+    @include onTablet {
+      margin-right: 66px;
+      margin-left: 0;
+    }
+
+    @include onDesktop {
+      margin-right: 66px;
+      margin-left: 0;
     }
   }
 
@@ -71,6 +98,10 @@
     @include onTablet {
       margin-bottom: 50px;
     }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
   }
 
   &__item {
@@ -79,6 +110,10 @@
 
       @include onTablet {
         margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
       }
     }
 
@@ -91,6 +126,11 @@
       @include onTablet {
         padding-bottom: 50px;
         margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 60px;
+        margin-bottom: 60px;
       }
     }
   }
@@ -106,6 +146,15 @@
       font-size: 48px;
       line-height: 120%;
     }
+
+    &:hover {
+      @include onDesktop {
+        text-decoration-line: underline;
+        text-decoration-skip-ink: none;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 4px;
+      }
+    }
   }
 
   &__image {
@@ -119,5 +168,23 @@
     @include onTablet {
       display: block;
     }
+
+    @include onDesktop {
+      display: block;
+
+      left: auto;
+      right: 0;
+    }
+  }
+
+  @include onTablet {
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 350px;
+  }
+
+  @include onDesktop {
+    background-position: bottom right;
+    background-size: 800px;
   }
 }

@@ -8,7 +8,13 @@
     column-gap: 30px;
   }
 
-  &--tablet {
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+
+  &--tablet,
+  &--desktop {
     display: block;
 
     @include onTablet {
@@ -21,6 +27,16 @@
       @for $end from $start through 6 {
         &--tablet-#{$start}-#{$end} {
           @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
             grid-column: #{$start} / #{$end + 1};
           }
         }

@@ -45,6 +45,10 @@
     &:disabled {
       background-color: #dd836f;
     }
+
+    @include onDesktop {
+      max-width: 50%;
+    }
   }
 
   &--secondary {
@@ -56,78 +60,25 @@
 
     transition: color 0.3s ease, border-color 0.3s ease;
 
-    &::after {
-      content: "";
-
-      width: 14px;
-      height: 12px;
-
-      transform: translateX(10px);
-
-      background-image: url(/images/arrow-h-default.svg);
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-
-    &:hover {
+    &:hover,
+    &:hover .icon--arrow-h {
       color: #af3419;
 
       border-color: #af3419;
-
-      &::after {
-        content: "";
-
-        width: 14px;
-        height: 12px;
-
-        transform: translateX(10px);
-
-        background-image: url(/images/arrow-h-hover.svg);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
     }
 
-    &:active {
+    &:active,
+    &:active .icon--arrow-h {
       color: #ea340d;
 
       border-color: #ea340d;
-
-      &::after {
-        content: "";
-
-        width: 14px;
-        height: 12px;
-
-        transform: translateX(10px);
-
-        background-image: url(/images/arrow-h-pressed.svg);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
     }
 
-    &:disabled {
+    &:disabled,
+    &:disabled .icon--arrow-h {
       color: #dd836f;
 
       border-color: #dd836f;
-
-      &::after {
-        content: "";
-
-        width: 14px;
-        height: 12px;
-
-        transform: translateX(10px);
-
-        background-image: url(/images/arrow-h-disabled.svg);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-      }
     }
   }
 }

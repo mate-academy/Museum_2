@@ -1,6 +1,11 @@
 .header {
   background-color: $c-background;
 
+  background-image: url("/images/header.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 270px;
+
   &__content {
     height: 100vh;
 
@@ -13,6 +18,10 @@
 
     @include onTablet {
       padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
     }
   }
 
@@ -31,11 +40,6 @@
   &__icons {
     display: flex;
     align-items: center;
-    gap: 44px;
-
-    @include onTablet {
-      gap: 70px;
-    }
   }
 
   &__language {
@@ -43,7 +47,24 @@
 
     @include onTablet {
       display: block;
+
       order: 1;
+    }
+
+    @include onDesktop {
+      display: block;
+
+      order: 1;
+    }
+  }
+
+  &__menu {
+    @include onTablet {
+      margin-right: 66px;
+    }
+
+    @include onDesktop {
+      margin-right: 66px;
     }
   }
 
@@ -67,6 +88,12 @@
 
       font-size: 72px;
     }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+
+      font-size: 96px;
+    }
   }
 
   &__subtitle {
@@ -81,12 +108,54 @@
     @include onTablet {
       margin-bottom: 50px;
     }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
   }
 
-  &__image {
+  &__date-title {
+    display: none;
+
+    width: 570px;
+
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 50px;
+
+    @extend %h6;
+
+    color: $c-white;
+
+    opacity: 0.7;
+
+    &--desktop {
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+
+      display: block;
+
+      height: 1px;
+      width: 570px - 100px;
+
+      transform: translate(100px, -8px);
+
+      background-color: $c-white;
+
+      opacity: 0.3;
+    }
+  }
+
+  @include onTablet {
+    background-size: 400px;
+  }
+
+  @include onDesktop {
+    background-size: 700px;
+    background-position: bottom right;
   }
 }
