@@ -1,0 +1,54 @@
+.header {
+  position: relative;
+  height: 100vh;
+
+  background-image: url(../images/backgrounds/header.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 350px auto;
+
+  color: $c-white;
+  background-color: $c-bg;
+
+  @include onTablet {
+    height: 1050px;
+    background-size: 490px auto;
+    background-position: bottom;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+    background-size: 550px auto;
+    background-position: bottom right;
+  }
+
+  &__top-actions {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    @extend %additional-text;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    @extend %main-text;
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__date-wrapper {
+    margin-top: 80px;
+  }
+}

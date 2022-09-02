@@ -1,0 +1,63 @@
+.subscribe {
+  height: 470px;
+
+  @include onTablet {
+    margin-top: 40px;
+    height: 420px;
+  }
+
+  &__title {
+    margin: 50px 0 20px;
+    color: $c-black;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+    @extend %main-text;
+    color: $c-black;
+
+    @include onDesktop {
+      margin-top: 65px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 30px;
+    width: 100%;
+
+    @extend %main-text;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $c-black;
+    color: $c-black;
+    background-color: $c-white;
+    box-shadow: inset 0 0 0 50px $c-white;
+
+    &:hover {
+      color: $c-main;
+      border-color: $c-main;
+      cursor: text;
+
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:focus {
+      color: $c-main;
+
+      &::placeholder {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    outline: none;
+  }
+}

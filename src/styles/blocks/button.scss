@@ -1,0 +1,92 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60px;
+  border: none;
+  @extend %main-text;
+
+  transition: background-color 0.3s;
+
+  &--primary {
+    background-color: $c-main;
+    color: $c-white;
+
+    &:hover {
+      background-color: $c-hover;
+    }
+
+    &:active {
+      background-color: $c-active;
+    }
+
+    &:disabled {
+      background-color: $c-disabled;
+    }
+  }
+
+  &--secondary {
+    display: none;
+    background-color: $c-white;
+    color: $c-main;
+    border: 1px solid $c-main;
+
+    &::after {
+      content: url(../images/button/arrow-default.svg);
+      padding-top: 4px;
+    }
+
+    @include onTablet {
+      display: flex;
+      gap: 10px;
+    }
+
+    &:hover {
+      color: $c-hover;
+      border-color: $c-hover;
+    }
+
+    &:active {
+      color: $c-active;
+      border-color: $c-active;
+    }
+
+    &:disabled {
+      color: $c-disabled;
+      border-color: $c-disabled;
+    }
+  }
+
+  &--secondary-2 {
+    display: flex;
+    gap: 10px;
+    background-color: $c-white;
+    color: $c-main;
+    border: 1px solid $c-main;
+
+    &::after {
+      content: url(../images/button/arrow-default.svg);
+      padding-top: 5px;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    &:hover {
+      color: $c-hover;
+      border-color: $c-hover;
+    }
+
+    &:active {
+      color: $c-active;
+      border-color: $c-active;
+    }
+
+    &:disabled {
+      color: $c-disabled;
+      border-color: $c-disabled;
+    }
+  }
+}
