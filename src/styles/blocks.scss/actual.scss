@@ -1,0 +1,197 @@
+.actual {
+
+  &__top {
+    display: flex;
+    max-width: 280px;
+    margin: 0 auto;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      max-width: 1280px;
+    }
+  }
+
+  &__item--first {
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__item--second {
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__title {
+    margin: 0 0 60px;
+    text-align: center;
+    @extend %titlePhoneSize;
+
+    color: $colorBlack;
+
+    @include onTablet {
+      margin-left: 39px;
+      // @extend %titleTabletSize;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include onDesktop {
+      margin-left: 56px;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__photo-container {
+    margin: 0 auto 20px;
+    transition: transform 0.3s;
+    background-image: url(../images/image1.jpg);
+    min-width: 280px;
+    min-height: 356px;
+    background-size: cover;
+
+    @include onTablet {
+      margin: 0 auto 30px;
+      min-width: 330px;
+      min-height: 420px;
+      background-image: url(../images/image1.jpg);
+    }
+
+    @include onDesktop {
+      margin: 0 auto 30px;
+      min-width: 570px;
+      height: 484px;
+      background-image: url(../images/image1.png);
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.48);
+      z-index: 1;
+    }
+  }
+
+  &__photo-container--2 {
+    margin: 0 auto 20px;
+    transition: transform 0.3s;
+    background-image: url(../images/image2.jpg);
+    min-width: 280px;
+    min-height: 356px;
+    background-size: cover;
+
+    @include onTablet {
+      margin: 0 auto 30px;
+      min-width: 330px;
+      min-height: 420px;
+      background-image: url(../images/image2.jpg);
+    }
+
+    @include onDesktop {
+      margin: 0 auto 30px;
+      min-width: 570px;
+      height: 484px;
+      background-image: url(../images/image2.png);
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.48);
+      z-index: 1;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.48);
+      z-index: 1;
+    }
+  }
+
+  &__date {
+    display: block;
+    margin: 0 0 10px;
+    @extend %textSize;
+    color: $mainColor;
+  }
+
+  &__subtitle {
+    margin: 0 0 20px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+
+    color: $colorBlack;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__subtitle--second {
+    margin: 0 0 20px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+
+    color: $colorBlack;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 30px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+  }
+
+  &__description {
+    display: block;
+    margin: 0 0 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $colorGray;
+
+    @include onTablet {
+      margin: 0 0 40px;
+
+    }
+    @include onDesktop {
+      width: 570px;
+      margin: 0 0 50px;
+    }
+  }
+}

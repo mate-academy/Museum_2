@@ -1,0 +1,129 @@
+.buy-button {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-color: $mainColor;
+  color: #f1f5f4;
+
+  &:hover {
+    background-color: $buttonHoverColor;
+  }
+
+  &:active {
+    background-color: $buttonActiveColor;
+  }
+
+  &__secondary {
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border: 1px solid $mainColor;
+
+    text-decoration: none;
+    color: $mainColor;
+    width: 100%;
+
+    &:hover {
+      border: 1px solid $buttonHoverColor;
+      color: $buttonHoverColor;
+    }
+
+    &:active {
+      border: 1px solid $buttonActiveColor;
+      color: $buttonActiveColor;
+    }
+
+    @include onTablet {
+      grid-column: 5/7;
+      display: none;
+    }
+  }
+
+  &__secondary--after::after {
+    position: absolute;
+    transform: translate(900%, -120%);
+    display: block;
+    content: "";
+    width: 14px;
+    height: 12px;
+    background-image: url(../images/Group.svg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__top {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border: 1px solid $mainColor;
+    background-color: #fff;
+
+    text-decoration: none;
+    color: $mainColor;
+    width: 210px;
+
+    display: none;
+
+    &:hover {
+      border: 1px solid $buttonHoverColor;
+      color: $buttonHoverColor;
+    }
+
+    &:active {
+      border: 1px solid $buttonActiveColor;
+      color: $buttonActiveColor;
+    }
+
+    @include onTablet {
+      display: initial;
+      grid-column: 5/ 7;
+      margin-right: 39px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      margin-right: 55px;
+    }
+  }
+
+  &__top::before {
+    @include onTablet {
+      position: absolute;
+      content: "";
+      display: block;
+      background: url(../images/Group.svg) no-repeat;
+      width: 16px;
+      height: 15px;
+      left: 80%;
+      top: 40%;
+    }
+
+    @include onDesktop {
+      left: 75%;
+    }
+  }
+
+  &__top--soon {
+    margin-right: 39px;
+
+    @include onDesktop {
+      margin-right: 0;
+    }
+  }
+
+  &__top--news {
+    margin-right: 0;
+  }
+
+  &__top--after {
+    line-height: 60px;
+  }
+}

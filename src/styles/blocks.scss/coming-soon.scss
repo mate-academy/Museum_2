@@ -1,0 +1,147 @@
+.coming-soon {
+
+  &__item {
+
+    @include onTablet {
+      display: grid;
+      margin: 0 auto 70px;
+      grid-template-columns: repeat(6,1fr);
+      column-gap: 30px;
+      min-width: 690px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12,1fr);
+      column-gap: 30px;
+      min-width: 1170px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    max-width: 280px;
+    margin: 0 auto;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      max-width: 1170px;
+    }
+  }
+
+  &__bottom {
+    @include onTablet {
+      max-width: 330px;
+      grid-column: 4 / 7;
+    }
+    @include onDesktop {
+      max-width: 330px;
+      grid-column: 5 / 13;
+    }
+  }
+
+  &__events {
+    margin: 0 0 60px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+
+    color: $colorBlack;
+
+    @include onTablet {
+      margin-left: 39px;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include onDesktop {
+      margin-left: 0;
+    }
+  }
+
+  &__photo-container {
+    margin: 0 auto 20px;
+
+    @include onTablet {
+      margin: 0;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      grid-column: 1 / 5;
+    }
+
+  }
+
+  &__photo {
+    display: block;
+    margin: 0 auto;
+    max-width: 280px;
+    max-height: 356px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 14px rgba(0, 0, 0, 0.48);
+      z-index: 1;
+    }
+
+    @include onTablet {
+      margin: 0;
+      min-width: 100%;
+      min-height: 422px;
+    }
+    @include onDesktop {
+      margin: 0;
+      min-width: 370px;
+      min-height: 475px;
+    }
+  }
+
+  &__date {
+    display: block;
+    margin: 0 0 10px;
+    @extend %textSize;
+
+    color: $mainColor;
+  }
+
+  &__subtitle {
+    margin: 0 0 20px;
+    @extend %subtitlePhoneSize;
+
+    color: $colorBlack;
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+    }
+  }
+
+  &__description {
+    display: block;
+    margin: 0 0 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $colorGray;
+
+    @include onDesktop {
+      width: 570px;
+    }
+  }
+}

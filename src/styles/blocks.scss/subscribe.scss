@@ -1,0 +1,113 @@
+.subscribe {
+
+  &__title {
+    display: block;
+    max-width: 280px;
+    margin: 0 auto 20px;
+
+    @extend %titlePhoneSize ;
+    color: $colorBlack;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 50px;
+      max-width: 768px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 58px;
+      margin: 0 0 50px;
+    }
+  }
+
+  &__container {
+    display: block;
+    max-width: 280px;
+    margin: 0 auto;
+
+    @include onTablet {
+      max-width: 690px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      max-width: 1170px;
+      padding: 50px 0;
+    }
+  }
+
+  &__item {
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__description {
+    display: block;
+    margin: 0 0 50px;
+    @extend %textSize;
+
+    color: $colorBlack;
+
+    @include onTablet {
+      max-width: 450px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__description--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: initial;
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__input {
+    display: block;
+    margin: 0 0 30px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $colorBlack;
+    background-color: $colorWhite;
+
+    @extend %textSize ;
+    color: $colorBlack;
+
+    &:hover {
+      border-bottom: 1px solid $mainColor;
+      &::placeholder {
+        color: $mainColor;
+      }
+    }
+
+    &:focus {
+      color: $mainColor;
+      outline: none;
+      border-bottom: 1px solid $mainColor;
+      &::placeholder {
+        color: $colorWhite;
+        font-weight: 700;
+      }
+    }
+
+    &:active {
+      &::placeholder {
+        color: $colorBlack;
+        font-weight: 700;
+      }
+    }
+
+    @include onTablet {
+      max-width: 450px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.header {
+  position: relative;
+  background-color: $backgroundColor;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  &__top {
+    margin-bottom: 70px;
+  }
+
+  &__image-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: 0 auto;
+    width: 245px;
+    height: 273px;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin-right: 0;
+      width: 625px;
+      height: 663px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__date {
+    position: absolute;
+    bottom: 50px;
+
+    font-size: 14px;
+    line-height: 18px;
+    color: $colorWhite;
+
+    opacity: 0;
+
+    @include onDesktop {
+      opacity: 1;
+    }
+  }
+
+  &__date::after {
+    @include onDesktop {
+      position: absolute;
+      transform: translate(101px, -9px);
+      display: block;
+      content: "";
+      width: 469px;
+      height: 1px;
+      background-color: $colorWhite;
+    }
+  }
+}

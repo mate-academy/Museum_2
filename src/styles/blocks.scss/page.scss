@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Playfair Display;
+}
+
+.page {
+  font-family: Raleway;
+  scroll-behavior: smooth;
+  background-color: $colorWhite;
+
+  &__body {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  &__section-header {
+    height: 100vh;
+    margin-bottom: 90px;
+
+  }
+
+  &__section-actual {
+    margin-bottom: 120px;
+  }
+
+  &__section-coming {
+    margin-bottom: 90px;
+  }
+
+  &__section-visit {
+    margin-bottom: 90px;
+
+    @include onDesktop {
+      position: relative;
+    }
+  }
+
+  &__section-news {
+    margin-bottom: 120px;
+  }
+
+  &__section-subscribe {
+    margin-bottom: 80px;
+  }
+
+  &__section-footer {
+    height: min-content;
+
+    @include onTablet {
+      height: min-content;
+    }
+  }
+
+  &-section__date {
+    margin: 0 0 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $colorWhite;
+  }
+
+  &-section__title {
+    margin: 0 0 30px;
+
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+
+    max-width: 279px;
+
+    color: #f1f5f4;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 72px;
+
+      max-width: 569px;
+    }
+
+    @include onDesktop {
+      font-weight: 700;
+      font-size: 96px;
+      line-height: 96px;
+
+      max-width: 569px;
+    }
+  }
+
+  &-section__description {
+    margin: 0 0 40px;
+    max-width: 267px;
+
+    @include onTablet {
+      max-width: 330px;
+    }
+
+    @include onDesktop {
+      max-width: 569px;
+    }
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $colorWhite;
+  }
+
+  &__button {
+    margin: 0 0 40px;
+
+    display: block;
+    width: 100%;
+    height: 60px;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__button--menu {
+    margin-bottom: 60px;
+  }
+
+  &__button--visit {
+    margin: 0;
+  }
+
+  &__button--submit {
+    display: block;
+    width: 280px;
+    height: 60px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: $buttonHoverColor;
+
+    background-color: $mainColor;
+    color: $colorWhite;
+
+    &:hover {
+      background-color: $buttonHoverColor;
+    }
+
+    &:active {
+      background-color: $buttonActiveColor;
+    }
+  }
+
+  &__menu {
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
