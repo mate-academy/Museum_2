@@ -4,3 +4,5 @@ This landing page implemented according to [Figma design](https://www.figma.com/
 - Desktop 1280px
 - Tablet 640px
 - Mobile (> 320px)
+
+-[DEMO LINK](https://roma-shafihullin.github.io/Museum_2)
