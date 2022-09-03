@@ -32,7 +32,7 @@
 
     background-color: $c-main;
 
-    transition: background-color 0.3s ease;
+    transition: background-color $transition-duration ease;
 
     &:hover {
       background-color: #af3419;
@@ -58,7 +58,8 @@
 
     border: 1px solid $c-main;
 
-    transition: color 0.3s ease, border-color 0.3s ease;
+    transition: color $transition-duration ease,
+      border-color $transition-duration ease;
 
     &:hover,
     &:hover .icon--arrow-h {
@@ -80,5 +81,13 @@
 
       border-color: #dd836f;
     }
+  }
+
+  &__icon {
+    transition: transform $transition-duration ease;
+  }
+
+  &:hover &__icon {
+    transform: translateX(4px);
   }
 }

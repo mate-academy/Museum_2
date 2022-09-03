@@ -61,12 +61,12 @@
     margin-left: 44px;
 
     @include onTablet {
-      margin-right: 66px;
+      margin-right: $menu-margin-right;
       margin-left: 0;
     }
 
     @include onDesktop {
-      margin-right: 66px;
+      margin-right: $menu-margin-right;
       margin-left: 0;
     }
   }
@@ -93,6 +93,14 @@
 
     &--last {
       margin-bottom: 40px;
+
+      @include onDesktop {
+        transition: transform $transition-duration ease;
+
+        &:hover {
+          transform: translateY(4px);
+        }
+      }
     }
 
     @include onTablet {
@@ -140,6 +148,8 @@
 
     color: $c-white;
 
+    border-bottom: 1px solid transparent;
+
     text-decoration: none;
 
     @include onTablet {
@@ -147,12 +157,11 @@
       line-height: 120%;
     }
 
-    &:hover {
-      @include onDesktop {
-        text-decoration-line: underline;
-        text-decoration-skip-ink: none;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 4px;
+    @include onDesktop {
+      transition: border-color $transition-duration ease;
+
+      &:hover {
+        border-color: $c-white;
       }
     }
   }
