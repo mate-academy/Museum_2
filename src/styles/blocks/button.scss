@@ -61,33 +61,39 @@
     transition: color $transition-duration ease,
       border-color $transition-duration ease;
 
-    &:hover,
-    &:hover .icon--arrow-h {
-      color: #af3419;
-
+    &:hover {
       border-color: #af3419;
     }
 
-    &:active,
-    &:active .icon--arrow-h {
-      color: #ea340d;
-
+    &:active {
       border-color: #ea340d;
     }
 
-    &:disabled,
-    &:disabled .icon--arrow-h {
-      color: #dd836f;
-
+    &:disabled {
       border-color: #dd836f;
     }
   }
 
   &__icon {
-    transition: transform $transition-duration ease;
+    margin-left: 12px;
+
+    color: $c-main;
+
+    transition: transform $transition-duration ease,
+      color $transition-duration ease;
   }
 
   &:hover &__icon {
+    color: #af3419;
+
     transform: translateX(4px);
+  }
+
+  &:active &__icon {
+    color: #ea340d;
+  }
+
+  &:disabled &__icon {
+    color: #dd836f;
   }
 }
