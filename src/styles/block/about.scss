@@ -1,0 +1,164 @@
+.about {
+  background-color: $colorGrey;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+
+  @include onTablet {
+    padding-top: 100px;
+  }
+
+  @include onDesktop {
+    flex-direction: row;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      margin-top: 80px;
+    }
+
+    &--date {
+      font-family: "Raleway", sans-serif ;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: $colorWhite;
+    }
+
+    &--title {
+      font-family: "Playfair Display", sans-serif ;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+      color: $colorWhite;
+      padding-top: 10px;
+      transition: 0.5s;
+
+      &:hover {
+        filter: drop-shadow(3px 3px 2px #000);
+      }
+
+      @include onTablet {
+        font-size: 72px;
+        width: 570px;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+        width: 600px;
+      }
+    }
+
+    &--text {
+      font-family: "Raleway", sans-serif ;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 150%;
+      color: $colorWhite;
+      padding-top: 30px;
+
+      @include onTablet {
+        width: 330px;
+      }
+
+      @include onDesktop {
+        width: 100%;
+      }
+    }
+
+    &--primary {
+      &:hover {
+        background-color: #af3419;
+      }
+
+      &:focus {
+        background: #ea340d;
+      }
+
+      &:disabled {
+        background-color: $colorTransparent;
+      }
+    }
+
+    &--button {
+      font-family: "Raleway", sans-serif ;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: $colorWhite;
+      border: 1px solid $colorOrange;
+      justify-content: center;
+      padding: 22px;
+      margin-top: 40px;
+      background-color: $colorOrange;
+      transition: 0.5s;
+
+      @include onTablet {
+        margin-top: 72px;
+        width: 330px;
+      }
+
+      @include onDesktop {
+        width: 270px;
+      }
+    }
+
+    &-date {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        position: absolute;
+        left: 60px;
+        top: 750px;
+        font-family: "Playfair Display", sans-serif ;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 125%;
+        color: $colorWhite;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+
+          right: -235px;
+          bottom: -204px;
+          width: 1px;
+          height: 420px;
+          background: $colorWhite;
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+
+  &__img {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(3px 3px 12px #000);
+    }
+
+    @include onTablet {
+      margin: 70px auto 0;
+      width: 494px;
+      height: 443px;
+    }
+
+    @include onDesktop {
+      width: 605px;
+      height: 660px;
+      margin: 0;
+    }
+  }
+}

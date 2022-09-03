@@ -1,0 +1,121 @@
+.subscribe {
+  &__info {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    &-title {
+      font-family: "Playfair Display", sans-serif ;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 125%;
+      color: $colorBlack;
+      padding-bottom: 20px;
+
+      @include onTablet {
+        font-size: 40px;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+      }
+    }
+
+    &-text {
+      font-family: "Raleway", sans-serif ;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $colorBlack;
+      padding-bottom: 50px;
+
+      @include onTablet {
+        width: 600px;
+      }
+
+      @include onDesktop {
+        width: 570px;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      margin-bottom: 100px;
+    }
+
+    &-email {
+      border: none;
+      margin-bottom: 30px;
+      border-bottom: 1px solid black;
+      padding-bottom: 3px;
+      width: 100%;
+
+      @include onTablet {
+        width: 450px;
+      }
+
+      @include onDesktop {
+        margin-top: 50px;
+
+      }
+
+      &::placeholder {
+        font-family: "Raleway", sans-serif ;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+      &:hover {
+        color: $colorOrange;
+        border-bottom: 1px solid $colorOrange;
+
+        &::placeholder {
+          color: $colorOrange;
+        }
+      }
+
+      &:focus {
+        outline: none;
+
+        border: none;
+        border-bottom: 1px solid $colorOrange;
+
+        font-family: "Raleway", sans-serif ;
+        font-weight: 700;
+        align-items: center;
+        color: $colorBlack;
+      }
+    }
+
+    &-button {
+      font-family: "Raleway", sans-serif ;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      display: flex;
+      justify-content: center;
+      color: $colorWhite;
+      margin-bottom: 80px;
+      padding: 22px;
+      background-color: $colorOrange;
+      border-color: $colorOrange;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.5s;
+      border: 0;
+
+      @include onTablet {
+        margin-bottom: 128px;
+        width: 330px;
+      }
+    }
+  }
+}
