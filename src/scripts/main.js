@@ -8,13 +8,17 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-const myForm = document.querySelector('.my-form');
+const myForm = document.querySelector('.news__form');
 
 const sendButton = document.getElementById('clicks');
 
 sendButton.addEventListener('click', function(event) {
-  event.preventDefault();
-  myForm.reset();
+  const myEmail = document.getElementById('email');
+
+  if (myEmail && /^[\w-]+@([\w-]+)+[\w-]{2,4}$/g.test(myEmail)) {
+    event.preventDefault();
+    myForm.reset();
+  }
 });
 
 myForm.addEventListener('clicks', sendButton);
