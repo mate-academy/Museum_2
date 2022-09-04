@@ -1,0 +1,179 @@
+.news {
+
+  &__content {
+    display: block;
+
+    @include onTable {
+      display: flex;
+      gap: 30px;
+    }
+
+    &--last-child {
+      margin-bottom: 140px;
+
+      @include onTable {
+        margin-bottom: 160px;
+      }
+
+      @include onDesctop {
+        margin-bottom: 200px;
+      }
+    }
+  }
+
+  &__wrapper {
+
+    &--first-child {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--last-child {
+      display: block;
+ 
+      @include onTable {
+        width: 80%;
+      }
+
+      @include onDesctop {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 130px;
+      }
+
+    }
+  }
+
+  &__title {
+    @extend %nav;
+    font-size: 28px;
+    line-height: 125%;
+    color: $color-title-main;
+    padding-bottom: 60px;
+
+    @include onTable {
+      font-size: 40px;
+    }
+
+    @include onDesctop {
+      font-size: 48px;
+    }
+
+    &--last-child {
+      padding-bottom: 20px;
+
+      @include onDesctop {
+        padding-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    display: none;
+    width: 100%;
+    height: 60px;
+    @extend %subtitle;
+    font-size: 16px;
+    line-height: 100%;
+    border: 1px solid $background-button;
+    color: $background-button;
+    margin-top: 40px;
+
+    @include onTable {
+      width: 30%;
+      display: block;
+      margin-top: 0;
+    }
+
+    &--last-child {
+      display: block;
+      margin-bottom: 90px;
+
+      @include onTable {
+        display: none;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding-bottom: 10px;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__date {
+    @extend %text;
+    font-size: 14px;
+    line-height: 150%;
+    color: $color-title-main;
+    padding-bottom: 10px;
+  }
+
+  &__subtitle {
+    @extend %subtitle;
+    font-size: 20px;
+    line-height: 125%;
+    color: $color-title-main;
+    padding-bottom: 20px;
+
+    @include onTable {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    @extend %text;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-text-main;
+    padding-bottom: 30px;
+
+    &--last-child {
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-weight;
+    }
+  }
+
+  &__form {
+    width: 100%;
+
+    @include onDesctop {
+      width: 70%;
+    }
+  }
+
+  &__email {
+    border: none;
+    width: 100%;
+    height: 40px;
+    @extend %text;
+    font-size: 16px;
+    line-height: 150%;
+    border-bottom: 1px solid $color-title-main;
+    color: $color-title-main;
+    background-color: $color-weight;
+    padding-bottom: 3px;
+    margin-bottom: 30px;
+    transition: color 1s;
+
+    &:hover::placeholder {
+      color: #cd4d31;
+    }
+
+    &:focus {
+      color: #cd4d31;
+    }
+
+    @include onTable {
+      width: 70%;
+    }
+  }
+}
