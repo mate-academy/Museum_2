@@ -1,0 +1,192 @@
+.menu {
+  min-height: 747px;
+  background-color: $Background;
+  &__content {
+    padding-top: 20px;
+  }
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  &__logo {
+    display: block;
+    @extend %logoSize-Mobile;
+    &-Img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__items {
+    width: 96px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__lang--select {
+    display: inline-block;
+    cursor: pointer;
+    width: 44px;
+    height: 24px;
+    background-color: $Background;
+    font-size: 16px;
+    color: $White;
+    border: none;
+    outline: none;
+    &-item {
+      width: 23px;
+      font-size: 14px;
+      border: none;
+    }
+  }
+  &__burger {
+    display: block;
+    @include square(24px);
+    &-img {
+      margin-top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__time {
+    @extend %fontStyleFor-Additional;
+    color: $White;
+    margin-bottom: 20px;
+    &--hours {
+      @extend %fontStyleMenu-span;
+      margin-bottom: 0;
+    }
+  }
+  &__place {
+    @extend %fontStyleFor-Additional;
+    color: $White;
+    margin-bottom: 40px;
+    &--addres {
+      @extend %fontStyleMenu-span;
+      margin-bottom: 0;
+    }
+  }
+  &__item {
+    display: block;
+    width: max-content;
+    @extend %fontStyleFor-h5;
+    color: $White;
+    margin-bottom: 20px;
+    border-bottom: 1px solid transparent;
+    @include transition-duration(border-color);
+    &:hover {
+      border-color: $White;
+    }
+  }
+  &__list {
+    margin-bottom: 40px;
+  }
+  &__line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: $White;
+    margin-bottom: 40px;
+  }
+  @include tablet {
+    min-height: 1092px;
+    background-image: url(../images/headerMenu_Tablet.svg);
+    background-size: auto 466px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    &__content {
+      padding: 0;
+    }
+    &__top {
+      height: 77px;
+      margin-bottom: 56px;
+    }
+    &__logo {
+      height: 26px;
+      width: 116px;
+    }
+    &__items {
+      width: 110px;
+      display: flex;
+      flex-direction: row;
+    }
+    &__burger {
+      display: inline-block;
+      @include square(22px);
+      &-img {
+        width:100%;
+      }
+    }
+    &__time {
+      display: inline-block;
+      margin-right: 123px;
+      margin-bottom: 50px;
+      &--hours {
+        margin-bottom: 0;
+      }
+    }
+    &__place {
+      display: inline-block;
+      margin-bottom: 50px;
+      &--addres {
+        margin-bottom: 0;
+      }
+    }
+    &__item {
+      font-size: 48px;
+      line-height: 120%;
+      margin-bottom: 30px;
+    }
+    &__list {
+      margin-bottom: 50px;
+    }
+    &__line {
+      margin-bottom: 50px;
+    }
+  }
+  @include desktop {
+    min-height: 0px;
+    height: 100vh;
+    background-image: url(../images/headerMenu_Desktop.svg);
+    background-size: auto 697px;
+    background-position: right bottom;
+    &__top {
+      height: 90px;
+      margin-bottom: 13px;
+    }
+    &__burger {
+      display: inline-block;
+      @include square(30px);
+      &-img {
+        width:100%;
+      }
+    }
+    &__time {
+      display: inline-block;
+      margin-right: 123px;
+      margin-bottom: 70px;
+      &--hours {
+        margin-bottom: 0;
+      }
+    }
+    &__place {
+      display: inline-block;
+      margin-bottom: 70px;
+      &--addres {
+        margin-bottom: 0;
+      }
+    }
+    &__item {
+      margin-bottom: 60px;
+    }
+    &__list {
+      margin-bottom: 0;
+    }
+    &__line {
+      width: 570px;
+      margin-bottom: 82px;
+    }
+  }
+}

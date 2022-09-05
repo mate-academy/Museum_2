@@ -1,0 +1,159 @@
+.header {
+  min-height: 747px;
+  background-color: $Background;
+  background-image: url(../images/headerFoto-Mobile.svg);
+  background-repeat: no-repeat;
+  background-size: auto 273px;
+  background-position: center bottom;
+  &__content {
+    padding-top: 20px;
+  }
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+  &__logo {
+    display: block;
+    @extend %logoSize-Mobile;
+    &-Img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__lang--select {
+    display: none;
+  }
+  &__burger {
+    display: block;
+    @include square(25px);
+    &-img {
+      margin-top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__inform {
+    margin-bottom: 40px;
+  }
+  &__date {
+    display: inline-block;
+    @extend %fontStyleFor-Additional;
+    color: $White;
+    margin-bottom: 10px;
+    &-bottom {
+      display: none;
+      @extend %fontStyleFor-Additional;
+    }
+  }
+  &__slogan {
+    display: inline-block;
+    @extend %fontStyleFor-h1-Mobile;
+    color: $White;
+    margin-bottom: 30px;
+  }
+  &__text {
+    display: inline-block;
+    @extend %fontStyleFor-Main;
+    color: $White;
+  }
+
+  @include tablet {
+    min-height: 1092px;
+    background-image: url(../images/headerFoto-Tablet.svg);
+    background-size: auto 494px;
+    &__content {
+      padding: 0;
+    }
+    &__top {
+      height: 77px;
+      margin-bottom: 99px;
+    }
+    &__logo {
+      height: 26px;
+      width: 116px;
+    }
+    &__items {
+      width: 110px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__burger {
+      display: inline-block;
+      @include square(30px);
+      &-img {
+        width:100%;
+      }
+    }
+    &__lang--select {
+      display: inline-block;
+      cursor: pointer;
+      width: 44px;
+      height: 24px;
+      background-color: $Background;
+      font-size: 16px;
+      color: $White;
+      border: none;
+      outline: none;
+      &-item {
+        font-size: 14px;
+        border: none;
+      }
+    }
+    &__date {
+      display: block;
+    }
+    &__slogan {
+      font-size: 75px;
+      margin-bottom: 20px;
+    }
+    &__text {
+      display: block;
+    }
+    &__inform {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include desktop {
+    min-height: 0px;
+    height: 100vh;
+    background-image: url(../images/headerFoto-Desktop.svg);
+    background-size: auto 663px;
+    background-position: right bottom;
+    &__top {
+      height: 90px;
+      margin-bottom: 90px;
+    }
+    &__date {
+      &-bottom {
+        position: relative;
+        display: inline-block;
+        color: $White;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 100px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 469px;
+          height: 1px;
+          background-color: $White;
+        }
+      }
+    }
+    &__slogan {
+      max-width: 569px;
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
+    &__inform {
+      margin-bottom: 81px;
+    }
+    &__button {
+      margin-bottom: 135px;
+    }
+  }
+}
