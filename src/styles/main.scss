@@ -195,11 +195,24 @@
 .nav {
   color: #f1f5f4;
 
-  &__flex {
-    display: flex;
-    justify-content: center;
-    margin-top: 0;
+  @include onTablet {
+    background-image: url(../images/sliderBackground.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
 
+  @include onDesktop {
+    background-position: bottom right;
+  }
+
+  &__flex {
+    padding-top: 30px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+    }
   }
 
   &__title--wrapper {
@@ -222,7 +235,11 @@
   }
 
   &__adress {
-    margin-top: 20px;
+    margin-top: 30px;
+    @include onTablet {
+      margin-top: 0;
+      margin-left: 140px;
+    }
   }
 
   &__schedule {
