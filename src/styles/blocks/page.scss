@@ -1,0 +1,67 @@
+.page {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  &__section {
+    // position: relative;
+
+    &-inner--tablet-desktop {
+      margin-bottom: 60px;
+
+      @include onTablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 60px;
+      }
+    }
+
+    &--title {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      line-height: 35px;
+      font-weight: 700;
+      text-align: center;
+
+      @include onTablet {
+        font-size: 40px;
+        line-height: 50px;
+        text-align: left;
+      }
+    }
+
+    &-button {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        width: 33%;
+      }
+
+      &--lower {
+        @include onTablet {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include onTablet {
+    width: 50%;
+  }
+
+  @include onDesktop {
+    width: 50%;
+  }
+
+  &__image {
+    display: block;
+    height: 356px;
+    margin-bottom: 20px;
+
+    object-fit: cover;
+    object-position: left;
+
+    &--man {
+      object-position: center;
+    }
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+    color: #1c1b29;
+
+    @include onTablet {
+      flex-basis: 72px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    @include onDesktop {
+      flex-basis: 0;
+    }
+  }
+
+  &__period {
+    margin-bottom: 10px;
+
+    color: $c-button;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    color: #504f5e;
+  }
+}

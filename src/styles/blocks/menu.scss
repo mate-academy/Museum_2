@@ -1,0 +1,139 @@
+.menu {
+  color: $c-white;
+  background-color: #3f5252;
+
+  @include onTablet {
+    background-image: url(../images/img_man-menu.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 422px 466px;
+  }
+
+  @include onDesktop {
+    background-position: right bottom;
+    background-size: 624px 697px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    --icon-width: 25px;
+    --lang-width: 36px;
+
+    padding-top: 20px;
+    margin-bottom: 30px;
+
+    display: grid;
+    align-items: center;
+    justify-content: left;
+    grid-template-columns: 1fr var(--lang-width) var(--icon-width);
+    gap: 30px;
+
+    @include onTablet {
+      grid-template-columns: 1fr var(--icon-width) var(--lang-width);
+      gap: 30px;
+      padding-top: 26px;
+      margin-bottom: 56px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+      margin-bottom: 46px;
+    }
+  }
+
+  &__lang {
+    display: block;
+  }
+
+  &__info {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+
+    &--last {
+      margin-bottom: 40px;
+    }
+
+    &--title {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &--detail {
+      display: block;
+      width: max-content;
+
+      color: inherit;
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+
+    &:last-child {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+
+      border-bottom: 1px solid $c-white;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+
+      font-size: 48px;
+      line-height: 58px;
+
+      &:last-child {
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+
+      font-size: 58px;
+      line-height: 55px;
+
+      &:last-child {
+        width: 50%;
+
+        margin-bottom: 60px;
+        padding-bottom: 60px;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 238px;
+
+    @include onTablet {
+      margin-bottom: 496px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 108px;
+    }
+  }
+}
