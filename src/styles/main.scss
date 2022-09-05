@@ -1,7 +1,120 @@
 @import "utils";
-@import "fonts";
-@import "typography";
+@import "normalize";
 
-body {
-  background: $c-gray;
+.container {
+  padding: 20px 20px 0;
+
+  @include onTablet {
+    padding: 20px 39px 0;
+  }
+}
+
+.header {
+  height: 100vh;
+  background-color: #3f5252;
+  color: #f1f5f4;
+  background-image: url(../images/tropinin.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 50%;
+
+  @include onDesktop {
+    background-position: bottom right;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__text {
+    font-size: 14px;
+  }
+
+  &__text--wrapper {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    @include onDesktop {
+      width: 25%;
+    }
+
+    &--wrapper {
+      margin-top: 40px;
+
+      @include onTablet {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  &__info {
+    margin-top: 70px;
+
+    @include onDesktop {
+      margin-top: 125px;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 48px;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+      width: 80%;
+    }
+
+    @include onDesktop {
+      font-style: 96px;
+      line-height: 96px;
+      width: 50%;
+    }
+
+    &--wrapper {
+      margin-top: 10px;
+    }
+  }
+}
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+  }
+}
+
+.button {
+  font-family: "Raleway", sans-serif;
+  font-style: 16px;
+  font-weight: 600;
+  color: "inherit";
+  height: 60px;
+  background-color: #cd4d31;
+  border: none;
 }
