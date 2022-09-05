@@ -5,7 +5,11 @@
   padding: 20px 20px 0;
 
   @include onTablet {
-    padding: 20px 39px 0;
+    padding: 26px 39px 0;
+  }
+
+  @include onDesktop {
+    padding: 32px 55px 0;
   }
 }
 
@@ -20,6 +24,7 @@
 
   @include onDesktop {
     background-position: bottom right;
+    background-size: 650px;
   }
 
   &__content {
@@ -63,7 +68,7 @@
   &__info {
     margin-top: 70px;
 
-    @include onDesktop {
+    @include onTablet {
       margin-top: 125px;
     }
   }
@@ -88,6 +93,35 @@
       margin-top: 10px;
     }
   }
+
+  &__lang {
+    display: flex;
+  }
+
+  &__menu {
+    margin-left: 40px;
+  }
+
+  &__small-title {
+    display: none;
+    color: #f1f5f4;
+    opacity: 0.7;
+    margin-top: 135px;
+
+    &::after {
+      display: block;
+      height: 1px;
+      width: 470px;
+      content: "";
+      background: #f1f5f4;
+      opacity: 0.3;
+      transform: translate(80px, -30px);
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
 }
 
 .top-actions {
@@ -107,14 +141,101 @@
   &--menu {
     background-image: url(../images/menu.svg);
   }
+
+  &--lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: #f1f5f4;
+    &-top {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  &-order1 {
+    order: 2;
+
+    @include onTablet {
+      order: 1;
+    }
+  }
+
+  &-order2 {
+    order: 1;
+
+    @include onTablet {
+      order: 2;
+    }
+  }
 }
 
 .button {
   font-family: "Raleway", sans-serif;
   font-style: 16px;
   font-weight: 600;
-  color: "inherit";
   height: 60px;
   background-color: #cd4d31;
   border: none;
+  color: #f1f5f4;
+}
+
+.page__menu {
+  height: 100vh;
+  background-color: #3f5252;
+}
+
+.nav {
+  color: #f1f5f4;
+
+  &__flex {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+
+  }
+
+  &__title--wrapper {
+    margin-top: 40px;
+    border-bottom: 1px solid #f1f5f4;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    padding-top: 20px;
+
+    &-first {
+      padding-top: 0;
+    }
+  }
+
+  &__info-menu {
+    margin-top: 30px;
+
+  }
+
+  &__adress {
+    margin-top: 20px;
+  }
+
+  &__schedule {
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: #f1f5f4;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #f1f5f4;
+    font-weight: 700;
+    font-size: 20px;
+  }
 }
