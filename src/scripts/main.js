@@ -13,3 +13,11 @@ elPin.addEventListener('click', function() {
 elPlinMenu.addEventListener('click', function() {
   elLngMenu.textContent = elLngMenu.textContent === 'UA' ? 'ENG' : 'UA';
 });
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#menu') {
+    document.body.classList.add('page__body--with-menu');
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+  }
+});
