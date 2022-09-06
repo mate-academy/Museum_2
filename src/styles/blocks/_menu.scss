@@ -1,0 +1,223 @@
+.menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  transform: translateX(-100%);
+
+  background-color: $greenColor;
+
+  padding: 20px 0 200px;
+
+  transition: $transitionTime;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onTablet() {
+    padding: 20px 0 0;
+  }
+
+  &__actions {
+    @include onDesktop() {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 55px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet() {
+      align-items: unset;
+    }
+
+    &-actions {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 40px;
+
+      @include onTablet() {
+        flex-direction: row;
+      }
+    }
+
+    &-logo {
+      display: block;
+      width: 123px;
+      height: 40px;
+
+      @include bgImgRules();
+      background-image: url(../images/logo/NAMU-logo.svg);
+    }
+
+    &-closer {
+      display: block;
+      width: 22px;
+      height: 22px;
+
+      @include bgImgRules();
+      background-image: url(../images/icons/closer.svg);
+    }
+
+    &-lang {
+      display: block;
+      width: 35px;
+      height: 25px;
+
+      @include bgImgRules();
+      background-image: url(../images/icons/language-icon.svg);
+      background-size: cover;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet() {
+      flex-direction: row;
+      gap: 123px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__time {
+    margin-bottom: 20px;
+
+    @include onTablet() {
+      margin-bottom: unset;
+    }
+
+    &-title {
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: $lightColor;
+    }
+
+    &-text {
+      @include ralewayFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      color: $lightColor;
+    }
+  }
+
+  &__adress {
+    margin-bottom: 40px;
+
+    @include onTablet() {
+      margin-bottom: unset;
+    }
+
+    &-title {
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: $lightColor;
+    }
+
+    &-text {
+      @include ralewayFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      color: $lightColor;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid $lightColor;
+
+    margin-bottom: 40px;
+
+    @include onDesktop() {
+      padding-bottom: 80px;
+      margin-bottom: 60px;
+    }
+
+    &-item {
+      @include playfairFont();
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+
+      @include onTablet() {
+        font-size: 48px;
+      }
+    }
+
+    &-link {
+      color: $lightColor;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 60px;
+
+    margin-bottom: 30px;
+
+    background-color: $orangeColor;
+
+    @include ralewayFont();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: $lightColor;
+
+    @include onTablet() {
+      width: 330px;
+    }
+
+    @include onDesktop() {
+      width: 270px;
+    }
+  }
+
+  &__image {
+    display: flex;
+    width: 422px;
+    height: 466px;
+    margin: 0 auto;
+
+    @include bgImgRules();
+    background-image: url(../images/people/boy.svg);
+
+    @include onMobile() {
+      display: none;
+    }
+
+    @include onTablet() {
+      display: flex;
+    }
+
+    @include onDesktop() {
+      display: flex;
+      justify-content: space-between;
+      width: 624px;
+      height: 697px;
+      margin: unset;
+      margin-left: 60px;
+    }
+  }
+}

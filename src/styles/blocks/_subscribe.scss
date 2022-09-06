@@ -1,0 +1,123 @@
+.subscribe {
+  margin-bottom: 80px;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop() {
+      flex-direction: row;
+    }
+
+    &-title {
+      margin-bottom: 20px;
+
+      @include playfairFont();
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 125%;
+      color: $darkColor;
+
+      @include onTablet() {
+        font-size: 40px;
+      }
+
+      @include onDesktop() {
+        margin-bottom: 50px;
+
+        width: 570px;
+        font-size: 48px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 50px;
+
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $darkColor;
+
+      @include onDesktop() {
+        width: 570px;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    &:hover > input {
+      border-color: $orangeColor;
+      &::placeholder {
+        color: $orangeColor;
+      }
+
+      &:focus {
+        &::placeholder {
+          color: transparent;
+        }
+        caret-color: $orangeColor;
+        border-color: $darkColor;
+
+        @include ralewayFont();
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        color: $darkColor;
+      }
+    }
+
+    &-input {
+      margin-bottom: 30px;
+
+      width: 100%;
+      outline: none;
+      border: none;
+
+      border-bottom: 1px solid $darkColor;
+
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $darkColor;
+
+      @include onTablet() {
+        width: 450px;
+      }
+
+      @include onTablet() {
+        width: 470px;
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      height: 60px;
+
+      background-color: $orangeColor;
+      border: none;
+
+      @include ralewayFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      color: $lightColor;
+
+      @include onTablet() {
+        width: 330px;
+      }
+
+      @include onDesktop() {
+        width: 270px;
+      }
+    }
+  }
+}

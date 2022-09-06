@@ -1,0 +1,228 @@
+.header {
+  position: relative;
+  background-color: $greenColor;
+  height: fit-content;
+
+  margin-bottom: 90px;
+
+  @include onTablet() {
+    margin-bottom: 105px;
+  }
+
+  @include onDesktop() {
+    margin-bottom: 110px;
+
+    height: 800px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0 70px;
+
+    &-logo {
+      width: 123px;
+      height: 40px;
+
+      @include bgImgRules();
+      background-image: url(../images/logo/NAMU-logo.svg);
+    }
+
+    &-menu {
+      width: 30px;
+      height: 30px;
+
+      @include bgImgRules();
+      background-image: url(../images/icons/menu-icon.svg);
+    }
+
+    &-icons {
+      display: flex;
+      gap: 40px;
+    }
+
+    &-lang {
+      width: 35px;
+      height: 24px;
+
+      align-self: flex-end;
+
+      @include bgImgRules();
+      background-image: url(../images/icons/language-icon.svg);
+
+      @include onMobile() {
+        display: none;
+      }
+
+      @include onTablet() {
+        display: flex;
+      }
+    }
+
+    @include onTablet() {
+      padding: 20px 0 124px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    &-date {
+      padding-bottom: 10px;
+
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: $lightColor;
+    }
+
+    &-title {
+      padding-bottom: 30px;
+
+      @include playfairFont();
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+      color: $lightColor;
+
+      @include onTablet() {
+        padding-bottom: 20px;
+
+        width: 569px;
+
+        font-size: 72px;
+      }
+
+      @include onDesktop() {
+        font-size: 96px;
+      }
+    }
+
+    &-description {
+      padding-bottom: 40px;
+
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $lightColor;
+
+      @include onTablet() {
+        padding-bottom: 50px;
+
+        width: 330px;
+      }
+
+      @include onDesktop() {
+        padding-bottom: 81px;
+
+        width: 570px;
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-bottom: 40px;
+
+      width: 279px;
+      height: 60px;
+
+      background-color: $orangeColor;
+
+      @include ralewayFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      color: $lightColor;
+
+      @include onTablet() {
+        margin-bottom: 70px;
+
+        width: 330px;
+      }
+
+      @include onDesktop() {
+        margin-bottom: 135px;
+
+        width: 270px;
+      }
+    }
+
+    &-link {
+      display: none;
+
+      @include playfairFont();
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      color: $lightColor;
+      opacity: 0.7;
+
+      @include onDesktop() {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      &::after {
+        content: "";
+        width: 470px;
+        height: 1px;
+        background-color: $lightColor;
+      }
+    }
+  }
+
+  &__image {
+    width: 245px;
+    height: 273px;
+
+    align-self: center;
+
+    @include bgImgRules();
+    background-image: url(../images/people/ua-girl.svg);
+    background-size: cover;
+
+    @include onTablet() {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include onDesktop() {
+      display: none;
+      width: 625px;
+      height: 663px;
+    }
+
+    &--desktop {
+      position: absolute;
+      top: 138px;
+      right: 0;
+      display: flex;
+
+      @include onMobile() {
+        display: none;
+      }
+
+      @include onTablet() {
+        display: none;
+      }
+
+      @include onDesktop() {
+        display: flex;
+      }
+    }
+  }
+}

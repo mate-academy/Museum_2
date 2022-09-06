@@ -1,6 +1,33 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onMobile {
+  @media (min-width: 320px) {
+    @content;
   }
+}
+
+@mixin onTablet {
+  @media (min-width: 639px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin bgImgRules {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+@mixin ralewayFont {
+  font-family: $ralewayFont;
+  font-style: normal;
+}
+
+@mixin playfairFont {
+  font-family: $playfairFont;
+  font-style: normal;
 }
