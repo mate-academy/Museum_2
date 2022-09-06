@@ -42,13 +42,18 @@
     color: #1c1b29;
 
     @include onTablet {
-      flex-basis: 72px;
       font-size: 24px;
       line-height: 30px;
     }
 
-    @include onDesktop {
-      flex-basis: 0;
+    &--exhibition {
+      @include onTablet {
+        flex-basis: 72px;
+      }
+
+      @include onDesktop {
+        flex-basis: 0;
+      }
     }
   }
 
@@ -62,5 +67,33 @@
     margin-bottom: 30px;
 
     color: #504f5e;
+
+    &--exhibition {
+      flex-basis: 96px;
+
+      @media (min-width: 675px) {
+        flex-basis: 0;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    &--event {
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    &--event {
+      width: 50%;
+    }
   }
 }
