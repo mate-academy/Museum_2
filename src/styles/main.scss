@@ -1,5 +1,5 @@
-@import "utils";
 @import "normalize";
+@import "utils";
 
 .container {
   padding: 20px 20px 0;
@@ -265,6 +265,19 @@
       margin-top: 200px;
     }
   }
+
+  &--third {
+    background-color: #3f5252;
+
+    @include onTablet {
+      padding: 80px 0;
+      margin-top: 100px;
+    }
+
+    @include onDesktop {
+      padding: 205px 0;
+    }
+  }
 }
 
 .nav {
@@ -414,17 +427,23 @@
       display: block;
       font-size: 24px;
       line-height: 30px;
-      margin-top: 10px;
+      margin: 10px 0 0;
+      // змушений задати m0 тут, бо normalize перебиває стилі саме h4
     }
   }
 
   &__text {
     color: #504f5e;
+    margin-top: 20px;
   }
 
   &__button {
     width: 100%;
     margin-top: 40px;
+
+    @include onDesktop {
+      width: 50%;
+    }
   }
 
   &__image {
@@ -441,5 +460,29 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: auto;
+  }
+}
+
+.visit {
+  color: #f1f5f4;
+
+  @include onDesktop {
+    background-image: url(../images/visit.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__title {
+    font-size: 62px;
+    line-height: 62px;
+  }
+
+  &__text {
+    margin-top: 20px;
+  }
+
+  &__button {
+    width: 75%;
+    margin-top: 60px;
   }
 }
