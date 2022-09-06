@@ -1,68 +1,83 @@
 .menu {
   background-color: $c-background;
 
+  background-image: url("../images/header_1.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 284px;
+
   &__content {
     height: 100vh;
-    padding-top: 20px;
+    padding: 20px 20px 0;
+
+    position: relative;
+
     display: flex;
     flex-direction: column;
+
+    @include onTablet {
+      padding: 30px;
+    }
+
+    @include onDesktop {
+      padding: 40px;
+    }
   }
 
-  &__top {
-    margin-bottom: 70px;
+  &__icons {
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
 
-  &__wrapper {
-    display: grid;
-    margin-bottom: 20px;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 124px;
+    }
   }
 
   &__info {
-    font-weight: normal;
+    display: block;
+    font-weight: 400;
     font-size: 14px;
     line-height: 140%;
     color: $c-white;
 
-    &-description {
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 150%;
-    }
-
-    &-adress {
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 150%;
-      text-decoration: none;
+    &-descr {
+      display: block;
+      font-weight: 600;
       color: $c-white;
-      margin-bottom: 40px;
-    }
-  }
+      text-decoration: none;
+      line-height: 140%;
+      margin-bottom: 20px;
 
-  &__list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+      &--with-margin {
+        margin-bottom: 40px;
+      }
+    }
   }
 
   &__item {
     margin-bottom: 20px;
 
     &:last-child {
+      border-bottom: 1px solid $c-white;
       padding-bottom: 40px;
       margin-bottom: 40px;
-      border-bottom: 1px solid $c-white;
     }
   }
 
   &__link {
-    text-decoration: none;
-    color: inherit;
+    font-family: "Playfair Display", sans-serif;
     font-weight: bold;
     font-size: 20px;
     line-height: 150%;
+    color: $c-white;
+    text-decoration: none;
   }
 }
