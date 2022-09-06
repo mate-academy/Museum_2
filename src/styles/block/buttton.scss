@@ -2,11 +2,13 @@
   display: block;
   height: 60px;
   width: 100%;
+  position: relative;
   background-color: $Main;
   @extend %fontStyleFor-Button;
   color: $White;
   text-align: center;
   text-decoration: none;
+  @include transition-duration(background-color);
   &:hover {
     background-color: $ButtonHover;
   }
@@ -20,14 +22,30 @@
     display: block;
     box-sizing: border-box;
     height: 60px;
-    width: 279px;
+    width: 100%;
     background-color: $White;
     @extend %fontStyleFor-Button;
     color: $Main;
     text-align: center;
-    border: 2px solid $Main;
+    border: 1px solid $Main;
     text-decoration: none;
+    position: relative;
+    @include transition-duration(border-color);
+    @include transition-duration(color);
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background-image: url(../images/icons/arrow.svg);
+      background-size: cover;
+      background-position: center;
+      top: 50%;
+      right: 20%;
+      transform: translate(25%, -10px);
+    }
     &:hover {
+      background-color: $White;
       color: $ButtonHover;
       border-color: $ButtonHover;
     }
@@ -45,18 +63,10 @@
     width: 330px;
     &--secondary {
       width: 210px;
-      position: relative;
       &::after {
-        content: "";
-        width: 14px;
-        height: 12px;
-        background-image: url(../images/icons/arrow.svg);
-        background-size: cover;
-        background-position: center;
-        position: absolute;
-        top: 30px;
-        left: 152px;
-        transform: translate(-50% -50%);
+        top: 50%;
+        left: 165px;
+        transform: translate(25%, -10px);
       }
     }
   }
@@ -65,18 +75,10 @@
     width: 270px;
     &--secondary {
       width: 270px;
-      position: relative;
       &::after {
-        content: "";
-        width: 14px;
-        height: 12px;
-        background-image: url(../images/icons/arrow.svg);
-        background-size: cover;
-        background-position: center;
-        position: absolute;
-        top: 30px;
-        left: 190px;
-        transform: translate(-50% -50%);
+        top: 50%;
+        left: 200px;
+        transform: translate(25%, -10px);
       }
     }
   }
