@@ -1,7 +1,13 @@
 .news {
   position: relative;
 
+  background-color: $defaultWhite;
+
   padding-top: 90px;
+
+  @include onTablet {
+    padding-top: 125px;
+  }
 
   &__title {
     font-family: "Playfair Display", serif;
@@ -30,9 +36,6 @@
 
   &__container {
     display: grid;
-    grid-auto-flow: row;
-    justify-content: center;
-    align-items: center;
 
     max-width: 320px;
 
@@ -80,6 +83,12 @@
         width: 570px;
         height: 370px;
       }
+
+      transition: transform 1s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     &--date {
@@ -114,18 +123,34 @@
   }
 
   &__btn {
-    // margin-bottom: 120px;
-
     @include onTablet {
       position: absolute;
       right: 40px;
-      top: 90px;
+      top: 125px;
     }
 
     @include onDesktop {
       position: absolute;
       right: 55px;
-      top: 90px;
+      top: 125px;
+    }
+  }
+
+  &__arrow {
+    &:after {
+      content: "";
+
+      display: inline-block;
+
+      width: 13.33px;
+      height: 11.67px;
+
+      margin-left: 11.33px;
+
+      background-image: url(../images/arrowRight.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   }
 }
