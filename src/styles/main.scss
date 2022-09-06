@@ -24,7 +24,7 @@
 
   @include onDesktop {
     background-position: bottom right;
-    background-size: 650px;
+    background-size: 600px;
   }
 
   &__content {
@@ -143,6 +143,7 @@
   }
 
   &--lang {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,6 +159,19 @@
         display: flex;
       }
     }
+  }
+
+  &-cross {
+    background-image: url(../images/cross.svg);
+    color: #fff;
+  }
+
+  &-union {
+    position: absolute;
+    left: 100%;
+    background-image: url(../images/Union.svg);
+    width: 8px;
+    height: 4px;
   }
 
   &-order1 {
@@ -185,6 +199,12 @@
   background-color: #cd4d31;
   border: none;
   color: #f1f5f4;
+
+  &--primary {
+    color: #cd4d31;
+    background-color: transparent;
+    border: 1px solid #cd4d31;
+  }
 }
 
 .page__body {
@@ -210,6 +230,43 @@
 
 }
 
+.page__section {
+
+  &-title {
+    font-size: 28px;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &--first {
+
+    @include onTablet {
+      margin-top: 105px;
+    }
+
+    @include onDesktop {
+      margin-top: 110px;
+    }
+  }
+
+  &--second {
+
+    @include onTablet {
+      margin-top: 164px;
+    }
+
+    @include onDesktop {
+      margin-top: 200px;
+    }
+  }
+}
+
 .nav {
   color: #f1f5f4;
 
@@ -221,6 +278,7 @@
 
   @include onDesktop {
     background-position: bottom right;
+    background-size: 600px;
   }
 
   &__flex {
@@ -229,7 +287,12 @@
     @include onTablet {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
+      justify-content: space-between;
+      width: 70%;
+    }
+
+    @include onDesktop {
+      width: 50%;
     }
   }
 
@@ -250,13 +313,17 @@
   &__info-menu {
     margin-top: 30px;
 
+    @include onTablet {
+      width: 100%;
+    }
+
   }
 
   &__adress {
     margin-top: 30px;
+
     @include onTablet {
       margin-top: 0;
-      margin-left: 140px;
     }
   }
 
@@ -272,5 +339,107 @@
     color: #f1f5f4;
     font-weight: 700;
     font-size: 20px;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+
+  &__text--wrapper {
+    width: max-content;
+  }
+}
+
+.grid {
+  column-gap: 20px;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__item {
+
+    @include onTablet {
+      @for $start from 1 through 6 {
+        @for $end from $start through 6 {
+          &-tabl--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @include onDesktop {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &-desk--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
+
+.expo {
+
+  &__first {
+
+    @include onTablet {
+      margin-top: 75px;
+    }
+  }
+
+  &__info {
+    display: block;
+    font-size: 16px;
+    color: #cd4d31;
+    margin-top: 30px;
+
+    &-second {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+
+    @include onTablet {
+      display: block;
+      font-size: 24px;
+      line-height: 30px;
+      margin-top: 10px;
+    }
+  }
+
+  &__text {
+    color: #504f5e;
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  &__image {
+    width: 100%;
+
+    @include onDesktop {
+      max-height: 500px;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
   }
 }
