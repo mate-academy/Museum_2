@@ -8,12 +8,21 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 16px;
+  border: none;
 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: #f1f5f4;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #af3419;
+  }
+  &:focus {
+    background-color: #ea340d;
+  }
 
   &-first {
     margin-bottom: 60px;
@@ -40,6 +49,15 @@
     }
   }
 
+  &-digest {
+    @include tablet {
+      width: 330px;
+    }
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
   &-hidden {
     display: none;
     font-family: "Raleway", sans-serif;
@@ -50,6 +68,19 @@
     color: #cd4d31;
     background-color: white;
     border: 1px solid #cd4d31;
+    transition: color 0.3s, border-color 0.3s;
+
+    &:hover {
+      background-color: white;
+      color: #af3419;
+      border-color: #af3419;
+    }
+
+    &:focus {
+      background-color: white;
+      color: #ea340d;
+      border-color: #ea340d;
+    }
 
     &::after {
       content: "";
