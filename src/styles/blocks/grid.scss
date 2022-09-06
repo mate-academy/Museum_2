@@ -14,17 +14,16 @@
   }
 
   &__item {
-    // &-row {
-    //   @include tablet {
-    //     position: relative;
-    //     top: -92%;
-    //   }
-    //   @include onDesktop {
-    //     position: relative;
-    //     top: -780%;
-    //   }
+   
+    &-row {
+      @include tablet {
+        grid-row-start: none;
+      }
+      @include onDesktop {
+        grid-row-start: none;
+      }
 
-    // }
+    }
 
     @for $start from 1 through 6 {
       @for $end from $start through 6 {
@@ -32,12 +31,6 @@
         &-#{$start}-#{$end} {
           grid-column: #{$start} / #{$end + 1};
         }
-      }
-    }
-    @include desktopRow {
-      &-desktop-row {
-        position: relative;
-        top: -65%;
       }
     }
 
