@@ -24,13 +24,63 @@
       border-color: $button-hover-color;
     }
 
-    &:focus {
+    &:active {
       background-color: $button-focus-color;
       border-color: $button-focus-color;
     }
 
     &:disabled {
       background: #dd836f;
+    }
+  }
+
+  &--secondary {
+    background-color: $white-color;
+    color: $main-color;
+    border: 1px solid $main-color;
+    display: none;
+    @include onTablet {
+      display: flex;
+    }
+
+    &::after {
+      content: "";
+      background-image: url(../images/arrow.svg);
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+      transition: all $transition-duration;
+    }
+
+    &:nth-child(6) {
+      display: flex;
+    }
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+      &::after {
+        background-image: url(../images/arrow--hover.svg);
+      }
+    }
+
+    &:active {
+      color: #ea340d;
+      border-color: #ea340d;
+
+      &::after {
+        background-image: url(../images/arrow--pressed.svg);
+      }
+    }
+
+    &:disabled {
+      color: #dd836f;
+      border-color: #dd836f;
+
+      &::after {
+        background-image: url(../images/arrow--disabled.svg);
+      }
     }
   }
 }
