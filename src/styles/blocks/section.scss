@@ -1,0 +1,142 @@
+.section {
+  &__inner {
+    margin-bottom: 30px;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: $gap-desk;
+
+      margin-bottom: 0;
+
+      &--events {
+        grid-template-columns: 1fr;
+        row-gap: 70px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+
+    &--events {
+      @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: $gap-desk;
+      }
+  
+      @include desktop {
+        width: 970px;
+        grid-template-columns: 1fr 2fr;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 356px;
+    margin-bottom: 20px;
+
+    object-fit: cover;
+    object-position: center;
+    
+    transition: transform 0.3s;
+
+    &--news {
+      height: 280px;
+      object-position: top;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include tablet {
+      height: 420px;
+
+      &--news {
+        height: 330px;
+      }
+    }
+
+    @include desktop {
+      height: 484px;
+
+      &--events {
+        height: 475px;
+      }
+
+      &--news {
+        height: 370px;
+      }
+    }
+  }
+
+  &__date {
+    color: $c-main;
+    margin-bottom: 15px;
+
+    &--news {
+      color: $c-black;
+    }
+  }
+
+  &__title {
+    @extend %h4;
+    @extend %limit-text;
+
+    margin-bottom: 15px;
+
+    @include tablet {
+      max-height: 60px;
+    }
+  }
+
+  &__text {
+    @extend %limit-text;
+
+    margin-bottom: 30px;
+
+    &--news {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      max-height: 72px;
+
+      &--events {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__form {
+    @include tablet {
+      width: 450px;
+    }
+
+    @include desktop {
+      width: 470px;
+    }
+  }
+
+  &__form-field {
+    margin-bottom: 30px;
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+}

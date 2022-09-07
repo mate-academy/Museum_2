@@ -1,0 +1,54 @@
+.lang {
+  position: relative;
+
+  width: 40px;
+
+  color: $c-white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+
+  &__items {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0;
+
+    width: 6px;
+    height: 1px;
+
+    background-color: $c-white;
+  }
+
+  &::before {
+    transform: translateX(3px) rotate(315deg);
+  }
+
+  &::after {
+    transform: rotate(-315deg);
+  }
+
+  &:hover {
+    .lang__items {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}

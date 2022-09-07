@@ -1,0 +1,47 @@
+.nav {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba($c-white, 0.3);
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @include tablet {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @include desktop {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    @include nav-links; 
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: $c-white;
+      margin-top: -5px;
+      opacity: 0;
+
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include desktop {
+    max-width: 570px;
+  }
+}

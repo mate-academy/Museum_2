@@ -1,0 +1,153 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    position: relative;
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+
+    color: $c-black;
+    font-family: "Raleway", sans-serif;
+    background: $c-white;
+    line-height: 150%;
+
+    &--active {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 90px;
+
+    @include tablet {
+      margin-bottom: 100px;
+    }
+
+    @include desktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__top-action {
+    @include position(sticky, 0, $padding, $padding);
+
+    z-index: 10;
+
+    @include tablet {
+      left: $padding-tab;
+      right: $padding-tab;
+    }
+  
+    @include desktop {
+      margin: 0 auto;
+      left: $padding-desk;
+      right: $padding-desk;
+    }
+  }
+
+  &__menu {
+    @include position(absolute, 0, 0, 0);
+  }
+
+  &__main {
+    flex-grow: 1;
+  }
+
+  &__section {
+    margin-bottom: 120px;
+
+    @include tablet {
+      margin-bottom: 160px;
+    }
+
+    @include desktop {
+      margin-bottom: 200px;
+    }
+
+    &--events,
+    &--visit {
+      margin-bottom: 90px;
+  
+      @include desktop {
+        margin-bottom: 110px;
+      }
+    }
+
+    &--events {
+      @include tablet {
+        margin-bottom: 100px;
+      }
+    }
+
+    &--visit {
+      @include tablet {
+        margin-bottom: 120px;
+      }
+    }
+
+    &--form {
+      margin-bottom: 80px;
+
+      @include desktop {
+        margin-bottom: 128px;
+      }
+    }
+  }
+
+  &__section-header {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      margin-bottom: 75px;
+    }
+
+    @include desktop {
+      margin-bottom: 70px;
+    }
+
+    &--form {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: start;
+
+      @include desktop {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  &__section-title {
+    @extend %h3;
+
+    @include tablet {
+      margin-right: 30px;
+    }
+
+    &--form {
+      margin-bottom: 20px;
+
+      @include desktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__section-btn {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    &--footer {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}

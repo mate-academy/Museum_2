@@ -1,0 +1,90 @@
+.header {
+  background: $c-background url(../images/promo/header.png);
+  background-position: bottom;
+  background-size: 245px;
+  background-repeat: no-repeat;
+  
+  color: $c-white;
+  
+  &__inner {
+    position: relative;
+
+    min-height: 100vh;
+    padding-top: $h-top + 50px;
+    padding-bottom: 50px;
+
+    @include tablet {
+      padding-top: $h-top-tab + 100px;
+    }
+  
+    @include desktop {
+      padding-top: $h-top-desk + 90px;
+    }
+  }
+
+  &__date {
+    @extend %additional;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @extend %h1;
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    @include desktop {
+      max-width: 570px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    width: 217px;
+    margin-bottom: 40px;
+
+    @include tablet {
+      width: 282px;
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      width: 100%;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+    @extend %additional;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      transform: translateY(-4px);
+      margin-left: 20px;
+      width: 470px;
+      height: 1px;
+      background-color: $c-white;
+      opacity: 0.3;
+    }
+
+    @include desktop {
+      display: block;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+    }
+  }
+
+  @include tablet {
+    background-size: 443px;
+  }
+
+  @include desktop {
+    background-size: 625px;
+    background-position: bottom right;
+  }
+}
