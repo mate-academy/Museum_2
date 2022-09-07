@@ -1,13 +1,44 @@
 .button {
   width: 100%;
   height: 60px;
-  background-color: $c-orange;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   text-decoration: none;
-  color: $c-white;
   font-weight: 600;
+
+  @include onDesktop {
+    max-width: 280px;
+  }
+
+  &--primary {
+    background-color: $c-orange;
+    color: $c-white;
+    border: none;
+  }
+
+  &--secondary {
+    background-color: $c-white;
+    color: $c-orange;
+    border: 1px solid $c-orange;
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &--mobile {
+    display: flex;
+    margin-top: 40px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
 }
