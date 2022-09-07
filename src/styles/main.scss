@@ -589,6 +589,7 @@
 }
 
 .footer {
+  position: relative;
   color: #f1f5f4;
   background-color: #3f5252;
 
@@ -601,14 +602,30 @@
   }
 
   &__container {
+    margin-top: 80px;
+    padding: 30px 20px;
+
     @include onTablet {
-      padding: 50px 20px 30px;
+      margin-top: 0;
+      padding: 50px 39px 30px;
     }
   }
 
   &__title {
     font-size: 20px;
     line-height: 30px;
+
+    @include onTablet {
+      padding-bottom: 30px;
+    }
+
+    &--second {
+      margin-top: 50px;
+
+      @include onTablet {
+        margin-top: 0;
+      }
+    }
   }
 
   &__link {
@@ -618,11 +635,58 @@
 
   &__list {
     list-style-type: none;
+    margin-top: 10px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
   }
 
   &__nav {
     display: block;
     text-decoration: none;
     color: #f1f5f4;
+
+    &:nth-of-type(n+2) {
+      margin-top: 10px;
+    }
+  }
+
+  &__social {
+    margin-top: 50px;
+
+    &--link {
+      margin-right: 25px;
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      margin-right: 20px;
+    }
+    @include onDesktop {
+      margin-right: 100px;
+    }
+  }
+
+  &__bottom-cont {
+    @include onTablet {
+      margin-top: 60px;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 30px;
+    right: 55px;
+  }
+
+  &__adress {
+    display: block;
+    margin-top: 10px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
   }
 }
