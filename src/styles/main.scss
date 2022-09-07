@@ -193,7 +193,7 @@
 
 .button {
   font-family: "Raleway", sans-serif;
-  font-style: 16px;
+  font-size: 16px;
   font-weight: 600;
   height: 60px;
   background-color: #cd4d31;
@@ -204,6 +204,24 @@
     color: #cd4d31;
     background-color: transparent;
     border: 1px solid #cd4d31;
+  }
+
+  &--phone {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--tabl {
+    display: block;
+    margin-top: 30px;
+    width: 100%;
+
+    @include onTablet {
+      display: none;
+    }
   }
 }
 
@@ -245,6 +263,7 @@
   }
 
   &--first {
+    margin-top: 90px;
 
     @include onTablet {
       margin-top: 105px;
@@ -256,6 +275,7 @@
   }
 
   &--second {
+    margin-top: 90px;
 
     @include onTablet {
       margin-top: 164px;
@@ -267,6 +287,7 @@
   }
 
   &--third {
+    padding: 50px 0;
     background-color: #3f5252;
 
     @include onTablet {
@@ -313,6 +334,10 @@
     margin-top: 40px;
     border-bottom: 1px solid #f1f5f4;
     padding-bottom: 40px;
+
+    @include onDesktop {
+      width: 50%;
+    }
   }
 
   &__title {
@@ -416,19 +441,21 @@
     margin-top: 30px;
 
     &-second {
-      margin-top: 0;
+      @include onTablet {
+        margin-top: 0;
+      }
+
     }
   }
 
   &__title {
     font-size: 20px;
+    margin-top: 10px;
 
     @include onTablet {
       display: block;
       font-size: 24px;
       line-height: 30px;
-      margin: 10px 0 0;
-      // змушений задати m0 тут, бо normalize перебиває стилі саме h4
     }
   }
 
@@ -448,9 +475,14 @@
 
   &__image {
     width: 100%;
+    margin-top: 60px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
 
     @include onDesktop {
-      max-height: 500px;
+      max-height: 570px;
     }
   }
 
@@ -465,6 +497,7 @@
 
 .visit {
   color: #f1f5f4;
+  margin-top: 110px;
 
   @include onDesktop {
     background-image: url(../images/visit.svg);
@@ -473,8 +506,13 @@
   }
 
   &__title {
-    font-size: 62px;
-    line-height: 62px;
+    font-size: 38px;
+    line-height: 38px;
+
+    @include onTablet {
+      font-size: 62px;
+      line-height: 62px;
+    }
   }
 
   &__text {
@@ -482,13 +520,25 @@
   }
 
   &__button {
-    width: 75%;
     margin-top: 60px;
+    width: 100%;
+
+    @include onTablet {
+      width: 75%;
+    }
+
+    @include onDesktop {
+      width: 45%;
+    }
   }
 }
 
 .form {
   margin-top: 160px;
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
 
   &__title {
     font-size: 40px;
@@ -498,6 +548,20 @@
   &__text {
     line-height: 24px;
     margin-top: 20px;
+
+    &-hidden {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &-desk {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
   }
 
   &__email {
@@ -516,5 +580,20 @@
     @include onTablet {
       width: 75%;
     }
+
+    @include onDesktop {
+      width: 60%;
+    }
+  }
+}
+
+.footer {
+
+  @include onTablet {
+    margin-top: 160px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
   }
 }
