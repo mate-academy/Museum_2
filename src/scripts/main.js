@@ -9,14 +9,12 @@ window.addEventListener('DOMContentLoaded', () => {
   const langTopAction = document.querySelector('.top-action__lang');
   const headerLinks = document.querySelectorAll('[data-link="header"]');
 
-  function closeMenu() {
-    body.classList.remove('page__body--active');
-    menu.classList.remove('menu--active');
-    burgerBtn.classList.remove('burger--active');
-  }
-
   headerLinks.forEach(item => {
-    item.addEventListener('click', closeMenu);
+    item.addEventListener('click', () => {
+      body.classList.remove('page__body--active');
+      menu.classList.remove('menu--active');
+      burgerBtn.classList.remove('burger--active');
+    });
   });
 
   burgerBtn.addEventListener('click', () => {
