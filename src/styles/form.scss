@@ -1,0 +1,76 @@
+.form {
+  margin-top: 160px;
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__title {
+    font-size: $font40;
+    line-height: 50px;
+  }
+
+  &__text {
+    line-height: 24px;
+    margin-top: 20px;
+
+    &-hidden {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &-desk {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__email {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $black;
+    margin-top: 50px;
+    width: 100%;
+    transition: all 0.3s;
+
+    &:invalid {
+      font-weight: bold;
+      border-color: $black;
+      color: $black;
+    }
+
+    &:hover::placeholder {
+      color: $red1;
+      font-weight: normal;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $red1;
+    }
+
+    &:focus {
+      color: $red1;
+      border-bottom: 1px solid $red1;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin-top: 30px;
+    width: 100%;
+
+    @include onTablet {
+      width: 75%;
+    }
+
+    @include onDesktop {
+      width: 60%;
+    }
+  }
+}
