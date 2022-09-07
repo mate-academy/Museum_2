@@ -615,6 +615,14 @@
     font-size: 20px;
     line-height: 30px;
 
+    &--third {
+      margin-top: 50px;
+
+      @include onTablet {
+        margin-top: 0;
+      }
+    }
+
     @include onTablet {
       padding-bottom: 30px;
     }
@@ -646,9 +654,12 @@
     display: block;
     text-decoration: none;
     color: #f1f5f4;
+    margin-top: 10px;
 
-    &:nth-of-type(n+2) {
-      margin-top: 10px;
+    @include onTablet {
+      &:nth-of-type(1) {
+        margin-top: 0;
+      }
     }
   }
 
@@ -661,18 +672,16 @@
   }
 
   &__info {
-    @include onTablet {
-      margin-right: 20px;
-    }
+    margin-right: 20px;
+
     @include onDesktop {
       margin-right: 100px;
     }
   }
 
   &__bottom-cont {
-    @include onTablet {
-      margin-top: 60px;
-    }
+    margin-top: 60px;
+
   }
 
   &__scroll {
