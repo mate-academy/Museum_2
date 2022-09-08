@@ -8,6 +8,8 @@
   color: $White;
   text-align: center;
   text-decoration: none;
+  border: 0;
+  padding: 0;
   @include transition-duration(background-color);
   &:hover {
     background-color: $ButtonHover;
@@ -41,13 +43,17 @@
       background-size: cover;
       background-position: center;
       top: 50%;
-      right: 20%;
-      transform: translate(25%, -10px);
+      right: 15%;
+      transform: translateY(-50%);
+      @include transition-duration(transform);
     }
     &:hover {
       background-color: $White;
       color: $ButtonHover;
       border-color: $ButtonHover;
+      &::after {
+        transform: translate(50%, -50%)
+      }
     }
     &:active {
       color: $ButtonActive;
@@ -65,8 +71,8 @@
       width: 210px;
       &::after {
         top: 50%;
-        left: 165px;
-        transform: translate(25%, -10px);
+        right: 8%;
+        transform: translateY(-50%);
       }
     }
   }
@@ -77,8 +83,8 @@
       width: 270px;
       &::after {
         top: 50%;
-        left: 200px;
-        transform: translate(25%, -10px);
+        right: 10%;
+        transform: translateY(-50%);
       }
     }
   }
