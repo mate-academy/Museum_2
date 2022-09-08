@@ -22,12 +22,31 @@
 
       background-color: $c-white;
       border: none;
+      outline: none;
+
       border-bottom: 1px solid $c-black;
+      transition: border-color $transition-duration ease;
 
       &::placeholder {
         color: $c-black;
         font-size: 16px;
         font-family: "Raleway", sans-serif;
+      }
+
+      &:hover {
+        border-color: $c-orange;
+        transition: color $transition-duration ease;
+
+        &::placeholder {
+          color: $c-orange;
+        }
+      }
+
+      &:focus {
+
+        &::placeholder {
+          color: transparent;
+        }
       }
 
       @include onDesktop {
