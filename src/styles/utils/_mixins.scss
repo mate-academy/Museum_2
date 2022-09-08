@@ -4,3 +4,112 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin PlayFair($fz, $lh, $color) {
+  font-family: "Playfair Display", sans-serif;
+  font-weight: 700;
+  font-size: $fz;
+  line-height: $lh;
+  color: $color;
+}
+
+@mixin Rale($fz, $lh, $color) {
+  font-size: $fz;
+  line-height: $lh;
+  color: $color;
+}
+
+@mixin iconTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin contentPhone($height, $top-pad) {
+  height: 100vh;
+  min-height: $height;
+  box-sizing: border-box;
+  padding: $top-pad 0 0;
+}
+
+/* #region Desk-Tab */
+@mixin onDesktop {
+  @media (min-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin onTab {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+/* #endregion */
+
+@mixin back-image {
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin positionImg {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+}
+/* #region header-menu-footer */
+@mixin content {
+  &__content {
+    @include contentPhone(747px, 20px);
+
+    @include onTab {
+      min-height: 1092px;
+      padding: 26px 0 0;
+    }
+
+    @include onDesktop {
+      min-height: 747px;
+      padding: 32px 0 0;
+    }
+  }
+}
+
+@mixin topRight {
+  &__top-right {
+    display: flex;
+    gap: 30px;
+
+    @include onTab {
+      gap: 40px;
+    }
+  }
+}
+
+@mixin grid {
+  @include onTab {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@mixin grid-column {
+  &__grid {
+    grid-column: 1 / 4;
+  }
+}
+
+@mixin DesktopImage($width, $height) {
+  @include onDesktop {
+    width: $width;
+    height: $height;
+
+    right: 0;
+    transform: translateX(0);
+  }
+}
+/* #endregion */

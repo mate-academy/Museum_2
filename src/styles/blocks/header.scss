@@ -1,0 +1,94 @@
+.header {
+  background-color: $c-header;
+
+  @include content;
+
+  &__top {
+    @include iconTop;
+
+    margin-bottom: 70px;
+
+    @include onTab {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__lang {
+    visibility: hidden;
+
+    @include onTab {
+      visibility: visible;
+    }
+  }
+
+  @include topRight;
+
+  &__date {
+    @include Rale(14px, 140%, $c-white);
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include PlayFair(48px, 100%, $c-white);
+
+    margin-bottom: 30px;
+
+    @include onTab {
+      font-size: 72px;
+
+      width: 569px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__about {
+    @include Rale(16px, 150%, $c-white);
+
+    margin-bottom: 40px;
+
+    @include onTab {
+      width: 330px;
+
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      width: max-content;
+
+      margin-bottom: 81px;
+    }
+  }
+
+  @include grid-column;
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include grid;
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__image-size {
+    width: 245px;
+    height: 273px;
+
+    @include positionImg;
+
+    @include onTab {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include DesktopImage (625px, 623px);
+  }
+}
