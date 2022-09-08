@@ -62,6 +62,7 @@
       border-color: #af3419;
       &::after {
         background-image: url(../images/arrow--hover.svg);
+        transform: translateX(20%);
       }
     }
 
@@ -81,6 +82,20 @@
       &::after {
         background-image: url(../images/arrow--disabled.svg);
       }
+    }
+  }
+
+  &--phone {
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    @include onDesktop {
+      width: 50%;
     }
   }
 }
