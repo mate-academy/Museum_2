@@ -24,13 +24,69 @@
       border-color: $button-hover-color;
     }
 
-    &:focus {
-      background-color: $button-focus-color;
-      border-color: $button-focus-color;
+    &:active {
+      background-color: $button-active-color;
+      border-color: $button-active-color;
     }
 
     &:disabled {
-      background: #dd836f;
+      background: $button-disable-color;
+    }
+  }
+
+  &--secondary {
+    background-color: $white-color;
+    color: $button-main-color;
+    border: 1px solid $button-main-color;
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &::after {
+      content: "";
+      background-image: url(../images/arrow-default.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+      transition: all $transition-duration;
+    }
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+
+      &::after {
+        background-image: url(../images/arrow-hover.svg);
+      }
+    }
+
+    &:active {
+      color: $button-active-color;
+      border-color: $button-active-color;
+
+      &::after {
+        background-image: url(../images/arrow-active.svg);
+      }
+    }
+
+    &:disabled {
+      color: $button-disable-color;
+      border-color: $button-disable-color;
+
+      &::after {
+        background-image: url(../images/arrow-disabled.svg);
+      }
+    }
+  }
+
+  &--desktop {
+    @include onDesktop {
+    display: grid;
+    width: 270px;
     }
   }
 }
