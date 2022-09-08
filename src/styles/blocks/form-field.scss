@@ -1,0 +1,47 @@
+.form-field {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $text-black;
+  width: 280px;
+  margin-bottom: 30px;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  @extend %text-standart;
+
+  color: $text-black;
+  &::placeholder {
+
+    font-weight: 400;
+    @extend %text-standart;
+    color: $text-black;
+  }
+  &:hover {
+    border-color: $main-accent;
+  }
+  &:hover::placeholder {
+    color: $main-accent;
+    border-color: $main-accent;
+  }
+  &:focus::placeholder {
+    font-weight: 600;
+    color: $main-accent;
+  }
+  &:focus {
+    border-color: $main-accent;
+  }
+
+  @include tablet {
+    margin-bottom: 30px;
+    width: 450px;
+  }
+  @include onDesktop {
+    margin-bottom: 40px;
+    width: 470px;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  transition: background-color 5000s ease-in-out 0s;
+}

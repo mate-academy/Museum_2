@@ -1,0 +1,116 @@
+.header {
+  background-image: url(../images/backMadam.png);
+  background-position: bottom;
+  background-color: $background;
+  background-size: 245px;
+  background-repeat: no-repeat;
+
+  @include tablet {
+    background-size: 443px;
+  }
+  @include onDesktop {
+    background-size: 625px;
+    background-position: right bottom;
+  }
+
+  &__content {
+
+    box-sizing: border-box;
+    height: 100vh;
+
+    padding: 20px 20px 0;
+
+    @include tablet {
+      padding: 26px 42px 0;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 70px;
+    @include tablet {
+      margin-bottom: 124px;
+    }
+    @include onDesktop {
+      margin-bottom: 122px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    letter-spacing: -1.5px;
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    line-height: 48px;
+    color: $white;
+
+    margin: 0 0 30px;
+
+    @include tablet {
+      font-size: 72px;
+      line-height: 72px;
+
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 20px;
+    font-family: "Raleway", sans-serif;
+    color: $white;
+    margin: 0 0 10px;
+
+  }
+
+  &__subtitle {
+    font-family: "Raleway", sans-serif;
+    @extend %text-standart;
+    margin: 0 0 40px;
+    color: $white;
+    @include tablet {
+      margin: 0 0 50px;
+    }
+    @include onDesktop {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__button {
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__desktop-text {
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: $white;
+    opacity: 0.7;
+    display: none;
+    @include onDesktop {
+      display: block;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+
+      margin-left: 20px;
+      grid-column: 2 / 6;
+      width: 400px;
+      height: 1px;
+      background-color: $white;
+      opacity: 0.3;
+    }
+  }
+}

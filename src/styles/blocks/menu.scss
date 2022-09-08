@@ -1,0 +1,172 @@
+.menu {
+  background-color: $background;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &-group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    height: 100vh;
+    box-sizing: border-box;
+    padding-top: 20px;
+
+    @include tablet {
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding: 32px 40px 0;
+    }
+
+    @include tablet {
+      background-image: url(../images/backBoy.png);
+      background-size: 422px;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/backBoy.png);
+      background-position: bottom right;
+      background-size: 624px;
+      background-repeat: no-repeat;
+
+    }
+
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__top {
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__item {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    @include tablet {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 50px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+
+      &:last-child {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: border-color 0.3s;
+    width: max-content;
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+    line-height: 30px;
+
+    color: $white;
+    @include tablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 58px;
+
+    }
+
+    &:hover {
+      border-color: $white;
+    }
+
+  }
+
+  &__inform {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $white;
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+    margin: 0;
+    font-weight: 600;
+    @extend %text-standart;
+    color: $white;
+    &-first {
+      margin: 0 0 20px;
+      @include tablet {
+        margin: 0 0 50px;
+      }
+      @include onDesktop {
+        margin: 0 0 70px;
+      }
+    }
+    &-second {
+      margin: 0 0 40px;
+      text-decoration: none;
+      transition: color 0.3s;
+      &:hover {
+        color: $main-accent;
+      }
+      @include tablet {
+        margin: 0 0 50px;
+      }
+      @include onDesktop {
+        margin: 0 0 70px;
+      }
+    }
+  }
+
+  &__underline {
+    width: 100%;
+    height: 1px;
+    background: $white;
+    opacity: 0.3;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+}
