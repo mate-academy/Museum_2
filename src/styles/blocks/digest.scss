@@ -1,0 +1,110 @@
+.digest {
+
+  &__content {
+    // @extend %grid;
+    display: flex;
+    flex-direction: column;
+    // margin-bottom: 50px;
+
+    @include onTablet {
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include onTablet {
+      // margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      // margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $blackColor;
+    max-width: 570px;
+
+    margin-bottom: 20px;
+    @include onTablet {
+      margin-bottom: 20px;
+      font-size: 40px;
+      // grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      // grid-column: 1 / 7;
+      font-size: 48px;
+    }
+  }
+
+  &__text {
+    font-family: "Raleway" , sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $blackColor;
+    max-width: 570px;
+  }
+
+  &__form {
+    width: 100%;
+    display: block;
+    border: none;
+    background-color: #fff;
+    outline: none;
+
+    border-bottom: 1px solid $blackColor;
+    padding-bottom: 3px;
+    margin-bottom: 30px;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: $blackColor;
+
+    transition: border-bottom-color $transitionDuration, color $transitionDuration;
+
+    &::placeholder {
+      color: inherit;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+    }
+
+    &:hover {
+      color: $orangeColor;
+      border-bottom-color: $orangeColor;
+
+    }
+
+    &:focus {
+      color: $orangeColor;
+      border-bottom-color: $orangeColor;
+    }
+
+    @include onTablet {
+      width: 450px;
+      }
+
+      @include onDesktop {
+        width: 470px;
+        margin-bottom: 40px;
+      }
+  }
+
+  &__button {
+    border-color: transparent;
+  }
+}

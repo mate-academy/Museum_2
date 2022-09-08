@@ -1,0 +1,110 @@
+.footer {
+  &__content {
+    @extend %grid;
+  }
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $backgroundColor;
+  padding: 34px 20px 0;
+
+  @include onTablet {
+    height: 388px;
+    padding: 50px 39px 0;
+  }
+
+  @include onDesktop {
+    height: 400px;
+    padding: 50px 55px 0;
+  }
+
+  &__contacts {
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+
+  }
+
+}
+
+.contacts {
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: $mainColor;
+    margin-bottom: 10px;
+
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+    @include onTablet{
+      margin-bottom: 50px;
+    }
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $mainColor;
+    text-decoration: none;
+    transition: color $transitionDuration;
+
+    &:hover {
+      color: $orangeColor;
+    }
+  }
+
+}
+
+.media {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+
+
+  &__item {
+    margin-right: 20px;
+
+  }
+
+  &__link {
+    transition: color $transitionDuration;
+
+    &:hover {
+      fill: $orangeColor;
+    }
+  }
+
+  &__pic {
+    transition: color $transitionDuration;
+
+    &:hover {
+      fill: $orangeColor;
+    }
+  }
+}
