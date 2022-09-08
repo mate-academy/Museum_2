@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>NAMU — National Art Museum of Ukraine</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
       rel="preconnect"
@@ -11,6 +11,11 @@
       crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.scss">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/icon_arrow_right.svg"
+    >
     <script
       type="text/javascript"
       src="scripts/main.js"
@@ -32,14 +37,10 @@
 
             <a href="#menu" class="icon icon--menu"></a>
 
-            <p class="top-icons__language">
-              UA
-              <img
-                src="./images/icon_arrow_down.png"
-                alt="arrow"
-                class="top-icons__arrow-down"
-              >
-            </p>
+            <select name="language-choice" class="top-icons__language">
+              <option value="ua">UA</option>
+              <option value="en">EN</option>
+            </select>
           </div>
 
           <div class="header__main">
@@ -90,14 +91,10 @@
 
             <a href="#" class="icon icon--cross"></a>
 
-            <p class="top-icons__language top-icons__language--visible">
-              UA
-              <img
-                src="./images/icon_arrow_down.png"
-                alt="arrow"
-                class="top-icons__arrow-down"
-              >
-            </p>
+            <select name="language-choice" class="top-icons__language top-icons__language--visible">
+              <option value="ua">UA</option>
+              <option value="en">EN</option>
+            </select>
           </div>
 
           <div class="menu__description">
@@ -162,9 +159,9 @@
               Актуальні виставки
             </h2>
             <div class="exhibitions__content">
-              <article class="exhibition">
+              <article class="exhibition exhibitions__exhibition">
                 <picture>
-                  <source media="(min-width: 768px)" srcset="./images/exhibition_img_desktop_01.jpg">
+                  <source media="(min-width: 769px)" srcset="./images/exhibition_img_desktop_01.jpg">
                   <img
                     src="./images/exhibition_img_mob_01.jpg"
                     alt="Кураторська виставка “Ангели”"
@@ -184,9 +181,9 @@
                   Купити квиток
                 </a>
               </article>
-              <article class="exhibition">
+              <article class="exhibition exhibitions__exhibition">
                 <picture>
-                  <source media="(min-width: 768px)" srcset="./images/exhibition_img_desktop_02.jpg">
+                  <source media="(min-width: 769px)" srcset="./images/exhibition_img_desktop_02.jpg">
                   <img
                     src="./images/exhibition_img_mob_02.jpg"
                     alt="Кураторська виставка “Ангели”"
@@ -221,52 +218,54 @@
 
       <section class="page__events events" id="events">
         <div class="container">
-          <div class="events__content">
+          <div class="events__main">
             <h2 class="section-title events__title">
               Найближчі події
             </h2>
-            <article class="event events__event">
-              <img
-                src="./images/event_img_01.jpg"
-                alt="event 1"
-                class="event__image"
-              >
-              <div class="event__main">
-                <div class="event__date">
-                  14.08 о 13:00
+            <div class="events__content">
+              <article class="event events__event">
+                <img
+                  src="./images/event_img_01.jpg"
+                  alt="event 1"
+                  class="event__image"
+                >
+                <div class="event__main">
+                  <div class="event__date">
+                    14.08 о 13:00
+                  </div>
+                  <h3 class="event__title">
+                    Кураторські екскурсії від Павла Гудімова
+                  </h3>
+                  <p class="event__description">
+                    Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...
+                  </p>
+                  <a href="#" class="button event__button">
+                    Купити квиток
+                  </a>
                 </div>
-                <h3 class="event__title">
-                  Кураторські екскурсії від Павла Гудімова
-                </h3>
-                <p class="event__description">
-                  Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...
-                </p>
-                <a href="#" class="button event__button">
-                  Купити квиток
-                </a>
-              </div>
-            </article>
-            <article class="event events__event">
-              <img
-                src="./images/event_img_02.jpg"
-                alt="event 2"
-                class="event__image"
-              >
-              <div class="event__main">
-                <div class="event__date">
-                  16.08 о 13:00
+              </article>
+              <article class="event events__event">
+                <img
+                  src="./images/event_img_02.jpg"
+                  alt="event 2"
+                  class="event__image"
+                >
+                <div class="event__main">
+                  <div class="event__date">
+                    16.08 о 13:00
+                  </div>
+                  <h3 class="event__title">
+                    Майстер-клас “Подорож до Австралії”
+                  </h3>
+                  <p class="event__description">
+                    Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт кругосвітньої подорожі - Австралія.
+                  </p>
+                  <a href="#" class="button event__button">
+                    Купити квиток
+                  </a>
                 </div>
-                <h3 class="event__title">
-                  Майстер-клас “Подорож до Австралії”
-                </h3>
-                <p class="event__description">
-                  Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт кругосвітньої подорожі - Австралія.
-                </p>
-                <a href="#" class="button event__button">
-                  Купити квиток
-                </a>
-              </div>
-            </article>
+              </article>
+            </div>
             <a href="#" class="button button--secondary event__secondary-button">
               Календар подій
               <img
@@ -311,7 +310,7 @@
             <div class="news__content">
               <article class="news-item news__news-item">
                 <picture>
-                  <source media="(min-width: 768px)" srcset="./images/news_img_desktop_01.jpg">
+                  <source media="(min-width: 769px)" srcset="./images/news_img_desktop_01.jpg">
                   <img
                     src="./images/news_img_mob_01.jpg"
                     alt="Оголошення переможця"
@@ -330,7 +329,7 @@
               </article>
               <article class="news-item news__news-item">
                 <picture>
-                  <source media="(min-width: 768px)" srcset="./images/news_img_desktop_02.jpg">
+                  <source media="(min-width: 769px)" srcset="./images/news_img_desktop_02.jpg">
                   <img
                     src="./images/news_img_mob_02.jpg"
                     alt="Міжнародний день котів"

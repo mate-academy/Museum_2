@@ -9,17 +9,15 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-// // clear input fields in form when butoon was pressed,
-// // in this case, page is not updating
-// const form = document.querySelector('.contacts__form');
-// const inputs = document.querySelectorAll('.contacts__field');
+// clear input fields in form when butoon was pressed,
+// in this case, page is not updating
+const form = document.querySelector('.subscribe__form');
+const input = document.querySelector('.subscribe__email');
 
-// function handler(event) {
-//   event.preventDefault();
+function handler(event) {
+  event.preventDefault();
 
-//   inputs.forEach(input => {
-//     input.value = '';
-//   });
-// }
+  input.value = '';
+}
 
-// form.addEventListener('submit', handler);
+form.addEventListener('submit', handler);
