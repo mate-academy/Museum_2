@@ -1,83 +1,212 @@
 .menu {
-  background-color: $c-background;
-  color: $c-white;
+  background-color: $background;
+
+  background-image: url("../images/menu.svg");
+  background-repeat: no-repeat;
+  background-size: 0;
 
   &__content {
-    box-sizing: border-box;
     height: 100vh;
+
+    padding-top: 20px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
   }
 
   &__top {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      margin-bottom: 54px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 44px;
+    }
   }
 
-  &__schedule {
+  &__icons {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+  }
 
+  &__language {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      background-color: transparent;
+      border: none;
+
+      cursor: pointer;
+
+      order: 1;
+    }
+
+    @include onDesktop {
+      margin-right: 10px;
+    }
+  }
+
+  &__cross {
+    margin-left: 44px;
+
+    transition: transform $transition-duration ease;
+
+    &:hover {
+      transform: scale(120%);
+    }
+
+    @include onTablet {
+      margin-right: $menu-margin-right;
+      margin-left: 0;
+    }
+
+    @include onDesktop {
+      margin-right: $menu-margin-right;
+      margin-left: 0;
+    }
+  }
+
+  &__info {
+    display: block;
+
+    @extend %additional;
+
+    color: $color-white;
+  }
+
+  &__info-description {
     margin-bottom: 20px;
 
-    &--day {
-      @extend %additional;
+    display: block;
+
+    font-weight: bold;
+    @extend %main;
+
+    color: $color-white;
+
+    text-decoration: none;
+
+    &--last {
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        transition: transform $transition-duration ease;
+
+        &:hover {
+          transform: translateY(4px);
+        }
+      }
     }
 
-    &--time {
-      font-family: "Raleway", sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 150%;
-
-      color: #f1f5f4;
-    }
-  }
-
-  &__adress {
-    display: flex;
-    flex-direction: column;
-
-    margin-bottom: 40px;
-
-    &--word-adress {
-      @extend %additional;
+    @include onTablet {
+      margin-bottom: 50px;
     }
 
-    &--street {
-      font-family: "Raleway", sans-serif;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 150%;
-
-      color: #f1f5f4;
+    @include onDesktop {
+      margin-bottom: 70px;
     }
-  }
-
-  &__list {
-    padding: 0;
-    list-style: none;
-
-    margin: 0 0 40px;
   }
 
   &__item {
-    margin-bottom: 20px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
 
-    &:last-child {
-      margin-bottom: 0;
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
     }
 
+    &:last-child {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+
+      border-bottom: 1px solid $color-white;
+
+      @include onTablet {
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 60px;
+        margin-bottom: 60px;
+      }
+    }
   }
 
   &__link {
     @extend %h5;
+
+    color: $color-white;
+
+    border-bottom: 1px solid transparent;
+
     text-decoration: none;
-    color: $c-white;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @include onDesktop {
+      transition: border-color $transition-duration ease;
+
+      &:hover {
+        border-color: $color-white;
+      }
+    }
   }
 
-  &__border {
-    display: block;
-    content: "";
-    border-bottom: 1px solid #f1f5f4;
+  &__image {
+    display: none;
 
-    margin-bottom: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+
+      left: auto;
+      right: 0;
+    }
+  }
+
+  @include onTablet {
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 320px;
+  }
+
+  @include onDesktop {
+    background-position: bottom right;
+    background-size: 800px;
   }
 }

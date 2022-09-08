@@ -1,80 +1,166 @@
-.top-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  position: relative;
-}
-
 .header {
-  height: 100vh;
-  box-sizing: border-box;
-  color: $c-white;
+  background-color: $background;
 
-  background-color: $c-background;
-
-  background-image: url("../images/Girl_from_Podolye_by_V.Tropinin_\(b.png");
+  background-image: url("../images/img_01.png");
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 270px;
 
-  @include onDesktop {
-    background-size: 644px;
+  &__content {
+    height: 100vh;
+
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
   }
 
-  &__nav {
+  &__top {
     margin-bottom: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      margin-bottom: 124px;
+    }
   }
 
   &__icons {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 90px;
   }
 
   &__language {
-    color: #f1f5ff;
-    text-decoration: none;
+    display: none;
 
-    font-family: "Raleway", serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
+    @include onTablet {
+      display: block;
+
+      background-color: transparent;
+      border: none;
+
+      cursor: pointer;
+
+      order: 1;
+    }
+  }
+
+  &__menu {
+    transition: transform $transition-duration ease;
+
+    &:hover {
+      transform: scale(120%);
+    }
+
+    @include onTablet {
+      margin-right: $menu-margin-right;
+    }
+
+    @include onDesktop {
+      margin-right: $menu-margin-right;
+    }
   }
 
   &__date {
+    margin-bottom: 10px;
+
     @extend %additional;
 
-    margin-bottom: 10px;
+    color: $color-white;
   }
 
   &__title {
-    @extend %h1;
-
     margin-bottom: 30px;
 
+    @extend %h1;
+
+    color: $color-white;
+
+    @include onTablet {
+      margin-bottom: 20px;
+
+      font-size: 72px;
+    }
+
     @include onDesktop {
-      font-weight: 700;
+      margin-bottom: 30px;
+
       font-size: 96px;
-      line-height: 100%;
     }
   }
 
   &__subtitle {
+    margin-bottom: 40px;
+
+    display: block;
+
     @extend %main;
+
+    color: $color-white;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
   }
 
   &__date-title {
-    font-family: "Playfair Display", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 125%;
-    color: #f1f5f4;
+    display: none;
+
+    width: 570px;
+
+    position: absolute;
+    bottom: 50px;
+
+    @extend %h6;
+
+    color: $color-white;
 
     opacity: 0.7;
 
-    display: none;
+    &--desktop {
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+
+      display: block;
+
+      height: 1px;
+      width: 470px;
+
+      transform: translate(100px, -8px);
+
+      background-color: $color-white;
+
+      opacity: 0.3;
+    }
+  }
+
+  @include onTablet {
+    background-size: 400px;
+  }
+
+  @include onDesktop {
+    background-size: 700px;
+    background-position: bottom right;
   }
 }
