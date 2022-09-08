@@ -1,22 +1,13 @@
-.exhibitions {
-  &__top {
-    display: flex;
-    align-items: baseline;
-  }
-
+.events {
   &__item {
     margin-bottom: 60px;
-    @include onTablet {
-      margin-bottom: 0;
-      display: flex;
-      flex-direction: column;
-    }
 
     &--last {
       margin-bottom: 30px;
-      @include onTablet {
-        margin-bottom: 0;
-      }
+    }
+
+    @include onTablet {
+      margin: 0;
     }
   }
 
@@ -26,18 +17,25 @@
     object-position: center;
     width: 100%;
     margin-bottom: 20px;
-    height: 356px;
+    height: 358px;
 
     @include onTablet {
-      margin-bottom: 30px;
-      height: 420px;
+      height: 422px;
+      margin-bottom: 70px;
     }
 
     @include onDesktop {
-      margin-bottom: 20px;
-      height: 484px;
+      height: 474px;
+      margin-bottom: 60px;
+    }
+
+    &--last {
+      @include onTablet {
+        margin: 0;
+      }
     }
   }
+
 
   &__schedule {
     font-family: "Raleway", sans-serif;
@@ -46,14 +44,13 @@
     line-height: 150%;
   }
 
-  &__exhibit-title {
+  &__event-title {
     font-family: "Playfair Display", serif;
     color: $black-color;
     font-size: 20px;
     font-weight: 700;
     line-height: 125%;
     margin-bottom: 20px;
-    flex: 1 1 auto;
 
     @include onTablet {
       font-size: 24px;
@@ -67,10 +64,6 @@
     margin-bottom: 30px;
 
     @include onTablet {
-      margin-bottom: 40px;
-    }
-
-    @include onDesktop {
       margin-bottom: 50px;
     }
   }
