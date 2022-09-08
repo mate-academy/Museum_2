@@ -39,3 +39,46 @@
     background-color: $c-hover-links;
   }
 }
+
+.section-btn {
+  display: flex;
+  text-decoration: none;
+
+  height: 60px;
+  width: 270px;
+
+  align-items: center;
+  justify-content: center;
+
+  @include fontSecondBold;
+
+  color: $c-main;
+  border: 1px solid $c-main;
+
+  transition: color 0.3s, border-color 0.3s;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+
+    transform: translateX(8px);
+
+    background-image: url(/images/arrow.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    color: $c-hover;
+    border-color: $c-hover;
+
+    &::after {
+      transform: translateX(16px);
+    }
+  }
+}
