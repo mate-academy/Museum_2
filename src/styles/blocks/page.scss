@@ -3,6 +3,8 @@
   scroll-behavior: smooth;
 
   &__body {
+    position: relative;
+
     &--with-menu {
       overflow: hidden;
     }
@@ -82,6 +84,30 @@
 
     @include onDesktop {
       margin-bottom: 200px;
+    }
+  }
+
+  &__scroll-up {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+
+    background-color: $c-background-gray;
+
+    transition: transform $transition-duration;
+
+    @include onTablet {
+      right: 40px;
+    }
+
+    @include onDesktop {
+      right: 56px;
+    }
+
+    &:hover {
+      transform: scale(110%);
     }
   }
 }
