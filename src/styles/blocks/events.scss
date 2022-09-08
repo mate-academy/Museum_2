@@ -1,0 +1,182 @@
+.events {
+  position: relative;
+
+  background-color: $defaultWhite;
+
+  padding-top: 120px;
+  padding-bottom: 90px;
+
+  @include onTablet {
+    padding-top: 164px;
+    padding-bottom: 100px;
+  }
+
+  @include onDesktop {
+    padding-top: 200px;
+    padding-bottom: 110px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+
+    color: $defaultBlack;
+
+    margin-bottom: 60px;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 57.6px;
+
+      margin-bottom: 70px;
+    }
+  }
+
+  &__container {
+    display: grid;
+
+    row-gap: 20px;
+
+    width: 280px;
+
+    @include onTablet {
+      grid-template-columns: 330px 1fr;
+
+      column-gap: 30px;
+      row-gap: 70px;
+
+      width: 690px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 370px 570px;
+
+      column-gap: 30px;
+      row-gap: 60px;
+
+      width: 1170px;
+    }
+  }
+
+  &__item {
+    &--photo {
+      width: 280px;
+      height: 358px;
+
+      object-fit: cover;
+      object-position: center;
+
+      @include onTablet {
+        width: 330px;
+        height: 422px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+        height: 475px;
+      }
+    }
+
+    &--date {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+
+      color: $defaultRed;
+
+      margin-bottom: 10px;
+    }
+
+    &--title {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+
+      color: $defaultBlack;
+
+      margin-bottom: 20px;
+
+      @include onTablet {
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      @include onDesktop {
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
+
+    &--discription {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+
+      color: $defaultGrey;
+
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__btn {
+    @include onTablet {
+      position: absolute;
+      justify-self: right;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      justify-self: right;
+    }
+
+    &--lastRed {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__arrow {
+    &:after {
+      content: "";
+
+      display: inline-block;
+
+      width: 13.33px;
+      height: 11.67px;
+
+      margin-left: 11.33px;
+
+      background-image: url(../images/arrowRight.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.button {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  width: 280px;
+  height: 60px;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 280px;
+  }
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+
+  text-decoration: none;
+
+  border: none;
+
+  &--red {
+    background-color: $defaultRed;
+    color: $defaultWhite;
+
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+
+    &--mb40 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &--white {
+    background-color: $defaultWhite;
+    border: 1px solid $defaultRed;
+
+    color: $defaultRed;
+
+    transition: all 0.5s;
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 280px;
+    }
+
+    &:hover {
+      border: 1px solid #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border: 1px solid #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border: 1px solid #dd836f;
+      color: #dd836f;
+    }
+  }
+}

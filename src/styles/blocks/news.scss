@@ -1,0 +1,144 @@
+.news {
+  position: relative;
+
+  background-color: $defaultWhite;
+
+  padding-top: 90px;
+
+  @include onTablet {
+    padding-top: 125px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+
+    color: $defaultBlack;
+
+    margin-bottom: 60px;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 57.6px;
+
+      margin-bottom: 55px;
+    }
+  }
+
+  &__container {
+    display: grid;
+
+    gap: 50px;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-template-columns: 330px 330px;
+
+      gap: 30px;
+
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 570px 570px;
+
+      gap: 30px;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    &--photo {
+      width: 280px;
+      height: 280px;
+
+      margin-bottom: 20px;
+
+      object-fit: cover;
+      object-position: center;
+
+      @include onTablet {
+        width: 330px;
+        height: 330px;
+      }
+
+      @include onDesktop {
+        width: 570px;
+        height: 370px;
+      }
+    }
+
+    &--date {
+      font-family: "Raleway", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 19.6px;
+
+      color: $defaultBlack;
+    }
+
+    &--title {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 30px;
+
+      color: $defaultBlack;
+
+      margin-bottom: 20px;
+    }
+
+    &--discription {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+
+      width: 280px;
+
+      color: $defaultGrey;
+    }
+  }
+
+  &__btn {
+    @include onTablet {
+      position: absolute;
+      justify-self: right;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      justify-self: right;
+    }
+  }
+
+  &__arrow {
+    &:after {
+      content: "";
+
+      display: inline-block;
+
+      width: 13.33px;
+      height: 11.67px;
+
+      margin-left: 11.33px;
+
+      background-image: url(../images/arrowRight.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

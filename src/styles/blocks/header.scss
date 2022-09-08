@@ -1,0 +1,198 @@
+.header {
+  // height: 100vh;
+
+  background-color: $defaultBackground;
+
+  padding-top: 20px;
+
+  @include onTablet {
+    padding-top: 26px;
+  }
+
+  @include onDesktop {
+    padding-top: 32px;
+    padding-right: 0;
+  }
+
+  &__top {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    align-items: center;
+
+    margin-bottom: 70px;
+
+    @include onTablet {
+      grid-template-columns: 1fr 70px 35px;
+
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 1fr 74px 34px;
+
+      margin-bottom: 122px;
+
+      margin-right: 55px;
+    }
+
+    &--lang--after {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    width: 245px;
+    height: 273px;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include onDesktop {
+      width: 625px;
+      height: 663px;
+    }
+
+    &--logo {
+      width: 123px;
+      height: 40px;
+    }
+
+    &--burger {
+      width: 29px;
+      height: 29px;
+    }
+
+    &--arrowDown {
+      width: 8px;
+      height: 4.61px;
+    }
+  }
+
+  &__container {
+    display: grid;
+    gap: 40px;
+
+    @include onTablet {
+      grid-auto-flow: row;
+      gap: 70px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 569px 625px;
+      gap: 30px;
+    }
+  }
+
+  &__item--img {
+    display: grid;
+    justify-content: center;
+  }
+
+  &__dates {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+
+    color: $defaultWhite;
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+
+    color: $defaultWhite;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $defaultWhite;
+
+    width: 267px;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      width: 330px;
+
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      width: 569px;
+
+      margin-bottom: 81px;
+    }
+  }
+
+  &__btn {
+    @include onDesktop {
+      margin-bottom: 170px;
+    }
+  }
+
+  &__dateLine--container {
+    grid-template-columns: 81px 1fr;
+    gap: 20px;
+
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+    }
+
+    &--date {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17.5px;
+
+      align-self: center;
+
+      color: $defaultWhite;
+
+      opacity: 0.7;
+    }
+
+    &--line {
+      align-self: center;
+
+      height: 5px;
+
+      border-bottom: 1px solid $defaultWhite;
+
+      opacity: 0.3;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.subscription {
+  background-color: $defaultWhite;
+
+  padding-top: 120px;
+  padding-bottom: 80px;
+
+  @include onTablet {
+    padding-top: 160px;
+    padding-bottom: 128px;
+  }
+
+  @include onDesktop {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+
+  &__container {
+    display: grid;
+
+    @include onDesktop {
+      grid-template-columns: 570px 570px;
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+
+    color: $defaultBlack;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+  }
+
+  &__discription {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $defaultBlack;
+
+    margin-bottom: 50px;
+  }
+
+  &__form {
+    height: 30px;
+
+    background-color: $defaultWhite;
+
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    width: 280px;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+
+    border: 1px solid transparent;
+    border-bottom: 1px solid $defaultBlack;
+
+    outline: none;
+
+    &::placeholder {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+
+      color: $defaultBlack;
+    }
+
+    &:hover::placeholder {
+      color: #cd4d31;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #cd4d31;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      caret-color: #cd4d31;
+      border-bottom: 1px solid #cd4d31;
+
+      font-family: "Raleway", sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+
+      color: #1c1b29;
+    }
+  }
+}
