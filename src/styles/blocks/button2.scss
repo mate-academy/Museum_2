@@ -4,7 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Raleway';
+  text-align: center;
+  font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 100%;
@@ -22,12 +23,28 @@
     border: 1px solid $orangeColor;
     color: $orangeColor;
 
+    &__arrow {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+
+      transform: translateX(8px);
+
+      background-image: url(../images/arrow.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      transition: transform $transitionDuration;
+    }
+
     &:hover {
-      color: #AF3419;
-      border: 1px solid #AF3419;
+      color: #af3419;
+      border: 1px solid #af3419;
     }
     &:hover &__arrow {
       background-image: url(../images/arrow-hover.png);
+      transform: translateX();
     }
 
     &:active {
@@ -38,6 +55,24 @@
       background-image: url(../images/arrow-active.png);
     }
 
+    &--disabled,
+    &:disabled {
+      opacity: 0.7;
+      pointer-events: none;
+    }
+  }
+
+  &--secondary-mobile {
+    display: flex;
+    @include onTablet {
+      display: none;
+    }
+    @include onDesktop {
+      display: none;
+    }
+    border: 1px solid $orangeColor;
+    color: $orangeColor;
+
     &__arrow {
       display: inline-block;
       width: 13px;
@@ -45,38 +80,54 @@
 
       transform: translateX(8px);
 
-      background-image: url(../images/arrow.svg);
+      background-image: url(../images/arrow.png);
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
 
-      transition: transform 0.3s;
+      transition: transform $transitionDuration;
     }
+
+    &:hover {
+      color: #af3419;
+      border: 1px solid #af3419;
+    }
+    &:hover &__arrow {
+      background-image: url(../images/arrow-hover.png);
+      transform: translateX();
+    }
+
+    &:active {
+      color: #ea340d;
+      border: 1px solid #ea340d;
+    }
+    &:active &__arrow {
+      background-image: url(../images/arrow-active.png);
+    }
+
     &--disabled,
     &:disabled {
       opacity: 0.7;
       pointer-events: none;
     }
-
   }
 
   &--primary {
-  background-color: $orangeColor;
-  color: $mainColor;
+    background-color: $orangeColor;
+    color: $mainColor;
 
-  &:hover {
-    background-color: #af3419;
+    &:hover {
+      background-color: #af3419;
+    }
 
-  }
+    &:active {
+      background-color: #ea340d;
+    }
 
-  &:active {
-    background-color: #ea340d;
-  }
-
-  &--disabled,
-  &:disabled {
-    opacity: 0.7;
-    pointer-events: none;
-  }
+    &--disabled,
+    &:disabled {
+      opacity: 0.7;
+      pointer-events: none;
+    }
   }
 }

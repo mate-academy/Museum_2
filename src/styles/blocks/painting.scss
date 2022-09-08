@@ -1,0 +1,76 @@
+.painting {
+  @extend %grid;
+  background-color: $backgroundColor;
+  box-sizing: border-box;
+  height: 416px;
+  padding: 50px 20px 0;
+  grid-template-rows: repeat(3, max-content);
+
+
+  @include onTablet {
+    height: 515px;
+    padding: 80px 39px 0;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/img_07.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 578px 800px;
+    height: 800px;
+    padding: 205px 55px 0;
+  }
+
+  &__title {
+    display: block;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+    color: $mainColor;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 62px;
+      grid-column: 1 / 5;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 10px;
+      grid-column: 6 / 13;
+      font-size: 80px;
+      line-height: 100%;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__text {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $mainColor;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 60px;
+    }
+    @include onDesktop {
+      grid-column: 6 / 11;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+}
+
