@@ -1,0 +1,92 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: #e5e5e5;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__exhibitions {
+    margin-bottom: 120px;
+
+    @include onTablet {
+      margin-bottom: 164px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__events {
+    margin-bottom: 100px;
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__visit {
+    margin-bottom: 90px;
+    background-color: #3f5252;
+
+    @include onTablet {
+      margin-bottom: 125px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__news {
+    margin-bottom: 120px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__subscription {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    font-family: Playfair Display, sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: #1c1b29;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}
