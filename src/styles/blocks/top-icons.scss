@@ -1,0 +1,69 @@
+.top-icons {
+  display: grid;
+  grid-template-columns: 122px 30px;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  padding-top: 20px;
+
+  @include onTablet {
+    height: 76px;
+    padding-top: 0;
+  }
+
+  @include onDesktop {
+    height: 90px;
+    padding-top: 0;
+  }
+
+  &__logo-image {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    height: 40px;
+    width: 123px;
+  }
+
+  &__language {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-52px);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-text-on-dark;
+    background-color: $c-background-gray;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+      border: none;
+    }
+
+    @include onTablet {
+      display: flex;
+      transform: translate(calc(100% + 40px), -50%);
+    }
+
+    @include onDesktop {
+      display: flex;
+      transform: translate(calc(100% + 40px), -50%);
+    }
+
+    &--visible {
+      display: flex;
+    }
+  }
+
+  &__arrow-down {
+    display: block;
+    margin-left: 3px;
+  }
+}
