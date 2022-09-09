@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
       body.classList.remove('page__body--active');
       menu.classList.remove('menu--active');
       burgerBtn.classList.remove('burger--active');
+      body.classList.remove('page__body--with-menu');
     });
   });
 
@@ -20,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
     burgerBtn.classList.toggle('burger--active');
     langTopAction.classList.toggle('top-actives__lang--desktop');
     document.body.classList.toggle('page__body--active');
+    body.classList.toggle('page__body--with-menu');
   });
 
   const lang = document.querySelector('.lang');
