@@ -6,10 +6,19 @@
   background-repeat: no-repeat;
   background-size: 560px;
 
+  @include onMobile {
+    background-size: 0px;
+  }
+
   &__info {
     display: flex;
     flex-direction: row-reverse;
     width: 1070px;
+
+    @include onMobile {
+      width: 300px;
+      display: block;
+    }
   }
 
   &__container {
@@ -22,6 +31,11 @@
     color: $c-white;
     font-size: 80px;
     width: 670px;
+
+    @include onMobile {
+      font-size: 38px;
+      line-height: 38px;
+    }
   }
 
   &__text {
@@ -34,6 +48,12 @@
     width: 470px;
 
     margin-top: 50px;
+
+    @include onMobile {
+      font-size: 16px;
+      line-height: 24px;
+      width: 300px;
+    }
   }
 
   &__btn {
