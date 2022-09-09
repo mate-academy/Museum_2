@@ -21,39 +21,42 @@
     background-color: $ButtonDisabled;
   }
   &--secondary {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     box-sizing: border-box;
     height: 60px;
     width: 100%;
     background-color: $White;
-    @extend %fontStyleFor-Button;
-    color: $Main;
-    text-align: center;
     border: 1px solid $Main;
     text-decoration: none;
+    text-align: center;
     position: relative;
     @include transition-duration(border-color);
-    @include transition-duration(color);
-    &::after {
-      content: "";
+    &-content {
+      display: block;
+      width: max-content;
+      @extend %fontStyleFor-Button;
+      color:$Main;
+      @include transition-duration(color);
+    }
+    &-arrow {
+      display: block;
       width: 20px;
       height: 20px;
-      position: absolute;
-      background-image: url(../images/icons/arrow.svg);
-      background-size: cover;
-      background-position: center;
-      top: 50%;
-      right: 15%;
-      transform: translateY(-50%);
       @include transition-duration(transform);
     }
     &:hover {
       background-color: $White;
-      color: $ButtonHover;
       border-color: $ButtonHover;
-      &::after {
-        transform: translate(50%, -50%)
-      }
+    }
+    &:hover &-content {
+      color:$ButtonHover;
+    }
+    &:hover &-arrow {
+      position: relative;
+      transform: translateX(20%);
     }
     &:active {
       color: $ButtonActive;
@@ -69,11 +72,6 @@
     width: 330px;
     &--secondary {
       width: 210px;
-      &::after {
-        top: 50%;
-        right: 8%;
-        transform: translateY(-50%);
-      }
     }
   }
 
@@ -81,11 +79,6 @@
     width: 270px;
     &--secondary {
       width: 270px;
-      &::after {
-        top: 50%;
-        right: 10%;
-        transform: translateY(-50%);
-      }
     }
   }
 }

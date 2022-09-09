@@ -19,7 +19,7 @@
       display: block;
     }
     &:hover {
-      &_hyphenation{
+      &_hyphenation {
         color: $Main;
       }
       color: $Main;
@@ -47,7 +47,7 @@
     }
   }
   &__mediaList {
-    width: 120px;
+    width: 145px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
@@ -81,18 +81,32 @@
       color: $Main;
     }
   }
+  &__to-topImg {
+    @include transition-duration(transform);
+    &:hover {
+      position: relative;
+      transform: scale(1.2);
+    }
+  }
   &__bottom {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: baseline
+    align-items: baseline;
   }
   &__copiwrite {
     @extend %fontStyleFor-Additional;
     color: $White;
   }
   &__privacy {
+    @extend %fontStyleFor-Additional;
+    text-decoration: none;
+    color: $White;
     margin-left: 20px;
+    @include transition-duration(color);
+    &:hover {
+      color: $Main;
+    }
   }
   @include tablet {
     &__content {
