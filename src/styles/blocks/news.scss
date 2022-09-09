@@ -1,4 +1,4 @@
-.events {
+.news {
 
   &__title {
     font-family: "Playfair Display", serif;
@@ -25,47 +25,35 @@
   }
 
   &__section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
 
-    &-image {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    &-img {
       object-fit: fill;
-      object-position: center;
-      width: 100%;
       margin-bottom: 20px;
 
       @include onTablet {
-        margin-bottom: 70px;
+        margin-bottom: 30px;
       }
 
       @include onDesktop {
-        margin-bottom: 60px;
-      }
-
-      &--last-child {
-        @include onTablet {
-          margin-bottom: 0;
-        }
-
-        @include onDesktop {
-          margin-bottom: 0;
-        }
-      }
-    }
-
-    &-info {
-      margin-bottom: 45px;
-
-      @include onTablet {
-        margin-bottom: 0;
-      }
-
-      @include onDesktop {
-        margin-bottom: 0;
+        margin-bottom: 20px;
       }
     }
 
     &-date {
-      display: block;
-      color: $main-color;
+      color: $black-color;
       font-size: 16px;
       line-height: 24px;
       margin-bottom: 10px;
@@ -87,22 +75,9 @@
     }
 
     &-discription {
-      display: block;
       font-size: 16px;
       line-height: 24px;
       color: $grey-color;
-
-      margin-bottom: 30px;
-
-      @include onTablet {
-        margin-bottom: 40px;
-      }
-
-      @include onDesktop {
-        margin-bottom: 50px;
-      }
     }
-
   }
-
 }
