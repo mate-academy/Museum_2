@@ -1,4 +1,76 @@
 .visit {
+  width: 100%;
+  min-width: 320px;
+
   color: $white-color;
   background-color: $background-color;
+
+  padding: 50px 20px;
+
+  @include onTablet {
+    padding: 80px 38px;
+  }
+
+  @include onDesktop {
+    padding: 0;
+  }
+
+  &__photo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 100%;
+
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+  }
+
+  &__button {
+    display: flex;
+  }
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+
+  @include onDesktop {
+    margin: 205px 55px 205px 0;
+  }
+
+  &__title {
+    height: 76px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      height: 145px;
+    }
+
+    @include onDesktop {
+      height: 200px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
 }
