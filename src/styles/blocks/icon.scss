@@ -8,9 +8,26 @@
   background-position: center;
   background-repeat: no-repeat;
 
+  &__tooltip {
+    padding-right: 3px;
+
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-white;
+    display: block;
+  }
+
   &--menu {
     background-image: url("../images/menu.svg");
     transition: transform 0.3s;
+
+    @include onTablet {
+      margin-right: 64px;
+    }
 
     &:hover {
       transform: scale(120%);
@@ -20,6 +37,10 @@
   &--cross {
     background-image: url("../images/cross.png");
     transition: transform 0.3s;
+
+    @include onTablet {
+      margin-right: 64px;
+    }
 
     &:hover {
       transform: scale(120%);
@@ -44,5 +65,19 @@
 
   &--arrow-up {
     background-image: url("..//images/scroll\ up.png");
+  }
+
+  &--union {
+    width: 8px;
+    height: 4px;
+
+    background-image: url(/images/union.svg);
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      order: 1;
+    }
   }
 }

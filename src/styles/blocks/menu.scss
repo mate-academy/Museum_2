@@ -1,10 +1,26 @@
 .menu {
   background-color: $c-background;
 
-  background-image: url("../images/header_1.svg");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: 284px;
+  @include onTablet {
+    background-image: url("../images/header_2.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 284px;
+  }
+
+  &__lang {
+    display: none;
+    color: $c-white;
+    font-weight: 600;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
 
   &__content {
     height: 100vh;
@@ -37,7 +53,7 @@
     margin-bottom: 30px;
 
     @include onTablet {
-      margin-bottom: 124px;
+      margin-bottom: 54px;
     }
   }
 
@@ -58,6 +74,10 @@
 
       &--with-margin {
         margin-bottom: 40px;
+
+        @include onDesktop {
+          margin-bottom: 70px;
+        }
       }
     }
   }
@@ -65,11 +85,23 @@
   &__item {
     margin-bottom: 20px;
 
+    @include onDesktop {
+      margin-bottom: 60px;
+
+    }
+
     &:last-child {
       border-bottom: 1px solid $c-white;
       padding-bottom: 40px;
       margin-bottom: 40px;
+
+      @include onDesktop {
+        max-width: 570px;
+        padding-bottom: 70px;
+        margin-bottom: 70px;
+      }
     }
+
   }
 
   &__link {
@@ -79,5 +111,26 @@
     line-height: 150%;
     color: $c-white;
     text-decoration: none;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    transition: color 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $c-white;
+    }
+  }
+
+  @include onTablet {
+    background-size: 340px;
+
+  }
+
+  @include onDesktop {
+    background-size: 660px;
+    background-position: bottom right;
   }
 }

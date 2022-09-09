@@ -13,6 +13,10 @@
     margin-left: 12px;
   }
 
+  @include onTablet {
+    max-width: 330px;
+  }
+
   @include onDesktop {
     max-width: 280px;
   }
@@ -21,9 +25,11 @@
     background-color: $c-orange;
     color: $c-white;
     border: none;
-    transition: background-color $transition-duration ease;
+    transition: background-color $transition-duration ease,
+      transform $transition-duration;
 
     &:hover {
+      transform: scale(1.1);
       background-color: #af3419;
     }
 
@@ -42,15 +48,18 @@
     border: 1px solid $c-orange;
 
     transition: color $transition-duration ease,
-      border-color $transition-duration ease;
+      border-color $transition-duration ease,
+      transform $transition-duration;
 
     &:hover {
+      transform: scale(1.1);
       border-color: #af3419;
 
       color: #af3419;
     }
 
     &:active {
+      transform: scale(1.1);
       border-color: #ea340d;
 
       color: #ea340d;
@@ -61,6 +70,11 @@
 
       color: #dd836f;
     }
+  }
+
+  &--subscribe {
+    font-size: inherit;
+    font-family: inherit;
   }
 
   &--tablet {
