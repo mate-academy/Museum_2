@@ -1,0 +1,151 @@
+.section {
+  &__title {
+    margin-bottom: 60px;
+
+    @extend %h3;
+
+    color: $c-black;
+
+    @include onTablet {
+      margin-bottom: 76px;
+
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+
+      font-size: 48px;
+    }
+  }
+
+  &__place {
+    margin-bottom: 60px;
+
+    &--current-exhibitions-last,
+    &--upcoming-events-last {
+      margin-bottom: 30px;
+    }
+
+    &--news {
+      margin-bottom: 50px;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+      
+      &--current-exhibitions {
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    object-fit: cover;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    &--current-exhibitions {
+      @include onDesktop {
+        height: 484px;
+
+        margin-bottom: 20px;
+      }
+    }
+
+    &--upcoming-events {
+      @include onTablet {
+        margin-bottom: 70px;
+      }
+    }
+
+    &--upcoming-events-last {
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &--news {
+      @include onDesktop {
+        height: 370px;
+
+        margin-bottom: 20px;
+
+        object-position: top;
+      }
+    }
+
+    transition: transform $transition-duration ease;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+
+    display: block;
+
+    @extend %main;
+
+    color: $c-main;
+
+    &--news {
+      margin-bottom: 0;
+
+      @extend %additional;
+
+      color: $c-black;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    @extend %h4;
+
+    color: $c-black;
+
+    @include onTablet {
+      font-size: 24px;
+
+      flex: 1 1 auto;
+    }
+
+    &--news {
+      @include onTablet {
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @extend %main;
+
+    color: $c-gray;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    &--news {
+      margin: 0;
+    }
+  }
+}

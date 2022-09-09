@@ -1,0 +1,56 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px $c-white inset;
+}
+
+.page {
+  font-family: "Raleway", sans-serif;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $c-white;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 105px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+
+    transition: transform $transition-duration ease;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__main {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 128px;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+.header {
+  background-color: $c-background;
+
+  background-image: url("/images/header.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 270px;
+
+  &__content {
+    height: 100vh;
+
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
+  }
+
+  &__top {
+    margin-bottom: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      margin-bottom: 124px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__language {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      background-color: transparent;
+      border: none;
+
+      cursor: pointer;
+
+      order: 1;
+    }
+  }
+
+  &__menu {
+    transition: transform $transition-duration ease;
+
+    &:hover {
+      transform: scale(120%);
+    }
+
+    @include onTablet {
+      margin-right: $menu-margin-right;
+    }
+
+    @include onDesktop {
+      margin-right: $menu-margin-right;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+
+    @extend %additional;
+
+    color: $c-white;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @extend %h1;
+
+    color: $c-white;
+
+    @include onTablet {
+      margin-bottom: 20px;
+
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+
+      font-size: 96px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+
+    display: block;
+
+    @extend %main;
+
+    color: $c-white;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__date-title {
+    display: none;
+
+    width: 570px;
+
+    position: absolute;
+    bottom: 50px;
+
+    @extend %h6;
+
+    color: $c-white;
+
+    opacity: 0.7;
+
+    &--desktop {
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+
+      display: block;
+
+      height: 1px;
+      width: 470px;
+
+      transform: translate(100px, -8px);
+
+      background-color: $c-white;
+
+      opacity: 0.3;
+    }
+  }
+
+  @include onTablet {
+    background-size: 400px;
+  }
+
+  @include onDesktop {
+    background-size: 700px;
+    background-position: bottom right;
+  }
+}
