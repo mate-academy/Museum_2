@@ -1,6 +1,4 @@
 .header {
-  margin-bottom: 90px;
-
   color: $c-white;
 
   background-color: $c-background-main;
@@ -21,6 +19,11 @@
   &__content {
     display: flex;
     flex-direction: column;
+    margin-bottom: 90px;
+
+    @include onDesktop {
+    padding-bottom: 50px;
+    }
   }
 
   &__top {
@@ -128,32 +131,25 @@
     display: none;
 
     @include onDesktop {
-      position: relative;
-
       display: block;
-      margin-bottom: 50px;
+      width: max-content;
 
       font-family: "Playfair Display", serif;
       font-size: 14px;
-      line-height: 18px;
+      line-height: $line-height-date;
       font-weight: 700;
-
-      &::after {
-        content: "";
-
-        position: absolute;
-        top: 50%;
-        left: 20%;
-
-        transform: translateY(50%);
-
-        display: block;
-        height: 1px;
-        width: 100%;
-
-        background-color: $c-white;
-        opacity: 30%;
-      }
     }
+  }
+
+  &__line {
+    position: relative;
+    margin-top: $margin-top-for-line;
+    transform: translateY(50%);
+    display: block;
+    height: 1px;
+    width: 100%;
+
+    background-color: $c-white;
+    opacity: 70%;
   }
 }
