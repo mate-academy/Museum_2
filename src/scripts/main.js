@@ -17,6 +17,8 @@ function handler(event) {
   inputs.forEach(input => {
     input.value = '';
   });
+
+  window.scrollBy(-10000, -10000);
 }
 
 form.addEventListener('submit', handler);
