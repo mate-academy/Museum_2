@@ -3,7 +3,7 @@
 
   color: $c-white;
 
-  background-color: #3f5252;
+  background-color: $c-background-main;
   background-image: url(../images/img-woman.png);
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -24,19 +24,14 @@
   }
 
   &__top {
-    --icon-width: 25px;
-    --lang-width: 36px;
+    @include top-actions;
 
-    padding-top: 20px;
     margin-bottom: 70px;
 
-    display: grid;
-    align-items: center;
-    justify-content: left;
     grid-template-columns: 1fr var(--icon-width);
 
     @include onTablet {
-      grid-template-columns: 1fr var(--icon-width) var(--lang-width);
+      grid-template-columns: 1fr var(--icon-width) var(--icon-width);
       gap: 30px;
       padding-top: 26px;
       margin-bottom: 124px;
@@ -65,7 +60,6 @@
     font-size: 48px;
     line-height: 48px;
     font-weight: 700;
-    // color: $c-white;
 
     @include onTablet {
       width: 570px;
@@ -131,7 +125,6 @@
   }
 
   &__date {
-    // use pattern
     display: none;
 
     @include onDesktop {
@@ -144,15 +137,13 @@
       font-size: 14px;
       line-height: 18px;
       font-weight: 700;
-      // color: $c-white;
 
       &::after {
         content: "";
 
         position: absolute;
         top: 50%;
-        //ask mentor
-        left: 21.5%;
+        left: 20%;
 
         transform: translateY(50%);
 

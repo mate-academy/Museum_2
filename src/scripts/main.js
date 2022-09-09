@@ -8,9 +8,12 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-// const nav = document.querySelector('.menu');
-// const button = document.querySelector('.icon--menu');
+const form = document.querySelector('.subscribe__form');
 
-// button.addEventListener('click', function () {
-//   nav.classList.toggle('menu--open');
-// });
+function handler(event) {
+  event.preventDefault();
+
+  form.reset();
+}
+
+form.addEventListener('submit', handler);

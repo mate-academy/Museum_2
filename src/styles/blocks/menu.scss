@@ -1,19 +1,31 @@
 .menu {
+  position: relative;
+  overflow-y: auto;
   color: $c-white;
-  background-color: #3f5252;
+  background-color:$c-background-main;
 
-  @include onTablet {
-    background-image: url(../images/img_man-menu.png);
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: 422px 466px;
+
+  &__image {
+    @include onTablet {
+      display: block;
+      margin: 0 auto;
+      width: 422px;
+      height: 466px;
+      background-image: url(../images/img_man-menu.png);
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-position: right bottom;
+      width: 624px;
+      height: 697px;
+    }
   }
-
-  @include onDesktop {
-    background-position: right bottom;
-    background-size: 624px 697px;
-  }
-
 
   &__content {
     display: flex;
@@ -21,20 +33,15 @@
   }
 
   &__top {
-    --icon-width: 25px;
-    --lang-width: 36px;
+    @include top-actions;
 
-    padding-top: 20px;
     margin-bottom: 30px;
 
-    display: grid;
-    align-items: center;
-    justify-content: left;
-    grid-template-columns: 1fr var(--lang-width) var(--icon-width);
+    grid-template-columns: 1fr var(--icon-width) var(--icon-width);
     gap: 30px;
 
     @include onTablet {
-      grid-template-columns: 1fr var(--icon-width) var(--lang-width);
+      grid-template-columns: 1fr var(--icon-width) var(--icon-width);
       gap: 30px;
       padding-top: 26px;
       margin-bottom: 56px;
@@ -99,12 +106,11 @@
   &__item {
     margin-bottom: 20px;
 
-
     &:last-child {
       margin-bottom: 40px;
       padding-bottom: 40px;
 
-      border-bottom: 1px solid $c-white;
+      border-bottom: 1px solid rgba(241, 245, 244, 0.3);
     }
 
     @include onTablet {
@@ -129,17 +135,40 @@
   }
 
   &__link {
-    text-decoration: none;
+    position: relative;
 
+    display: block;
+    width: max-content;
+
+    text-decoration: none;
     font-family: "Playfair Display", serif;
     font-size: 20px;
     line-height: 30px;
     font-weight: 700;
     color: $c-white;
 
+    &::after {
+      content:"";
+
+      position: absolute;
+      bottom: 5px;
+
+      display: block;
+      height: 1px;
+      width: 100%;
+
+      background-color: transparent;
+
+      transition: background-color $animation-duration;
+    }
+
     @include onTablet {
       font-size: 48px;
       line-height: 58px;
+    }
+
+    &:hover::after {
+      background-color: $c-white;
     }
   }
 
@@ -147,7 +176,7 @@
     margin-bottom: 238px;
 
     @include onTablet {
-      margin-bottom: 496px;
+      margin-bottom: 30px;
       width: 50%;
     }
 

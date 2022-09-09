@@ -1,11 +1,18 @@
 .lang {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   &__ua {
     position: relative;
-    // ask mentor
+
+    width: 25px;
 
     text-decoration: none;
-    font-weight: 500;
     text-align: center;
+    font-weight: 500;
     color: $c-white;
 
     &::after {
@@ -15,18 +22,36 @@
       left: 100%;
       transform: translateY(-50%);
 
+      display: block;
       width: 8px;
       height: 5px;
-      display: block;
       margin-left: 5px;
       background-image: url(../images/Union.svg);
       background-repeat: no-repeat;
       background-size: cover;
-
     }
-
   }
+
   &__en {
-    display: none;
+    position: absolute;
+    bottom: 0;
+    transform: translatey(100%);
+
+    width: 25px;
+
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    color: $c-white;
+
+    pointer-events: none;
+    opacity: 0;
+
+    transition: opacity $animation-duration;
+  }
+
+  &:hover &__en {
+    pointer-events: all;
+    opacity: 1;
   }
 }

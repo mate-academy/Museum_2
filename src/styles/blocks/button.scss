@@ -11,11 +11,11 @@
     color: $c-white;
     background-color: $c-button;
 
-    @include hover(background-color, #AF3419);
+    @include hover(background-color, $c-button-hover);
 
-    @include active(background-color, #EA340D);
+    @include active(background-color, $c-button-active);
 
-    @include disabled(background-color, #DD836F);
+    @include disabled(background-color, $c-button-disabled);
   }
 
   &--secondary {
@@ -30,16 +30,12 @@
     &::after {
       content: "";
 
-      // position: absolute;
-      top: 50%;
-      right: 50%;
       margin-left: 10px;
-      // right: 12%;
-      // transform: translateY(-50%);
 
       display: block;
       width: 20px;
       height: 20px;
+
       background-image: url(../images/arrow.svg);
       background-repeat: no-repeat;
       background-size: cover;
@@ -47,18 +43,18 @@
     }
 
     &:hover {
-      border-color: #af3419;
-      color: #af3419;
+      border-color: $c-button-hover;
+      color: $c-button-hover;
     }
 
     &:active {
-      border-color: #ea340d;
-      color: #ea340d;
+      border-color: $c-button-active;
+      color: $c-button-active;
     }
 
     &:disabled {
-      border-color: #dd836f;
-      color: #dd836f;
+      border-color: $c-button-disabled;
+      color: $c-button-disabled;
     }
   }
 }
