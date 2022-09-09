@@ -32,6 +32,31 @@
   padding: $top-pad 0 0;
 }
 
+@mixin scale {
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(110%);
+    z-index: 1;
+  }
+}
+
+/*#region button*/
+@mixin button ($color) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 600;
+  line-height: 100%;
+  color: $color;
+  text-decoration: none;
+
+  width: 100%;
+  height: 60px;
+}
+/*#endregion*/
+
 /* #region Desk-Tab */
 @mixin onDesktop {
   @media (min-width: 1170px) {
@@ -46,10 +71,114 @@
 }
 /* #endregion */
 
-@mixin back-image {
-  background-position: center;
-  background-size: cover;
+/* #region Grid */
+@mixin gridgallery ($phoneRow, $tabRow, $deskRow) {
+  display: grid;
+  grid-template-rows: repeat($phoneRow);
+
+  @include onTab {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat($tabRow);
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat($deskRow);
+    column-gap: 30px;
+  }
 }
+
+@mixin grid {
+  @include onTab {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin grid-column {
+  &__grid {
+    grid-column: 1 / 4;
+  }
+}
+/* #endregion */
+
+/*#region gallery-news-grid*/
+@mixin MEGAGRID {
+  &__grid {
+    @include gridgallery(4, 2, 2);
+
+    &--1 {
+      grid-row: 1 / 2;
+    }
+
+    &--2 {
+      grid-row: 4 / 5;
+    }
+
+    &--3 {
+      grid-row: 2 / 3;
+    }
+
+    &--4 {
+      grid-row: 3 / 4;
+    }
+
+    @include onTab {
+      &--1 {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+      }
+
+      &--2 {
+        grid-column: 5 / 7;
+        grid-row: 1 / 2;
+      }
+
+      &--3 {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+      }
+
+      &--4 {
+        grid-column: 4 / 7;
+        grid-row: 2 / 3;
+      }
+    }
+
+    @include onDesktop {
+      &--1 {
+        grid-column: 1 / 7;
+        grid-row: 1 / 2;
+      }
+
+      &--2 {
+        grid-column: 10 / 13;
+        grid-row: 1 / 2;
+      }
+
+      &--3 {
+        grid-column: 1 / 7;
+        grid-row: 2 / 3;
+      }
+
+      &--4 {
+        grid-column: 7 / 13;
+        grid-row: 2 / 3;
+      }
+    }
+  }
+}
+/*#endregion*/
 
 @mixin positionImg {
   position: absolute;
@@ -85,24 +214,6 @@
   }
 }
 
-@mixin grid {
-  @include onTab {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  @include onDesktop {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-  }
-}
-
-@mixin grid-column {
-  &__grid {
-    grid-column: 1 / 4;
-  }
-}
-
 @mixin DesktopImage($width, $height) {
   @include onDesktop {
     width: $width;
@@ -112,4 +223,31 @@
     transform: translateX(0);
   }
 }
+/* #endregion */
+
+/* #region main */
+@mixin photo-container($height) {
+  position: relative;
+  box-sizing: border-box;
+
+  width: 100%;
+  max-height: $height;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+@mixin photo($position) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: $position;
+}
+
 /* #endregion */

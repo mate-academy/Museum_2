@@ -13,3 +13,528 @@
 @import "./blocks/header.scss";
 @import "./blocks/menu.scss";
 @import "./blocks/footer.scss";
+
+.gallery {
+  @include MEGAGRID;
+
+  &__article {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+
+    @include onTab {
+      margin: 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__title {
+    @include PlayFair(28px, 125%, $c-black);
+    margin-bottom: 60px;
+
+    @include onTab {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__photo-container {
+    @include photo-container(484px);
+    height: 356px;
+
+    margin-bottom: 20px;
+
+    @include scale;
+
+    @include onTab {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+  }
+
+  &__photo {
+    @include photo(center);
+  }
+
+  &__date {
+    @include Rale (16px, 24px, $c-red);
+
+    margin-bottom: 10px;
+  }
+
+  &__title-article {
+    @include PlayFair(20px, 125%, $c-black);
+    font-weight: 700px;
+
+    margin-bottom: 20px;
+
+    @include onTab {
+      font-size: 24px;
+    }
+
+    // @include onDesktop {
+    //   margin-bottom: 50px;
+    // }
+  }
+
+  &__about {
+    @include Rale(16px, 150%, $c-gray);
+
+    margin-bottom: 30px;
+
+    @include onTab {
+      height: 72px;
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.events {
+  &__grid {
+    @include gridgallery(6, 3, 3);
+
+    &--1 {
+      grid-row: 1 / 2;
+    }
+
+    &--2 {
+      grid-row: 6 / 7;
+    }
+
+    &--3 {
+      grid-row: 2 / 3;
+    }
+
+    &--4 {
+      grid-row: 3 / 4;
+    }
+
+    &--5 {
+      grid-row: 4 / 5;
+    }
+
+    &--6 {
+      grid-row: 5 / 6;
+    }
+
+    @include onTab {
+      &--1 {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+      }
+
+      &--2 {
+        grid-column: 5 / 7;
+        grid-row: 1 / 2;
+      }
+
+      &--3 {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+      }
+
+      &--4 {
+        grid-column: 4 / 7;
+        grid-row: 2 / 3;
+      }
+
+      &--5 {
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+      }
+
+      &--6 {
+        grid-column: 4 / 7;
+        grid-row: 3 / 4;
+      }
+    }
+
+    @include onDesktop {
+      &--1 {
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+      }
+
+      &--2 {
+        grid-column: 10 / 13;
+        grid-row: 1 / 2;
+      }
+
+      &--3 {
+        grid-column: 1 / 5;
+        grid-row: 2 / 3;
+      }
+
+      &--4 {
+        grid-column: 5 / 13;
+        grid-row: 2 / 3;
+      }
+
+      &--5 {
+        grid-column: 1 / 5;
+        grid-row: 3 / 4;
+      }
+
+      &--6 {
+        grid-column: 5 / 13;
+        grid-row: 3 / 4;
+      }
+    }
+  }
+
+  &__article {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      &--button {
+        width: 270px;
+      }
+    }
+  }
+
+  &__title {
+    @include PlayFair(28px, 125%, $c-black);
+    margin-bottom: 60px;
+
+    @include onTab {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__photo-container {
+    @include photo-container(475px);
+    height: 358px;
+
+    margin-bottom: 20px;
+
+    @include scale;
+
+    @include onTab {
+      height: 422px;
+
+      &--1 {
+        margin-bottom: 70px;
+      }
+    }
+
+    @include onDesktop {
+      height: 475px;
+
+      &--1 {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__photo {
+    @include photo(center);
+  }
+
+  &__date {
+    @include Rale (16px, 24px, $c-red);
+
+    margin-bottom: 10px;
+  }
+
+  &__title-article {
+    @include PlayFair(20px, 125%, $c-black);
+    font-weight: 700px;
+
+    margin-bottom: 20px;
+
+    @include onTab {
+      font-size: 24px;
+    }
+  }
+
+  &__about {
+    @include Rale(16px, 150%, $c-gray);
+
+    margin-bottom: 30px;
+
+    @include onTab {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.visit {
+  position: relative;
+  background-color: $c-header;
+
+  &__content {
+    max-height: 800px;
+    padding: 50px 0;
+
+    @include onTab {
+      padding: 80px 0;
+    }
+
+    @include onDesktop {
+      padding: 205px 0;
+      padding-left: 500px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 578px;
+    height: 100%;
+
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__title {
+    @include PlayFair(38px, 100%, $c-white);
+
+    @include onTab {
+      font-size: 62px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+    }
+  }
+
+  &__about {
+    @include Rale(16px, 150%, $c-white);
+
+    margin: 20px 0 40px;
+
+    @include onTab {
+      margin-bottom: 60px;
+      width: 450px;
+    }
+
+    @include onDesktop {
+      margin: 10px 0 50px;
+      width: 470px;
+    }
+  }
+
+  &__button {
+    @include onTab {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}
+
+.news {
+  @include MEGAGRID;
+
+  &__article {
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+
+    @include onTab {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    @include PlayFair(28px, 125%, $c-black);
+    margin-bottom: 60px;
+
+    @include onTab {
+      font-size: 40px;
+
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+
+      margin-bottom: 55px;
+    }
+  }
+
+  &__photo-container {
+    @include photo-container(370px);
+    height: 280px;
+
+    margin-bottom: 20px;
+
+    @include scale;
+
+    @include onTab {
+      height: 330px;
+
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__photo {
+    @include photo(center);
+  }
+
+  &__date {
+    @include Rale (14px, 140%, $c-black);
+  }
+
+  &__title-article {
+    @include PlayFair(20px, 125%, $c-black);
+    font-weight: 700px;
+
+    margin-bottom: 20px;
+
+    @include onTab {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__about {
+    @include Rale(16px, 150%, $c-gray);
+  }
+}
+
+.subscribe {
+  &__grid {
+    @include gridgallery(3, 3, 2);
+
+    &--1 {
+      grid-row: 1 / 2;
+    }
+
+    &--2 {
+      grid-row: 2 / 3;
+    }
+
+    &--3 {
+      grid-row: 3 / 4;
+    }
+
+    @include onDesktop {
+      &--1 {
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+      }
+
+      &--2 {
+        grid-column: 7 / 13;
+        grid-row: 1 / 2;
+      }
+
+      &--3 {
+        grid-column: 1 / 6;
+        grid-row: 2 / 3;
+      }
+    }
+  }
+
+  &__title {
+    @include PlayFair(28px, 125%, $c-black);
+
+    margin-bottom: 20px;
+
+    @include onTab {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__about {
+    @include Rale(16px, 150%, $c-black);
+
+    margin-bottom: 50px;
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 30px;
+
+    background-color: #fff;
+
+    @include Rale(16px, 150%, $c-black);
+    font-weight: 600;
+
+    border: none;
+    border-bottom: 1px solid $c-black;
+
+    outline: none;
+
+    transition: border-bottom-color $transition-duration ease;
+
+    &::placeholder {
+      @include Rale(16px, 150%, $c-black);
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-bottom-color: $c-red;
+    }
+
+    &:hover::placeholder {
+      color: $c-red;
+      border-color: $c-red;
+    }
+    &:focus::placeholder {
+      @include PlayFair(16px, 150%, $c-red);
+    }
+    &:focus {
+      border-color: $c-red;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    border: none;
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}
