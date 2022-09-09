@@ -14,14 +14,14 @@
     text-decoration: none;
     @extend %fontStyleFor-Main;
     color: $White;
-    @include transition-duration(color);
     &_hyphenation {
       display: block;
     }
+    @include transition-duration(color);
     &:hover {
-      &_hyphenation {
-        color: $Main;
-      }
+      color: $Main;
+    }
+    &:hover &_hyphenation {
       color: $Main;
     }
   }
@@ -64,6 +64,8 @@
     &:hover {
       position: relative;
       transform: scale(1.2);
+      stroke: $Main;
+      fill: $Main;
     }
   }
   &__nav {
