@@ -12,7 +12,7 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 1. Implement `Актуальтні виставки` block.
 1. Implement `Найближчі події` block.
 1. Implement `Сплануйте візит до музею` block.
-1. Implement `Новини` block with the three cards.
+1. Implement `Новини` block with the threnpm starte cards.
 1. Implement `Підпишіться на дайджест` block.
 1. Implement footer.
 
@@ -31,7 +31,7 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 11. `git push origin develop` - to send you code for PR.
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Museum_2/).
+  [DEMO LINK](https://AntonVaida.github.io/Museum_2/).
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.
