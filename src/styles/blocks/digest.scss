@@ -18,11 +18,17 @@
   }
 
   &__input {
-    border: 1px solid transparent;
+    border: 0;
+    font-weight: 700;
     border-bottom: 1px solid $black-color;
     margin-bottom: 30px;
+    outline: 0;
 
     width: 100%;
+
+    &::placeholder {
+      font-weight: 400;
+    }
 
     @include onTablet {
       max-width: 450px;
@@ -35,6 +41,19 @@
     &:hover {
       color: $main-color;
       border-color: $main-color;
+
+      &::placeholder {
+        color: $main-color;
+      }
+    }
+
+    &:focus {
+      color: $main-color;
+      border-color: $main-color;
+
+      &::placeholder {
+        opacity: 0;
+      }
     }
   }
 

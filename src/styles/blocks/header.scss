@@ -4,7 +4,7 @@
   justify-content: start;
 
   height: 100vh;
-  background-color: #3f5252;
+  background-color: $background-color;
   color: $white-color;
 
   margin-bottom: 90px;
@@ -21,7 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 55px;
+    padding: 20px 55px 0;
     margin-bottom: 70px;
 
     @include onTablet {
@@ -43,12 +43,16 @@
   }
 
   &__right-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 3px;
-    padding-left: 40px;
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 3px;
+      padding-left: 40px;
+    }
   }
 
   &__logo {
@@ -66,6 +70,7 @@
   &__menuchangebutton {
     background-image: url(../images/icon2.png);
     background-repeat: no-repeat;
+    background-size: contain;
     width: 25px;
     height: 20px;
 
@@ -99,13 +104,18 @@
     }
   }
 
-  &__main {
-    position: relative;
+  &__container {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    // flex-grow: 0;
-    // flex-shrink: 0;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
     padding: 0 20px;
 
     @include onTablet {
@@ -114,37 +124,62 @@
   }
 
   &__img {
-    display: flex;
-    justify-content: center;
-
-    width: 100%;
+    background-image: url(../images/img1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
+    width: 100%;
+
+    min-width: 245px;
+    min-height: 273px;
+
+    position: absolute;
+    bottom: 0;
+    max-width: 625px;
+    right: 0;
+    max-height: 663px;
   }
 
   &__date {
-    font-size: 14px;
-    line-height: 140%;
-
     margin-bottom: 10px;
   }
 
   &__title {
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 100%;
-
     margin-bottom: 30px;
   }
 
   &__description {
-    font-size: 16px;
-    line-height: 150%;
 
     margin-bottom: 40px;
   }
 
-  &__button-container {
+  &__button {
     margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__little-date {
+    position: relative;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 50px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -15%;
+      bottom: 50%;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: white;
+    }
   }
 
   &__link {

@@ -1,31 +1,92 @@
 .footer {
   display: flex;
   flex-direction: column;
-
   color: $white-color;
   background-color: $background-color;
 
+  padding: 34px 20px 30px;
+
+  @include onTablet {
+    padding: 50px 39px 30px;
+  }
+
+  @include onDesktop {
+    padding: 50px 55px 30px;
+  }
+
   &__main {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__bottom-left {
+    display: flex;
+    gap: 22px;
   }
 
   &__contacts {
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+
+    width: 100%;
   }
 
   &__text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: flex-start;
+
+    margin: 0;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  &__shedule {
+    width: 100%;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+    margin-bottom: 60px;
   }
 
   &__link {
+    display: block;
     color: $white-color;
   }
 }
