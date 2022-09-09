@@ -1,5 +1,4 @@
 .menu {
-  position: relative;
   color: $white-color;
   background-color: $background-color;
   height: 100vh;
@@ -18,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 55px 0;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 
     @include onTablet {
       height: 77px;
@@ -39,16 +38,13 @@
   }
 
   &__right-container {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 3px;
+    padding-left: 40px;
 
-    @include onTablet {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-items: center;
-      gap: 3px;
-      padding-left: 40px;
-    }
   }
 
   &__logo {
@@ -70,9 +66,13 @@
     width: 25px;
     height: 20px;
 
+    order: 2;
+    margin-left: 30px;
+
     @include onTablet {
       width: 30px;
       height: 30px;
+      order: 0;
     }
   }
 
@@ -187,23 +187,28 @@
       display: flex;
       background-image: url(../images/img_menu.png);
       background-repeat: no-repeat;
-      background-size: cover;
-      width: 100%;
-      height: 100%;
-      min-width: 422px;
-      min-height: 466px;
+      // object-fit: cover;
+      // width: 100%;
+      // height: 100%;
+      width: 422px;
+      height: 466px;
 
-      position: absolute;
-      bottom: 0;
-      max-width: 623px;
-      right: 0;
-      max-height: 697px;
+      // position: absolute;
+      // position: fixed;
+      // bottom: 0;
+      // right: 50%;
+      // transform: translateX(50%);
 
-      margin: 0 auto;
     }
 
     @include onDesktop {
       width: calc((100% - 30px) / 2);
+      height: 100%;
+      max-width: 623px;
+      max-height: 697px;
+
+      // bottom: 0;
+      // right: 0;
     }
   }
 }
