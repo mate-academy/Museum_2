@@ -1,0 +1,35 @@
+.grid {
+  display: grid;
+
+  @include onTab {
+    & {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &--md {
+      @for $start from 1 through 6 {
+        @for $end from $start through 6 {
+          &-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  @include onDesktop {
+    & {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    &--lg {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &-#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+}
