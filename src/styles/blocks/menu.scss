@@ -8,29 +8,34 @@
   justify-content: center;
 
   background: $c-back url(/images/img_menu.png);
-  background-position: bottom;
+  background-size: 640px;
+  background-position: bottom right;
   background-repeat: no-repeat;
 
   transform: translateX(-100%);
   transition: transform 0.3s;
 
+  @include onTablet {
+    background-size: 440px;
+    background-position: bottom;
+  }
+
   @include onMobile {
     transform: translateX(-200%);
-    background-size: 0px;
+    background-size: 0;
   }
 
   &--active {
     transform: translateX(0);
   }
 
-  @include onDesktop {
-    background-size: 640px;
-    background-position: bottom right;
-  }
-
   &__top {
     display: flex;
     margin-top: 180px;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
 
     @include onMobile {
       display: block;
@@ -62,7 +67,7 @@
 
   &__address {
     @include onMobile {
-      margin-top: 20px
+      margin-top: 20px;
     }
   }
 
@@ -100,6 +105,10 @@
     padding-bottom: 60px;
     border-bottom: 1px solid rgba($c-white, 0.3);
 
+    @include onTablet {
+      padding-bottom: 30px;
+    }
+
     @include onMobile {
       width: 300px;
     }
@@ -109,6 +118,10 @@
     width: max-content;
 
     margin-top: 60px;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
 
     @include onMobile {
       margin-top: 30px;
@@ -150,5 +163,9 @@
 
   &__btn {
     margin-top: 60px;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
   }
 }

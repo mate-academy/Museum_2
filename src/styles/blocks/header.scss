@@ -3,16 +3,20 @@
     height: 100vh;
     width: 100%;
     background: $c-back url(/images/header-img.png);
-    background-position: bottom;
+    background-position: bottom right;
     background-repeat: no-repeat;
-    background-size: 245px;
+    background-size: 640px;
 
     display: flex;
     justify-content: center;
 
-    @include onDesktop {
-      background-size: 640px;
-      background-position: bottom right;
+    @include onTablet {
+      background-size: 440px;
+      background-position: bottom;
+
+      @include onMobile {
+        background-size: 245px;
+      }
     }
   }
 }
@@ -22,6 +26,10 @@
 
   &__content {
     margin-top: 180px;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
   }
 
   &__date {
@@ -37,6 +45,10 @@
     font-size: 96px;
 
     margin-top: 10px;
+
+    @include onTablet {
+      font-size: 72px;
+    }
 
     @include onMobile {
       font-size: 48px;
@@ -57,12 +69,16 @@
   }
 
   &__bottom {
-    display: none;
+    display: block;
+    position: absolute;
+    bottom: 50px;
 
-    @include onDesktop {
-      display: block;
-      position: absolute;
-      bottom: 50px;
+    @include onTablet {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
     }
 
     @include fontMain;

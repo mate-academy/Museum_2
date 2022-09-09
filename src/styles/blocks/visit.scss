@@ -6,14 +6,25 @@
   background-repeat: no-repeat;
   background-size: 560px;
 
+  @include onTablet {
+    display: flex;
+    justify-content: center;
+
+    background-size: 0;
+  }
+
   @include onMobile {
-    background-size: 0px;
+    background-size: 0;
   }
 
   &__info {
     display: flex;
     flex-direction: row-reverse;
     width: 1070px;
+
+    @include onTablet {
+      display: block;
+    }
 
     @include onMobile {
       width: 300px;
