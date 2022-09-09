@@ -29,82 +29,87 @@
 
   }
 
-}
+  &__main-links {
+    margin-bottom: 60px;
+    @include onTablet {
+      margin-bottom: 0;
+      }
 
-.contacts {
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+  }
 
-  &__title {
-    font-family: "Playfair Display", sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 150%;
+  &__schedule {
+    @include onTablet {
+    grid-column: 3 / 5;
+    }
 
-    color: $mainColor;
-    margin-bottom: 10px;
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+  }
 
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
 
     @include onTablet {
-      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0 30px;
+      justify-items:end;
     }
 
     @include onDesktop {
-      margin-bottom: 30px;
-    }
-  }
-
-  &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 30px;
-    @include onTablet{
-      margin-bottom: 50px;
-    }
-    @include onDesktop {
-      margin-bottom: 50px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0 30px;
+      justify-items:end;
     }
   }
 
   &__link {
-    font-family: "Raleway", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: $mainColor;
-    text-decoration: none;
-    transition: color $transitionDuration;
-
-    &:hover {
-      color: $orangeColor;
+    @include onTablet {
+      grid-column: 6 / 6;
     }
-  }
-
-}
-
-.media {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-
-
-  &__item {
-    margin-right: 20px;
-
-  }
-
-  &__link {
-    transition: color $transitionDuration;
-
-    &:hover {
-      fill: $orangeColor;
+    @include onDesktop {
+      grid-column: 12 / 12;
     }
   }
 
   &__pic {
-    transition: color $transitionDuration;
+    color: $mainColor;
+    transition: transform $transitionDuration;
 
     &:hover {
-      fill: $orangeColor;
+      transform: scale(120%);
+    }
+  }
+
+  &__text {
+    width: max-content;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $mainColor;
+
+    &--left {
+      @include onTablet {
+        grid-column: 1 / 2;
+      }
+      @include onDesktop {
+        grid-column: 1 / 2;
+      }
+    }
+    &--right {
+      @include onTablet {
+        grid-column: 2 / 2;
+      }
+      @include onDesktop {
+        grid-column: 3 / 4;
+      }
     }
   }
 }
