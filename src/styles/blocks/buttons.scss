@@ -1,3 +1,133 @@
+.burger {
+  border: none;
+  background-color: inherit;
+
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 20px;
+  bottom: 16px;
+  left: -60px;
+
+  &__line,
+  &::before,
+  &::after {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: $c-white;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+
+    transition: width 0.3s, transform 0.3s;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &:hover {
+    &::before {
+      width: 50%;
+    }
+
+    &::after {
+      width: 50%;
+    }
+  }
+
+  &--active {
+    .burger__line {
+      transform: scale(0);
+    }
+
+    &::before {
+      transform: rotate(45deg) translateY(13px);
+    }
+
+    &::after {
+      transform: rotate(-45deg) translateY(-12px);
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.lang {
+  border: none;
+  background-color: inherit;
+
+  position: relative;
+
+  width: 40px;
+
+  color: $c-white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+  bottom: -8px;
+
+  &__items {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 0;
+
+    width: 6px;
+    height: 1px;
+
+    background-color: $c-white;
+  }
+
+  &::before {
+    transform: translateX(3px) rotate(315deg);
+  }
+
+  &::after {
+    transform: rotate(-315deg);
+  }
+
+  &:hover {
+    .lang__items {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
 .buttons {
   text-decoration: none;
 

@@ -1,0 +1,129 @@
+.menu {
+  position: absolute;
+
+  height: 100vh;
+  width: 100%;
+
+  background-color: $c-back;
+
+  display: flex;
+  justify-content: center;
+
+  background: $c-back url(/images/img_menu.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 245px;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
+  &--active {
+    transform: translateX(0);
+    overflow: hidden;
+  }
+
+  @include onDesktop {
+    background-size: 640px;
+    background-position: bottom right;
+  }
+
+  &__top {
+    display: flex;
+    margin-top: 180px;
+  }
+
+  &__timetable {
+    margin-right: 84px
+  }
+
+  &__timetable-text {
+    @include fontSecond;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $c-white;
+  }
+
+  &__timetable-time {
+    @include fontSecondBold;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $c-white;
+  }
+
+  &__address-text {
+    @include fontSecond;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    color: $c-white;
+  }
+
+  &__address-link {
+    @include fontSecondBold;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    color: $c-white;
+
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+
+    width: 570px;
+
+    margin-top: 10px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba($c-white, 0.3);
+  }
+
+  &__nav-container {
+    width: max-content;
+
+    margin-top: 60px;
+  }
+
+  &__nav-item {
+    font-size: 48px;
+    line-height: 58px;
+
+    text-decoration: none;
+
+    @include fontMainBold;
+
+    color: $c-white;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: $c-white;
+      margin-top: -5px;
+      opacity: 0;
+
+      transition: opacity 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 60px;
+  }
+}
