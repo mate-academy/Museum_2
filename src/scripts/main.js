@@ -8,9 +8,10 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-const form = document.querySelector('#form');
+const form = document.getElementById('form');
 
-form.addEventListener('submit', event => {
+form.addEventListener('click', event => {
   event.preventDefault();
-  event.target.reset();
+  document.querySelector('.subscribe_card_form_input').value = '';
+  // event.target.reset();
 });
