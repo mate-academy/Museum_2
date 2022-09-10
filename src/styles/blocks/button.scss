@@ -1,0 +1,93 @@
+.button {
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  max-width: 280px;
+  height: 60px;
+  background-color: $c-brown;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: $c-white;
+  @include hover(transform, scale);
+  @include hover(color, $c-brown);
+  @include hover(background-color, $c-gray);
+
+  &:hover {
+    transform: scale(1.02);
+    background-color: $c-gray;
+    color: $c-brown;
+    border: 1px solid $c-brown;
+    border-radius: 2px;
+  }
+
+  &-transparent {
+    position: relative;
+    background-color: transparent;
+    border: 1px solid $c-brown;
+    color: $c-brown;
+    @include hover(transform, scale);
+
+    &:hover {
+      transform: scale(1.02);
+      background-color: transparent;
+    }
+
+    &--news {
+      padding-right: 40px;
+    }
+
+    &--disabled {
+      @include On768 {
+        display: none;
+      }
+    }
+
+    &--shown {
+      display: none;
+      padding-right: 40px;
+
+      @include On768 {
+        display: grid;
+        width: 100%;
+      }
+
+      @include On1280 {
+        height: 70px;
+        font-size: 20px;
+      }
+    }
+
+    &__arrow {
+      position: absolute;
+      background-image: url(../images/icons/events.svg);
+      width: 13.3px;
+      height: 14px;
+      transform: translate(80px, 0);
+
+      @include On768 {
+        transform: translate(60px, 0);
+      }
+
+      @include On1280 {
+        transform: translate(80px, 0);
+      }
+
+      &--news {
+        transform: translate(40px, 0);
+
+        @include On1280 {
+          transform: translate(60px, 0);
+        }
+      }
+
+      @include On1280 {
+        width: 17px;
+        height: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,189 @@
+.menu {
+  background-color: $c-gray-green;
+  width: 100%;
+  
+  display: none;
+
+  &:target {
+    display: block;
+  }
+
+  &:target ~ .header {
+    display: none;
+  }
+
+  &__content {
+    padding-top: 20px;
+    padding-bottom: 240px;
+
+    @include On768 {
+      padding-top: 26px;
+      padding-bottom: 0;
+    }
+
+    @include On1280 {
+      padding-top: 32px;
+    }
+  }
+
+  &__top-bar {
+    margin-bottom: 30px;
+
+    @include On768 {
+      margin-bottom: 55px;
+    }
+
+    @include On1280 {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    font-style: normal;
+    color: $c-white;
+
+    margin-bottom: 40px;
+
+    @include On768 {
+      flex-direction: row;
+      row-gap: 0;
+      width: 440px;
+      justify-content: space-between;
+
+      margin-bottom: 60px;
+    }
+
+    @include On1280 {
+      width: 400px;
+
+      margin-bottom: 80px;
+    }
+
+    &-title {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+
+    &-text {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      opacity: 1;
+      color: $c-white;
+      @include hover(color, $c-brown);
+
+      &:hover {
+        color: $c-brown;
+      }
+    }
+  }
+
+  &__nav {
+    font-family: "Playfair Display", serif;
+
+    margin-bottom: 80px;
+
+    @media screen and(min-width: 400px) {
+      margin: 0 auto 80px;
+    }
+
+    @include On768 {
+      margin: 0 0 100px;
+      width: 500px;
+    }
+
+    @include On1280 {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
+
+    @include On768 {
+      align-items: start;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      bottom: -40px;
+      background-color: $c-white;
+    }
+  }
+
+  &__item {
+    font-style: normal;
+    width: 200px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include On768 {
+      font-size: 48px;
+      line-height: 120%;
+      width: 500px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $c-white;
+
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      background-color: $c-white;
+      @include hover(opacity, 1);
+      opacity: 0;
+      z-index: 1;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include On768 {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    display: none;
+    width: 422px;
+    height: 100%;
+
+    @include On768 {
+      display: block;
+      margin: 0 auto;
+    }
+
+    @include On1280 {
+      width: 616px;
+      margin: 0;
+    }
+  }
+}

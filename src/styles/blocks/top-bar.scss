@@ -1,0 +1,80 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 100px;
+
+  @include On768 {
+    margin-bottom: 154px;
+  }
+
+  &__right-part {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+    padding-right: 8px;
+    height: 25px;
+
+    @include On768 {
+      justify-content: space-between;
+    }
+
+    &--menu {
+      justify-content: space-between;
+    }
+  }
+
+  &__burger {
+    background-image: url(../images/icons/burger.svg);
+    display: block;
+    width: 25px;
+    height: 25px;
+  }
+
+  &__cross {
+    background-image: url(../images/icons/cross.svg);
+    display: block;
+    width: 25px;
+    height: 25px;
+  }
+
+  &__lang {
+    display: none;
+    position: relative;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-white;
+    text-transform: uppercase;
+
+    &--shown {
+      display: flex;
+    }
+
+    @include On768 {
+      display: flex;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-image: url(../images/small_vector.svg.svg);
+      display: block;
+      width: 8px;
+      height: 4.6px;
+      top: 40%;
+      right: -50%;
+    }
+  }
+
+  &__small_arrow {
+    background-image: url(../images/small_vector.svg.svg);
+    width: 8px;
+    height: 6px;
+
+  }
+}
