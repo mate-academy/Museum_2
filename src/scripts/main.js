@@ -8,10 +8,17 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-const form = document.getElementById('form');
+// const form = document.getElementById('form');
 
-form.addEventListener('click', event => {
+// form.addEventListener('click', event => {
+//   event.preventDefault();
+//   document.querySelector('.subscribe_card_form_input').value = '';
+//   event.target.reset();
+// });
+
+const form = document.querySelector('#form');
+
+form.addEventListener('submit', event => {
   event.preventDefault();
-  document.querySelector('.subscribe_card_form_input').value = '';
-  // event.target.reset();
+  event.target.reset();
 });
