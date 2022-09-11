@@ -2,31 +2,32 @@
   color: $white-color;
   background-color: $background-color;
   height: 100vh;
-  padding: 0 20px;
 
   @include onTablet {
-    padding: 0 39px;
+    background-image: url(../images/img_menu.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 230px 250px;
   }
 
   @include onDesktop {
-    padding: 0 0  0 55px;
+    background-size: 625px 663px;
+    background-position: bottom right;
   }
 
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 55px 0;
+    padding: 25px 0 0;
     margin-bottom: 30px;
 
     @include onTablet {
       height: 77px;
-      padding: 0 39px;
     }
 
     @include onDesktop {
       height: 90px;
-      padding: 0 55px;
     }
   }
 
@@ -60,7 +61,7 @@
   }
 
   &__menuchangebutton {
-    background-image: url(../images/icon2.png);
+    background-image: url(../images/cross.svg);
     background-repeat: no-repeat;
     background-size: contain;
     width: 25px;
@@ -100,15 +101,6 @@
     }
   }
 
-  &__box {
-    @include onDesktop {
-      display: flex;
-      flex-direction: row;
-      justify-content: start;
-      gap: 30px;
-    }
-  }
-
   &__container {
     margin-bottom: 30px;
 
@@ -123,6 +115,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: flex-start;
+    gap: 20px;
 
     margin-bottom: 40px;
 
@@ -142,6 +135,9 @@
     display: flex;
     flex-direction: column;
     justify-content: start;
+    gap: 0;
+
+    max-height: 44px;
   }
 
   &__link {
@@ -152,6 +148,11 @@
     margin-bottom: 20px;
 
     @include onTablet {
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 120%;
+
       margin-bottom: 30px;
     }
 
@@ -177,38 +178,6 @@
   &__button {
     @include onDesktop {
       margin-bottom: 108px;
-    }
-  }
-
-  &__img {
-    display: none;
-
-    @include onTablet {
-      display: flex;
-      background-image: url(../images/img_menu.png);
-      background-repeat: no-repeat;
-      // object-fit: cover;
-      // width: 100%;
-      // height: 100%;
-      width: 422px;
-      height: 466px;
-
-      // position: absolute;
-      // position: fixed;
-      // bottom: 0;
-      // right: 50%;
-      // transform: translateX(50%);
-
-    }
-
-    @include onDesktop {
-      width: calc((100% - 30px) / 2);
-      height: 100%;
-      max-width: 623px;
-      max-height: 697px;
-
-      // bottom: 0;
-      // right: 0;
     }
   }
 }
