@@ -1,0 +1,64 @@
+.button {
+  text-decoration: none;
+  display: block;
+  padding: 22px 0;
+  text-align: center;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+
+  cursor: pointer;
+  transition: all $d-transition;
+
+  &--primary {
+    color: $c-white;
+    background-color: $c-button;
+    
+    &:hover {
+      transition: all $d-transition;
+      background-color: $hov-button;
+    }
+  }
+
+  &--secondary {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    color: $c-button;
+
+    border: 1px solid $c-button;
+
+    &::after {
+      content: "";
+
+      top: 50%;
+      right: 50%;
+      margin-left: 10px;
+
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/arow.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    &:hover {
+      border-color: $hov-button;
+      color: $hov-button;
+    }
+
+    &:active {
+      border-color: $act-button;
+      color: $act-button;
+    }
+
+    &:disabled {
+      border-color: $dis-button;
+      color: $dis-button;
+    }
+  }
+}
