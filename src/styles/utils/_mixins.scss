@@ -1,6 +1,48 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $animation-duration;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin active($_property, $_toValue) {
+  transition: #{$_property} $animation-duration;
+  &:active {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin disabled($_property, $_toValue) {
+  transition: #{$_property} $animation-duration;
+  &:disabled {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin onPhone {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin top-actions {
+  --icon-width: 25px;
+
+  padding-top: 20px;
+
+  display: grid;
+  align-items: center;
+  justify-content: left;
 }

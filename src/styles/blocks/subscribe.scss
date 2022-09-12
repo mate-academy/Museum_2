@@ -1,0 +1,93 @@
+.subscribe {
+  color: $c-black;
+
+  &__content {
+    position: relative;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      width: 50%;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      width: 83.34%;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+    }
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    padding-bottom: 3px;
+    margin-bottom: 30px;
+
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $c-black;
+
+    transition: border-color, border, $animation-duration;
+
+    &::placeholder {
+      font-family: inherit;
+      color: inherit;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+    }
+
+    @include onTablet {
+      width: 66.67%;
+    }
+
+    @include onDesktop {
+      width: 41.67%;
+      margin-bottom: 40px;
+    }
+
+    &:hover {
+      border-color: $c-button;
+      color: $c-button;
+    }
+
+    &:focus {
+      border-color: $c-button;
+      color: $c-button;
+    }
+
+    &:valid {
+      font-weight: 700;
+      color: $c-black;
+      border-bottom-color: $c-black;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+
+    cursor: pointer;
+    border: none;
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    @include onDesktop {
+      width: 25%;
+    }
+  }
+}

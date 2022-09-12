@@ -1,0 +1,82 @@
+.page {
+  scroll-behavior: smooth;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  &__body--with-menu {
+    overflow: hidden;
+  }
+
+  &__section {
+    margin-bottom: 120px;
+
+    &--last {
+      margin-bottom: 200px;
+    }
+
+    &-inner--tablet-desktop {
+      margin-bottom: 60px;
+
+      @include onTablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 60px;
+      }
+    }
+
+    &-title {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      line-height: 35px;
+      font-weight: 700;
+
+      @include onTablet {
+        font-size: 40px;
+        line-height: 50px;
+        text-align: left;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+        line-height: 58px;
+        text-align: left;
+      }
+    }
+
+    &-button {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        width: 33%;
+      }
+
+      &--lower {
+        @include onTablet {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform $animation-duration;
+
+    &:target {
+      z-index: 1;
+      transform: translateX(0);
+    }
+  }
+}

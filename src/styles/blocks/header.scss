@@ -1,0 +1,154 @@
+.header {
+  color: $c-white;
+  background-color: $c-background-main;
+  background-image: url(../images/img-woman.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 246px 274px;
+
+  @include onTablet {
+    background-size: 444px 494px;
+  }
+
+  @include onDesktop {
+    background-size: 620px 660px;
+    background-position: right bottom;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 90px;
+
+    @include onDesktop {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+
+    margin-bottom: 70px;
+
+    grid-template-columns: 1fr var(--icon-width);
+
+    @include onTablet {
+      grid-template-columns: 1fr var(--icon-width) var(--icon-width);
+      gap: 30px;
+      padding-top: 26px;
+      margin-bottom: 124px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+      margin-bottom: 122px;
+    }
+  }
+
+  &__logo {
+    width: max-content;
+  }
+
+  &__lang {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 700;
+
+    @include onTablet {
+      width: 570px;
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+
+    &::before {
+      content: "10 серпня - 10 листопада";
+
+      display: block;
+      margin-bottom: 10px;
+
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 400;
+    }
+
+    &::after {
+      content: "Внесок українських митців y світову культуру 19-20 ст.";
+
+      display: block;
+      max-width: 268px;
+      margin-bottom: 40px;
+      padding-top: 30px;
+
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+
+      @include onTablet {
+        margin-bottom: 50px;
+        padding-top: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+        padding-top: 30px;
+        max-width: max-content;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 314px;
+
+    @include onTablet {
+      width: 50%;
+      margin-bottom: 564px;
+    }
+
+    @include onDesktop {
+      width: 25%;
+      margin-bottom: 136px;
+    }
+  }
+
+  &__date {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: max-content;
+
+      font-family: "Playfair Display", serif;
+      font-size: 14px;
+      line-height: $line-height-date;
+      font-weight: 700;
+    }
+  }
+
+  &__line {
+    position: relative;
+    margin-top: $margin-top-for-line;
+    transform: translateY(50%);
+    display: block;
+    height: 1px;
+    width: 100%;
+
+    opacity: 0.3;
+    background-color: $c-white;
+  }
+}
