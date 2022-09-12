@@ -1,44 +1,28 @@
 .menu {
-  position: relative;
   color: $c-white;
   background-color: $c-background-main;
 
   @include onTablet {
-    overflow-y: auto;
+        background-image: url(../images/img_man-menu.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 422px 466px;
+      }
+
+  @media (min-width: 640px) and (max-height: 1100px) {
+    background-size: 342px 378px;
+  }
+
+  @include onDesktop {
+    background-position: right bottom;
+    background-size: 624px 697px;
+
   }
 
   &__content {
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh;
-
-    @include onTablet {
-      height: auto;
-    }
-  }
-
-  &__image {
-    display: none;
-
-    @include onTablet {
-      display: block;
-      margin: 0 auto;
-      width: 422px;
-      height: 466px;
-      background-image: url(../images/img_man-menu.png);
-      background-repeat: no-repeat;
-      background-position: center bottom;
-      background-size: cover;
-    }
-
-    @include onDesktop {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      background-position: right bottom;
-      width: 624px;
-      height: 697px;
-    }
   }
 
   &__top {
@@ -182,15 +166,13 @@
   }
 
   &__button {
-    margin-bottom: 238px;
-
     @include onTablet {
       margin-bottom: 30px;
       width: 50%;
     }
 
     @include onDesktop {
-      margin-bottom: 110px;
+      margin-bottom: 106px;
       width: 25%;
     }
   }
