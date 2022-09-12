@@ -23,26 +23,28 @@
   }
 
   &__title {
-    font-family: "Namu" , sans-serif;
-    font-size: 36px;
-    line-height: 43px;
     display: flex;
     align-items: center;
-    color: #F1F5F4;
-    text-transform: uppercase;
+    cursor: pointer;
   }
 
   &__menu-opener {
     display: block;
     width: 18px;
     height: 18px;
+    z-index: 1;
+    cursor: pointer;
 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-image: url(../images/menu.svg);
-  }
 
+    &::after {
+      display: block;
+
+    }
+  }
 
   &__date {
     font-family: "Raleway" , serif;
@@ -50,17 +52,17 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 140%;
-    color: #F1F5F4;
+    color: #f1f5f4;
     margin-bottom: 10px;
   }
 
   &__denomination {
-    font-family: 'Playfair Display';
+    font-family: "Playfair Display", serif;
     font-style: normal;
     font-weight: 700;
     font-size: 42px;
     line-height: 100%;
-    color: #F1F5F4;
+    color: #f1f5f4;
     margin-bottom: 30px;
     width: 100%;
 
@@ -74,12 +76,12 @@
   }
 
   &__info {
-    font-family: 'Raleway';
+    font-family: "Raleway", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    color: #F1F5F4;
+    color: #f1f5f4;
     margin-bottom: 40px;
 
     @include onTablet {
@@ -94,9 +96,6 @@
   &__img {
     display: flex;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
-    transform: rotateX(-50% , -50%);
 
     @include onTablet {
       right: 0;
@@ -104,15 +103,23 @@
   }
 
   &__photo {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 245px;
+    height: 273px;
+    transform: translateX(50%);
 
     @include onTablet {
-      width: 443px;
-      height: 494px;
+      width: 383px;
+      height: 434px;
+      transform: translateX(100%);
     }
 
     @include onDesktop {
       width: 625px;
       height: 663px;
+      transform: translateX(82%);
     }
   }
 }

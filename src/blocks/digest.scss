@@ -1,0 +1,69 @@
+.digest {
+  margin-bottom: 80px;
+
+  &__title::after {
+    @include stylesForP;
+    font-size: 16px;
+    display: none;
+    content: "Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів";
+
+    @include onDesktop {
+      display: block ;
+    }
+  }
+
+  &__info {
+    @include stylesForP;
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__input {
+    width: 280px;
+    font-size: 16px;
+    padding-bottom: 4px;
+
+    border-color: transparent;
+    background-color: #f1f5f4;
+    border-bottom: 1px solid #1c1b29;
+    margin-bottom: 30px;
+
+    transition: border-color 0.5s;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+
+    &:hover {
+      outline: 0;
+      outline-offset: 0;
+      border-color: #cd4d31;
+
+      &::placeholder  {
+        color: #cd4d31;
+      }
+    }
+
+    &:focus {
+      outline: 0;
+      outline-offset: 0;
+      color: #cd4d31;
+      border-color:#cd4d31;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    &:visited {
+      color:#1c1b29;
+    }
+  }
+}
