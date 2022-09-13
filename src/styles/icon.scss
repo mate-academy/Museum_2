@@ -1,0 +1,67 @@
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+  &--menu {
+    background-image: url(../images/menu.svg);
+  }
+
+  &--lang {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: $font16;
+    color: $white;
+    &-top {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  &-cross {
+    background-image: url(../images/cross.svg);
+    color: #fff;
+    transition: transform 0.3s;
+
+  }
+
+  &-union {
+    position: absolute;
+    left: 100%;
+    background-image: url(../images/Union.svg);
+    width: 8px;
+    height: 4px;
+  }
+
+  &-order1 {
+    order: 2;
+
+    @include onTablet {
+      order: 1;
+    }
+  }
+
+  &-order2 {
+    order: 1;
+
+    @include onTablet {
+      order: 2;
+    }
+  }
+}
