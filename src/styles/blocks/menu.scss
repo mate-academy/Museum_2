@@ -167,6 +167,7 @@
     }
 
     @include desktop {
+
       align-self: end;
 
       width: 624px;
@@ -175,8 +176,27 @@
   }
 
   &__main {
-    display: grid;
-    grid-template-columns: 570px 624px;
-    // flex-wrap: nowrap;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: 570px 624px;
+      // flex-wrap: nowrap;
+    }
+  }
+
+  &__btn {
+
+    @include tablet {
+      margin-bottom: 30px ;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+    }
   }
 }

@@ -1,0 +1,195 @@
+.exhibition {
+  position: relative;
+
+  background-color: #f1f5f4;
+
+  // padding-top: 90px;
+
+  // @include tablet {
+  //   padding-top: 105px;
+  // }
+
+  // @include desktop {
+  //   padding-top: 110px;
+  // }
+
+  // &__all {
+  //   position: relative;
+  // }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+      justify-content: start;
+    }
+  }
+
+  &__btn {
+    @include tablet {
+      position: absolute;
+      justify-self: right;
+    }
+
+    @include desktop {
+      position: absolute;
+      justify-self: right;
+      right: 55px;
+
+    }
+  }
+  &__container {
+    display: grid;
+    grid-auto-flow: row;
+
+    gap: 60px;
+
+    margin-bottom: 30px;
+
+    @include tablet {
+      grid-template-columns: 330px 330px;
+      gap: 30px;
+
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      grid-template-columns: 570px 570px;
+      gap: 30px;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    max-width: 320px;
+
+    @include tablet {
+      max-width: 770px;
+    }
+
+    @include desktop {
+      max-width: 1280px;
+    }
+    &--photo {
+      width: 280px;
+      height: 356px;
+
+      margin-bottom: 20px;
+
+      object-fit: cover;
+      object-position: center;
+
+      @include tablet {
+        width: 330px;
+        height: 420px;
+      }
+
+      @include desktop {
+        width: 570px;
+        height: 484px;
+      }
+    }
+
+    &--date {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: #cd4d31;
+
+      margin-bottom: 10px;
+    }
+
+    &--title {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 125%;
+
+      color: #1c1b29;
+
+      margin-bottom: 20px;
+    }
+
+    &--discription {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: #504f5e;
+
+      margin-bottom: 30px;
+
+      @include tablet {
+        margin-bottom: 40px;
+      }
+
+      @include desktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__arrow {
+    &:after {
+      content: "";
+
+      display: inline-block;
+
+      width: 13.33px;
+      height: 11.67px;
+
+      margin-left: 11.33px;
+
+      background-image: url(../images/arrow.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+
+    color: #1c1b29;
+
+    margin-bottom: 60px;
+
+    @include tablet {
+      font-size: 40px;
+      line-height: 50px;
+
+      margin-bottom: 75px;
+    }
+
+    @include desktop {
+      font-size: 48px;
+      line-height: 57.6px;
+
+      margin-bottom: 70px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    color: #1c1b29;
+
+    transition: color 0.5s;
+
+    &:hover {
+      color: #cd4d31;
+    }
+  }
+}
