@@ -1,0 +1,51 @@
+.button {
+  @include button($c-white);
+
+  background-color: $c-red;
+
+  transition: background-color $transition-duration ease;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  &__second {
+    @include button($c-red);
+
+    box-sizing: border-box;
+    border: 1px solid $c-red;
+
+    background-color: transparent;
+
+    gap: 8px;
+
+    transition: color $transition-duration ease,
+      border-color $transition-duration ease;
+
+    &:hover {
+      border-color: #af3419;
+
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+
+      color: #dd836f;
+    }
+  }
+}

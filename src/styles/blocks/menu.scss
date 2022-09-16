@@ -1,0 +1,125 @@
+.menu {
+  background-color: $c-header;
+
+  @include content;
+
+  &__top {
+    @include iconTop;
+
+    margin-bottom: 30px;
+
+    @include onTab {
+      margin-bottom: 50px;
+    }
+  }
+
+  @include topRight;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-bottom: 40px;
+
+    @include onTab {
+      flex-direction: row;
+      gap: 120px;
+
+      margin-bottom: 50px;
+    }
+
+    &--norm {
+      @include Rale(14px, 140%, $c-white);
+    }
+
+    &--bold {
+      font-weight: 600;
+      @include Rale(16px, 150%, $c-white);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0 0 40px;
+
+    border-bottom: 1px solid $c-white;
+
+    @include onTab {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTab {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @include PlayFair(20px, 150%, $c-white);
+
+    border-bottom: 1px solid transparent;
+
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $c-white;
+    }
+
+    @include onTab {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__adress-link {
+    &:hover &--red {
+      transition: color 0.3s;
+
+      color: $c-red;
+    }
+  }
+
+  &__button {
+    margin-top: 50px;
+
+    @include grid;
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  @include grid-column;
+
+  &__img {
+
+    display: none;
+
+    @include onTab {
+      @include positionImg;
+
+      display: block;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include DesktopImage(624px, 697px);
+  }
+}

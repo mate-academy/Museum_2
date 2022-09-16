@@ -1,0 +1,104 @@
+.subscribe {
+  &__grid {
+    @include gridgallery(3, 3, 2);
+
+    &--1 {
+      grid-row: 1 / 2;
+    }
+
+    &--2 {
+      grid-row: 2 / 3;
+    }
+
+    &--3 {
+      grid-row: 3 / 4;
+    }
+
+    @include onDesktop {
+      &--1 {
+        grid-column: 1 / 6;
+        grid-row: 1 / 2;
+      }
+
+      &--2 {
+        grid-column: 7 / 13;
+        grid-row: 1 / 2;
+      }
+
+      &--3 {
+        grid-column: 1 / 6;
+        grid-row: 2 / 3;
+      }
+    }
+  }
+
+  &__title {
+    @include PlayFair(28px, 125%, $c-black);
+
+    margin-bottom: 20px;
+
+    @include onTab {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__about {
+    @include Rale(16px, 150%, $c-black);
+
+    margin-bottom: 50px;
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 30px;
+
+    background-color: #fff;
+
+    @include Rale(16px, 150%, $c-black);
+    font-weight: 600;
+
+    border: none;
+    border-bottom: 1px solid $c-black;
+
+    outline: none;
+
+    transition: border-bottom-color $transition-duration ease;
+
+    &::placeholder {
+      @include Rale(16px, 150%, $c-black);
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-bottom-color: $c-red;
+    }
+
+    &:hover::placeholder {
+      color: $c-red;
+      border-color: $c-red;
+    }
+    &:focus::placeholder {
+      @include PlayFair(16px, 150%, $c-red);
+    }
+    &:focus {
+      border-color: $c-red;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    border: none;
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}
