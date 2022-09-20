@@ -1,0 +1,67 @@
+.top {
+  margin-bottom: 70px;
+
+  @include onTablet {
+    margin-bottom: 100px;
+  }
+
+  @include onDeskTop {
+    margin-bottom: 120px;
+
+  }
+
+  display: flex;
+  justify-content: space-between;
+
+  &_logo {
+    width: 123px;
+    height: 40px;
+
+    &_img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      object-position: center;
+    }
+  }
+
+  &_button {
+    display: flex;
+    gap: 40px;
+
+    &_menu {
+      width: 25px;
+      height: 25px;
+
+      &_img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        object-position: center;
+      }
+    }
+
+    &_lang {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+
+      &_select {
+        background-color: transparent;
+        border: none;
+        font-family: "Raleway", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: $white;
+
+        &_option {
+          background-color: $green_background;
+        }
+      }
+    }
+  }
+}
