@@ -1,0 +1,193 @@
+@import "../utils";
+@import "../fonts";
+
+
+.container5 {
+  display: flex;
+  margin:  0 auto;
+  max-width: 1280px;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 55px;
+  padding-right: 55px;
+  margin-bottom: 200px;
+
+
+  @include BigScreen {
+    padding-left: 30%;
+    max-width: none;
+  }
+
+  @include Tablet {
+    padding-left: 39px;
+  }
+
+  @include Mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__header {
+    font-size: 48px;
+    font-family: $playfair_font;
+    font-weight: 700;
+    color: $header_color;
+
+    @include Desktop {
+      font-size: 35px;
+    }
+
+    @include Tablet {
+      font-size: 30px;
+    }
+
+    @include Mobile{
+      font-size: 25px;
+    }
+  }
+
+
+  &__bttn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 60px;
+    font-family: $railway_font;
+    font-weight: 600;
+    font-size: 16px;
+    background: transparent;
+    color: $bttn_color;
+    cursor: pointer;
+    border: 1px solid $bttn_color;
+    transition: ease-in-out 0.3s;
+
+    &::after {
+      display: block;
+      margin-left: 10px;
+      margin-top: 5px;
+      filter: brightness(0) saturate(100%) invert(38%) sepia(43%) saturate(1582%) hue-rotate(337deg) brightness(93%) contrast(87%);
+      content: url("../images/exibition/arrow.jpg");
+
+      &:hover {
+        filter: brightness(0) saturate(100%) invert(23%) sepia(33%) saturate(4417%) hue-rotate(352deg) brightness(95%) contrast(91%);
+      }
+
+      &:active {
+        filter: brightness(0) saturate(100%) invert(34%) sepia(91%) saturate(5134%) hue-rotate(357deg) brightness(94%) contrast(96%);
+      }
+    }
+
+    &:hover {
+      color: $bttn_hover_color;
+      transform: scale(1.1);
+      border: 1px solid $bttn_hover_color;
+    }
+
+    &:active {
+      color: $bttn_pressed_color;
+      border: 1px solid $bttn_pressed_color;
+    }
+
+    @include Tablet {
+      width: 210px;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+
+    @include Desktop {
+      flex-direction: column;
+    }
+
+    @include Tablet {
+      flex-direction: column;
+    }
+
+    @include Mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__con {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__photo {
+    display: block;
+    width: 570px;
+    margin-bottom: 20px;
+
+    @media (max-width:618px){
+      width: 100%;
+    }
+
+    @include Mobile{
+      width: 100%;
+    }
+  }
+
+  &__about {
+    font-family: $railway_font;
+    font-weight: 400;
+    font-size: 16px;
+    color: $bttn_color;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $playfair_font;
+    font-weight: 700;
+    font-size: 24px;
+    color: $header_color;
+    margin-bottom: 20px;
+
+    @media (max-width:618px){
+      width: 100%;
+    }
+
+    @include Mobile{
+      width: 100%;
+    }
+  }
+
+  &__info {
+    font-family: $railway_font;
+    font-weight: 400;
+    font-size: 16px;
+    color: $text_color;
+    width: 570px;
+    margin-bottom: 50px;
+
+    @media (max-width:618px){
+      width: 100%;
+    }
+
+    @include Mobile{
+      width: 100%;
+    }
+  }
+
+  &__bttn2{
+    display: none;
+    @include Mobile{
+      display: flex;
+      width: 100%;
+    }
+  }
+
+}

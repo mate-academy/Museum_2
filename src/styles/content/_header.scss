@@ -1,0 +1,246 @@
+@import "../utils";
+@import "../fonts";
+
+.container {
+  display: flex;
+  overflow-y: hidden;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 55px;
+  background: $primary_color;
+  margin-bottom: 110px;
+
+  @include BigScreen {
+    padding-left: 30%;
+  }
+
+  @include Tablet {
+    padding-left: 39px;
+  }
+
+  @include Mobile {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-right: 55px;
+
+    @include Tablet {
+      padding-right: 39px;
+      padding-bottom: 26px;
+      padding-top: 26px;
+    }
+
+    @include Mobile {
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  }
+
+  &__logo {
+     transition: ease-in-out 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__bar {
+    filter: brightness(0) saturate(100%) invert(94%) sepia(2%) saturate(3459%) hue-rotate(185deg) brightness(109%) contrast(92%);
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+
+    @include Mobile {
+      column-gap: 0;
+    }
+  }
+
+  &__menu {
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__ua {
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+    font-family: $railway_font;
+    font-weight: 500;
+    font-size: 16px;
+    color: $Main-gray;
+    text-transform: uppercase;
+
+    &::after {
+      content: url("../images/header/dropdown.svg");
+      display: block;
+      margin-top: -5px;
+    }
+
+    @include Mobile {
+      display: none;
+    }
+  }
+
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 47px;
+    width: 100%;
+
+    @include Desktop {
+      flex-direction: column;
+    }
+
+    @include Tablet {
+      flex-direction: column;
+    }
+  }
+
+  &__b1 {
+    display: block;
+  }
+
+  &__text,
+  &__text2 {
+    font-family: $railway_font;
+    font-weight: 400;
+    font-size: 14px;
+    color: $Main-gray;
+    width: fit-content;
+  }
+
+  &__text {
+
+    padding-bottom: 10px;
+
+  }
+
+  &__text2 {
+    padding-bottom: 81px;
+
+    @include Desktop {
+      width: 330px;
+    }
+
+    @include Tablet {
+      width: 330px;
+    }
+
+    @include Mobile {
+      width: fit-content;
+    }
+  }
+
+  &__header {
+    font-family: $playfair_font;
+    font-weight: 700;
+    font-size: 96px;
+    color: $Main-gray;
+
+
+    @include Tablet {
+      font-size: 72px;
+    }
+
+    @include Mobile {
+      padding-bottom: 30px;
+      font-size: 48px;
+    }
+  }
+
+  &__bttn {
+    font-family: $railway_font;
+    font-weight: 600;
+    font-size: 16px;
+    width: 270px;
+    height: 60px;
+    border: none;
+    color: $Main-gray;
+    background: $bttn_color;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    margin-bottom: 135px;
+
+    &:hover {
+      transform: scale(1.1);
+      background: $bttn_hover_color;
+    }
+
+    &:active {
+      background: $bttn_pressed_color;
+    }
+
+    @include Desktop {
+      width: 330px;
+    }
+
+    @include Tablet {
+      width: 330px;
+    }
+
+    @include Mobile {
+      width: 279px;
+    }
+  }
+
+  &__duration {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    padding-bottom: 50px;
+
+    @include Desktop {
+      display: none;
+    }
+
+    @include Tablet {
+      display: none;
+    }
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+    font-family: $playfair_font;
+    font-weight: 700;
+    color: $Main-gray;
+    font-size: 14px;
+    width: 20%;
+
+  }
+
+  &__b2 {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  &__pic {
+    display: block;
+
+
+    @include Tablet {
+      width: 100%;
+      margin-right: 39px;
+    }
+
+    @include Mobile {
+      width: 100%;
+    }
+
+  }
+
+
+}

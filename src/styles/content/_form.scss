@@ -1,0 +1,170 @@
+@import "../utils";
+@import "../fonts";
+
+.container6 {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 55px;
+  padding-right: 55px;
+  margin-top: 200px;
+  margin-bottom: 200px;
+
+  @include BigScreen {
+    padding-left: 30%;
+  }
+
+  @include Tablet {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  @include Mobile {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+
+    @include Desktop{
+      column-gap: 50px;
+    }
+
+    @include Tablet {
+      flex-direction: column;
+      margin-bottom: 50px;
+
+    }
+
+    @include Mobile {
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
+  }
+
+
+
+  &__title {
+    width: 570px;
+    font-family: $playfair_font;
+    font-weight: 700;
+    font-size: 48px;
+    color: $header_color;
+    margin-bottom: 77px;
+
+    @include Tablet{
+      width: 100%;
+    }
+
+    @include Mobile{
+      width: 100%;
+      font-size: 28px;
+    }
+  }
+
+  &__about {
+    width: 570px;
+    font-family: $railway_font;
+    font-weight: 400;
+    font-size: 16px;
+    color: $header_color;
+
+    @include Tablet{
+      width: 100%;
+    }
+
+    @include Mobile{
+      width: 100%;
+    }
+  }
+
+  &__form {
+    width: 470px;
+    display: flex;
+    flex-direction: column;
+
+    @include Tablet{
+      width: 100%;
+    }
+
+    @include Mobile{
+      width: 100%;
+    }
+  }
+
+  &__input {
+    background: transparent;
+    color: $header_color;
+    border: none;
+    padding-bottom: 3px;
+    border-bottom: 1px solid $header_color;
+    outline: none;
+    font-size: 16px;
+    font-family: $railway_font;
+    font-weight: 400;
+
+    &:hover {
+      border-bottom: 1px solid $bttn_color;
+      background: transparent;
+
+      &::placeholder {
+        color: $bttn_color;
+      }
+    }
+
+    &:focus {
+      border-bottom: 1px solid $bttn_color;
+      background: transparent;
+      color: $bttn_color;
+
+      &::placeholder {
+        color: $bttn_color;
+      }
+    }
+
+    @include Mobile{
+      width: 100%;
+    }
+  }
+
+  &__bttn {
+    font-family: $railway_font;
+    font-weight: 600;
+    font-size: 16px;
+    width: 270px;
+    height: 60px;
+    border: none;
+    color: $Main-gray;
+    background: $bttn_color;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    margin-top: 70px;
+
+    &:hover {
+      transform: scale(1.1);
+      background: $bttn_hover_color;
+    }
+
+    &:active {
+      background: $bttn_pressed_color;
+    }
+
+    @include Desktop {
+      width: 330px;
+    }
+
+    @include Tablet {
+      width: 330px;
+    }
+
+    @include Mobile {
+      width: 279px;
+    }
+  }
+
+}

@@ -1,0 +1,282 @@
+@import "../utils";
+@import "../fonts";
+
+.slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  transform: translateX(-100%);
+  box-sizing: border-box;
+  height: 100vh;
+  background: $primary_color;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding-left: 55px;
+  background: $primary_color;
+
+  @include Tablet {
+    padding-left: 39px;
+  }
+
+  @include Mobile {
+    padding-left: 20px;
+  }
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-right: 55px;
+
+    @include Tablet {
+      padding-right: 39px;
+      padding-bottom: 26px;
+      padding-top: 26px;
+    }
+
+    @include Mobile {
+      padding-right: 20px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  }
+
+  &__logo {
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__bar {
+    filter: brightness(0) saturate(100%) invert(94%) sepia(2%) saturate(3459%) hue-rotate(185deg) brightness(109%) contrast(92%);
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+
+    @include Mobile {
+      column-gap: 0;
+    }
+  }
+
+  &__cross {
+    transition: ease-in-out 0.3s;
+    @include Mobile {
+      order: 2;
+    }
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+  &__sw {
+    @include Mobile {
+      margin-right: 20px;
+      
+      order: 1;
+    }
+  }
+
+  &__menu {
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__ua {
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+    font-family: $railway_font;
+    font-weight: 500;
+    font-size: 16px;
+    color: $Main-gray;
+    text-transform: uppercase;
+
+    &::after {
+      display: block;
+      float: right;
+      justify-content: center;
+      align-items: center;
+      content: url("../images/header/arrow_down.jpg");
+      margin-top: -5px;
+      margin-left: 5px;
+    @include Mobile{
+       margin-top: -2px;
+    }
+    }
+
+    @include Mobile {
+      display: block;
+    }
+  }
+
+  &__box {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-between;
+
+    @include Desktop {
+      flex-direction: column;
+    }
+
+    @include Tablet {
+      margin-right: 39px;
+      flex-direction: column;
+    }
+
+    @include Mobile {
+      margin-right: 20px;
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include Desktop{
+      margin-right: 39px;
+    }
+  }
+
+  &__table {
+    display: flex;
+    width: 424px;
+    justify-content: space-between;
+    margin-bottom: 70px;
+
+    @media (max-width:484px) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+
+  &__time {
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+  }
+
+  &__about {
+    font-size: 14px;
+    font-family: $railway_font;
+    font-weight: 400;
+    color: $Main-gray;
+  }
+
+  &__info {
+    font-size: 16px;
+    font-family: $railway_font;
+    font-weight: 600;
+    color: $Main-gray;
+  }
+
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+  }
+
+  &__links {
+    font-size: 48px;
+    font-family: $playfair_font;
+    font-weight: 700;
+    color: $Main-gray;
+    transition: ease-in-out 0.3s;
+    width: fit-content;
+
+    @media (max-width:527px) {
+      font-size: 30px;
+    }
+
+    @include Mobile {
+      font-size: 20px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__divider {
+    margin-top: 50px;
+    @include Tablet {
+      width: 100%;
+    }
+
+    @include Mobile {
+      width: 80%;
+    }
+  }
+
+  &__bttn {
+    font-family: $railway_font;
+    font-weight: 600;
+    font-size: 16px;
+    width: 270px;
+    height: 60px;
+    border: none;
+    color: $Main-gray;
+    background: $bttn_color;
+    margin-top: 50px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      background: $bttn_hover_color;
+    }
+
+    &:active {
+      background: $bttn_pressed_color;
+    }
+
+    @include Desktop {
+      width: 330px;
+      margin-bottom: 30px;
+    }
+
+    @include Tablet {
+      width: 330px;
+      margin-bottom: 30px;
+    }
+
+    @include Mobile {
+      width: 279px;
+    }
+  }
+
+  &__content2 {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  &__pic {
+    display: block;
+
+    @include Tablet {
+      width: 100%;
+    }
+
+    @include Mobile {
+     display: none;
+    }
+  }
+
+}

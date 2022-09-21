@@ -1,0 +1,117 @@
+@import "../utils";
+@import "../fonts";
+
+.container7 {
+  display: flex;
+  box-sizing: border-box;
+  padding-left: 55px;
+  padding-right: 55px;
+  background: $primary_color;
+  padding-top: 50px;
+  padding-bottom: 30px;
+
+  @include BigScreen {
+    padding-left: 30%;
+  }
+
+  @include Tablet {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  @include Mobile {
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__box {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    box-sizing: border-box;
+    @include Tablet {
+      padding-left: 20px;
+    }
+
+    @include Mobile{
+      padding-left: 0;
+    }
+  }
+
+  &__box:nth-child(2),
+  &__box:nth-child(3) {
+    @include Mobile {
+      margin-top: 50px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    font-family: $playfair_font;
+    font-weight: 700;
+    font-size: 20px;
+    color: $Main-gray;
+    margin-bottom: 30px;
+  }
+
+  &__contact {
+    font-family: $railway_font;
+    font-weight: 400;
+    font-size: 16px;
+    width: fit-content;
+    color: $Main-gray;
+    line-height: 24px;
+    transition: ease-in-out 0.3s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+
+  &__map {
+    width: fit-content;
+  }
+
+  &__time {
+    font-family: $railway_font;
+    font-weight: 400;
+    font-size: 16px;
+    color: $Main-gray;
+    line-height: 24px;
+  }
+
+  &__navigation {
+    font-family: $railway_font;
+    font-weight: 400;
+    font-size: 16px;
+    color: $Main-gray;
+    row-gap: 50x;
+    width: fit-content;
+    height: 100%;
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include Mobile {
+      margin-top: 20px;
+    }
+  }
+
+  &__socail {
+    display: flex;
+    width: 0;
+    margin-top: 50px;
+    column-gap: 25px;
+    align-items: center;
+  }
+
+  &__logo {
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      filter: invert(37%) sepia(99%) saturate(1650%) hue-rotate(185deg) brightness(102%) contrast(115%);
+    }
+  }
+}
