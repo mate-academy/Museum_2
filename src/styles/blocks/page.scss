@@ -1,0 +1,36 @@
+.page {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: #ccc;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    width: 320px;
+    height: 100vh;
+    background-color: $color-4;
+
+    @include Tablet {
+      width: 768px;
+    }
+
+    @include Desktop {
+      width: 1280px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
