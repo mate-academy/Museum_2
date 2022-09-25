@@ -1,0 +1,56 @@
+.button {
+  @extend %text-button;
+  margin: 0 auto;
+
+  height: 60px;
+  width: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $colorWhite;
+  background-color: $colorMain;
+  cursor: pointer;
+
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+  @extend %button-colors;
+
+  @include onTablet {
+    margin: 0;
+    width: 100%;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &--white-mobile {
+    margin-top: 30px;
+
+    color: $colorMain;
+    background-color: $colorWhite;
+    border: 1px solid $colorMain;
+
+    @include onTablet {
+      display: none;
+      margin-top: 0;
+    }
+
+    @extend %button-white-colors;
+  }
+
+  &--white {
+    @extend .button--white-mobile;
+    display: none;
+    width: 100%;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      width: 280px;
+    }
+  }
+}

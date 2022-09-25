@@ -1,0 +1,61 @@
+.top {
+  margin-bottom: 70px;
+  display: flex;
+  justify-content: space-between;
+
+  &__content {
+    display: flex;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 40px;
+
+    &--menu {
+      @extend .top__actions;
+      display: block;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__mini-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    &--header {
+      display: none;
+      margin: 0;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    &--high-res {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    &--low-res {
+      display: flex;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__lang {
+    color: $colorWhite;
+  }
+}
