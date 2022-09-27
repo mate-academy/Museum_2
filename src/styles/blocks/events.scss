@@ -1,0 +1,114 @@
+.events {
+  &--positioned {
+    position: relative;
+  }
+
+  &__grid {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 60px 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 70px);
+    }
+  }
+
+  &__card {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__primary-title {
+    margin-bottom: 60px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $black;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+    height: 358px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 10px;
+      height: 422px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+      height: 475px;
+    }
+  }
+
+  &__time {
+    margin-bottom: 10px;
+    color: $main;
+  }
+
+  &__secondary-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 125%;
+    color: $black;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__preview {
+    margin-bottom: 30px;
+
+    color: $gray;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onTablet {
+      width: 210px;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      transform: translate(-39px, -60%);
+    }
+
+    @include onDesktop {
+      transform: translate(-55px, -50%);
+    }
+  }
+}

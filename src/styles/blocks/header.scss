@@ -1,0 +1,121 @@
+.header {
+  background-color: $background;
+  color: $white;
+  width: 100%;
+
+  &__content {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 100vh;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onTablet {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__info {
+    width: 280px;
+
+    @include onTablet {
+      width: 570px;
+    }
+  }
+
+  &__additional {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 48px;
+    line-height: 100%;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      font-size: 96px;
+    }
+  }
+
+  &__main {
+    margin-bottom: 40px;
+    width: 267px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      width: 330px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 81px;
+      width: max-content;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      width: 330px;
+    }
+  }
+
+  &__dates {
+    bottom: 50px;
+    display: none;
+    line-height: 125%;
+    color: $white;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 570px;
+    }
+
+    &::after {
+      position: relative;
+      right: 40px;
+      display: flex;
+      justify-content: space-between;
+      content: "";
+      width: 450px;
+      height: 1px;
+      background-color: $white;
+    }
+  }
+
+  &__image {
+    margin-right: 0;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: -55px;
+    }
+  }
+}

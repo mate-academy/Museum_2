@@ -1,0 +1,100 @@
+.digest {
+  &__grid {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 90px);
+      gap: 0 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 70px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 28px;
+    line-height: 125%;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__main-info {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__form {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__field {
+    display: block;
+    padding: 0;
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+    border: 1px solid transparent;
+    background-color: $white;
+    outline: none;
+    color: $black;
+    border-bottom: 1px solid $black;
+
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      color: $black;
+      font-weight: normal;
+    }
+
+    &:hover {
+      border-bottom-color: $main;
+
+      &::placeholder {
+        color: $main;
+      }
+    }
+
+    &:focus {
+      border-bottom-color: #cd4d31;
+      caret-color: $main;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  &__button {
+    color: $white;
+    outline: none;
+    border-color: transparent;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.menu {
+  background-color: $background;
+  color: $white;
+  width: 100%;
+
+  &__content {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto auto auto auto 1fr;
+    align-items: flex-end;
+    width: 100%;
+    height: 100vh;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+    padding: 0;
+
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    width: 280px;
+
+    @include onTablet {
+      flex-direction: row;
+      width: 465px;
+    }
+  }
+
+  &__additional {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__main {
+    margin-bottom: 20px;
+    width: 224px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      width: max-content;
+    }
+
+    @include onDesktop {
+      margin-bottom: 81px;
+      width: max-content;
+    }
+  }
+
+  &__page-nav {
+    margin-bottom: 40px;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: $white;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+      max-width: 570px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 150%;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      width: 330px;
+    }
+  }
+
+  &__image {
+    margin-right: 0;
+    display: none;
+
+    @include onTablet {
+      display: flex;
+
+    }
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin-right: -55px;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.top-actions {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+
+  @include onTablet {
+    height: 77px;
+  }
+
+  @include onDesktop {
+    height: 90px;
+  }
+
+  &__interactive {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__language {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    margin-left: 40px;
+
+    &--menu {
+      position: static;
+      display: block;
+      transform: translateX(-50px);
+
+      @include onTablet {
+        transform: translateX(0);
+      }
+    }
+
+    @include onTablet {
+      position: static;
+      display: block;
+    }
+
+    &--box {
+      position: relative;
+      z-index: 1;
+
+      width: 35px;
+      line-height: inherit;
+      color: $white;
+      background-color: transparent;
+      border: 1px solid transparent;
+      outline: none;
+      font-size: inherit;
+      font-weight: 500;
+
+      appearance: none;
+    }
+
+    &--union {
+      position: relative;
+      bottom: 3px;
+      right: 12px;
+    }
+  }
+}

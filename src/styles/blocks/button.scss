@@ -1,0 +1,88 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  width: 100%;
+  height: 60px;
+
+  transition: 0.3s;
+
+  &--primary {
+    background-color: $main;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      background-color: #dd836f;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+
+    transition: 0.3s;
+
+    &--secondary {
+      color: $main;
+    }
+  }
+
+  &--secondary {
+    background-color: $white;
+    border: 1px solid $main;
+
+    &:hover .button__link--secondary {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active .button__link--secondary {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled .button__link--secondary {
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &__arrow {
+    position: relative;
+    left: 5px;
+    top: 3px;
+    background-image: url(../images/arrowRight.svg);
+    background-repeat: no-repeat;
+    height: 20px;
+    width: 20px;
+    transition: 0.3s;
+  }
+
+  &__link--secondary:hover > .button__arrow {
+    background-image: url(../images/arrowHover.svg);
+  }
+
+  &__link--secondary:active > .button__arrow {
+    background-image: url(../images/arrowActive.svg);
+  }
+}

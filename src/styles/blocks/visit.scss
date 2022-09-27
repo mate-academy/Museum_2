@@ -1,0 +1,90 @@
+.visit {
+  position: relative;
+  padding: 50px 0;
+  background-color: $background;
+  color: $white;
+
+  &__container {
+    position: relative;
+  }
+
+  @include onTablet {
+    padding: 80px 0;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+    padding: 0;
+  }
+
+  &__grid {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 90px);
+      gap: 0 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 70px);
+      align-content: center;
+      height: 100vh;
+    }
+  }
+
+  &__title {
+    font-size: 38px;
+    line-height: 100%;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+      font-size: 62px;
+      line-height: 100%;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 13;
+      margin-bottom: 30px;
+      font-size: 80px;
+    }
+  }
+
+  &__main-info {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 11;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__image {
+    @include onDesktop {
+      grid-column: 1 / 7;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      width: 40%;
+      background-image: url(../images/main/woman-2.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}
