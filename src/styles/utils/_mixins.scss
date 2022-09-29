@@ -1,6 +1,58 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin OnPhone {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin OnLaptop {
+  @media (min-width: 640px) and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin OnDesctop {
+  @media (min-width: 1280px) and (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin OnDesign {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin AfterPhone {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin AfterLaptop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin button {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  background-color: $colorBlue;
+  height: 50px;
+  border-radius: 8px;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+
   &:hover {
-    #{$_property}: $_toValue;
+    background-color: #fff;
+    border: 3px solid $colorBlue;
+    color: $colorBlue;
   }
 }

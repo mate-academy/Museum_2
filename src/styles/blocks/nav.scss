@@ -1,0 +1,84 @@
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 25px;
+  column-gap: 40px;
+  padding: 20px 0 70px;
+    
+  @include AfterPhone {
+    grid-template-columns: 1fr 25px 34px;
+  }
+    
+  @include OnLaptop {
+    padding: 26px 0 122px;
+  }
+    
+  @include AfterLaptop {
+    padding: 32px 0 80px;
+  }
+
+  &--menu {
+    padding: 20px 0 30px;
+
+    @include OnPhone {
+      grid-template-columns: 1fr 25px 34px;
+    }
+
+    @include OnLaptop {
+      padding: 26px 0 55px;
+    }
+
+    @include AfterLaptop {
+      padding: 32px 0 45px;
+    }
+  }
+      
+  &__link {
+    width: fit-content;
+  }
+    
+  &__menu {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    width: 25px;
+    height: 20px;
+    background-image: url(../images/menu.svg);
+
+    &--cross {
+      background-image: url(../images/cross.svg);
+      background-position: center;
+    }
+  }
+    
+  &__language-container {
+    display: flex;
+    justify-content: space-between;
+    
+    @include OnPhone {
+      display: none;
+    }
+
+    &--menu {
+      @include OnPhone {
+        display: flex;
+      }
+    }
+  }
+    
+  &__language {
+    width: 23px;
+    background-image: url(../images/UA.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+    
+  &__arrow {
+    display: block;
+    width: 8px;
+    background-image: url(../images/Union.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

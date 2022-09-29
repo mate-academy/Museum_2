@@ -1,0 +1,133 @@
+.header {
+  width: 100%;
+  height: fit-content;
+  background-color: $darkGrey;
+  margin-bottom: 90px;
+
+  @include AfterPhone {
+    margin-bottom: 110px;
+  }
+
+  &__date {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $darkWhite;
+    opacity: 0.7;
+    margin: 0 0 10px;
+
+    @include AfterLaptop {
+      margin: 42px 0 10px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $darkWhite;
+    margin: 0 0 30px;
+
+    @include OnLaptop {
+      font-size: 72px;
+      margin: 0 0 20px;
+    }
+
+    @include AfterLaptop {
+      font-size: 96px;
+      margin: 0 0 30px;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $darkWhite;
+    opacity: 0.7;
+    margin: 0 0 40px;
+
+    @include OnLaptop {
+      margin: 0 0 50px;
+    }
+
+    @include AfterLaptop {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__button-container {
+    width: 100%;
+    margin-bottom: 40px;
+    
+    @include AfterPhone {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include OnLaptop {
+      margin-bottom: 70px;
+    }
+
+    @include AfterLaptop {
+      margin-bottom: 158px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+    align-items: center;
+
+    @include AfterLaptop {
+      display: flex;
+    }
+  }
+
+  &__subdate {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: $darkWhite;
+    opacity: 0.7;
+    margin-right: 20px;
+  }
+
+  &__line {
+    display: flex;
+    flex-grow: 1;
+    height: 1px;
+    opacity: 0.3;
+    background-color: $darkWhite;
+  }
+
+  &__photo-container {
+    @include OnLaptop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__photo {
+    height: 273px;
+    background-image: url(../images/photos/img_01.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include OnLaptop {
+      height: 494px;
+    }
+
+    @include AfterLaptop {
+      height: 663px;
+    }
+  }
+}

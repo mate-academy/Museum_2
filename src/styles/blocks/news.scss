@@ -1,0 +1,115 @@
+.news {
+  &__title {
+    display: flex;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $lightBlack;
+    margin: 0;
+    width: max-content;
+    
+    @include OnPhone {
+      margin: 0 0 60px;
+    }
+    
+    @include OnLaptop {
+      font-size: 40px;
+      margin: 0 0 75px;
+    }
+    
+    @include AfterLaptop {
+      font-size: 40px;
+      margin: 0 0 71px;
+    }
+  }
+
+  &__card {
+    @include OnPhone {
+      margin-bottom: 50px;
+    }
+    &--last {
+      @include OnPhone {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__photo-container {
+    position: relative;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 330px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    transition: transform 0.5s;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+    
+    @include OnLaptop {
+      height: 330px;
+      margin-bottom: 30px;
+      padding-bottom: 0;
+    }
+
+    @include AfterLaptop {
+      max-height: 370px;
+      height: 370px;
+      margin-bottom: 20px;
+      padding-bottom: 0;
+    }
+
+    &:hover {
+      transform: scale(107%);
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__date {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $lightBlack;
+  }
+
+  &__subtitle {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    color: $lightBlack;
+    margin: 0 0 20px;
+
+    @include AfterPhone {
+      line-height: 150%;
+    }
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $midGrey;
+    margin: 0;
+  }
+}
