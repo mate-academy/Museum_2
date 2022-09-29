@@ -1,0 +1,113 @@
+.nav {
+  height: 100vh;
+  background-color: #3f5252;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__box {
+    max-width: 1170px;
+  }
+
+  &__list {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 36px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    &:last-child {
+      &::after {
+        display: block;
+        height: 1px;
+        width: 280px;
+        z-index: 1;
+        background-color: red ;
+      }
+    }
+  }
+
+  &__link {
+    color: #f1f5f4;
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    margin-top: 40px;
+    border-bottom: 1px transparent;
+    transition: border-bottom 1s;
+
+    @include onTablet {
+      font-size: 48px;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #f1f5f4;
+    }
+  }
+
+  &__line {
+    margin-top: 40px;
+    height: 1px;
+    width: 280px;
+    background-color: #f1f5f4;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      width: 690px;
+    }
+
+    @include onDesktop {
+      width: 400px;
+    }
+  }
+
+  &__photo {
+    display: none;
+    position: absolute;
+    left: 25%;
+    bottom: 0;
+
+    @include onTablet {
+      width: 422px;
+      height: 466px;
+      display: block;
+    }
+
+    @include onDesktop {
+      left: 39%;
+      width: auto;
+      height: auto;
+    }
+
+  }
+
+}
