@@ -1,0 +1,93 @@
+.form {
+  margin-bottom: 200px;
+
+  display: flex;
+  justify-content: space-between;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+
+    width: 570px;
+
+    @include onMobile {
+      width: 300px;
+    }
+  }
+
+  &__right {
+    @include fontSecond;
+
+    color: $c-black;
+
+    font-size: 16px;
+    line-height: 24px;
+
+    width: 570px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+      width: 300px;
+    }
+  }
+
+  &__input {
+    display: block;
+
+    border: none;
+    background-color: $c-white;
+    border-bottom: 1px solid $c-black;
+    width: 470px;
+    padding-bottom: 3px;
+    outline: none;
+
+    @include onMobile {
+      width: 300px;
+    }
+
+    @include fontSecond;
+    font-size: 16px;
+    line-height: 24px;
+
+    margin-top: 50px;
+
+    transition: border-bottom-color 0.3s, color 0.3s;
+
+    &::placeholder {
+      color: $c-black;
+
+      transition: color 0.3s;
+    }
+
+    &:invalid {
+      border-bottom-color: $c-black;
+      color: $c-black;
+    }
+
+    &:hover {
+      border-bottom-color: $c-main;
+      color: $c-main;
+
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:focus {
+      border-bottom-color: $c-main;
+      color: $c-main;
+    }
+  }
+
+  &__btn {
+    margin-top: 40px;
+
+    border: none;
+
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,101 @@
+.page {
+  &__header {
+    height: 100vh;
+    width: 100%;
+    background: $c-back url(/images/header-img.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 640px;
+
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      background-size: 440px;
+      background-position: bottom;
+
+      @include onMobile {
+        background-size: 245px;
+      }
+    }
+  }
+}
+
+.header {
+  position: relative;
+
+  &__content {
+    margin-top: 180px;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
+  }
+
+  &__date {
+    @include fontSecond;
+    color: $c-white;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &__title {
+    @include fontMainBold;
+    color: $c-white;
+    font-size: 96px;
+
+    margin-top: 10px;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onMobile {
+      font-size: 48px;
+    }
+  }
+
+  &__text {
+    @include fontSecond;
+    color: $c-white;
+    font-size: 14px;
+    line-height: 22px;
+
+    margin-top: 30px;
+  }
+
+  &__btn {
+    margin-top: 80px;
+  }
+
+  &__bottom {
+    display: block;
+    position: absolute;
+    bottom: 50px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    @include fontMain;
+    font-size: 14px;
+    opacity: 0.7;
+
+    color: $c-white;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      transform: translateY(-4px);
+      margin-left: 20px;
+      width: 470px;
+      height: 1px;
+      background-color: $c-white;
+      opacity: 0.3;
+    }
+  }
+}
