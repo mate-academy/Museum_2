@@ -1,0 +1,76 @@
+.top-menu {
+  background-color: $green;
+  color: $white;
+  
+  &__top {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      padding: 26px 0;
+    }
+
+    @include onDesktop {
+      padding: 32px 0;
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 123px;
+    height: 40px;
+    background-image: url(../images/logo.svg);
+    @extend %image-sets;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 30px;
+    flex-direction: row-reverse;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__menu {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/menu.svg);
+    @extend %image-sets;
+
+    &--cross {
+      background-image: url(../images/cross.svg);
+      width: 30px;
+      height: 30px;
+      @extend %image-sets;
+    }
+  }
+
+  &__lang {
+    display: none;
+    align-items: center;
+    @extend %ralewayMain;
+    font-weight: 500;
+    color: $white;
+    text-decoration: none;
+    gap: 5px;
+
+    &::after {
+      content: "";
+      display: block;
+      background-image: url(../images/dropdown.svg);
+      @extend %image-sets;
+      background-size: cover;
+      width: 8px;
+      height: 5px;
+    }
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+}

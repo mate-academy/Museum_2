@@ -1,0 +1,75 @@
+.button {
+  display: inline-block;
+  max-width: max-content;
+  text-decoration: none;
+  @extend %ralewayButton;
+
+  &--primary {
+    padding: 22px 78px;
+    background-color: $orange;
+    color: $white;
+    text-align: center;
+
+    &:hover {
+      background-color: $orangeHover;
+    }
+
+    &:active {
+      background-color: $orangePressed;
+    }
+
+    &:disabled,
+    &[disabled] {
+      background-color: $orangeDisabled;
+      pointer-events: none;
+    }
+  }
+
+  &--secondary {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: max-content;
+    gap: 6px;
+    padding: 19px 62px;
+    color: $orange;
+    border: 1px solid $orange;
+
+    &::after {
+      content: "";
+      display: block;
+      background-image: url(../images/arrowDef.svg);
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      border-color: $orangeHover;
+      color: $orangeHover;
+
+      &::after {
+        background-image: url(../images/arrowHov.svg);
+      }
+    }
+
+    &:active {
+      border-color: $orangePressed;
+      color: $orangePressed;
+
+      &::after {
+        background-image: url(../images/arrowPre.svg);
+      }
+    }
+
+    &:disabled,
+    &[disabled] {
+      border-color: $orangeDisabled;
+      color: $orangeDisabled;
+      pointer-events: none;
+
+      &::after {
+        background-image: url(../images/arrowDis.svg);
+      }
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.header {
+  background-color: $green;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0 0;
+
+    @include onTablet {
+      padding: 99px 0 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      padding: 90px 0 0;
+    }
+  }
+
+  &__date {
+    margin:  0 0 10px;
+  }
+
+  &__title {
+    color: $white;
+    margin: 0 0 30px;
+  }
+
+  &__text {
+    margin: 0 0 40px;
+
+    @include onDesktop {
+      margin: 0 0 81px;
+    }
+  }
+
+  &__button {
+    margin: 0 0 70px;
+
+    @include onDesktop {
+      margin: 0 0 146px;
+    }
+  }
+
+  &__image {
+    background-color: none;
+    @extend %image-sets;
+    background-size: cover;
+    width: 100%;
+
+    @include onTablet {
+      max-width: 443px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      max-width: 100%;
+    }
+  }
+
+  &__bottom-text {
+    display: none;
+    align-items: center;
+    gap: 20px;
+    width: 550px;
+    @extend %h6;
+    color: $white;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 449px;
+      height: 1px;
+      background-color: $white;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__lang {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
