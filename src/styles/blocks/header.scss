@@ -1,0 +1,113 @@
+.header {
+  background-color: $background-color;
+
+  background-image: url(../images/header-pic.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 50%;
+
+  @include onDesktop {
+    background-position: bottom right;
+    background-size: 625px;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 99px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 90px;
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__title {
+
+    margin-bottom: 40px;
+    color: $headerText-color;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    &--additional {
+      @extend %additional-text;
+      margin-bottom: 10px;
+    }
+
+    &--h1 {
+      @extend %h1-text;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--main {
+      @extend %main-text;
+    }
+  }
+
+  &__button {
+    margin-bottom: 0;
+
+    @include onDesktop {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__small-title {
+    @extend %h6-text;
+
+    color: $headerText-color;
+    opacity: 0;
+    display: none;
+
+    &::after {
+      display: block;
+      height: 1px;
+      width: 470px;
+      content: "";
+      background: $headerText-color;
+      opacity: 0.3;
+      transform: translate(100px, -7px);
+    }
+
+    @include onDesktop {
+      opacity: 0.7;
+      display: block;
+    }
+  }
+}

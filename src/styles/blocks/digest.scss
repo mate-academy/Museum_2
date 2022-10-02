@@ -1,0 +1,67 @@
+.digest {
+  &__title {
+    @extend %h3-text;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    @extend %main-text;
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__email {
+    @extend %main-text;
+    width: 100%;
+    margin-bottom: 30px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $black-color;
+    transition-duration: 0.5s;
+
+    &::placeholder {
+      @extend %main-text;
+      color: $black-color;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: $hover-color;
+      }
+
+      color: $hover-color;
+      border-bottom: 1px solid $hover-color;
+    }
+
+    &:focus {
+      font-weight: 700;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    border: none;
+
+    @include onTablet {
+      width: 75%;
+    }
+
+    @include onDesktop {
+      width: 60%;
+    }
+  }
+}

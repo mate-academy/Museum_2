@@ -1,0 +1,139 @@
+.menu {
+  background-color: $background-color;
+  color: $headerText-color;
+
+  @include onTablet {
+    background-image: url(../images/header-menu-pic.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 420px;
+
+    @include onDesktop {
+      background-position: bottom right;
+      background-size: 625px;
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding: 32px 0 108px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      flex-direction: row;
+      margin-bottom: 50px;
+      gap: 123px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      gap: 83px;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--name {
+      @extend %additional-text;
+    }
+    &--time {
+      @extend %main-text;
+      font-weight: 600;
+    }
+
+  }
+
+  &__list {
+    padding: 0;
+    margin-bottom: 80px;
+    list-style: none;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 120px;
+    }
+
+    &::after {
+      display: block;
+      height: 1px;
+      width: 100%;
+      content: "";
+      background: $headerText-color;
+      transform: translateY(40px);
+
+      @include onTablet {
+        transform: translateY(50px);
+      }
+
+      @include onDesktop {
+        width: 45%;
+        opacity: 0.3;
+        transform: translateY(60px);
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 238px;
+
+    @include onTablet {
+      margin-bottom: 496px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
