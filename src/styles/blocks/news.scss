@@ -1,0 +1,101 @@
+.news {
+  color: $black-color;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--bottom {
+      display: flex;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+}
+
+.new {
+  height: 100%;
+  width: 100%;
+
+  @include onTablet {
+    width: calc((100% - 30px) / 2);
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__time {
+    margin: 0 0 10px;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+  }
+
+  &__text {
+    color: $gray-color;
+
+    margin: 0 0 30px;
+
+    @include onTablet {
+      margin: 0 0 40px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+  }
+}

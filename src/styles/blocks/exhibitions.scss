@@ -1,0 +1,119 @@
+.exhibitions {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--bottom {
+      display: flex;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}
+
+.exhibition {
+  // height: 100%;
+  // width: 100%;
+
+  // @include onTablet {
+  //   width: calc((100% - 30px) / 2);
+  // }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__time {
+    margin: 0 0 10px;
+
+    color: $main-color;
+  }
+
+  &__title {
+    display: block;
+    // overflow: hidden;
+    margin: 0 0 20px;
+
+    color: $black-color;
+
+    @include onTablet {
+      height: 60px;
+    }
+
+    @include onDesktop {
+      height: 30px;
+    }
+  }
+
+  &__text {
+    display: block;
+    overflow: hidden;
+
+    color: $gray-color;
+
+    margin: 0 0 30px;
+
+    @include onTablet {
+      margin: 0 0 40px;
+      height: 70px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 50px;
+      height: 48px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 30px;
+    width: 100%;
+
+    @include onTablet {
+      margin-bottom: 164px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 222px;
+      width: 270px;
+    }
+  }
+}

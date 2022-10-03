@@ -1,0 +1,101 @@
+.events {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--bottom {
+      display: flex;
+      margin-bottom: 90px;
+
+      @include onTablet {
+        display: none;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 30px;
+  margin-bottom: 30px;
+
+  @include onTablet {
+    flex-direction: row;
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+
+    @include onTablet {
+      max-width: 330px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      max-width: 370px;
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__time {
+    margin: 0 0 10px;
+
+    color: $main-color;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+
+    color: $black-color;
+  }
+
+  &__text {
+    color: $gray-color;
+
+    margin: 0 0 30px;
+
+    @include onTablet {
+      margin: 0 0 40px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+  }
+}

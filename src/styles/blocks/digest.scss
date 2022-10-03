@@ -1,0 +1,72 @@
+.digest {
+  display: flex;
+  flex-direction: column;
+  color: $black-color;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__input {
+    border: 0;
+    font-weight: 700;
+    border-bottom: 1px solid $black-color;
+    margin-bottom: 30px;
+    outline: 0;
+
+    width: 100%;
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    @include onTablet {
+      max-width: 450px;
+    }
+
+    @include onDesktop {
+      max-width: 470px;
+    }
+
+    &:hover {
+      color: $main-color;
+      border-color: $main-color;
+
+      &::placeholder {
+        color: $main-color;
+      }
+    }
+
+    &:focus {
+      color: $main-color;
+      border-color: $main-color;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 80px;
+    border: solid 2px transparent;
+
+    @include onTablet {
+      margin-bottom: 128px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+}
