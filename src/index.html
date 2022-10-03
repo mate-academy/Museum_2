@@ -24,6 +24,7 @@
     >
     <title>Museum2</title>
     <link rel="stylesheet" href="./styles/main.scss">
+    <script src="./scripts/main.js" defer></script>
   </head>
   <body class="body page__body">
     <header class="header">
@@ -72,7 +73,7 @@
               світову культуру 19-20 ст.
             </div>
 
-            <a href="#" class="header__button button button-font">
+            <a href="#visit" class="header__button button button-font">
               Купити квиток
             </a>
 
@@ -132,7 +133,13 @@
               </div>
 
               <p class="menu__adress-text Main-bold">
-                Київ, вул. М. Грушевського, 6
+                <a
+                  href="https://goo.gl/maps/osq9nCUGynps6aP19"
+                  target="_blank"
+                  class="menu__adress-link"
+                >
+                  Київ, вул. М. Грушевського, 6
+                </a>
               </p>
             </div>
           </div>
@@ -149,7 +156,7 @@
             Новини
           </a>
 
-          <a href="#" class="menu__button button button-font">
+          <a href="#visit" class="menu__button button button-font">
               Купити квиток
           </a>
         </div>
@@ -164,7 +171,7 @@
               Актуальні виставки
             </h2>
 
-            <a href="#" class="exhibitions__button button-font button-secondary">
+            <a href="#digest" class="exhibitions__button button-font button-secondary">
               Архів виставок
 
               <img src="./images/arrow.jpg" alt="right">
@@ -196,7 +203,7 @@
                   </p>
 
                   <div class="grid__item grid__item--tablet-1-3 grid--desktop-1-3">
-                    <a href="#" class="exhibition__button button button-font">
+                    <a href="#visit" class="exhibition__button button button-font">
                       Купити квиток
                     </a>
                   </div>
@@ -228,7 +235,7 @@
                   </p>
 
                   <div class="grid__item grid__item--tablet-1-6 grid--desktop-7-9">
-                    <a href="#" class="exhibition__button button button-font">
+                    <a href="#visit" class="exhibition__button button button-font">
                       Купити квиток
                     </a>
                   </div>
@@ -237,7 +244,7 @@
             </div>
           </div>
 
-          <a href="#" class="
+          <a href="#digest" class="
             exhibitions__button
             exhibitions__button--bottom
             button-font
@@ -257,7 +264,7 @@
               Найближчі події
             </h2>
 
-            <a href="#" class="events__button button-secondary button-font">
+            <a href="#digest" class="events__button button-secondary button-font">
               Календар подій
 
               <img src="./images/arrow.jpg" alt="right">
@@ -287,7 +294,7 @@
                   – розгортатиметься...
                 </p>
 
-                <a href="#" class="event__button button button-font">
+                <a href="#digest" class="event__button button button-font">
                   Зареєструватись
                 </a>
               </div>
@@ -315,14 +322,14 @@
                   подорожі - Австралія.
                 </p>
 
-                <a href="#" class="event__button button button-font">
+                <a href="#digest" class="event__button button button-font">
                   Зареєструватись
                 </a>
               </div>
             </div>
           </div>
 
-          <a href="#" class="events__button--bottom button-secondary button-font">
+          <a href="#digest" class="events__button--bottom button-secondary button-font">
             Календар подій
 
             <img src="./images/arrow.jpg" alt="right">
@@ -330,7 +337,7 @@
         </div>
       </section>
 
-      <section class="visit">
+      <section class="visit" id="visit">
         <div class="visit__container">
           <img
             src="./images/visit.png"
@@ -350,7 +357,7 @@
               насолоджуватись мистецтвом
             </p>
 
-            <a href="#" class="visit__button button button-font">
+            <a href="#digest" class="visit__button button button-font">
               Почати
             </a>
           </div>
@@ -364,7 +371,7 @@
               Новини
             </h2>
 
-            <a href="#" class="news__button button-secondary button-font">
+            <a href="#digest" class="news__button button-secondary button-font">
               Усі новини
 
               <img src="./images/arrow.jpg" alt="right">
@@ -415,7 +422,7 @@
             </div>
           </div>
 
-          <a href="#" class="news__button--bottom button-secondary button-font">
+          <a href="#digest" class="news__button--bottom button-secondary button-font">
             Усі новини
 
             <img src="./images/arrow.jpg" alt="right">
@@ -423,7 +430,7 @@
         </div>
       </section>
 
-      <section class="digest page__section">
+      <section class="digest page__section" id="digest">
         <div class="container">
           <div class="digest__top">
             <h2 class="digest__title h3">
@@ -436,15 +443,18 @@
             </p>
           </div>
 
-          <input
-            type="email"
-            placeholder="e-mail"
-            class="digest__input Main"
-          >
+          <form action="#" id="subscripe__form">
+            <input
+              type="email"
+              name="email"
+              placeholder="e-mail"
+              class="digest__input Main"
+            >
+          </form>
 
-          <a href="#" class="digest__button button button-font">
+          <button form="subscripe__form" class="digest__button button button-font">
             Підписатись
-          </a>
+          </button>
         </div>
       </section>
     </main>
@@ -456,24 +466,56 @@
             Контакти
           </h2>
 
-          <p class="footer__text Main">
-            Київ,
+          <div class="footer__text Main">
+            <a
+              href="https://goo.gl/maps/osq9nCUGynps6aP19"
+              target="_blank"
+              class="footer__link"
+            >
+              Київ,
+              <br>
+              вул. М. Грушевського, 6
+            </a>
             <br>
-            вул. М. Грушевського, 6
+            <a href="tel: 278-13-57" class="footer__link">тел. 278-13-57</a>, <a href="tel: 278-74-54" class="footer__link">278-74-54</a>
             <br>
-            тел. 278-13-57, 278-74-54
-            <br>
-            info@namu.kiev.ua
-          </p>
+            <a href="mailto: info@namu.kiev.ua" class="footer__link">
+              info@namu.kiev.ua
+            </a>
+          </div>
 
           <div class="footer__icons">
-            <img src="./images/footer-icons/facebook.svg" alt="facebook-icon">
+            <a
+              href="https://www.facebook.com"
+              class="icons__link"
+              target="_blank"
+            >
+              <img src="./images/footer-icons/facebook.svg" alt="facebook-icon">
+            </a>
 
-            <img src="./images/footer-icons/twitter.svg" alt="twiter-icon">
+            <a
+              href="https://twitter.com"
+              class="icons__link"
+              target="_blank"
+            >
+              <img src="./images/footer-icons/twitter.svg" alt="twiter-icon">
+            </a>
 
-            <img src="./images/footer-icons/telegram.svg" alt="telegram-icon">
+            <a
+              href="https://web.telegram.org"
+              class="icon__link"
+              target="_blank"
+            >
+              <img src="./images/footer-icons/telegram.svg" alt="telegram-icon">
+            </a>
 
-            <img src="./images/footer-icons/instagram.svg" alt="instagram-icon">
+            <a
+              href="https://www.instagram.com"
+              class="icons__link"
+              target="_blank"
+            >
+              <img src="./images/footer-icons/instagram.svg" alt="instagram-icon">
+            </a>
           </div>
         </div>
 
@@ -501,18 +543,20 @@
 
         <div class="footer__links">
           <h2 class="footer__title h5">
-            Головна
+            <a href="#" class="footer__link">
+              Головна
+            </a>
           </h2>
 
-          <a href="#exhibitions" class="footer__link Main">
+          <a href="#exhibitions" class="footer__link footer__nav-link Main">
             Виставки
           </a>
 
-          <a href="#events" class="footer__link Main">
+          <a href="#events" class="footer__link footer__nav-link Main">
             Події
           </a>
 
-          <a href="#news" class="footer__link Main">
+          <a href="#news" class="footer__link footer__nav-link Main">
             Новини
           </a>
         </div>
@@ -520,9 +564,7 @@
 
       <div class="footer__bottom">
         <div class="footer__bottom-left">
-          <a href="#" class="footer__link">
             © 2010 — 2020
-          </a>
 
           <a href="#" class="footer__link">
             Privacy — Terms
