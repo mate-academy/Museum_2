@@ -1,0 +1,46 @@
+.event {
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet() {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__exhibition-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include onTablet() {
+      gap: 70px;
+    }
+
+    @include onDesktop() {
+      gap: 60px;
+    }
+  }
+
+  &__exhibition {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &:last-child {
+      margin-bottom: 30px;
+
+      @include onTablet() {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onTablet() {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+}

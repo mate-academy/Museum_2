@@ -1,0 +1,71 @@
+.sing {
+  &__title {
+    margin-bottom: 20px;
+
+    @include onDesktop() {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    margin-bottom: 50px;
+
+    @include onDesktop() {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 28px;
+    background-color: #e5e5e5;
+    border: none;
+    border-bottom: 1px solid $black;
+    color: $black;
+    font-weight: 700;
+    outline: none;
+    margin-bottom: 30px;
+
+    @include onTablet() {
+      width: 450px;
+    }
+
+    @include onDesktop() {
+      width: 470px;
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      font-weight: normal;
+      color: $black;
+    }
+
+    &:hover::placeholder {
+      color: $main;
+    }
+
+    &:focus::placeholder {
+      visibility: hidden;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $main;
+      caret-color: $main;
+    }
+
+  }
+
+  &__text {
+    color: $black;
+
+    @include onTablet() {
+      width: 570px;
+    }
+  }
+}

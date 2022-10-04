@@ -1,0 +1,87 @@
+.button {
+  height: 60px;
+  width: 100%;
+  background: #cd4d31;
+  outline: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  &-secondary {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $main;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-decoration: none;
+    border: 1px solid $main;
+    height: 60px;
+    order: 3;
+
+    &:hover {
+      color: #af3419;
+      border: 1px solid #af3419;
+
+      &:active {
+        color: #ea340d;
+        border: 1px solid #ea340d;
+      }
+
+      &:disabled {
+        color: #dd836f;
+        border: 1px solid #dd836f;
+      }
+    }
+
+    @include onTablet() {
+      width: 210px;
+    }
+
+    &::after {
+      content: "";
+      margin-left: 8px;
+      mask: url(../images/svg/arrow.svg) no-repeat center;
+      -webkit-mask: url(../images/svg/arrow.svg) no-repeat center;
+      background-color: $main;
+      width: 20px;
+      height: 20px;
+
+    }
+
+    &:hover:after {
+      background-color: #af3419;
+    }
+
+    &:active::after {
+      background-color: #ea340d;
+    }
+
+    &:disabled::after {
+      background-color: #dd836f;
+    }
+  }
+
+  @include onTablet() {
+    width: 330px;
+  }
+
+  @include onDesktop() {
+    width: 270px;
+  }
+}
