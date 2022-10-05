@@ -1,0 +1,124 @@
+.header {
+  position: relative;
+  color: $white;
+  background-color: $background-color;
+
+  &__top {
+    margin-bottom: 50px;
+
+    @include width_640 {
+      margin-bottom: 99px;
+    }
+
+    @include width_1280 {
+      margin-bottom: 47px;
+    }
+  }
+
+  &__dates {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+
+    margin-bottom: 30px;
+
+    @include width_640 {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include width_1280 {
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    width: 267px;
+    margin-bottom: 40px;
+
+    @include width_640 {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    @include width_1280 {
+      margin-bottom: 81px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include width_640 {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 768px) {
+      margin-bottom: 70px;
+    }
+
+    @include width_1280 {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__image {
+    width: 245px;
+    height: 273px;
+    margin: 0 auto;
+
+    background-image: url(../images/Header/Girl_from_Podolye_by_V.Tropinin.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    @include width_640 {
+      width: 100%;
+      height: 494px;
+
+      background-image: url(../images/Header/Girl_from_Podolye_by_V.Tropinin_640px.png);
+    }
+
+    @include width_1280 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: calc(50% - 15px);
+      height: 663px;
+
+      background-image: url(../images/Header/Girl_from_Podolye_by_V.Tropinin_1280px.png);
+      background-position: bottom right;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include width_1280 {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 50px;
+      opacity: 0.7;
+
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+
+      &::after {
+        display: block;
+        content: "";
+        height: 1px;
+        background-color: $white;
+        margin-left: 20px;
+        opacity: 0.3;
+        flex-grow: 1;
+      }
+    }
+  }
+}

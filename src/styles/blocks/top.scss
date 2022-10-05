@@ -1,0 +1,123 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: $white;
+  width: 100%;
+  height: 80px;
+
+  @include width_640 {
+    height: 77px;
+  }
+
+  @include width_1280 {
+    height: 90px;
+  }
+
+  &__logo {
+    text-decoration: none;
+    color: $white;
+    font-size: 36px;
+    line-height: 43px;
+  }
+
+  &__up-right-corner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    &--opposite {
+      flex-direction: row-reverse;
+      gap: 30px;
+
+      @include width_640 {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+  }
+
+  &__menu {
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+
+    background-image: url(../images/Header/menu_icon.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--cross {
+      background-image: url(../images/Header/menu_cross.svg);
+    }
+
+    @include width_640 {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__switcher {
+    display: flex;
+    cursor: pointer;
+
+    &--hidden {
+      display: none;
+
+      @include width_640 {
+        display: flex;
+      }
+    }
+
+    &::after {
+      display: inline-block;
+      content: url(../images/Header/switcher_arrow.svg);
+      width: 10px;
+      height: 7px;
+      margin-left: 3px;
+  
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__languages {
+    height: 24px;
+  }
+
+  &__language {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+
+    &:last-child {
+      position: relative;
+      text-decoration: none;
+      cursor: text;
+      color: $white;
+      font-weight: 400;
+      opacity: 0.5;
+      z-index: 0;
+
+      &::before {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $white;
+        opacity: 0.6;
+      }
+
+      &.show {
+        transform: translateY(-100%);
+        z-index: -1;
+      }
+
+      &.show-menu {
+        transform: translateY(-100%);
+        opacity: 0;
+        z-index: -2;
+      }
+    }
+  }
+}
