@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat($mobile-columns, $fraction);
+  column-gap: $mobile-gap;
+
+  @include onIpad {
+    grid-template-columns: repeat($ipad-columns, $fraction);
+    column-gap: $ipad-gap;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat($desktop-columns , $fraction);
+  }
+
+  &__item {
+    @include grid-cycle(mobile, $mobile-columns + 1);
+
+    @include onIpad {
+      @include grid-cycle(ipad, $ipad-columns + 1);
+    }
+
+    @include onDesktop {
+      @include grid-cycle(desktop, $desktop-columns + 1);
+    }
+  }
+}

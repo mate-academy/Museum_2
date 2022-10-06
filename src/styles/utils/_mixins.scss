@@ -1,6 +1,46 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-time;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin height-width ($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin onIpad {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin container-padding ($size) {
+  padding-left: ($size);
+  padding-right: ($size);
+}
+
+@mixin grid-cycle ($screen, $columns) {
+  @for $start from 1 through $columns {
+    @for $end from $start to $columns {
+      &--#{$screen}-#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}
+
+@mixin font-play($height, $size, $color:$white-color) {
+  font-family: Playfair, serif;
+  font-weight: 700;
+  line-height: $height;
+  font-size: $size;
+  color: $color;
 }

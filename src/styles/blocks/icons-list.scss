@@ -1,0 +1,41 @@
+.icons-list {
+  display: flex;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    @include height-width(20px, 20px);
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    @include height-width($footer-icon-height, $footer-icon-width);
+    background-repeat: no-repeat;
+    @include hover(transform, scale($icons-scale));
+
+    &--facebook {
+      width: 10px;
+      justify-self: flex-start;
+      background-image: url("/images/icons/facebook.svg");
+    }
+
+    &--twitter {
+      align-self: flex-end;
+      background-image: url("/images/icons/twit.svg");
+    }
+
+    &--telegram {
+      background-image: url("/images/icons/teleg.svg");
+    }
+
+    &--instagram {
+      width: 17px;
+      justify-self: end;
+      align-self: end;
+      background-image: url("/images/icons/inst.svg");
+    }
+  }
+}

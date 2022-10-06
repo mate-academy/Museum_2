@@ -1,0 +1,44 @@
+.article {
+  display: flex;
+  flex-direction: column;
+
+  &__img-wrapper {
+    height: 356px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__content-photo {
+    @extend %object-fit;
+    box-shadow: $img-shadow;
+    @include hover(transform, scale($img-scale));
+  }
+
+  &__info-about-event {
+    margin-bottom: 10px;
+    @extend %lh-150;
+    color: $main-color;
+
+    &--font {
+      margin-bottom: 0;
+      font-size: $fs-16;
+      color: $black-color;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    @include font-play(125%, 20px, $black-color);
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    line-height: 150%;
+    color: $gray-color;
+
+    &--position {
+      margin-bottom: 50px;
+    }
+  }
+}

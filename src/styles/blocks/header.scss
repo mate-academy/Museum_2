@@ -1,0 +1,130 @@
+.header {
+  @extend %container-100vh;
+  background-color: $dark-green-color;
+
+  @include onDesktop {
+    margin-bottom: 100px;
+  }
+
+  &__container {
+    @extend %container-100vh;
+    position: relative;
+  }
+
+  &__nav {
+    height: 80px;
+    margin-bottom: 17%;
+
+    @include onIpad {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+      margin-bottom: 90px;
+    }
+  }
+
+  &__description {
+    width: 240px;
+    @extend %lh-150;
+
+    @include onIpad {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin: 10px 0 30px;
+    @include font-play(100%, 48px, $white-color);
+
+    @include onIpad {
+      width: 90%;
+      margin: 10px 0 20px;
+      font-size: $fs-72;
+    }
+
+    @include onDesktop {
+      margin: 10px 0 30px;
+      width: 100%;
+      font-size: $fs-96;
+    }
+  }
+
+  &__primary-button {
+    margin: 40px 0;
+
+    @include onIpad {
+      margin: 50px 0 0;
+    }
+
+    @include onDesktop {
+      margin: 81px 0 120px;
+    }
+  }
+
+  &__date-wrapper {
+    display: flex;
+    align-items: center;
+    justify-items: end;
+    margin-bottom: 50px;
+  }
+
+  &__date {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 17%;
+      margin-right: 20px;
+
+      @include font-play(175%, 14px, $white-color);
+      opacity: 0.7;
+    }
+  }
+
+  &__decorative-line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+      opacity: 0.3;
+    }
+  }
+
+  &__picture-wrapper {
+    width: 265px;
+    margin: 0 auto;
+
+    @include onIpad {
+      width: 0;
+      right: 5%;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+
+    @include height-width (270px, 265px);
+    @extend %bg-img;
+    background-image: url("/images/content-photo/header-img.png");
+
+    @include onIpad {
+      @include height-width (386px, 376px);
+      right: 3%;
+    }
+
+    @include onDesktop {
+      @include height-width (630px, 610px);
+      right: 0;
+    }
+  }
+}

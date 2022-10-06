@@ -1,0 +1,191 @@
+.menu {
+  @extend %container-100vh;
+  padding-top: 20px;
+  background-color: $dark-green-color;
+  overflow: hidden;
+
+  @include onIpad {
+    height: min-content;
+    padding-top: 26px;
+  }
+
+  @include onDesktop {
+    padding-top: 32px;
+  }
+
+  &__container {
+    @extend %container-100vh;
+    position: relative;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @include onIpad {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__icons-wrapper {
+    display: flex;
+
+    @include onIpad {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__close-menu {
+    @include height-width($cross-mob, $cross-mob);
+    @extend %bg-img;
+    background-image: url("/images/icons/cross.svg");
+    @include hover(transform, scale($icons-scale));
+
+    @include onIpad {
+      margin-right: 44px;
+    }
+
+    @include onDesktop {
+      @include height-width($cross-desktop, $cross-desktop);
+    }
+  }
+
+  &__label {
+    margin-right: 30px;
+
+    @include onIpad {
+      margin-right: 0;
+    }
+  }
+
+  &__schedule-wrapper {
+    margin-bottom: 20px;
+
+    @include onIpad {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__adress-wrapper {
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    @extend %lh-150;
+  }
+
+  &__schedule-link {
+    @extend %rel-600;
+    line-height: 150%;
+    @include hover(text-shadow, $text-shadow);
+  }
+
+  &__adress-link {
+    @extend %rel-600;
+    line-height: 150%;
+    @include hover(text-shadow, $text-shadow);
+  }
+
+  &__list {
+
+    &::after {
+      content: "";
+      display: block;
+      margin: 40px 0;
+      height: 1px;
+      background-color: $white-color;
+
+      @include onIpad {
+        margin: 50px 0;
+      }
+
+      @include onIpad {
+        margin-bottom: 60px 0;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    @extend %playfair-700;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: $white-color;
+      opacity: 0;
+      transition: opacity $transition-time;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    @include onIpad {
+      font-size: $fs-48;
+      line-height: 120%;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+
+    @include onIpad {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__primary-button {
+    max-width: 330px;
+
+    @include onIpad {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__picture-wrapper {
+    margin: 0 auto;
+
+    @include onIpad {
+      width: 40%;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+
+    @extend %bg-img;
+    background-image: url("/images/content-photo/header-menu.png");
+    overflow: hidden;
+
+    @include onIpad {
+      @include height-width (420px, 375px);
+      right: 3%;
+    }
+
+    @include onDesktop {
+      @include height-width (700px, 625px);
+      right: 0;
+    }
+  }
+}
