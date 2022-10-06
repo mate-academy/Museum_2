@@ -1,6 +1,9 @@
 .menu {
   background-color: $color-bg;
-  height: 100vh;
+  @media (max-width: 640px) {
+    height: 100vh;
+  }
+
   &__header {
     margin: 0 0 30px;
 
@@ -11,6 +14,10 @@
 
   &__container-flex {
     flex: 1 1 auto;
+    
+    @include onDesktop {
+      padding-bottom: 103px;
+    }
   }
 
   &__decor {
@@ -137,15 +144,15 @@
 .menu__big-boy-photo {
   @include onDesktop {
     position: absolute;
-    top: 20%;
+    top: 111px;
     right: 0;
   }
 }
 
 .big-boy-photo {
   @include onDesktop {
-    width: 80vh;
-    height: 80vh;
+    width: 624px;
+    height: 697px;
     background-image: url(../images/big-boy.png);
     background-repeat: no-repeat;
     background-size: cover;

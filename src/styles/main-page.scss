@@ -114,6 +114,7 @@
 
 .photo-main1 {
   width: 100%;
+  align-items: center;
   transition: $time-of-transformation;
 
   @include onDesktop {
@@ -133,8 +134,8 @@
       box-shadow: 1px 10px 40px $colorDD836F;
       
       @include onTablet {
-        transform: scale(1.05);
-        box-shadow: 1px 10px 40px $colorDD836F;
+        transform: scale(0.95);
+        box-shadow: 1px 1px 90px $colorDD836F;
       }
     }
   }
@@ -152,8 +153,8 @@
       box-shadow: 1px 10px 40px $colorDD836F;
 
       @include onTablet {
-        transform: scale(1.05);
-        box-shadow: 1px 10px 40px $colorDD836F;
+        transform: scale(0.95);
+        box-shadow: 1px 1px 90px $colorDD836F;
       }
     }
   }
@@ -196,16 +197,29 @@
   }
 }
 
+.main__wrapper-cont {
+  height: 190px;
+
+  @include onTablet {
+    height: 226px;
+  }
+
+  @include onDesktop {
+    height: 180px;
+  }
+
+  @media (max-width:434px) {
+    height: auto;
+  }
+}
+
 .bloc-text-item {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
   color: $color504F5E;
-  margin-bottom: 40px;
+  word-wrap: break-word;
 
-  @include onDesktop {
-    margin-bottom: 50px;
-  }
   &-upcoming {
     margin-bottom: 50px;
   }
@@ -361,6 +375,8 @@
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
   @include onTablet {
     grid-column: 1/5;
   }
@@ -383,4 +399,8 @@
       min-width: 450px;
     }
   }
+}
+
+.button-subscribe {
+  margin-bottom: 128px;
 }

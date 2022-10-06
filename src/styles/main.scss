@@ -39,7 +39,36 @@
     &:target {
       transform: translateX(0);
     }
+    
+    @include onTablet {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+  
+      transform: translateY(-100%);
+      transition: transform $time-of-transformation;
+  
+      &:target {
+        transform: translateX(0);
+      }
+    }
+
+    @include onDesktop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      transform: translateX(-100%);
+      transition: transform $time-of-transformation;
+
+      &:target {
+        transform: translateX(0);
+      }
+    }
   }
+  
 }
 
 .page__body--with-menu {
