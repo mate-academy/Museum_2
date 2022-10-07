@@ -1,7 +1,76 @@
 @import "utils";
 @import "fonts";
-@import "typography";
+@import "./header.scss";
+@import "./grid.scss";
+@import "./container.scss";
+@import "./hed.scss";
+@import "./button-buy.scss";
+@import "./decor-line.scss";
+@import "./nav-menu.scss";
+@import "./main-page.scss";
+@import "./footer.scss";
 
-body {
-  background: $c-gray;
+.page {
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Playfair Display", Arial, Helvetica, sans-serif;
+  }
+
+  &__body {
+    margin: 0;
+  }
+
+  box-sizing: border-box;
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform $time-of-transformation;
+
+    &:target {
+      transform: translateX(0);
+    }
+    
+    @include onTablet {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+  
+      transform: translateY(-100%);
+      transition: transform $time-of-transformation;
+  
+      &:target {
+        transform: translateX(0);
+      }
+    }
+
+    @include onDesktop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      transform: translateX(-100%);
+      transition: transform $time-of-transformation;
+
+      &:target {
+        transform: translateX(0);
+      }
+    }
+  }
+  
+}
+
+.page__body--with-menu {
+  overflow: hidden;
 }
