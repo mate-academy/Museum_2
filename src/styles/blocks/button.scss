@@ -1,0 +1,97 @@
+.button {
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  font-weight: 600;
+
+  &__icon {
+    margin-left: 12px;
+  }
+
+  @include onTablet {
+    max-width: 330px;
+  }
+
+  @include onDesktop {
+    max-width: 280px;
+  }
+
+  &--primary {
+    background-color: $c-orange;
+    color: $c-white;
+    border: none;
+    transition: background-color $transition-duration ease,
+      transform $transition-duration;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+  }
+
+  &--secondary {
+    background-color: $c-white;
+    color: $c-orange;
+    border: 1px solid $c-orange;
+
+    transition: color $transition-duration ease,
+      border-color $transition-duration ease,
+      transform $transition-duration;
+
+    &:hover {
+      transform: scale(1.05);
+      border-color: #af3419;
+
+      color: #af3419;
+    }
+
+    &:active {
+      transform: scale(1.1);
+      border-color: #ea340d;
+
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+
+      color: #dd836f;
+    }
+  }
+
+  &--subscribe {
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &--mobile {
+    display: flex;
+    margin-top: 40px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

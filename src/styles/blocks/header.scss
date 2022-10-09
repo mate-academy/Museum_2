@@ -1,0 +1,123 @@
+.header {
+  background-color: $c-background;
+
+  background-image: url("../images/header_1.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 284px;
+
+  &__content {
+    height: 100vh;
+    padding: 20px 20px 0;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      padding: 30px;
+    }
+
+    @include onDesktop {
+      padding: 40px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 124px;
+    }
+  }
+
+  &__column {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu {
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__date {
+    color: $c-white;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @extend %h1;
+
+    color: $c-white;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    color: $c-white;
+    margin-bottom: 40px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__date-title {
+    display: none;
+    width: 570px;
+
+    position: absolute;
+    bottom: 50px;
+    color: $c-white;
+    opacity: 0.7;
+
+    &--desktop {
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 460px;
+
+      transform: translate(100px, -8px);
+      background-color: $c-white;
+      opacity: 0.3;
+    }
+  }
+
+  @include onTablet {
+    background-size: 400px;
+  }
+
+  @include onDesktop {
+    background-size: 700px;
+    background-position: bottom right;
+  }
+}

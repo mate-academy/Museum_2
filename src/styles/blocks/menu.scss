@@ -1,0 +1,142 @@
+.menu {
+  background-color: $c-background;
+
+  @include onTablet {
+    background-image: url("../images/header_2.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 284px;
+  }
+
+  &__lang {
+    display: none;
+    color: $c-white;
+    font-weight: 600;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__content {
+    height: 100vh;
+    padding: 20px 20px 0;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      padding: 30px;
+    }
+
+    @include onDesktop {
+      padding: 40px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 54px;
+    }
+  }
+
+  &__info {
+    display: block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $c-white;
+
+    &-descr {
+      display: block;
+      font-weight: 600;
+      color: $c-white;
+      text-decoration: none;
+      line-height: 140%;
+      margin-bottom: 20px;
+
+      &-adress {
+        &:hover {
+          color: $c-orange;
+        }
+      }
+
+      &--with-margin {
+        margin-bottom: 40px;
+
+        @include onDesktop {
+          margin-bottom: 70px;
+        }
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $c-white;
+      padding-bottom: 40px;
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        max-width: 570px;
+        padding-bottom: 70px;
+        margin-bottom: 70px;
+      }
+    }
+
+  }
+
+  &__link {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    color: $c-white;
+    text-decoration: none;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    transition: color 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $c-white;
+    }
+  }
+
+  @include onTablet {
+    background-size: 340px;
+
+  }
+
+  @include onDesktop {
+    background-size: 660px;
+    background-position: bottom right;
+  }
+}

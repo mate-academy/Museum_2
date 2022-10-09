@@ -1,0 +1,104 @@
+.section {
+  &__title {
+    @extend %h2;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      font-size: 40px;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 60px;
+  }
+
+  &__main {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 356px;
+    margin-bottom: 20px;
+
+    object-fit: cover;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      height: 420px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+  }
+
+  &__date {
+    @extend %main;
+
+    color: $c-orange;
+    margin-bottom: 10px;
+
+    &--default {
+      color: $c-black;
+    }
+  }
+
+  &__subtitle {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 125%;
+    color: $c-black;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      min-height: 60px;
+    }
+
+    @include onDesktop {
+      min-height: 30px;
+    }
+  }
+
+  &__descr {
+    @extend %main;
+
+    color: $c-descr;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+      min-height: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      min-height: 0;
+    }
+  }
+
+  &__visit {
+    background-color: $c-background;
+
+    @include onDesktop {
+      background-image: url("../images/visit_bg.svg");
+      background-repeat: no-repeat;
+      background-position: left bottom;
+    }
+  }
+}

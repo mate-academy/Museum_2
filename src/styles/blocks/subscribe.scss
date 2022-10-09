@@ -1,0 +1,62 @@
+.subscribe {
+
+  &__content {
+    padding: 20px 0 80px;
+
+    @include onTablet {
+      padding: 30px 0 88px;
+    }
+
+    @include onDesktop {
+      padding: 120px 0 180px;
+    }
+  }
+
+  &__form {
+    display: block;
+
+    &--input {
+      @extend %main;
+      font-weight: bold;
+
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 3px;
+
+      background-color: $c-white;
+      outline: none;
+
+      border: none;
+      border-bottom: 1px solid $c-black;
+      transition: border-color $transition-duration ease;
+
+      &::placeholder {
+        @extend %main;
+
+        color: $c-black;
+        background-color: $c-white;
+      }
+
+      &:hover {
+        border-color: $c-orange;
+        transition: color $transition-duration ease;
+
+        &::placeholder {
+          color: $c-orange;
+        }
+      }
+
+      &:focus {
+        border-color: $c-orange;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
