@@ -1,31 +1,13 @@
 .header {
   box-sizing: border-box;
-  width: 320px;
   padding: 0 $sideSize;
   background-color: $color-1;
 
   @include Tablet {
-    width: 768px;
     padding: 0 40px;
   }
 
   @include Desktop {
-    width: 1280px;
-    padding: 0;
-  }
-
-  @include Design {
-    width: 1600px;
-    padding: 0;
-  }
-
-  @include Full {
-    width: 1920px;
-    padding: 0;
-  }
-
-  @include Large {
-    width: 2560px;
     padding: 0;
   }
 
@@ -151,18 +133,6 @@
     }
   }
 
-  &__bottom {
-    display: none;
-    
-    @include Desktop {
-      display: inherit, flex;
-      // display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 570px;
-    }
-  }
-
   &__date {
     font-family: $fonts-2;
     font-weight: 700;
@@ -172,11 +142,26 @@
     opacity: 0.7;
     width: 190px;
     margin: 0;
+
+    
   }
 
-  &__stripe {
-    width: 470px;
-    border-bottom: 1px solid $color-2;
-    opacity: 0.3;
+  &__date-bottom {
+    display: none;
+    width: 100%;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 470px;
+      height: 1px;
+      background-color: $color-2;
+      opacity: 0.3;
+      margin: 0 0 3px 20px;
+    }
+
+    @include Desktop {
+      display: inherit;
+    }
   }
 }

@@ -1,8 +1,8 @@
 'use strict';
 
-let field = document.querySelector('.digest__field');
+const form = document.querySelector('.digest__box');
 
-field.addEventListener('click', () => {
-  field.placeholder = '';
-  field = '';
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  event.target.reset();
 });
