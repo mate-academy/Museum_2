@@ -1,0 +1,73 @@
+.subscribe {
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    line-height: 35px;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 58px;
+      text-align: left;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__discription {
+    font-size: 16px;
+    line-height: 24px;
+    color: $black-color;
+
+    margin-bottom: 50px;
+  }
+
+  &-field {
+    border: none;
+    border-bottom: 1px solid $black-color;
+    outline: none;
+    height: 28px;
+    width: 100%;
+    font-weight: bold;
+    line-height: 150%;
+    background-color: $white-color;
+    color: $black-color;
+    transition: all $transition-duration;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      color: $black-color;
+      transition: color $transition-duration;
+    }
+
+    &:hover {
+      border-color: $main-color;
+
+      &::placeholder {
+        color: $main-color;
+      }
+    }
+
+    &:focus {
+      border-color: $main-color;
+      color: $main-color;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+}

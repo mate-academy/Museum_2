@@ -1,0 +1,159 @@
+.menu {
+  background-color: $background-grey-color;
+
+  @include onTablet {
+    background-image: url(../images/img_menu.png);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 320px;
+  }
+
+  @include onDesktop {
+    background-position: 100% 100%;
+    background-size: 780px;
+  }
+
+  &__content {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 20px 0 0;
+
+    @include onTablet {
+      padding: 26px 0 0;
+    }
+
+    @include onDesktop {
+      padding: 32px 0 0;
+    }
+  }
+
+  &__top {
+    @include placing-header-nav;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 56px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 46px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
+      .language {
+        order: 1;
+      }
+    }
+  }
+
+  &__info {
+    color: $white-color;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: flex;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__timetable {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__address {
+    @include onTablet {
+      margin-left: 120px;
+    }
+
+    @include onDesktop {
+      margin-left: 80px;
+    }
+  }
+
+  &__info-title {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__info-text {
+    display: block;
+    text-decoration: none;
+    color: $white-color;
+    font-weight: 600;
+    line-height: 150%;
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin: 0;
+      border-bottom: 1px solid $white-color;
+      padding-bottom: 40px;
+
+      @include onTablet {
+        padding-bottom: 50px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 60px;
+        border-color: rgba($color: $white-color, $alpha: 0.3);
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $white-color;
+    border-bottom: 1px solid transparent;
+    transition: border-color $transition-duration;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      border-color: $white-color;
+    }
+  }
+}
