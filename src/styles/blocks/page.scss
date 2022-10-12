@@ -15,12 +15,16 @@
   }
 
   &__menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 2;
     transform: translateY(-100%);
+
+    @include width_640 {
+      position: absolute;
+    }
 
     &:target {
       transform: translateY(0);
