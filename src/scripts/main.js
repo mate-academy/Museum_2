@@ -45,3 +45,13 @@ const hours = ['10:00 - 17:00',
 const todayHours = hours[WeekDay];
 
 document.getElementById('hours').innerHTML = todayHours;
+
+// disabling page scrolling for mobile
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#menu' & window.innerWidth < 640) {
+    document.body.classList.add('page__body--with-menu');
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+  }
+});
