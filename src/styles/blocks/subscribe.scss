@@ -1,0 +1,99 @@
+.subscribe {
+  padding-top: 120px;
+  
+  @include onTablet {
+    padding-top: 160px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    padding-top: 200px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+
+  &__title {
+    padding-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+      padding-bottom: 0;
+    }
+  }
+
+  &__details {
+    padding-bottom: 50px;
+    color: $colorBlack;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      padding-bottom: 0;
+    }
+  }
+
+  &__form {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: #e5e5e5;
+    border: transparent;
+    border-bottom: $colorBlack 1px solid;
+    transition: border-bottom $transition-time;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 24px;
+      color: $colorBlack;
+    }
+
+    &:hover {
+      border-bottom: $colorMainOrange 1px solid;
+
+      &::placeholder {
+        color: $colorMainOrange;
+      }
+    }
+
+    &:focus {
+      border-bottom: $colorMainOrange 1px solid;
+      outline: none;
+      color: $colorMainOrange;
+    }
+
+    @include onDesktop {
+      margin: 50px 0 40px;
+    }
+  }
+
+  &__button {
+    border: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+}

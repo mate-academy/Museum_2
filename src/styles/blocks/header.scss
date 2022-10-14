@@ -1,0 +1,130 @@
+.header {
+  background-color: $backgroundColor;
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__select {
+    display: none;
+    cursor: pointer;
+    background-color: $backgroundColor;
+    border-color: transparent;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: $colorWhite;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__date {
+    padding: 70px 0 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $colorWhite;
+
+    @include onTablet {
+      padding-top: 100px;
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      padding-top: 90px;
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    padding-bottom: 30px;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $colorWhite;
+
+    @include onTablet {
+      padding-bottom: 20px;
+      font-size: 72px;
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      padding-bottom: 30px;
+      font-size: 96px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__description {
+    padding-bottom: 40px;
+    color: $colorWhite;
+
+    @include onTablet {
+      padding-bottom: 50px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      padding-bottom: 80px;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__date1 {
+    display: none;
+    position: relative;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: $colorWhite;
+
+    @include onDesktop {
+      display: grid;
+      grid-column: 1 / 7;
+    }
+
+    &::after {
+      margin-left: 20px;
+      display: block;
+      position: absolute;
+      top: -17%;
+      left: 12%;
+      content: url(../images/divider.svg);
+    }
+  }
+}

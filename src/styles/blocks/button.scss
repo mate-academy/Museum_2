@@ -1,0 +1,55 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: $colorMainOrange;
+  font-weight: 600;
+  line-height: 100%;
+  color: $colorWhite;
+  text-decoration: none;
+  transition: background-color $transition-time;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:focus {
+    background-color: #ea340d;
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  border: $colorMainOrange 1px solid;
+  color: $colorMainOrange;
+  transition: all $transition-time;
+
+  &::after {
+    margin-left: 10px;
+    content: url(../images/arrow.svg);
+    display: block;
+    transform: translateY(2px);
+  }
+
+  &:hover {
+    background-color: transparent;
+    border: #af3419 1px solid;
+    color: #af3419;
+
+    &::after {
+      content: url(../images/arrow-hover.svg);
+    }
+  }
+
+  &:focus {
+    background-color: transparent;
+    border: #ea340d 1px solid;
+    color: #ea340d;
+
+    &::after {
+      content: url(../images/arrow-focus.svg);
+    }
+  }
+}
