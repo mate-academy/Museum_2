@@ -1,0 +1,152 @@
+.header {
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background: $color-darkGreen;
+  color: $color-lightGray;
+  position: relative;
+  height: 100vh;
+
+  &__content {
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    height: 100vh;
+
+    &-info {
+      position: relative;
+      z-index: 1;
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &-text {
+      position: relative;
+      width: 270px;
+
+      @include onTablet {
+        width: 330px;
+      }
+
+      @include onDesktop {
+        display: flex;
+        width: auto;
+      }
+    }
+
+    &-before-title {
+      font-size: 14px;
+      line-height: 20px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      position: relative;
+      margin-bottom: 30px;
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 48px;
+
+      @include onTablet {
+        font-size: 72px;
+        line-height: 72px;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+        line-height: 96px;
+      }
+    }
+  }
+
+  &__image {
+    width: 245px;
+    margin: 0 auto;
+    z-index: 0;
+
+    @include onMobile {
+      width: 171px;
+    }
+
+    @include onTablet {
+      width: 443px;
+    }
+
+    @include onDesktop {
+      width: 625px;
+    }
+
+    &-png {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: absolute;
+      height: 273px;
+      width: 245px;
+      bottom: 0;
+      background-image: url("/images/header-image.png");
+
+      @include onMobile {
+        width: 171px;
+        height: 191px;
+      }
+
+      @include onTablet {
+        height: 494px;
+        width: 443px;
+      }
+
+      @include onDesktop {
+        height: 663px;
+        width: 625px;
+        right: 0;
+        margin-right: -56px;
+      }
+    }
+  }
+
+  &__date {
+    opacity: 0;
+
+    @include onDesktop {
+      display: flex;
+      position: absolute;
+      bottom: 50px;
+      left: 0;
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+      color: $color-lightGray;
+      opacity: 0.7;
+
+      &::after {
+        content: "";
+        width: 470px;
+        position: absolute;
+        left: 110px;
+        bottom: 40%;
+        border: 1px solid $color-lightGray;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 80px;
+    }
+  }
+}
