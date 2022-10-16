@@ -1,21 +1,7 @@
-.exhibition {
+.events {
   position: relative;
 
   background-color: #f1f5f4;
-
-  // padding-top: 90px;
-
-  // @include tablet {
-  //   padding-top: 105px;
-  // }
-
-  // @include desktop {
-  //   padding-top: 110px;
-  // }
-
-  // &__all {
-  //   // position: relative;
-  // }
 
   &__header {
     display: flex;
@@ -25,58 +11,39 @@
       justify-content: start;
     }
   }
-
-  &__btn {
-    @include tablet {
-      position: absolute;
-      justify-self: right;
-      right: 0;
-      top: 0;
-    }
-
-    @include desktop {
-      position: absolute;
-      justify-self: right;
-      right: 0;
-      top: 0;
-
-    }
-  }
   &__container {
-    display: grid;
-    grid-auto-flow: row;
-
-    gap: 60px;
-
     margin-bottom: 30px;
 
     @include tablet {
-      grid-template-columns: 330px 330px;
-      gap: 30px;
-
+      display: grid;
+      grid-template-columns: 1fr;
+      column-gap: 30px;
       margin-bottom: 0;
-    }
-
-    @include desktop {
-      grid-template-columns: 570px 570px;
-      gap: 30px;
-
-      margin-bottom: 0;
+      row-gap: 70px;
     }
   }
-
   &__item {
-    max-width: 320px;
-
     @include tablet {
-      max-width: 770px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      column-gap: 30px;
     }
 
     @include desktop {
-      max-width: 1280px;
+      // width: 970px;
+      grid-template-columns: 1fr 2fr;
     }
+
+    &--first {
+      margin-bottom: 60px;
+
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
+
     &--photo {
-      width: 280px;
+      width: 100%;
       height: 356px;
 
       margin-bottom: 20px;
@@ -85,13 +52,11 @@
       object-position: center;
 
       @include tablet {
-        width: 330px;
-        height: 420px;
+        height: 422px;
       }
 
       @include desktop {
-        width: 570px;
-        height: 484px;
+        height: 475px;
       }
     }
 
@@ -136,10 +101,47 @@
       }
     }
   }
+  &__btn {
+    @include tablet {
+      position: absolute;
+      justify-self: right;
+      right: 0;
+      top: 0;
+    }
+
+    @include desktop {
+      position: absolute;
+      justify-self: right;
+      right: 0;
+      top: 0;
+    }
+  }
+  // &__container {
+  //   display: grid;
+  //   grid-auto-flow: row;
+
+  //   gap: 60px;
+
+  //   margin-bottom: 30px;
+
+  //   @include tablet {
+  //     grid-template-columns: 330px 330px;
+  //     gap: 30px;
+
+  //     margin-bottom: 0;
+  //   }
+
+  //   @include desktop {
+  //     grid-template-columns: 570px 570px;
+  //     gap: 30px;
+
+  //     margin-bottom: 0;
+  //   }
+  // }
 
   &__img {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   &__arrow {
