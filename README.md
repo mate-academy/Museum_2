@@ -5,6 +5,6 @@ Fully responsive layout was made by using CSS Grid and Flexbox
 
 All buttons and links are interactive
 
-[NavLink] url(https://oksana-kyryienko.github.io/Museum_2/)
+[NavLink](https://oksana-kyryienko.github.io/Museum_2/)
 
 
