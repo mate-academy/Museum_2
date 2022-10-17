@@ -1,0 +1,68 @@
+.events {
+  margin-bottom: 120px;
+
+  @include onTablet {
+    margin-bottom: 164px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__title {
+    @extend %section-title;
+  }
+
+  &__header {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__card-title {
+    margin-bottom: 20px;
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__card-img {
+    @extend %card-img;
+
+    @include onTabletOnly {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      max-height: 484px;
+      object-fit: cover;
+    }
+  }
+
+  &__card-text {
+    @extend %card-text;
+  }
+
+  &__card-date {
+    @extend %card-date;
+  }
+
+  &__card-button {
+    @include onMobileOnly {
+      margin-bottom: 30px;
+
+      &--first {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

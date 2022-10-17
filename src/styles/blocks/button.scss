@@ -1,0 +1,55 @@
+.button {
+  color: #f1f5f4;
+  background-color: #cd4d31;
+  @extend %button-style;
+
+  &__transparent {
+    @extend %button-style;
+
+    color: #cd4d31;
+    background-color: transparent;
+    border: 1px solid #cd4d31;
+
+    &::after {
+      content: url(../images/button-teil.svg);
+      margin-left: 10px;
+    }
+
+    &--mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      @include onMobileOnly {
+        display: none;
+      }
+    }
+    
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  @include onTablet {
+    max-width: 330px;
+    align-self: flex-start;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+}

@@ -1,0 +1,86 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 80px;
+  margin-bottom: 70px;
+
+  @include onTablet {
+    height: 55px;
+    margin-bottom: 124px;
+  }
+
+  @include onDesktop {
+    height: 90px;
+    margin-bottom: 47px;
+  }
+
+  &__menu-opener {
+    display: block;
+    width: 25px;
+    height: 20px;
+
+    background-image: url(../images/menu-icon.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      width: 30px;
+      height: 30px;
+    }
+
+    &--cross {
+      background-image: url(../images/close.png);
+
+      @include onMobileOnly {
+        order: 2;
+      }
+    }
+  }
+
+  &__logo--img {
+    height: 40px;
+    transition: transform 0.3s;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+    
+    @include onTablet {
+      height: 25px;
+    }
+  }
+
+  &__actions {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    &--menu {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  }
+
+  &__language {
+    display: none;
+    cursor: pointer;
+    font-weight: 500;
+    background-color: transparent;
+    border: none;
+    color: #f1f5f4;
+
+    &--menu {
+      display: block;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}
