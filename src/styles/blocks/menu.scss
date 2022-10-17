@@ -1,0 +1,182 @@
+.menu {
+  background-color: $mainColor;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-y: auto;
+
+  @include onDesktop {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  &__container {
+    max-width: 1170px;
+    padding: 20px 20px 0;
+
+    @include onDesktop {
+      padding: 34px 55px 0;
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    padding: $headerTopPadding;
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+  &__top {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__first {
+      @include onDesktop {
+        display: flex;
+        gap: 105px;
+      }
+    }
+
+    &__second {
+      &::after {
+        display: block;
+        content: "";
+        width: 100%;
+
+        border-bottom: 1px solid $textColor;
+
+        padding-bottom: 40px;
+
+        @include onDesktop {
+          padding-bottom: 60px;
+          width: 570px;
+        }
+      }
+    }
+  }
+
+  &__item {
+
+    &__second:not(:last-child) {
+      padding-bottom: 20px;
+
+      @include onDesktop {
+        padding-bottom: 60px;
+        margin-top: 70px;
+      }
+    }
+
+    &__first {
+      padding-bottom: 20px;
+
+      @include onDesktop {
+        padding-bottom: 0;
+      }
+    }
+
+    &--adress {
+      &::before {
+        display: block;
+        content: "Адреса:";
+        font-family: "Raleway", sans-serif;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+
+        color: $textColor;
+      }
+    }
+
+    &--rozklad {
+      &::before {
+        display: block;
+        content: "Розклад сьогодні:";
+        font-family: "Raleway", sans-serif;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+
+        color: $textColor;
+      }
+    }
+
+  }
+
+  &__link {
+    display: inline-block;
+
+    color: $textColor;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    transition: border-bottom 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid #f1f5f4;
+    }
+
+    &--first {
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &--second {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 30px;
+
+      @include onDesktop {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 48px;
+      }
+    }
+  }
+
+  &__image {
+    visibility: hidden;
+
+    @include onDesktop {
+      visibility: visible;
+      position: relative;
+      height: 697px;
+    }
+  }
+
+  &__img {
+    display: block;
+    height: 273px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center bottom 20%;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      object-fit: contain;
+      top: 10%;
+      right: 0;
+      height: 663px;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    margin-top: 60px;
+  }
+}
