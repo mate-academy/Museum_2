@@ -25,11 +25,12 @@
 
   &__field {
     @extend %card-text;
+    font-family: 'Raleway';
     width: 100%;
     padding-bottom: 3px;
     border: none;
-    border-bottom: 1px solid #1c1b29;
-    color: #1c1b29;
+    border-bottom: 1px solid $blackColor;
+    color: $blackColor;
     background-color: transparent;
     outline: none;
 
@@ -41,6 +42,11 @@
       border-color: #cd4d31;
     }
 
+    &:-webkit-autofill {
+      font-weight: 700;
+      border-color: $blackColor;
+    }
+
     &:hover::-webkit-input-placeholder {
       color: #cd4d31;
     }
@@ -49,9 +55,8 @@
       color: #cd4d31;
     }
 
-    &:-webkit-autofill {
-      font-weight: 700;
-      border-color: #1c1b29;
+    @include onTabletOnly {
+      width: 50%;
     }
   }
 
