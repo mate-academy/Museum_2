@@ -1,7 +1,7 @@
 .footer {
   box-sizing: border-box;
   background-color: $color-1;
-  padding: 34px $sideSize 30px;
+  padding: 34px 20px 30px;
 
   @include Tablet {
     padding: 50px 40px 30px;
@@ -9,6 +9,14 @@
 
   @include Desktop {
     padding: 50px 55px 30px;
+  }
+
+  @include Design {
+    padding: 50px 227px 30px;
+  }
+
+  @include Large {
+    padding: 50px 707px 30px;
   }
 
   &__content {
@@ -65,16 +73,37 @@
     display: flex;
     align-items: center;
     color: $color-2;
-    transition: 0.3s ease-in-out;
-
-    &:hover {
-      color: $color-5;
-    }
+    @include hover(color, $color-5);
   }
 
   &__chain {
     display: flex;
     gap: 20px;
+  }
+
+  &__fasebook {
+    background-image: url(../images/facebook.svg);
+    @include size(10px, 20px);
+    @include hover(transform, scale(1.2));
+  }
+
+  &__twitter {
+    background-image: url(../images/twitter.svg);
+    @include size(20px, 16px);
+    @include hover(transform, scale(1.2));
+  }
+
+  &__telegram {
+    background-image: url(../images/telegram.png);
+    @include square(20px);
+    @include hover(transform, scale(1.2));
+  }
+
+  &__instagramm {
+    background-image: url(../images/instagramm.svg);
+    background-size: cover;
+    @include square(17px);
+    @include hover(transform, scale(1.2));
   }
 
   &__subtitle-nav {
@@ -116,10 +145,8 @@
     align-items: center;
     color: $color-2;
     text-decoration: none;
-
-    &:hover {
-      color: $color-5;
-    }
+    width: max-content;
+    @include hover(color, $color-5);
   }
 
   &__bottom {

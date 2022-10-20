@@ -1,11 +1,40 @@
 @mixin Tablet {
-  @media (min-width: 690px) {
+  @media (min-width: 768px) {
     @content;
   }
 }
 
 @mixin Desktop {
-  @media (min-width: 1170px) {
+  @media (min-width: 1280px) {
     @content;
   }
+}
+
+@mixin Design {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin Large {
+  @media (min-width: 2560px) {
+    @content;
+  }
+}
+
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin size($widthSize, $heightSize) {
+  width: $widthSize;
+  height: $heightSize;
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
 }

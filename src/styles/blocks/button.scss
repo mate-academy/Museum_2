@@ -1,7 +1,6 @@
 .button {
   box-sizing: border-box;
-  width: 280px;
-  height: 60px;
+  @include size(280px, 60px);
   padding: 0;
   background-color: $color-5;
   border: none;
@@ -12,27 +11,19 @@
   color: $color-2;
   margin-bottom: 62px;
   cursor: pointer;
-  transition: 0.5s ease-in-out;
-
-  &:hover {
-    background-color: #af3419;
-  }
-  
-  &:focus {
-    background-color: #ea340d;
-  }
+  @include hover(background-color, #af3419);
   
   &:disabled {
     background-color: #dd836f;
   }
 
   @include Tablet {
-    width: 330px;
+    @include size(330px, 60px);
     margin-bottom: 70px;
   }
 
   @include Desktop {
-    width: 270px;
+    @include size(270px, 60px);
   }
 
   &__ticket {

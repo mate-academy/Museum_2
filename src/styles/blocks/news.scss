@@ -1,5 +1,5 @@
 .news {
-  padding: 90px $sideSize 0;
+  padding: 90px 20px 0;
   background-color: $color-4;
 
   @include Tablet {
@@ -8,6 +8,14 @@
 
   @include Desktop {
     padding: 110px 55px 200px;
+  }
+
+  @include Design {
+    padding: 110px 227px 200px;
+  }
+
+  @include Large {
+    padding: 110px 707px 200px;
   }
 
   &__top {
@@ -51,48 +59,26 @@
     }
   }
 
-  &__image-picture {
+  &__image {
     background-image: url(../images/img_08.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 280px;
-    height: 280px;
+    @include square(280px);
     margin-bottom: 20px;
 
     @include Tablet {
-      width: 330px;
-      height: 330px;
+      @include square(330px);
       margin-bottom: 30px;
     }
 
     @include Desktop {
-      width: 570px;
-      height: 370px;
+      @include size(570px, 370px);
       margin-bottom: 20px;
     }
-  }
 
-  &__image-cat {
-    background-image: url(../images/img_09.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    width: 280px;
-    height: 280px;
-    margin-bottom: 20px;
-
-    @include Tablet {
-      width: 330px;
-      height: 330px;
-      margin-bottom: 30px;
-    }
-
-    @include Desktop {
-      width: 570px;
-      height: 370px;
-      background-position: top;
-      margin-bottom: 20px;
+    &--cat {
+      background-image: url(../images/img_09.png);
     }
   }
 
