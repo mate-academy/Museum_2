@@ -1,0 +1,142 @@
+.header {
+  box-sizing: border-box;
+  background-color: $color-gray;
+  position: relative;
+  color: $color-white;
+  
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100vh;
+
+    @include onTablet {
+      // max-height: 1092px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    padding: $headerTopPadding 0;
+  }
+
+  &__photo-container {
+    
+    // position: relative;
+  
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 494px;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    // width: 100%;
+    height: 494px;
+    object-fit: 40% ;
+    object-position: center;
+
+    @include onTablet {
+      bottom: 0;
+      object-fit: 100%;
+      width: 60%;
+      height: 45%;
+    }
+
+    @include onDekstop {
+      
+      position: absolute;
+      right: 0;
+      width: 50%;
+      height: 80%;
+    }
+  }
+
+  &__period {
+    @extend %additional;
+    
+    font-size: 14px;
+    line-height: 20px;
+
+    @include onDekstop {
+      margin: 200px 0 10px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @extend %h1;
+    font-size: 96px;
+    line-height: 96px;
+    
+    color: $color-white;
+
+    @include onTablet {
+      margin: 0 auto 20px;
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include onDekstop {
+      margin: 0 auto 30px;
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+
+  &__text {
+    
+    @extend %main;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDekstop {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDekstop {
+      margin-bottom: 140px;
+    }
+    margin-bottom: 140px;
+  }
+
+  &__anons {
+    visibility: hidden;
+    @extend %h6;
+
+    @include onDekstop {
+      position: relative;
+      
+      margin-bottom: 50px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      transform: translateY(-7px);
+      left: 100px;
+      width: 100%;
+      border: 1px solid $color-white;
+      border-radius: 4px;
+    }
+  }
+
+}

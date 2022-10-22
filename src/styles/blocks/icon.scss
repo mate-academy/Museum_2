@@ -1,0 +1,50 @@
+.icon {
+  position: relative;
+
+  display: block;
+  width: 100%;
+  padding-bottom: 100%;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+
+  &__tooltip {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: max-content;
+    padding-right: 20px;
+    color: $color-white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &:hover &__tooltip {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+    
+    &:hover {
+      background-image: url(../images/menu_hover.svg);
+     
+    }
+  }
+
+  &--language {
+    @extend %main;
+    color: $color-white;
+  }
+  &--cross {
+    background-image: url(../images/cross.svg);
+  }
+}

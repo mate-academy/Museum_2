@@ -1,0 +1,123 @@
+.menu {
+  background-color: $color-gray;
+  color: $color-white;
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 100vh;
+
+    @include onTablet {
+      // max-height: 1092px;
+    }
+  }
+
+  &__photo-container {
+    box-sizing: border-box;
+  }
+
+  &__photo {
+    box-sizing: border-box;
+    object-fit: 100%;
+    width: 443px;
+    height: 440px;
+    @include onDekstop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: 80%;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    padding: $headerTopPadding 0;
+  }
+
+  &__list {
+    margin: 0 0 48px;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 60px;
+
+    // &:last-child {
+    //   margin-bottom: 0;
+    // }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+
+    @extend %h3;
+    font-size: 48px;
+    line-height: 58px;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $color-white;
+    }
+  }
+
+  &__schedules {
+    color: $color-white;
+  }
+
+  &__schedule {
+    @extend %additional;
+    
+  }
+
+  &__period {
+    @extend %main;
+  }
+
+  &__info {
+    display: flex;
+    gap: 80px;
+    @include onDekstop {
+      margin-bottom: 80px;
+    }
+    
+  }
+
+  &__info-title {
+    @extend %additional;
+  }
+
+  &__info-link {
+    @extend %main;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__line {
+    position: relative;
+    @extend %h6;
+
+    @include onDekstop {
+      margin-bottom: 60px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      border: 1px solid $color-white;
+      
+    }
+  }
+}
