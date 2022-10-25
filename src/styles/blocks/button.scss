@@ -31,8 +31,12 @@
 
   &--secondary {
     display: flex;
-
     color: $main;
+
+    &::after {
+      content: (url(../images/arrow-button.svg));
+      margin-left: 8px;
+    }
 
     &:hover {
       border: 1px solid $btn-hover;
@@ -44,7 +48,7 @@
     }
   
     &:active {
-      border: 1px solid  $btn-pressed;
+      border: 1px solid $btn-pressed;
       color: $btn-pressed;
       &::after {
         content: (url(../images/arrow-button-pressed.svg));
@@ -53,17 +57,12 @@
     }
   
     &:disabled {
-      border: 1px solid  $btn-disabled;
+      border: 1px solid $btn-disabled;
       color: $btn-disabled;
       &::after {
         content: (url(../images/arrow-button-Disabled.svg));
         margin-left: 8px;
       }
-    }
-
-    &::after {
-      content: (url(../images/arrow-button.svg));
-      margin-left: 8px;
     }
   }
 }
