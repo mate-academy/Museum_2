@@ -1,50 +1,42 @@
 .news {
-  padding: 90px 20px 0;
+  padding: 90px 0 0;
   background-color: $color-4;
 
   @include Tablet {
-    padding: 120px 40px 160px;
+    padding: 120px 0 160px;
   }
 
   @include Desktop {
-    padding: 110px 55px 200px;
+    padding: 110px 0 200px;
   }
 
   @include Design {
-    padding: 110px 227px 200px;
+    padding: 110px 0 200px;
   }
 
   @include Large {
-    padding: 110px 707px 200px;
+    padding: 110px 0 200px;
   }
 
   &__top {
+    margin-bottom: 60px;
     @include Tablet {
       display: flex;
       justify-content: space-between;
       margin-bottom: 70px;
     }
-
-    @include Desktop {
-      margin-bottom: 50px;
-    }
   }
 
   &__title {
-    font-family: $fonts-2;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 35px;
-    margin-bottom: 60px;
+    @extend %h3;
+    text-align: center;
 
     @include Tablet {
-      font-size: 40px;
-      line-height: 50px;
       margin-bottom: 0;
     }
   }
 
-  &__button-1 {
+  &__button-top {
     display: none;
 
     @include Tablet {
@@ -52,33 +44,30 @@
     }
   }
 
-  &__content {
-    @include Tablet {
-      display: flex;
-      gap: 30px;
-    }
-  }
+  &__card {
+    @extend %center;
+    margin-bottom: 50px;
 
-  &__image {
-    background-image: url(../images/img_08.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    @include square(280px);
-    margin-bottom: 20px;
-
-    @include Tablet {
-      @include square(330px);
+    &:last-child {
       margin-bottom: 30px;
     }
 
-    @include Desktop {
-      @include size(570px, 370px);
-      margin-bottom: 20px;
+    @include Tablet {
+      align-items: flex-start;
+    }
+  }
+
+  &__painting {
+    margin-bottom: 20px;
+    @include hover(transform, scale(1.1));
+
+    @include Tablet {
+      height: 330px;
     }
 
-    &--cat {
-      background-image: url(../images/img_09.png);
+    @include Desktop {
+      width: 570px;
+      height: 370px;
     }
   }
 
@@ -86,14 +75,11 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: $color-3;
+    color: $colorBlack;
   }
 
   &__subtitle {
-    font-family: $fonts-2;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 25px;
+    @extend %h4;
     margin-bottom: 20px;
   }
 
@@ -101,23 +87,9 @@
     color: $color-6;
   }
 
-  &__block-one {
-    margin-bottom: 50px;
-
-    @include Tablet {
-      margin-bottom: 0;
-    }
-  }
-
-  &__block-two {
-    margin-bottom: 30px;
-
-    @include Tablet {
-      margin-bottom: 0;
-    }
-  }
-
-  &__button-2 {
+  &__button-bottom {
+    display: flex;
+    justify-content: center;
     @include Tablet {
       display: none;
     }

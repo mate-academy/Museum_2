@@ -37,19 +37,10 @@
     }
   }
 
-  &__logo {
-    @include Tablet {
-      opacity: 0.1;
-    }
-
-    @include Desktop {
-      opacity: 1;
-    }
-  }
-
   &__box {
     @include Tablet {
       display: flex;
+      align-items: center;
       gap: 40px;
     }
   }
@@ -62,6 +53,7 @@
     line-height: 24px;
     color: $color-2;
     display: none;
+    padding-bottom: 5px;
 
     @include Tablet {
       display: inherit;
@@ -71,7 +63,7 @@
   &__container {
     @include Desktop {
       display: flex;
-      gap: 30px;
+      justify-content: space-between;
       padding-left: 55px;
     }
 
@@ -86,22 +78,14 @@
   }
 
   &__title {
-    font-family: $fonts-2;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 48px;
-    color: $color-2;
+    @extend %h1;
     margin-bottom: 30px;
 
     @include Tablet {
-      font-size: 72px;
-      line-height: 72px;
       margin-bottom: 20px;
     }
 
     @include Desktop {
-      font-size: 96px;
-      line-height: 96px;
       width: 570px;
       margin-bottom: 30px;
     }
@@ -139,6 +123,7 @@
     @include Desktop {
       width: 625px;
       height: 663px;
+      margin: 0;
     }
 
     @include Large {
@@ -169,20 +154,19 @@
 
   &__date-bottom {
     display: none;
-    width: 100%;
-
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 470px;
-      height: 1px;
-      background-color: $color-2;
-      opacity: 0.3;
-      margin: 0 0 3px 20px;
-    }
-
+    
     @include Desktop {
       display: inherit;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 470px;
+        height: 1px;
+        background-color: $color-2;
+        opacity: 0.3;
+        margin: 0 0 3px 20px;
+      }
     }
   }
 }

@@ -1,40 +1,20 @@
 .footer {
-  box-sizing: border-box;
   background-color: $color-1;
-  padding: 34px 20px 30px;
+  padding: 34px 0 30px;
 
   @include Tablet {
-    padding: 50px 40px 30px;
-  }
-
-  @include Desktop {
-    padding: 50px 55px 30px;
-  }
-
-  @include Design {
-    padding: 50px 227px 30px;
-  }
-
-  @include Large {
-    padding: 50px 707px 30px;
-  }
-
-  &__content {
-    @include Tablet {
-      display: flex;
-      gap: 30px;
-    }
+    padding: 50px 0 30px;
   }
 
   &__block {
+    @extend %center;
     margin-bottom: 50px;
 
     @include Tablet {
-      width: 210px;
+      align-items: flex-start;
     }
 
     @include Desktop {
-      width: 370px;
       margin-bottom: 70px;
     }
   }
@@ -58,6 +38,9 @@
     color: $color-2;
     list-style: none;
     padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
   }
 
   &__text--margin {
@@ -70,10 +53,8 @@
 
   &__text-link {
     text-decoration: none;
-    display: flex;
-    align-items: center;
     color: $color-2;
-    @include hover(color, $color-5);
+    @include hover(color, $colorRed);
   }
 
   &__chain {
@@ -94,7 +75,7 @@
   }
 
   &__telegram {
-    background-image: url(../images/telegram.png);
+    background-image: url(../images/telegram.svg);
     @include square(20px);
     @include hover(transform, scale(1.2));
   }
@@ -106,6 +87,14 @@
     @include hover(transform, scale(1.2));
   }
 
+  &__nav {
+    @extend %center;
+
+    @include Tablet {
+      align-items: flex-start;
+    }
+  }
+
   &__subtitle-nav {
     font-family: $fonts-2;
     font-weight: 700;
@@ -113,6 +102,7 @@
     line-height: 30px;
     color: $color-2;
     margin-bottom: 10px;
+    
 
     @include Tablet {
       margin-bottom: 30px;
@@ -146,17 +136,13 @@
     color: $color-2;
     text-decoration: none;
     width: max-content;
-    @include hover(color, $color-5);
+    @include hover(color, $colorRed);
   }
 
   &__bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    @include Desktop {
-      padding: 0 55px;
-    }
   }
 
   &__box {

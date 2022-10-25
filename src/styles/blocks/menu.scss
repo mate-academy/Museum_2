@@ -3,7 +3,6 @@
   width: 100%;
   height: 100vh;
   background-color: $color-1;
-  z-index: 1;
 
   @include Desktop {
     display: flex;
@@ -38,15 +37,14 @@
   &__content {
     @include Desktop {
       display: flex;
-      gap: 15px;
-    }
-
-    @include Design {
-      gap: 170px;
+      justify-content: space-between;
     }
   }
 
   &__inform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0 20px;
 
     @include Tablet {
@@ -87,10 +85,12 @@
   }
 
   &__box-2 {
+    width: 280px;
     @include Tablet {
       display: flex;
       gap: 120px;
       margin-bottom: 50px;
+      width: max-content;
     }
 
     @include Desktop {
@@ -101,6 +101,10 @@
 
   &__schedule {
     margin-bottom: 20px;
+    @include Tablet {
+      width: 117px;
+      height: 44px;
+    }
 
     @include Desktop {
       margin-bottom: 0;
@@ -120,7 +124,7 @@
   }
 
   &__time-adress--color {
-    @include hover(color, $color-5);
+    @include hover(color, $colorRed);
   }
 
   &__adress-link {
@@ -139,25 +143,26 @@
   &__list {
     padding: 0;
     list-style: none;
+    width: 280px;
+
+    @include Tablet {
+      margin-bottom: 50px;
+      width: max-content;
+    }
+
+    @include Desktop {
+      margin-bottom: 60px;
+    }
     
     &::after {
       content: "";
       display: block;
-      width: 280px;
       height: 1px;
       background-color: $color-2;
       margin-bottom: 40px;
       opacity: 0.7;
 
-      @include Tablet {
-        margin-bottom: 50px;
-        width: 690px;
-      }
-
-      @include Desktop {
-        width: 570px;
-        margin-bottom: 60px;
-      }
+      
     }
   }
 
@@ -188,7 +193,7 @@
     line-height: 30px;
     color: $color-2;
     text-decoration: none;
-    @include hover(color, $color-5);
+    @include hover(color, $colorRed);
 
     @include Tablet {
       font-size: 48px;
@@ -202,13 +207,17 @@
 
   &__image {
     @include Tablet {
-      display: inherit;
+      background-image: url(../images/img_03.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin: 0 auto;
       @include size(422px, 466px);
-      margin: 0;
     }
 
     @include Desktop {
       @include size(624px, 697px);
+      margin: 0;
     }
 
     @include Large {
