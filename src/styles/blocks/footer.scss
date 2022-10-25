@@ -1,0 +1,109 @@
+.footer {
+  background-color: $background;
+  padding-top: 34px;
+  padding-bottom: 30px;
+
+  @include onTablet {
+    padding-top: 50px;
+  }
+
+  &__title {
+    @extend %h5;
+    color: $white;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item {
+    @extend %main-text;
+    color: $white;
+
+    &--link {
+      display: block;
+      text-decoration: none;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &--work-schedule {
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__social-icons {
+    display: grid;
+    grid-template-columns: repeat(4, 20px);
+    column-gap: 20px;
+    align-items: end;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-top: 50px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &--fb {
+      background-image: url(../images/social-icons/facebook.svg);
+    }
+    &--twitter {
+      background-image: url(../images/social-icons/twitter.svg);
+    }
+    &--telegram {
+      background-image: url(../images/social-icons/telegram.svg);
+    }
+    &--instagram {
+      background-image: url(../images/social-icons/instagram.svg);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 60px;
+  }
+
+  &__add {
+    display: flex;
+    justify-content: center;
+    @extend %additional-text;
+    color: $white;
+  }
+
+  .copyright {
+    margin-right: 22px;
+    @include onDesktop {
+      margin-right: 102px;
+    }
+  }
+
+  &__arrow-home {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/scroll-up.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

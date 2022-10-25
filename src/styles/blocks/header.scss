@@ -1,0 +1,126 @@
+.header {
+  background-color: $background;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 26px;
+
+    @include onTablet {
+      padding-top: 20px;
+    }
+
+    @include onDesktop {
+      padding-top: 26px;
+    }
+    &--icons {
+      display: flex;
+      align-items: center;
+      color: $white;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    
+    justify-content: center;
+    height: 40px;
+    width: 124px;
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__content {
+    height: 100%;
+    max-width: $max-width;
+    padding: 67px 0 313px;
+    background-image: url(../images/Girl_from_Podolye.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 245px auto;
+
+    @include onTablet {
+      margin: 0 auto;
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: 443px;
+      padding: 119px 0 564px;
+    }
+
+    @include onDesktop {
+      padding: 117px 0 50px;
+      background-position: bottom right;
+      background-size: calc(50% - #{$column-gap}) auto;
+    }
+  }
+
+  &__additional-text {
+    @extend %additional-text;
+    color: $white;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @extend %h1;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__main-text {
+    @extend %main-text;
+    margin-bottom: 40px;
+    color: $white;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onDesktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  &__decor-container {
+    display: none;
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      align-items: center;
+      margin-top: 135px;
+    }
+  }
+  
+  &__decor-line {
+    grid-column: 1 / 6;
+    position: relative;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: $white;
+    opacity: 0.7;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: 20px;
+      position: absolute;
+      top: 50%;
+      height: 1px;
+      width: 100%;
+      background: $white;
+      opacity: 0.3;
+    }
+  }
+}

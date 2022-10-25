@@ -1,0 +1,200 @@
+.menu {
+  background-color: $background;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 20px;
+    }
+
+    @include onDesktop {
+      padding-top: 26px;
+    }
+
+    &--icons {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      color: $white;
+
+      @include onTablet {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    
+    justify-content: center;
+    height: 40px;
+    width: 124px;
+
+  }
+
+  &__logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__content {
+    height: 100%;
+    max-width: $max-width;
+    padding: 30px 0 239px;
+
+    @include onTablet {
+      margin: 0 auto;
+      background-image: url(../images/boymenu.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: 422px;
+      padding: 50px 0 495px;
+    }
+
+    @include onDesktop {
+      padding: 40px 0 105px;
+      background-position: bottom right;
+      background-size: calc(50% - #{$column-gap}) 625px;
+    }
+  }
+
+  &__info-block {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__subtitle {
+    @extend %additional-text;
+    color: $white;
+  }
+
+  &__info {
+    margin-bottom: 20px;
+    
+    @extend %main-text;
+    color: $white;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+      @include onDesktop {
+        display: none;
+      }
+    }
+    @include onDesktop {
+      margin-bottom: 121px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    @extend %menu;
+    list-style: none;
+    width: max-content;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    &:hover {
+      border-color: $white;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 50px;
+      }
+    }
+
+    @include onDesktop {
+      color: $white;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    &:visited {
+      color: $white;
+    }
+  }
+
+  &__bottom-line {
+    height: 1px;
+    width: 100%;
+    background: $white;
+    opacity: 0.3;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__main-photo-container {
+    position: relative;
+    width: 100%;
+    max-height: 245px;
+    overflow: hidden;
+  
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      max-height: 443px;
+    }
+    
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__main-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}

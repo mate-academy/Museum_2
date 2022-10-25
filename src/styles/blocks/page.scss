@@ -1,0 +1,45 @@
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    font-family: "Playfair Display", serif , "Raleway", sans-serif;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: transform 0.3s;
+    transform: translateY(-100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+}
