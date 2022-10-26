@@ -9,7 +9,7 @@
       overflow: hidden;
     }
   }
-
+  
   &__menu {
     position: fixed;
     top: 0;
@@ -25,33 +25,70 @@
   }
   
   &__main {
-    padding: 60px 0 0;
-    background-color: $color-black;
+    background-color: $c-gray;
+    padding: 90px 0 80px;
+
+    @include onTablet {
+      padding: 105px 0 130px;
+
+      
+    }
+
+    @include onDekstop {
+      padding: 110px 0 200px;
+    }
   }
 
   &__section {
-    padding-bottom: 90px;
+    margin-bottom: 60px;
+
+    &:nth-child(1) {
+      margin-bottom: 90px;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 90px;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     @include onTablet {
-      padding-bottom: 132px;
+      margin-bottom: 132px;
+
+      &:nth-child(1) {
+        margin-bottom: 160px;
+      }
+
+      &:nth-child(4) {
+        margin-bottom: 160px;
+      }
     }
+
     @include onDekstop {
-      padding-bottom: 160px;
+      margin-bottom: 110px;
+
+      &:nth-child(1) {
+        margin-bottom: 200px;
+      }
+
+      &:nth-child(4) {
+        margin-bottom: 200px;
+      }
     }
   }
 
   &__section-title {
-    margin: 0 0 48px;
+    margin: 0 0 70px;
 
     font-weight: bold;
     font-size: 36px;
     line-height: 36px;
-    text-align: center;
     letter-spacing: -1.5px;
-    color: $color-white;
+    color: $color-black;
 
     @include onDekstop {
-     
       font-size: 48px;
       line-height: 48px;
     }

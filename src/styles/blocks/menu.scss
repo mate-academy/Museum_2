@@ -11,25 +11,29 @@
     height: 100vh;
 
     @include onTablet {
-      // max-height: 1092px;
+      max-height: 1092px;
     }
-  }
 
-  &__photo-container {
-    box-sizing: border-box;
+    @include onDekstop {
+      height: 100vh;
+    }
   }
 
   &__photo {
     box-sizing: border-box;
-    object-fit: 100%;
-    width: 443px;
-    height: 440px;
+    visibility: hidden;
+
+    @include onTablet {
+      visibility: visible;
+      object-fit: 100%;
+      width: 100%;
+      max-height: 490px;
+      height: 100%;
+    }
+
     @include onDekstop {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 50%;
-      height: 80%;
+      max-height: 660px;
+      height: 100%;
     }
   }
 
@@ -38,18 +42,41 @@
     padding: $headerTopPadding 0;
   }
 
+  &__content {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
   &__list {
     margin: 0 0 48px;
     padding: 0;
     list-style: none;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      margin: 0 0 48px;
+    }
   }
 
   &__item {
     margin-bottom: 60px;
 
-    // &:last-child {
-    //   margin-bottom: 0;
-    // }
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+      grid-column: 1 / 7;
+    }
+
+    @include onDekstop {
+      margin-bottom: 60px;
+    }
   }
 
   &__link {
@@ -69,7 +96,19 @@
     &:hover {
       border-color: $color-white;
     }
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      font-size: 28px;
+      line-height: 38px;
+    }
   }
+
+  // &__info {
+  //   @include onTablet {
+  //     grid-column: 1 / 7;
+  //   }
+  // }
 
   &__schedules {
     color: $color-white;
@@ -77,7 +116,6 @@
 
   &__schedule {
     @extend %additional;
-    
   }
 
   &__period {
@@ -87,10 +125,14 @@
   &__info {
     display: flex;
     gap: 80px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+
     @include onDekstop {
       margin-bottom: 80px;
     }
-    
   }
 
   &__info-title {
@@ -105,7 +147,13 @@
 
   &__line {
     position: relative;
-    @extend %h6;
+    visibility: hidden;
+
+    @include onTablet {
+      visibility: visible;
+      grid-column: 1 / 7;
+      margin-bottom: 50px;
+    }
 
     @include onDekstop {
       margin-bottom: 60px;
@@ -118,6 +166,18 @@
       width: 100%;
       border: 1px solid $color-white;
       
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 100px;
+    }
+
+    @include onDekstop {
+      margin-bottom: 100px;
+      grid-column: 1 / 4;
     }
   }
 }
