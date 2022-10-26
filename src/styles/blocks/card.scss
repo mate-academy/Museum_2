@@ -1,0 +1,64 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  &--horizontal {
+    width: 100%;
+    flex-direction: column;
+
+    @include onTablet {
+      width: 100%;
+      flex-direction: row;
+    }
+    @include onDesktop {
+      width: 100%;
+      flex-direction: row;
+    }
+  }
+
+  &__button {
+    margin-bottom: 70px;
+  }
+
+  &__img {
+    margin-bottom: 20px;
+    transition: transform 300ms;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__date {
+    color: $colorMain;
+    margin-bottom: 10px;
+    &-black {
+      color: black;
+    }
+  }
+
+  &__info {
+    margin-bottom: 50px;
+  }
+
+  &__info-container {
+    margin: 0 0 30px;
+  }
+
+  &__subheading {
+    margin-bottom: 20px;
+  }
+
+  &__subheading-small {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  &--horizontal .card__img {
+    margin: 0 30px 20px 0;
+  }
+}

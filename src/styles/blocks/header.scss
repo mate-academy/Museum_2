@@ -1,0 +1,98 @@
+.header {
+
+  &__container {
+    height: 90px;
+    margin-bottom: 48px;
+    padding: 32px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include onTablet {
+      height: 77px;
+      padding: 26px 0;
+    }
+
+    @include onDesktop {
+      padding: 20px 0;
+      height: 80px;
+    }
+  }
+
+  &__content {
+    color: $colorWhite;
+    @include onTablet {
+      height: 1092px;
+    }
+
+    &--info {
+      margin-top: 43px;
+    }
+
+    &--date {
+      margin-bottom: 10px;
+    }
+
+    &--heading {
+      margin-bottom: 30px;
+    }
+
+    &--image {
+      position: absolute;
+      bottom: 0;
+      width: 245px;
+      height: 273px;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+
+      @include onTablet {
+        right: 0;
+        max-height: 443px;
+        max-width: 494px;
+        @media (max-height:900px) {
+          transform: translateX(0);
+        }
+      }
+
+      @include onDesktop {
+        right: 0;
+        width: auto;
+        height: auto;
+        transform: translateX(0);
+        left: auto;
+      }
+    }
+
+    &--parag {
+      margin-bottom: 81px;
+    }
+
+    &--button {
+      margin-bottom: 135px;
+    }
+
+    &--lined {
+      margin-bottom: 50px;
+      position: relative;
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+
+      &-line {
+        &::after {
+          content: "";
+          width: 70%;
+          height: 1px;
+          top: 50%;
+          margin-left: 120px;
+          position: absolute;
+          background-color: $colorWhite;
+        }
+      }
+    }
+
+  }
+}

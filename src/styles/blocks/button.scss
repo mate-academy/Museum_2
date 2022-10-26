@@ -1,0 +1,74 @@
+.button {
+  height: 60px;
+  width: 280px;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: $fontRaleway;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &-primary {
+    color: $colorWhite;
+    background-color: $colorMain;
+    border: none;
+
+    &:hover {
+      background-color: $colorPrimaryHover;
+    }
+
+    &:focus {
+      background-color: $colorPrimaryPressed;
+    }
+    &:disabled {
+      background-color: $colorPrimaryDisabled;
+    }
+  }
+
+  &-secondary {
+    border: 1px solid $colorMain;
+    color: $colorMain;
+    background-color: $colorWhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    &:hover {
+      color: $colorPrimaryHover;
+      border-color: $colorPrimaryHover;
+    }
+    &:focus {
+      color: $colorPrimaryPressed;
+      border-color: $colorPrimaryPressed;
+    }
+    &:disabled {
+      color: $colorPrimaryDisabled;
+      border-color: $colorPrimaryDisabled;
+    }
+
+    &:hover svg > path {
+      stroke: $colorPrimaryHover;
+    }
+
+    &:focus svg > path {
+      stroke: $colorPrimaryPressed;
+    }
+
+    &:disabled svg > path {
+      stroke: $colorPrimaryDisabled;
+    }
+  }
+}
