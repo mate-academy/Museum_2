@@ -1,0 +1,95 @@
+.subscription {
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    flex-direction: row;
+  }
+  &__title {
+    display: flex;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: #1C1B29;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 125%;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 120%;
+      margin: 0;
+    }
+  }
+
+  &__text {
+    display: flex;
+    @include fontRalewayBig;
+    color: #1C1B29;
+    margin: 0;
+  }
+
+  &__email {
+    display: block;
+    max-width: 280px;
+    height: 24px;
+    width: 100%;
+    background: #f1f5f4;
+    border: none;
+    border-bottom: 1px solid #1C1B29;
+    box-sizing: border-box;
+    padding: 0;
+    outline: none;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      max-width: 450px;
+    }
+
+    @include onDesktop {
+      max-width: 470px;
+    }
+
+    &:hover {
+      border-color: $colorOrange;
+    }
+
+
+
+    &:focus {
+      color: $colorOrange;
+      border-color: $colorOrange;
+    }
+
+
+    &::placeholder {
+      @include fontRalewayBig;
+      color: #1C1B29;
+    }
+
+    &:hover::placeholder {
+      color: $colorOrange;
+    }
+  }
+
+  &__final {
+    display: block;
+    margin-bottom: 80px;
+    padding: 0 20px;
+
+    @include onTablet {
+      padding: 0 39px;
+      margin-bottom: 200px;
+    }
+
+    @include onDesktop {
+      padding: 0 45px;
+    }
+  }
+}
