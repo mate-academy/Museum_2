@@ -1,0 +1,63 @@
+.page {
+  font-family: "Playfair Display", serif;
+  scroll-behavior: smooth;
+  color: #f1f5f4;
+
+  &__body {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  &__menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+
+    &--title {
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 125%;
+      color: #1c1b29;
+      text-align: center;
+      margin: 0 0 60px;
+
+      @include onTablet {
+        text-align: start;
+        font-size: 40px;
+        margin: 0 0 75px;
+      }
+
+      @include onDesktop {
+        text-align: start;
+        font-size: 48px;
+        line-height: 120%;
+        margin: 0 0 70px;
+      }
+    }
+
+    &--image {
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--link {
+      text-decoration: none;
+    }
+  }
+}
