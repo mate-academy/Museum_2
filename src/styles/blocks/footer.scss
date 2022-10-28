@@ -18,12 +18,12 @@
   }
 
   &__item {
+    display: block;
     @extend %main-text;
     color: $white;
+    text-decoration: none;
 
     &--link {
-      display: block;
-      text-decoration: none;
       margin-bottom: 10px;
 
       &:last-child {
@@ -105,5 +105,24 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+
+    @keyframes move {
+      0% {
+        transform: translateY(0);
+      }
+      25% {
+        transform: translateY(8px);
+      }
+      50% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-5px);
+      }
+    }
+
+    &:hover {
+      animation: move 0.5s infinite;
+    }
   }
 }

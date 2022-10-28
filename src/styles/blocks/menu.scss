@@ -1,6 +1,18 @@
 .menu {
   background-color: $background;
 
+  @include onTablet {
+    background-image: url(../images/boymenu.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: auto 25%;
+  }
+
+  @include onDesktop {
+    background-position: bottom right;
+    background-size: auto 80%;
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -29,49 +41,50 @@
 
   &__logo-container {
     display: flex;
-    
-    justify-content: center;
+    background-image: url(../images/NAMU.png);
+    background-position: center;
+    background-repeat: no-repeat;
     height: 40px;
     width: 124px;
-
-  }
-
-  &__logo {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
   }
 
   &__content {
-    height: 100%;
+    height: 100vh;
     max-width: $max-width;
-    padding: 30px 0 239px;
-
-    @include onTablet {
-      margin: 0 auto;
-      background-image: url(../images/boymenu.png);
-      background-repeat: no-repeat;
-      background-position: bottom;
-      background-size: 422px;
-      padding: 50px 0 495px;
-    }
-
-    @include onDesktop {
-      padding: 40px 0 105px;
-      background-position: bottom right;
-      background-size: calc(50% - #{$column-gap}) 625px;
-    }
   }
 
   &__info-block {
-    margin-bottom: 40px;
-
+    display: grid;
+    column-gap: 30px;
+    margin: 50px 0 40px;
     @include onTablet {
-      margin-bottom: 50px;
+      grid-template-columns: repeat(6, 1fr);
+      margin: 50px 0;
     }
 
     @include onDesktop {
-      margin-bottom: 70px;
+      grid-template-columns: repeat(12, 1fr);
+      margin: 40px 0 70px;
+    }
+  }
+
+  &__schedule {
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__address {
+    @include onTablet {
+      grid-column: 3 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 3 / 6;
     }
   }
 
@@ -82,12 +95,18 @@
 
   &__info {
     margin-bottom: 20px;
-    
     @extend %main-text;
     color: $white;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
 
     &--last {
       margin-bottom: 0;
+
+      &:hover {
+        border-color: $white;
+      }
     }
 
     @include onTablet {
@@ -99,10 +118,11 @@
     &::after {
       content: "";
       display: block;
-      height: 1px;
-      width: 100%;
-      background-color: $white;
       margin-bottom: 40px;
+      width: 100%;
+      height: 1px;
+      background-color: $white;
+      opacity: 0.3;
 
       @include onTablet {
         margin-bottom: 50px;
@@ -111,6 +131,7 @@
         display: none;
       }
     }
+
     @include onDesktop {
       margin-bottom: 121px;
     }
@@ -153,48 +174,14 @@
     }
   }
 
-  &__bottom-line {
-    height: 1px;
-    width: 100%;
-    background: $white;
-    opacity: 0.3;
-    margin-bottom: 40px;
-
+  &__button {
     @include onTablet {
-      margin-bottom: 50px;
+      max-width: 330px;
+      margin-bottom: 496px;
     }
 
     @include onDesktop {
-      margin-bottom: 60px;
+      max-width: 270px;
     }
-  }
-
-  &__main-photo-container {
-    position: relative;
-    width: 100%;
-    max-height: 245px;
-    overflow: hidden;
-  
-    &::after {
-      content: "";
-      display: block;
-      padding-bottom: 100%;
-    }
-
-    @include onTablet {
-      max-height: 443px;
-    }
-    
-    @include onDesktop {
-      display: none;
-    }
-  }
-
-  &__main-photo {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
   }
 }
