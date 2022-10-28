@@ -1,0 +1,80 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  border: 1px solid $redLightColor;
+  gap: 10px;
+
+  font-weight: 600;
+  line-height: 100%;
+  color: $redLightColor;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 210px;
+    }
+  }
+
+  &--bottom {
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--primary {
+    margin: 0;
+    color: $whiteColor;
+    border: 2px solid $redLightColor;
+    background-color: $redLightColor;
+    transition: transform 0.3s;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      width: 330px;
+      height: 60px;
+      padding: 22px 99px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      height: 60px;
+      padding: 22px 76px;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      border-color: $redColorHover;
+      background-color: $redColorHover;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      border-color: $redColorActive;
+      background-color: $redColorActive;
+    }
+  }
+
+  &:hover {
+    border-color: $redColorHover;
+  }
+
+  &:active {
+    border-color: $redColorActive;
+  }
+}
