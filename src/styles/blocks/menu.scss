@@ -1,0 +1,110 @@
+.menu {
+  background-color: $background;
+  color: $white;
+
+  overflow-y: hidden;
+
+  @include onDesktop {
+    background-image: url(../images/img_menu.png);
+    background-repeat: no-repeat;
+    height: 780px;
+    background-size: 600px;
+    background-position: bottom right;
+  }
+
+  &__sign {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__value {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+    padding: 26px 0 0;
+  }
+
+  &__list {
+    box-sizing: border-box;
+    border-bottom: 1px solid $white;
+    padding: 0;
+    list-style: none;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 120%;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    &--item {
+      margin-bottom: 20px ;
+      width: max-content;
+      @include onDesktop {
+        margin-bottom: 60px;
+        &:last-child {
+          margin-bottom: 60px;
+        }
+      }
+
+      @include onTablet {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 50px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 40px;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $white;
+      }
+
+    }
+  }
+
+  &--link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__portret {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    height: 273px;
+    width: 245px;
+    visibility: hidden;
+
+    @include onTablet {
+      height: 494px;
+      width: 443px;
+      visibility: visible;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
