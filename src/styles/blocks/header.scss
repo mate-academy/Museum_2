@@ -1,0 +1,103 @@
+.header {
+  background-color: $backgroundColor;
+
+  &__content {
+    position: relative;
+
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 20px 0;
+
+    @include onTablet {
+      padding: 26px 42px 0;
+    }
+
+    @include onDesktop {
+      padding: 32px 60px 0;
+    }
+  }
+
+  &__menu {
+    grid-column: -1 / -2;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 123px 1fr 25px 25px;
+    
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 123px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 123px 1fr 30px 30px;
+    }
+  }
+
+  &__dates {
+    @include mainFont;
+
+    font-size: 14px;
+    line-height: 140%;
+    color: $whiteColor;
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include titleFont;
+
+    font-size: 48px;
+    line-height: 100%;
+    color: $whiteColor;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @include mainFont;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $whiteColor;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+
+    height: 273px;
+
+    object-fit: contain;
+
+    @include onTablet {
+      height: 449px;
+    }
+
+    @include onDesktop {
+      height: 663px;
+    }
+  }
+}

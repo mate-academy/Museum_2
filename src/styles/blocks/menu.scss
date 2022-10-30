@@ -1,0 +1,171 @@
+.menu {
+  background-color: $backgroundColor;
+
+  &__content {
+    position: relative;
+    
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 20px 0;
+
+    @include onTablet {
+      padding: 26px 42px 0;
+    }
+
+    @include onDesktop {
+      padding: 32px 60px 0;
+    }
+  }
+
+  &__cross {
+    grid-column: -1 / -2;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 123px 1fr 25px 25px;
+    
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 123px 1fr 30px 30px;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__schedule-text {
+    @include mainFont;
+    font-size: 14px;
+    line-height: 140%;
+    color: $whiteColor;
+  }
+
+  &__schedule-hours {
+    @include mainFont;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $whiteColor;
+  }
+
+  &__address {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__address-text {
+    @include mainFont;
+    font-size: 14px;
+    line-height: 140%;
+    color: $whiteColor;
+  }
+
+  &__address-link {
+    @include mainFont;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $whiteColor;
+    text-decoration: none;
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      border-bottom: 1px solid $whiteColor;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+  
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    @include titleFont;
+    font-size: 20px;
+    line-height: 150%;
+    color: $whiteColor;
+    text-decoration: none;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+
+    height: 0;
+
+    object-fit: contain;
+
+    @include onTablet {
+      height: 466px;
+    }
+
+    @include onDesktop {
+      height: 697px;
+    }
+  }
+}
