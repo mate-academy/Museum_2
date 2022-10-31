@@ -16,7 +16,7 @@
   &--primary {
     background-color: $mainColor;
     color: $whiteColor;
-    transition: background-color 0.3s;
+    transition: background-color content 0.3s;
 
     &:hover {
       background-color: #af3419;
@@ -26,7 +26,7 @@
       background-color: #ea340d;
     }
   }
-
+  
   &--secondary {
     background-color: $whiteColor;
     color: $mainColor;
@@ -41,6 +41,20 @@
     &:active {
       border-color: #ea340d;
       color: #ea340d;
+    }
+
+    &::after {
+      content: url(../images/arrow.svg);
+      position: relative;
+      left: 8px;
+    }
+  
+    &:hover::after {
+      content: url(../images/arrow_hover.svg);
+    }
+  
+    &:active::after {
+      content: url(../images/arrow_active.svg);
     }
   }
 }
