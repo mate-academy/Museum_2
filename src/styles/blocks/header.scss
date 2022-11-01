@@ -5,14 +5,12 @@
   
   &__container {
     @include container;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     box-sizing: border-box;
     height: 100vh;
+    position: relative;
 
     @include onTablet {
-      height: 1020px;
+      height: 1098px;
     }
 
     @include onDekstop {
@@ -23,7 +21,13 @@
 
   &__top {
     @include top-actions;
+    grid-template-columns: 1fr var(--icon-width);
     padding: $headerTopPadding 0;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      grid-template-columns: 1fr var(--icon-width) var(--icon-width);
+    }
   }
 
   &__content {
@@ -32,28 +36,42 @@
     align-content: end;
   }
 
-  &__photo {
-    object-fit: 100%;
-    width: 100%;
-    max-height: 273px;
+  &__photo-container {
+    margin: 0 auto;
+    width: 234px;
 
     @include onTablet {
-      max-height: 490px;
-      height: 100%;
+      width: 434px;
     }
 
     @include onDekstop {
-      max-height: 660px;
-      height: 100%;
+      width: 0;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    bottom: 0;
+    object-fit: 100%;
+    width: 246px;
+    height: 270px;
+
+    @include onTablet {
+      width: 400px;
+      height: 400px;
+    }
+
+    @include onDekstop {
+      right: 0;
+      width: 624px;
+      height: 664px;
+      
     }
   }
 
   &__about {
     display: block;
-    @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-    }
+    
     
   }
 
@@ -61,7 +79,6 @@
     @extend %additional;
 
     @include onTablet {
-      grid-column: 1 / 5;
       margin: 0 0 10px;
     }
   }
@@ -78,7 +95,7 @@
       margin: 0 0 20px;
       font-size: 72px;
       line-height: 72px;
-      grid-column: 1 / 7;
+     
     }
 
     @include onDekstop {
@@ -89,8 +106,8 @@
   }
 
   &__text {
-    grid-column: 1 / 6;
     @extend %main;
+    margin-bottom: 40px;
 
     @include onTablet {
       margin: 0 0 50px;
@@ -103,28 +120,23 @@
 
   &__button {
     @include onTablet {
-      grid-column: 1 / 4;
-      margin-bottom: 50px;
+     
+      margin-bottom: 0;
     }
 
     @include onDekstop {
       margin-bottom: 150px;
-      grid-column: 1 / 4;
     }
 
   }
 
   &__anons {
-    visibility: hidden;
+    display: none;
     @extend %h6;
-
-    @include onTablet {
-      grid-column: 1 / 6;
-    }
 
     @include onDekstop {
       position: relative;
-      visibility: visible;
+      display: block;
       margin-bottom: 50px;
     }
 
@@ -137,6 +149,14 @@
       width: 100%;
       border: 1px solid $color-white;
       margin-bottom: 50px;
+    }
+  }
+
+  &__language {
+    display: none;
+
+    @include onTablet {
+      display: block;
     }
   }
 }

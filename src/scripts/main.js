@@ -26,3 +26,11 @@ const elements = document.querySelectorAll('.visit__photo');
 for (const elm of elements) {
   observer.observe(elm);
 }
+
+const form = document.querySelector('.subscribe__form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  form.reset();
+});

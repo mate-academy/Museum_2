@@ -15,54 +15,54 @@
 
   transition: all 0.3s;
 
-  &--secondary {
-    color: $color-main;
-    background-color: $color-white;
-    border-color: $color-main;
-
-    &::after {
-      display: block;
-      content: "\1F872";
-      margin-left: 10px;
-
-      &:hover {
-        color: $color-white;
-      }
-
-      &:active {
-        color: $color-white;
-      }
-    
-      &:disabled {
-        color: $color-white;
-      }
-    }
-
-    &:hover {
-      color: $color-white;
-    }
-  
-    &:active {
-      color: $color-white;
-    }
-  
-    &:disabled {
-      color: $color-white;
-    }
-  }
-
   &:hover {
-    border: 2px solid #af3419;
-    background-color: #af3419;
+    border: 2px solid $color-hover;
+    background-color: $color-hover;
   }
 
   &:active {
-    border: 2px solid #ea340d;
-    background-color: #ea340d;
+    border: 2px solid $color-active;
+    background-color: $color-active;
   }
 
   &:disabled {
-    border: 2px solid #dd836f;
-    background-color: #dd836f;
+    border: 2px solid $color-disabled;
+    background-color: $color-disabled;
+  }
+
+  &--secondary {
+    color: $color-main;
+    background-color: $c-gray;
+    border-color: $color-main;
+
+    & svg {
+      margin-left: 11px;
+    }
+
+    & path {
+      transition: stroke 0.3s;
+    }
+
+    &:hover,
+    &:hover path {
+      color: $color-hover;
+      border-color: $color-hover;
+      background-color: $c-gray;
+      stroke: $color-hover;
+    }
+  
+    &:active,
+    &:active path {
+      color: $color-active;
+      border-color: $color-active;
+      background-color: $c-gray;
+    }
+  
+    &:disabled,
+    &:disabled path {
+      color: $color-disabled;
+      border-color: $color-disabled;
+      background-color: $c-gray;
+    }
   }
 }

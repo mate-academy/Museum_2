@@ -1,24 +1,26 @@
 .footer {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 34px 20px 30px;
+  @include container;
   background-color: $color-gray;
   color: $color-white;
-  height: 750px;
+  position: relative;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 34px 0 30px;
+    height: 750px;
   
-  @include onTablet {
-    padding: 34px 30px 30px;
-  }
+    @include onTablet {
+      padding: 34px 0 30px;
+      height: 390px;
+    }
 
-  @include onDekstop {
-    padding: 50px 40px 30px;
-  }
-
-  @include onTablet {
-    height: 390px;
+    @include onDekstop {
+      padding: 50px 0 30px;
+    }
   }
 
   &__title {
@@ -30,7 +32,6 @@
     @include onTablet {
       margin-bottom: 30px;
     }
-    
   }
 
   &__address {
@@ -45,10 +46,13 @@
 
   &__tel {
     display: flex;
+    align-items: center;
+    gap: 3px;
   }
 
   &__schedule {
     @extend %main;
+    margin-bottom: 50px;
   }
 
   &__text {
@@ -60,6 +64,7 @@
   &__networks {
     display: flex;
     gap: 25px;
+    margin-bottom: 50px;
   }
 
   &__network {
@@ -92,17 +97,14 @@
   &__arrow {
     box-sizing: border-box;
     text-decoration: none;
-    position: absolute;
-    bottom: 30px;
-    right: 35px;
-    padding: 10px;
+    height: 30px;
+    width: 30px;
+    background-image: url("../images/scroll-up.svg");
+  }
 
-    &::after {
-      display: block;
-      content: "\1F869";
-      margin-left: 10px;
-      
-      color: $color-white;
-    }
+  &__down {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 }

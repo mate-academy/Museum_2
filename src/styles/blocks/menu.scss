@@ -4,36 +4,42 @@
 
   &__container {
     @include container;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     box-sizing: border-box;
     height: 100vh;
+  }
+
+  &__photo-container {
+    margin: 0 auto;
+    width: 234px;
 
     @include onTablet {
-      max-height: 1092px;
+      width: 300px;
     }
 
     @include onDekstop {
-      height: 100vh;
+      width: 0;
     }
   }
 
   &__photo {
-    box-sizing: border-box;
-    visibility: hidden;
+    display: none;
+    
+    width: 246px;
+    height: 270px;
 
     @include onTablet {
-      visibility: visible;
+      display: block;
+      position: absolute;
+      bottom: 0;
       object-fit: 100%;
-      width: 100%;
-      max-height: 490px;
-      height: 100%;
+      width: 420px;
+      height: 340px;
     }
 
     @include onDekstop {
-      max-height: 660px;
-      height: 100%;
+      right: 0;
+      width: 624px;
+      height: 664px;
     }
   }
 
@@ -42,36 +48,38 @@
     padding: $headerTopPadding 0;
   }
 
-  &__content {
-    display: block;
+  &__language {
+    order: 1;
+  }
+
+  &__cross {
+    order: 2;
 
     @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      order: 1;
     }
   }
 
   &__list {
-    margin: 0 0 48px;
+    margin: 0 0 30px;
     padding: 0;
     list-style: none;
 
     @include onTablet {
-      grid-column: 1 / 7;
-      margin: 0 0 48px;
+      margin: 0 0 40px;
     }
   }
 
   &__item {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 
     &:last-child {
       margin-bottom: 0;
     }
 
     @include onTablet {
-      margin-bottom: 30px;
-      grid-column: 1 / 7;
+      margin-bottom: 25px;
+    
     }
 
     @include onDekstop {
@@ -98,7 +106,7 @@
     }
 
     @include onTablet {
-      grid-column: 1 / 7;
+      
       font-size: 28px;
       line-height: 38px;
     }
@@ -106,6 +114,7 @@
 
   &__schedules {
     color: $color-white;
+    margin-bottom: 20px;
   }
 
   &__schedule {
@@ -116,16 +125,11 @@
     @extend %main;
   }
 
-  &__info {
-    display: flex;
-    gap: 80px;
+  &__address {
+    margin-bottom: 40px;
 
     @include onTablet {
-      grid-column: 1 / 7;
-    }
-
-    @include onDekstop {
-      margin-bottom: 80px;
+      margin-bottom: 0;
     }
   }
 
@@ -141,16 +145,14 @@
 
   &__line {
     position: relative;
-    visibility: hidden;
+    padding-bottom: 40px;
 
     @include onTablet {
-      visibility: visible;
-      grid-column: 1 / 7;
-      margin-bottom: 50px;
+      padding-bottom: 50px;
     }
 
     @include onDekstop {
-      margin-bottom: 60px;
+      padding-bottom: 60px;
     }
 
     &::after {
@@ -159,19 +161,19 @@
       position: absolute;
       width: 100%;
       border: 1px solid $color-white;
-      
     }
   }
 
   &__button {
+    margin-bottom: 0;
+
     @include onTablet {
-      grid-column: 1 / 4;
       margin-bottom: 100px;
     }
 
     @include onDekstop {
       margin-bottom: 100px;
-      grid-column: 1 / 4;
+      
     }
   }
 }
