@@ -1,16 +1,57 @@
 .menu {
   background-color: $background;
+  z-index: 3;
 
-  @include onTablet {
-    background-image: url(../images/boymenu.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: auto 25%;
+  &__scroll {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 1;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+    }
   }
 
-  @include onDesktop {
-    background-position: bottom right;
-    background-size: auto 80%;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 100vh;
+
+    @include onDesktop {
+      min-height: 100%;
+    }
+  }
+
+  &__image-container {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+    }
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    @media (max-height: 700px) {
+      height: 85%;
+    }
+    @media (max-height: 550px) {
+      display: none;
+    }
+  }
+
+  &__image {
+    display: flex;
+    height: 100%;
+    width: 100%;
   }
 
   &__top {
@@ -18,13 +59,17 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
+    margin-bottom: 30px;
+    z-index: 2;
 
     @include onTablet {
       padding-top: 20px;
+      margin-bottom: 50px;
     }
 
     @include onDesktop {
       padding-top: 26px;
+      margin-bottom: 40px;
     }
 
     &--icons {
@@ -48,70 +93,54 @@
     width: 124px;
   }
 
-  &__content {
-    height: 100vh;
-    max-width: $max-width;
-  }
-
   &__info-block {
-    display: grid;
-    column-gap: 30px;
     margin: 50px 0 40px;
     @include onTablet {
-      grid-template-columns: repeat(6, 1fr);
       margin: 50px 0;
     }
 
     @include onDesktop {
-      grid-template-columns: repeat(12, 1fr);
       margin: 40px 0 70px;
     }
   }
 
   &__schedule {
-    @include onTablet {
-      grid-column: 1 / 3;
-    }
+    margin-bottom: 20px;
 
-    @include onDesktop {
-      grid-column: 1 / 3;
+    @include onTablet {
+      margin-bottom: 0;
     }
   }
 
   &__address {
+    margin-bottom: 40px;
     @include onTablet {
-      grid-column: 3 / 6;
+      margin-bottom: 50px;
     }
-
     @include onDesktop {
-      grid-column: 3 / 6;
+      margin-bottom: 70px;
     }
   }
 
   &__subtitle {
+
     @extend %additional-text;
     color: $white;
   }
 
   &__info {
-    margin-bottom: 20px;
     @extend %main-text;
     color: $white;
     text-decoration: none;
     border-bottom: 1px solid transparent;
-    transition: border-color 0.3s;
 
-    &--last {
-      margin-bottom: 0;
-
+    &--link {
+      transition: color 0.3s;
       &:hover {
-        border-color: $white;
+        color: $main;
       }
     }
 
-    @include onTablet {
-      margin-bottom: 0;
-    }
   }
 
   &__list {
@@ -164,6 +193,10 @@
     @include onDesktop {
       color: $white;
       margin-bottom: 60px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -177,13 +210,14 @@
   }
 
   &__button {
+    margin-bottom: 239px;
+
     @include onTablet {
-      max-width: 330px;
-      margin-bottom: 496px;
+      margin-bottom: 30px;
     }
 
     @include onDesktop {
-      max-width: 270px;
+      margin-bottom: 110px;
     }
   }
 }
