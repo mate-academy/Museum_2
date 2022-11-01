@@ -1,0 +1,102 @@
+.events {
+  margin: 120px 0 90px;
+  background-color: $white;
+
+  @include onTablet {
+    margin: 160px 0 100px;
+  }
+  @include onDesktop {
+    margin: 200px 0 110px;
+  }
+  
+  &__title {
+    margin-bottom: 0;
+    @extend %h3;
+    column-rule: $black;
+
+    @include onTablet {
+      margin-bottom: 76px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+  
+  &__photo-container {
+    display: flex;
+    margin: 60px 0 20px;
+    @include hover-photo;
+
+    @include onTablet {
+      margin: 0 0 70px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 60px;
+    }
+
+    &--last {
+      @include onTablet {
+        margin: 0;
+      }
+  
+      @include onDesktop {
+        margin: 0;
+      }
+    }
+  }
+
+  &__photo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__date {
+    @extend %main-text;
+    color: $main;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    @extend %h4;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    @extend %main-text;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__btn-container {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__button {
+    order: 1;
+    margin-top: 30px;
+
+    @include onTablet {
+      order: 0;
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      order: 0;
+      margin-top: 0;
+    }
+  }
+}

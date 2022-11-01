@@ -1,0 +1,189 @@
+.header {
+  background-color: $background;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 100vh;
+
+    @include onDesktop {
+      min-height: 100%;
+    }
+  }
+
+  &__image-container {
+    margin: 0 auto;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+
+  &__image {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    @include onDesktop {
+      height: 100%;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 26px;
+
+    @include onTablet {
+      padding-top: 20px;
+    }
+
+    @include onDesktop {
+      padding-top: 26px;
+    }
+    &--icons {
+      display: flex;
+      align-items: center;
+      color: $white;
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    background-image: url(../images/NAMU.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 124px;
+  }
+
+  &__additional-text {
+    @extend %additional-text;
+    color: $white;
+    margin-bottom: 10px;
+
+    padding-top: 67px;
+
+    @include onTablet {
+      padding-top: 119px;
+    }
+
+    @include onDesktop {
+      padding-top: 117px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__main-text {
+    @extend %main-text;
+    margin-bottom: 40px;
+    color: $white;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onDesktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__decor-container {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 50px;
+      overflow: hidden;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-left: 100px;
+        height: 1px;
+        width: 100%;
+        background: $white;
+        opacity: 0.3;
+      }
+    }
+  }
+  
+  &__decor-line {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: $white;
+    opacity: 0.7;
+  }
+}
+
+.select {
+  display: none;
+
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-transform: uppercase;
+  background-color: $background;
+  color: $white;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  @include onTablet {
+    display: block;
+    margin-left: 40px;
+  }
+
+  &--lang-mob {
+    display: flex;
+    margin-right: 30px;
+
+    @include onTablet {
+      margin-right: 0;
+    }
+    @include onDesktop {
+      margin-right: 0;
+    }
+  }
+
+  &:hover {
+    color: $main;
+  }
+}

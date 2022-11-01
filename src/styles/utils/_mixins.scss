@@ -1,6 +1,20 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin hover-photo {
+  box-shadow: 0 5px 5px 1px rgba(122, 133, 133, 0.8);
+  transition: all 0.3s;
   &:hover {
-    #{$_property}: $_toValue;
+    transform: translateY(-15px);
+    box-shadow: 10px 15px 5px 1px rgba(122, 133, 133, 0.8);
   }
 }

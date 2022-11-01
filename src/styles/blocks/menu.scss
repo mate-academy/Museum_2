@@ -1,0 +1,227 @@
+.menu {
+  background-color: $background;
+  z-index: 3;
+
+  &__scroll {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 4;
+    &::-webkit-scrollbar {
+      background-color: transparent;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: 100vh;
+
+    @include onDesktop {
+      min-height: 100%;
+    }
+  }
+
+  &__image-container {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+    }
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    @media (max-height: 700px) {
+      height: 85%;
+    }
+    @media (max-height: 550px) {
+      height: 75%;
+    }
+
+    @media (max-height: 200px) {
+      display: none;
+    }
+  }
+
+  &__image {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    z-index: 2;
+
+    @include onTablet {
+      padding-top: 20px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-top: 26px;
+      margin-bottom: 40px;
+    }
+
+    &--icons {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      color: $white;
+
+      @include onTablet {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__logo-container {
+    display: flex;
+    background-image: url(../images/NAMU.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 124px;
+  }
+
+  &__info-block {
+    margin: 50px 0 40px;
+    @include onTablet {
+      margin: 50px 0;
+    }
+
+    @include onDesktop {
+      margin: 40px 0 70px;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__address {
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__subtitle {
+
+    @extend %additional-text;
+    color: $white;
+  }
+
+  &__info {
+    @extend %main-text;
+    color: $white;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    &--link {
+      transition: color 0.3s;
+      &:hover {
+        color: $main;
+      }
+    }
+
+  }
+
+  &__list {
+    &::after {
+      content: "";
+      display: block;
+      margin-bottom: 40px;
+      width: 100%;
+      height: 1px;
+      background-color: $white;
+      opacity: 0.3;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 121px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    @extend %menu;
+    list-style: none;
+    width: max-content;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    &:hover {
+      border-color: $white;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 50px;
+      }
+    }
+
+    @include onDesktop {
+      color: $white;
+      margin-bottom: 60px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+    
+    &:visited {
+      color: $white;
+    }
+  }
+
+  &__button {
+    margin-bottom: 239px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+}

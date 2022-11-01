@@ -1,0 +1,93 @@
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $main;
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  cursor: pointer;
+  @extend %button-text;
+  transition: all, 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 5%;
+    height: 5px;
+    width: 90%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(0,0,0,0.5), rgba(0,0,0,0.1));
+    transform: translateY(-6px);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+  &:hover::before {
+    opacity: 1;
+    transform: translateY(3px);
+  }
+
+  &--primary {
+    background-color: $main;
+    color: $white;
+
+    &:hover {
+      background-color: $btn-hover;
+      border-color: $btn-hover;
+
+    }
+  
+    &:active {
+      background-color: $btn-pressed;
+      border: 1px solid $btn-pressed;
+    }
+  
+    &:disabled {
+      background-color: $btn-disabled;
+      border: 1px solid $btn-disabled;
+    }
+  }
+
+  &--secondary {
+    display: flex;
+    color: $main;
+
+    &::after {
+      content: (url(../images/arrow-button.svg));
+      margin-left: 8px;
+    }
+
+    &:hover {
+      border: 1px solid $btn-hover;
+      color: $btn-hover;
+      &::after {
+        content: (url(../images/arrow-button-hover.svg));
+        margin-left: 8px;
+      }
+    }
+  
+    &:active {
+      border: 1px solid $btn-pressed;
+      color: $btn-pressed;
+      &::after {
+        content: (url(../images/arrow-button-pressed.svg));
+        margin-left: 8px;
+      }
+    }
+  
+    &:disabled {
+      border: 1px solid $btn-disabled;
+      color: $btn-disabled;
+      &::after {
+        content: (url(../images/arrow-button-Disabled.svg));
+        margin-left: 8px;
+      }
+    }
+  }
+}

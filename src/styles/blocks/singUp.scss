@@ -1,0 +1,68 @@
+.singUp {
+  background-color: $white;
+  margin: 120px 0 80px;
+
+  @include onTablet {
+    margin: 160px 0 128px;
+  }
+
+  @include onDesktop {
+    margin: 200px 0;
+  }
+  
+  &__title {
+    @extend %h3;
+    color: $black;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    @extend %main-text;
+    color: $black;
+    margin-bottom: 50px;
+  }
+
+  &__field-email {
+    background: transparent;
+    @extend %main-text;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 3px 0;
+    border: none;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+      border-bottom: 1px solid $black;
+    }
+    
+    &::placeholder {
+      @extend %main-text;
+      color: $black;
+    }
+
+    &:valid {
+      @extend %main-text;
+      font-weight: 700;
+      border-bottom: 1px solid $black;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $main;
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main;
+      &::placeholder {
+        color: $main;
+      }
+    }
+  }
+
+  &__button {
+    max-width: 330px;
+  }
+}
