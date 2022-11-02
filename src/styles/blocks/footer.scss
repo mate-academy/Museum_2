@@ -42,12 +42,20 @@
     color: inherit;
     text-decoration: none;
     @extend %main;
+
+    transition: all 0.3s linear;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $color-hover;
+    }
   }
 
   &__tel {
     display: flex;
     align-items: center;
     gap: 3px;
+    @extend %main;
   }
 
   &__schedule {
@@ -77,20 +85,18 @@
     background-repeat: no-repeat;
     text-decoration: none;
 
-    &--facebook {
-      background-image: url(../images/facebook.svg);
-    }
-  
-    &--telegram {
-      background-image: url(../images/telegram.svg);
+    transition: transform 0.3s linear;
+
+    & path {
+      transition: fill 0.3s;
     }
 
-    &--twitter {
-      background-image: url(../images/twitter.svg);
+    &:hover {
+      transform: scale(1.1);
     }
 
-    &--instagram {
-      background-image: url(../images/instagram.svg);
+    &:hover path {
+      fill: $color-hover;
     }
   }
 
@@ -100,6 +106,11 @@
     height: 30px;
     width: 30px;
     background-image: url("../images/scroll-up.svg");
+    transition: transform 0.3s linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__down {
