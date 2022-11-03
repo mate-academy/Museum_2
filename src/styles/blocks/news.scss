@@ -16,7 +16,7 @@
     color: $blackColor;
 
     margin-bottom: 60px;
-
+    
     @include onTablet {
       font-size: 40px;
       line-height: 125%;
@@ -49,6 +49,7 @@
   }
 
   &__photo-container {
+    display: block;
     position: relative;
 
     box-sizing: border-box;
@@ -87,11 +88,16 @@
     object-fit: cover;
     object-position: center;
 
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
     &--position-top {
       @include onDesktop {
         object-position: top;
       }
-
     }
   }
 
