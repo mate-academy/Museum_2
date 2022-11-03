@@ -5,12 +5,16 @@
   
   &__container {
     @include container;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-sizing: border-box;
     min-height: 100vh;
     height: 100%;
     position: relative;
 
     @include onTablet {
+      display: block;
       min-height: 1098px;
     }
 
@@ -23,7 +27,7 @@
     @include top-actions;
     grid-template-columns: 1fr var(--icon-width);
     padding: $headerTopPadding 0;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
 
     @include onTablet {
       grid-template-columns: 1fr var(--icon-width) var(--icon-width);
@@ -37,6 +41,7 @@
   &__photo-container {
     margin: 0 auto;
     width: 234px;
+    
 
     @include onTablet {
       width: 434px;
@@ -48,13 +53,14 @@
   }
 
   &__photo {
-    position: absolute;
-    bottom: 0;
+    
     object-fit: 100%;
     width: 246px;
     height: 270px;
 
     @include onTablet {
+      position: absolute;
+      bottom: 0;
       width: 400px;
       height: 400px;
     }
@@ -117,6 +123,7 @@
   }
 
   &__button {
+    margin-bottom: 20px;
     @include onTablet {
      
       margin-bottom: 0;
