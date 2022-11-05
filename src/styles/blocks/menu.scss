@@ -4,8 +4,23 @@
 
   &__container {
     @include container;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-sizing: border-box;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+
+    @include onTablet {
+      min-height: 100vh;
+      max-height: 1098px;
+    }
+
+    @include onDekstop {
+      display: block;
+      min-height: 100vh;
+    }
   }
 
   &__photo-container {
@@ -23,20 +38,18 @@
 
   &__photo {
     display: none;
-    
-    width: 246px;
-    height: 270px;
 
     @include onTablet {
       display: block;
-      position: absolute;
-      bottom: 0;
+      
       object-fit: 100%;
-      width: 420px;
-      height: 340px;
+      width: 400px;
+      height: 400px;
     }
 
     @include onDekstop {
+      position: absolute;
+      bottom: 0;
       right: 0;
       width: 624px;
       height: 664px;
@@ -46,6 +59,7 @@
   &__top {
     @include top-actions;
     padding: $headerTopPadding 0;
+    z-index: 1;
   }
 
   &__language {
@@ -118,6 +132,10 @@
   &__schedules {
     color: $color-white;
     margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
   }
 
   &__schedule {
@@ -132,7 +150,11 @@
     margin-bottom: 40px;
 
     @include onTablet {
-      margin-bottom: 0;
+      margin-bottom: 50px;
+    }
+
+    @include onDekstop {
+      margin-bottom: 70px;
     }
   }
 
@@ -168,10 +190,10 @@
   }
 
   &__button {
-    margin-bottom: 0;
+    margin-bottom: 200px;
 
     @include onTablet {
-      margin-bottom: 100px;
+      margin-bottom: 30px;
     }
 
     @include onDekstop {
