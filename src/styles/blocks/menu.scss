@@ -1,0 +1,213 @@
+.menu {
+  background-color: $backgroundColor;
+
+  position: relative;
+
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 20px 20px 0;
+
+  @include onMobile {
+    min-height: 700px;
+  }
+
+  @include onTablet {
+    min-height: 1096px;
+    padding: 26px 39px 0;
+  }
+
+  @include onDesktop {
+    min-height: 800px;
+    padding: 32px 55px 0;
+  }
+
+  &__languages {
+    display: none;
+
+    @include onTablet {
+      grid-column: -2 / -1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__language {
+    @include mainFont;
+    font-size: 16px;
+    line-height: 150%;
+    color: $whiteColor;
+
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__union {
+    height: 5px;
+    width: 8px;
+    background-image: url(../images/union.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__cross {
+    grid-column: -2 / -1;
+
+    @include onTablet {
+      grid-column: -4 / -3;
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 123px 1fr 25px 40px min-content;
+    
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 123px 1fr 30px 40px min-content;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__schedule-text {
+    @include mainFont;
+    font-size: 14px;
+    line-height: 140%;
+    color: $whiteColor;
+  }
+
+  &__schedule-hours {
+    @include mainFont;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $whiteColor;
+  }
+
+  &__address {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__address-text {
+    @include mainFont;
+    font-size: 14px;
+    line-height: 140%;
+    color: $whiteColor;
+  }
+
+  &__address-link {
+    @include mainFont;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $whiteColor;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      border-bottom: 1px solid $whiteColor;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+  
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    @include titleFont;
+    font-size: 20px;
+    line-height: 150%;
+    color: $whiteColor;
+    text-decoration: none;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__picture {
+    display: none;
+    
+    position: absolute;
+    bottom: 0;
+    object-fit: contain;
+
+    @include onTablet {
+      display: block;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      height: 697px;
+    }
+  }
+}

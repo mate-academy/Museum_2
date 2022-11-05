@@ -1,0 +1,158 @@
+.header {
+  background-color: $backgroundColor;
+
+  position: relative;
+
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 20px 20px 0;
+
+  @include onMobile {
+    min-height: 700px;
+  }
+
+  @include onTablet {
+    min-height: 1024px;
+    padding: 26px 39px 0;
+  }
+
+  @include onDesktop {
+    min-height: 800px;
+    padding: 32px 55px 0;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 123px 1fr 25px 40px min-content;
+    
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 123px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 123px 1fr 30px 40px min-content;
+    }
+  }
+
+  &__languages {
+    display: none;
+
+    @include onTablet {
+      grid-column: -2 / -1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__language {
+    @include mainFont;
+    font-size: 16px;
+    line-height: 150%;
+    color: $whiteColor;
+
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__union {
+    height: 5px;
+    width: 8px;
+    background-image: url(../images/union.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__menu {
+    grid-column: -2 / -1;
+
+    @include onTablet {
+      grid-column: -4 / -3;
+    }
+  }
+
+  &__dates {
+    @include mainFont;
+
+    font-size: 14px;
+    line-height: 140%;
+    color: $whiteColor;
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include titleFont;
+
+    font-size: 48px;
+    line-height: 100%;
+    color: $whiteColor;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @include mainFont;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $whiteColor;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    bottom: 0;
+
+    height: 273px;
+
+    @include onTablet {
+      height: 449px;
+    }
+
+    @include onDesktop {
+      height: 663px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 0;
+
+    @include onDesktop {
+      margin-bottom: 168px;
+    }
+  }
+
+  &__decoration {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

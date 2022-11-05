@@ -1,0 +1,60 @@
+.button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 60px;
+  width: 100%;
+
+  @include mainFont;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-decoration: none;
+
+  &--primary {
+    background-color: $mainColor;
+    color: $whiteColor;
+    transition: background-color content 0.3s;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+  }
+  
+  &--secondary {
+    background-color: $whiteColor;
+    color: $mainColor;
+    transition: color border-color 0.3s;
+    border: 1px solid $mainColor;
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &::after {
+      content: url(../images/arrow.svg);
+      position: relative;
+      left: 8px;
+    }
+  
+    &:hover::after {
+      content: url(../images/arrow_hover.svg);
+    }
+  
+    &:active::after {
+      content: url(../images/arrow_active.svg);
+    }
+  }
+}

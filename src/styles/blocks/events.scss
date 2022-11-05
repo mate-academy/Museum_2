@@ -1,0 +1,154 @@
+.events {
+  padding: 0 20px;
+
+  @include onTablet {
+    padding: 0 39px;
+  }
+
+  @include onDesktop {
+    padding: 0 55px;
+  }
+
+  &__title {
+    @include titleFont;
+    font-size: 28px;
+    line-height: 125%;
+    color: $blackColor;
+
+    margin-bottom: 60px;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 125%;
+
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+
+      margin-bottom: 70px;
+    }
+  }
+
+  &__calendar {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--last {
+      display: flex;
+  
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__photo-container {
+    display: block;
+    position: relative;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 484px;
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      height: 420px;
+      padding-bottom: 0;
+
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+      padding-bottom: 0;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__date {
+    @include mainFont;
+    font-size: 16px;
+    line-height: 150%;
+    color: $mainColor;
+
+    margin-bottom: 10px;
+  }
+
+  &__topic {
+    @include titleFont;
+    font-size: 20px;
+    line-height: 125%;
+    color: $blackColor;
+    text-decoration: none;
+
+    display: block;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    @include mainFont;
+    font-size: 16px;
+    line-height: 150%;
+    color: $greyColor;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__sign-up {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 47.3%;
+    }
+  }
+}
