@@ -44,30 +44,51 @@
     }
   }
 
+  &__cards {
+    @extend %center;
+    @include Tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+    }
+  }
+
   &__card {
     @extend %center;
     margin-bottom: 50px;
 
     &:last-child {
       margin-bottom: 30px;
+
+      @include Tablet {
+        margin-bottom: 0;
+      }
     }
 
     @include Tablet {
       align-items: flex-start;
+      width: 330px;
+      margin-bottom: 0;
+    }
+
+    @include Desktop {
+      width: 570px;
     }
   }
 
   &__painting {
+    width: 100%;
     margin-bottom: 20px;
     @include hover(box-shadow, 4px 4px 12px #000);
     @include hover(transform, scale(1.05));
 
     @include Tablet {
+      margin-bottom: 30px;
       height: 330px;
     }
 
     @include Desktop {
-      width: 570px;
       height: 370px;
     }
   }
