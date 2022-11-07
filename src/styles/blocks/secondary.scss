@@ -1,0 +1,50 @@
+.secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 60px;
+  width: 100%;
+  background-color: #e5e5e5;
+  color: $main-red-color;
+  border: 1px solid $main-red-color;
+  font-family: $paragraph-font;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 60px;
+  text-align: center;
+
+  &::after {
+    margin-left: 10px;
+    content: url(../images/arrow_default.svg);
+    transform: translateY(8%);
+  }
+
+  &:hover {
+    color: #af3419;
+    border-color: #af3419;
+
+    &::after {
+      content: url(../images/arrow_hover.svg);
+    }
+  }
+
+  &:active {
+    color: #ea340d;
+    border-color: #ea340d;
+
+    &::after {
+      content: url(../images/arrow_pressed.svg);
+    }
+  }
+
+  @include onTablet {
+    width: 330px;
+    margin: 0;
+  }
+
+  @include onDesktop {
+    width: 270px;
+    margin: 0;
+  }
+}

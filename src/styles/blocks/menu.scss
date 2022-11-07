@@ -1,0 +1,104 @@
+.menu {
+  height: 100vh;
+  background-color: $background-color;
+  color: $text-color-white;
+  z-index: 1;
+
+  @include onTablet {
+    background-image: url(../images/img_menu.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 37%;
+  }
+
+  @include onDesktop {
+    background-position: bottom right;
+  }
+
+  &__actions {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__language {
+    display: block;
+  }
+
+  &__time-place {
+    @include onTablet {
+      display: flex;
+      gap: 123px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 83px;
+    }
+  }
+
+  &__title {
+    font-family: $paragraph-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__description {
+    font-family: $paragraph-font;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 20px;
+
+    &--bottom {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $text-color-white;
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        width: 570px;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    font-family: $title-font;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $text-color-white;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}
