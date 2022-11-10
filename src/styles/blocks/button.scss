@@ -1,0 +1,84 @@
+.button {
+  display: block;
+  height: 60px;
+  width: 100%;
+  position: relative;
+  background-color: $Main;
+  @extend %fontStyleFor-Button;
+  color: $White;
+  text-align: center;
+  text-decoration: none;
+  border: 0;
+  padding: 0;
+  @include transition-duration(background-color);
+  &:hover {
+    background-color: $ButtonHover;
+  }
+  &:active {
+    background-color: $ButtonActive;
+  }
+  &:disabled {
+    background-color: $ButtonDisabled;
+  }
+  &--secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    height: 60px;
+    width: 100%;
+    background-color: $BackgroundMain;
+    border: 1px solid $Main;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    @include transition-duration(border-color);
+    &-content {
+      display: block;
+      width: max-content;
+      @extend %fontStyleFor-Button;
+      color: $Main;
+      @include transition-duration(color);
+    }
+    &-arrow {
+      display: block;
+      width: 20px;
+      height: 20px;
+      @include transition-duration(transform);
+    }
+    &:hover {
+      background-color: $White;
+      border-color: $ButtonHover;
+    }
+    &:hover &-content {
+      color: $ButtonHover;
+    }
+    &:hover &-arrow {
+      position: relative;
+      transform: translateX(20%);
+    }
+    &:active {
+      color: $ButtonActive;
+      border-color: $ButtonActive;
+    }
+    &:disabled {
+      color: $ButtonDisabled;
+      border-color: $ButtonDisabled;
+    }
+  }
+
+  @include tablet {
+    width: 330px;
+    &--secondary {
+      width: 210px;
+    }
+  }
+
+  @include desktop {
+    width: 270px;
+    &--secondary {
+      width: 270px;
+    }
+  }
+}

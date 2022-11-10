@@ -1,0 +1,137 @@
+.footer {
+  width: 100%;
+  background-color: $Background;
+  &__content {
+    padding: 34px 0 30px;
+  }
+  &__subtitle {
+    @extend %fontSubtitle;
+    color: $White;
+    margin-bottom: 10px;
+  }
+  &__adress {
+    display: block;
+    text-decoration: none;
+    @extend %fontStyleFor-Main;
+    color: $White;
+    &_hyphenation {
+      display: block;
+    }
+    @include transition-duration(color);
+    &:hover {
+      color: $Main;
+    }
+    &:hover &_hyphenation {
+      color: $Main;
+    }
+  }
+  &__tell {
+    display: block;
+    text-decoration: none;
+    @extend %fontStyleFor-Main;
+    color: $White;
+    @include transition-duration(color);
+    &:hover {
+      color: $Main;
+    }
+  }
+  &__email {
+    display: block;
+    text-decoration: none;
+    @extend %fontStyleFor-Main;
+    color: $White;
+    margin-bottom: 30px;
+    @include transition-duration(color);
+    &:hover {
+      color: $Main;
+    }
+  }
+  &__mediaList {
+    width: 145px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  &__timetablte {
+    margin-bottom: 50px;
+  }
+  &__timetableItem {
+    @extend %fontStyleFor-Main;
+    color: $White;
+  }
+  &__mediaImg {
+    @include transition-duration(transform);
+    &:hover {
+      position: relative;
+      transform: scale(1.2);
+      stroke: $Main;
+      fill: $Main;
+    }
+  }
+  &__nav {
+    margin-bottom: 60px;
+  }
+  &__navLink {
+    display: block;
+    width: max-content;
+    text-decoration: none;
+    @extend %fontStyleFor-Main;
+    color: $White;
+    margin-bottom: 5px;
+    @include transition-duration(color);
+    &:hover {
+      color: $Main;
+    }
+  }
+  &__to-topImg {
+    @include transition-duration(transform);
+    &:hover {
+      position: relative;
+      transform: scale(1.2);
+    }
+  }
+  &__bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__copiwrite {
+    @extend %fontStyleFor-Additional;
+    color: $White;
+  }
+  &__privacy {
+    @extend %fontStyleFor-Additional;
+    text-decoration: none;
+    color: $White;
+    margin-left: 20px;
+    @include transition-duration(color);
+    &:hover {
+      color: $Main;
+    }
+  }
+  @include tablet {
+    &__content {
+      padding: 50px 0 30px;
+    }
+    &__subtitle {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+    &__email {
+      margin-bottom: 50px;
+    }
+    &__navLink {
+      margin-bottom: 10px;
+    }
+    &__privacy {
+      margin-left: 25px;
+    }
+  }
+  @include desktop {
+    &__privacy {
+      margin-left: 100px;
+    }
+  }
+}
