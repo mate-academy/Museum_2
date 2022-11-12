@@ -1,0 +1,168 @@
+.menu {
+  padding-inline-start: 0;
+  background-color: $c-background;
+  height: 100vh;
+  color: $c-white;
+  overflow: auto;
+
+  @include onTablet {
+    background-image: url("../images/10.png");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: auto 40%;
+  }
+
+  @include onDescktop {
+    background-position: right bottom;
+    background-size: auto 85%;
+    min-height: 800px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+
+    @include onTablet {
+      padding: 25px 0;
+    }
+
+    @include onDescktop {
+      padding: 32px 0;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+    width: 123px;
+
+    @include onTablet {
+      height: 26px;
+      width: 117px;
+    }
+
+    @include onDescktop {
+      height: 26px;
+      width: 117px;
+    }
+  }
+
+  &__box-buttons {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+  }
+
+  &__cross {
+    display: block;
+    @include square(25px);
+    background-image: url(../images/cross.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @extend %font-Raleway;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 120px;
+    }
+  }
+
+  &__schedule-upper-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__schedule-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__adress-upper-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__adress-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-inline-start: 0;
+    list-style-type: none;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+      gap: 30px;
+    }
+
+    @include onDescktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-white;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $c-main;
+    }
+  }
+
+  &__line {
+    width: 100%;
+
+    @include onTablet {
+      width: 40%;
+      margin-left: 0;
+    }
+  }
+
+  &__buy-button {
+    @include onTablet {
+      width: 300px;
+    }
+
+    @include onDescktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__down-line {
+    display: none;
+    @include onDescktop {
+      display: block;
+    }
+  }
+}

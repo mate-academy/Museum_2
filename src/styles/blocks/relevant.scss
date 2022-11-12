@@ -1,0 +1,96 @@
+.relevant {
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-basis: 50%;
+    }
+
+    @include onDescktop {
+      flex-basis: 50%;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    @extend %font-Raleway;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    @include onDescktop {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__pic {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      max-height: 420px;
+    }
+
+    @include onDescktop {
+      max-height: 485px;
+    }
+  }
+
+  &__upper-title {
+    color: $c-main;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @extend %font-Playfair-Display;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onDescktop {
+      font-size: 24px;
+    }
+  }
+
+  &__down-title {
+    color: $c-grey;
+    margin-bottom: 30px;
+  }
+
+  &__buy-button {
+    @include onDescktop {
+      width: 270px;
+    }
+  }
+
+  &__check-button {
+    display: none;
+    @include onTablet {
+      display: block;
+    }
+
+    &--mobile {
+      display: block;
+      margin-top: 20px;
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}
