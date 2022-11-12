@@ -1,6 +1,7 @@
 .page {
   background-color: #e5e5e5;
-  
+  scroll-behavior: smooth;
+
   &__body {
     margin: 0;
   }
@@ -10,10 +11,11 @@
     top: 0;
     left: 0;
     right: 0;
-    display: none;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
 
     &:target {
-      display: block;
+      transform: translateX(0);
     }
   }
 }
