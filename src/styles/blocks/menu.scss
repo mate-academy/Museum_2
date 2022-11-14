@@ -1,202 +1,179 @@
 .menu {
-  min-height: 100vh;
-  // width: 100%;
-  padding: 20px 0;
-  margin: 0 auto;
-  background-color: #3f5252;
+  background-color: $c-back;
+  box-sizing: border-box;
 
-  // @include tablet {
-  //   background-image: url(../images/menuBoy.svg);
-  // background-position: bottom;
-  // background-size: 35%;
-  // background-repeat: no-repeat;
-  // }
+  background-image: url(/images/menuBoy.svg);
+  background-repeat: no-repeat;
+  background-size: 0;
 
-  // @include desktop {
-  // background-size:  625px;
-  // background-position: 100% 100%;
-
-  // }
-
-  @include tablet {
-    padding: 26px 0;
+  @include onTablet {
+    background-position: bottom center;
+    background-size: 422px;
   }
 
-  @include desktop {
-    padding: 32px 0;
+  @include onDesktop {
+    background-size: 624px;
+    background-position: bottom right;
+
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
   }
 
   &__top {
-    color: #f1f5f4;
-
-    @include tablet {
-      display: flex;
-    }
-  }
-
-  &__schedule {
-    margin-bottom: 20px;
-
-    @include tablet {
-      margin-right: 123px;
-    }
-
-    @include desktop {
-      margin-right: 83px;
-    }
-  }
-
-  &__schedule-time {
-    font-weight: 600;
-  }
-
-  &__text {
-    font-size: 14px;
-    line-height: 140%;
-  }
-
-  &__address {
-    margin-bottom: 40px;
-
-  }
-
-  &__address-place {
-    color: inherit;
-    font-style: normal;
-    font-weight: 600;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__nav {
     margin-bottom: 30px;
 
-    @include tablet {
-      margin-bottom: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      margin-bottom: 54px;
     }
 
-    @include desktop {
-      margin-bottom: 45px;
+    @include onDesktop {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__column {
+    display: flex;
+    align-items: center;
+  }
+
+  &__cross {
+    margin-left: 44px;
+
+    transition: transform $animation-duration;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onTablet {
+      margin-right: 66px;
+      margin-left: 0;
+    }
+  }
+
+  &__info {
+    display: block;
+
+    font-size: 14px;
+    line-height: 140%;
+
+    color: $c-white;
+  }
+
+  &__description {
+    margin-bottom: 20px;
+
+    display: block;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $c-white;
+
+    text-decoration: none;
+
+    &--last {
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        transition: transform $animation-duration;
+
+        &:hover {
+          transform: translateY(4px);
+        }
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
     }
   }
 
   &__list {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   &__item {
-    margin-bottom: 20px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
 
-    @include tablet {
-      margin-bottom: 30px;
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
     }
 
-    @include desktop {
-      margin-bottom: 60px;
-    }
-  }
+    &:last-child {
+      padding-bottom: 40px;
+      margin-bottom: 40px;
 
-  &__link {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-    transition: color 0.5s;
-    text-decoration: none;
+      border-bottom: 1px solid $c-white;
 
-    color: #f1f5f4;
+      @include onTablet {
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+      }
 
-    @include tablet {
-      font-size: 48px;
-      line-height: 57.6px;
-    }
-
-    @include desktop {
-      font-size: 48px;
-      line-height: 57.6px;
-    }
-
-    &:hover {
-      color: #cd4d31;
-    }
-
-    &--last {
-      // padding-bottom: 40px;
-      // border-bottom:1px solid #F1F5F4;
-      // margin-bottom: 40px;
-      &::after {
-        content: "";
-        display: block;
-
-        width: 100%;
-        height: 1px;
-
-        background-color: #f1f5f4;
-
-        margin-top: 40px;
-        margin-bottom: 20px;
-
-        @include tablet {
-          margin-top: 50px;
-        }
-
-        @include desktop {
-          margin-top: 60px;
-          margin-bottom: 0;
-          opacity: 0.3;
-        }
+      @include onDesktop {
+        padding-bottom: 60px;
+        margin-bottom: 60px;
       }
     }
   }
 
-  &__img {
-    display: none;
+  &__link {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
 
-    @include tablet {
-      display: grid;
-      justify-content: center;
+    color: $c-white;
 
-      margin: 0 auto;
+    border-bottom: 1px solid transparent;
 
-      width: 422px;
+    text-decoration: none;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
     }
 
-    @include desktop {
+    @include onDesktop {
+      transition: border-color $animation-duration;
 
-      align-self: end;
-
-      width: 624px;
-      height: 697px;
-    }
-  }
-
-  &__main {
-
-    @include tablet {
-      display: flex;
-      flex-direction: column;
-    }
-
-    @include desktop {
-      display: grid;
-      grid-template-columns: 570px 624px;
-      // flex-wrap: nowrap;
-    }
-  }
-
-  &__btn {
-
-    @include tablet {
-      margin-bottom: 30px ;
-    }
-
-    @include desktop {
-      margin-bottom: 0;
+      &:hover {
+        border-color: $c-white;
+      }
     }
   }
 }

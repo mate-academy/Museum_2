@@ -1,200 +1,37 @@
 .events {
-  position: relative;
-
-  background-color: #f1f5f4;
-
-  &__header {
+  &__content {
     display: flex;
-    justify-content: center;
-
-    @include tablet {
-      justify-content: start;
-    }
-  }
-  &__container {
-    margin-bottom: 30px;
-
-    @include tablet {
-      display: grid;
-      grid-template-columns: 1fr;
-      column-gap: 30px;
-      margin-bottom: 0;
-      row-gap: 70px;
-    }
-  }
-  &__item {
-    @include tablet {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      column-gap: 30px;
-    }
-
-    @include desktop {
-      // width: 970px;
-      grid-template-columns: 1fr 2fr;
-    }
-
-    &--first {
-      margin-bottom: 60px;
-
-      @include tablet {
-        margin-bottom: 0;
-      }
-    }
-
-    &--photo {
-      width: 100%;
-      height: 356px;
-
-      margin-bottom: 20px;
-
-      object-fit: cover;
-      object-position: center;
-
-      @include tablet {
-        height: 422px;
-      }
-
-      @include desktop {
-        height: 475px;
-      }
-    }
-
-    &--date {
-      font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 150%;
-
-      color: #cd4d31;
-
-      margin-bottom: 10px;
-    }
-
-    &--title {
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      font-size: 20px;
-      line-height: 125%;
-
-      color: #1c1b29;
-
-      margin-bottom: 20px;
-    }
-
-    &--discription {
-      font-family: "Raleway", sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 150%;
-
-      color: #504f5e;
-
-      margin-bottom: 30px;
-
-      @include tablet {
-        margin-bottom: 40px;
-      }
-
-      @include desktop {
-        margin-bottom: 50px;
-      }
-    }
-  }
-  &__btn {
-    @include tablet {
-      position: absolute;
-      justify-self: right;
-      right: 0;
-      top: 0;
-    }
-
-    @include desktop {
-      position: absolute;
-      justify-self: right;
-      right: 0;
-      top: 0;
-    }
-  }
-  // &__container {
-  //   display: grid;
-  //   grid-auto-flow: row;
-
-  //   gap: 60px;
-
-  //   margin-bottom: 30px;
-
-  //   @include tablet {
-  //     grid-template-columns: 330px 330px;
-  //     gap: 30px;
-
-  //     margin-bottom: 0;
-  //   }
-
-  //   @include desktop {
-  //     grid-template-columns: 570px 570px;
-  //     gap: 30px;
-
-  //     margin-bottom: 0;
-  //   }
-  // }
-
-  &__img {
-    display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
   }
 
-  &__arrow {
-    &:after {
-      content: "";
+  &__image {
+    display: block;
+    margin-bottom: 20px;
+    width: 100%;
 
-      display: inline-block;
-
-      width: 13.33px;
-      height: 11.67px;
-
-      margin-left: 11.33px;
-
-      background-image: url(../images/arrow.svg);
-      background-position: center;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-  }
-  &__title {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 35px;
-
-    color: #1c1b29;
-
-    margin-bottom: 60px;
-
-    @include tablet {
-      font-size: 40px;
-      line-height: 50px;
-
-      margin-bottom: 75px;
-    }
-
-    @include desktop {
-      font-size: 48px;
-      line-height: 57.6px;
-
+    @include onTablet {
       margin-bottom: 70px;
     }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
   }
 
-  &__link {
-    text-decoration: none;
+  &__card {
+    margin-bottom: 60px;
 
-    color: #1c1b29;
+    @include onTablet {
+      width: 100%;
+      margin-bottom: 0;
+    }
 
-    transition: color 0.5s;
+    &--last {
+      margin-bottom: 30px;
 
-    &:hover {
-      color: #cd4d31;
+      @include onTablet {
+        margin-bottom: 0;
+      }
     }
   }
 }

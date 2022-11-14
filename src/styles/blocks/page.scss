@@ -1,14 +1,138 @@
 .page {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: $c-white;
+  scroll-behavior: smooth;
 
   &__body {
     margin: 0;
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: #1c1b29;
-    font-family: "Raleway", sans-serif;
-    background: #f1f5f4;
-    // line-height: 150%;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform $animation-duration;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    &-exhibition {
+      margin-bottom: 120px;
+
+      @include onTablet {
+        margin-bottom: 160px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 200px;
+      }
+    }
+
+    &-events {
+      margin-bottom: 90px;
+
+      @include onTablet {
+        margin-bottom: 100px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 110px;
+      }
+    }
+
+    &-visit {
+      margin-bottom: 90px;
+
+      @include onTablet {
+        margin-bottom: 120px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 110px;
+      }
+    }
+
+    &-news {
+      margin-bottom: 120px;
+
+      @include onTablet {
+        margin-bottom: 160px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 200px;
+      }
+    }
+
+    &--last {
+      margin-bottom: 80px;
+
+      @include onTablet {
+        margin-bottom: 130px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 200px;
+      }
+    }
+
+    &-inner--tablet-desktop {
+      margin-bottom: 60px;
+
+      @include onTablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 70px;
+      }
+    }
+
+    &-title {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      line-height: 35px;
+      font-weight: 700;
+      color: $c-black;
+
+      @include onTablet {
+        font-size: 40px;
+        line-height: 50px;
+        text-align: left;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+        line-height: 58px;
+        text-align: left;
+      }
+    }
+
+    &-button {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        width: 33%;
+      }
+    }
+
+    &-button--lower {
+      @include onTablet {
+        display: none;
+      }
+    }
   }
 }
