@@ -1,0 +1,206 @@
+.header {
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-color: $color-1;
+  // height: 100Vh;
+
+  @include Tablet {
+    padding: 0 40px;
+  }
+
+  @include Desktop {
+    padding: 0;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 50px;
+
+    @include Tablet {
+      margin-bottom: 100px;
+    }
+
+    @include Desktop {
+      height: 90px;
+      padding: 0 55px;
+      margin-bottom: 90px;
+    }
+
+    @include Design {
+      padding: 0 227px;
+    }
+
+    @include Large {
+      padding: 0 707px;
+    }
+  }
+
+  &__box {
+    display: flex;
+    @include Tablet {
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  &__logo {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__nav {
+    background-image: url(../images/burger.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 25px;
+    height: 20px;
+    @include hover(transform, scale(1.2));
+
+    @include Desktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__language {
+    display: none;
+
+    @include Tablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+
+    @include Tablet {
+      margin-bottom: 70px;
+    }
+
+    @include Desktop {
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+  }
+
+  &__container {
+    @include Desktop {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 55px;
+    }
+
+    @include Design {
+      padding-left: 227px;
+      gap: 160px;
+    }
+
+    @include Large {
+      padding-left: 707px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    text-align: center;
+    margin-bottom: 30px;
+
+    @include Tablet {
+      margin-bottom: 20px;
+    }
+
+    @include Desktop {
+      text-align: start;
+      width: 570px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    color: $color-2;
+    width: 267px;
+    margin-bottom: 40px;
+
+    @include Tablet {
+      margin-bottom: 50px;
+    }
+
+    @include Desktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__image {
+    background-image: url(../images/img_02.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 245px;
+    height: 273px;
+    margin: 0 auto;
+
+    @include Tablet {
+      width: 443px;
+      height: 494px;
+      margin: 0 auto;
+    }
+
+    @include Desktop {
+      width: 625px;
+      height: 663px;
+      margin: 0;
+      padding: 0;
+    }
+
+    @include Large {
+      margin: 0;
+      width: 1100px;
+      height: 1100px;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    @include Desktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__date {
+    font-family: $fonts-2;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: $color-2;
+    opacity: 0.7;
+    width: 190px;
+    margin: 0;
+
+    
+  }
+
+  &__date-bottom {
+    display: none;
+    
+    @include Desktop {
+      display: inherit;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 470px;
+        height: 1px;
+        background-color: $color-2;
+        opacity: 0.3;
+        margin: 0 0 3px 20px;
+      }
+    }
+  }
+}

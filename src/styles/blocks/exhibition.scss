@@ -1,0 +1,129 @@
+.exhibition {
+  background-color: $color-4;
+  padding: 90px 0 120px;
+
+  &__top {
+    @include Tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 75px;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+    margin-bottom: 60px;
+    text-align: center;
+
+    @include Tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button-top {
+    display: none;
+
+    @include Tablet {
+      display: inherit;
+    }
+  }
+
+  &__cards {
+    @extend %center;
+    @include Tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    width: 280px;
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 30px;
+
+      @include Tablet {
+        margin-bottom: 0;
+      }
+    }
+
+    @include Tablet {
+      width: 330px;
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+
+    @include Desktop {
+      width: 570px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 20px;
+    @include hover(box-shadow, 4px 4px 12px #000);
+    @include hover(transform, scale(1.05));
+
+    @include Tablet {
+      height: 420px;
+      margin-bottom: 30px;
+    }
+
+    @include Desktop {
+      height: 484px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__date {
+    height: max-content;
+    @extend %date;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    @extend %h4;
+    margin-bottom: 20px;
+
+    &--bottom {
+      @include Tablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    @include Desktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    @extend %text;
+    color: $color-6;
+    margin-bottom: 30px;
+
+    @include Desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 0;
+
+    @include Desktop {
+      width: 270px;
+    }
+  }
+
+  &__button-bottom {
+    display: flex;
+    justify-content: center;
+    @include Tablet {
+      display: none;
+    }
+  }
+}

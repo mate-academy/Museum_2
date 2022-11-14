@@ -1,0 +1,119 @@
+.news {
+  padding: 90px 0 0;
+  background-color: $color-4;
+
+  @include Tablet {
+    padding: 120px 0 160px;
+  }
+
+  @include Desktop {
+    padding: 110px 0 200px;
+  }
+
+  @include Design {
+    padding: 110px 0 200px;
+  }
+
+  @include Large {
+    padding: 110px 0 200px;
+  }
+
+  &__top {
+    margin-bottom: 60px;
+    @include Tablet {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+    text-align: center;
+
+    @include Tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button-top {
+    display: none;
+
+    @include Tablet {
+      display: inherit;
+    }
+  }
+
+  &__cards {
+    @extend %center;
+    @include Tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    @extend %center;
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 30px;
+
+      @include Tablet {
+        margin-bottom: 0;
+      }
+    }
+
+    @include Tablet {
+      align-items: flex-start;
+      width: 330px;
+      margin-bottom: 0;
+    }
+
+    @include Desktop {
+      width: 570px;
+    }
+  }
+
+  &__painting {
+    width: 100%;
+    margin-bottom: 20px;
+    @include hover(box-shadow, 4px 4px 12px #000);
+    @include hover(transform, scale(1.05));
+
+    @include Tablet {
+      margin-bottom: 30px;
+      height: 330px;
+    }
+
+    @include Desktop {
+      height: 370px;
+    }
+  }
+
+  &__date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $colorBlack;
+  }
+
+  &__subtitle {
+    @extend %h4;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    color: $color-6;
+  }
+
+  &__button-bottom {
+    display: flex;
+    justify-content: center;
+    @include Tablet {
+      display: none;
+    }
+  }
+}
