@@ -1,0 +1,63 @@
+.icon {
+  display: block;
+  position: relative;
+
+  @include iconSize(25px);
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+
+  @include onTablet {
+    @include iconSize(30px);
+  }
+
+  &__tooltip {
+    padding-right: 3px;
+
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-white;
+    display: block;
+  }
+
+  &--menu {
+    background-image: url(/images/burger.svg);
+
+    @include onTablet {
+      margin-right: 64px;
+    }
+  }
+
+  &--union {
+    width: 8px;
+    height: 4px;
+
+    background-image: url(/images/arrow-up.svg);
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      order: 1;
+    }
+  }
+
+  &--union-act {
+    display: block;
+    margin-right: -10px;
+
+    @include onTablet {
+      margin-right: 0;
+    }
+  }
+
+  &--cross {
+    background-image: url(/images/cross.svg);
+  }
+}
