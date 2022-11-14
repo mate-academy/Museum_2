@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0 20px;
   background-color: $color-1;
+  // height: 100Vh;
 
   @include Tablet {
     padding: 0 40px;
@@ -38,25 +39,38 @@
   }
 
   &__box {
+    display: flex;
     @include Tablet {
-      display: flex;
       align-items: center;
       gap: 40px;
     }
   }
 
+  &__logo {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__nav {
+    background-image: url(../images/burger.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 25px;
+    height: 20px;
+    @include hover(transform, scale(1.2));
+
+    @include Desktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
   &__language {
-    border: none;
-    background-color: $color-1;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: $color-2;
     display: none;
-    padding-bottom: 5px;
 
     @include Tablet {
-      display: inherit;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -142,6 +156,7 @@
       width: 625px;
       height: 663px;
       margin: 0;
+      padding: 0;
     }
 
     @include Large {
