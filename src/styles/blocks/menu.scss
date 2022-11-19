@@ -32,6 +32,8 @@
   }
 
   &__time-place {
+    margin-bottom: 40px;
+
     @include onTablet {
       display: flex;
       gap: 123px;
@@ -58,7 +60,14 @@
     margin-bottom: 20px;
 
     &--bottom {
-      margin-bottom: 40px;
+      @include onTablet {
+        border-bottom: 1px solid transparent;
+        transition: 0.3s;
+
+        &:hover {
+          border-bottom: 1px solid $text-color-white;
+        }
+      }
     }
   }
 
@@ -85,7 +94,7 @@
       margin-bottom: 40px;
     }
 
-    @include onDesktop {
+    @include onTablet {
       border-bottom: 1px solid transparent;
       margin-bottom: 60px;
       transition: 0.3s;
