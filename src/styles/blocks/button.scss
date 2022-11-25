@@ -1,0 +1,108 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-decoration: none;
+  border: none;
+
+  &--primary {
+    color: $c-l-grey;
+    background-color: $c-orange;
+
+    &:hover {
+      background-color: $c-rust;
+      transform: scale(1.03);
+    }
+
+    &:active {
+      background-color: $c-red;
+    }
+
+    &:disabled {
+      background-color: $c-purple;
+    }
+
+    &-disabled {
+      background-color: $c-purple;
+
+      &:hover {
+        background-color: $c-purple;
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  &--secondary {
+    box-sizing: border-box;
+    gap: 11px;
+    color: $c-orange;
+    background-color: #fff;
+    border: 1px solid $c-orange;
+
+    &::after {
+      content: "";
+      width: 14px;
+      height: 12px;
+      background-image: url(../images/button/btn-arrow-default.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      color: $c-rust;
+      border-color: $c-rust;
+      transform: scale(1.03);
+
+      &::after {
+        background-image: url(../images/button/btn-arrow-hover.svg);
+      }
+    }
+
+    &:active {
+      color: $c-red;
+      border-color: $c-red;
+
+      &::after {
+        background-image: url(../images/button/btn-arrow-active.svg);
+      }
+    }
+
+    &:disabled {
+      color: $c-purple;
+      border-color: $c-purple;
+
+      &::after {
+        background-image: url(../images/button/btn-arrow-disabled.svg);
+      }
+    }
+
+    &-disabled {
+      color: $c-purple;
+      border-color: $c-purple;
+
+      &::after {
+        background-image: url(../images/button/btn-arrow-disabled.svg);
+      }
+
+      &:hover {
+        color: $c-purple;
+        border-color: $c-purple;
+        transform: scale(1.03);
+
+        &::after {
+          background-image: url(../images/button/btn-arrow-disabled.svg);
+        }
+      }
+    }
+  }
+}
