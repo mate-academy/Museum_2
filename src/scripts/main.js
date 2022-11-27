@@ -59,7 +59,7 @@ subscribeForm.addEventListener('submit', e => {
 window.addEventListener('scroll', e => {
   showsImg.forEach(elem => {
     if (elem.getBoundingClientRect().top
-      <= document.documentElement.clientHeight) {
+      <= (document.documentElement.clientHeight - 50)) {
       elem.classList.remove('move-l');
       elem.classList.remove('move-r');
     }
