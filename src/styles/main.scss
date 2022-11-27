@@ -1,7 +1,81 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "blocks/menu";
+@import "blocks/burger";
+@import "blocks/dropdown-menu";
+@import "blocks/startpage";
+@import "blocks/interface";
+@import "blocks/shows";
+@import "blocks/events";
+@import "blocks/plan";
+@import "blocks/news";
+@import "blocks/subscribe";
+@import "blocks/footer";
 
-body {
-  background: $c-gray;
+:root {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  position: relative;
+  transition: 0.3s;
+  list-style: none;
+}
+
+.page__body {
+  background: $white;
+  position: relative;
+
+  &--with-menu {
+    overflow: hidden;
+  }
+}
+
+.out {
+  position: relative;
+  width: 100%;
+}
+
+.in {
+  max-width: 1280px;
+  padding: 0 55px;
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 0 39px;
+  }
+
+  @media (max-width: 460px) {
+    padding: 0 20px;
+  }
+}
+
+.startpage-bg,
+.footer-bgc {
+  position: relative;
+  background-color: $green;
+  height: min-content;
+}
+
+.for-move {
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform 1s, opacity 2s;
+}
+
+.move-l {
+  transform: translateX(-50vw);
+  opacity: 0;
+}
+
+.move-r {
+  transform: translateX(50vw);
+  opacity: 0;
 }
