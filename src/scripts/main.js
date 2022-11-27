@@ -20,9 +20,9 @@ const changeLanguage = document.querySelectorAll('.change-language');
 changeLanguage.forEach(change => {
   change.addEventListener('change', (event) => {
     if (event.target.value === 'en') {
-      window.location.pathname = 'en.html';
+      window.location.pathname = './en.html';
     } else {
-      window.location.pathname = '/';
+      window.location.pathname = './';
     }
   });
 });
