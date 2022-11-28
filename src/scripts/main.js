@@ -22,7 +22,7 @@ changeLanguage.forEach(change => {
     if (event.target.value === 'en') {
       window.location.pathname = './en.md';
     } else {
-      window.location.pathname = './';
+      window.location.pathname = './Museum_2';
     }
   });
 });
