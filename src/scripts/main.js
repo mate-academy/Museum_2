@@ -8,9 +8,9 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-const formSubmit = document.getElementById('formSubmit');
+const form = document.querySelector('.form');
 
-formSubmit.addEventListener('click', function(event) {
+form.addEventListener('submit', function(event) {
   event.preventDefault();
-  document.getElementById('footer-contact-form').reset();
+  form.reset();
 });
