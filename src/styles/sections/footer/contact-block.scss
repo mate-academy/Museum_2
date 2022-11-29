@@ -1,0 +1,91 @@
+.contact-block {
+  &__title {
+    font-size: 18px;
+    line-height: 150%;
+
+    color: $whiteColor;
+
+    margin-bottom: 10px;
+
+    @include onTablet {
+      font-size: 20px;
+
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      font-size: 20px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__contact {
+    display: inline-block;
+    width: min-content;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $whiteColor;
+
+    @include linkHoverEffect($whiteColor);
+    @include linkActiveEffect;
+  }
+
+  &__number {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $whiteColor;
+  }
+
+  &__social-media {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__fb-sign {
+    width: 10px;
+    height: 20px;
+
+    @include hover(box-shadow, 2px 2px 5px 5px #385898);
+    @include active(transform, scale(1.15));
+  }
+
+  &__tw-sign {
+    width: 20px;
+    height: 16px;
+
+    @include hover(box-shadow, 1px 1px 5px 2px #1d9bf0);
+    @include active(transform, scale(1.15));
+  }
+
+  &__tg-sign {
+    width: 20px;
+    height: 19px;
+
+    @include hover(box-shadow, 1px 1px 5px 2px #3390ec);
+    @include active(transform, scale(1.15));
+  }
+
+  &__inst-sign {
+    width: 17px;
+    height: 17px;
+
+    &:hover {
+      box-shadow: 1px 0 5px 2px #f35369, 0 1px 5px 2px #f5c33b;
+    }
+
+    @include active(transform, scale(1.15));
+  }
+}

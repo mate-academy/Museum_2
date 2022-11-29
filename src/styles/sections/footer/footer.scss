@@ -1,0 +1,83 @@
+.footer {
+  @extend %container;
+  padding-top: 34px;
+  padding-bottom: 30px;
+
+  @extend .grid;
+
+  background-color: $backgroundColor;
+
+  @include onTablet {
+    padding-top: 50px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include onTablet {
+      display: contents;
+    }
+  }
+
+  &__contact-block {
+    @extend .grid__item--tablet-1-2;
+    @extend .grid__item--desktop-1-4;
+  }
+
+  &__schedule {
+    @extend .grid__item--tablet-3-4;
+    @extend .grid__item--desktop-5-8;
+  }
+
+  &__nav {
+    @extend .grid__item--tablet-5-6;
+    @extend .grid__item--desktop-9-12;
+  }
+
+  &__bottom-actions {
+    @extend .grid__item--tablet-1-6;
+    @extend .grid__item--desktop-1-12;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 55px;
+
+    @include onDesktop {
+      margin-top: 65px;
+    }
+  }
+
+  &__privacy-terms {
+    display: flex;
+    gap: 22px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+
+    color: $whiteColor;
+
+    @include onDesktop {
+      gap: 102px;
+    }
+  }
+
+  &__top-link {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    @include hover(transform, scale(1.1));
+    @include active(background-color, rgba($blackColor, 0.2));
+  }
+}

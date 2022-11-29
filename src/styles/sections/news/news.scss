@@ -1,0 +1,66 @@
+.news {
+  @extend .grid;
+  @extend %container;
+
+  &__title {
+    @extend .grid__item--tablet-1-4;
+    @extend .grid__item--desktop-1-9;
+
+    color: $blackColor;
+
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__news-blocks {
+    @extend .grid__item--tablet-1-6;
+    @extend .grid__item--desktop-1-12;
+
+    @extend .grid;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: grid;
+      row-gap: 0;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__news-block {
+    @include onTablet {
+      display: contents;
+    }
+
+    & > * {
+      @include onTablet {
+        grid-column-end: span 3;
+      }
+ 
+      @include onDesktop {
+        grid-column-end: span 6;
+      }
+    }
+  }
+
+  &__all-news-button {
+    @extend .grid__item--tablet-5-6;
+    @extend .grid__item--desktop-10-12;
+
+    @include onTablet {
+      grid-row: 1;
+    }
+  }
+}

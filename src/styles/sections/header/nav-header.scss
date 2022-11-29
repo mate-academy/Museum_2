@@ -1,0 +1,78 @@
+.nav-header {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  &__right-actions {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    position: relative;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__lang-container {
+    display: none;
+    width: 37px;
+    height: 24px;
+  
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: uppercase;
+
+    color: $whiteColor;
+    position: relative;
+
+    background-image: url(../images/bottom-arrow.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+
+    &--menu {
+      display: block;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__lang-select {
+    position: absolute;
+    right: 55px;
+
+    width: 37px;
+    height: 24px;
+
+    opacity: 0;
+
+    display: none;
+
+    &--menu {
+      display: block;
+    }
+
+    @include onTablet {
+      display: block;
+      right: 0;
+    }
+  }
+
+  &__lang-option {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: uppercase;
+
+    background-color: transparent;
+  }
+}

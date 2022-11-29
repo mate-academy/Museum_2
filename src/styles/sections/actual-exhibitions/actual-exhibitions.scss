@@ -1,0 +1,100 @@
+.actual-exhibitions {
+  @extend %container;
+  @extend .grid;
+
+  &__title {
+    @extend .grid__item--tablet-1-4;
+    @extend .grid__item--desktop-1-6;
+
+    text-align: center;
+    color: $blackColor;
+
+    margin-bottom: 60px;
+
+    @include onTablet {
+      text-align: left;
+
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__archive-button {
+    @extend .grid__item--tablet-5-6;
+    @extend .grid__item--desktop-10-12;
+
+    @include onTablet {
+      grid-row: 1 / 1;
+
+      display: flex;
+      width: 100%;
+      justify-self: end;
+    }
+  }
+
+  &__exhibitions {
+    @extend .grid__item--tablet-1-6;
+    @extend .grid__item--desktop-1-12;
+
+    @extend .grid;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      display: grid;
+      column-gap: 30px;
+      row-gap: 0;
+    }
+  }
+
+  &__exhibition {
+    @include onTablet {
+      display: contents;
+    }
+
+    & > * {
+      @include onTablet {
+        grid-column-end: span 3;
+      }
+ 
+      @include onDesktop {
+        grid-column-end: span 6;
+      }
+    }
+  }
+
+  &__exhibition-photo {
+    @include image(100%, 356px);
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+  }
+
+  &__exhibition-description {
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__buy-button {
+    @include onDesktop {
+      grid-column-end: span 3;
+    }
+  }
+}
