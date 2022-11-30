@@ -40,7 +40,8 @@ window.addEventListener('click', e => {
     }, 300);
   }
 
-  if (e.target.classList.contains('dropdown-menu__link')) {
+  if (e.target.classList.contains('dropdown-menu__link')
+      || e.target.classList.contains('menu__logoLink')) {
     close.classList.add('hidden');
     dropdown.classList.remove('hidden');
 
