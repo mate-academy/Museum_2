@@ -3,10 +3,7 @@
   scroll-behavior: smooth;
 
   &__body {
-    max-width: 1440px;
     font-family: $mainFontFamily;
-
-    margin: 0 auto;
 
     &--with-menu {
       overflow-y: hidden;
@@ -22,6 +19,22 @@
 
     @include onDesktop {
       margin-bottom: 110px;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-150%);
+    transition: transform 0.3s;
+
+    z-index: 2;
+
+    &:target {
+      transform: translateY(0);
     }
   }
 

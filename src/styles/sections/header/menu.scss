@@ -1,20 +1,11 @@
 .menu {
   width: 100%;
+  height: 100%;
 
-  @extend .grid;
-
-  height: 100vh;
   background-color: $backgroundColor;
 
-  padding-top: 20px;
-
   @include onTablet {
-    padding-top: 26px;
     overflow-y: auto;
-  }
-
-  @include onDesktop {
-    padding-top: 32px;
   }
 
   &__content {
@@ -25,10 +16,18 @@
 
     @extend %container;
 
+    padding-top: 20px;
+
     height: 100%;
 
+    @include onTablet {
+      padding-top: 26px;
+    }
+
     @include onDesktop {
-      height: 800px;
+      min-height: 800px;
+
+      padding-top: 32px;
 
       position: relative;
     }
