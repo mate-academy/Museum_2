@@ -19,6 +19,15 @@ const closeSvg = document.querySelector('.close-svg');
 const subscribeForm = document.querySelector('.subscribe__form');
 const showsImg = document.querySelectorAll('.for-move');
 
+window.addEventListener('load', e => {
+  if (document.querySelector('.dropdown-menu:target')) {
+    dropdown.classList.add('hidden');
+    close.classList.remove('hidden');
+    dropdown.style.top = 30 + 'px';
+    close.style.top = 0;
+  };
+});
+
 window.addEventListener('click', e => {
   if (e.target === dropdown || e.target === dropdownSvg) {
     dropdown.classList.add('hidden');
@@ -41,7 +50,8 @@ window.addEventListener('click', e => {
   }
 
   if (e.target.classList.contains('dropdown-menu__link')
-      || e.target.classList.contains('menu__logoLink')) {
+    || e.target.classList.contains('menu__logoLink')
+    || e.target.classList.contains('button')) {
     close.classList.add('hidden');
     dropdown.classList.remove('hidden');
 
