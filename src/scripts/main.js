@@ -1,13 +1,26 @@
 'use strict';
 
+function hideScroll() {
+  const body = document.querySelector('.page__body');
+  const item = document.querySelector('.menu');
+
+  if (!item.classList.contains('menu--opacity')) {
+    body.classList.add('page__body--with-menu');
+  } else if (item.classList.contains('menu--opacity')) {
+    body.classList.remove('page__body--with-menu');
+  }
+}
+
 function openClose(className) {
   const item = document.querySelector(`.${className}`);
 
   if (item.classList.contains(`${className}--opacity`)) {
-    return item.classList.remove(`${className}--opacity`);
+    item.classList.remove(`${className}--opacity`);
   } else if (!item.classList.contains(`${className}--opacity`)) {
-    return item.classList.add(`${className}--opacity`);
+    item.classList.add(`${className}--opacity`);
   }
+
+  hideScroll();
 };
 
 document
@@ -21,6 +34,10 @@ document
 document
   .querySelector('.dropdown__btn--menu')
   .addEventListener('click', () => openClose('dropdown__content--menu'));
+
+document
+  .querySelectorAll('.menu__link')
+  .forEach((e) => e.addEventListener('click', () => openClose('menu')));
 
 window.addEventListener('click', (e) => {
   if (!e.target.matches('.dropdown__btn')) {
