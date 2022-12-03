@@ -1,0 +1,152 @@
+.header {
+  background-color: $bg;
+
+  &__container {
+    padding: 0 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @include on768 {
+      padding: 0 39px;
+    }
+
+    @include on1280 {
+      padding: 0 55px;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__nav {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+
+    @include on768 {
+      grid-column: 1 / 7;
+      height: 77px;
+    }
+
+    @include on1280 {
+      grid-column: 1 / 13;
+    }
+  }
+
+  &__menu-block {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &__menu-language {
+    display: none;
+    color: $white;
+    background-color: $bg;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    @include on768 {
+      display: block;
+    }
+  }
+
+  &__dates {
+    grid-column: 1 / 3;
+    margin-top: 50px;
+    color: $white;
+  }
+
+  &__title {
+    grid-column: 1 / 3;
+    margin-top: 10px;
+    color: $white;
+
+    @include on768 {
+      grid-column: 1 / 6;
+    }
+
+    @include on1280 {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / 3;
+    margin-top: 30px;
+    color: $white;
+
+    @include on768 {
+      grid-column: 1 / 4;
+      margin-top: 20px;
+    }
+
+    @include on1280 {
+      grid-column: 1 / 6;
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / 3;
+    margin: 40px auto 0;
+
+    @include on768 {
+      grid-column: 1 / 4;
+      margin: 50px 0 0;
+    }
+
+    @include on1280 {
+      margin-top: 80px;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / 3;
+    display: block;
+    width: 100%;
+    max-width: 444px;
+    margin: 40px auto 0;
+
+    @include on768 {
+      grid-column: 2 / 6;
+      margin-top: 70px;
+      max-width: 625px;
+    }
+
+    @include on1280 {
+      grid-column: 7 / 13;
+      grid-row: 2 / 8;
+      margin-top: 0;
+    }
+  }
+
+  &__decoration {
+    display: none;
+    color: $white;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    align-items: center;
+
+    @include on1280 {
+      grid-column: 1 / 7;
+      display: flex;
+    }
+
+    &--text {
+      margin-right: 20px;
+    }
+
+    &--line {
+      height: 1px;
+      flex-grow: 1;
+      background-color: $white;
+      opacity: 0.3;
+    }
+  }
+}
