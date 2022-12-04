@@ -1,6 +1,70 @@
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin linkHoverEffect($backgroundColor) {
+  width: fit-content;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $backgroundColor;
+    border-radius: 10px;
+
+    transform-origin: right;
+    transform: scaleX(0);
+
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &::after {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+}
+
+@mixin active($_property, $_toValue) {
+  transition: all 0.3s;
+  &:active {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin linkActiveEffect {
+  &:active {
+    transform: scale(1.05);
+  }
+}
+
+@mixin image($width, $height) {
+  width: $width;
+  height: $height;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
   }
 }

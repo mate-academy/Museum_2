@@ -1,0 +1,35 @@
+.menu-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  height: 20px;
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  @include hover(transform, scale(1.1));
+
+  &__line {
+    width: 25px;
+    height: 2px;
+
+    background-color: $whiteColor;
+
+    transition: all 0.3s;
+  }
+
+  &__cross-line {
+    &--1 {
+      transform: rotate(45deg) translateX(50%);
+    }
+
+    &--2 {
+      opacity: 0;
+    }
+
+    &--3 {
+      transform: rotate(-45deg) translateX(50%);
+    }
+  }
+}
