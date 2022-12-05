@@ -9,7 +9,9 @@
     @include hover(transform, scale(1.05));
 
     &--horizontal-card {
-      margin-bottom: 0;
+      @include onTablet {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -24,6 +26,14 @@
 
     @extend %regular-text;
     color: $main-color;
+
+    &--news-margin {
+      margin-bottom: 0;
+
+      font-size: 14px;
+      line-height: 140%;
+      color: $black-color;
+    }
   }
 
   &__title {
@@ -41,6 +51,12 @@
 
     &--horizontal-card {
       flex-grow: 0;
+    }
+
+    &--news-font {
+      @include onTablet {
+        font-size: 20px;
+      }
     }
   }
 
@@ -68,5 +84,10 @@
     @extend %regular-text;
 
     color: $gray-color;
+
+    &--news-margin {
+      margin-bottom: 0;
+    }
   }
+
 }
