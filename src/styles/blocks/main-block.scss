@@ -19,12 +19,10 @@
       justify-items: start;
       align-items: stretch;
       column-gap: 30px;
-      row-gap: 70px;
     }
 
     @include onDesktop {
       @include grid(12);
-      row-gap: 60px;
     }
   }
 
@@ -32,26 +30,28 @@
     margin-bottom: 60px;
     align-self: flex-start;
 
-    @include onTablet {
-      margin-bottom: 0;
-
-      font-size: 40px;
-
-      @include gridItemsPosition(1, 5);
-    }
-
-    @include onDesktop {
-      @include gridItemsPosition(1, 7);
-
-      font-size: 48px;
-      line-height: 120%;
-    }
-
     @extend %bold-text;
 
     font-size: 28px;
     line-height: 125%;
     color: $black-color;
+
+    @include onTablet {
+      margin-bottom: 75px;
+
+      @include gridItemsPosition(1, 5);
+
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+
+      @include gridItemsPosition(1, 7);
+
+      font-size: 48px;
+      line-height: 120%;
+    }
   }
 
   &__section-btn {
