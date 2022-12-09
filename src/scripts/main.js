@@ -39,6 +39,10 @@ document
   .querySelectorAll('.menu__link')
   .forEach((e) => e.addEventListener('click', () => openClose('menu')));
 
+document
+  .querySelector('.menu__btn')
+  .addEventListener('click', () => openClose('menu'));
+
 window.addEventListener('click', (e) => {
   if (!e.target.matches('.dropdown__btn')) {
     const dropDownContent = document.querySelector('.dropdown__content');
