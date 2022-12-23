@@ -1,0 +1,112 @@
+.header {
+  background-color: $c-background;
+
+  &__content {
+    margin: 0 auto;
+    max-width: 1440px;
+    position: relative;
+
+    @include desktop {
+      height: 100vh;
+    }
+  }
+
+  &__top {
+    @include top-action;
+  }
+
+  &__icon {
+    @include icon-box;
+    z-index: 1;
+  }
+
+  &__title {
+    width: 100%;
+    margin: 70px 0 40px;
+
+    @include tablet {
+      width: 570px;
+      margin: 120px 0 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 80px;
+    }
+
+    &-data {
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &-text {
+      margin: 10px 0 30px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+      color: $c-white;
+
+      @include tablet {
+        margin: 10px 0 20px;
+        font-size: 72px;
+      }
+
+      @include desktop {
+        font-size: 96px;
+      }
+    }
+
+    &-description {
+      width: 100%;
+
+      @include tablet {
+        width: 330px;
+      }
+
+      @include desktop {
+        width: 100%;
+      }
+    }
+  }
+
+  &__decoration {
+    display: none;
+
+    @include desktop {
+      position: absolute;
+      top: clamp(600px, calc(100vh - 67px), calc(100vh - 67px));
+      width: 570px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-data {
+      margin-right: 20px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+      color: $c-white;
+      opacity: 0.7;
+      white-space: nowrap;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+
+    @include tablet {
+      margin-top: 70px;
+    }
+
+    @include desktop {
+      margin-top: 0;
+      width: 624px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

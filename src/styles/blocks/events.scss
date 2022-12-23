@@ -1,0 +1,66 @@
+.events {
+  margin-bottom: 90px;
+
+  @include tablet {
+    margin-bottom: 100px;
+  }
+
+  @include desktop {
+    margin-bottom: 110px;
+  }
+
+  &__top {
+    @include section-action;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    @include content-margin-bottom;
+
+    @include tablet {
+      gap: 70px;
+    }
+
+    @include desktop {
+      gap: 60px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 358px;
+    object-fit: cover;
+    transition: all 0.3s;
+
+    @include tablet {
+      height: auto;
+    }
+
+    @include img-hover;
+  }
+
+  &__data {
+    color: $c-orange;
+    margin: 20px 0 10px;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    @extend %section-title;
+  }
+
+  &__description {
+    margin: 20px 0 30px;
+    color: $c-gray;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+  }
+}
