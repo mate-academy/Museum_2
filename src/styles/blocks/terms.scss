@@ -1,0 +1,70 @@
+.terms {
+  background-color: $bg;
+
+  &__container {
+    margin: 0 auto;
+    padding: 0 20px 30px;
+    max-width: 1280px;
+
+    @include on768 {
+      padding: 0 39px 30px;
+    }
+
+    @include on1280 {
+      padding: 10px 55px 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on768 {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px;
+    }
+
+    @include on1280 {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__years {
+    color: $white;
+
+    @include on768 {
+      grid-column: 1 / 2;
+    }
+  }
+
+  &__conditions {
+    text-decoration: none;
+    color: $white;
+
+    @include on768 {
+      grid-column: 2 / 4;
+    }
+
+    @include on1280 {
+      grid-column: 3 / 4;
+    }
+
+    &:hover {
+      font-weight: 700;
+    }
+  }
+
+  &__arrow {
+
+    @include on768 {
+      grid-column: 6 / 7;
+      justify-self: end;
+    }
+
+    @include on1280 {
+      grid-column: 12 / 13;
+    }
+  }
+}
