@@ -1,0 +1,160 @@
+.menu {
+  height: 100vh;
+  background-color: #3f5252;
+  background-image: url(../images/img_menu.png);
+  background-repeat: no-repeat;
+  background-size: 0;
+
+  &__image {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    @include onTablet {
+      display: block;
+    }
+  
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  @include  onTablet {
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 460px;
+  }
+
+  @include onDesktop {
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 700px;
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    &-icons {
+      display: flex;
+      gap: 30px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-top: 20px;
+  }
+
+  &__select {
+    display: none;
+    background-color: #3f5252;
+    color: #f1f5f4;
+    border: none;
+    @extend %mainText;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+
+    &--mobile {
+      display: flex;
+      background-color: #3f5252;
+      color: #f1f5f4;
+      border: none;
+      @extend %mainText;
+      font-weight: 500;
+      text-transform: uppercase;
+      outline: none;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+      background-color: #3f5252;
+      color: #f1f5f4;
+      border: none;
+      @extend %mainText;
+      font-weight: 500;
+      text-transform: uppercase;
+      outline: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__schedule {
+    display: block;
+    margin-bottom: 20px;
+    &-text {
+      @extend %additionalText;
+      color: #f1f5f4;
+    }
+
+    &-hours {
+      @extend %mainText;
+      font-weight: 600;
+      color: #f1f5f4;
+    }
+  }
+
+  &__adress {
+    text-decoration: none;
+    margin-bottom: 40px;
+
+    &-name {
+      @extend %additionalText;
+      color: #f1f5f4;
+    }
+
+    &-place {
+      @extend %mainText;
+      font-weight: 600;
+      color: #f1f5f4;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 40px;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      border-top: 1px solid #f1f5f4;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @extend %H5;
+    color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}
