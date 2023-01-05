@@ -17,4 +17,4 @@ Implemented landing page. Used BEM and SCSS
 Separately created blocks Cards for reuse. Cards positioned
 by Flex.
 
-[DEMO LINK](https://alina-isakova.github.io/layout_miami/)
+[DEMO LINK](https://alina-isakova.github.io/Museum_2/)
