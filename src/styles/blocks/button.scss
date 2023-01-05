@@ -1,0 +1,83 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  @extend %button;
+  transition: all 0.3s;
+
+  &--primary {
+    color: $c-white;
+    background-color: $c-main;
+
+    &:hover {
+      background-color: $c-main-hover;
+    }
+
+    &:active {
+      background-color: $c-main-active;
+    }
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &--card {
+    @include onTablet {
+      width: 100%;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &--secondary {
+    color: $c-main;
+    border: 1px solid $c-main;
+
+    &:hover {
+      color: $c-main-hover;
+      border-color: $c-main-hover;
+    }
+
+    &:hover path {
+      stroke: $c-main-hover;
+    }
+
+    &:active {
+      color: $c-main-active;
+      border-color: $c-main-active;
+    }
+
+    &:active path {
+      stroke: $c-main-active;
+    }
+
+    @include onTablet {
+      position: absolute;
+      top: 0;
+      right: $side-tablet;
+      width: 27%;
+    }
+
+    @include onDesktop {
+      right: $side-desktop;
+      width: 21%;
+    }
+  }
+
+  &__arrow {
+    margin-left: 11px;
+  }
+
+  &__item {
+    transition: all 0.3s;
+  }
+}
