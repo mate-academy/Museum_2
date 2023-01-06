@@ -20,6 +20,15 @@
 
   &__content {
     @include content;
+    padding-bottom: 238px;
+
+    @include onTablet {
+      padding-bottom: 496px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 108px;
+    }
   }
 
   &__top {
@@ -79,7 +88,12 @@
   }
 
   &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 1;
     margin-bottom: 40px;
+    height: 294px;
 
     @include onTablet {
       margin-bottom: 50px;
@@ -92,19 +106,6 @@
 
   &__item {
     list-style: none;
-    margin-bottom: 20px;
-
-    @include onTablet {
-      margin-bottom: 30px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 60px;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   &__link {
@@ -132,7 +133,7 @@
 
     &:hover::after {
       opacity: 1;
-      transform: translate3d(0, 0.2em, 0);
+      transform: translate3d(0, 0.1em, 0);
     }
   }
 
@@ -141,6 +142,7 @@
     width: 100%;
     background-color: $c-white;
     margin-bottom: 40px;
+    flex-shrink: 0;
 
     @include onTablet {
       margin-bottom: 50px;
@@ -166,5 +168,9 @@
       width: 624px;
       height: 697px;
     }
+  }
+
+  &__button {
+    flex-shrink: 0;
   }
 }
