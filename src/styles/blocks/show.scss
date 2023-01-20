@@ -1,0 +1,46 @@
+.show {
+  padding: 90px 0 60px;
+
+  @include onTablet {
+    padding: 100px 0 80px;
+  }
+
+  @include onDesktop {
+    padding: 110px 0 100px;
+  }
+
+  &__item {
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__body-img {
+    width: 100%;
+    @include adaptive-property(height, 356, 485, 1280);
+    @include img-container;
+    margin-bottom: 20px;
+
+    @include transition;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      border-radius: 50px;
+      transform: scale(1.05);
+    }
+  }
+
+  &__img {
+    @include img(cover);
+  }
+}

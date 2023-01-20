@@ -1,0 +1,90 @@
+.section {
+
+  &__title {
+    grid-column: 1 / 5;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      font-size: 40px;
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      font-size: 48px;
+    }
+
+    @extend %h1;
+    font-size: 28px;
+    line-height: 125%;
+    color: $color-black;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--odd {
+      grid-column: 1 / 4;
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--even {
+      grid-column: 4 / -1;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    @extend %h1;
+    font-size: 20px;
+    line-height: 125%;
+    color: $color-black;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 30px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-gray;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__duraction {
+    margin-bottom: 10px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-red;
+  }
+}

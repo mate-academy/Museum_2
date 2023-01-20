@@ -1,0 +1,73 @@
+.visit {
+  width: 100%;
+  position: relative;
+  background-color: $color-bg;
+  overflow: hidden;
+
+  &__body-text {
+    @include adaptive-property(padding-top, 50, 80, 768);
+    @include adaptive-property(padding-bottom, 50, 80, 768);
+
+    background-color: #3f5252;
+
+    @include onTablet {
+      grid-column: 1 / -2;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+      padding: 205px 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @extend %h1;
+    @include adaptive-property(font-size, 38, 62, 768);
+    line-height: 100%;
+    color: $color-white;
+
+    @include onTablet {
+      grid-column: 1 / -2;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-white;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__body-img {
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    @include bg-center(cover);
+    background-image: url("../images/photos/visit.png");
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 578px;
+      height: 800px;
+    }
+  }
+}

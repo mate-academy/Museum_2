@@ -1,0 +1,105 @@
+.button {
+  @include flex-row-center;
+  width: 100%;
+  height: 60px;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-decoration: none;
+
+  @include transition;
+
+  &:hover {
+    transform: scale(0.95) translateY(2px);
+  }
+
+  @include onPhone {
+    max-width: 330px;
+  }
+
+  @include onDesktop {
+    max-width: 270px;
+  }
+
+  &--primary {
+    color: $color-white;
+    background-color: $color-red;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+  }
+
+  &--secondary {
+    border: 1px solid $color-red;
+    color: $color-red;
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 14px;
+      height: 12px;
+      margin-left: 8px;
+
+      background-image: url(../images/icons/arrow_def.svg);
+      @include bg-center(contain);
+    }
+    &:hover::after {
+      background-image: url(../images/icons/arrow_hover.svg);
+    }
+
+    &:active::after {
+      background-image: url(../images/icons/arrow_presed.svg);
+    }
+
+    &:disabled::after {
+      background-image: url(../images/icons/arrow_disabled.svg);
+    }
+  }
+
+  &--hidden {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      display: flex;
+      grid-column: 10 / -1;
+    }
+  }
+
+  &--visibility {
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

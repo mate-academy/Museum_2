@@ -1,0 +1,160 @@
+.menu {
+  background-color: $color-bg;
+
+  &--burger {
+    min-height: 100vh;
+  }
+
+  &__top-action {
+    @include adaptive-property(margin-bottom, 10, 30, 768);
+
+    @include onDesktop {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__text {
+    color: $color-white;
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text-top {
+    display: block;
+    @include onTablet {
+      display: flex;
+      width: 70%;
+      justify-content: space-between;
+    }
+  }
+
+  &__info {
+    @include adaptive-property(margin-bottom, 20, 30, 768);
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__info-text {
+    font-size: 14px;
+    line-height: 140%;
+
+  }
+
+  &__info-link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 40px;
+
+    background-color: $color-white;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__body-img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 2 / 6;
+
+      width: 422px;
+      height: 466px;
+      background-size: contain;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 624px;
+      height: 697px;
+    }
+
+    margin: 0 auto;
+
+    background-image: url("../images/photos/menu.png");
+    @include bg-center(contain);
+  }
+
+  &__list {
+    display: flex;
+    flex-flow: column wrap;
+
+    &--burger {
+      padding-top: 20px;
+      margin-bottom: 20px;
+
+      @include onDesktop {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-bottom: 5px;
+
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+
+    &--title {
+      font-size: 20px;
+    }
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-white;
+    text-decoration: none;
+    @include transition;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &--burger {
+      @extend %h1;
+      margin-bottom: 20px;
+      font-size: 20px;
+
+      @include onTablet {
+        font-size: 48px;
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

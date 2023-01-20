@@ -1,0 +1,41 @@
+.container {
+  display: block;
+  position: relative;
+
+  height: 100%;
+  max-width: 1390px;
+  padding: 0 20px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+    padding: 0 40px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+    padding: 0 55px;
+  }
+
+  &--phone {
+    @include onPhone {
+      display: grid;
+      // grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &--block {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+      position: static;
+    }
+  }
+}

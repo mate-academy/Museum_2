@@ -1,0 +1,76 @@
+.events {
+  padding: 60px 0 90px;
+
+  @include onTablet {
+    padding: 80px 0 100px;
+  }
+
+  @include onDesktop {
+    padding: 100px 0 110px;
+  }
+
+  &__item--odd {
+    grid-column: 1 / 4;
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__item--even {
+    grid-column: 4 / -1;
+
+    @include onDesktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+  }
+
+  &__info {
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__body-img {
+    width: 100%;
+    @include adaptive-property(height, 358, 475, 1280);
+    @include img-container;
+    margin-bottom: 20px;
+
+    @include transition;
+
+    &:hover {
+      border-radius: 50px;
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &--margin-zero {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__img {
+    @include adaptive-property(height, 358, 475, 1280);
+    @include img(cover);
+  }
+
+  &__button {
+    margin-bottom: 30px;
+  }
+}
