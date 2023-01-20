@@ -1,0 +1,89 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all 0.3s;
+  
+  &--primary {
+    color: $whiteColor;
+    background-color: $mainColor;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:focus {
+      background-color: #ea340d;
+      outline: none;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+  }
+
+  &--secondary {
+    color: $mainColor;
+    background-color: #fff;
+    border: 1px solid $mainColor;
+
+    &::after {
+      display: block;
+      content: url(../images/arrow.svg);
+      padding-left: 8px;
+    }
+
+    &:hover {
+      color: #af3419;
+      border: 1px solid #af3419;
+
+      &::after {
+        content: url(../images/arrow-hover.svg);
+      }
+    }
+
+    &:active {
+      color: #ea340d;
+      border: 1px solid #ea340d;
+
+      &::after {
+        content: url(../images/arrow-active.svg);
+      }
+    }
+
+    &:focus {
+      color: #ea340d;
+      border: 1px solid #ea340d;
+      outline: none;
+
+      &::after {
+        content: url(../images/arrow-active.svg);
+      }
+    }
+
+    &:disabled {
+      color: #dd836f;
+      border: 1px solid #dd836f;
+
+      &::after {
+        content: url(../images/arrow-disabled.svg);
+      }
+    }
+  }
+}
