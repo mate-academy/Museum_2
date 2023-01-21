@@ -14,7 +14,7 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 1. Implement `Сплануйте візит до музею` block.
 1. Implement `Новини` block with the three cards.
 1. Implement `Підпишіться на дайджест` block.
-1. Implement footer.
+1. Implement  footer.
 
 
 ## Github flow
