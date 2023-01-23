@@ -9,3 +9,24 @@
     @content;
   }
 }
+
+@mixin top-actions {
+  --icon-width: 25px;
+  --lang-width: 33px;
+
+  display: grid;
+  grid-template-columns: 1fr var(--lang-width) var(--icon-width);
+  justify-items: left;
+  align-items: center;
+  column-gap: 30px;
+
+  @include onTablet {
+    grid-template-columns: 1fr var(--icon-width) var(--lang-width);
+    column-gap: 40px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: 1fr var(--icon-width) var(--lang-width);
+    column-gap: 40px;
+  }
+}
