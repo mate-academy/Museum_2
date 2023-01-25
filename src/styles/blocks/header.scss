@@ -6,6 +6,8 @@
   background-position: bottom center;
   background-size: 35vh;
 
+  color: $color-text-secondary;
+
   @include onTablet {
     background-size: 45vh;
   }
@@ -52,7 +54,6 @@
 
     font-size: 14px;
     line-height: 140%;
-    color: $color-text-secondary;
   }
 
   &__title {
@@ -63,7 +64,6 @@
     font-weight: 700;
     font-size: 48px;
     line-height: 100%;
-    color: $color-text-secondary;
 
     @include onTablet {
       max-width: 570px;
@@ -79,7 +79,7 @@
 
   &__description {
     margin: 0 0 40px;
-    color: $color-text-secondary;
+
 
     @include onTablet {
       margin: 0 0 50px;
@@ -87,6 +87,37 @@
 
     @include onDesktop {
       margin: 0 0 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 135px;
+  }
+
+  &__date-number {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+
+    opacity: 0.7;
+
+    @include onDesktop {
+      visibility: visible;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      background-color: $color-text-secondary;
+      height: 1px;
+      width: 450px;
+      margin-left: 20px;
+
+      opacity: 0.3;
     }
   }
 }
