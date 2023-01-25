@@ -1,25 +1,38 @@
 .menu {
   background-color: #3f5252;
-  height: 100vh;
+  min-height: 747px;
   
 
   @include onTablet {
+    min-height: 1092px;
     background-image: url(../images/img_menu.png);
     background-repeat: no-repeat;
     background-position: 50% 100%;
-    background-size: 40vh;
+    background-size: auto 466px;
   }
 
   @include onDesktop {
+    min-height: 800px;
+    height: 100vh;
     background-position: 100% 100%;
-    background-size: 80vh;
+    background-size: auto 697px;
   }
 
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 0;
     margin-bottom: 30px;
+
+    @include onTablet {
+      padding: 26px 0;
+    }
+
+    @include onDesktop {
+      padding: 32px 0;
+      margin-bottom: 40px;
+    }
 
     &-icons {
       display: flex;
@@ -31,7 +44,6 @@
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
-    padding-top: 20px;
   }
 
   &__select {
@@ -97,6 +109,7 @@
   &__adress {
     text-decoration: none;
     margin-bottom: 40px;
+    cursor: pointer;
 
     &-name {
       @extend %additionalText;
@@ -114,6 +127,14 @@
     list-style: none;
     margin-bottom: 40px;
 
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
     &::after {
       display: block;
       content: "";
@@ -125,8 +146,24 @@
   &__item {
     margin-bottom: 20px;
 
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
     &:last-child {
       margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
     }
   }
 
@@ -134,6 +171,7 @@
     text-decoration: none;
     @extend %H5;
     color: #f1f5f4;
+    cursor: pointer;
 
     @include onTablet {
       font-size: 48px;
