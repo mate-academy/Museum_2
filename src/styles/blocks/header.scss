@@ -1,18 +1,12 @@
 .header {
   color: $whiteColor;
   background-color: $backgroundColor;
-  background-image: url(../images/header-1.png);
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 100%;
-
-  @include onTablet {
-    background-size: 443px 494px;
-  }
 
   @include onDesktop {
-    background-size: 625px 663px;
-    background-position: right bottom;
+    background-image: url(../images/header-1.png);
+    background-repeat: no-repeat;
+    background-position: left 100% top 97px;
+    background-size: contain;
   }
 
   &__content {
@@ -123,7 +117,23 @@
 
     @include onDesktop {
       grid-area: 4 / 1 / 5 / 4;
-      margin-bottom: 135px;
+    }
+  }
+
+  &__background-container {
+    margin-top: 40px;
+    flex-grow: 1;
+    background-image: url(../images/header-1.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+
+    @include onTablet {
+      margin-top: 70px;
+    }
+
+    @include onDesktop {
+      background-image: none;
     }
   }
 
