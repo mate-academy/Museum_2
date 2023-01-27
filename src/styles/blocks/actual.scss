@@ -1,7 +1,82 @@
 .actual {
-  // &__photo-container {}
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__photo-container {
+    position: relative;
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 280px;
+    overflow: hidden;
+
+    &::after {
+      display: block;
+      content: "";
+      padding-bottom: 120%;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+      max-height: 420px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      max-height: 485px;
+      padding-bottom: 0;
+    }
+  }
 
   &__photo {
+    position: absolute;
     width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: left;
+
+    &--center {
+      object-position: center;
+    }
+  }
+
+  &__date {
+    margin: 0 0 10px;
+    color: $color-accent;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 30px;
+    color: $color-text-third;
+
+    @include onTablet {
+      margin: 0 0 40px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
   }
 }

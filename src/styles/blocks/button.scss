@@ -1,9 +1,10 @@
 .button {
+  align-self: end;
   display: block;
   width: 100%;
   height: 60px;
-  background-color: #cd4d31;
-  border: solid 1px #cd4d31;
+  background-color: $color-accent;
+  border: solid 1px $color-accent;
   color: $color-text-secondary;
   cursor: pointer;
 
@@ -20,15 +21,23 @@
   }
 
   &--secondary {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     background-color: #fff;
-    color: #cd4d31;
+    color: $color-accent;
 
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
 
     &:hover {
       background-color: #fff;
@@ -52,7 +61,14 @@
       background-repeat: no-repeat;
       width: 14px;
       height: 12px;
-      color: #ea340d;
+
+      &:hover {
+        background-image: url("..//images/icons/arrow-hover.svg");
+      }
+
+      &:active {
+        background-image: url("..//images/icons/arrow-active.svg");
+      }
     }
   }
 }
