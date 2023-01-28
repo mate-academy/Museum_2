@@ -1,0 +1,182 @@
+.menu {
+  background-color: $backgroundColor;
+  color: $whiteColor;
+
+  @include onDesktop {
+    background-image: url(../images/header-2.png);
+    background-repeat: no-repeat;
+    background-position: left 100% top 103px;
+    background-size: contain;
+  }
+  
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: $headerTopPadding;
+    overflow: hidden;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
+  }
+
+  &__top {
+    @include top-action;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__info-container {
+    display: grid;
+    column-gap: 30px;
+    
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__info {
+    margin-bottom: 20px;
+    color: $whiteColor;
+
+    @include onTablet {
+      grid-area: 1 / 1 / 1 / 3;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 1 / 1 / 3;
+    }
+
+    &--last {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        grid-area: 1 / 3 / 1 / 5;
+      }
+  
+      @include onDesktop {
+        grid-area: 1 / 3 / 1 / 6;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__info-title {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__info-description {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    list-style: none;
+    border-bottom: 1px solid $whiteColor;
+
+    @include onTablet {
+      grid-area: 2 / 1 / 3 / 7;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-area: 2 / 1 / 3 / 7;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 50px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $whiteColor;
+    text-decoration: none;
+
+    transition: border-color 0.3s;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $whiteColor;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-area: 3 / 1 / 4 / 4;
+    }
+
+    @include onDesktop {
+      grid-area: 3 / 1 / 4 / 4;
+    }
+  }
+
+  &__background-container {
+    @include onTablet {
+      margin-top: 30px;
+      flex-grow: 1;
+      background-image: url(../images/header-2.png);
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: contain;
+
+      @media  (max-height: 869px) {
+        display: none;
+      }
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

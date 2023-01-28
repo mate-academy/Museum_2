@@ -1,0 +1,131 @@
+.exhibitions {
+  &__container {
+    display: grid;
+    column-gap: 30px;
+    
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / 4;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 1 / 2 / 7;
+    }
+  }
+
+  &__secondary-button {
+    @include onTablet {
+      grid-area: 1 / 5 / 2 / 7;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 10 / 2 / 13;
+    }
+  }
+}
+
+.exhibition {
+  @include onTablet {
+    grid-area: 2 / 1 / 3 / 4;
+  }
+
+  @include onDesktop {
+    grid-area: 2 / 1 / 3 / 7;
+  }
+
+  &--last {
+    @include onTablet {
+      grid-area: 2 / 4 / 3 / 7;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-area: 2 / 7 / 3 / 13;
+    }
+  }
+
+  &__image-container {
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    &:hover {
+      transition: transform 0.3s;
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      max-height: 420px;
+    }
+
+    @include onDesktop {
+      max-height: 484px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    color: $mainColor;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    color: $blackColor;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-area: 3 / 1 / 4 / 4;
+    }
+  
+    @include onDesktop {
+      grid-area: 3 / 1 / 4 / 4;
+    }
+  
+    &--last {  
+      @include onTablet {
+        grid-area: 3 / 4 / 4 / 7;
+      }
+  
+      @include onDesktop {
+        grid-area: 3 / 7 / 4 / 10;
+      }
+    }
+  }
+}

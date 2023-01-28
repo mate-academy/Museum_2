@@ -1,0 +1,63 @@
+.page {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $grayColor;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow-y: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 160px;
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 60px;
+    font-family: 'Playfair Display';
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $blackColor;
+
+    @include onTablet {
+      margin-bottom: 75px;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}
