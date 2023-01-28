@@ -12,12 +12,14 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+const body = document.querySelector('#body');
 const dropdown = document.querySelector('.dropdown-link');
 const dropdownSvg = document.querySelector('.dropdown-svg');
 const close = document.querySelector('.body-link');
 const closeSvg = document.querySelector('.close-svg');
 const subscribeForm = document.querySelector('.subscribe__form');
 const showsImg = document.querySelectorAll('.for-move');
+const scrollUp = document.querySelector('#scroll-up');
 
 window.addEventListener('load', e => {
   if (document.querySelector('.dropdown-menu:target')) {
@@ -76,3 +78,15 @@ window.addEventListener('scroll', e => {
     }
   });
 });
+
+const scrollEvent = e => {
+  if (body.getBoundingClientRect().top >= -700) {
+    scrollUp.style.display = 'none';
+    window.removeEventListener('scroll', scrollEvent);
+    setTimeout(window.addEventListener('scroll', scrollEvent), 3000);
+  } else {
+    scrollUp.style.display = 'block';
+  }
+};
+
+window.addEventListener('scroll', scrollEvent);
