@@ -1,0 +1,189 @@
+.button {
+  @include way;
+  display: block;
+  white-space: nowrap;
+  background-color: $orange;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-weight: 600;
+  color: $white;
+  font-size: 16px;
+  line-height: 100%;
+  padding: 22px 0;
+  height: 60px;
+  max-width: 270px;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &[disabled] {
+    background-color: #dd836f;
+  }
+
+  @media (max-width: 320px) {
+    max-width: 100%;
+  }
+}
+
+.alt-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 100%;
+  padding: 22px 0;
+
+  color: $orange;
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+  height: 60px;
+  width: 270px;
+  border: 1px solid $orange;
+
+  &__arrow {
+    margin-left: 12px;
+
+    path {
+      stroke: $orange;
+    }
+  }
+
+  &:hover {
+    color: #af3419;
+    border-color: #af3419;
+
+    &__arrow {
+      path {
+        stroke: #af3419;
+      }
+    }
+  }
+
+  &:active {
+    color: #ea340d;
+    border-color: #ea340d;
+
+    &__arrow {
+      path {
+        stroke: #ea340d;
+      }
+    }
+  }
+
+  &[disabled] {
+    color: #dd836f;
+    border-color: #dd836f;
+
+    &__arrow {
+      path {
+        stroke: #dd836f;
+      }
+    }
+  }
+
+  @media (max-width: 320px) {
+    max-width: 100%;
+  }
+}
+
+.input {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #1c1b29;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #1c1b29;
+  background-color: inherit;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #1c1b29;
+  }
+
+  &:hover {
+    border-color: $orange;
+
+    &::placeholder {
+      color: $orange;
+    }
+  }
+
+  &:focus {
+    border-color: $orange;
+    caret-color: $orange;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
+.hidden {
+  transform-origin: top;
+  height: 0;
+  transform: rotateX(90deg);
+}
+
+.title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    @include h2;
+
+    @media (max-width: 1024px) {
+      font-size: 40px;
+    }
+  }
+}
+
+.card {
+  &__data {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__title {
+    @include h3;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $gray;
+  }
+
+  &__button {
+    @media (max-width: 820px) {
+      max-width: 100%;
+    }
+
+    @media (max-width: 460px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.body__scroll {
+  position: fixed;
+  display: block;
+  right: 20px;
+  bottom: 20px;
+  mix-blend-mode: difference;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
