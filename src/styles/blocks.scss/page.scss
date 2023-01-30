@@ -1,0 +1,72 @@
+.page {
+  scroll-behavior: smooth;
+  
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+
+    &--title {
+      @extend %H3;
+
+      @include onTablet {
+        font-size: 40px;
+        line-height: 125%;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+
+    &--subtitle {
+      @extend %H4;
+      color: #1c1b29;
+
+      @include onTablet {
+        font-size: 24px;
+        line-height: 125%;
+      }
+    }
+
+    &--text {
+      @extend %mainText;
+      color: #504f5e;
+    }
+
+    &--image {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all 0.7s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--data {
+      @extend %mainText;
+      color: #cd4d31;
+    }
+  }
+}

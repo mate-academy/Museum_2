@@ -1,0 +1,212 @@
+.menu {
+  background-color: #3f5252;
+  min-height: 747px;
+  
+
+  @include onTablet {
+    min-height: 1092px;
+    background-image: url(../images/img_menu.png);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: auto 466px;
+  }
+
+  @include onDesktop {
+    min-height: 800px;
+    height: 100vh;
+    background-position: 100% 100%;
+    background-size: auto 697px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      padding: 26px 0;
+    }
+
+    @include onDesktop {
+      padding: 32px 0;
+      margin-bottom: 40px;
+    }
+
+    &-icons {
+      display: flex;
+      gap: 30px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  &__select {
+    display: none;
+    background-color: #3f5252;
+    color: #f1f5f4;
+    border: none;
+    @extend %mainText;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: #1c70cf;
+      scale: 1.2;
+    }
+
+    &--mobile {
+      display: flex;
+      background-color: #3f5252;
+      color: #f1f5f4;
+      border: none;
+      @extend %mainText;
+      font-weight: 500;
+      text-transform: uppercase;
+      outline: none;
+      cursor: pointer;
+      transition-duration: 0.3s;
+  
+      &:hover {
+        color: #1c70cf;
+        scale: 1.2;
+      }
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+      background-color: #3f5252;
+      color: #f1f5f4;
+      border: none;
+      @extend %mainText;
+      font-weight: 500;
+      text-transform: uppercase;
+      outline: none;
+      cursor: pointer;
+      transition-duration: 0.3s;
+  
+      &:hover {
+        color: #1c70cf;
+        scale: 1.2;
+      }
+  
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__schedule {
+    display: block;
+    margin-bottom: 20px;
+    &-text {
+      @extend %additionalText;
+      color: #f1f5f4;
+    }
+
+    &-hours {
+      @extend %mainText;
+      font-weight: 600;
+      color: #f1f5f4;
+    }
+  }
+
+  &__adress {
+    text-decoration: none;
+    margin-bottom: 40px;
+    cursor: pointer;
+
+    &-name {
+      @extend %additionalText;
+      color: #f1f5f4;
+    }
+
+    &-place {
+      @extend %mainText;
+      font-weight: 600;
+      color: #f1f5f4;
+      transition-duration: 0.5s;
+
+      &:hover {
+        color: #1c70cf;
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      border-top: 1px solid #f1f5f4;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @extend %H5;
+    color: #f1f5f4;
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: #1c70cf;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}
