@@ -39,18 +39,6 @@
       display: flex;
     }
 
-    &:hover {
-      background-color: #fff;
-      color: #af3419;
-      border-color: #af3419;
-    }
-
-    &:active {
-      background-color: #fff;
-      color: #ea340d;
-      border-color: #ea340d;
-    }
-
     &::after {
       padding-right: 11px;
       display: block;
@@ -61,14 +49,39 @@
       background-repeat: no-repeat;
       width: 14px;
       height: 12px;
+    }
 
-      &:hover {
+    &:hover {
+      background-color: #fff;
+      color: #af3419;
+      border-color: #af3419;
+
+      &::after {
         background-image: url("..//images/icons/arrow-hover.svg");
       }
+    }
 
-      &:active {
+    &:active {
+      background-color: #fff;
+      color: #ea340d;
+      border-color: #ea340d;
+
+      &::after {
         background-image: url("..//images/icons/arrow-active.svg");
       }
+    }
+  }
+
+  &--third {
+    @extend .button--secondary;
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
     }
   }
 }
