@@ -25,16 +25,6 @@
     max-height: 280px;
     overflow: hidden;
 
-    &--horizontal {
-      @include onTablet {
-        grid-column: 1 / 4;
-      }
-
-      @include onDesktop {
-        grid-column: 1 / 5;
-      }
-    }
-
     &::after {
       display: block;
       content: "";
@@ -50,6 +40,20 @@
     @include onDesktop {
       max-height: 485px;
       padding-bottom: 0;
+    }
+
+    &--horizontal {
+      @include onTablet {
+        grid-column: 1 / 4;
+        grid-row: 1 / 6;
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+        grid-row: 1 / 6;
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -69,6 +73,24 @@
   &__date {
     margin: 0 0 10px;
     color: $color-accent;
+
+    &--horizontal {
+      @include onTablet {
+        grid-column: 4 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 11;
+      }
+    }
+
+    &--news {
+      margin: 0;
+
+      font-size: 14px;
+      line-height: 140%;
+      color: initial;
+    }
   }
 
   &__title {
@@ -86,6 +108,28 @@
     @include onDesktop {
       font-size: 24px;
     }
+
+    &--horizontal {
+      @include onTablet {
+        grid-column: 4 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 11;
+      }
+    }
+
+    &--news {
+      @include onTablet {
+        font-size: 20px;
+        line-height: 150%;
+      }
+
+      @include onDesktop {
+        font-size: 20px;
+        line-height: 150%;
+      }
+    }
   }
 
   &__description {
@@ -98,6 +142,16 @@
 
     @include onDesktop {
       margin: 0 0 50px;
+    }
+
+    &--horizontal {
+      @include onTablet {
+        grid-column: 4 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 11;
+      }
     }
   }
 
