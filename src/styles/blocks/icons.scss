@@ -1,0 +1,39 @@
+.icon {
+  --widthIcon: 25px;
+  position: relative;
+  display: block;
+  width: var(--widthIcon);
+  height: var(--widthIcon);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  background-color: $color-white;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $color-main;
+  }
+
+  &--menu {
+    -webkit-mask: url("../images/menu.svg") 0 0/var(--widthIcon) var(--widthIcon);
+    mask: url("../images/menu.svg") 0 0/var(--widthIcon) var(--widthIcon);
+    grid-column: -2 / -1;
+
+    @include onTablet {
+      grid-column: 2;
+    }
+  }
+
+  &--cross {
+    -webkit-mask: url("../images/cross.svg") 0 0/var(--widthIcon) var(--widthIcon);
+    mask: url("../images/cross.svg") 0 0/var(--widthIcon) var(--widthIcon);
+    grid-column: -2/-1;
+
+    @include onTablet {
+      grid-column: 2;
+    }
+  }
+}

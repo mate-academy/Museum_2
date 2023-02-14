@@ -1,0 +1,103 @@
+.header {
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $color-bg;
+
+  background-image: url("../images/img_01header.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 273px auto;
+
+  @include onTablet {
+    background-size: 494px auto;
+  }
+
+  @include onDesktop {
+    background-size: 663px auto;
+    background-position: bottom right;
+  }
+
+  &__top {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+
+    @include top-actions;
+
+    @include onTablet {
+      margin-bottom: 122px;
+    }
+  }
+
+  &__content {
+    color: $color-white;
+
+    &-date {
+      font-size: 14px;
+      line-height: 140%;
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      color: $color-white;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 30px;
+      }
+    }
+    
+    &-text {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        width: 330px;
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        width: max-content;
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 146px;
+  }
+
+  &__date {
+    display: none;
+    box-sizing: border-box;
+    color: $color-white;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    width: max-content;
+    align-items: center;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__border {
+    display: none;
+    box-sizing: border-box;
+    height: 1px;
+    background-color: $color-white;
+    opacity: 0.3;
+    align-self: center;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
