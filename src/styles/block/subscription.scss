@@ -1,0 +1,94 @@
+.subscription {
+  &__content {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+      line-height: 100%;
+    }
+  }
+
+  &__description {
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $section-title-color;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      max-width: 570px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background-color: $page-color;
+    border: none;
+    border-bottom: 1px solid $section-title-color;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: $section-title-color;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    &:hover {
+      border-color: $button-basic-color;
+
+      &::placeholder {
+        color: $button-basic-color;
+      }
+    }
+
+    &:focus {
+      outline: 0;
+      outline-offset: 0;
+      color: $button-basic-color;
+      border-bottom: 1px solid $button-basic-color;
+
+      &::placeholder {
+        width: 0;
+      }
+    }
+  }
+
+  &__form {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}

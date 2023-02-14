@@ -1,0 +1,187 @@
+.header {
+  height: max-content;
+  box-sizing: border-box;
+  background-color: $background-header-color;
+
+  @include onDesktop {
+    height: 100vh;
+  }
+
+  &__lang {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  @include padding-top-header-menu;
+
+  &__nav {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 124px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    justify-self: flex-end;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $text-color;
+    max-width: 280px;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 72px;
+      line-height: 100%;
+      max-width: 570px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+
+    &::before {
+      display: block;
+      content: "10 серпня - 10 листопада";
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: $text-color;
+
+      margin-bottom: 10px;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $text-color;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 330px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 245px;
+    height: 273px;
+    margin: 0 auto;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-image: url("../images/header_img_mobile.png");
+
+    @include onTablet {
+      width: 444px;
+      height: 494px;
+
+      background-image: url("../images/header_img_tablet.png");
+    }
+
+    @include onDesktop {
+      position: absolute;
+
+      background-size: contain;
+      background-position: bottom right;
+
+      width: 624px;
+      height: 90%;
+      left: 100%;
+      transform: translateX(-100%);
+
+      background-image: url("../images/header_img_desktop.png");
+    }
+  }
+
+  &__subscribe {
+    display: none;
+
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: $text-color;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      bottom: 50px;
+
+      &::after {
+        display: inline-block;
+        content: "";
+        width: 470px;
+        border-bottom: 1px solid $text-color;
+        transform: translate(20px, -100%);
+      }
+    }
+  }
+}
+
+.logo {
+  line-height: 0;
+
+  &__image {
+    width: 123px;
+
+    @include onDesktop {
+      width: 118px;
+      height: 26px;
+    }
+  }
+}
