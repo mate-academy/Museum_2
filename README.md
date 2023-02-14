@@ -34,4 +34,4 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
   [DEMO LINK](https://diolna.github.io/Museum_2/).
 14. Copy `DEMO LINK` to the PR description.
 
-> To update you PR repeat steps 7-11.
+
