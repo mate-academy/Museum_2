@@ -1,0 +1,159 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $color-bg;
+  transition: all 0.3s;
+
+  @include onTablet {
+    background-image: url("../images/img_menu.svg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 422px auto;
+    margin: 0 auto;
+  }
+
+  @include onDesktop {
+    background-size: 624px auto;
+    background-position: bottom right;
+  }
+
+  &__top {
+    margin-bottom: 30px;
+
+    @include top-actions;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+
+    &-language {
+      display: block;
+      grid-area: 1 / 2;
+
+      @include onTablet {
+        grid-area: 1 / 3;
+      }
+    }
+  }
+
+  &__schedule {
+    color: $color-white;
+    margin-bottom: 20px;
+
+    &-name {
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &-time {
+      font-weight: 600;
+    }
+  }
+
+  &__adress {
+    color: $color-white;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+
+    &-name {
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &-location {
+      font-weight: 600;
+      color: $color-white;
+      text-decoration: none;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $color-main;
+      }
+    
+      &:active {
+        color: $color-white;
+        text-shadow: 5px 3px 5px $color-main;
+        transform: scale(111%);
+      }
+    }
+  }
+
+  &__nav {
+    color: $color-white;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &-item {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-link {
+      box-sizing: border-box;
+      font-family: $fontsTitles;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: $color-white;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+
+      &:hover {
+        border-color: $color-white;
+        
+      }
+
+      @include onTablet {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+  }
+
+  &__border {
+    background-color: $color-white;
+    height: 1px;
+    width: 100%;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+}

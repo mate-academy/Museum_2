@@ -1,0 +1,86 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border: none;
+  gap: 30px;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px 30px;
+  }
+
+  &__email {
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid $colorFonts;
+    background: $color-white;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    color: $colorTitles;
+    font-size: 16px;
+    line-height: 150%;
+    outline: none;
+    transition: all 0.3s;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      color: $colorTitles;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $color-main;
+      &::placeholder {
+        color: $color-main;
+      }
+    }
+
+    &:focus {
+      color: $color-main;
+      border-bottom: 1px solid $color-main;
+    }
+  }
+
+  &__button {
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: $colorTitles;
+    -webkit-box-shadow: 0 0 0 1000px $color-white inset;
+    -webkit-font-feature-settings: inherit;
+    font-family: $fontsText;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}

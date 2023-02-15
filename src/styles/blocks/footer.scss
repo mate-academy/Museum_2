@@ -1,0 +1,136 @@
+.footer {
+  background-color: $color-bg;
+  // height: 751px;
+  height: 100vh;
+
+  @include onTablet {
+    height: 388px;
+  }
+
+  @include onDesktop {
+    height: 398px;
+  }
+
+  &__container {
+    padding-top: 34px;
+
+    @include onTablet {
+      padding-top: 50px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+
+    &-link {
+      display: block;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: $color-white;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $color-main;
+      }
+    
+      &:active {
+        color: $color-white;
+        text-shadow: 5px 3px 5px $color-main;
+        transform: scale(105%);
+      }
+    }
+
+    &-lastLink {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &-network {
+      display: flex;
+      flex-direction: row;
+      height: 20px;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__workTime {
+    color: $color-white;
+    margin-bottom: 50px;
+
+    &-schedule {
+      list-style: none;
+      padding: 0;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 50px;
+    color: $color-white;
+
+    &-title {
+      font-size: 20px;
+    }
+
+    &-menu {
+      list-style: none;
+      padding: 0;
+
+      &-item {
+        margin-bottom: 5px;
+      }
+
+      &-link {
+        color: $color-white;
+        text-decoration: none;
+        transition: all 0.3s;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+          border-color: $color-white;
+        }
+      }
+    }
+  }
+
+  &__creator {
+    display: grid;
+    grid-template-columns: 98px 106px 1fr;
+    gap: 22px;
+    align-items: center;
+    justify-items: end;
+
+    font-size: 14px;
+    line-height: 140%;
+    color: $color-white;
+    margin-bottom: 30px;
+
+    &-home {
+      display: block;
+      box-sizing: border-box;
+      width: 20px;
+      height: 22px;
+      background-color: $color-white;
+      background-size: cover ;
+
+      -webkit-mask: url("../images/arrow_home.svg") no-repeat 50% 50%;
+      mask: url("../images/arrow_home.svg") no-repeat 50% 50%;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: $color-main;
+      }
+    }
+  }
+}

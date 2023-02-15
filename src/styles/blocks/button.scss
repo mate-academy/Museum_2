@@ -1,0 +1,82 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+
+  color: $color-white;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  background-color: $color-main;
+  border: 2px solid $color-main;
+  outline: none;
+  text-decoration: none;
+  transition: all 0.3s;
+
+  &__container {
+    display: block;
+    box-sizing: border-box;
+    
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &:hover {
+    background-color: $colorHover;
+    border-color: $colorHover;
+  }
+
+  &:active {
+    background-color: $colorActive;
+    border-color: $colorActive;
+  }
+
+  &:disabled {
+    background-color: $colorVisited;
+    border-color: $colorVisited;
+  }
+
+  &__white {
+    color: $color-main;
+    background-color: $color-white;
+    gap: 10px;
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column: 5 / 7;
+    }
+
+    @include onDesktop {
+      grid-row: 1;
+      grid-column: 10 / 13;
+    }
+
+    &::after {
+      content: url(../images/arrow-default.svg);
+      object-position: center;
+    }
+
+    &:hover {
+      color: $colorHover;
+      background-color: $color-white;
+      border-color: $colorHover;
+    }
+  
+    &:active {
+      color: $colorActive;
+      border-color: $colorActive;
+    }
+  
+    &:disabled {
+      color: $colorVisited;
+      border-color: $colorVisited;
+    }
+  }
+}
