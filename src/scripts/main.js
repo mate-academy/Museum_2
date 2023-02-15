@@ -22,3 +22,12 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 
 hiddenElements.forEach((el) => observer.observe(el));
+
+const form = document.querySelector('.subscribe__form');
+
+form.addEventListener('submit', onButtonClick);
+
+function onButtonClick(event) {
+  event.preventDefault();
+  event.target.reset();
+};

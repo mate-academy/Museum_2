@@ -5,6 +5,7 @@
   height: 100vh;
   background-color: $color-background;
   color: $color-white;
+
   @include onTablet {
     height: 388px;
   }
@@ -90,6 +91,61 @@
     margin-bottom: 30px;
     @include onDesktop {
       margin-right: 102px;
+    }
+  }
+}
+
+.socials {
+  &__item {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    transition-property: background;
+    transition-duration: 0.3s;
+
+    &:hover {
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+      animation: snake 0.25s;
+    }
+
+    &--hover-facebook:hover {
+      background: #1877f2;
+    }
+
+    &--hover-twitter:hover {
+      background: #1d9bf0;
+    }
+
+    &--hover-telegram:hover {
+      background: #0084c6;
+    }
+
+    &--hover-instagram:hover {
+      background: radial-gradient(circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%);
+    }
+
+    @keyframes snake {
+      10% {
+        transform: rotate(15deg);
+      }
+
+      20% {
+        transform: rotate(-15deg);
+      }
+
+      30% {
+        transform: rotate(15deg);
+      }
+
+      40% {
+        transform: rotate(-15deg);
+      }
     }
   }
 }
