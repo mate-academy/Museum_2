@@ -1,8 +1,16 @@
 .header {
   background: $color-background;
   height: 100vh;
-  min-height: 100vh;
+  min-height: 667px;
+  max-height: 1500px;
   box-sizing: border-box;
+
+  @include onTablet {
+    min-height: 1024px;
+  }
+  @include onDesktop {
+    min-height: 800px;
+  }
 
   &__content {
     display: flex;
@@ -14,8 +22,11 @@
   }
 
   &__date {
-    margin-top: 70px;
+    margin-top: 20px;
     margin-bottom: 10px;
+    @include onTablet {
+      margin-top: 70px;
+    }
   }
 
   &__title {
