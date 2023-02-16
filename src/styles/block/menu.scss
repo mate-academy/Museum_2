@@ -1,0 +1,184 @@
+.menu {
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: $background-header-color;
+
+  @include padding-top-header-menu;
+
+  @include onDesktop {
+    height: 100vh;
+  }
+
+  &__nav {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+    margin: 0 0 40px;
+    padding: 0;
+  }
+
+  &__nav-item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav-link {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: $text-color;
+    text-decoration: none;
+    transition: $duration;
+
+    &:hover {
+      color: $background-header-color;
+      background-color: $text-color;
+      border-radius: 4px;
+    }
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 120%;
+
+      color: $text-color;
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 124px;
+
+      margin-bottom: 50px;
+
+      @include onDesktop {
+        gap: 84px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+
+    color: $text-color;
+  }
+
+  &__info {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+
+    color: $text-color;
+
+    &--hover {
+      &:hover {
+        border: 1px solid $text-color;
+        background-color: $text-color;
+        color: $background-header-color;
+      }
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid $text-color;
+
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      max-width: 570px;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 330px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__img {
+    display: block;
+
+    width: 245px;
+    height: 273px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onTablet {
+      display: block;
+      bottom: 0;
+      margin: 0 auto;
+
+      width: 444px;
+      height: 494px;
+
+      background-image: url("../images/img_menu_onTablet.png");
+    }
+
+    @include onDesktop {
+      position: absolute;
+
+      background-size: contain;
+      background-position: bottom right;
+
+      left: 100%;
+      width: 624px;
+      height: 90%;
+
+      transform: translateX(-100%);
+
+      background-image: url("../images/img_menu_onDesktop.png");
+    }
+  }
+}

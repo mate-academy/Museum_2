@@ -1,0 +1,56 @@
+.top-actions {
+  display: grid;
+  align-items: center;
+  column-gap: 40px;
+  grid-template-columns: 1fr 25px;
+
+  background-color: $background-header-color;
+
+  @include onTablet {
+    grid-template-columns: 1fr 30px max-content;
+  }
+
+  &__menu {
+    grid-template-columns: 1fr max-content 22px;
+
+    @include onTablet {
+      grid-template-columns: 1fr 30px max-content;
+    }
+  }
+
+  &__icon {
+    @include onTablet {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  &__select-lang {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    padding: 0;
+    padding-right: 11px;
+    margin: 0;
+    border: none;
+    outline: none;
+
+    color: $text-color;
+    background-color: $background-header-color;
+
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    background-image: url(../images/icon/arrowDown.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+
+    @include onTablet {
+      display: block;
+      grid-column: 3;
+      grid-row: 1;
+    }
+  }
+}

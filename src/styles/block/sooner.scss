@@ -1,0 +1,110 @@
+.sooner {
+  &__content {
+    position: relative;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 76px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__photo {
+    height: 358px;
+    background-size: cover;
+    transition: $duration;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      display: inline-block;
+      height: 422px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      width: 370px;
+      height: 475px;
+    }
+
+    &--1 {
+      background-image: url(../images/sooner/photo1_mobile.png);
+
+      @include onTablet {
+        background-image: url(../images/sooner/photo1_tablet.png);
+      }
+
+      @include onDesktop {
+        background-image: url(../images/sooner/photo1_desktop.png);
+      }
+    }
+
+    &--2 {
+      background-image: url(../images/sooner/photo2_mobile.png);
+
+      @include onTablet {
+        background-image: url(../images/sooner/photo2_tablet.png);
+      }
+
+      @include onDesktop {
+        background-image: url(../images/sooner/photo2_desktop.png);
+      }
+    }
+  }
+
+  &__card {
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      column-gap: 30px;
+
+      margin-bottom: 70px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      grid-template-columns: 370px 1fr;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__cards {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+.footer {
+  background-color: $background-header-color;
+
+  &__content {
+    display: grid;
+    grid-template-rows: min-content min-content 1fr;
+    row-gap: 50px;
+    padding-top: 30px;
+
+    @include onTablet {
+      grid-template-rows: none;
+      grid-template-columns: 210px 210px 210px;
+      column-gap: 30px;
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 370px 370px 370px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__contact-social {
+    display: grid;
+    grid-template-columns: 10px 20px 20px 18px;
+    column-gap: 25px;
+    padding-top: 30px;
+
+    @include onTablet {
+      padding-top: 0;
+    }
+  }
+
+  &__social {
+    &:hover {
+      opacity: 0.6;
+      -webkit-filter: invert(100%);
+      filter: invert(100%);
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display",
+      serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    color: $text-color;
+
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $text-color;
+    text-decoration: none;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    &--hover {
+      &:hover {
+        color: $background-header-color;
+        background-color: $text-color;
+      }
+    }
+  }
+
+  &__nav {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 5px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    &:first-child {
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &:hover {
+      color: $background-header-color;
+      background-color: $text-color;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__block {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $text-color;
+
+    margin-right: 22px;
+    padding-bottom: 30px;
+
+    @include onDesktop {
+      margin-right: 102px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding-bottom: 0;
+    margin-right: 5px;
+
+    &:hover {
+      transform: scale(120%, 120%);
+    }
+  }
+}
