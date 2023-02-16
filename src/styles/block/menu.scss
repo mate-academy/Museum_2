@@ -1,5 +1,5 @@
 .menu {
-  height: max-content;
+  height: 100vh;
   box-sizing: border-box;
   background-color: $background-header-color;
 
@@ -52,6 +52,13 @@
 
     color: $text-color;
     text-decoration: none;
+    transition: $duration;
+
+    &:hover {
+      color: $background-header-color;
+      background-color: $text-color;
+      border-radius: 4px;
+    }
 
     @include onTablet {
       font-weight: 700;
@@ -102,6 +109,14 @@
     text-decoration: none;
 
     color: $text-color;
+
+    &--hover {
+      &:hover {
+        border: 1px solid $text-color;
+        background-color: $text-color;
+        color: $background-header-color;
+      }
+    }
   }
 
   &__line {
