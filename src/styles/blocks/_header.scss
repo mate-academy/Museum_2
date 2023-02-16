@@ -6,6 +6,21 @@
   background-color: $color-background;
   scroll-behavior: smooth;
 
+  background-image: url(../images/header_mobile.png);
+  display: flex;
+
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    background-image: url(../images/header_tablet.png);
+  }
+
+  @include onDesktop {
+    background-image: url(../images/header.png);
+    background-position: right bottom;
+  }
+
   &__nav {
     padding-top: 20px;
     display: flex;
@@ -90,12 +105,4 @@
     display: flex;
     align-content: center;
   }
-}
-
-.images {
-  position: relative;
-  background-image: url(../images/header.png);
-
-  width: 170px;
-  height: 180px;
 }
