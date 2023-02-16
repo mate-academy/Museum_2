@@ -1,0 +1,37 @@
+.menu {
+  background-color: $colorBackgroundBlock;
+  color: $colorWhitet;
+  box-sizing: border-box;
+  
+  &__content {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(4, auto);
+    }
+  }
+
+  &__background {
+    display: none;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/img_menu.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      grid-row: 2 / -1;
+    }
+  }
+}
