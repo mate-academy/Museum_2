@@ -1,3 +1,81 @@
 h1 {
-  @extend %h1;
+  @extend %h-base;
+
+  @include onTablet {
+    size: 72px;
+  }
+
+  @include onDesktop {
+    size: 96px;
+  }
+}
+
+h2 {
+  @extend %h-base;
+  size: 38px;
+
+  @include onTablet {
+    size: 62px;
+  }
+
+  @include onDesktop {
+    size: 80px;
+  }
+}
+
+h3 {
+  @extend %h-base;
+  size: 28px;
+  line-height: 125%;
+
+  @include onTablet {
+    size: 40px;
+  }
+
+  @include onDesktop {
+    size: 58px;
+  }
+}
+
+h4 {
+  @extend %h-base;
+  size: 20px;
+  line-height: 125%;
+
+  @include onTablet {
+    size: 24px;
+  }
+}
+
+h5 {
+  @extend %h-base;
+  size: 20px;
+  line-height: 150%;
+}
+
+h6 {
+  @extend %h-base;
+  size: 14px;
+  line-height: 125%;
+}
+
+button {
+  @extend %button;
+
+  &:hover {
+    @include hover(transition, 0.3);
+    cursor: pointer;
+  }
+}
+
+p {
+  @extend %main;
+}
+
+img {
+  @extend %image;
+}
+
+a {
+  color: $white;
 }
