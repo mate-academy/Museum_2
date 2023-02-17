@@ -1,6 +1,10 @@
 .menu {
   background-color: $color-background;
-  height: 100vh;
+
+  &__content {
+    height: 100vh;
+    box-sizing: border-box;
+  }
 
   @include onTablet {
     background-image: url(../images/img_menu_tablet.png);
@@ -14,6 +18,8 @@
   }
 
   &__title {
+    text-decoration: none;
+
     &--text1 {
       margin: 10px 0 0;
       font-weight: 400;
@@ -56,6 +62,14 @@
   }
 
   &__top {
+    &--container {
+      display: flex;
+
+      @include onMobile {
+        flex-direction: row-reverse;
+      }
+    }
+
     width: 100%;
     justify-items: center;
 
@@ -69,43 +83,58 @@
       height: 77px;
     }
 
-    // @include onTablet {
-    //   padding: 0;
-    //   height: 90px;
-    // }
+    @include onTablet {
+      padding: 0;
+      height: 90px;
+    }
+  }
+
+  &__info {
+    list-style: none;
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0;
   }
 
   &__link {
-    margin: 0 0 20px;
-
     display: flex;
     text-decoration: none;
-    color: $color-white;
-
     font-family: "Playfair Display", sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
-    letter-spacing: -1;
+
+    color: $color-white;
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    margin: 0 0 20px;
 
     @include onTablet {
       margin: 0 0 30px;
     }
 
-    // @include onDesktop {
-    //   margin: 0 0 60px;
-    // }
+    @include onDesktop {
+      margin: 0 0 60px;
+    }
 
     &:first-child {
-      margin: 40px 0 20px 0;
+      margin: 40px 0 20px;
 
       @include onTablet {
-        margin: 50px 0 30px 0;
+        margin: 50px 0 30px;
       }
 
-      // @include onDesktop {
-      //   margin: 70px 0 60px 0;
-      // }
+      @include onDesktop {
+        margin: 70px 0 60px 0;
+      }
     }
 
     &:last-child {
@@ -118,25 +147,10 @@
         padding-bottom: 50px;
       }
 
-      // @include onDesktop {
-      //   margin-bottom: 60px;
-      //   padding-bottom: 60px;
-      // }
-    }
-
-    @include onTablet {
-      font-size: 48px;
-    }
-
-    @include onDesktop {
-    }
-  }
-
-  &__container {
-    display: flex;
-
-    @include onMobile {
-      flex-direction: row-reverse;
+      @include onDesktop {
+        margin-bottom: 60px;
+        padding-bottom: 60px;
+      }
     }
   }
 
