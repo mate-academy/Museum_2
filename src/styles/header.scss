@@ -1,59 +1,85 @@
 .header {
+  box-sizing: border-box;
   background: $color-background;
   height: 100vh;
-  min-height: 667px;
-  max-height: 1500px;
-  box-sizing: border-box;
+  max-width: 1280px;
+  min-height: 747px;
+  background-image: url(../images/photos/header_picture.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 273px auto;
 
   @include onTablet {
-    min-height: 1024px;
+    min-height: 1092px;
+    background-size: 494px auto;
   }
+
   @include onDesktop {
     min-height: 800px;
+    background-size: 625px auto;
+    background-position: right bottom;
   }
 
   &__content {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     color: $color-white;
-    background-image: url(../images/photos/header_picture.png);
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+    @include onTablet {
+      margin-bottom: 90px;
+    }
   }
 
   &__date {
-    margin-top: 20px;
     margin-bottom: 10px;
-    @include onTablet {
-      margin-top: 70px;
-    }
   }
 
   &__title {
     margin-bottom: 30px;
   }
 
-  &__post-date {
+  &__bottom-block {
     display: none;
+    width: 100%;
     margin-bottom: 50px;
+    box-sizing: border-box;
 
     @include onDesktop {
-      display: block;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
       color: $color-white;
-      opacity: 0.7;
-
-      &::after {
-        display: inline-block;
-        content: "";
-        position: relative;
-        bottom: 3px;
-        left: 20px;
-        width: 30%;
-        border: 1px solid $color-white;
-        opacity: 0.3;
-      }
+      column-gap: 30px;
     }
   }
+
+  &__bottom_line {
+    display: inline;
+    grid-column: 2 / 7;
+    position: relative;
+    left: 5px;
+    top: 50%;
+    height: 1px;
+    background: $color-white;
+    opacity: 0.7;
+    &::before {
+      content: "10.08 - 10.10";
+      position: relative;
+      left: -100px;
+      top: -10px;
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+    }
+  }
+
   &__button {
     margin-top: 40px;
 

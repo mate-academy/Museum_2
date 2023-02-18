@@ -1,32 +1,36 @@
 .menu {
+  box-sizing: border-box;
   background-color: $color-background;
   color: $color-white;
-  box-sizing: border-box;
   height: 100vh;
-  min-height: 667px;
-  max-height: 1500px;
-  padding-top: 30px;
+  min-height: 747px;
 
   @include onTablet {
-    min-height: 1024px;
     background-image: url(../images/photos/img_menu.png);
-    background-position-x: 70%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 466px auto;
+    min-height: 1092px;
   }
+
   @include onDesktop {
     min-height: 800px;
+    background-size: 697px auto;
+    background-position: right bottom;
   }
 
   &__info-list {
-    margin-top: 30px;
+    margin-top: 10px;
 
     @include onTablet {
-      margin-top: 50px;
+      margin-top: 30px;
+      display: flex;
+      gap: 123px;
     }
 
     @include onDesktop {
-      display: flex;
       gap: 83px;
-      margin-top: 45px;
+      margin-top: 13px;
     }
   }
 
@@ -37,7 +41,7 @@
   &__title-address {
     margin-top: 20px;
 
-    @include onDesktop {
+    @include onTablet {
       margin-top: 0;
     }
   }
@@ -48,28 +52,6 @@
 
   &__address {
     font-weight: 600;
-    width: max-content;
-  }
-
-  &__item {
-    margin-top: 20px;
-    font-size: 20px;
-    text-decoration: none;
-
-    @include onTablet {
-      font-size: 38px;
-      margin-top: 30px;
-    }
-
-    @include onDesktop {
-      font-size: 48px;
-      margin-top: 60px;
-    }
-  }
-
-  &__link {
-    text-decoration: none;
-    color: $color-white;
   }
 
   &__list {
@@ -81,6 +63,32 @@
 
     @include onDesktop {
       margin-top: 70px;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $color-white;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 150%;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    @include onTablet {
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+      font-size: 48px;
+    }
+
+    @include onDesktop {
+      &:not(:first-child) {
+        margin-top: 60px;
+      }
     }
   }
 
@@ -99,6 +107,7 @@
 
     @include onDesktop {
       margin-top: 60px;
+      opacity: 0.3;
     }
   }
 
