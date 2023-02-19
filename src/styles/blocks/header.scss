@@ -1,0 +1,172 @@
+.header {
+  box-sizing: border-box;
+  background-color: $color-gray;
+  color: $color-white;
+  
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 748px;
+    max-height: 100%;
+    position: relative;
+
+    @include onTablet {
+      min-height: 100vh;
+      height: 100%;
+      max-height: 1098px;
+    }
+
+    @include onDekstop {
+      display: block;
+      min-height: 100vh;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    grid-template-columns: 1fr var(--icon-width);
+    padding: $headerTopPadding 0;
+
+    @include onTablet {
+      grid-template-columns: 1fr var(--icon-width) var(--icon-width);
+      margin-bottom: 100px;
+    }
+
+    @include onDekstop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    
+    align-content: space-between;
+    
+  }
+
+  &__photo-container {
+    margin: 0 auto;
+    width: 234px;
+    
+
+    @include onTablet {
+      width: 434px;
+    }
+
+    @include onDekstop {
+      width: 0;
+    }
+  }
+
+  &__photo {
+    object-fit: 100%;
+    width: 246px;
+    height: 270px;
+
+    @include onTablet {
+      width: 400px;
+      height: 400px;
+    }
+
+    @include onDekstop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 624px;
+      height: 664px;
+    }
+  }
+
+  &__about {
+    display: block;
+  }
+
+  &__period {
+    @extend %additional;
+
+    @include onTablet {
+      margin: 0 0 10px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @extend %h1;
+    font-size: 48px;
+    line-height: 48px;
+    
+    color: $color-white;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      font-size: 72px;
+      line-height: 72px;
+     
+    }
+
+    @include onDekstop {
+      margin: 0 0 30px;
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__text {
+    @extend %main;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDekstop {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDekstop {
+      margin-bottom: 150px;
+    }
+
+  }
+
+  &__anons {
+    display: none;
+    @extend %h6;
+
+    @include onDekstop {
+      position: relative;
+      display: block;
+      margin-bottom: 50px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      transform: translateY(-7px);
+      left: 90px;
+      width: 100%;
+      border: 1px solid $color-white;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__language {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

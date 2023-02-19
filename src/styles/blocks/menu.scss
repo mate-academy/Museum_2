@@ -1,0 +1,205 @@
+.menu {
+  background-color: $color-gray;
+  color: $color-white;
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    height: 100vh;
+    max-height: 748px;
+
+    @include onTablet {
+      min-height: 100vh;
+      height: 100%;
+      max-height: 1098px;
+    }
+
+    @include onDekstop {
+      display: block;
+      min-height: 100vh;
+    }
+  }
+
+  &__photo-container {
+    margin: 0 auto;
+    width: 234px;
+
+    @include onTablet {
+      width: 300px;
+    }
+
+    @include onDekstop {
+      width: 0;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      
+      object-fit: 100%;
+      width: 400px;
+      height: 400px;
+    }
+
+    @include onDekstop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 624px;
+      height: 664px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    padding: $headerTopPadding 0;
+    z-index: 1;
+  }
+
+  &__language {
+    order: 1;
+  }
+
+  &__cross {
+    order: 2;
+
+    @include onTablet {
+      order: 1;
+    }
+  }
+
+  &__list {
+    margin: 0 0 30px;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      margin: 0 0 40px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 25px;
+    
+    }
+
+    @include onDekstop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid transparent;
+    @extend %h3;
+    font-size: 20px;
+    line-height: 30px;
+    color: $color-white;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: border-color 0.3s;
+    @include onTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    &:hover {
+      border-color: $color-white;
+    }
+
+    @include onTablet {
+      
+      font-size: 28px;
+      line-height: 38px;
+    }
+  }
+
+  &__schedules {
+    color: $color-white;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__schedule {
+    @extend %additional;
+  }
+
+  &__period {
+    @extend %main;
+  }
+
+  &__address {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDekstop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__info-title {
+    @extend %additional;
+  }
+
+  &__info-link {
+    @extend %main;
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__line {
+    position: relative;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDekstop {
+      padding-bottom: 60px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      border: 1px solid $color-white;
+    }
+  }
+
+  &__button {
+    margin-bottom: 200px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDekstop {
+      margin-bottom: 100px;
+      
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.subscribe {
+  &__container {
+    @include container;
+  }
+
+  &__text {
+    @extend %main;
+    color: $color-black;
+  }
+
+  &__email {
+    @extend %main;
+    box-sizing: border-box;
+    display: block;
+    outline: none;
+    width: 100%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $color-black;
+    background-color: $c-gray;
+  
+    padding: 3px 0;
+    margin-bottom: 40px;
+
+    &::placeholder {
+      @extend %main;
+      color: $color-black;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $color-main;
+
+      &::placeholder {
+        color: $color-main;
+      }
+    }
+
+    &:focus {
+      border-bottom: 1px solid #cd4d31;
+    }
+  }
+}

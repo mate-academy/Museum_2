@@ -1,0 +1,96 @@
+.page {
+  color: $color-main;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+  
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translate((-100%));
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+  
+  &__main {
+    background-color: $c-gray;
+    padding: 90px 0 80px;
+
+    @include onTablet {
+      padding: 105px 0 130px;
+
+      
+    }
+
+    @include onDekstop {
+      padding: 110px 0 200px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 60px;
+
+    &:nth-child(1) {
+      margin-bottom: 90px;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 90px;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 132px;
+
+      &:nth-child(1) {
+        margin-bottom: 160px;
+      }
+
+      &:nth-child(4) {
+        margin-bottom: 160px;
+      }
+    }
+
+    @include onDekstop {
+      margin-bottom: 110px;
+
+      &:nth-child(1) {
+        margin-bottom: 200px;
+      }
+
+      &:nth-child(4) {
+        margin-bottom: 200px;
+      }
+    }
+  }
+
+  &__section-title {
+    margin: 0 0 70px;
+
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: -1.5px;
+    color: $color-black;
+
+    @include onDekstop {
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }
+}

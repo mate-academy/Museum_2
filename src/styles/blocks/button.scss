@@ -1,0 +1,70 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  border: 2px solid $color-main;
+  background-color: $color-main;
+
+  @extend %button;
+  text-decoration: none;
+  color: $color-white;
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  &:hover {
+    border: 2px solid $color-hover;
+    background-color: $color-hover;
+  }
+
+  &:active {
+    border: 2px solid $color-active;
+    background-color: $color-active;
+  }
+
+  &:disabled {
+    border: 2px solid $color-disabled;
+    background-color: $color-disabled;
+  }
+
+  &--secondary {
+    color: $color-main;
+    background-color: $c-gray;
+    border-color: $color-main;
+
+    & svg {
+      margin-left: 11px;
+    }
+
+    & path {
+      transition: stroke 0.3s;
+    }
+
+    &:hover,
+    &:hover path {
+      color: $color-hover;
+      border-color: $color-hover;
+      background-color: $c-gray;
+      stroke: $color-hover;
+    }
+  
+    &:active,
+    &:active path {
+      color: $color-active;
+      border-color: $color-active;
+      background-color: $c-gray;
+      stroke: $color-active;
+    }
+  
+    &:disabled,
+    &:disabled path {
+      color: $color-disabled;
+      border-color: $color-disabled;
+      background-color: $c-gray;
+      stroke: $color-disabled;
+    }
+  }
+}
