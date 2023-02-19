@@ -1,0 +1,58 @@
+.visit {
+  position: relative;
+  background-color: $colorBackgroundBlock;
+  color: $colorWhitet;
+  box-sizing: border-box;
+
+  @include onDesktop {
+    height: 100vh;
+    
+  }
+
+  &__background {
+    position: absolute;
+    @include onDesktop {
+      height: 100%;
+      width: 50%;
+      background-image: url(../images/visit.png);
+      background-position: bottom left;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__title {
+    padding-top: 50px;
+    @extend %h2;
+
+    @include onTablet {
+      padding-top: 80px;
+    }
+    @include onDesktop {
+      padding-top: 0;
+      grid-column: 6 / - 1;
+    }
+  }
+
+  &__text {
+    padding-top: 20px;
+    @extend %main-text;
+    
+    @include onDesktop {
+      grid-column: 6 / - 1;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    
+    @include onTablet {
+      margin-top: 60px;
+    }
+
+    @include onDesktop {
+      margin-top: 75px;
+      grid-column: 6 / - 1;
+    }
+  }
+}
