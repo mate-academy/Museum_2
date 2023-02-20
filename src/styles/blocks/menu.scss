@@ -1,0 +1,147 @@
+.menu {
+  background-color: $backgroundColor;
+
+  &__content {
+    color: $whiteColor;
+
+    box-sizing: border-box;
+    height: 100vh;
+    padding-top: 20px;
+
+    background-image: url(../images/menu/img-menu-hovered.png);
+
+    @include onPhone {
+      background-image: none;
+    }
+  }
+
+  &__top {
+    &--telephone {
+      @include top-actions;
+
+      margin-top: 20px;
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        display: none;
+      }
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      @include top-actions;
+
+      @include onPhone {
+        display: none;
+      }
+
+      @include onTablet {
+        margin-top: 26px;
+        margin-bottom: 55px;
+      }
+  
+      @include onDesktop {
+        margin-top: 32px;
+        margin-bottom: 46px;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    gap: 83px;
+    font-weight: 600;
+
+    &--small {
+      display: inline;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    @include onPhone {
+      display: block;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+  }
+
+  &__adress {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    @include onPhone {
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 50px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__design {
+    margin-bottom: 60px;
+    background-color: $whiteColor;
+    height: 1px;
+    opacity: 0.3;
+
+    @include onPhone {
+      opacity: 1;
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      opacity: 1;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    color: $whiteColor;
+    text-decoration: none;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 120%;
+
+    transition: all ;
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+    }
+
+    @include onPhone {
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+}
