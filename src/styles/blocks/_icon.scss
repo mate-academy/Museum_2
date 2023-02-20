@@ -1,0 +1,66 @@
+.icon {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-decoration: none;
+
+  @include hover(scale, 110%);
+
+  & path {
+    fill: $color-white;
+  }
+
+  &--menu {
+    height: 25px;
+    width: 20px;
+    background-image: url(../images/menuwhite.svg);
+
+    @include onTablet {
+      margin-right: 40px;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &--lang {
+    display: none;
+    position: relative;
+    text-decoration: none;
+    color: $color-white;
+    padding-right: 3px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &::after {
+      display: inline-block;
+      position: absolute;
+      right: -10px;
+      top: 10px;
+      content: '';
+      background-image: url(../images/dropdownwhite.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 6px;
+      width: 10px;
+    }
+  }
+
+  &--cross {
+    width: 22px;
+    height: 22px;
+    background-image: url(../images/cross.svg);
+  }
+
+  &--scroll-up {
+    background-image: url(../images/scrollup.svg);
+    height: 30px;
+    width: 30px;
+  }
+}

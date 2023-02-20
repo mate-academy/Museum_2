@@ -1,0 +1,151 @@
+.menu {
+  background-color: $color-background;
+  color: $color-white;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 56px;
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+      margin-bottom: 46px;
+    }
+
+    &--top {
+      display: flex;
+      gap: 43px;
+    }
+  }
+
+  &__icon {
+    display: block;
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__paragraph {
+    font-size: 14px;
+    line-height: 14px;
+
+    &--bold {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 600;
+    }
+
+    &--link {
+      text-decoration: none;
+      color: $color-white;
+
+      &:hover {
+        border-bottom: 0.5px solid $color-white;
+      }
+    }
+  }
+
+  &__address {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      gap: 30px;
+      margin-bottom: 102px;
+    }
+
+    @include onDesktop {
+      gap: 60px;
+      margin-bottom: 122px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: -40px;
+      border: 0.5px solid $color-white;
+
+      @include onTablet {
+        bottom: -50px;
+      }
+
+      @include onDesktop {
+        bottom: -60px;
+      }
+    }
+  }
+
+  &__title {
+    text-decoration: none;
+    color: $color-white;
+    font-size: 20px;
+    line-height: 30px;
+
+    @extend %h;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    &:hover {
+      border-bottom: 0.5px solid $color-white;
+      width: fit-content;
+    }
+  }
+
+  &__image {
+    display: none;
+    background-image: url(../images/img_menu.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 466px;
+    width: 422px;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      background-position: bottom right;
+      right: 0;
+      width: 624px;
+      height: 697px;
+    }
+  }
+}
