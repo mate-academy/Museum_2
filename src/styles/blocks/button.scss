@@ -16,7 +16,6 @@
 
   @include onTablet {
     margin: 0;
-    width: 330px;
   }
 
   @include onDesktop {
@@ -29,5 +28,50 @@
 
   &:active {
     background-color: $c-btn-active;
+  }
+
+  &__alternate {
+    display: none;
+    background-color: transparent;
+    border: 1px solid $c-orange;
+    color: $c-orange;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--hidden {
+      display: flex;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-arrow {
+      stroke: $c-orange;
+      margin-left: 8px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $c-btn-hover;
+      color: $c-btn-hover;
+    }
+
+    &:hover &-arrow {
+      stroke: $c-btn-hover;
+      animation: arrow-movement 0.3s ease-in;
+    }
+
+    &:active {
+      background-color: transparent;
+      border: 1px solid $c-btn-active;
+      color: $c-btn-active;
+    }
+
+    &:active &-arrow {
+      stroke: $c-btn-active;
+    }
   }
 }

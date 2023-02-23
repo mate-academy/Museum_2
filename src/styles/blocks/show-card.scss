@@ -1,0 +1,59 @@
+.show-card {
+  &__image {
+    display: block;
+    width: 100%;
+    height: 356px;
+    object-fit: cover;
+    transition: all 0.3s;
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: auto;
+    }
+
+    @include img-hover;
+  }
+
+  &__data {
+    color: $c-orange;
+    margin: 20px 0 10px;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    @extend %section-title;
+
+    @include onTablet {
+      height: 60px;
+    }
+
+    @include onDesktop {
+      height: auto;
+    }
+  }
+
+  &__description {
+    margin: 20px 0 30px;
+    color: $c-gray;
+
+    @include onTablet {
+      height: 70px;
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      height: auto;
+      margin-bottom: 50px;
+    }
+  }
+}
