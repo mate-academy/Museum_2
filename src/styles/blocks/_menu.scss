@@ -1,0 +1,129 @@
+.menu {
+  background: $color-background;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  min-height: 100vh;
+
+  @include onTablet {
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-image: url(../images/img_menu.webp);
+  }
+
+  @include onDesktop {
+    background-image: url(../images/img_menuDesktop.webp);
+    background-position: right bottom;
+  }
+
+  &__top {
+    padding-top: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include onTablet {
+      padding: 0;
+      height: 77px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+      height: 90px;
+    }
+  }
+
+  &-container {
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__icon {
+    &-lang {
+      margin-right: 40px;
+
+      @include onTablet {
+        margin-right: 0;
+      }
+    }
+
+    &-cross {
+      margin-right: 0;
+
+      @include onTablet {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__item {
+    &-additional {
+      line-height: 140%;
+    }
+
+    &-main {
+      font-weight: 600;
+    }
+
+    &-locations {
+      display: block;
+      text-decoration: none;
+    }
+
+    &-nav {
+      text-decoration: none;
+      @include onDesktop {
+        &:hover {
+          border-bottom: 1px solid $color-white;
+        }
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-work {
+      margin: 10px 0 20px;
+
+      @include onTablet {
+        margin: 0;
+      }
+    }
+
+    &-locations {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &-nav {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      &:last-child {
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+
+        border-bottom: 1px solid $color-white;
+
+        @include onTablet {
+          padding-bottom: 50px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+}

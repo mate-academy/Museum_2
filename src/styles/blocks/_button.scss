@@ -1,0 +1,40 @@
+.button {
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+
+  cursor: pointer;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  border: 1px solid $color-main;
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &__main {
+    color: $color-white;
+    background-color: $color-main;
+  }
+
+  &__secondary {
+    background-color: #fff;
+
+    position: relative;
+    display: flex;
+    color: $color-main;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: url(../images/arrow.svg);
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+    }
+  }
+}
