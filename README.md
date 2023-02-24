@@ -8,6 +8,7 @@
   - CSS3
   - Sass (SCSS)
   - BEM
+  - JavaScript
 
 # Design
   A landing page is implemented according to the [design in Figma](https://www.figma.com/file/HL3XGt5ZatvJoYBhOaWY5x/museum-prototype?t=cZnv43txIYhRQ9qo-6)
