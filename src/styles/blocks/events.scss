@@ -1,0 +1,66 @@
+.events {
+  margin-bottom: 90px;
+
+  @include onTablet {
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 110px;
+  }
+
+  &__top {
+    @include section-action;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    @include content-margin-bottom;
+
+    @include onTablet {
+      gap: 70px;
+    }
+
+    @include onDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 358px;
+    object-fit: cover;
+    transition: all 0.3s;
+
+    @include onTablet {
+      height: auto;
+    }
+
+    @include img-hover;
+  }
+
+  &__data {
+    color: $c-orange;
+    margin: 20px 0 10px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    @extend %section-title;
+  }
+
+  &__description {
+    margin: 20px 0 30px;
+    color: $c-gray;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+}
