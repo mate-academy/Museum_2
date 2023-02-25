@@ -1,20 +1,63 @@
 .page {
+  scroll-behavior: smooth;
+
   &__body {
     margin: 0;
     padding: 0;
-  }
 
-  &__section {
-    margin: 160px 0;
-
-    &:first-child {
-      margin: 100px 0 160px;
+    &--with-menu {
+      overflow: hidden;
     }
   }
 
-  &__header {
-    box-sizing: border-box;
-    min-height: 100vh;
+  &__section {
+    &:first-child {
+      margin: 120px 0;
+
+      @include onTablet {
+        margin: 100px 0 160px;
+      }
+
+      @include onDesktop {
+        margin: 110px 0 200px;
+      }
+    }
+
+    &:nth-child(2) {
+      margin: 120px 0 90px;
+
+      @include onTablet {
+        margin: 160px 0 100px;
+      }
+
+      @include onDesktop {
+        margin: 200px 0 110px;
+      }
+    }
+
+    &:nth-child(4) {
+      margin: 90px 0 120px;
+
+      @include onTablet {
+        margin: 120px 0 160px;
+      }
+
+      @include onDesktop {
+        margin: 110px 0 200px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 80px;
+
+      @include onTablet {
+        margin-bottom: 128px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 200px;
+      }
+    }
   }
 
   &__menu {

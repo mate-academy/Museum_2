@@ -62,7 +62,19 @@
 
     cursor: pointer;
 
-    // transition: color 0.3s;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+
+      @include onTablet {
+        transform: scale(1.4);
+      }
+
+      @include onDesktop {
+        transform: scale(1.6);
+      }
+    }
 
     &-fb {
       background-image: url(../images/facebook.svg);
@@ -124,9 +136,11 @@
     height: 30px;
     width: 30px;
 
-    background-size: cover;
-    background-position: center;
+    cursor: pointer;
+
+    background-position: 50%;
     background-repeat: no-repeat;
+    background-size: contain;
 
     background-image: url(../images/skroll.svg);
   }

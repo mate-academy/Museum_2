@@ -58,8 +58,12 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: center;
 
+    transition: transform 0.4s;
     margin-top: 50px;
+
+    // box-shadow: 0 5px 5px rgba(15, 133, 133, 0.8);
 
     @include onTablet {
       margin: 0;
@@ -71,6 +75,16 @@
       height: 356px;
       overflow: hidden;
       margin: 0 0 20px;
+
+      box-shadow: 0 3px 10px rgba(99, 78, 97, 0.2);
+
+      &:hover {
+        transform: translateY(-10px);
+
+        transition: transform 0.3s;
+
+        box-shadow: 0 3px 10px rgba(99, 78, 97, 1);
+      }
 
       @include onTablet {
         max-height: 420px;
