@@ -1,0 +1,116 @@
+.subscribe {
+  padding-bottom: 80px;
+
+  @include onTablet {
+    padding-bottom: 128px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 200px;
+  }
+
+  &__top {
+    @include onTablet {
+      width: 570px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 30px;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: $c-black;
+
+    @include onDesktop {
+      width: 570px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+
+    @include main-text;
+    color: $c-black;
+
+    @include onDesktop {
+      width: 570px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 30px;
+
+    border: none;
+    border-bottom: 1px solid $c-black;
+    background-color: transparent;
+
+    @include main-text;
+    font-weight: 700;
+    color: $c-black;
+
+    transition: all 0.3s;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+
+    &::placeholder {
+      @include main-text;
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-color: $c-main;
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $c-main;
+      caret-color: $c-main;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+
+  &__button {
+    border: none;
+    cursor: pointer;
+  }
+
+  &__form-message {
+    position: absolute;
+    margin-top: 20px;
+
+    @include button-text;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $c-black;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

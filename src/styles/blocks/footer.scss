@@ -1,0 +1,102 @@
+.footer {
+  padding: 34px 0 30px;
+  background-color: $c-background;
+  color: $c-white;
+
+  @include onTablet {
+    padding: 50px 0 30px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 55px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__contacts,
+  &__schedule,
+  &__nav {
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    text-decoration: none;
+    color: $c-white;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    @include main-text;
+    text-decoration: none;
+    color: inherit;
+
+    @include hover(color, $c-main);
+  }
+
+  &__socials {
+    display: flex;
+    gap: 20px;
+    margin-top: 50px;
+  }
+
+  &__schedule-info {
+    @include main-text;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__list-item {
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  &__copyright {
+    display: flex;
+    gap: 22px;
+
+    @include onDesktop {
+      gap: 102px;
+    }
+  }
+
+  &__copyright-item {
+    @include additional-text;
+  }
+}

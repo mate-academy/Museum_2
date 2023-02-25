@@ -1,0 +1,43 @@
+.news-card {
+  @include hover(transform, scale(105%));
+  cursor: pointer;
+  
+  &__img-container {
+    @include square(280px);
+    margin-bottom: 20px;
+
+    @include onTablet {
+      @include square(330px);
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+      height: 370px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__date {
+    @include additional-text;
+    color: $c-black;
+  }
+
+  &__title {
+    color: $c-black;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @include main-text;
+    color: $c-gray;
+  }
+}

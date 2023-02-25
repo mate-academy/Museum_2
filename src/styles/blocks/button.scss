@@ -1,0 +1,61 @@
+.button {
+  display: block;
+  width: 280px;
+  height: 60px;
+  padding: 22px 0;
+
+  @include button-text;
+
+  text-align: center;
+  text-decoration: none;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &--primary {
+    color: $c-white;
+    background-color: $c-main;
+
+    @include hover(background-color, $c-button-hover);
+
+    @include active(background-color, $c-button-active);
+
+    @include disabled(background-color, $c-button-disabled);
+  }
+
+  &--secondary {
+    color: $c-main;
+    text-align: left;
+    border: 1px solid $c-main;
+
+    background-image: url(../images/button-icons/button-arrow.svg);
+    background-repeat: no-repeat;
+
+    @include onTabletOnly {
+      width: 220px;
+    }
+
+    &:hover {
+      color: $c-button-hover;
+      border-color: $c-button-hover;
+      background-image: url(../images/button-icons/button-arrow-hover.svg);
+    }
+
+    &:active {
+      color: $c-button-active;
+      border-color: $c-button-active;
+      background-image: url(../images/button-icons/button-arrow-active.svg);
+    }
+
+    &:disabled {
+      color: $c-button-disabled;
+      border-color: $c-button-disabled;
+      background-image: url(../images/button-icons/button-arrow-disabled.svg);
+    }
+  }
+}
