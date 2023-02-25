@@ -1,25 +1,11 @@
-.exhibitions {
-  &__top {
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    margin-bottom: 70px;
-  }
-
-  &__title {
-    margin: 0;
-    padding: 0;
-    font-family: "Playfair Display", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 125%;
-    color: $blackColor;
-  }
-}
-
 .exhibition {
-  max-width: 570px;
+  &__content {
+    max-width: 570px;
+
+    @include onPhone {
+      margin-bottom: 60px;
+    }
+  }
   
   &__date {
     color: $mainColor;
@@ -35,6 +21,12 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 125%;
+
+    &-2 {
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
   }
 
   &__description {
@@ -44,5 +36,26 @@
 
   &__image {
     margin-bottom: 20px;
+    object-fit: cover;
+
+    @include onPhone {
+      width: 100%;
+      height: 356px;
+    }
+
+    @include onTablet {
+      width: 100%;
+      height: 420px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
   }
 }
