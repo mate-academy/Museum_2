@@ -4,10 +4,17 @@
   align-items: center;
 
   width: 100%;
-  max-width: 330px;
   height: 60px;
 
   @extend %rale-600;
+
+  @include onTablet {
+    max-width: 330px;
+  }
+
+  @include onDesktop {
+    max-width: 270px;
+  }
 
   &--primary {
     background-color: $main-color;
@@ -63,9 +70,5 @@
   &--subscribe {
     border: none;
     cursor: pointer;
-
-    @include onDesktop {
-      width: 270px;
-    }
   }
 }
