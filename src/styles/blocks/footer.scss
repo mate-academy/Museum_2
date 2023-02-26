@@ -1,0 +1,104 @@
+.footer {
+  padding-top: 34px;
+  padding-bottom: 30px;
+  background-color: $dark-green-color;
+
+  @include onTablet {
+    padding-top: 50px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__contacts-block {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 62px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    @include font-play(18px, 150%);
+
+    @include onTablet {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+
+    &--inline-block {
+      display: inline-block;
+    }
+
+    &--shadow:hover {
+      @include hover(text-shadow, $text-shadow);
+    }
+  }
+
+  &__list {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__schedule-block {
+    margin-bottom: 50px;
+  }
+
+  &__nav-block {
+    margin-bottom: 60px;
+  }
+
+  &__item,
+  &__link,
+  &__schedule-item,
+  &__nav-link {
+    @extend %lh-150;
+  }
+  
+  &__copyright,
+  &__privacy {
+    @extend %lh-140;
+  }
+
+  &__link,
+  &__nav-link {
+    @include hover(text-shadow, $text-shadow);
+  }
+
+  &__copyright-block {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__copyright {
+    margin-right: 22px;
+
+    @include onDesktop {
+      margin-right: 102px;
+    }
+  }
+
+  &__nav-item:not(:last-child) {
+    margin-bottom: 5px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__up-button {
+    @include width-height(30px, 30px);
+    margin-left: auto;
+    background-image: url("/images/scroll-up.svg");
+    @include hover(transform, scale($icon-scale));
+  }
+}

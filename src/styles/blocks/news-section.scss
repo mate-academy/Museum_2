@@ -1,0 +1,64 @@
+.news-section {
+
+  &__container {
+    @include container;
+  }
+
+  &__secondary-button-position {
+    position: relative;
+    padding-top: 5px;
+  }
+
+  &__img-wrapper {
+    height: 280px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      height: 330px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+    }
+  }
+
+  &__content-photo {
+    @extend %object-fit;
+    box-shadow: $img-shadow;
+    @include hover(transform, scale($img-scale));
+  }
+
+  &__event-info {
+    @extend %lh-140;
+    color: $black-color;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    @include font-play(20px, 125%, $black-color);
+
+    @include onTablet {
+      line-height: 150%;
+    }
+  }
+
+  &__description {
+    line-height: 150%;
+    color: $gray-color;
+  }
+
+  &__article-one {
+    margin-bottom: 50px;
+  }
+
+  &__article-two {
+    margin-bottom: 30px;
+  }
+
+  &__secondary-button {
+
+    @include onTablet {
+      position: absolute;
+    }
+  }
+}
