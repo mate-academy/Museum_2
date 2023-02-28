@@ -3,10 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  min-height: 1092px;
+  min-height: 100vh;
 
   @include onTablet {
-    background-position: right center;
+    background-position: bottom center;
     background-repeat: no-repeat;
     background-image: url(../images/img_menu.webp);
   }
@@ -14,6 +14,7 @@
   @include onDesktop {
     background-image: url(../images/img_menuDesktop.webp);
     background-position: right center;
+    min-height: 1092px;
   }
 
   &__top {
@@ -72,7 +73,12 @@
 
     &-locations {
       display: block;
+      transition: color 0.3s;
       text-decoration: none;
+
+      &:hover {
+        color: $color-main;
+      }
     }
 
     &-nav {
