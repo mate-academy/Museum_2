@@ -1,0 +1,102 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+
+  &__wraper {
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__menu {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icon/menu.png);
+    transition: 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__cross {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../images/icon/cross.png);
+    transition: all 1s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__language--menu {
+    color: $same-white;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    margin-right: 40px;
+    @include onTablet {
+      margin: 0 0 0 40px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      width: 8px;
+      height: 5px;
+      top: -50%;
+      right: -100%;
+      transform: translateX(50%);
+      background-image: url(../images/icon/dropdown.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include onTablet {
+        top: -15px;
+      }
+    }
+  }
+
+  &__language {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: relative;
+      color: $same-white;
+      text-transform: uppercase;
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      margin-left: 40px;
+
+      &::after {
+        content: "";
+        display: block;
+        position: relative;
+        top: -50%;
+        right: -100%;
+        transform: translateX(50%);
+        width: 8px;
+        height: 5px;
+        background-image: url(../images/icon/dropdown.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
