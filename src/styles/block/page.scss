@@ -1,0 +1,61 @@
+.page {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $c-title;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0 auto;
+    background-color: $c-title;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+  
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__section {
+    margin: 90px 0 120px;
+  
+    @include tablet {
+      margin: 100px 0 160px;
+    }
+  
+    @include desktop {
+      margin: 110px 0 200px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 120%;
+    color: $c-blue;
+  
+    @include tablet {
+      font-size: 40px;
+      line-height: 125%;
+    }
+  
+    @include desktop {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}

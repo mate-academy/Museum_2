@@ -4,3 +4,37 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin top-action {
+  display: flex;
+  align-items: center;
+  
+  justify-content: space-between;
+  padding-top: 20px;
+
+  @include desktop {
+    padding-top: 26px;
+  }
+}
+
+@mixin icon-box {
+  width: max-content;
+  display: flex;
+  justify-content: space-between;
+
+  @include tablet {
+    width: 105px;
+  }
+}

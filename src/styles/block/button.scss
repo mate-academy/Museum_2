@@ -1,0 +1,48 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 60px;
+  background-color: $c-orange;
+  border: none;
+  cursor: pointer;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #f1f5f4;
+  text-decoration: none;
+
+  @include hover(background-color, $c-orangeRed);
+
+  @include desktop {
+    margin: 0;
+    width: 270px;
+  }
+
+  &:active {
+    background-color: $c-active;
+  }
+
+  &__alternate {
+    display: flex;
+    gap: 12px;
+    background-color: transparent;
+    border: 1px solid $c-orange;
+    color: $c-orange;
+  
+    @include tablet {
+      display: flex;
+    }
+  
+    &--hidden {
+      display: flex;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
