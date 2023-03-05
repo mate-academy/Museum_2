@@ -1,0 +1,95 @@
+button {
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button {
+  display: block;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+
+  @include onTablet {
+    max-width: 330px;
+  }
+
+  @include onDesktop {
+    max-width: 270px;
+  }
+
+  &--primary {
+    background-color: $main;
+    text-align: center;
+    color: $white;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    &:hover {
+      background: #af3419;
+    }
+
+    &:active {
+      background: #ea340d;
+    }
+
+    &:disabled {
+      background: #dd836f;
+    }
+  }
+
+  &--secondary {
+    box-sizing: border-box;
+    background-color: $white;
+    border: 1px solid $main;
+    text-align: center;
+    color: $main;
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 12px;
+      position: absolute;
+      bottom: 19px;
+      background-color: $main;
+      -webkit-mask-image: url(../images/arrow.svg);
+      mask-image: url(../images/arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+
+      &::after {
+        background-color: #af3419;
+      }
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+
+      &::after {
+        background-color: #ea340d;
+      }
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+      color: #dd836f;
+
+      &::after {
+        background-color: #dd836f;
+      }
+    }
+  }
+}
