@@ -4,17 +4,35 @@
     font-family: $_raleway;
     color: $colorBlack;
     background-color: $colorWhite;
+
+    &--with-menu {
+      overflow: hidden;
+    }
   }
 
-  // &__header {
-  //   margin-bottom: 90px;
+  &__header {
+    margin-bottom: 90px;
 
-  //   @include onTablet {
-  //     margin-bottom: 100px;
-  //   }
+    @include onTablet {
+      margin-bottom: 100px;
+    }
 
-  //   @include onDesktop {
-  //     margin-bottom: 110px;
-  //   }
-  // }
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+    transition: transform $smoothTime linear;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
 }
