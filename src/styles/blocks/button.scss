@@ -39,11 +39,13 @@
 
   &--secondary {
     color: $colorMain;
-    text-align: left;
+    background-color: #FFF;
     border: 1px solid $colorMain;
 
     background-image: url(../images/button_arrow.png);
     background-repeat: no-repeat;
+    background-position-x: 215px;
+    background-position-y: 19px;
 
     &:hover {
       color: $colorButtonHover;
@@ -61,6 +63,18 @@
       color: $colorButtonDisabled;
       border: 1px solid $colorButtonDisabled;
       background-image: url(../images/button_arrow.png);
+    }
+  }
+
+  &--mobile {
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
     }
   }
 }
