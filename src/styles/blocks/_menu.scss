@@ -1,0 +1,148 @@
+.menu {
+  z-index: 100;
+  padding-top: 20px;
+  background-color: $backg-col;
+
+  @include onTablet {
+    padding-top: 26px;
+    height: 130vh;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+    padding-top: 32px;
+  }
+
+  &__nav {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__date {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin: 0 120px 50px 0;
+    }
+  }
+
+  &__date--1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $same-white;
+  }
+
+  &__date--2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $same-white;
+  }
+
+  &__adress--1 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $same-white;
+  }
+
+  &__adress--2 {
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $same-white;
+    transition: all 0.5s ease;
+
+    &:hover {
+      color: $orange-text;
+    }
+  }
+
+  &__list {
+    padding-bottom: 40px;
+    border-bottom: 1px solid $same-white;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      max-width: 570px;
+      width: 58%;
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    list-style: none;
+    transition: all 0.5s;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    &:hover {
+      transform: scale(0.99);
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $same-white;
+    text-decoration: none;
+    transition: all 0.5s;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+    &:hover {
+      color: $orange-text;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include onDesktop {
+      transform: none;
+      left: auto;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
