@@ -14,8 +14,9 @@ function buttonClick(event) {
 menu.addEventListener('click', menuChecked);
 
 function menuChecked(evt) {
-  if (evt.target.className === 'menu__link'
-      || evt.target.className === 'button menu__button') {
+  if (evt.target.className === 'menu__link' ||
+      evt.target.className === 'button menu__button' ||
+      evt.target.className === 'logo__image') {
     menuIcon.checked = false;
   }
 
