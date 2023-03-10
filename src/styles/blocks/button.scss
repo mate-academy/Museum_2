@@ -5,7 +5,6 @@
   height: 60px;
 
   @include button-text;
-  text-align: center;
   text-decoration: none;
 
   cursor: pointer;
@@ -38,31 +37,53 @@
   }
 
   &--secondary {
+    padding-right: 30px;
     color: $colorMain;
     background-color: #FFF;
     border: 1px solid $colorMain;
+    position: relative;
 
-    background-image: url(../images/button_arrow.png);
-    background-repeat: no-repeat;
-    background-position-x: 215px;
-    background-position-y: 19px;
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 12px;
+      position: absolute;
+      bottom: 19px;
+      background-color: $colorMain;
+      -webkit-mask-image: url(../images/button_arrow.png);
+      mask-image: url(../images/button_arrow.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
 
     &:hover {
       color: $colorButtonHover;
       border: 1px solid $colorButtonHover;
-      background-image: url(../images/button_arrow.png);
+
+      &::after {
+        background-color: $colorButtonHover;
+      }
     }
 
     &:active {
       color: $colorButtonActive;
       border: 1px solid $colorButtonActive;
-      background-image: url(../images/button_arrow.png);
+
+      &::after {
+        background-color: $colorButtonActive;
+      }
     }
 
     &:disabled {
       color: $colorButtonDisabled;
       border: 1px solid $colorButtonDisabled;
-      background-image: url(../images/button_arrow.png);
+
+      &::after {
+        background-color: $colorButtonDisabled;
+      }
     }
   }
 

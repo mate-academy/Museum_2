@@ -1,0 +1,84 @@
+.subscribe {
+  &__top {
+    @include onDesktop {
+      margin: 0 0 50px;
+      display: flex;
+      width: 100%;
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    @include h3;
+    color: $colorBlack;
+
+    @include onDesktop {
+      width: 570px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 50px;
+    @include main-text;
+    color: $colorBlack;
+
+    @include onTablet {
+      width: 570px;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    margin: 0 0 30px;
+
+    border: none;
+    border-bottom: 1px solid $colorBlack;
+    background-color: transparent;
+
+    @include main-text;
+    font-weight: 700;
+    color: $colorBlack;
+
+    transition: all $transitionTime;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 40px;
+      width: 470px;
+    }
+
+    &::placeholder {
+      @include main-text;
+      font-weight: 400;
+      color: $colorBlack;
+    }
+
+    &:hover {
+      border-color: $colorMain;
+      &::placeholder {
+        color: $colorMain;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $colorMain;
+      caret-color: $colorMain;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}

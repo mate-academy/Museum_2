@@ -4,7 +4,7 @@
     margin: 0 0 60px;
     @include h3;
     color: $colorBlack;
-    text-align: center;
+    text-align: left;
 
     @include onTablet {
       display: grid;
@@ -34,14 +34,19 @@
   }
 
   &__image-container {
-    display: grid;
-    margin: 0 0 60px;
+    display: block;
+    margin: 0 0 20px;
     width: 100%;
 
     @include onTablet {
+      display: grid;
       margin: 0 0 70px;
     }
 
+    @include onDesktop {
+      display: grid;
+      margin: 0 0 60px;
+    }
 
     transition: transform $transitionTime;
 
@@ -54,7 +59,6 @@
     width: 100%;
 
     @include onDesktop {
-      // width: 570px;
       max-height: 484px;
       object-fit: cover;
     }
@@ -70,12 +74,6 @@
     margin: 0 0 20px;
     @include h4;
     color: $colorBlack;
-
-    // @include onTablet {
-    //   &:nth-last-child(2n) {
-    //     margin: 0 0 50px;
-    //   }
-    // }
   }
 
   &__subtitle {
@@ -90,4 +88,8 @@
       margin: 0 0 30px;
     }
   }
+}
+
+.grid__item:nth-last-child(-n+2) > .nearests__image-container {
+  margin-bottom: 0;
 }
