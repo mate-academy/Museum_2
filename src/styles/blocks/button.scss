@@ -8,6 +8,11 @@
   height: 60px;
   border: 1px solid transparent;
 
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+
   &--first-type {
     background-color: $def-button-color;
 
@@ -21,6 +26,50 @@
 
     &:disabled {
       background-color: $dis-button-color;
+    }
+  }
+
+  &--second-type {
+    color: $def-button-color;
+    border-color: $def-button-color;
+
+    &::after {
+      content: "";
+      display: block;
+      background-image: url(../images/arrow-def.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 14px;
+      width: 14px;
+      margin-left: 8px;
+    }
+
+    &:hover {
+      color: $hov-button-color;
+      border-color: $hov-button-color;
+
+      &::after {
+        background-image: url(../images/arrow-hov.svg);
+      }
+    }
+
+    &:active {
+      color: $pres-button-color;
+      border-color: $pres-button-color;
+
+      &::after {
+        background-image: url(../images/arrow-pres.svg);
+      }
+    }
+
+    &:disabled {
+      color: $dis-button-color;
+      border-color: $dis-button-color;
+
+      &::after {
+        background-image: url(../images/arrow-dis.svg);
+      }
     }
   }
 }

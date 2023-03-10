@@ -1,6 +1,66 @@
 .page {
   scroll-behavior: smooth;
 
+  &__section {
+    position: relative;
+    margin-bottom: 120px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__button {
+    position: static;
+    background-position: 30 20;
+    background-repeat: no-repeat;
+
+    width: 100%;
+
+    @include onTablet {
+      position: absolute;
+      top: 0;
+      right: 39px;
+
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      right: 55px;
+    }
+  }
+  
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+
+      .page__section {
+        position: static;
+      }
+
+      .page__button {
+        position: static;
+      }
+    }
+  }
+
+  &__header {
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 105px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
   &__menu {
     position: fixed;
     top: 0;
@@ -14,4 +74,25 @@
       transform: translateX(0);
     }
   }
+
+  &__section-title {
+    margin-bottom: 60px;
+
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $black-text-color;
+
+    @include onTablet {
+      margin-bottom: 75px;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 71px;
+      font-size: 48px;
+    }
+  }
+
 }
