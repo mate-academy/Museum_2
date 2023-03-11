@@ -1,9 +1,54 @@
 .page {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  color: $c-light;
+  color: $c-black;
 
   &__body {
     margin: 0;
   }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translate(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 90px;
+  }
+
+  &__section-preview {
+    margin-bottom: 60px;
+  }
+
+  &__section-title {
+    font-family: "Playfair Display", sans-serif;
+    margin: 0;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__section-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 }
+
