@@ -1,0 +1,58 @@
+.page {
+  min-width: 320px;
+
+  @extend %fontRaleway400;
+  font-size: 16px;
+  line-height: 1.5;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $whiteColor;
+
+    &--with-nav {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    margin-bottom: 120px;
+  }
+
+  &__section-title {
+    margin-bottom: 60px;
+
+    @extend %fontPlayfair;
+    font-size: 28px;
+    line-height: 1.25;
+    color: $blackColor;
+
+    @include onTablet {
+      margin-bottom: 0;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 1.2;
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translate(100%, -10%);
+    opacity: 0;
+    transition: all $primaryDuration;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translate(0);
+      pointer-events: all;
+    }
+  }
+}

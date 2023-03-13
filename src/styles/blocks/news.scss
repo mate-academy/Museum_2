@@ -1,0 +1,76 @@
+.news {
+  @include onTablet {
+    margin-bottom: 160px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__header {
+    @include flex(center, space-between);
+
+    @include onTablet {
+      margin-bottom: 76px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 54px;
+    }
+  }
+
+  &__card {
+    height: 100%;
+    margin-bottom: 60px;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      height: 370px;
+      object-fit: cover;
+      object-position: 50% 10%;
+    }
+  }
+
+  &__date {
+    color: $blackColor;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+
+    @extend %fontPlayfair;
+    font-size: 20px;
+    line-height: 1.25;
+    color: $blackColor;
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 1.5;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    color: $grayColor;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+}

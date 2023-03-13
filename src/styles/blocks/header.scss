@@ -1,0 +1,135 @@
+.header {
+  margin-bottom: 90px;
+
+  position: relative;
+  background-color: $primaryBgColor;
+
+  @include onTablet {
+    margin-bottom: 100px;
+  }
+
+  &__icon {
+    &--menu {
+      @include square (30px);
+    }
+  }
+
+  &__content {
+    min-height: 748px;
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @include onTablet {
+      min-height: 1092px;
+    }
+
+    @include onDesktop {
+      padding-top: 26px;
+      min-height: 700px;
+      height: 100vh;
+    }
+  }
+
+  &__actions-right {
+    @include flex(center, normal);
+    gap: 40px;
+  }
+
+  &__image {
+    margin: auto;
+    height: 280px;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @include onTablet {
+      height: 494px;
+    }
+
+    @include onDesktop {
+      left: unset;
+      height: 663px;
+    }
+  }
+
+  &__top-actions {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__additional-text {
+    margin-bottom: 10px;
+
+    @extend %additional-text;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @extend %fontPlayfair;
+    font-size: 48px;
+    line-height: 1;
+    color: $whiteColor;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      font-size: 96px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 50px;
+    color: $whiteColor;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 50px;
+    left: 55px;
+
+    @extend %fontPlayfair;
+    font-size: 14px;
+    line-height: 1.25;
+    color: $whiteColor;
+
+    opacity: 0.7;
+
+    &::after {
+      content: "";
+      width: 400px;
+      height: 1px;
+
+      position: absolute;
+      left: 110px;
+      bottom: 6px;
+
+      background: $whiteColor;
+      opacity: 0.3;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+}
