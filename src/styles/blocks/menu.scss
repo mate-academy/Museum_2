@@ -1,12 +1,13 @@
 .menu {
   background-color: $colorBackground;
-  height: 100vh;
+  // height: 100vh;
 
   &__content {
-    @include onDesktop {
-      display: flex;
-      gap: 30px;
-    }
+    height: 100vh;
+    // padding: 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__top {
@@ -14,16 +15,26 @@
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
 
     @include onTablet {
       height: 77px;
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
     }
 
     @include onDesktop {
       height: 90px;
-      margin-bottom: 30px;
+      // margin-bottom: 30px;
+    }
+  }
+
+  &__event {
+    // margin: 0 0 238px;
+    @include onTablet {
+      margin: 0;
+    }
+    @include onDesktop {
+      margin: 0 0 108px;
     }
   }
 
@@ -120,45 +131,36 @@
     }
   }
 
-  &__button {
-    @include onTablet {
-      margin: 0 0 30px;
-    }
-  }
+  // &__button {
+  //   @include onTablet {
+  //     margin: 0 0 30px;
+  //   }
+  // }
 
-  &__image-container {
-    height: 100vh;
+  &__image {
     display: none;
 
     @include onTablet {
-      display: block;
-      margin: 0 auto;
-      width: 422px;
+      display: flex;
+      align-self: center;
       height: 466px;
     }
 
     @include onDesktop {
-      margin: 0 -55px 0 0;
-      width: 624px;
-      height: 697px;
+      display: none;
     }
   }
 
-  &__image {
-    position: absolute;
-    bottom: 0;
-
-    @include onTablet {
-      width: 422px;
-      height: 466px;
-    }
+  &__image-desktop {
+    display: none;
 
     @include onDesktop {
-      width: 624px;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      right: 0;
       height: 697px;
     }
-
-    object-fit: cover;
-    object-position: bottom;
   }
 }

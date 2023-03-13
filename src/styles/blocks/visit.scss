@@ -1,4 +1,5 @@
 .visit {
+  position: relative;
   background-color: $colorBackground;
   color: $colorWhite;
   padding: 50px 0;
@@ -8,24 +9,39 @@
   }
 
   @include onDesktop {
-    display: grid;
-    padding: 205px 0;
+    // display: grid;
+    height: 800px;
+    box-sizing: border-box;
+    padding: 205px 0 0;
 
-    background-image: url(../images/visit.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
+    // background-image: url(../images/visit.svg);
+    // background-repeat: no-repeat;
+    // background-size: contain;
   }
 
-  &__content {
-    @include onTablet {
-      width: 450px;
-    }
+  &__image {
+    display: none;
 
     @include onDesktop {
-      width: 650px;
-      margin-left: 500px;
+      display: block;
+      position: absolute;
+      height: 100%;
+      left: 0;
+      bottom: 0;
+      overflow: hidden;
     }
   }
+
+  // &__content {
+  //   @include onTablet {
+  //     width: 450px;
+  //   }
+
+  //   @include onDesktop {
+  //     width: 650px;
+  //     margin-left: 500px;
+  //   }
+  // }
 
   &__title {
     margin: 0 0 20px;
