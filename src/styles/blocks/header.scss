@@ -10,6 +10,7 @@
     justify-content: space-between;
 
     @include onDesktop {
+      position: relative;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: repeat(4, auto);
@@ -55,7 +56,7 @@
     }
   }
 
-  &__background {
+  &__background-mobile {
     display: block;
     height: 100%;
     width: 100%;
@@ -65,8 +66,20 @@
     background-position: bottom center;
 
     @include onDesktop {
-      grid-column: 7 / -1;
-      grid-row: 2 / -1;
+      display: none;
+    }
+  }
+
+  &__background-desktop {
+    position: absolute;
+    @include onDesktop {
+      height: 100%;
+      width: 50%;
+      left: 50%;
+      background-image: url(../images/background-image.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
     }
   }
 
