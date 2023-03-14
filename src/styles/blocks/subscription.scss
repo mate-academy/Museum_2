@@ -1,0 +1,53 @@
+.subscription {
+
+  &__container {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 13;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__title {
+    color: $blackColor;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $blackColor;
+  }
+
+  &__form {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+}

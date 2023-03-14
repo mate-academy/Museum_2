@@ -1,0 +1,136 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+
+  background-color: #3f5252;
+  overflow-y: auto;
+
+  &__nav {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30;
+    }
+
+    @include onDesktop {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__main {
+    padding-bottom: 238px;
+
+    @include onTablet {
+      padding-bottom: 30px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 108px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__event {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+      gap: 60px;
+    }
+  }
+
+  &__item-list {
+    &:last-child {
+      padding-bottom: 40px;
+
+      border-bottom: 1px solid $whiteColor;
+
+      @include onTablet {
+        padding-bottom: 50px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: $whiteColor;
+
+    @include hover (text-decoration, underline);
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__img-wrapper {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__image {
+    object-fit: contain;
+    object-position: top;
+
+    @include onTablet {
+      width: 61%;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      right: 0;
+      top: 103px;
+      width: 49%;
+      height: 697px;
+    }
+  }
+}

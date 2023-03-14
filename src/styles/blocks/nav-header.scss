@@ -1,0 +1,57 @@
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 0;
+
+  @include onTablet {
+    padding: 26px 0;
+  }
+
+  @include onDesktop {
+    padding: 32px 0;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      gap: 40px;
+    }
+  }
+
+  &__country {
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+
+      font-weight: 500;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    &--none {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__arrow-country {
+    @include hover (fill, $blackColor);
+  }
+
+  &__cross {
+
+    @include onTablet {
+      order: -1;
+    }
+  }
+}

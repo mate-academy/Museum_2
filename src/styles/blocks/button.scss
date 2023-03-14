@@ -1,0 +1,72 @@
+.button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 22px 0;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+
+  color: $whiteColor;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &--primary {
+    background-color: $mainColor;
+
+    @include hover (background-color, #af3419);
+    @include active (background-color, #dd836f);
+    @include visited (background-color, #ea340d);
+  }
+
+  &--secondary {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: $mainColor;
+
+    border: 1px solid $mainColor;
+
+    @include hover (color, #af3419);
+    @include hover (border-color, #af3419);
+
+    @include visited (color, #ea340d);
+    @include visited (border-color, #ea340d);
+
+    @include active (color, #dd836f);
+    @include active (border-color, #dd836f);
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &--visible {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &--not-visible {
+    display: flex;
+    margin-top: 30px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
