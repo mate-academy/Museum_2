@@ -1,25 +1,29 @@
 .nav {
   background-color: $primaryBgColor;
+  z-index: 999;
 
-  @include onTablet {
-    &::after {
-      content: "";
-      height: 422px;
-      width: 100%;
-      position: absolute;
-      bottom: 0;
+  &--with-after {
+    @include onTablet {
+      &::after {
+        content: "";
+        min-height: 422px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+  
+        background-image: url(../images/header/Menu_image.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
 
-      background-image: url(../images/header/Menu_image.png);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-
-      @include onDesktop {
-        height: auto;
-        width: 50%;
-        top: 104px;
-        right: 0;
-        background-position: center bottom;
+        @include onDesktop {
+          min-height: 600px;
+          height: auto;
+          width: 50%;
+          top: 104px;
+          right: 0;
+          background-position: center bottom;
+        }
       }
     }
   }
@@ -33,17 +37,11 @@
   }
 
   &__content {
+    height: 100vh;
     padding-top: 20px;
-    min-height: 748px;
-
-    @include onTablet {
-      min-height: 1092px;
-    }
 
     @include onDesktop {
       padding-top: 26px;
-      min-height: 700px;
-      height: 100vh;
     }
   }
 

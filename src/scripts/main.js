@@ -2,10 +2,28 @@
 
 // Nav
 window.addEventListener('hashchange', () => {
+  const nav = document.querySelector('.nav');
+
   if (window.location.hash === '#nav') {
     document.body.classList.add('page__body--with-nav');
+    nav.style.overflowY = 'auto';
   } else {
     document.body.classList.remove('page__body--with-nav');
+    nav.style.overflowY = 'hidden';
+  }
+});
+
+// Nav image
+window.addEventListener('resize', () => {
+  const nav = document.querySelector('.nav');
+  const tabletMediaQuery = window.matchMedia(
+    '(min-width: 640px) and (max-width: 1024px)'
+  );
+
+  if (tabletMediaQuery.matches && nav.offsetHeight < 1024) {
+    nav.classList.remove('nav--with-after');
+  } else {
+    nav.classList.add('nav--with-after');
   }
 });
 

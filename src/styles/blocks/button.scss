@@ -9,11 +9,6 @@
   text-align: center;
 
   @include flex(center, center);
-
-  @include onTablet {
-    max-width: 330px;
-  }
-
   @include onDesktop {
     width: 270px;
   }
@@ -21,7 +16,11 @@
   &--primary {
     background-color: $primaryColor;
 
-    transition: all $primaryDuration;
+    transition: background-color $primaryDuration, opacity $primaryDuration;
+
+    @include onTablet {
+      max-width: 330px;
+    }
 
     @include onDesktop {
       &:hover {
@@ -53,6 +52,10 @@
       background-size: cover;
 
       @include square (20px);
+    }
+
+    @include onTablet {
+      max-width: 210px;
     }
 
     @include onDesktop {

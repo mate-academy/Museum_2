@@ -1,9 +1,16 @@
 .image {
   width: 280px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 
   @include onTablet {
     width: 100%;
-
+    position: static;
+    transform: none;
+  }
+  
+  @include onDesktop {
     @include hover (transform, scale(1.02));
   }
 }
