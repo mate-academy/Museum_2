@@ -1,15 +1,23 @@
 .header {
   background-color: $backgroundColor;
+  position: relative;
   
   &__content {
     color: $whiteColor;
 
-    box-sizing: border-box;
-    height: 100vh;
-    padding-top: 20px;
-    margin-bottom: 100px;
+    min-height: 100vh;
+    height: 749px;
+    display: flex;
+    flex-direction: column;
 
-    background-image: url(../images/menu/img-menu.png);
+    @include onTablet {
+      min-height: 100vh;
+      height: 1093px;
+    }
+
+    @include onDesktop {
+      height: 800px;
+    }
   }
 
   &__top {
@@ -42,7 +50,7 @@
   
       @include onDesktop {
         margin-top: 32px;
-        margin-bottom: 122px;
+        margin-bottom: 100px;
       }
     }
   }
@@ -66,6 +74,34 @@
 
     &--image {
       margin-left: 3px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    align-self: center;
+    width: 245px;
+    height: 275px;
+
+    @include onPhone {
+      left: 20%;
+    }
+
+    @include onTablet {
+      width: 445px;
+      height: 495px;
+      left: 20%;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: calc(100% - 90px);
+      object-fit: contain;
+      object-position: bottom right;
     }
   }
 
@@ -145,15 +181,6 @@
 
     @include onTablet {
       display: none;
-    }
-  }
-
-  &__image {
-    position: absolute;
-    bottom: 0;
-
-    @include onTablet {
-      height: 494px;
     }
   }
 }

@@ -4,14 +4,18 @@
   &__content {
     color: $whiteColor;
 
-    box-sizing: border-box;
-    height: 100vh;
-    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 749px;
+    
+    @include onTablet {
+      min-height: 100vh;
+      height: 1093px;
+    }
 
-    background-image: url(../images/menu/img-menu-hovered.png);
-
-    @include onPhone {
-      background-image: none;
+    @include onDesktop {
+      min-height: 800px;
     }
   }
 
@@ -71,7 +75,7 @@
     }
 
     @include onDesktop {
-      margin-bottom: 70px;
+      margin-bottom: 40px;
     }
   }
 
@@ -80,7 +84,7 @@
   }
 
   &__adress {
-    margin-bottom: 40px;
+    margin-bottom: 25px;
   }
 
   &__list {
@@ -101,7 +105,7 @@
     }
 
     @include onDesktop {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
   }
 
@@ -142,6 +146,29 @@
     @include onPhone {
       font-size: 20px;
       line-height: 150%;
+    }
+  }
+
+  &__image {
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: block;
+      margin: 0 auto;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: calc(100% - 90px);
+      object-fit: contain;
+      object-position: bottom right;
     }
   }
 }

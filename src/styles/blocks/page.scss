@@ -5,6 +5,8 @@
   font-size: 16px;
   line-height: 24px;
 
+  scroll-behavior: smooth;
+
   &__body {
     margin: 0;
   }
@@ -51,6 +53,30 @@
     line-height: 125%;
     color: $blackColor;
   }
+
+  &__link {
+    text-decoration: none;
+    color: $whiteColor;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $mainColor;
+    }
+  }
+
+  &__image {
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(103%);
+      box-shadow: 8px 8px 12px $mainColor;
+      z-index: 2;
+    }
+  }
+}
+
+.page__body--with-menu {
+  overflow: hidden;
 }
 
 .hidden-element {
@@ -60,6 +86,8 @@
 }
 
 .hidden-element-2 {
+  margin-top: 30px;
+
   @include onTablet {
     display: none;
   }
