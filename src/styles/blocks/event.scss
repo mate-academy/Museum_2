@@ -1,22 +1,24 @@
 .event {
-  @include hover(transform, scale(105%));
-  cursor: pointer;
-  
+  flex-grow: 1;
+
+  @include onDesktop {
+    flex-grow: 0;
+
+    @include hover(transform, scale(105%));
+  }
 
   &__img-container {
     width: 100%;
-    max-width: 570px;
-    height: 356px;
+    height: auto;
     margin-bottom: 20px;
 
     @include onTablet {
-      height: 420px;
+      max-height: 600px;
       margin-bottom: 30px;
     }
 
     @include onDesktop {
       width: 570px;
-      height: 484px;
       margin-bottom: 20px;
     }
 
@@ -33,11 +35,14 @@
   }
 
   &__content {
+    max-width: 440px;
+
     @include onTablet {
       width: 330px;
     }
 
     @include onDesktop {
+      max-width: unset;
       width: 570px;
     }
   }

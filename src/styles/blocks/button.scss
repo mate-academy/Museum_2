@@ -21,11 +21,13 @@
     color: $c-white;
     background-color: $c-main;
 
-    @include hover(background-color, $c-button-hover);
-
     @include active(background-color, $c-button-active);
 
     @include disabled(background-color, $c-button-disabled);
+
+    @include onDesktop {
+      @include hover(background-color, $c-button-hover);
+    }
   }
 
   &--secondary {
@@ -39,13 +41,7 @@
     @include onTabletOnly {
       width: 220px;
     }
-
-    &:hover {
-      color: $c-button-hover;
-      border-color: $c-button-hover;
-      background-image: url(../images/button-icons/button-arrow-hover.svg);
-    }
-
+    
     &:active {
       color: $c-button-active;
       border-color: $c-button-active;
@@ -56,6 +52,14 @@
       color: $c-button-disabled;
       border-color: $c-button-disabled;
       background-image: url(../images/button-icons/button-arrow-disabled.svg);
+    }
+
+    @include onDesktop {
+      &:hover {
+        color: $c-button-hover;
+        border-color: $c-button-hover;
+        background-image: url(../images/button-icons/button-arrow-hover.svg);
+      }
     }
   }
 }

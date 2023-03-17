@@ -32,6 +32,7 @@
   }
 
   &__title {
+    display: block;
     margin-bottom: 10px;
 
     font-size: 18px;
@@ -42,6 +43,12 @@
       margin-bottom: 30px;
       font-size: 20px;
     }
+
+    &--link {
+      @include onDesktop {
+        @include hover(color, $c-main);
+      }
+    }
   }
 
   &__link {
@@ -51,7 +58,9 @@
     text-decoration: none;
     color: inherit;
 
-    @include hover(color, $c-main);
+    @include onDesktop {
+      @include hover(color, $c-main);
+    }
   }
 
   &__socials {

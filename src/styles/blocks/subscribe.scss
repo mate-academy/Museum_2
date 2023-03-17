@@ -2,10 +2,12 @@
   padding-bottom: 80px;
 
   @include onTablet {
+    padding-top: 160px;
     padding-bottom: 128px;
   }
 
   @include onDesktop {
+    padding-top: 0;
     padding-bottom: 200px;
   }
 
@@ -32,10 +34,15 @@
   }
 
   &__description {
+    max-width: 400px;
     margin-bottom: 50px;
 
     @include main-text;
     color: $c-black;
+
+    @include onTablet {
+      max-width: unset;
+    }
 
     @include onDesktop {
       width: 570px;
@@ -45,6 +52,7 @@
 
   &__input {
     width: 100%;
+    max-width: 400px;
     margin-bottom: 30px;
 
     border: none;
@@ -63,18 +71,18 @@
 
     @include onDesktop {
       width: 470px;
+
+      &:hover {
+        border-color: $c-main;
+        &::placeholder {
+          color: $c-main;
+        }
+      }
     }
 
     &::placeholder {
       @include main-text;
       font-weight: 400;
-    }
-
-    &:hover {
-      border-color: $c-main;
-      &::placeholder {
-        color: $c-main;
-      }
     }
 
     &:focus {

@@ -1,13 +1,28 @@
 .news-card {
-  @include hover(transform, scale(105%));
-  cursor: pointer;
-  
+  flex-grow: 1;
+
+  @include onDesktop {
+    flex-grow: 0;
+    @include hover(transform, scale(105%));
+  }
+
   &__img-container {
-    @include square(280px);
+    position: relative;
+    width: 100%;
+    height: 100%;
     margin-bottom: 20px;
 
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+
+      @include onTablet {
+        padding-bottom: 50%;
+      }
+    }
+
     @include onTablet {
-      @include square(330px);
       margin-bottom: 30px;
     }
 
@@ -19,11 +34,18 @@
   }
 
   &__img {
+    position: absolute;
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-    object-position: center;
+    object-position: 50% 50%;
+
+    &--desktop {
+      @include onDesktop {
+        object-position: top;
+      }
+    }
   }
 
   &__date {
@@ -37,7 +59,16 @@
   }
 
   &__description {
+    max-width: 330px;
     @include main-text;
     color: $c-gray;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 550px;
+    }
   }
 }
