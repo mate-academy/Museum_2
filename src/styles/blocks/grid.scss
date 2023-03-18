@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  column-gap: 20px;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 90px);
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 70px);
+  }
+
+  &--phone {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__item {
+    &--actual {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
