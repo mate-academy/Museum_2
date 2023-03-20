@@ -1,0 +1,65 @@
+.button {
+  display: block;
+  height: 60px;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 60px;
+  text-align: center;
+
+  background-color: $colorMainAccent;
+  color: $colorWhitet;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $colorHover;
+  }
+
+  &:active {
+    background-color: $colorActive;
+  }
+}
+
+.button-secondary {
+  display: block;
+  margin-top: 30px;
+  height: 60px;
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 60px;
+  text-align: center;
+
+  color: $colorMainAccent;
+  border: 1px solid $colorMainAccent;
+  text-decoration: none;
+
+  &__text {
+    position: relative;
+    margin: 0;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background-image: url(../images/arrow.png);
+      top: 50%;
+      transform: translateY(-50%);
+      height: 20px;
+      width: 20px;
+      margin-left: 10px;
+    }
+  }
+
+  &:hover {
+    color: $colorHover;
+    border: 1px solid $colorHover;
+  }
+
+  &:active {
+    background-color: #fff;
+    color: $colorActive;
+    border: 1px solid $colorActive;
+  }
+
+  @include onTablet {
+    margin-top: 90px;
+  }
+}

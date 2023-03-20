@@ -1,0 +1,36 @@
+.page {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 16;
+  line-height: 100%;
+  color: $colorBlackAccent;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background: $colorBackgroundPage;
+    
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__section {
+    height: 100vh;
+  }
+
+  &__menu {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: 300ms;
+    transform: translateX(-100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

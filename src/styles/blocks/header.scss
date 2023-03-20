@@ -1,0 +1,107 @@
+.header {
+  background-color: $colorBackgroundBlock;
+  color: $colorWhitet;
+  box-sizing: border-box;
+  
+  &__content {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(4, auto);
+    }
+  }
+
+  &__title {
+    margin-bottom: 50px;
+
+    &--date {
+      @extend %additional-text;
+      margin-bottom: 10px;
+    }
+
+    &--name {
+      margin-bottom: 20px;
+    }
+
+    &--description {
+      @extend %additional-text;
+      margin: 0;
+    }
+
+    @include onTablet {
+      margin-top: 100px;
+    }
+
+    @include onDesktop {
+      grid-area: 2 / 1 / 3 / 7;
+    }
+  }
+
+  &__button {
+    display: block;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      grid-area: 3 / 1 / 4 / 4;
+      margin-bottom: 135px;
+    }
+  }
+
+  &__background-mobile {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/background-image.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__background-desktop {
+    position: absolute;
+    @include onDesktop {
+      height: 100%;
+      width: 50%;
+      left: 50%;
+      background-image: url(../images/background-image.png);
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__period {
+    display: none;
+    grid-area: 4 / 1 / -1 / 2;
+    opacity: 70%;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__deco-line {
+    display: none;
+    grid-area: 4 / 2 / -1 / 7;
+    opacity: 30%;
+    height: 10px;
+    border-bottom: 1px solid $colorWhitet;
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+}

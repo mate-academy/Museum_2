@@ -1,0 +1,109 @@
+.footer {
+  position: relative;
+  background-color: $colorBackgroundBlock;
+  height: 100vh;
+
+  @include onTablet {
+    height: 390px;
+  }
+
+  &__content {
+    display: block;
+    position: relative;
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @extend %main-text;
+    text-decoration: none;
+  }
+  &__icon {
+    margin-top: 30px;
+    display: flex;
+
+    @include onTablet {
+      margin-top: 52px;
+    }
+  }
+  &__contact {
+    padding-top: 50px;
+  }
+
+  &__schedul {
+    margin-top: 50px;
+  }
+
+  &__link {
+    margin-top: 50px;
+
+    &--title {
+      display: block;
+      margin-bottom: 10px;
+      @extend %h5;
+      text-decoration: none;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--text {
+      display: block;
+      margin-bottom: 10px;
+      @extend %main-text;
+      text-decoration: none;
+    }
+  }
+
+  &__bottom-block {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+
+    &--text {
+      @extend %additional-text;
+    }
+
+    &--icon {
+      display: block;
+      background-image: url(../images/scrollup.svg);
+      height: 22px;
+      width: 22px;
+      background-size: contain;
+
+      @include onTablet {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    @include onTablet {
+      bottom: 30px;
+      left: 40px;
+      right: 40px;
+    }
+  }
+}
+
+.text-block {
+  display: flex;
+  gap: 22px;
+
+  @include onDesktop {
+    gap: 102px;
+  }
+}

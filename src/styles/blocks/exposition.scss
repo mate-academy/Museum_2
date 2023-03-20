@@ -1,0 +1,39 @@
+.exposition {
+  overflow: hidden;
+
+  &__image {
+    width: 100%;
+    margin-top: 60px;
+    transition: 300ms;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.1);
+      
+    }
+
+    @include onTablet {
+      margin-top: 75px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  @include onTablet {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: max-content max-content max-content ;
+  }
+
+  @include onDesktop {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: max-content max-content max-content;
+  }
+}

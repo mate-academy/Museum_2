@@ -1,0 +1,84 @@
+.subscribe {
+  @include onTablet {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: max-content max-content max-content ;
+  }
+
+  @include onDesktop {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: max-content max-content max-content;
+  }
+
+  &__title {
+    text-align: left;
+    
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+    
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-top: 200px;
+    }
+  }
+
+  &__text {
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+    
+    @include onDesktop {
+      margin-top: 200px;
+      grid-column: 7 / - 1;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    font-weight: 700;
+    border-bottom: 1px solid #000;
+    margin-top: 50px;
+    margin-bottom: 30px;
+
+    &:hover {
+      color: $colorMainAccent;
+      border-bottom: 1px solid $colorMainAccent;
+    }
+
+    &:focus {
+      outline: 0;
+      color: $colorMainAccent;
+      border-bottom: 1px solid $colorMainAccent;
+    }
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+    }
+
+    &:hover::placeholder {
+      color: $colorMainAccent;
+    }
+  }
+
+  &__button {
+    margin-bottom: 80px;
+    width: 100%;
+    border: 0;
+    cursor: pointer;
+
+    @include onTablet {
+      width: 75%;
+      margin-bottom: 128px;
+    }
+
+    @include onDesktop {
+      width: 60%;
+      margin-bottom: 200px;
+    }
+  }
+}

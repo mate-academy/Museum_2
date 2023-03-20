@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 20px;
+  max-width: 1440px;
+
+  @include onTablet {
+    padding: 0 40px;
+  }
+
+  &__grid {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+      justify-content: center;
+      align-content: center;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      justify-content: center;
+      align-content: center;
+    }
+  }
+}
