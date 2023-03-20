@@ -4,3 +4,141 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin active($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:active {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin disabled($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:disabled {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onTabletOnly {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin h {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin h1 {
+  @include h;
+
+  font-size: 48px;
+  line-height: 100%;
+
+  @include onTablet {
+    font-size: 72px;
+  }
+
+  @include onDesktop {
+    font-size: 96px;
+  }
+}
+
+@mixin h2 {
+  @include h;
+
+  font-size: 38px;
+  line-height: 100%;
+
+  @include onTablet {
+    font-size: 62px;
+  }
+
+  @include onDesktop {
+    font-size: 80px;
+  }
+}
+
+@mixin h3 {
+  @include h;
+
+  font-size: 28px;
+  line-height: 125%;
+
+  @include onTablet {
+    font-size: 40px;
+  }
+
+  @include onDesktop {
+    font-size: 48px;
+    line-height: 120%;
+  }
+}
+
+@mixin h4 {
+  @include h;
+
+  font-size: 20px;
+  line-height: 125%;
+
+  @include onTablet {
+    font-size: 24px;
+  }
+}
+
+@mixin h5 {
+  @include h;
+
+  font-size: 20px;
+  line-height: 150%;
+}
+
+@mixin h6 {
+  @include h;
+
+  font-size: 14px;
+  line-height: 125%;
+}
+
+@mixin button-text {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+}
+
+@mixin main-text {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin additional-text {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}

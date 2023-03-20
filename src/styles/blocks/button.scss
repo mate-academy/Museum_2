@@ -1,0 +1,88 @@
+.button {
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 22px 0;
+
+  @include button-text;
+
+  text-align: center;
+  text-decoration: none;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &--primary {
+    color: $c-white;
+    background-color: $c-main;
+
+    @include active(background-color, $c-button-active);
+
+    @include disabled(background-color, $c-button-disabled);
+
+    @include onDesktop {
+      @include hover(background-color, $c-button-hover);
+    }
+  }
+
+  &--secondary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $c-main;
+    text-align: left;
+    border: 1px solid $c-main;
+
+    @include onTabletOnly {
+      width: 220px;
+    }
+
+    &-center {
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 14px;
+        height: 13px;
+
+        background-image: url(../images/button-icons/button-arrow.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+
+    &:active {
+      color: $c-button-active;
+      border-color: $c-button-active;
+
+      .button--secondary-center::after {
+        background-image: url(../images/button-icons/button-arrow-active.svg);
+      }
+    }
+
+    &:disabled {
+      color: $c-button-disabled;
+      border-color: $c-button-disabled;
+
+      .button--secondary-center::after {
+        background-image: url(../images/button-icons/button-arrow-disabled.svg);
+      }
+    }
+
+    @include onDesktop {
+      &:hover {
+        color: $c-button-hover;
+        border-color: $c-button-hover;
+
+        .button--secondary-center::after {
+          background-image: url(../images/button-icons/button-arrow-hover.svg);
+        }
+      }
+    }
+
+  }
+}
