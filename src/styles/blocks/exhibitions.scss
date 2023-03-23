@@ -1,0 +1,115 @@
+.exhibitions {
+  &__grid {
+    @include gridTablet;
+    @include gridDesktop;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $color-black;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+
+      margin-bottom: 75px;
+
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+
+      margin-bottom: 71px;
+
+      font-size: 40px;
+    }
+  }
+
+  &__top-button {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 60px;
+      line-height: 60px;
+
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: $color-main;
+
+      border: 1px solid $color-main;
+
+      transition: border-color 0.3s;
+
+      &::after {
+        content: "";
+        margin-left: 8px;
+        height: 14px;
+        width: 16px;
+
+        background-image: url(../images/arrow-button.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      grid-column: 5 / -1;
+
+      @include onDesktop {
+        grid-column: -4 / -1;
+      }
+
+      &:hover {
+        border-color: #af3419;
+        color: #af3419;
+      }
+
+      &:active {
+        border-color: #ea340d;
+        color: #ea340d;
+      }
+
+      &:disabled {
+        border-color: #dd836f;
+        color: #dd836f;
+      }
+
+    }
+  }
+
+  &__painting {
+    grid-column: 1 / -1;
+  }
+
+  &__painting-last {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__flex {
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__botton-button-first {
+    margin-bottom: 120px;
+  }
+
+  &__botton-button-last {
+    margin-bottom: 90px;
+  }
+}

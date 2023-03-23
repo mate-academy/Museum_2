@@ -1,0 +1,194 @@
+.menu {
+  height: 100vh;
+  background-color: $color-background;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        gap: 45px;
+      }
+    }
+  }
+
+  &__language {
+    display: block;
+    margin-right: 30px;
+  }
+
+  &__flex {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: flex;
+      gap: 123px;
+
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 83px;
+
+      margin-bottom: 70px;
+    }
+  }
+
+  &__data {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__time {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__adress {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__map {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__nav {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+
+    border-bottom: 1px solid $color-white;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    max-width: max-content;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    transition: border-bottom 0.3s;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $color-white;
+    }
+  }
+
+  &__grid {
+    @include gridTablet;
+  }
+
+  &__item-button {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-boy {
+    @include onTablet {
+      position: absolute;
+      bottom: 0;
+
+      transform: translate(0, 0);
+
+      width: 624px;
+      height: 466px;
+      background-image: url(../images/boy.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    @include onDesktop {
+      height: 697px;
+      left: 50%;
+      transform: translate(0, 0);
+    }
+  }
+
+  &__pozition-desktop {
+    @include gridDesktop;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &__block {
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+}
