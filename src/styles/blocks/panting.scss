@@ -7,22 +7,32 @@
   }
 
   &__image {
+
     margin-bottom: 20px;
     width: 100%;
+
     height: 356px;
 
     object-position: center;
 
     transition: transform 0.3s;
 
-    @include onTablet {
-      margin-bottom: 30px;
+    @media (min-width: 320px) {
+      display: block;
+      margin: 0 auto 20px;
+      width: 280px;
+    }
 
+    @include onTablet {
+      width: 100%;
+      margin-bottom: 30px;
       height: 420px;
     }
 
-    &:hover {
-      transform: scale(1.1);
+    @include onDesktop {
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 

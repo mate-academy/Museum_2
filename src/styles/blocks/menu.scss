@@ -34,7 +34,9 @@
 
       @include onTablet {
         display: flex;
-        gap: 45px;
+        gap: 40px;
+
+        margin-right: 0;
       }
     }
   }
@@ -42,9 +44,16 @@
   &__language {
     display: block;
     margin-right: 30px;
+
+    @include onTablet {
+      margin-right: 0;
+    }
   }
 
   &__flex {
+    position: relative;
+    z-index: 1;
+
     margin-bottom: 40px;
 
     @include onTablet {
@@ -97,6 +106,9 @@
   }
 
   &__nav {
+    position: relative;
+    z-index: 1;
+
     padding-bottom: 40px;
     margin-bottom: 40px;
 
@@ -112,6 +124,7 @@
   }
 
   &__item {
+
     &:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -124,6 +137,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
+    border-bottom: 1px solid transparent;
 
     transition: border-bottom 0.3s;
 
@@ -132,7 +146,7 @@
     }
 
     &:hover {
-      border-bottom: 1px solid $color-white;
+      border-color: $color-white;
     }
   }
 
@@ -147,6 +161,9 @@
   }
 
   &__button {
+    position: relative;
+    z-index: 1;
+
     @include onTablet {
       margin-bottom: 30px;
     }
@@ -160,6 +177,7 @@
     @include onTablet {
       position: absolute;
       bottom: 0;
+      z-index: 0;
 
       transform: translate(0, 0);
 
