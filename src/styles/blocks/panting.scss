@@ -1,0 +1,151 @@
+.painting {
+
+  @include onTablet {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  &__image {
+    margin-bottom: 20px;
+    width: 100%;
+
+    height: 356px;
+
+    object-position: center;
+    object-fit: cover;
+
+    transition: transform 0.3s;
+
+    @media (min-width: 320px) {
+      display: block;
+      margin: 0 auto 20px;
+      width: 280px;
+    }
+
+    @include onTablet {
+      width: 100%;
+      margin-bottom: 30px;
+      height: 420px;
+
+      object-fit: cover;
+    }
+
+    @include onDesktop {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &--angel {
+      object-position: left;
+    }
+  }
+
+  &__data {
+    margin-bottom: 10px;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-main;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    color: $color-black;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    &--margin {
+      @include onTablet {
+        margin-bottom: 50px;
+
+      }
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__discription {
+    margin-bottom: 30px;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-gray;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__button--first {
+    margin-bottom: 60px;
+  }
+
+  &__button--last {
+    margin: 0 0 30px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    margin-bottom: 30px;
+  }
+
+  &__event {
+    width: 100%;
+  }
+
+  &__grid-block-1 {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__grid-block {
+    @include onTablet {
+      grid-column: 4 /-1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__size-desktop {
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}

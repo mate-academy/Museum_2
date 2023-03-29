@@ -1,0 +1,150 @@
+.news {
+  color: $color-black;
+
+  &__grid {
+    @include gridTablet;
+    @include gridDesktop;
+  }
+
+  &__grid-item-3-6 {
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__grid-item-1-3 {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+
+      margin-bottom: 55px;
+    }
+  }
+
+  &__top-button {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 60px;
+    line-height: 60px;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: $color-main;
+
+    border: 1px solid $color-main;
+
+    &::after {
+      content: "";
+      margin-left: 8px;
+      height: 14px;
+      width: 16px;
+
+      background-image: url(../images/arrow-button.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    @include onTablet {
+      grid-column: -3 / -1;
+
+      display: flex;
+    }
+
+    @include onDesktop {
+      grid-column: -4 / -1;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin-bottom: 20px;
+
+    height: 280px;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      height: 330px;
+      width: 330px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+      width: 570px;
+    }
+  }
+
+  &__data {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+
+    @include onTablet {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__description {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    &--first {
+      margin-bottom: 50px;
+    }
+
+    &--last {
+      margin-bottom: 30px;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+}

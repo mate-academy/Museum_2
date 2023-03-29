@@ -1,0 +1,53 @@
+.main-link {
+  @include onTablet {
+    grid-column: 5 / -1;
+  }
+
+  @include onDesktop {
+    grid-column: 9 / -1;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 30px;
+
+      font-size: 20px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 60px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    @include onTablet {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    transition: transform 0.3s;
+
+    @include onTablet {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
