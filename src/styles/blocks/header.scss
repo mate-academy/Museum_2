@@ -1,0 +1,87 @@
+.header {
+  min-height: 100vh;
+  background-color: #3f5252;
+
+  &__top {
+    @include top-actions;
+  }
+
+  &__content {
+    padding: 90px 0 0 0;
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 140%;
+    color: $whiteColor;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    color: $whiteColor;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+  }
+  
+  &__bottom-content {
+    position: absolute;
+    bottom: 50px;
+  }
+
+  &__short-date {
+    position: relative;
+    display: none;
+    width: max-content;
+    
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: $whiteColor;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      margin-left: 20px;
+      transform: translateY(100%);
+      width: 470px;
+      height: 1px;
+      background-color: $whiteColor;
+    }
+  }
+}

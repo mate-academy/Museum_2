@@ -1,0 +1,61 @@
+.page {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #504f5e;
+
+  scroll-behavior: smooth;
+  position: relative;
+  
+  &__body {
+    height: 100%;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__image-bottom {
+    height: 273px;
+
+    &--menu {
+      display: none;
+    }
+
+    @include onTablet {
+      display: block;
+      height: 494px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      height: 663px;
+      right: 0;
+      bottom: 0;
+    }
+
+    @include onBigDesktop {
+      height: 700px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
