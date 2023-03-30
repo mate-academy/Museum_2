@@ -1,0 +1,113 @@
+.digest {
+
+  &__content {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__title {
+    grid-area: 1 / 1 / 2 / 6;
+    font-family: $fontPlayfair;
+    font-size: 28px;
+    line-height: 125%;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    grid-area: 1 / 7 / 2 / -1;
+    line-height: 150%;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      width: calc(100% / 6 * 5);
+    }
+
+    @include onDesktop {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__form {
+    grid-area: 2 / 1 / 3 / 6;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__email {
+    border: none;
+    border-bottom: 1px solid $colorBlack;
+
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 30px;
+    transition: all 0.3s;
+
+    &::placeholder {
+      font-family: inherit;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $colorBlack;
+      transition: all 0.3s;
+    }
+
+    @include onTablet {
+      width: calc(100% / 6 * 4);
+      margin-bottom: 34px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    &:hover::placeholder {
+      color: $colorRed;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border-color: $colorRed;
+    }
+
+    &:focus {
+      cursor: default;
+      outline: none;
+      caret-color: $colorRed;
+      border-color: $colorRed;
+    }
+  }
+
+  &__button {
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+
+    @include onTablet {
+      width: 50%;
+    }
+
+    @include onDesktop {
+      width: calc(100% / 5 * 3);
+    }
+  }
+}

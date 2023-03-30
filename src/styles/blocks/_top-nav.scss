@@ -1,0 +1,112 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 0;
+  margin-bottom: 70px;
+
+  @include onTablet {
+    padding: 26px 0 0;
+    margin-bottom: 124px;
+  }
+
+  @include onDesktop {
+    padding: 32px 0 0;
+    margin-bottom: 122px;
+  }
+
+  &-menu {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__logo-img {
+    display: block;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      gap: 40px;
+    }
+  }
+
+  &__language {
+    display: none;
+    background-color: $colorBackground;
+    border: none;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorWhite;
+
+    &--menu {
+      display: block;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    @include onTablet {
+      display: block;
+      order: 1;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    width: 25px;
+    height: 20px;
+    border: 2px $colorWhite;
+    border-style: solid none;
+
+    &--cross {
+      border: none;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__cross {
+    display: block;
+    background-image: url(../images/cross2.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: $colorWhite;
+    width: 22px;
+    height: 22px;
+  }
+
+  &__menu-open {
+    position: relative;
+    background-image: url(../images/menu-open.svg);
+    display: flex;
+    align-items: center;
+    width: 25px;
+    height: 2px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: -10px;
+      left: -5px;
+      right: -5px;
+      bottom: -10px;
+    }
+  }
+}

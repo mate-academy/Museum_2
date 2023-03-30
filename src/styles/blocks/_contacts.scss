@@ -1,0 +1,115 @@
+.contacts {
+  color: $colorWhite;
+
+  &__content {
+    padding: 34px 0 60px;
+
+    @include onTablet {
+      padding: 50px 0 60px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      padding: 50px 0 70px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__address {
+    grid-column: 1 / 3;
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__title {
+    font-family: $fontPlayfair;
+    font-size: 20px;
+    line-height: 150%;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    display: block;
+
+    line-height: 150%;
+    color: $colorWhite;
+    text-decoration: none;
+  }
+
+  &__tell {
+    display: inline-block;
+  }
+
+  &__email {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link-hover {
+    border-bottom: 1px solid transparent;
+    width: max-content;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $colorWhite;
+    }
+  }
+
+  &__social-link {
+    path {
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      path {
+        fill: $colorRed;
+      }
+    }
+  }
+
+  &__schedule {
+    grid-column: 3 / 5;
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      grid-column: 5 / 8;
+    }
+  }
+
+  &__main {
+    grid-column: 5 / -1;
+
+    @include onDesktop {
+      grid-column: 9 / 11;
+    }
+  }
+
+  &__main-link {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    @include onTablet {
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
