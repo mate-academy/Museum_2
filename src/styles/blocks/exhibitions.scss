@@ -1,0 +1,107 @@
+.exhibitions {
+  &__title {
+    margin: 0;
+  }
+
+  &__button-phone {
+    margin-top: 30px;
+  }
+
+  &__body {
+    margin-top: 60px;
+
+    @include onTablet {
+      margin-top: 75px;
+    }
+  }
+
+  &__item-photo {
+    width: 100%;
+    height: 356px;
+    object-fit: cover;
+    object-position: center;
+
+    @include transition(border-radius);
+
+    &--left {
+      object-position: left;
+    }
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 60px;
+
+      @include onTablet {
+        margin-top: 0;
+      }
+    }
+
+    transition: transform $transition-time ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+
+      .exhibitions__item-photo {
+        border-radius: 15px;
+      }
+    }
+  }
+
+  &__item-title {
+    margin: 10px 0 0;
+
+    @include onTablet {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      min-height: auto;
+      display: block;
+    }
+  }
+
+  &__item-body {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__item-date {
+    margin-top: 20px;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__item-text {
+    @include secondary-black-text;
+    margin-top: 20px;
+  }
+
+  &__item-button {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+    }
+  }
+}

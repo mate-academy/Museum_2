@@ -1,0 +1,41 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+
+  @include onTablet {
+    padding: 26px 0;
+  }
+
+  @include onDesktop {
+    padding: 32px 0;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__language {
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url(../images/dropdown.svg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 10px;
+      height: 7px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(15px, -50%);
+    }
+    @include secondary-white-text;
+  }
+}
