@@ -1,0 +1,89 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 123px;
+    height: 40px;
+
+    @include tablet {
+      width: 124px;
+      height: 37px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+
+    &--menu {
+      flex-direction: row;
+    }
+
+    @include tablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__language-container {
+    display: none;
+    
+    &--menu {
+      display: flex;
+      margin-right: 30px;
+
+      @include tablet {
+        margin-right: 0;
+      }
+    }
+    
+    @include tablet {
+      display: flex;
+      align-items: center;
+      margin-left: 40px;
+    }
+  }
+
+  &__language {
+    display: flex;
+    align-items: center;
+
+    &--eng {
+      display: none;
+      position: absolute;
+      transform: translateY(100%);
+    }
+  }
+  
+  &__language-abr {
+    margin-right: 2px;
+    color: $white;
+    
+    &--eng {
+      margin-right: 0;
+    }
+  }
+
+  &__language-arrow {
+    width: 10px;
+    height: 7px;
+  }
+
+  &__burger {
+    width: 25px;
+    height: 25px;
+    background: url("../images/icon/burger.svg") center no-repeat;
+
+    &--cross {
+      background-image: url("../images/icon/cross.svg");
+    }
+
+    @include tablet {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
