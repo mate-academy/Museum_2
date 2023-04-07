@@ -2,6 +2,7 @@
 
 const firstEventItem = document.querySelector('#firstEvent');
 const secondEventItem = document.querySelector('#secondEvent');
+const page = document.querySelector('#page');
 const form = document.querySelector('.digest__from');
 
 const handleEventItemSlide = (eventItem) => {
@@ -36,8 +37,8 @@ form.addEventListener('submit', (e) => {
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu') {
-    document.body.classList.add('page__body--menu');
+    page.classList.add('page--menu');
   } else {
-    document.body.classList.remove('page__body--menu');
+    page.classList.remove('page--menu');
   }
 });
