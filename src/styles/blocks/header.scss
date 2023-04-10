@@ -105,13 +105,23 @@
     transform: translateX(-50%);
     height: 35vh;
 
+    @include onSmallPhoneHeight {
+      display: none;
+    }
+
     @include onTablet {
-      transform: translateX(0);
+      display: block;
+      position: absolute;
       right: 0;
+      bottom: 0;
+      left: auto;
+      transform: translateX(0);
+      width: auto;
       height: 50vh;
     }
 
     @include onDesktop {
+      left: 50%;
       position: absolute;
       width: auto;
       height: auto;

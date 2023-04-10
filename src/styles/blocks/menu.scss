@@ -1,8 +1,10 @@
 .menu {
   position: relative;
+  z-index: 1;
   height: 100vh;
   background-color: $background-color;
   @include secondary-white-text;
+  overflow-y: auto;
 
   &__actions {
     display: flex;
@@ -99,8 +101,15 @@
       position: absolute;
       right: 0;
       bottom: 0;
-      width: 410px;
-      height: 466px;
+      height: 50vh;
+    }
+
+    @include onSmallTabletHeight {
+      display: none;
+    }
+
+    @include onSmallDesktopHeight {
+      display: none;
     }
 
     @include onDesktop {
