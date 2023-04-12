@@ -1,6 +1,67 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  @include transition($_property);
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin transition($property) {
+  transition: #{$property} $transition-time ease-in-out;
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onSmallTabletHeight {
+  @media (min-width: 768px) and (max-height: 590px) {
+    @content;
+  }
+}
+
+@mixin onSmallDesktopHeight {
+  @media (min-width: 1280px) and (max-height: 700px) {
+    @content;
+  }
+}
+
+@mixin onSmallPhoneHeight {
+  @media (min-width: 285px) and (max-height: 660px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin primary-white-text {
+  font-family: "Playfair Display", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: $accent-white-color;
+}
+
+@mixin primary-black-text {
+  font-family: "Playfair Display", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin secondary-black-text {
+  color: $text-secondary-color;
+}
+
+@mixin utils-text {
+  font-size: 16px;
+  line-height: 150%;
+  color: $utils-color;
+}
+
+@mixin secondary-white-text {
+  color: $accent-white-color;
 }

@@ -1,0 +1,130 @@
+.menu {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  background-color: $background-color;
+  @include secondary-white-text;
+  overflow-y: auto;
+
+  &__actions {
+    display: flex;
+    flex-direction: row-reverse;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+
+    &--open {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 123px;
+    }
+  }
+
+  &__info-part {
+    &-title {
+      line-height: 140%;
+    }
+
+    &-value {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #f1f5f4;
+
+    &-item {
+      @include primary-white-text;
+      font-size: 20px;
+      line-height: 150%;
+
+      &:not(:first-child) {
+        margin-top: 30px;
+
+        @include onDesktop {
+          margin-top: 60px;
+        }
+      }
+
+      @include onTablet {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+
+    @include onTablet {
+      margin-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 50vh;
+    }
+
+    @include onSmallTabletHeight {
+      display: none;
+    }
+
+    @include onSmallDesktopHeight {
+      display: none;
+    }
+
+    @include onDesktop {
+      left: 50%;
+      position: absolute;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__link {
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+
+    @include hover(border-color, $accent-white-color);
+    @include transition(border-color);
+  }
+}

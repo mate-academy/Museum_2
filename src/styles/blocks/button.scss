@@ -1,0 +1,99 @@
+.button {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: center;
+  height: 60px;
+  width: 100%;
+
+  &--primary {
+    background-color: $utils-color;
+    color: $accent-white-color;
+    @include transition(background-color);
+
+    @include hover(background-color, $button-hover-color);
+
+    &:active {
+      background-color: $button-pressed-color;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+
+    @include onTablet {
+      max-width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__arrow {
+    background-image: url(../images/arrow-right/arrow.svg);
+  }
+
+  &--secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    color: $utils-color;
+    border: 1px solid $utils-color;
+
+    transition: border-color $transition-time ease-in-out,
+      color $transition-time ease-in-out;
+
+    @include hover(color, $button-hover-color);
+    @include hover(border-color, $button-hover-color);
+
+    &-desktop {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    &-phone {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &:hover {
+      .button__arrow {
+        background-image: url(../images/arrow-right/hover.svg);
+      }
+    }
+
+    &:active {
+      color: $button-pressed-color;
+      border-color: $button-pressed-color;
+
+      .button__arrow {
+        background-image: url(../images/arrow-right/pressed.svg);
+      }
+    }
+
+    &:disabled {
+      color: #dd836f;
+      border-color: #dd836f;
+
+      .button__arrow {
+        background-image: url(../images/arrow-right/disabled.svg);
+      }
+    }
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}
