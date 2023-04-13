@@ -1,0 +1,63 @@
+.subscribe {
+  margin-bottom: 200px;
+
+  &__block-top {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      column-gap: 32px;
+    }
+  }
+
+  &__title {
+    width: 50%;
+    margin-bottom: 50px;
+
+    @include margin-bottom(20, 20, 50);
+  }
+
+  &__paragraph {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+
+  &__input-email {
+    width: 100%;
+    height: 24px;
+    color: $black-color;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $black-color;
+
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 40px;
+    transition: all 0.3s;
+
+    @include margin-bottom(30px, 30px, 40px);
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main-color;
+      &:focus,
+      &::placeholder {
+        color: $main-color;
+      }
+    }
+  }
+}

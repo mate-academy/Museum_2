@@ -2,19 +2,51 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   height: 60px;
   font-weight: 600;
-  background-color: $mainColor;
-  color: $whiteColor;
+  background-color: $main-color;
+  color: $white-color;
   
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #af3419;
+  @include onTablet {
+    width: 330px;
   }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  @include hover(background-color, #af3419);
 
   &:focus {
     background-color: #ea340d;
+  }
+
+  &--second {
+    color: $main-color;
+    border: 1px solid #CD4D31;
+    background-color: transparent;
+
+    &:hover {
+      color: #af3419;
+      background-color: transparent;
+      border-color: #af3419;
+    }
+
+    &:focus {
+      color: #ea340d;
+      background-color: transparent;
+      border-color: #ea340d;
+    }
+
+    &::after {
+      content: "";
+      width: 14px;
+      height: 12px;
+      margin-left: 11px;
+      background-image: url(/images/icon/arrow2.png);
+
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 }

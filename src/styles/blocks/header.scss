@@ -1,6 +1,7 @@
 .header {
   min-height: 100vh;
-  background-color: #3f5252;
+  background-color: $background;
+  position: relative;
 
   &__top {
     @include top-actions;
@@ -11,42 +12,21 @@
   }
 
   &__date {
-    font-size: 14px;
-    line-height: 140%;
-    color: $whiteColor;
+    margin-bottom: 10px;
   }
 
   &__title {
-    margin-bottom: 30px;
-
-    @include onTablet {
-      margin-bottom: 20px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 30px;
-    }
+    color: $white-color;
+    @include margin-bottom(30, 20, 30);
   }
 
   &__description {
-    color: $whiteColor;
-    margin-bottom: 40px;
-
-    @include onTablet {
-      margin-bottom: 50px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 80px;
-    }
+    color: $white-color;
+    @include margin-bottom(40, 50, 80);
   }
 
   &__button {
-    margin-bottom: 40px;
-
-    @include onTablet {
-      margin-bottom: 70px;
-    }
+    @include margin-bottom(40, 70, 0);
   }
   
   &__bottom-content {
@@ -63,7 +43,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 125%;
-    color: $whiteColor;
+    color: $white-color;
 
     @include onTablet {
       display: none;
@@ -81,7 +61,7 @@
       transform: translateY(100%);
       width: 470px;
       height: 1px;
-      background-color: $whiteColor;
+      background-color: $white-color;
     }
   }
 }

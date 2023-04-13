@@ -16,6 +16,25 @@
   }
 }
 
+@mixin margin-bottom($_mobile, $_tablet, $_desktop) {
+  margin-bottom: #{$_mobile}px;
+
+  @include onTablet {
+    margin-bottom: #{$_tablet}px;
+  }
+
+  @include onDesktop {
+    margin-bottom: #{$_desktop}px;
+  }
+}
+
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: #{$_toValue};
+  }
+}
+
 @mixin top-actions {
   --icon-width: 30px;
   
