@@ -1,7 +1,23 @@
 .header {
-  min-height: 100vh;
-  background-color: $background;
   position: relative;
+  height: 100vh;
+  min-height: 747px;
+  background-color: $background;
+  background-image: url(/images/header.png);
+  background-repeat: no-repeat;
+  background-size: auto 36%;
+  background-position: bottom;
+
+  @include onTablet {
+    background-size: auto 45%;
+    background-position: bottom;
+  }
+
+  @include onDesktop {
+    background-size: auto 82%;
+    background-position: right bottom;
+  }
+
 
   &__top {
     @include top-actions;
@@ -12,6 +28,7 @@
   }
 
   &__date {
+    color: $white-color;
     margin-bottom: 10px;
   }
 

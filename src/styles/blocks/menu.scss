@@ -1,12 +1,26 @@
 .menu {
-  min-height: 100vh;
-  background-color: #3f5252;
+  height: 100vh;
+  min-height: 747px;
   color: $white-color;
+  background-color: $background;
+  
+  @include onTablet {
+    background-image: url(/images/img_menu.png);
+    background-repeat: no-repeat;
+    
+    background-size: auto 45%;
+    background-position: bottom;
+  }
+
+  @include onDesktop {
+    background-size: auto 82%;
+    background-position: right bottom;
+  }
 
   &__top {
     @include top-actions;
-    grid-template-columns: 1fr var(--icon-width) var(--icon-width);
-    margin-bottom: 10px;
+      grid-template-columns: 1fr var(--icon-width) var(--icon-width);
+      margin-bottom: 10px;
 
     @include onTablet {
       margin-bottom: 30px;
@@ -28,7 +42,6 @@
   &__lang {
     grid-row: 1/2;
     grid-column: 2/3;
-    display: block;
 
     @include onTablet {
       grid-column: 3/4;
