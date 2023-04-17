@@ -1,0 +1,63 @@
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin top-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+
+  @include onTablet {
+    padding-top: 26px;
+  }
+
+  @include onDesktop() {
+    padding-top: 32px;
+  }
+}
+
+@mixin icon-box {
+  width: max-content;
+  display: flex;
+  justify-content: space-between;
+
+  @include onTablet {
+    width: 105px;
+  }
+}
+
+@mixin section-action {
+  margin-bottom: 60px;
+
+  @include onTablet {
+    margin-bottom: 75px;
+  }
+
+  @include onTablet {
+    margin-bottom: 70px;
+  }
+}
+
+@mixin content-margin-bottom {
+  margin-bottom: 30px;
+
+  @include onTablet {
+    margin-bottom: 0;
+  }
+}
+
+@mixin img-hover {
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
+  }
+}
