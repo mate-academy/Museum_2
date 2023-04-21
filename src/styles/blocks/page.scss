@@ -1,4 +1,6 @@
 .page {
+  position: relative;
+
   &__header {
     @include padding;
     padding-top: 20px;
@@ -13,6 +15,16 @@
   }
   
   &__menu {
+    position: fixed;
+    top: 0;
+
+    transform: translateX(-100%);
+    transition: transform $transition;
+
+    &:target {
+      transform: translateX(0);
+    }
+
     @include padding;
     padding-top: 20px;
     
