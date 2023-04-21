@@ -1,0 +1,84 @@
+.subscription {
+  margin-top: 140px;
+
+  @include onTablet {
+    margin-top: 160px;
+  }
+
+  &__headline {
+    @include secondary-font (28px, 125%, 700);
+    color: $headline-color;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+
+    @include main-font (16px, 150%, 400);
+    color: $headline-color;
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
+  &__email {
+    &--input {
+      margin-top: 50px;
+      border: 0;
+      border-bottom: 1px solid $main-background-color;
+      padding: 0;
+      padding-bottom: 3px;
+      outline: 0;
+
+      width: 100%;
+
+      @include transition;
+
+      @include main-font (16px, 150%, 700);
+      color: $headline-color;
+
+      &:hover {
+        border-color: $button-color;
+      }
+
+      &::placeholder {
+        @include secondary-font (16px, 150%, 400);
+        color: $headline-color;
+      }
+
+      &:hover::placeholder {
+        color: $button-color;
+      }
+
+      &:focus::placeholder {
+        color: transparent;
+      }
+
+      &:focus {
+        border-bottom-color: $headline-color;
+        cursor: text;
+        caret-color: $button-color;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onTablet {
+      width: 58%;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+}
