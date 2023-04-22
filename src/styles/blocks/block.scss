@@ -12,6 +12,12 @@
       grid-template-columns: repeat(12, 1fr);
       margin-bottom: 69px;
     }
+
+    &--news {
+      @include desktop {
+        margin-bottom: 53px;
+      }
+    }
   }
 
   &__title {
@@ -83,10 +89,21 @@
       column-gap: 30px;
       align-items: stretch;
     }
+
+    &--events {
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 
   &__card {
     margin-bottom: 60px;
+
+    &--news {
+      margin-bottom: 50px;
+    }
 
     &:last-child {
       margin-bottom: 30px;
@@ -100,6 +117,20 @@
 
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+
+    &--events {
+      @include tablet {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 30px;
+        margin-bottom: 70px;
+      }
+
+      @include desktop {
+        grid-template-columns: repeat(12, 1fr);
+        margin-bottom: 60px;
       }
     }
   }
@@ -118,6 +149,27 @@
     @include desktop {
       margin-bottom: 20px;
     }
+
+    &--events {
+      max-height: 600px;
+
+      @include tablet {
+        grid-column: 1 / 4;
+        margin-bottom: 0;
+      }
+
+      @include desktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--news {
+      max-height: 400px;
+    }
+
+    &--top {
+      object-position: top;
+    }
   }
 
   &__text {
@@ -126,6 +178,17 @@
       flex-direction: column;
       justify-content: space-between;
     }
+
+    &--events {
+      @include tablet {
+        grid-column: 4 / 7;
+        display: block;
+      }
+
+      @include desktop {
+        grid-column: 5 / 11;
+      }
+    }
   }
 
   &__shedule {
@@ -133,6 +196,13 @@
     font-size: $main;
     line-height: $medium;
     color: $orange;
+
+    &--news {
+      margin-bottom: 0;
+      font-size: $additional;
+      line-height: $small;
+      color: $black;
+    }
   }
 
   &__name {
@@ -161,6 +231,12 @@
 
     @include desktop {
       margin-bottom: 50px;
+    }
+
+    &--events {
+      @include tablet {
+        margin-bottom: 50px;
+      }
     }
   }
 }
