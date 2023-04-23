@@ -35,30 +35,9 @@ function buttonClick(event) {
 
 // translations
 
-const translateArrHeader = {
-  'dates': {
-    'ua': '10 серпня - 10 листопада',
-    'en': '10th August - 10th Novemner',
-  },
-  'headline': {
-    'ua': 'Мистецтво ХІХ - ХХ ст.',
-    'en': 'Art of the XIX - XX centuries.',
-  },
-  'description': {
-    'ua': 'Внесок українських митців у світову культуру 19-20 ст.',
-    // eslint-disable-next-line max-len
-    'en': 'The influence of Ukrainian artists on the world culture of the 19th and 20th centuries.',
-  },
-  'button': {
-    'ua': 'Купити квиток',
-    'en': 'Buy your ticket',
-  },
-};
-
 // changing the language
 
 const select = document.querySelector('select');
-const allLang = ['ua', 'en'];
 const location = window.location;
 
 select.addEventListener('change', changeURLLanguage);
@@ -70,28 +49,3 @@ function changeURLLanguage() {
 
   location.href = window.location.pathname + '#' + lang;
 }
-
-function changeLanguage() {
-  let hash = window.location.hash;
-
-  hash = hash.substring(1);
-
-  if (!allLang.includes(hash)) {
-    location.href = window.location.pathname + '#ua';
-  }
-
-  select.value = hash;
-
-  document.querySelector('title').innerHTML
-  = translateArrHeader['header__dates'][hash];
-
-  for (const key in translateArrHeader) {
-    const elem = document.querySelector(key);
-
-    if (elem) {
-      elem.innerHTML = translateArrHeader[key][hash];
-    }
-  }
-}
-
-changeLanguage();
