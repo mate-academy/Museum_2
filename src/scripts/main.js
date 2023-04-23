@@ -12,6 +12,16 @@ menuSwitch.addEventListener('change', (event) => {
   headerSwitch.value = event.target.value;
 });
 
+// menu classes added for body and overlay
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#menu') {
+    document.body.classList.add('page__body--with-menu');
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+  }
+});
+
 // email for reset
 
 const form = document.querySelector('#form');
