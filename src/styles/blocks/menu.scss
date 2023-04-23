@@ -58,6 +58,9 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 140%;
+    &--ad {
+      padding-bottom: 0;
+    }
   }
   .ctime {
     font-family: "Raleway", sans-serif;
@@ -66,9 +69,6 @@
     font-size: 16px;
     line-height: 150%;
     padding-bottom: 20px;
-    &--ad {
-      padding-bottom: 0;
-    }
   }
   .adress {
     font-family: "Raleway", sans-serif;
@@ -106,20 +106,25 @@
     }
   }
   .link {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 1px;
+    border-bottom: 1px solid transparent;
+    box-sizing: border-box;
     font-family: Playfair Display, sans-serif;
-    font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
     color: $grantext;
 
-    display: inline-block;
-    position: relative;
-    box-sizing: border-box;
-
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $grantext;
+    }
+
     @include onTablet {
       font-size: 48px;
       line-height: 58px;
