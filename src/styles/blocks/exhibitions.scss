@@ -1,23 +1,32 @@
 .exhibitions {
+  .margin-events {
+    margin-bottom: 142px;
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
   &__title {
     font-family: Playfair Display, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
     line-height: 35px;
-    padding: 90px 0 60px;
+    padding-bottom: 60px;
 
     color: #1c1b29;
 
     @include onTablet {
       font-size: 40px;
       line-height: 50px;
-      padding: 105px 0 75px;
+      padding-bottom: 75px;
     }
     @include onDesktop {
       font-size: 48px;
       line-height: 58px;
-      padding: 110px 0 71px;
+      padding-bottom: 71px;
     }
   }
 
@@ -27,19 +36,19 @@
     font-weight: 700;
     font-size: 28px;
     line-height: 35px;
-    padding: 142px 0 60px;
+    padding-bottom: 60px;
 
     color: #1c1b29;
 
     @include onTablet {
       font-size: 40px;
       line-height: 50px;
-      padding: 160px 0 76px;
+      padding-bottom: 76px;
     }
     @include onDesktop {
       font-size: 48px;
       line-height: 58px;
-      padding: 200px 0 70px;
+      padding-bottom: 70px;
     }
   }
   &__title-newsone {
@@ -48,43 +57,21 @@
     font-weight: 700;
     font-size: 28px;
     line-height: 35px;
-    padding: 90px 0 60px;
+    padding-bottom: 60px;
 
     color: #1c1b29;
 
     @include onTablet {
       font-size: 40px;
       line-height: 50px;
-      padding: 125px 0 75px;
+      padding-bottom: 75px;
     }
     @include onDesktop {
       font-size: 48px;
       line-height: 58px;
-      padding: 110px 0 55px;
+      padding-bottom: 55px;
     }
   }
-  // &__title-news {
-  //   font-family: Playfair Display, sans-serif;
-  //   font-style: normal;
-  //   font-weight: 700;
-  //   font-size: 28px;
-  //   line-height: 35px;
-  //   padding: 90px 0 60px;
-
-  //   color: #1c1b29;
-
-  //   @include onTablet {
-  //     font-size: 40px;
-  //     line-height: 50px;
-  //     padding: 105px 0 75px;
-  //   }
-  //   @include onDesktop {
-  //     font-size: 48px;
-  //     line-height: 58px;
-  //     padding: 110px 0 50px;
-  //   }
-  // }
-
   &__title-in {
     font-family: Playfair Display, sans-serif;
     font-style: normal;
@@ -284,13 +271,16 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
+    transition: transform 0.4s;
+      &:hover {
+        transform: scale(1.07);
+      }
   }
   &__pad {
     display: none;
     @include onTablet {
       display: grid;
       justify-content: end;
-      padding-top: 100px;
     }
     @include onDesktop {
       display: grid;
@@ -303,12 +293,10 @@
     @include onTablet {
       display: grid;
       justify-content: end;
-      padding-top: 155px;
     }
     @include onDesktop {
       display: grid;
       justify-content: end;
-      padding-top: 190px;
     }
   }
 
@@ -317,12 +305,10 @@
     @include onTablet {
       display: grid;
       justify-content: end;
-      padding-top: 125px;
     }
     @include onDesktop {
       display: grid;
       justify-content: end;
-      padding-top: 109px;
     }
   }
 
@@ -339,7 +325,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     box-sizing: border-box;
     border: 1px solid $buttoncolor;
     background-color: white;
@@ -349,7 +334,7 @@
     line-height: 100%;
     color: $buttoncolor;
     text-decoration: none;
-
+    cursor: pointer;
     width: 270px;
     height: 60px;
 
