@@ -1,0 +1,177 @@
+.exhibitions {
+  margin: 0 0 120px;
+
+  @include onTablet {
+    margin: 0 0 160px;
+  }
+
+  @include onDesktop {
+    margin: 0 0 200px;
+  }
+
+  &__items {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__cards {
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    margin: 0 0 60px;
+
+    font-family: $headerFont;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $headerBlackColor;
+
+    @include onTablet {
+      margin: 0 0 75px;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 55px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin: 0 0 50px;
+
+      @include onTablet {
+        margin: 0 30px 0 0;
+      }
+    }
+  }
+
+  &__button {
+    margin: 30px 0 0;
+
+    @include onTablet {
+      display: flex;
+      justify-content: end;
+
+      margin: 0;
+    }
+
+    &--item {
+      width: 100%;
+    }
+
+    &--item-secondary {
+      margin: 30px 0 0;
+
+      @include onTablet {
+        position: absolute;
+        right: 0;
+
+        margin: 0;
+        width: 210px;
+      }
+
+      @include onTablet {
+        width: 270px;
+      }
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    box-sizing: border-box;
+
+    margin: 0 0 20px;
+    width: 100%;
+    min-height: 356px;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      min-width: 330px;
+      height: 420px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      height: 370px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__date {
+    margin: 0 0 10px;
+    color: $orangeColor;
+  }
+
+  &__subtitle {
+    display: inline-block;
+
+    @include onTablet {
+      margin: 0 0 18px;
+      line-height: 150%;
+    }
+
+    &--item {
+      position: relative;
+      z-index: 1;
+
+      margin: 0 0 20px;
+      font-family: $headerFont;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 125%;
+      text-decoration: none;
+
+      color: $headerBlackColor;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-color: $headerBlackColor;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__description {
+    margin: 0 0 30px;
+
+    @include onTablet {
+      margin: 0 0 40px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+  }
+}

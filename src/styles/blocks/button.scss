@@ -1,0 +1,92 @@
+.button {
+  --hover-color: #af3419;
+  --active-color: #ea340d;
+  --dis-color: #dd836f;
+
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+  line-height: 100%;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &--primary {
+    color: $whiteColor;
+
+    background-color: $orangeColor;
+    border-color: transparent;
+
+    &:hover {
+      background-color: var(--hover-color);
+    }
+
+    &:active {
+      background-color: var(--active-color);
+    }
+
+    &:disabled {
+      background-color: var(--dis-color);
+    }
+  }
+
+  &--secondary {
+    color: $orangeColor;
+    border: 1px solid $orangeColor;
+
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::after {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 2px 0 0 20px;
+        content: url(/images/arrow-button.svg);
+      }
+    }
+
+    &:hover {
+      color: var(--hover-color);
+      border-color: var(--hover-color);
+
+      & span {
+        &::after {
+          content: url(/images/arrow-button--hover.svg);
+        }
+      }
+    }
+
+    &:active {
+      color: var(--active-color);
+      border-color: var(--active-color);
+
+      & span {
+        &::after {
+          content: url(/images/arrow-button--focus.svg);
+        }
+      }
+    }
+
+    &:disabled {
+      color: var(--dis-color);
+      border-color: var(--dis-color);
+
+      & span {
+        &::after {
+          content: url(/images/arrow-button--dis.svg);
+        }
+      }
+    }
+  }
+}
