@@ -16,13 +16,6 @@
     flex-direction: column;
   }
 
-  &__cards {
-    @include onTablet {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
   &__title {
     margin: 0 0 60px;
 
@@ -44,6 +37,13 @@
     }
   }
 
+  &__cards {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   &__card {
     display: flex;
     flex-direction: column;
@@ -54,43 +54,8 @@
 
     @include onTablet {
       margin: 0 0 70px;
+      width: 100%;
       flex-direction: row;
-    }
-  }
-
-  &__button {
-    margin: 30px 0 0;
-
-    @include onTablet {
-      display: flex;
-      justify-content: start;
-
-      margin: 0;
-    }
-
-    &--item {
-      // width: 100%;
-      min-width: 330px;
-
-      @include onDesktop {
-        width: 270px;
-      }
-    }
-
-    &--item-secondary {
-      margin: 30px 0 0;
-
-      @include onTablet {
-        position: absolute;
-        right: 0;
-
-        margin: 0;
-        width: 210px;
-      }
-
-      @include onTablet {
-        width: 270px;
-      }
     }
   }
 
@@ -99,8 +64,7 @@
     box-sizing: border-box;
 
     margin: 0 0 20px;
-    min-width: 330px;
-    height: 356px;
+    height: 400px;
 
     &::after {
       content: "";
@@ -109,7 +73,7 @@
     }
 
     @include onTablet {
-      width: 330px;
+      min-width: 330px;
       height: 425px;
       margin: 0 30px 0 0;
       padding-bottom: 0;
@@ -123,7 +87,6 @@
   }
 
   &__image {
-    // position: absolute;
     height: 100%;
     width: 100%;
 
@@ -164,6 +127,8 @@
       color: $headerBlackColor;
       border-bottom: 1px solid transparent;
 
+      transition: all 0.3s ease-in-out;
+
       &:hover {
         border-color: $headerBlackColor;
         cursor: pointer;
@@ -180,6 +145,40 @@
 
     @include onDesktop {
       margin: 0 0 50px;
+    }
+  }
+
+  &__button {
+    margin: 30px 0 0;
+
+    @include onTablet {
+      display: flex;
+      justify-content: start;
+      margin: 0;
+    }
+
+    &--item {
+      min-width: 330px;
+
+      @include onDesktop {
+        width: 270px;
+      }
+    }
+
+    &--item-secondary {
+      margin: 30px 0 0;
+
+      @include onTablet {
+        position: absolute;
+        right: 0;
+
+        margin: 0;
+        width: 210px;
+      }
+
+      @include onTablet {
+        width: 270px;
+      }
     }
   }
 }

@@ -11,13 +11,26 @@
   // overflow-y: hidden;
   z-index: 2;
 
-  &__subtitle {
-    font-size: 14px;
-    line-height: 140%;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 0;
   }
 
-  &__time {
-    font-weight: 600;
+  &__icons {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__text {
+    margin: 30px 0 0;
   }
 
   &__info {
@@ -32,8 +45,27 @@
     }
   }
 
-  &__text {
-    margin: 30px 0 0;
+  &__subtitle {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__time {
+    font-weight: 600;
+  }
+
+  &__address {
+    font-weight: 600;
+    text-decoration: none;
+    color: $whiteColor;
+    border-bottom: 1px solid transparent;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $whiteColor;
+      border-color: $whiteColor;
+    }
   }
 
   &__list {
@@ -83,6 +115,9 @@
       font-size: 20px;
       color: $whiteColor;
       text-decoration: none;
+      border-bottom: 1px solid transparent;
+
+      transition: all 0.3s ease-in-out;
 
       @include onTablet {
         font-size: 48px;
@@ -91,7 +126,7 @@
 
       &:hover {
         color: $whiteColor;
-        border-bottom: 1px solid $whiteColor;
+        border-color: $whiteColor;
       }
     }
   }
@@ -134,23 +169,5 @@
 
       margin: 0 auto;
     }
-  }
-
-  &__icons {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    gap: 30px;
-
-    @include onTablet {
-      flex-direction: row;
-      gap: 40px;
-    }
-  }
-
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0 0;
   }
 }
