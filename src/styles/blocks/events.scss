@@ -82,7 +82,7 @@
     }
 
     @include onDesktop {
-      width: 370;
+      min-width: 370px;
       height: 475px;
       padding-bottom: 0;
     }
@@ -99,6 +99,10 @@
 
     &:hover {
       transform: scale(1.05);
+    }
+
+    @include onDesktop {
+      width: 370px;
     }
   }
 
@@ -160,7 +164,9 @@
     }
 
     &--item {
-      min-width: 330px;
+      @include onTablet {
+        width: 330px;
+      }
 
       @include onDesktop {
         width: 270px;
