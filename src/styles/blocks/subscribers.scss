@@ -1,4 +1,10 @@
 .subscribers {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 9999s ease-in-out 0s;
+  }
   &__title {
     font-family: Playfair Display, sans-serif;
     font-style: normal;
@@ -57,7 +63,7 @@
     border: none;
     text-decoration: none;
     border-bottom: 1px solid black;
-    transition: border-color 0.3s;
+    transition: background-color 0.3s;
   }
   &__buttonpad {
     display: flex;
@@ -70,6 +76,30 @@
     }
     @include onDesktop {
       padding-top: 50px 0 200px;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    border: 1px solid $buttoncolor;
+    background-color: $buttoncolor;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: $grantext;
+    text-decoration: none;
+    cursor: pointer;
+    width: 270px;
+    height: 60px;
+
+    &:hover {
+      transition: 0.5s;
+      background-color: $buttonhover;
+      border: 1px solid $buttonhover;
     }
   }
 }
