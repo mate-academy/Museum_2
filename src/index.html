@@ -15,12 +15,12 @@
     <div class="headerfull" id="header">
       <nav class="top-nav containers">
         <div class="top-nav__logo">
-          <div class="xlogo">
+          <a href="#" class="xlogo">
             <img
             src="./images/NAMU.png"
             alt="NAMU"
             class="logo">
-          </div>
+          </a>
           <div class="xmenu">
             <a href="#menu" class="menuAC">
               <img
@@ -28,16 +28,10 @@
                 alt="menu"
               >
             </a>
-            <div class="uaion">
-              <img
-              src="./images/UA.png"
-              alt="UA."
-              class="ua">
-              <img
-              src="./images/Union.png"
-              alt="Union."
-              class="union">
-            </div>
+            <select class="lang" name="lang">
+              <option value="ua">UA</option>
+              <option value="en">EN</option>
+            </select>
           </div>
         </div>
       </nav>
@@ -83,28 +77,22 @@
     <nav class="page__menu menu" id="menu">
       <div class="top-nav containers">
         <div class="top-nav__logo">
-          <div class="xlogo">
+          <a href="#" class="xlogo">
             <img
             src="./images/NAMU.png"
             alt="NAMU"
             class="logo">
-          </div>
+          </a>
           <div class="xmenu">
             <a href="#" class="menuAC">
               <img
               src="./images/cross.png"
               alt="cross">
             </a>
-            <div class="uaion">
-              <img
-              src="./images/UA.png"
-              alt="UA."
-              class="ua">
-              <img
-              src="./images/Union.png"
-              alt="Union."
-              class="union">
-            </div>
+            <select class="lang" name="lang">
+              <option value="ua">UA</option>
+              <option value="en">EN</option>
+            </select>
           </div>
         </div>
       </div>
@@ -125,9 +113,10 @@
                 <div class="xtime ctime--ad">
                   Адреса:
                 </div>
-                <div class="adress">
+                <a href="https://goo.gl/maps/5pEv8S1epP8V5Ex97" target="_blank"
+                class="adress">
                   Київ, вул. М. Грушевського, 6
-                </div>
+                </a>
               </div>
             </div>
             <ul class="links">
@@ -502,20 +491,23 @@
               </div>
             </div>
           </div>
-          <div class="email">
-            <input
-              name="email"
-              type="email"
-              placeholder="E-mail"
-              class="subscribers__form"
-              required>
-          </div>
-          <div class="subscribers__buttonpad">
-            <a type="submit" class="header__link"
-              href="#header">
-              Підписатись
-            </a>
-          </div>
+          <form action="GET" id="#">
+            <div class="email">
+              <input
+                name="email"
+                type="email"
+                placeholder="E-mail"
+                class="subscribers__form"
+                required>
+            </div>
+            <div class="subscribers__buttonpad">
+              <button type="submit" class="header__link"
+              href="#">
+                Підписатись
+              </button>
+            </div>
+          </form>
+
         </div>
 
       </div>
@@ -529,36 +521,30 @@
             </div>
             <div class="footer__contact">
               <a href="https://goo.gl/maps/5pEv8S1epP8V5Ex97"
-                class="footer__contacts-title">Київ, <br> вул. М. Грушевського, 6</a>
+              target="_blank" class="footer__contacts-title footer__contacts-title--hov">Київ, <br> вул. М. Грушевського, 6</a>
               <br>
-              <a href="tel: +38 044 278-13-57" class="footer__contacts-title">тел. 278-13-57, 278-74-54</a>
+              <a href="tel: +38 044 278-13-57" class="footer__contacts-title footer__contacts-title--hov">тел. 278-13-57, 278-74-54</a>
               <br>
-              <a href="mailto:info@namu.kiev.ua" class="footer__contacts-title">info@namu.kiev.ua</a>
+              <a href="mailto:info@namu.kiev.ua" class="footer__contacts-title footer__contacts-title--hov">info@namu.kiev.ua</a>
               <br>
-              <a href="https://uk-ua.facebook.com/">
-                <img
-                src="./images/facebook.svg"
-                alt="facebook"
-                class="facebook">
-              </a>
-              <a href="https://twitter.com/">
-                <img
-                src="./images/twitter.svg"
-                alt="twitter"
-                class="twitter">
-              </a>
-              <a href="https://web.telegram.org/">
-                <img
-                src="./images/telegram.svg"
-                alt="telegram"
-                class="telegram">
-              </a>
-              <a href="https://www.instagram.com/">
-                <img
-                src="./images/instagram.svg"
-                alt="instagram"
-                class="instagram">
-              </a>
+              <div class="footer__flexbox">
+                <div class="facebook">
+                  <a href="https://uk-ua.facebook.com/" target="_blank"
+                  class="footer__socials scroll_face"></a>
+                </div>
+                <div class="twitter">
+                  <a href="https://twitter.com/" target="_blank"
+                  class="footer__socials scroll_twit"></a>
+                </div>
+                <div class="telegram">
+                  <a href="https://web.telegram.org/" target="_blank"
+                  class="footer__socials scroll_teleg"></a>
+                </div>
+                <div class="instagram">
+                  <a href="https://www.instagram.com/" target="_blank"
+                  class="footer__socials scroll_inst"></a>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col_2">
@@ -586,11 +572,15 @@
               Головна
             </div>
             <div class="footer__contacts-title">
-              <span class="padtitle">Виставки</span>
-              <br>
-              <span class="padtitle">Події</span>
-              <br>
-              <span class="padtitle">Новини</span>
+              <div class="padtitle">
+                <a href="#exhibitions" class="footer__contacts-title footer__contacts-title--hov">Виставки</a>
+              </div>
+              <div class="padtitle">
+                <a href="#exhibitions_2" class="footer__contacts-title footer__contacts-title--hov">Події</a>
+              </div>
+              <div class="padtitle">
+                <a href="#exhibitions_3" class="footer__contacts-title footer__contacts-title--hov">Новини</a>
+              </div>
             </div>
           </div>
         </div>
@@ -600,11 +590,11 @@
             <div class="privacy">
               Privacy — Terms
             </div>
+
           </div>
-          <img
-            src="./images/scroll_up.svg"
-            alt="scroll_up"
-            class="scroll_up">
+          <div class="scroll_pad">
+            <a href="#" class="footer__socials scroll_img"></a>
+          </div>
         </div>
       </div>
     </footer>
