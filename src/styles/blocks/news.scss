@@ -1,0 +1,171 @@
+.news {
+  margin: 0 0 120px;
+
+  @include onTablet {
+    margin: 0 0 160px;
+  }
+
+  @include onDesktop {
+    margin: 0 0 200px;
+  }
+
+  &__items {
+    // position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    margin: 0 0 60px;
+
+    font-family: $headerFont;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $headerBlackColor;
+
+    @include onTablet {
+      margin: 0 0 75px;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 55px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    box-sizing: border-box;
+
+    margin: 0 0 20px;
+    width: 100%;
+    min-height: 280px;
+
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      order: 2;
+      height: 330px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      height: 370px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin: 0 0 50px;
+
+      @include onTablet {
+        margin: 0 30px 0 0;
+      }
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 140%;
+    color: $headerBlackColor;
+
+    @include onTablet {
+      order: 3;
+    }
+  }
+
+  &__subtitle {
+    display: inline-block;
+
+    @include onTablet {
+      order: 4;
+      margin: 0 0 18px;
+      line-height: 150%;
+    }
+
+    &--item {
+      position: relative;
+      z-index: 1;
+
+      margin: 0 0 20px;
+      font-family: $headerFont;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 125%;
+      text-decoration: none;
+
+      color: $headerBlackColor;
+      border-bottom: 1px solid transparent;
+
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border-color: $headerBlackColor;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__description {
+    @include onTablet {
+      order: 5;
+    }
+  }
+
+  &__button {
+    margin: 30px 0 0;
+
+    @include onTablet {
+      display: flex;
+      justify-content: end;
+
+      margin: 0;
+    }
+
+    &--item {
+      @include onTablet {
+        order: 1;
+
+        margin: 0 0 65px;
+        width: 210px;
+      }
+
+      @include onDesktop {
+        margin: 0 0 52px;
+        width: 270px;
+      }
+    }
+  }
+}
