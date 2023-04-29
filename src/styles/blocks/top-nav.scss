@@ -18,15 +18,37 @@
     @include onDesktop {
       padding-top: 32px;
     }
-
+    .WBlogo {
+      display: block;
+      width: 117px;
+      height: 28px;
+      background-repeat: no-repeat;
+      transition: all 0.3s;
+      background-image: url(../images/NAMU.png);
+      &:hover {
+        background-image: url(../images/NAMUbla.png);
+      }
+    }
     .xmenu {
       display: flex;
       justify-content: end;
       align-items: center;
     }
-
-    .uaion {
+    .langMob {
+      display: flex;
+      background-color: #3f5252;
+      border: none;
+      color: #f1f5f4;
+      margin-right: 27px;
+      @include onTablet {
+        display: none;
+      }
+    }
+    .lang {
       display: none;
+      background-color: #3f5252;
+      border: none;
+      color: #f1f5f4;
       @include onTablet {
         display: flex;
         align-items: center;
@@ -42,7 +64,9 @@
     }
 
     .menuAC {
-      margin-right: 32px;
+      @include onTablet {
+        margin-right: 32px;
+      }
     }
   }
 }
