@@ -1,82 +1,145 @@
 .header {
   box-sizing: border-box;
-  padding: 32px 0;
-  height: 100vh;
-  background: url(../images/photo/header.webp) $color-background no-repeat bottom right / 625px 663px;
+  @extend %top-padding;
+  height: 100%;
+  background: $color-background;
+  color: $color-light;
 
-  &__nav {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 25px 36px;
-    column-gap: 42px;
+  &__menu {
+    @extend %top-actions;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 124px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 47px;
+    }
   }
 
   &__content {
-    padding: 82px 0 50px;
-    max-width: 570px;
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__description {
+    @include onDesktop {
+      padding-top: 72px;
+      grid-column: 1 / 2;
+    }
   }
 
   &__date {
-    font-size: 1.4rem;
-    line-height: 2rem;
-    color: $color-light;
     margin: 0 0 10px;
+    @extend %text-additional;
   }
-  
+
   &__title {
     margin: 0 0 30px;
-    font-family: $font-heading;
-    font-weight: 700;
-    font-size: 9.6rem;
-    line-height: 9.6rem;
-    color: $color-light;
+    @extend %h1;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      max-width: 569px;
+    }
+
+     @include onDesktop {
+      margin: 0 0 30px;
+    }
   }
 
   &__subtitle {
-  font-size: 1.6rem;
-    line-height: 2.4rem;
-    color: $color-light;
-    margin: 0 0 81px;
-  }
-  // &__img {
-  //   background: url(../images/photo/header.webp) no-repeat;
-  //   background-size: cover;
-  //   background-position-y: 33%;
-  // }
+    margin: 0 0 40px;
+    max-width: 270px;
+    @extend %text-main;
 
-  &__button {
-    margin-bottom: 135px;
-  }
+     @include onTablet {
+      max-width: 330px;
+      margin: 0 0 50px;
+    }
 
-  &__duration{
-    position: relative;
-    font-family: $font-heading;
-    font-weight: 700;
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    color: $color-light;
-
-    &::after {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    content: "";
-    width: 80%;
-    height: 1px;
-    background-color: $color-light;
-    padding-left: 20px;
-    transform: translateY(-50%);
+     @include onDesktop {
+      max-width: 570px;
+      margin: 0 0 81px;
     }
   }
-}
 
-.lang-select {
-  width: min-content;
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  background-color: $color-background;
-  border: none;
-  color: $color-light;
+  &__img-container {
+    width: 245px;
+    height: 273px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+    }
+    @include onDesktop {
+      grid-column: 2 / 3;
+      align-self: end;
+      width: 625px;
+      min-height: 694px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 15%;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__duration {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+      font-family: $font-heading;
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        content: "";
+        width: 80%;
+        height: 1px;
+        background-color: $color-light;
+        padding-left: 20px;
+        transform: translateY(50%);
+        }
+      }
+    }
+  &-select {
+    display: none;
+    @include onTablet {
+      display: inline-block;
+      width: min-content;
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      background-color: $color-background;
+      border: none;
+      color: inherit;
+    }
+  }
 }

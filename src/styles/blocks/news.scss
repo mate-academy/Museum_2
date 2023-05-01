@@ -1,0 +1,48 @@
+.news {
+  @include onTablet {
+    padding: 20px 0 0;
+  }
+
+  @include onDesktop {
+    padding: 0;
+  }
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
+  &__card {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & > .card__img-container {
+      margin-bottom: 22px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+      margin-bottom: 16px;
+      max-height: 370px;
+      overflow: hidden;
+      }
+    }
+
+    & .card__text {
+      @include onTablet {
+        letter-spacing: 0;
+      }
+    }
+  }
+}
