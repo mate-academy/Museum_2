@@ -9,28 +9,29 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 16px;
+  border: none;
 
-  background-color: #cd4d31;
+  background-color: $orangeDef;
 
   text-decoration: none;
-  color: #f1f5f4;
+  color: $textWhite;
 
   &:hover {
-    background-color: #af3419;
+    background-color: $orangeHov;
   }
 
   &:active {
-    background-color: #ea340d;
+    background-color: $orangeAct;
   }
 
   &:disabled {
-    background-color: #dd836f;
+    background-color: $orangeDis;
   }
 
   @include onTablet {
     width: 330px;
   }
-  
+
   @include onDesktop {
     width: 270px;
   }
@@ -45,6 +46,79 @@
     @include onDesktop {
       margin-bottom: 0;
     }
+
+    &--nav {
+      margin-bottom: 0;
+    }
+  }
+
+  &-about {
+    margin-bottom: 60px;
+
+    @include minTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &-section {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    border: 1px solid $orangeDef;
+    color: $orangeDef;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      height: 16px;
+      width: 16px;
+      margin-left: 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(../images/icon/arrowDefault.svg);
+    }
+
+    &:hover {
+      color: $orangeHov;
+      border-color: $orangeHov;
+
+      &::after {
+        background-image: url(../images/icon/arrowHover.svg);
+      }
+    }
+
+    &:active {
+      color: $orangeAct;
+      border-color: $orangeAct;
+
+      &::after {
+        background-image: url(../images/icon/arrowActive.svg);
+      }
+    }
+
+    @include onTablet {
+      display: flex;
+      width: 210px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      width: 270px;
+    }
+
+    &--end {
+      display: flex;
+
+      @include minTablet {
+        display: none;
+      }
+    }
+
   }
 
 }
