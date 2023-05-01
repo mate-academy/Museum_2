@@ -47,7 +47,7 @@
       max-width: 569px;
     }
 
-     @include onDesktop {
+    @include onDesktop {
       margin: 0 0 30px;
     }
   }
@@ -57,12 +57,12 @@
     max-width: 270px;
     @extend %text-main;
 
-     @include onTablet {
+    @include onTablet {
       max-width: 330px;
       margin: 0 0 50px;
     }
 
-     @include onDesktop {
+    @include onDesktop {
       max-width: 570px;
       margin: 0 0 81px;
     }
@@ -125,21 +125,27 @@
         background-color: $color-light;
         padding-left: 20px;
         transform: translateY(50%);
-        }
       }
     }
+  }
   &-select {
     display: none;
+    cursor: pointer;
+    transition: opacity $transition;
     @include onTablet {
       display: inline-block;
       width: min-content;
+      background-color: $color-background;
+      border: none;
       font-family: inherit;
       font-weight: 500;
       font-size: 1.6rem;
       line-height: 2.4rem;
-      background-color: $color-background;
-      border: none;
       color: inherit;
+    }
+
+    &:hover {
+      opacity: 0.6;
     }
   }
 }
