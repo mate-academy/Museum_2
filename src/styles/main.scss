@@ -1,7 +1,79 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils";
+
+@import "./button.scss";
+@import "./card.scss";
+@import "./photo.scss";
+
+@import "./header.scss";
+@import "./menu.scss";
+@import "./exhibitions.scss";
+@import "./events.scss";
+@import "./visit.scss";
+@import "./digest.scss";
+@import "./footer.scss";
+
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+  padding: 0;
+  font-family: $raleway;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 20px;
+  justify-content: center;
+
+  @include onTablet {
+    padding: 30px 40px;
+  }
+
+  @include onDesktop {
+    padding: 32px 56px;
+  }
+
+  &--menu {
+    overflow-y: auto;
+    margin-bottom: 20px;
+  }
+
+  &--visit {
+    margin-left: 0;
+
+    @include onDesktop {
+      margin-right: 0;
+    }
+  }
+}
+
+.title {
+
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__text {
+    font-family: $playfair;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    margin: 50px 0 65px;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
 }

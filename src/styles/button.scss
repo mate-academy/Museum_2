@@ -1,0 +1,96 @@
+.button {
+  display: flex;
+  width: 279px;
+  height: 60px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  background-color: $buttonMain;
+  text-decoration: none;
+  border: none;
+  margin-bottom: 30px;
+
+  transition: background-color $transition-duration;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &:hover {
+    background-color: $buttonHover;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: $buttonPressed;
+  }
+
+  &:disabled {
+    background-color: $buttonDisabled;
+  }
+}
+
+.diff__button {
+  display: flex;
+  box-sizing: border-box;
+  width: 279px;
+  height: 60px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: $buttonMain;
+  text-decoration: none;
+  border: 1px solid $buttonMain;
+  cursor: pointer;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &:hover {
+    color: $buttonHover;
+    border: 1px solid $buttonHover;
+  }
+
+  &:active {
+    color: $buttonPressed;
+    border: 1px solid $buttonPressed;
+  }
+
+  &:disabled {
+    color: $buttonDisabled;
+    border: 1px solid $buttonDisabled;
+  }
+
+  &--360 {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 200px;
+    }
+
+    @include onDesktop {
+      width: 300px;
+    }
+  }
+
+  &--760 {
+    @include onTablet {
+      display: none;
+    }
+  }
+}
