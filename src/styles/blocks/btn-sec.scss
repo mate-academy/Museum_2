@@ -1,0 +1,53 @@
+.btn-sec {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  @include flexDJI($fd: 0, $jc: center, $ai: center);
+  gap: 8px;
+
+  @extend %btn;
+  color: $c-main;
+  border: 1px solid $c-main;
+  background-color: $c-white;
+
+  transition: color $act-time,
+    background-image $act-time,
+    box-shadow $act-time;
+
+  &:hover {
+    color: $c-btn-hover;
+    border-color: $c-btn-hover;
+    box-shadow: 5px 3px 13px 3px $c-dark-gray;
+  }
+
+  &:active {
+    color: $c-btn-pressed;
+    border-color: $c-btn-pressed;
+  }
+
+  &--disable {
+    color: $c-btn-disabled;
+    border-color: $c-btn-disabled;
+  }
+
+  &__arrow {
+    display: block;
+    width: 24px;
+    height: 24px;
+    @include bgImgPosition($ps: center, $sz: cover);
+
+    background-image: url(./../images/icon/arrow.svg);
+  }
+
+  &--disable &__arrow {
+    background-image: url(./../images/icon/arrow-disable.svg);
+  }
+
+  &:hover &__arrow {
+    background-image: url(./../images/icon/arrow-hover.svg);
+  }
+
+  &:active &__arrow {
+    background-image: url(./../images/icon/arrow-press.svg);
+  }
+}

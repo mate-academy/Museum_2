@@ -1,0 +1,141 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+
+  @media (max-height: 450px) {
+    overflow-y: scroll;
+  }
+
+  @include onSmTablet {
+    overflow-y: scroll;
+  }
+
+  background: $c-bgd;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__content {
+    padding-top: 20px;
+  }
+
+  &__top {
+    margin-bottom: 32px;
+    @include flexDJI($fd: 0, $jc: space-between, $ai: center);
+
+    @include onSmTablet {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__bottom {
+    color: $c-white;
+  }
+
+  &__grid {
+    row-gap: 40px;
+
+    @include onSmTablet {
+      row-gap: 52px;
+    }
+
+    @include onDesktop {
+      row-gap: 60px;
+      align-items: start;
+    }
+  }
+
+  &__grid-item {
+    &--desk {
+      position: relative;
+      display: none;
+
+      @include onSmTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        margin-right: -#{$pddg-x-desk};
+        grid-row: 1 / 5;
+      }
+    }
+  }
+
+  &__link-text {
+    @include onSmTablet {
+      font-size: 48px;
+    }
+  }
+
+  &__icons {
+    @extend %icons;
+  }
+
+  &__aditional {
+    @extend %additional;
+  }
+
+  &__description {
+    &--bold {
+      font-weight: $fw-semibolt;
+    }
+  }
+
+  &__contact-link {
+    font-weight: $fw-semibolt;
+    color: $c-white;
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $c-white;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include onSmTablet {
+        margin-bottom: 32px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: $c-white;
+  }
+
+  &__img-container {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    @include bgImgPosition($ps: center, $sz: contain);
+    background-image: url(./../images/picture/pic-menu-tab.webp);
+
+    @include onDesktop {
+      position: absolute;
+      background-position: top;
+      background-image: url(./../images/picture/pic-menu-desk.webp);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+
+      @include onDesktop {
+        padding-bottom: 110%;
+      }
+    }
+  }
+
+  @include imgDefinition;
+}

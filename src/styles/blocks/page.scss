@@ -1,0 +1,36 @@
+.page {
+  @extend %main;
+  scroll-behavior: smooth;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 88px;
+
+    @include onSmTablet {
+      margin-bottom: 104px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 112px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(110%);
+    transition: transform $act-time;
+
+    &:target {
+      transform: translateX(0);
+      z-index: 2;
+    }
+  }
+}

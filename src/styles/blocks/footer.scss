@@ -1,0 +1,138 @@
+.footer {
+  color: $c-white;
+  background-color: $c-bgd;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__content {
+    padding: 32px 0;
+
+    @include onSmTablet {
+      padding: 52px 0 32px;
+    }
+  }
+
+  &__top {
+    margin-bottom: 60px;
+
+    @include onDesktop {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__grid-item-top {
+    &:not(:last-child) {
+      margin-bottom: 52px;
+
+      @include onSmTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 150%;
+
+    @include onSmTablet {
+      margin-bottom: 32px;
+      font-size: 20px;
+    }
+  }
+
+  &__menu-link {
+    display: block;
+
+    color: $c-white;
+    &:not(:last-child) {
+      margin-bottom: 4px;
+
+      @include onSmTablet {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &__contact {
+    height: 100%;
+  }
+
+  &__info-flex {
+    @include flexDJI($fd: column, $jc: space-between, $ai: 0);
+    gap: 32px;
+
+    @include onDesktop {
+      gap: 48px;
+    }
+  }
+
+  &__contact-info {
+    &--link {
+      color: $c-white;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__social-link {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    @include bgImgPosition($ps: center, $sz: contain);
+
+    @include hover(opacity, 0.7);
+
+    &--fb {
+      background-image: url(./../images/social/facebook.svg);
+    }
+
+    &--tw {
+      background-image: url(./../images/social/twitter.svg);
+    }
+
+    &--tg {
+      background-image: url(./../images/social/telegram.svg);
+    }
+
+    &--inst {
+      background-image: url(./../images/social/instagram.svg);
+    }
+  }
+
+  &__bottom {
+    position: relative;
+  }
+
+  &__scroll-up {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    @include bgImgPosition($ps: center, $sz: contain);
+    background-image: url(./../images/icon/scroll-up.svg);
+
+    @include hover(opacity, 0.7);
+  }
+
+  &__copyright {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__privacy {
+    font-size: 14px;
+    line-height: 140%;
+    color: $c-white;
+  }
+}
