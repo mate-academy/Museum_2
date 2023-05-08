@@ -40,6 +40,19 @@
     }
   }
 
+  @include onSmDesktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: $gr-gap-desk;
+
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &__item--sm-desktop-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+
   @include onDesktop {
     grid-template-columns: repeat(12, 1fr);
     column-gap: $gr-gap-desk;
