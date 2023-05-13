@@ -1,0 +1,154 @@
+.header {
+  position: relative;
+
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  color: $whiteColor;
+
+  background-color: $grayGreenColor;
+
+  @include onDesktop {
+    padding-bottom: 50px;
+  }
+
+  &__content {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 54px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__logo {
+    display: block;
+  }
+
+  &__menu-opener {
+    width: 30px;
+    height: 30px;
+
+    background-image: url(../images/icons/burger.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  &__additional-text {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__additional-bottom-text {
+    display: none;
+    align-items: center;
+    column-gap: 20px;
+    grid-column: 1 / 7;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    opacity: 0.7;
+
+    &::after {
+      display: block;
+      content: "";
+      height: 1px;
+      flex-grow: 1;
+
+      background-color: $whiteColor;
+      opacity: 0.3;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__image-wrapper {
+    width: 80%;
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    @include onTablet {
+      width: 100%;
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: 137px;
+      left: 51%;
+      right: 0;
+      bottom: 0;
+
+      width: auto;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+}
