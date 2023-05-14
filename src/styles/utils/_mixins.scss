@@ -10,3 +10,39 @@
   }
 }
 
+@mixin headerStyles {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-top: 30px;
+
+  @include onDesktop {
+    padding-bottom: 50px;
+  }
+
+  color: $whiteColor;
+
+  background-color: $grayGreenColor;
+}
+
+@mixin headerImageStyles($imagePath) {
+  flex-grow: 1;
+
+  background-image: $imagePath;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  @include onDesktop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 51%;
+
+    background-position: right bottom;
+  }
+}

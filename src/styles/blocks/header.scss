@@ -1,22 +1,9 @@
 .header {
-  position: relative;
+  @include headerStyles;
 
-  box-sizing: border-box;
-  min-height: 100vh;
-  padding-top: 30px;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
 
-  color: $whiteColor;
-
-  background-color: $grayGreenColor;
-
-  @include onDesktop {
-    padding-bottom: 50px;
-  }
-
-  &__content {
+  &__top-container {
     margin-bottom: 40px;
 
     @include onTablet {
@@ -53,7 +40,7 @@
     cursor: pointer;
   }
 
-  &__additional-text {
+  &__top-text {
     margin-bottom: 10px;
 
     font-size: 14px;
@@ -95,7 +82,7 @@
     }
   }
 
-  &__additional-bottom-text {
+  &__bottom-text {
     display: none;
     align-items: center;
     column-gap: 20px;
@@ -105,6 +92,7 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 125%;
+
     opacity: 0.7;
 
     &::after {
@@ -122,33 +110,7 @@
     }
   }
 
-  &__image-wrapper {
-    width: 80%;
-    grid-column: 1 / -1;
-    justify-self: center;
-
-    @include onTablet {
-      width: 100%;
-      grid-column: 2 / 6;
-    }
-
-    @include onDesktop {
-      position: absolute;
-      top: 137px;
-      left: 51%;
-      right: 0;
-      bottom: 0;
-
-      width: auto;
-    }
-  }
-
   &__image {
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-    object-position: center;
+    @include headerImageStyles(url(../images/header-image.png))
   }
 }
