@@ -1,10 +1,22 @@
 .menu {
   @include headerStyles;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+
   padding-bottom: 30px;
+
+  transition: transform $duration;
 
   @include onTablet {
     padding-bottom: 0;
+  }
+
+  &--open {
+    transform: translateX(0);
   }
 
   &__container {
