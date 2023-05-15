@@ -1,0 +1,83 @@
+.events {
+  &__title {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 76px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      grid-column: 1 / 10;
+    }
+  }
+
+  &__image-wrapper {
+    @include eventImageWrapper;
+
+    @include onTablet {
+      margin-bottom: 70px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+      grid-column: 1 / 5;
+    }
+
+    &--last-event {
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    @include eventImage;
+  }
+
+  &__info {
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__date {
+    @include eventDate;
+  }
+
+  &__event-title {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @include eventDescription;
+  }
+
+  &__button-wrapper {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: $tabletGridColumnGap;
+    }
+
+    &--last-event {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
