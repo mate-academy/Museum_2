@@ -8,6 +8,19 @@
       margin-bottom: 200px;
     }
   }
+  &__title-containers {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 292px;
+    }
+    @include onDesktop {
+      height: 238px;
+    }
+
+  }
   &__title {
     font-family: Playfair Display, sans-serif;
     font-style: normal;
@@ -232,7 +245,7 @@
     width: 100%;
 
     padding-bottom: 100%;
-    
+
     @include onTablet {
       display: none;
       height: 330px;
@@ -314,8 +327,11 @@
     color: $buttoncolor;
     text-decoration: none;
     cursor: pointer;
-    width: 270px;
     height: 60px;
+    width: 100%;
+    @include onTablet {
+      width: 270px;
+    }
 
     &:hover {
       transition: 0.5s;
