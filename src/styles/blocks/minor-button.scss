@@ -1,0 +1,44 @@
+.minor-button {
+  @include button;
+
+  color: $redColor;
+
+  border: 1px solid $redColor;
+
+  transition: color $duration, border-color $duration;
+
+  @include onTablet {
+    grid-column: -1 / -3;
+    grid-row: 1 / 2;
+  }
+
+  @include onDesktop {
+    grid-column: -1 / -4;
+  }
+
+  // &::after {
+  //   display: block;
+  //   content: "";
+  //   width: 20px;
+  //   height: 20px;
+
+  //   background-image: url(../../images/icons/);
+  // }
+
+  &:hover {
+    color: $hoverRedColor;
+    border-color: $hoverRedColor;
+  }
+
+  &:active {
+    color: $activeRedColor;
+    border-color: $activeRedColor;
+  }
+
+  &:disabled {
+    color: $disabledRedColor;
+    border-color: $disabledRedColor;
+  }
+
+
+}
