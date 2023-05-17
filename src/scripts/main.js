@@ -25,15 +25,19 @@ const closeMenu = () => {
   document.body.classList.remove('page__body--with-menu');
 };
 
-const openLocalesList = (localeList, currentLocale) => {
+const openLocalesList = (event, localeList, currentLocale) => {
+  event.stopPropagation();
   localeList.classList.toggle('locale__list--open');
   currentLocale.classList.toggle('locale__current--opened-list');
 };
 
-const localeChoosingHandler = (event, localeList, currentLocale) => {
-  currentLocale.innerText = event.target.innerText;
+const closeLocalesList = (localeList, currentLocale) => {
   localeList.classList.remove('locale__list--open');
   currentLocale.classList.remove('locale__current--opened-list');
+};
+
+const localeChoosingHandler = (event, currentLocale) => {
+  currentLocale.innerText = event.target.innerText;
 };
 
 menuOpener.addEventListener('click', openMenu);
@@ -48,22 +52,30 @@ form.addEventListener('submit', (e) => {
   form.reset();
 });
 
-headerCurrentLocale.addEventListener('click', () => {
-  openLocalesList(headerLocalesList, headerCurrentLocale);
+headerCurrentLocale.addEventListener('click', event => {
+  openLocalesList(event, headerLocalesList, headerCurrentLocale);
 });
 
-menuCurrentLocale.addEventListener('click', () => {
-  openLocalesList(menuLocalesList, menuCurrentLocale);
+menuCurrentLocale.addEventListener('click', event => {
+  openLocalesList(event, menuLocalesList, menuCurrentLocale);
 });
 
 headerLocalesListItems.forEach(item => {
   item.addEventListener('click', event => {
-    localeChoosingHandler(event, headerLocalesList, headerCurrentLocale);
+    localeChoosingHandler(event, headerCurrentLocale);
   });
 });
 
 menuLocalesListItems.forEach(item => {
   item.addEventListener('click', event => {
-    localeChoosingHandler(event, menuLocalesList, menuCurrentLocale);
+    localeChoosingHandler(event, menuCurrentLocale);
   });
+});
+
+document.addEventListener('click', (e) => {
+  if (e.target !== headerCurrentLocale
+    && e.target !== menuCurrentLocale) {
+    closeLocalesList(headerLocalesList, headerCurrentLocale);
+    closeLocalesList(menuLocalesList, menuCurrentLocale);
+  }
 });
