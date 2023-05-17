@@ -15,8 +15,15 @@ const menuCurrentLocale = menu.querySelector('.locale__current');
 const menuLocalesList = menu.querySelector('.locale__list');
 const menuLocalesListItems = menu.querySelectorAll('.locale__item');
 
-const openMenu = () => menu.classList.add('menu--open');
-const closeMenu = () => menu.classList.remove('menu--open');
+const openMenu = () => {
+  menu.classList.add('menu--open');
+  document.body.classList.add('page__body--with-menu');
+};
+
+const closeMenu = () => {
+  menu.classList.remove('menu--open');
+  document.body.classList.remove('page__body--with-menu');
+};
 
 const openLocalesList = (localeList, currentLocale) => {
   localeList.classList.toggle('locale__list--open');
