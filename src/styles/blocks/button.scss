@@ -2,11 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
   background-color: $c-main;
   border: none;
   height: 60px;
-  width: 270px;
+  width: 100%;
 
   font-weight: 600;
   font-size: 16px;
@@ -14,8 +13,20 @@
   color: $c-white;
   transition: all 0.3s;
 
+  &--last {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
   @include onTablet {
     width: 100%;
+  }
+
+  @include onDesktop {
+    width: 270px;
   }
 
   &:hover {
@@ -27,5 +38,54 @@
   }
   &:disabled {
     background-color: #dd836f;
+  }
+
+  &__alternate {
+    stroke: $c-main;
+    background-color: transparent;
+    border: $c-main 1px solid;
+    gap: 20px;
+    color: $c-main;
+
+    @include onTablet {
+      width: 270px;
+    }
+
+    &:hover {
+      stroke: #af3419;
+      color: #af3419;
+      border: #af3419 1px solid;
+      background-color: transparent;
+    }
+
+    &:active {
+      stroke: #ea340d;
+      color: #ea340d;
+      border: #ea340d 1px solid;
+      background-color: transparent;
+    }
+
+    &:disabled {
+      stroke: #dd836f;
+      color: #dd836f;
+      border: #dd836f 1px solid;
+      background-color: transparent;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    &--mobile {
+      display: flex;
+
+      @include onTablet {
+        display: none;
+      }
+    }
   }
 }
