@@ -42,7 +42,7 @@ menuButton.addEventListener('click', closeMenu);
 
 menuLinks.forEach(item => item.addEventListener('click', closeMenu));
 
-form.addEventListener('click', (e) => {
+form.addEventListener('submit', (e) => {
   e.preventDefault();
   form.reset();
 });
