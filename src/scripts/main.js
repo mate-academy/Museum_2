@@ -33,6 +33,7 @@ const openLocalesList = (localeList, currentLocale) => {
 const localeChoosingHandler = (event, localeList, currentLocale) => {
   currentLocale.innerText = event.target.innerText;
   localeList.classList.remove('locale__list--open');
+  currentLocale.classList.remove('locale__current--opened-list');
 };
 
 menuOpener.addEventListener('click', openMenu);
