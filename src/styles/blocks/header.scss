@@ -1,0 +1,100 @@
+.header {
+  background-color: $color-background;
+  overflow: hidden;
+
+  &__content {
+    padding: 0 20px;
+
+    @include on-tablet {
+      padding: 0 40px;
+    }
+
+    @include on-desktop {
+      padding: 0 45px;
+      @include flex(flex, false, space-between, row);
+    }
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+    @include fonts(14px, 20px, 400);
+    color: $color-white;
+    margin: 0 0 10px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    @include fonts(48px, 48px, 700);
+    color: $color-white;
+    margin: 0 0 30px;
+    max-width: 570px;
+
+    @include on-tablet {
+      @include fonts(72px, 72px, 700);
+      margin: 0 0 20px;
+    }
+
+    @include on-desktop {
+      @include fonts(96px, 96px, 700);
+      margin: 0 0 30px;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Raleway", sans-serif;
+    @include fonts(16px, 24px, 400);
+    color: $color-white;
+    margin: 0 0 40px;
+
+    @include on-tablet {
+      margin: 0 0 50px;
+    }
+
+    @include on-desktop {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__date {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      font-family: "Playfair Display", serif;
+      @include fonts(14px, 18px, 700);
+      opacity: 0.7;
+      color: $color-white;
+      margin: 0 20px 0 0;
+      white-space: nowrap;
+    }
+  }
+
+  &__small-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__line {
+    width: 100%;
+    border-bottom: 1px solid $color-white;
+    padding-bottom: 9px;
+    opacity: 0.3;
+  }
+
+  &__img-box {
+    @include flex(flex, center, center, row);
+  }
+
+  &__image {
+    @include sizes(245px, 273px);
+
+    @include on-tablet {
+      @include sizes(443px, 494px);
+    }
+
+    @include on-desktop {
+      @include sizes(625px, 663px);
+    }
+  }
+}

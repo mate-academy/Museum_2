@@ -1,0 +1,192 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-x: hidden;
+
+  @include on-tablet {
+    overflow-y: scroll;
+  }
+
+  @include on-desktop {
+    overflow-y: scroll;
+  }
+
+  &__content {
+    padding: 0 20px;
+
+    @include on-tablet {
+      padding: 0 40px;
+    }
+
+    @include on-desktop {
+      padding: 0 55px;
+      @include flex(flex, false, space-between, row);
+    }
+  }
+
+  &__cross {
+    display: block;
+    @include sizes(20px, 20px);
+    background-image: url("../images/cross.svg");
+    @include background(no-repeat, center, cover);
+    margin-left: 30px;
+
+    @include on-tablet {
+      @include sizes(25px, 25px);
+    }
+
+    @include on-desktop {
+      @include sizes(30px, 30px);
+    }
+  }
+
+  &__lang {
+    display: block;
+  }
+
+  &__box {
+    &--mobile {
+      @include flex(flex, center, false, row);
+    }
+
+    &--tablet {
+      display: none;
+    }
+
+    @include on-tablet {
+      &--mobile {
+        display: none;
+      }
+
+      &--tablet {
+        @include flex(flex, center, false, row);
+      }
+    }
+  }
+
+  &__boxes {
+    font-family: "Raleway", sans-serif;
+    color: $color-white;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      width: 500px;
+      @include flex(flex, center, space-between, row);
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      @include flex(flex, center, space-between, row);
+      margin-bottom: 70px;
+    }
+  }
+
+  &__box-first {
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    @include fonts(14px, 20px, 400);
+  }
+
+  &__time {
+    @include fonts(16px, 24px, 600);
+  }
+
+  &__adress {
+    @include fonts(16px, 24px, 600);
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    color: $color-white;
+    @include fonts(20px, 30px, 700);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $color-white;
+    }
+
+    @include on-tablet {
+      @include fonts(48px, 58px, 700);
+    }
+
+    @include on-desktop {
+      @include fonts(48px, 58px, 700);
+    }
+  }
+
+  &__line {
+    border-bottom: 1px solid $color-white;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__img-box {
+    display: none;
+
+    @include on-tablet {
+      @include flex(flex, center, flex-end, column);
+    }
+  }
+
+  &__image {
+    @include on-tablet {
+      @include sizes(422px, 466px);
+    }
+
+    @include on-desktop {
+      @include sizes(625px, 697px);
+    }
+  }
+}
