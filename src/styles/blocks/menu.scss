@@ -3,19 +3,6 @@
   color: $white-color;
   background-color: $background;
   overflow-y: auto;
-  
-  @include onTablet {
-    background-image: url(/images/img_menu.png);
-    background-repeat: no-repeat;
-    
-    background-size: auto 45%;
-    background-position: bottom;
-  }
-
-  @include onDesktop {
-    background-size: auto 82%;
-    background-position: right bottom;
-  }
 
   &__top {
     @include top-actions;
@@ -47,6 +34,25 @@
       grid-column: 3/4;
     }
   }
+
+  &__content {
+    @include onTablet {
+      min-height: 1092px;
+      background-image: url(/images/img_menu.png);
+      background-repeat: no-repeat;
+      
+      background-size: auto 45%;
+      background-position: bottom;
+    }
+
+    @include onDesktop {
+      min-height: 100vh;
+      //min-height: calc(100vh - 102px);
+      background-size: auto 82%;
+      background-position: right bottom;
+    }
+  }
+
 
   &__info {
     display: flex;
