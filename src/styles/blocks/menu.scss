@@ -4,6 +4,14 @@
   background-color: $background;
   overflow-y: auto;
 
+  @include onDesktop {
+    background-image: url(/images/img_menu.png);
+
+    background-repeat: no-repeat;
+    background-size: auto 82%;
+    background-position: right bottom;
+  }
+
   &__top {
     @include top-actions;
       grid-template-columns: 1fr var(--icon-width) var(--icon-width);
@@ -46,13 +54,11 @@
     }
 
     @include onDesktop {
-      min-height: 100vh;
-      //min-height: calc(100vh - 102px);
-      background-size: auto 82%;
-      background-position: right bottom;
+      background-image: none;
+      //min-height: 100vh;
+      min-height: calc(100vh - 102px);
     }
   }
-
 
   &__info {
     display: flex;
