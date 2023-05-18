@@ -1,0 +1,58 @@
+.nav {
+  @include flex(flex, center, space-between, row);
+  padding: 20px 20px 70px;
+  margin-bottom: -1px;
+
+  @include on-tablet {
+    padding: 26px 40px 90px;
+    margin-bottom: -1px;
+  }
+
+  @include on-desktop {
+    padding: 32px 55px 90px;
+    margin-bottom: -1px;
+  }
+
+  &__menu-burger {
+    display: block;
+    @include sizes(25px, 20px);
+    background-image: url(../images/menu-burger.svg);
+    @include background(no-repeat, center, cover);
+
+    @include on-tablet {
+      @include sizes(30px, 30px);
+    }
+
+    @include on-desktop {
+      @include sizes(30px, 30px);
+    }
+  }
+
+  &__lang {
+    font-family: "Raleway", sans-serif;
+    @include fonts(16px, 24px, 500);
+    text-align: center;
+    background-color: $color-background;
+    color: $color-white;
+    cursor: pointer;
+    border: none;
+    height: 24px;
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      margin-left: 40px;
+    }
+
+    @include on-desktop {
+      display: block;
+      margin-left: 40px;
+    }
+  }
+
+  &__box {
+    @include on-tablet {
+      @include flex(flex, center, false, false);
+    }
+  }
+}
