@@ -1,0 +1,41 @@
+.exhibitions {
+  @include onDesktop {
+    padding-bottom: 50px;
+  }
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
+  &__card {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 28px;
+    }
+
+    @include onTablet {
+      margin-bottom: 24px;
+    }
+
+    & > .card__img-container {
+      margin-bottom: 18px;
+      height: 358px;
+
+      @include onTablet {
+        height: 420px;
+        max-height: 484px;
+        padding-bottom: 0;
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 20px;
+        height: 484px;
+      }
+    }
+  }
+}
