@@ -1,0 +1,120 @@
+.menu {
+  background-size: cover;
+  background-position: center;
+  background-color: #3f5252;
+
+  @include onTablet {
+    background-image: url(../images/boyTablet.png);
+    background-repeat: no-repeat;
+    background-position: 50% 94%;
+    background-size: 422px 466px;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/boyTablet.png);
+    background-repeat: no-repeat;
+    background-size: 625px 697px;
+    background-position: 100% 80%;
+  }
+
+  @include onScreen {
+    background-image: url(../images/boyTablet.png);
+    background-repeat: no-repeat;
+    background-size: 70vh;
+    background-position: 87% 92%;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+  }
+
+  &__info {
+    margin-top: 30px;
+
+    @include onTablet {
+      display: flex;
+      gap: 123px;
+    }
+
+    &--title {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: #f1f5f4;
+    }
+
+    &--description {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      color: #f1f5f4;
+      text-decoration: none;
+      margin: 0;
+
+      &:first-of-type {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__list {
+    margin: 40px 0 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid #f1f5f4;
+
+    @include onDesktop {
+      width: 550px;
+      border-bottom: 1px solid rgba(241, 245, 244, 0.3);
+
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    width: max-content;
+    transition: 0.3s;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid #f1f5f4;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: #f1f5f4;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.header {
+  background-color: #3f5252;
+  height: 100vh;
+  background-image: url(../images/girlTablet.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 30vh;
+
+  @include onTablet {
+    background-size: 40vh;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/girlDesktop.png);
+    background-size: 625px 651px;
+    background-position: bottom right;
+  }
+
+  @include onScreen {
+    background-image: url(../images/girlDesktop.png);
+    background-size: 70vh;
+    background-position: 95% 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #f1f5f4;
+
+    &--date {
+      margin: 70px 0 0;
+    }
+
+    &--main {
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+
+      margin: 10px 0 0;
+
+      @include onTablet {
+        font-size: 72px;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+      }
+    }
+
+    &--description {
+      margin: 30px 0 40px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      color: #f1f5f4;
+      opacity: 0.7;
+      position: absolute;
+      bottom: 50px;
+      margin: 0;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        height: 1px;
+        background-color: #f1f5f4;
+        margin-left: 20px;
+        opacity: 0.3;
+        width: 500px;
+      }
+    }
+  }
+}
