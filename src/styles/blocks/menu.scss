@@ -38,6 +38,10 @@
     @include onTablet {
       margin-bottom: 55px;
     }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
   }
 
   &__block {
@@ -50,6 +54,11 @@
     @include onTablet {
       display: flex;
       margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      margin-bottom: 70px;
     }
   }
 
@@ -64,10 +73,14 @@
   }
 
   &__item {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 
     @include onTablet {
       margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
     }
 
     &:last-child {
@@ -98,7 +111,7 @@
   &__address {
     transition: color 0.3s;
     text-decoration: none;
-    
+
     &:hover {
       color: $mainColor;
     }
@@ -130,12 +143,20 @@
     }
 
     @include onDesktop {
-      position: absolute;    
-      right: 0;
-      bottom: 0;
-      display: block;
-      margin-top: 0;
-      width: 624px;
+      display: none;
     }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: block;
+        margin-top: 0;
+        width: 624px;
+      }
+   }
   }
 }

@@ -1,17 +1,21 @@
 .footer {
   background-color: $backgroundColor;
+  padding-top: 35px;
+
+  @include onTablet {
+    padding-top: 50px;
+  }
 
   &__content {
-    padding-top: 35px;
-    
+
     @include onTablet {
       display: flex;
       justify-content: space-between;
-      padding-top: 50px;
     }
   }
 
   &__additional-info {
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding-bottom: 30px;
@@ -31,6 +35,18 @@
     border: none;
     background-color: $backgroundColor;
     cursor: pointer;
+    transition: all 0.3s;
+
+    @include onTablet {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding-bottom: 35px;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__social-media {

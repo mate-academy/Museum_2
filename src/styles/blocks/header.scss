@@ -2,20 +2,29 @@
   background-color: $backgroundColor;
 
   &__wrapper {
+    position: relative;
     box-sizing: border-box;
     padding: $headerTopPadding 0 0;
     height: 100vh;
+
+    @include onTablet {
+      height: 1092px;
+    }
+
+    @include onDesktop {
+      height: 100vh;
+    }
   }
 
   &__nav {
     margin-bottom: 70px;
 
     @include onTablet {
-      margin-bottom: 70px;
+      margin-bottom: 125px;
     }
 
     @include onDesktop {
-      margin-bottom: 125px;
+      margin-bottom: 120px;
     }
   }
 
@@ -28,34 +37,32 @@
   }
 
   &__dates {
-    margin-bottom: 10px;
+    margin: 0 0 10px;
     font-size: 14px;
     line-height: 140%;
     color: $colorWhite;
   }
 
   &__title {
-    margin-bottom: 30px;
-    margin-top: 0;
-    font-size: 38px;
+    margin: 0 0 30px;
+    font-size: 48px;
+    line-height: 100%;
     font-family: 'Playfair Display', serif;
     color: $colorWhite;
 
     @include onTablet {
-      margin-bottom: 20px;
-      font-size: 36px;
+      margin: 0 0 20px;
+      font-size: 72px;
     }
 
     @include onDesktop {
-      margin-bottom: 30px;
+      margin: 0 0 30px;
       font-size: 96px;
-      line-height: 100%;
     }
   }
 
   &__info {
-    margin-top: 0;
-    margin-bottom: 40px;
+    margin: 0 0 40px;
     line-height: 150%;
     color: $colorWhite;
 
@@ -69,10 +76,10 @@
   }
 
   &__button {
-    margin-bottom: 40px;
+    margin: 0 0 40px;
 
     @include onTablet {
-      margin-bottom: 40px;
+      margin-bottom: 70px;
     }
 
     @include onDesktop {
@@ -88,7 +95,7 @@
     line-height: 125%;
     font-family: 'Playfair Display', serif;
     color: $colorWhite;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -117,8 +124,10 @@
     width: 245px;
 
    @include onTablet {
-      width: 303px;
-      left: 40%;
+    position: absolute;
+      width: 443px;
+      bottom: 0;
+
     }
 
     @include onDesktop {

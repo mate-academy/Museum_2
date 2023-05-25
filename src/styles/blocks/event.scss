@@ -16,7 +16,7 @@
     box-sizing: border-box;
     width: 100%;
     max-height: 420px;
- 
+
     &::after {
       content: "";
       display: block;
@@ -26,9 +26,11 @@
     @include onTablet {
       height: 420px;
       padding-bottom: 0;
+      margin-bottom: 30px;
     }
 
     @include onDesktop {
+      margin-bottom: 20px;
       height: 484px;
       padding-bottom: 0;
     }
@@ -42,7 +44,7 @@
     object-fit: cover;
     object-position: center;
     cursor: pointer;
- 
+
     &:hover {
       transform: scale(1.1);
     }
@@ -65,8 +67,13 @@
     font-size: 20px;
     line-height: 125%;
     font-family: 'Playfair Display', serif;
-    color: $backgroundColor;
-    
+    color: $colorBlack;
+    cursor: pointer;
+
+    &:hover {
+      color: $colorGray;
+    }
+
     @include onTablet {
       font-size: 24px;
     }
@@ -76,6 +83,21 @@
     margin-bottom: 30px;
     margin-top: 0;
     line-height: 150%;
-    color: $backgroundColor;
-  }
+    font-weight: 400px;
+    color: $colorGray;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    &--events {
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+}
 }
