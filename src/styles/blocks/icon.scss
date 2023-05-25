@@ -8,6 +8,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transition: 0.2s;
+
+    &:hover {
+      background-image: url(../images/menuHover.svg);
+    }
   }
 
   &__cross {
@@ -32,50 +37,41 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 
-  &__facebook {
+  &__social {
     display: block;
     width: 22px;
     height: 22px;
-
-    background-image: url(../images/icons/facebook.svg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
+    transition: transform 0.1s linear;
 
-  &__twitter {
-    display: block;
-    width: 22px;
-    height: 22px;
+    &:hover {
+      transform: scale(1.2);
+    }
 
-    background-image: url(../images/icons/twitter.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+    &--facebook {
+      background-image: url(../images/icons/facebook.svg);
+    }
 
-  &__telegram {
-    display: block;
-    width: 22px;
-    height: 22px;
+    &--twitter {
+      background-image: url(../images/icons/twitter.svg);
+    }
 
-    background-image: url(../images/icons/telegram.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+    &--telegram {
+      background-image: url(../images/icons/telegram.svg);
+    }
 
-  &__instagram {
-    display: block;
-    width: 22px;
-    height: 22px;
-
-    background-image: url(../images/icons/instagram.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    &--instagram {
+      background-image: url(../images/icons/instagram.svg);
+    }
   }
 
   &__nav {
@@ -122,6 +118,7 @@
 
   &__language {
     display: none;
+    cursor: pointer;
 
     @include onTablet {
       display: flex;
@@ -134,21 +131,15 @@
         font-size: 16px;
         line-height: 150%;
         color: #f1f5f4;
-
-        @include onTablet {
-          height: 23px;
-          width: 24px;
-        }
       }
 
       &--pointer {
         position: relative;
         top: 50%;
         transform: translateY(-25%);
-        cursor: pointer;
         border: none;
         background-color: transparent;
-        padding: 0 0 0 5px;
+        padding: 0 0 0 3px;
       }
     }
   }
