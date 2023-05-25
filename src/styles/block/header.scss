@@ -1,0 +1,151 @@
+.header {
+  background: $Background;
+  padding: 20px 0 0;
+  height: 100%;
+  color: $color-white;
+
+  &__top {
+    @include top-action;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 124px;
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__container {
+    grid-column: 1 / 2;
+  }
+
+  &__date {
+    margin: 0 0 10px;
+
+    @extend %edditional-text;
+    color: $color-white;
+  }
+
+  &__tittle {
+    margin: 0 0 30px;
+
+    @extend %h1;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      max-width: 570px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+      min-width: 560px;
+    }
+  }
+
+  &__subtittle {
+    margin: 0 0 40px;
+    @extend %main-text;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 146px;
+    }
+  }
+
+  &__duration {
+    margin: 0 0 50px;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      color: $color-white;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(50%);
+
+        content: "";
+        width: 80%;
+        padding-left: 20px;
+        height: 1px;
+        background-color: $color-white;
+      }
+    }
+  }
+
+  &__photo {
+    width: 246px;
+    height: 273px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 440px;
+      height: 494px;
+    }
+
+    @include onDesktop {
+      width: 625px;
+      height: 660px;
+      grid-column: 3 / 4;
+      align-self: end;
+    }
+
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &--select {
+    display: none;
+    cursor: pointer;
+
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    @include onTablet {
+      display: inline-block;
+      width: min-content;
+      background-color: $Background;
+      border: none;
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: $color-white;
+    }
+  }
+}

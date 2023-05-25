@@ -1,0 +1,170 @@
+.menu {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 20px 0 0;
+  background: $Background;
+
+  &__top {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 25px 40px;
+    column-gap: 30px;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 56px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 46px;
+    }
+  }
+
+  &--select {
+    display: inline-block;
+    width: min-content;
+    background-color: $Background;
+    border: none;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-white;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__location {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: flex;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      min-width: max-content;
+    }
+
+    &-tittle {
+      @extend %edditional-text;
+      color: $color-white;
+    }
+
+    &-time {
+      @extend %main-text;
+      color: $color-white;
+    }
+
+    &-adress {
+      text-decoration: none;
+      @extend %main-text;
+      color: $color-white;
+
+    }
+
+    &-schedule {
+      @include onTablet {
+        padding-right: 120px;
+      }
+
+      @include onDesktop {
+        padding-right: 80px;
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    list-style: none;
+    border-bottom: 1px solid $color-white;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    min-width: max-content;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    @extend %h5;
+    color: $color-white;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      text-decoration: underline 1px;
+      text-underline-offset: 5px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 238px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.header__photo--menu {
+  display: none;
+
+  @include onTablet {
+    display: block;
+  }
+}
