@@ -5,11 +5,7 @@
     position: relative;
     box-sizing: border-box;
     padding: $headerTopPadding 0 0;
-    height: 100vh;
-
-    @include onTablet {
-      height: 1092px;
-    }
+    height: max-content;
 
     @include onDesktop {
       height: 100vh;
@@ -115,30 +111,20 @@
   }
 
   &__image {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     display: block;
+    min-width: 320px;
     margin: 0 auto;
-    width: 245px;
-    height: 35%;
 
-   @include onTablet {
-    position: absolute;
-      width: 443px;
-      bottom: 0;
-
+    @include onTablet {
+      min-width: 443px;
     }
 
     @include onDesktop {
       position: absolute;
-      transform: translateX(0%);
       right: 0;
       bottom: 0;
-      margin-top: 0;
-      width: 625px;
-      height: 85%;
+      height: calc(100vh - 137px);
+      max-width: 625px;
     }
   }
 
