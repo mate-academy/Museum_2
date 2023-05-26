@@ -1,0 +1,49 @@
+.nav {
+
+  &--margins {
+    margin: 40px 0;
+
+    @include onTablet {
+      margin: 50px 0;
+    }
+
+    @include onSmallDesktop {
+      margin: 70px 0 60px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+
+    &--margin-bottom {
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+
+        @include onTablet {
+          margin-bottom: 30px;
+        }
+
+        @include onSmallDesktop {
+          margin-bottom: 60px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    width: max-content;
+    text-decoration: none;
+    @extend %playfair;
+    @include text-decoration ($fz-2xs, $fw-l, $lh-7, $color-2);
+
+    @include onTablet {
+      @include text-decoration ($fz-2xl, $fw-l, $lh-13, $color-2);
+    }
+  }
+}

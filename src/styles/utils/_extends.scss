@@ -1,4 +1,104 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+%playfair {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+}
+
+%raleway {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+}
+
+%container {
+  box-sizing: border-box;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+%paddings-for-top {
+  padding-top: 20px;
+
+  @include onTablet {
+    padding-top: 25px;
+  }
+
+  @include onSmallDesktop {
+    padding-top: 32px;
+  }
+}
+
+%paddings {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include onTablet {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include onSmallDesktop {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+}
+
+%for-infotop {
+  display: grid;
+  justify-content: center;
+
+  @include onTablet {
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+  }
+}
+
+%for-subtitle {
+  margin: 0;
+  @extend %playfair;
+  @include text-decoration ($fz-s, $fw-l, $lh-8, $color-5);
+
+  @include onTablet {
+    @include text-decoration ($fz-xl, $fw-l, $lh-12, $color-5);
+  }
+
+  @include onSmallDesktop {
+    @include text-decoration ($fz-2xl, $fw-l, $lh-13, $color-5);
+  }
+}
+
+%events-date {
+  margin: 0;
+  @extend %raleway;
+  @include text-decoration ($fz-4xs, $fw-xs, $lh-4, $color-3);
+}
+
+%events-subtitle {
+  margin: 0;
+  @extend %playfair;
+  @include text-decoration ($fz-2xs, $fw-l, $lh-5, $color-5);
+
+  @include onTablet {
+    @include text-decoration ($fz-xs, $fw-l, $lh-7, $color-5);
+  }
+}
+
+%events-description {
+  margin: 0;
+  @extend %raleway;
+  @include text-decoration ($fz-4xs, $fw-xs, $lh-4, $color-6);
+}
+
+%event-subtitle-margins {
+  margin: 10px 0 20px;
+}
+
+%events-description-margin-bottom {
+  margin-bottom: 30px;
+
+  @include onTablet {
+    margin-bottom: 40px;
+  }
+
+  @include onSmallDesktop {
+    margin-bottom: 50px;
+  }
 }

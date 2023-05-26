@@ -1,0 +1,92 @@
+.subscribe-us {
+
+  &--margin-bottom {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 128px;
+    }
+
+    @include onSmallDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__container {
+    @extend %container;
+    @extend %paddings;
+  }
+
+  &__primary-subtitle {
+    margin: 0;
+    @extend %playfair;
+    @include text-decoration ($fz-s, $fw-l, $lh-8, $color-5);
+
+    @include onTablet {
+      @include text-decoration ($fz-xl, $fw-l, $lh-12, $color-5);
+    }
+
+    @include onSmallDesktop {
+      @include text-decoration ($fz-2xl, $fw-l, $lh-13, $color-5);
+    }
+
+    &--margin-bottom {
+      margin-bottom: 20px;
+
+      @include onSmallDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__for-email {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $color-5;
+    padding: 0;
+    width: 100%;
+    height: max-content;
+
+    &::placeholder {
+      @extend %raleway;
+      @include text-decoration ($fz-4xs, $fw-xs, $lh-4, $color-5);
+    }
+
+    &:hover::placeholder {
+      @extend %raleway;
+      @include text-decoration ($fz-4xs, $fw-xs, $lh-4, $color-3);
+    }
+
+    &:focus::placeholder {
+      @extend %raleway;
+      @include text-decoration ($fz-4xs, $fw-xs, $lh-4, $color-3);
+    }
+
+    &::selection::placeholder {
+      @extend %raleway;
+      @include text-decoration ($fz-4xs, $fw-l, $lh-4, $color-5);
+    }
+
+    &--margin-bottom {
+      margin-bottom: 30px;
+
+      @include onSmallDesktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__description {
+    margin: 0;
+    @extend %raleway;
+    @include text-decoration ($fz-5xs, $fw-xs, $lh-4, $color-5);
+
+    &--margin-bottom {
+      margin-bottom: 50px;
+
+      @include onSmallDesktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

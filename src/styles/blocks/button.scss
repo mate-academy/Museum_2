@@ -1,0 +1,102 @@
+.button {
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  @extend %raleway;
+  transition: 0.3s;
+
+  &--primary {
+    background-color: $color-3;
+    @include text-decoration ($fz-4xs, $fw-m, $lh-1, $color-2);
+    width: 100%;
+
+    @include onTablet {
+      max-width: 330px;
+    }
+
+    @include onSmallDesktop {
+      width: 270px;
+    }
+
+    &:hover {
+      background-color: $color-7;
+    }
+
+    &:active {
+      background-color: $color-8;
+    }
+
+    &:disabled {
+      background-color: $color-9;
+    }
+  }
+
+  &--secondary {
+    @include text-decoration ($fz-4xs, $fw-m, $lh-1, $color-3);
+    border: 1px solid $color-3;
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onSmallDesktop {
+      width: 270px;
+    }
+
+    &:hover {
+      @include text-decoration ($fz-4xs, $fw-m, $lh-1, $color-7);
+      border: 1px solid $color-7;
+    }
+
+    &:active {
+      @include text-decoration ($fz-4xs, $fw-m, $lh-1, $color-8);
+      border: 1px solid $color-8;
+    }
+
+    &:disabled {
+      @include text-decoration ($fz-4xs, $fw-m, $lh-1, $color-9);
+      border: 1px solid $color-9;
+    }
+  }
+
+  &--thirt {
+    border: none;
+  }
+
+  &--none-onphone {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &--none-ontablet {
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--margin-bottom {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &--margins {
+    margin: 40px 0 0;
+
+    @include onTablet {
+      margin: 50px 0;
+    }
+
+    @include onSmallDesktop {
+      margin: 60px 0 0;
+    }
+  }
+}
