@@ -1,0 +1,39 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    box-sizing: border-box;
+    margin: 0;
+
+    &--with-navigation {
+      overflow: hidden;
+    }
+  }
+
+  &__navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(-100%);
+    transition: 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    @extend %playfair;
+    @include text-decoration ($fz-s, $fw-l, $lh-8, $color-5);
+
+    @include onTablet {
+      @include text-decoration ($fz-xl, $fw-l, $lh-12, $color-5);
+    }
+
+    @include onSmallDesktop {
+      @include text-decoration ($fz-2xl, $fw-l, $lh-13, $color-5);
+    }
+  }
+}

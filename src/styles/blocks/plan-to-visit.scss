@@ -1,0 +1,66 @@
+.plan-to-visit {
+  box-sizing: border-box;
+  background-color: $color-4;
+  padding: 50px 0;
+
+  @include onTablet {
+    padding: 80px 0;
+  }
+
+  @include onSmallDesktop {
+    padding: 0;
+  }
+
+  &__container {
+    @extend %container;
+    @extend %paddings;
+  }
+
+  &__img {
+    display: none;
+
+    @include onSmallDesktop {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    @extend %playfair;
+    @include text-decoration ($fz-l, $fw-l, $lh-9, $color-2);
+
+    &--margin-top {
+
+      @include onSmallDesktop {
+        margin-top: 200px;
+      }
+    }
+
+    @include onTablet {
+      @include text-decoration ($fz-3xl, $fw-l, $lh-14, $color-2);
+    }
+
+    @include onSmallDesktop {
+      @include text-decoration ($fz-5xl, $fw-l, $lh-16, $color-2);
+    }
+  }
+
+  &__description {
+    margin: 0;
+    @extend %raleway;
+    @include text-decoration ($fz-4xs, $fw-xs, $lh-4, $color-2);
+
+    &--margins {
+      margin: 20px 0 40px;
+
+      @include onTablet {
+        margin: 20px 0 60px;
+      }
+
+      @include onSmallDesktop {
+        margin: 10px 0 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.menu {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  align-items: center;
+
+  @include onTablet {
+    column-gap: 40px;
+  }
+
+  &__link {
+    display: block;
+    width: 25px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+
+    @include onTablet {
+      height: 26px;
+    }
+
+    &:hover {
+      filter: invert(1);
+    }
+
+    &--opener {
+      background-image: url(../images/menu.svg);
+    }
+
+    &--closer {
+      background-image: url(../images/cross.svg);
+    }
+  }
+
+  &__dropdown {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    &--header {
+      display: none;
+
+      @include onTablet {
+        display: grid;
+      }
+    }
+  }
+
+  &__drop-block {
+    width: min-content;
+  }
+
+  &__lang {
+    margin: 0;
+    cursor: pointer;
+    text-decoration: none;
+    @extend %raleway;
+    @include text-decoration ($fz-4xs, $fw-s, $lh-4, $color-2);
+
+    &--none {
+      display: none;
+    }
+
+    &--grid {
+      display: grid;
+    }
+  }
+
+  &__img {
+    cursor: pointer;
+    width: 8px;
+    height: 5px;
+    margin-left: 5px;
+  }
+}
