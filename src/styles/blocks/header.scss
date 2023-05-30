@@ -1,0 +1,127 @@
+.header {
+  position: relative;
+  background-color: $background-color-dark-green;
+  height: 100%;
+
+  &__image {
+    @extend %background-image-cover;
+    background-image: url(/src/images/header-image.png);
+
+    height: 270px;
+    width: 245px;
+
+    margin: 0 auto;
+
+    @include onTablet {
+      height: 490px;
+      width: 440px;
+    }
+
+    @include onDesktop {
+      height: 660px;
+      width: 625px;
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__description {
+
+    @include onDesktop {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    height: 100%;
+    color: $text-color-white;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__announce {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__announce-data {
+    @extend %font-additional;
+    margin-bottom: 10px;
+    width: 190px;
+    line-height: 140%;
+  }
+
+  &__announce-title {
+    @extend %h1;
+    margin-bottom: 30px;
+    width: 280px;
+    line-height: 100%;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      width: 570px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__announce-description {
+    @extend %font-main;
+    width: 270px;
+    line-height: 150%;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+    }
+  }
+
+  &__underline {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center ;
+    }
+  }
+
+  &__underline-data {
+    font-family: $font-family-title;
+    font-weight: 700;
+    font-size: 14px;
+    margin-right: 20px;
+    line-height: 125%;
+    color: $text-color-white;
+    opacity: 0.7;
+  }
+
+  &__underline-line {
+    width: 470px;
+    height: 1px;
+
+    background-color: $text-color-white;
+    opacity: 0.3
+  }
+}
