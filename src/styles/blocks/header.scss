@@ -1,0 +1,115 @@
+.header {
+  // height: 100%;
+  position: relative;
+  background-color: $color-header;
+
+  &__body {
+    margin: 50px 0 40px;
+    color: $color-text-header;
+
+    @include onTablet {
+      margin: 96px 0 70px;
+    }
+
+    @include onDesctop {
+      margin: 90px 0 0;
+    }
+  }
+
+  &__text-top {
+    padding-bottom: 10px;
+    @extend %p-small;
+  }
+
+  &__title {
+    padding-bottom: 30px;
+
+    font-weight: 700;
+    line-height: 100%;
+    font-size: 48px;
+
+    @include onTablet {
+      padding-bottom: 20px;
+
+      width: 569px;
+      font-size: 72px;
+    }
+
+    @include onDesctop {
+      padding-bottom: 30px;
+
+      width: 569px;
+      font-size: 96px;
+    }
+  }
+
+  &__text-buttom {
+    width: 267px;
+    margin-bottom: 40px;
+    @extend %p-large;
+
+    @include onTablet {
+      width: 330px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesctop {
+      width: 569px;
+      margin-bottom: 81px;
+    }
+  }
+
+  &__button {
+    @include onDesctop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__date-exhibition {
+    display: none;
+    position: relative;
+    padding-bottom: 50px;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+
+    @include onDesctop {
+      display: flex;
+
+      &::after {
+        content: "";
+        width: 468px;
+        height: 1px;
+        background-color: $color-text-header;
+        position: absolute;
+        top: 10px;
+        left: 101px;
+      }
+    }
+  }
+
+  &__image {
+    width: 245px;
+    height: 273px;
+    margin: 0 auto;
+
+    background-image: url(../images/image_header-main.svg);
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @include onDesctop {
+      width: 625px;
+      height: 663px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

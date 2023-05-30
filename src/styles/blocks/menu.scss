@@ -1,0 +1,175 @@
+.menu {
+  background-color: $color-header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateX(-100%);
+  transition: transform 0.5s;
+
+  &:target {
+    transform: translateX(0);
+
+    .header__language {
+      display: block;
+    }
+  }
+
+  &__body {
+    margin: 10px 0 238px;
+    position: relative;
+    color: $color-text-header;
+
+    @include onTablet {
+      margin: 30px 0;
+    }
+
+    @include onDesctop {
+      margin-top: 13px;
+    }
+  }
+
+  &__information {
+
+    @include onTablet {
+      display: flex;
+      gap: 123px;
+      padding-bottom: 50px;
+    }
+
+    @include onDesctop {
+      padding-bottom: 70px;
+      gap: 83px;
+    }
+  }
+
+  &__schedule {
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 0;
+    }
+
+  }
+  &__text-schedule {
+    @extend %p-small;
+  }
+  &__time-schedule {
+    font-weight: 600;
+    @extend %p-large;
+  }
+
+  &__adress {
+    padding-bottom: 40px;
+
+    @include onTablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__text-adress {
+    @extend %p-small;
+  }
+
+  &__value-adress {
+    font-weight: 600;
+    @extend %p-large;
+  }
+
+  &__list {
+    margin-bottom: 40px;
+
+    padding: 0;
+    list-style: none;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $color-text-header;
+      display: block;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesctop {
+      &::after {
+        width: 50%;
+      }
+
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+
+    &:not(:last-child) {
+      padding-bottom: 20px;
+    }
+    &:last-child {
+      padding-bottom: 40px;
+    }
+
+    @include onTablet {
+      &:not(:last-child) {
+        padding-bottom: 30px;
+      }
+      &:last-child {
+        padding-bottom: 50px;
+      }
+    }
+
+    @include onDesctop {
+      &:nth-child(n) {
+        padding-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $color-text-header;
+    text-decoration: none;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @include onDesctop {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__button {
+    @include onDesctop {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      width: 422px;
+      height: 466px;
+      background-image: url(../images/image_header-cross.svg);
+      background-size: cover;
+      margin: 0 auto;
+    }
+
+    @include onDesctop {
+      width: 624px;
+      height: 697px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
