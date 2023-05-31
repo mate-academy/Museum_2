@@ -1,8 +1,26 @@
 .menu {
   box-sizing: border-box;
   height: 100%;
+
   padding: 20px 0 0;
   background: $Background;
+
+  @include onTablet {
+    padding: 26px 0 0;
+  }
+
+  @include onDesktop {
+    padding: 32px 0 0;
+  }
+
+  &__content {
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
 
   &__top {
     display: grid;
@@ -35,14 +53,6 @@
 
     &:hover {
       opacity: 0.6;
-    }
-  }
-
-  &__content {
-    @include onDesktop {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 30px;
     }
   }
 
@@ -166,5 +176,14 @@
 
   @include onTablet {
     display: block;
+    object-position: 0 85%;
+    width: 422px;
+    height: 466px;
+  }
+
+  @include onDesktop {
+    width: 624px;
+    height: 696px;
+
   }
 }

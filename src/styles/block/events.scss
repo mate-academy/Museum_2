@@ -1,0 +1,55 @@
+.events {
+  &__content {
+    margin-top: 60px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr) ;
+    }
+  }
+
+  &__photo--container {
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__description {
+    &--last {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: transform 0.3s linear;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      height: 422px;
+    }
+
+    @include onDesktop {
+      width: auto;
+      height: 475px;
+    }
+  }
+}

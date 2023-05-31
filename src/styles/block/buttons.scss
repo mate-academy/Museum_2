@@ -4,16 +4,17 @@
   align-items: center;
 
   box-sizing: border-box;
-
-  width: 100%;
+  width: 280px;
   height: 60px;
   border: 1px solid $color-main;
   @extend %button-text;
 
   text-decoration: none;
+  transition: all $transition;
 
-  &__red {
+  &__primary {
     background-color: $color-main;
+    border: $color-main;
     color: $color-white;
 
     &:hover {
@@ -37,6 +38,49 @@
 
     @include onDesktop {
       width: 270px;
+    }
+  }
+
+  &__secondary {
+    color: $color-main;
+
+    &:hover {
+      color: $color-main-hover;
+      border-color: $color-main-hover;
+    }
+
+    &:active {
+      color: $color-main-active;
+      border-color: $color-main-active;
+    }
+
+    &:disabled {
+      color: $color-main-disabled;
+      border-color: $color-main-disabled;
+    }
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__secondary--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__secondary--mobile {
+    display: flex;
+
+    @include onTablet {
+      display: none;
     }
   }
 }

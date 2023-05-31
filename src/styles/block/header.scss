@@ -1,16 +1,14 @@
 .header {
-  background: $Background;
   padding: 20px 0 0;
   height: 100%;
-  color: $color-white;
+  background: $Background;
 
-  &__top {
-    @include top-action;
-    margin-bottom: 70px;
+  @include onTablet {
+    padding: 26px 0 0;
+  }
 
-    @include onTablet {
-      margin-bottom: 124px;
-    }
+  @include onDesktop {
+    padding: 32px 0 0;
   }
 
   &__content {
@@ -18,6 +16,15 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 30px;
+    }
+  }
+
+  &__top {
+    @include top-action;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 124px;
     }
   }
 
@@ -36,6 +43,7 @@
     margin: 0 0 30px;
 
     @extend %h1;
+    color: $color-white;
 
     @include onTablet {
       margin: 0 0 20px;
@@ -51,6 +59,7 @@
   &__subtittle {
     margin: 0 0 40px;
     @extend %main-text;
+    color: $color-white;
 
     @include onTablet {
       margin: 0 0 50px;
@@ -117,7 +126,6 @@
       grid-column: 3 / 4;
       align-self: end;
     }
-
   }
 
   &__img {

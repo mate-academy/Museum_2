@@ -1,0 +1,70 @@
+.digest {
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__tittle {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    @extend %main-text;
+  }
+
+  &__field {
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    display: block;
+    padding-bottom: 3px;
+    width: 100%;
+    max-width: 470px;
+    height: 24px;
+
+    outline: none;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $color-black;
+    color: $color-black;
+
+    @extend %main-text;
+    font-weight: 700;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      @extend %main-text;
+      color: $color-black;
+    }
+
+    &:hover {
+      color: $color-main;
+      border-bottom-color: $color-main;
+
+      &::placeholder {
+        color: $color-main;
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+}
