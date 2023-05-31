@@ -1,0 +1,101 @@
+.button {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+
+  @include button-text;
+  text-decoration: none;
+
+  cursor: pointer;
+  transition: all $transitionTime;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &--primary {
+    color: $colorWhite;
+    border: transparent;
+    background-color: $colorMain;
+
+    &:hover {
+      background-color: $colorButtonHover;
+    }
+
+    &:active {
+      background-color: $colorButtonActive;
+    }
+
+    &:disabled {
+      background-color: $colorButtonDisabled;
+    }
+  }
+
+  &--secondary {
+    padding-right: 30px;
+    color: $colorMain;
+    background-color: #FFF;
+    border: 1px solid $colorMain;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 12px;
+      position: absolute;
+      bottom: 19px;
+      background-color: $colorMain;
+      -webkit-mask-image: url(../images/button_arrow.svg);
+      mask-image: url(../images/button_arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &:hover {
+      color: $colorButtonHover;
+      border: 1px solid $colorButtonHover;
+
+      &::after {
+        background-color: $colorButtonHover;
+      }
+    }
+
+    &:active {
+      color: $colorButtonActive;
+      border: 1px solid $colorButtonActive;
+
+      &::after {
+        background-color: $colorButtonActive;
+      }
+    }
+
+    &:disabled {
+      color: $colorButtonDisabled;
+      border: 1px solid $colorButtonDisabled;
+
+      &::after {
+        background-color: $colorButtonDisabled;
+      }
+    }
+  }
+
+  &--mobile {
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

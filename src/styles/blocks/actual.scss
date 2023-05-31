@@ -1,0 +1,73 @@
+.actual {
+  &__image-container {
+    display: grid;
+    margin: 0 0 20px;
+    width: 100%;
+
+    transition: transform $transitionTime;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include onDesktop {
+      max-height: 484px;
+      object-fit: cover;
+    }
+  }
+
+  &__date {
+    margin: 0 0 10px;
+    @include main-text;
+    color: $colorMain;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    @include h4;
+    color: $colorBlack;
+
+    @include onTablet {
+      height: 60px;
+    }
+
+    @include onDesktop {
+      height: 30px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 30px;
+    @include main-text;
+    color: $colorGray;
+    @include onTablet {
+      margin: 0 0 40px;
+    }
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__button {
+    margin: 0 0 60px;
+    &:nth-last-child(2n) {
+      margin: 0 0 30px;
+      @include onTablet {
+        margin: 0;
+      }
+      @include onDesktop {
+        margin: 0;
+      }
+    }
+    @include onTablet {
+      margin: 0;
+    }
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}

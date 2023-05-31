@@ -1,0 +1,150 @@
+.menu {
+  background-color: $colorBackground;
+  bottom: 0;
+
+  &__content {
+    height: 100vh;
+    max-height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      height: 77px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title-info {
+    margin: 0;
+    @include additional-text;
+    color: $colorWhite;
+  }
+
+  &__title-time {
+    margin: 0 0 20px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorWhite;
+  }
+
+  &__title-address {
+    display: block;
+    margin: 0 0 40px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorWhite;
+    text-decoration: none;
+  }
+
+  &__list {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 1px;
+    border-bottom: 1px solid transparent;
+
+    @include h5;
+    color: $colorWhite;
+    text-decoration: none;
+
+    transition: border-color $transitionTime;
+
+    @include onTablet {
+      @include h3-menu;
+    }
+
+    &:hover {
+      border-color: $colorWhite;
+    }
+  }
+
+  &__line {
+    margin: 0 0 40px;
+    width: 100%;
+    height: 1px;
+    background-color: $colorWhite;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 60px;
+      width: 570px;
+      opacity: 0.3;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-self: center;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__image-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 697px;
+    }
+  }
+}

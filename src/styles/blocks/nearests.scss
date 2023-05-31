@@ -1,0 +1,95 @@
+.nearests {
+  &__title-text {
+    display: block;
+    margin: 0 0 60px;
+    @include h3;
+    color: $colorBlack;
+    text-align: left;
+
+    @include onTablet {
+      display: grid;
+      margin: 0 0 70px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      display: grid;
+      margin: 0 0 70px;
+      text-align: left;
+    }
+  }
+
+  &__title-button {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 210px;
+    }
+
+    @include onDesktop {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__image-container {
+    display: block;
+    margin: 0 0 20px;
+    width: 100%;
+
+    @include onTablet {
+      display: grid;
+      margin: 0 0 70px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      margin: 0 0 60px;
+    }
+
+    transition: transform $transitionTime;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include onDesktop {
+      max-height: 484px;
+      object-fit: cover;
+    }
+  }
+
+  &__date {
+    margin: 0 0 10px;
+    @include main-text;
+    color: $colorMain;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    @include h4;
+    color: $colorBlack;
+  }
+
+  &__subtitle {
+    margin: 0 0 30px;
+    @include main-text;
+    color: $colorGray;
+  }
+
+  &__button {
+    margin: 0 0 60px;
+    &:nth-last-child(2n) {
+      margin: 0 0 30px;
+    }
+  }
+}
+
+.grid__item:nth-last-child(-n+2) > .nearests__image-container {
+  margin-bottom: 0;
+}

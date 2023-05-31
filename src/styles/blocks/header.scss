@@ -1,0 +1,160 @@
+.header {
+  color: $colorWhite;
+  background-color: $colorBackground;
+  position: relative;
+
+  &__content {
+    height: 100vh;
+    max-height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      height: 77px;
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+      margin-bottom: 90px;
+    }
+  }
+
+  &__wrapper {
+    margin: 0 0 40px;
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__select {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorWhite;
+    background-color: $colorBackground;
+    border: none;
+    outline: none;
+    visibility: hidden;
+
+    @include onTablet {
+      visibility: visible;
+    }
+  }
+
+  &__date {
+    margin: 0 0 10px;
+    @include additional-text;
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    @include h1;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      width: 569px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 40px;
+    @include main-text;
+
+    @include onTablet {
+      margin: 0 0 50px;
+      width: 300px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 80px;
+      width: max-content;
+    }
+  }
+
+  &__duration {
+    position: absolute;
+    bottom: 0;
+    margin: 0 0 50px;
+    display: none;
+    opacity: 0.7;
+    @include h6;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 469px;
+      height: 1px;
+      margin-left: 20px;
+
+      transform: translateY(-4px);
+
+      background-color: $colorWhite;
+      opacity: 0.3;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    height: 273px;
+    overflow: hidden;
+
+    @include onTablet {
+      height: 443px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__image-desktop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      height: 663px;
+      bottom: 0;
+      right: 0;
+      overflow: hidden;
+    }
+  }
+}

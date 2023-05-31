@@ -1,0 +1,75 @@
+.new {
+  &__image-container {
+    display: grid;
+    margin: 0 0 20px;
+    width: 100%;
+
+    transition: transform $transitionTime;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image-1 {
+    width: 100%;
+
+    @include onDesktop {
+      max-height: 370px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__image-2 {
+    width: 100%;
+
+    @include onDesktop {
+      max-height: 370px;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  &__date {
+    margin: 0;
+    @include additional-text;
+    color: $colorBlack;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    @include h4;
+    color: $colorBlack;
+
+    @include onTablet {
+      @include h5;
+    }
+
+    @include onDesktop {
+      @include h5;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 50px;
+    @include main-text;
+    color: $colorGray;
+    @include onTablet {
+      margin: 0;
+    }
+    @include onDesktop {
+      margin: 0;
+    }
+
+    &:nth-last-child(2n) {
+      margin: 0 0 25px;
+      @include onTablet {
+        margin: 0;
+      }
+      @include onDesktop {
+        margin: 0;
+      }
+    }
+  }
+}
