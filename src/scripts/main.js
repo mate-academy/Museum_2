@@ -1,9 +1,25 @@
 'use strict';
 
-const menuDropdowns = document.querySelectorAll('.menu__dropdown--header');
-const menuImgs = document.querySelectorAll('.menu__img');
-const langUas = document.querySelectorAll('.menu__lang--ua');
-const langEns = document.querySelectorAll('.menu__lang--en');
+const langUa = document.querySelector('.dropdown__link--ua');
+const langEn = document.querySelector('.dropdown__link--en');
+const langElements = document.querySelectorAll('.dropdown__lang');
+const form = document.querySelector('.subscribe-us__form-field');
+
+langUa.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  langElements.forEach((lang) => {
+    lang.innerHTML = 'UA';
+  });
+});
+
+langEn.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  langElements.forEach((lang) => {
+    lang.innerHTML = 'EN';
+  });
+});
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#navigation') {
@@ -13,30 +29,7 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-menuDropdowns.forEach((menuDropdown, index) => {
-  const menuImg = menuImgs[index];
-  const langUa = langUas[index];
-  const langEn = langEns[index];
-  let visibleLang = langUa;
-
-  menuImg.addEventListener('mouseover', () => {
-    langEn.classList.remove('menu__lang--none');
-    langUa.classList.remove('menu__lang--none');
-  });
-
-  langEn.addEventListener('click', () => {
-    visibleLang = langEn;
-    langEn.classList.remove('menu__lang--none');
-    langUa.classList.add('menu__lang--none');
-  });
-
-  langUa.addEventListener('click', () => {
-    visibleLang = langUa;
-    langUa.classList.remove('menu__lang--none');
-    langEn.classList.add('menu__lang--none');
-  });
-
-  menuImg.addEventListener('mouseout', () => {
-    visibleLang.classList.remove('menu__lang--none');
-  });
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  e.target.reset();
 });
