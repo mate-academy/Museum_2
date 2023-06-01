@@ -1,0 +1,36 @@
+.main-page {
+  font-family: "Raleway", sans-serif;
+  @include fonts(16px, 24px, 400);
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__section {
+    margin-bottom: 90px;
+
+    @include on-tablet {
+      margin-bottom: 105px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 110px;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.header {
+  background-color: $color-background;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &__top {
+    box-sizing: border-box;
+    padding: 20px;
+    @include flex(flex, center, space-between, row);
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      padding: 25px 40px;
+      margin-bottom: 90px;
+    }
+
+    @include on-desktop {
+      padding: 32px 55px;
+      margin-bottom: 90px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+  }
+
+  &__bottom {
+    color: $color-white;
+  }
+
+  &__dates {
+    @include fonts(14px, 20px, 400);
+    margin: 0 0 10px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    @include fonts(48px, 48px, 700);
+    margin: 0 0 30px;
+
+    @include on-tablet {
+      @include fonts(72px, 72px, 700);
+      margin: 0 0 20px;
+    }
+
+    @include on-desktop {
+      width: 596px;
+    }
+
+    @include design {
+      @include fonts(96px, 96px, 700);
+      margin: 0 0 30px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 40px;
+
+    @include on-tablet {
+      margin: 0 0 50px;
+    }
+
+    @include design {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__button {
+    @include on-desktop {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__box {
+    @include flex(flex, flex-start, flex-start, row);
+  }
+
+  &__date {
+    display: none;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: block;
+      font-family: "Playfair Display", serif;
+      @include fonts(14px, 18px, 700);
+      opacity: 0.7;
+      white-space: nowrap;
+      margin-right: 20px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: block;
+      width: 469px;
+      border-bottom: 1px solid $color-white;
+      padding-bottom: 10px;
+      opacity: 0.3;
+    }
+  }
+
+  &__logo {
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(3px 5px 2px RGB(0 0 0 / 0.4));
+    }
+  }
+
+  &__image {
+    background-image: url("../images/header-img.png");
+    @include background(no-repeat, center, cover);
+    @include sizes(245px, 273px);
+    margin: 0 auto;
+
+    @include on-tablet {
+      @include sizes(443px, 494px);
+    }
+
+    @include on-desktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @include sizes(525px, 525px);
+    }
+  }
+}
