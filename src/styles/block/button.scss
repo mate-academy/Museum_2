@@ -32,13 +32,13 @@
     background-color: transparent;
     border: 1px solid $c-orange;
     color: $c-orange;
-
+    
     &:hover {
       background-color: #e5e5e5;
       color: $c-orangeRed;
       border: 1px solid $c-orangeRed;
     }
-
+    
     &:active {
       color: $c-active;
       border: 1px solid $c-active;
@@ -46,11 +46,20 @@
   
     @include tablet {
       display: flex;
+      
     }
 
     &--gap {
-      display: flex;
+      display: none;
       gap: 12px;
+
+      @include tablet {
+        display: flex;
+      }
+
+      @include desktop {
+        display: flex;
+      }
     }
   
     &--hidden {
