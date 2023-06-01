@@ -12,5 +12,7 @@ const form = document.querySelector('.digest__form');
 
 function submitForm(event) {
   event.preventDefault();
+
+  form.reset();
 }
 form.addEventListener('submit', submitForm);
