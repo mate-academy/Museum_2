@@ -1,0 +1,118 @@
+.header {
+  background-color: $c-background-footer;
+  
+
+  &__content {
+    margin: 0 auto;
+    max-width: 1440px;
+    position: relative;
+    height: 100vh;
+  }
+
+  &__top {
+    @include top-action;
+  }
+
+  &__icon {
+    @include icon-box;
+    z-index: 1;
+  }
+
+  &__title {
+    width: 100%;
+    margin: 70px 0 40px;
+
+    @include tablet {
+      width: 570px;
+      margin: 120px 0 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 80px;
+    }
+
+    &-data {
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &-name {
+      width: 280px;
+      margin: 10px 0 30px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+      color: $c-title;
+
+      @include tablet {
+        width: 550px;
+        margin: 10px 0 20px;
+        font-size: 72px;
+      }
+
+      @include desktop {
+        font-size: 96px;
+      }
+    }
+
+    &-text {
+      width: 100%;
+
+      @include tablet {
+        width: 330px;
+      }
+
+      @include desktop {
+        width: 100%;
+      }
+    }
+  }
+
+  &__decoration {
+    display: none;
+
+    @include desktop {
+      position: absolute;
+      top: clamp(600px, calc(100vh - 67px), calc(100vh - 67px));
+      width: 570px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-data {
+      margin-right: 20px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 18px;
+      color: $c-title;
+      opacity: 0.7;
+      white-space: nowrap;
+    }
+  }
+
+  &__image {
+    object-fit: contain;
+    display: block;
+    left: 90px;
+    width: 55vw;
+    position: absolute;
+    bottom: 0;
+    
+
+    @include tablet {
+      width: 443px;
+      height: 494px;
+      left: 50%;
+      object-fit: cover;
+    }
+
+    @include desktop {
+      width: 625px;
+      height: 663px;
+      position: absolute;
+      left: 54%;
+    }
+  }
+}
