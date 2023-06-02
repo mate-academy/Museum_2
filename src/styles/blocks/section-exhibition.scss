@@ -2,19 +2,25 @@
 
   display: grid;
   grid-template-columns: 1fr;
+  margin-bottom: 120px;
 
   @include onTablet {
     grid-template-columns: repeat(6, 1fr);
     grid-column-gap: 30px;
     justify-content: center;
+
+    margin-bottom: 0;
   }
 
   @include onDesktop {
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 30px;
+
+    margin-bottom: 0;
   }
 
   &__angel {
+
     @include onTablet {
       grid-column: 1 / span 3;
     }
@@ -25,8 +31,14 @@
 
     &-img {
       width: 100%;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
     }
-    
+
   }
 
   &__art {
