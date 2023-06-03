@@ -1,0 +1,72 @@
+.button {
+  @include button;
+  background: $main-color;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &:hover {
+    background: #af3419;
+  }
+
+  &:active {
+    background: #ea340d;
+  }
+
+  &:disabled {
+    background: #dd836f;
+  }
+
+  &--form {
+    border: none;
+    outline: none;
+    color: $main-text-color;
+  }
+}
+
+.archive-button {
+  @include button;
+  gap: 12px;
+  border: 1px solid $main-color;
+  color: $main-color;
+
+  @include onTablet {
+    width: 210px;
+  }
+
+  &:hover {
+    color: #af3419;
+    border: 1px solid #af3419;
+  }
+
+  &:active {
+    color: #ea340d;
+    border: 1px solid #ea340d;
+  }
+
+  &:disabled {
+    color: #dd836f;
+    border: 1px solid #dd836f;
+  }
+
+  &--onTablet-top {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &--onTablet-bottom {
+    display: flex;
+
+    @include onTablet {
+      display: none !important;
+    }
+  }
+}

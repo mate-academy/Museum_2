@@ -1,0 +1,136 @@
+.header {
+  background: $background-color;
+  color: $main-text-color;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+
+    @include onDesktop {
+      justify-content: start;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+
+    @include onDesktop {
+      margin-bottom: 90px;
+    }
+
+    &-menu {
+      display: flex;
+    }
+  }
+
+  &__lang-visible {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__block {
+    &-title {
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+
+      @include onTablet {
+        margin-bottom: 20px;
+        font-size: 72px;
+      }
+
+      @include onDesktop {
+        width: 569px;
+        font-size: 96px;
+      }
+    }
+
+    &-text {
+      font-family: "Raleway", sans-serif;
+      margin-bottom: 10px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &--text-m {
+      margin-bottom: 40px;
+      color: $main-text-color;
+
+      @include onTablet {
+        width: 330px;
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        width: 100%;
+        margin-bottom: 81px;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $main-text-color;
+
+      &--tablet {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    width: 245px;
+    height: 273px;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 0;
+      width: 625px;
+      height: 663px;
+    }
+  }
+
+  &__data {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 50px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      &-text {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 125%;
+        opacity: 0.7;
+      }
+
+      &--line {
+        width: 440px;
+        height: 1px;
+        background: $main-text-color;
+        opacity: 0.3;
+      }
+    }
+  }
+}
