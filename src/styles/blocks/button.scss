@@ -2,13 +2,8 @@
   width: 280px;
   height: 60px;
   display: block;
-  background-color: $color-button;
+  background-color: $color-orange;
   border: none;
-
-  &:hover {
-    border: solid 2px $color-button;
-    background-color: rgba($color: $color-button, $alpha: 0.5);
-  }
 
   @include onTablet {
     width: 330px;
@@ -27,5 +22,68 @@
     line-height: 100%;
     color: $color-text-header;
     text-decoration: none;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+
+    &:active {
+      background-color: $button-active;
+    }
+
+    &:link {
+      background-color: $button-link;
+    }
+  }
+
+  &__link-clear {
+    border: solid 1px $color-orange;
+    color: $color-orange;
+    background-color: $background-main;
+
+    &:hover {
+      border-color: $button-hover;
+      color: $button-hover;
+      background-color: $background-main;
+    }
+
+    &:active {
+      border-color: $button-active;
+      color: $button-active;
+    }
+
+    &:disabled {
+      border-color: $button-link;
+      color: $button-link;
+      background-color: $background-main;
+    }
+
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/icons/arrow.png);
+      position: relative;
+      top: 0;
+      left: 8px;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__link-clear-top {
+    width: 210px;
+    height: 60px;
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesctop {
+      width: 270px;
+    }
   }
 }
