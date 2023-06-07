@@ -58,5 +58,15 @@
         }
       }
     }
+
+    @include on-desktop {
+      @for $start from 1 through 6 {
+        @for $end from $start through 6 {
+          &--desktop-row-#{$start}-#{$end} {
+            grid-row: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
   }
 }

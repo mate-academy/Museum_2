@@ -4,13 +4,6 @@
   color: $color-white;
   height: 100vh;
   box-sizing: border-box;
-  overflow: hidden;
-
-  &__content {
-    @include on-desktop {
-      @include flex(flex, center, space-between, row);
-    }
-  }
 
   &__top {
     box-sizing: border-box;
@@ -29,29 +22,17 @@
     }
   }
 
-  &__icons {
-    display: flex;
+  &__logo {
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(3px 5px 2px RGB(0 0 0 / 0.4));
+    }
   }
 
-  &__boxes {
-    color: $color-white;
-    margin-bottom: 40px;
-
-    @include on-tablet {
-      width: 500px;
-      @include flex(flex, center, space-between, row);
-      margin-bottom: 40px;
-    }
-
-    @include on-desktop {
-      @include flex(flex, center, space-between, row);
-      margin-bottom: 40px;
-    }
-
-    @include design {
-      @include flex(flex, center, space-between, row);
-      margin-bottom: 70px;
-    }
+  &__icons {
+    display: flex;
   }
 
   &__box-first {
@@ -60,8 +41,12 @@
     @include on-tablet {
       margin-bottom: 0;
     }
+  }
 
-    @include on-desktop {
+  &__box-second {
+    margin-bottom: 40px;
+
+    @include on-tablet {
       margin-bottom: 0;
     }
   }
@@ -79,13 +64,15 @@
   }
 
   &__list {
-    margin: 0;
-    padding: 0;
     list-style: none;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 
     @include on-tablet {
-      margin-bottom: 30px;
+      margin: 50px 0;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
     }
   }
 
@@ -102,10 +89,6 @@
 
     @include on-desktop {
       margin-bottom: 30px;
-    }
-
-    @include design {
-      margin-bottom: 50px;
     }
   }
 
@@ -137,46 +120,26 @@
     margin-bottom: 40px;
 
     @include on-tablet {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     @include on-desktop {
-      margin-bottom: 30px;
-    }
-
-    @include design {
       margin-bottom: 60px;
     }
   }
 
-  &__img-box {
-    display: none;
-
-    @include on-tablet {
-      @include flex(flex, center, flex-end, column);
-    }
-  }
-
   &__image {
+    display: none;
+    background-image: url("../images/img_menu.png");
+    @include background(no-repeat, center, cover);
+
     @include on-tablet {
+      display: block;
       @include sizes(422px, 466px);
     }
 
     @include on-desktop {
-      @include sizes(422px, 466px);
-    }
-
-    @include design {
-      @include sizes(625px, 697px);
-    }
-  }
-
-  &__logo {
-    transition: all 0.3s;
-
-    &:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(3px 5px 2px RGB(0 0 0 / 0.4));
+      @include sizes(624px, 697px);
     }
   }
 }
