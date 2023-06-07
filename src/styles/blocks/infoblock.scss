@@ -1,13 +1,23 @@
-.events {
+.infoblock {
   color: $text-color-black;
   margin-bottom: 120px;
 
   @include onTablet {
-    margin-bottom: 100px;
+    margin-bottom: 160px;
   }
 
   @include onDesktop {
-    margin-bottom: 110px;
+    margin-bottom: 200px;
+  }
+
+  &--events {
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
   }
 
   &__description-container {
@@ -20,6 +30,10 @@
     @include onDesktop {
       margin-bottom: 50px;
     }
+
+    &--news {
+      margin-bottom: 0;
+    }
   }
 
   &__description-title {
@@ -31,6 +45,11 @@
     line-height: 140%;
     margin-bottom: 10px;
     color: $button-action-color;
+
+    &--news {
+      margin-bottom: 0;
+      color: $text-color-black;
+    }
   }
 
   &__description-title-text {
@@ -49,10 +68,12 @@
   }
 
   &__description-text {
-    margin-bottom: 30px;
+    &--events {
+      margin-bottom: 30px;
 
-    @include onTablet {
-      margin-bottom: 50px;
+      @include onTablet {
+        margin-bottom: 50px;
+      }
     }
   }
 
@@ -69,6 +90,22 @@
 
     width: 100%;
     margin-bottom: 30px;
+
+    &--exhibitions {
+      @include onTablet {
+        flex-direction: row;
+        align-items: start;
+        margin-bottom: 0;
+      }
+    }
+
+    &--news {
+      @include onTablet {
+        flex-direction: row;
+        align-items: start;
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__element {
@@ -78,12 +115,25 @@
     margin-bottom: 60px;
 
     @include onTablet {
-      flex-direction: row;
-      margin-bottom: 70px;
+      margin-bottom: 0;
+      margin-right: 30px;
     }
 
     &:last-child {
       margin: 0;
+    }
+
+    &--events {
+      margin-right: 0;
+
+      @include onTablet {
+        flex-direction: row;
+        margin-bottom: 70px;
+      }
+    }
+
+    &--news {
+      margin-bottom: 50px;
     }
   }
 
@@ -94,11 +144,30 @@
 
     @include onTablet {
       height: 420px;
-      margin-bottom: 0;
+      margin-bottom: 30px;
     }
 
     @include onDesktop {
-      height: 475px;
+      height: 485px;
+      margin-bottom: 20px;
+    }
+
+    &--events {
+      @include onDesktop {
+        height: 475px;
+      }
+    }
+
+    &--news {
+      height: 280px;
+
+      @include onTablet {
+        height: 330px;
+      }
+
+      @include onDesktop {
+        height: 370px;
+      }
     }
   }
 
@@ -110,6 +179,14 @@
 
     @include onDesktop {
       object-position: center left;
+    }
+
+    &--news {
+      object-position: top center;
+
+      @include onDesktop {
+        object-position: top center;
+      }
     }
   }
 }
