@@ -1,0 +1,66 @@
+.exhibition {
+  &__photo {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: transform 0.1s linear;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    @include onDesktop {
+      height: 484px;
+      width: 570px;
+      object-fit: cover;
+    }
+
+    @include onScreen {
+      width: 440px;
+      object-fit: cover;
+    }
+  }
+
+  &__date {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #cd4d31;
+
+    margin: 0 0 10px;
+  }
+
+  &__name {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    color: #1c1b29;
+
+    margin: 0 0 20px;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #504f5e;
+    margin: 0 0 30px;
+
+    @include onScreen {
+      max-width: 440px;
+    }
+  }
+
+  &__sections {
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__top-content {
+    display: flex;
+    justify-content: space-between;
+  }
+}
