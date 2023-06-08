@@ -1,0 +1,64 @@
+.subscribe {
+  &__about {
+    margin-top: 20px;
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+  }
+
+  &__input {
+    background-color: $color-white;
+    border: none;
+    border-bottom: 1px solid $color-black;
+    height: 28px;
+    width: 100%;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    outline: none;
+
+    &::placeholder {
+      color: $color-black;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+    }
+    &:hover {
+      color: $color-main;
+      border-color: $color-main;
+    }
+    &:focus {
+      background-color: $color-white;
+      color: $color-main;
+      border-color: $color-main;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+    
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $color-white inset;
+    }
+
+    &:hover::-webkit-input-placeholder {
+      color: $color-main;
+    }
+
+  }
+  &__button {
+    margin-top: 30px;
+    margin-bottom: 80px;
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+      margin-bottom: 200px;
+    }
+  }
+}

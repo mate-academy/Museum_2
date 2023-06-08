@@ -1,0 +1,163 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-color: $color-background;
+  color: $color-white;
+
+  @include onTablet {
+    height: 388px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 34px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 10px;
+  }
+
+  &__contacts {
+    margin-bottom: 50px;
+  }
+
+  &__works-chedule {
+    margin-bottom: 50px;
+  }
+
+  &__menu {
+    margin-bottom: 60px;
+  }
+
+  &__buttom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+
+  &__up {
+    margin-bottom: 30px;
+  }
+
+  .contacts {
+    &__link {
+      text-decoration: none;
+      color: $color-white;
+    }
+
+    &__br {
+      display: block;
+      @include onTablet {
+        display: inline;
+      }
+    }
+
+    &__social {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+    }
+  }
+
+  .works-chedule {
+    &__list {
+      list-style: none;
+      padding: 0;
+    }
+  }
+
+  .footer-menu {
+    &__list {
+      list-style: none;
+      margin-top: 10px;
+      @include onTablet {
+        margin-top: 30px;
+      }
+    }
+
+    &__link {
+      margin-top: 10px;
+      text-decoration: none;
+      color: $color-white;
+    }
+  }
+
+  .site-info {
+    display: inline;
+    margin-right: 10px;
+    text-decoration: none;
+    color: $color-white;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-right: 102px;
+    }
+  }
+}
+
+.socials {
+  &__item {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 50%;
+    transition-property: background;
+    transition-duration: 0.3s;
+
+    &:hover {
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+      animation: snake 0.25s;
+    }
+
+    &--hover-facebook:hover {
+      background: #1877f2;
+    }
+
+    &--hover-twitter:hover {
+      background: #1d9bf0;
+    }
+
+    &--hover-telegram:hover {
+      background: #0084c6;
+    }
+
+    &--hover-instagram:hover {
+      background: radial-gradient(circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%);
+    }
+
+    @keyframes snake {
+      10% {
+        transform: rotate(15deg);
+      }
+
+      20% {
+        transform: rotate(-15deg);
+      }
+
+      30% {
+        transform: rotate(15deg);
+      }
+
+      40% {
+        transform: rotate(-15deg);
+      }
+    }
+  }
+}

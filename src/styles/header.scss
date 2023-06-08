@@ -1,0 +1,97 @@
+.header {
+  box-sizing: border-box;
+  background: $color-background;
+  height: 100vh;
+  max-width: 1280px;
+  // min-height: 747px;
+  background-image: url(../images/photos/header_picture.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 273px auto;
+
+  @include onTablet {
+    // min-height: 1024px;
+    background-size: 494px auto;
+  }
+
+  @include onDesktop {
+    // min-height: 800px;
+    background-size: 625px auto;
+    background-position: right bottom;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    color: $color-white;
+  }
+
+  &__nav {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__buttom-block {
+    display: none;
+    width: 100%;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      color: $color-white;
+      column-gap: 30px;
+    }
+  }
+
+  &__buttom-line {
+    display: inline;
+    grid-column: 2 / 7;
+    position: relative;
+    left: 5px;
+    top: 50%;
+    height: 1px;
+    background: $color-white;
+    opacity: 0.3;
+    
+    &::before {
+      content: "10.08 - 10.10";
+      position: relative;
+      left: -100px;
+      top: -10px;
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      opacity: 0.7;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 100px;
+    }
+  }
+}

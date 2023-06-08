@@ -1,0 +1,64 @@
+.button {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &--orange {
+    border: none;
+    background-color: $color-main;
+    color: $color-white;
+
+    @include onTablet {
+      width: 100%;
+      max-width: 330px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      max-width: 270px;
+    }
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+  }
+
+  &--white {
+    border: 1px solid $color-main;
+    color: $color-main;
+    background-color: $color-white;
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+
+    &::after {
+      position: relative;
+      left: 8px;
+      font-size: larger;
+      bottom: -2px;
+      content: "→";
+    }
+  }
+}

@@ -1,0 +1,118 @@
+.item {
+  &__photo {
+    width: 100%;
+    // object-fit: cover;
+    transition: all 1s;
+    // background-color: $color-black;
+
+    &:hover {
+      -webkit-animation-name: bounce;
+      animation-name: bounce;
+      -webkit-transform-origin: center bottom;
+      -ms-transform-origin: center bottom;
+      transform-origin: center bottom;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+
+      @-webkit-keyframes bounce {
+        0%,
+        20%,
+        53%,
+        80%,
+        100% {
+          -webkit-transition-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+          transition-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+        40%,
+        43% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.75, 0.05, 0.85, 0.06);
+          transition-timing-function: cubic-bezier(0.75, 0.05, 0.85, 0.06);
+          -webkit-transform: translate3d(0, -30px, 0);
+          transform: translate3d(0, -30px, 0);
+        }
+        70% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.75, 0.05, 0.85, 0.06);
+          transition-timing-function: cubic-bezier(0.75, 0.05, 0.85, 0.06);
+          -webkit-transform: translate3d(0, -15px, 0);
+          transform: translate3d(0, -15px, 0);
+        }
+        90% {
+          -webkit-transform: translate3d(0, -4px, 0);
+          transform: translate3d(0, -4px, 0);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        53%,
+        80%,
+        100% {
+          -webkit-transition-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+          transition-timing-function: cubic-bezier(0.21, 0.61, 0.35, 1);
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+        40%,
+        43% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.75, 0.05, 0.85, 0.06);
+          transition-timing-function: cubic-bezier(0.75, 0.05, 0.85, 0.06);
+          -webkit-transform: translate3d(0, -30px, 0);
+          transform: translate3d(0, -30px, 0);
+        }
+        70% {
+          -webkit-transition-timing-function: cubic-bezier(
+            0.75, 0.05, 0.85, 0.06);
+          transition-timing-function: cubic-bezier(0.75, 0.05, 0.85, 0.06);
+          -webkit-transform: translate3d(0, -15px, 0);
+          transform: translate3d(0, -15px, 0);
+        }
+        90% {
+          -webkit-transform: translate3d(0, -4px, 0);
+          transform: translate3d(0, -4px, 0);
+        }
+      }
+    }
+
+    @include onTablet {
+      object-fit: cover;
+    }
+
+    @include onDesktop {
+      object-fit: cover;
+    }
+  }
+
+  &__date {
+    margin-top: 20px;
+    color: $color-main;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+  }
+
+  &__about {
+    margin-top: 20px;
+    color: $color-gray;
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+}
