@@ -1,0 +1,31 @@
+.copyright {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    @extend %text-additional;
+    text-decoration: none;
+    color: inherit;
+
+    &:last-child {
+      margin-left: 22px;
+      transition: all $transition;
+
+      @include onDesktop {
+        margin-left: 102px;
+      }
+
+      &:hover {
+        color: $color-main;
+        text-decoration: underline 1px;
+        text-underline-offset: 2px;
+        opacity: 0.6;
+      }
+    }
+  }
+}
