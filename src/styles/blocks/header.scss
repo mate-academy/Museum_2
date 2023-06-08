@@ -1,0 +1,106 @@
+.header {
+  box-sizing: border-box;
+  background-color: $color-4;
+
+  &__container {
+    @extend %container;
+    @extend %paddings-for-top;
+    @extend %paddings;
+
+    @include onSmallDesktop {
+      height: 100vh;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    margin: 0;
+    @extend %raleway;
+    @include text-decoration ($fz-5xs, $fw-xs, $lh-3, $color-2);
+
+    &--margins {
+      margin: 70px 0 10px;
+
+      @include onTablet {
+        margin: 125px 0 10px;
+      }
+
+      @include onSmallDesktop {
+        margin: 122px 0 10px;
+      }
+    }
+
+    &--margins-second {
+      margin: 30px 0 40px;
+
+      @include onTablet {
+        margin: 20px 0 50px;
+      }
+
+      @include onSmallDesktop {
+        margin: 30px 0 80px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    @extend %playfair;
+    @include text-decoration ($fz-2xl, $fw-l, $lh-11, $color-2);
+
+    @include onTablet {
+      @include text-decoration ($fz-4xl, $fw-l, $lh-15, $color-2);
+    }
+
+    @include onSmallDesktop {
+      @include text-decoration ($fz-6xl, $fw-l, $lh-17, $color-2);
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    &--margin-top {
+      margin-top: 50px;
+
+      @include onTablet {
+        margin-top: 90px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include onSmallDesktop {
+      display: flex;
+      align-items: center;
+    }
+
+    &--margin-top {
+      margin-top: 146px;
+    }
+  }
+
+  &__bottomtext {
+    margin: 0;
+    opacity: 0.7;
+    @extend %playfair;
+    @include text-decoration ($fz-5xs, $fw-l, $lh-2, $color-2);
+  }
+
+  &__bottomline {
+    width: 469px;
+    height: 1px;
+    background-color: $color-2;
+
+    &--margin-left {
+      margin-left: 20px;
+    }
+  }
+}

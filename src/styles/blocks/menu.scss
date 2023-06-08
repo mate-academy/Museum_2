@@ -1,0 +1,37 @@
+.menu {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  align-items: center;
+
+  @include onTablet {
+    column-gap: 40px;
+  }
+
+  &__link {
+    display: block;
+    width: 25px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.3s;
+
+    @include onTablet {
+      height: 26px;
+    }
+
+    &:hover {
+      filter: invert(1);
+    }
+
+    &--opener {
+      background-image: url(../images/menu.svg);
+    }
+
+    &--closer {
+      background-image: url(../images/cross.svg);
+    }
+  }
+}

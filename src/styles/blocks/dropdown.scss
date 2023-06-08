@@ -1,0 +1,48 @@
+.dropdown {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+
+  &--for-header {
+    display: none;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__img {
+    cursor: pointer;
+    width: 18px;
+    height: 15px;
+    margin-left: 5px;
+    transition: transform 0.3s;
+  }
+
+  &__lang {
+    margin: 0;
+  }
+
+  &__link {
+    display: none;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  &__text {
+    @extend %raleway;
+    @include text-decoration ($fz-4xs, $fw-s, $lh-4, $color-2);
+  }
+
+  &:hover &__img {
+    transform: rotate(90deg);
+  }
+
+  &:hover &__link {
+    display: block;
+  }
+
+  &:hover &__lang {
+    display: none;
+  }
+}
