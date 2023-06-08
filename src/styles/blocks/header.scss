@@ -1,0 +1,178 @@
+.header {
+  background-color: $green-color;
+  min-height: 100vh;
+
+  &__content {
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
+
+    @include onDesktop {
+      padding-top: 32px;
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr 25px;
+    margin: 0 0 70px;
+
+    @include onTablet {
+      margin: 0 0 122px;
+      grid-template-columns: 1fr 25px 25px;
+      column-gap: 45px;
+    }
+  }
+
+  &__left-grid {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+      grid-column: 1 / 6;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      margin: auto;
+    }
+  }
+
+  &__right-grid {
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__info {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 140%;
+    color: $white-color;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    &--2 {
+      font-size: 16px;
+      line-height: 150%;
+      margin: 0 5px 40px 0;
+
+      @include onTablet {
+        margin: 0 0 50px;
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        margin: 0 0 81px;
+        grid-column: 1 / 6;
+      }
+    }
+  }
+
+  &__title {
+    @include fontPlayfairDisplay;
+    margin: 0 0 30px;
+    font-size: 48px;
+    line-height: 100%;
+    color: $white-color;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      grid-column: 1 / 6;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+      grid-column: 1 / 7;
+      font-size: 96px;
+    }
+  }
+
+  &__image-container {
+    &--mobile {
+      padding: 0 18px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+      
+      @include onTablet {
+        display: block;
+        padding: 0;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        padding: 0;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__desktop-down-info {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__desktop-date {
+    @include onDesktop {
+      margin: 0;
+      margin-right: -13px;
+      grid-column: 1 / 2;
+      @include fontPlayfairDisplay;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      color: $white-color;
+      opacity: 0.7;
+    }
+  }
+
+  &__desktop-line {
+    @include onDesktop {
+      grid-column: 2 / 7;
+      border-bottom: 1px solid $white-color;
+      position: relative;
+      bottom: 35%;
+    }
+  }
+}

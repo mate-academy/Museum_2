@@ -1,0 +1,190 @@
+.exhibitions {
+  &__title-archiv-content {
+    margin-bottom: 60px;
+    display: grid;
+
+    @include onTablet {
+      margin-bottom: 75px;
+      @include gridTablet;
+    }
+
+    @include onDesktop {
+      margin-bottom: 71px;
+      @include gridDesktop;
+    }
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__about-exhibition {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &--1 {
+      @include onTablet {
+        grid-column: 1 / 4;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 30px;
+      }
+    }
+
+    &--2 {
+      margin-bottom: 32px;
+      @include onTablet {
+        grid-column: 4 / 7;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
+        margin: 0;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 13;
+
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 30px;
+      }
+    }
+  }
+
+  &__photo-container {
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &--mobile_1 {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--mobile_2 {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet_1 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--tablet_2 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop_1 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--desktop_2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+
+        grid-column: 1 / 7;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &__date {
+    margin: 0 0 10px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $buttons-color-default;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__name-exhibition {
+    margin: 0 0 20px;
+    @include fontPlayfairDisplay;
+    font-size: 20px;
+    line-height: 125%;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      font-size: 24px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__info-exhibition {
+    margin: 0 0 30px;
+    line-height: 150%;
+    color: $gray-color;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin: 0 0 40px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin: 0 0 50px;
+    }
+  }
+}

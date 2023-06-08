@@ -1,0 +1,26 @@
+.form-field {
+  border-bottom: 1px solid $black-color;
+  padding-bottom: 3px;
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 150%;
+  color: $black-color;
+
+  &::placeholder {
+    color: $gray-color;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  &:not(:focus):not(:placeholder-shown):invalid {
+    color: $buttons-color-default;
+    border-bottom: 1px solid $buttons-color-default;
+  }
+}

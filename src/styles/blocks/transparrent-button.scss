@@ -1,0 +1,63 @@
+.transparrent-button {
+  text-decoration: none;
+  color: $buttons-color-default;
+  border: 1px solid $buttons-color-default;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 56px;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &::after {
+    content: "";
+    margin-left: 8px;
+    background-image: url(../images/icon-arrow.jpg);
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 13px;
+  }
+
+  &:hover {
+    color: $buttons-color-hover;
+    border: 1px solid $buttons-color-hover;
+
+    &::after {
+      content: "";
+      background-image: url(../images/icon-hover-arrow.jpg);
+    }
+  }
+
+  &:active {
+    color: $buttons-color-pressed;
+    border: 1px solid $buttons-color-pressed;
+
+    &::after {
+      content: "";
+      background-image: url(../images/icon-pressed-arrow.jpg);
+    }
+  }
+
+  &--mobile {
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      grid-column: 5 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.visit-plan {
+  background-color: $green-color;
+
+  &__content {
+    padding: 50px 0;
+
+    @include onTablet {
+      padding: 80px 0;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+  &__photo-container {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      grid-column: 1 / 7;
+      position: relative;
+      right: 56px;
+    }
+
+    @include onDesign {
+      right: 136px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__information {
+    @include onTablet {
+      grid-column: 1 / 7;
+      @include gridTablet;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      margin: auto;
+      position: relative;
+      right: 100px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    @include fontPlayfairDisplay;
+    font-size: 38px;
+    line-height: 100%;
+    color: $white-color;
+
+    @include onTablet {
+      font-size: 62px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin: 0 0 10px;
+      font-size: 80px;
+    }
+  }
+
+  &__info {
+    margin: 0 0 40px;
+    line-height: 150%;
+    color: $white-color;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin: 0 0 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+      margin: 0 0 50px;
+    }
+  }
+}
