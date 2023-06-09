@@ -1,0 +1,36 @@
+.dd-list {
+  display: none;
+  text-decoration: none;
+
+  &--menu {
+    display: flex;
+    align-items: center;
+    order: -1;
+    margin-right: 30px;
+  }
+
+  @include onTablet {
+    order: 0;
+    margin-right: 0;
+  }
+
+  @include onTablet {
+    display: flex;
+    align-items: center;
+  }
+
+  &__text {
+    @extend %dd-list-font;
+    color: $text-color-white;
+
+    margin-right: 5px;
+  }
+
+  &__arrow {
+    @extend %background-image-contain;
+    height: 4px;
+    width: 8px;
+
+    background-image: url(/src/images/dd-arrow.svg);
+  }
+}
