@@ -1,0 +1,177 @@
+.content {
+  @include setGridCell;
+  margin: 0 auto;
+}
+
+.button {
+  grid-column: span 2;
+
+  height: fit-content;
+  text-align: center;
+
+  transition: all 0.3s ease;
+
+  &-main {
+    display: block;
+    background-color: $main-button-color;
+
+    border: none;
+    cursor: pointer;
+
+    padding-block: 22px;
+
+    &-content {
+      color: $secondary-button-color;
+      min-width: max-content;
+    }
+
+    &:hover {
+      background-color: $hover-button-color;
+      transform: scale(1.05);
+    }
+
+    &:active {
+      background-color: $active-button-color;
+    }
+
+    &:disabled {
+      background-color: $disabled-button-color;
+    }
+  }
+
+  &-secondary {
+    display: flex;
+    background-color: $secondary-button-color;
+    grid-column: span 2;
+    border: 1px solid $main-button-color;
+
+    gap: 11px;
+
+    color: $main-button-color;
+
+    margin-top: 30px;
+    padding-block: 21px;
+
+    &-content {
+      display: flex;
+      gap: 11px;
+      font-weight: bold;
+      color: inherit;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    &-arrow {
+      --icon-size: 20px;
+
+      width: var(--icon-size);
+      min-width: min-content;
+      height: var(--icon-size);
+
+      background-image: url(../icons/button-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:hover {
+      border-color: $hover-button-color;
+      color: $hover-button-color;
+      transform: scale(1.05);
+
+      .button-secondary-arrow {
+        background-image: url(../icons/button-arrow-hover.svg);
+      }
+    }
+
+    &:active {
+      border-color: $active-button-color;
+      color: $active-button-color;
+
+      .button-secondary-arrow {
+        background-image: url(../icons/button-arrow-active.svg);
+      }
+    }
+
+    &:disabled {
+      border-color: $disabled-button-color;
+      color: $disabled-button-color;
+
+      .button-secondary-arrow {
+        background-image: url(../icons/button-arrow-disabled.svg);
+      }
+    }
+
+    @include onTablet {
+      margin: 0;
+      grid-column: 5 / 7;
+      display: flex;
+    }
+
+    @include onDesktop {
+      grid-column: -4 / -1;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.blocktitle {
+  text-align: center;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+
+  &-align-left {
+    text-align: left;
+  }
+
+  @include onTablet {
+    grid-column: 1 / 5;
+  }
+
+  @include onDesktop {
+    grid-column: span 6;
+    text-align: left;
+  }
+}
+
+.buttontext {
+  display: block;
+  margin: 0 auto;
+}
+
+.pagelink {
+  display: block;
+  width: fit-content;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $secondary-button-color;
+    transition: transform 0.3s ease;
+    transform: scale(0);
+    margin-top: -4px;
+  }
+
+  &:hover {
+    &::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.photo {
+  transition: transform 0.3s ease,
+    box-shadow 0.3s ease-out;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    box-shadow: -10px -10px 15px $text-color;
+    transform: translate(10px, 10px);
+  }
+}

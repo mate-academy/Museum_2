@@ -1,7 +1,120 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils";
+@import "./fonts";
 
-body {
-  background: $c-gray;
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    background: $c-gray;
+    position: relative;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
 }
+
+// #region font tags styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $main-font;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 100%;
+
+  @include onTablet {
+    font-size: 72px;
+  }
+
+  @include onDesktop {
+    font-size: 96px;
+  }
+}
+
+h2 {
+  font-size: 38px;
+  line-height: 100%;
+
+  @include onTablet {
+    font-size: 62px;
+  }
+
+  @include onDesktop {
+    font-size: 80px;
+  }
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 125%;
+
+  @include onTablet {
+    font-size: 40px;
+  }
+
+  @include onDesktop {
+    font-size: 58px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 125%;
+
+  @include onTablet {
+    font-size: 24px;
+  }
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 150%;
+}
+
+h6 {
+  font-size: 14px;
+  line-height: 125%;
+}
+
+.buttontext {
+  font-family: $secondary-font;
+  font-weight: 600;
+}
+
+.maintext {
+  font-family: $secondary-font;
+  line-height: 150%;
+}
+
+.additional {
+  font-family: $secondary-font;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+// #endregion
+
+@import "./blocks/header";
+@import "./blocks/topbar";
+@import "./blocks/menu";
+@import "./blocks/mainblock";
+@import "./blocks/topical";
+@import "./blocks/events";
+@import "./blocks/signup";
+@import "./blocks/news";
+@import "./blocks/digest";
+@import "./blocks/footer";

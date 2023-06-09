@@ -4,3 +4,40 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin setGridCell {
+  --colums: 2;
+  --padding: 20px;
+  --grid-width: 280px;
+  display: grid;
+  grid-template-columns: repeat(var(--colums), 1fr);
+  grid-column-gap: 20px;
+  width: 100%;
+  max-width: 1280px;
+  padding-inline: var(--padding);
+
+  @include onTablet {
+    --colums: 6;
+    --padding: 39px;
+    --grid-width: 768px;
+    grid-column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --colums: 12;
+    --padding: 55px;
+    --grid-width: 1280px;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
