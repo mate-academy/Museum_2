@@ -1,0 +1,122 @@
+.topical {
+  color: $title-color;
+  @include setGridCell;
+  --rows: 3;
+  grid-template-rows: var(--rows);
+
+  &__blocktitle {
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__cardcontainer {
+    grid-column: span 2;
+    grid-row: 2 / 3;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 30px;
+      margin-top: 75px;
+    }
+
+    @include onDesktop {
+      margin-top: 71px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    height: fit-content;
+    width: 100%;
+    margin-top: 60px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    grid-column: span 2;
+
+    height: 356px;
+    width: 100%;
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 100%;
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__worktime {
+    margin-top: 20px;
+    margin-inline: 0;
+    color: $main-button-color;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 10px;
+    grid-column: span 2;
+    height: 100%;
+
+    @include onTablet {
+      height: 60px;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      height: 100%;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    grid-column: span 2;
+
+    color: $text-color;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    color: $secondary-button-color;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+  }
+
+  @include onTablet {
+    --rows: 2;
+    align-items: center;
+  }
+}

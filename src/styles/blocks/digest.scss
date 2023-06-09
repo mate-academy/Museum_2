@@ -1,0 +1,94 @@
+.digest {
+  @include setGridCell;
+
+  &__blocktitle {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / -2;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+    grid-column: span 2;
+    display: grid;
+    --colums: 2;
+    grid-template-columns: repeat(var(--colums), 1fr);
+    column-gap: 30px;
+
+    @include onTablet {
+      --colums: 4;
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      --colums: 5;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $title-color;
+    font-family: $secondary-font;
+    padding-bottom: 3px;
+    grid-column: span 2;
+    font-weight: bold;
+
+    transition: border-color 0.3s ease,
+      color 0.3s ease;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 5;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $main-button-color;
+      color: $main-button-color;
+    }
+  }
+
+  &__button {
+    font-size: 16px;
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+}
