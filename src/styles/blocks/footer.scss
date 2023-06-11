@@ -48,16 +48,32 @@
   }
 
   &__contacts-link {
+    position: relative;
     display: block;
 
-    &:hover {
-      text-decoration: underline;
+    &::after {
+      @extend %after-underline-footer;
+      width: 40%;
+
+      @extend %transform-underline;
+    }
+
+    &:hover::after {
+      transform: scale(1);
     }
   }
 
   &__networks {
     display: flex;
     gap: 20px;
+  }
+
+  &__network-link {
+    transition: 1s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
   }
 
   &__schedule {
@@ -98,20 +114,28 @@
   }
 
   &__main-link {
+    position: relative;
     display: block;
     @extend %p-large;
 
-    &:hover {
-      text-decoration: underline;
+    &::after {
+      @extend %after-underline-footer;
+      width: 20%;
+
+      @extend %transform-underline;
+    }
+
+    &:hover::after {
+      transform: scale(1);
     }
 
     &:not(:last-child) {
-      padding-bottom: 5px;
+      margin-bottom: 5px;
     }
 
     @include onTablet {
       &:not(:last-child) {
-        padding-bottom: 10px;
+        margin-bottom: 10px;
       }
     }
   }
