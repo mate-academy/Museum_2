@@ -1,0 +1,154 @@
+.menu {
+  min-height: 100vh;
+
+  color: $c-light;
+  background-color: $c-dark-green;
+  transition: $transition transform;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      justify-content: space-between;
+    }
+  }
+
+  &__top-actions {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 100px  ;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__select {
+    @include onTablet {
+      order: 2;
+    }
+  }
+
+  &__close {
+    @include onTablet {
+      order: 1;
+    }
+  }
+
+  &__info-title {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__info-link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__list {
+    position: relative;
+    margin: 0 0 80px;
+    padding: 0;
+
+    list-style: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      right: 0;
+
+      height: 1px;
+
+      background-color: $c-light;
+
+      @include onTablet {
+        bottom: -50px;
+      }
+
+      @include onDesktop {
+        bottom: -60px;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", sans-serif;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
