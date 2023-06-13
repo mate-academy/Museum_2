@@ -1,0 +1,79 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  width: 100%;
+  height: 60px;
+  border: 0;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+
+  cursor: pointer;
+
+  &--main {
+    background-color: $c-button;
+
+    color: $c-font-light;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include hover(background-color, $c-button-hover);
+
+    @include active(background-color, $c-button-active);
+
+    &:disabled {
+      background-color: $c-button-disabled;
+      
+      cursor: default;
+    }
+  }
+
+  &--primary {
+    background-color: #fff;
+    border: 1px solid $c-button;
+
+    color: $c-button;
+
+    transition: border $transition-time, color $transition-time;
+
+    &::after {
+      content: "\27F6";
+      font-size: 23px;
+      position: relative;
+      bottom: 1px;
+    }
+
+    @include onTablet {
+      display: none;
+      width: 240px;
+    }
+
+    &:hover {
+      border: 1px solid $c-button-hover;
+
+      color: $c-button-hover;
+    }
+
+    &:active {
+      border: 1px solid $c-button-active;
+
+      color: $c-button-active;
+
+      transition: border 0s, color 0s;
+    }
+
+    &:disabled {
+      border: 1px solid $c-button-disabled;
+
+      color: $c-button-disabled;
+      
+      cursor: default;
+    }
+  }
+}

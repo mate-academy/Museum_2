@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ua" class="page">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
                       UA
                     </option>
       
-                    <option value="en" class="change-language__option">
+                    <option value="en" class="change-language__option" selected>
                       EN
                     </option>
                   </select>
@@ -59,15 +59,15 @@
           </div>
   
           <p class="header__event-period">
-            10 серпня - 10 листопада
+            August 10 - November 10
           </p>
   
           <h1 class="header__title">
-            Мистецтво ХІХ - ХХ ст.
+            Art of the 19th - 20th centuries.
           </h1>
   
           <p class="header__paragraph">
-            Внесок українських митців у світову культуру 19-20 ст.
+            The contribution of Ukrainian artists to the world culture of the 19th and 20th centuries.
           </p>
 
           <a href="#">
@@ -76,7 +76,7 @@
               button 
               button--main
             ">
-              Купити квиток
+              Buy a ticket
             </button>
           </a>
   
@@ -116,7 +116,7 @@
                     UA
                   </option>
     
-                  <option value="en" class="change-language__option">
+                  <option value="en" class="change-language__option" selected>
                     EN
                   </option>
                 </select>
@@ -140,7 +140,7 @@
             <div class="sidebar__place">
               <div class="sidebar__items">
                 <p class="sidebar__name-item">
-                  Розклад сьогодні:
+                  Schedule today:
                 </p>
       
                 <p class="sidebar__content-item">
@@ -150,7 +150,7 @@
       
               <div class="sidebar__items">
                 <p class="sidebar__name-item">
-                  Адреса:
+                  Address:
                 </p>
       
                 <a 
@@ -158,7 +158,7 @@
                   class="sidebar__content-item sidebar__link"
                   target="_blank"
                 >
-                  Київ, вул. М. Грушевського, 6
+                  Kyiv, str. M. Hrushevsky, 6
                 </a>
               </div>
             </div>
@@ -167,19 +167,19 @@
               <ul class="nav__list">
                 <li class="nav__item nav__item--sidebar">
                   <a href="#actual-exhibitions" class="nav__link nav__link--sidebar">
-                    Актуальні виставки
+                    Actual exhibitions
                   </a>
                 </li>
     
                 <li class="nav__item nav__item--sidebar">
                   <a href="#upcoming-events" class="nav__link nav__link--sidebar">
-                    Найближчі події
+                    Upcoming events
                   </a>
                 </li>
     
                 <li class="nav__item nav__item--sidebar">
                   <a href="#news" class="nav__link nav__link--sidebar">
-                    Новини
+                    News
                   </a>
                 </li>
               </ul>
@@ -192,7 +192,7 @@
               button 
               button--main
             ">
-              Купити квиток
+              Buy a ticket
             </button>
           </a>
         </div>
@@ -212,7 +212,7 @@
             title
           ">
             <h2 class="page__section-title">
-              Актуальні виставки
+              Actual exhibitions
             </h2>
 
             <a href="#">
@@ -221,7 +221,7 @@
                 button--primary
                 title__button
               ">
-                Архів виставок
+                Archive of exhibitions
               </button>
             </a>
           </div>
@@ -245,11 +245,11 @@
               </span>
     
               <h3 class="card__title">
-                Кураторська виставка “Ангели”
+                Curated exhibition "Angels"
               </h3>
             
               <p class="card__paragraph">
-                Виставковий проект «Ангели» – знакова подія для української культури і водночас наймасштабніший...
+                The exhibition project "Angels" is a landmark event for Ukrainian culture and at the same time the largest...
               </p>
     
               <a href="#" class="
@@ -257,7 +257,7 @@
                 button
                 button--main
               ">
-                Купити квиток
+                Buy a ticket
               </a>
             </div>
 
@@ -279,15 +279,15 @@
               </picture>
 
               <span class="card__date">
-                Діє постійно
+                Works constantly
               </span>
     
               <h3 class="card__title">
-                Мистецтво ХХ ст. — XXI ст.
+                Art of the 20th century — XXI century.
               </h3>
 
               <p class="card__paragraph">
-                Знакові роботи Алли Горської, Миколи Самокиша, Федора Кричевського та інших митців.
+                Iconic works by Alla Horska, Mykola Samokysh, Fedor Krychevsky and other artists.
               </p>
     
               <a href="#" class="
@@ -295,7 +295,7 @@
                 button
                 button--main
               ">
-                Купити квиток
+                Buy a ticket
               </a>
             </div>
           </div>
@@ -305,7 +305,7 @@
               button
               button--primary
             ">
-              Архів виставок
+              Archive of exhibitions
             </button>
           </a>
         </div>
@@ -321,7 +321,7 @@
             title
           ">
             <h2 class="page__section-title">
-              Найближчі події
+              Upcoming events
             </h2>
 
             <a href="#">
@@ -330,7 +330,7 @@
                 button--primary
                 title__button
               ">
-                Календар подій
+                Calendar of events
               </button>
             </a>
           </div>
@@ -344,15 +344,15 @@
 
             <div class="upcoming-events__card-container">
               <span class="card__date">
-                14.08 о 13:00
+                14.08 at 13:00
               </span>
     
               <h3 class="card__title">
-                Кураторські екскурсії від Павла Гудімова 
+                Curated tours by Pavel Gudimov
               </h3>
             
               <p class="card__paragraph">
-                Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...
+                The secrets of preparation, the history of the exhibits, the magic of action before and during your presence will unfold...
               </p>
 
               <a href="#">
@@ -361,7 +361,7 @@
                   button
                   button--main
                 ">
-                  Зареєструватись
+                  Register
                 </button>
               </a>
             </div>
@@ -380,15 +380,15 @@
 
             <div class="upcoming-events__card-container">
               <span class="card__date">
-                16.08 о 13:00
+                16.08 at 13:00
               </span>
     
               <h3 class="card__title">
-                Майстер-клас “Подорож до Австралії”
+                Master class "Travel to Australia"
               </h3>
             
               <p class="card__paragraph">
-                Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт кругосвітньої подорожі - Австралія.
+                This Sunday at 2:00 p.m., the last point of the round-the-world trip awaits art travelers - Australia.
               </p>
 
               <a href="#">
@@ -397,7 +397,7 @@
                   button
                   button--main
                 ">
-                  Зареєструватись
+                  Register
                 </button>
               </a>
             </div>
@@ -408,7 +408,7 @@
               button
               button--primary
             ">
-              Календар подій
+              Calendar of events
             </button>
           </a>
         </div>
@@ -418,11 +418,11 @@
         <div class="container">
           <div class="visit-to-museum__container">
             <h2 class="visit-to-museum__title">
-              Сплануйте візит до музею
+              Plan a visit to the museum
             </h2>
   
             <p class="visit-to-museum__paragraph">
-              Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом.
+              Choose a convenient day, register for events of interest, buy a ticket in advance so that nothing prevents you from enjoying art.
             </p>
 
             <a href="#">
@@ -430,7 +430,7 @@
                 button
                 button--main
               ">
-                Почати
+                Begin
               </button>
             </a>
           </div>
@@ -447,7 +447,7 @@
             title
           ">
             <h2 class="page__section-title">
-              Новини
+              News
             </h2>
 
             <a href="#">
@@ -456,7 +456,7 @@
                 button--primary
                 title__button
               ">
-                Усі новини
+                All news
               </button>
             </a>
           </div>
@@ -479,15 +479,15 @@
               </picture>
 
               <span class="card-news__date">
-                9 серпня 2019
+                August 9, 2019
               </span>
     
               <h3 class="card-news__title">
-                Оголошення переможця
+                Announcement of the winner
               </h3>
             
               <p class="card-news__paragraph">
-                Друзі, сьогодні п'ятниця! А це означає, що час оголосити переможця розіграшу...
+                Friends, today is Friday! And that means it's time to announce the winner of the raffle...
               </p>
             </div>
 
@@ -509,15 +509,15 @@
               </picture>
 
               <span class="card-news__date">
-                9 серпня 2019
+                August 9, 2019
               </span>
     
               <h3 class="card-news__title">
-                Міжнародний день котів
+                International Cat Day
               </h3>
             
               <p class="card-news__paragraph">
-                Музей з левами не може просто так взяти і пропустити Міжнародний день котів!
+                A museum with lions cannot simply take and miss International Cat Day!
               </p>
             </div>
           </div>
@@ -528,7 +528,7 @@
               button
               button--primary
             ">
-              Усі новини
+              All news
             </button>
           </a>
         </div>
@@ -538,11 +538,11 @@
         <div class="container">
           <div class="subscription__container">
             <h2 class="page__section-title subscription__title">
-              Підпишіться на дайджест
+              Subscribe to the digest
             </h2>
   
             <p class="subscription__paragraph">
-              Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів
+              Be the first to hear about museum news and raffles, receive invitations to events and read articles from curators
             </p>
           </div>
 
@@ -567,7 +567,7 @@
               button
               button--main
             ">
-              Підписатись
+              Subscribe
             </button>
           </form>
         </div>
@@ -579,7 +579,7 @@
         <div class="footer__content">
           <section class="footer__section contacts">
             <h2 class="footer__section-title">
-              Контакти
+              Contacts
             </h2>
   
             <div class="contacts__container">
@@ -588,13 +588,13 @@
                 target="_blank"
                 class="contacts__link"
               >
-                Київ, 
+                Kyiv,
                 <br>
-                вул. М. Грушевського, 6
+                st. M. Hrushevsky, 6
               </a>
   
               <p>
-                тел.
+                tel.
                 <a href="tel:278-13-57" class="contacts__link">
                   278-13-57
                 </a>,
@@ -646,23 +646,23 @@
   
           <section class="footer__section work-schedule">
             <h2 class="footer__section-title">
-              Розклад роботи
+              Work schedule
             </h2>
   
             <p class="work-schedule__paragraph">
-              ПН: вихідний
+              MON: day off
               <br>
-              ВТ: вихідний
+              TUE: day off
               <br>
-              СР: 10:00 - 17:00
+              WED: 10:00 - 17:00
               <br>
-              ЧТ: 10:00 - 17:00
+              THU: 10:00 - 17:00
               <br>
-              ПТ: 12:00 - 19:00
+              FRI: 12:00 - 19:00
               <br>
-              СБ: 11:00 - 18:00
+              SAT: 11:00 - 18:00
               <br>
-              НД: 10:00 - 17:00
+              SUN: 10:00 - 17:00
             </p>
           </section>
   
@@ -670,25 +670,25 @@
             <ul class="nav__list">
               <li class="nav__item footer__section-title">
                 <a href="#" class="nav__link nav__link--footer-first">
-                  Головна
+                  Main
                 </a>
               </li>
   
               <li class="nav__item nav__item--footer">
                 <a href="#actual-exhibitions" class="nav__link nav__link--footer">
-                  Виставки
+                  Exhibitions
                 </a>
               </li>
   
               <li class="nav__item nav__item--footer">
                 <a href="#upcoming-events" class="nav__link nav__link--footer">
-                  Події
+                  Events
                 </a>
               </li>
   
               <li class="nav__item nav__item--footer">
                 <a href="#news" class="nav__link nav__link--footer">
-                  Новини
+                  News
                 </a>
               </li>
             </ul>
