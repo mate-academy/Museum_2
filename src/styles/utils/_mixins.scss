@@ -1,6 +1,59 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin top-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+
+  @include desktop {
+    padding-top: 26px;
+  }
+}
+
+@mixin icon-box {
+  width: max-content;
+  display: flex;
+  justify-content: space-between;
+
+  @include tablet {
+    width: 105px;
+  }
+}
+
+@mixin section-action {
+  margin-bottom: 60px;
+
+  @include tablet {
+    margin-bottom: 75px;
+  }
+
+  @include desktop {
+    margin-bottom: 70px;
+  }
+}
+
+@mixin img-hover {
   &:hover {
-    #{$_property}: $_toValue;
+    transform: translateY(-8px);
+    box-shadow: rgba(0, 0, 0, 0.3) 0 19px 38px, rgba(0, 0, 0, 0.22) 0 15px 12px;
+  }
+}
+
+@mixin content-margin-bottom {
+  margin-bottom: 30px;
+
+  @include tablet {
+    margin-bottom: 0;
   }
 }
