@@ -1,0 +1,55 @@
+.top-section {
+  display: grid;
+  @include pageGrid;
+
+  &__title {
+    grid-column: 1 / -1;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $black-text-c;
+    @include onTablet {
+      grid-column: span 4;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      grid-column: span 7;
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &--subscription {
+      margin-bottom: 20px;
+      @include onDesktop {
+        margin-bottom: 50px;
+        grid-column: 1 / 6;
+      }
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: -3 /-1;
+    }
+
+    @include onDesktop {
+      grid-column: -4 /-1;
+    }
+  }
+  &--subscription--text {
+    line-height: 24px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 5;
+    }
+
+    @include onDesktop {
+      grid-column: 7 /-1;
+    }
+
+  }
+}

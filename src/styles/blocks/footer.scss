@@ -1,0 +1,88 @@
+.footer {
+  margin-top: auto;
+  background: $gray-bg;
+  color: $white-text-c;
+  &__blocks {
+    @include pageGrid;
+    row-gap: 50px;
+    margin: 34px 0 60px;
+    @include onTablet {
+      margin: 50px 0 70px;
+    }
+  }
+
+  &__block {
+    grid-column: span 2;
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    margin-bottom: 10px;
+    @include onTablet {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 30px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__contacts-adress {
+    color: inherit;
+    @include hover (color, $button-main-c);
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__social-img {
+    @include hover (scale, 1.2);
+  }
+
+  &__nav-list {
+    margin-bottom: 5px;
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__nav-link {
+    color: inherit;
+    @include hover (color, $button-main-c);
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    line-height: 140%;
+    margin-bottom: 30px;
+  }
+
+  &__copyring {
+    display: flex;
+    gap: 22px;
+    @include onDesktop {
+      gap: 102px;
+    }
+  }
+
+  &__arrow-up:hover {
+    position: relative;
+    animation: move 500ms ease-in-out infinite alternate;
+  }
+}

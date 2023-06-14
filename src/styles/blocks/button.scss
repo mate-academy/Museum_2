@@ -1,0 +1,62 @@
+.button {
+  width: 100%;
+  height: 60px;
+  background-color: $button-main-c;
+  color: $white-text-c;
+  border: none;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+
+  transition: all $effect-duration;
+
+  &:hover {
+    background-color: #af3419;
+    @include hover(scale, 102%);
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  &--secondary {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: $white-bg;
+    border: 1px solid $button-main-c;
+    color: $button-main-c;
+    @include onTablet {
+      display: flex;
+    }
+
+    &:hover {
+      background-color: $white-bg;
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      background-color: $white-bg;
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+    &:disabled {
+      background-color: $white-bg;
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+  }
+  &--secondary--mobile {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+    display: flex;
+    @include onTablet {
+      display: none;
+    }
+  }
+}
