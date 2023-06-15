@@ -1,0 +1,36 @@
+.icon {
+  display: block;
+  width: 100%;
+  padding-bottom: 100%;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/cross.svg);
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+  }
+
+  @include onTablet {
+    &--menu {
+      grid-column: 3 / 4;
+    }
+
+    &--cross {
+      grid-column: 3 / 4;
+    }
+  }
+}
