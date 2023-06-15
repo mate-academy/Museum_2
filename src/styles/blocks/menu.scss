@@ -1,0 +1,113 @@
+.menu {
+  overflow: none;
+  height: 100vh;
+  background-color: $background;
+  @include onTablet {
+    min-height: 992px;
+    max-height: 994px;
+    background-image: url(../images/imgmenu.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 420px 466px;
+  }
+  @include onLaptop {
+    min-height: 800px;
+    background-size: 625px 697px;
+    background-position: bottom right;
+  }
+  @include onDecktop {
+    background-size: calc(max(30%, 755px));
+  }
+  &__content {
+    padding: 20 0 112px;
+
+    .top-actions {
+      margin-bottom: 10px;
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+      @include onLaptop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  &__nav-icons {
+    margin-bottom: 0;
+  }
+  &__place {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    @include onTablet {
+      margin-bottom: 50px;
+      width: 464px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @include onLaptop {
+      margin-bottom: 70px;
+      width: 424px;
+    }
+  }
+  &__date {
+    margin-bottom: 20px;
+  }
+  &__text {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $white;
+    &--strong {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+  &__nav {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $white;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onLaptop {
+      margin-bottom: 60px;
+      max-width: 570px;
+    }
+  }
+  &__link {
+    margin-bottom: 20px;
+    font-family: "Play", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $white;
+    border: 1px solid transparent;
+    transition: border 0.3s ease-in-out;
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+    @include onLaptop {
+      margin-bottom: 60px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+    &:hover {
+      width: max-content;
+      border-bottom: 1px solid $white;
+    }
+  }
+  &__icons {
+    flex-direction: row-reverse;
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+}
+
+.page__body--with-menu {
+  overflow: hidden;
+}
