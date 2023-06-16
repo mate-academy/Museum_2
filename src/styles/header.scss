@@ -1,0 +1,107 @@
+.header {
+  padding-top: 20px;
+  min-height: 100vh;
+  background-color: $blocks-background;
+  position: relative;
+
+  @include onTablet {
+    padding-top: 26px;
+  }
+
+  @include onDesktop {
+    padding-top: 32px;
+    overflow: hidden;
+  }
+
+  &__wrapper-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+  }
+
+  &__language {
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  &__burger-line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #f1f5f4;
+    margin-bottom: 7px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__burger-menu {
+    cursor: pointer;
+  }
+
+  &__date {
+    grid-column: 1 / -1;
+    margin-top: 70px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $header-text-color;
+
+    &--active {
+      background-color: black;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $header-text-color;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      max-width: 570px;
+    }
+  }
+
+  &__event-name {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $header-text-color;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__main-photo {
+    background: url("../images/header-woman.png") center center/contain no-repeat;
+    width: 100%;
+    height: 273px;
+    position: absolute;
+    bottom: 0;
+
+    @include onDesktop {
+      right: 0;
+      width: 50%;
+      height: 90%;
+      transform: translate(10%, 10%);
+    }
+  }
+}

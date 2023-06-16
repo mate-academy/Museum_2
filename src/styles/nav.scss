@@ -1,0 +1,57 @@
+.nav {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &--header {
+      gap: 20px;
+    }
+  }
+
+  &__link {
+    line-height: 200%;
+    color: $header-text-color;
+    width: max-content;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 1.5px;
+      background-color: $header-text-color;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover {
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &--footer {
+    margin-top: 10px;
+  }
+
+  &--header {
+    margin-top: 40px;
+    font-family: "Playfair Display", "Arial", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $header-text-color;
+
+    @include onTablet {
+      margin-top: 50px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}
