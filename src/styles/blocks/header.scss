@@ -1,13 +1,14 @@
 .header {
   background-color: $background-color;
-
   color: $font-color;
+  height: 100vh;
 
   &__container {
     max-width: 1280px;
     margin: 0 auto;
     padding-top: 20px;
-
+    height: 100%;
+    
     @include onTablet {
       padding-top: 24px;
     }
@@ -55,8 +56,11 @@
 
     @include onTablet {
       margin-bottom: 20px;
-
       font-size: 72px;
+    }
+
+    @media (min-width: 1024px) {
+      width: 50%;
     }
 
     @include onDesktop {
@@ -69,7 +73,6 @@
 
   &__paragraph {
     margin-bottom: 40px;
-
     font-size: 16px;
     line-height: 150%;
 
@@ -83,13 +86,16 @@
   }
 
   &__button {
-    margin-bottom: 40px;
+    margin: 0 auto;
     max-width: 332px;
+
+    @include onTablet {
+      margin: 0;
+    }
   }
 
   &__event-period-bottom {
     display: none;
-
     position: absolute;
     bottom: 52px;
 
@@ -109,25 +115,41 @@
       margin-left: 100px;
       position: absolute;
       top: 56%;
-
       background-color: $font-color;
       opacity: 0.3;
     }
   }
+  &__main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
 
-  &__background {
+  &__main-background {
     width: 100%;
-    height: 76vw;
-    max-height: 443px;
-
+    height: 100%;
     background-image: url(../images/pictures/main_image.png);
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: contain;
 
+    @include onTablet {
+      max-height: 50%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    @media (min-width: 1024px) {
+      max-height: 80%;
+      background-position: right bottom;
+    }
+    
+
     @include onDesktop {
-      width: 625px;
       max-height: 663px;
+      background-position: right bottom;
       position: absolute;
       bottom: 0;
       right: 0;

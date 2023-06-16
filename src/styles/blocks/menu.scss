@@ -32,10 +32,13 @@
     margin-bottom: 40px;
     border-bottom: 1px solid $font-color;
 
+    @media (min-width: 1024px) {
+      margin-bottom: 10px;
+    }
+
     @include onDesktop {
       width: 50%;
-      padding-bottom: 60px;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
   }
 
@@ -46,6 +49,10 @@
       display: flex;
       gap: 124px;
       margin-bottom: 52px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 10px;
     }
 
     @include onDesktop {
@@ -78,13 +85,17 @@
   }
 
   &__button {
+    margin: 0 auto;
     margin-bottom: 28px;
     max-width: 332px;
+
+    @include onTablet {
+      margin: 0;
+    }
   }
 
   &__background {
     display: none;
-
     flex-basis: 100%;
 
     background-image: url(../images/pictures/menu_image.png);
@@ -94,6 +105,14 @@
 
     @include onTablet {
       display: block;
+    }
+
+    @media (min-width: 1024px) {
+      position: absolute;
+      top: 70px;
+      bottom: 0;
+      left: 55%;
+      right: 0;
     }
 
     @include onDesktop {
