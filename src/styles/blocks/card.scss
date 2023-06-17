@@ -1,0 +1,61 @@
+.card {
+  &__image {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+
+    object-position: center;
+    object-fit: cover;
+
+    @include onTablet {
+      margin-bottom: 28px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    transition: transform 0.5s ease, box-shadow 0.5s ease-out;
+    cursor: pointer;
+    
+    &:hover {
+      box-shadow: -5px -5px 5px $background-color;
+      transform: translate(10px, -10px);
+    }
+  }
+
+  &__date {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $button-color;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @extend %title-card;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 32px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__button {
+    max-width: 100%;
+  }
+}

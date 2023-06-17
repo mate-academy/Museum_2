@@ -1,0 +1,51 @@
+.form {
+  &__field {
+    display: block;
+    width: 100%;
+    margin-bottom: 32px;
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid $title-color;
+    background-color: #e5e5e5;
+
+    line-height: 150%;
+
+    transition: border-color $transition-time;
+
+    &:hover {
+      border-color: $button-color;
+    }
+
+    &:focus {
+      border-color: $button-color;
+    }
+
+    &::placeholder {
+      font-size: 16px;
+      color: $title-color;
+
+      transition: color $transition-time;
+    }
+
+    &:hover::placeholder {
+      color: $button-color;
+    }
+
+    &:focus::placeholder {
+      color: $button-color;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+  }
+
+  &__submit {
+    cursor: pointer;
+    border: 0;
+  }
+}

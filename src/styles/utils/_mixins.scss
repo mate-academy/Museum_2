@@ -1,6 +1,31 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-time;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin active($_property, $_toValue) {
+  &:active {
+    transition: #{$_property} 0s;
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin hover-underline($_thickness, $_color) {
+  border-bottom: #{$_thickness} solid transparent;
+
+  @include hover(border-bottom-color, #{$_color});
 }
