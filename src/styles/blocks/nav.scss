@@ -1,0 +1,118 @@
+.nav {
+  height: 100%;
+  background-color: $colorDarkGrey;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-top: 20px;
+
+    @include minTablet {
+      padding-top: 0;
+    }
+
+    &-section {
+      display: block;
+
+      @include onDesktop {
+        display: flex;
+        justify-content: space-between;
+      }
+
+    }
+  }
+
+  &__about {
+    display: block;
+    margin: 30px 0 40px;
+    color: $textWhite;
+
+    @include minTablet {
+      display: flex;
+      margin: 30px 0 50px;
+    }
+
+    &-name {
+      margin: 0 0 20px;
+
+      @include onTablet {
+        margin: 0 123px 0 0;
+      }
+
+      @include onDesktop {
+        margin: 0 83px 0 0;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+
+      &--title {
+        margin: 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &--about {
+        margin: 0;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+    list-style: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    border-bottom: 1px solid transparent;
+    font-size: 20px;
+    line-height: 30px;
+    text-decoration: none;
+    color: $textWhite;
+
+    &:hover {
+      border-color: $textWhite;
+    }
+
+    @include minTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__list-end {
+    height: 1px;
+    margin: 40px 0;
+    background-color: $textWhite;
+
+    @include onDesktop {
+      opacity: 0.3;
+    }
+  }
+}
