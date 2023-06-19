@@ -1,9 +1,14 @@
 .plan-your-visit {
   padding: 50px 0;
   background-color: $blocks-background;
+  position: relative;
 
   @include onTablet {
     padding: 80px 0;
+  }
+
+  @include onDesktop {
+    padding: 205px 0;
   }
 
   &__title {
@@ -15,6 +20,11 @@
     @include onTablet {
       font-size: 62px;
     }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+      font-size: 82px;
+    }
   }
 
   &__text {
@@ -22,5 +32,23 @@
     margin-top: 20px;
     line-height: 150%;
     color: $header-text-color;
+
+    @include onDesktop {
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      background: url("../images/img_visit.png") center center/contain no-repeat;
+      width: 50%;
+      height: 100%;
+      position: absolute;
+      left: -15%;
+      top: 0;
+    }
   }
 }

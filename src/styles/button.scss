@@ -31,6 +31,8 @@
 
     @include onTablet {
       margin-top: 50px;
+      width: 330px;
+      margin-inline: 0;
     }
 
     @include onDesktop {
@@ -42,12 +44,17 @@
     transform: translateY(150px);
 
     @include onTablet {
-      transform: translateY(220px);
+      transform: translateY(180px);
+    }
+
+    @media (min-width: 901px) {
+      transform: translateY(250px);
     }
 
     @include onDesktop {
       transform: translateY(150px);
     }
+
   }
 
   &--card {
@@ -59,6 +66,19 @@
     }
   }
 
+  &--card-grid {
+    @include onTablet {
+      margin-top: 10px;
+      grid-column: 4 / 7;
+      align-self: start;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 8;
+      margin-top: 50px;
+    }
+  }
+
   &--card-transparent {
     margin-top: 30px;
     grid-column: 1 / -1;
@@ -66,8 +86,20 @@
     background-color: transparent;
     color: $button-background;
     transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    &::after {
+      content: url("../images/arrow.svg");
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
 
     @include onTablet {
+      width: 100%;
       grid-column: 5 / 7;
       grid-row: 1 / 2;
       margin-top: 0;
@@ -97,6 +129,11 @@
     @include onTablet {
       margin-top: 60px;
       margin-inline: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+      width: 270px;
     }
   }
 

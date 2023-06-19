@@ -1,15 +1,18 @@
 .header {
   padding-top: 20px;
+  padding-bottom: 273px;
   min-height: 100vh;
   background-color: $blocks-background;
   position: relative;
 
   @include onTablet {
     padding-top: 26px;
+    padding-bottom: 564px;
   }
 
   @include onDesktop {
     padding-top: 32px;
+    padding-bottom: 273px;
     overflow: hidden;
   }
 
@@ -20,9 +23,36 @@
     grid-column: 1 / -1;
   }
 
-  &__language {
-    opacity: 1;
+  &__wrapper-right {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+      gap: 42px;
+    }
+
+    @include onDesktop {
+      gap: 45px;
+    }
+  }
+
+  &__change-lang {
+    opacity: 0;
     pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+
+    @include onTablet {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &--active {
+      opacity: 1;
+      pointer-events: all;
+    }
   }
 
   &__burger-line {
@@ -31,6 +61,10 @@
     height: 2px;
     background: #f1f5f4;
     margin-bottom: 7px;
+    transition: transform 0.2s ease-in-out,
+      margin-bottom 0.2s ease-in-out,
+      width 0.2s ease-in-out;
+    transform-origin: right;
 
     &:last-child {
       margin-bottom: 0;
@@ -40,6 +74,25 @@
 
   &__burger-menu {
     cursor: pointer;
+
+    &--active {
+      .header__burger-line:last-child {
+        transform-origin: left;
+        transform: rotate(-45deg);
+        background-color: #fff;
+      }
+
+      .header__burger-line:nth-child(2) {
+        display: none;
+      }
+
+      .header__burger-line:first-child {
+        transform-origin: left;
+        transform: rotate(45deg);
+        background-color: #fff;
+        margin-bottom: 15px;
+      }
+    }
   }
 
   &__date {
@@ -93,9 +146,13 @@
   &__main-photo {
     background: url("../images/header-woman.png") center center/contain no-repeat;
     width: 100%;
-    height: 273px;
+    height: 43%;
     position: absolute;
     bottom: 0;
+
+    @include onTablet {
+      height: 50%;
+    }
 
     @include onDesktop {
       right: 0;
