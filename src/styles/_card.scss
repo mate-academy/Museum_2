@@ -1,0 +1,100 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 60px;
+  text-align: left;
+
+  max-width: 280px;
+  @include onTablet {
+    max-width: 330px;
+  }
+
+  @include onDesktop {
+    max-width: 570px;
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    height: 356px;
+    max-width: 280px;
+
+    @include onTablet {
+      height: 420px;
+      max-width: 330px;
+
+    }
+
+    @include onDesktop {
+      height: 484px;
+      max-width: 570px;
+
+    }
+
+    &--upcoming {
+      @include onTablet {
+        grid-column: 1/span 3;
+        max-width: 330px;
+      }
+
+      @include onDesktop {
+        grid-column: 1/span 4;
+        max-width: 370px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-family: "Raleway", serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    &--orange {
+      color: $main-color;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 60px;
+    background-color: $main-color;
+    color: $white-color;
+    border-style: none;
+    font-family: "Raleway", serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+
+    @include onDesktop {
+      max-width: 270px;
+      margin: 0;
+    }
+  }
+
+  &__content--upcoming {
+    @include onTablet {
+      grid-column: 4/-1;
+      max-width: 330px;
+    }
+
+    @include onDesktop {
+      grid-column: 5/span 6;
+      max-width: 570px;
+    }
+  }
+}

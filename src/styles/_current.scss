@@ -1,0 +1,65 @@
+.current {
+  text-align: center;
+
+  @include onTablet {
+    text-align: left;
+  }
+
+  &__wrapper {
+
+    @include onTablet {
+      @include pageGrid;
+      grid-template-rows: repeat(2, fit-content);
+    }
+  }
+
+  &__title {
+    padding-top: 90px;
+
+    @include onTablet {
+      grid-column: 1/span 4;
+      grid-row: 1/2;
+      padding-top: 105px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/span 6;
+    }
+  }
+
+  &__card {
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 30px auto 0;
+    width: 100%;
+    max-width: 280px;
+    height: 60px;
+    background-color: $white-color;
+    color: $main-color;
+    border: 1px solid $main-color;
+    font-family: "Raleway", serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+
+    @include onTablet {
+      grid-column: 5/-1;
+      grid-row: 1/2;
+      margin-top: 100px;
+    }
+
+    @include onDesktop {
+      grid-column: 10/span 3;
+    }
+  }
+}

@@ -7,15 +7,51 @@
 
   &__top {
     margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__bottom {
+    @include pageGrid;
+  }
+
+  &__image {
+    display: none;
+    padding-top: 30px;
+    justify-self: center;
+    grid-column: 1/-1;
+    max-width: 245px;
+    @include onTablet {
+      max-width: 422px;
+      display: block;
+    }
+
+    @include onDesktop {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      max-width: 624px;
+      height: 100%;
+      max-height: 697px;
+    }
+
   }
 
   &__schedule {
     margin-bottom: 20px;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 1/3;
+    }
 
     &--title {
       font-family: "Raleway", serif;
       font-size: 14px;
       line-height: 140%;
+      color: $white-color;
     }
 
     &--content {
@@ -23,17 +59,25 @@
       font-weight: 600;
       font-size: 16px;
       line-height: 150%;
+      color: $white-color;
     }
   }
 
   &__address {
     margin-bottom: 40px;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 3/6;
+      margin-bottom: 50px;
+    }
 
     &--title {
       font-family: "Raleway", serif;
       font-weight: 400;
       font-size: 14px;
       line-height: 140%;
+      color: $white-color;
     }
 
     &--content {
@@ -41,11 +85,21 @@
       font-weight: 600;
       font-size: 16px;
       line-height: 150%;
+      color: $white-color;
     }
   }
 
   &__nav {
     margin-bottom: 40px;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/span 6;
+    }
   }
 
   &__line {
@@ -55,5 +109,36 @@
     width: 100%;
     background-color: $white-color;
     margin-bottom: 40px;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/span 6;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    width: 100%;
+    max-width: 280px;
+    height: 60px;
+    background-color: $main-color;
+    color: $white-color;
+    border-style: none;
+    font-family: "Raleway", serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      max-width: 330px;
+    }
+    @include onDesktop {
+      grid-column: 1/span 3;
+    }
   }
 }
