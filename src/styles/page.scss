@@ -1,0 +1,162 @@
+.page {
+  &__nav {
+    position: absolute;
+    background-color: $page-primay-color;
+  }
+
+  &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 450px;
+      height: 60px;
+      background-color: $button-color;
+      color: $header-trxt-color;
+      margin: 0 auto 30px 0;
+
+      @include tablet {
+        max-width: 330px;
+      }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 10px;
+
+    @include tablet {
+      padding: 26px 0;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__logo {
+    width: 123px;
+    height: 40px;
+
+    @include tablet {
+      width: 124px;
+      height: 37px;
+    }
+  }
+
+  &__top-right {
+    display: flex;
+    gap: 30px;
+
+    @include tablet {
+      flex-direction: row-reverse;
+      gap: 44px;
+    }
+  }
+
+  &__close {
+    width: 22px;
+    height: 22px;
+    background-image: url(../images/icon/close-phone-tablet.png);
+  }
+
+  &__pre-century {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__date-address {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__ivent-blok {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 123px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__list {
+    position: relative;
+    font-family: 'Playfair Display';
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    margin-bottom: 81px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $header-trxt-color;
+    }
+
+    @include tablet {
+      font-size: 48px;
+      line-height: 120%;
+      margin-bottom: 101px;
+      gap: 30px;
+    }
+  }
+
+  &__face {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__human-boy {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+  }
+
+  &__picture {
+      display: none;
+
+      @include tablet {
+      display: block;
+      padding: 0 134px;
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+
+  &__sending {
+    color: $header-trxt-color;
+  }
+
+}
+
+#backdrop {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $page-primay-color;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#backdrop:target {
+  opacity: 1;
+  visibility: visible;
+}
