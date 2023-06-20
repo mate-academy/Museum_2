@@ -16,3 +16,23 @@ function submitButtonClick(event) {
   event.preventDefault();
   form.reset();
 }
+
+const dropdown = document.querySelector('.navigation__block_dropdown');
+const trigger = document.querySelector('.navigation__block_dropdown-toggle');
+
+trigger.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  dropdown.classList.toggle('navigation__block_dropdown--active');
+});
+
+const dropdownMenu
+  = document.querySelector('.navigation__block_dropdown--menu');
+const triggerMenu
+  = document.querySelector('.navigation__block_dropdown-toggle--menu');
+
+triggerMenu.addEventListener('click', (event) => {
+  event.preventDefault();
+
+  dropdownMenu.classList.toggle('navigation__block_dropdown--active');
+});

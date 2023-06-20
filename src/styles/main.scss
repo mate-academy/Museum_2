@@ -3,6 +3,7 @@
 @import "./button.scss";
 @import "./card.scss";
 @import "./photo.scss";
+@import "./navigation.scss";
 
 @import "./header.scss";
 @import "./menu.scss";
@@ -20,11 +21,15 @@ ul {
   padding: 0;
 }
 
+.page {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: $raleway;
-  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 .container {
@@ -32,6 +37,7 @@ body {
   max-width: 1280px;
   padding: 20px;
   justify-content: center;
+  position: relative;
 
   @include onTablet {
     padding: 30px 40px;
@@ -47,8 +53,10 @@ body {
   }
 
   &--menu {
-    overflow-y: auto;
+    overflow: hidden;
     margin-bottom: 20px;
+    max-width: 100vw;
+
   }
 
   &--visit {
@@ -110,4 +118,13 @@ body {
     display: flex;
     margin: 0 auto;
   }
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  background-color: $bgcolor;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }
