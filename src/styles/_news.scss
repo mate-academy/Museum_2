@@ -1,37 +1,43 @@
-.upcoming {
-
-  &__title {
-    margin-top: 164px;
-
+.news {
+  &__wrapper {
+    padding-block: 90px 120px;
     @include onTablet {
-      grid-column: 1/span 4;
+      @include pageGrid;
+
+      padding-block: 120px 160px;
+    }
+
+    @include onDesktop {
+      padding-block: 110px 200px;
     }
   }
 
-  &__wrapper {
-    padding-bottom: 90px;
-
+  &__title {
     @include onTablet {
-      @include pageGrid;
+      grid-column: 1/span 4;
+      grid-row: 1/2;
+    }
+
+    @include onDesktop {
+      grid-column: 1/span 6;
     }
   }
 
   &__card {
-
     @include onTablet {
-      @include pageGrid;
-      max-width: fit-content;
-      grid-column: span 6;
+      grid-column: span 3;
+      padding-top: 70px;
+      height: 478px;
     }
 
     @include onDesktop {
-      grid-column: span 12;
+      grid-column: span 6;
     }
   }
 
   &__button {
     display: block;
-    margin: 30px auto 0;
+    margin: 0 auto;
     width: 100%;
     max-width: 280px;
     height: 60px;
@@ -46,7 +52,6 @@
     @include onTablet {
       grid-column: 5/-1;
       grid-row: 1/2;
-      margin-top: 160px;
     }
 
     @include onDesktop {
