@@ -1,7 +1,130 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils";
+
+@import "./button.scss";
+@import "./card.scss";
+@import "./photo.scss";
+@import "./navigation.scss";
+
+@import "./header.scss";
+@import "./menu.scss";
+@import "./exhibitions.scss";
+@import "./events.scss";
+@import "./visit.scss";
+@import "./digest.scss";
+@import "./footer.scss";
+
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  margin: 0;
+  padding: 0;
+  font-family: $raleway;
+  overflow-y: scroll;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 20px;
+  justify-content: center;
+  position: relative;
+
+  @include onTablet {
+    padding: 30px 40px;
+  }
+
+  @include onDesktop {
+    padding: 32px 56px;
+  }
+
+  &--nav {
+    margin: 0 ;
+    max-width: 100vw;
+  }
+
+  &--menu {
+    overflow: hidden;
+    margin-bottom: 20px;
+    max-width: 100vw;
+
+  }
+
+  &--visit {
+    margin-left: 0;
+
+    @include onDesktop {
+      margin-right: 0;
+    }
+  }
+}
+
+.title {
+
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  &__text {
+    font-family: $playfair;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    margin: 50px 0 65px;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+}
+
+.bg__img {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 273px;
+
+  @include onTablet {
+    height: 494px;
+  }
+
+  @include onDesktop {
+    height: 600px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  &-img {
+    width: 100%;
+  }
+}
+
+.main__stuff {
+  @include onDesktop {
+    display: flex;
+    margin: 0 auto;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+  background-color: $bgcolor;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
 }

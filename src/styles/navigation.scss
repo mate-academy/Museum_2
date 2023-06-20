@@ -1,0 +1,140 @@
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    width: 123px;
+    height: 40px;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__block {
+    display: flex;
+    gap: 30px;
+
+    @include onTablet {
+      gap: 40px;
+    }
+
+    &_menu {
+      background: url(../images/menu.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      width: 22px;
+      height: 22px;
+      text-decoration: none;
+
+      @include onTablet {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &_cross {
+      background: url(../images/cross.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      width: 22px;
+      height: 22px;
+      text-decoration: none;
+
+      @include onTablet {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &_dropdown {
+      position: relative;
+      display: inline-block;
+      background-image: url(../images/language.svg);
+      background-size: cover;
+      width: 22px;
+      height: 22px;
+      margin-right: 12px;
+
+      transition: height $transition-duration;
+
+      &-menu {
+        position: absolute;
+        background-color: transparent;
+        border: 1px solid transparent;
+        list-style: none;
+        height: 0;
+        overflow: hidden;
+        transition: height $transition-duration;
+
+        &_item {
+          text-decoration: none;
+          color: $white;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 150%;
+          cursor: pointer;
+
+          @include onTablet {
+            font-size: 20px;
+          }
+        }
+      }
+
+      &--active .navigation__block_dropdown-menu {
+        height: 60px;
+      }
+
+      &-toggle {
+        background-color: transparent;
+        width: 40px;
+        height: 20px;
+        padding: 0;
+        border: none;
+        cursor: pointer;
+
+        @include onTablet {
+          height: 30px;
+        }
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 25px;
+        top: 10px;
+        right: 20px;
+        background-image: url(../images/Union.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 8px;
+        height: 5px;
+
+        @include onTablet {
+          left: 30px;
+        }
+
+        @include onDesktop {
+          left: 33px;
+          top: 12px;
+
+        }
+      }
+
+      @include onTablet {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

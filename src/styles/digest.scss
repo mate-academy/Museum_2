@@ -1,0 +1,102 @@
+.digest {
+
+  @include onDesktop {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-family: $playfair;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    max-width: 550px;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+      font-size: 48px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 20px 0 50px;
+
+    @include onTablet {
+      width: 570px;
+    }
+  }
+}
+
+.form {
+  padding: 50px 0;
+
+  &__input {
+    width: 280px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    border: none;
+    border-bottom: 1px solid black;
+
+    margin-bottom: 35px;
+
+    &::placeholder {
+      font-family: $raleway;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: black;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $buttonMain;
+
+      &::placeholder {
+        color: $buttonMain;
+      }
+    }
+
+    &:focus {
+      border: none;
+      border-bottom: 1px solid $buttonMain;
+    }
+
+    &:active {
+      border: none;
+      border-bottom: 1px solid $buttonMain;
+    }
+
+    &:target {
+      border: none;
+      border-bottom: 1px solid $buttonMain;
+    }
+
+    &:focus-visible {
+      border: none;
+      border-bottom: 1px solid $buttonMain;
+      outline: none;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  font-size: 16px !important;
+
+}
