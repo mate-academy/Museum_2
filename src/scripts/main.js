@@ -30,9 +30,11 @@ const body = document.getElementById('home');
 const header = document.querySelector('.header');
 const navLinkHeader = header.querySelectorAll('.nav__link');
 const headerButton = header.querySelector('.button');
-const buttonsBuy = document.querySelectorAll('[data-buy');
+const buttonsBuy = document.querySelectorAll('[data-buy]');
+const buttonsRegister = document.querySelectorAll('[data-register]');
 const form = document.querySelector('.subscribe__form');
 const footer = document.querySelector('.footer');
+const subscribe = document.querySelector('.subscribe');
 const selectLanguage = document.querySelector('.header__change-lang');
 
 burgerMenu.addEventListener('click', () => {
@@ -55,6 +57,12 @@ navLinkHeader.forEach((link) => {
 buttonsBuy.forEach((button) => {
   button.addEventListener('click', () => {
     footer.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+
+buttonsRegister.forEach((button) => {
+  button.addEventListener('click', () => {
+    subscribe.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
