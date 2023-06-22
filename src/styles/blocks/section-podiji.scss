@@ -1,0 +1,94 @@
+.section-podiji {
+
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 110px;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 30px;
+    justify-content: center;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 30px;
+  }
+
+  &__archive {
+    grid-row: 5;
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column: 4 / span 3;
+      justify-self: end;
+      align-self: center;
+      margin-bottom: 1rem;
+    }
+
+    @include onDesktop {
+      grid-row: 1;
+      grid-column: 10 / span 3;
+      align-self: center;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__block {
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 90px);
+      grid-column-gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 70px);
+      grid-column-gap: 30px;
+    }
+
+    &-man {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+    }
+
+    &-woman {
+      grid-column: 1 / span 2;
+      grid-row: 3;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      grid-column: 4 / span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / span 6;
+    }
+  }
+
+  &__picture {
+    @include onTablet {
+      grid-column: 1 / span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      grid-row: 1;
+      grid-column: 1 / span 3;
+    }
+
+    @include onDesktop {
+      grid-row: 1;
+      grid-column: 1 / span 6;
+    }
+  }
+
+}

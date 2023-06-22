@@ -1,0 +1,98 @@
+.dajest {
+
+  margin-bottom: 80px;
+
+  @include onTablet {
+    margin-bottom: 128px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $black-color;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      width: 375px;
+      grid-row: 1;
+      grid-column: 1 / span 6;
+    }
+  }
+
+  &__paragraph {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $black-color;
+    margin-bottom: 70px;
+
+    @include onDesktop {
+      grid-column: 7 / span 6;
+    }
+  }
+
+  &__form {
+    grid-row: 2;
+    grid-column: 1 / span 6;
+  }
+
+  &__input {
+    margin-bottom: 30px;
+    border-bottom: 1px solid $black-color;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    width: 100%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $black-color;
+
+    &:hover {
+      color: #cd4d31;
+      border-color: #cd4d31;
+    }
+
+    &:focus {
+      border-bottom: 1px solid #1c1b29;
+      font-family: "Raleway", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+      color: #1c1b29;
+    }
+
+    @include onTablet {
+      width: 60%;
+    }
+
+    @include onDesktop {
+      width: 86%;
+    }
+
+  }
+
+  &__button {
+    border: none;
+  }
+
+  &__block {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      align-items: center;
+    }
+  }
+}
