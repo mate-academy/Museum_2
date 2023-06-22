@@ -1,9 +1,9 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function() {
-  let headerIcon = document.querySelector('.header__icon');
-  let menu = document.querySelector('.menu');
-  let menuItems = document.querySelectorAll('.menu__item');
+  const headerIcon = document.querySelector('.header__icon');
+  const menu = document.querySelector('.menu');
+  const menuItems = document.querySelectorAll('.menu__item');
 
   headerIcon.addEventListener('click', function() {
     menu.classList.toggle('open');
