@@ -1,0 +1,126 @@
+.menu {
+  height: 747px;
+  background-color: $headerBg;
+
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  @include onTablet {
+    height: 1092px;
+    background-image: url(../images/menu__bg-tab.png);
+  }
+
+  @include onDesktop {
+    height: 818px;
+    background-image: none;
+  }
+
+  &__content {
+    height: 700px;
+    padding: 13px 0;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    @include onDesktop {
+      background-image: url(../images/menu__bg.png);
+    }
+  }
+
+  &__info {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      margin-bottom: 70px;
+    }
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $whiteTextColor;
+  }
+
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+
+        @include onTablet {
+          margin-bottom: 30px;
+        }
+
+        @include onDesktop {
+          margin-bottom: 60px;
+        }
+      }
+
+      transition: all 0.3s;
+
+      &:hover {
+        scale: 110%;
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      font-family: "Playfair Display", serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: $whiteTextColor;
+
+      @include onTablet {
+        font-size: 48px;
+        line-height: 120%;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+  }
+
+  &__decor {
+    height: 1px;
+    width: 100%;
+    background-color: $whiteTextColor;
+    opacity: 0.3;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+}

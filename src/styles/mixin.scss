@@ -1,0 +1,56 @@
+@mixin onDesktop {
+  @media (min-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) and (max-width: 1169px) {
+    @content;
+  }
+}
+
+@mixin mainTitle {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 125%;
+  color: #1c1b29;
+  text-align: center;
+  margin-bottom: 71px;
+
+  @include onTablet {
+    font-size: 40px;
+    text-align-last: left;
+  }
+
+  @include onDesktop {
+    font-size: 48px;
+    line-height: 120%;
+    text-align-last: left;
+    margin-bottom: 60px;
+  }
+}
+
+@mixin mainBtn {
+  display: none;
+
+  @include onTablet {
+    display: block;
+  }
+
+  @include onDesktop {
+    display: block;
+  }
+
+  &-bottom {
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
