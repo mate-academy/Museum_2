@@ -1,148 +1,68 @@
 .header {
-  position: relative;
-  max-width: 100%;
-  background-color: $page-primay-color;
   color: $header-trxt-color;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  width: 100%;
+  height: 80px;
+  background-color: $page-primay-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  &__nav {
-    display: flex;
-    flex-direction: column;
-    background-color: $page-primay-color;
+  @include tablet {
+    height: 77px;
   }
 
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    margin-bottom: 50px;
-
-    @include tablet {
-      padding: 26px 0;
-      margin-bottom: 93px;
-    }
-  }
-
-  &__logo {
-    width: 123px;
-    height: 40px;
-
-    @include tablet {
-      width: 124px;
-      height: 37px;
-    }
+  @include desktop {
+    height: 90px;
   }
 
   &__top-right {
     display: flex;
-    align-items: center;
     gap: 30px;
 
     @include tablet {
-      gap: 40px;
+      gap: 44px;
       flex-direction: row-reverse;
     }
   }
 
-  &__link {
-    width: 25px;
-    height: 20px;
-    background-image: url(../images/icon/menu-mobile.png);
-
-    @include tablet {
-      width: 30px;
-      height: 30px;
-      background-image: url(../images/icon/menu.png);
-    }
-  }
-
-  &__content {
-    margin-bottom: 40px;
-
-    @include tablet {
-      margin-bottom: 70px;
-    }
-  }
-
-  &__pre-century {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 140%;
-    margin-bottom: 10px;
-  }
-
-  &__title {
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 100%;
-    margin-bottom: 30px;
-
-    @include tablet {
-      font-size: 72px;
-      margin-bottom: 20px;
-      max-width: 570px;
-    }
-  }
-
-  &__pre-century-bottom {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    margin-bottom: 40px;
-    max-width: 270px;
-
-    @include tablet {
-      margin-bottom: 50px;
-    }
-  }
-
-  &__human {
+  &__language {
     display: flex;
-    align-items: flex-end;
-    max-width: 100%;
-    max-height: 100%;
+    align-items: center;
+    gap: 5px;
   }
 
-  &__picture {
-    padding: 0 18px;
-
-    @include tablet {
-      padding: 0 120px;
-    }
+  &__arrow {
+    width: 8px;
+    height: 4.61px;
+    background-image: url(../images/icon/Union.png);
   }
 
-  &__U-F-O {
-    display: none;
+  &__open {
+    display: block;
+    width: 30px;
+    height: 30px;
+    // background-image: url(../images/icon/menu-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
   }
+}
+.header__icon {
+  display: block;
+    width: 30px;
+    height: 30px;
+  background-image: url("../images/icon/menu.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
-  &__dropdwn {
-    display: none;
-    border: none;
-    background-color: transparent;
-    color: $header-trxt-color;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-
-    cursor: pointer;
-
-    @include tablet {
-      display: inline;
-    }
-
-    &:focus-visible {
-      outline: none;
-      background-color: transparent;
-      transition: background-color 0.3s;
-    }
-  }
-
-  &__dropdwn-menu {
-    display: inline-block;
-  }
-
-  &__dropdwn-value {
-    background-color: $page-primay-color;
-  }
-
+.header__icon.close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/icon/close.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
