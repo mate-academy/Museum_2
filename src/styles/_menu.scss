@@ -5,6 +5,10 @@
   color: $white-color;
   z-index: 1;
 
+  @include onDesktop {
+    min-height: 800px;
+  }
+
   &__top {
     margin-bottom: 30px;
 
@@ -131,14 +135,29 @@
     font-family: "Raleway", serif;
     font-weight: 600;
     font-size: 16px;
-    line-height: 100%;
+    text-decoration: none;
+    text-align: center;
+    line-height: 60px;
     grid-column: 1/-1;
+    transition: all 300ms;
 
     @include onTablet {
       max-width: 330px;
     }
     @include onDesktop {
       grid-column: 1/span 3;
+
+      &:hover {
+        background-color: $hover-orange-color;
+      }
+
+      &:active {
+        background-color: $active-orange-color;
+      }
+
+      &:disabled {
+        background-color: $disabled-orange-color;
+      }
     }
   }
 }
