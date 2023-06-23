@@ -13,12 +13,12 @@
     line-height: 100%;
     transition: all 0.3s ease;
 
-    &:active {
-      background-color: $button-pressed;
-    }
-
     &:disabled {
       background-color: $button-disabled;
+    }
+
+    &:not(:disabled):active {
+      background-color: $button-pressed;
     }
 
     @include tablet {
@@ -28,18 +28,15 @@
     @include desktop {
       margin: 0;
       min-width: 270px;
-      transition: all 0.3s ease;
 
-      &:active {
-        background-color: $button-pressed;
-      }
+      & {
+        &:not(:disabled):hover {
+          background-color: $button-hover;
+        }
 
-      &:disabled {
-        background-color: $button-disabled;
-      }
-
-      &:hover {
-        background-color: $button-hover;
+        &:not(:disabled):active {
+          background-color: $button-pressed;
+        }
       }
     }
   }
@@ -52,20 +49,21 @@
     height: 60px;
     background-color: transparent;
     color: $button-color;
-    border: 1px solid  $button-color;
+    border: 1px solid $button-color;
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;
     transition: all 0.3s ease;
 
-    &:active {
-      border-color: $button-pressed;
-      color: $button-pressed;
-    }
 
     &:disabled {
       border-color: $button-disabled;
       color: $button-disabled;
+    }
+
+    &:not(:disabled):active {
+      border-color: $button-pressed;
+      color: $button-pressed;
     }
 
     @include tablet {
@@ -76,21 +74,15 @@
       min-width: 270px;
       transition: all 0.3s ease;
 
-      &:disabled {
-        border-color: $button-disabled;
-        color: $button-disabled;
-      }
-
-      &:active {
-        border-color: $button-pressed;
-        color: $button-pressed;
-      }
-
-      &:hover {
+      &:not(:disabled):hover {
         border-color: $button-hover;
         color: $button-hover;
       }
 
+      &:not(:disabled):active {
+        border-color: $button-pressed;
+        color: $button-pressed;
+      }
     }
   }
 
