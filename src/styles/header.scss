@@ -32,12 +32,19 @@
     display: flex;
     align-items: center;
     gap: 5px;
+
+    @include desktop {
+      &:hover .header__arrow {
+        transform: scale(1.2);
+      }
+    }
   }
 
   &__arrow {
     width: 8px;
     height: 4.61px;
     background-image: url(../images/icon/Union.png);
+    transition: transform 0.3s ease;
   }
 
   &__open {
@@ -56,6 +63,13 @@
   background-image: url("../images/icon/menu.png");
   background-repeat: no-repeat;
   background-position: center;
+  transition: transform 0.3s ease;
+
+  @include desktop {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }
 
 .header__icon.close {
@@ -65,4 +79,11 @@
   background-image: url("../images/icon/close.png");
   background-repeat: no-repeat;
   background-position: center;
+  transition: transform 0.3s ease;
+
+  @include desktop {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
 }

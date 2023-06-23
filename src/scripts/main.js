@@ -7,11 +7,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   headerIcon.addEventListener('click', function() {
     menu.classList.toggle('open');
+
+    if (menu.classList.contains('open')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   });
 
   menuItems.forEach(function(item) {
     item.addEventListener('click', function() {
       menu.classList.remove('open');
+      document.body.style.overflow = '';
     });
   });
 });
