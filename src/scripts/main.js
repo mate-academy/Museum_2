@@ -26,7 +26,7 @@ scrollTopBtn.addEventListener('click', () => {
 
 const menu = document.querySelector('.menu');
 const burgerMenu = document.querySelector('.header__burger-menu');
-const body = document.getElementById('home');
+const html = document.querySelector('html');
 const header = document.querySelector('.header');
 const navLinkHeader = header.querySelectorAll('.nav__link');
 const headerButton = header.querySelector('.button');
@@ -41,7 +41,7 @@ burgerMenu.addEventListener('click', () => {
   burgerMenu.classList.toggle('header__burger-menu--active');
   menu.classList.toggle('menu--active');
   headerButton.classList.toggle('button--menu-active');
-  body.classList.toggle('block-scroll');
+  html.classList.toggle('block-scroll');
   selectLanguage.classList.toggle('header__change-lang--active');
 });
 
@@ -50,7 +50,7 @@ navLinkHeader.forEach((link) => {
     burgerMenu.classList.toggle('header__burger-menu--active');
     menu.classList.toggle('menu--active');
     headerButton.classList.toggle('button--menu-active');
-    body.classList.toggle('block-scroll');
+    html.classList.toggle('block-scroll');
   });
 });
 
