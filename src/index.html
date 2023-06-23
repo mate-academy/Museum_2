@@ -19,7 +19,7 @@
       <div class="page__background">
         <nav class="header container">
           <a href="#" class="header__logo">
-            <img src="images/icon/logo.png" alt="NAMU logo">
+            <img src="images/icon/logo.svg" alt="NAMU logo">
           </a>
 
           <div class="header__top-right">
@@ -46,7 +46,7 @@
 
               <p class="introduction__pre-century-bottom">Внесок українських митців у світову культуру 19-20ст</p>
 
-              <button href="#" class="introduction__button  page__button">Купити квиток</button>
+              <button onclick="window.location.href='#planning'" class="introduction__button  page__button">Купити квиток</button>
 
               <p class="introduction__U-F-O">10.08 - 10.10</p>
             </div>
@@ -89,7 +89,7 @@
                   </li>
                 </ul>
 
-                <button href="#" class="menu__button page__button">Купити квиток</button>
+                <button onclick="window.location.href='#planning'" class="menu__button page__button">Купити квиток</button>
               </div>
 
               <div class="menu__picture">
@@ -110,7 +110,7 @@
         <div class="page__cap">
           <h2 class="page__title title2">Актуальні виставки</h2>
 
-          <button href="#" class="page__button-transparent page__button-top">
+          <button onclick="window.location.href='#actual'"  class="page__button-transparent page__button-top">
             Архів виставок
 
             <span class="page__button-arrow"></span>
@@ -128,7 +128,7 @@
 
             <p class="actual__description">Виставковий проект «Ангели» – знакова подія для української культури і водночас наймасштабніший...</p>
 
-            <button href="#" class="actual__button  page__button">Купити квиток</button>
+            <button onclick="window.location.href='#planning'" class="actual__button  page__button">Купити квиток</button>
           </div>
 
           <div class="actual__card">
@@ -142,11 +142,11 @@
 
             <p class="actual__description">Знакові роботи Алли Горської, Миколи Самокиша, Федора Кричевського та інших митців.</p>
 
-            <button class="actual__button  page__button">Купити квиток</button>
+            <button onclick="window.location.href='#planning'" class="actual__button  page__button">Купити квиток</button>
           </div>
         </div>
 
-        <button href="#" class="page__button-transparent page__button-bottom">
+        <button onclick="window.location.href='#actual'" class="page__button-transparent page__button-bottom">
           Архів виставок
 
           <span class="page__button-arrow"></span>
@@ -157,7 +157,7 @@
         <div class="page__cap">
           <h2 class="page__title title2">Найближчі події</h2>
 
-          <button href="#" class="page__button-transparent page__button-top">
+          <button onclick="window.location.href='#events'" class="page__button-transparent page__button-top">
             Календар подій
 
             <span class="page__button-arrow"></span>
@@ -178,7 +178,7 @@
 
                 <p class="events__description">Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...</p>
 
-                <button href="#" class="events__button  page__button">Зареєструватись</button>
+                <button onclick="window.location.href='#subscribe'" class="events__button  page__button">Зареєструватись</button>
               </div>
             </div>
 
@@ -193,20 +193,20 @@
 
                 <p class="events__description">Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт кругосвітньої подорожі - Австралія.</p>
 
-                <button href="#" class="events__button  page__button">Зареєструватись</button>
+                <button onclick="window.location.href='#subscribe'" class="events__button  page__button">Зареєструватись</button>
               </div>
             </div>
           </div>
         </div>
 
-        <button href="#" class="page__button-transparent page__button-bottom">
+        <button onclick="window.location.href='#events'" class="page__button-transparent page__button-bottom">
           Календар подій
 
           <span class="page__button-arrow"></span>
         </button>
       </section>
 
-      <section class="planning">
+      <section id="planning" class="planning">
         <img
           class="planning__beauty"
           src="./images/main-image/beauty.png"
@@ -217,7 +217,7 @@
 
           <p class="planning__description">Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом</p>
 
-          <button disabled class="planning__button  page__button">Почати</button>
+          <button onclick="window.location.href='#planning'" class="planning__button  page__button">Почати</button>
         </div>
       </section>
 
@@ -225,7 +225,7 @@
         <div class="page__cap">
           <h2 class="page__title title2">Новини</h2>
 
-          <button disabled class="page__button-transparent page__button-top">
+          <button onclick="window.location.href='#news'" class="page__button-transparent page__button-top">
             Усі новини
 
             <span class="page__button-arrow"></span>
@@ -258,14 +258,14 @@
           </div>
         </div>
 
-        <button href="#" class="page__button-transparent page__button-bottom">
+        <button onclick="window.location.href='#news'" class="page__button-transparent page__button-bottom">
           Усі новини
 
           <span class="page__button-arrow"></span>
         </button>
       </section>
 
-      <section class="subscribe container">
+      <section id="subscribe" class="subscribe container">
         <div class="page__cap subscribe__cap">
           <h2 class="subscribe__title title2">Підпишіться на дайджест</h2>
 
@@ -276,6 +276,7 @@
           method="post"
           action="#form">
           <input
+            autocomplete="email"
             class="subscribe__input"
             type="email"
             name="email"
@@ -287,107 +288,113 @@
       </section>
     </main>
     <footer>
-      <section class="footer container">
-        <section class="footer__content">
-          <div class="footer__contacts">
-            <h5 class="footer__title">Контакти</h5>
+      <div class="page__background">
+        <section class="footer container">
+          <section class="footer__content">
+            <div class="footer__contacts">
+              <h5 class="footer__title">Контакти</h5>
 
-            <ul class="footer__list-contacts">
-              <li class="footer__item-contacts">
-                <a href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB%D0%B0+%D0%93%D1%80%D1%83%D1%88%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE,+6,+%D0%9A%D0%B8%D0%B5%D0%B2,+02000/@50.4494397,30.5307593,17z/data=!3m1!4b1!4m6!3m5!1s0x40d4ce524453048d:0x49a2895b6cb43e10!8m2!3d50.4494397!4d30.5307593!16s%2Fg%2F1tj901fm?entry=ttu" class="footer__link-contacts">Київ, <br> вул. М. Грушевського, 6 </a>
-              </li>
-              <li class="footer__item-contacts">
-                <a href="tel:044-278-74-54" class="footer__link-contacts">тел. 278-13-57, 278-74-54</a>
-              </li>
-              <li class="footer__item-contacts">
-                <a href="#" class="footer__link-contacts">info@namu.kiev.ua</a>
-              </li>
-            </ul>
-
-            <ul class="footer__list-socials">
-              <li class="footer__item__social">
-                <a
+              <ul class="footer__list-contacts">
+                <li class="footer__item-contacts">
+                  <a
                   target="_blank"
-                  href="https://www.facebook.com/mist.museum/"
-                  class="footer__link-facebook"
-                >
-                  <img src="./images/social-icon/facebook.png" alt="icon facebook">
-                </a>
-              </li>
-              <li class="footer__item__social">
-                <a
-                  target="_blank"
-                  href="https://twitter.com/tsosnowska1"
-                  class="footer__link-twitter"
-                >
-                  <img src="./images/social-icon/twitter.png" alt="icon twitter">
-                </a>
-              </li>
-              <li class="footer__item__social">
-                <a
-                  target="_blank"
-                  href="https://t.me/s/namu_museum120"
-                  class="footer__link-telegram"
-                >
-                  <img src="./images/social-icon/telegram.png" alt="icon telegram">
-                </a>
-              </li>
-              <li class="footer__item__social">
-                <a
-                  target="_blank"
-                  href="https://www.instagram.com/mist.museum/"
-                  class="footer__link-instagram"
-                >
-                  <img src="./images/social-icon/instagram.png" alt="icon instagram">
-                </a>
-              </li>
-            </ul>
-          </div>
+                  href="https://tinyurl.com/3brrvxy3"
+                  class="footer__link-contacts"
+                >Київ, <br> вул. М. Грушевського, 6</a>
+                </li>
+                <li class="footer__item-contacts">
+                  <a href="tel:044-278-74-54" class="footer__link-contacts">тел. 278-13-57, 278-74-54</a>
+                </li>
+                <li class="footer__item-contacts">
+                  <a href="#" class="footer__link-contacts">info@namu.kiev.ua</a>
+                </li>
+              </ul>
 
-          <div class="footer__timetable">
-            <h5 class="footer__title">Розклад роботи</h5>
+              <ul class="footer__list-socials">
+                <li class="footer__item__social">
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/mist.museum/"
+                    class="footer__link-facebook"
+                  >
+                    <img src="./images/icon/facebook.svg" alt="icon facebook">
+                  </a>
+                </li>
+                <li class="footer__item__social">
+                  <a
+                    target="_blank"
+                    href="https://twitter.com/tsosnowska1"
+                    class="footer__link-twitter"
+                  >
+                    <img src="./images/icon/twitter.svg" alt="icon twitter">
+                  </a>
+                </li>
+                <li class="footer__item__social">
+                  <a
+                    target="_blank"
+                    href="https://t.me/s/namu_museum120"
+                    class="footer__link-telegram"
+                  >
+                    <img src="./images/icon/telegram.svg" alt="icon telegram">
+                  </a>
+                </li>
+                <li class="footer__item__social">
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/mist.museum/"
+                    class="footer__link-instagram"
+                  >
+                    <img src="./images/icon/instagram.svg" alt="icon instagram">
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-            <ul class="footer__timetable-list">
-              <li class="footer__timetable-link">ПН: вихідний</li>
-              <li class="footer__timetable-link">ВТ: вихідний</li>
-              <li class="footer__timetable-link">СР: 10:00 - 17:00</li>
-              <li class="footer__timetable-link">ЧТ: 10:00 - 17:00</li>
-              <li class="footer__timetable-link">ПТ: 12:00 - 19:00</li>
-              <li class="footer__timetable-link">СБ: 11:00 - 18:00</li>
-              <li class="footer__timetable-link">НД: 10:00 - 17:00</li>
-            </ul>
-          </div>
+            <div class="footer__timetable">
+              <h5 class="footer__title">Розклад роботи</h5>
 
-          <div class="footer__menu">
-            <h5 class="footer__title">Головна</h5>
+              <ul class="footer__timetable-list">
+                <li class="footer__timetable-link">ПН: вихідний</li>
+                <li class="footer__timetable-link">ВТ: вихідний</li>
+                <li class="footer__timetable-link">СР: 10:00 - 17:00</li>
+                <li class="footer__timetable-link">ЧТ: 10:00 - 17:00</li>
+                <li class="footer__timetable-link">ПТ: 12:00 - 19:00</li>
+                <li class="footer__timetable-link">СБ: 11:00 - 18:00</li>
+                <li class="footer__timetable-link">НД: 10:00 - 17:00</li>
+              </ul>
+            </div>
 
-            <ul class="footer__lis-menu">
-              <li class="footer__item-menu">
-                <a href="#actual" class="footer__menu-link">Виставки</a>
-              </li>
+            <div class="footer__menu">
+              <h5 class="footer__title">Головна</h5>
 
-              <li class="footer__item-menu">
-                <a href="#events" class="footer__menu-link">Події</a>
-              </li>
+              <ul class="footer__lis-menu">
+                <li class="footer__item-menu">
+                  <a href="#actual" class="footer__menu-link">Виставки</a>
+                </li>
 
-              <li class="footer__item-menu">
-                <a href="#news" class="footer__menu-link">Новини</a>
-              </li>
-            </ul>
-          </div>
+                <li class="footer__item-menu">
+                  <a href="#events" class="footer__menu-link">Події</a>
+                </li>
+
+                <li class="footer__item-menu">
+                  <a href="#news" class="footer__menu-link">Новини</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="footer__captchas">
+            <div class="footer__captcha">
+              <a href="#">© 2010 — 2020</a>
+              <a href="#">Privacy — Terms</a>
+            </div>
+
+            <a href="#header" class="footer__scroll-up">
+              <img src="./images/icon/scroll up.svg" alt="scroll up">
+            </a>
+          </section>
         </section>
-
-        <section class="footer__captchas">
-          <div class="footer__captcha">
-            <a href="#">© 2010 — 2020</a>
-            <a href="#">Privacy — Terms</a>
-          </div>
-
-          <a href="#header" class="footer__scroll-up">
-            <img src="./images/icon/scroll up.png" alt="scroll up">
-          </a>
-        </section>
-      </section>
+      </div>
     </footer>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
