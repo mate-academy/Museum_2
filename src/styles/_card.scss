@@ -1,0 +1,144 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 60px;
+  text-align: left;
+
+  max-width: 280px;
+  @include onTablet {
+    max-width: 330px;
+  }
+
+  @include onDesktop {
+    max-width: 570px;
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+    height: 356px;
+    max-width: 280px;
+
+    @include onTablet {
+      height: 420px;
+      max-width: 330px;
+
+    }
+
+    @include onDesktop {
+      height: 484px;
+      max-width: 570px;
+      transition: all 300ms;
+
+      &:hover {
+        box-shadow: 0 0 15px $gray-color;
+      }
+
+    }
+
+    &--upcoming {
+      @include onTablet {
+        grid-column: 1/span 3;
+        max-width: 330px;
+      }
+
+      @include onDesktop {
+        grid-column: 1/span 4;
+        max-width: 370px;
+      }
+    }
+
+    &--news {
+      max-height: 280px ;
+
+      @include onTablet {
+        margin-bottom: 30px;
+        max-width: 330px;
+        min-height: 330px;
+      }
+
+      @include onDesktop {
+        object-fit: cover;
+        object-position: top;
+        margin-bottom: 20px;
+        max-width: 570px;
+        max-height: 370px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-family: "Raleway", serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    &--orange {
+      color: $main-color;
+      margin-bottom: 10px;
+    }
+
+    &--small {
+      margin: 0;
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 60px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 60px;
+    background-color: $main-color;
+    color: $white-color;
+    border-style: none;
+    font-family: "Raleway", serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 300ms;
+
+    @include onDesktop {
+      max-width: 270px;
+      margin: 0;
+
+      &:hover {
+        background-color: $hover-orange-color;
+      }
+
+      &:active {
+        background-color: $active-orange-color;
+      }
+
+      &:disabled {
+        background-color: $disabled-orange-color;
+      }
+    }
+  }
+
+  &__content--upcoming {
+    @include onTablet {
+      grid-column: 4/-1;
+      max-width: 330px;
+    }
+
+    @include onDesktop {
+      grid-column: 5/span 6;
+      max-width: 570px;
+    }
+  }
+}

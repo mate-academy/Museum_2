@@ -1,0 +1,91 @@
+.nav {
+  &__title--footer {
+    color: $white-color;
+    font-size: 20px;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    line-height: 150%;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    &--link {
+      text-decoration: none;
+    }
+  }
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    &--footer {
+      gap: 5px;
+
+      @include onTablet {
+        gap: 10px;
+      }
+    }
+
+  }
+
+  &__link {
+    position: relative;
+    color: $white-color;
+    text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    transition: transform 300ms;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+    @include onDesktop {
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+
+    &--footer {
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      &:hover::after {
+        transform: scale(0);
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+}

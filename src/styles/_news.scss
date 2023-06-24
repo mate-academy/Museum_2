@@ -1,0 +1,80 @@
+.news {
+  &__wrapper {
+    padding-block: 90px 120px;
+    @include onTablet {
+      @include pageGrid;
+
+      padding-block: 120px 160px;
+    }
+
+    @include onDesktop {
+      padding-block: 110px 200px;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      grid-column: 1/span 4;
+      grid-row: 1/2;
+    }
+
+    @include onDesktop {
+      grid-column: 1/span 6;
+    }
+  }
+
+  &__card {
+    @include onTablet {
+      grid-column: span 3;
+      padding-top: 70px;
+      height: 478px;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+      height: fit-content;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 280px;
+    height: 60px;
+    background-color: $white-color;
+    color: $main-color;
+    border: 1px solid $main-color;
+    font-family: "Raleway", serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 60px;
+    transition: all 300ms;
+
+    @include onTablet {
+      grid-column: 5/-1;
+      grid-row: 1/2;
+    }
+
+    @include onDesktop {
+      grid-column: 10/span 3;
+
+      &:hover {
+        border-color: $hover-orange-color;
+        color: $hover-orange-color;
+      }
+
+      &:active {
+        border-color: $active-orange-color;
+        color: $active-orange-color;
+      }
+
+      &:disabled {
+        border-color: $disabled-orange-color;
+        color: $disabled-orange-color;
+      }
+    }
+  }
+}
