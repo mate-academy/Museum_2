@@ -1,0 +1,136 @@
+.exhibitions {
+  margin-top: 90px;
+
+  @include onTablet {
+    margin-top: 105px;
+  }
+
+  @include onDesktop {
+    margin-top: 110px;
+  }
+
+  &__headline {
+    position: relative;
+
+    @include secondary-font(28px, 125%, 700);
+    color: $headline-color;
+    text-align: center;
+
+    @include onTablet {
+      font-size: 40px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      font-style: 48px;
+    }
+  }
+
+  &__image {
+    height: 100%;
+
+    @include transition;
+
+    &:hover {
+      @include image-animation;
+    }
+
+    &--container {
+      display: flex;
+      justify-content: center;
+
+      overflow: hidden;
+      margin-top: 60px;
+
+      height: 380px;
+
+      @include onTablet {
+        margin-top: 75px;
+
+        height: 420px;
+      }
+
+      @include onDesktop {
+        margin-top: 70px;
+
+        height: 485px;
+      }
+    }
+  }
+
+  &__time {
+    margin-top: 20px;
+
+    @include main-font (16px, 150%, 400);
+    color: $button-color;
+    text-align: left;
+  }
+
+  &__name {
+    margin-top: 10px;
+    display: block;
+
+    @include secondary-font (20px, 125%, 700);
+    color: $headline-color;
+    text-align: left;
+
+    @include onTablet {
+      font-size: 24px;
+
+      min-height: 60px;
+    }
+
+    @include transition;
+    &:hover {
+      color: $button-color;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+
+    @include main-font (16px, 150%, 400);
+    color: $headline-color;
+    text-align: left;
+
+    @include onTablet {
+      min-height: 95px;
+    }
+  }
+
+  &__button {
+    @include onMobile {
+      margin-top: 30px;
+    }
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+    }
+
+    &--mobile {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      @include onMobile {
+        display: none;
+      }
+
+      @include onTablet {
+        display: flex;
+
+        margin-top: 105px;
+      }
+
+      @include onDesktop {
+        margin-top: 0;
+      }
+    }
+  }
+}

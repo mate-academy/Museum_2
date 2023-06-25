@@ -1,0 +1,195 @@
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 100vh;
+
+  opacity: 0;
+  z-index: -1;
+
+  @include transition;
+
+  &:target {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  background-color: $main-background-color;
+
+  &__elements {
+    display: flex;
+    align-items: center;
+
+    flex-direction: row-reverse;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__cross {
+    display: block;
+
+    height: 30px;
+    width: 30px;
+
+    background-image: url(../images/navigation/cross.svg);
+
+    @include onTablet {
+      margin-right: 40px;
+    }
+  }
+
+  &__switch {
+    margin-right: 30px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__headline {
+    text-decoration: none;
+
+    @include main-font(14px, 140%, 400);
+    color: $main-color;
+
+    &--schedule {
+      margin-top: 30px;
+
+      @include onTablet {
+        margin: 0;
+      }
+
+      @include onDesktop {
+        margin-top: 15px;
+      }
+    }
+
+    &--address {
+      margin-top: 20px;
+
+      @include onTablet {
+        margin: 0;
+      }
+
+      @include onDesktop {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__description {
+    text-decoration: none;
+
+    @include main-font(16px, 150%, 600);
+    color: $main-color;
+
+    &--address {
+      @include transition;
+
+      &:hover {
+        color: $button-color;
+      }
+    }
+  }
+
+  &__links {
+    margin: 40px 0;
+
+    @include onTablet {
+      margin: 50px 0;
+    }
+
+    @include onDesktop {
+      margin: 70px 0;
+    }
+  }
+
+  &__link {
+    margin: 20px 0;
+    display: block;
+
+    text-decoration: none;
+
+    @include transition;
+
+    &:hover {
+      color: $button-color;
+    }
+
+    @include secondary-font(20px, 150%, 700);
+    color: $main-color;
+
+    @include onTablet {
+      margin: 30px 0;
+
+      @include secondary-font (48px, 120%, 700);
+    }
+
+    @include onDesktop {
+      margin: 60px 0;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__line {
+    height: 1px;
+
+    background-color: $main-color;
+    opacity: 0.3;
+
+    margin-top: 20px;
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+
+      display: block;
+
+      height: calc((100vh - 520px) * 0.85);
+    }
+
+    @include onDesktop {
+      margin-top: 75px;
+
+      height: 663px;
+    }
+
+    &-container {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+
+      padding: 0 37px;
+
+      @include onTablet {
+        padding: 0 163px;
+      }
+
+      @include onDesktop {
+        bottom: 0;
+        left: 50%;
+        right: 0;
+
+        padding: 0;
+      }
+    }
+  }
+}

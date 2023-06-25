@@ -1,0 +1,120 @@
+.news {
+  &__headline {
+    margin-top: 90px;
+    margin-bottom: 10px;
+
+    @include secondary-font(28px, 125%, 700);
+    color: $headline-color;
+    text-align: left;
+
+    @include onTablet {
+      margin-top: 125px;
+
+      font-size: 40px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      margin-top: 110px;
+
+      font-style: 48px;
+    }
+  }
+
+  &__image {
+    height: 100%;
+
+    @include transition;
+
+    &:hover {
+      @include image-animation;
+    }
+
+    &--container {
+      display: flex;
+      justify-content: center;
+
+      overflow: hidden;
+      margin-top: 50px;
+
+      height: 280px;
+
+      @include onTablet {
+        margin-top: 75px;
+
+        height: 330px;
+      }
+
+      @include onDesktop {
+        margin-top: 70px;
+
+        height: 370px;
+      }
+    }
+  }
+
+  &__time {
+    margin-top: 20px;
+
+    @include main-font (14px, 150%, 400);
+    color: $headline-color;
+    text-align: left;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+  }
+
+  &__name {
+    display: block;
+
+    @include secondary-font (20px, 125%, 700);
+    color: $headline-color;
+    text-align: left;
+
+    @include transition;
+    &:hover {
+      color: $button-color;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+
+    @include main-font (16px, 150%, 400);
+    color: $headline-color;
+    text-align: left;
+
+    @include onTablet {
+      min-height: 95px;
+    }
+  }
+
+  &__button {
+    &--mobile {
+      @include onMobile {
+        margin-top: 20px;
+      }
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      @include onMobile {
+        display: none;
+      }
+
+      @include onTablet {
+        display: flex;
+
+        margin-top: 125px;
+      }
+
+      @include onDesktop {
+        margin-top: 110px;
+      }
+    }
+  }
+}

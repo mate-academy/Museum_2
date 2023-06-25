@@ -1,0 +1,90 @@
+.button {
+  &--main {
+    box-sizing: border-box;
+
+    height: 60px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include main-font (16px, 100%, 600);
+    color: $main-color;
+    text-decoration: none;
+
+    background-color: $button-color;
+
+    transition: all $transition-time;
+
+    &:hover {
+      background-color: $button-on-hover;
+    }
+
+    &:active {
+      background-color: $button-pressed;
+    }
+
+    &:disabled {
+      background-color: $button-disabled;
+    }
+  }
+
+  &--secondary {
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 60px;
+    width: 100%;
+
+    @include main-font (16px, 100%, 600);
+    text-decoration: none;
+
+    background-color: $secondary-button-color;
+    border: 2px solid $button-color;
+
+    transition: all $transition-time;
+    color: $button-color;
+
+    &:hover {
+      color: $button-on-hover;
+      border: 2px solid $button-on-hover;
+    }
+
+    &:active {
+      color: $button-pressed;
+      border: 3px solid $button-pressed;
+    }
+
+    &:disabled {
+      color: $button-disabled;
+      border-color: 1px solid $button-disabled;
+    }
+
+    &::after {
+      content: url(../images/button/arrow.svg);
+      display: inline-block;
+      margin: 0;
+      height: 16px;
+      width: 16px;
+      margin-left: 8px;
+      margin-bottom: 5px;
+      vertical-align: middle;
+    }
+
+    &::after:hover {
+      content: url(../images/button/arrow-hover.svg);
+    }
+
+    &::after:active {
+      content: url(../images/button/arrow-pressed.svg);
+    }
+
+    &::after:disabled {
+      content: url(../images/button/arrow-disabled.svg);
+    }
+  }
+}
