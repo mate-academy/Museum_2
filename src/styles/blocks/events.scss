@@ -8,6 +8,10 @@
   &__content {
     padding-bottom: 6px;
 
+    @include onMobile {
+      padding-bottom: 0;
+    }
+
     @include onTablet {
       padding-bottom: 0;
     }
@@ -20,9 +24,18 @@
     &:last-child {
       margin-bottom: 24px;
 
+      @include onMobile {
+        padding-bottom: 0;
+      }
+
       @include onTablet {
         margin-bottom: 0;
       }
+    }
+
+    @include onMobile {
+      width: 100%;
+      padding-bottom: 0;
     }
 
     @include onTablet {
@@ -41,6 +54,12 @@
     & > .card__img-container {
       margin-bottom: 18px;
       height: 360px;
+
+      @include onMobile {
+        width: 100%;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
 
       @include onTablet {
         height: 424px;
