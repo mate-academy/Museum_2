@@ -1,0 +1,133 @@
+.top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  @include onTablet {
+    padding: 29px 0;
+  }
+
+  @include onDesktop {
+    padding: 32px 0;
+  }
+
+  &__logo {
+    display: block;
+    width: 120px;
+    height: 25px;
+    background-image: url(../images/NAMU.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: all 0.3s;
+
+    &:hover {
+      scale: 110%;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+
+    @include onDesktop {
+      padding-right: 16px;
+    }
+
+    &_menu {
+      display: block;
+      width: 25px;
+      height: 25px;
+      background-image: url(../images/menu.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include onTablet {
+        width: 30px;
+        height: 30px;
+      }
+
+      @include onDesktop {
+        width: 30px;
+        height: 30px;
+      }
+
+      transition: all 0.3s;
+
+      &:hover {
+        scale: 110%;
+      }
+    }
+
+    &_cross {
+      display: block;
+      width: 25px;
+      height: 25px;
+      background-image: url(../images/cross.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include onTablet {
+        width: 30px;
+        height: 30px;
+      }
+
+      @include onDesktop {
+        width: 30px;
+        height: 30px;
+      }
+
+      transition: all 0.3s;
+
+      &:hover {
+        scale: 110%;
+      }
+    }
+
+    &_lang {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: $whiteTextColor;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      display: none;
+      position: relative;
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 4px;
+        background-image: url(../images/Union.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        right: -15px;
+        top: 9px;
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        &::after {
+          top: 13px;
+        }
+      }
+
+      &--menu {
+        display: block;
+      }
+    }
+  }
+}
