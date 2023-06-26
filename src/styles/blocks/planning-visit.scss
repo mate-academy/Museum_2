@@ -1,5 +1,4 @@
 .planning-visit {
-  height: 100vh;
   background-color: $background;
   background-image: none;
 
@@ -8,13 +7,22 @@
   background-size: contain;
 
   @include onDesktop {
+    height: 100vh;
     background-image: url(../images/5.png);
   }
 
   &__content {
-    height: 100vh;
-    align-content: center;
     padding: 50px 20px;
+
+    @include onTablet {
+      padding: 80px 38px;
+    }
+
+    @include onDesktop {
+      height: 100vh;
+      align-content: center;
+      padding: 0;
+    }
   }
 
   &__title {
