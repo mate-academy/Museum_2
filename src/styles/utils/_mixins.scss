@@ -1,6 +1,115 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin headerStyles {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-top: 30px;
+
+  @include onDesktop {
+    padding-bottom: 50px;
+  }
+
+  color: $whiteColor;
+
+  background-color: $grayGreenColor;
+}
+
+@mixin headerImageStyles($imagePath) {
+  flex-grow: 1;
+
+  background-image: $imagePath;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+
+  @include onDesktop {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 51%;
+
+    background-position: right bottom;
+  }
+}
+
+@mixin eventImageWrapper {
+  position: relative;
+
+  margin-bottom: 20px;
+
+  @include onTablet {
+    margin-bottom: 30px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 20px;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    padding-top: 125%;
+  }
+}
+
+@mixin eventImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin eventDate {
+  margin-bottom: 10px;
+
+  line-height: 150%;
+  color: $redColor;
+}
+
+@mixin eventDescription {
+  margin-bottom: 30px;
+
+  line-height: 150%;
+  color: $grayColor ;
+
+  @include onTablet {
+    margin-bottom: 40px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 50px;
+  }
+}
+
+@mixin button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: 100%;
+  text-decoration: none;
+  cursor: pointer;
 }

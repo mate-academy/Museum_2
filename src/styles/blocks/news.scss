@@ -1,0 +1,143 @@
+.news {
+  &__title {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 75px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      margin-bottom: 55px;
+      grid-column: 1 / 10;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      grid-column: 1 / 7;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      padding-top: 100%;
+
+      @include onDesktop {
+        padding-top: 65%;
+      }
+    }
+
+    &--second-news {
+      @include onTablet {
+        grid-column: 4 / -1;
+        grid-row: 2 / 3;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__image {
+    @include eventImage;
+
+    &--top {
+      @include onDesktop {
+        object-position: center top;
+      }
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 140%;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+
+    &--second-news {
+      @include onTablet {
+        grid-column: 4 / -1;
+        grid-row: 3 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__news-title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+
+    &--second-news {
+      @include onTablet {
+        grid-column: 4 / -1;
+        grid-row: 4 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__description {
+    @include eventDescription;
+
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+
+    &--last-news {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &--second-news {
+      @include onTablet {
+        grid-column: 4 / -1;
+        grid-row: 5 / 6;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+}

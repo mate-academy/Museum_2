@@ -1,0 +1,119 @@
+.header {
+  @include headerStyles;
+
+  justify-content: space-between;
+
+  &__top-container {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__top {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 54px;
+      padding-right: 80px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__logo {
+    display: block;
+  }
+
+  &__menu-opener {
+    width: 30px;
+    height: 30px;
+
+    background-image: url(../images/icons/burger.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    transition: background-image $duration;
+
+    &:hover {
+      background-image: url(../images/icons/burger-red.svg);
+    }
+  }
+
+  &__top-text {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      margin-bottom: 30px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__bottom-text {
+    display: none;
+    align-items: center;
+    column-gap: 20px;
+    grid-column: 1 / 7;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+
+    opacity: 0.7;
+
+    &::after {
+      display: block;
+      content: "";
+      height: 1px;
+      flex-grow: 1;
+
+      background-color: $whiteColor;
+      opacity: 0.3;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__image {
+    @include headerImageStyles(url(../images/header-image.png));
+  }
+}

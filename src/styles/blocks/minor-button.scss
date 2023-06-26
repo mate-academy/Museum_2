@@ -1,0 +1,59 @@
+.minor-button {
+  @include button;
+
+  color: $redColor;
+
+  border: 1px solid $redColor;
+
+  transition: color $duration, border-color $duration;
+
+  @include onTablet {
+    grid-column: -1 / -3;
+    grid-row: 1 / 2;
+  }
+
+  @include onDesktop {
+    grid-column: -1 / -4;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+
+    background-image: url(../images/icons/arrow-red.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: background-image $duration;
+  }
+
+  &:hover {
+    color: $hoverRedColor;
+    border-color: $hoverRedColor;
+
+    &::after {
+      background-image: url(../images/icons/arrow-hover-red.svg);
+    }
+  }
+
+  &:active {
+    color: $activeRedColor;
+    border-color: $activeRedColor;
+
+    &::after {
+      background-image: url(../images/icons/arrow-active-red.svg);
+    }
+  }
+
+  &:disabled {
+    color: $disabledRedColor;
+    border-color: $disabledRedColor;
+
+    &::after {
+      background-image: url(../images/icons/arrow-disabled-red.svg);
+    }
+  }
+}

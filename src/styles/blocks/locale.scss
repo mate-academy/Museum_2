@@ -1,0 +1,99 @@
+.locale {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+
+  display: none;
+
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  @include onTablet {
+    display: block;
+  }
+
+  &__current {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+
+    cursor: pointer;
+
+    transition: color $duration;
+
+    &::after {
+      display: block;
+      content: "";
+
+      width: 10px;
+      height: 10px;
+
+      background-image: url(../images/icons/corner.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transition: transform $duration, background-image $duration;
+      will-change: transform;
+    }
+
+    &:hover {
+      color: $redColor;
+
+      &::after {
+        background-image: url(../images/icons/corner-red.svg);
+      }
+    }
+
+    &--opened-list {
+      &::after {
+        transform: rotateZ(-180deg);
+      }
+    }
+  }
+
+  &__list {
+    position: absolute;
+    left: 0;
+    top: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+
+    list-style-type: none;
+
+    transition: height $duration, visibility $duration;
+
+    &--open {
+      height: 64px;
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    line-height: 175%;
+    text-align: center;
+
+    cursor: pointer;
+
+    &:hover {
+      color: $redColor;
+    }
+  }
+
+  &--menu {
+    right: 60px;
+
+    display: block;
+
+    @include onTablet {
+      right: 0;
+    }
+  }
+}

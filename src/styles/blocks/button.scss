@@ -1,0 +1,44 @@
+.button {
+  @include button;
+
+  color: $whiteColor;
+
+  background-color: $redColor;
+  border: none;
+
+  transition: background-color $duration;
+
+  @include onTablet {
+    grid-column: 1 / 4;
+  }
+
+  &:hover {
+    background-color: $hoverRedColor;
+  }
+
+  &:active {
+    background-color: $activeRedColor;
+  }
+
+  &:disabled {
+    background-color: $disabledRedColor;
+  }
+
+  &--tablet--4-6 {
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &--desktop--7-9 {
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+
+  &--desktop--6-8 {
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+}

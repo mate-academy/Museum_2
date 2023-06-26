@@ -1,0 +1,94 @@
+.subscribe {
+  &__title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+
+    line-height: 150%;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: $tabletGridColumnGap;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(5, 1fr);
+      margin-bottom: 40px;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 3px;
+
+    font-size: inherit;
+    font-weight: 700;
+    line-height: 150%;
+
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $blackColor;
+
+    transition: border-color $duration;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      color: $blackColor;
+
+      transition: color $duration;
+    }
+
+    &:hover {
+      border-bottom-color: $redColor;
+
+      &::placeholder {
+        color: $redColor;
+      }
+    }
+
+    &:focus {
+      caret-color: $redColor;
+      border-bottom-color: $redColor;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      box-shadow: 0 0 0 1000px #fff inset;
+    }
+  }
+}
