@@ -1,0 +1,131 @@
+.page {
+  font-family: $font-text;
+  font-size: 10px;
+  font-weight: 400;
+  font-style: normal;
+  color: $color-dark;
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.page__body--with-menu {
+  overflow: hidden;
+}
+
+.page__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform $transition;
+  transform: translateX(100%);
+}
+
+.page__menu:target {
+  transform: translateX(0);
+}
+
+.page__section {
+  box-sizing: border-box;
+  margin-bottom: 90px;
+}
+
+@media screen and (min-width: 768px) {
+  .page__section {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page__section {
+    margin-bottom: 110px;
+  }
+}
+
+.page__section--last {
+  margin-bottom: 65px;
+}
+
+.page__section-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .page__section-top {
+    margin-bottom: 70px;
+  }
+}
+
+.page__section-top--news {
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 55px;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.page__section-title {
+  @extend %h2;
+  // font-family: "Playfair Display", serif;
+  margin: 0;
+  width: 570px;
+  font-size: 48px;
+}
+
+.page__section-title--accent {
+  margin-bottom: 20px;
+  font-family: $font-heading;
+  font-weight: 700;
+  font-size: 3.8rem;
+  line-height: 3.8rem;
+}
+
+@media screen and (min-width: 768px) {
+  .page__section-title--accent {
+    margin-bottom: 30px;
+    font-size: 6.2rem;
+    line-height: 6.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page__section-title--accent {
+    margin-bottom: 30px;
+    font-size: 8rem;
+    line-height: 8rem;
+  }
+}
+
+.page__section-button {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .page__section-button {
+    display: flex;
+  }
+}
+
+.page__section-button--mobile {
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .page__section-button--mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .page__section-title {
+    font-size: 24px;
+    width: auto;
+  }
+}
