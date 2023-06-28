@@ -1,0 +1,45 @@
+.form-field {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 32px;
+  padding: 8px;
+
+  font-family: $ff-main;
+  font-weight: $fw-regular;
+  font-size: 16px;
+  line-height: 150%;
+
+  border: 0;
+  border-bottom: 1px solid $c-black;
+  color: $c-black;
+  background-color: transparent;
+
+  @include onDesktop {
+    margin-bottom: 40px;
+  }
+
+  &::placeholder {
+    padding: 0;
+    color: $c-black;
+  }
+
+  &:focus {
+    font-weight: $fw-medium;
+    color: $c-black;
+    border-bottom: 2px solid $c-black;
+    outline: none;
+    background-color: $c-white;
+  }
+
+  &:-webkit-autofill {
+    &,
+    &:hover,
+    &:focus {
+      appearance: none;
+      padding: 8px;
+      border-bottom: 1px solid $c-black;
+      -webkit-text-fill-color: $c-black !important;
+      -webkit-box-shadow: 0 0 0 40px $c-white inset;
+    }
+  }
+}

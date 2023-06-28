@@ -1,0 +1,102 @@
+.news-card {
+  &--grid {
+    @include onSmTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $gr-gap-tab;
+    }
+  }
+
+  &__img-container {
+    position: relative;
+    width: 100%;
+    max-height: 370px;
+    margin: 0 auto 20px;
+    transition: box-shadow $act-time;
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: 5px 3px 13px 3px $c-dark-gray;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &--grid {
+      @include onSmTablet {
+        margin-bottom: 0;
+        grid-column: 1 / 4;
+      }
+    }
+
+    @include onSmTablet {
+      margin-bottom: 32px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    @extend %pic-position;
+  }
+
+  @include imgDefinition;
+
+  &__info {
+    &--grid {
+      @include onSmTablet {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+
+  &__date {
+    &--red {
+      margin-bottom: 12px;
+      color: $c-main;
+    }
+
+    &--black {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 140%;
+      color: $c-black;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: $c-black;
+  }
+
+  &__description {
+    margin-bottom: 28px;
+    color: $c-dark-gray;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    &--column {
+      margin-bottom: 28px;
+
+      @include onSmTablet {
+        margin-bottom: 40px;
+      }
+    }
+
+    &--row {
+      margin-bottom: 28px;
+
+      @include onSmTablet {
+        margin-bottom: 52px;
+      }
+    }
+  }
+}

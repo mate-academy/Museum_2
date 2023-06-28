@@ -1,0 +1,160 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-x: hidden;
+  background: $c-bgd;
+
+  @media (max-height: 450px) {
+    overflow-y: scroll;
+  }
+
+  @include onSmTablet {
+    overflow-y: scroll;
+  }
+
+  &__container {
+    position: relative;
+    @extend %container;
+  }
+
+  &__content {
+    padding-top: 20px;
+  }
+
+  &__top {
+    margin-bottom: 32px;
+    @include flexDJI($fd: 0, $jc: space-between, $ai: center);
+
+    @include onSmTablet {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__bottom {
+    color: $c-white;
+  }
+
+  &__grid {
+    row-gap: 40px;
+
+    @include onSmTablet {
+      row-gap: 52px;
+    }
+
+    @include onSmDesktop {
+      row-gap: 32px;
+      align-items: start;
+    }
+
+    @include onDesktop {
+      row-gap: 60px;
+      align-items: start;
+    }
+  }
+
+  &__grid-item {
+    &--desk {
+      position: relative;
+      display: none;
+
+      @include onSmTablet {
+        display: block;
+      }
+
+      @include onSmDesktop {
+        margin: 0 -#{$pddg-x-tab};
+        grid-row: 1 / 5;
+      }
+
+      @include onDesktop {
+        margin-left: 0;
+        margin-right: -#{$pddg-x-desk};
+      }
+    }
+  }
+
+  &__link-text {
+    @include onSmTablet {
+      font-size: 48px;
+    }
+  }
+
+  &__icons {
+    @extend %icons;
+  }
+
+  &__aditional {
+    @extend %additional;
+  }
+
+  &__description {
+    &--bold {
+      font-weight: $fw-semibolt;
+    }
+  }
+
+  &__contact-link {
+    font-weight: $fw-semibolt;
+    color: $c-white;
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $c-white;
+    opacity: 0.3;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include onSmTablet {
+        margin-bottom: 32px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    color: $c-white;
+  }
+
+  &__img-container {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include bgImgPosition($ps: center, $sz: contain);
+
+    background-image: url(./../images/picture/pic-menu-tab.webp);
+
+    @include onSmDesktop {
+      position: absolute;
+      background-position: bottom right;
+    }
+    
+    @include onDesktop {
+      background-image: url(./../images/picture/pic-menu-desk.webp);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+
+      @include onSmDesktop {
+        padding-bottom: 106%;
+      }
+
+      @include onDesktop {
+        padding-bottom: 113%;
+      }
+    }
+  }
+
+  @include imgDefinition;
+}

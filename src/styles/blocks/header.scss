@@ -1,0 +1,163 @@
+.header {
+  background-color: $c-bgd;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    @extend %container;
+  }
+
+  &__content {
+    padding-top: 20px;
+  }
+
+  &__top {
+    margin-bottom: 70px;
+    @include flexDJI($fd: 0, $jc: space-between, $ai: center);
+
+    @include onSmTablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__icons {
+    @extend %icons;
+  }
+
+  &__language {
+    display: none;
+
+    @include onSmTablet {
+      display: inline-block;
+    }
+  }
+
+  &__bottom {
+    color: $c-white;
+  }
+
+  &__grid-item {
+    &--desk {
+      @include onSmDesktop {
+        grid-row: 1 / 6;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 32px;
+
+    @include onSmTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__aditional {
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+
+    @include onSmTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 40px;
+
+    @include onSmTablet {
+      margin-bottom: 68px;
+    }
+
+    @include onSmDesktop {
+      margin-bottom: 88px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 136px;
+    }
+  }
+
+  &__img-container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    @include bgImgPosition($ps: center, $sz: contain);
+    background-image: url(./../images/picture/pic-header-mob.webp);
+
+    @include onSmTablet {
+      background-image: url(./../images/picture/pic-header-tab.webp);
+    }
+
+    @include onSmDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      width: 48%;
+      max-height: 600px;
+      background-position: bottom right;
+    }
+
+    @include onDesktop {
+      max-height: 724px;
+      background-image: url(./../images/picture/pic-header-desk.webp);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 112%;
+
+      @include onSmDesktop {
+        padding-bottom: 106%;
+      }
+    }
+  }
+
+  &__img {
+    @extend %pic-position;
+  }
+
+  @include imgDefinition;
+
+  &__date-container {
+    display: none;
+
+    @include onSmDesktop {
+      margin-bottom: 52px;
+
+      @include flexDJI($fd: row, $jc: space-between, $ai: center);
+      gap: 20px;
+    }
+  }
+
+  &__date {
+    flex-basis: 100px;
+    opacity: 0.7;
+
+    @include onSmDesktop {
+      flex-shrink: 0;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+
+    background-color: $c-white;
+    opacity: 0.3;
+  }
+}

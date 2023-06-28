@@ -1,0 +1,53 @@
+.language {
+  position: relative;
+
+  &__switch {
+    @include flexDJI($fd: row, $jc: 0, $ai: center);
+    gap: 4px;
+    color: $c-white;
+    @include hover(opacity, 0.7);
+  }
+
+  &__text {
+    display: block;
+    font-size: 16px;
+  }
+
+  &__union {
+    display: inline-block;
+    width: 8px;
+    height: 5px;
+
+    @include bgImgPosition($ps: center, $sz: contain);
+    background-image: url(./../images/icon/union.svg);
+
+    transition: transform $act-time;
+  }
+
+  &:hover &__union {
+    transform: rotate(180deg);
+  }
+
+  &__tooltip {
+    position: absolute;
+    display: none;
+    width: 100%;
+    padding-top: 8px;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  &:hover &__tooltip {
+    display: block;
+  }
+
+  &__link {
+    @extend %language;
+    color: $c-white;
+    @include hover(opacity, 0.7);
+
+    &:not(:last-child) {
+      padding-bottom: 8px;
+    }
+  }
+}

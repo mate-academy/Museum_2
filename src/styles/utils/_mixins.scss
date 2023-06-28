@@ -1,6 +1,86 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $act-time;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin onSmTablet {
+  @media (min-width: $scr-sm-tab) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $scr-tab) {
+    @content;
+  }
+}
+
+@mixin onSmDesktop {
+  @media (min-width: $scr-sm-desk) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $scr-desk) {
+    @content;
+  }
+}
+
+@mixin onLrgDesktop {
+  @media (min-width: $scr-lrg-desk) {
+    @content;
+  }
+}
+
+@mixin flexDJI($fd: row, $jc: flex-start, $ai: stretch) {
+  display: flex;
+
+  @if $fd != 0 {
+    flex-direction: $fd;
+  }
+
+  @if $jc != 0 {
+    justify-content: $jc;
+  }
+
+  @if $ai != 0 {
+    align-items: $ai;
+  }
+}
+
+@mixin imgDefinition {
+  &__img-definition {
+    @extend %pic-definition;
+
+    &--top {
+      top: 0;
+    }
+
+    &--bottom {
+      bottom: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+
+  &__img-container:hover &__img-definition {
+    opacity: 1;
+  }
+}
+
+@mixin bgImgPosition($ps: center, $sz: cover) {
+  @if $ps != 0 {
+    background-position: $ps;
+  }
+
+  @if $sz != 0 {
+    background-size: $sz;
+  }
+
+  background-repeat: no-repeat;
 }

@@ -1,0 +1,127 @@
+.card {
+  &--grid {
+    @include onSmTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: $gr-gap-tab;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__img-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 20px;
+    transition: box-shadow $act-time;
+    overflow: hidden;
+
+    @include onSmTablet {
+      margin-bottom: 32px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      box-shadow: 5px 3px 13px 3px $c-dark-gray;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 127%;
+    }
+
+    &--grid {
+      @include onSmTablet {
+        margin-bottom: 0;
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--column {
+      max-height: 484px;
+    }
+  }
+
+  &__img {
+    @extend %pic-position;
+  }
+
+  @include imgDefinition;
+
+  &__info {
+    &--grid {
+      @include onSmTablet {
+        grid-column: 4 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 11;
+      }
+    }
+  }
+
+  &__date {
+    &--red {
+      margin-bottom: 12px;
+      color: $c-main;
+    }
+
+    &--black {
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 140%;
+      color: $c-black;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: $c-black;
+  }
+
+  &__description {
+    margin-bottom: 28px;
+    color: $c-dark-gray;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    &--column {
+      margin-bottom: 28px;
+
+      @include onSmTablet {
+        margin-bottom: 40px;
+        flex: 1 0 auto;
+      }
+
+      @include onDesktop {
+        margin-bottom: 52px;
+      }
+    }
+
+    &--row {
+      margin-bottom: 28px;
+
+      @include onSmTablet {
+        margin-bottom: 52px;
+      }
+    }
+  }
+
+  &__btn {
+    @include onDesktop {
+      width: 47.5%;
+    }
+  }
+}

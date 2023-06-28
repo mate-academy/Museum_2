@@ -1,0 +1,74 @@
+.news {
+  &__container {
+    @extend %container;
+  }
+
+  &__content {
+    @include onSmTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: auto;
+      column-gap: $gr-gap-tab;
+
+      @include onDesktop {
+        grid-template-columns: repeat(12, 1fr);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    color: $c-black;
+
+    @include onSmTablet {
+      margin-bottom: 76px;
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      margin-bottom: 52px;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__cards {
+    @include onSmTablet {
+      grid-column: 1 / 7;
+      grid-row: 2 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 13;
+    }
+  }
+
+  &__btn-sec {
+    @include onSmTablet {
+      grid-column: 5 / 7;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+  }
+
+  &__grid {
+    margin-bottom: 30px;
+
+    @include onSmTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__grid-item {
+    &:not(:last-child) {
+      margin-bottom: 52px;
+
+      @include onSmTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
