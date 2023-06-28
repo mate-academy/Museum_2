@@ -1,0 +1,64 @@
+.events {
+  &__container {
+    position: relative;
+  }
+
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__block {
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      column-gap: 30px;
+    }
+  }
+
+  &__photo-container {
+    width: 100%;
+    height: 358px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      width: 50%;
+      height: 422px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 370px;
+      height: 475px;
+    }
+  }
+
+  &__text-wrapper {
+    @include onTablet {
+      width: 50%;
+    }
+  }
+
+  &__date {
+    color: $main-color;
+    margin-bottom: 10px;
+  }
+
+  &__photo {
+    @extend %photo-in-container;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @include margin-bottom(30, 40, 50);
+  }
+
+  &__button--second {
+    @extend %position-top-right;
+  }
+}

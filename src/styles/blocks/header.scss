@@ -1,0 +1,96 @@
+.header {
+  position: relative;
+  height: 100vh;
+  min-height: 747px;
+  background-color: $background;
+  background-image: url(/images/header.png);
+  background-repeat: no-repeat;
+  background-size: auto 36%;
+  background-position: bottom;
+
+  @include onTablet {
+    height: 1092px;
+    background-size: auto 45%;
+    background-position: bottom;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+    background-size: auto 82%;
+    background-position: right bottom;
+  }
+
+  &__top {
+    @include top-actions;
+  }
+
+  &__content {
+    padding: 80px 0 0 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      height: calc(100vh - (
+        #{$h-logo-tablet} + 
+        #{$header-padding-desktop} + 
+        #{$header-padding-desktop}
+      ));
+    }
+  }
+
+  &__date {
+    color: $white-color;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    color: $white-color;
+    @include margin-bottom(30, 20, 30);
+  }
+
+  &__description {
+    color: $white-color;
+    @include margin-bottom(40, 50, 80);
+  }
+
+  &__button {
+    @include margin-bottom(40, 70, 10);
+  }
+  
+  &__content-bottom {
+    padding-bottom: 50px;
+  }
+
+  &__short-date {
+    position: relative;
+    display: none;
+    width: max-content;
+    
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: $white-color;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      margin-left: 20px;
+      transform: translateY(100%);
+      width: 470px;
+      height: 1px;
+      background-color: $white-color;
+    }
+  }
+}

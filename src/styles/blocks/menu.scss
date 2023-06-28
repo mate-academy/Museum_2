@@ -1,0 +1,152 @@
+.menu {
+  height: 100vh;
+  color: $white-color;
+  background-color: $background;
+  overflow-y: auto;
+
+  @include onDesktop {
+    background-image: url(/images/img_menu.png);
+
+    background-repeat: no-repeat;
+    background-size: auto 82%;
+    background-position: right bottom;
+    overflow: hidden;
+  }
+
+  &__top {
+    @include top-actions;
+      grid-template-columns: 1fr var(--icon-width) var(--icon-width);
+
+    @include margin-bottom(10, 30, 12);
+  }
+
+  &__cross {
+    grid-column: 3/4;
+
+    @include onTablet {
+      grid-column: 2/3;
+    }
+  }
+
+  &__lang {
+    grid-row: 1/2;
+    grid-column: 2/3;
+
+    @include onTablet {
+      grid-column: 3/4;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      height: calc(100vh - (
+        #{$header-padding-tablet} * 2 + #{$h-logo-tablet}
+        ) - 30px);
+      min-height: 980px;
+      background-image: url(/images/img_menu.png);
+      background-repeat: no-repeat;
+      
+      background-size: auto 466px;
+      background-position: bottom;
+    }
+
+    @include onDesktop {
+      min-height: auto;
+      background-image: none;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    
+    @include margin-bottom(40, 50, 70);
+  
+    @include onTablet {
+      flex-direction: row;
+      column-gap: 123px;
+    }
+
+    @include onDesktop {
+      column-gap: 83px;
+    }
+  }
+
+  &__hours,
+  &__address-house {
+    font-weight: 600;
+  }
+
+  &__address-house {
+    color: $white-color;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $white-color;
+    }
+  }
+  
+  &__list-item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 150%;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $white-color;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__hr {
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: $white-color;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}
