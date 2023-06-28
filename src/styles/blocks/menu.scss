@@ -39,7 +39,9 @@
 
   &__content {
     @include onTablet {
-      height: 100vh;
+      height: calc(100vh - (
+        #{$header-padding-tablet} * 2 + #{$h-logo-tablet}
+        ) - 30px);
       min-height: 980px;
       background-image: url(/images/img_menu.png);
       background-repeat: no-repeat;
@@ -141,7 +143,6 @@
 
     @include onTablet {
       width: 330px;
-      margin-bottom: 30px;
     }
 
     @include onDesktop {
