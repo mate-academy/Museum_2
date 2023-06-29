@@ -1,0 +1,58 @@
+.news {
+  margin-bottom: 120px;
+
+  @include onTablet {
+    margin-bottom: 160px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    @include pageGrid;
+    align-items: center;
+
+    @include onTablet {
+      row-gap: 70px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+
+    margin-bottom: 60px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+      margin-bottom: 0;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      font-size: 48px;
+    }
+  }
+
+  &__cards {
+    grid-column: 1 / -1;
+
+    @include pageGrid;
+    row-gap: 50px;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+  }
+}
