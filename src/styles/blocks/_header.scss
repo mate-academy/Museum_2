@@ -1,0 +1,81 @@
+.header {
+  position: relative;
+  background-color: $bgc;
+  height: 100vh;
+
+  &__top-nav {
+    @include onDesktop {
+      margin: 25px 55px 0;
+    }
+
+    &__museum {
+      position: absolute;
+      background-image: url(../images/photos/main.svg);
+      width: 100%;
+      height: 350px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      z-index: 0;
+
+      @include onDesktop {
+        position: relative;
+        grid-row: 1 / 5;
+        height: 100%;
+        background-size: contain;
+      }
+    }
+
+    &__name {
+      margin-bottom: 15px;
+
+      &__item {
+        @include paragraph;
+        font-weight: 400;
+        line-height: 19px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 20px;
+
+      &__head {
+        @include head;
+        font-weight: 700;
+        line-height: 96px;
+      }
+    }
+
+    &__name-last {
+      margin-bottom: 65px;
+      &__item {
+        @include paragraph;
+        font-weight: 400;
+        line-height: 19px;
+      }
+    }
+
+    &__act {
+      position: relative;
+      &__actions {
+        @include paragraph;
+        font-weight: 400;
+        line-height: 17px;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          top: 8px;
+          left: 105px;
+          background-image: url(../images/arrow/stick.svg);
+          background-repeat: no-repeat;
+          background-color: $white;
+          width: 60%;
+          height: 1px;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}

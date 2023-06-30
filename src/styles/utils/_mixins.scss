@@ -1,6 +1,31 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 720px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin paragraph {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  color: $white;
+  @content;
+}
+
+@mixin head {
+  font-family: "Playfair", sans-serif;
+  font-size: 96px;
+  color: $white;
+}
+
+@mixin burger {
+  font-family: "Playfair", sans-serif;
+  font-size: 48px;
+  line-height: 57px;
+  color: $white;
 }
