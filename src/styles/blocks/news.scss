@@ -1,0 +1,180 @@
+.news {
+  &__content {
+    width: 100%;
+    margin-bottom: 120px;
+
+    @include smartphone {
+      margin-bottom: 160px;
+    }
+
+    @include smalldesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__top {
+    margin-bottom: 60px;
+
+    @include smartphone {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+      margin-bottom: 75px;
+    }
+
+    @include smalldesktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__title {
+    color: $text-color-title;
+    font-size: 28px;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include smartphone {
+      font-size: 36px;
+    }
+
+    @include smalldesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__btn {
+    display: none;
+
+    @include smartphone {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+
+      width: 180px;
+      height: 60px;
+      background-color: #fff;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+
+      cursor: pointer;
+      border: 1px solid $button-color;
+
+      color: $button-color;
+      @include hover(transform, scale(1.1));
+
+      @include smartphone {
+        width: 210px;
+      }
+
+      @include smalldesktop {
+        width: 270px;
+      }
+    }
+  }
+
+  &__boxes {
+    margin-bottom: 30px;
+
+    @include smartphone {
+      @include gridPage;
+      margin-bottom: 0;
+    }
+  }
+
+  &__box {
+    @include smartphone {
+      grid-column: 1 / 4;
+    }
+
+    @include smalldesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__box--two {
+    grid-column: 4 / -1;
+
+    @include smalldesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 20px;
+
+    @include smartphone {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__date {
+    color: $text-color-title;
+
+    font-size: 14px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  &__subtitle {
+    color: $text-color-title;
+
+    font-size: 20px;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    @include smartphone {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__description {
+    color: $description-color-text;
+
+    font-size: 16px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 50px;
+  }
+
+  &__calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+
+    cursor: pointer;
+    border: 1px solid $button-color;
+    color: $button-color;
+    @include hover(transform, scale(1.1));
+
+    @include smartphone {
+      display: none;
+      width: 240px;
+    }
+  }
+}
