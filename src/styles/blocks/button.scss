@@ -1,0 +1,68 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 21px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  text-decoration: none;
+  color: $color-white;
+  background-color: $color-main;
+  border: 1px solid $color-main;
+  transition: all $effectDuration;
+  max-width: 280px;
+  cursor: pointer;
+
+  @include onTablet {
+    max-width: 330px;
+  }
+
+  @include onDesktop {
+    max-width: 270px;
+  }
+
+  &:hover {
+    background-color: #af3419;
+    border: 1px solid #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &__svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+  }
+
+  &--secondary {
+    padding-block: 19px;
+    display: flex;
+    gap: 8px;
+    background-color: transparent;
+    border: 1px solid $color-main;
+    color: $color-main;
+    transition: all $effectDuration;
+
+    &:hover {
+      background-color: transparent;
+      color: #af3419;
+
+      .button__svg {
+        animation: move 0.4s;
+      }
+    }
+
+    &:active {
+      background-color: transparent;
+      color: #ea340d;
+    }
+  }
+}

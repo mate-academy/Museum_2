@@ -1,0 +1,124 @@
+.card {
+  &--grid {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: span 3;
+  }
+
+  @include onDesktop {
+    grid-column: span 6;
+  }
+
+  &__img {
+    display: flex;
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 20px;
+    object-fit: center center;
+    object-position: center center;
+    transition-property: transform, box-shadow;
+    transition-duration: $effectDuration;
+
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px $color-bg;
+    }
+
+    &--grid {
+      @include onTablet {
+        grid-column: 1 / 4;
+        grid-row: 1 / 6;
+      }
+  
+      @include onDesktop {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  &__date {
+    &--grid {
+      @include onTablet {
+        grid-column: 4 / -1;
+      }
+  
+      @include onDesktop {
+        grid-column: 5 / -1;
+      }
+    }
+
+    &--color--main {
+      color: $color-main;
+    }
+
+    &--extra-margin {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    @extend %title;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+
+    &--grid {
+      @include onTablet {
+        grid-column: 4 / -1;
+      }
+  
+      @include onDesktop {
+        grid-column: 5 / 11;
+      }
+    }
+
+  }
+
+  &__description {
+    color: $color-grey;
+
+    &--grid {
+      @include onTablet {
+        grid-column: 4 / -1;
+        margin-bottom: 50px;
+      }
+  
+      @include onDesktop {
+        grid-column: 5 / 11;
+      }
+    }
+
+    &--extra-margin {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    &--grid {
+      @include onTablet {
+        grid-column: 4 / -1;
+      }
+  
+      @include onDesktop {
+        grid-column: 5 / 11;
+      }
+    }
+  }
+}

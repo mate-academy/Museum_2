@@ -1,0 +1,63 @@
+.events {
+  margin-bottom: 90px;
+
+  @include onTablet {
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 110px;
+  }
+
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+      align-items: center;
+      row-gap: 70px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $color-black;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      font-size: 40px;
+      margin-bottom: 0;
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 5 / 7;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+  }
+}

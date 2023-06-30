@@ -1,0 +1,94 @@
+.menu {
+  background-color: $color-bg;
+  min-height: 100vh;
+  color: $color-white;
+  overflow: auto;
+
+  @include onTablet {
+    background-image: url(../images/tablet/menu.webp);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      background-image: url(../images/desktop/menu.webp);
+      background-position: bottom right;
+    }
+  }
+
+  &__content {
+    padding-top: 10px;
+
+    @include pageGrid;
+
+    @include onTablet {
+      padding-top: 30px;
+    }
+
+    @include onDesktop {
+      padding-top: 17px;
+    }
+  }
+
+  &__datalist {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__schedule {
+    @include onTablet {
+      grid-column: span 2;
+    }
+  }
+
+  &__address {
+    @include onTablet {
+      grid-column: span 3;
+    }
+  }
+
+  &__address-link {
+    color: $color-white;
+    text-decoration: none;
+
+    @include hover(color, $color-main);
+  }
+
+  &__term {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__description {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid rgba(241, 245, 244, 0.3);
+    padding-block: 40px;
+    margin-bottom: 40px;
+  
+    @include onTablet {
+      padding-block: 50px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-block: 70px 60px;
+      grid-column: 1 / 7;
+      margin-bottom: 60px;
+    }
+  }
+  &__button {
+    grid-column: 1 / 4;
+  }
+}

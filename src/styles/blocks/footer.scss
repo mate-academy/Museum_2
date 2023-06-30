@@ -1,0 +1,101 @@
+.footer {
+  color: $color-white;
+  background-color: $color-bg;
+  padding-block: 34px 30px;
+
+  @include onTablet {
+    padding-block: 50px 30px;
+  }
+
+  &__content {
+    position: relative;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__section {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      grid-column: span 2;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+  }
+
+  &__list {
+    &--extra-margin {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--nav {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      @include onTablet {
+        gap: 10px;
+      }
+    }
+  }
+
+  &__link {
+    width: fit-content;
+    color: $color-white;
+    text-decoration: none;
+
+    @include hover(color, $color-main);
+  }
+
+  &__copy {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__go-top {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    stroke: currentColor;
+    fill: currentColor;
+
+    @include onTablet {
+      right: 39px;
+    }
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+
+  &__go-top-link {
+    color: $color-white;
+
+    @include hover(color, $color-main);
+  }
+}

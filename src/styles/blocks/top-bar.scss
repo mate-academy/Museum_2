@@ -1,0 +1,46 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: 20px;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 124px;
+    color: $color-white;
+    fill: currentColor;
+    transition: all $effectDuration;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $color-main;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  &__menu {
+    color: $color-white;
+
+    @include hover(color, $color-main);
+  }
+
+  &__cross {
+    order: 1;
+    color: $color-white;
+
+    @include hover(color, $color-main);
+
+    @include onTablet {
+      order: 0;
+    }
+  }
+}

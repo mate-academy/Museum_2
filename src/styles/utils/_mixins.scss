@@ -1,6 +1,46 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $effectDuration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin font-face($font-family, $url, $weight, $style) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: url("../fonts/#{$url}.woff2") format("woff2"),
+      url("../fonts/#{$url}.woff") format("woff"),
+      url("../fonts/#{$url}.ttf") format("ttf");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: $style;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 767.98px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1279.98px) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --grid-columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  column-gap: 20px;
+
+  @include onTablet {
+    --grid-columns: 6;
+    column-gap: 30px;
+  }
+  @include onDesktop() {
+    --grid-columns: 12;
   }
 }
