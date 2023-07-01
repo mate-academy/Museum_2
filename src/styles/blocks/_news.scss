@@ -1,0 +1,164 @@
+.news {
+  margin-bottom: 120px;
+
+  @include onTablet() {
+    margin-bottom: 160px;
+  }
+
+  @include onTablet() {
+    margin-bottom: 200px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    @include playfairFont();
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $darkColor;
+
+    @include onTablet() {
+      margin-bottom: 75px;
+
+      font-size: 40px;
+    }
+
+    @include onDesktop() {
+      font-size: 48px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet() {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    min-width: 280px;
+
+    margin-bottom: 50px;
+
+    @include onTablet() {
+      width: 330px;
+    }
+
+    @include onDesktop() {
+      width: 570px;
+    }
+
+    &-image {
+      margin-bottom: 20px;
+
+      width: 100%;
+      height: 281px;
+
+      @include onTablet() {
+        margin-bottom: 0;
+        height: 330px;
+      }
+
+      @include onDesktop() {
+        height: 370px;
+      }
+
+      @include bgImgRules();
+      background-image: url(../images/news-images/news-img-1.svg);
+      background-size: cover;
+
+      &--2 {
+        background-image: url(../images/news-images/news-img-2.svg);
+      }
+    }
+
+    &-date {
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: $darkColor;
+    }
+
+    &-title {
+      margin-bottom: 20px;
+
+      @include playfairFont();
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 125%;
+      color: $darkColor;
+    }
+
+    &-text {
+      width: 280px;
+
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $greyColor;
+
+      @include onTablet() {
+        width: 100%;
+      }
+    }
+
+    transition: $transitionTime;
+
+    &:hover {
+      transform: scale(0.9);
+      box-shadow: 10px 10px 5px rgba(190, 190, 190, 1.5);
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 60px;
+
+    border: 1px solid $orangeColor;
+
+    @include ralewayFont();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: $orangeColor;
+
+    &::after {
+      width: 13px;
+      height: 12px;
+
+      margin-left: 8px;
+
+      content: "";
+      @include bgImgRules();
+      background-image: url(../images/icons/Group.svg);
+    }
+
+    @include onTablet() {
+      display: none;
+      width: 200px;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onTablet() {
+        display: flex;
+      }
+    }
+  }
+}

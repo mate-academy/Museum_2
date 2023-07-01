@@ -1,0 +1,224 @@
+.actual {
+  margin-bottom: 120px;
+
+  @include onTablet() {
+    margin-bottom: 165px;
+  }
+
+  @include onDesktop() {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    &-title {
+      padding-bottom: 60px;
+
+      @include playfairFont();
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 125%;
+      color: $darkColor;
+
+      @include onTablet() {
+        padding-bottom: 75px;
+
+        font-size: 40px;
+      }
+
+      @include onDesktop() {
+        padding-bottom: 75px;
+
+        font-size: 48px;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 280px;
+    height: 60px;
+
+    border: 1px solid $orangeColor;
+
+    @include ralewayFont();
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: $orangeColor;
+
+    @include onTablet() {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      width: 200px;
+
+      @include onTablet() {
+        display: flex;
+        margin-bottom: 0;
+      }
+    }
+
+    &::after {
+      margin-left: 12px;
+
+      width: 13px;
+      height: 12px;
+
+      content: "";
+      @include bgImgRules();
+      background-image: url(../images/icons/Group.svg);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet() {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    width: 280px;
+
+    &:first-child {
+      margin-bottom: 60px;
+
+      @include onTablet() {
+        margin-bottom: 0;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 30px;
+
+      @include onTablet() {
+        margin-bottom: 0;
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet() {
+      width: 330px;
+    }
+
+    @include onDesktop() {
+      width: 570px;
+    }
+
+    &-image {
+      width: 100%;
+      height: 356px;
+
+      margin-bottom: 20px;
+
+      @include bgImgRules();
+      background-image: url(../images/actual-images/actual-image-1.svg);
+      background-size: cover;
+
+      &--2 {
+        background-image: url(../images/actual-images/actual-image-2.svg);
+      }
+    }
+
+    &-date {
+      margin-bottom: 10px;
+
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $orangeColor;
+    }
+
+    &-title {
+      margin-bottom: 20px;
+
+      @include playfairFont();
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 125%;
+      color: $darkColor;
+
+      @include onTablet() {
+        font-size: 24px;
+      }
+    }
+
+    &-description {
+      margin-bottom: 30px;
+
+      @include ralewayFont();
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $greyColor;
+
+      @include onTablet() {
+        margin-bottom: 40px;
+      }
+
+      @include onDesktop() {
+        margin-bottom: 50px;
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 280px;
+      height: 60px;
+
+      background-color: $orangeColor;
+
+      @include ralewayFont();
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      color: $lightColor;
+
+      @include onTablet() {
+        width: 330px;
+      }
+
+      @include onDesktop() {
+        width: 270px;
+      }
+
+      &--2 {
+        margin-top: 30px;
+
+        @include onDesktop() {
+          margin-top: 0;
+        }
+      }
+    }
+
+    transition: $transitionTime;
+
+    &:hover {
+      transform: scale(0.9);
+      box-shadow: 10px 10px 5px rgba(190, 190, 190, 1.5);
+    }
+  }
+}
