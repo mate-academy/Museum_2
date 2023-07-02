@@ -1,0 +1,187 @@
+.events {
+  padding: 60px 0 90px;
+
+  @include onTablet {
+    padding: 80px 0 100px;
+  }
+
+  @include onDesktop {
+    padding: 100px 0 110px;
+  }
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    font-family: $fontSecondary;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $colorThird;
+
+    @include onTablet {
+      grid-column: 1/5;
+
+      margin-bottom: 75px;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/7;
+
+      margin-bottom: 71px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__cards {
+    margin-bottom: 30px;
+
+    & > :not(:last-child) {
+      margin-bottom: 60px;
+    }
+
+    @include onTablet {
+      grid-column: 1/7;
+      margin-bottom: 0;
+
+      & > :not(:last-child) {
+        margin-bottom: 70px;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 1/13;
+
+      & > :not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 5/7;
+      grid-row: 1/2;
+      align-self: start;
+    }
+
+    @include onDesktop {
+      grid-column: 10/13;
+    }
+  }
+
+  &__card {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      align-items: start;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      &-container {
+        height: 356px;
+        margin-bottom: 20px;
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        @include onTablet {
+          grid-column: 1/4;
+
+          height: 420px;
+          margin-bottom: 0;
+        }
+
+        @include onDesktop {
+          grid-column: 1/5;
+          height: 475px;
+        }
+      }
+    }
+
+    &-content {
+      @include onTablet {
+        grid-column: 4/7;
+      }
+
+      @include onDesktop {
+        grid-column: 5/13;
+
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 30px;
+      }
+    }
+
+    &-date {
+      margin-bottom: 10px;
+      color: $colorFourth;
+
+      @include onDesktop {
+        grid-column: 1/9;
+      }
+    }
+
+    &-article {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        grid-column: 1/7;
+      }
+    }
+
+    &-title {
+      margin-bottom: 20px;
+
+      font-family: $fontSecondary;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 125%;
+      color: $colorThird;
+
+      @include onTablet {
+        font-size: 24px;
+      }
+    }
+
+    &-description {
+      color: $colorPrimary;
+    }
+
+    &-button {
+      @include onDesktop {
+        grid-column: 1/4;
+      }
+    }
+  }
+}

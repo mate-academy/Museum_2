@@ -1,0 +1,75 @@
+.planning {
+  display: flex;
+  align-items: center;
+  height: 416px;
+  background-color: $colorBackground;
+
+  @include onTablet {
+    height: 515px;
+  }
+
+  @include onDesktop {
+    height: 800px;
+    background-image: url(../images/planning-bg.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-family: $fontSecondary;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+
+    @include onTablet {
+      grid-column: 1/5;
+      font-size: 62px;
+    }
+
+    @include onDesktop {
+      grid-column: 6/12;
+
+      margin-bottom: 25px;
+      font-size: 80px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1/5;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 6/11;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      grid-column: 6/9;
+    }
+  }
+}
