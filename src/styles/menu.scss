@@ -1,23 +1,36 @@
 .menu {
-  position: absolute;
+  position: fixed;
   background-color: $page-primay-color;
+
   padding-top: 10px;
   color: $header-trxt-color;
-  overflow: hidden;
-
-  top: 0;
-  bottom: 0;
+  top: 90px;
   left: 0;
   right: 0;
-  width: 100%;
-  max-height: 100%;
-  visibility: hidden;
+  bottom: 0;
+  display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
 
+  @include desktop {
+    top: 0;
+    position: absolute;
+    padding: 10px 0 0;
+    height: 100%;
+    max-height: calc(100vh - 90px);
+    background-image: url(../images/main-image/litle-boy.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto 95%;
+  }
+
   &.open {
     opacity: 1;
-    visibility: visible;
+    display: block;
+
+&::-webkit-scrollbar {
+  width: 0;
+}
   }
 
   &__face {
@@ -25,13 +38,16 @@
 
     @include tablet {
       padding: 0 40px;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
     }
 
     @include desktop {
-      padding: 0 0 0 47px;
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
+      padding: 0 55px;
+      width: 1280px;
+      margin: auto;
     }
   }
 
@@ -44,7 +60,7 @@
     @include tablet {
       flex-direction: row;
       gap: 123px;
-      margin-bottom: 50px;
+      margin-bottom: 49px;
     }
 
     @include desktop {
@@ -75,6 +91,7 @@
     flex-direction: column;
     gap: 20px;
     margin-bottom: 81px;
+    width: 100%;
 
     &::before {
       content: "";
@@ -95,7 +112,7 @@
     @include tablet {
       font-size: 48px;
       gap: 30px;
-      margin-bottom: 101px;
+      margin-bottom: 100px;
     }
 
     @include desktop {
@@ -104,33 +121,56 @@
     }
   }
 
+  &__button {
+    @include tablet {
+      margin-bottom: 29px;
+      flex: 0 0 60px;
+    }
+
+    @include desktop {
+      margin-bottom: 100px;
+    }
+
+  }
+
+  &__container {
+    @include tablet {
+      display: flex;
+      align-items: flex-end;
+      padding: 0 153px;
+      width: 101%;
+      height: 101%;
+      margin-top: auto;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
   &__picture {
     display: none;
 
     @include tablet {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      display: block;
-      padding: 0 153px;
-      width: 88%;
-      height: auto;
-    }
-    @include desktop {
-      transform: translateX(-0);
-      padding: 0;
-      width: 624px;
-      height: 697px;
-      left: 655px;
+
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      height: 100%;
+
+      padding-bottom: calc(466 / 422 * 100%);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: bottom center;
+      background-image: url(../images/main-image/litle-boy-tablet.png);
     }
   }
 
   &__human-boy {
     display: flex;
+    width: 422px;
+    height: 466px;
     align-items: flex-end;
-    max-width: 100%;
-    height: auto;
   }
 
   &__item {

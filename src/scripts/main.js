@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (menu.classList.contains('open')) {
       document.body.style.overflow = 'hidden';
+      menu.style.overflow = 'auto';
     } else {
       document.body.style.overflow = '';
+      menu.style.overflow = '';
     }
   });
 
@@ -19,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     item.addEventListener('click', function() {
       menu.classList.remove('open');
       document.body.style.overflow = '';
+      menu.style.overflow = '';
     });
   });
 });
