@@ -1,0 +1,160 @@
+.header {
+  position: relative;
+  background-color: $bgc;
+  height: 100vh;
+
+  &__block {
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 20px;
+    }
+
+    @include onDesktop {
+      padding-top: 28px;
+    }
+  }
+
+  &__top-nav {
+    margin: 20px 20px 0;
+
+    @include onTablet {
+      margin: 20px 30px 0;
+    }
+
+    @include onDesktop {
+      margin: 25px 55px 0;
+    }
+
+    &__museum {
+      position: relative;
+      margin: auto;
+      background-image: url(../images/photos/main.svg);
+      width: 245px;
+      height: 243px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      z-index: 0;
+
+      @include onTablet {
+        height: 350px;
+        width: 443px;
+      }
+
+      @include onDesktop {
+        grid-row: 1 / 5;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__box {
+      @include onDesktop {
+        padding-top: 60px;
+      }
+    }
+
+    &__name {
+      margin-bottom: 15px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 15px;
+      }
+
+      &__item {
+        @include paragraph;
+        font-weight: 400;
+        line-height: 19px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 15px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+
+      &__head {
+        @include burger;
+        max-width: 300px;
+        line-height: 48px;
+
+        @include onTablet {
+          @include head;
+          font-size: 72px;
+          line-height: 72px;
+          max-width: 550px;
+        }
+
+        @include onDesktop {
+          font-weight: 700;
+          line-height: 96px;
+        }
+      }
+    }
+
+    &__name-last {
+      margin-bottom: 47px;
+
+      @include onTablet {
+        margin-bottom: 17px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 65px;
+      }
+
+      &__item {
+        @include paragraph;
+        font-weight: 400;
+        line-height: 19px;
+      }
+    }
+
+    &__act {
+      text-decoration: none;
+      cursor: none;
+      height: min-content;
+
+      @include onDesktop {
+        position: relative;
+        margin-bottom: 24px;
+        padding: 3px;
+        cursor: pointer;
+      }
+
+      &__actions {
+        color: transparent;
+
+        @include onDesktop {
+          @include paragraph;
+          font-weight: 400;
+          line-height: 17px;
+
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 9px;
+            left: 105px;
+            background-repeat: no-repeat;
+            background-color: $white;
+            width: 100%;
+            height: 1px;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}

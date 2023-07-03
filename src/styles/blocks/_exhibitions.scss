@@ -1,0 +1,90 @@
+.main {
+  padding-top: 70px;
+  margin: 20px 20px 0;
+
+  @include onTablet {
+    margin: 20px 30px 0;
+  }
+
+  @include onDesktop {
+    margin: 25px 55px 0;
+  }
+
+  &__actual {
+    margin-bottom: 40px;
+
+    &__head {
+      @include main-h1;
+    }
+  }
+
+  &__archive {
+    &__item {
+      cursor: none;
+      text-decoration: none;
+      color: transparent;
+    }
+  }
+
+  &__exhibition {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    &__photo {
+      margin-bottom: 20px;
+    }
+
+    &__time {
+      @include time;
+      margin-bottom: 20px;
+    }
+
+    &__second-head {
+      @include main-h2;
+      margin-bottom: 20px;
+    }
+
+    &__paragraph {
+      @include time;
+      margin-bottom: 45px;
+    }
+
+    &--first {
+      margin-bottom: 30px;
+    }
+
+    &--second {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__archives {
+    display: flex;
+    justify-content: center;
+    border: 1px solid $button;
+
+    &__items {
+      position: relative;
+      color: $button;
+      padding: 20px 145px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-image: url(../images/arrow/arrow-gallery.svg);
+        height: 20px;
+        width: 20px;
+        right: 110px;
+      }
+
+      &--photo {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+.top-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px 60px;
+
+  @include onTablet {
+    margin: 0 30px;
+  }
+
+  @include onDesktop {
+    margin: 0 55px;
+  }
+
+  &--burger {
+    margin: 20px 20px 50px;
+
+    @include onTablet {
+      margin: 15px 30px 20px;
+    }
+
+    @include onDesktop {
+      margin: 25px 55px 35px;
+    }
+  }
+
+  &__logo {
+    &__NAMU {
+      height: 37px;
+      width: 124px;
+    }
+  }
+
+  &__link {
+    margin-right: 0;
+
+    @include onTablet {
+      margin-right: 70px;
+    }
+
+    @include onDesktop {
+      margin-right: 80px;
+    }
+
+    &__menu-image {
+      height: 30px;
+      width: 30px;
+    }
+  }
+  &__right {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__cross {
+    display: flex;
+
+    @include onTablet {
+      margin-right: 70px;
+    }
+
+    @include onDesktop {
+      margin-right: 80px;
+    }
+
+    &__item {
+      position: relative;
+      background-image: url(../images/arrow/cross.svg);
+      width: 24px;
+      height: 24px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background-image: url(../images/arrow/language.svg);
+        width: 32px;
+        padding: 2px;
+        height: 24px;
+        right: 55px;
+
+        @include onTablet {
+          background-image: none;
+        }
+      }
+    }
+  }
+
+  &__language {
+    @include onTablet {
+      position: absolute;
+      background-image: url(../images/arrow/language.svg);
+      height: 24px;
+      width: 35px;
+      left: 60px;
+    }
+
+    @include onDesktop {
+      left: 75px;
+    }
+  }
+}

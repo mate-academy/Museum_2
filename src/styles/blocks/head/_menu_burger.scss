@@ -1,0 +1,202 @@
+.menu {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $bgc;
+  overflow: hidden;
+  z-index: 1;
+
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateY(0);
+  }
+
+  &__image {
+    position: absolute;
+    background-image: url(../images/photos/burger.svg);
+    height: 300px;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    z-index: 0;
+
+    @include onTablet {
+      position: relative;
+      width: 100%;
+      grid-row-start: 4;
+      height: 275px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: auto;
+      height: 100%;
+      background-size: contain;
+    }
+  }
+
+  &__block {
+    margin: 20px 20px 0;
+
+    @include onTablet {
+      margin: 25px 30px 0;
+    }
+
+    @include onDesktop {
+      margin: 25px 55px 0;
+    }
+  }
+
+  &__schedAndAdr {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    min-width: max-content;
+    z-index: 1;
+
+    @include onTablet {
+      flex-direction: row;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &__fl {
+      &--mar {
+        margin: 0 0 20px;
+
+        @include onTablet {
+          margin: 0 70px 0 0;
+        }
+      }
+
+      &__sched {
+        @include paragraph;
+        min-width: max-content;
+        font-weight: 400;
+        line-height: 19px;
+
+        @include onTablet {
+          font-size: 14px;
+        }
+
+        @include onDesktop {
+          font-size: 16px;
+        }
+
+        &__time {
+          @include paragraph;
+          font-weight: 600;
+          line-height: 24px;
+
+          @include onTablet {
+            font-size: 14px;
+          }
+
+          @include onDesktop {
+            font-size: 16px;
+          }
+        }
+      }
+
+      &__adr {
+        @include paragraph;
+        font-weight: 400;
+        line-height: 19px;
+
+        @include onTablet {
+          font-size: 14px;
+        }
+
+        @include onDesktop {
+          font-size: 16px;
+        }
+
+        &__loc {
+          @include paragraph;
+          font-weight: 600;
+          line-height: 24px;
+
+          @include onDesktop {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__nav-link {
+    @include burger;
+    width: max-content;
+    margin-bottom: 35px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    z-index: 1;
+
+    @include onTablet {
+      margin-bottom: 0;
+      font-size: 36px;
+      line-height: 57px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      margin-bottom: 30px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $white;
+      width: max-content;
+    }
+  }
+
+  &__stick {
+    position: relative;
+    margin-bottom: 60px;
+    width: 100%;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $white;
+      width: 100%;
+      height: 1px;
+    }
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}
