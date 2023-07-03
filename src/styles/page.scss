@@ -62,6 +62,10 @@
       color: $button-disabled;
     }
 
+    &:disabled .page__button-arrow{
+      background-image: url(../images/icon/disabled.svg);
+    }
+
     &:not(:disabled):active {
       border-color: $button-pressed;
       color: $button-pressed;
@@ -84,9 +88,12 @@
         color: $button-hover;
       }
 
-      &:not(:disabled):active {
-        border-color: $button-pressed;
-        color: $button-pressed;
+      &:not(:disabled):hover .page__button-arrow{
+        background-image: url(../images/icon/hover.svg);
+      }
+
+      &:not(:disabled):active .page__button-arrow{
+        background-image: url(../images/icon/pressed.svg);
       }
     }
   }
@@ -96,6 +103,10 @@
     width: 20px;
     height: 20px;
     margin-left: 8px;
+
+    &:not(:disabled):active {
+      background-image: url(../images/icon/arrow.svg);
+    }
   }
 
   &__cap {
@@ -130,4 +141,8 @@
     width: 100%;
     background-color: $page-primay-color;
   }
+}
+
+.arrow-line {
+  transition: stroke 0.3s ease;
 }
