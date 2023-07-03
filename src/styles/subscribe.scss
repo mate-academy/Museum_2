@@ -50,12 +50,8 @@
     min-width: 100%;
     margin-bottom: 30px;
 
-    &:valid:-webkit-autofill {
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 150%;
-      border-color: 1px solid $primary-text-color;
-      -webkit-text-fill-color: $primary-text-color !important;
+    &:-webkit-autofill{
+      -webkit-box-shadow: inset 0 0 0 50px white;
     }
 
     @include tablet {
@@ -91,6 +87,15 @@
     &:valid {
       color: $primary-text-color;
       border-color: $primary-text-color;
+    }
+
+    &:valid:-webkit-autofill {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+      background-color: transparent;
+      border-color: 1px solid $primary-text-color;
+      -webkit-text-fill-color: $primary-text-color !important;
     }
   }
 }
