@@ -10,6 +10,9 @@ window.addEventListener('hashchange', () => {
 
 const button = document.querySelector('.sing__form-button');
 
+const input = document.querySelector('.sing__input');
+
 button.addEventListener('click', e => {
   e.preventDefault();
+  input.value = '';
 });
