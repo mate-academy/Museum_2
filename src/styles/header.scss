@@ -1,0 +1,91 @@
+.header {
+  color: $header-trxt-color;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  max-width: 1280px;
+  height: 80px;
+  background-color: $page-primay-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include tablet {
+    height: 77px;
+  }
+
+  @include desktop {
+    height: 90px;
+  }
+
+  &__top-right {
+    display: flex;
+    gap: 30px;
+
+    @include tablet {
+      gap: 44px;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    @include desktop {
+      cursor: pointer;
+
+      &:hover .header__arrow {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__arrow {
+    width: 8px;
+    height: 4.61px;
+    background-image: url(../images/icon/dropdown.svg);
+    transition: transform 0.3s ease;
+  }
+
+  &__open {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.header__icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/icon/menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+
+  @include desktop {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.header__icon.close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../images/icon/close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease;
+
+  @include desktop {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

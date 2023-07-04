@@ -1,0 +1,175 @@
+.footer {
+  background-color: $page-primay-color;
+  padding-top: 34px;
+  color: $header-trxt-color;
+
+  @include desktop {
+    max-width: 1280px;
+  }
+
+  &__content {
+    margin-bottom: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 60px;
+    }
+
+    @include desktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    margin-bottom: 10px;
+    color: $header-trxt-color;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list-contacts {
+    margin-bottom: 30px;
+
+    @include tablet {
+      min-width: 210px;
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      min-width: 370px;
+    }
+  }
+
+  &__item-contacts {
+    @include desktop {
+      &:hover .footer__link-contacts::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__link-contacts {
+    @include desktop {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $header-trxt-color;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    }
+  }
+
+  &__list-socials {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__item__social {
+    display: block;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+
+    @include desktop {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__timetable {
+    @include tablet {
+      min-width: 210px;
+    }
+
+    @include desktop {
+      min-width: 370px;
+    }
+  }
+
+  &__lis-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include tablet {
+      gap: 10px;
+      min-width: 210px;
+    }
+
+    @include desktop {
+      min-width: 370px;
+    }
+  }
+
+  &__item-menu {
+    @include desktop {
+      &:hover .footer__menu-link::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__menu-link {
+    @include desktop {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $header-trxt-color;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    }
+  }
+
+  &__captchas {
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+    justify-content: space-between;
+  }
+
+  &__captcha {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    @include desktop {
+      gap: 102px;
+    }
+  }
+
+  &__scroll-up {
+    transition: transform 0.3s ease;
+
+    @include desktop {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
