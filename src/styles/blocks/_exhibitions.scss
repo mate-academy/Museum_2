@@ -10,25 +10,13 @@
     margin: 25px 55px 0;
   }
 
-  &__actual {
-    margin-bottom: 40px;
-
-    &__head {
-      @include main-h1;
-    }
-  }
-
-  &__archive {
-    &__item {
-      cursor: none;
-      text-decoration: none;
-      color: transparent;
-    }
-  }
-
   &__exhibition {
     display: flex;
     justify-content: center;
+
+    @include onTablet {
+      display: grid;
+    }
   }
 
   &__card {
@@ -36,22 +24,43 @@
     flex-direction: column;
 
     &__photo {
+      max-height: 370px;
       margin-bottom: 20px;
+      object-fit: cover;
+
+      @include onTablet {
+        height: 420px;
+      }
+
+      @include onDesktop {
+        height: 484px;
+      }
     }
 
     &__time {
       @include time;
+      color: $button;
       margin-bottom: 20px;
     }
 
     &__second-head {
       @include main-h2;
       margin-bottom: 20px;
+
+      @include onTablet {
+        height: 60px;
+        font-size: 24px;
+        line-height: 30px;
+      }
     }
 
     &__paragraph {
       @include time;
       margin-bottom: 45px;
+
+      @include onTablet {
+        height: 70px;
+      }
     }
 
     &--first {
@@ -60,6 +69,14 @@
 
     &--second {
       margin-bottom: 150px;
+
+      @include onTablet {
+        margin-bottom: 100px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -68,22 +85,30 @@
     justify-content: center;
     border: 1px solid $button;
 
-    &__items {
-      position: relative;
-      color: $button;
-      padding: 20px 145px;
+    @include onTablet {
+      border: none;
+    }
 
-      &::after {
-        content: "";
-        position: absolute;
-        background-image: url(../images/arrow/arrow-gallery.svg);
-        height: 20px;
-        width: 20px;
-        right: 110px;
-      }
+    &__items {
+      padding: 20px 145px;
+      @include arrow;
 
       &--photo {
         cursor: pointer;
+
+        @include onTablet {
+          cursor: none;
+        }
+      }
+
+      @include onTablet {
+        padding: 0;
+        color: transparent;
+
+        &::after {
+          background-image: none;
+          height: 0;
+        }
       }
     }
   }

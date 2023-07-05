@@ -1,7 +1,10 @@
 .header {
   position: relative;
   background-color: $bgc;
-  height: 100vh;
+
+  @include onDesktop {
+    height: 100vh;
+  }
 
   &__block {
     padding-top: 20px;
@@ -50,7 +53,14 @@
     }
 
     &__box {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 60px;
+      }
+
       @include onDesktop {
+        margin-bottom: 0;
         padding-top: 60px;
       }
     }
@@ -59,7 +69,7 @@
       margin-bottom: 15px;
 
       @include onTablet {
-        margin-bottom: 0;
+        margin-bottom: 15px;
       }
 
       @include onDesktop {
@@ -128,7 +138,7 @@
 
       @include onDesktop {
         position: relative;
-        margin-bottom: 24px;
+        margin-bottom: 32px;
         padding: 3px;
         cursor: pointer;
       }

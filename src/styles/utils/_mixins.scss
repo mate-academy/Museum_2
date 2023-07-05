@@ -14,7 +14,6 @@
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   color: $white;
-  @content;
 }
 
 @mixin head {
@@ -49,4 +48,19 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 25px;
+}
+
+@mixin arrow {
+  position: relative;
+  color: $button;
+  text-decoration: none;
+  &::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/arrow/arrow-gallery.svg);
+    height: 20px;
+    width: 20px;
+    right: 110px;
+    @content;
+  }
 }

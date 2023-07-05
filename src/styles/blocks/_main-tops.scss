@@ -1,0 +1,45 @@
+.tops {
+  @include onTablet {
+    margin-bottom: 50px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 20px;
+  }
+
+  &__actual {
+    margin-bottom: 40px;
+
+    &__head {
+      @include main-h1;
+
+      @include onTablet {
+        font-size: 40px;
+        line-height: 50px;
+      }
+    }
+  }
+
+  &__archive {
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      border: 1px solid $button;
+    }
+
+    &__item {
+      cursor: none;
+      text-decoration: none;
+      color: transparent;
+
+      @include onTablet {
+        cursor: pointer;
+        @include arrow {
+          right: -30px;
+        }
+      }
+    }
+  }
+}
