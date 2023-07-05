@@ -1,0 +1,42 @@
+.nav {
+  &__link {
+    @extend %h5;
+
+    position: relative;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      color: $button-color;
+      transition: $effectDuration;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      //bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+
+      transition: transform $effectDuration;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}

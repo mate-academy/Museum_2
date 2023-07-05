@@ -1,0 +1,182 @@
+.news {
+  padding-top: 90px;
+
+  @include onTablet {
+    padding-top: 120px;
+  }
+
+  @include onDesktop {
+    padding-top: 110px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 330px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    width: 100%;
+
+    @include onTablet {
+      width: 330px;
+      height: 60px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      height: 60px;
+    }
+
+    &--mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 8px;
+      width: 100%;
+      margin-top: 30px;
+
+      @include onTablet {
+        display: none;
+      }
+
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+        width: 210px;
+      }
+
+      @include onDesktop {
+        width: 270px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px 0 120px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 30px;
+      padding: 70px 0 100px;
+    }
+
+    @include onDesktop {
+      gap: 32px;
+      padding: 53px 0 140px;
+    }
+  }
+
+  &__photos {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 281px;
+    background-image: url(/images/news/image-1-mob.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include onTablet {
+      height: 330px;
+      background-image: url(/images/news/image-1-tablet.png);
+    }
+
+    @include onDesktop {
+      height: 370px;
+      background-image: url(/images/news/image-1-desktop.png);
+
+      &:hover {
+        @include hover(transform, scale($scalePhoto));
+      }
+    }
+
+    &--two {
+      width: 100%;
+      height: 280px;
+      background-image: url(/images/news/image-2-mob.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include onTablet {
+        height: 330px;
+        background-image: url(/images/news/image-2-tablet.png);
+      }
+
+      @include onDesktop {
+        height: 370px;
+        background-image: url(/images/news/image-2-desktop.png);
+
+        &:hover {
+          @include hover(transform, scale($scalePhoto));
+        }
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__date {
+    @extend %additional;
+    color: $black-color;
+  }
+
+  &__about {
+    @extend %h5;
+    color: $black-color;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 18px;
+    }
+  }
+
+  &__description {
+    @extend %main;
+    color: $grey-color;
+  }
+}
