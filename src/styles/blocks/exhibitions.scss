@@ -107,7 +107,7 @@
     background-position: center;
     background-size: cover;
     margin: 0 auto;
-    cursor: url(/images/cursor.png), auto;
+    transition: $effectDuration;
 
     @include onTablet {
       height: 420px;
@@ -115,12 +115,10 @@
     }
 
     @include onDesktop {
+      @include hover(transform, scale($scalePhoto));
+
       height: 484px;
       background-image: url(/images/exhibitions/image-1-desktop.png);
-
-      &:hover {
-        @include hover(transform, scale($scalePhoto));
-      }
     }
 
     &--two {
@@ -131,6 +129,7 @@
       background-position: center;
       background-size: cover;
       margin: 0 auto;
+      transition: $effectDuration;
 
       @include onTablet {
         height: 420px;
@@ -138,12 +137,9 @@
       }
 
       @include onDesktop {
+        @include hover(transform, scale($scalePhoto));
         height: 484px;
         background-image: url(/images/exhibitions/image-2-desktop.png);
-
-        &:hover {
-          @include hover(transform, scale($scalePhoto));
-        }
       }
     }
   }
