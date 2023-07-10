@@ -1,0 +1,115 @@
+.header {
+  background-color: $background-color;
+  background-image: url(../images/background.png);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 270px;
+
+  @include onTablet {
+    background-size: 290px;
+  }
+
+  @include onDesktop {
+    background-position: 100% 100%;
+    background-size: 700px;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 0 0;
+
+    @include onTablet {
+      padding: 26px 0 0;
+    }
+
+    @include onDesktop {
+      padding: 32px 0 50px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 126px;
+    }
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    color: $white-color;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    line-height: 100%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+  }
+
+  &__date {
+    color: $white-color;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    line-height: 140%;
+    margin-bottom: 10px;
+  }
+
+  &__date-numbers {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+    @include onDesktop {
+      display: block;
+      color: $white-color;
+      opacity: 0.7;
+      font-size: 14px;
+      line-height: 125%;
+      font-family: "Playfair Display", serif;
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: $white-color;
+        width: 470px;
+        box-sizing: border-box;
+        transform: translate(100px, -8px);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+}

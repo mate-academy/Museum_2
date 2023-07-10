@@ -1,0 +1,86 @@
+.exhibitions {
+  &__title {
+    white-space: nowrap;
+  }
+
+  &__top {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__item {
+    margin-bottom: 60px;
+    @include onTablet {
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--last {
+      margin-bottom: 30px;
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 356px;
+    transition: transform $transition-duration;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      height: 420px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      height: 484px;
+    }
+
+    &:hover {
+      transform: scale(106%);
+    }
+  }
+
+  &__schedule {
+    font-family: "Raleway", sans-serif;
+    color: $main-color;
+    margin-bottom: 10px;
+    line-height: 150%;
+  }
+
+  &__exhibit-title {
+    font-family: "Playfair Display", serif;
+    color: $black-color;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 125%;
+    margin-bottom: 20px;
+    flex: 1 1 auto;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__info {
+    font-family: "Raleway", sans-serif;
+    color: $gray-color;
+    line-height: 150%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}

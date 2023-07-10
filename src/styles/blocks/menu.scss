@@ -1,0 +1,166 @@
+.menu {
+  background-color: $background-color;
+  
+  @include onTablet {
+    background-image: url(../images/img_menu.png);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 320px;
+  }
+
+  @include onDesktop {
+    background-position: 100% 100%;
+    background-size: 780px;
+  }
+
+  &__content {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 20px 0 0;
+
+    @include onTablet {
+      padding: 26px 0 0;
+    }
+
+    @include onDesktop {
+      padding: 32px 0 0;
+    }
+  }
+
+  &__top {
+    @include topActions;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 56px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 46px;
+    }
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+  }
+
+  &__info {
+    color: $white-color;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      display: flex;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__address {
+    @include onTablet {
+      margin-left: 122px;
+    }
+
+    @include onDesktop {
+      margin-left: 82px;
+    }
+  }
+
+  &__info-title {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__info-text {
+    color: $white-color;
+    text-decoration: none;
+    font-family: $ff-raleway;
+    font-weight: $menu-info-text-weight;
+    line-height: $menu-info-text-lh;
+  }
+
+  &__info-link {
+    color: $white-color;
+    text-decoration: none;
+    font-family: $ff-raleway;
+    font-weight: $menu-info-text-weight;
+    line-height: $menu-info-text-lh;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &:last-child {
+      margin: 0;
+      border-bottom: 1px solid $white-color;
+      padding-bottom: 40px;
+
+      @include onTablet {
+        padding-bottom: 50px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 60px;
+        border-color: rgba($color: $white-color, $alpha: 0.3);
+      }
+    }
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $white-color;
+    border-bottom: 1px solid transparent;
+    transition: border-color $transition-duration;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      border-color: $white-color;
+    }
+  }
+}

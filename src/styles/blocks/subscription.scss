@@ -1,0 +1,62 @@
+.subscription {
+  &__title {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__info {
+    font-family: $ff-raleway;
+    color: $black-color;
+    line-height: 150%;
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    font-family: $ff-raleway;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid $black-color;
+    outline: none;
+    height: 28px;
+    width: 100%;
+    font-weight: 700;
+    line-height: 150%;
+    background-color: $white-color;
+    color: $black-color;
+    transition: all $transition-duration;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      color: $black-color;
+      transition: color $transition-duration;
+    }
+
+    &:hover {
+      border-color: $main-color;
+
+      &::placeholder {
+        color: $main-color;
+      }
+    }
+
+    &:focus {
+      border-color: $main-color;
+      color: $main-color;
+      &::placeholder {
+        color: transparent;
+      }
+    }
+  }
+}
