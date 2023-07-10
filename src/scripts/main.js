@@ -8,14 +8,6 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-function submitForm(event) {
-  event.preventDefault();
-  document.querySelector('#form').reset();
-  window.location.hash = '#home';
-}
-
-document.querySelector('#form').addEventListener('submit', submitForm);
-
 const dropdowns = document.querySelectorAll('.dropdown');
 
 dropdowns.forEach(el => {
@@ -26,3 +18,11 @@ dropdowns.forEach(el => {
     el.classList.toggle('dropdown--active');
   });
 });
+
+function submitForm(event) {
+  event.preventDefault();
+  document.querySelector('#form').reset();
+  window.location.hash = '#home';
+}
+
+document.querySelector('#form').addEventListener('submit', submitForm);
