@@ -1,0 +1,84 @@
+.subscribe {
+  &__content {
+    @include grid;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    grid-column: span 5;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 50px;
+    grid-column: 1 / 6;
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__form {
+    grid-column: span 4;
+
+    @include onDesktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__form-field {
+    margin-bottom: 30px;
+    width: 100%;
+    
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: 1px solid $color-black;
+
+    @include textSize(16px, 150%);
+
+    transition: $transition;
+
+    &::placeholder {
+      color: $color-black;
+      transition: $transition;
+    }
+
+    &:hover {
+      border-bottom-color: $color-main;
+
+      &::placeholder {
+        color: $color-main;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      color: $color-main;
+      border-bottom-color: $color-main;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    border: none;
+
+    @include onTablet {
+      width: 74%;
+    }
+
+    @include onDesktop {
+      width: 58%;
+    }
+  }
+}

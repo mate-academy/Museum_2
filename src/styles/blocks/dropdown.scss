@@ -1,0 +1,46 @@
+.dropdown {
+  width: 34px;
+  display: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+
+  @include onTablet {
+    display: block;
+  }
+
+  &--menu {
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  & svg,
+  &__trigger,
+  &__content {
+    transition: $transition;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    position: absolute;
+    overflow: hidden;
+    height: 0;
+  }
+
+  &--active {
+    & svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &--active &__content {
+    height: 20px;
+  }
+}
