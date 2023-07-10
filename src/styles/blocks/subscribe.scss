@@ -1,0 +1,111 @@
+.subscribe {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    padding-bottom: 20px;
+
+    @include onDesktop {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+
+    @include onTablet {
+      padding-bottom: 128px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 200px;
+    }
+  }
+
+  &__description {
+    @extend %main;
+    color: $black-color;
+    padding-bottom: 50px;
+  }
+
+  &__input {
+    @extend %main;
+    color: $black-color;
+    font-weight: 700;
+    background: $white-color;
+    border: none;
+    border-bottom: 1px solid $black-color;
+    width: 100%;
+    margin-bottom: 30px;
+    transition: $effectDuration;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      color: $black-color;
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $button-color;
+
+      &::placeholder {
+        color: $button-color;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      caret-color: $button-color;
+      border-bottom: 1px solid $button-color;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    &:focus-visible {
+      color: $black-color;
+      caret-color: $black-color;
+      border-bottom: 1px solid $black-color;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    width: 100%;
+
+    @include onTablet {
+      width: 330px;
+      height: 60px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      height: 60px;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+.header {
+  @extend %main;
+  color: $white-color;
+  font-size: 36px;
+  background-color: $bg-color;
+  overflow: hidden;
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
+  &__center {
+    @extend %main;
+
+    color: $white-color;
+    padding: 50px 0 40px;
+
+    @include onTablet {
+      padding: 99px 0 70px;
+    }
+
+    @include onDesktop {
+      padding: 90px 0 55px;
+    }
+  }
+
+  &__date {
+    @extend %additional;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    @extend %h1;
+    color: $white-color;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+  }
+
+  &__description {
+    padding-bottom: 40px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    @include onTablet {
+      width: 330px;
+      height: 60px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      height: 60px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__text {
+    @extend %h6;
+
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      padding-top: 135px;
+      color: $white-color;
+      opacity: 0.7;
+      white-space: nowrap;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 469px;
+      border-bottom: 1px solid $white-color;
+      margin: 0 30px 5px;
+      opacity: 0.3;
+    }
+  }
+
+  &__image {
+    width: 245px;
+    height: 273px;
+    margin: 0 auto;
+
+    background-image: url(/images/header-bg-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+
+      background-image: url(/images/header-bg-tablet.png);
+    }
+
+    @include onDesktop {
+      width: 625%;
+      height: 663px;
+      margin-top: auto;
+      background-image: url(/images/header-bg-desktop.png);
+      background-position: bottom;
+    }
+  }
+}

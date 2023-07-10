@@ -1,0 +1,35 @@
+.select {
+  @extend %main;
+
+  font-weight: 500;
+  background-color: $bg-color;
+  color: $white-color;
+  border: none;
+  outline: none;
+  transition: all $effectDuration;
+
+  display: none;
+
+  @include onTablet {
+    display: block;
+
+    &:hover {
+      @include hover(transform, scale($scale));
+    }
+  }
+
+  &__mobile {
+    @extend %main;
+    
+    font-weight: 500;
+    background-color: $bg-color;
+    color: $white-color;
+    border: none;
+    outline: none;
+    transition: all $effectDuration;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

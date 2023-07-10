@@ -1,0 +1,174 @@
+.menu {
+  @extend %h5;
+
+  box-sizing: border-box;
+  background-color: $bg-color;
+  z-index: 1;
+  overflow: hidden;
+
+  &__top {
+    position: sticky;
+    top: 0;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__bottom {
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__shedule {
+    @include dayAndHoursDisplay;
+    gap: 20px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @include onDesktop {
+      gap: 83px;
+    }
+  }
+  &__date,
+  &__where {
+    @include dayAndHoursDisplay;
+
+  }
+
+  &__text,
+  &__address {
+    @extend %additional;
+
+    &-link {
+      @extend %main;
+      color: $white-color;
+      transition: $effectDuration;
+
+      @include onDesktop {
+        &:hover {
+          color: $button-color;
+        }
+      }
+    }
+  }
+
+  &__time {
+    @extend %main;
+    color: $white-color;
+  }
+
+  &__nav {
+    margin: 40px 0;
+
+    @include onTablet {
+      margin: 50px 0;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__line {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid $white-color;
+    margin-bottom: 40px;
+    transition: $effectDuration;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    @include onTablet {
+      width: 330px;
+      height: 60px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      height: 60px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 100%;
+      height: 466px;
+
+    }
+
+    @include onDesktop {
+      width: 624px;
+      height: 100%;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 422px;
+      height: 466px;
+      margin: 0 auto;
+
+      background-image: url(/images/img-menu-tablet.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    @include onDesktop {
+      width: 624px;
+      height: 697px;
+      margin-top: auto;
+
+      background-image: url(/images/img-menu-desktop.png);
+    }
+  }
+}

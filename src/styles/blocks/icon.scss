@@ -1,0 +1,42 @@
+.icon {
+  display: block;
+  height: 20px;
+  width: 25px;
+  background-image: url(/images/icons/icon-burger-menu.png);
+  background-size: cover;
+  background-position: center;
+
+  @include hover(transform, scale($scale));
+
+  @include onTablet {
+    height: 30px;
+    width: 30px;
+  }
+
+  &--menu {
+    background-image: url(/images/icons/icon-burger-menu.png);
+  }
+
+  &--lang {
+    @include onDesktop {
+      &:hover .top-bar__text-block {
+        @include onDesktop {
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
+    }
+  }
+
+  &--close {
+    background-image: url(/images/icons/icon-close.png);
+    width: 22px;
+    height: 22px;
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+}
