@@ -1,0 +1,92 @@
+.button {
+  box-sizing: border-box;
+  height: 60px;
+  width: 100%;
+
+  cursor: pointer;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  border: 1px solid $color-main;
+
+  box-shadow: 0 3px 10px rgba(99, 78, 97, 0.2);
+
+  &:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 3px 10px rgba(99, 78, 97, 1);
+
+    transition: transform 0.3s;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &__main {
+    color: $color-white;
+    background-color: $color-main;
+
+    &:hover {
+      background-color: #af3419;
+      border-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+      border-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+      border-color: #dd836f;
+    }
+  }
+
+  &__secondary {
+    background-color: #fff;
+
+    position: relative;
+    display: flex;
+    color: $color-main;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: url(../images/arrow.svg);
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+
+      :hover {
+        color: #af3419;
+      }
+
+      &:active {
+        color: #ea340d;
+      }
+
+      &:disabled {
+        color: #dd836f;
+      }
+    }
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+    }
+
+    &:active {
+      color: #ea340d;
+      border-color: #ea340d;
+    }
+
+    &:disabled {
+      color: #dd836f;
+      border-color: #dd836f;
+    }
+  }
+}
