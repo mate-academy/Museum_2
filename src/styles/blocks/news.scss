@@ -1,0 +1,127 @@
+.news {
+  display: grid;
+  grid-row-gap: 30px;
+  justify-content: center;
+  padding: 90px 20px 120px;
+
+  &__title {
+    width: 280px;
+    padding-bottom: 10px;
+  }
+
+  &__item {
+    width: 280px;
+    padding-top: 20px;
+
+    &__image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 280px;
+      height: 280px;
+
+      &--1 {
+        background-image: url(../images/news/img_08.png);
+      }
+
+      &--2 {
+        background-image: url(../images/news/img_09.png);
+      }
+    }
+
+    &__date {
+      padding-top: 20px;
+    }
+
+    &__subtitle {
+      padding-top: 20px;
+      color: $gray;
+    }
+  }
+
+  @include onTablet {
+    padding: 125px 40px 160px;
+    grid-template-columns: repeat(6, 90px);
+    column-gap: 30px;
+    row-gap: 70px;
+
+    &__title {
+      grid-column: 1 / 4;
+      grid-row: 1;
+      padding: 0;
+    }
+
+    &__item {
+      padding: 0;
+      grid-row: 2;
+      width: 100%;
+
+      &--grid {
+        display: grid;
+        grid-template-rows: 30px 20px 30px 18px 50px;
+      }
+
+      &--1 {
+        grid-column: 1 / 4;
+      }
+    
+      &--2 {
+        grid-column: 4 / 7;
+      }
+
+      &__image {
+        width: 330px;
+        height: 330px;
+      }
+
+      &__date {
+        padding: 0;
+        grid-row: 2;
+      }
+
+      &__title {
+        padding: 0;
+        grid-row: 3;
+      }
+
+      &__subtitle {
+        padding: 0;
+        grid-row: 5;
+      }
+    }
+
+    &__secondary-button {
+      grid-column: 5 / 7;
+      grid-row: 1;
+    }
+  }
+
+  @include onDesktop {
+    padding: 110px 55px 200px;
+    grid-template-columns: repeat(12, 70px);
+    row-gap: 55px;
+
+    &__title {
+      grid-column: 1 / 8;
+    }
+
+    &__item {
+      &--1 {
+        grid-column: 1 / 7;
+      }
+    
+      &--2 {
+        grid-column: 7 / 13;
+      }
+
+      &__image {
+        width: 570px;
+        height: 370px;
+      }
+    }
+
+    &__secondary-button {
+      grid-column: 10 / 13;
+    }
+  }
+}

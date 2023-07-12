@@ -1,0 +1,109 @@
+.header {
+  padding: 20px 20px 0;
+  box-sizing: border-box;
+  background-color: $background-color;
+  color: $white;
+  width: 100%;
+
+  &__content {
+    flex-direction: column;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    width: 280px;
+
+    &__title {
+      padding-top: 10px;
+    }
+
+    &__subtitle {
+      padding-top: 20px; 
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+
+  &__image {
+    width: 245px;
+    height: 273px;
+    flex-shrink: 0;
+
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  
+  &__date-duration {
+    display: none;
+  }
+
+  @include onTablet {
+    padding-left: 39px;
+    padding-right: 39px;
+
+    &__content {
+      padding-top: 119px;
+      padding-bottom: 50px;
+      width: 680px;
+    }
+
+    &__title {
+      width: 570px;
+    }
+
+    &__subtitle {
+      width: 330px;
+    }
+
+    &__bottom {
+      padding-top: 70px;
+    }
+
+    &__image {
+      width: 443px;
+      height: 494px;
+    }
+  }
+
+  @include onDesktop {
+    padding-left: 55px;
+    padding-left: 55px;
+
+    &__cover {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__content {
+      padding-top: 119px;
+      padding-bottom: 80px;
+      width: 570px;
+    }
+
+    &__image {
+      width: 625px;
+      height: 663px;
+      overflow: hidden;
+    }
+
+    &__date-duration {
+      display: flex;
+      align-items: last baseline;
+      padding-top: 135px;
+      opacity: 70%;
+      gap: 20px;
+    }
+
+    &__date-duration::after {
+      content: " ";
+      color: $white;
+      width: 450px;
+      height: 1px;  
+      opacity: 30%;
+      background: var(--white, #F1F5F4);
+    }
+  }
+}
+  
