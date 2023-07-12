@@ -21,11 +21,19 @@
     @include onDesktop {
       margin-bottom: 55px;
     }
+
+    &:hover {
+      letter-spacing: 2px;
+    }
   }
 
   &__paragraph {
     @include time;
     margin-bottom: 35px;
+
+    &:hover {
+      color: $button;
+    }
   }
 
   &__form {
@@ -47,28 +55,22 @@
       margin-bottom: 30px;
       padding-bottom: 5px;
       border: 1px solid transparent;
-      border-bottom: 1px solid $grey;
+      border-bottom: 1px solid $black;
       cursor: pointer;
-
-      @include onTablet {
-        // margin-right: 20px;
-        // height: 70px;
-      }
-
-      @include onDesktop {
-        // margin-right: 30px;
-      }
 
       &::placeholder {
         @include time;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $button;
+        border-bottom-color: $button;
       }
 
-      &:focus {
-        outline: none;
+      &:active {
+        color: $black;
+        border-bottom-color: $black;
       }
     }
 

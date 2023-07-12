@@ -12,10 +12,15 @@
 
     &__head {
       @include main-h1;
+      transition: letter-spacing 0.3s;
 
       @include onTablet {
         font-size: 40px;
         line-height: 50px;
+      }
+
+      &:hover {
+        letter-spacing: 3px;
       }
     }
   }
@@ -28,6 +33,18 @@
       height: 60px;
       border: 1px solid $button;
       text-decoration: none;
+
+      &:hover {
+        border-color: $hover;
+      }
+
+      &:active {
+        border-color: $pressed;
+      }
+
+      &:disabled {
+        border-color: $disabled;
+      }
     }
 
     &__item {
@@ -38,6 +55,18 @@
         cursor: pointer;
         @include arrow {
           right: -30px;
+        }
+
+        &:hover {
+          color: $hover;
+        }
+
+        &:active {
+          color: $pressed;
+        }
+
+        &:disabled {
+          color: $disabled;
         }
       }
     }
