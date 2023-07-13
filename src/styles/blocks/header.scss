@@ -20,6 +20,26 @@
     }
   }
 
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    &__menu {
+      background-image: url(../images/icons/menu.svg);
+      width: 25px;
+      height: 20px;
+    }
+
+    &__cross{
+      background-image: url(../images/icons/cross.svg);
+      width: 22px;
+      height: 22px;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
   &__bottom {
     display: flex;
     justify-content: center;
@@ -34,7 +54,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
   }
-  
+
   &__date-duration {
     display: none;
   }
@@ -47,14 +67,24 @@
       padding-top: 119px;
       padding-bottom: 50px;
       width: 680px;
+
+      &__title {
+        width: 570px;
+      }
+  
+      &__subtitle {
+        width: 330px;
+      }
     }
 
-    &__title {
-      width: 570px;
-    }
-
-    &__subtitle {
-      width: 330px;
+    &__navigation {
+      &__menu {
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     }
 
     &__bottom {
@@ -69,7 +99,7 @@
 
   @include onDesktop {
     padding-left: 55px;
-    padding-left: 55px;
+    padding-right: 0;
 
     &__cover {
       display: flex;
@@ -82,16 +112,30 @@
       width: 570px;
     }
 
+    &__navigation {
+      padding-right: 55px;
+
+      &__cross{
+        width: 30px;
+        height: 30px;
+      }
+    }
+
     &__image {
       width: 625px;
       height: 663px;
       overflow: hidden;
     }
 
+    &__bottom {
+      padding-top: 105px;
+    }
+    
     &__date-duration {
       display: flex;
-      align-items: last baseline;
+      align-items: center;
       padding-top: 135px;
+      padding-bottom: 50px;
       opacity: 70%;
       gap: 20px;
     }

@@ -1,0 +1,163 @@
+.menu {
+  background-color: $background-color;
+  color: $white;
+  padding: 20px 20px 0;
+  box-sizing: border-box;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__content {
+    padding-top: 30px;
+
+    &__info {
+      font-weight: 600;
+    }
+
+    &__location {
+      padding-top: 20px;
+    }
+  }
+  
+  &__list {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+  }
+
+  &__item {
+    color: $white
+  }
+
+  &__link {
+    &__data {
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+
+  &__link:link,
+  &__link:visited,
+  &__link:hover,
+  &__link:active {
+    color: $white; 
+    text-decoration: none;
+  }
+
+
+  &__link:hover {
+    color: $main-color;
+  }
+
+  &__button {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__bottom {
+    display: none;
+  }
+
+  @include onTablet {
+    padding-left: 39px;
+    padding-right: 39px;
+  
+    &__content {
+      display: flex;
+      gap: 120px;
+      padding-top: 50px;
+      
+      &__location {
+        padding-top: 0;
+      }
+    }
+    
+    &__list {
+      padding-top: 50px;
+      padding-bottom: 50px;
+      gap: 30px;
+    }
+
+    &__link {
+      &__data {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+
+    &__button {
+      padding-top: 50px;
+      justify-content: left;
+    }
+
+    &__bottom {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      right: calc(50% - 211px);
+
+      &__image {
+        width: 422px;
+        height: 466px;
+        flex-shrink: 0;
+      }
+    }
+  }
+  
+  @include onDesktop {
+    padding-left: 55px;
+    padding-right: 0;
+    
+    &__top {
+      padding-right: 55px;
+    }
+
+    &__flex-cover {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__content {
+      gap: 85px;
+      padding-top: 40px;
+    }
+    
+    &__list {
+      padding-top: 70px;
+      padding-bottom: 60px;
+      gap: 60px;
+      border-color: #f1f5f45a;
+    }
+
+    &__button {
+      padding-top: 60px;
+    }
+
+    &__bottom {
+      display: flex;
+      position: fixed;
+      right: 0;
+
+      &__image {
+        width: 624px;
+        height: 697px;
+      }
+    }
+  }
+}
