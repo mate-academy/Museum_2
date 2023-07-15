@@ -1,0 +1,135 @@
+.events {
+  color: $title-color;
+  @include setGridCell;
+  --rows: 3;
+  grid-template-rows: var(--rows);
+
+  &__blocktitle {
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__cardcontainer {
+    grid-column: span 2;
+    grid-row: 2 / 3;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      gap: 70px;
+      margin-top: 75px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 11;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    height: fit-content;
+    width: 100%;
+    margin-top: 60px;
+
+    @include onTablet {
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(10, 1fr);
+      grid-column: span 10;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    grid-column: span 2;
+
+    height: 358px;
+    width: 100%;
+
+    @include onTablet {
+      height: 422px;
+      grid-column: span 1;
+    }
+
+    @include onDesktop {
+      height: 475px;
+      grid-column: span 4;
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      grid-column: span 1;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, min-content);
+      grid-column: span 6;
+      column-gap: 30px;
+    }
+  }
+
+  &__worktime {
+    margin-top: 20px;
+    margin-inline: 0;
+    color: $main-button-color;
+
+    grid-column: span 2;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 10px;
+    grid-column: span 2;
+    height: 100%;
+
+    @include onTablet {
+      height: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    grid-column: span 2;
+
+    color: $text-color;
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    color: $secondary-button-color;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+  }
+
+  @include onTablet {
+    --rows: 2;
+    align-items: center;
+  }
+}

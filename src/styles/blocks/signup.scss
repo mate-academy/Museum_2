@@ -1,0 +1,67 @@
+.signup {
+  @include setGridCell;
+  background-color: $header-bg-color;
+  color: $header-text-color;
+  padding-block: 50px;
+  align-items: center;
+
+  &__image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 578px;
+      height: 800px;
+
+      margin: -50px -55px;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    grid-template-rows: repeat(3, min-content);
+    padding: 0;
+
+    align-items: center;
+
+    @include onDesktop {
+      grid-template-columns: repeat(7, 1fr);
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__title {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -3;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: span 3;
+      margin-top: 60px;
+    }
+  }
+}
