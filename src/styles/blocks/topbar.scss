@@ -1,0 +1,93 @@
+.topbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 20px;
+
+  &__logo {
+    display: block;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 40px;
+
+    &-reverse {
+      display: flex;
+      flex-direction: row-reverse;
+
+      @include onTablet {
+        flex-direction: row;
+      }
+    }
+  }
+
+  &__icon {
+    transition: transform 0.3s ease;
+
+    &-burger {
+      background-image: url("../icons/burger-menu.svg");
+      height: 20px;
+      width: 25px;
+    }
+
+    &-close {
+      background-image: url("../icons/close-menu.svg");
+      height: 22px;
+      width: 22px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__language {
+    font-family: $secondary-font;
+    text-decoration: none;
+    display: flex;
+    color: inherit;
+    align-items: center;
+    transition: transform 0.3s ease;
+
+    &::after {
+      content: "";
+      width: 8px;
+      height: 100%;
+      background-image: url(../icons/language-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 5px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &-lang-hidden {
+    .topbar__language {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  @include onTablet {
+    grid-column: span 6;
+    padding-block: 26px;
+  }
+
+  @include onDesktop {
+    grid-column: span 12;
+    padding-block: 32px;
+  }
+}
