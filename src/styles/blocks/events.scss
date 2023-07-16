@@ -1,0 +1,144 @@
+.events {
+  padding: 120px 20px 90px;
+  display: grid;
+  grid-gap: 30px;
+  justify-content: center;
+
+  &__item {
+    width: 280px;
+    padding-top: 30px;
+
+    &__image {
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 280px;
+      height: 356px;
+
+      &--1 {
+        background-image: url(../images/events/img_05.png);
+      }
+
+      &--2 {
+        background-image: url(../images/events/img_06.png);
+      }
+    }
+
+    &__image:hover {
+      transition: 0.3s;
+      box-shadow:
+        rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+
+    &__date {
+      padding-top: 20px;
+      color: $main-color;
+    }
+
+    &__title {
+      padding-top: 10px;
+    }
+
+    &__subtitle {
+      padding-top: 20px;
+      padding-bottom: 30px;
+      color: $gray;
+    }
+  }
+
+  @include onTablet {
+    padding: 164px 40px 100px;
+    grid-template-columns: repeat(6, 90px);
+    column-gap: 30px;
+    row-gap: 70px;
+
+    &__title {
+      grid-column: 1 / 5;
+      grid-row: 1;
+      width: 100%;
+    }
+
+    &__item {
+      padding: 0;
+      display: grid;
+      grid-template-columns: inherit;
+      column-gap: 30px;
+      grid-row: 2;
+      grid-column: 1 / 7;
+
+      &--1 {
+        grid-row: 2;
+      }
+    
+      &--2 {
+        grid-row: 3;
+      }
+
+      &--grid {
+        grid-column: 4 / 7;
+
+        display: grid;
+        grid-template-rows: 24px 10px 60px 20px 70px 50px;
+      }
+
+      &__image {
+        grid-column: 1 / 4;
+        width: 330px;
+        height: 420px;
+      }
+
+      &__date {
+        padding: 0;
+        grid-row: 1;
+      }
+
+      &__title {
+        padding: 0;
+        grid-row: 3;
+      }
+
+      &__subtitle {
+        padding: 0;
+        grid-row: 5;
+      }
+    }
+
+    &__button {
+      grid-row: 7;
+    }
+
+    &__secondary-button {
+      grid-column: 5 / 7;
+      grid-row: 1;
+    }
+  }
+
+  @include onDesktop {
+    padding: 200px 55px 110px;
+    grid-template-columns: repeat(12, 70px);
+    row-gap: 60px;
+
+    &__title {
+      grid-column: 1 / 8;
+    }
+
+    &__item {
+      &__image {
+        grid-column: 1 / 5;
+        width: 370px;
+        height: 475px;
+      }
+
+      &--grid {
+        grid-column: 5 / 11;
+        grid-template-rows: 24px 10px 30px 20px 50px 60px;
+      }
+    }
+
+    &__secondary-button {
+      grid-column: 10 / 13;
+      grid-row: 1;
+    }
+  }
+}

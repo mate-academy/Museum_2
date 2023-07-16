@@ -1,0 +1,100 @@
+.subscribe {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 80px;
+  
+  &__cover {
+    max-width: 450px;
+    width: 100%;
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+  }
+
+  &__title {
+    padding-bottom: 20px;
+  }
+
+  &__info {
+    padding-bottom: 50px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    &__input {
+      height: 28px;
+      width: 100%;
+      border: none;
+      padding-bottom: 3px;
+      border-bottom: 1px solid $black;
+      background-color: $white;
+
+      font-family: Raleway;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+
+      box-shadow: inset 0 0 0 50px $white;
+      -webkit-text-fill-color: $black;
+    }
+
+    &__input::placeholder {
+      color: $black;
+      font-family: Raleway;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    &__input:focus {
+      outline-style: none;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+    }
+  }
+
+  @include onTablet {
+    padding: 0 40px 128px;
+
+    &__cover {
+      max-width: 550px;
+    }
+
+    &__form {
+      align-items: start;
+      width: 450px;
+    }
+  }
+
+  @include onDesktop {
+    padding: 0 55px 200px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 570px);
+
+    &__cover {
+      display: inherit;
+      grid-template-columns: repeat(2, 570px);
+    }
+    
+    &__title {
+      grid-column: 1 / 2;
+    }
+
+    &__form {
+      align-items: start;
+      width: 450px;
+      gap: 40px;
+      padding-top: 50px;
+    }
+
+    &__info {
+      grid-column: 2 / 3;
+    }
+  }
+}
