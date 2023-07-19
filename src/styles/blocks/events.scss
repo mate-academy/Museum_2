@@ -1,0 +1,102 @@
+.events {
+
+  &__top {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    @include title;
+
+    @media (min-width: 430px) {
+      text-align: center;
+
+      font-size: 34px;
+    }
+
+    @include onTablet {
+      text-align: left;
+
+      font-size: 40px;
+    }
+  }
+
+  &__calendar {
+    @include buttonWhite;
+  }
+
+  &__calendar-name {
+    @include buttonName;
+  }
+
+  &__calendar-arrow {
+    @include buttonArrow;
+  }
+
+  &__item {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDasktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__image-box {
+    max-width: 400px;
+
+    margin: 0 auto 20px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+
+      max-width: 100%;
+    }
+
+    @include onDasktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__description {
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDasktop {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__period {
+    @include period;
+  }
+
+  &__name {
+    @include name;
+  }
+
+  &__text {
+    @include text;
+  }
+
+  &__button {
+    max-width: 100%;
+  }
+}

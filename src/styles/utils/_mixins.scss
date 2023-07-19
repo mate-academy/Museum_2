@@ -4,3 +4,145 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDasktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin title {
+  color: $title-color;
+  font-family: $title-font;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+@mixin buttonWhite {
+  display: none;
+
+  text-decoration: none;
+
+  height: 60px;
+  width: 100%;
+
+  border: 1px solid $button-color;
+
+  @include hover(border, 2px solid #af3419);
+
+  &:active {
+    border: 3px solid #ea340d;
+  }
+
+  @include onTablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 210px;
+  }
+
+  @include onDasktop() {
+    width: 270px;
+  }
+
+  &--mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 30px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
+
+@mixin buttonName {
+  color: $button-color;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+
+  margin-right: 10px;
+}
+
+@mixin buttonArrow {
+  width: 20px;
+  height: 20px;
+
+  background-image: url(../images/archive/archive-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin period {
+  color: $button-color;
+  font-size: 16px;
+  line-height: 150%;
+
+  margin-bottom: 10px;
+}
+
+@mixin name {
+  color: $title-color;
+  font-family: $title-font;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 125%;
+
+  margin-bottom: 20px;
+
+  @include onTablet {
+    font-size: 24px;
+  }
+}
+
+@mixin text {
+  color: $paragraf-color;
+  font-size: 16px;
+  line-height: 150%;
+
+  margin-bottom: 30px;
+
+  @include onTablet {
+    flex-grow: 1;
+
+    margin-bottom: 40px;
+  }
+
+  @include onDasktop {
+    margin-bottom: 50px;
+  }
+}
+
+@mixin titleFooter {
+  color: $text-color;
+  font-family: $title-font;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 150%;
+
+  margin-bottom: 10px;
+
+  @include onTablet {
+    font-size: 20px;
+
+    margin-bottom: 30px;
+  }
+}
+
+@mixin textFooter {
+  color: $text-color;
+  font-size: 16px;
+  line-height: 150%;
+}

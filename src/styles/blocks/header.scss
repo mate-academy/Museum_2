@@ -1,0 +1,155 @@
+.header {
+  height: 100%;
+  background-color: $bg-color;
+  color: $text-color;
+
+  @include onDasktop {
+    position: relative;
+
+    padding-bottom: 200px;
+  }
+
+  &__top {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__content {
+    @include onDasktop {
+      width: 570px;
+
+      &::after {
+        content: "";
+        height: 1px;
+        width: 400px;
+        background-color: $text-color;
+        opacity: 0.3;
+
+        position: absolute;
+        bottom: 58px;
+        left: 150px;
+
+        @media (min-width: 1280px) {
+          left: 200px;
+        }
+
+        @media (min-width: 1360px) {
+          left: 270px;
+        }
+      }
+
+      &::before {
+        content: "10.08 - 10.10";
+        color: $text-color;
+        font-family: $main-font;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 125%;
+
+        position: absolute;
+        bottom: 50px;
+        opacity: 0.6;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      &::after {
+        width: 470px;
+      }
+    }
+  }
+
+  &__period {
+    font-size: 14px;
+    line-height: 140%;
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $title-font;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+
+      margin-bottom: 20px;
+    }
+
+    @include onDasktop {
+      width: 570px;
+
+      font-size: 96px;
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      width: 330px;
+
+      margin-bottom: 50px;
+    }
+
+    @include onDasktop {
+      width: 100%;
+
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDasktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-box {
+    width: 245px;
+    height: 273px;
+
+    margin: 0 auto;
+    display: flex;
+
+    @include onTablet {
+      width: 450px;
+      height: 500px;
+    }
+
+    @include onDasktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    @media (min-width: 1280px) {
+      width: 625px;
+      height: 665px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+
+}
