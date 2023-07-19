@@ -1,0 +1,103 @@
+.digest {
+  margin-bottom: 80px;
+
+  @include onTablet {
+    margin-bottom: 128px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__container {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+    @extend %h3;
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__text {
+    @extend %main;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      width: 570px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__form {
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__input {
+    @extend %main;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $c-black;
+    width: 100%;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: $c-black;
+    transition: all 0.3s;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      color: $c-black;
+      font-weight: 400;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      border-color: $c-main;
+      color: $c-main;
+      cursor: text;
+
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $c-black;
+      -webkit-box-shadow: 0 0 0 1000px white inset;
+      border-color: $c-black;
+      box-shadow: 0 0 0 1000px white inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  &__button {
+    border: none;
+  }
+}

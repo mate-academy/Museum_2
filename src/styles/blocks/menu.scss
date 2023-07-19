@@ -1,0 +1,176 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+
+  &:target {
+    transform: translate(0);
+  }
+
+  color: $c-white;
+  background-color: $c-background;
+
+  &__container {
+    position: relative;
+  }
+
+  &__content {
+    @include content;
+    padding-bottom: 238px;
+
+    @include onTablet {
+      padding-bottom: 496px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 108px;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__block {
+    @include top-actions-block;
+    z-index: 2;
+  }
+
+  &__cross {
+    @include onTablet {
+      order: -1;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 123px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      gap: 83px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__name {
+    @extend %additional;
+  }
+
+  &__visit {
+    @extend %main;
+
+    &--addres {
+      text-decoration: none;
+      color: $c-white;
+      @include hover(color, $c-main);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 1;
+    margin-bottom: 40px;
+    height: 294px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    @extend %h5;
+    color: $c-white;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $c-white;
+      opacity: 0;
+      transition: opacity 300ms, transform 300ms;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      transform: translate3d(0, 0.1em, 0);
+    }
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: $c-white;
+    margin-bottom: 40px;
+    flex-shrink: 0;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__img {
+    @include image;
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      width: 624px;
+      height: 697px;
+    }
+  }
+
+  &__button {
+    flex-shrink: 0;
+  }
+}
