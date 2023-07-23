@@ -4,3 +4,63 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onPhone {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin onTabletAndDesktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin top-actions {
+  display: grid;
+  grid-template-columns: 1fr 28px;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 27px;
+
+  @include onTablet {
+    grid-template-columns: 1fr 28px 44px;
+    column-gap: 42px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: 1fr 25px 50px;
+    column-gap: 42px;
+  }
+}
+
+@mixin top-actions-menu {
+
+  @include onPhone {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    display: flex;
+    justify-content: space-between;
+  }
+}

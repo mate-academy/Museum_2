@@ -1,0 +1,236 @@
+.menu {
+  background-color: $footer-color;
+  padding-top: 20px;
+  padding-bottom: 238px;
+
+  @include onTablet {
+    padding-top: 26px;
+    padding-bottom: 0;
+  }
+
+  @include onDesktop {
+    padding-top: 32px;
+    padding-bottom: 108px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white-color;
+  }
+
+  &__cross-img {
+    transition: all 0.3s;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__decoration-img {
+
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      width: 422px;
+      height: 466px;
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__decoration-img-first {
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      width: 624px;
+      height: 697px;
+    }
+  }
+
+  &__top {
+    @include top-actions-menu;
+
+    &__cross-and-select {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      @include onPhone {
+        flex-direction: row-reverse;
+      }
+
+      @include onTablet {
+        gap: 45px;
+      }
+
+      @include onDesktop {
+        gap: 45px;
+      }
+    }
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: $white-color;
+      margin-top: 40px;
+
+      @include onTablet {
+        margin-top: 50px;
+      }
+
+      @include onDesktop {
+        margin-top: 60px;
+      }
+    }
+
+    &__item {
+      margin: 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.5s;
+      font-size: 20px;
+      width: max-content;
+
+      @include onPhone {
+        margin-bottom: 20px;
+      }
+
+      @include onTablet {
+        margin-bottom: 10px;
+        font-size: 48px;
+      }
+      
+      @include onDesktop {
+        line-height: 80%;
+        margin-bottom: 60px;
+        width: max-content;
+        font-size: 48px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        margin-top: 5px;
+        border-radius: 20px;
+        transition: all 0.3s;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: $white-color;
+        transform: scaleX(1);
+      }
+    }
+
+    &__link {
+      margin: 0;
+      @extend %PlayfairDisplay700;
+      text-decoration: none;
+      font-size: 20px;
+      line-height: 150%;
+      color: $white-color;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      @include onTabletAndDesktop {
+        font-size: 48px;
+      }
+
+      &:last-child {
+        margin-bottom: 40px;
+
+        @include onTablet {
+          margin-bottom: 50px;
+        }
+
+        @include onDesktop {
+          margin-bottom: 60px;
+        }
+      }
+    }
+  }
+
+  &__schedule,
+  &__address {
+    margin-bottom: 20px;
+    
+    &__title {
+      margin: 0;
+      @extend %Raleway400;
+      font-size: 14px;
+      line-height: 140%;
+      color: $white-color;
+    }
+
+    &__date {
+      margin: 0;
+      @extend %Raleway600;
+      font-size: 16px;
+      line-height: 150%;
+      color: $white-color;
+    }
+  }
+
+  &__schedule {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 55px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 45px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__address {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-top: 55px;
+    }
+
+    @include onDesktop {
+      margin-top: 45px;
+    }
+  }
+
+  &__select {
+    font-size: 16px;
+    color: white;
+    background-color: #3f5252;
+    border: none;
+  }
+}

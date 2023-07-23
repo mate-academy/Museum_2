@@ -1,0 +1,156 @@
+.footer {
+  background-color: $footer-color;
+
+  @include onPhone {
+    padding-top: 34px;
+    padding-bottom: 30px;
+  }
+
+  @include onTabletAndDesktop {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  &--scroll {
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    @extend %PlayfairDisplay700;
+    font-size: 18px;
+    line-height: 150%;
+    color: $white-color;
+
+    @include onPhone {
+      margin-bottom: 10px;
+    }
+
+    @include onTabletAndDesktop {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__privacy {
+    margin: 0;
+    @extend %Raleway400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $white-color;
+
+    &-container {
+      display: flex;
+      gap: 22px;
+      width: max-content;
+
+      @include onDesktop {
+        gap: 102px;
+      }
+    }
+  }
+
+  &__privacy-and-scroll-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onPhone {
+      margin-top: 60px;
+    }
+  }
+
+  &-container-img {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 50px;
+
+    @include onPhone {
+      margin-top: 60px;
+    }
+
+    @include onTablet {
+      margin-top: 50px;
+      margin-bottom: 62px;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+      margin-bottom: 74px;
+      gap: 20px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onPhone {
+      margin-top: 50px;
+    }
+
+    @include onTablet {
+      // margin-top: 0;
+    }
+  }
+
+  &__item {
+    width: max-content;
+    @include onPhone {
+      margin-top: 4px;
+    }
+
+    @include onTablet {
+      margin-top: 9px;
+    }
+
+    @include onDesktop {
+      margin-top: 9px;
+    }
+  }
+
+  &-img {
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    text-decoration: none;
+    color: $white-color;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      transition: all 0.5s;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: $white-color;
+      transform: scaleX(1);
+    }
+
+    &_absolute {
+      position: absolute;
+    }
+  }
+}

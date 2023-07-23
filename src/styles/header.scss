@@ -1,0 +1,198 @@
+.header {
+  background-color: $footer-color;
+  position: relative;
+
+  @include onPhone {
+    height: 115vh;
+  }
+
+  @include onTablet {
+    height: 167vh;
+  }
+
+  @include onDesktop {
+    height: 120vh;
+  }
+
+  &-container {
+    margin: 0 auto;
+
+    @include onPhone {
+      margin: 0 auto;
+      width: 260px;
+      padding: 20px;
+      padding-bottom: 0;
+    }
+
+    @include onTablet {
+      max-width: 690px;
+      padding: 26px 39px;
+    }
+
+    @include onDesktop {
+      max-width: 1170px;
+      padding: 32px 55px;
+      padding-bottom: 203px;
+    }
+  }
+
+  &__logo-img,
+  &__menu-img {
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  
+
+  &__main-img {
+
+    @include onPhone {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    @include onTablet {
+      position: absolute;
+      bottom: 0;
+      width: 443px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 625px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__content {
+    margin: 0 20px;
+    box-sizing: border-box;
+
+    @include onTablet {
+      margin: 0 40px;
+    }
+
+    @include onDesktop {
+      margin: 0 55px;
+    }
+  }
+
+  &__select {
+    font-size: 16px;
+    color: $white-color;
+    background-color: $footer-color;
+    border: none;
+
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      padding-right: -20px;
+    }
+  }
+
+  &__top {
+    padding: 20px;
+    padding-bottom: 0;
+
+    @include onPhone {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include onTablet {
+      padding: 20px 40px;
+      padding-bottom: 0;
+      @include top-actions;
+    }
+
+    @include onDesktop {
+      padding: 26px 55px;
+      padding-bottom: 0;
+      @include top-actions;
+    }
+  }
+
+  &__language-img {
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: $white-color;
+
+    @include onPhone {
+      width: 279px;
+    }
+
+    &-date {
+      @extend %Raleway400;
+      font-size: 14px;
+      line-height: 140%;
+
+      @include onPhone {
+        width: 190px;
+      }
+
+      @include onDesktop {
+        margin-top: 122px;
+      }
+    }
+
+    &-main {
+      margin: 0;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      font-size: 48px;
+      line-height: 100%;
+
+      @include onTablet {
+        font-size: 72px;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+      }
+    }
+
+    &-subtitle {
+      @extend %Raleway400;
+      font-size: 16px;
+      line-height: 150%;
+
+      @include onPhone {
+        width: 267px;
+        margin-bottom: 40px;
+      }
+
+      @include onTablet {
+        width: 330px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 81px;
+      }
+    }
+
+    &-container {
+      margin-top: 70px;
+
+      @include onTablet {
+        margin-top: 124px;
+      }
+
+      @include onDesktop {
+        margin-top: 122px;
+      }
+    }
+  }
+}
