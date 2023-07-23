@@ -1,0 +1,125 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__main-title {
+    font-size: 28px;
+    line-height: 125%;
+    color: $title-color;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      width: max-content;
+    }
+
+    &_modified {
+      font-size: 28px;
+      line-height: 125%;
+      color: $title-color;
+
+      @include onTablet {
+        font-size: 40px;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+      }
+    }
+  }
+
+  &-container {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    @include onTablet {
+      margin-left: 38px;
+      margin-right: 38px;
+    }
+
+    @include onDesktop {
+      margin-left: 55px;
+      margin-right: 55px;
+    }
+  }
+
+  &-img {
+    width: 100%;
+
+    @include onDesktop {
+      height: 570px;
+      object-fit: cover;
+    }
+
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $title-color 0 19px 38px, $description-color 0 15px 12px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+    line-height: 125%;
+    display: flex;
+    align-items: center;
+    color: $title-color;
+  }
+
+  &__description {
+    @extend %Raleway400;
+    font-size: 16px;
+    line-height: 150%;
+    align-items: center;
+    color: $white-color;
+
+    @include onPhone {
+      margin-top: 10px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    @extend %Raleway400;
+    font-size: 16px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    color: $white-color;
+    margin-top: 5px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    transform: translateX(106%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
+
+.h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}

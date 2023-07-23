@@ -1,0 +1,273 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white-color;
+  box-sizing: border-box;
+  @extend %Raleway600;
+  height: 60px;
+  width: 100%;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: $button-color;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &:active {
+    background-color: $active-color;
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
+  }
+
+  @include onPhone {
+    margin-bottom: 40px;
+  }
+
+  @include onTablet {
+    margin-top: 50px;
+  }
+
+  &-header {
+    &::before {
+      @include onDesktop {
+        content: "10.08 - 10.10";
+        position: absolute;
+        width: max-content;
+        font-size: 14px;
+        line-height: 125%;
+        color: $white-color;
+        opacity: 0.7;
+        margin-right: 180px;
+        margin-top: 357px;
+      }
+    }
+
+    &::after {
+      @include onDesktop {
+        content: "";
+        position: absolute;
+        width: 469px;
+        height: 1px;
+        background: $white-color;
+        opacity: 0.3;
+        margin-top: 357px;
+        margin-left: 410px;
+      }
+    }
+  }
+
+  &-events {
+    margin-top: 30px;
+    margin-bottom: 60px;
+
+    &-modify {
+      margin: 0;
+    }
+  }
+
+  &-page {
+    background-color: $button-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white-color;
+    box-sizing: border-box;
+    @extend %Raleway600;
+    height: 60px;
+    width: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+  
+    &:active {
+      background-color: $active-color;
+    }
+
+    &:disabled {
+      background-color: $disabled-color;
+    }
+
+    &__start {
+      grid-column: span 3;
+    }
+  
+
+    &-form {
+      width: 100%;
+    }
+
+    &-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      @extend %Raleway600;
+      height: 60px;
+      width: 100%;
+      font-size: 16px;
+      text-decoration: none;
+      cursor: pointer;
+      color: $button-color;
+      border: 1px solid $button-color;
+      margin-top: 30px;
+
+      &::after {
+        content: url(../images/section/arrow.svg);
+        margin-left: 8px;
+        margin-top: 5px;
+      }
+
+      &:hover::after {
+        content: url(../images/arrows/arrow-hover.svg);
+      }
+
+      &:active::after {
+        content: url(../images/arrows/arrow-active.svg);
+      }
+
+      &:hover {
+        border-color: $hover-color;
+        color: $hover-color;
+      }
+
+      &:active {
+        border-color: $active-color;
+        color: $active-color;
+      }
+
+      &:disabled {
+        border-color: $disabled-color;
+        color: $disabled-color;
+      }
+
+      &-first {
+        @include onPhone {
+          display: none;
+        }
+
+        @include onTablet {
+          margin-top: 160px;
+        }
+
+        @include onDesktop {
+          margin-top: 210px;
+        }
+      }
+
+      &_top {
+        @include onPhone {
+          display: none;
+        }
+
+        // @include onTablet {
+        //   margin-bottom: 60px;
+        // }
+      }
+
+      &_bottom {
+        margin-top: -20px;
+        margin-bottom: 120px;
+
+        @include onTabletAndDesktop {
+          display: none;
+        }
+      }
+
+      &-modify {
+
+        @include onTablet {
+          display: none;
+        }
+
+        @include onDesktop {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &-news {
+
+    &-first {
+
+      @include onTablet {
+        margin-top: 120px;
+        margin-bottom: 70px;
+      }
+
+      @include onDesktop {
+        margin-top: 110px;
+        margin-bottom: 53px;
+      }
+    }
+  }
+
+  
+
+  &__exhibitions {
+    
+    &-first {
+      margin-top: 30px;
+
+      @include onPhone {
+        margin-bottom: 60px;
+      }
+
+      @include onDesktop {
+        width: 270px;
+      }
+    }
+
+    &-second {
+      margin-top: 30px;
+      
+      @include onPhone {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        width: 270px;
+      }
+    }
+
+    
+    &-archive {
+      
+
+      &-first {
+
+        @include onPhone {
+          display: none;
+        }
+
+        @include onTablet {
+          margin-top: 100px;
+        }
+
+        @include onDesktop {
+          margin-top: 110px;
+        }
+      }
+
+      &-second {
+        @include onTablet {
+          display: none;
+        }
+
+        @include onDesktop {
+          display: none;
+        }
+      }
+    }
+  }
+}
