@@ -1,0 +1,129 @@
+.actual {
+  box-sizing: border-box;
+  padding: 0 20px;
+  display: block;
+  @include Desktop {
+    padding: 0 55px !important;
+  }
+  @include Tablet {
+    padding: 0 39px;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    font-size: 28px;
+    color: $black;
+    text-align: center;
+    font-weight: 700;
+    font-family: Playfair Display, Helvetica, sans-serif;
+    margin: 90px 0 50px;
+    @include Tablet {
+      margin: 105px 0;
+      font-size: 40px;
+    }
+    @include Desktop {
+      font-size: 48px !important;
+    }
+  }
+  &__image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    &:hover {
+      transform: scale(107%);
+      filter: contrast(100%);
+    }
+    @include Desktop {
+      width: 700px !important;
+      height: 500px !important;
+      transition: 1s;
+    }
+    @include Tablet {
+      width: 330px;
+      height: 400px;
+    }
+  }
+  &__date {
+    color: $orange;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: "Raleway", sans-serif;
+    margin: 20px 0 10px;
+  }
+  &__show {
+    @include Tablet {
+      display: flex;
+
+      justify-content: space-between;
+
+    }
+    @include Desktop {
+      @include Grid;
+      display: inline-grid;
+    }
+  }
+  &__show-angel {
+    @include Desktop {
+      grid-template: row;
+      grid-column: span 6;
+    }
+  }
+  &__show-paint {
+    @include Desktop {
+      grid-column: span 6;
+    }
+  }
+  &__show-title {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Playfair Display, Helvetica, sans-serif;
+    line-height: 25px;
+    color: $black;
+    padding-bottom: 20px;
+  }
+  &__show-text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    font-family: "Raleway", sans-serif;
+    @include Tablet {
+      max-width: 330px;
+    }
+  }
+  &__btn {
+    margin: 30px 0 !important;
+    position: right bottom;
+    @include Desktop {
+      width: 270px !important;
+    }
+    @include Tablet {
+      width: 330px !important;
+    }
+  }
+
+  &__btn-end {
+    @include Desktop {
+      display: none;
+    }
+
+    @include Tablet {
+      display: none;
+    }
+  }
+
+  &__btn-start {
+    display: none;
+    @include Desktop {
+      display: block;
+      max-width: 270px !important;
+    }
+
+    @include Tablet {
+      display: block;
+      max-width: 210px;
+      margin-top: 100px;
+    }
+  }
+}
