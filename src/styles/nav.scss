@@ -1,0 +1,52 @@
+.nav {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $text-w-color;
+    font-family: $header-ff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $text-w-color;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

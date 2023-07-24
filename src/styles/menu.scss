@@ -1,0 +1,172 @@
+.menu {
+  background-color: $bg-accent-color;
+  color: $text-w-color;
+  box-sizing: border-box;
+  overflow: auto;
+
+  &__top {
+    padding-top: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    @include onDesktop {
+      padding-top: 26px;
+    }
+
+    &--lang {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        cursor: pointer;
+      }
+    }
+
+    &--lang-mob {
+      display: flex;
+      cursor: pointer;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+      grid-column: span 6;
+    }
+
+    &--right {
+      @include onTablet {
+        grid-column: span 6;
+      }
+
+      @include onDesktop {
+        display: flex;
+        justify-content: flex-end;
+        grid-column: span 6;
+        margin-top: -697px;
+      }
+    }
+  }
+
+  &__anons {
+    margin-top: 30px;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin: 0;
+    font-size: 14px;
+    line-height: 140%;
+
+    &--bold {
+      display: block;
+      text-decoration: none;
+      color: $text-w-color;
+      margin: 0;
+      font-weight: 600;
+    }
+  }
+
+  &__address {
+    margin-top: 20px;
+
+    @include onTablet {
+      margin-top: 50px;
+      grid-column: 3 / 6;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__nav {
+    margin-top: 40px;
+    grid-column: span 2;
+
+    @include onTablet {
+      margin-top: 50px;
+      grid-column: span 5;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__separator {
+    width: 280px;
+    height: 1px;
+    background-color: $text-w-color;
+    margin-block: 40px;
+
+    @include onTablet {
+      width: 690px;
+      margin-block: 50px;
+      grid-column: span 6;
+    }
+
+    @include onDesktop {
+      width: 570px;
+      margin-block: 60px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 238px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      margin-inline: auto;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      vertical-align: bottom;
+      width: 422px;
+      height: 466px;
+      margin-inline: auto;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      width: 624px;
+      height: 697px;
+    }
+  }
+}
