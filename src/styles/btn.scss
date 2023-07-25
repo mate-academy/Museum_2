@@ -1,5 +1,7 @@
 .btn {
+  box-sizing: border-box;
   display: block;
+  padding: 0;
   background-color: $btn-color;
   color: $text-w-color;
   border: none;
@@ -32,5 +34,82 @@
 
   &:disabled {
     background-color: $btn-dissabled-color;
+  }
+
+  &__outline {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 210px;
+      box-sizing: border-box;
+      height: 60px;
+      border: 1px solid $btn-color;
+
+      color: $btn-color;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 100%;
+      transition: all 0.3s;
+
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+    &--text {
+      text-decoration: none;
+      color: $btn-color;
+    }
+
+    &--arrow {
+      background-image: url(../images/exhibition/arrow.svg);
+      background-position: center;
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+    }
+
+    &--mob {
+      margin-top: 30px;
+      display: flex;
+      width: 280px;
+      box-sizing: border-box;
+      height: 60px;
+      border: 1px solid $btn-color;
+
+      color: $btn-color;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 100%;
+      transition: all 0.3s;
+
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &:hover {
+      border-color: $btn-hover-color;
+      color: $btn-hover-color;
+    }
+
+    &:active {
+      color: $btn-pressed-color;
+      border-color: $btn-pressed-color;
+    }
+
+    &:disabled {
+      color: $btn-dissabled-color;
+      border-color: $btn-dissabled-color;
+    }
   }
 }

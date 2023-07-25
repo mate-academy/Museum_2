@@ -1,0 +1,79 @@
+.exhibition {
+  margin-top: 60px;
+  @include pageGrid;
+  row-gap: 60px;
+
+  @include onTablet {
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 70px;
+  }
+
+  @include onDesktop {
+    margin-top: 69px;
+  }
+
+  &__anons {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__image {
+    display: block;
+    background-size: cover;
+    height: 356px;
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+  }
+
+  &__image--1 {
+    background-image: url(../images/exhibition/exhibition_angels.png);
+  }
+
+  &__image--2 {
+    background-image: url(../images/exhibition/art_20_21_century.png);
+    background-position: center;
+  }
+
+  &__date {
+    margin: 0;
+    margin-block: 20px 10px;
+    color: $btn-color;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__description {
+    margin-block: 20px 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}

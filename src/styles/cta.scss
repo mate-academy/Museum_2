@@ -1,0 +1,78 @@
+.cta {
+  background-color: $bg-accent-color;
+  color: $text-w-color;
+  margin-top: 90px;
+
+  @include onTablet {
+    margin-top: 100px;
+  }
+
+  @include onDesktop {
+    margin-top: 110px;
+    @include pageGrid;
+    padding-inline: 55px;
+  }
+
+  &__information {
+    padding: 50px 20px;
+
+    @include onTablet {
+      padding: 80px 38px;
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      padding: 205px 0;
+      display: flex;
+      flex-direction: column;
+      grid-column: span 7;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      height: 800px;
+      grid-column: span 5;
+      vertical-align: bottom;
+      bottom: 0;
+      transform: translateX(-55px);
+    }
+  }
+
+  &__title {
+    font-size: 38px;
+    line-height: 100%;
+
+    @include onTablet {
+      font-size: 62px;
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-block: 20px 40px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      margin-block: 10px 50px;
+    }
+  }
+
+  &__btn {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+}

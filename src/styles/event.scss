@@ -1,0 +1,73 @@
+.event {
+  margin-top: 60px;
+  display: grid;
+  row-gap: 60px;
+
+  @include onTablet {
+    margin-top: 70px;
+    row-gap: 70px;
+  }
+
+  @include onDesktop {
+    margin-top: 68px;
+    row-gap: 60px;
+  }
+
+  &__anons {
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__image {
+    display: block;
+    background-size: cover;
+    background-position: center;
+    height: 358px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+
+    &--1 {
+      background-image: url(../images/events/pavlo_gudimov.png);
+    }
+
+    &--2 {
+      background-image: url(../images/events/podorozh_do_avstralii.png);
+    }
+  }
+
+  &__date {
+    margin: 0;
+    margin-block: 20px 10px;
+    color: $btn-color;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}
