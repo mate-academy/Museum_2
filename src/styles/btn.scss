@@ -21,7 +21,6 @@
 
   @include onDesktop {
     width: 270px;
-    height: 60px;
   }
 
   &:hover {
@@ -43,13 +42,13 @@
       display: flex;
       width: 210px;
       box-sizing: border-box;
-      height: 60px;
+      background-color: transparent;
       border: 1px solid $btn-color;
 
       color: $btn-color;
       font-size: 16px;
       font-weight: 600;
-      line-height: 100%;
+      line-height: 60px;
       transition: all 0.3s;
 
       justify-content: center;
@@ -62,16 +61,26 @@
     }
 
     &--text {
+      display: flex;
       text-decoration: none;
       color: $btn-color;
+
+      &:hover {
+        color: $btn-hover-color;
+      }
+
+      &:active {
+        color: $btn-pressed-color;
+      }
+
+      &:disabled {
+        color: $btn-dissabled-color;
+      }
     }
 
     &--arrow {
-      background-image: url(../images/exhibition/arrow.svg);
-      background-position: center;
-      background-size: cover;
-      width: 20px;
-      height: 20px;
+      display: flex;
+
     }
 
     &--mob {
@@ -99,16 +108,13 @@
 
     &:hover {
       border-color: $btn-hover-color;
-      color: $btn-hover-color;
     }
 
     &:active {
-      color: $btn-pressed-color;
       border-color: $btn-pressed-color;
     }
 
     &:disabled {
-      color: $btn-dissabled-color;
       border-color: $btn-dissabled-color;
     }
   }

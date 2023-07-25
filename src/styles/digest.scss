@@ -54,17 +54,31 @@
 
     font-family: $text-ff;
     color: $text-color;
+    font-weight: 700;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $text-color;
 
+    &:hover {
+      border-bottom: 1px solid $btn-color;
+    }
+
     &:focus {
       outline: none;
+      border-bottom: 1px solid $btn-color;
     }
 
     &::placeholder {
       color: $text-color;
       font-family: $text-ff;
+    }
+    
+    &:hover::placeholder {
+      color: $btn-color;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
     }
 
     @include onTablet {
