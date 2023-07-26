@@ -1,17 +1,23 @@
 .header {
   background-color: $bg-accent-color;
-  padding-top: 20px;
   color: $text-w-color;
-
-  @include onDesktop {
-    padding-top: 26px;
-  }
+  height: 100vh;
+  position: relative;
 
   &__top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
+
+    @include onTablet {
+      height: 77px;
+    }
+
+    @include onDesktop {
+      height: 90px;
+    }
 
     &--lang {
       display: none;
@@ -103,21 +109,22 @@
     }
 
     @include onDesktop {
-      padding-top: 74px;
+      padding-top: 47px;
     }
 
     &--right {
       display: flex;
-      margin-top: 40px;
-
-      @include onTablet {
-        margin-top: 70px;
-      }
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
 
       @include onDesktop {
         margin: 0;
-        margin-top: -663px;
         justify-content: flex-end;
+        right: 0;
+        left: 0;
+        transform: translateX(0);
       }
     }
   }
@@ -172,7 +179,6 @@
     vertical-align: bottom;
     width: 245px;
     height: 273px;
-    margin-inline: auto;
 
     @include onTablet {
       width: 443px;

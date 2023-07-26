@@ -3,16 +3,12 @@
   color: $text-w-color;
   box-sizing: border-box;
   overflow: auto;
+  height: 100vh;
 
   &__top {
-    padding-top: 20px;
     position: sticky;
     top: 0;
     z-index: 1;
-
-    @include onDesktop {
-      padding-top: 26px;
-    }
 
     &--lang {
       display: none;
@@ -41,14 +37,21 @@
 
     &--right {
       @include onTablet {
+        position: absolute;
         grid-column: span 6;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       @include onDesktop {
         display: flex;
         justify-content: flex-end;
         grid-column: span 6;
-        margin-top: -697px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transform: translateX(0);
       }
     }
   }
