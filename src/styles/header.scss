@@ -2,7 +2,6 @@
   background-color: $bg-accent-color;
   color: $text-w-color;
   height: 100vh;
-  position: relative;
 
   &__top {
     display: flex;
@@ -100,25 +99,29 @@
   }
 
   &__content {
-    padding-top: 70px;
-
-    @include pageGrid;
-
     @include onTablet {
-      padding-top: 119px;
-    }
-
-    @include onDesktop {
-      padding-top: 47px;
+      @include pageGrid;
     }
 
     &--left {
-      z-index: 1;
+      z-index: 5;
+      padding-top: 70px;
+
+      @include onTablet {
+        padding-top: 119px;
+        grid-column: span 6;
+      }
+
+      @include onDesktop {
+        padding-top: 47px;
+      }
     }
 
     &--right {
       display: flex;
       position: absolute;
+      z-index: 1;
+
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
