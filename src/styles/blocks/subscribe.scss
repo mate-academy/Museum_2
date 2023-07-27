@@ -1,0 +1,70 @@
+.subscribe {
+  margin-bottom: 80px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 20px;
+    @extend %section-title;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    @extend %card-text;
+  }
+
+  &__field {
+    @extend %card-text;
+    width: 100%;
+    padding-bottom: 3px;
+    border: none;
+    border-bottom: 1px solid $blackColor;
+    color: $blackColor;
+    background-color: transparent;
+    outline: none;
+
+    &:hover {
+      border-color: $mainColor;
+    }
+
+    &:focus {
+      border-color: $mainColor;
+    }
+
+    &:-webkit-autofill {
+      font-weight: 700;
+      border-color: $blackColor;
+    }
+
+    &:hover::-webkit-input-placeholder {
+      color: $mainColor;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      color: $mainColor;
+    }
+
+    &::placeholder {
+      font-family: "Raleway", sans-serif;
+      color: $blackColor;
+    }
+
+    @include onTabletOnly {
+      width: 50%;
+    }
+  }
+
+  &__button {
+    border: none;
+  }
+}

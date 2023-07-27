@@ -1,0 +1,91 @@
+.header {
+  background-color: $back-gr;
+
+  padding-top: 20px;
+  margin-bottom: 90px;
+
+  @include onTablet {
+    padding-top: 26px;
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+    padding-top: 26px;
+    margin-bottom: 110px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    color: $whiteColor;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include onTabletOnly {
+      margin-bottom: 20px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 94px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+    color: $whiteColor;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__img {
+    display: block;
+    bottom: 0;
+    height: 273px;
+    margin: auto;
+
+    @include onTablet {
+      height: 494px;
+    }
+
+    @include onDesktop {
+      height: 663px;
+    }
+  }
+
+  &__line {
+    position: relative;
+    padding-top: 75px;
+
+    font-size: 14px;
+    line-height: 125%;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 400px;
+      height: 1px;
+
+      left: 110px;
+      bottom: 6px;
+
+      background: $whiteColor;
+      opacity: 0.3;
+    }
+  }
+}
