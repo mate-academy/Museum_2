@@ -1,0 +1,80 @@
+.tops {
+  @include onTablet {
+    margin-bottom: 50px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 20px;
+  }
+
+  &__actual {
+    margin-bottom: 40px;
+
+    &__head {
+      @include main-h1;
+      transition: letter-spacing 0.3s;
+
+      @include onTablet {
+        font-size: 40px;
+        line-height: 50px;
+      }
+
+      &:hover {
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  &__archive {
+    text-decoration: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      border: 1px solid $button;
+      text-decoration: none;
+      transition: border-color 0.3s;
+
+      &:hover {
+        border-color: $hover;
+      }
+
+      &:active {
+        border-color: $pressed;
+      }
+
+      &:disabled {
+        border-color: $disabled;
+      }
+    }
+
+    &__item {
+      cursor: none;
+      color: transparent;
+
+      @include onTablet {
+        margin-right: 32px;
+        cursor: pointer;
+        font-family: "Raleway", sans-serif;
+        @include arrow {
+          right: -30px;
+        }
+        transition: border-color 0.3s;
+
+        &:hover {
+          color: $hover;
+        }
+
+        &:active {
+          color: $pressed;
+        }
+
+        &:disabled {
+          color: $disabled;
+        }
+      }
+    }
+  }
+}

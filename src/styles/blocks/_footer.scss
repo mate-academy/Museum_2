@@ -1,0 +1,149 @@
+.footer {
+  padding-top: 30px;
+  background-color: $bgc;
+
+  @include onTablet {
+    padding-top: 50px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 20px 30px;
+
+    @include onTablet {
+      display: grid;
+      margin: 0 30px 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__header {
+    box-sizing: border-box;
+    @include main-h2;
+    margin-bottom: 20px;
+    line-height: 30px;
+    color: $white;
+    border-bottom: 1px solid transparent;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    &:hover {
+      width: max-content;
+      letter-spacing: 1px;
+      border-bottom: 1px solid $white;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    &__link {
+      text-decoration: none;
+    }
+
+    &__item {
+      @include time;
+      color: $white;
+      text-decoration: none;
+
+      &:hover {
+        color: $pressed;
+      }
+
+      &--marg {
+        margin-right: 10px;
+      }
+
+      &--scroll {
+        @include onTablet {
+          margin-bottom: 10px;
+        }
+      }
+
+      &--privacy {
+        &:hover {
+          color: $white;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  &__phone {
+    display: flex;
+    width: max-content;
+  }
+
+  &__media {
+    display: flex;
+    flex-direction: row;
+
+    &__facebook {
+      background-image: url(../images/media/facebook.svg);
+      @include bgi;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+
+    &__twitter {
+      background-image: url(../images/media/twitter.svg);
+      @include bgi;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+
+    &__telegram {
+      background-image: url(../images/media/telegram.svg);
+      @include bgi;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+
+    &__instagram {
+      background-image: url(../images/media/instagram.svg);
+      @include bgi;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+
+  &__scrolls {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__privacy {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    padding-bottom: 20px;
+  }
+
+  &__scroll {
+    &__img {
+      &:hover {
+        border: 1px solid $white;
+        border-radius: 50%;
+      }
+    }
+  }
+}

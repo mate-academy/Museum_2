@@ -1,0 +1,72 @@
+.tickets {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+
+  padding: 20px 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: $button;
+  color: $white;
+  text-decoration: none;
+  outline: none;
+  z-index: 1;
+  transition: background-color 0.3s;
+
+  @include onTablet {
+    margin-bottom: 14px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 112px;
+  }
+
+  &--head {
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &--exhibition {
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &--plan {
+    margin: 0 20px;
+
+    @include onTablet {
+      margin: 0 30px 30px;
+    }
+
+    @include onDesktop {
+      grid-row-start: 6;
+      margin: 0;
+    }
+  }
+
+  &--subscribe {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+
+    @include onTablet {
+      width: 350px;
+    }
+  }
+
+  &:hover {
+    background-color: $hover;
+  }
+
+  &:active {
+    background-color: $pressed;
+  }
+
+  &:disabled {
+    background-color: $disabled;
+  }
+}

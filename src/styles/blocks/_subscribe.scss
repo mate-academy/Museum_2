@@ -1,0 +1,89 @@
+.subscribe {
+  margin: 0 20px 90px;
+
+  @include onTablet {
+    margin: 20px 30px 60px;
+  }
+
+  @include onDesktop {
+    margin: 25px 55px 20px;
+  }
+
+  &__head {
+    @include main-h1;
+    margin-bottom: 20px;
+    transition: letter-spacing 0.3s;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 55px;
+    }
+
+    &:hover {
+      letter-spacing: 2px;
+    }
+  }
+
+  &__paragraph {
+    @include time;
+    margin-bottom: 35px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $button;
+    }
+  }
+
+  &__form {
+    width: 100%;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 500px;
+    }
+
+    @include onDesktop {
+      max-width: 650px;
+    }
+
+    &__field {
+      box-sizing: border-box;
+      width: 100%;
+      margin-bottom: 30px;
+      padding-bottom: 5px;
+      border: 1px solid transparent;
+      border-bottom: 1px solid $black;
+      cursor: pointer;
+      outline: none;
+      transition: color 0.3s;
+
+      &::placeholder {
+        @include time;
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        color: $button;
+        border-bottom-color: $button;
+      }
+
+      &:active {
+        outline: none;
+        color: $black;
+        border-bottom-color: $black;
+      }
+    }
+
+    &__button {
+      display: block;
+      text-decoration: none;
+    }
+  }
+}
