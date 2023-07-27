@@ -1,0 +1,121 @@
+.btn {
+  box-sizing: border-box;
+  display: block;
+  padding: 0;
+  background-color: $btn-color;
+  color: $text-w-color;
+  border: none;
+  text-align: center;
+  width: 280px;
+
+  text-decoration: none;
+  font-family: $text-ff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 60px;
+  transition: all 0.3s;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &:hover {
+    background-color: $btn-hover-color;
+  }
+
+  &:active {
+    background-color: $btn-pressed-color;
+  }
+
+  &:disabled {
+    background-color: $btn-dissabled-color;
+  }
+
+  &__outline {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 210px;
+      box-sizing: border-box;
+      background-color: transparent;
+      border: 1px solid $btn-color;
+
+      color: $btn-color;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 60px;
+      transition: all 0.3s;
+
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+    &--text {
+      display: flex;
+      text-decoration: none;
+      color: $btn-color;
+
+      &:hover {
+        color: $btn-hover-color;
+      }
+
+      &:active {
+        color: $btn-pressed-color;
+      }
+
+      &:disabled {
+        color: $btn-dissabled-color;
+      }
+    }
+
+    &--arrow {
+      display: flex;
+
+    }
+
+    &--mob {
+      margin-top: 30px;
+      display: flex;
+      width: 280px;
+      box-sizing: border-box;
+      height: 60px;
+      border: 1px solid $btn-color;
+
+      color: $btn-color;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 100%;
+      transition: all 0.3s;
+
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &:hover {
+      border-color: $btn-hover-color;
+    }
+
+    &:active {
+      border-color: $btn-pressed-color;
+    }
+
+    &:disabled {
+      border-color: $btn-dissabled-color;
+    }
+  }
+}

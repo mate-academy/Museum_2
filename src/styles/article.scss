@@ -1,0 +1,80 @@
+.article {
+  display: grid;
+  gap: 50px;
+  margin-top: 60px;
+
+  @include onTablet {
+    margin-top: 70px;
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    margin-top: 53px;
+  }
+
+  &__block {
+    overflow: hidden;
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__image {
+    display: block;
+    height: 281px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s;
+
+    @include onTablet {
+      height: 330px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &--1 {
+      background-image: url(../images/news/winner.png);
+    }
+
+    &--2 {
+      background-image: url(../images/news/cats_day.png);
+    }
+  }
+
+  &__date {
+    margin: 0;
+    font-size: 14px;
+    line-height: 140%;
+    margin-top: 20px;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    margin-top: 20px;
+  }
+}

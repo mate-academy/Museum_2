@@ -1,0 +1,97 @@
+.digest {
+  margin-block: 120px 80px;
+
+  @include onTablet {
+    margin-block: 160px 128px;
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    margin-block: 200px;
+  }
+
+  &__title {
+
+    @include onTablet {
+      grid-column: span 5;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-block: 20px 50px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+    height: 28px;
+    padding: 0;
+    padding-bottom: 3px;
+    width: 280px;
+
+    font-family: $text-ff;
+    color: $text-color;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $text-color;
+
+    &:hover {
+      border-bottom: 1px solid $btn-color;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $btn-color;
+    }
+
+    &::placeholder {
+      color: $text-color;
+      font-family: $text-ff;
+    }
+
+    &:hover::placeholder {
+      color: $btn-color;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+  }
+
+  &__btn {
+    margin-top: 30px;
+    cursor: pointer;
+  }
+}
