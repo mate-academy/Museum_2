@@ -39,10 +39,10 @@
     margin-bottom: 10px;
   }
   &__title-main {
-    font-size: 20px;
+    font-size: 18px;
     font-family: Playfair Display, Helvetica, sans-serif;
     color: $white-text;
-    margin: 50px 0 10px;
+    margin: 36px 0 10px;
   }
   &__text {
     font-size: 16px;
@@ -64,13 +64,27 @@
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+    width: max-content;
     font-family: "Raleway", sans-serif;
     color: $white-text;
+    transition: all 0.5s;
 
-    &:hover {
-      border-bottom: 1px solid transparent;
-      transition: border-color 5s;
-      width: 80px;
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      transition: all 0.5s;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      content: "";
+      display: block;
+      height: 1px;
+      // width: 70px;
+      background-color: $white-text;
+      transform: scaleX(1);
     }
   }
   &__contact-icons {
@@ -98,25 +112,41 @@
       justify-content: start;
     }
   }
-  &__scroll {
-    background-color: $green-main;
-    border: none;
-    position: absolute;
-    right: 0;
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    margin-top: 60px;
+  }
+
+  &__copyright-text {
+    color: $white-text;
+    font-size: 14px;
+    line-height: 140%;
+
     margin-right: 20px;
-    cursor: pointer;
+
     @include Desktop {
-      padding: 0 55px !important;
-    }
-    @include Tablet {
-      padding: 0 39px;
+      margin-right: 100px;
     }
   }
-}
 
-.icon {
-  &:hover {
-    transform: scale(107%);
-    filter: contrast(100%);
+  &__scroll {
+    width: 30px;
+    height: 30px;
+    display: block;
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
+
+  .icon {
+    &:hover {
+      transition: all 0.5s;
+      transform: scale(1.2);
+    }
   }
 }
