@@ -1,0 +1,89 @@
+.exhibitions {
+  position: relative;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    padding-top: 90px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      padding-top: 100px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      padding-top: 110px;
+    }
+  }
+
+  &__box {
+
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__img {
+    height: 356px;
+    width: 100%;
+    margin-top: 60px;
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+
+    &--1 {
+      background-image: url(../images/exhibitions/angels.png);
+    }
+
+    &--2 {
+      background-image: url(../images/exhibitions/men.png);
+    }
+  }
+
+  &__sub-title {
+    margin-top: 10px;
+  }
+
+  &__termin {
+    margin-top: 20px;
+  }
+
+  &__text {
+    margin-top: 20px;
+  }
+
+  &__exhibition {
+    margin: auto;
+  }
+
+  &__exhibition--2 {
+    @include onTablet {
+      grid-column: 4 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__exhibition--1 {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+}

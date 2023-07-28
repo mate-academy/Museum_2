@@ -1,0 +1,47 @@
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  @include onDesktop {
+    padding: 26px 0;
+  }
+
+  &_icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+
+    &--burger {
+      gap: 30px;
+
+      @include onTablet {
+        gap: 44px;
+      }
+    }
+  }
+
+  &_language {
+    display: none;
+    align-items: center;
+    text-decoration: none;
+    @extend %raleway_600;
+    font-weight: 500;
+    @include hover (transform, scale(1.1));
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--burger {
+      display: flex;
+    }
+  }
+
+  &_country {
+    text-align: center;
+    font-size: 16px;
+    color: inherit;
+  }
+}

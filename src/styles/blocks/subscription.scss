@@ -1,0 +1,71 @@
+.subscription {
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    padding: 120px 0 80px;
+
+    @include onTablet {
+      padding: 160px 0 128px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      padding: 200px 0;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      margin: 0;
+    }
+  }
+
+  &__mail {
+    margin-top: 50px;
+
+    display: block;
+    width: 100%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $title-black;
+    height: 28px;
+    padding: 14px 10px;
+    font-family: inherit;
+    font-style: inherit;
+
+    &:hover {
+      border-bottom: 1px solid $red;
+    }
+
+    &:hover::placeholder {
+      color: $red;
+    }
+
+    &:active::placeholder {
+      border: 1px solid transparent;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.icon {
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  @include sizeIcon ($mobile-icon-size);
+
+  @include hover (transform, scale(1.2));
+
+  @include onDesktop {
+    @include sizeIcon ($desktop-icon-size);
+  }
+
+  &--menu {
+    background-image: url(../images/icons/icon-menu.svg);
+  }
+
+  &--cross {
+    background-image: url(../images/icons/icon-close.svg);
+    margin-right: 34px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--burger {
+      margin: 0;
+    }
+  }
+
+  &--cross2 {
+    background-image: url(../images/icons/icon-close.svg);
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--face {
+    background-image: url(../images/icons/icon-face.svg);
+    @include sizeIcon ($application-icon-size);
+  }
+
+  &--inst {
+    background-image: url(../images/icons/icon-inst.svg);
+    @include sizeIcon ($application-icon-size);
+  }
+
+  &--telegram {
+    background-image: url(../images/icons/icon-telegram.svg);
+    @include sizeIcon ($application-icon-size);
+  }
+
+  &--tvit {
+    background-image: url(../images/icons/icon-tvit.svg);
+    @include sizeIcon ($application-icon-size);
+  }
+
+  &--dropdown {
+    background-image: url(../images/icons/icon-dropdown.svg);
+    width: 8px;
+    height: 5px;
+
+    @include onDesktop {
+      width: 10px;
+      height: 7px;
+    }
+  }
+
+  &--arrow {
+    background-image: url(../images/icons/icon-arrow.svg);
+    @include sizeIcon ($desktop-icon-size);
+  }
+
+  &--scroll-up {
+    background-image: url(../images/icons/icon-scroll_up.svg);
+    @include sizeIcon ($application-icon-size);
+  }
+}
