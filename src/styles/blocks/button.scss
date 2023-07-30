@@ -1,37 +1,62 @@
 .button {
   display: flex;
   text-decoration: none;
-  width: auto;
+  width: 280px;
   max-width: 330px;
   margin: 0 auto;
-  background-color: $red;
+  @include change_color;
   @extend %raleway_600;
   font-size: 16px;
   line-height: 100%;
   align-items: center;
   justify-content: center;
   height: 60px;
-
-  &__header {
-    margin: 0;
-    @include change_color;
-  }
+  background-color: $red;
 
   &--white {
-    background-color: #fff;
+    background-color: white;
     border: 1px solid $red;
     color: $red;
+    transition: all, 0.3s;
+    fill: none;
 
-    &::after {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-image: url(../images/icons/icon-arrow.svg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      margin-left: 8px;
+    & path {
+      stroke: $red;
+      transition: stroke, 0.3s;
+    }
+
+    &:visited {
+      color: #dd836f;
+      border-color: #dd836f;
+      background-color: transparent;
+
+      & path {
+        stroke: #dd836f;
+      }
+    }
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+      background-color: transparent;
+
+      & path {
+        stroke: #af3419;
+      }
+    }
+
+    &:active {
+      color: #ea340d;
+      border-color: #ea340d;
+      background-color: transparent;
+
+      & path {
+        stroke: #ea340d;
+      }
+    }
+
+    &__header {
+      margin: 0;
     }
 
     &--1 {
@@ -70,14 +95,6 @@
 
     @include onDesktop {
       margin: 30px 0 0;
-    }
-
-    &--1 {
-      @include change_color;
-    }
-
-    &--2 {
-      @include change_color;
     }
   }
 

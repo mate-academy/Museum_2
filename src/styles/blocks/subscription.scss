@@ -45,7 +45,7 @@
 
     display: block;
     width: 100%;
-    border: 1px solid transparent;
+    border: none;
     border-bottom: 1px solid $title-black;
     height: 28px;
     padding: 14px 10px;
@@ -56,12 +56,16 @@
       border-bottom: 1px solid $red;
     }
 
-    &:hover::placeholder {
-      color: $red;
+    &:active::placeholder {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: $title-black;
+      border: none;
     }
 
-    &:active::placeholder {
-      border: 1px solid transparent;
+    &:hover::placeholder {
+      color: $red;
     }
 
     @include onTablet {
