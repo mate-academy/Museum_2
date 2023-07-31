@@ -1,0 +1,73 @@
+.subscribe {
+  @include pageGrid;
+
+  &__main {
+    @include main;
+    color: $black;
+    margin: 0 0 50px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 5;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    @include pageGrid;
+    border: none;
+  }
+
+  &__input {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $black;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid $black;
+    margin: 0 0 30px;
+    width: 100%;
+    grid-column: 1 / -1;
+    cursor: pointer;
+
+    &::placeholder {
+      @include main;
+      color: $black;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $hover;
+    }
+
+    &:hover::placeholder {
+      color: $hover;
+    }
+
+    &:focus {
+      border: none;
+      border-bottom: 1px solid $main;
+      color: $main;
+      cursor: text;
+      caret-color: $main;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+  }
+}

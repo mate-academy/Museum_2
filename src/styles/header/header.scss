@@ -1,0 +1,115 @@
+.header {
+  background-color: $bg;
+  background-image: url(../images/header-bottom-img.png);
+  background-size: 245px 273px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  @include onTablet {
+    background-size: 443px 494px;
+  }
+
+  @include onDesktop {
+    background-size: 625px 663px;
+    background-position: right bottom;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+  }
+
+  &__main {
+    margin-top: 50px;
+
+    @include pageGrid;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
+
+    @include onDesktop {
+      margin-top: 90px;
+    }
+
+    &__additional {
+      @include additional;
+      color: $white;
+      margin: 0 0 10px;
+      grid-column: 1 / -1;
+    }
+
+    &__h1 {
+      @include h1;
+      color: $white;
+      margin: 0 0 30px;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        font-size: 72px;
+        margin: 0 0 20px;
+        grid-column: 1 / -2;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+        grid-column: span 6;
+      }
+    }
+
+    &__main-text {
+      @include main;
+      color: $white;
+      margin: 0 0 40px;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        margin: 0 0 50px;
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        margin: 0 0 40px;
+        grid-column: 1 / 7;
+      }
+    }
+  }
+
+  &__date {
+    display: none;
+    margin: 135px 0 50px;
+    color: $white;
+    @include pageGrid;
+
+    &-information {
+      display: none;
+      margin: 0;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: none;
+      height: 1px;
+      width: 100%;
+      background: $white;
+      opacity: 0.3;
+      grid-column: span 5;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    @include onDesktop {
+      display: grid;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+}
