@@ -42,8 +42,6 @@
 
   &__mail {
     margin-top: 50px;
-
-    display: block;
     width: 100%;
     border: none;
     border-bottom: 1px solid $title-black;
@@ -51,21 +49,26 @@
     padding: 14px 10px;
     font-family: inherit;
     font-style: inherit;
+    caret-color: $red;
 
     &:hover {
       border-bottom: 1px solid $red;
+
+      &::placeholder {
+        color: $red;
+      }
     }
 
-    &:active::placeholder {
+    &:focus {
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
       color: $title-black;
-      border: none;
-    }
+      outline: none;
 
-    &:hover::placeholder {
-      color: $red;
+      &::placeholder {
+        color: transparent;
+      }
     }
 
     @include onTablet {
