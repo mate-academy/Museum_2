@@ -1,0 +1,54 @@
+.section {
+  &__content {
+    @include grid;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 60px;
+    grid-column: span 4;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: span 7;
+    }
+  }
+
+  &__articles {
+    @include grid;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    margin-bottom: 30px;
+    grid-column: 1 / -1;
+
+    &--events {
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__article {
+    grid-column: span 3;
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    grid-row: 1 / 2;
+    grid-column: 5 / 7;
+
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+  }
+}
