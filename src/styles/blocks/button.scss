@@ -1,0 +1,135 @@
+.button {
+  display: flex;
+  text-decoration: none;
+  width: 100%;
+  max-width: 330px;
+  margin: 0 auto;
+  @include change_color;
+  @extend %raleway_600;
+  font-size: 16px;
+  line-height: 100%;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  cursor: pointer;
+  background-color: $red;
+
+  &--white {
+    background-color: white;
+    border: 1px solid $red;
+    color: $red;
+    transition: all, 0.3s;
+    fill: none;
+
+    & path {
+      stroke: $red;
+      transition: stroke, 0.3s;
+    }
+
+    &:visited {
+      color: #dd836f;
+      border-color: #dd836f;
+      background-color: transparent;
+
+      & path {
+        stroke: #dd836f;
+      }
+    }
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+      background-color: transparent;
+
+      & path {
+        stroke: #af3419;
+      }
+    }
+
+    &:active {
+      color: #ea340d;
+      border-color: #ea340d;
+      background-color: transparent;
+
+      & path {
+        stroke: #ea340d;
+      }
+    }
+
+    &--1 {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        margin: 0;
+      }
+
+      @include onDesktop {
+        width: 270px;
+      }
+    }
+
+    &--2 {
+      margin-top: 30px;
+      display: flex;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__header {
+    margin: 0;
+  }
+
+  &__exhibition {
+    margin-top: 30px;
+
+    @include onDesktop {
+      margin: 30px 0 0;
+    }
+  }
+
+  &__plan {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin: 60px 0 0;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__subscription {
+    margin-top: 30px;
+    width: 100%;
+    border: 1px solid $red;
+
+    input:-webkit-autofill:hover {
+      cursor: pointer;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin: 0;
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+  }
+}

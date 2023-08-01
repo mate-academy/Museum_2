@@ -1,0 +1,151 @@
+.header {
+  background-color: $background-color;
+  height: 100vh;
+  position: relative;
+
+  @include onTablet {
+    height: 1092px;
+  }
+
+  @include onDesktop {
+    height: 800px;
+  }
+
+  &__container {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 747px;
+
+    @include onTablet {
+      height: 1092px;
+    }
+
+    @include onDesktop {
+      height: 800px;
+    }
+  }
+
+  &__content {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      position: relative;
+    }
+  }
+
+  &__box {
+    padding: 50px 0 40px;
+
+    @include onTablet {
+      padding: 99px 0 70px;
+    }
+
+    @include onDesktop {
+      padding: 90px 0 50px;
+    }
+  }
+
+  &__img {
+    background-image: url(../images/img_01.png);
+    height: 273px;
+    width: 245px;
+    position: absolute;
+    bottom: 0;
+    right: calc((100% - 245px) / 2);
+
+    @include onTablet {
+      height: 494px;
+      width: 443px;
+      right: calc((100% - 443px) / 2);
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      height: 663px;
+      width: 625px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__termin {
+    @extend %raleway_400;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @extend %playfair_Display;
+    font-size: 48px;
+    line-height: 100%;
+    margin: 0 0 30px;
+    width: 279px;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      width: 569px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      margin: 0 0 30px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 135px;
+  }
+
+  &__slogan {
+    @extend %raleway_400;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 40px;
+    width: 267px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      width: 330px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 81px;
+      width: 569px;
+    }
+  }
+
+  &__events {
+    @extend %playfair_Display;
+    display: none;
+    font-size: 14px;
+    line-height: 125%;
+    text-decoration: none;
+
+    @include onDesktop {
+      display: inline-block;
+      position: relative;
+      margin-top: 135px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 469px;
+        height: 1px;
+        background-color: $title_white;
+        margin-left: 20px;
+        top: 50%;
+        left: 100%;
+      }
+    }
+  }
+}

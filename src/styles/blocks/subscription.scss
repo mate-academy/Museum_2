@@ -1,0 +1,86 @@
+.subscription {
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    padding: 120px 0 80px;
+
+    @include onTablet {
+      padding: 160px 0 128px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      padding: 200px 0;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      margin: 0;
+    }
+  }
+
+  &__mail {
+    margin-top: 50px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $title-black;
+    height: 28px;
+    padding: 14px 10px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: inherit;
+    font-style: inherit;
+    caret-color: $red;
+
+    &:hover {
+      border-bottom: 1px solid $red;
+
+      &::placeholder {
+        color: $red;
+      }
+    }
+
+    &:focus {
+      font-weight: 700;
+      line-height: 24px;
+      outline: none;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 1000px #fff inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+}
