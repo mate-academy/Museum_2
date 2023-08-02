@@ -1,0 +1,66 @@
+.top-bar {
+  padding-block: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onTablet {
+    padding-block: 26px;
+  }
+
+  @include onDesktop {
+    padding-block: 32px;
+  }
+
+  &__logo {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__icons {
+    display: flex;
+    gap: 30px;
+
+    @include onTablet {
+      gap: 40px;
+    }
+  }
+
+  &__language {
+    color: $white;
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    text-decoration: none;
+  }
+
+  &__close {
+    order: 2;
+
+    @include onDesktop {
+      order: 1;
+    }
+  }
+
+  &__switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    order: 1;
+
+    @include onTablet {
+      order: 2;
+    }
+
+    &-off {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+}

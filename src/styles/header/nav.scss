@@ -1,0 +1,46 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include onTablet {
+      row-gap: 30px;
+    }
+
+    @include onDesktop {
+      row-gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    @include h5;
+    text-decoration: none;
+    color: $white;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

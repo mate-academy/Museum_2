@@ -1,0 +1,127 @@
+.button {
+  display: flex;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  text-decoration: none;
+  background: $main;
+  grid-column: 1 / -1;
+
+  &:hover {
+    background: $hover;
+  }
+
+  &:active {
+    background: $active;
+  }
+
+  &:disabled {
+    background: $disabled;
+  }
+
+  @include onTablet {
+    grid-column: 1 / 4;
+  }
+
+  @include button;
+  color: $white;
+
+  &__aside {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__main {
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__plan-visit {
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+}
+
+.menu__button,
+.header__main--button {
+  @include pageGrid;
+}
+
+.button__archive {
+  display: flex;
+  margin: 30px 0 0;
+  height: 60px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid $main;
+  background: transparent;
+  grid-column: 1 / -1;
+
+  @include button;
+  color: $main;
+  text-align: center;
+
+  &:hover {
+    border: 1px solid $hover;
+    color: $hover;
+
+    & path {
+      stroke: $hover;
+    }
+  }
+
+  &:active {
+    border: 1px solid $active;
+    color: $active;
+
+    & path {
+      stroke: $active;
+    }
+  }
+
+  &:disabled {
+    border: 1px solid $disabled;
+    color: $disabled;
+
+    & path {
+      stroke: $disabled;
+    }
+  }
+
+  &--off-mobile {
+    display: none;
+    margin: 0;
+
+    @include onTablet {
+      display: flex;
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / -1;
+    }
+  }
+
+  &--off-tablet {
+    @include onTablet {
+      display: none;
+    }
+  }
+}
