@@ -8,6 +8,9 @@
   text-decoration: none;
   background: $main;
   grid-column: 1 / -1;
+  cursor: pointer;
+
+  @include hover(transform, scale(1.1));
 
   &:hover {
     background: $hover;
@@ -73,36 +76,43 @@
   border: 1px solid $main;
   background: transparent;
   grid-column: 1 / -1;
+  cursor: pointer;
+
+  @include hover(transform, scale(1.1));
 
   @include button;
   color: $main;
   text-align: center;
 
+  &::after {
+    content: url(../images/icons/arrow.svg);
+  }
+
   &:hover {
     border: 1px solid $hover;
     color: $hover;
+  }
 
-    & path {
-      stroke: $hover;
-    }
+  &:hover::after {
+    content: url(../images/icons/arrow-hover.svg);
   }
 
   &:active {
     border: 1px solid $active;
     color: $active;
+  }
 
-    & path {
-      stroke: $active;
-    }
+  &:active::after {
+    content: url(../images/icons/arrow-active.svg);
   }
 
   &:disabled {
     border: 1px solid $disabled;
     color: $disabled;
+  }
 
-    & path {
-      stroke: $disabled;
-    }
+  &:disabled::after {
+    content: url(../images/icons/arrow-disabled.svg);
   }
 
   &--off-mobile {
