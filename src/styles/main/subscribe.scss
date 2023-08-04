@@ -1,0 +1,83 @@
+.subscribe {
+  padding: 0 0 80px;
+
+  @include onTablet {
+    padding: 0 0 128px;
+  }
+
+  @include onDesktop {
+    padding: 0 0 200px;
+  }
+
+  &__text {
+    line-height: 150%;
+    margin-top: 20px;
+    color: $title-color;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+    margin-top: 50px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__input {
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid $title-color;
+    background-color: transparent;
+    width: 100%;
+    padding: 5px 0;
+    color: $title-color;
+    font-weight: 600;
+    line-height: 150%;
+    font-family: inherit;
+    max-width: 450px;
+    transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    @include onDesktop {
+      max-width: 470px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $button-background;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $button-background;
+    }
+
+    &::placeholder {
+      color: $title-color;
+      line-height: 150%;
+      font-family: inherit;
+      font-weight: 400;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &:hover::placeholder {
+      color: #cd4d31;
+    }
+
+    &:focus::placeholder {
+      color: #cd4d31;
+    }
+  }
+}

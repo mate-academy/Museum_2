@@ -1,0 +1,147 @@
+.button {
+  grid-column: span 2;
+  display: block;
+  margin-inline: auto;
+  width: 280px;
+  height: 60px;
+  background-color: $button-background;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  color: $header-text-color;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:focus {
+    background-color: #ea340d;
+  }
+
+  &--header {
+    margin-top: 40px;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    @include onTablet {
+      margin-top: 50px;
+      width: 330px;
+      margin-inline: 0;
+    }
+
+    @include onDesktop {
+      margin-top: 81px;
+    }
+  }
+
+  &--menu-active {
+    transform: translateY(150px);
+
+    @include onTablet {
+      transform: translateY(180px);
+    }
+
+    @media (min-width: 901px) {
+      transform: translateY(250px);
+    }
+
+    @include onDesktop {
+      transform: translateY(150px);
+    }
+
+  }
+
+  &--card {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 40px;
+      width: 100%;
+    }
+  }
+
+  &--card-grid {
+    @include onTablet {
+      margin-top: 10px;
+      grid-column: 4 / 7;
+      align-self: start;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 8;
+      margin-top: 50px;
+    }
+  }
+
+  &--card-transparent {
+    margin-top: 30px;
+    grid-column: 1 / -1;
+    border: 1px solid $button-background;
+    background-color: transparent;
+    color: $button-background;
+    transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    &::after {
+      content: url("../images/icons/arrow.svg");
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+
+    @include onTablet {
+      width: 100%;
+      grid-column: 5 / 7;
+      grid-row: 1 / 2;
+      margin-top: 0;
+      align-self: center;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+      background-color: transparent;
+    }
+
+    &:focus {
+      background-color: transparent;
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+  }
+
+  &--plan-your-visit {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 60px;
+      margin-inline: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+      width: 270px;
+    }
+  }
+
+  &--subscribe {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-inline: 0;
+    }
+  }
+}

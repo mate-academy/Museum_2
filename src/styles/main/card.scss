@@ -1,0 +1,150 @@
+.card {
+  grid-column: 1 / -1;
+  padding-top: 60px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  @include onTablet {
+    padding-top: 75px;
+    grid-column: span 3;
+  }
+
+  @include onDesktop {
+    grid-column: span 6;
+  }
+
+  &--grid-full {
+    grid-column: 1 / -1;
+  }
+
+  &__image {
+    max-width: 100%;
+    min-height: 357px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: left;
+    max-height: 550px;
+    transition: transform 0.3s ease-in-out;
+
+    @include onTablet {
+      min-height: 420px;
+      min-width: 100%;
+      max-height: none;
+    }
+
+    &--object-position-center {
+      object-position: center;
+    }
+
+    &--min-height-280 {
+      min-height: 280px;
+    }
+
+    &--grid {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+        grid-row: 1 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+        grid-row: 1 / 6;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.07);
+    }
+  }
+
+  &__date {
+    display: block;
+    margin-top: 20px;
+    line-height: 150%;
+    color: $date-color;
+
+    @include onTablet {
+      margin-top: 30px;
+      grid-column: 4 / 7;
+    }
+
+    &--black {
+      color: $title-color;
+    }
+
+    &--grid {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        margin-top: 0;
+        grid-column: 4 / 7;
+        align-self: end;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 11;
+        align-self: start;
+      }
+    }
+  }
+
+  &__image-caption {
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 125%;
+    color: $title-color;
+    align-self: flex-start;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    &--grid {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        margin-top: 10px;
+        grid-column: 4 / 7;
+        align-self: center;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 11;
+        align-self: start;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__descr {
+    margin-top: 20px;
+    line-height: 150%;
+    color: $main-text-color;
+
+    @include onTablet {
+      margin-top: 50px;
+      margin-bottom: auto;
+    }
+
+    &--grid {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        margin-top: 0;
+        grid-column: 4 / 7;
+      }
+
+      @include onDesktop {
+        margin-top: 20px;
+        grid-column: 5 / 11;
+        align-self: start;
+      }
+    }
+  }
+}
