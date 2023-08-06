@@ -1,0 +1,103 @@
+.event {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  height: 100%;
+
+  &--last {
+    margin-bottom: 30px;
+  }
+
+  &__image-container {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-height: 420px;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      height: 420px;
+      padding-bottom: 0;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      height: 484px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    transition: transform 0.3s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    margin-top: 0;
+    line-height: 150%;
+    color: $mainColor;
+
+    &--dark {
+      color: $backgroundColor;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 20px;
+    line-height: 125%;
+    font-family: 'Playfair Display', serif;
+    color: $colorBlack;
+    cursor: pointer;
+
+    &:hover {
+      color: $colorGray;
+    }
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    margin-top: 0;
+    line-height: 150%;
+    font-weight: 400px;
+    color: $colorGray;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    &--events {
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+}
+}

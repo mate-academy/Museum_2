@@ -1,0 +1,143 @@
+.header {
+  background-color: $backgroundColor;
+
+  &__wrapper {
+    position: relative;
+    box-sizing: border-box;
+    padding: $headerTopPadding 0 0;
+    height: max-content;
+
+    @include onDesktop {
+      height: 100vh;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 125px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__content {
+    display: block;
+  }
+
+  &__main-part {
+    margin-right: 30px;
+  }
+
+  &__dates {
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 140%;
+    color: $colorWhite;
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    font-size: 48px;
+    line-height: 100%;
+    font-family: 'Playfair Display', serif;
+    color: $colorWhite;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 30px;
+      font-size: 96px;
+    }
+  }
+
+  &__info {
+    margin: 0 0 40px;
+    line-height: 150%;
+    color: $colorWhite;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    margin: 0 0 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__additional-info {
+    position: relative;
+    display: none;
+    opacity: 0.7;
+    margin-bottom: 50px;
+    line-height: 125%;
+    font-family: 'Playfair Display', serif;
+    color: $colorWhite;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 60%;
+      display: inline-block;
+      opacity: 0.3;
+      transform: translateY(-50%);
+      margin-left: 20px;
+      width: 469px;
+      height: 1px;
+      background: $colorWhite;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__image {
+    display: block;
+    min-width: 320px;
+    margin: 0 auto;
+
+    @include onTablet {
+      min-width: 443px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: calc(100vh - 137px);
+      max-width: 625px;
+    }
+  }
+
+  &__addional-options {
+    display: flex;
+  }
+
+  &__select {
+    display: none;
+    margin-left: 42px;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}
