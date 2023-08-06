@@ -1,0 +1,150 @@
+.near-events {
+  margin-top: 120px;
+
+  padding-bottom: 90px;
+
+  @include onTablet {
+    padding-bottom: 100px;
+    margin-top: 164px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+    padding-bottom: 110px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__top {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__button-secondary {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / -1;
+    }
+  }
+
+  &__module {
+    @include onTablet {
+      margin-top: 70px;
+      @include pageGrid;
+    }
+
+    &--1 {
+      @include onDesktop {
+        margin-top: 70px;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  &__img {
+    margin-top: 60px;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+
+    @include onTablet {
+      margin-top: 0;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+
+    @include hover(transform, scale(1.05));
+
+    &:hover {
+      transition: $effectDuration;
+      box-shadow: 5px 5px 10px $gray-color;
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 11;
+      display: grid;
+      column-gap: 30px;
+      grid-template-columns: repeat(6, 1fr);
+      height: 244px;
+    }
+  }
+
+  &__description {
+    @include onDesktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__time {
+    margin-top: 20px;
+    @extend %p;
+    color: $main-color;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 10px;
+    @extend %h4;
+  }
+
+  &__text {
+    margin-top: 20px;
+    @extend %p;
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+  }
+}

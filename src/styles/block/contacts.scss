@@ -1,0 +1,62 @@
+.contacts {
+  &__title {
+    @extend %h6;
+    font-size: 18px;
+    color: $white-color;
+
+    @include onTablet {
+      font-size: 20px;
+    }
+  }
+
+  &__info {
+    margin-top: 10px;
+    @extend %p;
+    color: $white-color;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+
+      transition: $effectDuration;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    @include hover(transform, scale(1.3));
+  }
+}

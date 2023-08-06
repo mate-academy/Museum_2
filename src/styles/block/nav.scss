@@ -1,0 +1,43 @@
+.nav {
+  &__title {
+    @extend %h5;
+    color: $white-color;
+  }
+
+  &__block {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include onTablet {
+      margin-top: 30px;
+      gap: 10px;
+    }
+  }
+
+  &__link {
+    @extend %p;
+    color: $white-color;
+    width: min-content;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+
+      transition: $effectDuration;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

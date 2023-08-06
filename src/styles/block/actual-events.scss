@@ -1,0 +1,160 @@
+.actual-events {
+  margin-top: 90px;
+
+  @include onTablet {
+    margin-top: 105px;
+  }
+
+  @include onDesktop {
+    margin-top: 110px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__box {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__top {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      margin-top: 10px;
+    }
+  }
+
+  &__button-secondary {
+    display: none;
+    @include onTablet {
+      display: flex;
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / -1;
+    }
+  }
+
+  &__button-secondary-mobile {
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__module {
+    @include onDesktop {
+      display: grid;
+      column-gap: 30px;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &--1 {
+      @include onTablet {
+        grid-column: span 3;
+      }
+
+      @include onDesktop {
+        grid-column: span 6;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-column: span 3;
+      }
+
+      @include onDesktop {
+        grid-column: span 6;
+      }
+    }
+  }
+
+  &__title {
+    @extend %h3;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 120%;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__img {
+    margin-top: 60px;
+    width: 100%;
+    transition: $effectDuration;
+    cursor: pointer;
+
+    @include onTablet {
+      margin-top: 75px;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+      grid-column: span 6;
+    }
+
+    @include hover(transform, scale(1.05));
+
+    &:hover {
+      transition: $effectDuration;
+      box-shadow: 5px 5px 10px $gray-color;
+    }
+  }
+
+  &__info {
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__time {
+    @extend %p;
+    color: $main-color;
+    margin-top: 20px;
+  }
+
+  &__subtitle {
+    @extend %h4;
+    margin-top: 10px;
+
+    @media (max-width: 880px) and (min-width: 768px) {
+      height: 60px;
+    }
+
+  }
+
+  &__text {
+    @extend %p;
+    margin-top: 20px;
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+      margin-top: 50px;
+    }
+  }
+}

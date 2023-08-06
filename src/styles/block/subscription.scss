@@ -1,0 +1,107 @@
+.subscription {
+  &__container {
+    @include container;
+  }
+
+  &__grid {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    margin-top: 120px;
+    @extend %h3;
+
+    @include onTablet {
+      margin-top: 160px;
+      grid-column: span 5;
+    }
+
+    @include onDesktop {
+      margin-top: 200px;
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    @extend %p;
+
+    @include onTablet {
+      grid-column: span 5;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      margin-top: 200px;
+    }
+  }
+
+  &__form {
+    @include onTablet {
+      grid-column: span 4;
+      display: grid;
+      column-gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include onDesktop {
+      grid-column: span 5;
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__input {
+    margin-top: 50px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid $black-color;
+    outline: none;
+    transition: $effectDuration;
+
+    @extend %p;
+    color: $black-color;
+    font-weight: 700;
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-color: $main-color;
+    }
+
+    &:hover::placeholder {
+      transition: $effectDuration;
+      color: $main-color;
+    }
+
+    &:focus {
+      border-color: $main-color;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__button {
+    border: none;
+    margin-top: 30px;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+  }
+}
