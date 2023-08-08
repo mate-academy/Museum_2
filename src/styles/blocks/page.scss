@@ -1,0 +1,84 @@
+.page {
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    height: 100vh;
+    background-color: #3f5252;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onTablet {
+      height: 100vh;
+    }
+
+    @include onDesktop {
+      height: 100vh;
+    }
+  }
+
+  &__section {
+
+    @include onTablet {
+      &:nth-child(1) {
+        margin-bottom: 100px;
+      }
+    }
+
+    @include onDesktop {
+      &:nth-child(1) {
+        margin-bottom: 140px;
+      }
+    }
+
+    &--card {
+
+      @include onTablet {
+        margin-bottom: 100px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 110px;
+      }
+    }
+
+    &--title {
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 125%;
+      margin-bottom: 60px;
+
+      @include onTablet {
+        font-size: 40px;
+        line-height: 125%;
+      }
+
+      @include onDesktop {
+        font-size: 48px;
+        line-height: 125%;
+        margin-bottom: 70px;
+      }
+    }
+    
+    &--img-1 {
+      width: 100%;
+    }
+  }
+}

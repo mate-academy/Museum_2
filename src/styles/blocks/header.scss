@@ -1,0 +1,122 @@
+.header {
+  height: 100vh;
+  background-color: #3f5252;
+  position: relative;
+  margin-bottom: 90px;
+
+  @include onTablet {
+    height: 100vh;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &--img {
+      color: white;
+      @include onTablet {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  &__duration {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: #f1f5f4;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  &__image {
+    width: 245px;
+    justify-self: center;
+    position: absolute;
+    bottom: 0;
+
+    @media (min-height: 450px) and (max-height: 685px) {
+      width: 110px;
+    }
+
+    @include onTablet {
+      width: 35%;
+    }
+
+    @include onDesktop {
+      width: 663px;
+      right: 0;
+    }
+  }
+
+  &__languages {
+    display: flex;
+
+    &--lang {
+      color: $color-white;
+      font-size: 16px;
+      line-height: 24px;
+      margin-right: 3px;
+    }
+
+    &--label {
+      display: none;
+      cursor: pointer;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__divider {
+    position: relative;
+    bottom: 0;
+    display: none;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+    color: $color-white;
+    opacity: 0.7;
+    padding-top: 135px;
+    
+    @include onDesktop {
+      display: block;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        width: 470px;
+        display: inline-block;
+        margin-left: 20px;
+        height: 1px;
+        background: $color-white;
+        opacity: 0.7;
+      }
+    }
+  }
+}
