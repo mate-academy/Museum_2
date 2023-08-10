@@ -300,7 +300,13 @@
             <p class="subscribe__main">Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів</p>
           </section>
 
-          <form action="#" class="subscribe__form">
+          <form
+            class="subscribe__form"
+            action="#"
+            method="post"
+            onsubmit="this.reset(); return false"
+          >
+
             <input
               type="email"
               id="email"
@@ -309,19 +315,16 @@
               class="subscribe__input"
               required
             >
+
+            <input
+              type="submit"
+              value="Підписатись"
+              class="button"
+            >
+
           </form>
 
-          <div class="header__main--button">
-            <span id="error-message"></span>
 
-            <button
-              type="button"
-              href="#"
-              class="button"
-              onclick="if (validateEmail()) alert('Email is valid!'); else alert('Please fill in the email field.');"
-            >Підписатись</button>
-
-          </div>
 
         </div>
       </div>
