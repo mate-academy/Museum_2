@@ -4,3 +4,165 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+  @include onTablet() {
+    padding-inline: 39px;
+  }
+
+  @include onDesktop() {
+    padding-inline: 55px;
+  }
+}
+
+.container {
+  @include contentPaddingInline;
+}
+
+@mixin pageGrid {
+  --column: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--column), 1fr);
+
+  @include onTablet() {
+    --column: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop() {
+    --column: 12;
+  }
+}
+
+@mixin hover-zoom {
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+@mixin h1 {
+  color: var( $gray-headings);
+  font-family: "Playfair Display", sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+
+  @include onTablet() {
+    font-size: 72px;
+  }
+
+  @include onDesktop() {
+    font-size: 96px;
+  }
+}
+
+@mixin h2 {
+  color: $gray-headings;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+
+  @include onTablet() {
+    font-size: 62px;
+  }
+
+  @include onDesktop() {
+    font-size: 80px;
+  }
+}
+
+@mixin h3 {
+  color: $gray-headings;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+
+  @include onTablet() {
+    font-size: 40px;
+  }
+
+  @include onDesktop() {
+    font-size: 48px;
+    line-height: 120%;
+  }
+}
+
+@mixin h4 {
+  color: $gray-headings;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+
+  @include onTablet() {
+    font-size: 24px;
+  }
+}
+
+@mixin h5 {
+  color: $gray-headings;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+@mixin h6 {
+  color: $gray-headings;
+  font-family: "Playfair Display", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%;
+}
+
+@mixin button {
+  color: $gray-headings;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+@mixin main {
+  color: $gray-headings;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin additional {
+  color: $gray-headings;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}

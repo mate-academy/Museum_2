@@ -1,0 +1,91 @@
+.footer {
+  background-color: $bg;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+
+  &__content {
+    @include pageGrid;
+    row-gap: 50px;
+    padding: 34px 0 60px;
+  }
+
+  &__context {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    color: $white;
+    margin: 0 0 10px;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__text {
+    position: relative;
+    text-decoration: none;
+    @include main;
+    color: $white;
+
+    &--link {
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $white;
+
+        transition: transform 0.3s;
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0 0;
+    column-gap: 20px;
+  }
+
+  &__bottom {
+    margin: 0 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &--context {
+      display: flex;
+      flex-direction: row;
+      column-gap: 22px;
+    }
+
+    &--text {
+      margin: 0;
+      @include additional;
+      color: $white;
+    }
+  }
+}

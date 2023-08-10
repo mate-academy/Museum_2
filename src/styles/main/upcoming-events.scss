@@ -1,0 +1,73 @@
+.upcoming-events {
+  &__wrapper {
+    @include pageGrid;
+  }
+
+  &__content {
+    display: grid;
+    row-gap: 60px;
+  }
+}
+
+.upcoming-event {
+  @include pageGrid;
+  &__img {
+    display: block;
+    width: 100%;
+    height: 358px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+
+    @include hover(transform, scale(1.1));
+
+    @include onTablet {
+      height: 422px;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      height: 475px;
+      grid-column: span 4;
+    }
+  }
+
+  &__context {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -2;
+    }
+  }
+
+  &__text {
+    @include main;
+
+    color: $main;
+    margin: 0 0 10px;
+  }
+
+  &__title {
+    @include h4;
+    color: $black;
+    margin: 0 0 20px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__main-text {
+    @include main;
+    color: $gray;
+    margin: 0 0 30px;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+  }
+}
