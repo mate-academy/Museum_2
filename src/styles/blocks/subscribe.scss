@@ -1,0 +1,94 @@
+.subscribe {
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 120%;
+    color: $lightBlack;
+    margin: 0 0 20px;
+
+    @include OnLaptop {
+      font-size: 40px;
+    }
+
+    @include AfterLaptop {
+      font-size: 48px;
+      margin: 0 0 50px;
+    }
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $lightBlack;
+    margin: 0 0 50px;
+
+    @include AfterLaptop {
+      margin: 0;
+    }
+  }
+
+  &__form-field {
+    width: 100%;
+    border-color: transparent;
+    border-bottom: 1px solid $lightBlack;
+
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: $lightBlack;
+    margin: 0 0 30px;
+
+    @include AfterLaptop {
+      margin: 0 0 40px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $lightRed;
+
+      &::placeholder {
+        color: $lightRed;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button-container {
+    width: 100%;
+
+    @include AfterPhone {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 30px;
+    }
+    
+    @include AfterLaptop {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+
+    @include OnPhone {
+      width: 100%;
+    }
+
+    @include AfterPhone {
+      grid-column: 1 / 4;
+    }
+  }
+}

@@ -1,0 +1,190 @@
+.menu {
+  width: 100%;
+  height: fit-content;
+  background-color: $darkGrey;
+
+  &__photo-container {
+    @include OnPhone {
+      display: none;
+    }
+
+    @include OnLaptop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__photo {
+    height: 273px;
+    background-image: url(../images/photos/img_menu.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include OnLaptop {
+      height: 494px;
+    }
+
+    @include AfterLaptop {
+      height: 663px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+
+    @include AfterPhone {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__shadule {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $darkWhite;
+    opacity: 0.7;
+  }
+
+  &__adress {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $darkWhite;
+    opacity: 0.7;
+
+    @include AfterPhone {
+      grid-column: 3 / 5;
+      grid-row: 1;
+    }
+  }
+
+  &__time {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $darkWhite;
+
+    @include OnPhone {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__link {
+    grid-column: 1 / 4;
+    grid-row: 4;
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $darkWhite;
+    margin: 0 0 40px;
+    text-decoration-color: transparent;
+
+    transition: text-decoration-color 0.4s;
+
+    @include AfterPhone {
+      grid-column: 3 / 6;
+      grid-row: 2;
+    }
+
+    @include OnLaptop {
+      margin: 0 0 50px;
+    }
+  
+    @include AfterLaptop {
+      margin: 0 0 70px;
+    }
+
+    &:hover {
+      text-decoration-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__links-container {
+    grid-column: 1 / 4;
+    margin: 0 0 20px;
+
+    @include AfterPhone {
+      grid-column: 1 / 7;
+    }
+  
+    @include OnLaptop {
+      margin: 0 0 30px;
+    }
+  
+    @include AfterLaptop {
+      margin: 0 0 60px;
+    }
+
+    &:last-child {
+      margin: 0 0 40px;
+
+      @include OnLaptop {
+        margin: 0 0 50px;
+      }
+    
+      @include AfterLaptop {
+        margin: 0 0 60px;
+      }
+    }
+  }
+
+  &__links {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $darkWhite;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    transition: border-color 0.5s;
+
+    @include AfterPhone {
+      grid-column: 1 / 7;
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__line {
+    grid-column: 1 / 4;
+    height: 2px;
+    background-color: $darkWhite;
+    opacity: 0.3;
+    margin: 0 0 40px;
+
+    @include AfterPhone {
+      grid-column: 1 / 7;
+    }
+
+    @include OnLaptop {
+      margin: 0 0 50px;
+    }
+
+    @include AfterLaptop {
+      margin: 0 0 60px;
+    }
+  }
+}

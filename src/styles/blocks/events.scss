@@ -1,0 +1,128 @@
+.events {
+  &__title {
+    display: flex;
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $lightBlack;
+    margin: 0;
+    width: max-content;
+    
+    @include OnPhone {
+      margin: 0 0 60px;
+    }
+    
+    @include OnLaptop {
+      font-size: 40px;
+      margin: 0 0 75px;
+    }
+    
+    @include AfterLaptop {
+      font-size: 40px;
+      margin: 0 0 71px;
+    }
+  }
+
+  &__painting {
+    width: 100%;
+    height: 365px;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s;
+
+    @include OnLaptop {
+      height: 420px;
+    }
+
+    @include AfterLaptop {
+      height: 484px;
+    }
+
+    &:hover {
+      transform: scale(107%);
+    }
+
+    &--first {
+      margin-bottom: 20px;
+
+      @include OnLaptop {
+        margin-bottom: 70px;
+      }
+
+      @include AfterLaptop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__date {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $lightRed;
+    margin: 0 0 10px;
+  }
+
+  &__subtitle {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    color: $lightBlack;
+    margin: 0 0 20px;
+
+    @include OnPhone {
+      margin: 0 0 20px;
+    }
+
+    @include AfterPhone {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $midGrey;
+    margin: 0 0 30px;
+
+    @include OnLaptop {
+      margin: 0 0 40px;
+    }
+
+    @include AfterLaptop {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__button-container {
+    width: 100%;
+
+    @include AfterLaptop {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    &--first {
+      @include OnPhone {
+        margin-bottom: 60px;
+      }
+    }
+
+    &--second {
+      @include OnPhone {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
