@@ -1,0 +1,134 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $header-bg-color;
+  color: $header-text-color;
+  font-family: "Raleway", sans-serif;
+  overflow: hidden;
+
+  @include onTablet {
+    background-position: center;
+  }
+
+  &__title {
+    margin: 10px 0 30px 0;
+    font-size: 36px;
+    line-height: 100%;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    font-family: "Playfair Display", serif;
+
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      font-size: 64px;
+    }
+
+    @include onDesktop {
+      text-align: left;
+      font-size: 96px;
+      // margin-bottom: 203px;
+    }
+  }
+
+  &__content {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    // overflow: hidden;
+
+    @include onTablet {
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      height: auto;
+
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+    }
+  }
+
+  &__image {
+    width: 50%;
+    height: auto;
+    margin-top: 40px;
+    display: block;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: $header-gray-text;
+    margin-top: 50px;
+
+    &--about {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $header-gray-text;
+      margin-bottom: 40px;
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include onDesktop {
+      display: flex;
+      align-items: left;
+      justify-content: left;
+    }
+  }
+
+  &__only-decktop {
+    display: none;
+
+    margin-top: 125px;
+
+    font-size: 14px;
+    font-weight: 700;
+    font-style: "Playfair Display", serif;
+    color: $header-gray-text;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &__inline-hr {
+      border: none;
+      border-top: 1px solid white;
+      display: inline-block;
+      width: 80%;
+      margin-left: 20px;
+      vertical-align: middle;
+    }
+  }
+}
+

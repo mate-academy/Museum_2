@@ -1,0 +1,47 @@
+.current-events {
+
+  &__events--tablet {
+    display: grid;
+    place-items: center;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 29px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+      line-height: 50px;
+      font-size: 37px;
+    }
+  }
+
+  &--tablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button {
+    @include onDesktop {
+      display: flex;
+      align-items: left;
+      justify-content: left;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .current-events--tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+}

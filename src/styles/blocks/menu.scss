@@ -1,0 +1,115 @@
+.menu {
+  box-sizing: border-box;
+
+  height: 100vh;
+  background-color: $header-bg-color;
+  color: $header-text-color;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  overflow: hidden;
+  z-index: 1;
+
+  &__top {
+    position: relative;
+    padding-top: 26px;
+    z-index: 1;
+    background-color: $header-bg-color;
+
+    @include onDesktop {
+      margin-top: 26px;
+    }
+  }
+
+  &__schedule {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    &--span {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include onDesktop {
+      display: flex;
+      column-gap: 83px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__lang {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+
+    @include onTablet {
+      justify-content: flex-end;
+    }
+
+    &--text {
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    width: 50%;
+    margin-left: auto;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      width: 100%;
+
+      position: absolute;
+      bottom: 0;
+      left: 38%;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    display: block;
+  }
+
+  &__bottom {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.subscribe {
+  color: $main-text-color;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: 0.7fr;
+
+    font-family: "Raleway", sans-serif;
+  }
+
+  @include onDesktop {
+    grid-template-columns: 1fr;
+  }
+
+  &__email {
+    border: none;
+    border-bottom: 1px #000 solid;
+    background-color: $c-gray;
+    outline: none;
+    color: $main-text-color;
+
+    &:hover::placeholder {
+      color: #CD4D31;
+    }
+
+    &::placeholder {
+      color: $main-text-color;
+    }
+
+    &:hover {
+      color: #CD4D31;
+      border-color: #CD4D31;
+    }
+
+    &:focus {
+      color: #CD4D31;
+      border-color: #CD4D31;
+    }
+
+    &:valid {
+      color: #1C1B29;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+
+    &--desktop {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+
+    display: block;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 58px;
+
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 58px;
+
+      margin-top: 0;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__container {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 30px;
+    }
+  }
+}
