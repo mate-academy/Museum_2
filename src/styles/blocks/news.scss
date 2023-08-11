@@ -1,0 +1,118 @@
+.news {
+  padding: 90px 0 60px;
+
+  @include onTablet {
+    padding: 75px 0 80px;
+  }
+
+  @include onDesktop {
+    padding: 90px 0 100px;
+  }
+
+  &__titles {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0 0 50px;
+
+    @include onTablet {
+
+      margin: 0 0 70px;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+  }
+
+  &__button {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    margin: 0 0 30px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 30px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__card {
+
+    &--1-6 {
+      grid-column: 1 / 7;
+    }
+
+    &--7-12 {
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+
+    margin: 0 0 20px;
+
+    &--mobile {
+      display: block;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      height: 330px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+    }
+  }
+
+  &__date {
+    @extend %ralewayAdditional;
+  }
+
+  &__name {
+    @extend %h5;
+
+    margin: 0 0 20px;
+  }
+
+  &__text {
+    @extend %ralewayMain;
+  }
+
+  &__button-mobile {
+    margin: auto;
+    @include onTablet {
+      display: none;
+    }
+  }
+}

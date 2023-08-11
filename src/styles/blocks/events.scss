@@ -1,0 +1,121 @@
+.events {
+  padding: 60px 0 90px;
+
+  &__titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 0 0 60px;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+  }
+
+  &__button {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      padding: 22px 32px;
+    }
+
+    @include onDesktop {
+      padding: 22px 62px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+
+    margin: 0 0 30px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include onTablet {
+      max-height: 422px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include onDesktop {
+      max-height: 475px;
+    }
+  }
+
+  &__image-wrapper {
+    
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 475px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__text-wrapper {
+    max-width: 570px;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+    }
+  }
+
+  &__date {
+    text-decoration: none;
+    @extend %ralewayMain;
+    color: $orange;
+    transition: 0.3s;
+
+    margin: 0 0 10px;
+
+    &:hover {
+      transform: translateY(-10%);
+    }
+    
+  }
+
+  &__name {
+    @extend %h4;
+
+    margin: 0 0 20px;
+  }
+
+  &__text {
+    @extend %ralewayMain;
+
+    margin: 0 0 30px;
+  }
+
+  &__card-button {
+    max-width: 280px;
+  }
+
+  &__button-mobile {
+    margin: auto;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

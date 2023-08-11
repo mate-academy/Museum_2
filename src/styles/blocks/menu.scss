@@ -1,0 +1,130 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: $green;
+  overflow-x: scroll;
+  z-index: 1;
+
+  @include onDesktop {
+    height: max-content;
+  }
+
+  &__lang {
+    display: flex;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-gap: 30px;
+    }
+  }
+
+  &__content {
+    padding: 30px 0;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__schedules-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 123px;
+    }
+  }
+
+  &__schedules {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__schedule {
+    @extend %ralewayAdditional;
+    color: $white;
+  }
+
+  &__schedule-link {
+    @extend %ralewayButton;
+    line-height: 150%;
+    color: $white;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      color: $orange
+    }
+  }
+
+  &__link-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0 40px;
+    border-bottom: 1px solid $white;
+    margin: 0 0 40px;
+
+    @include onDesktop {
+      padding: 70px 0 60px;
+      gap: 60px;
+      margin: 0 0 60px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    width: max-content;
+    @extend %h5;
+    color: $white;
+    transition: 0.3s;
+
+    &:hover {
+      color: $orange
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__button {
+    max-width: 280px;
+    display: block;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+  }
+
+  &__image {
+    display: none;
+    width: 422px;
+    margin: 0 auto;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      width: 100%;
+    }
+  }
+}

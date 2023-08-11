@@ -1,0 +1,125 @@
+.exhibitions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 90px 0 60px;
+
+  &__titles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    margin: 0 0 60px;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+  }
+
+  &__button {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      padding: 22px 32px;
+    }
+
+    @include onDesktop {
+      padding: 22px 62px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    margin: 0 0 30px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 50px;
+      margin: 0;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    &--1-3 {
+      grid-column: 1 / 4;
+    }
+
+    &--4-6 {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__image {
+    height: 356px;
+    object-fit: cover;
+    object-position: 10%;
+
+    margin: 0 0 20px;
+
+    &--center {
+      object-position: center;
+    }
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+  }
+
+  &__date {
+    text-decoration: none;
+    @extend %ralewayMain;
+    color: $orange;
+    transition: 0.3s;
+
+    margin: 0 0 10px;
+
+    &:hover {
+      transform: translateY(-10%);
+    }
+  }
+
+  &__name {
+    @extend %h4;
+
+    margin: 0 0 20px;
+  }
+
+  &__text {
+    @extend %ralewayMain;
+
+    margin: 0 0 30px;
+  }
+
+  &__card-button {
+    max-width: 280px;
+
+    @include onTablet {
+      max-width: 113px;
+    }
+  }
+
+  &__button-mobile {
+    max-width: 280px;
+    margin: auto;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}
