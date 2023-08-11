@@ -1,0 +1,98 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+
+  &__logo {
+    height: 40px;
+    width: 123px;
+
+    background-image: url(../images/logo/NAMU.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-image: url(../images/logo/logo-red.svg);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 42px;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__action {
+    width: 30px;
+    height: 30px;
+
+    &--menu {
+      background-image: url(../images/icons/menu.svg);
+
+      transition: transform 0.2s, background-image 0.2s;
+
+      &:hover {
+        background-image: url(../images/icons/menu-red.svg);
+        transform: scale(1.1);
+      }
+    }
+
+    &--cross {
+      background-image: url(../images/icons/cross.svg);
+
+      transition: transform 0.2s, background-image 0.2s;
+
+      &:hover {
+        background-image: url(../images/icons/cross-red.svg);
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__languages {
+    visibility: hidden;
+    font-style: "Raleway", sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 24px;
+    border: 0;
+    outline: none;
+    color: $c-white;
+    background-color: $c-bg;
+
+    transition: color 0.2s;
+
+    &:hover {
+      color: $c-main;
+    }
+
+    @include onTablet {
+      visibility: visible;
+    }
+
+    &--menu {
+      display: block;
+      font-style: "Raleway", sans-serif;
+      font-weight: 100;
+      font-size: 16px;
+      line-height: 24px;
+      border: 0;
+      outline: none;
+      color: $c-white;
+      background-color: $c-bg;
+
+      transition: color 0.2s;
+
+      &:hover {
+        color: $c-main;
+      }
+    }
+  }
+}
