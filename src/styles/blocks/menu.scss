@@ -1,12 +1,22 @@
 .menu {
   background-color: $c-background;
+  box-sizing: border-box;
   height: 100%;
+
+  overflow-x: hidden;
   overflow-y: auto;
 
+  opacity: 0;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
   &__icon {
-    width: max-content;
     display: flex;
-    justify-content: space-between;
+    width: max-content;
+    z-index: 1; //буде розміщено вище від image і не буде закриватися
   }
 
   &__content {
@@ -15,12 +25,6 @@
     justify-content: space-between;
     box-sizing: border-box;
     margin: 0;
-    position: relative;
-
-    @include onDesktop {
-      min-height: 100vh;
-      display: block;
-    }
   }
 
   &__top {
@@ -33,12 +37,38 @@
     }
   }
 
+  &_container {
+    padding-top: 100px;
+  }
+
   &__image {
+    box-sizing: border-box;
     display: none;
-    @include top-image;
 
     @include onTablet {
       display: block;
+      position: absolute;
+
+      z-index: -1;
+
+      width: 422px;
+      height: 466px;
+
+      bottom: 0;
+      left: 15%;
+    }
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+
+      z-index: -1;
+
+      width: 624px;
+      height: 697px;
+
+      left: 50%;
+      bottom: 0;
     }
   }
 
@@ -135,14 +165,14 @@
 
     border-bottom: 1px solid transparent;
 
-    font-family: "Playfair Display", sans-serif;
+    font-family: "Playfair Display", "Times New Roman", Times, serif;
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
 
     color: $c-white;
-    transition: border-color 0.3s;
+    transition: border-color $duration;
 
     @include onTablet {
       font-size: 48px;
@@ -155,10 +185,17 @@
   }
 
   &__button {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 238px;
+
+    z-index: 1; //буде розміщено вище від image і не буде закриватися
+
+    overflow: hidden;
 
     @include onTablet {
       margin-bottom: 30px;
-      overflow-y: auto;
     }
 
     @include onDesktop {

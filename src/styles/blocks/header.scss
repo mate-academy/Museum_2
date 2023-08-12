@@ -1,6 +1,5 @@
 .header {
   background-color: $c-background;
-  height: 100%;
 
   &__content {
     display: flex;
@@ -48,6 +47,7 @@
     }
 
     &-text {
+      font-family: "Playfair Display", "Times New Roman", Times, serif;
       font-weight: 700;
       font-size: 48px;
       line-height: 100%;
@@ -59,8 +59,12 @@
       }
 
       @include onDesktop {
+
         font-size: 96px;
         margin-bottom: 20px;
+
+        // width: 569px;
+        // height: 192px;
       }
     }
 
@@ -117,6 +121,23 @@
 
 .logo {
   &__image {
-    height: 30px;
+    width: 123px;
+    height: 40px;
+
+    @include onTablet {
+      width: 124px;
+      height: 37px;
+    }
+
+    @include onDesktop {
+      width: 124px;
+      height: 37px;
+    }
+    transition: transform $duration;
+
+    &:hover {
+      transform: scale(1.1);
+      transition-delay: $duration;
+    }
   }
 }

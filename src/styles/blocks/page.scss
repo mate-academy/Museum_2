@@ -7,26 +7,33 @@
   scroll-behavior: smooth;
   margin: 0;
 
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
   &__body {
     margin: 0;
     background-color: $c-white;
+
+    height: 100%;
+    overflow-y: scroll;
   }
 
   &__menu {
+    width: 100vw;
+    height: 100%;
+
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
 
     transform: translateX(-100%);
-    transition: transform 0.3s;
+    transition: transform $duration;
 
     &:target {
       transform: translateX(0);
     }
   }
-}
-
-.page__body--with-menu {
-  overflow: hidden;
 }

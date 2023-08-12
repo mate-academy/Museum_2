@@ -2,6 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  box-sizing: border-box;
+
   background-color: $c-main;
   border: none;
   height: 60px;
@@ -11,7 +14,8 @@
   font-size: 16px;
   line-height: 100%;
   color: $c-white;
-  transition: all 0.3s;
+
+  cursor: pointer;
 
   &--last {
     margin-bottom: 30px;
@@ -22,12 +26,14 @@
   }
 
   @include onTablet {
-    width: 100%;
+    width: 330px;
   }
 
   @include onDesktop {
     width: 270px;
   }
+
+  transition: all $duration;
 
   &:hover {
     background-color: $c-hover;
@@ -36,8 +42,10 @@
   &:active {
     background-color: $c-active;
   }
+
   &:disabled {
     background-color: $c-disabled;
+    transition-delay: $duration;
   }
 
   &__alternate {
