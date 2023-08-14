@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-sizing: border-box;
+
     margin: 0;
     position: relative;
     min-height: 100vh;
@@ -59,12 +59,8 @@
       }
 
       @include onDesktop {
-
         font-size: 96px;
         margin-bottom: 20px;
-
-        // width: 569px;
-        // height: 192px;
       }
     }
 
@@ -115,7 +111,18 @@
   }
 
   &__image {
-    @include top-image;
+    height: 273px;
+
+    @include onTablet {
+      height: 494px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 663px;
+    }
   }
 }
 
