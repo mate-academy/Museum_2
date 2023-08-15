@@ -1,0 +1,46 @@
+.form {
+  margin: 50px 0 30px;
+
+  @include onDesktop {
+    margin-bottom: 40px;
+  }
+
+  &__field {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $c-black;
+    background-color: $c-white;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-black;
+    caret-color: $c-main;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $c-main;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      color: $c-black;
+    }
+
+    &:hover::placeholder {
+      color: $c-main;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+  }
+
+  &__email:-webkit-autofill {
+    -webkit-text-fill-color: $c-black;
+    -webkit-background-clip: text;
+    box-shadow: inset $c-white; //забирає фон
+  }
+}

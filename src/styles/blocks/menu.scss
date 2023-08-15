@@ -1,0 +1,200 @@
+.menu {
+  background-color: $c-background;
+  height: 100vh;
+
+  overflow: hidden;
+  opacity: 0;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__icon {
+    display: flex;
+    width: max-content;
+    z-index: 1; //буде розміщено вище від image і не буде закриватися
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  &__top {
+    @include top-actions;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      padding-bottom: 0;
+      margin-bottom: 45px;
+    }
+  }
+
+  &_container {
+    padding-top: 100px;
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+
+      z-index: -1;
+
+      width: 422px;
+      height: 466px;
+
+      bottom: 0;
+      left: 15%;
+    }
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+
+      z-index: -1;
+
+      width: 624px;
+      height: 697px;
+
+      left: 50%;
+      bottom: 0;
+    }
+  }
+
+  &__contact {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-white;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: flex;
+      gap: 124px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      gap: 83px;
+      margin-bottom: 70px;
+    }
+
+    &-title {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &-time {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__decoration {
+    display: flex;
+    margin-bottom: 40px;
+
+    &-data {
+      display: none;
+      margin-right: 20px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      color: $c-white;
+      white-space: nowrap;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      opacity: 0.3;
+      margin-bottom: 60px;
+      align-items: center;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    border-bottom: 1px solid transparent;
+
+    font-family: "Playfair Display", "Times New Roman", Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: $c-white;
+    transition: border-color $duration;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      border-color: $c-white;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 238px;
+
+    z-index: 1; //буде розміщено вище від image і не буде закриватися
+
+    overflow: hidden;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 0;
+    }
+  }
+}

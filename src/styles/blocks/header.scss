@@ -1,0 +1,150 @@
+.header {
+  background-color: $c-background;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      padding: 32px 0;
+      margin-bottom: 90px;
+    }
+  }
+
+  &__icon {
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: $c-white;
+    margin-bottom: 40px;
+
+    &-data {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      font-family: "Playfair Display", "Times New Roman", Times, serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        font-size: 72px;
+        margin-bottom: 70px;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &-description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__decoration {
+    display: none;
+    opacity: 0.3;
+
+    &-data {
+      display: block;
+      margin-right: 20px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      color: $c-white;
+      white-space: nowrap;
+    }
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+
+    &-line {
+      display: flex;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    height: 273px;
+
+    @include onTablet {
+      height: 494px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 663px;
+    }
+  }
+}
+
+.logo {
+  &__image {
+    width: 123px;
+    height: 40px;
+
+    @include onTablet {
+      width: 124px;
+      height: 37px;
+    }
+
+    @include onDesktop {
+      width: 124px;
+      height: 37px;
+    }
+    transition: transform $duration;
+
+    &:hover {
+      transform: scale(1.1);
+      transition-delay: $duration;
+    }
+  }
+}
