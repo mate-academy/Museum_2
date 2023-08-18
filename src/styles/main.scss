@@ -2,3 +2,138 @@
 @import "./utils/variables";
 
 @import "./reset";
+@import "./blocks/fonts_settings.scss";
+
+.container {
+  padding: 0 20px;
+}
+
+.header {
+  padding-top: 20px;
+  height: 100vh;
+  background-color: $background;
+
+  &__top-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+  }
+
+  &__logo {
+    width: 123px;
+    height: 40px;
+    background-image: url("../images/icons/NAMU_main-logo--white.svg");
+  }
+
+  &__event {
+
+    &-title {
+      margin-bottom: 30px;
+      color: $white;
+    }
+
+    &-schedule {
+      margin-bottom: 10px;
+      color: $white;
+    }
+
+    &-topic {
+      margin-bottom: 40px;
+      width: 267px;
+      color: $white;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+  }
+
+  &__poster {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.menu {
+  &__page {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    padding-top: 20px;
+    background-color: $background;
+
+    transform: translateX(100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+      z-index: 1;
+    }
+  }
+
+  &__open-button {
+    width: 25px;
+    height: 20px;
+    background-image: url("../images/icons/menu_open--white.svg");
+  }
+
+  &__close-button {
+    width: 22px;
+    height: 22px;
+    background-image: url("../images/icons/menu_close--white.svg");
+  }
+
+  &__top-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    color: $white;
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+  }
+
+  &__address {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid $white;
+  }
+
+  &__link {
+    color: $white;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 150%;
+  }
+}
+
+.icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.button {
+  width: 279px;
+  height: 60px;
+  color: $white;
+  background-color: $main;
+}
