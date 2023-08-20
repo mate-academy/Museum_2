@@ -30,6 +30,10 @@
     width: 123px;
     height: 40px;
     background-image: url("../images/icons/NAMU_main-logo--white.svg");
+
+    &:hover {
+      background-image: url("../images/icons/NAMU_main-logo--red.svg");
+    }
   }
 
   &__event {
@@ -87,12 +91,16 @@
     width: 25px;
     height: 20px;
     background-image: url("../images/icons/menu_open--white.svg");
+
+    @include hover (transform, rotate(90deg));
   }
 
   &__close-button {
     width: 22px;
     height: 22px;
     background-image: url("../images/icons/menu_close--white.svg");
+
+    @include hover (transform, rotate(90deg));
   }
 
   &__top-action {
@@ -128,6 +136,10 @@
     font-family: "Playfair Display", serif;
     font-size: 20px;
     line-height: 150%;
+
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
   }
 }
 
@@ -155,6 +167,14 @@
   font-weight: 600;
   color: $white;
   background-color: $main;
+
+  &:hover {
+    background-color: $main_hover;
+  }
+
+  &:active {
+    background-color: $main_pressed;
+  }
 }
 
 .button-secondary {
@@ -165,16 +185,36 @@
   font-weight: 600;
   color: $main;
   border: 1px solid $main;
+
+  &:hover {
+    border-color: $main_hover;
+  }
+
+  &:active {
+    border-color: $main_pressed;
+  }
 }
 
 .button__link {
   padding: 20px 63px;
   color: $main;
+
+  &:hover {
+    color: $main_hover;
+  }
+
+  &:active {
+    color: $main_pressed;
+  }
 }
 
 .button__link--white {
   padding: 20px 63px;
   color: $white;
+}
+
+.image-hover {
+  @include hover(transform, scale(110%));
 }
 
 .actual-events {
@@ -281,9 +321,18 @@
   margin-bottom: 30px;
   padding-bottom: 3px;
   border-bottom: 1px solid $black;
+
+  &:hover {
+    color: $main;
+    border-color: $main;
+    &::placeholder {
+      color: $main;
+    }
+  }
 }
 
 .footer {
+  height: 100vh;
   background-color: $background;
   color: $white;
 
@@ -336,6 +385,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
   }
 
   &__bottom-actions {
@@ -368,4 +421,53 @@
   width: 30px;
   height: 30px;
   background-image: url(../images/icons/scroll_up.svg);
+  transition: all 0.3s;
+
+  &:hover {
+    border: 1px solid $white;
+    border-radius: 100%;
+    transform: scale(130%);
+  }
+}
+
+.social-link {
+  display: block;
+  height: 20px;
+  width: 20px;
+
+  &__facebook {
+    background-image: url("../images/socials/facebook_white.svg");
+
+    &:hover {
+      background-image: url("../images/socials/facebook_red.svg");
+      transform: scale(130%);
+    }
+  }
+
+  &__twitter {
+    background-image: url("../images/socials/twitter_white.svg");
+
+    &:hover {
+      background-image: url("../images/socials/twitter_red.svg");
+      transform: scale(130%);
+    }
+  }
+
+  &__telegram {
+    background-image: url("../images/socials/telegram_white.svg");
+
+    &:hover {
+      background-image: url("../images/socials/telegram_red.svg");
+      transform: scale(130%);
+    }
+  }
+
+  &__instagram {
+    background-image: url("../images/socials/instagram_white.svg");
+
+    &:hover {
+      background-image: url("../images/socials/instagram_red.svg");
+      transform: scale(130%);
+    }
+  }
 }
