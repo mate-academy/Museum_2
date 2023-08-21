@@ -1,0 +1,134 @@
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding-top: 20px;
+  background-color: $c-background;
+  color: $c-white;
+  @include paddingInline;
+  @include pageGrid;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  pointer-events: none;
+  margin: 0;
+  @include onTablet {
+    background-image: url(../images/img_menu.png);
+    background-size: 466px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+  @include onDesktop {
+    background-size: 45%;
+    background-position-x: right;
+    background-position-y: bottom;
+  }
+
+  &:target {
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  &__content {
+    height: 50vh;
+    grid-column: span 2;
+    @include onTablet {
+      grid-column: span 6;
+    }
+    @include onDesktop {
+      grid-column: span 12;
+    }
+  }
+
+  &__shedule {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include onTablet {
+      flex-direction: row;
+      margin-top: 50px;
+    }
+
+    &-row {
+      width: 100%;
+      @include onTablet {
+        width: 35%;
+      }
+      @include onDesktop {
+        width: 20%;
+      }
+    }
+
+    &-text {
+      @extend %additional-text;
+    }
+
+    &-bold {
+      @extend %additional-text;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 150%;
+      text-decoration: none;
+      color: $c-white;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-block: 40px;
+    @include onTablet {
+      margin-block: 50px;
+    }
+  }
+
+  &__link {
+    width: fit-content;
+    @extend %h3;
+    text-decoration: none;
+    color: $c-white;
+    @include onDesktop {
+      transition: all 0.3s;
+
+      &:hover {
+        cursor: url(../images/icons/Cursor-Mouse-Mice.svg), auto;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $c-white;
+        transform: scale(0);
+        transform-origin: left;
+        transition: all 0.3s;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $c-white;
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  & .button {
+    grid-column: span 2;
+    margin-top: 40px;
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: 50px;
+    }
+  }
+}
