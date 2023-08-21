@@ -1,0 +1,65 @@
+.top-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__menu-icon {
+    transition-duration: 300ms;
+
+    &:hover {
+      transform: scale(1.04);
+    }
+
+    &--opener {
+      width: 25px;
+      background-image: url("../images/icon/menu-opener.svg");
+
+      @include onTablet {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &--closer {
+      width: 25px;
+      background-image: url("../images/icon/menu-closer.svg");
+
+      @include onTablet {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  &__languages {
+    display: none;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__check-options {
+    background-color: $background;
+    border: none;
+    color: $white;
+    font-family: "Raleway";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__option {}
+}

@@ -1,0 +1,150 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $background;
+  height: 100vh;
+  width: 100%;
+  padding: 20px 0;
+  color: $white;
+
+  transform: translate(0, -100%);
+  transition-duration: 300ms;
+  z-index: 2;
+
+  &._open {
+    transform: translate(0, 0);
+  }
+
+  &__top-action {
+    position: relative;
+    margin-bottom: 30px;
+    z-index: 3;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__top-block {
+    &:last-child {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 30px;
+
+      @include onTablet {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+  }
+
+  .top-action__languages {
+    display: block;
+  }
+
+  &__info-block {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      display: flex;
+      gap: 120px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__info-item {
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__info-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  &__info-text {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+
+    transition-duration: 300ms;
+
+    &:hover {
+      color: $main-hover;
+      cursor: pointer;
+    }
+  }
+
+  &__menu-list {
+
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+
+    border-bottom: 1px solid $white;
+
+    @include onDesktop {
+      width: fit-content;
+    }
+  }
+
+  &__menu-item {
+    width: fit-content;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__menu-link {
+    font-family: "Playfair Display";
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+
+    transition-duration: 300ms;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      color: $main-hover;
+    }
+  }
+
+  &__background-image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      height: 100vh;
+      left: auto;
+      right: 0;
+      transform: translate(0, 0);
+    }
+
+    z-index: 1;
+  }
+}

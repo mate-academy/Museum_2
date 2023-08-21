@@ -1,0 +1,83 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  color: $white;
+  background-color: $main;
+  width: 100%;
+  max-width: 330px;
+  height: 60px;
+
+  transition-duration: 300ms;
+
+  &:hover {
+    background-color: $main-hover;
+    cursor: pointer;
+  }
+
+  @include onDesktop {
+    max-width: 270px;
+  }
+
+  &:visited {
+    color: $white;
+  }
+
+  &:active {
+    background-color: $main-active;
+  }
+
+  &:disabled {
+    background-color: $main-disabled;
+  }
+
+  &--transparent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background-color: transparent;
+    border: 1px solid $main;
+    color: $main;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url("../images/icon/btn/arrow.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      transition-duration: 300ms;
+    }
+
+    &:visited {
+      color: $main;
+    }
+
+    &:hover {
+      border: 1px solid $main-hover;
+      color: $main-hover;
+      background-color: transparent;
+
+      &::after {
+        background-image: url("../images/icon/btn/arrow-hover.svg");
+      }
+    }
+
+    &:active {
+      border: 1px solid $main-active;
+      color: $main-active;
+      background-color: transparent;
+
+      &::after {
+        background-image: url("../images/icon/btn/arrow-active.svg");
+      }
+    }
+  }
+}
