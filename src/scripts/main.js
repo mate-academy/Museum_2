@@ -46,6 +46,7 @@ const mainMenu = document.querySelector('.top-navigation');
 const menuOpener = document.querySelector('.top-action__menu-icon--opener');
 const menuCloser = document.querySelector('.top-action__menu-icon--closer');
 const headerLinks = document.querySelectorAll('.navigation__menu-link');
+const headerButton = document.querySelectorAll('.navigation__button');
 const body = document.querySelector('.page__body');
 const scrolWidth = window.innerWidth - document.body.clientWidth;
 const mediaQueryOnDesktop = window.matchMedia('(min-width: 1280px)');
@@ -102,6 +103,27 @@ if (menuCloser) {
 if (menuCloser) {
   for (let i = 0; i < headerLinks.length; i++) {
     headerLinks[i].addEventListener('click', (e) => {
+      body.classList.toggle('_lock');
+      mainMenu.classList.toggle('_open');
+
+      if (!isMobile.any()) {
+        if (body.classList.contains('_lock')) {
+          setTimeout(() => {
+            body.style.paddingRight = scrolWidth + 'px';
+          }, 300);
+        } else {
+          setTimeout(() => {
+            body.style.paddingRight = 0;
+          }, 300);
+        }
+      }
+    });
+  }
+}
+
+if (menuCloser) {
+  for (let i = 0; i < headerButton.length; i++) {
+    headerButton[i].addEventListener('click', (e) => {
       body.classList.toggle('_lock');
       mainMenu.classList.toggle('_open');
 
