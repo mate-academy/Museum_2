@@ -14,6 +14,11 @@
       rel="stylesheet"
       href="./styles/main.scss"
     >
+    <link
+      rel="shortcut icon"
+      href="favicon.ico"
+      type="image/x-icon"
+    >
   </head>
   <body class="page__body">
     <header class="header header--margin-bottom">
@@ -601,5 +606,16 @@
       type="text/javascript"
       src="scripts/main.js"
     ></script>
+    <script>
+      let resizeTimeout;
+
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+
+        resizeTimeout = setTimeout(() => {
+          location.reload();
+        }, 500); // Ждем 500 миллисекунд после завершения изменения ширины
+      });
+    </script>
   </body>
 </html>

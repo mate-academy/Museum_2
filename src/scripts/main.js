@@ -27,6 +27,16 @@ const isMobile = {
   },
 };
 
+// let resizeTimeout;
+
+// window.addEventListener('resize', () => {
+//   clearTimeout(resizeTimeout);
+
+//   resizeTimeout = setTimeout(() => {
+//     location.reload();
+//   }, 500); // Ждем 500 миллисекунд после завершения изменения ширины
+// });
+
 const headerContent = document.querySelector('.header__content');
 const headerImage = document.querySelector('.header__main-image');
 const navigationContent = document.querySelector('.navigation__container');
