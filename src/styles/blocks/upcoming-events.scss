@@ -1,0 +1,111 @@
+.upcoming-events {
+
+  &--margin-bottom-120 {
+    margin-bottom: 120px;
+  }
+
+  &__button {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__title-row {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .upcoming-events__button {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        max-width: 210px;
+      }
+
+      @include onDesktop {
+        max-width: 270px;
+      }
+    }
+  }
+
+  &__row {
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__image-box {
+    height: 360px;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    @include onTablet {
+      flex: 0 1 330px;
+      max-width: 330px;
+      height: 420px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition-duration: 300ms;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__info-block {
+    flex: 0 1 330px;
+
+    @include onDesktop {
+      flex: 0 1 570px;
+    }
+  }
+
+  &__period {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: $main;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    color: $black;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    color: $gray;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+}
