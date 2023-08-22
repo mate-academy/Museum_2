@@ -1,0 +1,84 @@
+.upcoming-events {
+  &__wrapper {
+    @include contentPaddingInline;
+    padding-bottom: 90px;
+  }
+
+  &__top {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    row-gap: 60px;
+  }
+}
+
+.item-upcoming {
+  display: flex;
+  flex-direction: column;
+
+  @include onTablet {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  &__image {
+    position: relative;
+    height: 100%;
+    padding-bottom: 127%;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      flex: 1 0 50%;
+      height: 422px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      flex: 0 0 31%;
+      height: 475px;
+      width: 370px;
+    }
+  }
+
+  &__image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__label {
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      max-width: 570px;
+    }
+  }
+
+  &__text p {
+    margin: 0;
+  }
+}
