@@ -1,0 +1,112 @@
+.subscribe {
+  @include pageGrid;
+  @include paddingInline;
+  margin-block: 120px;
+
+  @include onTablet {
+    margin-block: 160px;
+  }
+
+  @include onTablet {
+    margin-block: 200px;
+  }
+
+  &__title {
+    @extend %h3;
+    grid-column: span 2;
+    margin-bottom: 20px;
+    @include onTablet {
+      grid-column: 1 / 5;
+      grid-row: 1;
+    }
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  & .main-text {
+    grid-column: span 2;
+    margin-bottom: 50px;
+    @include onTablet {
+      grid-column: span 5;
+    }
+    @include onDesktop {
+      grid-column: 7 / -1;
+      grid-row: 1;
+    }
+  }
+
+  &__form {
+    grid-column: span 2;
+    @include onTablet {
+      grid-column: span 4;
+    }
+    @include onDesktop {
+      grid-column: span 5;
+      margin-top: 50px;
+    }
+  }
+
+  &__input {
+    @extend %main-text;
+    font-weight: 700;
+    grid-column: span 2;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $c-black;
+
+    &::placeholder {
+      @extend %main-text;
+    }
+
+    &:hover {
+      color: $c-main;
+      border-bottom: 1px solid $c-main;
+    }
+
+    &:hover::placeholder {
+      color: $c-main;
+    }
+
+    &:focus::placeholder {
+      @extend %main-text;
+      font-weight: 600;
+    }
+
+    &:-webkit-autofill {
+      font-weight: 700;
+      -webkit-text-fill-color: $c-black;
+      -webkit-box-shadow: 0 0 0 1000px #fff inset;
+      border: none;
+      background: $c-white;
+
+      &:focus {
+        border: none;
+        font-weight: 700;
+        background: $c-white;
+      }
+    }
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+    @include onDesktop {
+      grid-column: span 3;
+    }
+  }
+
+  & .button {
+    margin-top: 30px;
+    grid-column: span 2;
+    border: none;
+    cursor: pointer;
+    @include onTablet {
+      grid-column: span 6;
+    }
+    @include onDesktop {
+      grid-column: span 12;
+      margin-top: 40px;
+    }
+  }
+}

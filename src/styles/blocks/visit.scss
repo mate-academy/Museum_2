@@ -1,0 +1,58 @@
+.visit {
+  @include pageGrid;
+  @include paddingInline;
+  padding-block: 50px;
+  background-color: $c-background;
+  margin-top: 90px;
+  color: $c-white;
+  @include onTablet {
+    padding-block: 80px;
+  }
+  @include onDesktop {
+    padding-block: 205px;
+    height: 100vh;
+    background-image: url(../images/visit.png);
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+    background-size: 500px;
+  }
+
+  &-title {
+    grid-column: span 2;
+    margin: 0;
+    margin-bottom: 20px;
+    @include onTablet {
+      grid-column: span 4;
+      font-size: 62px;
+      margin-bottom: 20px;
+    }
+    @include onDesktop {
+      grid-column: 6 / -1;
+      margin-bottom: 10px;
+    }
+  }
+
+  & .main-text {
+    grid-column: span 2;
+    @include onTablet {
+      grid-column: span 4;
+    }
+    @include onDesktop {
+      grid-column: 6 / 11;
+    }
+  }
+
+  & .button {
+    grid-column: span 2;
+    margin-top: 40px;
+    @include onTablet {
+      margin-top: 60px;
+      grid-column: span 3;
+    }
+    @include onDesktop {
+      margin-top: 50px;
+      grid-column: 6 / 9;
+    }
+  }
+}

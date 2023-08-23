@@ -1,3 +1,85 @@
-h1 {
+.main-title {
   @extend %h1;
+  color: $c-white;
+  margin: 0;
+}
+
+.visit-title {
+  @extend %h2;
+}
+
+.main-text {
+  @extend %main-text;
+  margin: 0;
+
+  &--red {
+    color: $c-main;
+  }
+
+  &--tel {
+    display: inline;
+    text-decoration: none;
+    color: $c-white;
+  }
+}
+
+.additional-text {
+  @extend %additional-text;
+  margin: 0;
+}
+
+.button {
+  display: block;
+  @extend %button;
+  width: 100%;
+  height: fit-content;
+  background-color: $c-main;
+  padding-block: 22px;
+  text-align: center;
+  text-decoration: none;
+  color: $c-white;
+  margin: 0;
+  @include onTablet {
+    width: 330px;
+  }
+  @include onDesktop {
+    width: 270px;
+  }
+  @include hover (background-color, #af3419);
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  &--white {
+    background-color: #fff;
+    border: 1px solid $c-main;
+    display: block;
+    @extend %button;
+    color: $c-main;
+    width: 100%;
+    height: fit-content;
+    padding-block: 22px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    @include hover (color, #af3419);
+    @include hover (border-color, #af3419);
+
+    &:active {
+      color: #ea340d;
+    }
+
+    &:disabled {
+      color: #dd836f;
+    }
+  }
+}
+
+.logo {
+  @include hover (transform, scale(1.1));
 }
