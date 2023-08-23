@@ -1,0 +1,246 @@
+.menu {
+  background-color: $background;
+  margin: 0 auto;
+  box-sizing: border-box;
+  z-index: 50;
+
+  height: 100vh;
+  overflow: auto;
+
+  &__container {
+    @include contentPaddingInline;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__opened {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 40px;
+  }
+
+  &__lang {
+    background-image: url(../images/icons/ua.svg);
+    position: relative;
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 28px;
+    height: 30px;
+
+    order: -1;
+
+    transition: all 0.3s ease 0s;
+
+    &::after {
+      content: "";
+      background-image: url(../images/icons/arrow-down.svg);
+      width: 8px;
+      height: 4px;
+      position: absolute;
+      right: -10px;
+      bottom: 50%;
+    }
+
+    @include onTablet {
+      order: 1;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__nav {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__image {
+    display: none;
+    margin-top: 30px;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
+  &__image img {
+    width: 422px;
+    height: 466px;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 624px;
+      height: 697px;
+    }
+  }
+}
+
+.info-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include onTablet {
+    flex-direction: row;
+    column-gap: 124px;
+  }
+}
+
+.hours-info {
+  color: $whiteColor;
+  font-family: "Raleway", sans-serif;
+  &__label {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__time {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+  }
+}
+
+.address-info {
+  color: $whiteColor;
+  font-family: "Raleway", sans-serif;
+
+  &__label {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__map {
+    position: relative;
+    color: $whiteColor;
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 160%;
+    transition: all 0.3s ease 0s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: #fff;
+
+      transition: transform 0.3s ease 0s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.nav {
+  &__list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -38px;
+      height: 1px;
+      width: 100%;
+      background-color: $whiteColor;
+
+      @include onTablet {
+        bottom: -50px;
+      }
+
+      @include onDesktop {
+        bottom: -60px;
+        opacity: 0.3;
+      }
+    }
+
+    @include onTablet {
+      gap: 30px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $whiteColor;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    transition: all 0.3s ease 0s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: #fff;
+
+      transition: transform 0.3s ease 0s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}

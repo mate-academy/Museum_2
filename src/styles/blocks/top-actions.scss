@@ -1,0 +1,97 @@
+.top-action {
+  @include contentPaddingInline;
+  background-color: $background;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+
+  @include onTablet {
+    padding-top: 26px;
+  }
+
+  &__logo {
+    display: flex;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__logo img {
+    width: 123px;
+    height: 40px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 45px;
+    align-items: center;
+  }
+
+  &__menu {
+    background-image: url(../images/icons/burger.svg);
+    position: relative;
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 25px;
+    height: 20px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__cross {
+    background-image: url(../images/icons/cross.svg);
+    position: relative;
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__lang {
+    display: none;
+    background-image: url(../images/icons/ua.svg);
+    position: relative;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 28px;
+    height: 30px;
+    transition: all 0.3s ease 0s;
+
+    &::after {
+      content: "";
+      background-image: url(../images/icons/arrow-down.svg);
+      width: 8px;
+      height: 4px;
+      position: absolute;
+      right: -10px;
+      bottom: 50%;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
