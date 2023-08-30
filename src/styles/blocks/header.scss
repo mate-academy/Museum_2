@@ -46,6 +46,7 @@
       }
 
       @include onDesktop {
+        margin-bottom: 30px;
         font-size: 96px;
       }
     }
@@ -63,6 +64,11 @@
 
       @include onTablet {
         margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+        width: max-content;
       }
     }
   }
@@ -88,6 +94,7 @@
       align-items: center;
       gap: 20px;
       color: $white;
+      margin-top: 146px;
 
       &::after {
         display: inline-block;
@@ -109,6 +116,34 @@
 
     @include onTablet {
       width: 443px;
+    }
+
+    @include onDesktop {
+      width: 625px;
+      transform: none;
+      left: 51%;
+      right: 0;
+    }
+  }
+
+  &__grid {
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+
+    &-item {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--desktop-#{$start}-#{$end} {
+            @include onDesktop {
+              grid-column: #{$start} / #{$end + 1};
+            }
+          }
+        }
+      }
     }
   }
 }
