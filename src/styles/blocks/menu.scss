@@ -89,6 +89,7 @@
 
     width: 50%;
     margin-left: auto;
+    max-height: 100%;
 
     // z-index: -1;
 
@@ -97,17 +98,25 @@
     }
 
     @include onDesktop {
-      width: 100%;
-
-      position: absolute;
-      bottom: 0;
-      left: 58%;
+      padding-bottom: 75%;
+      position: relative;
+      width: 200%;
+      height: auto;
+      margin-bottom: 0;
+      // margin-left: -35%;
     }
   }
 
   &__image {
     max-width: 100%;
     display: block;
+
+    @include onDesktop {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      max-height: 100%;
+    }
   }
 
   &__bottom {
