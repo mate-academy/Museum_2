@@ -5,8 +5,11 @@
   background-color: $background;
 
   @include onTablet {
-    height: max-content;
     margin-bottom: 105px;
+  }
+
+  @include onDesktop {
+    padding-top: 26px;
   }
 
   &__top-action {
@@ -41,6 +44,10 @@
         width: 570px;
         margin-bottom: 20px;
       }
+
+      @include onDesktop {
+        font-size: 96px;
+      }
     }
 
     &-schedule {
@@ -68,6 +75,31 @@
     }
   }
 
+  &__bottom-dates-onDesktop--visible {
+    display: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+    opacity: 0.7;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      color: $white;
+
+      &::after {
+        display: inline-block;
+        content: "";
+        opacity: 0.3;
+        background-color: $white;
+        width: 469px;
+        height: 1px;
+      }
+    }
+  }
+
   &__poster {
     display: block;
     position: absolute;
@@ -76,7 +108,6 @@
     transform: translateX(-50%);
 
     @include onTablet {
-      position: relative;
       width: 443px;
     }
   }
