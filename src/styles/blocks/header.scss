@@ -1,39 +1,102 @@
 .header {
-  box-sizing: border-box;
-  min-height: 100vh;
+  color: $color-white;
   background-color: $color-background;
   background-image: url(../images/header-bg-mobile.png);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: 245px 273px;
 
+  @include onTablet {
+    background-image: url(../images/header-bg-tablet.png);
+    background-size: 443px 494px;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/header-bg-desktop.png);
+    background-size: 625px 663px;
+    background-position: right bottom;
+  }
+
   &__top {
     margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__lang-dropdown {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+  }
+
+  &__lang-option {
+    @include onTablet {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 
   &__content {
-    padding-inline: 20px;
+    height: 100vh;
   }
 
   &__date {
+    margin: 0;
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 140%;
   }
 
   &__title {
-    margin-bottom: 36px;
+    margin: 0 0 30px;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-size: 48px;
     line-height: 100%;
+
+    @include onTablet {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
   }
 
   &__subtitle {
+    margin: 0;
     margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
   }
 
   &__button {
     margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 }

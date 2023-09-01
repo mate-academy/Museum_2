@@ -1,15 +1,36 @@
 .top-bar {
-  padding: 20px 20px;
+  padding-block: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  @include onDesktop {
+    padding-block: 32px;
+  }
+
   &__logo {
     display: flex;
+    height: 40px;
+
+    @include onDesktop {
+      height: 26px;
+    }
+
+    @include hover(transform, scale(1.2));
   }
 
   &__icons {
     display: flex;
+    align-items: center;
     gap: 24px;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 40px;
+    }
   }
 }
