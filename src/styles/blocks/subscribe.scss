@@ -29,7 +29,11 @@
     background-color: $c-gray;
     outline: none;
     color: $main-text-color;
-    width: 273px;
+    width: 100vw - 15vw;
+
+    @include onTablet {
+      width: 480px;
+    }
 
     &::placeholder {
       color: $main-text-color;
@@ -112,10 +116,22 @@
   }
 
   &__button {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
     @include onTablet {
       display: flex;
       align-items: left;
       justify-content: left;
+    }
+
+    &--desktop {
+      @media (max-width: 650px) {
+        width: 100vw - 14vw;
+        transition: all 0s ease-out;
+      }
     }
   }
 }
