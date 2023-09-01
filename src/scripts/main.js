@@ -6,9 +6,9 @@ const emailField = document.getElementById('email');
 subscribeForm.addEventListener('submit', function(event) {
   event.preventDefault();
 
-  const emailValue = emailField.value;
+  // const emailValue = emailField.value;
 
-  console.log('Email:', emailValue);
+  // console.log('Email:', emailValue);
 
   emailField.value = '';
 });
