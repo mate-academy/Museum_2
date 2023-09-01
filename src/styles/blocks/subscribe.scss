@@ -12,6 +12,17 @@
     grid-template-columns: 1fr;
   }
 
+  &__form--desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      justify-content: left;
+      align-items: left;
+    }
+  }
+
   &__email {
     border: none;
     border-bottom: 1px #000 solid;
@@ -101,8 +112,10 @@
   }
 
   &__button {
-    display: flex;
-    align-items: left;
-    justify-content: left;
+    @include onTablet {
+      display: flex;
+      align-items: left;
+      justify-content: left;
+    }
   }
 }
