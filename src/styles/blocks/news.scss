@@ -1,18 +1,38 @@
 .news {
   &__title {
-    padding-top: 90px;
+    color: #1c1b29;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include onMobile {
+      &-wrapper {
+        padding-top: 90px;
+      }
+    }
 
     @include onTablet {
+      font-size: 40px;
       &-wrapper {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        padding-top: 125px;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      &-wrapper {
+        padding-top: 110px;
       }
     }
   }
 
   &__content {
-    width: 280px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -21,7 +41,13 @@
     margin-top: 60px;
 
     @include onTablet {
-      width: 330px;
+      width: 100%;
+      margin-top: 75px;
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      margin-top: 55px;
     }
   }
 
@@ -44,6 +70,23 @@
         width: 330px;
         height: 330px;
       }
+
+      @include onDesktop {
+        background-image: url(../images/picture/news-picture-1-desktop.png);
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 570px;
+        height: 370px;
+      }
+
+      &-wrapper {
+        grid-column: 1 / 4;
+
+        @include onDesktop {
+          grid-column: 1 / 7;
+        }
+      }
     }
 
     &--2 {
@@ -65,26 +108,82 @@
         height: 330px;
       }
 
-    }
+      @include onDesktop {
+        background-image: url(../images/picture/news-picture-2-desktop.png);
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 570px;
+        height: 370px;
+      }
 
-    &__info {
-      margin-bottom: 50px;
-      &-date {
-        color: #1c1b29;
-        font-family: "Raleway", sans-serif;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 140%;
+      &-wrapper {
+        grid-column: 4 / 7;
+        grid-row-start: 1;
 
-        &--title {
-          margin-top: 0;
+        @include onDesktop {
+          grid-column: 7 / 13;
         }
       }
 
-      &--2 {
-        margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 50px;
+    &-date {
+      color: #1c1b29;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      margin-top: 20px;
+
+      &--wrapper {
+        @include onTablet {
+          width: 330px;
+        }
+        &--1 {
+          width: 280px;
+          @include onTablet {
+            grid-column: 1 / 4;
+            width: 330px;
+          }
+
+          @include onDesktop {
+            grid-column: 1 / 7;
+            width: 570px;
+          }
+        }
+
+        &--2 {
+          width: 280px;
+          @include onTablet {
+            grid-column: 4 / 7;
+            width: 330px;
+          }
+
+          @include onDesktop {
+            width: 570px;
+            grid-column: 7 / 13;
+          }
+        }
       }
+
+      &--title {
+        margin-top: 0;
+        color: #1c1b29;
+        font-family: "Playfair Display", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 125%;
+      }
+    }
+
+    &--2 {
+      margin-bottom: 30px;
     }
   }
 
@@ -93,6 +192,13 @@
 
     @include onTablet {
       display: block;
+    }
+  }
+
+  &-button {
+    @include onTablet {
+      display: flex;
+      align-items: center;
     }
   }
 }
