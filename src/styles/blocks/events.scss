@@ -1,0 +1,67 @@
+.events {
+  @include onTablet {
+    display: grid;
+    --columns: 6;
+    column-gap: 30px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+  }
+
+  @include onDesktop {
+    --columns: 12;
+  }
+
+  &__section-title {
+    margin: 0;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 75px;
+
+      :nth-child(1) {
+        order: 1;
+       }
+      }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      grid-column: 1 / 8;
+    }
+  }
+
+  &__events {
+    display: grid;
+    gap: 60px;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      grid-row: 2;
+
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+
+      column-gap: 30px;
+
+      &--column {
+        grid-template-columns: auto;
+      }
+      }
+    }
+
+  &__button {
+    @include onTablet{
+      justify-self: end;
+      grid-column: 5 / 7;
+
+      :nth-child(3) {
+        order: 2;
+      }
+      }
+
+      @include onDesktop {
+        grid-column: 10 / 13;
+      }
+    }
+}

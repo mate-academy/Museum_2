@@ -1,0 +1,97 @@
+.event {
+  &--column {
+    @include onTablet {
+      display: grid;
+      --columns: 6;
+      column-gap: 30px;
+      grid-template-columns: repeat(var(--columns), 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      grid-auto-rows: 0;
+    }
+
+    @include onDesktop {
+      --columns: 12;
+    }
+  }
+
+  &__info {
+    &--column {
+      @include onTablet {
+        grid-column: 5 / 11;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 20px;
+
+    @include hover(transform, scale(1.03));
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+
+      &--news {
+        margin-bottom: 30px;
+      }
+    }
+
+    @include onDesktop {
+      &--news {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__date {
+    color: $color-main;
+    margin: 0;
+    margin-bottom: 10px;
+
+    &--news {
+      color: $color-black;
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+
+  &__title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    color: $color-gray;
+    margin: 0;
+    margin-bottom: 30px;
+
+    &--news {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      &--column {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      &--column {
+        max-width: 270px;
+      }
+    }
+
+    @include onDesktop {
+      &--column {
+        grid-column: 5 / 8;
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+.plan-visit {
+  max-width: none;
+  background-color: $color-background;
+  color: $color-white;
+
+  @include onDesktop {
+    background-image: url(../images/main/plan-visit-bg-desktop.png);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    --columns: 2;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    padding-block: 50px;
+
+    @include onTablet {
+      --columns: 6;
+      column-gap: 30px;
+      padding-block: 80px;
+    }
+
+    @include onDesktop {
+      --columns: 12;
+      padding-block: 205px;
+    }
+  }
+
+  &__section-title {
+    grid-column: 1 / -1;
+    margin: 0;
+    margin-bottom: 60px;
+
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 75px;
+
+      font-size: 62px;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 13;
+      margin-bottom: 70px;
+
+      font-size: 80px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    margin: 0;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 60px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 6 / 13;
+    }
+  }
+}

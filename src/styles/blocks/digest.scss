@@ -1,0 +1,116 @@
+.digest {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+  }
+
+  &__section-title {
+    margin: 0;
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 50px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 /6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 /13;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 /5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__email {
+    margin-bottom: 30px;
+    background-color: $color-white;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $color-black;
+    outline: none;
+
+    color: $color-black;
+    font-weight: 700;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $color-black;
+    }
+
+    &:hover {
+      border-color: $color-main;
+    }
+
+    &:hover::placeholder  {
+      color: $color-main;
+    }
+
+    &:focus  {
+      border-color: $color-main;
+      color: $color-main;
+      font-size: 16px;
+    }
+
+    &:focus::placeholder  {
+      color: $color-main;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      font-size: 16px;
+      border-bottom: 1px solid $color-black;
+      -webkit-box-shadow: $color-white;
+      box-shadow: $color-white;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+}

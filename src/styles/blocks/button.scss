@@ -1,0 +1,74 @@
+.button {
+  min-height: 60px;
+  min-width: 280px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: $color-main;
+  color: $color-white;
+  font-size: 16px;
+  line-height: 100%;
+  border: none;
+  cursor: pointer;
+
+  @include onTablet {
+    height: 60px;
+    max-width: 330px;
+  }
+
+  @include onDesktop {
+    height: 60px;
+    width: 270px;
+  }
+
+  &__arrow {
+    display: inline-block;
+    background-image: url(../images/icons/icon-arrow.svg);
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover &__arrow{
+    background-image: url(../images/icons/icon-arrow-hover.svg);
+  }
+
+  &:active &__arrow{
+    background-image: url(../images/icons/icon-arrow-focus.svg);
+  }
+
+  &:hover {
+    background-color: $color-dark-orange;
+    @include hover(transition, 0.3s);
+  }
+
+  &:active {
+    background-color: $color-accent-orange;
+  }
+
+  &--secondary {
+    background-color: $color-white;
+    color: $color-main;
+    border: 1px $color-main solid;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    &:hover {
+      color: $color-dark-orange;
+      background-color: $color-white;
+      border-color: $color-dark-orange;
+      @include hover(transition, 0.3s);
+    }
+
+    &:active {
+      color: $color-accent-orange;
+      border-color: $color-accent-orange;
+    }
+  }
+}
