@@ -1,0 +1,126 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 20px;
+  background-color: #3f5252;
+  height: 100vh;
+  transition: transform 0.3s;
+  transform: translateX(-100%);
+
+  &:target {
+    transform: translateY(0);
+  }
+
+  @include onDesktop {
+    padding: 0 55px !important;
+    max-height: 100vh;
+    position: relative;
+    // overflow-y: auto;
+    overflow: hidden;
+  }
+
+  @include onTablet {
+    padding: 0 39px;
+    height: 1092px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .menu__bottom {
+    color: #fff;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-bottom: 40px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-bottom: 0;
+
+      gap: 105px;
+      margin: 30px 0 50px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 83px;
+      margin-bottom: 70px;
+      padding-bottom: 0;
+    }
+
+    &-title {
+      font-size: 14px;
+
+      &:first-child {
+        padding-top: 30px;
+      }
+    }
+
+    &-time {
+
+      font-size: 16px;
+
+    }
+
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: #fff;
+    transition: border-color 0.3s;
+
+    @include onDesktop {
+      font-size: 48px;
+      margin-bottom: 0;
+    }
+    @include onTablet {
+      font-size: 45px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    padding-bottom: 20px;
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 400px;
+      height: 446px;
+      position: absolute;
+      bottom: 0;
+      margin-left: 130px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 544px;
+      height: 620px;
+      top: 103px;
+    }
+  }
+
+  &__line {
+    width: 100%;
+  }
+
+}
