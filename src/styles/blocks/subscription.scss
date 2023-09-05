@@ -1,0 +1,73 @@
+.subscription {
+  margin-bottom: 80px;
+
+  @include tablet {
+    margin-bottom: 128px;
+  }
+
+  @include desktop {
+    margin-bottom: 200px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    max-width: 570px;
+  }
+
+  &__form-field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    border: none;
+    border-bottom: 2px solid $c-black;
+    padding: 0 0 3px;
+    margin-bottom: 30px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-black;
+    background-color: inherit;
+  
+    @include hover(border-bottom, 2px solid $c-red);
+
+    @include desktop {
+      margin-bottom: 40px;
+      max-width: 470px;
+    }
+  
+    &::placeholder {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-black;
+
+      @include hover(color, $c-red);
+    }
+
+    &:hover {
+      &::placeholder {
+        color: $c-red;
+      }
+    }
+  
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $c-red;
+    }
+  }
+
+  &__button {
+    border: none;
+  }
+}
