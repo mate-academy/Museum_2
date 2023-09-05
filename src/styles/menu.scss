@@ -1,8 +1,11 @@
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  
   padding: 0 20px;
   background-color: #3f5252;
   height: 100vh;
@@ -10,13 +13,14 @@
   transform: translateX(-100%);
 
   &:target {
-    transform: translateY(0);
+    overflow-y: hidden;
+    transform: translateX(0);
   }
 
   @include onDesktop {
     padding: 0 55px !important;
     max-height: 100vh;
-    position: relative;
+    
     // overflow-y: auto;
     overflow: hidden;
   }
@@ -24,7 +28,7 @@
   @include onTablet {
     padding: 0 39px;
     height: 1092px;
-    position: relative;
+    
     overflow: hidden;
   }
 
