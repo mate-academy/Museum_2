@@ -20,11 +20,13 @@
     width: 280px;
     background-image: url(../images/actual1-mob.png);
     background-size: cover;
+    text-align: center;
 
     @include onDesktop {
       background-image: url(../images/actual-angel-desk.png);
-      width: 570px !important;
-      height: 500px !important;
+      min-width: 570px !important;
+      min-height: 484px !important;
+      background-position: center;
     }
   }
 
@@ -42,8 +44,8 @@
 
     @include onDesktop {
       background-image: url(../images/actual.desk.png);
-      width: 570px !important;
-      height: 500px !important;
+      min-width: 570px !important;
+      min-height: 484px !important;
       transition: 1s;
     }
     
@@ -73,15 +75,17 @@
   margin: 20px 0 10px;
 }
 &__show {
+  
   @include onTablet {
     display: flex;
-    gap: 20px;
+    
+    justify-content: space-between;
 
   }
   @include onDesktop {
     display: flex;
+    justify-content: space-between;
     
-    gap: 30px;
   }
 }
 &__show-title {
@@ -134,6 +138,13 @@
   @include onTablet {
 width: 280px !important;
 }
+}
+
+&__about {
+  @include onDesktop {
+
+width: 570px;
+  }
 }
 }
 .actual__btn-start {
