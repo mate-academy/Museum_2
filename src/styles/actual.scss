@@ -17,10 +17,19 @@
   }
   &__image-angel {
     height: 356px;
-    width: 280px;
+    min-width: 280px;
     background-image: url(../images/actual1-mob.png);
     background-size: cover;
-    text-align: center;
+
+    &:hover {
+      transform: scale(107%);
+      filter: contrast(100%);
+    }
+
+   @include onTablet {
+      min-width: 250px !important;
+      height: 420px !important;
+   }
 
     @include onDesktop {
       background-image: url(../images/actual-angel-desk.png);
@@ -32,15 +41,19 @@
 
   &__image-port {
     height: 356px;
-    width: 280px;
+    min-width: 280px;
     background-size: cover;
-    display: block;
     background-image: url(../images/actual2-mob.png);
 
     &:hover {
       transform: scale(107%);
       filter: contrast(100%);
     }
+
+    @include onTablet {
+      min-width: 250px !important;
+     height: 420px !important;
+   }
 
     @include onDesktop {
       background-image: url(../images/actual.desk.png);
@@ -78,7 +91,7 @@
   
   @include onTablet {
     display: flex;
-    
+    gap: 20px;
     justify-content: space-between;
 
   }
@@ -120,7 +133,7 @@
 
 
 @include onTablet {
-  padding-bottom: 24px;
+  
 }
 
 @include onDesktop {
