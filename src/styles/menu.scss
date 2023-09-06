@@ -9,8 +9,9 @@
   padding: 0 20px;
   background-color: #3f5252;
   height: 100vh;
-  transition: transform 0.3s;
+  transition: transform 1s;
   transform: translateX(-100%);
+  overflow: auto;
 
   &:target {
     overflow-y: hidden;
@@ -20,15 +21,12 @@
   @include onDesktop {
     padding: 0 55px !important;
     max-height: 100vh;
-    
-    // overflow-y: auto;
     overflow: hidden;
   }
 
   @include onTablet {
     padding: 0 39px;
     height: 1092px;
-    
     overflow: hidden;
   }
 
@@ -124,7 +122,10 @@
   }
 
   &__line {
-    width: 100%;
+    @include onDesktop {
+    width: 870px;
+    height: 1px;
+    }
   }
 
 }
