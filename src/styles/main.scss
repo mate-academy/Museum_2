@@ -1,7 +1,118 @@
 @import "utils";
 @import "fonts";
+@import "mixins.scss";
 @import "typography";
+@import "header.scss"; 
+@import "menu.scss";
+@import "actual.scss";
+@import "events.scss";
+@import "visit.scss";
+@import "news.scss";
+@import "subscrible";
+@import "footer";
 
 body {
   background: $c-gray;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.header__button {
+  display: block;
+  background-color: #cd4d31;
+  width: 100%;
+  height: 60px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  margin-top: 40px;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 40px;
+
+  @include onDesktop {
+    min-width: 270px;
+    max-width: 400px;
+    margin: 60px 0;
+  }
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+}
+.button-white {
+ 
+  background-color: #eee;
+  width: 100%;
+  height: 60px;
+  border: 1px solid #cd4d31 !important;
+  color: #cd4d31;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+
+  cursor: pointer;
+  &:hover {
+    border-color: #af3419;
+    color: #af3419;
+  }
+
+  &:disabled {
+    border-color: #dd836f;
+    color: #dd836f;
+  }
+
+  &:active {
+    border-color: #ea340d;
+    color: #ea340d;
+}
+}
+ .page__body {
+  scroll-behavior: smooth;
+ }
+
+ .page__body--with-menu {
+  overflow: hidden 
 }
