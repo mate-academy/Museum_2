@@ -145,8 +145,36 @@
       }
 
       @include onDesktop {
-        width: 50%;
         margin-top: 50px;
+      }
+
+      &--first {
+        display: none;
+        @include onTablet {
+          grid-column: 1 / 4;
+          display: block;
+        }
+      }
+
+      &--second {
+        display: none;
+        @include onTablet {
+          grid-column: 4 / -1;
+          display: block;
+        }
+
+        @include onDesktop {
+          grid-column: 7 / 10;
+        }
+      }
+
+      &--bottom {
+        margin-top: 30px;
+        width: 100%;
+
+        @include onTablet {
+          display: none;
+        }
       }
     }
   }
