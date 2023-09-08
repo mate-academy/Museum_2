@@ -1,0 +1,49 @@
+.icon {
+  @include hover(transform, scale(1.2));
+
+  &--menu {
+    background-image: url(../images/logo/burger-menu-logo.svg);
+    display: block;
+    width: 25px;
+    height: 20px;
+  }
+
+  &-wrapper {
+    display: flex;
+    gap: 43px;
+  }
+
+  &--ua {
+    @include fontRaleway;
+    font-size: 16px;
+    line-height: 24px;
+    color: $main-text-color;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &-top {
+      display: none;
+      @include fontRaleway;
+      font-size: 16px;
+      line-height: 24px;
+      color: $main-text-color;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    @include onTablet {
+      order: 1;
+    }
+  }
+
+  &--close {
+    background-image: url(../images/logo/close-menu-logo.svg);
+    display: block;
+    height: 22px;
+    width: 22px;
+  }
+}

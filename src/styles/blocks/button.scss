@@ -1,0 +1,153 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include fontRaleway;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  height: 60px;
+  @include hover(transform, scale(1.1));
+
+  &--white {
+    border: 1px solid $button-orange-background;
+    background-color: transparent;
+    color: $button-orange-background;
+
+    &--news {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 10 / -1;
+      }
+
+      &-bottom {
+        grid-column: 1 / -1;
+        margin-top: 30px;
+
+        @include onTablet {
+          display: none;
+        }
+      }
+    }
+
+    &--first-section {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 5 / -1;
+        margin-top: 90px;
+      }
+
+      @include onDesktop {
+        grid-column: 10 / -1;
+      }
+
+      &-bottom {
+        grid-column: 1 / -1;
+        margin-top: 30px;
+
+        @include onTablet {
+          display: none;
+        }
+      }
+    }
+
+    &--second-section {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 10 / -1;
+      }
+    }
+  }
+
+  &--orange {
+    color: $main-text-color;
+    border: none;
+    background-color: $button-orange-background;
+
+
+    &--submit {
+      margin-top: 30px;
+      width: 100%;
+
+      @include onTablet {
+        width: 75%;
+      }
+
+      @include onDesktop {
+        margin-top: 40px;
+        width: 60%;
+      }
+    }
+
+    &--pay {
+      grid-column: 1 / -1;
+      margin: 40px 0 50px;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+        margin: 60px 0 80px;
+      }
+
+      @include onDesktop {
+        grid-column: 6 / 9;
+        margin: 50px 0 205px;
+      }
+    }
+
+    &--header {
+      margin-top: 40px;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        margin-top: 50px;
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        margin-top: 81px;
+      }
+    }
+
+    &--menu {
+      grid-column: 1 / -1;
+      margin-top: 40px;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+        margin-top: 50px;
+      }
+
+      @include onDesktop {
+        margin-top: 60px;
+      }
+    }
+
+    &--article {
+      width: 100%;
+      margin-top: 30px;
+
+      @include onTablet {
+        margin-top: 40px;
+      }
+
+      @include onDesktop {
+        width: 50%;
+        margin-top: 50px;
+      }
+    }
+  }
+}

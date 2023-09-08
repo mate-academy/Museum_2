@@ -1,0 +1,92 @@
+.menu {
+  background-color: $header-background-color;
+  overflow: hidden;
+
+  &__main-picture {
+    @include onTablet {
+      margin-inline: auto;
+      background-image: url(../images/menu-main-picture-tablet.svg);
+      width: 443px;
+      height: 494px;
+      margin-top: 71px;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/menu-main-picture-desktop.svg);
+      width: 625px;
+      height: 663px;
+      margin-top: -580px;
+      margin-right: 0;
+    }
+  }
+
+  &__text-thin {
+    @include fontRaleway;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+    color: $main-text-color;
+
+    &--first {
+      grid-column: 1 / -1;
+      margin-top: 10px;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+        margin-top: 60px;
+      }
+    }
+
+    &--second {
+      grid-column: 1 / -1;
+      margin-top: 20px;
+
+      @include onTablet {
+        grid-column: 3 / 6;
+        margin-top: -19.6px;
+      }
+    }
+  }
+
+  &__text-bold {
+    @include fontRaleway;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: $main-text-color;
+
+    &--first {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &--second {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 3 / 6;
+        margin-top: -24px;
+      }
+    }
+  }
+
+  &__line {
+    height: 1px;
+    background-color: $main-text-color;
+    grid-column: 1 / -1;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-top: 60px;
+    }
+  }
+}

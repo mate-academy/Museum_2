@@ -4,3 +4,59 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --colomns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--colomns), 1fr);
+
+  @include onTablet {
+    --colomns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --colomns: 12;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 39px;
+  }
+
+  @include onDesktop() {
+    padding-inline: 55px;
+    max-width: 1170px;
+    margin-inline: auto;
+  }
+}
+
+.container {
+  @include contentPaddingInline;
+  @include pageGrid;
+}
+
+@mixin fontRaleway {
+  font-family: 'Raleway', Arial, sans-serif;
+}
+
+
+@mixin fontPlayFairDisplay {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+}
