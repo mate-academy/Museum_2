@@ -45,12 +45,45 @@
     outline: none;
     border-bottom: 1px solid $black-color;
     @include fontRaleway;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 24px;
+    padding-bottom: 3px;
+
+    &::placeholder {
+      @include fontRaleway;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $button-orange-background;
+    }
+
+    &:hover::placeholder {
+      color: $button-orange-background;
+    }
 
     &:focus {
       border-bottom: 1px solid $button-orange-background;
+      caret-color: $button-orange-background;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    &:focus::-moz-placeholder {
+      color: transparent;
+    }
+
+    &:focus:-moz-placeholder {
+      color: transparent;
+    }
+
+    &:focus:-ms-input-placeholder {
+      color: transparent;
     }
 
     &:webkit-autofil,
