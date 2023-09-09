@@ -1,0 +1,43 @@
+.nav {
+  grid-column: 1 / -1;
+  margin-top: 40px;
+
+  @include onTablet {
+    margin-top: 50px;
+  }
+
+  @include onDesktop {
+    margin-top: 70px;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    @include hover(transform, scale(1.03));
+    @include fontPlayFairDisplay;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: $main-text-color;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+.subscribe {
+  margin-top: 120px;
+
+  @include onTablet {
+    margin-top: 160px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__text {
+    @include fontRaleway;
+    font-size: 16px;
+    line-height: 24px;
+    color: $black-color;
+    font-weight: 400;
+    grid-column: 1 / -1;
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $black-color;
+    @include fontRaleway;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 3px;
+
+    &::placeholder {
+      @include fontRaleway;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $button-orange-background;
+    }
+
+    &:hover::placeholder {
+      color: $button-orange-background;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $button-orange-background;
+      caret-color: $button-orange-background;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    &:focus::-moz-placeholder {
+      color: transparent;
+    }
+
+    &:focus:-moz-placeholder {
+      color: transparent;
+    }
+
+    &:focus:-ms-input-placeholder {
+      color: transparent;
+    }
+
+    &:webkit-autofil,
+    &:webkit-autofil:hover,
+    &:webkit-autofil:focus {
+      background-color: #fff;
+      border: none;
+      border-bottom: 1px solid $button-orange-background;
+    }
+  }
+}
