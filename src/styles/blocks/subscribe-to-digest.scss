@@ -41,20 +41,37 @@
     background-color: $page-background-color;
     border: none;
     border-bottom: 1px solid $page-second-color;
+    color: $page-second-color;
 
-    padding: 0;
+    padding: 3px 0;
     margin-block: 50px 30px;
 
     width: 100%;
+
+    @include hover(border-color, $page-main-color);
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 150%;
+      color: $page-second-color;
+    }
+
+    &:hover::placeholder {
+      color: $page-main-color;
+    }
 
     @include onDesktop() {
       margin-bottom: 40px;
     }
 
-    &::placeholder {
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 150%;
+    &:focus {
+      outline: none;
+      color: $page-main-color;
+      border-color: $page-main-color;
+
+      &::placeholder {
+        opacity: 0;
+      }
     }
   }
 
