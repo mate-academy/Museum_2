@@ -1,0 +1,149 @@
+.menu {
+  &__page {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    padding-top: 20px;
+    background-color: $background;
+
+    transform: translateX(100%);
+    transition: all 0.5s;
+
+    &:target {
+      transform: translateX(0);
+      z-index: 1;
+      transition: all 1s;
+    }
+
+    @include onTablet {
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+
+    @include onDesktop {
+      padding-top: 26px;
+    }
+  }
+
+  &__open-button {
+    width: 25px;
+    height: 20px;
+    background-image: url("../images/icons/menu_open--white.svg");
+    
+    @include onTablet {
+      width: 30px;
+      height: 30px;
+    }
+    @include hover (transform, rotate(90deg));
+  }
+
+  &__close-button {
+    width: 22px;
+    height: 22px;
+    background-image: url("../images/icons/menu_close--white.svg");
+
+    @include hover (transform, rotate(90deg));
+    @include onTablet {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  &__top-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__content {
+    color: $white;
+
+    @include onTablet {
+      display: flex;
+      gap: 123px;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__address {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid $white;
+
+    @include onTablet {
+      padding-bottom: 50px;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+      padding-bottom: 60px;
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    color: $white;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 100%;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+  }
+}
+
+.mobile-poster--hidden {
+  display: none;
+
+  @include onTablet {
+    display: block;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 30px;
+
+  @include onTablet {
+    flex-direction: row-reverse;
+    gap: 40px;
+  }
+}
+
+.language-select {
+  display: none;
+  color: $white;
+  background-color: $background;
+
+  @include onTablet {
+    display: block;
+  }
+}
