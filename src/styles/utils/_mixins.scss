@@ -5,6 +5,31 @@
   }
 }
 
+@mixin hoverUnderline($bottom) {
+  &::after {
+    position: absolute;
+    z-index: 12;
+    bottom: $bottom;
+    left: 0;
+    right: 0;
+
+    content: "";
+
+    height: 2px;
+
+    border-radius: 4px;
+    background-color: #f1f5f4;
+
+    transition: transform 0.3s;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
+
 @mixin contentPaddingInline() {
   padding-inline: 20px;
 
