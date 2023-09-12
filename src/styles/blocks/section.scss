@@ -1,0 +1,55 @@
+.section {
+  &__top-bar {
+    @include pageGrid();
+
+    margin-bottom: 60px;
+
+    @include onTable() {
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop() {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+    color: $page-second-color;
+
+    grid-column: span 2;
+
+    @include onTable() {
+      font-size: 40px;
+
+      grid-column: span 4;
+    }
+
+    @include onDesktop() {
+      font-size: 48px;
+      line-height: 120%;
+
+      grid-column: span 6;
+    }
+  }
+
+  &__button-top {
+    display: none;
+
+    @include onTable() {
+      display: flex;
+      grid-column: span 2;
+    }
+
+    @include onDesktop() {
+      grid-column: 10 / span 3;
+    }
+  }
+
+  &__text {
+    line-height: 150%;
+  }
+}
