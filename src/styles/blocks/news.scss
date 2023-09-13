@@ -1,0 +1,92 @@
+.news {
+  padding-top: toRem(90);
+
+  @include contentPaddingInLine;
+
+  @include onTablet {
+    @include pageGrid;
+
+    padding-top: toRem(120);
+  }
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: toRem(28);
+    line-height: 125%; /* 35/28 */
+
+    @include onTablet {
+      display: flex;
+      align-items: end;
+      grid-column: 1 / 5;
+      grid-row: 1;
+
+      font-size: toRem(40);
+    }
+
+    @include onDesktop {
+      font-size: toRem(48);
+    }
+  }
+
+  &__product {
+    @include onTablet {
+      display: flex;
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+
+    @include onTablet {
+      padding-top: toRem(10);
+    }
+
+    @include onDesktop {
+      gap: toRem(32);
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: toRem(30);
+
+    height: 60px;
+    gap: toRem(8);
+
+    color: $orangeColor;
+    cursor: pointer;
+
+    border: 1px solid $orangeColor;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / -1;
+    }
+
+    &:hover {
+      color: $hoverBtColor;
+      border-color: $hoverBtColor;
+    }
+
+    &:active {
+      color: $activeBtColor;
+      border-color: $activeBtColor;
+    }
+  }
+
+  &__button svg path {
+    stroke: $orangeColor;
+  }
+
+  &__button:hover svg path {
+    stroke: $hoverBtColor;
+  }
+
+  &__button:active svg path {
+    stroke: $activeBtColor;
+  }
+}

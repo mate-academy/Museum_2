@@ -1,0 +1,167 @@
+.footer {
+  background-color: $headerBgColor;
+
+  color: $whiteColor;
+
+  margin-top: toRem(80);
+  &__content {
+    padding-top: toRem(34);
+
+    @include contentPaddingInLine;
+
+    @include onTablet {
+      display: flex;
+
+      gap: toRem(30);
+
+      padding-top: toRem(50);
+    }
+  }
+
+  &__top {
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__main {
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__bottom {
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__terms {
+    display: flex;
+    align-items: center;
+    gap: toRem(22);
+    padding-top: toRem(60);
+    padding-bottom: toRem(30);
+
+    font-size: toRem(14);
+
+    @include contentPaddingInLine;
+
+    @include onTablet {
+      justify-content: space-between;
+
+      padding-top: toRem(62);
+    }
+
+    @include onDesktop {
+      padding-top: toRem(72);
+    }
+  }
+
+  &__box {
+    display: flex;
+    gap: toRem(22);
+
+    @include onDesktop {
+      gap: toRem(102);
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: toRem(700);
+    font-size: toRem(18);
+    line-height: 150%; /* 27/18 */
+  }
+
+  &__text {
+    line-height: 150%; /* 24/16 */
+
+    padding-top: toRem(10);
+
+    @include onTablet {
+      padding-top: toRem(30);
+    }
+  }
+
+  &__image {
+    display: flex;
+
+    gap: toRem(20);
+    padding-top: toRem(30);
+    cursor: pointer;
+
+    @include onTablet {
+      padding-top: toRem(50);
+    }
+  }
+
+  &__nav {
+    padding-top: toRem(10);
+
+    @include onTablet {
+      padding-top: toRem(30);
+    }
+    &-list {
+      display: grid;
+      gap: toRem(5);
+
+      @include onTablet {
+        gap: toRem(10);
+      }
+    }
+
+    &-link {
+      display: inline-block;
+      @include hover (transform, scale(1.05));
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -1px;
+        height: 1px;
+        width: 100%;
+        background-color: $whiteColor;
+        transition: $transitionTime;
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__icon {
+    width: toRem(30);
+    height: toRem(30);
+  }
+
+  &__title--padding {
+    padding-top: toRem(50);
+
+    @include onTablet {
+      padding-top: 0;
+    }
+  }
+
+  &__title--big {
+    font-size: toRem(20);
+  }
+
+  &__image--hover {
+    @include hover (transform, scale(1.15));
+  }
+}

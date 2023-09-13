@@ -1,0 +1,115 @@
+.visit {
+  position: relative;
+
+  background-color: $headerBgColor;
+
+  @include contentPaddingInLine;
+
+  @include onDesktop {
+    margin-top: toRem(110);
+    height: 800px;
+
+    @include pageGrid;
+  }
+  &__content {
+    margin-top: toRem(90);
+    padding-bottom: toRem(50);
+
+    @include onTablet {
+      margin-top: toRem(100);
+      padding-bottom: toRem(80);
+    }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+      display: grid;
+      align-items: center;
+
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__image {
+    display: none;
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: toRem(38);
+
+    padding-top: toRem(50);
+
+    color: $whiteColor;
+
+    @include onTablet {
+      font-size: toRem(62);
+
+      padding-top: toRem(80);
+
+      max-width: 500px;
+    }
+
+    @include onDesktop {
+      font-size: toRem(80);
+
+      padding-top: 0;
+
+      max-width: 600px;
+    }
+  }
+
+  &__text {
+    line-height: 150%; /* 24/16 */
+
+    padding-top: toRem(20);
+
+    color: $whiteColor;
+
+    @include onTablet {
+      max-width: 450px;
+    }
+
+    @include onDesktop {
+      max-width: 470px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    cursor: pointer;
+
+    margin-top: toRem(40);
+
+    color: $whiteColor;
+    background-color: $orangeColor;
+
+    @include onTablet {
+      margin-top: toRem(60);
+
+      max-width: 330px;
+    }
+
+    @include onDesktop {
+      max-width: 270px;
+    }
+
+    &:hover {
+      background-color: $hoverBtColor;
+    }
+
+    &:active {
+      background-color: $activeBtColor;
+    }
+  }
+}
