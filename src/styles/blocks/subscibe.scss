@@ -1,10 +1,16 @@
 .subscribe {
-  &__content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    padding-top: 200px;
   }
 
   &__title {
@@ -15,6 +21,26 @@
     font-style: normal;
     font-weight: 700;
     line-height: 125%;
+    width: 280px;
+
+    @include onTablet {
+      width: 100%;
+      padding-top: 160px;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      padding-top: 0;
+    }
+
+    &-wrapper {
+      grid-column: 1 / 6;
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+      }
+    }
   }
 
   &__info {
@@ -25,13 +51,44 @@
     line-height: 150%;
     color: #1c1b29;
     margin-top: 20px;
+    width: 280px;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+
+    &-wrapper {
+      grid-column: 1 / 6;
+
+      @include onDesktop {
+        grid-column: 7 / 13;
+        align-self: start;
+      }
+    }
   }
 
-  &__form-wrapper {
-    &__form {
-      margin-top: 50px;
-      display: flex;
-      justify-content: center;
+  &__form {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &-wrapper {
+      padding-bottom: 80px;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+        padding-bottom: 128px;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 6;
+        padding-bottom: 200px;
+      }
     }
   }
 
@@ -39,13 +96,34 @@
     font-family: "Raleway", sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 150%;
     width: 280px;
     color: #1c1b29;
+    border: none;
+    border-bottom: 1px solid #1c1b29;
+    background-color: #f1f5f4;
+    outline: none;
+
+    &::placeholder {
+      color: #1c1b29;
+      font-weight: 400;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
   }
 
   &-button {
     margin-top: 30px;
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
   }
 }
