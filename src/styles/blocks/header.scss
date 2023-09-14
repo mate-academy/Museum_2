@@ -1,0 +1,222 @@
+.header {
+  background-color: $headerBgColor;
+  &__content {
+    position: relative;
+    @include contentPaddingInLine;
+  }
+
+  &__top-bar {
+    height: toRem(60);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      height: toRem(77);
+    }
+
+    @include onDesktop {
+      height: toRem(90);
+    }
+  }
+
+  &__logo {
+    width: toRem(123);
+    height: toRem(40);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include hover (transform, scale(1.1));
+
+    @include onTablet {
+      width: toRem(124);
+      height: toRem(37);
+    }
+  }
+
+  &__settings {
+    display: flex;
+
+    gap: toRem(40);
+  }
+
+  &__lang {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+
+      width: toRem(35);
+      gap: toRem(2);
+
+      font-weight: 500;
+      line-height: 1.5;
+
+      color: $whiteColor;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      @include hover (transform, scale(1.15));
+    }
+  }
+
+  &__main {
+    padding-top: toRem(50);
+
+    @include onDesktop {
+      display: flex;
+    }
+    &--white {
+      color: $whiteColor;
+    }
+  }
+
+  &__text {
+
+    @include onTablet {
+      grid-column: 1 / 6;
+      grid-row: 1;
+    }
+  }
+
+  &__additional-text {
+    height: toRem(20);
+    font-size: toRem(14);
+    line-height: 1.4; /* 19.6/14 */
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-size: toRem(48);
+    font-weight: 700;
+    padding-top: toRem(10);
+
+    @include onTablet {
+      font-size: toRem(72);
+
+      max-width: 569px;
+    }
+
+    @include onDesktop {
+      font-size: toRem(96);
+    }
+  }
+
+  &__main-text {
+    max-width: 267px;
+
+    line-height: 1.5; /* 24/16 */
+    padding-top: toRem(30);
+
+    @include onTablet {
+      max-width: 330px;
+      padding-top: toRem(20);
+    }
+
+    @include onDesktop {
+      max-width: 500px;
+      padding-top: toRem(30);
+    }
+  }
+
+  &__button {
+    max-width: toRem(330);
+    height: toRem(60);
+    margin-top: toRem(40);
+
+    font-weight: 600;
+
+    background-color: $orangeColor;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: $transitionTime;
+
+    &:hover {
+      background-color: $hoverBtColor;
+    }
+
+    &:active {
+      background-color: $activeBtColor;
+    }
+
+    @include onTablet {
+      margin-top: toRem(50);
+    }
+
+    @include onDesktop {
+      margin-top: toRem(81);
+      max-width: 270px;
+    }
+  }
+
+  &__date {
+    position: relative;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      padding-top: toRem(135);
+      padding-bottom: toRem(50);
+    }
+
+    &-text {
+      line-height: 1.25; /* 17.5/14 */
+      font-weight: 700;
+    }
+
+    &-line {
+      position: absolute;
+      display: inline-block;
+      bottom: 57px;
+      right: -20px;
+      background-color: $whiteColor;
+      width: 469px;
+      height: 1px;
+    }
+  }
+
+  &__image {
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: toRem(40);
+
+    @include onTablet {
+      margin-top: toRem(70);
+    }
+
+    @include onDesktop {
+      position: absolute;
+    }
+  }
+
+  &__image-size {
+    width: 100%;
+
+    background-size: cover;
+    background-position: center;
+
+    padding-inline: toRem(17.5);
+
+    @include onTablet {
+      content: url("../images/photos/header-image-tablet.png");
+
+      padding-inline: toRem(123.5);
+    }
+
+    @include onDesktop {
+      content: url("../images/photos/header-image-desktop.png");
+
+      padding-inline: 0;
+    }
+  }
+}

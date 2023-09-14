@@ -1,0 +1,269 @@
+.menu {
+  background-color: $headerBgColor;
+  box-sizing: border-box;
+  height: 100vh;
+  margin: 0 auto;
+
+  overflow-y: hidden;
+  &__content {
+    position: relative;
+
+    @include contentPaddingInLine;
+  }
+
+  &__top-bar {
+    height: toRem(80);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      height: toRem(77);
+    }
+
+    @include onDesktop {
+      height: toRem(90);
+    }
+  }
+
+  &__logo {
+    width: toRem(123);
+    height: toRem(40);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include hover (transform, scale(1.1));
+  }
+
+  &__set {
+    display: flex;
+    gap: toRem(30);
+
+    @include onTablet {
+      gap: toRem(44);
+    }
+  }
+
+  &__lang {
+    display: flex;
+    align-items: center;
+    font-size: toRem(16);
+    line-height: 1.5; /* 24/16 */
+    font-weight: 500;
+
+    width: toRem(35);
+    gap: toRem(5);
+
+    color: $whiteColor;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @include hover (transform, scale(1.15));
+
+    @include onTablet {
+      order: 2;
+
+      width: toRem(34);
+    }
+
+    @include onDesktop {
+      width: toRem(35);
+    }
+  }
+}
+
+.main {
+  padding-top: toRem(30);
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &--white {
+    color: $whiteColor;
+  }
+
+  &__text {
+    position: relative;
+    &--font {
+      font-size: toRem(14);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+  }
+
+  &__container {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+
+      padding-top: toRem(30);
+      gap: toRem(123);
+    }
+
+    @include onDesktop {
+      padding-top: toRem(13);
+      gap: toRem(83);
+    }
+  }
+
+  &__schedule {
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  &__address {
+    padding-top: toRem(20);
+    font-weight: 600;
+    line-height: 1.5;
+
+    @include onTablet {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-size: toRem(20);
+    font-weight: 700;
+    line-height: 1.5;
+
+    padding-top: toRem(40);
+    padding-bottom: toRem(40);
+
+    @include onTablet {
+      font-size: toRem(48);
+      line-height: 1.2;
+
+      gap: toRem(30);
+      padding-top: toRem(50);
+      padding-bottom: toRem(50);
+    }
+
+    @include onDesktop {
+      gap: toRem(60);
+      padding-top: toRem(70);
+      padding-bottom: toRem(60);
+    }
+
+    &-text {
+      cursor: pointer;
+      display: inline-block;
+      @include hover (transform, scale(1.05));
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -1px;
+        height: 1px;
+        width: 100%;
+        background-color: $whiteColor;
+        transition: $transitionTime;
+        transform: scale(0);
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: toRem(20);
+
+    @include onTablet {
+      gap: toRem(30);
+    }
+
+    @include onDesktop {
+      gap: toRem(60);
+    }
+  }
+
+  &__line {
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 280px;
+      height: toRem(1);
+      background-color: $whiteColor;
+
+      @include onDesktop {
+        width: toRem(570);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__button {
+    width: toRem(280);
+    height: toRem(60);
+    margin-top: toRem(40);
+
+    font-weight: 600;
+
+    background-color: $orangeColor;
+    cursor: pointer;
+    transition: $transitionTime;
+
+    &:hover {
+      background-color: $hoverBtColor;
+    }
+
+    &:active {
+      background-color: $activeBtColor;
+    }
+
+    @include onTablet {
+      width: toRem(330);
+      margin-top: toRem(50);
+    }
+
+    @include onDesktop {
+      width: toRem(270);
+      margin-top: toRem(60);
+      margin-bottom: toRem(108);
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+
+      max-width: 100%;
+      height: auto;
+
+      padding-top: toRem(30);
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      padding-top: 0;
+    }
+
+    &-photo {
+      @include onTablet {
+        width: toRem(422);
+        height: auto;
+
+        background-size: cover;
+        background-position: center;
+      }
+
+      @include onDesktop {
+        width: 100%;
+      }
+    }
+  }
+}

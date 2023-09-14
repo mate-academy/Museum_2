@@ -1,0 +1,93 @@
+.subscribe {
+  padding-top: toRem(120);
+
+  @include contentPaddingInLine;
+
+  &__flex-box {
+    @include onDesktop {
+      display: flex;
+
+      gap: toRem(30);
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: toRem(28);
+    line-height: 125%; /* 35/28 */
+
+    @include onTablet {
+      font-size: toRem(40);
+    }
+
+    @include onDesktop {
+      font-size: toRem(48);
+    }
+  }
+
+  &__text {
+    line-height: 150%; /* 24/16 */
+
+    padding-top: toRem(20);
+
+    @include onTablet {
+      max-width: toRem(570);
+    }
+  }
+
+  &__form-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: toRem(30);
+
+    @include onDesktop {
+      gap: toRem(40);
+    }
+  }
+
+  &__field {
+    margin-top: toRem(50);
+    padding-bottom: toRem(3);
+
+    border-bottom: 1px solid $mainColor;
+
+    outline: none;
+
+    &:hover {
+      border-color: $orangeColor;
+      &::placeholder {
+        color: $orangeColor;
+      }
+    }
+
+    &:active {
+      color: $orangeColor;
+      border-bottom: 1px solid $orangeColor;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    @include onTablet {
+      max-width: toRem(450);
+    }
+  }
+
+  &__button {
+    height: toRem(60);
+
+    color: $whiteColor;
+    background-color: $orangeColor;
+
+    @include onTablet {
+      max-width: toRem(330);
+    }
+
+    @include onDesktop {
+      max-width: toRem(270);
+    }
+  }
+}
