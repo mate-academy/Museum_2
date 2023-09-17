@@ -1,9 +1,26 @@
 .header {
   background-color: $b-color;
 
+  &__image {
+    background-image: url(../images/Girl.png);
+    background-size: contain;
+    background-position: center top 474px;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      background-position: center bottom;
+      background-size: auto;
+    }
+
+    @include onDesktop {
+      background-position: 100% 100%;
+      background-size: contain;
+      // background-position: right ;
+    }
+  }
+
   &__content {
-    flex-direction: column;
-    justify-content: space-between;
+    // height: 100vh;
   }
 
   &__info {
@@ -97,26 +114,16 @@
     align-items: center;
     display: flex;
     grid-column: span 2;
-    margin-bottom: 40px;
+    margin-bottom: 313px;
 
     @include onTablet {
       grid-column: 1/4;
-      margin-bottom: 70px;
+      margin-bottom: 564px;
     }
 
     @include onDesktop {
       margin-bottom: 135px;
     }
-  }
-
-  &__image {
-    // width: 625px;
-    height: 663px;
-    right: 0;
-    position: absolute;
-    top: 137px;
-    left: 665px;
-    bottom: 0;
   }
 
   &__line {
