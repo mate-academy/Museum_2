@@ -1,0 +1,124 @@
+.subscribe-to-the-digest {
+  padding-top: 30px;
+  padding-bottom: 80px;
+
+  @include onTablet {
+    padding-top: 55px;
+    padding-bottom: 128px;
+  }
+
+  @include onDesktop {
+    padding-top: 0;
+    padding-bottom: 200px;
+  }
+
+  &__wrapper {
+    @include pageGrid;
+
+    &--title {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 6;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--description {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 6;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 13;
+      }
+    }
+
+    &--email {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 6;
+      }
+
+      &:-webkit-autofill {
+        &,
+        &:hover,
+        &:focus,
+        &:active {
+          caret-color: $c-main;
+          -webkit-text-fill-color: $c-black;
+          // -webkit-box-shadow: none;
+          -webkit-box-shadow: 0 0 0 1000px $c-white inset;
+          // transition: background-color 5000s ease-in-out 0s;
+        }
+      }
+    }
+
+    &--button {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+    }
+  }
+
+  &__title {
+    color: $c-black;
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    color: $c-black;
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__email {
+    width: 100%;
+    padding-bottom: 3px;
+    color: $c-black;
+    height: 28px;
+    font-weight: 700;
+
+    background-color: transparent;
+    border-bottom: 1px solid $c-black;
+    
+    margin-bottom: 30px;
+
+    @include hover(color, $c-main);
+    @include hover(border-color, $c-main);
+
+    &:focus {
+      color: $c-main;
+      border-color: $c-main;
+      font-weight: 400;
+    }
+
+    &:active {
+      font-weight: 400;
+      caret-color: $c-main;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+    }
+  }
+}
