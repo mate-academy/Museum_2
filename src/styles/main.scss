@@ -1,7 +1,31 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "blocks";
 
 body {
   background: $c-gray;
+}
+
+.main {
+  &__content {
+    display: grid;
+    row-gap: 90px;
+    padding-block: 90px;
+    background-color: $c-white;
+
+    @include onTablet {
+      row-gap: 125px;
+      padding-block: 125px;
+    }
+
+    @include onDesktop {
+      row-gap: 110px;
+      padding-block: 110px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
 }

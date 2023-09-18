@@ -1,0 +1,191 @@
+.footer {
+  padding-top: 34px;
+  padding-bottom: 30px;
+
+  @include onTablet {
+    padding-top: 50px;
+  }
+
+  &__wrapper {
+    @include pageGrid;
+
+    &--contacts {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+    }
+
+    &--work-schedule {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 3 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 7;
+      }
+    }
+
+    &--nav {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 5 / 7;
+      }
+
+      @include onDesktop {
+        grid-column: 9 / 11;
+      }
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 62px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 72px;
+    }
+
+    &--title {
+      color: $c-white;
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--links {
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+
+      &--link {
+        color: $c-white;
+        position: relative;
+        width: max-content;
+        
+        @include hover(color, $c-hover-text);
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -2px;
+  
+          height: 2px;
+          width: 100%;
+  
+          background-color: $c-white;
+          transition: transform 0.3s;
+          transform: scale(0);
+          transform-origin: left;
+        }
+  
+        &:hover::after {
+          transform: scale(1);
+        }
+      }
+    }
+
+    &--socials {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  &__work-schedule {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--title {
+      color: $c-white;
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    &--description {
+      color: $c-white;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-bottom: 60px;
+
+    @include onTablet {
+      gap: 30px;
+      margin-bottom: 0;
+    }
+
+    &--links {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &--link {
+      color: $c-white;
+      position: relative;
+      width: max-content;
+      @include hover(color, $c-hover-text);
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -4px;
+
+        height: 2px;
+        width: 100%;
+
+        background-color: $c-white;
+        transition: transform 0.3s;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &-text-block {
+      display: flex;
+      flex-direction: row;
+      gap: 22px;
+    
+      @include onDesktop {
+        gap: 102px;
+      }
+
+      &--text {
+        color: $c-white;
+      }
+    }
+  }
+}
