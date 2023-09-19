@@ -1,0 +1,126 @@
+.header {
+  background-color: $primary-color;
+  background-image: url("./images/header-bg-sm.png");
+  background-repeat: no-repeat;
+  background-position: bottom 0 center;
+  background-size: 300px;
+
+  @include onTablet {
+    background-size: 500px;
+  }
+
+  @include onDesktop {
+    background-position: right 0 bottom 0;
+    background-size: 600px;
+
+  }
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: $c-gray;
+    position: relative;
+  }
+}
+
+.description {
+  @include pageGrid;
+  margin: 0;
+  margin-top: 50px;
+
+  @include onTablet {
+    margin-top: 100px;
+  }
+
+  &__wrapper {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__schedule {
+    font-size: 14px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+    margin: 0;
+    margin-top: 10px;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+
+  }
+
+  &__sub-title {
+    margin: 0;
+    margin-top: 30px;
+  }
+
+  &__btn-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+    margin: 0;
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      display: grid;
+      column-gap: 10px;
+      grid-template-columns: repeat(7, 1fr);
+      position: absolute;
+      bottom: 50px;
+      left: 50px;
+    }
+  }
+
+  &__time {
+    grid-column: span 1;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    margin-bottom: -3px;
+    padding: 0;
+
+  }
+
+  &__line {
+    grid-column: 2 / 7;
+    border-bottom: 1px solid $c-gray;
+  }
+}

@@ -1,0 +1,135 @@
+.menu {
+  height: 100vh;
+  background-color: $primary-color;
+  color: $c-gray;
+
+  &__bottom {
+    @include pageGrid;
+    height: 100vh;
+  }
+
+  &__order {
+    grid-column: 1  / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__info-wrapper {
+    display: grid;
+    grid-template-rows: 2;
+    margin-top: 10px;
+
+    @include onTablet {
+      grid-template-rows: 1;
+      margin-top: 40px;
+
+    }
+  }
+
+  &__schedule {
+    margin: 0;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__adress {
+    margin: 0;
+    grid-row: 2 / 3;
+
+    @include onTablet {
+      grid-column: 3 / 6;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__info {
+    margin: 0;
+
+    &--weigth {
+      font-weight: 600;
+    }
+  }
+
+  &__events {
+    padding: 40px 0;
+    border-bottom: 1px solid $c-gray;
+
+    @include onTablet {
+      padding-top: 70px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__event {
+    margin: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+  &__link {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    text-decoration: none;
+    color: $c-gray;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+  }
+
+  &__btn-wrapper {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__img-wrapper {
+    grid-column: 1 / -1;
+    display: none;
+
+    @include onTablet {
+      grid-column: 2 / 6;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+}
