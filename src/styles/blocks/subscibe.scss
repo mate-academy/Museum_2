@@ -106,8 +106,22 @@
     outline: none;
 
     &::placeholder {
-      color: #1c1b29;
       font-weight: 400;
+    }
+
+    &:hover::placeholder,
+    &:hover:invalid {
+      border-color: #cd4d31;
+      color: #cd4d31;
+    }
+
+    &:focus:invalid {
+      border-color: #cd4d31;
+      color: #cd4d31;
+    }
+
+    &:focus::placeholder {
+      color: #cd4d31;
     }
 
     @include onTablet {
@@ -117,6 +131,8 @@
     @include onDesktop {
       width: 470px;
     }
+
+    transition: all $duration;
   }
 
   &-button {
