@@ -8,10 +8,8 @@
   font-weight: 600;
   line-height: 16px;
   transition: $effectDuration;
-
-  &:hover {
-    background-color: $hover;
-  }
+  cursor: pointer;
+  @include hover(transform, scale(1.05));
 
   &--secondary {
     display: none;
@@ -23,16 +21,14 @@
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: right 24px center;
+    outline: none;
 
     @include onTablet {
       display: grid;
     }
 
     &:hover {
-      background-color: $c-gray;
       background-image: url("./images/icons/arrow-hover.png");
-      color: $hover;
-      border: 2px solid $hover;
     }
 
     &--sm {
