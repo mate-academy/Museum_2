@@ -1,0 +1,58 @@
+.top-bar {
+  padding-block: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    height: 40px;
+  }
+
+  &__logo-link {
+    cursor: pointer;
+    @include hover(transform, scale(1.1));
+  }
+
+  &__icons {
+    display: flex;
+    gap: 40px;
+
+    &--menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    @include onTablet {
+      &--menu {
+        gap: 40px;
+      }
+    }
+  }
+
+  &__lang {
+    display: none;
+    background-color: transparent;
+    color: $c-gray;
+    font-size: 16px;
+    border: none;
+    outline: none;
+
+    &--menu {
+      display: inline;
+    }
+
+    @include onTablet {
+      display: inline;
+
+      &--menu {
+        display: none;
+      }
+    }
+
+    &--visible {
+      display: none;
+    }
+  }
+
+}
