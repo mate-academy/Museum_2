@@ -8,6 +8,7 @@
   &__logo {
     height: 40px;
   }
+
   &__logo-link {
     cursor: pointer;
     @include hover(transform, scale(1.1));
@@ -16,22 +17,42 @@
   &__icons {
     display: flex;
     gap: 40px;
-  }
 
-  &__lang {
-    display: block;
-    background-color: transparent;
-    color: $c-gray;
-    font-size: 22px;
-    border: none;
-    outline: none;
+    &--menu {
+      display: flex;
+      gap: 15px;
+    }
 
-    &--hidden {
-      display: none;
-
-      @include onTablet {
-        display: inline;
+    @include onTablet {
+      &--menu {
+        gap: 40px;
       }
     }
   }
+
+  &__lang {
+    display: none;
+    background-color: transparent;
+    color: $c-gray;
+    font-size: 16px;
+    border: none;
+    outline: none;
+
+    &--menu {
+      display: inline;
+    }
+
+    @include onTablet {
+      display: inline;
+
+      &--menu {
+        display: none;
+      }
+    }
+
+    &--visible {
+      display: none;
+    }
+  }
+
 }
