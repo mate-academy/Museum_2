@@ -1,0 +1,72 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  @extend %button;
+  border: none;
+  text-decoration: none;
+
+  &--first {
+    background-color: $main-color;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+  }
+
+  &--secondary {
+    border: 1px solid $main-color;
+    gap: 8px;
+    color: $main-color;
+    background-color: transparent;
+
+    @include onTablet {
+      grid-column: 5 / 7;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+
+    & path {
+      stroke: $main-color;
+    }
+
+    &:hover {
+      color: #af3419;
+      border: 1px solid #af3419;
+
+      & path {
+        stroke: #af3419;
+      }
+    }
+
+    &:active {
+      color: #ea340d;
+      border: 1px solid #ea340d;
+
+      & path {
+        stroke: #ea340d;
+      }
+    }
+
+    &:disabled {
+      color: #dd836f;
+      border: 1px solid #dd836f;
+
+      & path {
+        stroke: #dd836f;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+input:-webkit-autofill {
+  font-family: "Raleway", sans-serif !important;
+  font-size: 16px !important;
+  background-color: none !important;
+  padding-bottom: 3px;
+  -webkit-box-shadow: 0 0 0 1000px #f1f5f4 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+  outline: none;
+  -webkit-text-fill-color: $black-color;
+  font-weight: 700 !important;
+
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  font-weight: 600 !important;
+  -webkit-text-fill-color: $main-color;
+}
+
+.subscribe {
+  @include pageGrid;
+  padding-bottom: 80px;
+
+  @include onTablet {
+    padding-bottom: 128px;
+
+  }
+
+  &__title {
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__brake {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__text {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    @extend %main;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+      color: $black-color;
+    }
+
+    @include onDesktop {
+      padding-block: 0;
+      grid-column: 7 / 13;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    @include pageGrid;
+    grid-template-rows: repeat(2, auto);
+    row-gap: 30px;
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      padding-top: 50px;
+      row-gap: 40px;
+    }
+  }
+
+  &__email {
+    width: 100%;
+    color: $black-color;
+    font-weight: 700;
+    @extend %main;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $black-color;
+    padding-bottom: 3px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+
+    &::placeholder {
+      color: $black-color;
+      @extend %main;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main-color;
+
+      &::placeholder {
+        color: $main-color;
+      }
+    }
+
+    &:focus {
+      color: $main-color;
+      font-weight: 600;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    @include onTablet {
+      grid-column: span 3;
+      grid-row: 2 / 3;
+    }
+  }
+}
