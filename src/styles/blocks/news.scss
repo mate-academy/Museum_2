@@ -1,0 +1,110 @@
+.news {
+  padding-top: 90px;
+  padding-bottom: 120px;
+
+  @include onTablet {
+    padding-top: 120px;
+    padding-bottom: 130px;
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    padding-top: 110px;
+    padding-bottom: 150px;
+  }
+
+  &__title {
+    padding-bottom: 40px;
+
+    @include onTablet {
+      align-self: center;
+      display: flex;
+      align-items: end;
+      height: fit-content;
+      padding-bottom: 0;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__card {
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 70px;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      padding-top: 53px;
+      grid-column: span 6;
+    }
+  }
+
+  &__image {
+    height: 281px;
+    width: 100%;
+
+    @include onTablet {
+      height: 330px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+    }
+
+    &--first {
+      background-image: url("../images/pictures-mobile.jpg");
+
+      @include onTablet {
+        background-image: url("../images/pictures-tablet.jpg");
+      }
+
+      @include onDesktop {
+        background-image: url("../images/pictures.jpg");
+      }
+    }
+
+    &--second {
+      background-image: url("../images/cat-mouse-mobile.jpg");
+
+      @include onTablet {
+        background-image: url("../images/cat-mouse-tablet.jpg");
+      }
+
+      @include onDesktop {
+        background-image: url("../images/cat-mouse.jpg");
+      }
+    }
+  }
+
+  &__dates {
+    color: $black-color;
+    padding-bottom: 0;
+
+    @include onTablet {
+      padding-top: 30px;
+    }
+
+    @include onDesktop {
+      padding-top: 20px;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      padding-top: 18px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      align-self: center;
+      grid-column: 5 / 7;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: -3 / -1;
+    }
+  }
+}

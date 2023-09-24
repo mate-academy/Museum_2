@@ -1,0 +1,100 @@
+.actual {
+  padding-top: 90px;
+  @include pageGrid;
+  row-gap: 30px;
+  grid-template-rows: repeat(4, auto);
+
+  @include onTablet {
+    grid-template-rows: repeat(2, auto);
+    padding-top: 105px;
+  }
+
+  @include onDesktop {
+    padding-top: 110px;
+  }
+
+  &__title {
+    text-align: center;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__card {
+    padding-top: 30px;
+    
+    @include onTablet {
+      padding-top: 40px;
+      grid-column: span 3;
+      grid-row: 2 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: stretch;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__image {
+    height: 356px;
+
+    @include onTablet {
+      height: 420px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+    }
+
+    &--first {
+      background-image: url("../images/angel-mobile.jpg");
+
+      @include onTablet {
+        background-image: url("../images/angel-tablet.jpg");
+      }
+
+      @include onDesktop {
+        background-image: url("../images/angel.png");
+      }
+    }
+
+    &--second {
+      background-image: url("../images/mykola-pymonenko-mobile.jpg");
+
+      @include onTablet {
+        background-image: url("../images/mykola-pymonenko-tablet.jpg");
+      }
+
+      @include onDesktop {
+        background-image: url("../images/mykola-pymonenko.png");
+      }
+    }
+  }
+
+  &__dates {
+
+    @include onTablet {
+      padding-top: 30px;
+    }
+
+    @include onDesktop {
+      padding-top: 20px;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      padding-bottom: 40px;
+    }
+  }
+}

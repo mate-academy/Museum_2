@@ -1,0 +1,133 @@
+.footer {
+  padding-top: 34px;
+  padding-bottom: 30px;
+  color: $white-color;
+  background-color: $background-color;
+
+  @include onTablet {
+    padding-top: 50px;
+  }
+
+  &__content {
+    @include pageGrid;
+    grid-template-rows: repeat(4, auto);
+    row-gap: 50px;
+
+    @include onTablet {
+      grid-template-rows: repeat(2, auto);
+      row-gap: 60px;
+    }
+
+    @include onDesktop {
+      row-gap: 70px;
+    }
+  }
+
+  &__block {
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    padding-bottom: 10px;
+    @include onTablet {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @extend %main;
+    color: $white-color;
+    font-style: normal;
+  }
+
+  &__social {
+    height: fit-content;
+    padding-top: 30px;
+    display: flex;
+    gap: 20px;
+
+    @include onDesktop {
+      padding-top: 50px;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $white-color;
+    transform-origin: left;
+    @include hover(color, $main-color);
+    @include hover(transform, scale(1.2));
+
+    &--inline {
+      display: inline;
+    }
+
+    &:hover path {
+      fill: $main-color;
+      transition: all $effectDuration ease-in;
+    }
+  }
+
+  &__nav-item {
+    height: 28px;
+    padding-bottom: 5px;
+
+    @include onTablet {
+      padding-bottom: 10px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      height: 23px;
+    }
+  }
+
+  &__nav-link {
+    height: 23px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-top: 10px;
+
+    @include onTablet {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__watermarks {
+    display: flex;
+
+    & :nth-child(2) {
+      padding-left: 22px;
+
+      @include onDesktop {
+        padding-left: 102px;
+      }
+    }
+  }
+
+  &__go-top {
+    height: 30px;
+    @include hover(transform, scale(1.2));
+
+    &:hover path {
+      stroke: $main-color;
+      transition: all $effectDuration ease-in;
+    }
+  }
+
+  &__add-text {
+    @extend %additional;
+  }
+}

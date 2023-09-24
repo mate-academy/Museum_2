@@ -1,0 +1,108 @@
+.events {
+  padding-top: 120px;
+  padding-bottom: 90px;
+  @include pageGrid;
+  row-gap: 30px;
+  grid-template-rows: repeat(4, auto);
+
+  @include onTablet {
+    grid-template-rows: repeat(3, auto);
+    padding-top: 105px;
+    padding-bottom: 100px;
+  }
+
+  @include onDesktop {
+    padding-top: 200px;
+    padding-bottom: 110px;
+  }
+
+  &__title {
+    @include onTablet {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__card {
+    padding-top: 30px;
+
+    @include onTablet {
+      padding-top: 40px;
+      grid-column: 1 / -1;
+      grid-row: span 1;
+      @include pageGrid;
+    }
+  }
+
+  &__card-top {
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__card-bottom {
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__image {
+    height: 358px;
+
+    @include onTablet {
+      height: 422px;
+    }
+
+    @include onDesktop {
+      height: 475px;
+    }
+
+    &--first {
+      background-image: url("../images/pavlo-gudimov-mobile.jpg");
+
+      @include onTablet {
+        background-image: url("../images/pavlo-gudimov-tablet.jpg");
+      }
+
+      @include onDesktop {
+        background-image: url("../images/pavlo-gudimov.png");
+      }
+    }
+
+    &--second {
+      background-image: url("../images/australia-mobile.jpg");
+
+      @include onTablet {
+        background-image: url("../images/australia-tablet.jpg");
+      }
+
+      @include onDesktop {
+        background-image: url("../images/australia.jpeg");
+      }
+    }
+  }
+
+  &__dates {
+    @include onTablet {
+      padding-top: 0;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+  }
+}

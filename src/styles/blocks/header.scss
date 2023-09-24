@@ -1,0 +1,168 @@
+.header {
+  background-color: $background-color;
+  color: $white-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 30px;
+  }
+
+  &__content {
+    @include pageGrid;
+    grid-template-rows: repeat(5, auto) 1fr;
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__top-bar {
+    grid-column: 1 / -1;
+  }
+
+  &__menu-group {
+    gap: 40px;
+  }
+
+  &__lang {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__dates {
+    height: fit-content;
+    grid-column: 1 / -1;
+    padding-top: 70px;
+    padding-bottom: 10px;
+    @extend %additional;
+
+    @include onTablet {
+      padding-top: 99px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text {
+    height: fit-content;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-right: 13px;
+    @extend %main;
+    color: $white-color;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      padding-top: 20px;
+      padding-bottom: 50px;
+      padding-right: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      padding-top: 30px;
+      padding-bottom: 81px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__desktop-block {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 20px;
+      align-self: start;
+      justify-content: stretch;
+      grid-row: -1 / -2;
+      grid-column: 1 / 7;
+      margin-top: 135px;
+      width: 100%;
+    }
+  }
+
+  &__desktop-dates {
+    opacity: 0.7;
+  }
+
+  &__line {
+    position: relative;
+    top: 2px;
+    height: 1px;
+    background-color: $white-color;
+    opacity: 0.3;
+    flex-grow: 1;
+    align-self: center;
+  }
+
+  &__bottom {
+    z-index: 0;
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      padding-top: 70px;
+    }
+
+    @include onDesktop {
+      justify-content: end;
+      padding-top: 137px;
+      grid-column: 2 / -1;
+      grid-row: 1 / -1;
+    }
+
+  }
+  &__image {
+    height: 273px;
+    width: 245px;
+    background-image: url("../images/ukraine-girl.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+
+    @include onTablet {
+      height: 494px;
+      width: 443px;
+    }
+
+    @include onDesktop {
+      min-height: 663px;
+      width: 100%;
+      justify-self: end;
+      align-self: flex-end;
+      background-position: bottom right;
+      background-size: contain;
+    }
+  }
+}
