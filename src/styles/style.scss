@@ -1,0 +1,65 @@
+@import "utils/mixins";
+@import "utils/vars";
+@import "blocks/header";
+@import "blocks/menu";
+@import "blocks/icons";
+@import "blocks/section-title";
+@import "blocks/main";
+@import "blocks/plan-a-visit";
+@import "blocks/buttons";
+@import "blocks/current-exhibitions";
+@import "blocks/upcoming-events";
+@import "blocks/news";
+@import "blocks/subscribe";
+@import "blocks/footer";
+
+.page {
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: $white-color;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  .page__top {
+    position: fixed;
+    display: block;
+    bottom: 30px;
+    right: 20px;
+    z-index: 1;
+
+    @include onTablet {
+      right: 39px;
+    }
+
+    @include onDesktop {
+      right: 55px;
+    }
+  }
+
+  &__arrow-up {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 26px;
+
+  &__logo-link {
+    display: flex;
+
+    @include hover(transform, scale(1.2));
+  }
+}

@@ -1,0 +1,82 @@
+.upcoming-events {
+  position: relative;
+}
+
+.event {
+  @include pageGrid;
+
+  &__photos {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 1/4;
+
+    }
+    @include onDesktop {
+      grid-column: 1/5;
+    }
+  }
+
+  &__content {
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 4/7;
+    }
+    
+    @include onDesktop {
+      grid-column: 5/11;
+    }
+  }
+
+  &__photo {
+    max-width: 280px;
+
+    @include onTablet {
+      max-width: 330px;
+    }
+
+    @include onDesktop {
+      max-width: 370px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include fontContentSection;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+.event__photo:hover {
+  @include hover (transform, scale(1.2));
+}
+
+.first--event {
+  margin-bottom: 60px;
+
+  @include onTablet {
+    margin-bottom: 70px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 60px;
+  }
+}
+
+.second--event {
+  margin-bottom: 30px;
+
+  @include onTablet {
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 110px;
+  }
+}
