@@ -1,5 +1,6 @@
 .visit {
   background-color: $b-color;
+  max-height: 100%;
 
   @include onDesktop {
     background-image: url(../images/girl2.png);
@@ -7,6 +8,13 @@
     height: 100vh;
     background-position: center right 702px;
     background-size: contain;
+    transition: transform $time-transition;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+      overflow-x: scroll;
+    }
   }
 
   @include onDesktop1200 {
@@ -16,6 +24,7 @@
 
     &:hover {
       transform: scale(1.05);
+      overflow-x: scroll;
     }
   }
 
