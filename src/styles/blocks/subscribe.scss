@@ -1,0 +1,95 @@
+.subscribe {
+  &__content {
+    @include pageContent;
+  }
+
+  &__title {
+    @include sectionTitle;
+    margin-bottom: 20px;
+    grid-column: span 2;
+
+    @include onTablette {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    grid-column: span 2;
+
+    @include onTablette {
+      grid-column: span 5;
+    }
+    @include onDesktop {
+      grid-column: 7 / 12;
+    }
+  }
+
+  &__form {
+    grid-column: span 2;
+
+    @include onTablette {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__form-field {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid $c-black;
+    background-color: $c-white;
+    color: $c-black;
+    outline: none;
+    cursor: pointer;
+
+    &::placeholder {
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $c-black;
+
+      &:hover {
+        color: $c-red;
+      }
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px $c-white inset !important;
+      -webkit-text-fill-color: $c-black !important;
+      border-top-color: $c-white;
+      border-left: $c-white;
+      border-right-color: $c-white;
+    }
+  }
+
+  &__label {
+    display: block;
+    height: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    width: 100%;
+    @include onTablette {
+      width: 75%;
+    }
+    @include onDesktop {
+      width: 60%;
+    }
+  }
+}

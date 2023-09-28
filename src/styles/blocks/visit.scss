@@ -1,0 +1,97 @@
+.visit {
+  color: $c-white;
+  background-color: $c-green;
+
+  @include onDesktop {
+    position: relative;
+  }
+
+  &__content {
+    @include pageContent;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @include onTablette {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      padding-top: 200px;
+      padding-bottom: 400px;
+    }
+  }
+
+  &__image-container {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      width: 42%;
+      max-height: 800px;
+      overflow: hidden;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    @include onTablette {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    @include sectionTitle;
+
+    margin-bottom: 20px;
+    font-size: 38px;
+    line-height: 38px;
+    grid-column: span 2;
+
+    @include onTablette {
+      margin-bottom: 20px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 12;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+    @include onTablette {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    grid-column: span 2;
+
+    @include onTablette {
+      grid-column: 1 / 5;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__date {
+    color: $c-black;
+  }
+}

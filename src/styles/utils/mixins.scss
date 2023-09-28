@@ -1,0 +1,87 @@
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onTablette {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin paddingInline {
+  padding-inline: 20px;
+
+  @include onTablette {
+    padding-inline: 39px;
+  }
+
+  @include onDesktop {
+    padding-inline: 55px;
+  }
+}
+
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin photo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin photoContainer {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @include hover(transform, scale(1.03));
+}
+
+@mixin pageTitle {
+  font-family: "Playfair Display", sans-serif;
+  font-weight: 700;
+}
+
+@mixin sectionTitle {
+  @include pageTitle;
+
+  font-size: 28px;
+  line-height: 35px;
+  height: max-content;
+  margin: 0;
+}
+
+@mixin articleTitle {
+  @include pageTitle;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+@mixin pageContent {
+  max-width: 1280px;
+  box-sizing: border-box;
+  display: grid;
+  column-gap: 20px;
+  --columns: 2;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include paddingInline;
+
+  @include onTablette {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+    margin: 0 auto;
+  }
+}
