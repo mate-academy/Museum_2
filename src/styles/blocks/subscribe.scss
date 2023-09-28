@@ -1,0 +1,124 @@
+.subscribe {
+  &__wrapper {
+    @include contentPaddingInline;
+    @include pageGrid;
+
+    @include onDesktop {
+      max-width: 1170px;
+      margin-inline: auto;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: $main-font;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+    text-align: left;
+    color: $black-color;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+
+      grid-column: 1 / -2;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 58px;
+      margin-bottom: 50px;
+
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+    grid-column: 1 / -1;
+    text-align: left;
+    color: $black-color;
+
+    @include onTablet {
+      grid-column: 1 / -2;
+    }
+
+    @include onDesktop {
+      grid-row: 1 / 2;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $black-color;
+    background-color: transparent;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      font-family: $secondary-font;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: $black-color;
+    }
+
+    &:hover {
+      &::placeholder {
+        color: $main-color;
+      }
+
+      border-bottom-color: $main-color;
+    }
+
+    &:focus {
+      outline: none;
+      caret-color: $main-color;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0 1000px $white-color inset;
+      font-weight: 700;
+    }
+  }
+
+  &__button {
+    @include button;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+    cursor: pointer;
+  }
+}

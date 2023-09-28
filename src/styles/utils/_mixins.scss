@@ -1,6 +1,93 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover($property, $toValue) {
+  transition: #{$property} $effectDuration;
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 39px;
+  }
+
+  @include onDesktop {
+    padding-inline: 55px;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+  }
+}
+
+@mixin button {
+  background-color: $main-color;
+  color: $white-color;
+  border: none;
+  @include hover(background-color, #af3419);
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+}
+
+@mixin button-white {
+  border: 1px solid $main-color;
+  color: $main-color;
+
+  &:hover {
+    color: #af3419;
+    border-color: #af3419;
+
+    .icon--arrow {
+      background-image: url(../images/icons/icon-arrow-hover.svg);
+    }
+  }
+
+  &:active {
+    color: #ea340d;
+    border-color: #ea340d;
+
+    .icon--arrow {
+      background-image: url(../images/icons/icon-arrow-pressed.svg);
+    }
+  }
+
+  &:disabled {
+    color: #dd836f;
+    border-color: #dd836f;
+
+    .icon--arrow {
+      background-image: url(../images/icons/icon-arrow-disabled.svg);
+    }
   }
 }

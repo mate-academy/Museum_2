@@ -1,0 +1,160 @@
+.exhibitions {
+  &__wrapper {
+    @include contentPaddingInline;
+
+    @include onDesktop {
+      max-width: 1170px;
+      margin-inline: auto;
+    }
+  }
+
+  &__items {
+    @include pageGrid;
+    row-gap: 60px;
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button-white-wrapper {
+    grid-column: 1 / -1;
+    @include onTablet {
+      display: none;
+    }
+
+    &--1 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 10 / -1;
+      }
+    }
+  }
+
+  &__title-wrapper {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__main-title {
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    height: 356px;
+    margin-bottom: 20px;
+
+    @include hover(transform, scale(1.03));
+
+    @include onTablet {
+      margin-bottom: 30px;
+      height: 420px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      height: 484px;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &--angel {
+      object-fit: cover;
+      object-position: 17%;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @extend %h4;
+    text-align: left;
+    color: $black-color;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      height: 60px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      height: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    text-align: left;
+    color: $gray-color;
+
+    @include onTablet {
+      margin-bottom: 40px;
+      height: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button-wrapper {
+    --columns: 1;
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(var(--columns), 1fr);
+
+    @include onTablet {
+      --columns: 3;
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      --columns: 6;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    @include button;
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__button-white {
+    @include button-white;
+  }
+}

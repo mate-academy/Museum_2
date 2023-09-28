@@ -1,0 +1,141 @@
+.menu {
+  box-sizing: border-box;
+  color: $white-color;
+  background-color: $header-bg-color;
+  font-weight: 700;
+  overflow: auto;
+  overflow-x: hidden;
+  height: 100vh;
+
+  &__main-picture {
+    @include onTablet {
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom;
+      background-image: url(../images/menu-bg-painter.png);
+      width: 422px;
+      height: 466px;
+      margin-inline: auto;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+      margin-left: 0;
+      grid-column: 7 / -1;
+      width: 624px;
+      height: 697px;
+    }
+  }
+
+  &__top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 10px;
+    background-color: $header-bg-color;
+
+    @include onDesktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__bottom {
+    @include contentPaddingInline;
+
+    @include onDesktop {
+      padding-left: 55px;
+      padding-right: 0;
+
+      --columns: 12;
+      display: grid;
+      column-gap: 30px;
+      grid-template-columns: repeat(var(--columns), 1fr);
+    }
+  }
+
+  &__wrapper {
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__bottom-title {
+    @extend %additional-text;
+  }
+
+  &__bottom-value {
+    font-family: $secondary-font;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: $white-color;
+    text-decoration: none;
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @include onDesktop {
+      gap: 83px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+  }
+
+  &__address {
+    margin-bottom: 40px;
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__line {
+    border-bottom: 1px solid $white-color;
+    width: 100%;
+    opacity: 0.3px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    @include button;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 232px;
+
+    @include onTablet {
+      width: 330px;
+      margin-bottom: 108px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}

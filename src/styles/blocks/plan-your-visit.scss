@@ -1,0 +1,73 @@
+.plan-your-visit {
+  &__wrapper {
+    @include pageGrid;
+    @include contentPaddingInline;
+
+    padding-block: 50px;
+    background-color: $header-bg-color;
+    color: $white-color;
+
+    @include onTablet {
+      padding-block: 80px;
+    }
+
+    @include onDesktop {
+      padding-block: 205px;
+
+      background-image: url(../images/plan-your-visit-bg-girl.png);
+      background-repeat: no-repeat;
+      background-position-x: left;
+      background-position-y: bottom;
+      background-size: contain;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    text-align: left;
+    color: $white-color;
+
+    grid-column: span 2;
+    grid-row: 1 / 2;
+
+    @include onTablet {
+      grid-column: span 4;
+      font-size: 62px;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+      font-size: 80px;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 11;
+      margin-top: 10px;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+    margin-top: 40px;
+    @include button;
+
+    @include onTablet {
+      margin-top: 60px;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+      grid-column: 6 / 9;
+    }
+  }
+}
