@@ -3,17 +3,20 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  scroll-behavior: smooth;
-  overflow: scroll;
 
   &__body {
+    overflow: scroll;
+    scroll-behavior: smooth;
     background-color: $c-white;
     min-width: 320px;
     margin: 0 auto;
 
     &:has(.page__menu:target) {
       overflow: hidden;
-      z-index: 2;
+    }
+
+    &--with-menu {
+      overflow: hidden;
     }
   }
 
@@ -50,6 +53,8 @@
 
     @include onDesktop {
       grid-column: 1 / 13;
+      padding-top: 27px;
+      padding-bottom: 27px;
     }
   }
 
