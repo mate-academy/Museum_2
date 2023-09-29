@@ -1,5 +1,5 @@
 # Museum 2 landing page
--[Museum 2 landing](https://marina-semipyatnaya.github.io/layout_landing-page/)
+-[Museum 2 landing](https://marina-semipyatnaya.github.io/Museum_2/#page__top)
 -[Museum 2 layout] (https://www.figma.com/file/HL3XGt5ZatvJoYBhOaWY5x/museum-prototype?type=design&node-id=12561-2985&mode=design&t=Ou4Uye3hyGuC2J6M-0)
 
 
