@@ -1,0 +1,154 @@
+.footer {
+  background-color: $header-bg-color;
+  color: $white-color;
+
+  &__content {
+    @include pageGrid;
+    row-gap: 50px;
+
+    @include onDesktop {
+      row-gap: 60px;
+    }
+
+    padding-block: 34px 30px;
+
+    @include onTablet {
+      padding-block: 50px 30px;
+    }
+  }
+
+  &__contacts {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-family: $main-font;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &__address {
+    margin-bottom: 30px;
+    text-align: left;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__address-link {
+    text-decoration: none;
+    color: $white-color;
+    transition: all $effectDuration;
+
+    @include hover(color, $black-color);
+    @include hover(font-size, 17px);
+  }
+
+  &__social-media-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__schedule {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__links-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &__links {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 5 / 6;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      grid-column: 9 / 11;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: $white-color;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      display: block;
+      height: 1px;
+      width: 35%;
+      background-color: $white-color;
+
+      transition: transform $effectDuration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+
+    text-align: center;
+  }
+
+  &__privacy {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+
+    @include onDesktop {
+      gap: 102px;
+    }
+  }
+}
