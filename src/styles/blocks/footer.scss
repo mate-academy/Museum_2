@@ -38,11 +38,6 @@
   }
 }
 
-.footer__data {
-  text-decoration: none;
-  color: $white-color;
-}
-
 .nav__footer {
   &--list {
     list-style: none;
@@ -51,8 +46,18 @@
 
   &--link {
     text-decoration: none;
+    position: relative;
+    display: inline-block;
 
     @include footerContentFont;
+  }
+
+  &--link::after {
+    @include underlineLinks;
+  }
+
+  &--link:hover::after {
+    transform: scale(1);
   }
 
   &--item {
@@ -113,4 +118,19 @@
   font-size: 14px;
   line-height: 19.6px;
   color: $white-color;
+}
+
+.footer__data {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: $white-color;
+
+  &::after {
+    @include underlineLinks;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
 }

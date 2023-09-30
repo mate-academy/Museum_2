@@ -128,6 +128,8 @@
 }
 
 .first--page {
+  position: relative;
+  
   @include footerTitleFont;
 
   text-decoration: none;
@@ -135,5 +137,13 @@
 
   @include onTablet {
     margin-bottom: 30px;
+  }
+
+  &::after {
+    @include underlineLinks;
+  }
+
+  &:hover::after {
+    transform: scale(1);
   }
 }

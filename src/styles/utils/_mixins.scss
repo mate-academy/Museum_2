@@ -12,7 +12,7 @@
 }
 
 @mixin hover($property, $toValue) {
-  transition: #{$property} 0.3s;
+  transition: #{$property} 0.5s;
   &:hover {
     #{$property}: $toValue;
   }
@@ -21,8 +21,8 @@
 @mixin Button() {
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 280px;
   height: 60px;
   background-color: $red-color;
@@ -83,8 +83,13 @@
 }
 
 @mixin fontButton() {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: 600;
   font-size: 16px;
+  padding-block: 5px;
   text-decoration: none;
   color: $white-color;
 }
@@ -92,6 +97,7 @@
 @mixin fontWhiteButton() {
   font-weight: 600;
   font-size: 16px;
+  padding-block: 5px;
   text-decoration: none;
   color: $red-color;
 }
@@ -181,7 +187,8 @@
 }
 
 @mixin fontContentSection () {
-  font-weight: font-weight__default;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: $grey_color;
@@ -200,4 +207,18 @@
   font-size: 16px;
   line-height: 24px;
   color: $white-color;
+}
+
+@mixin underlineLinks () {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: $white-color;
+
+  transition: transform $effectDuration;
+  transform: scale(0);
+  transform-origin: left;
 }
