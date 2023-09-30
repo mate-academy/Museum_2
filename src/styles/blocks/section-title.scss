@@ -1,0 +1,149 @@
+.section__title {
+  margin: 0;
+  margin-bottom: 60px;
+
+  font-family: $font-family__Playfair;
+  font-weight: $font-weight__bold;
+  font-size: 28px;
+  line-height: 35px;
+  color: $black-color;
+  text-align: left;
+
+  @include onTablet {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  @include onDesktop {
+    font-size: 48px;
+    line-height: 57.6px;
+  }
+
+  &--bigger-size {
+    font-size: 38px;
+    line-height: 38px;
+    color: $white-color;
+    padding-bottom: 20px;
+    margin-bottom: 0;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      font-family: $font-family__Playfair;
+      font-size: 62px;
+      line-height: 62px;
+      grid-column: 1/5;
+    }
+
+    @include onDesktop {
+      padding-bottom: 10px;
+      grid-column: 6/12;
+    }
+  }
+}
+
+.exibition__date {
+  @include styleDate;
+
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.exibition {
+  &__title {
+    @include styleTitleThird;
+
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  &__second--title {
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.first--subtitle {
+  width: 279px;
+
+  @include onTablet {
+    width: 329px;
+  }
+
+  @include onDesktop {
+    width: 569px;
+  }
+}
+
+.event {
+  &__date {
+    margin: 0;
+    margin-bottom: 10px;
+    @include styleDate;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    @include styleTitleThird;
+  }
+}
+
+.news {
+  &__date {
+    margin: 0;
+    font-weight: $font-weight__small;
+    font-size: 14px;
+    line-height: 19.6px;
+    color: $black-color;
+  }
+
+  &__title {
+    margin: 0;
+    @include styleTitleThird;
+  }
+}
+
+.ident__title {
+  margin-bottom: 20px;
+
+  @include onDesktop {
+    margin-bottom: 50px;
+    grid-column: 1/6;
+  }
+}
+
+.footer__title {
+  margin: 0;
+  margin-bottom: 10px;
+  @include footerTitleFont;
+
+  @include onTablet {
+    margin-bottom: 30px;
+  }
+}
+
+.first--page {
+  position: relative;
+  
+  @include footerTitleFont;
+
+  text-decoration: none;
+  margin-bottom: 10px;
+
+  @include onTablet {
+    margin-bottom: 30px;
+  }
+
+  &::after {
+    @include underlineLinks;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}

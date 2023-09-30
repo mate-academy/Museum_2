@@ -1,6 +1,224 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.5s;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin Button() {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 60px;
+  background-color: $red-color;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+}
+
+@mixin visitedColor() {
+  background-color: $visited-color;
+}
+
+@mixin hoverColor() {
+  background-color: $hover-color;
+}
+
+@mixin activeColor() {
+  background-color: $active-color;
+}
+
+@mixin whiteButton () {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 60px;
+  background-color: $white-color;
+  border: 1px solid $red-color;
+
+  @include onTablet {
+    width: 210px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+}
+
+@mixin visitedColorWhiteButton () {
+  color: $visited-color;
+  background-color: $visited-color;
+}
+
+@mixin hoverColorWhiteButton () {
+  color: $hover-color;
+  border-color: $hover-color;
+}
+
+@mixin activeColorWhiteButton () {
+  color: $active-color;
+  border-color: $active-color;
+}
+
+@mixin fontButton() {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  padding-block: 5px;
+  text-decoration: none;
+  color: $white-color;
+}
+
+@mixin fontWhiteButton() {
+  font-weight: 600;
+  font-size: 16px;
+  padding-block: 5px;
+  text-decoration: none;
+  color: $red-color;
+}
+
+@mixin arrow() {
+  margin-left: 8px;
+  width: 20px;
+  height: 20px;
+  color: $red-color;
+  text-decoration: none;
+  font-weight: $font-weight__bold;
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 39px;
+    margin-inline: auto;
+    width: 690px;
+  }
+
+  @include onDesktop {
+    padding-inline: 55px;
+    width: 1170px;
+  }
+}
+
+@mixin iconLang () {
+  background-image: url(../images/icons/icon-lang-ua.svg), url(../images/icons/union.svg);
+  background-repeat: no-repeat;
+  background-position: left, right;
+}
+
+@mixin styleDate () {
+  font-weight: $font-weight__small;
+  font-size: 16px;
+  line-height: 24px;
+  color: $red-color;
+}
+
+@mixin styleTitleThird {
+  font-family: $font-family__Playfair;
+  font-weight: $font-weight__bold;
+  font-size: 20px;
+  line-height: 25px;
+  color: $black-color;
+
+  @include onTablet {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+  }
+}
+
+@mixin twoCulumnPageGrid {
+  @include onTablet() {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin indentRight {
+
+  @include onTablet() {
+    margin-right: 39px;
+  }
+
+  @include onDesktop() {
+    margin-right: 55px;
+  }
+}
+
+@mixin fontContentSection () {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $grey_color;
+}
+
+@mixin footerTitleFont () {
+  font-family: $font-family__Playfair;
+  font-weight: $font-weight__bold;
+  font-size: 18px;
+  line-height: 27px;
+  color: $white-color;
+}
+
+@mixin footerContentFont () {
+  font-weight: $font-weight__small;
+  font-size: 16px;
+  line-height: 24px;
+  color: $white-color;
+}
+
+@mixin underlineLinks () {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: $white-color;
+
+  transition: transform $effectDuration;
+  transform: scale(0);
+  transform-origin: left;
 }

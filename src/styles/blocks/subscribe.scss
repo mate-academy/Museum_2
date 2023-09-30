@@ -1,0 +1,83 @@
+.subscribe {
+  margin-top: 120px;
+
+  @include onTablet {
+    margin-top: 160px;
+  }
+
+  @include onDesktop {
+    @include pageGrid;
+
+    margin-top: 200px;
+  }
+
+  &__form {
+    @include onDesktop {
+      grid-column: 1/6;
+    }
+  }
+
+  &__about--news {
+
+    @include onDesktop {
+      grid-column: 7/12;
+    }
+  }
+}
+
+.to-subscribe {
+  margin-bottom: 50px;
+
+  @include onTablet {
+    width: 570px;
+  }
+
+  @include fontContentSection;
+  color: $black-color;
+
+}
+
+.email {
+  border: none;
+  padding: 0;
+  width: 100%;
+  padding-bottom: 3px;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  caret-color: $red-color;
+  background-color: $white-color;
+  outline-color: invert $white-color;
+
+  &::placeholder {
+    @include fontContentSection;
+    color: $black-color;
+    outline: none;
+  }
+
+  &:focus::placeholder {
+    color: $red-color;
+    background-color: $white-color;
+  }
+
+  &:hover::placeholder {
+    color: $red-color;
+  }
+}
+
+.email[type~="email"] {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.email__block {
+  display: block;
+  border-bottom: 1px solid $black-color;
+  margin-bottom: 30px;
+
+  &:hover {
+    border-color: $red-color;
+  }
+}
