@@ -1,0 +1,135 @@
+.footer {
+  background-color: $bgc;
+  padding-block: 50px 30px;
+
+  @include onMobile {
+    padding-top: 34px;
+  }
+
+  & * {
+    color: $text-color-on-bg;
+  }
+
+  & li {
+    width: fit-content;
+    line-height: 150%;
+
+    & a {
+      line-height: 150%;
+
+      &:hover {
+        color: aqua;
+      }
+    }
+  }
+
+  &__conteiner {
+    row-gap: 70px;
+
+    @include onTablet {
+      row-gap: 60px;
+    }
+  }
+
+  &--internal-block {
+    grid-column: span 4;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+  }
+
+  // #region footer menu
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include onMobile {
+      gap: 5px;
+    }
+  }
+  // #endregion
+
+  &__bottom-text {
+    display: flex;
+    align-items: end;
+    font-size: 14px;
+    line-height: 140%;
+    text-wrap: nowrap;
+
+    @include onMobile {
+      margin-top: 10px;
+    }
+  }
+}
+
+.internal-block-name {
+  margin-bottom: 30px;
+
+  @include onMobile {
+    margin-bottom: 10px;
+  }
+}
+
+// #region contacts
+.contacts-list {
+  margin-bottom: 50px;
+
+  @include onMobile {
+    margin-bottom: 30px;
+  }
+}
+
+.list-item-tel {
+  display: inline-flex;
+}
+
+.contact-bottom-icon {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-icons {
+  @include zoom-img;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+
+.facebook-icon {
+  background-image: url(../images/footer/icon/facebook.svg);
+}
+
+.twitter-icon {
+  background-image: url(../images/footer/icon/twitter.svg);
+}
+
+.telegram-icon {
+  background-image: url(../images/footer/icon/telegram.svg);
+}
+
+.instagram-icon {
+  background-image: url(../images/footer/icon/instagram.svg);
+}
+// #endregion
+
+.copyright-years {
+  grid-column: span 1;
+}
+
+.privacy {
+  grid-column: 3/6;
+
+  &:hover {
+    color: aqua;
+  }
+
+  @include onTablet {
+    grid-column: span 2;
+  }
+
+  @include onMobile {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,78 @@
+@import "./top-bar.scss";
+
+.header {
+  @include header-menu-common-opt;
+  background-image: url(../images/header/bgi-header.png);
+
+  & * {
+    color: $text-color-on-bg;
+  }
+
+  &__content {
+    grid-column: span 6;
+
+    @include onTablet {
+      grid-column: 1/-2;
+    }
+
+    @include onMobile {
+      grid-column: 1/-1;
+    }
+
+    & a {
+      margin-top: 30px;
+
+      @include onTablet {
+        margin-top: 50px;
+      }
+
+      @include onMobile {
+        margin-top: 40px;
+        margin-inline: auto;
+      }
+    }
+
+    & h6 {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      bottom: 50px;
+      opacity: 0.7;
+      width: 40%;
+      text-wrap: nowrap;
+
+      &::after {
+        content: "";
+        border: 1px solid white;
+        width: 100%;
+        opacity: 0.3;
+      }
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__date {
+    line-height: 140%;
+    font-size: 14px;
+  }
+
+  &__head {
+    margin-block: 10px 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onMobile {
+      text-align: center;
+    }
+  }
+
+  &__topic {
+    line-height: 150%;
+  }
+}
