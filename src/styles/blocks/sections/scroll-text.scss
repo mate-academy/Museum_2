@@ -1,0 +1,72 @@
+.scroll-text {
+  position: relative;
+
+  @include onDesktop {
+    padding: 100px 0;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__text {
+    display: none;
+    width: 380px;
+    @extend %text;
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      display: block;
+      color: $text;
+      font-weight: 400;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 44%;
+        height: 1px;
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+  }
+
+  &__link {
+    @extend %h5;
+    color: #344f10;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 280px;
+    margin: 0 auto;
+
+    @include onTablet {
+      text-align: center;
+    }
+
+    @include onDesktop {
+      width: 380px;
+      grid-column: 7 / 11;
+      margin: 0;
+      text-align: left;
+
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 50%;
+        height: 1px;
+        background: rgba(52, 79, 16, 0.5);
+      }
+    }
+
+    @include hover(color, #8c9772);
+  }
+}

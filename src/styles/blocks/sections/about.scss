@@ -1,0 +1,122 @@
+.about {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__reverse-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      &:before {
+        left: 8px;
+      }
+    }
+
+    @media (min-width: 1444px) {
+      &:before {
+        left: 22px;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      gap: 30px;
+      width: 380px;
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__title {
+    color: $primary;
+    @extend %h4;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      letter-spacing: 1.8px;
+      line-height: 110%;
+      font-size: 36px;
+
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    color: $text;
+    @extend %small-text;
+    font-weight: 400;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 16px;
+      max-width: 342px;
+    }
+
+    @include onDesktop {
+      max-width: 380px;
+    }
+
+    &--second {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+    object-fit: cover;
+
+    @include onDesktop {
+      align-self: flex-end;
+
+      @include imgHover;
+    }
+
+    &--big {
+      @include onTablet {
+        display: block;
+        height: 100%;
+        grid-column: 4 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / 11;
+      }
+    }
+
+    &--small {
+      @include onDesktop {
+        display: block;
+        grid-column: 11 / -1;
+      }
+
+      &:hover {
+        transform: rotate(-3deg) scale(1.05);
+        border-radius: 50px;
+      }
+    }
+  }
+}

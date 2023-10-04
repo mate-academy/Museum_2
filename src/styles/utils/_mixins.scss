@@ -1,6 +1,65 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $effectDuration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin imgHover {
+  transition: all $effectDuration;
+  &:hover {
+    transform: rotate(3deg) scale(1.05);
+    border-radius: 50px;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin onLarge {
+  @media (min-width: $lg-breakpoint) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline() {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 27px;
+  }
+
+  @include onDesktop {
+    padding-inline: 50px;
+  }
+
+  @include onLarge {
+    padding: 0;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+    column-gap: 20px;
   }
 }

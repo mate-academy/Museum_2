@@ -1,0 +1,335 @@
+.product {
+  position: relative;
+
+  &__title {
+    @extend %h4;
+    color: $primary;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      margin-bottom: 30px;
+
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+    }
+  }
+
+  &__grid {
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__reverse-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 34px;
+
+    @include onTablet {
+      gap: 14px;
+    }
+    @include onDesktop {
+      grid-column: 2 / -1;
+      grid-row: 2 / 3;
+      gap: 20px;
+    }
+  }
+
+  &__img {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    width: 100vw;
+    height: 267px;
+    object-fit: cover;
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    z-index: 1;
+
+    @include hover(transform, scale(0.95));
+
+    @include onTablet {
+      position: static;
+      margin-left: 0;
+      margin-right: 0;
+      height: 300px;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      height: 500px;
+    }
+
+    &--page {
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        height: 440px;
+        width: 100%;
+        display: flex;
+        margin-bottom: 27px;
+      }
+
+      @include imgHover;
+    }
+  }
+
+  &__name {
+    color: $text;
+    @extend %h5;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    &--aside {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+
+      &--hidden {
+        @include onTablet {
+          display: none;
+        }
+      }
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $text;
+    }
+  }
+
+  &__price {
+    color: $text;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    &--aside {
+      margin-bottom: 20px;
+      display: none;
+
+      @include onTablet {
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+
+      &--hidden {
+        margin-bottom: 20px;
+        @include onTablet {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    color: #828282;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: 15px;
+
+    @include onTablet {
+      margin-bottom: 25px;
+      font-weight: 600;
+      font-size: 18px;
+      margin-right: 20px;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__content {
+    order: 1;
+    width: 100%;
+    display: none;
+
+    &--left {
+      position: relative;
+
+      @include onTablet {
+        grid-column: span 3;
+      }
+
+      @include onDesktop {
+        grid-column: span 5;
+      }
+    }
+
+    &--right {
+      position: relative;
+      display: none;
+
+      @include onTablet {
+        display: initial;
+        grid-column: span 3;
+      }
+      @include onDesktop {
+        grid-column: span 5;
+      }
+    }
+  }
+
+  &__input:checked + .product__label {
+    color: $text;
+    border-bottom: 2px solid $text;
+  }
+
+  &__input:checked + .product__label + .product__content {
+    display: initial;
+  }
+
+  &__input:checked + .product__label + .product__content--grid {
+    @include onTablet {
+      @include  pageGrid;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      width: 280px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+      grid-row: 3 / 4;
+    }
+
+    &--aside {
+      margin: 0 auto 50px;
+
+      @include onTablet {
+        margin-bottom: 60px;
+        width: 280px;
+      }
+
+      @include onDesktop {
+        margin: 0;
+        display: none;
+      }
+
+      &--desktop {
+        display: none;
+        @include onDesktop {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__description {
+    &--ingrid {
+      margin-bottom: 20px;
+    }
+
+    &--green {
+      color: $primary;
+    }
+
+    &--appl {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__size {
+    color: $text;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+
+    &--aside {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        margin-bottom: 10px;
+      }
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__aside {
+    padding-inline: 20px;
+
+    @include onTablet {
+      padding-inline: 151px;
+    }
+
+    @include onDesktop {
+      padding-inline: 50px;
+      @include pageGrid;
+      align-items: flex-start;
+    }
+
+    &--left {
+      @include onDesktop {
+        grid-column: span 6;
+      }
+    }
+
+    &--right {
+      @include onDesktop {
+        grid-column: 8 / 13;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
