@@ -9,54 +9,61 @@
   }
 
   @include onMobile {
-    row-gap: 90px;
+    grid-template-rows: repeat(auto, auto);
   }
 
-  &__cards {
+  & > *:nth-child(n+3) {
     grid-column: span 6;
-    margin-top: 70px;
 
     @include onTablet {
       grid-column: span 3;
     }
 
     @include onMobile {
+      grid-row: auto;
       grid-column: span 2;
-      margin-top: 60px;
     }
   }
 
   &__img {
-    margin-bottom: 20px;
+    margin-block: 70px 20px;
     height: max-content;
+    grid-row: 2;
 
     @include onTablet {
       margin-bottom: 30px;
     }
 
     @include onMobile {
-      margin-bottom: 20px;
+      margin-block: 60px 20px;
     }
   }
-}
 
-.ex-c-holding-time {
-  margin-bottom: 10px;
-}
-
-.ex-c-name {
-  margin-bottom: 20px;
-}
-
-.ex-c-description {
-  margin-bottom: 50px;
-
-  @include onTablet {
-    margin-bottom: 40px;
+  &__holding-time {
+    margin-bottom: 10px;
+    grid-row: 3;
   }
 
-  @include onMobile {
-    margin-bottom: 30px;
+  &__name {
+    grid-row: 4;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    grid-row: 5;
+  }
+
+  &__bottom-link {
+    margin-top: 50px;
+    grid-row: 6;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+
+    @include onMobile {
+      margin-top: 30px;
+    }
   }
 }
 // #endregion
@@ -153,10 +160,6 @@
 
   &__block {
     grid-template-rows: repeat(3, auto);
-
-    & * {
-      color: $text-color-on-bg;
-    }
   }
 
   &__head {
@@ -201,6 +204,10 @@
       margin-inline: auto;
     }
   }
+}
+
+.plan * {
+  color: $text-color-on-bg;
 }
 // #endregion
 
@@ -293,18 +300,31 @@
     }
   }
 
-  &__input {
+  &__form {
     grid-column: span 5;
-    margin-bottom: 40px;
 
     @include onTablet {
       grid-column: span 4;
+    }
+
+    @include onMobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__input {
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+
+    @include onTablet {
       margin-bottom: 30px;
     }
   }
 
   &__bottom-link {
     grid-column: 1/3;
+    border: none;
   }
 }
 // #endregion
