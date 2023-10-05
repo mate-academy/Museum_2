@@ -1,0 +1,330 @@
+@import "./main-common-styles.scss";
+
+// #region section exhibitions
+.exhibitions {
+  margin-top: 110px;
+
+  @include onTablet {
+    margin-top: 100px;
+  }
+
+  @include onMobile {
+    grid-template-rows: repeat(auto, auto);
+  }
+
+  & > *:nth-child(n+3) {
+    grid-column: span 6;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onMobile {
+      grid-row: auto;
+      grid-column: span 2;
+    }
+  }
+
+  &__img {
+    margin-block: 70px 20px;
+    height: max-content;
+    grid-row: 2;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onMobile {
+      margin-block: 60px 20px;
+    }
+  }
+
+  &__holding-time {
+    margin-bottom: 10px;
+    grid-row: 3;
+  }
+
+  &__name {
+    grid-row: 4;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    grid-row: 5;
+  }
+
+  &__bottom-link {
+    margin-top: 50px;
+    grid-row: 6;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+
+    @include onMobile {
+      margin-top: 30px;
+    }
+  }
+}
+// #endregion
+
+// #region upcoming
+.upcoming {
+  margin-top: 200px;
+
+  @include onTablet {
+    margin-top: 160px;
+  }
+
+  @include onMobile {
+    margin-top: 120px;
+  }
+
+  &__card {
+    grid-column: 1/-1;
+    @include grid;
+    margin-top: 60px;
+
+    @include onTablet {
+      margin-top: 70px;
+    }
+
+    @include onMobile {
+      margin-top: 60px;
+    }
+
+    &-img {
+      grid-column: span 4;
+      height: 100%;
+
+      @include onTablet {
+        grid-column: span 3;
+      }
+
+      @include onMobile {
+        grid-column: span 2;
+      }
+    }
+
+    &-info {
+      grid-column: span 8;
+      display: flex;
+      flex-direction: column;
+
+      @include onTablet {
+        grid-column: span 3;
+      }
+
+      @include onMobile {
+        grid-column: span 2;
+      }
+    }
+
+    &-holding {
+      margin-bottom: 10px;
+    }
+
+    &-name {
+      margin-bottom: 20px;
+    }
+
+    &-description {
+      margin-bottom: 50px;
+
+      @include onMobile {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+// #endregion
+
+// #region plan a visit
+.plan {
+  background-color: $bgc;
+  background-image: url(../images/main/sect-3/img_07.png);
+  background-size: 40% 100%;
+  background-position: bottom left;
+  height: 100vh;
+  margin-block: 110px;
+
+  @include onTablet {
+    height: 60vh;
+    margin-block: 100px 125px;
+    background-image: none;
+  }
+
+  @include onMobile {
+    margin-block: 90px;
+  }
+
+  &__block {
+    grid-template-rows: repeat(3, auto);
+  }
+
+  &__head {
+    grid-column: 6/-1;
+    margin-top: 205px;
+
+    @include onTablet {
+      grid-column: span 5;
+      margin-top: 80px;
+    }
+
+    @include onMobile {
+      grid-column: span 2;
+      margin-top: 50px;
+    }
+  }
+
+  &__text {
+    grid-column: 6/10;
+    margin-block: 10px 50px;
+    line-height: 150%;
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-block: 20px 60px;
+    }
+
+    @include onMobile {
+      grid-column: span 2;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__bottom-link {
+    grid-column: 6/9;
+
+    @include onTablet {
+      grid-column: 1/-1;
+    }
+
+    @include onMobile {
+      margin-inline: auto;
+    }
+  }
+}
+
+.plan:nth-child(n) {
+  color: $text-color-on-bg;
+}
+// #endregion
+
+// #region section news
+.news {
+  margin-bottom: 200px;
+
+  @include onTablet {
+    margin-bottom: 160px;
+  }
+
+  @include onMobile {
+    margin-bottom: 120px;
+  }
+
+  &__card {
+    grid-column: span 6;
+    margin-top: 55px;
+
+    @include onTablet {
+      margin-top: 70px;
+      grid-column: span 3;
+    }
+
+    @include onMobile {
+      grid-column: span 2;
+      margin-top: 60px;
+    }
+
+    &-img {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+
+      @include onMobile {
+        margin-bottom: 20px;
+      }
+    }
+
+    &-date {
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &-name {
+      margin-bottom: 18px;
+
+      @include onMobile {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+// #endregion
+
+// #region section digest
+.digest {
+  margin-bottom: 200px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onMobile {
+    margin-bottom: 80px;
+    padding-bottom: 0;
+
+    & :nth-child(n) {
+      grid-column: span 2;
+    }
+  }
+
+  &__name {
+    grid-column: span 6;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    grid-column: span 6;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__form {
+    grid-column: span 5;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onMobile {
+      grid-column: span 2;
+    }
+  }
+
+  &__input {
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__bottom-link {
+    grid-column: 1/3;
+    border: none;
+  }
+}
+// #endregion

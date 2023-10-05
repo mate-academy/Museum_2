@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.conteiner {
+  padding-inline: 55px;
+  @include grid;
+
+  @include onTablet {
+    padding-inline: 40px;
+  }
+
+  @include onMobile {
+    padding-inline: 20px;
+  }
+}
+
+a {
+  display: flex;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.link--with--bg {
+  color: $text-color-on-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  line-height: 100%;
+  width: 270px;
+  height: 60px;
+  background: $def-link;
+
+  @include onMobile {
+    width: 100%;
+  }
+
+  &:hover {
+    background: $hover-link;
+  }
+
+  &:active {
+    background: $active-link;
+  }
+
+  &:disabled {
+    background: $disabled-link;
+  }
+}
+
+input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+
+  &::placeholder {
+    color: hsl(244, 21%, 13%);
+    font-weight: 400;
+  }
+
+  &:hover::placeholder {
+    color: $hover-active-input;
+  }
+
+  &:focus {
+    color: $hover-active-input;
+    font-weight: 600;
+  }
+}
+
+// #region h1-h6
+h1 {
+  font-size: 96px;
+  line-height: 100%;
+
+  @include onTablet {
+    font-size: 72px;
+  }
+
+  @include onMobile {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-size: 80px;
+  line-height: 100%;
+
+  @include onTablet {
+    font-size: 62px;
+  }
+
+  @include onMobile {
+    font-size: 38px;
+  }
+}
+
+h3 {
+  font-size: 48px;
+  line-height: 120%;
+
+  @include onTablet {
+    font-size: 40px;
+    line-height: 125%;
+  }
+
+  @include onMobile {
+    font-size: 28px;
+    line-height: 125%;
+  }
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 125%;
+
+  @include onMobile {
+    font-size: 20px;
+  }
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 150%;
+}
+
+h6 {
+  font-size: 14px;
+  line-height: 125%;
+}
+// #endregion
