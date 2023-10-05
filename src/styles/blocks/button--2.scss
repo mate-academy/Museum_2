@@ -12,7 +12,8 @@
     display: none;
 
     @include onTablet {
-      display: block;
+      display: flex;
+      width: 280px;
     }
   }
 
@@ -24,7 +25,43 @@
     font-weight: 600;
     line-height: 100%;
     padding-right: 3px;
+
+
+    &:focus {
+
+    }
   }
 
-  
+  &:hover {
+    border-color: #af3419;
+
+    .button--2-svg {
+      & path {
+        stroke: #af3419;
+      }
+    }
+
+    .button--2-text {
+      color: #af3419;
+    }
+
+
+  }
+
+  &:focus {
+    & path {
+      stroke: #ea340d;
+    }
+
+    .button--2-text {
+      color: #ea340d;
+    }
+  }
+
+  &:focus {
+    color: #ea340d;
+    border-color: #ea340d;
+  }
+
+  transition: all $duration;
 }
