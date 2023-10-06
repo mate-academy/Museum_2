@@ -1,0 +1,196 @@
+.header {
+  height: 800px;
+
+  background-color: $themeColor;
+
+  @include on768px {
+    height: 1000px;
+  }
+
+  @include on320px {
+    height: 747px;
+  }
+
+  &__nav {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu-icons {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__icon-open,
+  &__menu-cancel,
+  &__languages {
+    @include hoverScale120;
+  }
+
+  &__menu-cancel {
+    position: relative;
+    margin-right: 8px;
+  }
+
+  &__list {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 100%;
+    z-index: 1;
+
+    :hover {
+      @include hoverScale120;
+    }
+  }
+
+  &__languages {
+    display: block;
+    position: relative;
+    @include fontRaleway400;
+    font-weight: 500;
+
+    color: $mainColor;
+
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &--menu {
+      display: none;
+    }
+
+    @include on320px {
+      display: none;
+      &--menu {
+        display: block;
+      }
+    }
+
+    &:hover .header__list {
+      display: block;
+    }
+  }
+
+  &__lang {
+    padding-right: 8px;
+    margin-right: 2px;
+    transition: all 0.5s;
+  }
+
+  &__arrow {
+    position: absolute;
+    right: -3px;
+    top: 40%;
+    width: 9px;
+    height: 5px;
+    margin-right: 2px;
+
+    background-image: url("./../images/Union.svg");
+    background-repeat: no-repeat;
+  }
+
+  &__image {
+    justify-self: center;
+    align-self: end;
+    padding-left: 47px;
+    margin-top: -43px;
+
+    @include on768px {
+      width: 500px;
+      margin: 0;
+      padding: 0;
+    }
+
+    @include on320px {
+      width: 245px;
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+
+  &__info {
+    height: calc(100% - 90px);
+    padding-top: 90px;
+
+    @include on320px {
+      padding-top: 35px;
+    }
+  }
+
+  &__date {
+    @include fontRaleway400;
+    font-size: 14px;
+    line-height: 140%;
+
+    color: $mainColor;
+  }
+
+  &__title {
+    padding-top: 10px;
+
+    @include fontPlayfair700;
+    font-size: 96px;
+    line-height: 100%;
+
+    color: $mainColor;
+
+    &-description {
+      padding-top: 30px;
+
+      @include fontRaleway400;
+
+      color: $mainColor;
+
+      @include on768px {
+        padding-top: 20px;
+      }
+    }
+
+    @include on768px {
+      font-size: 72px;
+    }
+
+    @include on768px {
+      font-size: 48px;
+    }
+  }
+
+  &__button {
+    @include menuButton;
+    margin-top: 81px;
+  }
+
+  &__date-number {
+    position: relative;
+
+    padding-top: 157px;
+    @include fontPlayfair700;
+    font-size: 14px;
+    line-height: 125%;
+
+    color: $mainColor;
+
+    opacity: 0.7;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+
+      display: inline-block;
+      margin-left: 20px;
+      width: calc(100% - 100px);
+      height: 1px;
+
+      background: $mainColor;
+      opacity: 0.3;
+    }
+
+    @include on768px {
+      display: none;
+    }
+  }
+}
