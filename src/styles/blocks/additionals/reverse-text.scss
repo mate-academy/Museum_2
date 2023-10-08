@@ -1,0 +1,25 @@
+.reverse-text {
+  position: relative;
+  @extend %decorative-text;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(52, 79, 16, 0.5);
+  transform: rotate(-180deg);
+  writing-mode: vertical-rl;
+  align-self: start;
+
+  &:before {
+    content: "";
+    transform: rotate(90deg);
+    border-bottom: 1px solid rgba(52, 79, 16, 0.5);
+    width: 100px;
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: -60px;
+
+    @media (min-width: 1440px) {
+      left: 22px;
+    }
+  }
+}

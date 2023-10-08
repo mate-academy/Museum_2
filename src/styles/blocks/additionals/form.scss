@@ -1,0 +1,40 @@
+.form {
+  input {
+    font-weight: 500;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #bdbdbd;
+
+    &::placeholder {
+      color: #828282;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
+      text-transform: capitalize;
+
+      @include onTablet {
+        font-weight: 500;
+      }
+
+      @include onDesktop {
+        font-size: 18px;
+      }
+    }
+
+    &:valid {
+      border-bottom: 1px solid $primary;
+      color: $primary;
+    }
+
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid $text;
+    }
+
+    &:invalid {
+      border-bottom: 1px solid $red-600;
+      color: $red-600;
+    }
+  }
+}
