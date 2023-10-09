@@ -1,0 +1,67 @@
+.button--2 {
+  width: 100%;
+  height: 60px;
+  background-color: $white;
+  border: 1px solid $orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-news {
+    width: 210px;
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      width: 280px;
+    }
+  }
+
+  &-text {
+    color: $orange;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    padding-right: 3px;
+
+
+    &:focus {
+
+    }
+  }
+
+  &:hover:not(:focus) {
+    border-color: $dark-orange;
+
+    .button--2-svg {
+      & path {
+        stroke: $dark-orange;
+      }
+    }
+
+    .button--2-text {
+      color: $dark-orange;
+    }
+
+
+  }
+
+  &:focus {
+    & path {
+      stroke: $light-orange;
+    }
+
+    .button--2-text {
+      color: $light-orange;
+    }
+  }
+
+  &:focus {
+    color: $light-orange;
+    border-color: $light-orange;
+  }
+
+  transition: all $duration;
+}

@@ -1,0 +1,212 @@
+.news {
+  &__title {
+    color: $black;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include onMobile {
+      &-wrapper {
+        padding-top: 90px;
+      }
+    }
+
+    @include onTablet {
+      font-size: 40px;
+      &-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 125px;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      &-wrapper {
+        padding-top: 110px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 60px;
+
+    @include onTablet {
+      width: 100%;
+      margin-top: 75px;
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      margin-top: 55px;
+    }
+  }
+
+  &__picture {
+    &--1 {
+      @include onMobile {
+        background-image: url(../images/picture/news-picture-1-mobile.png);
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 280px;
+        height: 281px;
+      }
+
+      @include onTablet {
+        background-image: url(../images/picture/news-picture-1-tablet.png);
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 330px;
+        height: 330px;
+      }
+
+      @include onDesktop {
+        background-image: url(../images/picture/news-picture-1-desktop.png);
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 570px;
+        height: 370px;
+      }
+
+      &-wrapper {
+        grid-column: 1 / 4;
+
+        @include onDesktop {
+          grid-column: 1 / 7;
+        }
+      }
+    }
+
+    &--2 {
+      @include onMobile {
+        background-image: url(../images/picture/news-picture-2-mobile.png);
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 280px;
+        height: 281px;
+      }
+
+      @include onTablet {
+        background-image: url(../images/picture/news-picture-2-tablet.png);
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 330px;
+        height: 330px;
+      }
+
+      @include onDesktop {
+        background-image: url(../images/picture/news-picture-2-desktop.png);
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 570px;
+        height: 370px;
+      }
+
+      &-wrapper {
+        grid-column: 4 / 7;
+        grid-row-start: 1;
+
+        @include onDesktop {
+          grid-column: 7 / 13;
+        }
+      }
+
+    }
+  }
+
+  &__info {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+    &-date {
+      color: $black;
+      font-family: "Raleway", sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      margin-top: 20px;
+
+      &--wrapper {
+        @include onTablet {
+          width: 330px;
+        }
+        &--1 {
+          width: 280px;
+          @include onTablet {
+            grid-column: 1 / 4;
+            width: 330px;
+          }
+
+          @include onDesktop {
+            grid-column: 1 / 7;
+            width: 570px;
+          }
+        }
+
+        &--2 {
+          width: 280px;
+          @include onTablet {
+            grid-column: 4 / 7;
+            width: 330px;
+          }
+
+          @include onDesktop {
+            width: 570px;
+            grid-column: 7 / 13;
+          }
+        }
+      }
+
+      &--title {
+        margin-top: 0;
+        color: $black;
+        font-family: "Playfair Display", sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 125%;
+      }
+    }
+
+    &--2 {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &-button {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
