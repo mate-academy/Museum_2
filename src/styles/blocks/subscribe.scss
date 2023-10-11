@@ -1,0 +1,123 @@
+.subscribe {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      width: 690px;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 125%;
+    }
+
+    @include onDesktop {
+      width: 570px;
+      font-size: 48px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      width: 570px;
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+    }
+  }
+
+  &__input {
+    width: 280px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid $black-color;
+    outline: none;
+    transition: $effectDuration;
+    margin-bottom: 30px;
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-color: $orange_color;
+    }
+
+    &:hover::placeholder {
+      transition: $effectDuration;
+      color: $orange_color;
+    }
+
+    &:focus {
+      border-color: $orange_color;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus {
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    width: 280px;
+    height: 60px;
+    background-color: $orange_color;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white_color;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    margin-bottom: 80px;
+    transition: $effectDuration;
+
+    &:hover {
+      background-color: $button_hover;
+      transform: scale(1.2);
+    }
+
+    &:active {
+      background-color: $button_pressed;
+    }
+
+    &:disabled {
+      background-color: $button_disabled;
+    }
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}
