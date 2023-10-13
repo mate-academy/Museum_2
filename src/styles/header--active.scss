@@ -1,0 +1,47 @@
+.header--active .header {
+  &__menu {
+    height: 100vh;
+    visibility: visible;
+    display: block;
+    transition: 0.3s;
+  }
+  &__lang {
+    visibility: visible;
+    display: block;
+    transition: 0.3s;
+  }
+
+}
+
+.header--active .icon--menu {
+  margin-left: 30px;
+  background-image: url("../images/cross.svg");
+  transition: 0.6s;
+
+  &:hover {
+    cursor: pointer;
+    background-image: url("../images/cross-hover.svg");
+  }
+}
+
+.header--active .menu__image {
+  @include Tablet {
+    display: block;
+  }
+}
+
+.header--active .header__info {
+  display: none;
+
+  .header--active .menu {
+    display: flex;
+  }
+}
+
+.header--active ~ footer {
+  display: none;
+}
+
+.header--active ~ main {
+  display: none;
+}

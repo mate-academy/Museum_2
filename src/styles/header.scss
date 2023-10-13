@@ -1,0 +1,219 @@
+.header {
+  background-color: #3f5252;
+  /*
+  position: relative;
+  */
+
+  &__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    @include Tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__lang {
+    position: relative;
+    visibility: hidden;
+    background-color: rgba(5, 5, 5, 0);
+    outline: none;
+    color: #fff;
+    font-family: Raleway, sans-serif;
+    font-size: 20px;
+    padding-right: 45px;
+    cursor: pointer;
+    transition: color 0.6s;
+
+    &:hover {
+      color: #ffe55c;
+    }
+
+    &:after {
+      content: "";
+      background-image: url("../images/Union.svg");
+      height: 5px;
+      width: 8px;
+      position: absolute;
+      right: 2px;
+      top: 12px;
+      transition: color 0.6s;
+    }
+
+    &:hover::after {
+      background-image: url("../images/Union-hover.svg");
+    }
+
+    @include Tablet {
+      visibility: visible;
+    }
+  }
+
+  &__menu {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    top: 60px;
+    left: 0;
+    background-color: #3f5252;
+    padding: 0 20px;
+    margin-top: 30px;
+
+    @include Tablet {
+      padding: 0 40px;
+    }
+
+    @include Desktop {
+      padding: 0 55px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-bottom: 70px;
+
+    @include Desktop {
+      padding-bottom: 122px;
+    }
+
+    @include Tablet {
+      padding-bottom: 122px;
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    @include DesktopMax {
+      flex-direction: column;
+    }
+
+    &--text {
+      @include Desktop {
+        width: 76%;
+      }
+    }
+
+  }
+
+  .header__info--text {
+    @include Desktop {
+      width: 56%;
+    }
+  }
+
+  &__data-text {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #f1f5f4;
+    margin: 0 0 10px;
+  }
+
+  &__title {
+    font-family: Playfair Display, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: #f1f5f4;
+    padding: 0 0 30px;
+
+    @include Tablet {
+      margin-bottom: 20px;
+      font-size: 72px;
+      width: 80%;
+    }
+
+    @include Desktop {
+      font-size: 96px;
+      width: 89%;
+    }
+  }
+
+  &__subtitle {
+    font-family: Raleway, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+    margin-bottom: 40px;
+
+    @include Tablet {
+      margin-bottom: 50px;
+    }
+
+    @include Desktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  &__button {
+    max-width: 330px;
+    width: 100%;
+    background-color: #cd4d31;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+    color: #f1f5f4;
+    border: 0;
+    padding: 22px;
+    margin-bottom: 40px;
+
+    &--menu {
+      position: relative;
+    }
+
+    @include Tablet {
+      margin-bottom: 30px;
+    }
+
+    @include Desktop {
+      margin-bottom: 133px;
+    }
+  }
+
+  &__mini-text {
+    display: none;
+    font-family: Playfair Display, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    margin-bottom: 50px;
+    position: relative;
+    color: #fff;
+
+    @include Desktop {
+      display: block;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 469px;
+      height: 1px;
+      background: #f1f5f4;
+      opacity: 0.3;
+      top: 9px;
+      left: 110px;
+    }
+  }
+
+  &__girl {
+    margin: 0 auto;
+    width: 87.5%;
+    @include Tablet {
+      width: 60.3%;
+
+    }
+
+    @include Desktop {
+      width: 50.7%;
+    }
+  }
+}

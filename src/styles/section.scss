@@ -1,0 +1,96 @@
+.section {
+
+  @include Desktop {
+    padding: 0 55px;
+  }
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include Tablet {
+    position: relative;
+    padding: 0 39px;
+  }
+
+  &__title {
+    margin-top: 90px;
+    margin-bottom: 60px;
+    text-align: center;
+
+    @include Tablet {
+      text-align: left;
+    }
+  }
+
+  &__title--news {
+    text-align: left;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 60px;
+    @include Tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+  }
+
+  &__buy-tickets {
+    width: 100%;
+    margin-top: 30px;
+    @include Tablet {
+      position: absolute;
+      right: 39px;
+      top: 0;
+      width: auto;
+      margin-top: 0;
+    }
+
+    @include Desktop {
+      margin-top: 0;
+    }
+  }
+
+  .section {
+    &__name {
+      text-align: left;
+      margin: 0 0 20px;
+    }
+
+    &__date {
+      color: #cd4d31;
+      margin: 0 0 10px;
+    }
+
+    &__date--news {
+      color: #1c1b29;
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &__description {
+      text-align: left;
+      margin: 0 0 30px;
+
+      @include Desktop {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+    }
+
+    &__image {
+      margin: 0 0 20px;
+      width: 100%;
+      max-height: 475px;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &__tickets {
+      width: 100%;
+    }
+  }
+}
