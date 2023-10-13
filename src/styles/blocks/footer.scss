@@ -1,0 +1,133 @@
+.footer {
+  background-color: $g-color-main-accent;
+
+  &__body {
+    margin-bottom: rem(60);
+
+    @include lg-device {
+      margin-bottom: rem(70);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(50);
+    gap: rem(30);
+
+    @include md-device {
+      margin: 0;
+      gap: rem(50);
+    }
+  }
+
+  &__title {
+    margin: 0 0 rem(10);
+    color: $g-color-light;
+
+    @include md-device {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__link {
+    color: $g-color-light;
+    transition: color 0.3s;
+
+    & > svg > path {
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      color: $g-color-second-accent;
+
+      & > svg > path {
+        fill: $g-color-second-accent;
+      }
+    }
+  }
+
+  &__phones {
+    display: flex;
+    flex-wrap: wrap;
+    color: $g-color-light;
+  }
+
+  &__socials {
+    display: flex;
+    gap: rem(20);
+  }
+
+  &__schedule {
+    margin-bottom: rem(50);
+
+    @include md-device {
+      margin: 0;
+    }
+  }
+
+  &__schedule-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: $g-color-light;
+  }
+
+  &__menu-items {
+    & :not(:last-child) {
+      margin-bottom: rem(5);
+    }
+
+    @include md-device {
+      & :not(:last-child) {
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__copyright {
+    display: flex;
+    gap: rem(22);
+    color: $g-color-light;
+
+    @include lg-device {
+      gap: rem(102);
+    }
+  }
+
+  /* stylelint-disable no-descending-specificity */
+  &__go-top {
+    & svg path {
+      transition: stroke 0.3s;
+    }
+
+    &:hover {
+      animation: 0.6s ease arrow-move-top forwards;
+
+      & svg path {
+        stroke: $g-color-second-accent;
+      }
+    }
+  }
+  /* stylelint-enable no-descending-specificity */
+}
+
+@keyframes arrow-move-top {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,183 @@
+.header {
+  overflow: hidden;
+  background-color: $g-color-main-accent;
+
+  &__container {
+    position: relative;
+
+    @media (max-height:960px) and (min-width:1024px) {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: rem(50);
+    padding: rem(20) 0;
+    background-color: $g-color-main-accent;
+    z-index: 999;
+
+    @include md-device {
+      margin-bottom: rem(100);
+    }
+
+    @include lg-device {
+      margin-bottom: rem(90);
+      padding: rem(26) 0;
+    }
+  }
+
+  &__actions-right-side {
+    display: flex;
+    align-items: center;
+    gap: rem(30);
+
+    @include md-device {
+      gap: rem(40);
+    }
+  }
+
+  &__language {
+    display: none;
+    order: -1;
+    opacity: 0;
+    animation: 0.2s ease opacity-end forwards;
+
+    &--is-visible {
+      display: block;
+      animation: 0.3s ease 0.5s opacity-start forwards;
+    }
+
+    @include md-device {
+      animation: 0.3s ease opacity-start forwards;
+      display: block;
+      order: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    @media (max-height:960px) and (min-width:1024px) {
+      flex: 1;
+    }
+  }
+
+  &__date {
+    display: block;
+    color: $g-color-light;
+    margin-bottom: rem(10);
+  }
+
+  &__title {
+    margin: 0 0 rem(30);
+    color: $g-color-light;
+
+    @include md-device {
+      margin-bottom: rem(20);
+    }
+
+    @include lg-device {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__description {
+    margin: 0 0 rem(40);
+    color: $g-color-light;
+
+    @include md-device {
+      margin-bottom: rem(50);
+    }
+
+    @include lg-device {
+      margin-bottom: rem(80);
+    }
+  }
+
+  &__button {
+    margin-bottom: rem(40);
+
+    @include lg-device {
+      margin-bottom: rem(70);
+    }
+
+    @include lg-device {
+      margin-bottom: rem(135);
+    }
+  }
+
+  &__second-date {
+    display: none;
+
+    @include lg-device {
+      display: flex;
+      align-items: center;
+      margin-bottom: rem(50);
+      gap: rem(20);
+    }
+  }
+
+  &__second-date-text {
+    display: block;
+    color: $g-color-light;
+  }
+
+  &__second-date-line {
+    display: block;
+    flex: 1;
+    height: 1px;
+    background-color: $g-color-light;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    max-height: 494px;
+
+    & img {
+      width: 100%;
+      // height: 100%;
+      object-fit: contain;
+      object-position: bottom;
+    }
+
+    @include md-device {
+      max-height: 512px;
+    }
+
+    @include lg-device {
+      position: absolute;
+      width: calc(50% + 55px);
+      max-height: 663px;
+      right: 0;
+      bottom: 0;
+      transform: translateX(55px);
+    }
+  }
+}
+
+@keyframes opacity-start {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacity-end {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
