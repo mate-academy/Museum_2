@@ -1,17 +1,34 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: min-content;
 
   &__image-link {
+    width: 100%;
+    height: 100%;
     margin-bottom: 20px;
 
     @include hover(transform, scale(1.05));
+
+    @include onTablet {
+      width: auto;
+      height: auto;
+    }
 
     &--horizontal-card {
       @include onTablet {
         margin-bottom: 0;
       }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 356px;
+    object-fit: cover;
+
+    @include onTablet {
+      width: auto;
+      height: auto;
     }
   }
 
