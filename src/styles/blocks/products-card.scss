@@ -15,8 +15,12 @@
 }
 
 .product {
+
   &__image {
-    width: 280px;
+    background-image: url(/images/product-1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
     height: 356px;
     margin-bottom: 20px;
     transition: $effectDuration;
@@ -26,13 +30,38 @@
     }
 
     @include onTablet {
-      width: 330px;
       height: 420px;
     }
 
     @include onDesktop {
+      background-image: url(/images/angel-img.png);
+      background-size: contain;
       width: 570px;
       height: 484px;
+    }
+
+    &--second {
+      background-image: url(/images/product-2.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 356px;
+      margin-bottom: 20px;
+      transition: $effectDuration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      @include onTablet {
+        height: 420px;
+      }
+
+      @include onDesktop {
+        background-size: cover;
+        background-position: center;
+        height: 484px;
+      }
     }
   }
 
@@ -91,7 +120,7 @@
   }
 
   &__btn {
-    width: 280px;
+    width: 100%;
     height: 60px;
     background-color: $orange_color;
 
@@ -104,7 +133,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     transition: $effectDuration;
 
     &:hover {
