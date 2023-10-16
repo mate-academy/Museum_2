@@ -1,0 +1,128 @@
+.footer {
+  background-color: $bg-color;
+  color: $main-white-color;
+  padding-block-start: 34px;
+  padding-block-end: 30px;
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+    margin-bottom: 10px;
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    margin-bottom: 30px;
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  &__list--left {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-white-color;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid $main-white-color;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 20px;
+    @include onTablet {
+      margin-bottom: 62px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__left {
+    @include onTablet {
+      grid-column: span 2;
+    }
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__right {
+    margin-bottom: 60px;
+    @include onTablet {
+      grid-column: span 2;
+    }
+    @include onDesktop {
+      grid-column: span 4;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__center {
+    @include onTablet {
+      grid-column: span 2;
+    }
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    gap: 22px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  &__scroll-up {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &--link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+}

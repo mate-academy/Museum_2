@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: $accent-black-color;
+  overflow-x: auto;
+  height: 100vh;
+  transition: all 0.3s ease;
+  scroll-behavior: smooth;
+
+  &-body {
+    min-width: 320px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 1;
+    transform: translateX(-200%);
+    background-color: $bg-color;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    height: 100vh;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+      background-color: $bg-color;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}

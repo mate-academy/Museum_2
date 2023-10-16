@@ -1,0 +1,114 @@
+.menu {
+  color: $main-white-color;
+  background-color: $bg-color;
+  overflow: auto;
+  position: relative;
+  height: 100vh;
+  scroll-behavior: smooth;
+
+  &__top {
+    margin-bottom: 30px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    @include onTablet {
+      flex-direction: row;
+      gap: 123px;
+    }
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Playfair Display", serif;
+    @include onTablet {
+      gap: 30px;
+    }
+    @include onDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+
+    &-link {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 150%;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid transparent;
+      @include onTablet {
+        font-size: 48px;
+        line-height: 120%;
+      }
+
+      &:hover {
+        border-bottom: 1px solid $main-white-color;
+      }
+    }
+  }
+
+  &__line {
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    margin-bottom: 238px;
+    @include onTablet {
+      margin-bottom: 30px;
+      width: 50%;
+    }
+  }
+
+  &__img {
+    &--tablet {
+      display: none;
+      @include onTablet {
+        display: block;
+        margin: 0 auto;
+      }
+      @include onDesktop {
+        display: none;
+      }
+    }
+    &--desktop {
+      display: none;
+      @include onDesktop {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__grid {
+    margin-top: 10px;
+    @include onTablet {
+      margin-top: 30px;
+    }
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__left {
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+}
