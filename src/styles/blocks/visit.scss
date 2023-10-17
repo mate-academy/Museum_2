@@ -1,0 +1,75 @@
+.visit {
+  position: relative;
+  background-color: $green;
+  color: $white;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: $font;
+    font-weight: $title-weight;
+    font-size: 38px;
+    line-height: 38px;
+
+    @include tablet {
+      grid-column: 1 / 6;
+      font-size: 62px;
+      line-height: 62px;
+    }
+
+    @include desktop {
+      grid-column: 6 / 13;
+      margin-bottom: 10px;
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    font-size: $main;
+    line-height: $medium;
+
+    @include tablet {
+      grid-column: 1 / 5;
+      margin-bottom: 60px;
+    }
+
+    @include desktop {
+      grid-column: 6 / 11;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include desktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include desktop {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      height: 100%;
+    }
+  }
+}

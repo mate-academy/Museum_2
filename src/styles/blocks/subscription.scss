@@ -1,0 +1,93 @@
+.subscription {
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: $font;
+    font-weight: $title-weight;
+    font-size: 28px;
+    line-height: 35px;
+
+    @include tablet {
+      grid-column: 1 / 7;
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include desktop{
+      margin-bottom: 50px;
+      font-size: $big;
+      line-height: 58px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+
+    @include tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include desktop {
+      grid-column: 7 / 13;
+      margin-bottom: 0;
+    }
+  }
+
+  &__form {
+    @include tablet {
+      grid-column: 1 / 7;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+  
+    @include desktop {
+      grid-column: 1 / 13;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__email {
+    margin-bottom: 30px;
+    padding: 0 0 3px;
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 1px solid $black;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include desktop {
+      grid-column: 1 / 6;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    border: none;
+
+    @include tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include desktop {
+      grid-column: 1 / 4;
+    }
+  }
+}
