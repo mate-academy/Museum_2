@@ -1,0 +1,144 @@
+.card {
+  padding-block: 60px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @include onTablet {
+    padding-block: 75px 164px;
+    gap: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include onSmallDesktop {
+    padding-block: 70px 200px;
+  }
+
+  &__img {
+    height: 356px;
+    width: 280px;
+    margin-bottom: 20px;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.04);
+      box-shadow: 8px 8px 14px -1px rgba(0, 0, 0, 0.25);
+    }
+
+    @include onTablet {
+      height: 420px;
+      width: 330px;
+      margin-bottom: 30px;
+    }
+
+    @include onSmallDesktop {
+      height: 484px;
+      width: 570px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__date {
+    color: $main-item-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 10px;
+
+    &--two {
+      color: $second-text-color;
+      padding-bottom: 0;
+    }
+  }
+
+  &__tittle {
+    color: $second-text-color;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 125%;
+    padding-bottom: 20px;
+
+    &--two {
+      @include onTablet {
+        padding-bottom: 50px;
+      }
+
+      @include onSmallDesktop {
+        padding-bottom: 20px;
+      }
+    }
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 40px;
+    }
+
+    @include onSmallDesktop {
+      padding-bottom: 50px;
+    }
+
+    &--two {
+      @include onSmallDesktop {
+        width: 570px;
+      }
+    }
+  }
+
+  &__button {
+    @include button1;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    @include button2;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__photo {
+    height: 358px;
+    width: 280px;
+    padding-bottom: 20px;
+
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.04);
+      box-shadow: 8px 8px 14px -1px rgba(0, 0, 0, 0.25);
+    }
+
+    @include onTablet {
+      height: 422px;
+      width: 330px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__wrap {
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+  }
+}
