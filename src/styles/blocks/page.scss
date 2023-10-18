@@ -22,12 +22,19 @@
     top: 0;
     right: 0;
     left: 0;
-    opacity: 1;
+    opacity: 0;
     transform: translateX(-200%);
     background-color: $bg-color;
     transition: all 0.3s ease;
     pointer-events: none;
     height: 100vh;
+    overflow: hidden;
+    @include onTablet {
+      overflow: auto;
+    }
+    @include onDesktop {
+      overflow: hidden;
+    }
 
     &:target {
       opacity: 1;
