@@ -1,0 +1,40 @@
+.nav {
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-bg-color;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    position: relative;
+    transition: 0.4s ease-in-out;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: $main-bg-color;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}

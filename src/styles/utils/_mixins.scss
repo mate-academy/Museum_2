@@ -4,3 +4,107 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onSmallDesktop {
+  @media (min-width: $smallDesktop-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include onSmallDesktop() {
+    --columns: 12 ;
+    column-gap: 30px;
+  }
+}
+
+@mixin button1 {
+  display: block;
+  text-decoration: none;
+  background-color: $main-item-color;
+  color: $main-bg-color;
+  font-weight: 600;
+  line-height: 100%;
+  width: 280px;
+  padding-block: 22px;
+  text-align: center;
+  transition: 0.4s ease-in-out;
+
+  &:focus {
+    background-color: #ea340d;
+    color: rgba(241, 245, 244, 1);
+  }
+
+  &:hover {
+    color: rgba(241, 245, 244, 1);
+    background-color: #af3419;
+  }
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onSmallDesktop {
+    width: 270px;
+  }
+}
+
+@mixin button2 {
+  background-color: transparent;
+  border: 1px solid $main-item-color;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 280px;
+  padding-block: 22px;
+  justify-content: center;
+  color: $main-item-color;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  transition: 0.4s ease-in-out;
+
+  &:focus {
+    border: 1px solid $third-item-color;
+    color: $third-item-color;
+  }
+
+  &:hover {
+    border: 1px solid $second-item-color;
+    color: $second-item-color;
+  }
+
+  @include onTablet {
+    width: 210px;
+  }
+
+  @include onSmallDesktop {
+    width: 270px;
+  }
+
+  &--arrow {
+    background-image: url(../images/icon/arrow-button.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 20px;
+    width: 20px;
+  }
+}

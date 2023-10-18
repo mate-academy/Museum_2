@@ -1,0 +1,189 @@
+.header {
+  background-color: $second-bg-color;
+
+  &__wrap {
+    position: relative;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 26px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__language {
+    text-decoration: none;
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+  }
+
+  &__ua {
+    text-decoration: none;
+    color: $main-bg-color;
+    font-weight: 500;
+  }
+
+  &__arrow {
+    background-image: url(../images/icon/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 7px;
+    width: 10px;
+  }
+
+  &__logo {
+    background-image: url(../images/header/logo.svg);
+    display: block;
+    height: 40px;
+    width: 123px;
+  }
+
+  &__menu {
+    background-image: url(../images/icon/icon-menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 20px;
+    width: 25px;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__content {
+    @include onSmallDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__bottom {
+    padding-block: 70px 40px;
+
+    @include onTablet {
+      padding-block: 120px 70px;
+    }
+
+    @include onSmallDesktop {
+      padding-block: 120px 135px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__date {
+    color: $main-bg-color;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    padding-bottom: 10px;
+  }
+
+  &__tittle {
+    color: $main-bg-color;
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      padding-bottom: 20px;
+    }
+
+    @include onSmallDesktop {
+      font-size: 96px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__subtittle {
+    color: $main-bg-color;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onSmallDesktop {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__button {
+    @include button1;
+  }
+
+  &__underline {
+    display: none;
+
+    @include onSmallDesktop {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      padding-bottom: 56px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__dates {
+    color: $main-bg-color;
+    font-family: "Playfair Display", serif;
+    opacity: 0.7;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 125%;
+  }
+
+  &__line {
+    height: 1px;
+    background-color: $main-bg-color;
+    opacity: 0.3;
+    width: 469px;
+  }
+
+  &__photo {
+    display: block;
+    height: 273px;
+    width: 245px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 443px;
+      height: 495px;
+    }
+
+    @include onSmallDesktop {
+      height: 663px;
+      width: 625px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
