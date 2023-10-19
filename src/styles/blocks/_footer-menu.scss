@@ -1,0 +1,32 @@
+.footer__menu {
+  padding-top: 50px;
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    padding-top: 0;
+    grid-column: span 2;
+  }
+
+  @include onDesktop {
+    grid-column: 9 / -1;
+  }
+
+  &--item {
+    padding-top: 10px;
+
+    &:nth-of-type(1) {
+      padding-top: 0;
+
+      @include onTablet {
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  &--link {
+    display: inline-block;
+    @include hover(transform, scale(1.1));
+
+    color: $clr--bg;
+  }
+}

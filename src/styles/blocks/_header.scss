@@ -1,0 +1,136 @@
+.header {
+  background-color: $clr--green;
+
+
+  &__layout {
+    @include pageGrid;
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+  }
+
+  &__logo {
+    cursor: pointer;
+    display: inline-block;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+
+    margin-top: 50px;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      // margin-top: 90px;
+
+    }
+  }
+
+  &__desc {
+    color: $clr--bg;
+    font-size: 14px;
+    line-height: 140%; /* 19.6px */
+  }
+
+  &__title {
+    padding-top: 10px;
+  }
+
+  &__text {
+    color: $clr--bg;
+    padding-top: 30px;
+
+    @include onTablet {
+      padding-top: 20px;
+    }
+
+    @include onDesktop {
+      padding-top: 30px;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      width: 330px;
+      margin-top: 50px;
+
+    }
+
+    @include onDesktop {
+      width: 270px;
+      margin-top: 80px;
+    }
+  }
+
+  &__footer {
+    display: none;
+
+    @include onDesktop {
+      margin-top: 135px;
+
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &--text {
+      width: 100px;
+      color: $clr--bg;
+      font-family: $font--secondary;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 125%;
+
+      opacity: 0.7;
+    }
+
+    &--line {
+      background-color: $clr--bg;
+      width: 100%;
+      height: 1px;
+      opacity: 0.3;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    padding-top: 40px;
+
+    height: 273px;
+
+    background-image: url(../images/header/header-bg-01-mobile.png);
+    background-repeat: no-repeat;
+    background-position: center bottom 0;
+
+    @include onTablet {
+      height: 494px;
+      padding-top: 70px;
+
+
+      background-image: url(../images/header/header-bg-01-tablet.png);
+
+    }
+
+    @include onDesktop {
+      padding-top: 47px;
+
+      grid-column: 7 / -1;
+      margin-right: -55px;
+
+      height: 663px;
+
+      background-image: url(../images/header/header-bg-01.png);
+      background-position: right bottom 0;
+    }
+  }
+}

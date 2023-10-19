@@ -1,0 +1,64 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include onDesktop {
+    gap: 40px;
+  }
+
+  &__label {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__input {
+    display: inline-block;
+    box-sizing: border-box;
+
+    width: 100%;
+    margin: 0;
+    padding-bottom: 3px;
+
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $clr--gray;
+    background-color: $clr--bg;
+
+    color: $clr--gray;
+    font-weight: 700;
+
+    &:hover {
+      border-bottom: 1px solid $clr--red;
+    }
+
+    &::placeholder {
+      color: $clr--gray;
+      font-weight: 400;
+    }
+
+    &:hover::placeholder {
+      color: $clr--red;
+    }
+
+    &:active {
+      color: $clr--gray;
+      font-weight: 700;
+      border-bottom: 1px solid $clr--gray;
+    }
+  }
+
+  &__button {
+
+    @include onTablet {
+      width: 330px;
+      height: 60px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+    
+  }
+}
