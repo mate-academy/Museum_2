@@ -1,0 +1,128 @@
+.footer {
+  background-color: $clr--green;
+
+  &__grid {
+    @include pageGrid;
+
+    padding: 34px 0 30px;
+
+    @include onTablet {
+      padding: 50px 0 30px;
+    }
+  }
+
+  &__contacts {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+
+    p {
+      padding-top: 10px;
+      color: $clr--bg;
+
+      @include onTablet {
+        padding-top: 30px;
+      }
+    }
+
+    &--link {
+      padding: 5px 0 5px;
+      display: inline-block;
+      color: $clr--bg;
+
+      @include hover(transform, scale(1.02));
+      @include hover(color, rgb(180, 177, 177));
+    }
+  }
+
+  &__icons {
+    padding-top: 30px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    @include hover(transform, scale(1.2));
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &--facebook {
+      background-image: url(../images/icons/facebook.svg);
+    }
+
+    &--twitter {
+      background-image: url(../images/icons/twitter.svg);
+    }
+
+    &--telegram {
+      background-image: url(../images/icons/telegram.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/instagram.svg);
+    }
+  }
+
+  &__shedule {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+
+    &--title {
+      padding-top: 50px;
+
+      @include onTablet {
+        padding-top: 0;
+      }
+    }
+
+    p {
+      padding-top: 10px;
+      color: $clr--bg;
+
+      @include onTablet {
+        padding-top: 30px;
+      }
+    }
+  }
+
+  &__copyright {
+    padding-top: 60px;
+    grid-column: 1 / -1;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include onDesktop {
+      padding-top: 72px;
+      gap: 100px;
+    }
+
+    p {
+      color: $clr--bg;
+      font-size: 14px;
+      line-height: 140%; /* 19.6px */
+    }
+  }
+}

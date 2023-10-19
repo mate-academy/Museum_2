@@ -1,0 +1,58 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-block: 22px;
+  border: none;
+  cursor: pointer;
+
+  background-color: $clr--red;
+
+  color: $clr--bg;
+  font-family: $font--main;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 16px */
+
+  @include hover(background-color, $clr--btn-hover);
+
+  &:active {
+    background-color: $clr--btn-passed;
+  }
+}
+
+.button--white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding-block: 22px;
+  border: none;
+  cursor: pointer;
+
+  background-color: transparent;
+  border: 1px solid $clr--red;
+
+  color: $clr--red;
+
+  &:hover {
+    border: 1px solid $clr--btn-hover;
+    color: $clr--btn-hover;
+  }
+
+  &:hover svg path {
+    stroke: $clr--btn-hover;
+  }
+
+  &:active {
+    border: 1px solid $clr--btn-passed;
+    color: $clr--btn-passed;
+  }
+
+  &:active svg path {
+    stroke: $clr--btn-passed;
+  }
+}

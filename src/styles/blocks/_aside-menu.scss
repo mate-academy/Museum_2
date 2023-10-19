@@ -1,0 +1,48 @@
+.nav-menu {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop{
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    color: $clr--bg;
+    font-family: $font--secondary;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 1px;
+
+      left: 0;
+      right: 0;
+      bottom: 3px;
+
+      background-color: $clr--bg;
+    }
+  }
+}
