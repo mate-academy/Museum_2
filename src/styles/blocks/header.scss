@@ -1,0 +1,223 @@
+.header {
+  background-color: $header_color;
+  position: relative;
+  margin-bottom: 90px;
+
+  @include onTablet {
+    margin-bottom: 105px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 110px;
+  }
+
+  &__top {
+    padding-top: 20px;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 119px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 117px;
+    }
+
+    &--image {
+      width: 123px;
+      height: 40px;
+    }
+
+    &--burger {
+      width: 30px;
+      height: 30px;
+    }
+
+    &--images {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+
+      @include onTablet {
+        padding: 0 39px;
+      }
+
+      @include onDesktop {
+        padding: 0 55px;
+      }
+    }
+  }
+
+  &__ua {
+    display: flex;
+    align-items: center;
+
+    &--img {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        margin-left: 40px;
+        color: $white_color;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+
+    @include onTablet {
+      padding-left: 39px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      padding-left: 55px;
+    }
+  }
+
+  &__center {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    &--date {
+      color: $white_color;
+      font-size: 14px;
+      line-height: 140%;
+      margin-bottom: 10px;
+    }
+
+    &--title {
+      color: $white_color;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        width: 569px;
+        font-size: 72px;
+        line-height: 100%;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+      }
+    }
+
+    &--description {
+      color: $white_color;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 81px;
+      }
+    }
+
+    &--btn {
+      width: 279px;
+      height: 60px;
+      background-color: $orange_color;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white_color;
+
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      margin-bottom: 40px;
+      transition: $effectDuration;
+      &:hover {
+        background-color: $button_hover;
+        transform: scale(1.2);
+      }
+
+      &:active {
+        background-color: $button_pressed;
+      }
+
+      &:disabled {
+        background-color: $button_disabled;
+      }
+
+      @include onTablet {
+        width: 330px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 135px;
+      }
+    }
+
+    &--data {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    &--time {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        color: $white_color;
+        font-size: 14px;
+        line-height: 125%;
+        opacity: 0.7;
+        margin-bottom: 50px;
+      }
+    }
+
+    &--line {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        width: 469px;
+        height: 1px;
+        opacity: 0.3;
+        border-top: 1px solid $white_color;
+        color: $white_color;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+
+    &--img {
+      background-image: url(/images/header-main-img.png);
+      width: 245px;
+      height: 273px;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include onTablet {
+        width: 443px;
+        height: 494px;
+      }
+
+      @include onDesktop {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 625px;
+        height: 663px;
+      }
+    }
+  }
+}
