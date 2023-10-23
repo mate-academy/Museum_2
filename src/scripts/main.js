@@ -43,7 +43,6 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-
 const animItems = document.querySelectorAll('.card__photo');
 
 window.addEventListener('scroll', animOnScroll);
