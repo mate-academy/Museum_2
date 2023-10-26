@@ -42,7 +42,7 @@ function closeDropdown() {
 menuButton.addEventListener('click', (e) => {
   e.preventDefault();
   menu.classList.toggle('page__menu-active');
-  this.classList.toggle('header__menu-active');
+  menuButton.classList.toggle('header__menu-active');
 });
 
 function toggleMenu(element) {
