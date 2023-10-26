@@ -1,0 +1,135 @@
+.menu {
+  color: $white-color;
+  padding-bottom: 100px;
+
+  @include onTablet {
+    @include pageGrid;
+    grid-template-rows: repeat(4, min-content) 1fr min-content;
+    min-height: calc(100vh - 107px);
+    padding-bottom: 0;
+  }
+
+  @include onDesktop {
+    grid-template-rows: repeat(4, min-content) 1fr;
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__schedule {
+    @include onTablet {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__adress {
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 3 / 7;
+      grid-row: 1 / 2;
+      margin-top: 0;
+    }
+  }
+
+  &__subtitle {
+    font-family: Raleway, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__info {
+    color: $white-color;
+    text-decoration: none;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 150%;
+
+    &--link {
+      @include onDesktop {
+        @include hover(color, $button-disabled-color);
+      }
+    }
+  }
+
+  &__nav {
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      grid-row: 2 / 3;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+    }
+  }
+
+  &__divider {
+    margin-top: 40px;
+    width: 100%;
+    height: 1px;
+    background-color: $white-color;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      grid-row: 3 / 4;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 4 / 5;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__empty-row {
+    align-self: stretch;
+    grid-column: 1 / 7;
+    grid-row: 5 / 6;
+  }
+
+  &__picture {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-top: 30px;
+      grid-column: 2 / 6;
+      grid-row: 6 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      grid-row: 1 / 6;
+      margin-top: 0;
+      align-self: flex-end;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    position: relative;
+    bottom: -8px;
+
+    @include onDesktop {
+      min-width: 600px;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+.planAVisit {
+  color: $white-color;
+  background-color: $green-bg-color;
+  padding-block: 50px;
+  position: relative;
+
+  @include onTablet {
+    padding-block: 80px;
+  }
+
+  @include onDesktop {
+    padding-block: 205px;
+  }
+
+  &__container {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    font-family: Playfair Display, Helvetica, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 100%;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      font-size: 62px;
+      max-width: 500px;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 13;
+      max-width: 650px;
+      font-size: 80px;
+    }
+  }
+
+  &__paragraph {
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: 60px;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      max-height: 746px;
+    }
+  }
+}

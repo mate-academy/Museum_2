@@ -1,0 +1,41 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: $green-bg-color;
+  z-index: 10000;
+
+  &__top {
+    padding-block: $header-padding-block-mobile;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 37px;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  &__icons-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include onTablet {
+      gap: 40px;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__menu-open {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icons/menu-open.png);
+  }
+
+  &__menu-active {
+    background-image: url(../images/icons/menu-close.png);
+  }
+}

@@ -1,0 +1,142 @@
+.main-screen {
+  background-color: $green-bg-color;
+  color: $white-color;
+
+  &__container {
+    position: relative;
+    padding-top: 130px;
+    overflow: hidden;
+
+    @include onTablet {
+      padding-top: 176px;
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(5, auto);
+      padding-bottom: 13px;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 140%;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-top: 43px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", Helvetica, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+    padding-top: 10px;
+
+    @include onTablet {
+      font-size: 72px;
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      grid-column: 1 / 9;
+    }
+  }
+
+  &__subtitle {
+    padding-top: 30px;
+    width: 267px;
+
+    @include onTablet {
+      width: 330px;
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 80px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      bottom: 50px;
+      width: 100%;
+      opacity: 0.7;
+      grid-column: 1 / 7;
+      margin-top: 135px;
+    }
+  }
+
+  &__line-date {
+    white-space: nowrap;
+    color: $white-color;
+    font-family: Playfair Display, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__line-divider {
+
+    width: 100%;
+    height: 1px;
+    background-color: $white-color;
+  }
+
+  &__picture {
+    @include onTablet {
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: 137px;
+      bottom: 0;
+      right: -70px;
+      width: 625px;
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    position: relative;
+    margin-top: 40px;
+    bottom: -7px;
+    left: 0;
+
+    @include onTablet {
+      margin-top: 70px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+}

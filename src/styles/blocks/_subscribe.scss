@@ -1,0 +1,129 @@
+.subscribe {
+  padding-block: 120px 80px;
+
+  @include onTablet {
+    padding-block: 160px 128px;
+  }
+
+  @include onDesktop {
+    padding-block: 200px;
+  }
+
+  &__container {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    color: $black-color;
+    font-family: Playfair Display, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include onTablet {
+      font-size: 40px;
+      grid-column: 1 / 7;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      grid-column: 1 / 6;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__paragraph {
+    color: $black-color;
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      grid-row: 1 / 2;
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+    position: relative;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__email {
+    width: 100%;
+    font-family: Raleway, Helvetica, sans-serif;
+    padding: 4px 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    border: none;
+    color: $black-color;
+    border-bottom: 1px solid $black-color;
+    outline: none;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
+      -webkit-text-fill-color: $black-color;
+    }
+
+    &--focus {
+      color: $red-accent-color;
+      border-bottom: 1px solid $red-accent-color;
+    }
+
+    @include onDesktop {
+      &:hover {
+        transition: all $effectDuration;
+
+        &:not(:focus) + .subscribe__label {
+          color: $red-accent-color;
+          transition: all $effectDuration;
+        }
+      }
+      
+      &:not(:focus):hover {
+        color: $red-accent-color;
+        border-bottom: 1px solid $red-accent-color;
+      }
+    }
+  }
+
+  &__label {
+    color: $black-color;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    top: 4px;
+
+    &--active {
+      display: none;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+      grid-row: 3 / 4;
+    }
+  }
+}
