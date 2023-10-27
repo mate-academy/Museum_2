@@ -1,0 +1,26 @@
+.subscription {
+  @include grid;
+  grid-template-rows: 70px 116px 1fr;
+  row-gap: 20px;
+
+  @include onTablet {
+    grid-template-rows: 50px 78px 1fr;
+  }
+
+  @include onDesktop {
+    grid-template-rows: 1fr 1fr;
+  }
+
+  &-description {
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 13;
+      grid-row: 1;
+    }
+  }
+}

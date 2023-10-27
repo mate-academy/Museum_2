@@ -1,0 +1,46 @@
+.top-bar {
+  display: grid;
+  grid-column: span 2;
+  z-index: 1;
+
+  @include onTablet {
+    grid-column: 1 / 7;
+  }
+
+  @include onDesktop {
+    grid-column: 1 / 13;
+  }
+
+  &__icon {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 30px;
+    column-gap: 30px;
+    grid-row: 1;
+    grid-column: span 2;
+    align-items: center;
+
+    @include onTablet {
+      grid-template-columns: 1fr 1fr 36px;
+      grid-template-rows: 1fr;
+      grid-column: 1 / 6;
+      column-gap: 40px;
+      align-items: center;
+    }
+
+    &-language {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: end;
+      gap: 5px;
+
+      color: $color-white;
+      text-align: center;
+      font-family: $font-family-text;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+    }
+  }
+}

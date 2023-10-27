@@ -1,0 +1,204 @@
+.footer {
+  @include grid;
+  row-gap: 50px;
+
+  padding-block: 30px;
+  background-color: $color-background;
+
+  @include onTablet {
+    row-gap: 60px;
+  }
+
+  @include onDesktop {
+    row-gap: 70px;
+  }
+
+  &__contacts {
+    grid-column: span 2;
+
+    display: grid;
+    grid-template-rows: 27px 96px 40px;
+    row-gap: 10px;
+
+    @include onTablet {
+      row-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+
+    &-address {
+      width: 80%;
+
+      @include onTablet {
+        width: 100%;
+      }
+
+      &--link {
+        text-decoration: none;
+        color: $color-white;
+
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: $color-main;
+        }
+      }
+    }
+
+    &-social {
+      grid-column: 1;
+      align-items: end;
+
+      display: grid;
+      grid-template-columns: repeat(4, 20px);
+      column-gap: 20px;
+    }
+  }
+
+  &__schedule {
+    display: grid;
+    grid-column: span 2;
+    row-gap: 10px;
+
+    @include onTablet {
+      row-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 8;
+    }
+
+    &-description {
+      color: $color-white;
+    }
+  }
+
+  &__main {
+    display: grid;
+    grid-column: span 2;
+    row-gap: 10px;
+
+    @include onTablet {
+      grid-template-rows: 30px 1fr;
+      row-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 9 / 13;
+    }
+  }
+
+  &__bottom {
+    grid-column: span 2;
+    display: grid;
+    grid-template-rows: 1fr;
+    align-items: center;
+    column-gap: 24px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 13;
+    }
+
+    &-text {
+      grid-row: 1;
+      display: grid;
+      grid-template-rows: 1fr;
+      column-gap: 24px;
+
+      @include onTablet {
+        justify-self: left;
+      }
+
+      @include onDesktop {
+        column-gap: 102px;
+      }
+
+      &--description {
+        grid-row: 1;
+        margin: 0;
+        color: $color-white;
+        text-align: center;
+        font-family: $font-family-main;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 140%;
+
+      }
+    }
+
+    &-button {
+      grid-row: 1;
+
+      @include onTablet {
+        grid-column: 6;
+        justify-self: end;
+      }
+    }
+  }
+
+  &-title {
+    margin: 0;
+    color: $color-white;
+    font-family: $font-family-main;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 20px;
+    }
+  }
+
+  &__nav {
+    &-list {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      row-gap: 5px;
+
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    @include onDesktop {
+      row-gap: 10px;
+    }
+
+    &-link {
+      color: $color-white;
+      font-family: $font-family-main;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      text-decoration: none;
+
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: $color-white;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        transform-origin: right;
+        transform: scale(0);
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+}

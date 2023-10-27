@@ -1,0 +1,69 @@
+.button {
+  height: 60px;
+  width: 280px;
+  background-color: $color-main;
+  border: none;
+  align-self: self-end;
+
+  font-family: $font-family-text;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  color: $color-white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  // &:focus {
+  //   background-color: #ea340d;
+  // }
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &--white {
+    border: 1px solid $color-main;
+    background-color: $color-white;
+    background-image: url(../images/icon/icon-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 80%;
+    padding-right: 10px;
+    color: $color-main;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-image: url(../images/icon/icon-arrow-hover.svg);
+      background-color: $color-white;
+      border: 1px solid #af3419;
+      color: #af3419;
+    }
+
+    // &:focus {
+    //   background-image: url(../images/icon/icon-arrow-active.svg);
+    //   background-color: $color-white;
+    //   border: 1px solid #ea340d;
+    //   color: #ea340d;
+    // }
+
+    @include onTablet {
+      width: 210px;
+      background-position: 90%;
+      grid-row: 1;
+      grid-column: 5 / 7;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      grid-column: 10 / 13;
+    }
+  }
+}

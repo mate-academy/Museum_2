@@ -1,0 +1,134 @@
+.header {
+  @include grid;
+  grid-template-rows: 70px 320px 1fr;
+  row-gap: 70px;
+  overflow: hidden;
+
+  background-color: $color-background;
+  height: 100%;
+
+  @include onTablet {
+    row-gap: 119px;
+  }
+
+  @include onDesktop {
+    grid-template-rows: 70px 420px 1fr;
+    height: 100vh;
+  }
+
+  &__content {
+    display: grid;
+    grid-row: 2;
+    grid-column: span 2;
+    grid-template-rows: 20px 126px 68px 60px;
+    row-gap: 10px;
+    position: relative;
+
+    @include onTablet {
+      grid-template-rows: 20px 144px 68px 60px;
+      grid-column: 1 / 6;
+      row-gap: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      row-gap: 10px;
+      grid-template-rows: 20px 202px 94px 60px;
+
+      &::after {
+        content: "";
+        width: 80%;
+        height: 1px;
+        opacity: 0.3;
+        background-color: $color-white;
+
+        position: absolute;
+        bottom: -30%;
+        right: 0;
+      }
+    }
+
+    &-description {
+      color: $color-white;
+      font-family: $font-family-text;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 140%;
+      margin: 0;
+
+      @include onTablet {
+        width: 50%;
+      }
+
+      @include onDesktop {
+        width: 100%;
+      }
+    }
+
+    &-title {
+      color: $color-white;
+      font-family: $font-family-main;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 100%;
+      margin: 0;
+
+      @include onTablet {
+        font-size: 72px;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+      }
+    }
+  }
+
+  &-image {
+    width: 245px;
+    height: 262px;
+
+    grid-column: span 2;
+    grid-row: 3;
+
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/background/image-bg-mobile.png);
+
+    @include onTablet {
+      height: 494px;
+      width: 443px;
+
+      grid-column: 2 / 6;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/background/image-bg-desktop.png);
+
+      grid-column: 7 / 13;
+      grid-row: 2;
+
+      width: 625px;
+      height: 100vh;
+
+      margin-top: -188px;
+      background-position: bottom right;
+    }
+  }
+
+  &-span {
+    display: none;
+    color: $color-white;
+    font-family: $font-family-main;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 125%;
+    opacity: 0.7;
+
+    @include onDesktop {
+      display: block;
+      grid-row: 3;
+      grid-column: 1 / 3;
+    }
+  }
+}
