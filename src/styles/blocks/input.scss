@@ -1,0 +1,43 @@
+.input {
+  width: 100%;
+
+  @extend %fontRaleway400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $blackColor;
+
+  border-bottom: 1px solid $blackColor;
+  padding: 0 0 3px;
+  background: none;
+
+  transition: border-color $primaryDuration, color $primaryDuration;
+
+  &::placeholder {
+    color: $blackColor;
+    transition: color $primaryDuration;
+  }
+
+  &:focus {
+    @extend %fontRaleway600;
+
+    &::placeholder {
+      @extend %fontRaleway600;
+    }
+
+    border-color: $blackColor;
+  }
+
+  &:hover {
+    border-color: $primaryColor;
+    color: $primaryColor;
+
+    &::placeholder {
+      color: $primaryColor;
+    }
+  }
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px $whiteColor inset;
+    -webkit-text-fill-color: $blackColor;
+  }
+}

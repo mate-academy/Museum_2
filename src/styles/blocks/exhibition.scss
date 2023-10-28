@@ -1,0 +1,74 @@
+.exhibition {
+  @include onTablet {
+    margin-bottom: 160px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &__header {
+    @include flex(center, space-between);
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__card {
+    margin-bottom: 60px;
+    height: 100%;
+
+    &--last {
+      margin-bottom: 30px;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      height: 484px;
+      object-fit: cover;
+      object-position: 50% 35%;
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    color: $primaryColor;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    min-height: 60px;
+
+    @extend %fontPlayfair;
+    font-size: 20px;
+    line-height: 1.25;
+    color: $blackColor;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    color: $grayColor;
+
+    @include onTablet {
+      margin-bottom: 40px;
+      min-height: 10ch;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      min-height: unset;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.language {
+  position: relative;
+  padding-right: 22px;
+
+  width: 40px;
+
+  color: $whiteColor;
+  font-size: 16px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-image: url(../images/header/Dropdown.svg);
+    background-position: center;
+    background-size: cover;
+    width: 10px;
+    height: 7px;
+
+    transition: transform $primaryDuration, transform-origin $primaryDuration;
+  }
+
+  &__items {
+    position: absolute;
+    top: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    opacity: 0;
+    transition: opacity $primaryDuration;
+  }
+
+  &:hover {
+    &::after {
+      transform: rotate(180deg);
+      transform-origin: top;
+    }
+
+    .language__items {
+      opacity: 1;
+    }
+  }
+
+  &--display {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.nav {
+  background-color: $primaryBgColor;
+  z-index: 999;
+
+  &--with-after {
+    @include onTablet {
+      &::after {
+        content: "";
+        min-height: 422px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+  
+        background-image: url(../images/header/Menu_image.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @include onDesktop {
+          min-height: 630px;
+          height: auto;
+          width: 50%;
+          top: 104px;
+          right: 0;
+          background-position: center bottom;
+        }
+      }
+    }
+  }
+
+  &__top-actions {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__content {
+    height: 100vh;
+  }
+
+  &__content-container {
+    padding: 20px 0 40px;
+
+    @include onDesktop {
+      padding: 26px 0 50px;
+    }
+  }
+
+  &__icon {
+    @include square (30px);
+
+    @include onTablet {
+      order: -1;
+    }
+  }
+
+  &__data {
+    margin-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+
+      flex-direction: row;
+      gap: 124px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      gap: 84px;
+    }
+  }
+
+  &__additional-text {
+    @extend %additional-text;
+  }
+
+  &__text {
+    @extend %fontRaleway600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $whiteColor;
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    border-bottom: 1px solid $whiteColor;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    @extend %fontPlayfair;
+    font-size: 20px;
+    line-height: 1.5;
+    color: $whiteColor;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 1.2;
+    }
+  }
+}
