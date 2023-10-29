@@ -1,0 +1,116 @@
+.subscription {
+  margin-bottom: 80px;
+
+  @include on768px {
+    margin-bottom: 128px;
+  }
+
+  &__grid {
+
+    @include on768px {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    color: $c-black;
+    margin-bottom: 20px;
+
+    @include on768px {
+      grid-column: 1 / -1;
+    }
+
+    @include on1280px {
+      margin-bottom: 50px;
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    color: $c-black;
+    line-height: 150%;
+    margin-bottom: 50px;
+
+    @include on768px {
+      grid-column: 1 / -2;
+    }
+
+    @include on1280px {
+      grid-column: span 6;
+    }
+  }
+
+  &__form {
+
+    @include on768px {
+      grid-column: 1 / -3;
+    }
+
+    @include on1280px {
+      grid-column: span 5;
+    }
+
+    &__input {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid $c-black;
+      background: transparent;
+      padding-bottom: 3px;
+      width: 100%;
+      font-size: 16px;
+      line-height: 150%;
+      margin-bottom: 30px;
+
+      &:-webkit-autofill {
+        transition: all 5000s ease-in-out;
+      }
+
+      &::placeholder {
+        color: $c-black;
+      }
+
+      &:hover {
+        color: $c-orange;
+        border-bottom: 1px solid $c-orange;
+
+        &::placeholder {
+          color: $c-orange;
+        }
+      }
+
+      &:focus {
+        color: $c-orange;
+        font-weight: 600;
+        border-bottom: 1px solid $c-orange;
+
+        &::placeholder {
+          color: $c-orange;
+        }
+      }
+    }
+  }
+
+  &__button {
+
+    @include on768px {
+      display: grid;
+      column-gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include on1280px {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    &__link {
+      cursor: pointer;
+      margin-bottom: 80px;
+      border: none;
+      width: 100%;
+
+      @include on768px {
+        grid-column: 1 / 4;
+      }
+    }
+  }
+}

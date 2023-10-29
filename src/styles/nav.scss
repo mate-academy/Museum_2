@@ -1,0 +1,60 @@
+.nav {
+  @include on768px {
+    grid-column: 1 / -1;
+  }
+
+  @include on1280px {
+    grid-column: 1 / 7;
+  }
+
+  &__list {
+    position: relative;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    margin: 40px 0 80px;
+
+    @include on768px {
+      gap: 30px;
+      margin: 50px 0 101px;
+    }
+
+    @include on1280px {
+      gap: 60px;
+      margin: 70px 0 121px;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $c-white;
+      height: 1px;
+      width: 100%;
+      bottom: -40px;
+
+      @include on768px {
+        bottom: -50px;
+      }
+
+      @include on1280px {
+        bottom: -60px;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $c-white;
+      font-family: $font-playfair;
+      font-size: 20px;
+      line-height: 150%;
+
+      @include hover(color, $c-orange);
+
+      @include on768px {
+        font-size: 48px;
+      }
+    }
+  }
+}
