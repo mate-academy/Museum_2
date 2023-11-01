@@ -49,10 +49,7 @@
               Внесок українських митців у світову культуру 19-20 ст.
             </p>
 
-            <button
-              href="#"
-              class="header__button button"
-            >
+            <button class="header__button button">
               Купити квиток
             </button>
           </div>
@@ -355,19 +352,31 @@
               method="post"
               id="form"
             >
-              <label for="subscription" class="form__label">
+              <label for="email" class="form__label">
                 <input
-                  class="form__field"
-                  type="email"
-                  name="email"
-                  placeholder="e-mail"
-                  required
-                    >
+                class="form__field"
+                type="email"
+                name="email"
+                placeholder="e-mail"
+                required
+                id="email"
+                >
               </label>
               <button class="form__button button">
                 Підписатись
               </button>
             </form>
+
+            <script>
+              document.addEventListener("DOMContentLoaded", function() {
+                const form = document.getElementById("form");
+                form.addEventListener("submit", function(event) {
+                  event.preventDefault();
+                  form.reset();
+                });
+              });
+            </script>
+
           </div>
         </div>
       </section>
@@ -521,7 +530,7 @@
           <a href="#top" class="footer__arrow-up">
             <img
               class="footer__arrow-up-img"
-              src="images/icon/scroll up.svg"
+              src="images/icon/scroll-up.svg"
               alt="arrow-up"
             >
           </a>
