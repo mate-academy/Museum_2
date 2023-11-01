@@ -1,0 +1,73 @@
+.form {
+  @include pageGrid;
+
+  &__label {
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: span 4;
+    }
+    @include onDesktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__field {
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $black-text-c;
+    background-color: $white-bg;
+
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    color: $black-text-c;
+    caret-color: $button-main-c;
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $button-main-c;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      color: $black-text-c;
+    }
+
+    &:hover::placeholder {
+      color: $button-main-c;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 1px 1000px $white-bg inset;
+    }
+
+    &:valid {
+      border-bottom: 1px solid $black-text-c;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    margin-bottom: 80px;
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+      margin-bottom: 130px;
+    }
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+}
