@@ -1,0 +1,75 @@
+.header {
+  @include gridTemplate;
+  @include paddingInline;
+  background-color: $bg-color;
+  &__top {
+    grid-column: 1/-1;
+  }
+  &__date {
+    margin-top: 50px;
+    grid-column: 1/-1;
+    color: #f1f5f4;
+    @include onTablet {
+      margin-top: 99px;
+      grid-column: span 2;
+
+    }
+    @include onDesktop {
+      margin-top: 90px;
+      grid-column: 1/span 2;
+    }
+  }
+  &__title {
+    margin-top: 10px;
+    grid-column: 1/-1;
+    color: #f1f5f4;
+    @include onTablet {
+      grid-column: span 5;
+    }
+    @include onDesktop {
+      grid-column: 1/span 6;
+    }
+  }
+  &__desc {
+    margin-top: 30px;
+    grid-column: 1/-1;
+    color: #f1f5f4;
+    @include onTablet {
+      grid-column: 1/span 3;
+      margin-top: 20px;
+    }
+    @include onDesktop {
+      grid-column: 1/span 6;
+      margin-top: 30px;
+    }
+  }
+  &__button {
+    margin-top: 40px;
+    grid-column: 1/-1;
+    @include onTablet {
+      grid-column: 1/span 3;
+      margin-top: 50px;
+    }
+    @include onDesktop {
+      grid-column: 1/span 3;
+      margin-top: 81px;
+    }
+  }
+  &__img {
+    margin-top: 40px;
+    grid-column: 1/-1;
+    width: 100%;
+    object-fit: contain;
+    @include onTablet {
+      grid-column: 2/6;
+      margin-top: 70px;
+    }
+    @include onDesktop {
+      --mar-desctop: $mar-desktop;
+      grid-column: 7/-1;
+      grid-row: 2 / 10;
+      margin-top: 47px;
+      width: calc(100% + var(--mar-desktop));
+    }
+  }
+}

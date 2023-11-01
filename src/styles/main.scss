@@ -1,7 +1,187 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./blocks/header";
+@import "./blocks/menu.scss";
+@import "./blocks/section.scss";
+@import "./blocks/actual.scss";
+@import "./blocks/events.scss";
+@import "./blocks/visit.scss";
+@import "./blocks/news.scss";
+@import "./blocks/subscribe.scss";
+@import "./blocks/footer.scss";
 
 body {
   background: $c-gray;
+  font-family: Raleway, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+}
+
+.button {
+  --hover-color: #af3419;
+  --pressed-color: #ea340d;
+  --disabled-color: #dd836f;
+
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  background: $main-color;
+  color: $second-color;
+  border: none;
+
+  &:hover {
+    background: var(--hover-color);
+  }
+  &:focus {
+    background: var(--pressed-color);
+  }
+  &:disabled {
+    background: var(--disabled-color);
+  }
+
+  &--second {
+    flex-direction: row;
+    gap: 8px;
+    color: $main-color;
+    border: 1px solid $main-color;
+    background: none;
+
+    &::after {
+      display: block;
+      content: "";
+      height: 20px;
+      width: 20px;
+      background: url(../images/icon-arrow.svg) no-repeat;
+    }
+
+    &:active {
+      background: none;
+      color: var(--pressed-color);
+      border: 1px solid var(--pressed-color);
+      &::after {
+        background: url(../images/icon-arrow-press.svg) no-repeat;
+      }
+    }
+    &:disabled {
+      background: none;
+      color: var(--disabled-color);
+      border: 1px solid var(--disabled-color);
+      &::after {
+        background: url(../images/icon-arrow-disable.svg) no-repeat;
+      }
+    }
+
+    &:hover {
+      background: none;
+      color: var(--hover-color);
+      border: 1px solid var(--hover-color);
+      &::after {
+        background: url(../images/icon-arrow-hover.svg) no-repeat;
+      }
+    }
+  }
+
+}
+
+.mail {
+  text-decoration: none;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid $font-main-color;
+  font-weight: bold;
+  background: none;
+  &::placeholder {
+    color: $font-main-color;
+    font-weight: normal;
+  }
+  &:hover {
+    border-bottom: 1px solid $main-color;
+    color: $main-color;
+    font-weight: normal;
+    &::placeholder {
+      color: $main-color;
+    }
+  }
+  &:focus {
+    border-bottom: 1px solid $main-color;
+    caret-color: $main-color;
+    color: $main-color;
+    font-weight: normal;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+.link {
+  @include hover(text-decoration, underline);
+}
+
+.logo {
+  height: 40px;
+  width: 123px;
+  background: url(../images/logo.svg) no-repeat center;
+}
+
+.menu-button {
+  width: 25px;
+  height: 20px;
+  background: url(../images/menu.svg) no-repeat center;
+  &--close {
+    background: url(../images/cross.svg) no-repeat center;
+  }
+}
+
+.top-bar {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__right {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 40px;
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  @include onTablet {
+    height: 77px;
+  }
+  @include onDesktop {
+    height: 90px;
+  }
+}
+
+.lang {
+  display: none;
+  flex-direction: row;
+  gap: 5px;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  color: $second-color;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%; /* 24px */
+  @include onTablet {
+    display: flex;
+  }
+  &--menu {
+    display: flex;
+  }
+  &::after {
+    width: 8px;
+    content: url(../images/dropdown.svg);
+  }
 }
