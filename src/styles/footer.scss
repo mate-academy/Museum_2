@@ -1,15 +1,39 @@
 .footer {
   background-color: $c-green;
   color: $c-white;
-  padding-inline: 20px;
+  @include paddingInline;
+
+  @include onTablet {
+    display: grid;
+    grid-template-areas: "contacts schedule main"
+    "bottom bottom bottom";
+    grid-template-columns: calc(100% / 3);
+
+    padding-block: 55px;
+  }
 
   &__title {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 27px;
+    @include forFooterTitle;
+    // font-family: "Playfair Display", serif;
+    // font-weight: 700;
+    // font-size: 18px;
+    // line-height: 27px;
     padding: 34px 0 10px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+      grid-areas: "contacts";
+    }
   }
+
+  // &__contacts {
+  //   @include onTablet {
+  //     padding: 0;
+  //     margin: 0;
+  //     // grid-areas: "contacts";
+  //   }
+  // }
 
   &__address {
     @include forDescriptions;
@@ -19,19 +43,48 @@
     margin-bottom: 30px;
   }
 
+  // &__socials {
+  //   @include onTablet {
+  //     padding: 0;
+  //     margin: 0;
+  //     grid-areas: "socials";
+  //   }
+  // }
+
   &__socials__list {
     list-style: none;
     display: flex;
     gap: 25px;
     margin-bottom: 30px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+      grid-areas: "socials";
+    }
   }
 
+  // &__schedule {
+  //   @include onTablet {
+  //     padding: 0;
+  //     margin: 0;
+  //     grid-areas: "schedule";
+  //   }
+  // }
+
   &__schedule__title {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 27px;
+    @include forFooterTitle;
+    // font-family: "Playfair Display", serif;
+    // font-weight: 700;
+    // font-size: 18px;
+    // line-height: 27px;
     padding-bottom: 10px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+      grid-areas: "schedule";
+    }
   }
 
   &__schedule__list {
@@ -46,12 +99,27 @@
     // line-height: 24px;
   }
 
+  // &__nav {
+  //   @include onTablet {
+  //     padding: 0;
+  //     margin: 0;
+  //     grid-areas: "main";
+  //   }
+  // }
+
   &__nav__title {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 27px;
+    @include forFooterTitle;
+    // font-family: "Playfair Display", serif;
+    // font-weight: 700;
+    // font-size: 18px;
+    // line-height: 27px;
     padding-bottom: 10px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+      grid-areas: "main";
+    }
   }
 
   &__nav__list{
@@ -73,5 +141,14 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 30px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+      grid-area: bottom;
+
+      justify-content: start;
+      gap: 22px;
+    }
   }
 }

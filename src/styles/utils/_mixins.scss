@@ -5,6 +5,65 @@
   }
 }
 
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesctop {
+  @media (min-width: $desctop-min-width) {
+    @content;
+  }
+}
+
+@mixin paddingInline {
+  padding-inline: 20px;
+
+  @include onTablet {
+    padding-inline: 39px;
+  }
+
+  @include onDesctop {
+    padding-inline: 55px;
+  }
+}
+
+@mixin forTitle {
+  font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+}
+
+@mixin forNames {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+@mixin forDescriptions {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  // @include onTablet {
+  // }
+}
+
+@mixin forFooterTitle {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+}
+
 @mixin forBtn {
   display: block;
   box-sizing: border-box;
@@ -18,10 +77,23 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 16px;
+
+  @include onTablet {
+    width: 330px;
+    margin: 0;
+  }
 }
 
-@mixin forDescriptions {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
+@mixin forBtnLight {
+  box-sizing: border-box;
+    display: block;
+    width: 280px;
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 22px 80px;
+
+    background-color: transparent;
+    border: 1px solid $c-orange;
+    color: $c-orange;
 }
+

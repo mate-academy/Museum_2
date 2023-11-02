@@ -1,24 +1,29 @@
 .digest {
-  padding-inline: 20px;
+  @include paddingInline;
 
   &__wrapper {
     margin: 120px 0 80px;
   }
 
   &__title {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 35px;
+    // font-family: "Playfair Display", serif;
+    // font-weight: 700;
+    // font-size: 28px;
+    // line-height: 35px;
     margin-bottom: 20px;
+    @include forTitle;
   }
 
   &__description {
+    margin-bottom: 50px;
     @include forDescriptions;
     // font-weight: 400;
     // font-size: 16px;
     // line-height: 24px;
-    margin-bottom: 50px;
+
+    @include onTablet {
+      width: 570px;
+    }
   }
 
   &__input {
@@ -38,6 +43,10 @@
       background-color: $c-white;
       color: inherit;
       border-bottom: 1px solid $c-black;
+    }
+
+    @include onTablet {
+      width: 450px;
     }
   }
 

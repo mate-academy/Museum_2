@@ -1,18 +1,33 @@
 .visit {
   background-color: $c-green;
   color: $c-white;
-  padding: 50px 20px;
+  @include paddingInline;
+  padding-block: 20px;
+
+  @include onTablet {
+    padding-block: 80px;
+  }
 
   &__wrapper {
     margin-top: 90px;
+
+    @include onTablet {
+      margin-top: 100px;
+    }
   }
 
   &__title {
     font-family: "Playfair Display", serif;
     font-weight: 700;
-    font-size: 38xp;
+    font-size: 38px;
     line-height: 38px;
     margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 62px;
+      line-height: 62px;
+      max-width: 570px;
+    }
   }
 
   &__description {
@@ -21,6 +36,11 @@
     // font-size: 16px;
     // line-height: 24px;
     margin-bottom: 40px;
+
+    @include onTablet {
+      max-width: 450px;
+      margin-bottom: 60px;
+    }
   }
 
   &__btn {
