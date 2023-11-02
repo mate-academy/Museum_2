@@ -1,0 +1,111 @@
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: $bg-color;
+  opacity: 0;
+  pointer-events: none;
+  @include paddingInline;
+  @include gridTemplate;
+  grid-auto-rows: min-content;
+  &:target {
+    pointer-events: all;
+    opacity: 1;
+    z-index: 3;
+  }
+  transition: 0.5s;
+
+  &__top {
+    grid-column: 1/-1;
+  }
+
+  &__get {
+    margin-top: 10px;
+    grid-column: 1/-1;
+    @include onTablet {
+      grid-column: span 4;
+    }
+    @include onDesktop {
+      margin-top: 40px;
+      grid-column: 1/6;
+    }
+  }
+
+  &__links {
+    margin-top: 40px;
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: $second-color;
+    @include onTablet {
+      margin-top: 50px;
+      gap: 30px;
+    }
+    @include onDesktop {
+      margin-top: 70px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__line {
+    margin-top: 40px;
+    grid-column: 1/-1;
+    height: 1px;
+    background: $second-color;
+    @include onTablet {
+      margin-top: 50px;
+      gap: 30px;
+    }
+    @include onDesktop {
+      margin-top: 60px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    grid-column: 1/-1;
+    @include onTablet {
+      margin-top: 50px;
+    }
+    @include onDesktop {
+      margin-top: 60px;
+      grid-column: 1/4;
+    }
+  }
+
+  &__img {
+    display: none;
+    @include onTablet {
+      display: block;
+      margin-top: 30px;
+      grid-column: 2/6;
+      object-fit: contain;
+      width: 100%;
+    }
+    @include onDesktop {
+      --mar-desctop: $mar-desktop;
+      grid-column: 7/-1;
+      grid-row: 2 / 10;
+      margin-top: 40px;
+      width: calc(100% + var(--mar-desktop));
+    }
+  }
+}
+
+.how-get {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: $second-color;
+  @include onTablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @include onDesktop {
+    gap: 60px;
+  }
+}

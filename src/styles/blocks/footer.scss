@@ -1,0 +1,88 @@
+.footer {
+  @include paddingInline;
+  @include gridTemplate;
+  position: relative;
+  background: $bg-color;
+  padding-block: 30px;
+  row-gap: 50px;
+  color: $second-color;
+  &__block {
+    grid-column: 1/-1;
+    @include onTablet {
+      grid-column: span 2;
+    }
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+  &__bottom {
+    grid-column: 1/-1;
+    display: flex;
+    gap: 20px;
+    @include onDesktop {
+      gap: 102px;
+    }
+  }
+  &__up-button {
+    position: absolute;
+    right: $mar-phone;
+    bottom: 30px;
+    height: 30px;
+    width: 30px;
+    background: url(../images/icon-scroll-up.svg) no-repeat center;
+    @include onTablet {
+      right: $mar-tablet;
+    }
+    @include onDesktop {
+      right: $mar-desktop;
+    }
+  }
+}
+
+.socials {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  @include onTablet {
+    margin-top: 50px;
+  }
+}
+
+.navigation {
+  display: grid;
+  gap: 5px;
+  @include onTablet {
+    gap: 10px;
+  }
+}
+
+.social {
+  display: block;
+  height: 20px;
+  width: 20px;
+  background: no-repeat center;
+  &--facebook {
+    background: url(../images/facebook.svg);
+  }
+  &--twitter {
+    background: url(../images/twitter.svg);
+  }
+  &--telegram {
+    background: url(../images/telegram.svg);
+  }
+  &--instagram {
+    background: url(../images/instagram.svg);
+  }
+  &:hover {
+    @include hover (transform, translateY(10%));
+  }
+}
