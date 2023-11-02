@@ -4,8 +4,17 @@
   background: $c-green
     url(..//images/pictures/1.png) center bottom / 245px auto no-repeat;
 
+    @include onTablet {
+      background: $c-green
+        url(..//images/pictures/1.png) center bottom / 443px auto no-repeat;
+    }
+
   &__top {
-    padding: 50px 20px 40px;
+    @include paddingInline;
+
+    @include onTablet {
+      padding-block: 26px;
+    }
   }
 
   &__date {
@@ -17,6 +26,10 @@
     color: $c-white;
 
     padding-bottom: 10px;
+
+    @include onTablet {
+      padding-block: 99px 10px;
+    }
   }
 
   &__title {
@@ -28,6 +41,12 @@
     color: $c-white;
 
     padding-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+      width: 569px;
+    }
   }
 
   &__subtitle {
@@ -39,6 +58,11 @@
     color: $c-white;
 
     padding-bottom: 40px;
+
+    @include onTablet {
+      width: 330px;
+      padding-bottom: 55px;
+    }
   }
 
   &__btn {
