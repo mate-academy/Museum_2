@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
   }
 
   &__conteiner {
@@ -19,13 +20,18 @@
   }
 
   &__dropdown {
+    width: 50%;
     display: none;
-    
-      @include onTablet {
-        position: relative;
-        display: inline-block;
-        box-sizing: border-box;
+
+    @include onTablet {
+      position: relative;
+      display: inline-block;
+      box-sizing: border-box;
     }
+  }
+
+  &__dropdown:hover &__dropdown__content {
+    display: block;
   }
 
   &__dropdown__content {
