@@ -4,10 +4,15 @@
   background: $c-green
     url(..//images/pictures/1.png) center bottom / 245px auto no-repeat;
 
-    @include onTablet {
-      background: $c-green
-        url(..//images/pictures/1.png) center bottom / 443px auto no-repeat;
-    }
+  @include onTablet {
+    background: $c-green
+      url(..//images/pictures/1.png) center bottom / 443px auto no-repeat;
+  }
+
+  @include onDesctop {
+    background: $c-green
+      url(..//images/pictures/1.png) right bottom / 625px auto no-repeat;
+  }
 
   &__top {
     @include paddingInline;
@@ -24,7 +29,6 @@
     // font-size: 14px;
     line-height: 19px;
     color: $c-white;
-
     padding-bottom: 10px;
 
     @include onTablet {
@@ -39,7 +43,6 @@
     font-size: 48px;
     line-height: 48px;
     color: $c-white;
-
     padding-bottom: 30px;
 
     @include onTablet {
@@ -68,4 +71,29 @@
   &__btn {
     @include forBtn;
   }
+
+  &__bottom {
+    display: none;
+    @include paddingInline;
+
+    @include onDesctop {
+      display: flex;
+      padding-top: 135px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      color: $c-white;
+      opacity: 0.7;
+
+      // &::after {
+      //   content: "";
+      //   width: 469px;
+      //   height: 1px;
+      //   color: $c-white;
+      //   padding-left: 6px;
+      // }
+    }
+  }
 }
+

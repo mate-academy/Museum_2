@@ -25,11 +25,20 @@
       url(..//images/pictures/2.png) center bottom / 422px auto no-repeat;
   }
 
+  @include onDesctop {
+    background: $c-green
+      url(..//images/pictures/2.png) right bottom / 624px auto no-repeat;
+  }
+
   &__nav {
     padding-block: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include onDesctop {
+      padding-block: 32px;
+    }
   }
 
   &__conteiner {
@@ -67,9 +76,15 @@
   }
 
   &__list {
-    padding-bottom: 40px;
     border-bottom: 1px solid $c-white;
+    padding-bottom: 40px;
     margin-bottom: 40px;
+
+    @include onDesctop {
+      width: 570px;
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
   }
 
   &__text__container {
@@ -87,6 +102,10 @@
     padding-bottom: 20px;
 
     @include forLinks;
+
+    @include onDesctop {
+      padding-bottom: 70px;
+    }
   }
 
   &__text--bold {
@@ -99,9 +118,12 @@
   &__item__list {
     padding-top: 20px;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
-    & :not(:last-child) {
-      padding-bottom: 20px;
+    @include onDesctop {
+      gap: 60px;
     }
   }
 
@@ -117,7 +139,6 @@
     @include onTablet {
       font-size: 48px;
       line-height: 57px;
-
       @include forLinks;
     }
   }
