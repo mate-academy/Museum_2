@@ -11,4 +11,42 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  &__conteiner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__dropdown {
+    display: none;
+    
+      @include onTablet {
+        position: relative;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+  }
+
+  &__dropdown__content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__dropdown__link {
+    text-decoration: none;
+    color: $c-white;
+
+    &::after {
+      content: url(../images/icons/dropdown.svg);
+      width: 8px;
+      padding-left: 5px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $c-white;
+      width: fit-content;
+    }
+  }
 }
