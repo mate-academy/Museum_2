@@ -2,14 +2,28 @@
   background-color: $c-green;
   color: $c-white;
   @include paddingInline;
+  // position: relative;
 
   @include onTablet {
     display: grid;
-    grid-template-areas: "contacts schedule main"
-    "bottom bottom bottom";
-    grid-template-columns: calc(100% / 3);
+    // grid-template-areas: "contacts schedule main"
+    // "socials . ."
+    // "bottom bottom top";
+    // grid-template-columns: calc(100% / 3);
+    // grid-template-rows: auto;
 
     padding-block: 55px;
+  }
+
+  &__wrapper {
+    @include onTablet {
+      display: flex;
+      gap: 90px;
+    }
+
+    @include onDesctop {
+      gap: 240px;
+    }
   }
 
   &__title {
@@ -19,7 +33,7 @@
     @include onTablet {
       padding: 0;
       margin: 0;
-      grid-areas: "contacts";
+      // grid-areas: "contacts";
 
       padding-bottom: 30px;
     }
@@ -50,7 +64,7 @@
     @include onTablet {
       padding: 0;
       margin: 0;
-      grid-areas: "socials";
+      // grid-areas: "socials";
     }
   }
 
@@ -61,7 +75,7 @@
     @include onTablet {
       padding: 0;
       margin: 0;
-      grid-areas: "schedule";
+      // grid-areas: "schedule";
       padding-bottom: 30px;
     }
   }
@@ -82,7 +96,7 @@
     @include onTablet {
       padding: 0;
       margin: 0;
-      grid-areas: "main";
+      // grid-areas: "main";
       padding-bottom: 30px;
     }
   }
@@ -108,6 +122,7 @@
   &__bottom {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-bottom: 30px;
 
     @include onTablet {
@@ -117,6 +132,17 @@
 
       justify-content: start;
       gap: 22px;
+
+      position: relative;
+    }
+  }
+
+  &__top {
+    @include onTablet {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      grid-area: top;
     }
   }
 }
