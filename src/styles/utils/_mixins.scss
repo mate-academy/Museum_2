@@ -52,9 +52,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-
-  // @include onTablet {
-  // }
 }
 
 @mixin forFooterTitle {
@@ -70,19 +67,21 @@
   width: 280px;
   margin: 0 auto;
   background-color: $c-orange;
+  color: $c-white;
   padding-block: 22px;
-  text-align: center;
 
   text-decoration: none;
-  color: $c-white;
   font-weight: 600;
   font-size: 16px;
   line-height: 16px;
+  text-align: center;
 
   @include onTablet {
     width: 330px;
     margin: 0;
   }
+
+  @include hover (background-color, $c-orange-hover);
 }
 
 @mixin forBtnLight {
@@ -104,22 +103,25 @@
     font-size: 16px;
     line-height: 16px;
 
+
     @include onTablet {
       position: absolute;
       top: 0;
       right: 0;
       width: 210px;
+
+      @include hover (border-color, $c-orange-hover);
+      @include hover (color, $c-orange-hover);
     }
 }
 
 @mixin forBtnAfterElement {
   width: 20px;
   height: 20px;
-  content: url(..//images/icons/arrow-orange.svg);
   padding-left: 8px;
+  content: url(..//images/icons/arrow-orange.svg);
 }
 
-// @mixin forBtnTopPosition {
-
-// }
-
+@mixin forLinks {
+  @include hover (color, $c-orange-hover);
+}
