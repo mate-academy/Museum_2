@@ -1,0 +1,138 @@
+.digest {
+
+  @include onPhone {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    justify-content: center;
+    gap: 20px;
+    margin: 0 0 140px;
+  }
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 90px);
+    gap: 30px;
+    margin: 32px 55px 110px;
+  }
+
+  @include onDesctop {
+    display: grid;
+    grid-template-columns: repeat(12, 70px);
+    gap: 30px;
+    margin: 32px 55px 200px;
+  }
+}
+  
+.digest__title {
+  font-family: "Playfair Display", Helvetica, sans-serif;
+  font-weight: 700;
+
+  @include onPhone {
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+    
+  @include onTablet {
+    font-size: 40px;
+    grid-column: 1/5;
+    grid-row: 1;
+  }
+    
+  @include onDesctop {
+    grid-column: 1/6;
+    grid-row: 1;
+    font-size: 48px;
+    width: 570px;
+    margin: 0 0 50px;
+  }
+}
+
+.digest__text {
+  font-family: "Raleway", Helvetica, sans-serif;
+  color: #1c1b29;
+
+  @include onPhone {
+    grid-column: 1/3;
+    grid-row: 2;
+  }
+
+  @include onTablet {
+    grid-column: 1/5;
+    grid-row: 2;
+  }
+  
+  @include onDesctop {
+    grid-column: 7/13;
+    grid-row: 1;
+  }
+}
+
+.digest__container-2 {
+  display: flex;
+
+  @include onPhone {
+    flex-direction: column;
+    grid-column: 1/3;
+    grid-row: 3;
+  }
+
+  @include onTablet {
+    flex-direction: column;
+    grid-row: 3;
+  }
+
+  @include onDesctop {
+    flex-direction: column;
+    grid-column: 1/6;
+  }
+  
+  
+  .digest__email {
+    border: none;
+    border-bottom: 1px solid #1c1b29;
+    background-color: #eee;
+    margin: 0 0 40px;
+    padding: 3px;
+    outline: none;
+
+    @include onPhone {
+      width: 270px;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesctop {
+      width: 490px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #cd4d31 ;
+    }
+  }
+  
+  .digest__email:focus {
+    color: #1c1b29;
+    font-weight: bold;
+    border-bottom: 1px solid #cd4d31 ;
+  }
+
+  input:hover::placeholder {
+    color: #cd4d31;
+    border: none;
+  }
+  
+  input:checked::placeholder {
+    color: #1c1b29;
+    border: none;
+  }
+  
+  .digest__button {
+    width: 270px;
+    height: 60px;
+    color: white;
+    background-color: #cd4d31;
+    border: none;
+  }
+}

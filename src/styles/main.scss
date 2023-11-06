@@ -2,6 +2,112 @@
 @import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
+@import "./bloks.scss/header.scss";
+@import "./bloks.scss/menu.scss";
+@import "./bloks.scss/first.section.scss";  /* актуальна події */
+@import "./bloks.scss/second.section.scss"; /* найближчі події */
+@import "./bloks.scss/third.section.scss";  /* візит до музею */
+@import "./bloks.scss/fourth.section.scss"; /* новини */
+@import "./bloks.scss/fifth.section.scss";  /* дайджест */
+@import "./bloks.scss/footer.scss";
+
+.page {
+  scroll-behavior: smooth;
+}
+
+.page__body {
+  transition-duration: 450s;
+  background-color: #eee;
+}
+
+.page__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translateX(-110%);
+  transition: transform 0.5s ;
+
+  &:target {
+    transform: translateX(0);
+  }
+}
+
+.page--with-menu {
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:focus {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+}
+
+.ticket {
+  cursor: pointer;
+  //background-color: #e5e5e5;;
+
+  &:hover {
+    color: #af3419;
+    border: 1px solid #af3419;
+  }
+
+  &:focus {
+    color: #ea340d;
+    border: 1px solid #ea340d;
+  }
+
+  &:disabled {
+    color: #dd836f;
+    border: 1px solid #dd836f;
+  }
+}
+
+.photo {
+  cursor: pointer;
+  transition-duration: 0.6s;
+
+  &:hover {
+    transition-duration: 0.6s;
+    transform: scale(1.1);
+  }
+}
+
+.link {
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0;
+  list-style: none;
+  color: white;
+
+  
+  &:checked {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.general__link {
+  transition-duration: 1s;
+
+  &:hover {
+    transition-duration: 1s;
+    transform: scale(1.1);
+  }
 }
