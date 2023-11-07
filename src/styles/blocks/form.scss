@@ -1,0 +1,45 @@
+.form {
+  grid-column: 1 / -1;
+  margin-top: 50px;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    grid-column: span 5;
+  }
+
+  &__input {
+    width: 100%;
+    background-color: $white;
+    outline: none;
+    border: none;
+    color: $black;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $black;
+
+    &:hover,
+    &:active {
+      border-bottom: 1px solid $main;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-bottom: 1px solid $black;
+      -webkit-text-fill-color: $black;
+      -webkit-box-shadow: 0 0 0 1000px $white inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    &::placeholder {
+      @include mainText;
+      color: $black;
+    }
+  }
+}
