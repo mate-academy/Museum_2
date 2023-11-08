@@ -123,14 +123,28 @@
     color: $main;
     border: 1px solid $main;
 
+    &__arrow {
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/arrow.png);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    
     &:hover {
       background-color: $main;
       color: $white;
+
+      & > .button__additional__arrow {
+        background-image: url(../images/arrowHover.svg);
+      }
     }
 
     @include onTablet {
       width: 210px;
     }
+
     @include onDesktop {
       width: 270px;
     }
@@ -149,12 +163,6 @@
         grid-column: 10/-1;
         margin-top: 120px;
       }
-
-    }
-
-    &__arrow {
-      width: 20px;
-      height: 20px;
     }
 
     &--events {
