@@ -45,41 +45,10 @@
     display: flex;
     align-items: center;
     gap: 30px;
+    box-sizing: border-box;
 
     @include onTablet {
       flex-direction: row-reverse;
-    }
-  }
-
-  &__dropdown {
-    position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-  }
-
-  &__dropdown:hover &__dropdown__content {
-    display: block;
-  }
-
-  &__dropdown__content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-  }
-
-  &__dropdown__link {
-    text-decoration: none;
-    color: $c-white;
-
-    &::after {
-      content: url(../images/icons/dropdown.svg);
-      width: 8px;
-      padding-left: 5px;
-    }
-
-    &:hover {
-      border-bottom: 1px solid $c-white;
-      width: fit-content;
     }
   }
 
@@ -119,6 +88,7 @@
     color: $c-white;
     text-decoration: none;
     @include forLinks;
+    border-bottom: 1px solid transparent;
   }
 
   &__text--bold {
