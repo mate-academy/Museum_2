@@ -1,0 +1,180 @@
+.menu {
+  background: $c-background;
+  height: 100vh;
+  overflow-y: hidden;
+  z-index: 1000;
+
+  @include onDesktop {
+    background-image: url(../images/background/bg_menu_desktop.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+
+  &__wrapper {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__top {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+    flex-direction: row;
+    margin-top: 20px;
+
+    &-wrapper-icons {
+      align-items: center;
+      display: flex;
+
+      flex-direction: row-reverse;
+      gap: 40px;
+
+      @include onTablet {
+        flex-direction: row;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__bot {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include onTablet {
+        justify-content: space-between;
+
+        grid-column: span 4;
+        flex-direction: row;
+      }
+
+      @include onDesktop {
+        grid-column: span 5;
+      }
+
+      &-time,
+      &-address {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-title {
+        @include fonts--additional;
+        color: $c-white;
+      }
+
+      &-text {
+        font-family: "Raleway", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+
+        color: $c-white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+
+    border-bottom: 1px solid $c-white;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+
+      gap: 30px;
+      padding-bottom: 50px;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+
+      gap: 60px;
+      padding-bottom: 60px;
+      margin-top: 70px;
+    }
+
+    &__link {
+      position: relative;
+
+      font-family: "Playfair Display", serif;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 150%;
+      text-decoration: none;
+      color: $c-white;
+
+      @include onTablet {
+        font-family: "Playfair Display", serif;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 125%;
+      }
+
+      @include onDesktop {
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+
+          display: inline-block;
+          height: 1px;
+          width: 100%;
+
+          background-color: $c-white;
+
+          transition: transform $effectDuration;
+          transform: scaleX(0);
+          transform-origin: left;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  &__bg {
+    display: none;
+
+    height: 466px;
+    margin-top: 30px;
+
+    background-image: url(../images/background/bg_menu_tablet.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+  }
+}

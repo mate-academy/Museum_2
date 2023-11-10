@@ -1,0 +1,78 @@
+.news {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 60px;
+
+  grid-column: 1 / -1;
+
+  &--cats {
+    margin-top: 50px;
+  }
+
+  @include onTablet {
+    grid-column: span 3;
+    margin-top: 70px;
+  }
+
+  @include onDesktop {
+    grid-column: span 6;
+    margin-top: 70px;
+  }
+
+  &__image {
+    display: flex;
+    width: 100%;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+
+    &-link {
+      display: flex;
+      height: 281px;
+
+      @include onTablet {
+        height: 330px;
+      }
+
+      @include onDesktop {
+        height: 370px;
+      }
+    }
+  }
+
+  &__date {
+    @include fonts--additional;
+    margin-top: 20px;
+
+    color: $c-black;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__text {
+    @include fonts--main;
+    margin-top: 20px;
+
+    color: $c-grey;
+
+    @include onTablet {
+      margin-top: 18px;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+.digest {
+  @include pageGrid;
+  padding-bottom: 80px;
+
+  &__text {
+    @include fonts--main;
+    margin-top: 20px;
+
+    color: $c-black;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 5;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+      margin-top: 200px;
+    }
+  }
+
+  &__form {
+    @include pageGrid;
+    @include fonts--main;
+
+    grid-column: 1 / -1;
+
+    color: $c-black;
+  }
+
+  &__email {
+    grid-column: 1 / -1;
+
+    margin-top: 50px;
+
+    border: none;
+    outline: none;
+
+    color: $c-black;
+    border-bottom: 1px solid $c-black;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 5;
+    }
+
+    &::placeholder {
+      color: $c-black;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $c-main-orange;
+    }
+
+    &:hover::placeholder {
+      color: $c-main-orange;
+    }
+
+    &:focus {
+      color: $c-main-orange;
+      border-bottom: 1px solid $c-main-orange;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    &:valid {
+      font-weight: 700;
+    }
+  }
+}
