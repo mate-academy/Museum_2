@@ -1,0 +1,68 @@
+.secondary {
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 60px;
+    width: 280px;
+    border: 1px solid $Red;
+    text-decoration: none;
+
+    &:hover {
+      border: 1px solid #af3419;
+    }
+
+    &:active {
+      border: 1px solid #ea340d;
+    }
+
+    @include onTablet {
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+    &-mobile {
+      margin: 30px 0 120px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &-tablet {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__button {
+    color: $Red;
+    font-weight: 600;
+    line-height: 100%; /* 16px */
+
+    &:hover {
+      color: #af3419;
+    }
+
+    &:active {
+      color: #ea340d;
+    }
+
+    &-photo {
+      width: 20px;
+      height: 20px;
+      margin: 0;
+
+      &:hover {
+        color: #af3419;
+      }
+    }
+  }
+}

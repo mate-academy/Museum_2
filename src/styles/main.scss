@@ -1,7 +1,62 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+.section {
 
-body {
-  background: $c-gray;
+  // @include contentPaddingInline;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      width: 450px;
+      margin-bottom: 75px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__exhibition {
+    @include contentPaddingInline;
+  }
+
+  &__event {
+    @include contentPaddingInline;
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__news {
+    @include contentPaddingInline;
+  }
+
+  &__digest {
+    @include contentPaddingInline;
+    @include onDesktop {
+      @include pageGrid;
+    }
+
+  }
+}
+
+.main {
+  // @include contentPaddingInline;
+
+  &__info {
+    color: $Red;
+    line-height: 150%; /* 24px */
+    margin-bottom: 10px;
+  }
 }
