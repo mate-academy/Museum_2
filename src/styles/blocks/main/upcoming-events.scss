@@ -1,0 +1,85 @@
+.upcoming {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 60px;
+
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    @include pageGrid;
+
+    grid-column: 1 / -1;
+    margin-top: 70px;
+  }
+
+  @include onDesktop {
+    grid-column: 1 / -1;
+    margin-top: 70px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__image {
+    display: flex;
+    width: 100%;
+
+    &-link {
+      display: flex;
+      height: 358px;
+
+      @include onTablet {
+        height: 422px;
+        grid-column: span 3;
+      }
+
+      @include onDesktop {
+        height: 475px;
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  &__date {
+    @include fonts--main;
+    margin-top: 20px;
+
+    color: $c-main-orange;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+  }
+
+  &__text {
+    @include fonts--main;
+    margin-top: 20px;
+
+    color: $c-grey;
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+
+    &--artist {
+      @include onTablet {
+        margin-top: 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,192 @@
+.button {
+  @include fonts--button;
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  height: 60px;
+
+  color: $c-white;
+  text-decoration: none;
+  background-color: $c-main-orange;
+
+  transition: all $effectDuration;
+
+  @include onDesktop {
+    &:hover {
+      background-color: $c-main-hover;
+    }
+
+    &:active {
+      background-color: $c-main-active;
+    }
+  }
+
+  &--header {
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      margin-top: 81px;
+    }
+  }
+
+  &--menu {
+    margin-top: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &--actual {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+      width: calc(50% - 15px);
+    }
+  }
+
+  &--upcoming {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      width: calc(50% - 15px);
+    }
+  }
+
+  &--visit {
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 60px;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+      grid-column: 6 / 9;
+    }
+  }
+
+  &--digest {
+    border: none;
+
+    margin-top: 30px;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+      margin-top: 40px;
+    }
+  }
+}
+
+.button-additional {
+  @include fonts--button;
+
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  gap: 8px;
+  box-sizing: border-box;
+  height: 60px;
+
+  color: $c-main-orange;
+  background-color: $c-white;
+  text-decoration: none;
+  border: 1px solid $c-main-orange;
+
+  transition: all $effectDuration;
+
+  @include onDesktop {
+    &:hover {
+      border: 1px solid $c-main-hover;
+      color: $c-main-hover;
+
+      & .icon--arrow-color {
+        stroke: $c-main-hover;
+      }
+    }
+
+    &:active {
+      border: 1px solid $c-main-active;
+      color: $c-main-active;
+
+      & .icon--arrow-color {
+        stroke: $c-main-active;
+      }
+    }
+  }
+
+  &--actual {
+    margin-top: 30px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      align-self: self-end;
+
+      grid-column: 5 / -1;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / -1;
+    }
+  }
+
+  &--upcoming {
+    margin-top: 30px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      align-self: self-end;
+
+      grid-column: 5 / -1;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / -1;
+    }
+  }
+
+  &--news {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+  }
+
+  @include onTablet {
+    align-self: self-end;
+    grid-column: 5 / -1;
+    grid-row: 1;
+  }
+
+  @include onDesktop {
+    grid-column: 10 / -1;
+  }
+}

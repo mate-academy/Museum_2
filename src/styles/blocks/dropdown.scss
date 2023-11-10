@@ -1,0 +1,71 @@
+.dropbtn {
+  cursor: pointer;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+
+    height: 16px;
+    width: 10px;
+    margin-left: 2px;
+
+    background: url(../images/icons/arrow-chng-lng.svg) no-repeat ;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: none;
+  color: $c-white;
+
+  @include onTablet {
+    display: inline-block;
+  }
+
+  &--menu {
+    display: inline-block;
+  }
+
+  &__content {
+    position: absolute;
+
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: all $effectDuration ease;
+
+    & .dropdown__content-chng-lng {
+      display: block;
+      padding: 2px 0;
+
+      color: $c-white;
+      text-decoration: none;
+
+      transition: color $effectDuration;
+
+      &:hover {
+        color: $c-main-orange;
+      }
+
+      &:active {
+        color: $c-main-active;
+      }
+    }
+  }
+
+  &:hover .dropdown__content {
+    max-height: 84px;
+  }
+}

@@ -1,0 +1,29 @@
+.link {
+  @include onDesktop {
+    &__text {
+      transition: color $effectDuration;
+
+      &:hover {
+        color: $c-main-active;
+      }
+
+      &:active {
+        color: $c-main-hover;
+      }
+    }
+
+    &__img {
+      @include hover(transform, scale(1.05));
+      transition: all $effectDuration;
+
+      &:hover {
+        border-radius: 25px;
+        box-shadow: 0 0 22px 3px rgba(0,0,0,0.75);
+      }
+    }
+
+    &__social {
+      @include hover(transform, scale(1.05));
+    }
+  }
+}

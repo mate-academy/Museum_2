@@ -1,0 +1,34 @@
+.visit {
+  display: flex;
+  flex-direction: column;
+
+  color: $c-white;
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__title {
+    @include onTablet {
+      grid-column: span 5;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__text {
+    @include fonts--main;
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 11;
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.actual {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 60px;
+
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: span 3;
+  }
+
+  @include onDesktop {
+    grid-column: span 6;
+    margin-top: 70px;
+  }
+
+  &__image {
+    object-fit: cover;
+    object-position: left;
+    display: flex;
+    width: 100%;
+
+    &-link {
+      display: flex;
+      height: 356px;
+
+      @include onTablet {
+        height: 420px;
+      }
+
+      @include onDesktop {
+        height: 484px;
+      }
+    }
+  }
+
+  &__date {
+    @include fonts--main;
+    margin-top: 20px;
+
+    color: $c-main-orange;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+  }
+
+  &__text {
+    @include fonts--main;
+    margin-top: 20px;
+
+    color: $c-grey;
+
+    &--artist {
+      @include onTablet {
+        margin-top: 50px;
+      }
+
+      @include onDesktop {
+        margin-top: 20px;
+      }
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+}
