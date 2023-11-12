@@ -1,0 +1,91 @@
+.button {
+  display: inline-block;
+  text-align: center;
+  margin-top: 40px;
+  width: 100%;
+  background-color: #cd4d31;
+  font-family: "Raleway", serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 60px;
+  height: 60px;
+  color: #f1f5f4;
+  border: 1px solid #cd4d31;
+  box-shadow: #f1f5f4;
+
+  &:hover {
+    background-color: #af3419;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+
+  @include onDesktop {
+    max-width: 270px;
+  }
+}
+
+.button-arhive {
+  color: #cd4d31;
+  background-color: #fff;
+  border: 1px solid #cd4d31;
+
+  &:hover {
+    color: #af3419;
+    background-color: #fff;
+    border-color: #af3419;
+  }
+
+  &:active {
+    color: #ea340d;
+    border-color: #ea340d;
+  }
+
+  &:disabled {
+    color: #dd836f;
+    border-color: #dd836f;
+  }
+
+  &::after {
+    content: "\2192";
+  }
+
+  &--low {
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--high {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 210px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: 1px solid green;
+  box-shadow: #f1f5f4;
+  -webkit-text-fill-color: rgb(0, 77, 128);
+  -webkit-box-shadow: 1 1 1px 1000px orange inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
