@@ -1,0 +1,117 @@
+.subscription {
+  &__content {
+    width: 100%;
+    @include grid;
+  }
+
+  &__header {
+    grid-column: 1 / 7;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: left;
+    color: $black;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    @include onPhone {
+      font-size: 28px;
+      width: 100%;
+    }
+  }
+
+  &__description {
+    grid-column: 7 / 13;
+    color: $black;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      grid-column: 1 / 7;
+    }
+
+    @include onPhone {
+      width: 100%;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / 6;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onPhone {
+      width: 100%;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid $black;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    text-align: left;
+    margin-bottom: 40px;
+    transition: all 0.3s;
+
+    &::-webkit-input-placeholder {
+      color: $black;
+      font-weight: 400;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $orange;
+    }
+
+    &:focus {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $orange;
+    }
+
+    &:hover::-webkit-input-placeholder {
+      color: $orange;
+    }
+
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+      outline: none;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button {
+    width: 70%;
+
+    @include onTablet {
+      width: 80%;
+    }
+
+    @include onPhone {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+}
