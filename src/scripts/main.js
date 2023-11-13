@@ -16,10 +16,34 @@ function transform(element) {
   element.addEventListener('click', () => {
     if (element === document.getElementById('menu')) {
       document.querySelector('.burger').style.transform = 'translateY(0)';
+      disableScroll();
     } else {
       document.querySelector('.burger').style.transform = 'translateY(-100%)';
+      enableScroll();
     }
   });
+}
+
+function disableScroll() {
+  const scrollY = window.scrollY;
+
+  document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
+
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollY}px`;
+}
+
+function enableScroll() {
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+
+  const scrollY = parseInt(document.body.style.top || '0');
+
+  document.body.style.position = '';
+  document.body.style.top = '';
+
+  window.scrollTo(0, scrollY);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
