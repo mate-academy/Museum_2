@@ -9,7 +9,7 @@
   }
 
   &__info {
-    // text-align: center;
+
     &-content {
       margin-bottom: 30px;
 
@@ -33,9 +33,24 @@
   &__blank {
     color: $White;
     text-decoration: none;
+    position: relative;
 
-    &:hover {
-      color: darkblue;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: yellow;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
     }
   }
 
