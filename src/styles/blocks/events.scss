@@ -1,0 +1,64 @@
+.events {
+  position: relative;
+  margin-top: 240px;
+  @include onTablet {
+    margin-top: 164px;
+  }
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+ &__wrapper {
+  @include pageGrid;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 60px;
+    @include onTablet {
+      margin-top: 76px;
+    }
+    @include onDesktop {
+      margin-top: 70px;
+    }
+  }
+
+  &__card {
+    @include pageGrid;
+    position: relative;
+    grid-column: 1 / -1;
+    @include onTablet {
+      width: 100%;
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__button {
+    position: static;
+  }
+
+  &__time {
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__img {
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+    @include onDesktop {
+      grid-column: 5 / 10;
+    }
+  }
+}
