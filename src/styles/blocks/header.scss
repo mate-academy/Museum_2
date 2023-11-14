@@ -1,0 +1,111 @@
+.header {
+  background-color: $main-backgroung-color;
+
+  &__container {
+    @include paddingInline;
+    @include pageGrid;
+    margin-bottom: 90px;
+
+    @include onTable {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+    margin-bottom: 50px;
+
+    @include onTable {
+      margin-bottom: 100px;
+      grid-row: 1;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__text--up {
+    grid-column: 1 / -1;
+
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 140%;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    color: $white-color;
+    font-size: 48px;
+    line-height: 100%;
+    margin-bottom: 30px;
+
+    @include onTable {
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text--down {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include onTable {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__text-date {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+
+      display: flex;
+      margin-top: 135px;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__img {
+    object-fit: contain;
+    margin-top: 40px;
+    grid-column: 1/-1;
+    width: 100%;
+
+    @include onTable {
+      grid-column: 2 / 6;
+      margin-top: 70px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      grid-row: 1 / 8;
+      margin-top: 137px;
+    }
+  }
+}
