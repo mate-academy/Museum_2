@@ -1,19 +1,25 @@
 .section {
 
   &__content {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
+    @include onTablet {
+      @include pageGrid;
+      grid-column: 1/-1;
+    }
   }
 
   &__title {
     margin-bottom: 60px;
 
     @include onTablet {
+      grid-column: 1/5;
       width: 450px;
       margin-bottom: 75px;
     }
 
     @include onDesktop {
+      grid-column: 1/7;
       width: 570px;
       margin-bottom: 70px;
     }

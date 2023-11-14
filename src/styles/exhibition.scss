@@ -1,9 +1,10 @@
 .exhibition {
 
   @include onTablet {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    @include pageGrid;
     margin-bottom: 160px;
   }
 
@@ -14,8 +15,22 @@
   &__pageone {
     @include onTablet {
       margin-right: 30px;
+      grid-column: 1/4;
     }
 
+    @include onDesktop {
+      grid-column: 1/7;
+    }
+  }
+
+  &__pagetwo {
+    @include onTablet {
+      grid-column: 4/-1;
+    }
+
+    @include onDesktop {
+      grid-column: 7/-1;
+    }
   }
 
   &__title {
