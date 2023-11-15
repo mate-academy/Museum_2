@@ -1,0 +1,155 @@
+.page {
+  background-color: $c-gray;
+  scroll-behavior: smooth;
+  
+  &__body {
+    margin: 0 auto;
+    min-width: 320px;
+    font-family: Raleway, serif;
+    font-weight: 400;
+    overflow-x: hidden;
+
+    &--with-menu {
+      overflow: hidden;
+      height: 100vw;
+    }
+  }
+
+  &__header {
+    background-color: rgb(63, 82, 82);
+    height: 100vh;
+    min-height: 747px;
+    max-height: 900px;
+    overflow: hidden;
+    position: relative;
+    
+    @include desk-768 {
+      min-height: 1092px;
+      max-height: 1200px;
+
+    }
+
+    @include desk-1280 {
+      min-height: 800px;
+      max-height: 1000px;
+
+    }
+
+    &--menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      transition: transform 0.3s;
+      transform: translateX(-100%);
+
+      &:target {
+        transform: translateX(0);
+        height: 100vh;
+      }
+    }
+  }
+
+  &__section-actual-exhibitions {
+    padding-top: 90px;
+
+    @include desk-768 {
+      padding-top: 105px;
+    }
+
+    @include desk-1280 {
+      padding-top: 105px;
+    }
+
+    &--upcoming-events {
+      padding-top: 120px;
+
+      @include desk-768 {
+        padding-top: 160px;
+      }
+
+      @include desk-1280 {
+        padding-top: 200px;
+      }
+    }
+  }
+
+  &__section-title {
+    display: block;
+    margin: 0;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: rgb(28, 27, 41);
+    text-align: center;
+
+    @include desk-768 {
+      font-size: 40px;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--upcoming-events-title {
+      text-align: left;
+    }
+
+    &--news {
+      text-align: left;
+    }
+  }
+
+  &__button-secondary-container {
+    margin-top: 20px;
+
+    @include desk-768 {
+      margin-top: 0;
+      display: none;
+    }
+
+    &--top {
+      display: none;
+
+      @include desk-768 {
+        display: block;
+      }
+    }
+  }
+
+  &__section-payment {
+    margin-top: 90px;
+    background-color: rgba(63, 82, 82, 1);
+    padding-bottom: 50px;
+
+    @include desk-768 {
+      margin-top: 100px;
+      padding-bottom: 80px;
+    }
+
+    @include desk-1280 {
+      margin-top: 110px;
+      padding-bottom: 205px;
+      position: relative;
+    }
+  }
+
+  &__section-digest {
+    padding: 120px 0 80px;
+
+    @include desk-768 {
+      padding: 160px 0 120px;
+    }
+
+    @include desk-768 {
+      padding: 200px 0;
+    }
+  }
+
+  &__footer {
+    background-color: rgb(63, 82, 82);
+  }
+
+}

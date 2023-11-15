@@ -1,0 +1,265 @@
+.header {
+  color: rgb(241, 245, 244);
+  overflow: hidden;
+  
+  &__content {
+    padding-top: 20px;
+    max-height: 1092px;
+    box-sizing: border-box;
+    
+    @include desk-768 {
+      padding-top: 26px;
+    }
+
+    @include desk-1280 {
+      padding-top: 32px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__schedule-adress-position {
+    margin-top: 30px;
+
+    @include desk-768 {
+      margin-top: 55px;
+      display: flex;
+    }
+
+    @include desk-1280 {
+      margin-top: 45px;
+    }
+  }
+
+  &__date-menu-container {
+    width: 117px;
+  }
+
+  &__adress-menu-container {
+    margin-top: 20px;
+    
+    @include desk-768 {
+      width: 224px;
+      margin-top: 0;
+      padding-left: 123px;
+    }
+  }
+
+  &__date {
+    margin-top: 70px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @include desk-768 {
+      margin-top: 122px;
+    }
+
+    &--schedule-menu {
+      margin: 0;
+    }
+
+    &--date-menu {
+      margin: 0;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    &--adress-link {
+      text-decoration: none;
+      font-family: Raleway, sans-serif;
+      color: rgb(241, 245, 244);
+      cursor: pointer;
+      position: relative;
+      width: max-content;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: rgb(241, 245, 244);
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__list {
+    margin-top: 40px;
+
+    @include desk-768 {
+      margin-top: 50px;
+    }
+
+    @include desk-1280 {
+      margin-top: 70px;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 10px 0 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+
+    max-width: 569px;
+
+    @include desk-768 {
+      font-size: 72px;
+    }
+
+    @include desk-1280 {
+      font-size: 96px;
+    }
+  }
+
+  &__about {
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include desk-768 {
+      margin-top: 20px;
+      max-width: 330px;
+    }
+
+    @include desk-1280 {
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include desk-768 {
+      margin-top: 72px;
+    }
+
+    @include desk-1280 {
+      margin-top: 81px;
+    }
+
+    &--button-menu {
+      margin-top: 62px;
+      padding-bottom: 238px;
+
+      @include desk-768 {
+        margin-top: 72px;
+        padding-bottom: 0;
+
+      }
+
+      @include desk-1280 {
+        margin-top: 60px;
+        padding-bottom: 108px;
+
+      }
+    }
+  }
+
+  &__date-bottom-container {
+    display: none;
+    margin-top: 135px;
+    grid-template-columns: 81px 1fr;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 50px;
+
+    @include desk-1280 {
+      display: grid;
+    }
+  }
+
+  &__date-bottom {
+    font-family: "Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+
+    @include desk-1280 {
+      position: absolute;
+      bottom: 50px;
+    }
+  }
+
+  &__img-container {
+
+    @include desk-768 {
+      padding-bottom: 0;
+      margin: 50px auto 0;
+      height: 494px;
+      width: 443px;
+
+    }
+
+    @include desk-1280 {
+      position: static;
+    }
+
+    &--foto-container-menu {
+      display: none;
+
+      @include desk-768 {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    object-position: bottom;
+    object-fit: cover;
+    height: 273px;
+    position: absolute;
+    bottom: 0;
+    left: calc((100vw - 273px) / 2);
+
+    @include desk-768 {
+      height: 494px;
+      left: calc((100vw - 494px) / 2);
+    }
+
+    @include desk-1280 {
+      right: 0;
+      bottom: 0;
+      left: auto;
+      height: 663px;
+      width: 625px;
+    }
+
+    @include desk-1600 {
+      left: calc((100vw / 2) + 15px);
+      right: auto;
+    }
+
+    &--img-menu {
+      max-height: 697px;
+
+      @include desk-1280 {
+        top: 103px;
+        right: 0;
+        bottom: 0;
+        height: 697px;
+        width: 624px;
+      }
+    }
+  }
+}

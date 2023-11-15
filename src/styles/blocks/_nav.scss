@@ -1,0 +1,55 @@
+.nav {
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    width: max-content;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+
+      @include desk-768 {
+        margin-top: 30px;
+      }
+
+      @include desk-1280 {
+        margin-top: 60px;
+      }
+    }
+    
+    &::after {
+      content: "";
+      display: block;
+      background-color: rgb(241, 245, 244);
+      height: 1px;
+      transform: translateY(-5px);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    
+  }
+
+  &__link {
+    font-family: "Playfair Display", sans-serif;
+    color: rgb(241, 245, 244);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    text-decoration: none;
+    cursor: pointer;
+
+    @include desk-768 {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}

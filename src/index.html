@@ -1,13 +1,580 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="page" lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>NAMU</title>
     <link rel="stylesheet" href="./styles/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link 
+      rel="icon" 
+      href="/images/fav_icon.svg"
+    >
+    <script
+      type="text/javascript"
+      src="scripts/main.js"
+      defer
+    ></script>
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
-    <script type="text/javascript" src="scripts/main.js"></script>
+  <body class="page__body">
+    <header class="page__header">
+      <div class="container header">
+        <div class="header__content">
+          <div class="header__nav">
+            <a href="#">
+              <img
+                class="logo"
+                src="/images/NAMU.svg" alt="NAMU"
+              >
+            </a>
+            <div class="header__menu">
+              <a href="#menu" class="icon"></a>
+              <label class="choose-language choose-language--on-768">
+                <select
+                  class="choose-language__select"
+                  name="language"
+                  size="1"
+                >
+                  <option value="UA">
+                    UA
+                  </option>
+                  <option value="EN">
+                    EN
+                  </option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="grid grid--off-768">
+            <div class="grid__item grid__item--6-1-5 grid__item--12-1-6">
+              <div class="header__date">
+                10 серпня - 10 листопада
+              </div>
+              <h1 class="header__title">
+                Мистецтво ХІХ - ХХ ст.
+              </h1>
+              <div class="header__about">
+                Внесок українських митців у світову культуру 19-20 ст.
+              </div>
+              <div class="header__button">
+                <a href="#payment" class="button">
+                  Купити квиток
+                </a>
+              </div>
+              <div class="header__date-bottom-container">
+                <div class="header__date-bottom">
+                  10.08 - 10.10
+                </div>
+              </div>
+            </div>
+            <div class="header__img-container grid__item grid__item--6-2-5 grid__item--12-7-12">
+              <img
+                src="/images/header_main_foto.png"
+                alt="NAMU"
+                class="header__img"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav class="page__header page__header--menu" id="menu">
+      <div class="container header">
+        <div class="header__content">
+          <div class="header__nav">
+            <a href="#">
+              <img
+                class="logo"
+                src="/images/NAMU.svg" alt="NAMU"
+              >
+            </a>
+            <div class="header__menu">
+              <a href="#" class="icon icon--cross"></a>
+              <label class="choose-language choose-language--cross-before">
+                <select
+                  class="choose-language__select choose-language__select--before-cross"
+                  name="language"
+                  size="1"
+                >
+                  <option value="UA" selected>UA</option>
+                  <option value="EN">EN</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div class="grid grid--off-768">
+            <div class="grid__item grid__item--6-1-5 grid__item--12-1-6">
+              <div class="header__schedule-adress-position">
+                <div class="header__date-menu-container">
+                  <div class="header__date header__date--schedule-menu">
+                    Розклад сьогодні:
+                  </div>
+                  <div class="header__date header__date--date-menu">
+                    12:00 - 19:00
+                  </div>
+                </div>
+                <div class="header__adress-menu-container">
+                  <div class="header__date header__date--schedule-menu">
+                    Адреса:
+                  </div>
+                  <a
+                    href="https://goo.gl/maps/2qdckPnmemYwxeHD6"
+                    target="_blank"
+                    class="header__date header__date--date-menu header__date--adress-link"
+                  >
+                    Київ, вул. М. Грушевського, 6
+                  </a>
+                </div>
+              </div>
+              <div class="header__list">
+                <nav class="nav">
+                  <ul class="nav__list">
+                    <li class="nav__item">
+                      <a href="#actual-exhibitions" class="nav__link">Актуальні виставки</a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="#upcoming-events" class="nav__link">Найближчі події</a>
+                    </li>
+                    <li class="nav__item">
+                      <a href="#news" class="nav__link">Новини</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              
+            </div>
+          </div>
+          <div class="grid__item grid__item--6-1-6 grid__item--12-1-3">
+            <div class="header__button--button-menu">
+              <a href="#payment" class="button">
+                Купити квиток
+              </a>
+            </div>
+          </div>
+          <div class="grid__item grid__item--6-1-3 grid__item--12-7-12">
+            <div class="header__img-container header__img-container--foto-container-menu">
+              <img
+                src="/images/menu_foto.png"
+                alt="NAMU"
+                class="header__img header__img--img-menu"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="container page__section-actual-exhibitions grid grid--off-768 ">
+        <h3 class="page__section-title grid__item grid__item--6-1-6 grid__item--12-1-12" id="actual-exhibitions">
+          Актуальні виставки
+          <div class="page__button-secondary-container page__button-secondary-container--top">
+            <a
+              href="#actual-exhibitions"
+              class="button-secondary"
+              alt="NAMU"
+            >
+              Архів виставок
+              <img
+                class="button-secondary__img"
+                src="/images/archive.svg"
+                alt="NAMU"
+              >
+            </a>
+          </div>
+        </h3>
+        <div class="actual-exhibitions grid__item grid__item--6-1-3 grid__item--12-1-6">
+          <div class="actual-exhibitions__img-container">
+            <div class="actual-exhibitions__img"></div>
+          </div>
+          <div class="actual-exhibitions__date">
+            11.07 - 22.09
+          </div>
+          <h4 class="actual-exhibitions__subtitle">
+            Кураторська виставка “Ангели”
+          </h4>
+          <div class="actual-exhibitions__about">
+            Виставковий проект «Ангели» – знакова подія для української культури i водночас наймасштабніший...
+          </div>
+          <div class="actual-exhibitions__button-container">
+            <a class="button" href="#payment">
+              Купити квиток
+            </a>
+          </div>
+        </div>
+        <div class="actual-exhibitions grid__item grid__item--6-4-6 grid__item--12-7-12">
+          <div class="actual-exhibitions__img-container">
+            <div class="actual-exhibitions__img actual-exhibitions__img--2"></div>
+          </div>
+          <div class="actual-exhibitions__date">
+            Діє постійно
+          </div>
+          <h4 class="actual-exhibitions__subtitle">
+            Мистецтво ХХ ст. — XXI ст.
+          </h4>
+          <div class="actual-exhibitions__about">
+            Знакові роботи Алли Горської, Миколи Самокиша, Федора Кричевського та інших митців.
+          </div>
+          <div class="actual-exhibitions__button-container">
+            <a class="button" href="#payment">
+              Купити квиток
+            </a>
+          </div>
+        </div>
+        <div class="page__button-secondary-container">
+          <a href="#actual-exhibitions" class="button-secondary">
+            <span>
+              Архів виставок
+            </span>
+            <img
+              class="button-secondary__img"
+              src="/images/archive.svg"
+              alt="NAMU"
+            >
+          </a>
+        </div>
+      </section>
+      <section class="container page__section-actual-exhibitions page__section-actual-exhibitions--upcoming-events grid grid--off-768">
+        <h3 class="page__section-title page__section-title--upcoming-events-title grid__item grid__item--6-1-6 grid__item--12-1-12" id="upcoming-events">
+          Найближчі події
+          <div class="page__button-secondary-container page__button-secondary-container--top">
+            <a href="#actual-exhibitions" class="button-secondary">
+              Календар подій
+              <img
+                class="button-secondary__img"
+                src="/images/archive.svg"
+                alt="NAMU"
+              >
+            </a>
+          </div>
+        </h3>
+        <div class="actual-exhibitions grid__item grid__item--6-1-3 grid__item--12-1-4">
+          <div class="actual-exhibitions__img-container actual-exhibitions__img-container--upcoming-events">
+            <div class="actual-exhibitions__img actual-exhibitions__img--upcoming-events-img"></div>
+          </div>
+        </div>
+        <div class="grid__item grid__item--6-4-6 grid__item--12-5-10">
+          <div class="actual-exhibitions__date actual-exhibitions__date--upcoming-events-date">
+            14.08 о 13:00
+          </div>
+          <h4 class="actual-exhibitions__subtitle">
+            Кураторські екскурсії від Павла Гудімова
+          </h4>
+          <div class="actual-exhibitions__about">
+            Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...
+          </div>
+          <div class="actual-exhibitions__button-container actual-exhibitions__button-container--upcoming-events">
+            <a class="button" href="#">Зареєструватись</a>
+          </div>
+        </div>
+        <div class="actual-exhibitions grid__item grid__item--6-1-3 grid__item--12-1-4">
+          <div class="actual-exhibitions__img-container actual-exhibitions__img-container--upcoming-events">
+            <div class="actual-exhibitions__img actual-exhibitions__img--upcoming-events-img-2"></div>
+          </div>
+        </div>
+        <div class="grid__item grid__item--6-4-6 grid__item--12-5-10">
+          <div class="actual-exhibitions__date actual-exhibitions__date--upcoming-events-date">
+            16.08 о 13:00
+          </div>
+          <h4 class="actual-exhibitions__subtitle">
+            Майстер-клас “Подорож до Австралії”
+          </h4>
+          <div class="actual-exhibitions__about">
+            Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт кругосвітньої подорожі - Австралія.
+          </div>
+          <div class="actual-exhibitions__button-container">
+            <a class="button" href="#">
+              Зареєструватись
+            </a>
+          </div>
+        </div>
+        <div class="page__button-secondary-container">
+          <a href="#actual-exhibitions" class="button-secondary">
+            <span>
+              Календар подій
+            </span>
+            <img
+              class="button-secondary__img"
+              src="/images/archive.svg"
+              alt="NAMU"
+            >
+          </a>
+        </div>
+      </section>
+      <section class="page__section-payment" id="payment">
+        <div class="container grid grid--off-768">
+          <div class="payment__img-container grid__item grid__item--12-1-5">
+            <img 
+              src="/images/img_07.png"
+              alt="NAMU"
+              class="payment__img"
+            >
+          </div>
+          <div class="payment grid__item grid__item--6-1-4 grid__item--12-6-12">
+            <h3 class="payment__title">
+              Сплануйте<br>візит до музею
+            </h3>
+            <div class="payment__about">
+              Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом.
+            </div>
+            <div class="payment__button-container">
+              <a class="button" href="#payment">
+                Почати
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container page__section-actual-exhibitions grid grid--off-768">
+        <h3 class="page__section-title page__section-title--news grid__item grid__item--6-1-6 grid__item--12-1-12" id="news">
+          Новини
+          <div class="page__button-secondary-container page__button-secondary-container--top">
+            <a href="#news" class="button-secondary">
+              Усі новини
+              <img
+                class="button-secondary__img"
+                src="/images/archive.svg"
+                alt="NAMU"
+              >
+            </a>
+          </div>
+        </h3>
+        <div class="actual-exhibitions grid__item grid__item--6-1-3 grid__item--12-1-6">
+          <div class="actual-exhibitions__img-container actual-exhibitions__img-container--news">
+            <div class="actual-exhibitions__img actual-exhibitions__img--news"></div>
+          </div>
+          <div class="actual-exhibitions__date actual-exhibitions__date--news">
+            9 серпня 2019
+          </div>
+          <h4 class="actual-exhibitions__subtitle actual-exhibitions__subtitle--news">
+            Оголошення переможця
+          </h4>
+          <div class="actual-exhibitions__about">
+            Друзі, сьогодні п'ятниця! А це означає, що час оголосити переможця розіграшу...
+          </div>
+        </div>
+        <div class="actual-exhibitions grid__item grid__item--6-4-6 grid__item--12-7-12">
+          <div class="actual-exhibitions__img-container actual-exhibitions__img-container--news">
+            <div class="actual-exhibitions__img actual-exhibitions__img--news-2"></div>
+          </div>
+          <div class="actual-exhibitions__date actual-exhibitions__date--news">
+            9 серпня 2019
+          </div>
+          <h4 class="actual-exhibitions__subtitle actual-exhibitions__subtitle--news">
+            Міжнародний день котів
+          </h4>
+          <div class="actual-exhibitions__about">
+            Музей з левами не може просто так взяти і пропустити Міжнародний день котів!
+          </div>
+          <div class="actual-exhibitions__button-container actual-exhibitions__button-container--news">
+            <a href="#" class="button-secondary">
+              Усі новини
+              <img
+                class="button-secondary__img"
+                src="/images/archive.svg"
+                alt="NAMU"
+              >
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="container page__section-digest grid grid--off-768">
+        <h3 class="page__section-title page__section-title--news grid__item grid__item--6-1-5 grid__item--12-1-5">
+          Підпишіться на дайджест
+        </h3>
+        <div class="digest__about grid__item grid__item--6-1-5 grid__item--12-7-12">
+          Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів
+        </div>
+        <form
+          class="grid__item grid__item--6-1-4 grid__item--12-1-5 digest__form"
+          action="http://localhost:8080" 
+          method="get" 
+          id="form"
+        >
+          <input
+            class="digest__input"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="e-mail"
+            required
+          >
+          <div class="digest__button-container">
+            <button 
+              class="button button--digest"
+              type="submit"
+              form="form"
+            >
+              Підписатись
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="page__footer">
+      <div class="container footer grid grid--off-768">
+        <div class="grid__item grid__item--6-1-2 grid__item--12-1-3">
+          <h5 class="footer__contact footer__contact--first">
+            Контакти
+          </h5>
+          <a
+            class="footer__contact-adress-info footer__contact-adress-info--link-page"
+            href="https://goo.gl/maps/NBBoDXpYazGZeUtdA"
+            target="_blank"
+          >
+            Київ,<br>
+            вул. М. Грушевського, 6
+          </a>
+          <div class="footer__contact-adress-info">
+            <a
+              href="tel:+380442781357"
+              class="footer__contact-adress-info footer__contact-adress-info--link-page"
+            >
+              тел. 278-13-57, 278-74-54
+            </a>
+            <a
+              class="footer__contact-adress-info footer__contact-adress-info--link-page"
+              href="mailto:info@namu.kiev.ua"
+            >
+              info@namu.kiev.ua
+            </a>
+          </div>
+          <div class="footer__social-networks">
+            <a
+              class="footer__link"
+              href="https://facebook.com/"
+              target="_blank"
+            >
+              <svg
+                class="icon-networks"
+                width="10" height="20"
+                viewbox="0 0 10 20"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M2.90909 10.9434V20H6.54545V10.9434H9.27273L10 7.16981H6.54545V4.5283C6.54545 3.96226 7.09091 3.39623 7.63636 3.39623H10V0H5.81818C4.90909 0 2.90909 1.32075 2.90909 3.39623V7.16981H0V10.9434H2.90909Z"
+                  fill="currentColor"
+                >
+              </svg>
+            </a>
+            <a
+              class="footer__link"
+              href="https://twitter.com/"
+              target="_blank"
+            >
+              <svg
+                class="icon-networks"
+                width="20" height="16"
+                viewbox="0 0 20 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M3.78947 13.9669C2.94737 14.4548 0.912281 14.4412 0 14.3734C0.421053 14.78 3.57895 16 6.52632 16C9.47368 16 11.5789 15.5934 15.1579 12.3408C18.0211 9.73865 18.3158 5.971 18.1053 4.41244L20 2.37953H18.3158L19.3684 0.346626C18.5965 0.820951 17.0105 1.64763 16.8421 1.15973C16.6316 0.549857 13.6842 -0.873177 11.1579 0.753142C9.13684 2.0542 9.47368 3.80257 9.68421 5.22553C5.89474 4.81902 1.05263 0.753142 1.05263 0.753142C-0.122503 2.86053 1.46337 5.41233 2.09911 6.43529L2.10526 6.4452L0.631579 6.03862C0.631579 7.82757 2.31579 9.08812 3.15789 9.69776H1.89474C2.56842 11.4867 4.70175 12.4761 5.68421 12.7471C5.40351 12.9504 4.63158 13.479 3.78947 13.9669Z"
+                  fill="currentColor"
+                >
+              </svg>
+            </a>
+            <a
+              class="footer__link"
+              href="https://web.telegram.org/z/"
+              target="_blank"
+            >
+              <svg
+                class="icon-networks"
+                width="20" height="20"
+                viewbox="0 0 20 20"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M7.62887 17.4639L10.9278 14.2887L16.4948 19.0515L20 0L0 8.16495L5.56701 10.8866L7.62887 17.4639ZM8.0412 15.6495V12.0207L16.4948 3.85572L6.18553 10.433L8.0412 16.1031V15.6495Z"
+                  fill="currentColor"
+                >
+              </svg>
+            </a>
+            <a
+              class="footer__link"
+              href="https://www.instagram.com/"
+              target="_blank"
+            >
+              <svg
+                class="icon-networks"
+                width="20" height="20"
+                viewbox="0 0 20 20"
+                fill="currentColor" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M1 14.2442V3.56977C1 2.38372 2.38372 1 3.76744 1H15.2326C16.814 1 18 2.5814 18 4.36047V15.0349C18 16.2209 17.0116 18 14.8372 18H4.95349C2.77907 18 1 16.4186 1 14.2442ZM9.50003 6.54189C7.8663 6.54189 6.54189 7.8663 6.54189 9.50003C6.54189 11.1338 7.8663 12.4582 9.50003 12.4582C11.1338 12.4582 12.4582 11.1338 12.4582 9.50003C12.4582 7.8663 11.1338 6.54189 9.50003 6.54189ZM5.34189 9.50003C5.34189 7.20356 7.20356 5.34189 9.50003 5.34189C11.7965 5.34189 13.6582 7.20356 13.6582 9.50003C13.6582 11.7965 11.7965 13.6582 9.50003 13.6582C7.20356 13.6582 5.34189 11.7965 5.34189 9.50003ZM14.0466 5.5465C14.5924 5.5465 15.035 5.10399 15.035 4.55813C15.035 4.01226 14.5924 3.56976 14.0466 3.56976C13.5007 3.56976 13.0582 4.01226 13.0582 4.55813C13.0582 5.10399 13.5007 5.5465 14.0466 5.5465Z"
+                  fill="currentColor"
+                >
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="grid__item grid__item--6-3-4 grid__item--12-5-6">
+          <h5 class="footer__contact">
+            Розклад роботи
+          </h5>
+          <div class="footer__contact-adress-info">
+            ПН: вихідний<br>
+            ВТ: вихідний<br>
+            СР: 10:00 - 17:00<br>
+            ЧТ: 10:00 - 17:00<br>
+            ПТ: 12:00 - 19:00<br>
+            СБ: 11:00 - 18:00<br>
+            НД: 10:00 - 17:00
+          </div>
+        </div>
+        <div class="grid__item grid__item--6-5-6 grid__item--12-9-12">
+          <h5 class="footer__contact">
+            Головна
+          </h5>
+          <a class="footer__contact-adress-info footer__contact-adress-info--link-page" href="#actual-exhibitions">
+            Виставки
+          </a>
+          <a class="footer__contact-adress-info footer__contact-adress-info--link-page" href="#upcoming-events">
+            Події
+          </a>
+          <a class="footer__contact-adress-info footer__contact-adress-info--link-page" href="#news">
+            Новини
+          </a>
+        </div>
+        <div class="footer__privacy-terms-block grid__item grid__item--6-1-6 grid__item--12-1-12">
+          <div class="footer__privacy-terms">
+            <span class="footer__copyright">
+              © 2010 — 2020
+            </span>
+            <span class="footer__copyright">
+              Privacy — Terms
+            </span>
+          </div>
+          <a class="footer__up-home" href="#">
+            <svg
+              width="30"
+              height="30"
+              viewbox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.25 13.7498L15 4.99976L23.75 13.7498 M15 24.9998V4.99976"
+                stroke="#F1F5F4"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+            </svg>
+              
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
