@@ -1,0 +1,90 @@
+.registration {
+  position: relative;
+  background-color: $secondary-color;
+  color: $main-color;
+  padding: 50px 20px;
+  margin-bottom: 90px;
+
+  @include onTablet {
+    padding: 80px 38px;
+    margin-bottom: 120px;
+  }
+
+  @include onDesktop {
+    padding: 205px 55px;
+    margin-bottom: 110px;
+  }
+
+  &__content {
+    @include pageGrid;
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    display: flex;
+    align-items: center;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 100%;
+    margin: 0 0 20px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      font-size: 62px;
+      grid-column: 1 / 5;
+      height: 145px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+      margin: 0 0 10px;
+      height: 200px;
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 11;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    display: none;
+    left: 0;
+    bottom: 0;
+    height: 800px;
+    width: 578px;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &__link {
+      height: inherit;
+      width: inherit;
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+}
