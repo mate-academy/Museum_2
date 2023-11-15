@@ -1,0 +1,220 @@
+.footer {
+  margin-top: 80px;
+  background-color: $bcg;
+
+  @include onTablet {
+    margin-top: 128px;
+  }
+
+  &__content {
+    padding-top: 34px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      padding-top: 50px;
+    }
+  }
+
+  &__contact {
+    width: 280px;
+    @extend %p;
+
+    &-title {
+      @extend %title;
+      color: $white;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 150%;
+
+      @include onDesktop {
+        font-size: 20px;
+      }
+    }
+
+    &-container {
+      margin-top: 30px;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      width: 370px;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__adress {
+    @include hover (opacity, $opacity);
+  }
+
+  &__phone {
+    @include hover (opacity, $opacity);
+  }
+
+  &__mail {
+    @include hover (opacity, $opacity);
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    &-facebook {
+      @include hover (transform, rotate($rotate));
+    }
+
+    &-twit {
+      @include hover (transform, rotate($rotate));
+    }
+
+    &-teleg {
+      @include hover (transform, rotate($rotate));
+    }
+
+    &-inst {
+      @include hover (transform, rotate($rotate));
+    }
+  }
+
+  &__schedule {
+    margin-top: 50px;
+
+    &-title {
+      @extend %title;
+      color: $white;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 150%;
+    }
+
+    &-text {
+      @extend %p;
+      color: $white;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+
+      @include onTablet {
+        margin-top: 30px;
+      }
+    }
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__nav {
+    margin-top: 50px;
+
+    &-title {
+      @extend %title;
+      color: $white;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 150%;
+    }
+
+    &-list {
+      margin-top: 10px;
+
+      @include onTablet {
+        margin-top: 30px;
+      }
+    }
+
+    &-item {
+      position: relative;
+      margin-top: 5px;
+
+      &:first-child {
+        @include onTablet {
+          margin-top: 0;
+        }
+      }
+
+      @include onTablet {
+        margin-top: 10px;
+      }
+    }
+
+    &-link {
+      position: relative;
+      @extend %p;
+      color: $white;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+
+      &::after {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $white;
+        content: "";
+        transition: width $t-anim ease-out;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+    @include onTablet {
+      grid-column: 5 / 7;
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 9 / 13;
+    }
+  }
+
+  &__bottom {
+    padding-top: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+
+    @include hover (transform, scale($scale-other));
+
+    @include onTablet {
+      grid-column: 6 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 12 / 12;
+    }
+  }
+
+  &__arrow {
+    display: block;
+    height: 30px;
+    width: 30px;
+
+    background-image: url(../images/footer/scroll-up.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
