@@ -1,0 +1,51 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 77px;
+  width: 100%;
+  animation: falling-appearance 1s ease-in;
+  max-width: 1500px;
+
+  @include paddings;
+
+  @include onDesktop {
+    height: 90px;
+  }
+
+  &__elements {
+    display: flex;
+    gap: 30px;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+      gap: 40px;
+    }
+  }
+
+  &__menu {
+    background-image: url(../images/menu.svg);
+    height: 22px;
+    width: 22px;
+    background-position: center;
+    background-size: contain;
+
+    @include onTablet {
+      height: 30px;
+      width: 30px;
+    }
+
+    &-close {
+      background-image: url(../images/menu-close.svg);
+      position: relative;
+      background-size: contain;
+      height: 22px;
+      width: 22px;
+
+      @include onTablet {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+}
