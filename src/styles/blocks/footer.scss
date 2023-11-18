@@ -1,0 +1,135 @@
+.footer {
+  background-color: $background-color;
+
+  &__content {
+    padding-top: 34px;
+
+    @include pageGrid;
+  }
+
+  &__block {
+    grid-column: 1 / -1;
+    margin-bottom: 50px;
+    color: $white-color;
+
+    @include OnTablet {
+      grid-column: span 2;
+    }
+
+    @include OnDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 10px;
+
+    @include PD;
+
+    @include OnTablet {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__icons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+
+    @include OnTablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    &-facebook {
+      background-image: url(../images/icons/facebook.svg);
+      background-size: cover;
+    }
+
+    &-twitter {
+      background-image: url(../images/icons/twitter.svg);
+      background-size: cover;
+    }
+
+    &-telegram {
+      background-image: url(../images/icons/telegram.svg);
+      background-size: cover;
+    }
+
+    &-instagram {
+      background-image: url(../images/icons/instagram.svg);
+      background-size: cover;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include OnTablet {
+      gap: 10px;
+    }
+  }
+
+  &__link {
+    transition: $transition;
+
+    &:hover {
+      color: $hover-color;
+    }
+  }
+
+  &__bottom {
+    color: $white-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-bottom: 30px;
+
+    @include OnDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    &__text {
+      font-size: 14px;
+      line-height: 20px;
+      margin-right: 22px;
+
+      @include OnDesktop {
+        margin-right: 102px;
+      }
+    }
+  }
+
+  &__arrow {
+    background-image: url(../images/icons/scroll-up.svg);
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+
+    transition: $transition;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+}

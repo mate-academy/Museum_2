@@ -1,0 +1,89 @@
+.header {
+  background-image: url(../images/header.png);
+  background-position: bottom;
+  background-size: 60%;
+  background-repeat: no-repeat;
+
+  background-color: $background-color;
+  height: 100vh;
+
+  @include OnTablet {
+    background-size: 60%;
+  }
+
+  @include OnDesktop {
+    background-size: 40%;
+    background-position: right bottom;
+  }
+
+  &__content {
+    color: $white-color;
+    margin-top: 50px;
+
+    @include OnTablet {
+      margin-top: 100px;
+    }
+
+    @include OnDesktop {
+      margin-top: 90px;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 48px;
+    margin-bottom: 30px;
+
+    @include PD;
+
+    @include OnTablet {
+      font-size: 72px;
+      line-height: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include OnDesktop {
+      width: 50%;
+      font-size: 96px;
+      line-height: 96px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @include pageGrid;
+    margin-bottom: 40px;
+
+    @include OnTablet {
+      margin-bottom: 50px;
+    }
+
+    @include OnDesktop {
+      margin-bottom: 80px;
+    }
+
+    &__position {
+      grid-column: 1 / -1;
+
+      @include OnTablet {
+        grid-column: span 3;
+      }
+
+      @include OnTablet {
+        grid-column: span 6;
+      }
+    }
+  }
+
+  &__btn {
+    @include OnDesktop {
+      grid-column: span 3 !important;
+    }
+  }
+}
