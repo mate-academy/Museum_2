@@ -1,0 +1,58 @@
+.btn {
+  width: 280px;
+  height: 60px;
+  color: $color-white;
+  background-color: $color-orange;
+  box-sizing: border-box;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-hover;
+  }
+
+  &:active {
+    background-color: $color-pressed;
+  }
+
+  &:disabled {
+    background-color: $color-disabled;
+  }
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  &__secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-white;
+    color: $color-orange;
+    border: 1px solid $color-orange;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-hover;
+      background-color: $color-white;
+      border: 1px solid $color-hover;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__secondary--tablet {
+    display: none;
+
+    @include onTablet {
+      width: 210px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

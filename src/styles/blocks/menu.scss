@@ -1,0 +1,111 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background-color: $color-green;
+  color: $color-white;
+  font-weight: 600;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: hidden;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__name {
+    margin-top: 40px;
+    color: $color-white;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+
+  &__nav {
+    text-align: left;
+    line-height: 150%;
+
+    @media (min-width: 768px) {
+      margin-top: 100px;
+    }
+  }
+
+  &__list {
+    margin-top: 40px;
+    font-family: $second-font-family;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      margin-top: 40px;
+      background-color: $color-white;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 27px;
+  }
+
+  @media (min-width: 1280px) {
+    display: none;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__top--aside {
+    display: flex;
+  }
+
+  &__top--selection {
+    display: flex;
+    margin-right: 30px;
+    cursor: pointer;
+  }
+
+  &__schcedule {
+    margin-top: 30px;
+  }
+
+  &__adress {
+    margin-top: 20px;
+  }
+
+  &__schcedule--title,
+  &__adress--title {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  &__list--other {
+    margin-top: 20px;
+  }
+
+  &__btn {
+    margin-top: 40px;
+  }
+
+  &__adress--place,
+  &__schcedule--time {
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  &__adress--place:hover,
+  &__schcedule--time:hover {
+    color: $color-black;
+  }
+}
