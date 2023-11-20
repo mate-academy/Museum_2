@@ -5,11 +5,27 @@
   font-family: $second-font-family;
   line-height: 150%;
 
+  @include onTablet {
+    padding: 50px 40px 30px;
+  }
+
+  @include onDesktop {
+    padding-inline: 55px;
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
     font-family: $main-font-family;
     margin-top: 10px;
+
+    @include onTablet {
+      font-size: 16px;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
   }
 
   &__info--section {
@@ -24,10 +40,18 @@
   &__schedule,
   &__main {
     margin-top: 50px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
   }
 
   &__media {
     margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
   }
 
   &__media--icon {
@@ -42,6 +66,10 @@
 
   &__bottom--info {
     margin-right: 22px;
+
+    @include onDesktop {
+      margin-right: 102px;
+    }
   }
 
   &__img--icon {
@@ -55,5 +83,19 @@
 
   &__info--link:hover {
     color: $color-black;
+  }
+
+  &__wrap {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 30px;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      font-size: 20px;
+    }
   }
 }

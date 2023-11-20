@@ -7,6 +7,11 @@
     margin-bottom: 100px;
   }
 
+  @include onDesktop {
+    padding-inline: 55px;
+    margin-bottom: 110px;
+  }
+
   &__title {
     font-family: $second-font-family;
     font-size: 28px;
@@ -18,6 +23,11 @@
       font-size: 40px;
       margin-bottom: 76px;
     }
+
+    @include onDesktop {
+      font-size: 48px;
+      margin-bottom: 70px;
+    }
   }
 
   &__img {
@@ -25,6 +35,14 @@
     margin-bottom: 20px;
     cursor: pointer;
     @include hover (transform, scale(1.2));
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
   }
 
   &__date {
@@ -41,6 +59,10 @@
     font-weight: 700;
     line-height: 125%;
     margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
   }
 
   &__prg {
@@ -49,6 +71,10 @@
     font-weight: 400;
     line-height: 150%;
     margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
   }
 
   &__btn {
@@ -67,6 +93,20 @@
     @include onTablet {
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  &--aside {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 30px;
+    }
+  }
+
+  &__img--other {
+    @include onTablet {
+      margin-bottom: 0;
     }
   }
 }

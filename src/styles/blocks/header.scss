@@ -9,6 +9,13 @@
     @include onTablet {
       padding: 100px 40px 70px;
     }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 0 0 0 55px;
+    }
   }
 
   &__contant--date {
@@ -28,6 +35,9 @@
     @include onTablet {
       font-size: 72px;
     }
+    @include onDesktop {
+      font-size: 96px;
+    }
   }
 
   &__contant--subtitle {
@@ -38,6 +48,10 @@
 
     @include onTablet {
       margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
     }
   }
 
@@ -56,5 +70,37 @@
     @include onTablet {
       padding-inline: 162px;
     }
+
+    @include onDesktop {
+      padding-inline: 0;
+      margin-top: 50px;
+    }
+  }
+
+  &__bottom {
+    @include onDesktop {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__bottom--info {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 135px;
+      opacity: 0.7;
+    }
+  }
+
+  &__bottom--line {
+    width: 469px;
+    height: 1px;
+    background-color: $color-white;
+    opacity: 0.7;
   }
 }
