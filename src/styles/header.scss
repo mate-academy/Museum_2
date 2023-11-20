@@ -1,0 +1,83 @@
+.header {
+  height: 100vh;
+
+  background: $c-green
+    url(..//images/pictures/1.png) center bottom / 245px auto no-repeat;
+
+  @include onTablet {
+    background: $c-green
+      url(..//images/pictures/1.png) center bottom / 443px auto no-repeat;
+  }
+
+  @include onDesctop {
+    background: $c-green
+      url(..//images/pictures/1.png) right bottom / 625px auto no-repeat;
+  }
+
+  &__top {
+    @include paddingInline;
+
+    @include onTablet {
+      padding-block: 26px;
+    }
+  }
+
+  &__date {
+    font-family: inherit;
+    @include forDescriptions;
+    line-height: 19px;
+    color: $c-white;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      padding-block: 99px 10px;
+    }
+  }
+
+  &__title {
+    @include forNames;
+    font-size: 48px;
+    line-height: 48px;
+    color: $c-white;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+      width: 569px;
+    }
+  }
+
+  &__subtitle {
+    font-family: inherit;
+    @include forDescriptions;
+    color: $c-white;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      width: 330px;
+      padding-bottom: 55px;
+    }
+  }
+
+  &__btn {
+    @include forBtn;
+  }
+
+  &__bottom {
+    display: none;
+    @include paddingInline;
+
+    @include onDesctop {
+      display: flex;
+      padding-top: 135px;
+      font-family: "Playfair Display", serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 17px;
+      color: $c-white;
+      opacity: 0.7;
+    }
+  }
+}
+

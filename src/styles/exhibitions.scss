@@ -1,0 +1,48 @@
+.exhibitions {
+  @include paddingInline;
+
+  &__wrapper {
+    margin: 0 auto;
+
+    @include onTablet {
+      position: relative;
+    }
+  }
+
+  &__title {
+    margin-top: 120px;
+    padding-bottom: 60px;
+    @include forTitle;
+
+    @include onDesctop {
+      margin-top: 110px;
+      padding-bottom: 71px;
+    }
+  }
+
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 29px;
+      justify-content: space-between;
+    }
+  }
+
+  &__btn {
+    @include forBtnLight;
+
+    &::after {
+      @include forBtnAfterElement;
+    }
+
+    &:hover::after {
+      content: url(..//images/icons/arrow-orange-hover.svg);
+    }
+  }
+}

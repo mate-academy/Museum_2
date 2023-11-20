@@ -1,0 +1,135 @@
+.footer {
+  background-color: $c-green;
+  color: $c-white;
+  @include paddingInline;
+
+  @include onTablet {
+    display: grid;
+
+    padding-block: 55px;
+  }
+
+  &__wrapper {
+    @include onTablet {
+      display: flex;
+      gap: 90px;
+    }
+
+    @include onDesctop {
+      gap: 240px;
+    }
+  }
+
+  &__title {
+    @include forFooterTitle;
+    padding: 34px 0 10px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__address {
+    list-style: none;
+    @include forDescriptions;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__address__link {
+    text-decoration: none;
+    color: $c-white;
+    @include forLinks;
+  }
+
+  &__socials__list {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__schedule__title {
+    @include forFooterTitle;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__schedule__list {
+    list-style: none;
+    margin-bottom: 50px;
+  }
+
+  &__schedule__item {
+    @include forDescriptions;
+  }
+
+  &__nav__title {
+    @include forFooterTitle;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__nav__list{
+    list-style: none;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      gap: 10px;
+    }
+  }
+
+  &__nav__item {
+    text-decoration: none;
+    color: inherit;
+    @include forDescriptions;
+    @include forLinks;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0;
+      grid-area: bottom;
+      justify-content: start;
+      gap: 22px;
+      position: relative;
+    }
+  }
+
+  &__top {
+    @include onTablet {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      grid-area: top;
+    }
+  }
+}

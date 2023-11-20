@@ -1,0 +1,77 @@
+.digest {
+  @include paddingInline;
+
+  &__wrapper {
+    margin: 120px 0 80px;
+
+    @include onDesctop {
+      margin-block: 200px;
+    }
+  }
+
+  &__conteiner {
+    @include onDesctop {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @include forTitle;
+
+    @include onDesctop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+    @include forDescriptions;
+
+    @include onTablet {
+      width: 570px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    background-color: $c-white;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $c-black;
+    margin-bottom: 30px;
+    padding-bottom: 3px;
+    border-radius: 0;
+
+    @include onTablet {
+      width: 450px;
+
+      &:hover {
+        border-color: $c-orange-hover;
+        color: $c-orange-hover;
+      }
+
+      &:focus {
+        border-color: $c-orange-focused;
+        color: $c-orange-focused;
+      }
+    }
+
+    @include onDesctop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input::placeholder {
+    font-family: inherit;
+    color: inherit;
+    @include forDescriptions;
+  }
+
+  &__btn {
+    border: none;
+    @include forBtn;
+    cursor: pointer;
+  }
+}

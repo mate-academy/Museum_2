@@ -1,0 +1,126 @@
+.menu {
+  @include paddingInline;
+  background-color: $c-green;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateX(-100%);
+  opacity: 0;
+  color: $c-white;
+
+  position: fixed;
+  pointer-events: none;
+  transition: all 0.3s;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+    z-index: 1;
+  }
+
+  @include onTablet {
+    background: $c-green
+      url(..//images/pictures/2.png) center bottom / 422px auto no-repeat;
+  }
+
+  @include onDesctop {
+    background: $c-green
+      url(..//images/pictures/2.png) right bottom / 624px auto no-repeat;
+  }
+
+  &__nav {
+    padding-block: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesctop {
+      padding-block: 32px;
+    }
+  }
+
+  &__conteiner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-sizing: border-box;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__list {
+    border-bottom: 1px solid $c-white;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+
+    @include onDesctop {
+      width: 570px;
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__text__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesctop {
+      gap: 123px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__text {
+    @include forDescriptions;
+    line-height: 19px;
+    color: $c-white;
+    text-decoration: none;
+    @include forLinks;
+    border-bottom: 1px solid transparent;
+  }
+
+  &__text--bold {
+    @include forDescriptions;
+    font-weight: 600;
+  }
+
+  &__item__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onDesctop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-white;
+    @include forNames;
+    line-height: 30px;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 57px;
+      @include forLinks;
+    }
+  }
+
+  &__btn {
+    @include forBtn;
+  }
+}

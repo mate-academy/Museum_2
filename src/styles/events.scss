@@ -1,0 +1,40 @@
+.events {
+  @include paddingInline;
+
+  &__wrapper {
+    margin: 0 auto;
+
+    @include onTablet {
+      position: relative;
+    }
+  }
+
+  &__title {
+    margin-top: 120px;
+    padding-bottom: 60px;
+    @include forTitle;
+  }
+
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      gap: 70px;
+    }
+  }
+
+  &__btn {
+    @include forBtnLight;
+
+    &::after {
+      @include forBtnAfterElement;
+    }
+
+    &:hover::after {
+      content: url(..//images/icons/arrow-orange-hover.svg);
+    }
+  }
+}

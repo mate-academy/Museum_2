@@ -1,0 +1,52 @@
+.exhibition {
+  box-sizing: border-box;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesctop {
+    width: 570px;
+  }
+
+  &__picture {
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+
+    @include onTablet {
+      &:hover {
+        transform: scale(1.05);
+        border-radius: 25px;
+        border: 1px solid $c-orange;
+      }
+    }
+
+    @include onDesctop {
+      height: 484px;
+      object-fit: cover;
+    }
+  }
+
+  &__date {
+    @include forDescriptions;
+    color: $c-orange;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    @include forNames;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @include forDescriptions;
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+    @include forBtn;
+  }
+}

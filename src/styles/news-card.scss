@@ -1,0 +1,44 @@
+.news__card {
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesctop {
+    width: 570px;
+  }
+
+  &__image {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+
+    @include onTablet {
+      &:hover {
+        transform: scale(1.05);
+        border-radius: 50px;
+        border: 1px solid $c-orange;
+      }
+    }
+
+    @include onDesctop {
+      height: 370px;
+      object-fit: contain;
+    }
+  }
+
+  &__date {
+    @include forDescriptions;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    @include forNames;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @include forDescriptions;
+    margin-bottom: 30px;
+  }
+}
