@@ -1,0 +1,130 @@
+.menu {
+  box-sizing: border-box;
+
+  height: 100vh;
+  background-color: $header-bg-color;
+  color: $header-text-color;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  overflow: hidden;
+  z-index: 1;
+
+  &__top {
+    position: relative;
+    padding-top: 26px;
+    z-index: 1;
+    background-color: $header-bg-color;
+
+    @include onDesktop {
+      margin-top: 10px;
+    }
+  }
+
+  &__schedule {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    &--span {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include onDesktop {
+      display: flex;
+      column-gap: 83px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__lang {
+    position: absolute;
+    top: 0;
+    right: 70px;
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+
+    @include onTablet {
+      justify-content: flex-end;
+    }
+
+    &--text {
+      font-family: "Raleway", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+
+      cursor: pointer;
+    }
+  }
+
+  &__photo {
+    position: relative;
+    width: 50%;
+    margin-left: auto;
+    overflow: hidden;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 25%;
+    }
+
+    @include onDesktop {
+      padding-bottom: 75%;
+      position: relative;
+      width: 200%;
+      height: auto;
+      margin-bottom: 0;
+      margin-left: 9%;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    display: block;
+    width: auto;
+
+    @include onDesktop {
+      max-height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__bottom {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

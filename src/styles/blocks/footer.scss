@@ -1,0 +1,82 @@
+.footer {
+  display: flex;
+  background-color: $header-bg-color;
+  color: $header-gray-text;
+  position: relative;
+
+  &__container {
+    display: grid;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      justify-content: space-between;
+      gap: 250px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+  }
+
+  &__nav {
+    list-style: none;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $header-gray-text;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+    &--hover {
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    @include onDesktop {
+      margin-top: 35px;
+      margin-bottom: 52px;
+    }
+  }
+
+  &__terms {
+    display: inline-block;
+    margin-right: 72px;
+    margin-bottom: 20px;
+    color: $header-gray-text;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    padding: 5px;
+  }
+}
