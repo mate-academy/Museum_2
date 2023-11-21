@@ -1,0 +1,37 @@
+.actual {
+  &--margin {
+    margin-bottom: 120px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__card {
+    @include onTablet {
+      justify-self: center;
+
+      &:nth-child(odd) {
+        @include gridItemsPosition(1, 4);
+      }
+
+      &:nth-child(even) {
+        @include gridItemsPosition(4, 7);
+      }
+    }
+
+    @include onDesktop {
+      &:nth-child(odd) {
+        @include gridItemsPosition(1, 7);
+      }
+
+      &:nth-child(even) {
+        @include gridItemsPosition(7, 13);
+      }
+    }
+  }
+}

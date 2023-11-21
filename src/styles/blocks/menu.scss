@@ -1,0 +1,170 @@
+.menu {
+  background-color: $background-color;
+  transition: opacity 0.3s;
+
+  @include onTablet {
+    background-image: url(../images/photos/Background_menu.svg);
+    background-size: fill;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  @include onDesktop {
+    background-position: bottom right;
+    background-size: 663px;
+  }
+
+  &--opacity {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &--position {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &__content {
+    height: 100vh;
+    padding: 20px 0;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 55px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      display: grid;
+
+      @include grid(6);
+
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      @include grid(12);
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      @include gridItemsPosition(1, 3);
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__location {
+    @include onTablet {
+      @include gridItemsPosition(3, 6);
+    }
+  }
+
+  &__info-name {
+    @extend %regular-text;
+
+    color: $white-color;
+  }
+
+  &__info-value {
+    @extend %semi-bold-text;
+
+    line-height: 150%;
+    color: $white-color;
+  }
+
+  &__info-link {
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-color, $white-color);
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    padding: 40px 0;
+
+    border-bottom: 1px solid $white-color;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      padding: 50px 0;
+    }
+
+    @include onDesktop {
+      width: max-content;
+      margin-bottom: 60px;
+      padding: 60px 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    @extend %bold-text;
+
+    font-size: 20px;
+    line-height: 150%;
+    color: $white-color;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-color, $white-color);
+  }
+
+  &__btn-container {
+    @include onTablet {
+      display: grid;
+
+      @include grid(6);
+
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      @include grid(12);
+    }
+  }
+
+  &__btn {
+    @include onTablet {
+      @include gridItemsPosition(1, 4);
+    }
+  }
+}

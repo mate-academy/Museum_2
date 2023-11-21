@@ -1,0 +1,49 @@
+.form {
+  width: 100%;
+
+  &__field {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: 28px;
+    margin-bottom: 30px;
+
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid $black-color;
+    outline: none;
+
+    @extend %regular-text;
+
+    font-weight: 700;
+    font-size: inherit;
+    color: $black-color;
+
+    &::placeholder {
+      font-weight: 400;
+      color: $black-color;
+
+      transition: color 0.3s;
+    }
+
+    &:hover::placeholder {
+      color: $main-color;
+    }
+
+    &:focus::placeholder {
+      color: $main-color;
+    }
+
+    @include hover(border-color, $main-color);
+
+    &:focus {
+      border-color: $main-color;
+
+      color: $main-color;
+    }
+  }
+
+  @include onDesktop {
+    max-width: none;
+  }
+}

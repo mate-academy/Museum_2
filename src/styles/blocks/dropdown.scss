@@ -1,0 +1,84 @@
+.dropdown {
+  position: relative;
+
+  &--display {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__btn {
+    display: block;
+    position: relative;
+    margin-right: 5px;
+
+    width: 35px;
+    height: 24px;
+
+    @extend %regular-text;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: $white-color;
+
+    cursor: pointer;
+
+    @include hover(transform, scale(1.5));
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 5px;
+
+      background-image: url(../images/Change-lang.svg);
+      background-size: fill;
+      background-repeat: no-repeat;
+      background-position: right;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding: 10px 5px;
+    position: absolute;
+
+    background-color: $main-color;
+    transition: opacity 0.3s;
+
+    &--opacity {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &--menu--opacity {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__lang {
+    display: block;
+    margin-bottom: 10px;
+
+    @extend %regular-text;
+
+    font-weight: 500;
+    color: $white-color;
+    text-align: center;
+
+    border-bottom: 1px solid transparent;
+
+    @include hover(border-color, $white-color);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

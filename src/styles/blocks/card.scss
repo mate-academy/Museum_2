@@ -1,0 +1,110 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  &__image-link {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+
+    @include hover(transform, scale(1.05));
+
+    @include onTablet {
+      width: auto;
+      height: auto;
+    }
+
+    &--horizontal-card {
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 356px;
+    object-fit: cover;
+
+    @include onTablet {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+
+    @extend %regular-text;
+    color: $main-color;
+
+    &--news-margin {
+      margin-bottom: 0;
+
+      font-size: 14px;
+      line-height: 140%;
+      color: $black-color;
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    margin-bottom: 20px;
+
+    @extend %bold-text;
+
+    font-size: 20px;
+    line-height: 125%;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+
+    &--horizontal-card {
+      flex-grow: 0;
+    }
+
+    &--news-font {
+      @include onTablet {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__link {
+    color: $black-color;
+
+    @include hover(color, $hover-color);
+
+    &:active {
+      color: $active-color;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+
+    @extend %regular-text;
+
+    color: $gray-color;
+
+    &--news-margin {
+      margin-bottom: 0;
+    }
+  }
+
+}

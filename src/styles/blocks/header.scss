@@ -1,0 +1,147 @@
+.header {
+  background-color: $background-color;
+  background-image: url(../images/photos/Header-background-img.svg);
+  background-size: fill;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  @include onTablet {
+    background-size: 443px 494px;
+  }
+
+  @include onDesktop {
+    background-size: 663px;
+    background-position: bottom right;
+  }
+
+  &__content {
+    height: 100vh;
+    padding: 20px 0;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__event {
+    padding: 70px 0;
+
+    @include onTablet {
+      display: grid;
+
+      @include grid(6);
+
+      padding: 124px 0;
+    }
+
+    @include onDesktop {
+      @include grid(12);
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 10px;
+
+    @extend %regular-text;
+    font-size: 14px;
+
+    color: $white-color;
+
+    @include onTablet {
+      @include gridItemsPosition(1, 4);
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @extend %bold-text;
+
+    font-size: 48px;
+    line-height: 100%;
+
+    @include onTablet {
+      @include gridItemsPosition(1, 6);
+
+      margin-bottom: 20px;
+
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      @include gridItemsPosition(1, 7);
+      margin-bottom: 30px;
+
+      font-size: 96px;
+    }
+  }
+
+  &__title-link {
+    color: $white-color;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+
+    @extend %regular-text;
+
+    color: $white-color;
+
+    @include onTablet {
+      @include gridItemsPosition(1, 4);
+
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      @include gridItemsPosition(1, 6);
+
+      margin-bottom: 80px;
+    }
+  }
+
+  &__btn {
+    @include onTablet {
+      @include gridItemsPosition(1, 4);
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__schedule-bottom {
+    display: none;
+    width: 100%;
+
+    @extend %bold-text;
+
+    font-size: 14px;
+    line-height: 125%;
+    color: $white-color;
+
+    opacity: 0.7;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+
+      position: relative;
+      bottom: 50%;
+      left: 20%;
+      transform: translateY(50%);
+
+      background: $white-color;
+      opacity: 0.3;
+    }
+
+    @include onDesktop {
+      display: block;
+
+      @include gridItemsPosition(1, 7);
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.main {
+  background-color: $white-color;
+  padding: 90px 0;
+
+  @include onTablet {
+    padding: 105px 0;
+  }
+
+  @include onDesktop {
+    padding: 110px 0 200px;
+  }
+
+  &__section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      display: grid;
+
+      @include grid(6);
+
+      justify-items: start;
+      align-items: stretch;
+    }
+
+    @include onDesktop {
+      @include grid(12);
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 60px;
+    align-self: flex-start;
+
+    @extend %bold-text;
+
+    font-size: 28px;
+    line-height: 125%;
+    color: $black-color;
+
+    @include onTablet {
+      margin-bottom: 75px;
+
+      @include gridItemsPosition(1, 5);
+
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+
+      @include gridItemsPosition(1, 10);
+
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__section-btn {
+    width: 100%;
+    order: 1;
+
+    @include onTablet {
+      order: 0;
+      width: 100%;
+
+      @include gridItemsPosition(5, 7);
+    }
+
+    @include onDesktop {
+      @include gridItemsPosition(10, 13);
+    }
+  }
+
+  &__section-card {
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
