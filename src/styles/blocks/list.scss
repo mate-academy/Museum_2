@@ -1,0 +1,45 @@
+.list {
+  display: flex;
+  flex-direction: column;
+
+  &__item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  &__link {
+    width: auto;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 60px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onPhone {
+      font-size: 20px;
+      line-height: 150%;
+      margin-bottom: 20px;
+    }
+
+    &--last {
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onPhone {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

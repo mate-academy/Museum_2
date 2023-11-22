@@ -1,63 +1,120 @@
 .header {
-  background-color: $bgc-green;
-  color: $c-white;
+  background-color: $green;
+  overflow: hidden;
 
-  display: flex;
-  justify-content: center;
-  margin-bottom: 90px;
-  padding: 0;
+  &__content {
+    width: 100%;
+    position: relative;
+  }
 
-  &__top {
-    display: flex;
-    justify-content: space-between;
+  &__main {
+    @include grid;
+  }
 
-    padding-top: 20px;
+  &__lady {
+    position: absolute;
+    background-image: url(../images/header_image.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 662px;
+    width: 626px;
+    bottom: 0;
+    right: -10%;
 
-    &-aside {
-      display: flex;
-      align-items: center;
-      align-content: center;
+    @include onTablet {
+      right: 0;
+      left: 50%;
+      margin-left: -220px;
+      bottom: -15px;
+      height: 492px;
+      width: 442px;
+    }
+
+    @include onPhone {
+      width: 245px;
+      height: 273px;
+      margin-left: -123px;
     }
   }
 
-  &__content {
-    margin-top: 70px;
-    margin-bottom: 40px;
+  &__description {
+    margin: 90px 0 80px;
+    grid-column: 1 / 7;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      margin: 0 0 50px;
+      grid-column: 1 / 6;
+    }
   }
 
-  &__date {
-    line-height: 140%;
+  &__small-text {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
     margin-bottom: 10px;
   }
 
-  &__title {
-    font-size: 48px;
+  &__name {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 96px;
     font-weight: 700;
-    font-family: "Playfair Display", serif;
-
+    line-height: 96px;
+    text-align: left;
     margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+
+    @include onPhone {
+      font-size: 48px;
+      line-height: 100%;
+    }
   }
 
-  &__text {
-    font-size: 16px;
-    line-height: 150%;
-    padding-bottom: 40px;
+  &__button {
+    grid-column: 1 / 4;
+    margin-bottom: 134px;
+
+    @include onTablet {
+      margin-bottom: 500px;
+    }
+
+    @include onPhone {
+      margin-bottom: 273px;
+    }
   }
 
-  &__image {
-    width: 245px;
-    height: 273px;
-    margin-top: 40px;
+  &__bottom {
+    grid-column: 1 / 7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      display: none;
+    }
   }
-}
 
-.dropdown {
-  color: $c-white;
-  background-color: $bgc-green;
-  border: 0;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 150%;
+  &__date {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: left;
+    margin-right: 20px;
+  }
 
-  margin-right: 30px;
+  &__line {
+    display: block;
+    width: calc(100% - 101px);
+    height: 1px;
+    background-color: $white;
+  }
 }
