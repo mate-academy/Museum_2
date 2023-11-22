@@ -1,0 +1,111 @@
+.next {
+  //stylelint-disable property-no-unknown
+  &__title {
+    @include pageTitle;
+    font-size: 20px;
+    line-height: 25px;
+    margin: 0 0 20px;
+
+    grid-column: span 2;
+
+    @include onTablette {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 10;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  &__button-secondary {
+    grid-column: span 2;
+    margin-top: 30px;
+
+    @include onTablette {
+      grid-column: 5 / 7;
+      grid-row: 1 / 1;
+      margin: 0;
+    }
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+  }
+
+  &__article {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    margin: 60px 0 0;
+
+    @include onTablette {
+      grid-column: span 6;
+      flex-grow: 0;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: span 12;
+      gap: 30px;
+    }
+  }
+
+  &__photo-container {
+    margin-bottom: 20px;
+
+    @include photoContainer;
+    &--square {
+      aspect-ratio: 1 / 1;
+    }
+
+    @include onTablette {
+      margin-bottom: 0;
+      aspect-ratio: 1.2 / 1;
+    }
+    @include onDesktop {
+      min-height: 700px;
+    }
+  }
+
+  &__container {
+    @include onTablette {
+      flex-grow: 1;
+      flex-basis: 100%;
+      aspect-ratio: 1 / 1.25;
+    }
+  }
+
+  &__photo {
+    @include photo;
+
+    @include onTablette {
+
+      aspect-ratio: 1.25 / 1;
+    }
+  }
+
+  &__content {
+    @include pageContent;
+    grid-column: span 2;
+
+    @include onTablette {
+      grid-column: span 3;
+    }
+  }
+
+  &__date {
+    display: block;
+    color: $c-red;
+    margin: 0 0 10px;
+  }
+
+  &__text {
+    margin: 0 0 30px;
+  }
+}
