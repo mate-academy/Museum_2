@@ -1,0 +1,120 @@
+.subscribe {
+  @include page-grid;
+
+  grid-auto-flow: column;
+  align-items: start;
+
+  &__section-title {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      margin: 0;
+
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: subgrid;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      margin-top: 50px;
+
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__form-input {
+    width: 100%;
+
+    box-sizing: border-box;
+    border: none;
+    background-color: inherit;
+    color: $color-black;
+
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $color-white inset;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:focus {
+      caret-color: $color-main;
+      outline: none;
+    }
+  }
+
+  &__input-strip {
+    width: 100%;
+    height: 1px;
+
+    background-color: $color-black;
+  }
+
+  &__form-label:hover &__input-strip {
+    background-color: $color-main;
+  }
+
+  &__form-label:hover &__form-input::placeholder {
+    color: $color-main;
+  }
+
+  &__form-button {
+    margin-top: 30px;
+    padding: 0;
+
+    border: none;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+}

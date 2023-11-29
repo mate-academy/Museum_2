@@ -1,0 +1,65 @@
+.button {
+  /* primary */
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: $color-main;
+
+  color: $color-white;
+  text-align: center;
+
+  /* buttons */
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%; /* 16px */
+
+  @include hover-transition(transform, scale($button-hover-scale));
+
+  stroke: $color-main;
+
+  &:link {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $color-button-hover;
+    stroke: $color-button-hover;
+  }
+
+  &:active {
+    background-color: $color-button-active;
+    stroke: $color-button-active;
+  }
+
+  &--secondary {
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    background-color: $color-white;
+    color: $color-main;
+    border: 1px solid $color-main;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-button-hover;
+      border: 1px solid $color-button-hover;
+    }
+
+    &:active {
+      color: $color-button-active;
+      border: 1px solid $color-button-active;
+    }
+  }
+
+  &__svg-icon {
+    stroke: inherit;
+  }
+}
