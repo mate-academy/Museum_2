@@ -1,9 +1,14 @@
 .burger-menu {
-  height: 100vh;
-
   background-color: $color-background;
 
   overflow: auto; /* to scroll the menu if needed */
+
+  &__content {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+  }
 
   &__top {
     position: sticky; /* to keep cross always visible */
@@ -13,7 +18,11 @@
   }
 
   &__bottom {
+    height: 100%;
+
     @include page-grid;
+
+    grid-template-rows: auto auto auto auto 1fr;
   }
 
   &__todays-schedule {
@@ -123,6 +132,8 @@
   }
 
   &__image {
+    height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,11 +143,11 @@
     }
 
     @include on-desktop {
-      margin-top: 13px;
+      // margin-top: 13px;
       margin-right: -56px;
 
       grid-column: 7 / 13;
-      grid-row: 1 / 7;
+      grid-row: 1 / 6;
     }
   }
 }
