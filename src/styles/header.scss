@@ -1,0 +1,250 @@
+
+.header {
+  background-color: $custom-background;
+
+  @include on-desktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    @include on-tablet {
+      padding: 20px 40px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      padding: 25px 55px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: 123px;
+
+    background-image: url('../images/NAMU.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__nav {
+    display: block;
+    width: 25px;
+    height: 20px;
+    background-image: url('../images/Icons/Menu.svg');
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__news {
+    padding: 50px 20px 40px;
+
+    @include on-tablet {
+      padding: 120px 160px 70px 40px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      padding: 90px 0 50px 56px;
+    }
+  }
+
+  &__date,
+  &__title,
+  &__description,
+  &__lang-letters {
+    color: $custom-white;
+  }
+
+  &__date {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    padding-top: 10px;
+
+    &--wp {
+      padding-top: 0;
+    }
+
+    @include on-tablet {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__description {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include on-tablet {
+      padding-top: 20px;
+      max-width: 330px;
+    }
+
+    @include on-desktop {
+      padding-top: 30px;
+      max-width: 100%;
+    }
+  }
+
+  &__last-event {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-top: 135px;
+    }
+  }
+
+  &__last-event-text {
+    display: block;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: $custom-white;
+    width: fit-content;
+    white-space: nowrap;
+  }
+
+  &__last-event-line {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $custom-white;
+  }
+
+  &__ticket {
+    padding-top: 40px;
+
+    @include on-tablet {
+      padding-top: 50px;
+      max-width: 330px;
+    }
+
+    @include on-desktop {
+      padding-top: 80px;
+      max-width: 270px;
+    }
+  }
+
+  &__image {
+    padding-inline: 38px;
+
+    @include on-tablet {
+      padding-inline: 163px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      padding-inline: 0;
+      padding-top: 47px;
+    }
+  }
+
+  &__image-pic {
+    position: relative;
+    display: block;
+    margin: auto;
+
+    max-width: 443px;
+    max-height: 494px;
+
+    @include on-tablet {
+      max-width: 625px;
+      max-height: 663px;
+    }
+  }
+
+  &__image-pic-inner {
+    width: 100%;
+    padding-bottom: calc(((273/245) * 100) * 1%);
+
+    @include on-tablet {
+      padding-bottom: calc(((663/625) * 100) * 1%);
+    }
+  }
+
+  &__image-src {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-image: url('../images/Galery/Header.png');
+
+    @include on-tablet {
+      background-image: url('../images/Galery/header-tablet.png');
+    }
+
+    @include on-desktop {
+      background-image: url('../images/Galery/header-desktop.png');
+      background-size: contain;
+    }
+  }
+
+  &__lang {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      gap: 2px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include on-desktop {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__lang-letters {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  &__caret {
+    display: block;
+    width: 10px;
+    height: 7px;
+    background-image: url('../images/Icons/dropdown.svg');
+    background-repeat: no-repeat;
+  }
+}

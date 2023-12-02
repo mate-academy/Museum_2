@@ -1,7 +1,785 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./utils/vars";
+@import "./header.scss";
+@import "./button.scss";
+@import "./footer.scss";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  &:has(#menu:target) {
+    overflow: hidden;
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-color: $custom-background;
+  overflow-y: scroll;
+
+  &:target {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  @include on-desktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__top {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 90px;
+    z-index: 5;
+
+    @include on-tablet {
+      padding: 20px 40px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      padding: 25px 55px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    height: 40px;
+    width: 123px;
+
+    background-image: url('../images/NAMU.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__navigation {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__nav {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/Icons/cross.svg');
+    text-decoration: none;
+    grid-column: 2 / -1;
+    grid-row: 1;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+  }
+
+  &__lang {
+    display: flex;
+    gap: 2px;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1 / 2;
+    grid-row: 1;
+
+    @include on-tablet {
+      grid-column: 2 / -1;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__lang-letters {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+
+    color: $custom-white;
+  }
+
+  &__caret {
+    display: block;
+    width: 10px;
+    height: 7px;
+    background-image: url('../images/Icons/dropdown.svg');
+    background-repeat: no-repeat;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-inline: 20px;
+
+    @include on-tablet {
+      padding-inline: 40px;
+      gap: 123px;
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      grid-row: 2;
+      height: fit-content;
+    }
+  }
+
+  &__info-title,
+  &__info-time {
+    color: $custom-white;
+  }
+
+  &__info-title {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &__info-time {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__list {
+    padding-top: 40px;
+    padding-inline: 20px;
+
+    @include on-tablet {
+      padding-inline: 40px;
+    }
+
+    @include on-desktop {
+      padding-inline: 55px;
+      padding-top: 70px;
+      grid-column: 1 / 7;
+      grid-row: 3;
+    }
+  }
+
+  &__link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+
+    padding-bottom: 40px;
+    border-bottom: 1px solid $custom-white;
+
+    @include on-tablet {
+      gap: 30px;
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__item-list {
+    list-style-type: none;
+  }
+
+  &__link-item {
+    font-family: "Playfair Display", sans-serif;
+    text-decoration: none;
+    color: $custom-white;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      line-height: 58px;
+
+      &:hover {
+        border-bottom: 1px solid $custom-white;
+      }
+    }
+  }
+
+  &__buy {
+    padding: 40px 20px 0;
+
+    @include on-tablet {
+      padding: 50px 40px 0;
+      max-width: 330px;
+    }
+
+    @include on-desktop {
+      padding-inline: 55px;
+      grid-column: 1 / 7;
+      grid-row: 4;
+      max-width: 270px;
+      box-sizing: content-box;
+    }
+  }
+
+  &__image-src {
+    position: relative;
+    display: block;
+    padding-top: 30px;
+    margin-inline: 173px;
+    min-width: 422px;
+    min-height: 466px;
+
+    @include on-desktop {
+      margin-inline: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    max-height: 694px;
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      grid-row: span 5;
+    }
+  }
+}
+
+.main {
+  &__section {
+    padding-top: 90px;
+    padding-inline: 20px;
+
+    &--top-space {
+      padding-top: 120px;
+    }
+
+    &--bottom-space {
+      padding-bottom: 50px;
+
+      @include on-tablet {
+        padding-bottom: 128px;
+      }
+    }
+
+    &--visit {
+      padding-inline: 0;
+    }
+
+    @include on-tablet {
+      padding-top: 100px;
+      padding-inline: 40px;
+
+      &--grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 30px;
+
+        @include on-desktop {
+          grid-template-columns: repeat(12, 1fr);
+          column-gap: 32px;
+        }
+      }
+
+      &--visit {
+        padding-inline: 0;
+      }
+
+      &--bottom-space {
+        padding-bottom: 128px;
+      }
+
+      &--top-space {
+        padding-top: 160px;
+      }
+
+      &--news {
+        padding-top: 120px;
+      }
+    }
+
+    @include on-desktop {
+      padding-top: 110px;
+      padding-inline: 55px;
+
+      &--grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 32px;
+      }
+
+      &--visit {
+        padding-inline: 0;
+      }
+
+      &--top-space {
+        padding-top: 200px;
+      }
+
+      &--bottom-space {
+        padding-bottom: 200px;
+      }
+    }
+  }
+
+  &__max-width {
+    max-width: 1280px;
+    margin: auto;
+  }
+
+  &__section-container {
+    padding: 50px 20px;
+    background-color: $custom-background;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      padding: 80px 40px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 32px;
+      padding: 0;
+      height: 800px;
+    }
+  }
+
+  &__visit-image {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      grid-column: 1 / 6;
+      grid-row: span 3;
+      background-image: url('../images/Galery/visit.png');
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__start-btn {
+    padding-top: 40px;
+
+
+    @include on-tablet {
+      padding-top: 60px;
+      max-width: 330px;
+      grid-column: span 4;
+      grid-row: 3;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+
+      padding-bottom: 205px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+
+
+    &--small {
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    @include on-tablet {
+      grid-column: span 4;
+      grid-row: 1;
+
+      font-size: 40px;
+      line-height: 60px;
+
+      &--small {
+        font-size: 24px;
+        line-height: 30px;
+        height: 60px;
+        padding-top: 10px;
+      }
+
+      &--subscribe {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      grid-row: 1;
+      font-size: 48px;
+      line-height: 58px;
+
+      &--subscribe {
+        font-size: 48px;
+        line-height: 58px;
+        grid-column: span 6;
+      }
+
+      &--wp {
+        font-size: 20px;
+        line-height: 30px;
+        padding-top: 0;
+      }
+
+      &--small {
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &__title-visit {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 38px;
+    line-height: 38px;
+    font-weight: 700;
+    color: $custom-white;
+
+    @include on-tablet {
+      grid-column: span 5;
+      grid-row: 1;
+      font-size: 62px;
+      line-height: 62px;
+    }
+
+    @include on-desktop {
+      grid-column: span 7;
+      padding-top: 205px;
+      grid-column: 6 / -1;
+      max-width: 670px;
+      font-size: 80px;
+      line-height: 80px;
+    }
+
+  }
+
+  &__exhibit {
+    padding-top: 60px;
+
+    @include on-tablet {
+      padding-top: 70px;
+      grid-row: 2;
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__event {
+    padding-top: 60px;
+
+    @include on-tablet {
+      grid-column: span 6;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      padding-top: 70px;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-column: span 12;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+
+    @include on-tablet {
+      &--event {
+        grid-column: span 3;
+      }
+    }
+
+    @include on-desktop {
+      object-position: top center;
+      object-fit: cover;
+
+      &--event {
+        grid-column: span 4;
+      }
+
+      &--exhibit {
+        max-height: 484px;
+        object-position: center;
+      }
+
+      &--new {
+        max-height: 370px;
+      }
+    }
+  }
+
+  &__inner {
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__date {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $custom-main;
+    padding-top: 20px;
+
+    &--new {
+      font-size: 14px;
+      line-height: 20px;
+      color: black;
+    }
+
+    @include on-tablet {
+      padding-top: 0;
+
+      &--new {
+        padding-top: 30px;
+      }
+    }
+
+    @include on-desktop {
+
+      &--new {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  &__description {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 20px;
+
+    &--form {
+      @include on-tablet {
+        grid-column: span 5;
+        grid-row: 2;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+        grid-row: 1;
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__buy-ticket {
+    padding-top: 30px;
+
+    @include on-tablet {
+      padding-top: 50px;
+    }
+
+    @include on-desktop {
+      max-width: 270px;
+    }
+  }
+
+  &__arrow-left {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/Icons/arrow.svg');
+    background-repeat: no-repeat;
+  }
+
+  &__btn-text {
+    display: block;
+  }
+
+  &__detail {
+    padding-top: 30px;
+
+    @include on-tablet {
+      padding-top: 0;
+      grid-column: span 2;
+      grid-row: 1;
+
+      &--subscribe {
+        padding-top: 30px;
+        grid-column: span 4;
+        grid-row: 1;
+        max-width: 330px;
+      }
+    }
+
+    @include on-desktop {
+      padding-top: 0;
+      grid-column: 10 / -1;
+      grid-row: 1;
+
+      &--subscribe {
+        padding-top: 50px;
+        grid-column: span 5;
+        max-width: 270px;
+      }
+    }
+  }
+
+  &__text {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 20px;
+
+    color: $custom-white;
+
+    @include on-tablet {
+      grid-column: span 4;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+      max-width: 470px;
+    }
+  }
+
+  &__news-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 50px;
+    padding-top: 60px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      padding-top: 75px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 32px;
+      padding-top: 50px;
+    }
+  }
+
+  &__news {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__form {
+     padding-top: 50px;
+
+     @include on-tablet {
+      grid-column: span 4;
+      grid-row: 3;
+     }
+
+     @include on-desktop {
+      grid-column: span 5;
+     }
+  }
+
+  &__form-input {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid #1c1b29;
+    width: 100%;
+    padding-bottom: 3px;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      background-color: transparent;
+      border-bottom: 1px solid #1c1b29;
+      font-weight: 700;
+
+      &::placeholder {
+        color: #1c1b29;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: $custom-main;
+      border-bottom: 1px solid $custom-main;
+
+      &::placeholder {
+        color: $custom-main;
+      }
+    }
+
+    &:focus {
+      color: $custom-main;
+      border-bottom: 1px solid $custom-main;
+
+      &::placeholder {
+        color: $custom-main;
+      }
+    }
+  }
 }
