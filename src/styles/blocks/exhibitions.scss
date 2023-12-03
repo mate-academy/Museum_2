@@ -1,0 +1,64 @@
+.exhibitions {
+
+  &__header {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    color: $blackColor;
+    text-align: center;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    &--events {
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 20px;
+    }
+
+    &--events {
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      @include onDesktop {
+        grid-template-columns: repeat(12, 1fr);
+      }
+    }
+  }
+}

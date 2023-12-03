@@ -1,0 +1,56 @@
+.form-field {
+
+  &__item {
+    width: 100%;
+    padding-bottom: 3px;
+    margin-bottom: 30px;
+
+    font-weight: 700;
+    font-size: 16px;
+    color: $blackColor;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $blackColor;
+    transition: all 0.3s;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $blackColor;
+    }
+
+    &:hover {
+      border-color: $mainColor;
+      color: $mainColor;
+      cursor: text;
+      transition: all 0.3s;
+
+      &::placeholder {
+        color: $mainColor;
+      }
+    }
+
+    &:focus {
+      color: $mainColor;
+      border-color: $mainColor;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-text-fill-color: $blackColor;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+}
