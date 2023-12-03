@@ -2,7 +2,7 @@
   display: block;
   padding: 22px 0;
   color: $custom-white;
-  font-family: 'Raleway', sans-serif;
+  font-family: Raleway, sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 16px;
@@ -13,6 +13,14 @@
   border: 0;
   transition: background-color 0.3s ease-in-out;
 
+  &:focus {
+    background-color: $custom-main-pressed;
+  }
+
+  &:disabled {
+    background-color: $custom-main-disabled;
+  }
+
   &:hover {
     cursor: pointer;
 
@@ -21,14 +29,6 @@
     &:focus {
       background-color: $custom-main-pressed;
     }
-  }
-
-  &:focus {
-    background-color: $custom-main-pressed;
-  }
-
-  &:disabled {
-    background-color: $custom-main-disabled;
   }
 
   &--detail {
@@ -42,6 +42,16 @@
     background-color: $custom-white;
     border: 1px solid $custom-main;
 
+    &:focus {
+      color: $custom-main-hover;
+      border: 1px solid $custom-main-pressed;
+    }
+
+    &:disabled {
+      color: $custom-main-hover;
+      border: 1px solid $custom-main-disabled;
+    }
+
     &:hover {
       background-color: $custom-white;
       color: $custom-main-hover;
@@ -52,16 +62,6 @@
         color: $custom-main-hover;
         border: 1px solid $custom-main-pressed;
       }
-    }
-
-    &:focus {
-      color: $custom-main-hover;
-      border: 1px solid $custom-main-pressed;
-    }
-
-    &:disabled {
-      color: $custom-main-hover;
-      border: 1px solid $custom-main-disabled;
     }
   }
 }
