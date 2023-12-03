@@ -1,0 +1,62 @@
+.subscribe {
+
+  &__title {
+    @extend %title;
+    margin: 0 0 20px;
+
+    @include onDesktop {
+      margin: 0 0 50px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 50px;
+    @extend %description;
+    color: $black-text;
+  }
+
+  &__input-form {
+    margin: 0 0 30px;
+    width: 100%;
+    line-height: 150%;
+    align-self: stretch;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid $black-text;
+    box-sizing: border-box;
+    order: 0;
+
+    @include onDesktop {
+      margin: 0 0 40px;
+    }
+
+    &::placeholder {
+      color: $black-text;
+    }
+
+    &:hover {
+      color: $color-orange;
+      border-bottom: 1px solid $color-orange;
+
+      &::placeholder {
+        color: $color-orange;
+      }
+    }
+
+    &:focus {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+      outline: 1px solid $white-background;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__send-button {
+    width: 100%;
+    border: 0;
+  }
+}
