@@ -47,6 +47,9 @@
   &__link {
     display: block;
     text-decoration: none;
+    width: fit-content;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
 
     &--icon {
       width: 20px;
@@ -67,6 +70,13 @@
 
       &--twitter {
         background-image: url('../images/Icons/twitter.svg');
+      }
+    }
+
+    &:not(.footer__link--icon) {
+      &:hover {
+        cursor: pointer;
+        border-bottom: 1px solid $custom-white;
       }
     }
   }
