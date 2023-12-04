@@ -1,0 +1,116 @@
+.footer {
+  @include textSize(16px, 150%);
+
+  background-color: $color-background;
+  color: $color-white;
+  padding: 34px 0 30px;
+
+  &__content {
+    @include grid;
+    position: relative;
+  }
+
+  &__section {
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 60px;
+    }
+
+    &--contacts,
+    &--schedule,
+    &--navlist {
+      grid-column: span 2;
+
+      @include onDesktop {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__social-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__social-link {
+
+    &:hover {
+      transform: $transform;
+      transition: $transition;
+    }
+  }
+
+  &__navlist-item {
+    margin-bottom: 5px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    &:first-child {
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__link {
+    transition: $transition;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    gap: 22px;
+    grid-column: span 6;
+
+    @include onDesktop {
+      gap: 100px;
+    }
+  }
+
+  &__copyright,
+  &__copyright-paragraph {
+    @include textSize(14px, 140%);
+  }
+
+  &__scroll-up {
+    @include backgroundImage(url("/images/scroll-up-white.png"));
+    background-position: center;
+    background-size: contain;
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    transition: $transition;
+
+    &:hover {
+      transform: $transform;
+    }
+  }
+}

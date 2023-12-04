@@ -1,0 +1,76 @@
+.article {
+  &--events {
+    @include grid;
+  }
+
+  &__img,
+  &__text-content {
+    grid-column: span 3;
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 20px;
+
+    transition: $transition;
+
+    &:hover {
+      cursor: pointer;
+      transform: $transform;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__text-content {
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__date {
+    color: $color-main;
+    margin-bottom: 10px;
+
+    &--news {
+      color: $color-black;
+    }
+  }
+
+  &__link {
+    transition: $transition;
+
+    &:hover {
+      color: $color-main;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    &--exhibitions {
+      @include onTablet {
+        height: 60px;
+      }
+    }
+  }
+
+  &__paragraph {
+    color: $color-gray;
+    margin-bottom: 30px;
+
+    &--events {
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+}
