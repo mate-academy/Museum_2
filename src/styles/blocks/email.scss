@@ -1,0 +1,102 @@
+.email {
+  margin-top: 120px;
+  margin-bottom: 80px;
+
+  &__content {
+    @include pageGrid;
+  }
+
+  @include OnTablet {
+    margin-top: 160px;
+    margin-bottom: 128px;
+  }
+
+  @include OnDesktop {
+    margin-top: 200px;
+    margin-bottom: 170px;
+  }
+
+  &__title {
+    font-size: 28px;
+    line-height: 35px;
+    margin-bottom: 20px;
+
+    @include PD;
+
+    grid-column: 1 / -1;
+
+    @include OnTablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include OnDesktop {
+      font-size: 48px;
+      line-height: 58px;
+      margin-bottom: 50px;
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    grid-column: 1 / -1;
+
+    @include OnDesktop {
+      grid-column: span 6;
+      padding-top: 15px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 30px;
+    grid-column: 1 / -1;
+
+    @include OnDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 450px;
+    background-color: $white-color;
+    border: none;
+    border-bottom: 1px solid $black-color;
+    transition: $transition;
+
+    @include OnDesktop {
+      max-width: 470px;
+    }
+
+    &::placeholder {
+      color: $black-color;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main-color;
+
+      &::placeholder {
+        color: $main-color;
+      }
+    }
+
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid $main-color;
+      caret-color: $main-color;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__block {
+    grid-column: 1 / -1;
+  }
+
+  &__btn {
+    grid-column: span 3;
+  }
+}

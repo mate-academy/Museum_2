@@ -4,3 +4,37 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin OnTablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin OnDesktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin PD {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+@mixin pageGrid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 20px;
+
+  @include OnTablet {
+    --columns: 6;
+    column-gap: 30px;
+  }
+
+  @include OnDesktop {
+    --columns: 12;
+  }
+}

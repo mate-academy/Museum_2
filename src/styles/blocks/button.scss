@@ -1,0 +1,67 @@
+.button {
+  @include pageGrid;
+
+  &__link {
+    background-color: $main-color;
+    color: $white-color;
+    padding-block: 22px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 16px;
+    border-radius: 2%;
+    transition: $transition;
+
+    grid-column: 1 / -1;
+
+    @include OnTablet {
+      grid-column: span 3;
+    }
+
+    @include OnDesktop {
+      grid-column: span 6;
+    }
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &:active {
+      background-color: $active-color;
+    }
+
+    &-2 {
+      margin-top: 30px;
+      background-color: $white-color;
+      color: $main-color;
+      border: 1px solid $main-color;
+      transition: $transition;
+      display: flex;
+      justify-content: center;
+
+      grid-column: 1 / -1;
+
+      &::after {
+        content: "🠆";
+        margin-top: 1px;
+        margin-left: 8px;
+      }
+
+      @include OnTablet {
+        position: absolute;
+        grid-column: -2 / -1;
+      }
+
+      &:hover {
+        background-color: $white-color;
+        color: $hover-color;
+        border: 1px solid $hover-color;
+      }
+
+      &:active {
+        background-color: $white-color;
+        color: $active-color;
+        border: 1px solid $active-color;
+      }
+    }
+  }
+}
