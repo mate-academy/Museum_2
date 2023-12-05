@@ -1,0 +1,150 @@
+.footer {
+  display: grid;
+  gap: 50px 30px;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: $custom-background;
+  padding: 35px 20px 30px;
+
+  @include on-tablet {
+    padding: 50px 40px 30px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  &__container {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 2;
+
+      &--low {
+        grid-column: span 6;
+      }
+    }
+  }
+
+  &__title,
+  &__link,
+  &__date,
+  &__secure {
+    color: $custom-white;
+  }
+
+  &__title {
+    font-family: "Playfair Display",sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+  }
+
+  &__description {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    padding-top: 10px;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    width: fit-content;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+
+    &--icon {
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+
+      &--facebook {
+        background-image: url('../images/Icons/facebook.svg');
+      }
+
+      &--instagram {
+        background-image: url('../images/Icons/instagram.svg');
+      }
+
+      &--telegram {
+        background-image: url('../images/Icons/telegram.svg');
+      }
+
+      &--twitter {
+        background-image: url('../images/Icons/twitter.svg');
+      }
+    }
+
+    &:not(.footer__link--icon) {
+      &:hover {
+        cursor: pointer;
+        border-bottom: 1px solid $custom-white;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    padding-top: 30px;
+    gap: 20px;
+  }
+
+  &__date {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__low {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__secure {
+    display: block;
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+
+    &--up {
+      text-decoration: none;
+      width: 30px;
+      height: 30px;
+      padding: 20px;
+      background-image: url('../images/Icons/up.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50%;
+      border: 1px solid transparent;
+      transition: border 0.3s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        border: 1px solid $custom-white;
+      }
+    }
+
+    @include on-tablet {
+      grid-column: span 1;
+
+      &--up {
+        position: relative;
+        left: 100%;
+        transform: translateX(-100%);
+        grid-column: 6 / -1;
+      }
+    }
+
+    @include on-desktop {
+      text-align: left;
+    }
+  }
+}
