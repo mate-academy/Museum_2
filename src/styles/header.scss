@@ -1,6 +1,7 @@
 
 .header {
   background-color: $custom-background;
+  min-height: 100vh;
 
   @include on-desktop {
     display: grid;
@@ -55,6 +56,7 @@
   }
 
   &__news {
+    position: relative;
     padding: 50px 20px 40px;
 
     @include on-tablet {
@@ -124,10 +126,13 @@
     display: none;
 
     @include on-desktop {
+      position: absolute;
+      // left: 0;
+      bottom: 56px;
       display: flex;
+      width: calc(100% - 55px);
       align-items: center;
       gap: 20px;
-      padding-top: 135px;
     }
   }
 
@@ -164,6 +169,7 @@
   }
 
   &__image {
+    display: block;
     padding-inline: 38px;
 
     @include on-tablet {
@@ -183,20 +189,22 @@
     margin: auto;
 
     max-width: 443px;
-    max-height: 494px;
+    max-height: calc(100vh - 90px);
 
     @include on-tablet {
       max-width: 625px;
-      max-height: 663px;
+      max-height: calc(100vh - 137px);
     }
   }
 
   &__image-pic-inner {
     width: 100%;
     padding-bottom: calc(((273 / 245) * 100) * 1%);
+    max-height: calc(100vh - 137px);
 
     @include on-tablet {
       padding-bottom: calc(((663 / 625) * 100) * 1%);
+      max-height: calc(100vh - 137px);
     }
   }
 
@@ -206,6 +214,9 @@
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+
+
+    max-height: calc(100vh - 137px);
 
     background-image: url('../images/Galery/Header.png');
 
