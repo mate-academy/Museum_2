@@ -1,0 +1,69 @@
+.subscribe {
+  margin-top: 120px;
+
+  @include onTablet {
+    margin-top: 160px;
+  }
+
+  &__container {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+    @extend %title;
+    color: $black;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      width: 570px;
+      font-size: 48px;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+
+    @extend %p;
+    color: $black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include onTablet {
+      width: 570px;
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+      grid-column: 7 / 13;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+}

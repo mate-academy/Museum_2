@@ -1,0 +1,93 @@
+.visit {
+  margin-top: 90px;
+  padding: 0 20px;
+
+  background-color: $bcg;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+    padding: 0 39px;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/visit/img_07.png);
+    background-repeat: no-repeat;
+    height: 800px;
+    padding: 0 55px;
+    margin-top: 110px;
+
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__title {
+    padding-top: 50px;
+
+    @extend %title;
+    color: $white;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 100%;
+
+    @include onTablet {
+      width: 450px;
+      grid-column: 1 / 5;
+
+      font-size: 62px;
+    }
+
+    @include onDesktop {
+      width: 670px;
+      grid-column: 6 / 13;
+      padding-top: 205px;
+
+      font-size: 80px;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+
+    @extend %p;
+    color: $white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include onTablet {
+      width: 450px;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__plan {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__btn {
+    margin-top: 40px;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-top: 60px;
+      margin-bottom: 80px;
+    }
+
+    @include onDesktop {
+      margin-top: 50px;
+      margin-bottom: 205px;
+    }
+  }
+}

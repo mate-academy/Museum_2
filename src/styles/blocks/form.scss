@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include onDesktop {
+    gap: 40px;
+  }
+
+  &__input {
+    width: 280px;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 3px;
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+
+    @extend %p;
+    color: $black;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: $black;
+    background-color: inherit;
+    outline: none;
+
+    &::placeholder {
+      @extend %p;
+      color: inherit;
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-color: $main;
+      color: $main;
+    }
+
+    &:focus {
+      border-color: $main;
+      color: $main;
+    }
+  }
+
+  &__submit {
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}
