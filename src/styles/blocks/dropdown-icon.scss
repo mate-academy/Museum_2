@@ -1,0 +1,35 @@
+@import '../utils/vars';
+@import '../utils/mixins';
+
+.dropdown-icon {
+  color: $color-white;
+  text-align: center;
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  display: none;
+  position: absolute;
+  z-index: 100;
+  top: 27px;
+  right: 39px;
+  display: none;
+  flex-direction: row;
+
+  @include for-tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &::after {
+    content: '';
+    width: 8px;
+    height: 4.61px;
+    background-image: url(../images/icons/dropdown.svg);
+    background-size: contain;
+    margin-left: 5px;
+  }
+}

@@ -8,7 +8,10 @@ window.addEventListener('scroll', () => {
 });
 
 scroll.addEventListener('click', () => {
-  window.scrollTo(0, 0);
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 });
 
 // menu
