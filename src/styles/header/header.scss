@@ -1,0 +1,135 @@
+.header {
+  background-color: $background-color;
+  height: fit-content;
+  overflow: hidden;
+
+  @include onDesktop {
+    position: relative;
+  }
+
+  &__content {
+    color: $white-color;
+  }
+
+  &__top-bar {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__bottom {
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+    font-family: "Playfair Display", serif;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      font-size: 72px;
+
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      font-size: 96px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__button {
+    margin-block: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 6;
+
+      margin-top: 81px;
+      margin-bottom: 146px;
+    }
+  }
+
+  &__when {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      position: relative;
+      margin-bottom: 56px;
+
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      opacity: 0.7;
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $white-color;
+        position: absolute;
+        left: 110px;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    height: 273px;
+    width: 100%;
+
+    background-image: url(../images/img_01.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      height: 494px;
+
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 50vw;
+      transform: translateX(110px);
+      height: 663px;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
