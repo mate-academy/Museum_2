@@ -1,0 +1,166 @@
+.header {
+  background-color: #3f5252;
+  padding-top: 20px;
+  position: relative;
+  height: 100%;
+
+  @include on-tablet {
+    padding-bottom: 564px;
+    height: auto;
+  }
+
+  @include on-desktop {
+    height: 100vh;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+
+    &-btns {
+      display: flex;
+      align-items: center;
+    }
+
+    &-menu {
+      width: 25px;
+      height: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 0.3s;
+      }
+
+      @include on-tablet {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &-lang {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+        margin-left: 40px;
+        color: #f1f5f4;
+        text-align: center;
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 150%;
+        position: relative;
+        padding-right: 15px;
+        cursor: pointer;
+
+        &::after {
+          position: absolute;
+          content: "";
+          right: -50%;
+          top: 0;
+          background-image: url("../icons/lang-icon.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-logo {
+      width: 124px;
+      height: 37px;
+    }
+  }
+
+  &__content {
+    &-date {
+      color: #f1f5f4;
+      font-family: Raleway, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 140%;
+      margin-bottom: 10px;
+    }
+
+    &-title {
+      color: #f1f5f4;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 100%;
+      margin-bottom: 30px;
+
+      @include on-tablet {
+        font-size: 72px;
+        width: 569px;
+      }
+
+      @include on-desktop {
+        font-size: 96px;
+      }
+    }
+
+    &-text {
+      color: #f1f5f4;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 245px;
+    height: 233px;
+
+    @include on-tablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include on-desktop {
+      width: 625px;
+      height: 663px;
+      transform: translateX(0);
+    }
+  }
+
+  &__duration {
+    color: #f1f5f4;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 125%;
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      position: absolute;
+      left: 55px;
+      bottom: 50px;
+      padding-right: 20px;
+
+      &::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 469px;
+        color: #f1f5f4;
+        background-color: #f1f5f4;
+        left: 100px;
+        top: 50%;
+      }
+    }
+  }
+}
