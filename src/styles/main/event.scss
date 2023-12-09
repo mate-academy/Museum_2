@@ -1,23 +1,26 @@
 .event {
   @include onTablet {
-    display: flex;
-    gap: 30px;
+    @include pageGrid;
   }
 
   &__img {
     width: 100%;
-
     margin-bottom: 20px;
 
     @include onTablet {
-      width: 330px;
-      height: 422px;
+      grid-column: 1 / 4;
       margin-bottom: 0;
     }
 
     @include onDesktop {
       width: 370px;
       height: 475px;
+    }
+  }
+
+  &__text-box {
+    @include onTablet {
+      grid-column: span 3;
     }
   }
 

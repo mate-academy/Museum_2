@@ -1,11 +1,38 @@
 .upcoming-events {
+
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      grid-column: 1 / span 4;
+      // grid-row: 1;
+    }
+  }
+
+  &__button-link {
+    @include onTablet {
+      // grid-column: span 2;
+      grid-row: 1;
+    }
+  }
+
   &__cards {
     display: flex;
     flex-direction: column;
     gap: 60px;
-  }
 
-  @include onTablet {
-    gap: 70px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      gap: 70px;
+
+      margin-bottom: 0;
+
+      grid-column: 1 / -1;
+    }
   }
 }
