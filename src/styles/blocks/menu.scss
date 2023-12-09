@@ -1,15 +1,37 @@
 @import '../utils/vars';
+@import '../utils/mixins';
 
 .menu {
+  box-sizing: border-box;
   display: none;
+  position: absolute;
   transform: translateY(-100%);
   z-index: 99;
   color: $color-white;
   background-color: $color-green;
-  min-height: 747px;;
+  min-height: 747px;
+  width: 100vw;
   flex-direction: column;
-  padding: 20px 20px 0;
+  padding: 0 20px 0;
   transition: transform 0.5s ease-in-out;
+
+  @include for-tablet {
+    padding: 0 39px 0;
+    min-height: 1092px;
+    background-image: url(../images/menu_image.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 422px 466px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include for-tablet {
+      flex-direction: row;
+    }
+  }
 
   &__schedule {
     font-family: Raleway, sans-serif;
@@ -18,6 +40,10 @@
     font-weight: 400;
     line-height: 19.6px;
     margin: 30px 0 20px;
+
+    @include for-tablet {
+      margin: 50px 0 50px;
+    }
 
     &--bold {
       font-size: 16px;
@@ -34,6 +60,10 @@
     font-weight: 400;
     line-height: 19.6px;
     margin-bottom: 40px;
+
+    @include for-tablet {
+      margin: 50px 0 50px 123px;
+    }
 
     &--bold {
       font-size: 16px;
@@ -58,6 +88,12 @@
     font-weight: 700;
     line-height: 30px;
     margin-bottom: 20px;
+
+    @include for-tablet {
+      font-size: 48px;
+      line-height: 57.6px;
+      margin-bottom: 30px;
+    }
   }
 
   &__line {
@@ -66,6 +102,10 @@
     margin-bottom: 40px;
     background-color: $color-white;
     border: 0;
+
+    @include for-tablet {
+      margin-bottom: 50px;
+    }
   }
 
   &__dropdown-icon {
@@ -84,8 +124,8 @@
     align-items: center;
     cursor: pointer;
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 10px;
+    right: 52px;
 
     &::after {
       content: '';
