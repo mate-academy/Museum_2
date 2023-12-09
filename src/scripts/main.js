@@ -33,3 +33,27 @@ document.addEventListener('DOMContentLoaded', function() {
     closeIcon.style.display = 'none';
   });
 });
+
+// dropdown icon
+
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdownIcon = document.getElementById('dropdownIcon');
+  const dropdownList = document.createElement('ul');
+
+  dropdownList.classList.add('dropdown-list');
+
+  const items = ['PL', 'EN', 'FR'];
+
+  items.forEach(function(itemText) {
+    const listItem = document.createElement('li');
+
+    listItem.textContent = itemText;
+    dropdownList.appendChild(listItem);
+  });
+
+  dropdownIcon.appendChild(dropdownList);
+
+  dropdownIcon.addEventListener('click', function() {
+    dropdownList.classList.toggle('visible');
+  });
+});
