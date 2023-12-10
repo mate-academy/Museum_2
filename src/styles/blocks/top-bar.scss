@@ -1,0 +1,55 @@
+.top-bar {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  perspective: 500px;
+
+  @include onTablet {
+    height: 77px;
+  }
+
+  @include onDesctop {
+    height: 90px;
+  }
+
+  &__logo {
+    position: relative;
+    width: 116px;
+    height: 25px;
+    transition: 1s;
+
+    &::after {
+      @extend %after-underline;
+      border-radius: 8px;
+
+      @extend %transform-underline;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 30px;
+
+    @include onTablet {
+      gap: 40px;
+    }
+  }
+
+  &__language {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      order: 1;
+    }
+  }
+}

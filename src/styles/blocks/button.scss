@@ -1,0 +1,92 @@
+.button {
+  width: 280px;
+  height: 60px;
+  display: block;
+  background-color: $color-orange;
+  border: none;
+  transition: 300ms;
+  cursor: pointer;
+
+  @include onTablet {
+    width: 330px;
+  }
+
+  @include onDesctop {
+    width: 270px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    color: $color-text-header;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+
+    &:active {
+      background-color: $button-active;
+    }
+
+    &:disabled {
+      background-color: $button-disabled;
+    }
+  }
+
+  &__link-clear {
+    border: solid 2px $color-orange;
+    color: $color-orange;
+    background-color: $background-main;
+
+    &:hover {
+      border-color: $button-hover;
+      color: $button-hover;
+      background-color: $background-main;
+      box-shadow: 2px 2px 2px $color-text-grey;
+    }
+
+    &:active {
+      border-color: $button-active;
+      color: $button-active;
+    }
+
+    &:disabled {
+      border-color: $button-disabled;
+      color: $button-disabled;
+      background-color: $background-main;
+    }
+
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/icons/arrow.png);
+      position: relative;
+      top: 0;
+      left: 8px;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__link-clear-top {
+    width: 210px;
+    height: 60px;
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesctop {
+      width: 270px;
+    }
+  }
+}

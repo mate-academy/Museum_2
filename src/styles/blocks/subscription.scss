@@ -1,0 +1,89 @@
+.subscription {
+  padding: 100px 0 80px;
+
+  @include onTablet {
+    padding: 160px 0 128px;
+  }
+
+  @include onDesctop {
+    padding: 200px 0;
+  }
+
+  &__body {
+    @include onDesctop {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+
+    color: $color-text-title;
+    @extend %p-large;
+
+    @include onDesctop {
+      flex-basis: 50%;
+
+      text-align: left;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+  }
+
+  &__input {
+    width: 100%;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-text-title;
+
+    &::placeholder {
+      @extend %p-large;
+      color: $color-text-title;
+    }
+
+    &:hover::placeholder {
+      color: $color-orange;
+    }
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-orange;
+      border-bottom: 1px solid $color-orange;
+      outline: 0;
+      outline-offset: 0;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDesctop {
+      width: 470px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include onDesctop {
+      margin-top: 40px;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  @extend %p-large;
+  border-bottom: 1px solid $color-text-title;
+}
