@@ -1,0 +1,61 @@
+.dropdown {
+  position: relative;
+  display: none;
+  @include hover(opacity, 0.5);
+
+  &--menu {
+    display: inline-block;
+  }
+
+  @include onTablet {
+    display: inline-block;
+  }
+
+  &__content {
+    display: none;
+    position: absolute;
+    background-color: $background-color;
+    z-index: 5;
+    height: fit-content;
+  }
+
+  &:hover .dropdown__content {
+    display: block;
+  }
+
+  &__link {
+    margin-top: 3px;
+    padding-left: 6px;
+    color: $white-color;
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+
+    @include hover(transform, scale(1.2));
+
+    &:hover {
+      background-color: $background-color;
+    }
+  }
+
+  &__btn {
+    background-color: $background-color;
+    color: $white-color;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__icon {
+    fill: $white-color;
+    background-image: url(../images/icons/dropdownW.svg);
+    width: 8px;
+    height: 5px;
+  }
+}

@@ -1,0 +1,53 @@
+.top-bar {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  padding-block: 20px;
+  
+
+  &__logo-link {
+    background-image: url(../images/icons/logo.svg);
+    display: block;
+    width: 116.66px;
+    height: 27px;
+    @include hover(opacity, 0.5);
+    @include hover(transform, scale(1.05));
+  }
+
+  &__menu-box {
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      gap: 40px;
+    }
+
+    &--menu {
+      flex-direction: row-reverse;
+      gap: 30px;
+
+      @include onTablet {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 25px;
+    height: 22px;
+    background-repeat: no-repeat;
+    @include hover(opacity, 0.5);
+    @include hover(transform, scale(1.2));
+
+    &--menu {
+      background-image: url(../images/icons/menu.svg);
+    }
+
+    &--close {
+      background-image: url(../images/icons/close.svg);
+
+    }
+  }
+}
