@@ -1,0 +1,104 @@
+.page {
+  background-color: $white;
+  min-width: 320px;
+  scroll-behavior: smooth;
+
+  &__body {
+    &--with-menu {
+      z-index: 100;
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 110px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onPhone {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+  }
+
+  &__exhibition {
+    margin-bottom: 200px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onPhone {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__events {
+    margin-bottom: 200px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onPhone {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__visit {
+    height: 800px;
+    margin-bottom: 110px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+
+    @include onPhone {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__news {
+    margin-bottom: 200px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
+
+    @include onPhone {
+      margin-bottom: 120px;
+    }
+  }
+
+  &__subscription {
+    margin-bottom: 200px;
+
+    @include onTablet {
+      margin-bottom: 128px;
+    }
+
+    @include onPhone {
+      margin-bottom: 80px;
+    }
+  }
+}
