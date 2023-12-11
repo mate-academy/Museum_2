@@ -1,0 +1,101 @@
+.menu {
+  position: fixed;
+  height: 100vh;
+  background-color: $c-background;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 0.3s;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
+  &__content {
+
+    &__top-bar {
+      margin-bottom: 30px;
+    }
+
+    @include on768px {
+      margin-bottom: 0;
+
+      @include pageGrid;
+    }
+
+    &__text {
+      text-decoration: none;
+      color: $c-white;
+      font-size: 14px;
+      line-height: 140%;
+      margin-bottom: 20px;
+
+      @include on768px {
+        margin-bottom: 0;
+      }
+
+      &--schedule {
+        @include on768px {
+          grid-column: 1 / 3;
+        }
+      }
+
+      &--adress {
+        @include on768px {
+          grid-column: 3 / 6;
+        }
+      }
+
+      &--bold {
+        color: $c-white;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
+      }
+
+      &--hover {
+        @include hover(color, $c-orange);
+      }
+
+    }
+
+    &__button {
+      @include on768px {
+        grid-column: 1 / 4;
+        margin-bottom: 30px;
+      }
+
+      @include on1280px {
+        margin-bottom: 108px;
+      }
+
+    }
+  }
+
+  &__image {
+    @include on768px {
+      @include pageGrid;
+
+      position: absolute;
+      height: 466px;
+      background-image: url(../images/img_menu.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    @include on1280px {
+      height: 697px;
+      background-position: right;
+    }
+  }
+}
