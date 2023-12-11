@@ -1,0 +1,124 @@
+.events {
+  margin-top: 120px;
+  margin-bottom: 90px;
+
+  @include on768px {
+    margin-top: 164px;
+  }
+
+  @include on1280px {
+    margin-top: 200px;
+  }
+
+  &__grid {
+    @include on768px {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 4;
+
+    @include on768px {
+      margin-bottom: 76px;
+    }
+
+    @include on1280px {
+      grid-column: 1 / 7;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__block {
+
+    grid-column: 1 / -1;
+
+    @include on768px {
+      @include pageGrid;
+    }
+
+    &__image {
+      margin-bottom: 20px;
+      margin-top: 60px;
+      height: 356px;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      @include hover(transform, scale(1.05));
+
+      @include on768px {
+        margin-top: 0;
+        height: 422px;
+        margin-bottom: 70px;
+        grid-column: 1 / 4;
+      }
+
+      @include on1280px {
+        height: 475px;
+        margin-bottom: 60px;
+        grid-column: 1 / 5;
+      }
+    }
+
+    &__content {
+
+      grid-column: 4 / -1;
+
+      @include on1280px {
+        grid-column: 5 / 11;
+
+      }
+
+      &__data {
+        color: $c-orange;
+        line-height: 150%;
+        margin-bottom: 10px;
+
+        @include on1280px {
+          grid-column: 1 / -1;
+        }
+      }
+
+      &__title {
+        margin-bottom: 20px;
+
+        @include on1280px {
+          grid-column: 1 / -1;
+        }
+      }
+
+      &__text {
+        color: $c-gray;
+        line-height: 150%;
+        margin-bottom: 30px;
+
+        @include on768px {
+          margin-bottom: 50px;
+        }
+
+        @include on1280px {
+          grid-column: 1 / -1;
+        }
+      }
+
+      &__button {
+        margin-bottom: 30px;
+
+        @include on1280px {
+          display: grid;
+          column-gap: 20px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        &--link {
+          grid-area: 1 / 5 / 2 / -1;
+
+          @include on1280px {
+            grid-area: 1 / 10 / 2 / -1;
+          }
+        }
+      }
+    }
+  }
+}
