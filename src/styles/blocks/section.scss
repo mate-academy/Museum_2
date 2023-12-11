@@ -1,0 +1,106 @@
+.section {
+  &__title {
+    font-family: Playfair Display;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+    color: $c-title;
+    grid-column: 1 / 5;
+    margin-block: 0 60px;
+
+    @include on-tablet {
+      font-size: 48px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+
+    &--plan-visit {
+      color: $c-light-text;
+      font-family: Playfair Display;
+      font-size: 38px;
+      line-height: 100%;
+
+      @include on-tablet {
+        font-size: 62px;
+      }
+
+      @include on-desktop {
+        font-size: 80px;
+        grid-column: span 6;
+        position: relative;
+        top: 20%;
+      }
+    }
+
+    &--subscribe {
+      margin-bottom: 0;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &--plan-visit {
+    color: $c-light-text;
+  }
+
+  &__button {
+    width: 210px;
+    color: $button-sec-default-text;
+    background-color: $button-sec-bg;
+    position: relative;
+    top: -13px;
+
+    @include on-mobile {
+      order: 1;
+      width: 280px
+    }
+
+    @include on-tablet {
+      grid-column: auto / 7;
+      top: 0;
+    }
+
+    @include on-desktop {
+      grid-column: auto / 13;
+      top: 0;
+    }
+
+    &.button__text::before {
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/icons/icon-arrow-right.svg);
+    }
+
+    &:hover {
+      color: $button-sec-hover-text;
+      background-color: $button-sec-bg;
+      border: 2px solid $button-hover-border;
+
+      &:active {
+        color: $button-sec-active-text;
+        background-color: $button-sec-bg;
+        border: 2px solid $button-prim-active-bg;
+      }
+    }
+  }
+
+  &__articles {
+    @include page-grid;
+    padding-top: 140px;
+    position: relative;
+
+    @include on-mobile {
+      &>* {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &--plan-visit {
+      background-color: $c-dark-background;
+      padding-top: 50px;
+      margin-top: 50px;
+      position: relative;
+    }
+  }
+}

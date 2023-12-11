@@ -1,0 +1,44 @@
+.page {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  color:$c-base-text;
+  background-color: $c-dark-background;
+  scroll-behavior: smooth;
+  color: $c-light-text;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+
+    &:has(> .page__menu:target) {
+      .menu {
+        overflow: auto;
+      }
+
+      .header,
+      .main {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+}
