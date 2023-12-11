@@ -1,4 +1,5 @@
 @import '../utils/vars';
+@import '../utils/mixins';
 
 .visit {
   display: flex;
@@ -15,9 +16,37 @@
     font-weight: 400;
     line-height: 24px;
     margin: 0 20px;
+
+    @include for-tablet {
+      margin: 0;
+      grid-column: 1 / 5;
+    }
   }
 
   &__button {
     margin: 40px 20px 50px;
+
+    @include for-tablet {
+      margin: 60px 0 80px;
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__title {
+    @include for-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__content {
+    @include for-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 90px);
+      gap: 30px;
+    }
+  }
+
+  @include for-tablet {
+    margin: 0 -39px 125px;
   }
 }
