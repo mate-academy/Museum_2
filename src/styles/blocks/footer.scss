@@ -1,4 +1,5 @@
 @import '../utils/vars';
+@import '../utils/mixins';
 
 .footer {
   background-color: $color-green;
@@ -10,10 +11,15 @@
   font-style: normal;
   font-weight: 400;
   line-height: 19.6px;
-  padding: 0 0 30px;
+  padding: 0 20px 30px;
 
   &__content {
-    padding: 0;
-    margin: 0 0 0 20px;
+    &:nth-child(2) {
+      margin-left: 22px;
+    }
+  }
+
+  @include for-tablet {
+    padding: 0 39px 30px;
   }
 }
