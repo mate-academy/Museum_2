@@ -57,13 +57,12 @@
     }
 
     @include on-tablet {
-      grid-column: auto / 7;
-      top: 0;
+      grid-column: span 2 / 7;
+      justify-self: end;
     }
 
     @include on-desktop {
-      grid-column: auto / 13;
-      top: 0;
+      grid-column: span 2 / 13;
     }
 
     &.button__text::before {
@@ -102,6 +101,11 @@
       padding-top: 50px;
       margin-top: 50px;
       position: relative;
+
+      @include on-desktop {
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 }
