@@ -1,0 +1,60 @@
+.news {
+  padding-top: 90px;
+
+  @include onDesktop {
+    padding-top: 120px;
+  }
+
+  &__container {
+    @include onTablet {
+      @include pageGrid;
+      align-items: center;
+      gap: 70px;
+    }
+  }
+
+  &__date {
+    color: $black-color;
+  }
+
+  &__title {
+    margin-top: 0;
+
+    @include onTablet {
+      grid-row: 1 / 2;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__cards {
+    @include onTablet {
+      grid-row: 2 / 3;
+      grid-column: span 6;
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      grid-column: span 12;
+    }
+  }
+
+  &__archive-button {
+    margin-top: 30px;
+    display: block;
+
+    @include onTablet {
+      grid-row: 1 / 2;
+      grid-column: 5 / 7;
+      margin-top: 0;
+      min-width: 160px;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / 13;
+    }
+  }
+}

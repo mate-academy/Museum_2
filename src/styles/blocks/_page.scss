@@ -1,0 +1,72 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    min-width: 320px;
+    font-family: "Raleway", Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__menu {
+    position: fixed;
+    padding-top: 100px;
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 100%;
+    background-color: $green-bg-color;
+    transition: all $effectDuration;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include onTablet {
+      padding-top: 107px;
+    }
+
+    &-active {
+      opacity: 1;
+      height: 100vh;
+      pointer-events: all;
+    }
+  }
+
+  &__arrow-up {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    color: $white-color;
+    filter: drop-shadow(0 0 2px $green-bg-color);
+    text-decoration: none;
+    height: 30px;
+
+    @include onTablet {
+      right: 39px;
+    }
+
+    @include onDesktop {
+      right: 55px;
+
+      &:hover {
+        filter: drop-shadow(0 0 2px $red-accent-color);
+      }
+    }
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &:has(.page__menu-active) {
+    overflow: hidden;
+  }
+}
