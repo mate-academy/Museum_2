@@ -1,0 +1,60 @@
+.news {
+
+  &__photo {
+    width: 100%;
+
+    @include hover (transform, scale(1.05));
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--desktop-swap {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__dates {
+    color: $main-black-color;
+
+    font-size: 14px;
+    line-height: 140%;
+    margin: 0;
+    margin-top: 20px;
+  }
+
+  &__info {
+    color: $main-gray-color;
+    margin-bottom: 0;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__exhibitions-name {
+    margin-top: 0;
+    color: $main-black-color;
+
+    font-family: Playfair Display;
+    font-size: 20px;
+    line-height: 125%;
+  }
+
+  &__articles {
+    @include pageGrid;
+    row-gap: 50px;
+  }
+}

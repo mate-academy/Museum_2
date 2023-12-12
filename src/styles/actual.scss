@@ -1,0 +1,43 @@
+.actual {
+  &__photo {
+    width: 100%;
+
+    @include hover (transform, scale(1.05));
+  }
+
+  &__dates {
+    color: $main-red-color;
+    margin-bottom: 10px;
+  }
+
+  &__info {
+    color: $main-gray-color;
+    margin-bottom: 0;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__exhibitions-name {
+    margin-top: 0;
+    color: $main-black-color;
+
+    font-family: Playfair Display;
+    font-size: 20px;
+    line-height: 125%;
+  }
+
+  &__articles {
+    @include pageGrid;
+    row-gap: 40px;
+  }
+}

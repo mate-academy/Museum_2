@@ -1,0 +1,81 @@
+.subscribe {
+  &__content {
+    @include pageGrid;
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      margin: 0;
+    }
+  }
+
+  &__input {
+    border: none;
+    background-color: $main-white-color;
+    
+    font-family: Raleway;
+    font-size: 16px;
+    line-height: 150%;
+    width: 100%;
+    color: $main-red-color;
+
+    &::placeholder {
+      color: $main-black-color;
+    }
+
+    &:hover::placeholder {
+      color: $main-red-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    margin-bottom: 10px;
+  }
+
+  &-title--grid {
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: span 5;
+    }
+  }
+
+  &-title--margins {
+    margin-bottom: 5px;
+  }
+}
+
+.input-wrapper {
+  margin-top: 35px;
+
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: span 4;
+  }
+
+  @include onDesktop {
+    margin-top: 45px;
+    grid-column: span 5;
+  }
+
+  &__content {
+    background-color: $main-black-color;
+
+    &:hover {
+      background-color: $main-red-color;
+    }
+  }
+}
