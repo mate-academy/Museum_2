@@ -1,7 +1,11 @@
 .menu {
-  height: 100vh;
+  height: 150vh;
   z-index: 1;
   background-color: $c-dark-background;
+
+  @include on-tablet {
+    height: 200vh;
+  }
 
   &__nav {
     margin: auto;
@@ -14,5 +18,11 @@
   &__content {
     padding-inline: 16px;
     background-color: $c-dark-background;
+
+    .header__button {
+      @include on-desktop {
+        margin-top: -45px;
+      }
+    }
   }
 }

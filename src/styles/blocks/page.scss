@@ -12,13 +12,23 @@
     min-width: 320px;
 
     &:has(> .page__menu:target) {
-      .menu {
-        overflow: auto;
+      @include on-mobile {
+        overflow: hidden;
       }
 
-      .header,
-      .main {
-        visibility: hidden;
+      @include on-tablet {
+        .menu {
+          overflow: hidden;
+        }
+
+        .header,
+        .main {
+          visibility: hidden;
+        }
+      }
+
+      @include on-desktop {
+        overflow: hidden;
       }
     }
   }
@@ -38,6 +48,7 @@
       opacity: 1;
       pointer-events: all;
       transform: translateX(0);
+      height: 200vh;
     }
   }
 }
