@@ -1,0 +1,140 @@
+.news {
+  margin-top: 90px;
+
+  @include onTablet {
+    margin-top: 125px;
+  }
+
+  @include onDesktop {
+    margin-top: 110px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__top {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      @include pageGrid;
+    }
+  }
+
+  &__box {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+    }
+  }
+
+  &__module {
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+    &--1 {
+      margin-top: 60px;
+
+      @include onTablet {
+        margin-top: 70px;
+      }
+
+      @include onDesktop {
+        margin-top: 53px;
+      }
+    }
+
+    &--2 {
+      margin-top: 50px;
+
+      @include onTablet {
+        margin-top: 70px;
+      }
+
+      @include onDesktop {
+        margin-top: 53px;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.05));
+
+    &:hover {
+      transition: $effectDuration;
+      box-shadow: 5px 5px 10px $gray-color;
+    }
+  }
+
+  &__time {
+    margin-top: 20px;
+    @extend %p;
+    font-size: 14px;
+    line-height: 140%;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__subtitle {
+    @extend %h4;
+
+    @include onTablet {
+      line-height: 150%;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
+    @extend %p;
+
+    @include onTablet {
+      margin-top: 18px;
+    }
+  }
+
+  &__button-secondary {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / -1;
+    }
+  }
+
+  &__button-secondary-mobile {
+    margin-top: 30px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

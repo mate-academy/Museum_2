@@ -1,0 +1,78 @@
+.button {
+  &__link {
+    width: 100%;
+    height: 60px;
+    background-color: $main-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $effectDuration;
+
+    @extend %p;
+    font-weight: 600;
+    line-height: 100%;
+    color: $white-color;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &:active {
+      background-color: $pressed-color;
+    }
+
+    &:disabled {
+      background-color: $disabled-color;
+    }
+  }
+
+  &__link-secondary {
+    width: 100%;
+    height: 60px;
+    border: 1px solid $main-color;
+    display: flex;
+    color: $main-color;
+    @extend %p;
+    font-weight: 600;
+    line-height: 100%;
+    justify-content: center;
+    align-items: center;
+    transition: $effectDuration;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+      background-image: url(../images/icons/arrow-right.svg);
+      background-repeat: no-repeat;
+      fill: #fff;
+    }
+
+    &--mobile {
+      display: flex;
+      margin-top: 30px;
+    }
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &:hover {
+      border-color: $hover-color;
+      color: $hover-color;
+    }
+
+    &:active {
+      border-color: $pressed-color;
+      color: $pressed-color;
+    }
+
+    &:disabled {
+      border-color: $disabled-color;
+      color: $disabled-color;
+    }
+  }
+}
