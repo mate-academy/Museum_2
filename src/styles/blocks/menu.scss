@@ -1,0 +1,95 @@
+.menu {
+  background-color: $color-background;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+
+  @include grid;
+  grid-template-rows: 70px 1fr;
+  row-gap: 30px;
+
+  @include onTablet {
+    height: 100%;
+    row-gap: 50px;
+    overflow: auto;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 44px 44px 170px 80px;
+    grid-column: span 2;
+    row-gap: 20px;
+
+    @include onTablet {
+      grid-template-columns: 117px 224px;
+      column-gap: 83px;
+      grid-column: 1 / 7;
+      grid-template-rows: 44px 288px 80px;
+      row-gap: 50px;
+    }
+
+    @include onDesktop {
+      row-gap: 70px;
+      grid-template-rows: 44px 360px 80px;
+    }
+
+    &-text {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      color: $color-white;
+      font-family: $font-family-text;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 140%;
+
+      @include onTablet {
+        grid-row: 1;
+      }
+
+      &--span {
+        color: $color-white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &-image {
+    display: none;
+    width: 100%;
+
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../images/background/image-bg-menu.png);
+
+    @include onTablet {
+      display: block;
+      height: 494px;
+      grid-column: 1 / 7;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/background/image-bg-menu-desktop.png);
+      background-position: bottom right;
+      height: 100vh;
+      width: 624px;
+      grid-column: 7 / 13;
+      margin-top: -120px;
+    }
+  }
+}

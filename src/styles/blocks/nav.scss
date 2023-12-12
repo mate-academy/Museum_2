@@ -1,0 +1,75 @@
+.nav {
+  position: relative;
+
+  @include onTablet {
+    grid-column: 1 / 5;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-white;
+
+    @include onDesktop {
+      width: 95%;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 20px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      grid-template-rows: repeat(3, 58px);
+      row-gap: 30px;
+    }
+
+    @include onDesktop {
+      row-gap: 60px;
+    }
+  }
+
+  &__link {
+    color: $color-white;
+    font-family: $font-family-main;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    text-decoration: none;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $color-white;
+
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      transform-origin: right;
+      transform: scale(0);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include onTablet {
+      font-size: 48px;
+    }
+  }
+}

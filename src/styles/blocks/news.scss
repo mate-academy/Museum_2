@@ -1,0 +1,72 @@
+.news {
+  @include grid;
+  grid-template-rows: 35px 1fr 1fr 40px;
+  row-gap: 50px;
+
+  @include onTablet {
+    align-items: center;
+    grid-template-rows: 60px 1fr;
+    row-gap: 75px;
+  }
+
+  @include onDesktop {
+    row-gap: 55px;
+  }
+
+  &__content {
+    display: grid;
+    grid-column: span 2;
+    row-gap: 20px;
+
+    @include onTablet {
+      grid-row: 2;
+      grid-column: span 3;
+      row-gap: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+      row-gap: 20px;
+    }
+
+    &-image {
+      width: 280px;
+      height: 280px;
+      object-fit: contain;
+
+      @include onTablet {
+        width: 330px;
+        height: 330px;
+      }
+
+      @include onDesktop {
+        width: 570px;
+        height: 370px;
+        object-fit: cover;
+      }
+    }
+
+    &-text {
+      display: grid;
+      grid-template-rows: 0 24px 72px;
+      row-gap: 20px;
+
+      @include onTablet {
+        grid-template-rows: 0 30px 50px;
+        width: 330px;
+        grid-column: span 3;
+        row-gap: 20px;
+      }
+
+      @include onDesktop {
+        width: 560px;
+        row-gap: 18px;
+      }
+
+      &--span {
+        line-height: 140%;
+        color: $color-black;
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.exhibition {
+  @include grid;
+  grid-template-rows: 35px 1fr 1fr 30px;
+  row-gap: 60px;
+
+  @include onTablet {
+    align-items: center;
+    grid-template-rows: 60px 1fr;
+    row-gap: 75px;
+  }
+
+  @include onDesktop {
+    row-gap: 71px;
+  }
+
+  &__content {
+    display: grid;
+    grid-column: span 2;
+    row-gap: 20px;
+
+    @include onTablet {
+      grid-row: 2;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+
+    &-image {
+      width: 280px;
+      height: 356px;
+      object-fit: contain;
+
+      @include onTablet {
+        width: 330px;
+        height: 420px;
+      }
+
+      @include onDesktop {
+        width: 570px;
+        height: 484px;
+        object-fit: cover;
+      }
+    }
+
+    &-text {
+      display: grid;
+      grid-template-rows: 24px 50px 106px 80px;
+      row-gap: 10px;
+
+      @include onTablet {
+        grid-template-rows: 24px 60px 70px 80px;
+        width: 330px;
+        grid-column: span 3;
+        row-gap: 20px;
+      }
+
+      @include onDesktop {
+        width: 560px;
+        row-gap: 10px;
+      }
+    }
+  }
+}
