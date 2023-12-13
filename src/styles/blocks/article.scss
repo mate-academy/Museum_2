@@ -1,0 +1,183 @@
+.article {
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &--plan-visit {
+      height: auto;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 355px;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-desktop {
+      height: 480px;
+    }
+
+    &--plan-visit {
+      display: none;
+      height: auto;
+
+      @include on-desktop {
+        display: flex;
+        grid-column: span 5;
+        margin-left: -55px;
+
+        &:hover {
+          cursor: default;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &--plan-visit {
+    grid-column: 1 / 4;
+
+    @include on-desktop {
+      grid-column: 7 / 12;
+      position: absolute;
+      top: 50%;
+      left: -20%;
+    }
+  }
+
+  &__date {
+    color: $c-accent-text;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__title {
+    color: $c-title;
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 125%;
+  }
+
+  &--subscribe {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__description {
+    color: $c-base-text;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 40px;
+
+    &--plan-visit {
+      color: $c-light-text;
+    }
+
+    &--subscribe {
+      @include on-desktop {
+        width: 570px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-top: 140px;
+        padding-right: 40px;
+      }
+    }
+
+    &--events {
+      width: 320px;
+
+      @include on-desktop {
+        width: 550px;
+      }
+    }
+  }
+
+  &__button {
+    margin-block: 30px 60px;
+
+    &--mobile {
+      margin-inline: auto;
+
+      @include on-tablet {
+        margin-inline: 0;
+      }
+    }
+
+    &--plan-visit {
+      margin-block: 40px 50px;
+    }
+  }
+
+  &__input {
+    width: 280px;
+    margin-top: 40px;
+    border: none;
+    border-bottom: 1px solid $c-black;
+    background-color: $c-light-background;
+    outline: transparent;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: inset 0 0 0 15px $c-light-background;
+    }
+
+    @include on-mobile {
+      width: 100%;
+    }
+
+    @include on-tablet {
+      width: 330px;
+    }
+  }
+
+  &--odd {
+    @include on-tablet {
+      grid-column: 1 / 4;
+
+      &--half {
+        grid-column: 1 / 4;
+      }
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+
+      &--half {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &--even {
+    @include on-tablet {
+      grid-column: 4 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &--events {
+    @include on-tablet {
+      display: grid;
+      column-gap: 30px;
+      grid-column: 1 / -1;
+      margin-bottom: 70px;
+
+      .article__image {
+        grid-column: 1 / 4;
+      }
+
+      .article--half {
+        grid-column: 4 / 7;
+      }
+    }
+  }
+}

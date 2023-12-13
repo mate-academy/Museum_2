@@ -1,0 +1,137 @@
+.footer {
+  padding-bottom: 50px;
+  font-size: 16px;
+  line-height: 180%;
+  letter-spacing: -0.16px;
+
+  &__address-link,
+  &__email-link,
+  &__phone-link {
+    color: $c-light-text;
+    text-decoration: none;
+
+    @include underlane-effect($c-light-text);
+  }
+
+  &__social-web {
+    margin-block: 50px;
+  }
+
+  &__container {
+    @include page-grid;
+
+    position: relative;
+    columns: 1;
+
+    @include on-tablet {
+      columns: 3;
+    }
+  }
+
+  &__nav {
+    margin-block: 44px;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+  }
+
+  .nav {
+    &__list {
+      align-items: start;
+    }
+
+    &__item:last-child {
+      padding-left: 0;
+    }
+
+    &__item:last-child>.nav__link {
+      text-transform: capitalize;
+
+      &::before {
+        display: none;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    .menu__nav {
+      margin: 0;
+    }
+
+    .nav__list {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      gap: 10px;
+      width: auto;
+      margin: 0;
+    }
+
+    &.menu__content {
+      padding-inline: 0;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    gap: 25px;
+
+    &>span {
+      flex-shrink: 0;
+    }
+
+    @include on-mobile {
+      display: none;
+      order: 1;
+      margin-top: 60px;
+    }
+
+    @include on-desktop {
+      gap: 100px;
+    }
+  }
+
+  &__copyright-mobile {
+    display: none;
+
+    @include on-mobile {
+      display: flex;
+      order: 1;
+      margin-top: 60px;
+      white-space: nowrap;
+    }
+  }
+
+  &__section {
+    grid-column: span 2;
+    padding-top: 50px;
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__schedule {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  &__scroll-up {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icons/icon-scroll-up.svg);
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+  }
+}

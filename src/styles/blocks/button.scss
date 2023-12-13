@@ -1,0 +1,55 @@
+.button {
+  display: block;
+  width: 280px;
+  height: 60px;
+  text-align: center;
+  padding-block: 18px;
+  text-decoration: none;
+  color: $button-primary-text;
+  background-color: $button-prim-default-bg;
+  border: 2px solid $button-default-border;
+
+  &--plan-visit {
+    @include on-mobile {
+      margin-inline: auto;
+    }
+  }
+
+  @include on-mobile {
+    width: 100%;
+  }
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  @include hover(background-color, $button-prim-hover-bg);
+
+  &:hover {
+    border: 2px solid $button-hover-border;
+
+    &:active {
+      background-color: $button-prim-active-bg;
+      border: 2px solid $button-prim-active-bg;
+    }
+  }
+
+  &__text {
+    position: relative;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+
+    &::before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: 18px;
+      right: 20px;
+    }
+  }
+}
