@@ -1,94 +1,27 @@
 .header {
   background-color: $background-color;
+  overflow: hidden;
 
-  &__photo {
+  &__content {
+    height: 100vh;
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
-
-    @include onTablet {
-      margin-top: 40px;
-    }
-
-    @include onDesktop {
-      margin: 0 30px;
-    }
-
-    &--female {
-      width: 245px;
-
-      @include onTablet {
-        width: 443px;
-      }
-
-      @include onDesktop {
-        width: 625px;
-        height: 663px;
-      }
-    }
-  }
-
-  &__dates {
-    color: $main-white-color;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 140%;
-    margin-bottom: 10px;
-
-    opacity: 0.9;
-  }
-
-  &__title {
-    color: $main-white-color;
-    font-family: Playfair Display, sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 100%;
-    margin: 0;
-    margin-bottom: 30px;
-
-    @include onTablet {
-      width: 569px;
-      font-size: 72px;
-    }
-
-    @include onDesktop {
-      font-size: 96px;
-    }
-  }
-
-  &__info {
-    color: $main-white-color;
-    font-size: 16px;
-    width: 267px;
-    font-weight: 400;
-    line-height: 150%;
-    margin-bottom: 0;
-
-    opacity: 0.9;
-
-    @include onTablet {
-      width: 330px;
-    }
-
-    @include onDesktop {
-      width: 569px;
-      margin-bottom: 51px;
-    }
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__wrapper {
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     @include onDesktop {
+      display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-end;
     }
   }
 
-  &__date {
+  &__when {
     display: none;
 
     @include onDesktop {
@@ -96,7 +29,7 @@
       justify-content: space-between;
       align-items: center;
 
-      transform: translateY(120%);
+      margin-top: 110px;
     }
 
     &--line {
@@ -112,6 +45,93 @@
       font-size: 14px;
       line-height: 125%;
       opacity: 0.7;
+    }
+  }
+
+  &__dates {
+    margin: 0;
+    margin-top: 40px;
+    color: $main-white-color;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+
+    padding-block: 30px 10px;
+    opacity: 0.9;
+
+    @include onDesktop {
+      padding-block: 90px 10px;
+    }
+  }
+
+  &__title {
+    color: $main-white-color;
+    font-family: Playfair Display, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+    margin: 0;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      width: 569px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+    }
+  }
+
+  &__description {
+    color: $main-white-color;
+    font-size: 16px;
+    width: 267px;
+    font-weight: 400;
+    line-height: 150%;
+    margin: 0;
+    padding-bottom: 10px;
+
+    @include onDesktop {
+      padding-bottom: 40px;
+    }
+
+    opacity: 0.9;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 569px;
+    }
+  }
+
+  &__photo {
+    width: 245px;
+    height: 273px;
+    margin: 0 auto;
+
+    background-image: url(../images/header-photo.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+
+      background-image: url(../images/header-bg-tablet.png);
+
+    }
+
+    @include onDesktop {
+      width: 625px;
+      height: 663px;
+      margin-top: auto;
+
+      background-image: url(../images/header-bg-desktop.png);
+      transform: translateX(55px);
     }
   }
 }
