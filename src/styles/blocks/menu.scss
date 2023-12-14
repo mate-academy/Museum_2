@@ -2,34 +2,40 @@
 @import '../utils/mixins';
 
 .menu {
-  box-sizing: border-box;
   display: none;
   position: absolute;
-  transform: translateY(-100%);
-  z-index: 99;
-  color: $color-white;
+  top: 0px;
+  right: 0px;
+  left: 0px;
   background-color: $color-green;
   min-height: 747px;
-  width: 100vw;
   flex-direction: column;
-  padding: 0 20px;
-  transition: transform 0.5s ease-in-out;
+  padding: 20px 20px 0;
 
   @include for-tablet {
-    padding: 0 39px;
+    padding: 20px 39px 0;
     min-height: 1092px;
     background-image: url(../images/menu_image.png);
     background-repeat: no-repeat;
     background-position: bottom;
-    background-size: 422px 466px;
+    background-size: 422px;
+  }
+
+  @include for-desktop {
+    padding: 26px 55px 0px;
+    min-height: 800px;
+    background-size: 624px;
+    background-position: right bottom;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
+    color: $color-white;
 
     @include for-tablet {
       flex-direction: row;
+      align-items: center;
     }
   }
 
@@ -43,6 +49,10 @@
 
     @include for-tablet {
       margin: 50px 0;
+    }
+
+    @include for-desktop {
+      margin: 40px 0 70px;
     }
 
     &--bold {
@@ -65,6 +75,10 @@
       margin: 50px 0 50px 123px;
     }
 
+    @include for-desktop {
+      margin: 40px 0 70px 83px;
+    }
+
     &--bold {
       font-size: 16px;
       font-style: normal;
@@ -77,6 +91,10 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+
+    @include for-desktop {
+      margin-bottom: 0;
+    }
   }
 
   &__link {
@@ -94,6 +112,10 @@
       line-height: 57.6px;
       margin-bottom: 30px;
     }
+
+    @include for-desktop {
+      margin-bottom: 60px;
+    }
   }
 
   &__line {
@@ -105,6 +127,12 @@
 
     @include for-tablet {
       margin-bottom: 50px;
+    }
+
+    @include for-desktop {
+      max-width: 570px;
+      margin: 0 0 60px;
+      opacity: 0.3;
     }
   }
 
@@ -123,7 +151,7 @@
     align-items: center;
     cursor: pointer;
     position: absolute;
-    top: 10px;
+    top: 30px;
     right: 52px;
 
     &::after {
@@ -132,6 +160,7 @@
       height: 4.61px;
       background-image: url(../images/icons/dropdown.svg);
       background-size: contain;
+      background-repeat: no-repeat;
       margin-left: 5px;
     }
 
