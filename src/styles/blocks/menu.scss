@@ -2,11 +2,12 @@
 @import '../utils/mixins';
 
 .menu {
-  display: none;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  left: 0px;
+  position: fixed;
+  transform: translateY(-101%);
+  transition: transform 0.5s ease;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: $color-green;
   min-height: 747px;
   flex-direction: column;
@@ -168,4 +169,13 @@
       display: none;
     }
   }
+}
+
+.showMenu {
+  transform: translateY(0);
+  position: absolute;
+}
+
+.no-scroll {
+  overflow: hidden;
 }

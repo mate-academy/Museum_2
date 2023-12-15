@@ -16,22 +16,42 @@ scroll.addEventListener('click', () => {
 
 // menu
 
-document.addEventListener('DOMContentLoaded', function() {
-  const menuIcon = document.querySelector('.menuIcon');
-  const closeIcon = document.querySelector('.closeIcon');
-  const menu = document.querySelector('.menu');
+const menu = document.querySelector('.menu');
+const navigation = document.querySelector('.navigation');
+const closeIcon = document.querySelector('.closeIcon');
+const menuIcon = document.querySelector('.menuIcon');
+const menuLinks = document.querySelectorAll('.menu__link');
 
-  menuIcon.addEventListener('click', function() {
-    menu.style.display = 'flex';
-    menuIcon.style.display = 'none';
-    closeIcon.style.display = 'block';
-  });
-
-  closeIcon.addEventListener('click', function() {
-    menu.style.display = 'none';
-    menuIcon.style.display = 'block';
+function toggleMenu() {
+  if (menu.classList.contains('showMenu')) {
+    menu.classList.remove('showMenu');
     closeIcon.style.display = 'none';
-  });
+    menuIcon.style.display = 'block';
+
+    document.body.classList.remove('no-scroll');
+  } else {
+    menu.classList.add('showMenu');
+    closeIcon.style.display = 'block';
+    menuIcon.style.display = 'none';
+
+    document.body.classList.add('no-scroll');
+  }
+}
+
+function closeMenu() {
+  if (menu.classList.contains('showMenu')) {
+    menu.classList.remove('showMenu');
+    closeIcon.style.display = 'none';
+    menuIcon.style.display = 'block';
+
+    document.body.classList.remove('no-scroll');
+  }
+}
+
+navigation.addEventListener('click', toggleMenu);
+
+menuLinks.forEach((link) => {
+  link.addEventListener('click', closeMenu);
 });
 
 // Dropdown List
