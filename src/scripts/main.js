@@ -69,9 +69,9 @@ formEmail.addEventListener('blur', function() {
   this.classList.remove('subscribe__email--focus');
 });
 
-/* const menuOpenElement = document.querySelector('.header__menu-open');
+const menuOpenElement = document.querySelector('.header__menu-open');
 const toggleElement = document.querySelector('.dropdown__toggle');
 
 menuOpenElement.addEventListener('click', function() {
   toggleElement.classList.toggle('menu-visible');
-}); */
+});
