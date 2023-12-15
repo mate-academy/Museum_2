@@ -38,6 +38,12 @@
       width: 330px;
       margin-bottom: 30px;
     }
+
+    @include for-desktop {
+      width: 570px;
+      height: 484px;
+      margin-bottom: 20px;
+    }
   }
 
   &__article {
@@ -51,6 +57,10 @@
 
     @include for-tablet {
       margin-bottom: 40px;
+    }
+
+    @include for-desktop {
+      margin-bottom: 50px;
     }
   }
 
@@ -79,5 +89,30 @@
     .exhibitions__content:nth-child(2) {
       grid-area: content1;
     }
+  }
+
+  @include for-desktop {
+    margin-bottom: 200px;
+    grid-template-columns: repeat(12, 70px);
+
+    grid-template-areas:
+    'titleWhite titleWhite titleWhite titleWhite titleWhite titleWhite titleWhite titleWhite titleWhite buttonWhite buttonWhite buttonWhite'
+    'content1 content1 content1 content1 content1 content1 content2 content2 content2 content2 content2 content2';
+
+  .title__third {
+    grid-area: titleWhite;
+  }
+
+  .button__white {
+    grid-area: buttonWhite;
+  }
+
+  .exhibitions__content:not(:first-child) {
+    grid-area: content2;
+  }
+
+  .exhibitions__content:nth-child(2) {
+    grid-area: content1;
+  }
   }
 }
