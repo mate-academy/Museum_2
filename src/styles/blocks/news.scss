@@ -38,6 +38,12 @@
       height: 330px;
       margin-bottom: 30px;
     }
+
+    @include for-desktop {
+      width: 570px;
+      height: 370px;
+      margin-bottom: 20px;
+    }
   }
 
   &__article {
@@ -78,6 +84,23 @@
 
     .news__content:nth-child(2) {
       grid-area: content1;
+    }
+  }
+
+  @include for-desktop {
+    margin-bottom: 200px;
+    grid-template-columns: repeat(12, 70px);
+
+    grid-template-areas:
+    'titleWhite titleWhite titleWhite titleWhite titleWhite titleWhite titleWhite titleWhite titleWhite buttonWhite buttonWhite buttonWhite'
+    'content1 content1 content1 content1 content1 content1 content2 content2 content2 content2 content2 content2';
+
+    .title__third {
+      grid-area: titleWhite;
+    }
+
+    .button__white {
+      grid-area: buttonWhite;
     }
   }
 }
