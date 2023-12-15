@@ -1,0 +1,46 @@
+.button {
+  width: 100%;
+  height: 60px;
+  background-color: $red-accent-color;
+  font-weight: 500;
+  color: $white-color;
+  border: 1px solid $red-accent-color;
+  font-family: Raleway, Helvetica, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+
+  @include on-desktop {
+    @include hover(background-color, $button-hover-color);
+  }
+
+  &:active {
+    background-color: $button-pressed-color;
+  }
+
+  &:disabled {
+    background-color: $button-disabled-color;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: $red-accent-color;
+
+    @include on-desktop {
+      @include hover(background-color, transparent);
+      @include hover(color, $button-hover-color);
+      @include hover(border-color, $button-hover-color);
+    }
+
+    &:active {
+      background-color: transparent;
+      color: $button-pressed-color;
+      border-color: $button-pressed-color;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: $button-disabled-color;
+      border-color: $button-disabled-color;
+    }
+  }
+}

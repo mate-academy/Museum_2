@@ -1,7 +1,37 @@
+@import "normalize";
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "blocks";
 
-body {
-  background: $c-gray;
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding-inline: $mobile-container-inline-paddings;
+
+  @include on-tablet {
+    padding-inline: $tablet-container-inline-paddings;
+  }
+
+  @include on-desktop {
+    padding-inline: $desktop-container-inline-paddings;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $green-bg-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $red-accent-color;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #dd836f;
 }
