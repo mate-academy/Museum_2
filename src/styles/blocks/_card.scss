@@ -1,0 +1,194 @@
+.card {
+  display: grid;
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: span 3;
+  }
+
+  @include onDesktop {
+    grid-column: span 6;
+  }
+
+  &--1 {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &--2 {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 356px;
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      height: 420px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+      margin-bottom: 20px;
+    }
+
+    &__link {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+  }
+
+  &__date {
+    display: block;
+    color: $button-color;
+    margin-bottom: 10px;
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      font-size: 24px;
+      height: 60px;
+    }
+
+    @include onDesktop {
+      height: 30px;
+    }
+  }
+
+  &__description {
+    color: #504f5e;
+    margin: 0 0 30px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      height: 70px;
+      margin: 0 0 40px;
+    }
+
+    @include onDesktop {
+      height: 50px;
+      margin: 0 0 50px;
+    }
+  }
+
+  &__button {
+    color: $main-color;
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+    @include buttonEvents;
+  }
+
+  &-3 {
+    @include onTablet {
+      @include pageGrid;
+      grid-column: 1 / -1;
+    }
+
+    &--position {
+      margin-bottom: 60px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &__img {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+        margin: 0;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      grid-column: 1 / -1;
+      justify-content: flex-start;
+
+      @include onTablet {
+        grid-column: 4 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / -1;
+      }
+    }
+  }
+
+  &__news {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &__img {
+      height: 281px;
+      width: 100%;
+
+      @include onTablet {
+        height: 330px;
+      }
+
+      @include onDesktop {
+        height: 370px;
+      }
+
+      &__link {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__date {
+      color: #1c1b29;
+      height: 20px;
+    }
+
+    &__description {
+      margin: 0;
+
+    }
+
+    &__title {
+      font-size: 20px;
+      line-height: 150%;
+      height: fit-content;
+    }
+
+    &__last {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin: 0;
+      }
+    }
+  }
+}

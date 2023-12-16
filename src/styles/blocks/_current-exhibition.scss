@@ -1,0 +1,72 @@
+.current-exhibition {
+  @include pageGrid;
+  grid-column: 1 / -1;
+  row-gap: 60;
+  margin-bottom: 120px;
+
+  @include onTablet {
+    row-gap: 70px;
+    margin-bottom: 160px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+
+  &--two {
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__archive {
+    display: none;
+    text-decoration: none;
+    justify-content: center;
+    box-sizing: border-box;
+    gap: 8px;
+    color: $button-color;
+    height: 60px;
+    border: 1px solid $button-color;
+    align-items: center;
+
+    @include buttonEventsTwo;
+
+    @include onTablet {
+      display: flex;
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 10 / -1;
+    }
+
+    &__bottom {
+      display: flex;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      line-height: 100%;
+    }
+
+    &__arrow {
+      width: 20px;
+      height: 20px;
+      background-image: url(./../images/logo/arrow.png);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}

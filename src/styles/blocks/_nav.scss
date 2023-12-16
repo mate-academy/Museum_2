@@ -1,0 +1,49 @@
+.nav {
+  grid-column: 1 / -1;
+  margin-bottom: 40px;
+
+  @include onTablet {
+    margin-bottom: 50px;
+  }
+
+  @include onDesktop {
+    grid-column: 1 / 7;
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+  }
+
+  &__link {
+    font-family: "Playfair Display", serif;
+    color: $main-color;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+
+    @include hover(color, aqua);
+
+    @include onTablet {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 120%;
+    }
+  }
+}
