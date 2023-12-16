@@ -1,0 +1,102 @@
+.planAVisit {
+  color: $white-color;
+  background-color: $green-bg-color;
+  padding-block: 50px;
+  position: relative;
+
+  @include on-phone {
+    padding-block: 80px;
+  }
+
+  @include on-tablet {
+    padding-block: 80px;
+  }
+
+  @include on-desktop {
+    padding-block: 205px;
+  }
+
+  &__container {
+    @include on-phone {
+      @include page-grid;
+    }
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__title {
+    font-family: PlayfairDisplay, Helvetica, sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 100%;
+
+    @include on-phone {
+      grid-column: 1 / 7;
+      font-size: 62px;
+      max-width: 500px;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 7;
+      font-size: 62px;
+      max-width: 500px;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / 13;
+      max-width: 650px;
+      font-size: 80px;
+    }
+  }
+
+  &__paragraph {
+    margin-top: 20px;
+
+    @include on-phone {
+      grid-column: 1 / 5;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    display: block;
+
+    @include on-phone {
+      grid-column: 1 / 4;
+      margin-top: 60px;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-top: 60px;
+    }
+
+    @include on-desktop {
+      margin-top: 50px;
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      position: absolute;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      max-height: 746px;
+    }
+  }
+}
