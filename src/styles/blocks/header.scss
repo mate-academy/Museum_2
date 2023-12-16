@@ -1,0 +1,115 @@
+.header {
+  background-color: $gray-bg;
+  background-image: url(../images/photo/header-img.png);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 270px;
+
+  @include onTablet {
+    background-size: 300px;
+  }
+
+  @include onDesktop {
+    background-position: 100% 100%;
+    background-size: 660px;
+  }
+
+  &__content {
+    height: 100vh;
+  }
+
+  &__info {
+    display: grid;
+    margin-top: 50px;
+    @include pageGrid;
+
+    @include onTablet {
+      margin-top: 90px;
+    }
+  }
+
+  &__info-date {
+    grid-column: 1 / -1;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: $white-text-c;
+
+    margin-bottom: 10px;
+  }
+
+  &__info-title {
+    grid-column: 1 / -1;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    color: $white-text-c;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 1 / -2;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 8;
+      font-size: 96px;
+    }
+  }
+
+  &__info-description {
+    grid-column: 1 / -1;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-text-c;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__date-numbers {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 50px;
+    @include onDesktop {
+      display: block;
+      color: $white-text-c;
+      opacity: 0.7;
+      font-size: 14px;
+      line-height: 125%;
+      font-family: "Playfair Display", serif;
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background-color: $white-text-c;
+        width: 470px;
+        box-sizing: border-box;
+        transform: translate(100px, -8px);
+        opacity: 0.3;
+      }
+    }
+  }
+}
