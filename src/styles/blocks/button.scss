@@ -1,0 +1,54 @@
+@import '../utils/vars';
+@import '../utils/mixins';
+
+.button {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  color: $color-white;
+  background-color: $color-red;
+  height: 60px;
+  width: 280px;
+  line-height: 60px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+
+  @include for-tablet {
+    width: 330px;
+    height: 60px;
+  }
+
+  @include for-desktop {
+    width: 270px;
+    height: 60px;
+  }
+
+  &__white {
+    background-color: $color-white;
+    color: $color-red;
+    vertical-align: middle;
+    border: 1px solid #cd4d31;
+
+    &::after {
+      content: "";
+      background-image: url(../images/icons/arrow-red.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    @include for-tablet {
+      width: 210px;
+    }
+
+    @include for-desktop {
+      width: 270px;
+    }
+  }
+}
