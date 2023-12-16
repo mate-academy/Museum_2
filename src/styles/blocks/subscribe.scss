@@ -10,6 +10,10 @@
     @include for-tablet {
       grid-column: 1 / 6;
     }
+
+    @include for-desktop {
+      grid-column: 1 / 5;
+    }
   }
 
   &__article {
@@ -23,6 +27,10 @@
 
     @include for-tablet {
       grid-column: 1 / 6;
+    }
+
+    @include for-desktop {
+      grid-column: 7 / 13;
     }
   }
 
@@ -50,10 +58,16 @@
     @include for-tablet {
       width: 450px;
     }
+
+    @include for-desktop {
+      width: 470px;
+    }
   }
 
   &__button {
-    grid-column: 1 / 5;
+    @include for-tablet {
+      grid-column: 1 / 5;
+    }
   }
 
   @include for-tablet {
@@ -61,5 +75,10 @@
     display: grid;
     grid-template-columns: repeat(6, 90px);
     gap: 0 30px;
+  }
+
+  @include for-desktop {
+    margin-bottom: 200px;
+    grid-template-columns: repeat(12, 70px);
   }
 }
