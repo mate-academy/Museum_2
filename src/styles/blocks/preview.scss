@@ -1,0 +1,74 @@
+.preview {
+  &__content {
+    @include onTabletAndDesktop {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    font-family: $_playfair;
+    margin: 0 0 60px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+
+    @include onTablet {
+      flex-basis: 60%;
+      margin-bottom: 75px;
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      flex-basis: 50%;
+      margin-bottom: 40px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__exhibition {
+    margin-bottom: 60px;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    @include onTabletAndDesktop {
+      flex-basis: 47%;
+      flex-grow: 1;
+      order: 2;
+      margin-bottom: 0;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__events {
+    margin-bottom: 60px;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    @include onTabletAndDesktop {
+      flex-basis: 100%;
+      order: 2;
+      margin-bottom: 0;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__button {
+    @include onTabletAndDesktop {
+      order: 1;
+    }
+  }
+}
