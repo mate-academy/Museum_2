@@ -1,0 +1,77 @@
+.dropdown {
+  color: $white-color;
+  font-family: Raleway, Helvetica, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  min-width: 36px;
+  cursor: pointer;
+
+  &__toggle {
+    position: relative;
+    transition: all ease-in-out $effect-duration;
+
+    @media (min-width: 768px) {
+      left: 50px;
+    }
+
+    &::before {
+      content: url("../images/icons/language-dropdown.svg");
+      position: absolute;
+      right: 0;
+      transition: all ease-in-out $effect-duration;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    height: 0;
+    transition: all ease-in-out $effect-duration;
+    overflow: hidden;
+    background-color: $red-accent-color;
+    z-index: 10000;
+
+    @media (min-width: 768px) {
+      left: 50px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10000;
+
+    @media (min-width: 768px) {
+      left: 50px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    color: $white-color;
+    font-size: 16px;
+    justify-content: center;
+    font-family: Raleway, Helvetica, sans-serif;
+    font-weight: 500;
+    transition: all ease-in-out $effect-duration;
+  }
+
+  &__open {
+    .dropdown__menu.dropdown__active {
+      height: 94px;
+    }
+
+    .dropdown__toggle {
+      &::before {
+        transform: rotate(-180deg);
+        transform-origin: center;
+      }
+    }
+  }
+}
