@@ -1,0 +1,42 @@
+@import '../utils/vars';
+@import '../utils/mixins';
+
+.menu-dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 30px;
+  background-color: $color-white;
+  color: $color-green;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: none;
+  z-index: 200;
+}
+
+.menu-dropdown-list.visible {
+  display: block;
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.menu-dropdown-list li {
+  padding: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-dropdown-list li:hover {
+  background-color: $color-green;
+  color: $color-white;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

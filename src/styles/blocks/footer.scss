@@ -1,0 +1,33 @@
+@import '../utils/vars';
+@import '../utils/mixins';
+
+.footer {
+  background-color: $color-green;
+  color: $color-white;
+  display: flex;
+  flex-direction: row;
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.6px;
+  padding: 0 20px 30px;
+
+  &__content {
+    &:nth-child(2) {
+      margin-left: 22px;
+
+      @include for-desktop {
+        margin-left: 102px;
+      }
+    }
+  }
+
+  @include for-tablet {
+    padding: 0 39px 30px;
+  }
+
+  @include for-desktop {
+    padding: 0 55px 30px;
+  }
+}
