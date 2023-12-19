@@ -1,0 +1,137 @@
+.menu {
+  background-color: $background-color;
+  height: 748px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
+
+  &--is-open {
+  transform: translateY(0);
+  transition: transform 1s;
+  }
+
+  @include onTablet {
+    height: 1092px;
+  }
+
+  @include onDesktop {
+    height: 800px;
+  }
+
+  &__right-side {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-direction: row-reverse;
+
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 90px;
+    opacity: 0;
+    animation: 0.4s ease opacityEnd forwards;
+
+    &--is-visible {
+      animation: 1s ease 0.5s opacityStart forwards;
+    }
+
+    @include onTablet {
+      padding-top: 106px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    color: $white-color;
+    padding-bottom: 20px;
+
+    &:last-child :first-child {
+      margin-bottom: 0;
+    }
+
+    &--information {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-bottom: 40px;
+
+      @include onTablet {
+        flex-direction: row;
+        padding-bottom: 50px;
+        gap: 122px;
+        align-items: center;
+      }
+      @include onDesktop {
+        padding-bottom: 70px;
+        gap: 83px;
+      }
+    }
+
+    @include onTablet {
+      padding-bottom: 30px;
+    }
+    @include onDesktop {
+      padding-bottom: 60px;
+    }
+  }
+  &__link {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    transition: border-color 1s;
+
+    &:hover {
+      border-color: $white-color;
+    }
+  }
+
+  &__img-container {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      height: 466px;
+    }
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 696px;
+      justify-content: end;
+    }
+  }
+}
+
+@keyframes opacityStart {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes opacityEnd {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
