@@ -104,3 +104,13 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdown.classList.toggle('visible');
   }
 });
+
+// clear form
+
+const submitButton = document.getElementById('submit');
+const subscribeForm = document.getElementById('subscribeForm');
+
+submitButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  subscribeForm.reset();
+});
