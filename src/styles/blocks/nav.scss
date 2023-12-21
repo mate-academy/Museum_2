@@ -1,0 +1,47 @@
+.nav {
+  grid-column: 1 / -1;
+  margin-top: 50px;
+
+  @include onTablet {
+    grid-column: span 2;
+    margin-top: 55px;
+  }
+
+  @include onDesktop {
+    grid-column: span 4;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include onTablet {
+      gap: 10px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+
+    &:hover {
+      color: $main;
+      transform: scale(1.05);
+    }
+
+    &:not(:nth-child(1)) {
+      @include mainText;
+    }
+
+    &:nth-child(1) {
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

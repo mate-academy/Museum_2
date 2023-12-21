@@ -1,0 +1,169 @@
+.menu {
+  background-color: $background;
+  overflow: auto;
+  // height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s;
+  opacity: 0;
+  transform: translateX(-100%);
+  pointer-events: none;
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &__top {
+    padding-top: 20px;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__links {
+      display: flex;
+      gap: 20px;
+
+      @include onTablet {
+        gap: 40px;
+      }
+    }
+  }
+
+  &__schedule {
+    margin-top: 30px;
+    grid-column: 1 / -1;
+    color: $white;
+
+    & > p:first-child {
+      @include addText;
+    }
+
+    & > p:last-child {
+      @include mainText;
+    }
+
+    @include onTablet {
+      grid-column: span 2;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+
+  }
+
+  &__address {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    color: $white;
+
+    &__text {
+      @include addText;
+    }
+
+    &__link {
+      @include mainText;
+      color: $white;
+      text-decoration: none;
+    }
+
+    @include onTablet {
+      grid-column: span 4;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+      grid-column: span 10;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+
+    &__list {
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include onTablet {
+        gap: 30px;
+      }
+
+      & > a {
+        color: $white;
+        text-decoration: none;
+        @extend %h5;
+
+        &:hover {
+          border-bottom: 1px solid $white;
+          width: fit-content;
+        }
+
+        @include onTablet {
+          line-height: 120%;
+          font-size: 48px;
+          font-style: normal;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &__line {
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: $white;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/6;
+      margin-top: 60px;
+    }
+  }
+
+  &__cover {
+    display: none;
+
+    @include onTablet {
+      grid-column: 2 / -2;
+      display: block;
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 624px;
+      height: 697px;
+      right: 0;
+      margin-top: 120px;
+    }
+
+    &__photo {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
