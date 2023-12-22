@@ -1,0 +1,157 @@
+.events {
+  padding-block: 0 90px;
+
+  @include on-tablet {
+    padding-block: 0 100px;
+  }
+
+  @include on-desktop {
+    padding-block: 0 110px;
+  }
+
+  &__top {
+    @include page-grid;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-bottom: 75px;
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      margin-bottom: 71px;
+      grid-column: span 7;
+    }
+  }
+
+  &__secondary-button {
+    @include on-tablet {
+      display: none;
+    }
+
+    &__top {
+      display: none;
+
+      @include on-tablet {
+        @include secondary-button;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-column: 5 / 7;
+      }
+
+      @include on-desktop {
+        grid-column: 10 / 13;
+      }
+    }
+  }
+
+  &__block {
+    @include page-grid;
+
+    &--Pavlo-Gudimov {
+      margin-bottom: 60px;
+
+      @include on-tablet {
+        margin-bottom: 70px;
+      }
+
+      @include on-design {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__event1 {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__event2 {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -3;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 358px;
+    object-fit: cover;
+    object-position: center;
+    transition: $effect-duration;
+
+    &:hover {
+          transform: scale(1.1);
+        }
+
+    @include on-tablet {
+      height: 422px;
+    }
+
+    @include on-desktop {
+      height: 475px;
+    }
+  }
+
+  &__data {
+    margin: 0;
+    padding-bottom: 10px;
+    color: $main-text-color;
+
+    @include main-text;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin: 0;
+    margin-bottom: 30px;
+    color: $secondary-text-color;
+
+    @include main-text;
+
+    @include on-tablet {
+      height: 70px;
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      height: 50px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 60px;
+
+    @include primary-button;
+
+    @include on-tablet {
+      margin: 0;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+}

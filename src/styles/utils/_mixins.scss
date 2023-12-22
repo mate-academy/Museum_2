@@ -4,3 +4,134 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin page-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  column-gap: 20px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(6,1fr);
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(12,1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin on-mobile {
+  @media (min-width: $mobile-min-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-design {
+  @media (min-width: $design-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 40px;
+  }
+
+  @include on-desktop {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 55px;
+  }
+}
+
+.container {
+  @include content-padding-inline;
+}
+
+@mixin primary-button {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  width: auto;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: $primary-text-color;
+  background-color: $main-text-color;
+
+  &:hover {
+    background-color: $background-color-button-hover;
+  }
+
+  &:active {
+    background-color: $background-color-button-active;
+  }
+
+  &:disabled {
+    background-color: $background-color-button-disabled;
+  }
+}
+
+
+@mixin secondary-button {
+  border: 1px solid $main-text-color;
+  background-color: $primary-text-color;
+  background-image: url(/src/images/actual/button-arrow.svg);
+  background-repeat: no-repeat;
+  padding-right: 10px;
+  width: 100%;
+  height: 60px;
+  background-position: 90%;
+  cursor: pointer;
+  color: $main-text-color;
+  transition: all $effect-duration ease-in-out;
+
+  &:hover {
+    border: 1px solid $background-color-button-hover;
+    color: $background-color-button-hover;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    border: 1px solid $background-color-button-active;
+    color: $background-color-button-active;
+  }
+
+  &:disabled {
+    border: 1px solid $background-color-button-disabled;
+    color: $background-color-button-disabled;
+  }
+}
+
+.secondary-button {
+  @include secondary-button;
+}
+
+
+@mixin main-text {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+

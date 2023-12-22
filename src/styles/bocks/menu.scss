@@ -1,0 +1,234 @@
+.menu {
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #3f5252;
+    transition: all $effect-duration;
+
+    @include on-tablet {
+      align-items: unset;
+    }
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    &__bg {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+        justify-content: center;
+        height: 466px;
+        background-image: url(/src/images/header/img_menu.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        bottom: 0;
+      }
+
+      @include on-desktop{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 625px;
+        height: 697px;
+        margin: 0;
+      }
+    }
+
+  &__container {
+    @include page-grid;
+
+    overflow: hidden;
+  }
+
+  &__top-bar {
+    grid-column: 1 / -1;
+  }
+
+  &__schedule {
+    grid-column: 1 / -1;
+    padding-top: 10px;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 40px;
+    }
+
+    &-text {
+      font-family: Raleway, sans-serif;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: left;
+      color: $primary-text-color;
+    }
+
+    &-time {
+      font-family: Raleway, sans-serif;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: left;
+      color: $primary-text-color;
+    }
+  }
+
+  &__adress {
+    grid-column: 1 / -1;
+    padding-top: 20px;
+
+    @include on-tablet {
+      grid-column: 3 / -1;
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 40px;
+    }
+
+    &-name {
+      font-family: Raleway, sans-serif;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: left;
+      color: $primary-text-color;
+    }
+
+    &-text {
+      font-family: Raleway, sans-serif;
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: left;
+      color: $primary-text-color;
+
+      &-link {
+        text-decoration: none;
+        color: $primary-text-color;
+        transition: $effect-duration;
+
+        &:hover {
+          color: $main-text-color;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+    padding-top: 40px;
+    color: $primary-text-color;
+
+    @include on-tablet {
+      padding-top: 50px;
+    }
+
+    @include on-desktop {
+      padding-top: 70px;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+
+      @include on-tablet {
+        gap: 30px;
+      }
+
+      @include on-desktop {
+        gap: 60px;
+      }
+
+      &-link {
+        position: relative;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: left;
+        color: $primary-text-color;
+        text-decoration: none;
+
+        @include on-tablet {
+          font-size: 48px;
+          line-height: 58px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -8px;
+          display: block;
+          height: 1px;
+          width: 200px;
+          background-color: #fff;
+          transition: all $effect-duration;
+          transform: scaleX(0);
+          transform-origin: left;
+
+          @include on-tablet {
+            width: 500px;
+          }
+        }
+
+        &:hover::after {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  &__line {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    opacity: .3;
+    height: 1px;
+    background-color: $primary-text-color;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -7;
+      margin-top: 60px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+
+    @include primary-button;
+
+    @include on-tablet {
+      width: 270px;
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      margin-top: 60px;
+      width: 270px;
+    }
+  }
+}
