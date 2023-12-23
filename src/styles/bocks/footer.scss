@@ -1,0 +1,234 @@
+.footer {
+  background-color: $background-color;
+  height: 751px;
+
+  @include on-tablet {
+    height: 388px;
+  }
+
+  @include on-desktop {
+    height: 388px;
+  }
+
+  &__container {
+    @include page-grid;
+  }
+
+  &__title {
+    margin-top: 34px;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contacts {
+    @include main-text;
+
+    grid-column: 1 / -1;
+    color: $primary-text-color;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
+
+    &__contact {
+      margin: 0;
+
+      &-link {
+        text-decoration: none;
+        color: $primary-text-color;
+        transition: $effect-duration;
+
+        &:hover {
+          color: $main-text-color;
+        }
+      }
+    }
+
+    &__social {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+
+      @include on-tablet {
+        margin-top: 50px;
+      }
+
+      &__link {
+        height: 20px;
+        width: 20px;
+
+        &--facebook {
+          background-image: url(/src/images/footer/facebook.svg);
+          transition: $effect-duration;
+
+          &:hover {
+            background-image: url(/src/images/footer/facebook-hover.svg);
+            transform: scale(1.1);
+          }
+        }
+
+        &--twitter {
+          background-image: url(/src/images/footer/twitter.svg);
+          transition: $effect-duration;
+
+          &:hover {
+            background-image: url(/src/images/footer/twitter-hover.svg);
+            transform: scale(1.1);
+          }
+        }
+
+        &--telegram {
+          background-image: url(/src/images/footer/telegram.svg);
+          transition: $effect-duration;
+
+          &:hover {
+            background-image: url(/src/images/footer/telegram-hover.svg);
+            transform: scale(1.1);
+          }
+        }
+
+        &--instagram {
+          background-image: url(/src/images/footer/instagram.svg);
+          transition: $effect-duration;
+
+          &:hover {
+            background-image: url(/src/images/footer/instagram-hover.svg);
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  &__schedule {
+    @include main-text;
+
+    grid-column: 1 / -1;
+    color: $primary-text-color;
+
+    @include on-tablet {
+      grid-column: 3 / -3;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -5;
+    }
+
+    &__title {
+      margin-top: 50px;
+    }
+  }
+
+  &__menu {
+    @include main-text;
+
+    grid-column: 1 / -1;
+    color: $primary-text-color;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 9 / -1;
+    }
+
+    &__link {
+      text-decoration: none;
+    }
+
+    &__title{
+      margin-top: 50px;
+      transition: $effect-duration;
+
+      &:hover {
+        color: $main-text-color;
+      }
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      @include on-tablet {
+        gap: 10px;
+      }
+
+      &-link {
+        @include main-text;
+
+        color: $primary-text-color;
+        text-decoration: none;
+        transition: $effect-duration;
+
+        &:hover {
+          color: $main-text-color;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    position: relative;
+    gap: 22px;
+    grid-column: 1 / -1;
+
+  @include on-tablet {
+    gap: 102px;
+  }
+
+    &__text {
+      font-family: Raleway, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: center;
+      color: $primary-text-color;
+
+      &-item {
+        margin: 0;
+        margin-top: 60px;
+
+        @include on-desktop {
+          margin-top: 72px;
+        }
+      }
+    }
+
+    &__arrow {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      bottom: 20%;
+      transform: translateY(50%);
+      right: 0;
+      background-image: url(/src/images/footer/arrow.svg);
+      transition: background-image $effect-duration;
+      animation: move-up-down 1s infinite alternate;
+
+    @keyframes move-up-down {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(20px);
+        }
+    }
+
+      &:hover {
+        background-image: url(/src/images/footer/arrow-hover.svg)
+      }
+    }
+  }
+}

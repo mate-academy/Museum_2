@@ -1,0 +1,138 @@
+.header {
+  position: relative;
+  background-color: $background-color;
+
+  &__content {
+    @include page-grid;
+
+    margin-top: 70px;
+
+    @include on-tablet {
+      margin-top: 100px;
+    }
+
+    @include on-desktop {
+      margin-top: 90px;
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 1 / 8;
+    }
+  }
+
+  &__additional-text {
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    margin: 0;
+    padding-bottom: 10px;
+    color: $primary-text-color;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__main-text {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin: 0;
+    padding-bottom: 40px;
+    color: $primary-text-color;
+
+    @include on-tablet {
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include primary-button;
+
+    @include on-tablet {
+      width: 270px;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 135px;
+      width: 270px;
+    }
+  }
+
+  &__article {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    &-date {
+      display: block;
+      color: $primary-text-color;
+      opacity: .7;
+      margin-bottom: 50px;
+    }
+
+    &-line {
+      display: block;
+      width: 469px;
+      height: 1px;
+      opacity: .3;
+      margin-top: 10px;
+      background-color: $primary-text-color;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__bg {
+    background-image: url(/src/images/header/header-img.svg);
+    background-position: 50% 100%;
+    width: 245px;
+    height: 273px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include on-tablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include on-desktop{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 625px;
+      height: 663px;
+    }
+  }
+}
