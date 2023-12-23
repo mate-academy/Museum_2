@@ -1,0 +1,106 @@
+.page {
+  scroll-behavior: smooth;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  color: #504f5e;
+  background-color: #e5e5e5;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    @extend %section-margin-bottom-small;
+  }
+
+  &__menu {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    transition: transform $transition-time;
+    transform: translateX(-100%);
+
+    &:target {
+      overflow-y: hidden;
+      transform: translateX(0);
+    }
+  }
+
+  &__section-title {
+    @extend  %font-title;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $title-color;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__title-container {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 76px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 72px;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__actual-exhibitions {
+    @extend %section-margin-bottom-big;
+  }
+
+  &__closest-events {
+    @extend %section-margin-bottom-small;
+  }
+
+  &__visit-to-museum {
+    margin-bottom: 88px;
+
+    @include onTablet {
+      margin-bottom: 120px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__news {
+    @extend %section-margin-bottom-big;
+  }
+
+  &__subscription {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 128px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 200px;
+    }
+  }
+}

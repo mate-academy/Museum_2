@@ -1,0 +1,79 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  width: 100%;
+  height: 60px;
+  border: 0;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+
+  cursor: pointer;
+
+  &--main {
+    background-color: $button-color;
+
+    color: $font-color;
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include hover(background-color, $button-color-hover);
+
+    @include active(background-color, $button-color-active);
+
+    &:disabled {
+      background-color: $button-color-disabled;
+
+      cursor: default;
+    }
+  }
+
+  &--primary {
+    background-color: #fff;
+    border: 1px solid $button-color;
+
+    color: $button-color;
+
+    transition: border $transition-time, color $transition-time;
+
+    &::after {
+      content: "\27F6";
+      font-size: 23px;
+      position: relative;
+      bottom: 1px;
+    }
+
+    @include onTablet {
+      display: none;
+      width: 240px;
+    }
+
+    &:hover {
+      border: 1px solid $button-color-hover;
+
+      color: $button-color-hover;
+    }
+
+    &:active {
+      border: 1px solid $button-color-active;
+
+      color: $button-color-active;
+
+      transition: border 0s, color 0s;
+    }
+
+    &:disabled {
+      border: 1px solid $button-color-disabled;
+
+      color: $button-color-disabled;
+
+      cursor: default;
+    }
+  }
+}
