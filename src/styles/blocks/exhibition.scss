@@ -1,0 +1,173 @@
+.exhibition {
+  &__content {
+    width: 100%;
+    @include grid;
+  }
+
+  &__header {
+    grid-row: 1 / 2;
+    grid-column: 1 / 7;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 120%;
+    color: $black;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      font-size: 40px;
+      margin-bottom: 75px;
+    }
+
+    @include onPhone {
+      font-size: 28px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    grid-column: 10 / 13;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: auto;
+      grid-column: 5 / 7;
+    }
+
+    @include onPhone {
+      margin-bottom: auto;
+      display: none;
+    }
+
+    &--1 {
+      display: none;
+
+      @include onPhone {
+        display: block;
+      }
+    }
+  }
+
+  &__card {
+    grid-column: 1 / 7;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onPhone {
+      width: 100%;
+    }
+
+    &--1 {
+      grid-column: 7 / 13;
+
+      @include onTablet {
+        grid-column: 4 / 7;
+      }
+
+      @include onPhone {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  &__photo {
+    background-image: url("../images/angel.png");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 484px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      @include hover;
+    }
+
+    @include onTablet {
+      height: 420px;
+      margin-bottom: 30px;
+    }
+
+    @include onPhone {
+      margin-bottom: 20px;
+    }
+
+    &--1 {
+      background-image: url("../images/portrait.png");
+    }
+  }
+
+  &__date {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $orange;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    display: block;
+    margin: 0;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 125%;
+    color: $black;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $orange;
+    }
+  }
+
+  &__description {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $gray;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onPhone {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__card-button {
+    grid-row: 3 / 4;
+    grid-column: 1 / 4;
+
+    @include onPhone {
+      width: 100%;
+    }
+
+    &--1 {
+      grid-column: 7 / 10;
+
+      @include onTablet {
+        grid-column: 4 / 7;
+      }
+
+      @include onPhone {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
