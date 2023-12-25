@@ -1,7 +1,124 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "header.scss";
+@import "menu.scss";
+@import "actual.scss";
+@import "events.scss";
+@import "visit.scss";
+@import "news.scss";
+@import "subscribe.scss";
+@import "footer.scss";
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   background: $c-gray;
+}
+
+*,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+// p, h1, h2, h3 {
+//   // color: $white-text;
+//   font-family: 'Raleway', sans-serif;
+// }
+
+.button {
+  display: block;
+  // margin-top: 40px;
+  background-color: $orange;
+  width: 100%;
+  height: 60px;
+  border: none;
+  color: $white-text;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hover-red;
+  }
+
+  &:disabled {
+    background-color: $disabled;
+  }
+
+  &:active {
+    background-color: $presser;
+  }
+}
+
+.button-white {
+  // display: block;
+  // margin-top: 40px;
+  background-color: $c-gray;
+  width: 100%;
+  height: 60px;
+  // border: none;
+  border: 1px solid $orange !important;
+  color: $orange;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  
+  cursor: pointer;
+  &:hover {
+    border-color: $hover-red;
+    color: $hover-red;
+  }
+
+  &:disabled {
+    border-color: $disabled;
+    color: $disabled;
+  }
+
+  &:active {
+    border-color: $presser;
+    color: $presser;
+  }
+}
+
+.container {
+  // max-width: 320px;
+  @include Tablet {
+    max-width: 1040px;
+  }
+  @include Desktop {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+  &__visited {
+    @include Desktop {
+      max-width: 1480px;
+      min-width: 1040px;
+    }
+  }
 }

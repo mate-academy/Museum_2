@@ -1,0 +1,265 @@
+.menu {
+  box-sizing: border-box;
+  transform: translateX(-100%);
+  // overflow: auto;
+  display: block;
+  height: 100vh;
+  padding: 0 20px;
+  background-color: $green-main;
+  // overflow-x: auto;
+  // overflow-y: auto;
+  // overflow-x: scroll;
+  /* Для Сафари дополнительно зададим инерцию при прокрутке.
+  С инерцией меню будет «оттягиваться» при попытке прокрутить
+  его за его пределы. */
+  // -webkit-overflow-scrolling: touch;
+
+  &:target {
+    transform: translateX(0);
+  }
+  @include Desktop {
+    padding: 0 55px !important;
+    max-height: 100vh !important;
+    position: relative;
+    // overflow-y: auto;
+    overflow: hidden;
+  }
+  @include Tablet {
+    padding: 0 39px;
+    height: 1092px;
+    position: relative;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0;
+    @include Tablet {
+      display: block;
+    }
+    @include Desktop {
+      display: block;
+    }
+
+  }
+
+  &__actionss {
+    margin-bottom: 40px;
+    @include Desktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+
+    @include Desktop {
+      padding-bottom: 0;
+      margin-bottom: 45px;
+    }
+
+  }
+
+  &__nav {
+    padding-top: 20px;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  &__content-list {
+    display: flex;
+    justify-content: space-between;
+    @include Tablet {
+      display: block;
+    }
+    @include Desktop {
+      display: flex;
+    }
+  }
+
+  &__image-top {
+    display: none;
+
+    @include Phone {
+      display: none !important;
+    }
+    @include Tablet {
+      display: block;
+      width: 422px;
+      height: 466px;
+      position: absolute;
+      bottom: 0;
+      margin-left: 130px;
+    }
+    @include Desktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 544px;
+      height: 620px;
+    }
+  }
+
+  &__contact {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-text;
+
+    margin: 30px 0 40px;
+
+    @include Tablet {
+      display: flex;
+      gap: 124px;
+      margin: 30px 0 50px;
+    }
+
+    @include Desktop {
+      gap: 83px;
+      margin-bottom: 70px;
+    }
+
+    &-title {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &-time {
+      margin-bottom: 20px;
+
+      @include Tablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    overflow: hidden;
+
+    @include Tablet {
+      margin-bottom: 50px;
+    }
+
+    @include Desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__line {
+    margin-bottom: 50px;
+    @include Tablet {
+      width: 100%;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @include Tablet {
+        margin-bottom: 30px;
+      }
+
+      @include Desktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $white-text;
+    transition: border-color 0.3s;
+
+    @include Tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      border-color: $white-text;
+    }
+  }
+
+  &__button {
+    max-width: 430px;
+    @include Tablet {
+      margin-bottom: 30px;
+      overflow-y: auto;
+    }
+
+    @include Desktop {
+      padding-bottom: 0;
+      width: 270px;
+    }
+  }
+
+  &__language {
+    display: none;
+    font-size: 16px;
+    cursor: pointer;
+    @include Tablet {
+      background-color: $green-main;
+      border: none;
+      color: $white-text;
+      overflow: hidden;
+      margin-left: 40px;
+      display: block;
+    }
+    @include Desktop {
+      border: none;
+      margin-top: 5px;
+    }
+  }
+}
+
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+    overflow: auto;
+    @include Desktop {
+      overflow: hidden;
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .mobile-sidenavbar {
+    overflow: scroll;
+  }
+}
