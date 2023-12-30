@@ -2,6 +2,7 @@
 
 const modalManager = {
   modal: null,
+  scrollPosition: 0,
 
   init: function() {
     this.modal = document.getElementById('myModal');
@@ -9,19 +10,43 @@ const modalManager = {
   },
 
   open: function() {
+    this.scrollPosition = window.scrollY;
+    document.body.style.overflow = 'hidden';
     this.modal.classList.add('modal--open');
   },
 
   close: function() {
+    document.body.style.overflow = '';
+
+    if (this.scrollPosition !== undefined) {
+      window.scrollTo(0, this.scrollPosition);
+      this.scrollPosition = undefined;
+    }
+
     this.modal.classList.remove('modal--open');
   },
 
   setupEventListeners: function() {
     const menuButton = document.getElementById('openModal');
     const closeButton = document.getElementById('closeModal');
+    const modalItems = document.querySelectorAll('.modal__item');
 
     menuButton.addEventListener('click', () => this.open());
     closeButton.addEventListener('click', () => this.close());
+
+    modalItems.forEach(item => {
+      item.addEventListener('click', (event) => {
+        this.close();
+
+        const targetSectionId = event.currentTarget
+          .getAttribute('href')
+          .substring(1);
+
+        const targetSection = document.getElementById(targetSectionId);
+
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
 
     window.addEventListener('click', (event) => {
       if (event.target === this.modal) {
@@ -38,9 +63,9 @@ const modalManager = {
   },
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-  modalManager.init();
+modalManager.init();
 
+document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('myForm');
 
   form.addEventListener('submit', function(event) {
