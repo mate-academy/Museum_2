@@ -1,0 +1,178 @@
+.modal {
+  background-color: $bg-color;
+  min-height: 100vh;
+  position: relative;
+
+  &__wrapper {
+    padding-top: 13px;
+  }
+
+  &__info {
+    display: flex;
+    gap: 83px;
+    margin-bottom: 70px;
+  }
+
+  &__text {
+    color: $color-while;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+  }
+
+  &__link {
+    color: $color-while;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+
+    &:hover {
+      color: $val;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    color: $color-while;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 120%;
+    margin-bottom: 60px;
+    position: relative;
+
+    &::before {
+      content: '';
+      bottom: -10px;
+      left: 0;
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      background-color: $color-while;
+      transition: 0.3s;
+    }
+
+    &:hover::before {
+      width: 40%;
+    }
+  }
+
+  &__line {
+    opacity: 0.3;
+    background: #f1f5f4;
+    width: 40%;
+    height: 1px;
+    margin-bottom: 60px;
+  }
+
+  &__bg {
+    background-image: url(../images/img_menu.png);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 626px;
+    height: 662px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &--page {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  &--open {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1030px) {
+  .modal {
+    min-height: 1092px;
+
+    &__bg {
+      width: 443px;
+      height: 350px;
+      left: 0;
+      bottom: 0;
+      margin: 0 auto;
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+
+    &__item {
+      margin-bottom: 30px;
+
+      &:hover::before {
+        width: 65%;
+      }
+    }
+
+    &__navigation {
+      margin-bottom: 20px;
+    }
+
+    &__line {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    &__bg {
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 687px) {
+  .modal {
+    min-height: 747px;
+
+    &__info {
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    &__item {
+      font-size: 24px;
+    }
+
+    &__bg {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .modal {
+
+    &__item {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    &__navigation {
+      margin-bottom: 40px;
+    }
+
+    &__line {
+      margin-bottom: 40px;
+    }
+  }
+}
