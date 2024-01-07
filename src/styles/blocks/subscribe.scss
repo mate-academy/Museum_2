@@ -1,0 +1,98 @@
+.subscribe {
+
+  &__digest {
+    @include onDasktop {
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: 1280px) {
+      display: flex;
+    }
+  }
+
+  &__title {
+    @include title;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDasktop {
+      font-size: 48px;
+    }
+  }
+
+  &__text {
+    @include text;
+
+    margin-bottom: 50px;
+
+    @include onTablet {
+      width: 570px;
+    }
+  }
+
+  &__email {
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+
+    border: none;
+    border-bottom: 1px solid $title-color;
+
+    width: 100%;
+    padding: 4px 0;
+
+    background-color: $bg-body-color;
+
+    margin-bottom: 30px;
+
+    @include hover(border-bottom, 1px solid $button-color);
+
+    &::placeholder {
+      color: $title-color;
+      font-size: 16px;
+      line-height: 150%;
+
+      transition: color 0.3s;
+    }
+
+    &:hover::placeholder {
+      color: $button-color;
+    }
+
+    &:focus {
+      color: $button-color;
+      border-bottom: 1px solid $button-color;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-bottom: 1px solid $title-color;
+      -webkit-text-fill-color: $title-color;
+      -webkit-box-shadow: 0 0 0 1000px $bg-body-color inset;
+      transition: background-color 5000s ease-in-out 0s;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    @include onTablet {
+      width: 450px;
+    }
+
+    @include onDasktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    border: none;
+  }
+}

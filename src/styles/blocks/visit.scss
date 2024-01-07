@@ -1,0 +1,63 @@
+.visit {
+  --columns: 7 / -1;
+
+  @media (min-width: 1200px) {
+    --columns: 6 / -1;
+  }
+
+  background-color: $bg-color;
+
+  @include onDasktop {
+    background-image: url(../images/visit/img.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__title {
+    color: $text-color;
+    font-family: $title-font;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 100%;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      font-size: 62px;
+    }
+
+    @include onDasktop {
+      font-size: 80px;
+
+      grid-column: var(--columns);
+
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    @include text;
+
+    color: $text-color;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      max-width: 450px;
+
+      margin-bottom: 60px;
+    }
+
+    @include onDasktop {
+      grid-column: var(--columns);
+
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include onDasktop {
+      grid-column: var(--columns);
+    }
+  }
+}
