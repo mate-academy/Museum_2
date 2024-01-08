@@ -1,0 +1,63 @@
+.subscribe {
+  padding-bottom: 80px;
+
+  @include onTablet {
+    padding-bottom: 128px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 200px;
+
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 50px;
+  }
+
+  &__form {
+    &--email {
+      display: block;
+      width: 100%;
+      outline: none;
+      margin-bottom: 30px;
+      padding: 0 0 3px;
+      background-color: $pageBackground;
+      border: none;
+      border-bottom: 1px solid $black;
+      transition: all $duration;
+
+      &::placeholder {
+        @extend %Raleway16px400150;
+        color: $black;
+        transition: color $duration;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+
+      &:hover {
+        border-color: $main;
+      }
+
+      &:hover::placeholder {
+        border-color: $main;
+        color: $main;
+      }
+    }
+
+    &--button {
+      @include onTablet {
+        width: 75%;
+      }
+
+      @include onDesktop {
+        width: 60%;
+      }
+    }
+  }
+}

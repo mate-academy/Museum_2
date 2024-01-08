@@ -1,0 +1,168 @@
+.header {
+  background-color: $background;
+
+  &__logo {
+    fill: $white;
+    @extend %hover;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+
+    @include onTablet {
+      padding: 26px 0;
+    }
+
+    @include onDesktop {
+      padding: 32px 0;
+    }
+
+    &--link {
+      text-decoration: none;
+
+      &-menu {
+        @extend %hover;
+      }
+    }
+
+    &--container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include onTablet {
+        width: 100px;
+      }
+    }
+  }
+
+  &__menu {
+    display: inline-block;
+    fill: $white;
+  }
+
+  &__language {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--ua {
+      display: inline-block;
+      @extend %Raleway16px400150;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $white;
+    }
+
+    &--corner {
+      display: inline-block;
+      margin-left: 3px;
+      fill: $white;
+    }
+  }
+
+  &__main {
+    display: block;
+    position: relative;
+    padding-top: 50px;
+
+    @include onTablet {
+      display: grid;
+      padding: 100px 0 0;
+    }
+
+    @include onDesktop {
+      padding: 90px 0 0;
+    }
+
+    &--date {
+      @extend %Raleway16px400150;
+      font-size: 14px;
+      color: $white;
+      margin: 0 0 10px;
+    }
+
+    &--title {
+      @extend %playfair700125;
+      font-size: 48px;
+      line-height: 100%;
+      color: $white;
+      margin: 0 0 30px;
+
+      @include onTablet {
+        font-size: 72px;
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        font-size: 96px;
+        margin-bottom: 30px;
+      }
+    }
+
+    &--text {
+      color: $white;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+
+    &-picture {
+      padding: 40px 17px 0;
+
+      @include onTablet {
+        padding: 70px 0 0;
+      }
+
+      @include onDesktop {
+        margin-right: -55px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+
+      &--img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        object-position: bottom;
+      }
+    }
+
+    &--span {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        align-items: center;
+        margin: 135px 0 50px;
+      }
+      &-date {
+        display: inline-block;
+        @extend %playfair700125;
+        font-size: 14px;
+        color: $white;
+        margin-right: 20px;
+      }
+
+      &-line {
+        flex-grow: 1;
+        height: 1px;
+        opacity: 0.3;
+        background-color: $white;
+      }
+    }
+  }
+}
