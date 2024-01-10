@@ -1,0 +1,79 @@
+// mixin size
+@mixin tablet {
+  @media (min-width:$width-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width:$width-desktop) {
+    @content;
+  }
+}
+
+@mixin big-desktop {
+  @media (min-width:$width-big-desktop) {
+    @content;
+  }
+}
+
+// mixin grid
+@mixin column {
+  --columns:2;
+
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include desktop {
+    --columns: 12;
+
+    column-gap: 30px;
+  }
+
+  @include big-desktop {
+    --columns: 12;
+
+    column-gap: 30px;
+  }
+}
+
+// mixin padding
+@mixin padding-inline {
+  padding-inline: $padding-inline-mobile;
+
+  @include tablet {
+    padding-inline: $padding-inline-tablet;
+  }
+
+  @include desktop {
+    padding-inline: $padding-inline-desktop;
+  }
+
+  @include big-desktop {
+    padding-inline: $padding-inline-big-desktop;
+  }
+}
+
+
+// mixin shake
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+}

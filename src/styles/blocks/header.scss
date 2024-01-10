@@ -1,0 +1,271 @@
+.header {
+  background-color: $header-background;
+
+  &__top-bar {
+    @include column;
+    @include padding-inline;
+
+    display: grid;
+    padding-top: 20px;
+    align-items: center;
+
+    @media (min-width:1280px) {
+      padding-top: 30px;
+    }
+  }
+
+  &__top-container {
+    display: flex;
+    grid-column: 1/3;
+
+    @media (min-width:640px) {
+      grid-area: 1/7/1/7;
+    }
+
+    @media (min-width:1280px) {
+      grid-area: 1/13/1/13;
+    }
+  }
+
+  &__top-logo {
+    grid-column: 1/2;
+    font-size: 36px;
+    text-decoration: none;
+    color: $color-white;
+    transition: $animation-content;
+
+    &:hover {
+      transform: $transform-content;
+    }
+
+    @media (min-width:640px) {
+      grid-column: 1/3;
+    }
+  }
+
+  &__top-burger {
+    text-align: right;
+    grid-column: 2/3;
+    justify-self: end;
+    width: fit-content;
+
+    @media (min-width:640px) {
+      grid-area: 1/6/1/6;
+    }
+
+    @media (min-width:1280px) {
+      grid-column: 12/12;
+      justify-self: right;
+      margin-right: 10px;
+    }
+  }
+
+  &__top-nav {
+    display: none;
+
+    @media (min-width:640px) {
+      display: flex;
+      gap: 5px;
+    }
+
+    @media (min-width:1280px) {
+      grid-column: 12/13;
+    }
+  }
+
+  &__top-lang {
+    text-decoration: none;
+  }
+
+  &__ua {
+    color: $color-white;
+  }
+
+  &__logo {
+    height: 40px;
+    width: 100%;
+  }
+
+  &__burger-menu {
+    width: 25px;
+    height: 20px;
+
+    &:hover {
+      animation: shake 500ms ease-in-out;
+    }
+  }
+
+  &__container {
+    @include padding-inline;
+    @include column;
+
+    margin: 70px 0 40px;
+    display: grid;
+    grid-column: 1/3;
+
+    @media (min-width:640px) {
+      grid-column: 1/7;
+    }
+
+    @media (min-width:1280px) {
+      grid-column: 1/13;
+    }
+
+    @media (min-width:1280px) {
+      grid-area: 1/1/1/13;
+      margin-top: 117px;
+    }
+
+    &-content {
+      @include column;
+
+      display: grid;
+    }
+  }
+
+  &__info {
+    color: $color-white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+    grid-column: 1/3;
+
+    @media (min-width:1280px) {
+      grid-area: 1/1/1/3;
+      height: fit-content;
+    }
+  }
+
+  &__title {
+    color: $color-white;
+    grid-column: 1/3;
+    margin: 10px 0 30px;
+
+    @media (min-width:640px) {
+      grid-column: 1/7;
+      font-size: 70px;
+    }
+
+    @media (min-width:1280px) {
+      font-size: 96px;
+      grid-area: 1/1/1/7;
+      margin-top: 20px;
+    }
+  }
+
+  &__subtitle {
+    color: $color-white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    grid-column: 1/3;
+
+    @media (min-width:640px) {
+      grid-column: 1/4;
+    }
+
+    @media (min-width:1280px) {
+      grid-column: 1/6;
+    }
+  }
+
+  &__button {
+    color: $color-white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    background-color: $button-color;
+    border: 0;
+    height: 60px;
+    margin: 40px 0;
+    transition: $animation-content;
+
+    &:hover {
+      background-color: $background-hover;
+      transform: $transform-content;
+    }
+
+    &:active {
+      background-color: $background-active;
+    }
+
+    &:disabled {
+      background-color: $background-disabled;
+    }
+
+    @media (min-width:1280px) {
+      margin-top: 80px;
+    }
+
+    &-text {
+      display: grid;
+      grid-column: 1/3;
+      color: $color-white;
+      text-decoration: none;
+
+      @media (min-width:640px) {
+        grid-column: 1/4;
+      }
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    grid-column: 1/3;
+
+    @media (min-width:640px) {
+      grid-column: 2/6;
+    }
+
+    @media (min-width:1280px) {
+      grid-area: 1/7/auto/13;
+      margin-top: 47px;
+    }
+
+    &-image {
+      grid-column: 1/3;
+      height: 273px;
+      width: 100%;
+
+      @media (min-width:640px) {
+        height: 494px;
+      }
+
+      @media (min-width:1280px) {
+        height: 663px;
+      }
+    }
+  }
+
+  &__bottom-content {
+    display: none;
+    align-items: center;
+
+    @media (min-width:1280px) {
+      display: grid;
+      grid-area: 4/1/4/8;
+    }
+  }
+
+  &__bottom-date {
+    color: $color-white;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 125%;
+
+    @media (min-width:1280px) {
+      grid-column: 1/3;
+    }
+  }
+
+  &__bottom-border {
+    width: 469px;
+    height: 1px;
+    background-color: $color-white;
+
+    @media (min-width:1280px) {
+      grid-column: 3/8;
+    }
+  }
+}
