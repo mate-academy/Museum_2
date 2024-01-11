@@ -37,10 +37,6 @@
     &:hover {
       transform: $transform-content;
     }
-
-    @media (min-width:640px) {
-      grid-column: 1/3;
-    }
   }
 
   &__top-burger {
@@ -99,7 +95,6 @@
     @include padding-inline;
     @include column;
 
-    margin: 70px 0 40px;
     display: grid;
     grid-column: 1/3;
 
@@ -108,18 +103,26 @@
     }
 
     @media (min-width:1280px) {
-      grid-column: 1/13;
-    }
-
-    @media (min-width:1280px) {
       grid-area: 1/1/1/13;
-      margin-top: 117px;
     }
 
     &-content {
       @include column;
 
       display: grid;
+    }
+
+    &-box {
+      display: grid;
+      margin-top: 70px;
+      grid-column: 1/3;
+
+      @media (min-width:640px) {
+        grid-column: 1/7;
+        margin-top: 119px;
+        grid-template-columns: repeat(6, 1fr);
+        align-self: baseline;
+      }
     }
   }
 
@@ -131,7 +134,7 @@
     grid-column: 1/3;
 
     @media (min-width:1280px) {
-      grid-area: 1/1/1/3;
+      grid-area: 1/1/1/4;
       height: fit-content;
     }
   }
@@ -143,6 +146,7 @@
 
     @media (min-width:640px) {
       grid-column: 1/7;
+      margin: 0;
       font-size: 70px;
     }
 
@@ -165,7 +169,8 @@
     }
 
     @media (min-width:1280px) {
-      grid-column: 1/6;
+      grid-column: 1/7;
+      margin-top: 30px;
     }
   }
 
@@ -177,7 +182,6 @@
     background-color: $button-color;
     border: 0;
     height: 60px;
-    margin: 40px 0;
     transition: $animation-content;
 
     &:hover {
@@ -193,18 +197,20 @@
       background-color: $background-disabled;
     }
 
-    @media (min-width:1280px) {
-      margin-top: 80px;
-    }
-
     &-text {
       display: grid;
       grid-column: 1/3;
       color: $color-white;
       text-decoration: none;
+      margin-top: 40px;
 
       @media (min-width:640px) {
         grid-column: 1/4;
+      }
+
+      @media (min-width:1280px) {
+        grid-column: 1/4;
+        margin-top: 80px;
       }
     }
   }
@@ -212,6 +218,7 @@
   &__bottom {
     display: grid;
     grid-column: 1/3;
+    height: fit-content;
 
     @media (min-width:640px) {
       grid-column: 2/6;
@@ -232,7 +239,7 @@
       }
 
       @media (min-width:1280px) {
-        height: 663px;
+        height: 572px;
       }
     }
   }
@@ -243,6 +250,7 @@
 
     @media (min-width:1280px) {
       display: grid;
+      margin-top: 50px;
       grid-area: 4/1/4/8;
     }
   }
@@ -267,5 +275,10 @@
     @media (min-width:1280px) {
       grid-column: 3/8;
     }
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
   }
 }
