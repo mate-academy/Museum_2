@@ -4,27 +4,50 @@
 .footer {
   background-color: $color-green;
   color: $color-white;
-  display: flex;
-  flex-direction: row;
   font-family: Raleway, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 19.6px;
+  display: flex;
   padding: 0 20px 30px;
 
   &__content {
-    &:nth-child(2) {
-      margin-left: 22px;
+    display: grid;
+    grid-template-columns: 98px 106px;
+    gap: 22px;
 
-      @include for-desktop {
-        margin-left: 102px;
-      }
+    @include for-tablet {
+      grid-template-columns: repeat(6, 90px);
+      gap: 0 30px;
+    }
+
+    @include for-desktop {
+      grid-template-columns: repeat(12, 70px);
+    }
+  }
+
+  &__trademark {
+    @include for-tablet {
+      grid-column: 1;
+      white-space: nowrap;
+    }
+  }
+
+  &__privacy {
+    @include for-tablet {
+      grid-column: 2;
+      white-space: nowrap;
+    }
+
+    @include for-desktop {
+      grid-column: 3;
     }
   }
 
   @include for-tablet {
     padding: 0 39px 30px;
+    justify-content: center;
   }
 
   @include for-desktop {
