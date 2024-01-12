@@ -1,0 +1,73 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    width: 330px;
+    grid-column: 1 / 2;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 4;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 10px;
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: $white-main;
+    font-family: $font-raleway;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include hover-scale(1.02);
+  }
+
+  &__socials {
+    display: flex;
+    gap: 20px;
+
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 50px;
+      width: 210px;
+    }
+  }
+
+  &__social {
+    width: 20px;
+    height: 20px;
+
+    @include set-pos-backg;
+    @include hover-scale(1.1);
+
+    &--facebook {
+      background-image: url(../images/socials/facebook.png);
+    }
+
+    &--twitter {
+      background-image: url(../images/socials/twitter.png);
+    }
+
+    &--telegram {
+      background-image: url(../images/socials/telegram.png);
+    }
+
+    &--instagram {
+      background-image: url(../images/socials/instagram.png);
+    }
+  }
+}
