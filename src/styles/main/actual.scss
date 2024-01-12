@@ -1,0 +1,98 @@
+.actual {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 130px);
+  column-gap: 20px;
+
+  color: $black-main;
+
+  @include on-tablet {
+    grid-template-columns: repeat(6, 90px);
+    grid-template-rows: repeat(3, auto);
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(12, 70px);
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    margin: 0;
+
+    font-family: $font-playfair;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+
+    @include on-tablet {
+      width: 450px;
+      grid-column: 1 / 5;
+      grid-row: 1;
+
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include on-desktop {
+      width: 570px;
+      grid-column: 1 / 6;
+
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+  }
+
+  &__ticket {
+    grid-column: 1 / -1;
+
+    margin-top: 60px;
+
+    @include on-tablet {
+      margin-top: 75px;
+    }
+
+    @include on-desktop {
+      margin-top: 71px;
+    }
+
+    &--1 {
+      @include on-tablet {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--2 {
+      @include on-tablet {
+        grid-column: 4 / -1;
+        grid-row: 2 / 3;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__transparrent-button {
+    margin-top: 30px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: -3 / -1;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: -4 / -1;
+    }
+  }
+}

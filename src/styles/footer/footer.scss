@@ -1,0 +1,132 @@
+.footer {
+  margin-top: 80px;
+
+  background-color: #3F5252;
+
+  @include on-tablet {
+    margin-top: 128px;
+  }
+
+  @include on-desktop {
+    margin-top: 200px;
+  }
+
+  &__wrap {
+    @include padding-inline;
+    @include grid-template;
+
+    padding-block: 34px 30px;
+
+    @include on-tablet {
+      padding-top: 50px;
+    }
+
+    @include on-desktop {
+      padding-top: 50px;
+    }
+  }
+
+  &__contacts {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 2;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__schedule {
+    margin-top: 50px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: 3 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__navigation {
+    margin-top: 50px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: -3 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: -5 / -1;
+    }
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+
+    margin-top: 60px;
+
+    display: flex;
+    align-items: center;
+
+    font-family: $font-raleway;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+
+    @include on-tablet {
+      @include grid-template;
+    }
+
+    @include on-desktop {
+      margin-top: 70px;
+    }
+  }
+
+  &__since {
+    color: $white-main;
+
+    @include on-tablet {
+      grid-column: 1 / 2;
+      width: 98px;
+    }
+  }
+
+  &__privacy-terms {
+    color: $white-main;
+    margin-left: 22px;
+
+    @include on-tablet {
+      grid-column: 2 / 3;
+      width: 106px;
+      margin-left: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 3 / 4;
+    }
+  }
+
+  &__arrow-start {
+    margin-left: 24px;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/socials/scroll-up.png);
+
+    @include set-pos-backg;
+
+    @include on-tablet {
+      grid-column: -2 / -1;
+      margin: 0;
+      justify-self: end;
+    }
+
+    @include hover-scale (1.1);
+  }
+}
