@@ -1,0 +1,113 @@
+.visit {
+  background-color: $c-background;
+  @include fontRaleway;
+  margin-bottom: 90px;
+
+  @include onTablet {
+    margin-bottom: 125px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 110px;
+  }
+
+  &__content {
+    padding: 50px 0 50px;
+
+    @include onTablet {
+      @include pageGrid;
+      padding: 80px 0 80px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-column: 1 / 6;
+      width: 578px;
+      height: 800px;
+      background-image: url(../images/actual-events/woman.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      margin-left: -178px;
+    }
+  }
+
+  &__block {
+    @include onTablet {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      margin: 205px 0 205px;
+      grid-column: 6 / 13;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @include fontPlayfair;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 38px;
+    color: $c-main-white;
+
+    @include onTablet {
+      font-size: 62px;
+      line-height: 62px;
+    }
+
+    @include onDesktop {
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    @include fontRaleway;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-main-white;
+
+    @include onTablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: $c-main-orange;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    color: $c-main-white;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $c-hover-orange;
+    }
+
+    &:active {
+      background-color: $c-active-orange;
+    }
+
+    @include onTablet {
+      width: 330px;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+.actual-events {
+  margin-top: 90px;
+  margin-bottom: 120px;
+  @include fontRaleway;
+
+  @include onTablet {
+    margin-top: 105px;
+    margin-bottom: 165px;
+  }
+
+  @include onDesktop {
+    margin-top: 110px;
+    margin-bottom: 200px;
+  }
+
+  &__top {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__events {
+    display: grid;
+    gap: 60px;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__event {
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__title {
+    @include fontPlayfair;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+    color: $c-main-black;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+      line-height: 58px;
+    }
+  }
+
+  &__arhive-block {
+    display: none;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid $c-hover-orange;
+    }
+
+    &:active {
+      border: 1px solid $c-active-orange;
+    }
+
+    @include onTablet {
+      width: 210px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #CD4D31;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__arhive-exhebition {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    color: $c-main-orange;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $c-hover-orange;
+    }
+
+    &:active {
+      color: $c-active-orange;
+    }
+  }
+
+  &__icon-svg {
+    stroke: $c-main-orange;
+    transition: all 0.3s;
+
+    &:hover {
+      stroke: $c-hover-orange;
+    }
+
+    &:active {
+      stroke: $c-active-orange;
+    }
+  }
+}
