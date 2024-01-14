@@ -1,0 +1,427 @@
+.announcement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__block {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__history {
+    display: none;
+
+    @include on-tablet {
+      @include button-second;
+
+      width: 210px;
+      display: flex;
+      grid-column: 5 / -1;
+
+      &--arrow {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/arrow.png);
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    @include on-desktop {
+      width: 270px;
+      grid-column: 10 / -1;
+    }
+
+    &--end {
+      @include button-second;
+
+      width: 280px;
+      display: flex;
+      margin-bottom: 90px;
+
+      &--arrow {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/arrow.png);
+        background-position: center;
+        background-size: cover;
+      }
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    &--end-2 {
+      @include button-second;
+
+      width: 280px;
+      display: flex;
+      margin-bottom: 0;
+
+      &--arrow {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/arrow.png);
+        background-position: center;
+        background-size: cover;
+      }
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__events {
+    @include page-grid;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+  }
+}
+
+.events__author {
+  background-size: cover;
+  background-position: center;
+
+  @include hover(transform, scale(1.05));
+  &::before {
+    transition: $effect-duration;
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    right: 2rem;
+    bottom: 2rem;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 0.6rem;
+    font-weight: bold;
+    content: attr(data-author);
+    color: $hover;
+    opacity: 0;
+    text-shadow: 0 0 5px $white;
+    transform: translateY(-265px);
+
+    @include on-tablet {
+      transform: translateY(-280px);
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      transform: translateY(-260px);
+    }
+  }
+
+  &:hover::before {
+    opacity: 1;
+    text-shadow: 0 0 5px $white,
+    -2px 2px 10px $white,
+    2px -2px 10px $white,
+    -2px -2px 10px $white,
+    2px 2px 10px $white;
+    font-size: 1rem;
+  }
+}
+
+.events {
+  &__angels {
+    grid-column: 1 / -1;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 165px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/7;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__artists {
+    grid-column: 1 / -1;
+    margin-bottom: 33px;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      margin-bottom: 165px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      margin-bottom: 200px;
+    }
+  }
+
+  &__image {
+    width: 280px;
+    height: 356px;
+    transition: all $effect-duration;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      grid-column: span 3;
+      width: 330px;
+      height: 420px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      object-fit: cover;
+      height: 484px;
+      width: 570px;
+      transition: all $effect-duration;
+
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    transition: $effect-duration;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__about {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 570px;
+    }
+  }
+
+  &__date {
+    display: block;
+    color: $coral;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__name {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      font-size: 24px;
+      width: 330px;
+      height: 60px;
+    }
+
+    @include on-desktop {
+      height: 30px;
+      width: 570px;
+    }
+  }
+
+  &__description {
+    color: $gray;
+    margin: 0 0 30px;
+
+    @include on-tablet {
+      width: 330px;
+      height: 70px;
+      margin: 0 0 40px;
+    }
+
+    @include on-desktop {
+      width: 570px;
+      height: 50px;
+      margin: 0 0 50px;
+    }
+  }
+
+  &__button {
+    @include button-prime;
+
+    position: relative;
+    grid-column: 1 / -1;
+    width: 280px;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+
+    &--container {
+      position: absolute;
+      bottom: -35px;
+      visibility: hidden;
+      opacity: 0;
+      transition: all $effect-duration ease-in-out;
+    }
+
+    &:hover &--container {
+      transition: $effect-duration ease-in-out;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.event {
+  @include on-tablet {
+    @include page-grid;
+
+    width: 100%;
+  }
+
+  &__gudimov {
+    grid-column: 1 / -1;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      width: 100%;
+    }
+  }
+
+  &__australia {
+    grid-column: 1 / -1;
+    margin-bottom: 33px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-left {
+    grid-column: 1 / -1;
+    width: 280px;
+    height: 356px;
+    transition: all $effect-duration;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      width: 330px;
+      height: 424px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+      height: 475px;
+      width: 370px;
+      transition: all $effect-duration;
+
+      @include hover(transform, scale(1.1));
+    }
+  }
+
+  &__about-right {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      width: 330px;
+      grid-column: 4 / -1;
+    }
+
+    @include on-desktop {
+      width: 570px;
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__date {
+    display: block;
+    color: $coral;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__name {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      font-size: 24px;
+      width: 330px;
+      height: 60px;
+    }
+
+    @include on-desktop {
+      height: 30px;
+      width: 570px;
+    }
+  }
+
+  &__description {
+    color: $gray;
+    margin: 0 0 30px;
+
+    @include on-tablet {
+      width: 330px;
+      height: 70px;
+      margin: 0 0 40px;
+    }
+
+    @include on-desktop {
+      width: 570px;
+      height: 50px;
+      margin: 0 0 50px;
+    }
+  }
+
+  &__button {
+    @include button-prime;
+
+    position: relative;
+    grid-column: 1 / -1;
+    width: 280px;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+      margin-bottom: 135px;
+    }
+
+    &--container {
+      position: absolute;
+      bottom: -35px;
+      visibility: hidden;
+      opacity: 0;
+      transition: all $effect-duration ease-in-out;
+    }
+
+    &:hover &--container {
+      transition: $effect-duration ease-in-out;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+/* #endregion */

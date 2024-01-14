@@ -1,0 +1,132 @@
+.subscribe {
+  margin-top: 90px;
+  height: 360px;
+
+  @include on-tablet {
+    margin-top: 0;
+    height: 290px;
+    margin-bottom: 30px;
+  }
+
+  @include on-desktop {
+    height: 310px;
+    margin-bottom: 90px;
+  }
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      width: 690px;
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      width: 570px;
+      font-size: 48px;
+      line-height: 120%;
+      grid-column: 1 / 7;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    color: $black;
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      width: 570px;
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__data {
+    grid-column: 1 / -1;
+    width: 280px;
+    height: 28px;
+    padding: 3px;
+    color: $black;
+    border: transparent;
+    outline: none;
+    background-color: $white;
+    border-bottom: 1px solid $black;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-family: Raleway, sans-serif;
+    line-height: 150%;
+    transition: $effect-duration;
+
+    &:focus {
+      border-bottom: 1px solid $active;
+      color: $active;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $hover;
+    }
+
+    &:valid {
+      font-weight: 700;
+      color: $black;
+      border-bottom: 1px solid $black;
+    }
+
+    @include on-tablet {
+      width: 450px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+      width: 470px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    @include button-prime;
+
+    position: relative;
+    width: 280px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+/* #endregion */
+
+

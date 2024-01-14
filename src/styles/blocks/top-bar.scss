@@ -1,0 +1,104 @@
+/* #region top bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 127px;
+  padding-block: 20px;
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    padding-block: 24px;
+  }
+
+  @include on-desktop {
+    padding-block: 30px;
+  }
+
+  &__logo {
+    width: 123px;
+    height: 40px;
+    transition: $effect-duration;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__icon-menu {
+    display: block;
+    width: 30px;
+    height: 30px;
+    transition: $effect-duration;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__form {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: max-content;
+      height: 30px;
+      color: $white;
+      background-color: $background;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      cursor: pointer;
+      border: none;
+      outline: none;
+
+      @include hover(scale, 1.1);
+    }
+  }
+
+  /* for menu-aside */
+  &__icons-aside {
+    display: flex;
+    gap: 30px;
+
+    @include on-tablet {
+      gap: 40px;
+    }
+  }
+
+  &__icon-close {
+    display: block;
+    width: 30px;
+    height: 30px;
+    gap: 30px;
+    transition: $effect-duration;
+
+    @include hover(transform, scale(1.2));
+
+    @include on-tablet {
+      display: none;
+    }
+
+    &--left {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+        width: 30px;
+        height: 30px;
+        gap: 40px;
+        transition: $effect-duration;
+
+        @include hover(transform, scale(1.2));
+      }
+    }
+  }
+}
+
+/* #endregion */
