@@ -1,0 +1,116 @@
+/* #region page */
+* {
+    box-sizing: border-box;
+  }
+
+.page {
+  width: 100%;
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  color: $gray;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  background-color: $white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  &__menu {
+    position: fixed;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: all $effect-duration;
+
+    &:target {
+      opacity: 1;
+      z-index: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+  }
+}
+
+.container {
+  @include content-padding-inline;
+}
+
+.main {
+  width: 100%;
+
+  &__content {
+    padding-block: 90px;
+
+    @include on-tablet {
+      padding-block: 100px;
+    }
+
+    @include on-desktop {
+      padding-block: 110px;
+    }
+  }
+}
+
+.hint {
+  width: content;
+  transition: $effect-duration ease-in-out;
+
+  &__phone,
+  &__mail,
+  &__text {
+    margin: 0;
+    color: $disabled;
+    text-decoration: none;
+    padding: 5px;
+    transition: $effect-duration ease-in-out;
+
+    @include hover(font-weight, bolder);
+    @include hover(color, $hover);
+  }
+}
+
+.section__title {
+  width: 280px;
+  color: $black;
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 125%;
+  margin: 0 0 60px;
+  justify-content: left;
+
+
+  @include on-tablet {
+    width: 450px;
+    font-size: 40px;
+    grid-column: 1 / 5;
+    margin: 0 0 70px;
+  }
+
+  @include on-desktop {
+    width: 570px;
+    font-size: 48px;
+    line-height: 120%;
+    grid-column: 1 / 7;
+    margin-bottom: 70px;
+  }
+}
+
+/* #endregion */

@@ -1,0 +1,207 @@
+/* #region merch */
+.merch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__block {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      @include page-grid;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__history {
+    display: none;
+
+    @include on-tablet {
+      @include button-second;
+
+      width: 210px;
+      display: flex;
+      grid-column: 5 / -1;
+
+      &--arrow {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/arrow.png);
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    @include on-desktop {
+      width: 270px;
+      grid-column: 10 / -1;
+    }
+
+    &--end {
+      @include button-second;
+
+      width: 280px;
+      display: flex;
+      grid-column: 1 / -1;
+      margin-bottom: 30px;
+
+      &--arrow {
+        width: 20px;
+        height: 20px;
+        background-image: url(../images/arrow.png);
+        background-position: center;
+        background-size: cover;
+      }
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__news {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    gap: 60px;
+
+    @include on-tablet {
+      margin-inline: 0;
+      padding-inline: 0;
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 160px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  .news {
+    @include page-grid;
+
+    &__cards {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        margin-top: 0;
+        grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        grid-column: span 1 / 5;
+      }
+    }
+
+    &__cat {
+      grid-column: 1 / -1;
+      margin-bottom: 33px;
+
+      @include on-tablet {
+        margin-bottom: 0;
+        grid-column: 4 / -1;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+      }
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      transition: $effect-duration;
+
+      @include hover(transform, scale(1.05));
+    }
+
+    &__image {
+      display: block;
+      width: 280px;
+      height: 280px;
+      transition: all $effect-duration;
+
+      @include hover(transform, scale(1.05));
+
+      @include on-tablet {
+        grid-column: span 3;
+        width: 330px;
+        height: 330px;
+      }
+
+      @include on-desktop {
+        grid-column: span 6;
+        object-fit: cover;
+        height: 370px;
+        width: 570px;
+        transition: all $effect-duration;
+
+        @include hover(transform, scale(1.05));
+      }
+    }
+
+    &__about {
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+
+      @include on-tablet {
+        width: 330px;
+      }
+
+      @include on-desktop {
+        width: 570px;
+      }
+    }
+
+    &__date {
+      display: block;
+      color: $coral;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    &__name {
+      font-family: "Playfair Display", sans-serif;
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 20px;
+
+      @include on-tablet {
+        font-size: 24px;
+        width: 330px;
+        height: 30px;
+      }
+
+      @include on-desktop {
+        height: 30px;
+        width: 570px;
+      }
+    }
+
+    &__description {
+      color: $gray;
+      margin: 0;
+
+      @include on-tablet {
+        width: 330px;
+        height: 50px;
+      }
+
+      @include on-desktop {
+        width: 570px;
+        height: 50px;
+      }
+    }
+  }
+}
+
+/* #endregion */

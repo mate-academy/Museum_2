@@ -1,13 +1,550 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <!--<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NaMuseum</title>
+    <link
+      rel="icon"
+      href="./images/logo-x.png"
+      type="image/x-icon"
+    >
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+  <body class="page__body">
+    <header class="header">
+      <div class="container">
+        <div class="header__content">
+          <div class="top-bar">
+            <a href="#" class="top-bar__logo-link">
+              <img
+                src="./images/logo.png"
+                alt="NAMU"
+                class="top-bar__logo"
+              >
+            </a>
+
+            <div class="top-bar__icons">
+              <a href="#menu" class="top-bar__icon-menu">
+                <img
+                  src="./images/menu.png"
+                  alt="menu"
+                >
+              </a>
+
+              <form
+                onsubmit="this.reset(); return false"
+                action="http://localhost:3000/api"
+                method="post"
+              >
+                <select
+                  class="top-bar__form"
+                  name="lang"
+                  size="1"
+                >
+                  <option value="UA">UA</option>
+                  <option value="EN">EN</option>
+                </select>
+              </form>
+            </div>
+          </div>
+          <div class="header__prefix">10 серпня - 10 листопада</div>
+          <h1 class="header__title">Мистецтво ХІХ - ХХ ст.</h1>
+          <span class="header__description">Внесок українських митців у світову культуру 19-20 ст.</span>
+          <button class="header__button">
+            Купити квиток
+            <div class="hint header__button--container">
+              <a href="#subscribe" class="hint__text">Замовлення</a>
+              <a href="tel:+380442781357" class="hint__phone">+38(044) 278-13-57</a>
+              <a href="#subscribe" class="hint__mail">info@namu.kiev.ua</a>
+            </div>
+          </button>
+          <div class="header__image"></div>
+          <div class="header__bottom">
+            <span class="header__bottom--date">10.08 - 10.10</span>
+            <div class="header__bottom--line"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <aside class="menu page__menu" id="menu">
+      <div class="container">
+        <div class="menu__content">
+          <div class="top-bar menu__top">
+            <a href="#" class="top-bar__logo-link">
+              <img
+                src="./images/NAMU.png"
+                alt="NAMU"
+                class="top-bar__logo"
+                >
+            </a>
+
+            <div class="top-bar__icons-aside">
+              <a href="#" class="top-bar__icon-close--left">
+                <img
+                  src="./images/cross.png"
+                  alt="menu"
+                >
+              </a>
+
+              <form
+                onsubmit="this.reset(); return false"
+                action="http://localhost:3000/api"
+                method="post"
+              >
+                <select
+                  class="menu__form"
+                  name="lang"
+                  size="1"
+                >
+                  <option value="UA">UA</option>
+                  <option value="EN">EN</option>
+                </select>
+              </form>
+
+              <a href="#" class="top-bar__icon-close">
+                <img
+                  src="./images/cross.png"
+                  alt="menu"
+                >
+              </a>
+            </div>
+          </div>
+
+          <div class="menu__info">
+            <p class="menu__schedule">Розклад сьогодні:</p>
+            <p class="menu__schedule--bold">12:00 - 19:00</p>
+          </div>
+          <div class="menu__contact">
+            <p class="menu__address">Адреса:</p>
+            <a
+              href="https://maps.app.goo.gl/PpdX3HaikviWNCzH7"
+              class="menu__address--bold"
+              target="_blank"
+            >
+              Київ, вул. М. Грушевського, 6
+            </a>
+          </div>
+
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a class="nav__link" href="#gallery">Актуальні виставки</a>
+              </li>
+
+              <li class="nav__item">
+                <a class="nav__link" href="#events">Найближчі події</a>
+              </li>
+
+              <li class="nav__item">
+                <a class="nav__link" href="#news">Новини</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="menu__line"></div>
+
+          <button class="menu__button">
+            Купити квиток
+            <div class="hint menu__button--container">
+              <a href="#subscribe" class="hint__text">Замовлення</a>
+              <a href="tel:+380442781357" class="hint__phone">+38(044) 278-13-57</a>
+              <a href="#subscribe" class="hint__mail">info@namu.kiev.ua</a>
+            </div>
+          </button>
+
+          <div class="menu__image"></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="container">
+        <div class="main__content">
+          <section class="announcement">
+            <div class="announcement__block">
+              <h2 class="section__title">Актуальні виставки</h2>
+              <a href="#subscribe" class="announcement__history">
+                <div class="announcement__history--link">Архів виставок</div>
+                <div class="announcement__history--arrow"></div>
+              </a>
+            </div>
+            <div class="announcement__events" id="gallery">
+              <article class="events__angels events__author"
+                data-author="Кураторська виставка Павла Гудімова">
+                <a href="#gallery" class="events__link">
+                  <img
+                    class="events__image"
+                    src="./images/angel.svg"
+                    alt="angel"
+                  >
+                </a>
+                <div class="events__about">
+                  <p class="events__date">11.07 - 22.09</p>
+                  <h3 class="events__name">Кураторська виставка “Ангели”</h3>
+                  <p class="events__description">Виставковий проект «Ангели» – знакова подія для української культури і водночас наймасштабніший...</p>
+                </div>
+
+                <button class="events__button">
+                  Купити квиток
+                  <div class="hint events__button--container">
+                    <a href="#subscribe" class="hint__text">Замовлення</a>
+                    <a href="tel:+380442781357" class="hint__phone">+38(044) 278-13-57</a>
+                    <a href="#subscribe" class="hint__mail">info@namu.kiev.ua</a>
+                  </div>
+                </button>
+              </article>
+
+              <article class="events__artists events__author"
+                data-author="М.К. Пімоненко «Автопортрет»">
+                <a href="#gallery" class="events__link">
+                  <img
+                    class="events__image"
+                    src="./images/man.svg"
+                    alt="artist"
+                  >
+                </a>
+
+                <div class="events__about">
+                  <p class="events__date">Діє постійно</p>
+                  <h3 class="events__name">Мистецтво ХХ ст. — XXI ст.</h3>
+                  <p class="events__description">Знакові роботи Алли Горської, Миколи Самокиша, Федора Кричевського та інших митців.</p>
+                </div>
+
+                <button class="events__button">
+                  Купити квиток
+                  <div class="hint events__button--container">
+                    <a href="#subscribe" class="hint__text">Замовлення</a>
+                    <a href="tel:+380442781357" class="hint__phone">+38(044) 278-13-57</a>
+                    <a href="#subscribe" class="hint__mail">info@namu.kiev.ua</a>
+                  </div>
+                </button>
+              </article>
+            </div>
+            <div class="announcement__block">
+              <a href="#subscribe" class="announcement__history--end">
+                <div class="announcement__history--link">Архів виставок</div>
+                <div class="announcement__history--arrow"></div>
+              </a>
+            </div>
+
+            <div class="announcement__block">
+              <h2 class="section__title">Найближчі події</h2>
+              <a href="#subscribe" class="announcement__history">
+                <div class="announcement__history--link">Календар подій</div>
+                <div class="announcement__history--arrow"></div>
+              </a>
+            </div>
+
+            <div class="announcement__event" id="events">
+              <article class="event__gudimov">
+                <img
+                  class="event__image-left"
+                  src="./images/gudimov.svg"
+                  alt="gudimov"
+                >
+                <div class="event__about-right">
+                  <p class="event__date">14.08 о 13:00</p>
+                  <h3 class="event__name">Кураторські екскурсії від Павла Гудімова</h3>
+                  <p class="event__description">Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...</p>
+
+                  <button class="event__button">
+                    Зареєструватись
+                    <div class="hint event__button--container">
+                      <a href="#subscribe" class="hint__text">Реєстрація</a>
+                      <a href="tel:+380442781357" class="hint__phone">+38(044) 278-13-57</a>
+                      <a href="#subscribe" class="hint__mail">info@namu.kiev.ua</a>
+                    </div>
+                  </button>
+                </div>
+              </article>
+
+              <article class="event__australia">
+                <img
+                  class="event__image-left"
+                  src="./images/australia.svg"
+                  alt="australia"
+                >
+                <div class="event__about-right">
+                  <p class="event__date">16.08 о 13:00</p>
+                  <h3 class="event__name">Майстер-клас “Подорож до Австралії”</h3>
+                  <p class="event__description">Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт навколосвітньої подорожі - Австралія.</p>
+
+                  <button class="event__button">
+                    Зареєструватись
+                    <div class="hint event__button--container">
+                      <a href="#subscribe" class="hint__text">Реєстрація</a>
+                      <a href="tel:+380442781357" class="hint__phone">+38(044) 278-13-57</a>
+                      <a href="#subscribe" class="hint__mail">info@namu.kiev.ua</a>
+                    </div>
+                  </button>
+                </div>
+              </article>
+            </div>
+
+            <div class="announcement__block">
+              <a href="#subscribe" class="announcement__history--end-2">
+                <div class="announcement__history--link">Календар подій</div>
+                <div class="announcement__history--arrow"></div>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section class="order">
+        <div class="container">
+          <div>
+            <img
+              src="./images/woman.svg"
+              alt="woman"
+              class="order__image"
+            >
+            <div class="order__wrapper">
+              <h2 class="order__title">Сплануйте<br>візит до музею</h2>
+              <div class="order__description">Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом.</div>
+              <button class="order__button">
+                <a href="#events" class="order__button">Почати</a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <div class="main__content">
+          <section class="merch" id="news">
+            <div class="merch__block">
+              <h2 class="section__title">Новини</h2>
+              <a href="#nets" class="merch__history">
+                <div class="merch__history--link">Усі новини</div>
+                <div class="merch__history--arrow"></div>
+              </a>
+            </div>
+            <div class="merch__news">
+              <article class="news__cards">
+                <a class="news__link">
+                  <img
+                    src="./images/cards.svg"
+                    alt="cards"
+                    class="news__image"
+                  >
+                </a>
+                <div class="news__about">
+                  <p class="news__date">9 серпня 2019</p>
+                  <h3 class="news__name">Оголошення переможця</h3>
+                  <p class="news__description">Друзі, сьогодні п'ятниця! А це означає, що час оголосити переможця розіграшу...</p>
+                </div>
+              </article>
+
+              <article class="news__cat">
+                <a class="news__link">
+                  <img
+                    src="./images/cat.svg"
+                    alt="cat"
+                    class="news__image"
+                  >
+                </a>
+                <div class="news__about">
+                  <p class="news__date">9 серпня 2019</p>
+                  <h3 class="news__name">Міжнародний день котів</h3>
+                  <p class="news__description">Музей з левами не може просто так взяти і пропустити Міжнародний день котів!</p>
+                </div>
+              </article>
+            </div>
+            <div class="merch__block">
+              <a href="#nets" class="merch__history--end">
+                <div class="merch__history--end--link">Усі новини</div>
+                <div class="merch__history--end--arrow"></div>
+              </a>
+            </div>
+          </section>
+
+          <section class="subscribe" id="subscribe">
+            <div class="subscribe__content">
+              <h2 class="subscribe__title">Підпишіться на дайджест</h2>
+              <p class="subscribe__description">
+                Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів
+              </p>
+
+              <form
+                onsubmit="this.reset(); return false"
+                action="http://localhost:3000/api"
+                method="post"
+                class="subscribe__form"
+                name="form"
+              >
+                <input
+                  class="subscribe__data"
+                  type="email"
+                  name="email"
+                  placeholder="e-mail"
+                  required
+                  autocomplete="off"
+                >
+
+                <button
+                  type="submit"
+                  class="subscribe__button"
+                >
+                  <span class="subscribe__button">Підписатись</span>
+                </button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div class="footer">
+      <div class="footer__contacts">
+        <div class="footer__nav-addresses">
+          <h5 class="footer__title">Контакти</h5>
+
+          <nav class="nav-addresses">
+            <ul class="nav-addresses__list">
+              <li class="nav-addresses__item">
+                <a
+                class="nav-addresses__link"
+                href="https://maps.app.goo.gl/PpdX3HaikviWNCzH7"
+                target="_blank"
+                >
+                  Київ,<br>
+                  вул. М. Грушевського, 6
+                </a>
+              </li>
+
+              <li class="nav-addresses__item">
+                <a class="nav-addresses__link" href="tel: 278-13-57">тел. 278-13-57, 278-74-54</a>
+              </li>
+
+              <li class="nav-addresses__item">
+                <a class="nav-addresses__link" href="mailto: info@namu.kiev.ua">info@namu.kiev.ua</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="footer__nets" id="nets">
+            <a
+              href="https://uk-ua.facebook.com"
+              target="_blank"
+              class="footer__nets--fb"
+            >
+              <img
+                src="./images/facebook.png"
+                alt="facebook"
+                class="footer__nets--logo"
+              >
+            </a>
+
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              class="footer__nets--tw"
+            >
+              <img
+                src="./images/twitter.png"
+                alt="twitter"
+                class="footer__nets--logo"
+              >
+            </a>
+
+            <a
+              href="https://www.telegram.com"
+              target="_blank"
+              class="footer__nets--tg"
+            >
+              <img
+                src="./images/telegram.png"
+                alt="telegram"
+                class="footer__nets--logo"
+              >
+            </a>
+
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              class="footer__nets--ins"
+            >
+              <img
+                src="./images/instagram.png"
+                alt="instagram"
+                class="footer__nets--logo"
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__nav-schedule">
+        <h5 class="footer__title">Розклад роботи</h5>
+
+        <nav class="nav-schedule">
+          <ul class="nav-schedule__list">
+            <li class="nav-schedule__item">
+              <span class="nav-schedule__link">ПН: вихідний</span>
+            </li>
+
+            <li class="nav-schedule__item">
+              <span class="nav-schedule__link">ВТ: вихідний</span>
+            </li>
+
+            <li class="nav-schedule__item">
+              <span class="nav-schedule__link">СР: 10:00 - 17:00</span>
+            </li>
+
+            <li class="nav-schedule__item">
+              <span class="nav-schedule__link">ЧТ: 10:00 - 17:00</span>
+            </li>
+
+            <li class="nav-schedule__item">
+              <span class="nav-schedule__link">ПТ: 12:00 - 19:00</span>
+            </li>
+
+            <li class="nav-schedule__item">
+              <span class="nav-schedule__link">СБ: 11:00 - 18:00</span>
+            </li>
+
+            <li class="nav-schedule__item">
+              <span class="nav-schedule__link">НД: 10:00 - 17:00</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__nav-bar">
+        <h5 class="footer__title">Головна</h5>
+
+        <nav class="nav-bar">
+          <ul class="nav-bar__list">
+            <li class="nav-bar__item">
+              <a class="nav-bar__link" href="#gallery">Виставки</a>
+            </li>
+
+            <li class="nav-bar__item">
+              <a class="nav-bar__link" href="#events">Події</a>
+            </li>
+
+            <li class="nav-bar__item">
+              <a class="nav-bar__link" href="#news">Новини</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__copyright">
+        <div class="footer__copyright--text">
+          <span>© 2010 — 2020</span>
+          <span>Privacy — Terms</span>
+        </div>
+        <a href="#" class="footer__copyright--arrow"></a>
+      </div>
+    </div>>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
