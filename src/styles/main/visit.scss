@@ -1,0 +1,131 @@
+.visit {
+  position: relative;
+
+  padding-block: 50px;
+
+  @include on-tablet {
+    padding-block: 80px;
+  }
+
+  @include on-desktop {
+    padding-block: 250px;
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    height: 416px;
+
+    background-color: #3F5252;
+
+    @include on-tablet {
+      height: 515px;
+    }
+
+    @include on-desktop {
+      height: 800px;
+    }
+  }
+
+  &__girl {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 578px;
+    height: 800px;
+
+    background-image: url(../images/visit-backg.png);
+
+    @include set-pos-backg;
+
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__wrapper {
+    @include grid-template;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    margin: 0;
+    width: 280px;
+    font-family: $font-playfair;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 38px;
+    color: $white-main;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+
+      width: 560px;
+      font-size: 62px;
+      line-height: 62px;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+
+      width: 670px;
+      height: 200px;
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+    margin: 0;
+    margin-top: 20px;
+
+    width: 280px;
+
+    font-family: $font-raleway;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $white-main;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+
+      width: 450px;
+    }
+
+    @include on-desktop {
+      grid-column: -8 / -1;
+
+      margin-top: 10px;
+
+      width: 470px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    margin-top: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+
+      margin-top: 60px;
+    }
+
+    @include on-desktop {
+      grid-column: -8 / -1;
+
+      margin-top: 50px;
+    }
+  }
+}
