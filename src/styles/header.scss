@@ -1,0 +1,102 @@
+.header {
+  color: $White;
+  background-color: #3f5252;
+  height: 100vh;
+  background-image: url(../images/header-bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: 245px 273px;
+  background-position: bottom;
+  margin-bottom: 90px;
+
+  @include onTablet {
+    background-size: 443px 494px;
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+    height: 100vh;
+    background-size: 625px 663px;
+    background-position: right bottom;
+    margin-bottom: 110px;
+  }
+
+  &__top-bar {
+    padding-block: 20px 70px;
+
+    @include onTablet {
+      padding-block: 20px 99px;
+    }
+
+    @include onDesktop {
+      padding-block: 26px 90px;
+    }
+  }
+
+  &__text {
+    color: $White;
+    width: 192px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 140%; /* 19.6px */
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      width: 570px;
+    }
+
+    &--more {
+      color: inherit;
+      width: 267px;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        width: 330px;
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        width: 569px;
+        margin-bottom: 81px;
+      }
+    }
+  }
+
+  &__title {
+    width: 279px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      width: 569px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      width: 569px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: inline;
+      position: relative;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 125%; /* 17.5px */
+      color: $White;
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 469px;
+        height: 1px;
+        background-color: $White;
+        top: 8px;
+        left: 101px;
+      }
+    }
+  }
+}
