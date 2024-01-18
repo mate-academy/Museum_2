@@ -1,0 +1,35 @@
+.icon {
+  display: block;
+  @include sizes(25px, 20px);
+
+  &--menu {
+    background-image: url("../images/menu-burger.svg");
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(3px 5px 2px RGB(0 0 0 / 0.4));
+    }
+  }
+
+  &--cross {
+    display: block;
+    @include sizes(20px, 20px);
+    background-image: url("../images/cross.svg");
+    @include background(no-repeat, center, cover);
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(3px 5px 2px RGB(0 0 0 / 0.4));
+    }
+
+    @include on-tablet {
+      @include sizes(25px, 20px);
+    }
+
+    @include on-desktop {
+      @include sizes(25px, 20px);
+    }
+  }
+}

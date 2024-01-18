@@ -1,0 +1,67 @@
+.main-page {
+  font-family: "Raleway", sans-serif;
+  @include fonts(16px, 24px, 400);
+  scroll-behavior: smooth;
+  background-color: $color-white;
+
+  &__body {
+    margin: 0;
+    box-sizing: border-box;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition: translate 0.3s linear,
+      opacity 0.3s linear;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 90px;
+
+    @include on-tablet {
+      margin-bottom: 105px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__title {
+    font-family: "Playfair Display", serif;
+    @include fonts(28px, 35px, 700);
+    color: $color-black;
+    margin: 0 0 60px;
+
+    @include on-tablet {
+      @include fonts(36px, 48px, 700);
+      margin: 0 0 75px;
+    }
+
+    @include on-desktop {
+      @include fonts(48px, 58px, 700);
+      margin: 0 0 71px;
+    }
+  }
+
+  &__visit {
+    background-color: $color-background;
+  }
+}

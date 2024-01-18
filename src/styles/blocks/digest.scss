@@ -1,0 +1,94 @@
+.digest {
+  &__title {
+    font-family: "Playfair Display", serif;
+    @include fonts(28px, 35px, 700);
+    color: $color-black;
+    margin: 0 0 20px;
+
+    @include on-tablet {
+      @include fonts(40px, 50px, 700);
+    }
+
+    @include on-desktop {
+      @include fonts(48px, 58px, 700);
+      margin: 0 0 50px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 50px;
+
+    @include on-tablet {
+      margin: 0 0 50px;
+    }
+
+    @include on-desktop {
+      margin: 0;
+    }
+  }
+
+  &__form {
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__field {
+    background-color: $color-white;
+    border: none;
+    border-bottom: 1px solid $color-black;
+    @include sizes(100%, 24px);
+    font-weight: 700;
+    color: $color-black;
+
+    &::placeholder {
+      color: $color-black;
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $color-main;
+
+      &::placeholder {
+        color: $color-main;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      caret-color: $color-main;
+      border-bottom: 1px solid $color-main;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    &:focus-visible {
+      color: $color-black;
+      caret-color: $color-black;
+      border-bottom: 1px solid $color-black;
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $color-black;
+      -webkit-box-shadow: 0 0 0 1000px $color-white inset;
+    }
+  }
+
+  &__button {
+    width: 280px;
+    height: 60px;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+  }
+}

@@ -1,0 +1,71 @@
+.button {
+  max-width: 280px;
+  height: 60px;
+  @include flex(flex, center, center, row);
+  @include fonts(16px, 16px, 600);
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  &--pos-center {
+    @include on-mobile {
+      margin: 0 auto;
+    }
+
+    @include on-tablet {
+      margin: 0;
+    }
+
+    @include on-desktop {
+      margin: 0;
+    }
+  }
+
+  &--buy-ticket {
+    background-color: $color-main;
+    color: $color-white;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+  }
+
+  &--exhibitions-archive {
+    background-color: $color-white;
+    color: $color-main;
+    border: 1px solid $color-main;
+    transition: all 0.3s;
+
+    &::after {
+      content: url("../images/arrow.svg");
+      margin-left: 10px;
+      transform: translateY(10%);
+    }
+
+    &:hover {
+      border-color: #af3419;
+      color: #af3419;
+    }
+
+    &:active {
+      border-color: #ea340d;
+      color: #ea340d;
+    }
+
+    &:disabled {
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+  }
+}
