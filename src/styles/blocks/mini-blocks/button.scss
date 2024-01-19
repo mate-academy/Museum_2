@@ -1,0 +1,78 @@
+.button {
+  $heigth: 60px;
+
+  display: block;
+  height: $heigth;
+  width: 100%;
+
+  @include tablet {
+    width: 330px;
+  }
+
+  @include desktop {
+    width: 270px;
+  }
+
+  background-color: $orange-color;
+  color: $white-color;
+
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: $heigth; /* 16px */
+  text-align: center;
+
+  transition: all .3s;
+
+  &:hover {
+    background-color: rgb(175, 52, 25);
+  }
+
+  &:active, &:focus {
+    background-color: rgb(234, 52, 13);
+  }
+
+  &:disabled {
+    background-color: rgb(221, 131, 111);
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $orange-color;
+    border: 1px solid $orange-color;
+
+    & span {
+      position: relative;
+    }
+
+    & span::after {
+      content: "";
+      position: absolute;
+      right: -28px;
+      top: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url("../images/svg/arrow.svg");
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: rgba(175, 52, 25, 1);
+      border: 1px solid rgba(175, 52, 25, 1);
+    }
+
+    &:active, &:focus {
+      background-color: transparent;
+      color: rgba(234, 52, 13, 1);
+      border: 1px solid rgba(234, 52, 13, 1);
+    }
+
+    &:disabled {
+      background-color: transparent;
+      color: rgba(221, 131, 111, 1);
+      border: 1px solid rgba(221, 131, 111, 1);
+    }
+  }
+}

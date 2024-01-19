@@ -1,0 +1,45 @@
+.navigation {
+  background-color: $bg-color;
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $heigth-navigation;
+  }
+
+  &__logo-svg:hover path {
+    fill: rgb(36, 36, 36);
+  }
+
+  &__menu {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__language {
+    color: $white-color;
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+
+    display: none;
+
+    @include tablet {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+    }
+
+    @include mobile {
+      &--menu {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        order: -2;
+      }
+    }
+  }
+}
