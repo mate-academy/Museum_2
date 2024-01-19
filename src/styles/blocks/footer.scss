@@ -1,8 +1,139 @@
 .footer {
   background-color: $bg-color;
   padding: 34px 0 30px;
+  color: $white-color;
 
   @include tablet {
     padding-top: 50px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    margin-bottom: 60px;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+
+      margin-bottom: 70px;
+    }
+  }
+
+  &__contact {
+    @include tablet {
+      grid-area: 1/1/1/3;
+    }
+  }
+
+  &__schedule {
+    @include tablet {
+      grid-area: 1/3/1/5;
+    }
+  }
+
+  &__menu {
+    @include tablet {
+      grid-area: 1/5/1/7;
+    }
+  }
+
+  &__title {
+    font-family: PlayfairDisplay, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%; /* 27px */
+
+    margin-bottom: 10px;
+
+    @include tablet {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__adress {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__adress a {
+    transition: all .3s;
+  }
+
+  &__adress a:hover {
+    color: $orange-color;
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__social-link svg path {
+    transition: all .3s;
+  }
+
+  &__social-link:hover svg path {
+    fill: $orange-color;
+  }
+
+  &__schedule-link {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include tablet {
+      gap: 10px;
+    }
+  }
+
+  &__menu-link {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+
+    transition: all .3s;
+  }
+
+  &__menu-link:hover {
+    color: $orange-color;
+  }
+
+  &__privacy {
+    display: flex;
+    gap: 22px;
+
+    @include desktop {
+      gap: 102px;
+    }
+  }
+
+  &__text-privacy {
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
   }
 }
