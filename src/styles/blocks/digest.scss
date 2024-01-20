@@ -1,0 +1,105 @@
+.digest {
+  background-color: $main-white-color;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  @include onTablet {
+    padding-top: 160px;
+    padding-bottom: 128px;
+  }
+  @include onDesktop {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    @include onTablet {
+      grid-column: span 5;
+    }
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-column: 7 / 13;
+      grid-row: 1;
+    }
+  }
+
+  &__input {
+    margin-bottom: 30px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $accent-black-color;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 150%;
+    color: $accent-black-color;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &::placeholder {
+      color: $accent-black-color;
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      color: $main-accent-color;
+      border-bottom: 1px solid $main-accent-color;
+
+      &::placeholder {
+        color: $main-accent-color;
+      }
+    }
+
+    &:focus {
+      color: $main-accent-color;
+      font-weight: 600;
+      border-bottom: 1px solid $main-accent-color;
+
+      &::placeholder {
+        color: $main-accent-color;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: $accent-black-color;
+      font-weight: 700;
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__form {
+    @include onTablet {
+      grid-column: span 4;
+    }
+    @include onDesktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    cursor: pointer;
+    @include onTablet {
+      grid-column: span 3;
+      width: 70%;
+    }
+    @include onDesktop {
+      grid-row: 3;
+      width: 50%;
+    }
+  }
+}

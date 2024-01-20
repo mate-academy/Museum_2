@@ -1,0 +1,114 @@
+.hero {
+  background-color: $bg-color;
+  padding-top: 50px;
+
+  @include onTablet {
+    padding-top: 100px;
+  }
+  @include onDesktop {
+    padding-top: 90px;
+  }
+
+  &__container {
+    @include onDesktop {
+      padding-inline-end: 0;
+    }
+  }
+
+  &__img {
+    &--mb {
+      display: block;
+      margin: 0 auto;
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tb {
+      display: none;
+      @include onTablet {
+        display: block;
+        margin: 0 auto;
+      }
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--des {
+      display: none;
+      @include onDesktop {
+        display: inline-block;
+        align-self: self-start;
+      }
+    }
+  }
+
+  &__grid {
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__left {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    @include menuText;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    color: $main-white-color;
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+    @include onDesktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  &__date {
+    display: none;
+    font-family: "Playfair Display", serif;
+    color: $main-white-color;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 125%;
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 81px auto;
+      align-items: center;
+      margin-top: auto;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__line {
+    display: none;
+    @include onDesktop {
+      display: block;
+      height: 4px;
+      color: $main-white-color;
+      width: 100%;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 40px;
+    @include onTablet {
+      width: 50%;
+      margin-bottom: 70px;
+    }
+    @include onDesktop {
+      margin-bottom: 0;
+      width: 50%;
+    }
+  }
+}
