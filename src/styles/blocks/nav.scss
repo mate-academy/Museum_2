@@ -1,0 +1,78 @@
+.nav {
+  grid-column: 1 / 7;
+  z-index: 1;
+
+  &__list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-family: "Playfair Display";
+    font-weight: 700;
+    margin-bottom: 80px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      background-color: $sections-background-color;
+      height: 1px;
+      width: 100%;
+      bottom: -40px;
+
+      @include onTablet {
+        bottom: -50px;
+      }
+
+      @include onDesktop {
+        bottom: -60px;
+      }
+    }
+
+    @include onTablet {
+      gap: 30px;
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      gap: 60px;
+      margin-bottom: 120px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: -8px;
+      height: 1px;
+      width: 100%;
+      background-color: $sections-background-color;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}

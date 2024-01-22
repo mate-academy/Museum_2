@@ -1,0 +1,110 @@
+.footer {
+  padding-top: 34px;
+  padding-bottom: 30px;
+  background: $background-color;
+  color: $footer-text-color;
+
+  @include onTablet {
+    padding-top: 50px;
+  }
+
+  & a {
+    @include hover(color, $button-hover-color);
+  }
+
+  &--wrapper {
+    @include pageGrid;
+    grid-template-rows: repeat(4, auto);
+    row-gap: 50px;
+
+    @include onTablet {
+      grid-template-rows: repeat(2, auto);
+      row-gap: 60px;
+    }
+
+    @include onDesktop {
+      row-gap: 70px;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @extend %paragraph;
+    font-style: normal;
+    color: $footer-text-color;
+  }
+
+  &__social {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+
+    @include onDesktop {
+      margin-top: 50px;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $footer-text-color;
+    text-decoration: none;
+  }
+
+  &__nav {
+    grid-column: 9 / -1;
+
+    &-list {
+      list-style: none;
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+
+    &-item {
+      margin-bottom: 5px;
+
+      @include onTablet {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding-top: 10px;
+
+    @include onTablet {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+    }
+
+    &-terms {
+      display: flex;
+      gap: 22px;
+
+      @include onDesktop {
+        gap: 102px;
+      }
+    }
+  }
+}
