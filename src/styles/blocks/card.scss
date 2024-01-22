@@ -1,0 +1,38 @@
+.card {
+  &__image {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__dates {
+    @extend %paragraph;
+    color: $card-dates-color;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    @extend %paragraph;
+    color: $grey-text-color;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__button--wrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+    }
+  }
+}

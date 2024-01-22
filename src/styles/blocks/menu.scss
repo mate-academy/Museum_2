@@ -1,0 +1,90 @@
+.menu {
+  overflow: auto; /* to scroll the menu if needed */
+  z-index: 2;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: $background-color;
+  font-weight: 700;
+
+  @include onTablet {
+    height: 1092px;
+  }
+
+  @include onDesktop {
+    height: 800px;
+  }
+
+  &__top {
+    margin-bottom: 30px;
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__content {
+    font-family: "Raleway";
+    color: $planning-visit-text-color;
+
+    &--wrapper {
+      @include pageGrid;
+    }
+
+    &--top--wrapper {
+      display: flex;
+      flex-direction: column;
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        flex-direction: row;
+        gap: 123px;
+      }
+    }
+
+    &__text {
+      color: inherit;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 140%;
+      margin-bottom: 20px;
+      font-weight: 400;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 70px;
+      }
+
+      &--bold {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
+      }
+
+      &--adress {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__boy {
+    @include onTablet {
+      position: absolute;
+      background-repeat: no-repeat;
+      background-image: url(../images/menu-boy.png);
+      height: 466px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-position: center;
+      background-size: contain;
+    }
+
+    @include onDesktop {
+      height: 697px;
+      background-position: bottom right;
+    }
+  }
+}

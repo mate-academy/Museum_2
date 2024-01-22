@@ -1,0 +1,87 @@
+.news {
+  padding-top: 90px;
+  padding-bottom: 120px;
+
+  @include onTablet {
+    padding-top: 120px;
+    padding-bottom: 130px;
+  }
+
+  @include onDesktop {
+    padding-top: 110px;
+    padding-bottom: 150px;
+  }
+
+  &--wrapper {
+    @include pageGrid;
+    row-gap: 30px;
+    grid-template-rows: repeat(4, auto);
+
+    @include onTablet {
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      grid-row: 1 / 2;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__card {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 40px;
+      grid-row: 2 / 3;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      margin-top: 23px;
+      grid-column: span 6;
+    }
+  }
+
+  &__image {
+    height: 281px;
+
+    @include onTablet {
+      height: 330px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+    }
+
+    &--first {
+      background-image: url(../images/news-pictures.png);
+    }
+
+    &--second {
+      background-image: url(../images/news-cats-day.png);
+    }
+  }
+
+  &__dates {
+    color: $main-text-color;
+    margin-bottom: 0;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 0;
+  }
+}

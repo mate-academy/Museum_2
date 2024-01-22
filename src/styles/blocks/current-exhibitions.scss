@@ -1,0 +1,76 @@
+.current-exhibitions {
+  padding-top: 90px;
+
+  @include onTablet {
+    padding-top: 105px;
+  }
+
+  @include onDesktop {
+    padding-top: 110px;
+  }
+
+  &--wrapper {
+    @include pageGrid;
+    row-gap: 30px;
+    grid-template-rows: repeat(4, auto);
+
+    @include onTablet {
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+
+  &__title {
+    text-align: center;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      text-align: left;
+      grid-row: 1 / 2;
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__card {
+    padding-top: 30px;
+
+    @include onTablet {
+      grid-column: span 3;
+      grid-row: 2 / 3;
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-self: stretch;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__image {
+    height: 356px;
+
+    @include onTablet {
+      height: 420px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 484px;
+      margin-bottom: 20px;
+    }
+
+    &--first {
+      background-image: url("../images/sculpture_current_exhibitions.png");
+    }
+
+    &--second {
+      background-image: url("../images/mykola-pymonenko_current_exhibition.png");
+    }
+  }
+}
