@@ -1,0 +1,151 @@
+.actual {
+  &__container-exhib {
+    @include tab768 {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__container-title{
+    margin: 90px 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include tab768 {
+      font-family: "Playfair Display", sans-serif;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 125%;
+    }
+  }
+
+  &__data {
+    color: #cd4d31;
+    margin: 20px 0 10px;
+  }
+
+  &__exhib {
+    @include tab768 {
+      width: 330px;
+    }
+
+    @include desk1280 {
+      width: 570px;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    margin-bottom: 20px;
+
+    @include tab768 {
+      font-family: "Playfair Display", sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 125%;
+      height: 60px;
+    }
+  }
+
+  &__pic {
+    width: 280px;
+    height: 356px;
+
+    @include tab768 {
+      width: 330px;
+      height: 420px;
+    }
+
+    @include desk1280 {
+      width: 570px;
+      height: 484px;
+    }
+  }
+
+  &__discription {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: $gray;
+    margin-bottom: 20px;
+  }
+}
+
+.pic1 {
+  background-image: url(../images/actual1.png);
+  background-position: 25% 25%;
+}
+
+.pic2 {
+  background-image: url(../images/actual2.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include desk1280 {
+    background-image: url(../images/actual2_desk.png);
+  }
+}
+
+.exhib2 {
+  margin-top: 60px;
+
+  @include tab768 {
+    margin-top: 0;
+    margin-left: 30px;
+  }
+}
+
+.button_exhib {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 278px;
+  background-color: white;
+  border: solid $main 1px;
+
+  @include tab768 {
+    width: 210px;
+  }
+
+  &:hover {
+    border: #af3419 solid 1px;
+    color: #af3419;
+  }
+
+  &:active {
+    border: #ea340d solid 1px;
+    color: #ea340d;
+  }
+
+  &:disabled {
+    border: #dd836f solid 1px;
+    background-color: #dd836f;
+  }
+
+  &__text {
+    color: $main;
+  }
+}
+
+.button-tablet {
+  display: none;
+
+  @include tab768 {
+    display: flex;
+  }
+}
+
+.button-phone {
+  @include tab768 {
+    display: none;
+  }
+}
