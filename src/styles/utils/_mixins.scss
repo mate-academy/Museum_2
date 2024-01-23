@@ -1,6 +1,247 @@
+// grid //
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+
+@mixin on-large-screen {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin grid {
+  --columns: 2;
+  --gap: 20px;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: var(--gap);
+
+  @include on-tablet {
+    --columns: 6;
+    --gap: 30px
+  }
+
+  @include on-desktop {
+    --columns: 12;
+    --gap: 30px;
+  }
+}
+
+// hover //
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin hover-under-line {
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color: white;
+    bottom: 2px;
+    transition: all 0.4s;
+    transform: scale(0);
+    transform-origin: center;
+  }
+  &:hover::after {
+    transform: scale(1);
+  }
+}
+
+
+// under line //
+@mixin under-line {
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color: white;
+  }
+}
+
+// buttons //
+
+@mixin button-buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $orange;
+  border: none;
+  cursor: pointer;
+  color: white;
+
+  height: 60px;
+
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  &:focus {
+    background-color: rgba(234, 52, 13, 1);
+  }
+
+  &:disabled {
+    background-color: rgba(221, 131, 111, 1);
+  }
+}
+
+@mixin event-button {
+  @include hover(color, $dark-orange);
+  @include hover(border-color, $dark-orange);
+  @include hover(background-color, transparent);
+
+  display: flex;
+  width: auto;
+
+  background-color: transparent;
+  border: 1px solid $orange;
+  color: $orange;
+
+  &:focus {
+    background-color: transparent;
+    color: rgba(234, 52, 13, 1);
+    border-color: rgba(234, 52, 13, 1);
+  }
+
+  &:disabled {
+    background-color: transparent;
+    color: rgba(221, 131, 111, 1);
+    border-color: rgba(221, 131, 111, 1);
+  }
+}
+
+// fonts //
+// h1 //
+@mixin mobile-h1 {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: left;
+}
+
+@mixin tablet-h1 {
+  font-size: 72px;
+  line-height: 72px;
+}
+
+@mixin desktop-h1 {
+  font-size: 96px;
+  line-height: 96px;
+}
+
+// h2 //
+@mixin phone-h2 {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 38px;
+  text-align: left;
+}
+
+@mixin tablet-h2 {
+  font-size: 62px;
+  line-height: 62px;
+}
+
+@mixin desktop-h2 {
+  font-size: 80px;
+  line-height: 80px;
+}
+
+// h3 //
+@mixin phone-h3 {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 35px;
+  text-align: left;
+  }
+
+@mixin tablet-h3 {
+  font-size: 40px;
+  line-height: 50px;
+}
+
+@mixin desktop-h3 {
+  font-size: 48px;
+  line-height: 58px;
+}
+
+// h4 //
+
+@mixin phone-h4 {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: left;
+}
+
+@mixin tablet-h4 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+// h5 //
+@mixin phone-h5 {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+}
+
+@mixin tablet-h5 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+// h6 //
+@mixin phone-h6 {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: left;
+}
+
+
+// main text //
+@mixin main-text {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+// additional text //
+@mixin additional-text {
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
 }

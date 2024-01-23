@@ -1,0 +1,132 @@
+.header {
+  height: 100vh;
+  background-color: $main-background;
+
+  background-image: url("/src/images/menu-back.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 65%;
+
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 90px;
+
+  @include on-tablet {
+    background-size: 65%;
+  }
+
+  @include on-desktop {
+    background-position: 100% 100%;
+    background-size: 40%;
+  }
+
+  &-content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 20px;
+    max-width: 600px;
+
+    @include on-tablet {
+      padding: 20px 39px;
+    }
+
+    @include on-desktop {
+      padding: 20px 55px;
+    }
+
+    &__date {
+      @include additional-text;
+
+      text-align: justify;
+      color: white;
+    }
+
+    &__heading {
+      @include mobile-h1;
+
+      color: white;
+      text-align: justify;
+
+      margin-bottom: 15px;
+
+      @include on-tablet {
+        @include tablet-h1;
+
+        font-size: 72px;
+        line-height: 72px;
+      }
+
+      @include on-desktop {
+        @include desktop-h1;
+      }
+    }
+
+    &__info {
+      @include main-text;
+
+      text-align: justify;
+      color: white;
+
+      margin-bottom: 25px;
+
+      @include on-desktop {
+        margin-bottom: 80px;
+      }
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &>a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__dateline {
+      display: none;
+
+      @include on-desktop {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        position: absolute;
+        left: 55px;
+        bottom: 20px;
+
+
+        &-text {
+          @include phone-h6;
+
+          position: relative;
+          color: rgba(241, 245, 244, 1);
+          opacity: 70%;
+
+          &::after {
+            content: "";
+            display: flex;
+            position: absolute;
+            background-color: white;
+            height: 1px;
+            width: 650px;
+            top: 55%;
+            left: 120%;
+          }
+        }
+     }
+    }
+  }
+}
