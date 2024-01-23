@@ -1,0 +1,243 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: $main-background;
+  position: relative;
+
+  padding-inline: 20px;
+
+  padding-top: 35px;
+  padding-bottom: 30px;
+
+  @include on-tablet {
+    @include grid;
+
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-top: 50px;
+    padding-inline: 55px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+
+    &__heading {
+      @include phone-h5;
+
+      color: white;
+
+      @include on-tablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__address {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      margin-bottom: 30px;
+
+      @include on-tablet {
+        margin-bottom: 50px;
+      }
+
+      &-link {
+        @include main-text;
+
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        text-align: left;
+        width: fit-content;
+        color: white;
+      }
+
+      &-phone {
+        @include main-text;
+
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        text-align: left;
+        width: fit-content;
+        color: white;
+
+        &-call {
+          @include main-text;
+
+          text-decoration: none;
+          color: white;
+        }
+      }
+
+      &-mail {
+        @include main-text;
+
+        display: flex;
+        text-decoration: none;
+        justify-content: center;
+        text-align: left;
+        width: fit-content;
+        color: white;
+      }
+    }
+
+    &__social {
+      display: flex;
+
+      margin-bottom: 50px;
+
+
+      &__list {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        gap: 20px;
+
+        &-item {
+          @include hover(scale, 1.2);
+        }
+      }
+    }
+  }
+
+  &__schedule {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: 3 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+
+
+    &__heading {
+      @include phone-h5;
+
+      color: white;
+
+      @include on-tablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__info {
+      @include main-text;
+
+      color: white;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+
+    &__heading {
+      @include phone-h5;
+
+      color: white;
+
+      @include on-tablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    &__list {
+      @include main-text;
+
+      list-style: none;
+      gap: 5px;
+
+
+      &-item {
+        @include hover(scale, 1.1);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        margin-bottom: 5px;
+
+        @include on-tablet {
+          margin-bottom: 10px;
+        }
+
+        &-link {
+          @include main-text;
+
+          display: flex;
+          text-decoration: none;
+          justify-content: center;
+          text-align: left;
+          width: fit-content;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__terms {
+    @include main-text;
+
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+
+    color: white;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    display: block;
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+    bottom: 30px;
+    right: 25px;
+
+    @include on-tablet {
+      right: 39px;
+    }
+
+    @include on-desktop {
+      right: 55px;
+    }
+  }
+}
