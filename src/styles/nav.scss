@@ -1,0 +1,40 @@
+.nav {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+
+  @include on-tablet {
+    gap: 30px;
+    grid-column: 1/-1;
+  }
+
+  @include on-desktop {
+    grid-column: 1/7;
+    row-gap: 60px;
+  }
+
+  &__item {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 700;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__item-link {
+    text-decoration: none;
+    color: $header-txt-color;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $links-hover-color;
+    }
+  }
+}

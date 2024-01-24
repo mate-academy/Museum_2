@@ -1,0 +1,103 @@
+.subscription {
+  @include page-grid;
+
+  margin-top: 120px;
+  margin-bottom: 80px;
+
+  @include on-tablet {
+    margin-top: 160px;
+    margin-bottom: 128px;
+  }
+
+  @include on-desktop {
+    margin-block: 200px;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include on-tablet {
+      font-size: 40px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__description {
+    grid-column: 1/-1;
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: 1/6;
+    }
+
+    @include on-desktop {
+      margin-top: 0;
+      grid-column: 7/13;
+    }
+  }
+
+  &__form {
+    grid-column: 1/-1;
+
+    @include page-grid;
+  }
+
+  &__input {
+    grid-column: 1/-1;
+    padding: 0;
+    margin-bottom: 30px;
+    width: 100%;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    border: 0;
+    background-color: $page-bg-color;
+    border-bottom: 1px solid $main-txt-color;
+    transition: color, border-bottom 0.3s;
+
+    &:hover {
+      color: $button-bg-color;
+      border-bottom: 1px solid $button-bg-color;
+
+      &::placeholder {
+        color: $button-bg-color;
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      font-weight: 600;
+      color: $button-bg-color;
+      outline: none;
+    }
+
+    &:valid {
+      font-weight: 600;
+    }
+
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+
+    @include on-desktop {
+      grid-column: 1/6;
+      margin-bottom: 40px;
+    }
+  }
+
+  & .button--red {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+  }
+}
