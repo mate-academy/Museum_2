@@ -1,7 +1,48 @@
 @import "utils";
-@import "fonts";
-@import "typography";
+@import "page";
+@import "header";
+@import "top-bar";
+@import "icons";
+@import "buttons";
+@import "menu";
+@import "nav";
+@import "exhibitions";
+@import "events";
+@import "visit";
+@import "news";
+@import "subscription";
+@import "footer";
 
-body {
-  background: $c-gray;
+
+.container {
+  height: 100%;
+
+  @include content-padding-inline;
+}
+
+.main {
+  height: 100%;
+
+  &__title {
+    grid-column: 1/-1;
+    color: $main-txt-color;
+    margin: 0;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include on-tablet {
+      font-size: 40px;
+      grid-column: 1/5;
+      align-self: center;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      grid-column:  1/7;
+    }
+  }
 }

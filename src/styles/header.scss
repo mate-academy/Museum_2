@@ -1,0 +1,154 @@
+.header {
+  position: relative;
+  background-color: $header-bg-color;
+  color: $header-txt-color;
+  height: 100%;
+
+  @include on-desktop {
+    height: 100vh;
+  }
+
+  &__logo-link {
+    height: 37px;
+  }
+
+  &__logo {
+    width: 124px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__content {
+    margin-top: 70px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      margin-top: 100px;
+      gap: 70px;
+    }
+
+    @include on-desktop {
+      margin-top: 90px;
+      width: 50%;
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__date {
+    margin: 0;
+    margin-right: 20px;
+    white-space: nowrap;
+    opacity: 0.7;
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 125%;
+  }
+
+  &__line {
+    margin: 0;
+    background-color: $header-txt-color;
+    height: 1px;
+    opacity: 0.3;
+    width: 100%;
+    border: 0;
+  }
+
+  &__image {
+    grid-column: 1/-1;
+    align-self: center;
+    width: 245px;
+    height: 273px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+
+    @include on-tablet {
+      height: 474px;
+      width: 443px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 663px;
+      width: 625px;
+    }
+  }
+
+  & .button--red {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+  }
+}
+
+.description {
+  @include on-tablet {
+    display: grid;
+    column-gap: 30px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  &__top {
+    margin: 0;
+    font-size: 14px;
+    line-height: 140%;
+
+    @include on-tablet {
+      grid-column: 1/6;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+
+    @include on-tablet {
+      font-size: 72px;
+      grid-column: 1/6;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+    }
+  }
+
+  &__bottom {
+    margin-top: 30px;
+    margin-bottom: 40px;
+    font-size: 16px;
+
+    @include on-tablet {
+      margin-top: 20px;
+      margin-bottom: 50px;
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      grid-column: 1/6;
+      margin-top: 30px;
+      margin-bottom: 81px;
+    }
+  }
+}
