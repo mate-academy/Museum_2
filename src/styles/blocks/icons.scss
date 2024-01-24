@@ -1,0 +1,64 @@
+.icon {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  background-position: center;
+  background-size: cover;
+
+  @include hover(transform, scale(1.1));
+
+  &--menu {
+    width: 25px;
+    height: 20px;
+    background-image: url(../images/icons/menu.svg);
+
+    @include on-tablet {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/icons/cross.svg);
+  }
+
+  &__link {
+    display: flex;
+  }
+
+  &--language {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+
+    &--main {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+      }
+    }
+
+    margin: 0;
+    padding-right: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+      content: "";
+
+      display: block;
+      position: absolute;
+      right: 0;
+      width: 8px;
+      height: 5px;
+      background-image: url(../images/icons/dropdown.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      }
+    }
+  }
+
