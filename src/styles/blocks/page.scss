@@ -1,0 +1,90 @@
+.page {
+  min-width: 320px;
+
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    padding: 0;
+    margin: 0;
+    font-family: Raleway, sans-serif;
+    color: $white-color;
+    position: relative;
+  }
+
+  &__menu {
+    height: 100vh;
+
+    @include on-tablet {
+      height: fit-content;
+    }
+
+    @include on-desktop {
+      height: 100vh;
+    }
+
+    background-color: $background-color;
+  }
+
+  &__main {
+    padding-block: 90px 80px;
+
+    @include on-tablet {
+      padding-block: 105px 128px;
+    }
+
+    @include on-desktop {
+      padding-block: 110px 200px;
+    }
+
+    &--title {
+      margin: 0;
+      color: $black-color;
+      font-family: "Playfair Display", sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 125%; /* 35px */
+
+      @include on-tablet {
+        font-size: 40px;
+      }
+
+      @include on-desktop {
+        font-size: 48px;
+      }
+    }
+
+    &--cards {
+      grid-column: 1 / -1;
+      grid-row: 2;
+
+      @include on-tablet {
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+      }
+
+      @include page-grid;
+
+      grid-template-rows: repeat(2, fit-content);
+      row-gap: 60px;
+    }
+  }
+
+  &__link-scroll {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 1;
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/icons/scroll-up.svg);
+
+    @include on-desktop {
+      right: 55px;
+    }
+  }
+
+}

@@ -1,0 +1,95 @@
+.news {
+  @include content-padding-inline;
+  @include page-grid;
+
+  padding-block: 90px 0;
+  color: $black-color;
+  place-content: center;
+  grid-template-rows: repeat(3, fit-content);
+
+  &__title {
+    margin: 0;
+    margin-bottom: 60px;
+
+    grid-row: 1;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      margin-bottom: 75px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 30px;
+
+    grid-row: 2;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 30px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    height: 281px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &--1 {
+      background-image: url(../images/news-img-1.png);
+    }
+
+    &--2 {
+      background-image: url(../images/news-img-2.png);
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+  }
+
+  &__card-title {
+    margin: 0;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 125%; /* 25px */
+  }
+
+  &__overview {
+    margin-top: 20px;
+    color: $grey-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+
+    @include on-tablet {
+      margin-top: 18px;
+    }
+  }
+}

@@ -4,3 +4,109 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet() {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop() {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin large-screens() {
+  @media (min-width: $large-screens) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline() {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+    max-width: $tablet-min-width;
+    margin-inline: auto;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+    max-width: $desktop-min-width;
+    margin-inline: auto;
+  }
+}
+
+@mixin page-grid() {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    column-gap: 30px;
+
+    --columns: 6;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+@mixin underline-text-hover($height) {
+  & {
+    position: relative;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: #{$height};
+    height: 2px;
+    background-color: $main-color;
+
+    transform: scale(0);
+    transition: transform 0.3s;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+    }
+}
+
+@mixin red-button() {
+  color: $white-color;
+  text-decoration: none;
+
+  &-button {
+    background: $main-color;
+    height: 60px;
+    width: 100%;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px
+    }
+
+    @include hover(background-color, $hover-main-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%; /* 16px */
+
+
+  }
+}
