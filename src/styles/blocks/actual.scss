@@ -1,6 +1,16 @@
 .actual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet {
+    align-items: stretch;
+  }
+
   &__container-exhib {
-    @include tab768 {
+    margin-bottom: 30px;
+    
+    @include tablet {
       display: flex;
       justify-content: center;
     }
@@ -11,10 +21,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
   }
 
   &__title {
-    @include tab768 {
+    @include tablet {
       font-family: "Playfair Display", sans-serif;
       font-size: 40px;
       font-style: normal;
@@ -29,11 +44,15 @@
   }
 
   &__exhib {
-    @include tab768 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @include tablet {
       width: 330px;
     }
 
-    @include desk1280 {
+    @include desktop {
       width: 570px;
     }
   }
@@ -42,7 +61,7 @@
     font-size: 20px;
     margin-bottom: 20px;
 
-    @include tab768 {
+    @include tablet {
       font-family: "Playfair Display", sans-serif;
       font-size: 24px;
       font-style: normal;
@@ -56,12 +75,12 @@
     width: 280px;
     height: 356px;
 
-    @include tab768 {
+    @include tablet {
       width: 330px;
       height: 420px;
     }
 
-    @include desk1280 {
+    @include desktop {
       width: 570px;
       height: 484px;
     }
@@ -75,6 +94,7 @@
     line-height: 150%;
     color: $gray;
     margin-bottom: 20px;
+    text-align: center;
   }
 }
 
@@ -89,7 +109,7 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  @include desk1280 {
+  @include desktop {
     background-image: url(../images/actual2_desk.png);
   }
 }
@@ -97,7 +117,7 @@
 .exhib2 {
   margin-top: 60px;
 
-  @include tab768 {
+  @include tablet {
     margin-top: 0;
     margin-left: 30px;
   }
@@ -112,7 +132,7 @@
   background-color: white;
   border: solid $main 1px;
 
-  @include tab768 {
+  @include tablet {
     width: 210px;
   }
 
@@ -139,13 +159,13 @@
 .button-tablet {
   display: none;
 
-  @include tab768 {
+  @include tablet {
     display: flex;
   }
 }
 
 .button-phone {
-  @include tab768 {
+  @include tablet {
     display: none;
   }
 }

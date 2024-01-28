@@ -9,15 +9,16 @@
   right: 0;
   transform: translateY(-100%);
   transition: 0.3s;
-  overflow: hidden;
   font-family: "IBM Plex Sans", monospace;
   font-weight: 500;
   font-size: 16px;
   line-height: 16px;
   color: #fff;
+  overflow: hidden;
   
   &:target {
     transform: translateY(0);
+    overflow: hidden;
   }
 
   &__container {
@@ -54,12 +55,12 @@
   &__point {
     height: 26px;
 
-    @include desk1280 {
+    @include desktop {
       height: 58px;
     }
   }
 
-  @include tab768 {
+  @include tablet {
     font-family: "Playfair Display", sans-serif;
     font-size: 48px;
     font-style: normal;
@@ -72,7 +73,7 @@
     gap: 20px;
     flex-direction: column;
 
-    @include desk1280 {
+    @include desktop {
       gap: 60px;
     }
     
@@ -97,6 +98,12 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
+    transition-duration: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
   }
 }
 
@@ -114,8 +121,17 @@
   justify-content: space-between;
   padding: 20px 0;
 
-  @include tab768 {
+  @include tablet {
     margin-bottom: 10px;
+  }
+  &__namu {
+    display: flex;
+    transition-duration: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
   }
 
   &__right {
@@ -123,7 +139,7 @@
     align-items: center;
     gap: 30px;
 
-    @include tab768 {
+    @include tablet {
       flex-direction: row-reverse;
     }
   }
@@ -131,6 +147,12 @@
   &__cross {
     display: flex;
     align-items: center;
+    transition-duration: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
   }
 
   &__language {
@@ -145,6 +167,12 @@
     font-style: normal;
     font-weight: 500;
     line-height: 150%;
+    transition-duration: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
 
     &::after {
       display: flex;
@@ -158,13 +186,16 @@
   &__menu {
     display: flex;
     align-items: center;
+    &:target {
+      overflow: hidden;
+    }
   }
 }
 
 .schedule_geo {
   margin-bottom: 20px;
 
-  @include tab768 {
+  @include tablet {
     display: flex;
     gap: 123px;
     margin-bottom: 50px;
@@ -174,7 +205,7 @@
 .aside_pic {
  display: none;
 
- @include tab768 {
+ @include tablet {
   bottom: 0;
   display: block;
   position: absolute;
@@ -183,7 +214,7 @@
   right: calc(50% - 211px);
   }
 
-  @include desk1280 {
+  @include desktop {
     position: absolute;
     right: 0;
     width: 624px;
@@ -192,7 +223,7 @@
 }
 
 .aside_wrap {
-    @include desk1280 {
+    @include desktop {
       display: flex;
     }
   }

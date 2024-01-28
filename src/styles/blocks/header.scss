@@ -1,10 +1,16 @@
 header {
   background-color: #3f5252;
   padding: 0 20px;
+  max-width: 1280px;
+  
+
+  @include desktop {
+    padding: 0 55px;
+  }
 }
 
 .pic_wrap {
-  @include desk1280 {
+  @media (min-width: 1280px) {
     display: flex;
     justify-content: space-between;
   }
@@ -13,7 +19,7 @@ header {
 .intro {
   margin-bottom: 30px;
 
-  @include tab768 {
+  @include tablet {
     width: 569px;
     font-size: 72px;
     font-style: normal;
@@ -21,7 +27,7 @@ header {
     line-height: 100%;
   }
 
-  @include desk1280 {
+  @include desktop {
     font-size: 96px;
   }
 }
@@ -31,8 +37,18 @@ header {
   justify-content: space-between;
   padding: 20px 0;
   margin-bottom: 50px;
+  
+  &__namu {
+    display: flex;
+    transition-duration: 0.5s;
 
-  @include desk1280 {
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
+  }
+
+  @include desktop {
     margin-bottom: 70px;
   }
 
@@ -48,6 +64,12 @@ header {
     font-style: normal;
     font-weight: 500;
     line-height: 150%;
+    transition: 0.5s;
+    
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
 
     &::after {
       display: flex;
@@ -57,7 +79,7 @@ header {
       height: 4px;
     }
 
-    @include tab768 {
+    @include tablet {
       display: flex;
     }
   }
@@ -67,7 +89,7 @@ header {
     align-items: center;
     gap: 30px;
 
-    @include tab768 {
+    @include tablet {
       flex-direction: row;
     }
   }
@@ -75,6 +97,12 @@ header {
   &__menu {
     display: flex;
     align-items: center;
+    transition-duration: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
   }
 
 }
@@ -98,7 +126,7 @@ header {
   text-align: left;
   margin-bottom: 40px;
 
-  @include tab768 {
+  @include tablet {
     width: 330px;
     font-size: 16px;
     font-style: normal;
@@ -106,7 +134,7 @@ header {
     line-height: 150%;
   }
 
-  @include desk1280 {
+  @include desktop {
     width: 569px;
     margin-bottom: 80px;
   }
@@ -120,7 +148,7 @@ header {
   align-items: center;
   justify-content: center;
   
-  @include tab768 {
+  @include tablet {
     width: 330px
   }
 
@@ -149,7 +177,7 @@ header {
   top: 4px;
 
 
-  @include tab768 {
+  @include tablet {
     display: block;
     position: relative;
     width: 443px;
@@ -158,7 +186,7 @@ header {
     top: 0;
    }
 
-   @include desk1280 {
+   @include desktop {
     width: 625px;
     height: 663px;
     position: relative;
@@ -177,7 +205,7 @@ header {
   display: none;
   opacity: 0.7;
 
-  @include desk1280 {
+  @include desktop {
     display: flex;
     margin-top: 135px;
     align-items: center;
