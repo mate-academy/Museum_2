@@ -1,0 +1,84 @@
+.card {
+  box-sizing: border-box;
+
+  &__img-container {
+    position: relative;
+    width: 100%;
+    max-height: 356px;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      max-height: 420px;
+    }
+
+    @include onDesktop {
+      max-height: 484px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.3s linear;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__duration {
+    @extend %main-text;
+    color: $color-main;
+    max-height: 24px;
+
+    margin-bottom: 10px;
+  }
+
+  &__tittle {
+    @extend %h4;
+    color: $color-black;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      min-height: 60px;
+    }
+
+    @include onDesktop {
+      min-height: 30px;
+    }
+  }
+
+  &__text {
+    @extend %main-text;
+    color: $color-black;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+}

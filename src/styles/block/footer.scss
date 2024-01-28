@@ -1,0 +1,91 @@
+.footer {
+  box-sizing: border-box;
+  padding: 34px 0 30px;
+  background-color: $Background;
+  color: $color-white;
+
+  @include onTablet {
+    padding: 50px 0 30px;
+  }
+
+  &__content {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 50px;
+  }
+
+  &__schedule {
+    margin-bottom: 50px;
+  }
+
+  &__tittle {
+    margin-bottom: 10px;
+    @extend %h5;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    &-social {
+      display: grid;
+      grid-template-columns: repeat(4, 20px);
+      column-gap: 20px;
+    }
+
+    &-adress {
+      margin-bottom: 30px;
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__item {
+    @extend %main-text;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-white;
+    transition: all $transition;
+
+    &:hover {
+      color: $color-white;
+      text-decoration: underline 1px;
+      text-underline-offset: 2px;
+      opacity: 0.6;
+    }
+  }
+
+  &__day {
+    @extend %main-text;
+    list-style: none;
+  }
+
+  &__nav .footer__item {
+    :not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+}
