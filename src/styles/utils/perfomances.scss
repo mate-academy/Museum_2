@@ -1,0 +1,161 @@
+.perfomances {
+  @include content-padding-inline;
+
+  &__top {
+    @include page-grid;
+    margin-bottom: 60px;
+
+    &--title {
+      color: $color-for-main-text-black;
+      font-family: "Playfair Display";
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 125%;
+      grid-column: 1 / 5;
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+        font-size: 48px;
+      }
+    }
+
+    &--button {
+      grid-column: 5 / 7;
+      flex-direction: row;
+      gap: 8px;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+
+      color: $color-for-back-button;
+      font-family: Raleway;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 100%;
+      border: 1px solid $color-for-back-button;
+
+      &-img {
+        width: 24px;
+        height: 24px;
+      }
+
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+      }
+
+      @include on-desktop {
+        grid-column: 10 / 13;
+      }
+    }
+  }
+
+  &__cards {
+    @include page-grid;
+
+    &--card {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-desktop {
+        grid-column: span 6;
+      }
+
+      &-1 {
+        margin-bottom: 60px;
+      }
+
+      &-img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+        object-position: center;
+        object-fit: cover;
+
+        @include on-desktop {
+          height: 484px;
+        }
+      }
+
+      &-date {
+        color: $color-for-back-button;
+        font-family: Raleway;
+        font-size: 16px;
+        line-height: 150%;
+        margin-bottom: 10px;
+      }
+
+      &-title {
+        height: 60px;
+        color: $color-for-main-text-black;
+        font-family: "Playfair Display";
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 125%;
+        // margin-bottom: 20px;
+      }
+
+      &-subtitle {
+        height: 96px;
+        color: var(--gray, #504F5E);
+        font-family: Raleway;
+        font-size: 16px;
+        line-height: 150%;
+        margin-bottom: 16px;
+      }
+
+      &-button {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 60px;
+        line-height: 60px;
+        color: $color-for-main-text;
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 100%;
+        background-color: $color-for-back-button;
+
+        @include on-desktop {
+          width: 270px;
+        }
+      }
+    }
+
+    &--button {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      height: 60px;
+      align-items: center;
+      justify-content: center;
+
+      color: $color-for-back-button;
+      font-family: Raleway;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 100%;
+      border: 1px solid $color-for-back-button;
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        display: none;
+      }
+
+      &-img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

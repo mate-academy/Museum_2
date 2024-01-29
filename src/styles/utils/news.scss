@@ -1,0 +1,48 @@
+.news {
+  @include content-padding-inline;
+
+  margin-top: 120px;
+
+  &__cards {
+    @include page-grid;
+    gap: 50px;
+
+    &--card {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-desktop {
+        grid-column: span 6;
+      }
+
+      &-date {
+        margin: 20px 0 10px 0;
+        color: $color-for-main-text-black;
+        font-family: Raleway;
+        font-size: 14px;
+        line-height: 140%;
+      }
+
+      &-title {
+        color: $color-for-main-text-black;
+        font-family: "Playfair Display";
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 125%;
+        margin-bottom: 20px;
+      }
+
+      &-subtitle {
+        color: #504F5E;
+        font-family: Raleway;
+        font-size: 16px;
+        line-height: 150%;
+      }
+    }
+  }
+}

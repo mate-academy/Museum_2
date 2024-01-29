@@ -1,0 +1,78 @@
+.visit {
+  margin-top: 110px;
+  background-color: $color-green;
+
+  background-position: left;
+  background-repeat: no-repeat;
+  background-image: none;
+
+  @include on-desktop {
+    background-image: url(../images/visit/img_07.svg);
+  }
+
+  &__wrapper {
+    @include page-grid;
+    @include content-padding-inline;
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    padding: 50px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    color: $color-for-main-text;
+
+    @include on-tablet {
+      grid-column: span 4;
+      padding: 80px 0 80px 0;
+    }
+    @include on-desktop {
+      grid-column: 6 / 13;
+      padding: 205px 0 205px 0;
+    }
+
+    &--title {
+      margin-bottom: 20px;
+      font-family: "Playfair Display";
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 100%;
+
+      @include on-tablet {
+        font-size: 62px;
+      }
+
+      @include on-desktop {
+        font-size: 80px;
+      }
+    }
+
+    &--subtitle {
+      margin-bottom: 50px;
+      font-family: Raleway;
+      font-size: 16px;
+      line-height: 150%;
+
+      @include on-desktop {
+        width: 470px;
+      }
+    }
+
+    &--button {
+      width: 100%;
+      height: 60px;
+      background-color: $color-for-back-button;
+      color: $color-for-main-text;
+      font-family: Raleway;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 100%;
+      text-align: center;
+      line-height: 60px;
+
+      @include on-desktop {
+        width: 280px;
+      }
+    }
+  }
+}
