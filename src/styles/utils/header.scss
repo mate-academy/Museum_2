@@ -1,0 +1,87 @@
+.header {
+  background-color: $color-green;
+  height: 100vh;
+
+  background-image: url(../images/header/img_header.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 245px 273px;
+
+  @include on-desktop {
+    background-size: 565px 603px;
+    background-position: bottom right;
+  }
+
+  &__wrapper {
+    @include content-padding-inline;
+  }
+
+  &__bottom {
+    @include page-grid;
+
+    margin-top: 70px;
+    color: $color-for-main-text;
+
+    @include on-desktop {
+      margin-top: 110px;
+    }
+
+    &--text {
+      grid-column: 1 / -1;
+      font-family: Raleway;
+      font-size: 14px;
+      line-height: 140%;
+      margin-bottom: 10px;
+    }
+
+    &--title {
+      grid-column: 1 / -1;
+      font-family: "Playfair Display";
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 100%;
+      margin-bottom: 30px;
+
+      @include on-tablet {
+        font-size: 72px;
+        grid-column: span 5;
+      }
+
+      @include on-desktop {
+        font-size: 96px;
+        grid-column: span 7;
+      }
+    }
+
+    &--article {
+      grid-column: 1 / -1;
+      font-family: Raleway;
+      font-size: 16px;
+      line-height: 150%;
+      margin-bottom: 40px;
+
+      @include on-tablet {
+        margin-bottom: 50px;
+        grid-column: span 4;
+      }
+
+      @include on-desktop {
+        margin-bottom: 80px;
+        grid-column: 1 / -1;
+      }
+    }
+
+    &--button {
+      grid-column: 1 / -1;
+      color: $color-for-main-text;
+      height: 60px;
+      background-color: $color-for-back-button;
+      text-align: center;
+      line-height: 60px;
+
+      @include on-tablet {
+        grid-column: span 3;
+      }
+    }
+  }
+}

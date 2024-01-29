@@ -1,0 +1,88 @@
+.events {
+  @include content-padding-inline;
+
+  margin-top: 100px;
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    &--card {
+      @include page-grid;
+
+      &-image {
+        grid-column: 1 / -1;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+
+        @include on-tablet {
+          grid-column: span 3;
+        }
+
+        @include on-desktop {
+          grid-column: span 4;
+        }
+      }
+
+      &-text {
+        grid-column: 1 / -1;
+
+        @include on-tablet {
+          grid-column: span 3;
+        }
+
+        @include on-desktop {
+          grid-column: span 8;
+        }
+
+        &-date {
+          color: $color-for-back-button;
+          font-family: Raleway;
+          font-size: 16px;
+          line-height: 150%;
+          margin-bottom: 10px;
+        }
+
+        &-title {
+          color: $color-for-main-text-black;
+          font-family: "Playfair Display";
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 125%;
+          margin-bottom: 20px;
+
+          @include on-tablet {
+            font-size: 24px;
+          }
+        }
+
+        &-subtitle {
+          color: #504F5E;
+          font-family: Raleway;
+          font-size: 16px;
+          line-height: 150%;
+          margin-bottom: 50px;
+        }
+
+        &-button {
+          width: 100%;
+          height: 60px;
+          background-color: $color-for-back-button;
+          color: $color-for-main-text;
+          font-family: Raleway;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 100%;
+          text-align: center;
+          line-height: 60px;
+
+          @include on-desktop {
+            width: 280px;
+          }
+        }
+      }
+    }
+  }
+}

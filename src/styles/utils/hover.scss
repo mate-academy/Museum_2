@@ -1,0 +1,60 @@
+.hover-bigger {
+  @include hover(transform, scale(1.1));
+}
+
+.hover-bigger-1 {
+  @include hover(transform, scale(1.05));
+}
+
+.hover-button-red {
+  cursor: pointer;
+  @include hover(background-color, #AF3419);
+}
+
+.hover-button-white {
+  cursor: pointer;
+  @include hover(border-color, #AF3419);
+  @include hover(color, #AF3419);
+}
+
+.hover-text {
+  width: fit-content;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    height: 1px;
+    width: 0%;
+    background-color: $color-for-main-text;
+    transition: all 0.3s ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
+
+.hover-text1 {
+  width: fit-content;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 0%;
+    background-color: $color-for-main-text;
+    transition: all 0.3s ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}

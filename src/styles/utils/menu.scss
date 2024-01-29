@@ -1,0 +1,120 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $color-green;
+  z-index: 100;
+
+  @include on-tablet {
+    background-image: url(../images/header/img_menu.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 245px 273px;
+  }
+
+  @include on-desktop {
+    background-size: 565px 603px;
+    background-position: bottom right;
+  }
+
+  &__wrapper {
+    @include content-padding-inline;
+  }
+
+  &__bottom {
+    @include page-grid;
+
+    color: $color-for-main-text;
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 40px;
+    }
+
+    &--schedule {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      grid-column: span 2;
+      margin-bottom: 20px;
+
+      &-2 {
+        margin-bottom: 40px;
+        grid-column: span 3;
+
+        @include on-tablet {
+          margin-bottom: 50px;
+        }
+
+        @include on-desktop {
+          margin-bottom: 70px;
+        }
+      }
+
+      &-text {
+        font-family: Raleway;
+        font-size: 14px;
+        line-height: 140%;
+      }
+
+      &-title {
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 150%;
+        color: $color-for-main-text;
+      }
+    }
+
+    &--buttons {
+      display: flex;
+      flex-direction: column;
+      grid-column: 1 / -1;
+      gap: 20px;
+
+      font-family: "Playfair Display";
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 120%;
+
+      @include on-tablet {
+        font-size: 32px;
+        gap: 30px;
+      }
+
+      @include on-desktop {
+        gap: 60px;
+      }
+
+      &-button1 {
+        color: $color-for-main-text;
+        width: fit-content;
+        position: relative;
+
+      }
+    }
+
+    &--line {
+      margin: 40px 0 40px 0;
+      grid-column: 1 / -1;
+      height: 1px;
+      background-color: $color-for-main-text;
+
+      @include on-tablet {
+        margin: 50px 0 50px 0;
+      }
+
+      @include on-desktop {
+        margin: 60px 0 60px 0;
+        grid-column: span 6;
+      }
+
+      &-1 {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}
