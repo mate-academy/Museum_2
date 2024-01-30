@@ -1,0 +1,116 @@
+.page {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $color-text-primary;
+  background-color: $color-white;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0%);
+    }
+  }
+
+  &__section {
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 125px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+
+    &--subscribe {
+      margin-bottom: 80px;
+
+      @include onTablet {
+        margin-bottom: 130px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 200px;
+      }
+    }
+
+    &--plan {
+      margin-bottom: 90px;
+
+      @include onTablet {
+        margin-bottom: 125px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 110px;
+      }
+    }
+
+    &--news {
+      margin-bottom: 120px;
+
+      @include onTablet {
+        margin-bottom: 160px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 200px;
+      }
+    }
+
+  }
+
+  &__top-section-container {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__section-title {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+
+    @include onTablet {
+      font-size: 40px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+
+    &--subscribe {
+      margin: 0 0 20px;
+
+      @include onDesktop {
+        margin: 0 0 50px;
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.button {
+  align-self: end;
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: $color-accent;
+  border: solid 1px $color-accent;
+  color: $color-text-secondary;
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #af3419;
+    border-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+    border-color: #ea340d;
+  }
+
+  &--secondary {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: initial;
+    color: $color-accent;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+
+    &::after {
+      padding-right: 11px;
+      display: block;
+      content: "";
+      background-image: url("..//images/icons/arrow.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 14px;
+      height: 12px;
+    }
+
+    &:hover {
+      background-color: initial;
+      color: #af3419;
+      border-color: #af3419;
+
+      &::after {
+        background-image: url("..//images/icons/arrow-hover.svg");
+      }
+    }
+
+    &:active {
+      background-color: initial;
+      color: #ea340d;
+      border-color: #ea340d;
+
+      &::after {
+        background-image: url("..//images/icons/arrow-active.svg");
+      }
+    }
+  }
+
+  &--third {
+    @extend .button--secondary;
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--none {
+    display: none;
+  }
+}

@@ -1,0 +1,123 @@
+.header {
+  background-color: #3f5252;
+  background-image: url(..//images/photos/ukrainian_girl.png);
+
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 35vh;
+
+  color: $color-text-secondary;
+
+  @include onTablet {
+    background-size: 45vh;
+  }
+
+  @include onDesktop {
+    background-position: bottom right;
+    background-size: 80vh;
+  }
+
+  @include landscape {
+    background-position: right bottom;
+    background-size: 80vh;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20px 0 320px;
+
+    @include onTablet {
+      padding: 26px 0 500px;
+    }
+
+    @include onDesktop {
+      padding: 32px 0 56px;
+    }
+  }
+
+  &__top {
+    margin: 0 0 70px;
+
+    @include onTablet {
+      margin: 0 0 125px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 125px;
+    }
+
+    @include top-actions;
+  }
+
+  &__date {
+    margin: 0 0 10px;
+
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__title {
+    max-width: 280px;
+    margin: 0 0 30px;
+
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+
+    @include onTablet {
+      max-width: 570px;
+      margin: 0 0 20px;
+      font-size: 72px;
+    }
+
+    @include onDesktop {
+      max-width: 570px;
+      font-size: 96px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 40px;
+
+    @include onTablet {
+      margin: 0 0 50px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 135px;
+  }
+
+  &__date-number {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 125%;
+
+    opacity: 0.7;
+
+    @include onDesktop {
+      visibility: visible;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      background-color: $color-text-secondary;
+      height: 1px;
+      width: 450px;
+      margin-left: 20px;
+
+      opacity: 0.3;
+    }
+  }
+}
