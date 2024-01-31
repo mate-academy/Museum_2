@@ -1,0 +1,102 @@
+.menu {
+  max-height: 100%;
+  background-color: $b-color;
+
+  &__bottom {
+    @include pageGrid;
+
+    @include onTablet {
+      background-image: url(../images/manmenu.png);
+      background-size: 422px;
+      background-repeat: no-repeat;
+      background-position: center top 549px;
+    }
+
+    @include onDesktop {
+      background-position: center right;
+      background-size: contain;
+      height: 100vh;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 30px;
+  }
+
+  &__layout {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    color: $color-white;
+    font-weight: 400;
+    line-height: 140%;
+    margin: 0;
+  }
+
+  &__time {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    color: $color-white;
+    font-weight: 600;
+    line-height: 150%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__nav {
+    grid-column: span 2;
+
+    @include  onTablet {
+      grid-row: 2;
+      grid-column: span 6;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+      grid-row: 2;
+    }
+
+    &::after {
+      content: "";
+      margin-top: 40px;
+      margin-bottom: 40px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $color-white;
+    }
+  }
+
+  &__inform {
+    grid-column: span 2;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: span 2;
+      grid-row: 1;
+    }
+
+    @include onDesktop {
+      grid-column: span 2;
+      grid-row: 1;
+    }
+  }
+
+  &__information {
+    text-decoration: none;
+    grid-column: span 2;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 3/7;
+      grid-row: 1;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 3/6;
+      grid-row: 1;
+    }
+  }
+}

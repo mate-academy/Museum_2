@@ -1,0 +1,47 @@
+.button {
+
+  align-items: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  color: $color-orange;
+  font-weight: 600;
+  line-height: 100%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  grid-column: span 2;
+  border: 1px solid $color-orange;
+  gap: 8px;
+  height: 60px;
+  transition: transform $time-transition;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-red;
+    border: 1px solid $color-red;
+    transform: scale(1.2);
+
+    .iconss path {
+      stroke: $color-red;
+    }
+  }
+
+  &:focus {
+    color: $color-focusb;
+    border: 1px solid $color-focusb;
+
+    .iconss path {
+      stroke: $color-focusb;
+    }
+  }
+
+  @include onTablet {
+    grid-column: 5/-1;
+    grid-row: 1;
+  }
+
+  @include onDesktop {
+    grid-column: 10/-1;
+    grid-row: 1;
+  }
+}
