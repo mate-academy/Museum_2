@@ -1,0 +1,229 @@
+.menu {
+  z-index: 101;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  transition: 0.3s;
+  font-family: "IBM Plex Sans", monospace;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #fff;
+  overflow: hidden;
+  
+  &:target {
+    transform: translateY(0);
+    overflow: hidden;
+  }
+
+  &__container {
+    padding: 0 20px;
+    background-color: $bg;
+    height: 100%;
+  }
+}
+
+.schedule {
+  font-family: Raleway, sans-serif;
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+  }
+
+  &__time {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.navigation {
+
+  &__link {
+    &:hover {
+      text-decoration: underline 1px $white;
+    }
+  }
+
+  &__point {
+    height: 26px;
+
+    @include desktop {
+      height: 58px;
+    }
+  }
+
+  @include tablet {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+  }
+
+  &__container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    @include desktop {
+      gap: 60px;
+    }
+    
+    font-family: "Playfair Display", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+  }
+}
+
+.geo {
+  font-family: Raleway, sans-serif;
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+  }
+
+  &__place {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    transition-duration: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
+  }
+}
+
+.navigation::after {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: block;
+  content: "";
+  width: 100%;
+  border-bottom: solid 1px white;
+}
+
+.topline_aside {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+
+  @include tablet {
+    margin-bottom: 10px;
+  }
+  &__namu {
+    display: flex;
+    transition-duration: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include tablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__cross {
+    display: flex;
+    align-items: center;
+    transition-duration: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
+  }
+
+  &__language {
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    transition-duration: 0.5s;
+
+    &:hover {
+      filter: drop-shadow(0 0 1px $white);
+      transform: scale(1.03);
+    }
+
+    &::after {
+      display: flex;
+      content: "";
+      background-image: url(../images/vector-down.svg);
+      width: 8px;
+      height: 4px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    &:target {
+      overflow: hidden;
+    }
+  }
+}
+
+.schedule_geo {
+  margin-bottom: 20px;
+
+  @include tablet {
+    display: flex;
+    gap: 123px;
+    margin-bottom: 50px;
+  }
+}
+
+.aside_pic {
+ display: none;
+
+ @include tablet {
+  bottom: 0;
+  display: block;
+  position: absolute;
+  width: 422px;
+  height: 466px;
+  right: calc(50% - 211px);
+  }
+
+  @include desktop {
+    position: absolute;
+    right: 0;
+    width: 624px;
+    height: 697px;
+  }
+}
+
+.aside_wrap {
+    @include desktop {
+      display: flex;
+    }
+  }

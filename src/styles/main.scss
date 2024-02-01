@@ -1,7 +1,41 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./blocks/header";
+@import "./blocks/actual";
+@import "./blocks/section";
+@import "./blocks/events";
+@import "./blocks/visit";
+@import "./blocks/news";
+@import "./blocks/aside";
+@import "./blocks/follow";
+@import "./blocks/footer";
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 body {
-  background: $c-gray;
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  background: $white;
+  margin: 0;
+  
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+}
+
+.menu-open {
+  overflow: hidden;
 }

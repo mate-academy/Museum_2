@@ -4,3 +4,28 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin active($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:active {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin mobile{
+  @media (min-width: $mob) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tab) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desk) {
+    @content;
+  }
+}
