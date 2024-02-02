@@ -1,0 +1,78 @@
+.news {
+  @include content-inline-padding;
+  @include page-grid;
+
+  &--first {
+    margin-bottom: 50px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &--second {
+    grid-column: 1 / -1;
+    align-self: flex-start;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+      grid-row: 1;
+      margin: 125px 0 75px;
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      grid-row: 1;
+      margin: 110px 0 71px;
+      font-size: 48px;
+      align-self: start;
+    }
+
+    margin: 90px 0 60px;
+    color: $second-text-color;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+  }
+
+  &__transparent-button {
+    grid-column: 1 / -1;
+    grid-row: 6;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      grid-row: 1;
+      margin: 120px 0 70px;
+    }
+
+    @include on-desktop {
+      grid-column: 10 / -1;
+      grid-row: 1;
+      margin: 110px 0 53px;
+    }
+
+    margin-bottom: 120px;
+    background: none;
+    border: 1px solid $button-background-color;
+    color: $button-background-color;
+  }
+}
