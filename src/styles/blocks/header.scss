@@ -1,0 +1,124 @@
+.header {
+  @include content-inline-padding;
+
+  background-color: #3F5252;
+
+  &__content {
+    @include page-grid;
+
+    @include on-desktop {
+      grid-template-rows: $grid-rows-desktop;
+      align-items: start;
+    }
+  }
+
+  &__date {
+    margin: 50px 0 10px;
+    color: $main-text-color;
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 2;
+      margin: 99px 0 10px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      grid-row: 1;
+      margin: 90px 0 10px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    color: $main-text-color;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 5;
+      margin-bottom: 20px;
+      font-size: 72px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      grid-row: 2;
+      margin-bottom: 30px;
+      font-size: 96px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    color: $main-text-color;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      grid-row: 3;
+      margin-bottom: 81px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+      grid-row: 4;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      grid-column: span 3;
+      grid-row: 4;
+    }
+  }
+
+  &__image {
+    background-image: url(../images/header-image.png);
+    width: 245px;
+    height: 273px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    justify-self: center;
+    background-position: bottom;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+      width: 443px;
+      height: 494px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      grid-row: 1 / 5;
+      width: 625px;
+      height: 663px;
+    }
+  }
+}
