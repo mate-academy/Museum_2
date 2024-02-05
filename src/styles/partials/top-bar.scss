@@ -1,0 +1,65 @@
+.top-bar {
+  @include header-padding-block;
+  @include page-grid;
+
+  align-items: center;
+
+  @include on-desktop {
+    column-gap: 40px;
+  }
+
+  &__logo {
+    cursor: pointer;
+
+    grid-area: 1 / 1 / 1 / 1;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__menu-icon, &__close-icon {
+    justify-self: end;
+    grid-area: 1 / 2 / 1 / 2;
+
+    @include on-tablet {
+      grid-area: 1 / 6 / 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-area: 1 / 12 / 1 / 12;
+    }
+  }
+
+  &__language {
+    position: relative;
+    cursor: pointer;
+    display: none;
+
+    grid-area: 1 / 2 / 1 / 2;
+
+    @include on-tablet {
+      display: block;
+      grid-area: 1 / 7 / 1 / 7;
+    }
+
+    @include on-desktop {
+      grid-area: 1 / 13 / 1 / 13;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      background: url('../images/icons/dropdown.svg') center no-repeat;
+      width: 8px;
+      height: 5px;
+      top: 50%;
+      margin-left: 5px;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.menu {
+  &__language {
+    display: block;
+  }
+}

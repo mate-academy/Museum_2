@@ -1,0 +1,67 @@
+.plan {
+  background: $dark-green;
+  margin-top: 90px;
+  padding-block: $plan-padding-block;
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__img {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+
+      grid-area: 1 / 1 / 1 / span 5;
+
+      margin-left: -$padding-inline-on-desktop;
+      margin-bottom: -$plan-padding-block;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+
+    @include on-big-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      width: 670px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+  }
+
+  &__description {
+    grid-column: span 2;
+
+    margin-bottom: 40px;
+
+    @include on-desktop {
+      width: 470px;
+    }
+  }
+
+  &__btn {
+    @include on-big-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 320px;
+    }
+  }
+}

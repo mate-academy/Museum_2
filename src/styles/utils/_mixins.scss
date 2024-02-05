@@ -1,6 +1,143 @@
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
+
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-big-tablet {
+  @media (min-width: $big-tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-big-desktop {
+  @media (min-width: $big-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin padding-inline {
+  padding-inline: $padding-inline;
+
+  @include on-tablet {
+    padding-inline: $padding-inline-on-tablet;
+  }
+
+  @include on-desktop {
+    padding-inline: $padding-inline-on-desktop;
+  }
+}
+
+@mixin header-padding-block {
+  padding-block: 20px;
+
+  @include on-desktop {
+    padding-block: 25px;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+
+  --columns: 2fr;
+
+  grid-template-columns: repeat(var(--columns) 1fr);
+
+  column-gap: 20px;
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+
+    grid-template-columns: repeat(var(--columns), 1fr);
+  }
+
+  @include on-desktop {
+    --columns: 12;
+
+    grid-template-columns: repeat(var(--columns), 1fr);
+  }
+}
+
+@mixin page-grid-md {
+  display: grid;
+
+  --columns: 2fr;
+
+  grid-template-columns: repeat(var(--columns) 1fr);
+
+  column-gap: 20px;
+
+  @include on-tablet {
+    --columns: 3;
+
+    column-gap: 30px;
+
+    grid-template-columns: repeat(var(--columns), 1fr);
+  }
+
+  @include on-desktop {
+    --columns: 6;
+
+    grid-template-columns: repeat(var(--columns), 1fr);
+  }
+}
+
+@mixin arrow-link {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: '';
+    background: url('../images/icons/arrow.svg') center no-repeat;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    margin-left: 10px;
+    transform: translateY(-50%);
+  }
+
+  &:hover::after {
+    background: url('../images/icons/arrow-white.svg') center no-repeat;;
+  }
+}
+
+@mixin link-line-style {
+  position: relative;
+  cursor: pointer;
+  width: max-content;
+
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    bottom: -8px;
+    height: 2px;
+    width: 100%;
+    background-color: $light-white;
+
+    transition: transform $effect-duration;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
   }
 }
