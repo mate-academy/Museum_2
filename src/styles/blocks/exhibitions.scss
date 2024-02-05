@@ -1,0 +1,96 @@
+.exhibitions {
+  padding-top: 90px;
+
+  &__content {
+    @include page-grid;
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+
+    @include on-desktop {
+      grid-column: span 12;
+    }
+  }
+
+  &__title {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-area: 1 / 1 / 1 / span 5;
+    }
+
+    @include on-desktop {
+      grid-area: 1 / 1 / 1 / span 9;
+    }
+
+    margin-bottom: 60px;
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+
+    grid-column: span 2;
+
+    margin-bottom: 60px;
+
+    &:last-child {
+      margin-bottom: 30px;
+    }
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+
+    @include on-big-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+
+  }
+
+  &__img {
+    margin-bottom: 20px;
+
+    min-height: 356px;
+    object-fit: cover;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+  }
+
+  &__title-article {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+  }
+
+  &__ticket {
+    @include on-desktop {
+      max-width: 270px;
+    }
+  }
+
+  &__btn-archive {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: 1 / span 6;
+    }
+
+    @include on-big-tablet {
+      grid-area: 1 / 5 / 1 / 7;
+    }
+
+    @include on-desktop {
+      grid-area: 1 / 10 / 1 / 13;
+    }
+  }
+}
