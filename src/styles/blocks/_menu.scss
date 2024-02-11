@@ -1,0 +1,179 @@
+.menu {
+  box-sizing: border-box;
+  background-color: $c-bg;
+  color: $c-white;
+  overflow: auto;
+
+  &__container {
+    @include content-padding-in-line;
+    padding-bottom: 246px;
+
+    @include on-tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__top {
+    @include content-padding-in-line;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: $c-bg;
+
+  }
+
+  &__content {
+    @include page-grid;
+
+    position: relative;
+    row-gap: 40px;
+
+
+    @include on-tablet {
+      row-gap: 0;
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      padding: 0 40px 108px;
+      row-gap: 0;
+    }
+  }
+
+  &__info {
+    grid-column: 1/-1;
+    display: grid;
+    row-gap: 20px;
+
+    padding-top: 10px;
+
+    @include on-tablet {
+      display: flex;
+      padding-top: 0;
+      column-gap: 110px;
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop {
+      display: flex;
+      column-gap: 50px;
+      padding-top: 40px;
+      padding-bottom: 70px;
+
+    }
+  }
+
+  &__schedule {
+    @include on-tablet {
+      grid-column: span 2;
+      grid-row-start: 1;
+    }
+
+    &--value {
+      &:hover {
+        color: $c-focus;
+      }
+    }
+  }
+
+  &__adress {
+    @include on-tablet {
+      grid-column: span 2;
+      grid-row-start: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 3/6;
+    }
+
+    &--value {
+      &:hover {
+        color: $c-focus;
+      }
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    padding-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: 1/-2;
+    }
+
+    @include on-desktop {
+      grid-column: 1/8;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 5px;
+      grid-column: 1/8;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__line {
+    grid-column: 1/-1;
+
+    border-bottom: 1px solid $c-white;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+    }
+
+    @include on-desktop {
+      grid-column: 1/7;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+      margin-top: 50px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      justify-content: center;
+
+      height: 466px;
+      width: 100%;
+      margin-top: 35px;
+      grid-column: 1/-1;
+      bottom: 0;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      height: 663px;
+      z-index: -1;
+
+      padding-top: 0;
+      transform: translateX(10%);
+
+
+      grid-row-start: 1;
+      grid-column: 7/13;
+    }
+  }
+}
+

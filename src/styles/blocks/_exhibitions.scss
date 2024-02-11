@@ -1,0 +1,163 @@
+.exhibitions {
+  @include content-padding-in-line;
+
+  padding-bottom: 30px;
+
+  @include on-tablet{
+    padding-bottom: 70px;
+  }
+
+  &__container {
+    @include page-grid;
+
+    padding-top: 90px;
+    position: relative;
+
+    @include on-tablet {
+      padding-bottom: 100px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 110px;
+    }
+  }
+
+  &__topic {
+    grid-column: 1/-1;
+    padding-bottom: 30px;
+
+    @include on-tablet {
+      grid-row-start: 1;
+    }
+
+    @include on-desktop {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__item {
+    grid-column: 1/-1;
+    padding: 30px 0;
+
+    @include on-tablet{
+      grid-column: span 3;
+    }
+
+    @include on-desktop{
+      grid-column: span 6;
+    }
+  }
+
+  &__link {
+    @include hover(transform, scale(1.05));
+
+    display: block;
+    height: 356px;
+
+    @include on-tablet{
+      height: 420px;
+    }
+
+    @include on-desktop{
+      height: 484px;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+
+    @include on-tablet{
+      padding-bottom: 30px;
+    }
+
+    @include on-desktop{
+      padding-bottom: 20px;
+    }
+  }
+
+  &__info {
+    display: grid;
+  }
+
+  &__dates {
+    color: $c-main;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    padding-bottom: 20px;
+
+      @include on-tablet {
+        height: 80px;
+        padding-bottom: 50px;
+      }
+
+      @include on-desktop {
+        padding-bottom: 20px;
+        height: 100%;
+      }
+    }
+
+  &__describtion {
+    padding-bottom: 30px;
+
+    @include on-tablet{
+      padding-bottom: 40px;
+    }
+
+    @include on-desktop{
+      padding-bottom: 50px;
+    }
+  }
+
+  &__button-archive {
+    grid-column: 1 / -1;
+
+    @include on-tablet{
+      grid-row-start: 1;
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop{
+      grid-row-start: 1;
+      grid-column: -4 / -1;
+    }
+
+    a {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-inner {
+        display: flex;
+        align-items: center;
+      }
+
+      &::after {
+        content: '';
+        background-image: url(../images/icons/icon-arrow.svg);
+        background-size: contain;
+        margin-left: 8px;
+
+        height: 20px;
+        width: 20px;
+        top: 50%;
+
+      }
+
+      &:hover::after {
+        filter: brightness(85%);
+      }
+
+      &:focus::after {
+        filter: brightness(110%);
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.nav {
+  &__list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 20px;
+
+
+    @include on-tablet {
+    gap: 30px;
+    }
+
+    @include on-desktop {
+      row-gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+    font-family: Playfair Display;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 58px;
+      color: #F1F5F4;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      margin-top: 3px;
+      height: 1px;
+      width: 100%;
+      background-color: $c-white;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: center;
+    }
+    &:hover::after {
+      transform: scale(1);
+    }
+
+  }
+
+  &__item {
+
+
+
+    @include on-desktop{
+    }
+  }
+}
