@@ -1,0 +1,59 @@
+.button {
+  color: $c-white;
+  border: none;
+  text-decoration: none;
+  background-color: $c-main;
+  background-size: auto;
+  text-align: center;
+  padding-block: 22px;
+
+  &:hover {
+    background-color: $c-hover;
+  }
+
+  &:focus {
+    background-color: $c-focus;
+  }
+
+  &:disabled {
+    background-color: $c-disabled;
+  }
+
+  &--outline {
+    @include hover(transform, scale(1.01));
+
+    color: $c-main;
+    border: 1px solid $c-main;
+    text-decoration: none;
+    background-color: #fff;
+    padding: 19px 23px;
+
+    @include on-desktop {
+      padding-block: 22px;
+    }
+
+    &:hover {
+      border: 1px solid $c-hover;
+      color: $c-hover;
+      background-color: #fff;
+    }
+
+    &:focus {
+      border: 1px solid $c-focus;
+      color: $c-focus;
+      background-color: #fff;
+    }
+
+    &:disabled {
+      border: 1px solid $c-disabled;
+      color: $c-disabled;
+      background-color: #fff;
+    }
+
+    &::after {
+      content: '';
+
+    }
+  }
+}
+

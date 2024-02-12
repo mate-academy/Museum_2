@@ -1,0 +1,159 @@
+.events {
+  @include content-padding-in-line;
+
+  padding-bottom: 90px;
+
+  @include on-tablet{
+    padding-bottom: 100px;
+  }
+
+  @include on-desktop{
+    padding-bottom: 110px;
+  }
+
+  &__container {
+    @include page-grid;
+
+    padding-top: 90px;
+    position: relative;
+  }
+
+  &__topic {
+    grid-column: 1/-1;
+    padding-bottom: 30px;
+
+    @include on-tablet{
+      grid-row-start: 1;
+      padding-bottom: 46px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    padding-bottom: 20px;
+  }
+
+
+  &__item {
+    grid-column: 1/-1;
+    padding: 30px 0;
+
+    @include on-tablet{
+      @include page-grid;
+    }
+  }
+
+  &__link {
+    @include hover(transform, scale(1.05));
+
+    display: block;
+    height: 358px;
+
+    @include on-tablet {
+      height: 422px;
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      height: 475px;
+      grid-column: span 4;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+
+    @include on-tablet{
+      padding-bottom: 0;
+    }
+  }
+
+  &__info {
+    display: grid;
+
+    @include on-tablet{
+      grid-column: 4/-1;
+    }
+
+    @include on-desktop {
+      display: block;
+      grid-column: 5/-1;
+    }
+  }
+
+  &__dates {
+    color: $c-main;
+      padding-bottom: 10px;
+  }
+
+  &__describtion {
+    padding-bottom: 30px;
+
+    @include on-tablet{
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop{
+      padding-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include on-tablet{
+      margin-bottom: 122px;
+    }
+
+    @include on-desktop{
+      padding-inline: 67px;
+    }
+  }
+
+  &__button-calendar {
+    grid-column: 1 / -1;
+
+    @include on-tablet{
+      grid-row-start: 1;
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop{
+      grid-row-start: 1;
+      grid-column: 10/13;
+    }
+
+    a {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-inner {
+        display: flex;
+        align-items: center;
+      }
+
+      &::after {
+        content: '';
+        background-image: url(../images/icons/icon-arrow.svg);
+        background-size: contain;
+        margin-left: 8px;
+
+        height: 20px;
+        width: 20px;
+        top: 50%;
+      }
+
+      &:hover::after {
+        filter: brightness(85%);
+      }
+
+      &:focus::after {
+        filter: brightness(110%);
+      }
+    }
+  }
+}

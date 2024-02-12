@@ -1,0 +1,70 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-block: 20px;
+  height: 80px;
+
+  @include on-tablet {
+    height: 77px;
+  }
+
+  @include on-desktop {
+    height: 90px;
+    padding-block: 26px;
+
+  }
+
+
+  &__icons {
+    display: flex;
+    text-transform: uppercase;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    flex-direction: row-reverse;
+
+
+    gap: 30px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 44px;
+    }
+
+    @include on-desktop {
+      gap: 40px;
+
+    }
+  }
+
+  &__dropdown {
+    @include hover(transform, scale(1.2));
+
+    display: none;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+
+    @include on-tablet {
+      display: flex;
+      align-items: center;
+
+    }
+  }
+
+  &__logo {
+    display: flex;
+    height: 40px;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      height: 37px;
+    }
+  }
+}
+

@@ -1,0 +1,140 @@
+.news {
+  @include content-padding-in-line;
+
+  padding-bottom: 40px;
+
+  @include on-desktop {
+    padding-bottom: 0;
+  }
+
+  &__container {
+    @include page-grid;
+
+    padding-top: 90px;
+
+    @include on-tablet {
+      padding-top: 120px;
+    }
+
+    @include on-desktop {
+      padding-top: 110px;
+    }
+  }
+
+  &__topic {
+    grid-column: 1/-1;
+    padding-bottom: 30px;
+
+    @include on-tablet{
+      grid-row-start: 1;
+      padding-bottom: 75px;
+    }
+
+    @include on-desktop{
+      padding-bottom: 55px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    padding-bottom: 20px;
+
+    @include on-tablet{
+      height: 80px;
+    }
+
+    @include on-tablet{
+      padding-bottom: 18px;
+      height: 100%;
+    }
+  }
+
+  &__item {
+    grid-column: 1/-1;
+    padding: 30px 0;
+
+    @include on-tablet{
+      grid-column: span 3;
+      padding: 0;
+    }
+
+    @include on-desktop{
+      grid-column: span 6;
+    }
+  }
+
+  &__img {
+    @include hover(transform, scale(1.05));
+
+    object-fit: cover;
+    width: 100%;
+    height: 356px;
+    padding-bottom: 10px;
+
+    @include on-tablet{
+      padding-bottom: 30px;
+    }
+
+    @include on-desktop{
+      padding-bottom: 20px;
+    }
+  }
+
+  &__info {
+    display: grid;
+  }
+
+  &__describtion {
+    padding-bottom: 20px;
+
+    @include on-tablet{
+      padding-bottom: 0;
+    }
+  }
+
+  &__button-news {
+    grid-column: 1 / -1;
+
+    @include on-tablet{
+      grid-row-start: 1;
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop{
+      grid-row-start: 1;
+      grid-column: 10 / -1;
+    }
+
+    a {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-inner {
+        display: flex;
+        align-items: center;
+      }
+
+      &::after {
+        content: '';
+        background-image: url(../images/icons/icon-arrow.svg);
+        background-size: contain;
+        margin-left: 8px;
+
+        height: 20px;
+        width: 20px;
+        top: 50%;
+      }
+
+      &:hover::after {
+        filter: brightness(85%);
+      }
+
+      &:focus::after {
+        filter: brightness(110%);
+      }
+    }
+  }
+}
