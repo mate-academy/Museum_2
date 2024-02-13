@@ -1,0 +1,83 @@
+.button {
+  box-sizing: border-box;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: $white-color;
+  transition: all 0.3s;
+
+  &-primary {
+    background-color: $button-default;
+    border: 1px solid $button-default;
+
+    &:hover {
+      background-color: $button-hover;
+    }
+
+    &:active {
+      background-color: $button-active;
+    }
+
+    &:disabled {
+      background-color: $button-disabled;
+    }
+  }
+
+  &-secondary {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 8px;
+
+    color: $main-color;
+    background-color: transparent;
+    border: 1px solid $main-color;
+
+    &::after {
+      content: "";
+      color: $main-color;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url("../images/icons/icon_arrow_default.svg");
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      color: $button-hover;
+      border-color: $button-hover;
+
+      &::after {
+        background-image: url("../images/icons/icon_arrow_hover.svg");
+      }
+    }
+
+    &:active {
+      color: $button-active;
+      border-color: $button-active;
+
+      &::after {
+        background-image: url("../images/icons/icon_arrow_pressed.svg");
+      }
+    }
+
+    &:disabled {
+      color: $button-hover;
+      border-color: $button-hover;
+
+      &::after {
+        background-image: url("../images/icons/icon_arrow_disabled.svg");
+      }
+    }
+  }
+}
