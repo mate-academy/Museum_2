@@ -1,0 +1,120 @@
+.header {
+  background-color: $c-background;
+  position: relative;
+  height: 100vh;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  &__content {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include grid-desktop;
+  }
+
+  &__image-desktop {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: calc(50% - ($col-gap-desktop / 2));
+      height: 80%;
+      object-fit: contain;
+      object-position: bottom right;
+    }
+  }
+
+  &__info-wrapper {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  &__info {
+    padding-top: 50px;
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      padding-top: 100px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      padding-top: 90px;
+      padding-bottom: 50px;
+      justify-content: space-between;
+    }
+  }
+
+  &__add-info {
+    display: none;
+
+    @include on-desktop{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      opacity: 70%;
+
+      &::after {
+        content: '';
+        box-sizing: border-box;
+        display: block;
+        height: 1px;
+        background-color: $c-white;
+        flex-grow: 4;
+        opacity: 70%;
+      }
+    }
+  }
+
+  &__add-title {
+    display: block;
+    margin-right: 20px;
+    color: $c-white;
+  }
+
+  &__bottom {
+    // text-align: center;
+    position: relative;
+    height: 100%;
+
+    @include grid-tablet;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__image {
+    inset: 0 0 0 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: contain;
+    object-position: bottom;
+    position: absolute;
+
+    @include on-tablet {
+      height: 100%;
+      object-fit: contain;
+      object-position: top;
+      grid-column: 2 / -2;
+    }
+
+    @include on-desktop {
+      object-fit: contain;
+      object-position: right bottom;
+      grid-column: 1 / -1;
+    }
+  }
+}

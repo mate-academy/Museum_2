@@ -1,0 +1,146 @@
+.info-card {
+  display: flex;
+  flex-direction: column;
+
+  &__image-link {
+    text-decoration: none;
+    display: block;
+    overflow: hidden;
+
+    @include property-on-devices(margin-bottom, 20px, 30px, 20px);
+
+    &--events {
+      margin-bottom: 0;
+      grid-column: span 3;
+
+      @include on-desktop {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__events-wrapper {
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / -3;
+    }
+  }
+
+  &__add-text {
+    @include text-additional;
+
+    color: $c-main;
+    margin-bottom: 10px;
+
+    &--header {
+      color: $c-white;
+    }
+
+    &--news {
+      color: $c-black;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    &--header {
+      color: $c-white;
+
+      @include property-on-devices(margin-bottom, 20px, 20px, 30px);
+    }
+
+    &--banner {
+      color: $c-white;
+
+      @include property-on-devices(margin-bottom, 30px, 20px, 10px);
+    }
+
+    &--news {
+      color: $c-black;
+
+      @include property-on-devices(margin-bottom, 20px, 18px, 18px);
+    }
+  }
+
+  &__wrapper {
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 4;
+    }
+
+    &--events {
+      grid-column: span 3;
+    }
+  }
+
+  &__main-text {
+    @include text-main;
+    @include property-on-devices(margin-bottom, 30px, 40px, 50px);
+
+    &--header {
+      color: $c-white;
+
+      @include property-on-devices(margin-bottom, 40px, 50px, 80px);
+    }
+
+    &--banner {
+      color: $c-white;
+
+      @include property-on-devices(margin-bottom, 40px, 60px, 50px);
+    }
+
+    &--news {
+      margin: 0;
+    }
+  }
+
+  &__button {
+    &--header {
+      @include grid-tablet;
+
+      @include on-desktop {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: $col-gap-desktop;
+      }
+    }
+
+    &--exhibition {
+      @include on-desktop {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: $col-gap-desktop;
+      }
+    }
+
+    &--banner {
+      @include on-tablet {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: $col-gap-tablet;
+      }
+
+      @include on-desktop {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        column-gap: $col-gap-desktop;
+      }
+    }
+  }
+}
