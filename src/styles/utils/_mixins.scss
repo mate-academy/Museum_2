@@ -5,6 +5,13 @@
   }
 }
 
+@mixin transform-on-hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
 @mixin on-tablet {
   @media (min-width: 640px) {
     @content;
@@ -38,7 +45,7 @@
 
   @include on-tablet {
     --colums: 6;
-    
+
     column-gap: 30px;
   }
 
