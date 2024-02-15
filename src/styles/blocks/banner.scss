@@ -1,0 +1,95 @@
+.banner {
+  margin-inline: -20px;
+  background-color: $background-color;
+  padding: 50px 20px;
+
+  position: relative;
+
+  margin-bottom: 90px;
+
+  @include on-tablet {
+    margin-inline: -39px;
+    padding: 0;
+  }
+
+  @include on-desktop{
+    margin-inline: -55px;
+    padding: 0;
+  }
+
+  &__card {
+    @include on-tablet {
+      padding: 80px 38px;
+
+      @include page-grid;
+
+      grid-column: span 6;
+
+      @include on-desktop {
+        grid-column: span 12;
+      }
+    }
+  }
+
+  &__title {
+    @include on-tablet {
+      margin-bottom: 20px;
+      grid-column: 1 / span 5;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / span 7;
+      margin-top: 205px;
+    }
+  }
+
+  &__image-link {
+    display: none;
+    cursor: default;
+
+    @include on-desktop {
+      display: block;
+
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: auto;
+    object-fit: contain;
+
+    &:hover {
+      transform: scale(1);
+      pointer-events: none;
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      grid-column: 1 / span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / span 3;
+      margin-bottom: 205px;
+    }
+  }
+
+  &__description {
+    color: $white-color;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 60px;
+      grid-column: 1 / span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / span 5;
+    }
+  }
+}

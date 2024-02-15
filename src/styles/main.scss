@@ -1,7 +1,55 @@
 @import "utils";
-@import "fonts";
 @import "typography";
+@import "normalize";
+@import "blocks/button";
+@import "blocks/card";
+@import "blocks/input";
+@import "blocks/header";
+@import "blocks/menu";
+@import "blocks/nav";
+@import "blocks/content";
+@import "blocks/top-bar";
+@import "blocks/icon";
+@import "blocks/footer";
+@import "blocks/section-title";
+@import "blocks/subscribe";
+@import "blocks/banner";
+@import "blocks/news";
+@import "blocks/events";
+@import "blocks/exhibitions";
+@import "blocks/link-hover-effect";
+@import "blocks/up";
 
-body {
-  background: $c-gray;
+html {
+  scroll-behavior: smooth;
+  display: flex;
+  align-items: center;
+}
+
+.page {
+  margin: 0;
+  background-color: $white-color;
+
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden; /* not to scroll the page */
+  }
+
+  &__menu {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    transition: all .3s;
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
 }

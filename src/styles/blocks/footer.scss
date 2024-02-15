@@ -1,0 +1,125 @@
+.footer {
+  padding-block: 34px;
+  background-color: $background-color;
+  position: relative;
+
+  @include content-padding-inline;
+  @include page-grid;
+
+  grid-column: 1 / -1;
+  row-gap: 50px;
+
+  @include on-tablet {
+    padding-block: 50px;
+    grid-column: span 6;
+  }
+
+  @include on-desktop {
+    grid-column: span 12;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 20px;
+
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 10px;
+    color: $white-color;
+    text-decoration: none;
+
+    @include on-tablet {
+      font-size: 20px;
+      line-height: 150%;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contacts-info {
+    line-height: 150%;
+    color: $white-color;
+    text-decoration: none;
+  }
+
+  &__schedule-info {
+    line-height: 150%;
+    color: $white-color;
+  }
+
+  &__info-link {
+    @include hover(color, $main-color);
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    line-height: 150%;
+    color: $white-color;
+    margin-bottom: 5px;
+
+    @include on-tablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__contacts {
+    @include on-tablet {
+      grid-column: 1 / span 2;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__schedule {
+    @include on-tablet {
+      grid-column: 3 / span 2;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / span 4;
+    }
+  }
+
+  &__menu {
+    @include on-tablet {
+      grid-column: 5 / span 2;
+    }
+
+    @include on-desktop {
+      grid-column: 9 / span 4;
+    }
+  }
+
+  &__privacy {
+    display: flex;
+    gap: 22px;
+
+    @include on-tablet {
+      grid-column: 1 / span 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 12;
+    }
+  }
+
+}
