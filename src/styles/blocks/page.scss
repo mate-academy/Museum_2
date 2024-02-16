@@ -1,0 +1,36 @@
+.page {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    min-width: $phone-min-width;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: all $effect-duration;
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+  }
+
+  &__header {
+    @include property-on-devices(margin-bottom, 90px, 100px, 110px)
+  }
+}

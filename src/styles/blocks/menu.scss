@@ -1,0 +1,128 @@
+.menu {
+  height: 100vh;
+  width: 100%;
+  background-color: $c-background;
+  overflow: auto;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100vh;
+    width: 100%;
+
+    @include on-desktop {
+      display: block;
+      position: relative;
+    }
+  }
+
+  &__content {
+    @include on-desktop {
+      @include grid-desktop;
+
+    }
+  }
+
+  &__links {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @include on-desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      grid-column: span 6;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
+    width: max-content;
+  }
+
+  &__link-title {
+    @include text-additional;
+
+    color: $c-white;
+    margin: 0;
+  }
+
+  &__link-text {
+    font-family: $f-text;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: $c-white;
+    margin: 0;
+  }
+
+  &__nav {
+    @include on-desktop {
+      grid-column: span 6;
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include grid-tablet;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      display: block;
+      grid-column: span 3;
+      grid-row: 3 / 4;
+      margin-top: 60px;
+    }
+  }
+
+  &__bottom {
+    @include on-tablet {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    @include on-desktop {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: calc(50% - ($col-gap-desktop / 2));
+      height: 80%;
+      object-position: bottom;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-tablet {
+      inset: 0 0 0 50%;
+      transform: translateX(-50%);
+      height: 100%;
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      object-position: bottom;
+      position: absolute;
+    }
+
+    @include on-desktop {
+      object-fit: contain;
+      object-position: right bottom;
+    }
+  }
+}

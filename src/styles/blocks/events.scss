@@ -1,0 +1,51 @@
+.events {
+  @include page-grid;
+
+  &__title {
+    grid-column: span $grid-col-phone;
+
+    @include on-tablet {
+      grid-column: span 3;
+      grid-row: 1 / 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__card {
+    grid-column: span $grid-col-phone;
+    margin-top: 60px;
+
+    @include on-tablet {
+      grid-column: span $grid-col-tablet;
+
+      @include grid-tablet;
+    }
+
+    @include on-desktop {
+      grid-column: span $grid-col-desktop;
+
+      @include grid-desktop;
+    }
+  }
+
+  &__button {
+    grid-column: span $grid-col-phone;
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-column: -3 / -1;
+      grid-row: 1 / 2;
+    }
+
+    @include on-desktop {
+      margin-top: 0;
+      grid-column: -4 / -1;
+      grid-row: 1 / 2;
+    }
+  }
+}

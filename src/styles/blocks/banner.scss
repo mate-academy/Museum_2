@@ -1,0 +1,41 @@
+.banner {
+  width: 100%;
+  background-color: $c-background;
+  position: relative;
+
+  &__content {
+    @include page-grid;
+  }
+
+
+  &__image {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      object-fit: contain;
+      object-position: center;
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+
+  &__card {
+    grid-column: span 2;
+    z-index: 10;
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+
+    @include on-desktop{
+      grid-column: 6 /-1;
+    }
+
+    @include property-on-devices(padding-block, 50px, 80px, 205px);
+  }
+}
