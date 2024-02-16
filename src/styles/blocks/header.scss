@@ -1,0 +1,93 @@
+.header {
+  height: 100%;
+  background-color: $c-green;
+  display: flex;
+  flex-direction: column;
+
+  @include margin-bottom-small;
+
+  &__container {
+    @include padding-inline;
+
+    padding-top: 50px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      padding-top: 47px;
+    }
+  }
+
+  &__middle {
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+
+    }
+
+    & > * {
+      color: $c-white;
+      padding-bottom: 10px;
+    }
+
+    &--heading {
+      margin-top: 0;
+      margin-bottom: 30px;
+
+      @include on-tablet {
+        font-size: 72px;
+      }
+
+      @include on-desktop {
+        font-size: 96px;
+      }
+    }
+
+    &--text {
+      margin-right: 33px;
+      text-align: left;
+      margin-bottom: 40px;
+
+      @include on-tablet {
+        width: 330px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    height: 273px;
+
+    @include on-tablet {
+      height: 494px;
+      grid-column: 1 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 12;
+      height: 100%;
+
+    }
+
+    &--img {
+      object-fit: cover;
+      object-position: center;
+      margin: 0 auto;
+      height: 100%;
+
+      @include on-desktop {
+        height: 663px;
+        width: 625px;
+      }
+    }
+  }
+}
+
+

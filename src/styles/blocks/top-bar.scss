@@ -1,0 +1,87 @@
+.top-bar {
+  @include padding-inline;
+
+  display: flex;
+  justify-content:space-between;
+  align-items: top;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include on-desktop {
+    grid-column: 1 / 13;
+  }
+
+  &__logo {
+    font-size: 36px;
+    color: $c-white;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    @include on-tablet {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.icon {
+  display:  block;
+
+  @include hover(transform, scale(1.2));
+
+  &__menu {
+    height: 20px;
+    width: 25px;
+
+    @include on-tablet {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__close {
+    &--container {
+      width: 20px;
+      height: 20px;
+
+      @include on-tablet {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    &--color {
+      fill: $c-white;
+    }
+  }
+
+  &__language {
+    display: flex;
+    align-items: center;
+    color: $c-white;
+
+    &-arrow {
+      margin-left: 5px;
+      height: 5px;
+      width: 8px;
+    }
+
+    &--header {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+      }
+    }
+  }
+}
