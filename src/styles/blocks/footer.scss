@@ -5,9 +5,21 @@
   background-color: $c-green;
   padding-top: 34px;
   padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
 
-  @include on-tablet {
-    @include page-grid;
+
+
+  &__wrapper {
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      margin: 0 auto;
+      min-width: 1280px;
+      max-width: 1250px;
+    }
   }
 
   &__schedule {
@@ -59,7 +71,7 @@
     }
   }
 
-  & > *:not(:last-child) {
+  &__wrapper > *:not(:last-child) {
     margin-bottom: 50px;
 
     @include on-tablet {

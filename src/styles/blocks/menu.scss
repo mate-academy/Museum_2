@@ -3,6 +3,11 @@
   background-color: $c-green;
   overflow-y: hidden;
 
+  @include on-desktop {
+    height: 100vh;
+    min-height: 800px;
+  }
+
   & > * {
     color: $c-white;
   }
@@ -10,8 +15,17 @@
   &__wrapper {
     @include padding-inline;
 
+    margin: 0 auto;
+    max-width: 1250px;
+
     @include on-desktop {
       @include page-grid;
+    }
+  }
+
+  &__top-bar {
+    @include on-desktop {
+      grid-column: 1 / -1;
     }
   }
 
@@ -46,12 +60,19 @@
     }
   }
 
-  &__text :nth-child(2) {
-    font-weight: 700;
-    margin-bottom: 20px;
+  &__text {
+    & > * {
+      text-decoration: none;
+      color: $c-white;
+    }
 
-    @include on-tablet {
-      margin-bottom: 0;
+    :nth-child(2) {
+      font-weight: 700;
+      margin-bottom: 20px;
+
+      @include on-tablet {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -92,14 +113,16 @@
 
   & > * {
     width: fit-content;
+    position: relative;
 
     &:hover {
       &::after {
         content: " ";
         display: block;
+        position: absolute;
         width: 100%;
         border-bottom: 1px solid $c-white;
-        margin-top: 5px;
+        margin-top: 1px;
       }
     }
   }
