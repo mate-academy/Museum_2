@@ -1,0 +1,91 @@
+.button {
+  text-decoration: none;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 16px;
+
+  &--width {
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+
+  &--header {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 70px;
+      width: 100%;
+    }
+
+    @include on-desktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__events {
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 6/9;
+    }
+  }
+
+  &--red {
+    color: white;
+    background-color: $button-color;
+
+    @include hover(border-radius, 20px)
+  }
+
+  &--white {
+    box-sizing: border-box;
+    border: 1 solid $button-color;
+
+    @include hover(border-style, dashed solid)
+  }
+
+  &--article {
+    margin-bottom: 90px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $button-color;
+  }
+
+  &--mb {
+    margin-bottom: 120px;
+
+    @include on-tablet {
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &--form {
+    border: none;
+    font-weight: normal;
+
+    @include on-tablet {
+      width: calc(100% - 90px);
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+}
+
+
