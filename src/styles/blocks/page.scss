@@ -1,0 +1,50 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0 1000px white inset;
+  transition: white 5000s ease-in-out 0s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  font-family: Raleway, sans-serif;
+  scroll-behavior: smooth;
+
+  &__menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
+    transition: all $effect-duration;
+
+    &:target {
+      pointer-events: all;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__header {
+    position: relative;
+  }
+}
+
