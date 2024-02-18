@@ -1,8 +1,6 @@
 .subscribe {
   @include padding-inline;
-  
-  margin: 0 auto;
-  max-width: 1250px;
+  @include max-width;
 
   margin-bottom: 80px;
 
@@ -42,7 +40,26 @@
     margin-bottom: 50px;
 
     @include on-desktop {
+      margin-bottom: 10px;
       grid-column: 7 / -1;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      grid-column: 7 / -1;
+    }
+
+    &--img {
+      height: 300px;
+      bottom: -50%;
+      position: absolute;
     }
   }
 }
@@ -79,6 +96,7 @@ input {
   }
 
   &:hover {
+    transition: 0.3s;
   border-bottom: 1px solid $c-red;
 
     &::placeholder {

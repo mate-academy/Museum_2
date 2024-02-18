@@ -1,21 +1,30 @@
 .header {
+  @include margin-bottom-small;
+
   display: flex;
   flex-direction: column;
   height: 100%;
   background-color: $c-green;
 
-  @include margin-bottom-small;
-
-  &__wrapper {
-    margin: 0 auto;
-    max-width: 1250px;
+  @include on-desktop {
+    min-height: 800px;
+    height: 100vh;
   }
 
+  &__top-bar {
+    @include padding-inline;
+  }
+
+  &__wrapper {
+    @include max-width;
+
+    height: 100%;
+    position: relative;
+  }
 
   &__container {
     @include padding-inline;
 
-    height: 100%;
     margin: 0 auto;
     padding-top: 50px;
 
@@ -37,7 +46,7 @@
 
     @include on-desktop {
       grid-column: 1 / 7;
-
+      padding-bottom: 0;
     }
 
     & > * {
@@ -94,6 +103,9 @@
       @include on-desktop {
         height: 663px;
         width: 625px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
       }
     }
   }

@@ -10,6 +10,7 @@
   justify-content: center;
   padding: 0;
   cursor: pointer;
+  transition: 0.3s;
 
   --color: #CD4D31;
 
@@ -27,16 +28,23 @@
 
   &:hover {
     --color:#AF3419;
+    
+    box-shadow: 5px 5px 10px $c-red;
   }
 
   &:active {
     --color:#EA340D;
   }
 
+
   &:disabled {
     --color: #DD836F;
-    
+
     cursor: default;
+
+    &:hover {
+      box-shadow: none;
+    }
   }
 
   &__red {
@@ -50,6 +58,9 @@
     color: var(--color);
     border: 1px solid var(--color);
     margin-top: 30px;
+    &:hover {
+      box-shadow: 5px 5px 7px $c-red;
+    }
 
     @include on-tablet {
       margin-top: 0;
@@ -71,10 +82,21 @@
 
    &__back-to-top {
       position: fixed;
-      background-color: $c-green;
       right: 20px;
       bottom: 30px;
-      padding-top: 5px;
+
+      background-color: $c-green;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      transition: 0.6s;
+
+      &--arrow {
+        display: block;
+      }
 
       @include on-tablet {
         right: 39px;
@@ -85,7 +107,7 @@
       }
 
     &:hover {
-      background-color: $c-red;
+      box-shadow: inset 0 -50px 0 0 $c-red;
     }
   }
 }

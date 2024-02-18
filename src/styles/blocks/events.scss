@@ -1,20 +1,17 @@
 .events {
   @include padding-inline;
   @include margin-bottom-small;
-  
-  margin: 0 auto;
-  max-width: 1250px;
+  @include max-width;
 
   @include on-tablet {
     @include page-grid;
 
     align-items: center;
-    grid-template-columns: 50px, 1fr;
+    grid-template-rows: 50px, 1fr;
     row-gap: 60px;
   }
 
   &__heading {
-    grid-column: 1 / span 4;
     grid-row: 1/2;
     margin-top: 0;
 
@@ -56,6 +53,8 @@
   &__photo {
     margin-bottom: 20px;
     width: 100%;
+
+    @include img-hover;
 
     @include on-tablet {
       grid-column: 1 / 4;
