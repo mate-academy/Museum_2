@@ -19,6 +19,54 @@
     }
   }
 
+  &__wrapper {
+    display: flex;
+    gap: 30px;
+
+    @include on-tablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__lang {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: $color-text-menu;
+    transition: all $time-hover;
+
+    &-none {
+      @include on-mobile {
+        display: none;
+      }
+
+      @include on-tablet {
+        display: flex;
+      }
+    }
+
+    & > span:nth-child(1) {
+      font-weight: 500;
+    }
+
+    &:hover {
+      color: $color-text-menu-hover;
+    }
+  }
+
+  &__dropdown {
+    width: 8px;
+    height: 5px;
+    background-image: url('./../images/icons/dropdown.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover {
+      background-image: url('./../images/icons/dropdown-hover.svg');
+    }
+  }
+
   &__icon {
     display: block;
     width: 25px;
