@@ -1,5 +1,40 @@
+// Utils
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/container';
+
+// Modules
+@import './modules/top-bar';
+@import './modules/text';
+@import './modules/title';
+@import './modules/btn';
+
+// Blocks
+@import './blocks/header';
+@import './blocks/menu';
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: $font-main;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
 }
