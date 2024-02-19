@@ -1,0 +1,166 @@
+.footer {
+  padding-block: 35px;
+  background-color: $color-bg-one;
+
+  @include on-tablet {
+    padding-top: 50px;
+  }
+
+  &__top {
+    @include on-tablet {
+      @include template {
+        align-items: start;
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__bottom {
+    position: relative;
+
+    display: flex;
+    gap: 25px;
+  }
+
+  &__copy, &__privacy {
+    color: $color-text-footer;
+  }
+
+  &__back {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-image: url('./../images/icons/back.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all $time-hover;
+
+    &:hover {
+      background-image: url('./../images/icons/back-hover.svg');
+    }
+  }
+}
+
+.block {
+  margin-bottom: 50px;
+
+  &-contacts {
+    @include on-tablet {
+      grid-column: 1 / span 2;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  &-work {
+    @include on-tablet {
+      grid-column: 3 / span 2;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / span 3;
+    }
+  }
+
+  &-main {
+    @include on-tablet {
+      grid-column: 5 / span 2;
+    }
+
+    @include on-desktop {
+      grid-column: 9 / span 3;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-family: $font-second;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $color-text-footer;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+  }
+
+  &__items {
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    margin-bottom: 8px;
+    color: $color-text-footer;
+  }
+
+  &__link {
+    color: $color-text-footer;
+    line-height: 150%;
+    transition: color $time-hover;
+
+    &:hover {
+      color: $color-text-menu-hover;
+    }
+  }
+}
+
+.social {
+
+  &__items {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all $time-hover;
+
+    &-facebook {
+      background-image: url('./../images/icons/facebook.svg');
+
+      &:hover {
+        background-image: url('./../images/icons/facebook-hover.svg');
+      }
+    }
+
+    &-twitter {
+      background-image: url('./../images/icons/twitter.svg');
+
+      &:hover {
+        background-image: url('./../images/icons/twitter-hover.svg');
+      }
+    }
+
+    &-telegram {
+      background-image: url('./../images/icons/telegram.svg');
+
+      &:hover {
+        background-image: url('./../images/icons/telegram-hover.svg');
+      }
+    }
+
+    &-instagram {
+      background-image: url('./../images/icons/instagram.svg');
+
+      &:hover {
+        background-image: url('./../images/icons/instagram-hover.svg');
+      }
+    }
+  }
+}
