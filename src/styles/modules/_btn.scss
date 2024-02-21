@@ -1,0 +1,81 @@
+.btn {
+  display: block;
+  padding-block: 22px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 100%;
+  transition: all $time-hover;
+
+  @include on-tablet {
+    max-width: 330px;
+  }
+
+  @include on-desktop {
+    max-width: 270px;
+  }
+
+  &-orange {
+    color: $color-btn-text;
+    background-color: $color-btn-first;
+
+    &:hover {
+      background-color: $color-btn-first-hover;
+    }
+
+    &:active {
+      background-color: $color-btn-first-active;
+    }
+
+    &:disabled {
+      background-color: $color-btn-first-disabled;
+    }
+  }
+
+  &-transparent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: $color-btn-first;
+    background-color: transparent;
+    border: 1px solid $color-btn-first;
+
+    &:hover {
+      color: $color-btn-first-hover;
+      border-color: $color-btn-first-hover;
+    }
+
+    &:active {
+      color: $color-btn-first-active;
+      border-color: $color-btn-first-active;
+    }
+
+    &:disabled {
+      color: $color-btn-first-disabled;
+      border-color: $color-btn-first-disabled;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url('./../images/icons/arrow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &:hover {
+      background-image: url('./../images/icons/arrow-hover.svg');
+    }
+
+    &:active {
+      background-image: url('./../images/icons/arrow-active.svg');
+    }
+
+    &:disabled {
+      background-image: url('./../images/icons/arrow-disabled.svg');
+    }
+  }
+}
+
