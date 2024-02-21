@@ -6,13 +6,13 @@
   @include margin-bottom-small;
 
   &__wrapper {
-    @include max-width;
-
     @include on-tablet {
       @include page-grid;
-
-      align-items: center;
       }
+
+    @include on-desktop {
+      @include max-width;
+    }
   }
 
   &__img {
@@ -29,26 +29,22 @@
     @include padding-inline;
 
     max-width: 1200px;
-
     padding-top: 50px;
     padding-bottom: 50px;
 
     @include on-tablet {
       padding-top: 80px;
       padding-bottom: 80px;
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / span 8;
     }
 
     & > * {
       color: $c-white;
       margin: 0;
-    }
-
-    @include on-tablet {
-      grid-column: 1 / 5;
-    }
-
-    @include on-desktop {
-      grid-column: 6 / span 8;
     }
   }
 
@@ -61,10 +57,12 @@
 
     @include on-tablet {
       margin-bottom: 60px;
+      max-width: 450px;
+      text-align: left;
     }
 
     @include on-desktop {
-      width: 470px;
+      max-width: 500px;
     }
   }
 }

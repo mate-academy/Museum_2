@@ -1,12 +1,13 @@
 .menu {
-  height: fit-content;
+  height: 100%;
   background-color: $c-green;
-  overflow-y: hidden;
-  position: relative;
+  overflow-y:scroll;
+  z-index: 1;
 
   @include on-desktop {
     height: 100vh;
     min-height: 800px;
+    overflow-y: hidden;
   }
 
   & > * {
@@ -20,6 +21,9 @@
     height: 100vh;
     box-sizing: border-box;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @include on-desktop {
       @include padding-inline;
@@ -86,11 +90,13 @@
 
     &--img {
       display: block;
-      height: 426px;
+      height: 100%;
       margin: 0 auto;
+      bottom: 0;
 
       @include on-desktop {
-        height: 692px;
+        height: 663px;
+        width: 625px;
         position: absolute;
         right: 0;
         bottom: 0;
