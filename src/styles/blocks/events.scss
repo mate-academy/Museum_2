@@ -1,0 +1,98 @@
+.events {
+  @include padding-inline;
+  @include max-width;
+  @include margin-bottom-small;
+
+  @include on-tablet {
+    @include page-grid;
+
+    align-items: center;
+    grid-template-rows: 50px, 1fr;
+    row-gap: 60px;
+  }
+
+  &__heading {
+    grid-row: 1/2;
+    margin-top: 0;
+
+    @include on-tablet  {
+      grid-column: 1 / span 5;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include on-tablet {
+      grid-column: 5 / span 2;
+      grid-row: 1/2;
+    }
+
+    @include on-desktop {
+      grid-column: 10 / span 3;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include on-tablet {
+      grid-column: 1/ -1;
+      grid-row: 2/3;
+    }
+  }
+}
+
+.event {
+  @include on-tablet {
+    @include page-grid;
+  }
+
+  &__photo {
+    margin-bottom: 20px;
+    width: 100%;
+
+    @include img-hover;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__container {
+    & :first-child {
+      margin-bottom: 10px;
+    }
+
+    @include on-tablet {
+      grid-column: 4 / span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / span 6;
+    }
+  }
+
+  &__heading {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  &__text:last-of-type {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

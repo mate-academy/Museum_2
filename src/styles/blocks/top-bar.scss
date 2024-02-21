@@ -1,0 +1,65 @@
+.top-bar {
+  @include padding-inline;
+  @include max-width;
+
+  display: flex;
+  justify-content:space-between;
+  align-items: top;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+
+  @include on-desktop {
+    grid-column: 1 / 13;
+  }
+
+  &__logo {
+    font-size: 36px;
+    color: $c-white;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+
+    &--link {
+      color: $c-white;
+      text-decoration: none;
+    }
+
+    @include hover(transform, scale(1.2));
+  }
+}
+
+.icon {
+  display:  block;
+
+  --fill-color: #F1F5F4;
+
+    & > * {
+      fill: var(--fill-color);
+    }
+
+    @include hover(transform, rotate(180deg));
+    @include hover(--fill-color, #CD4D31);
+
+  &__menu {
+    height: 20px;
+    width: 25px;
+    transition: 0.3s;
+
+    @include on-tablet {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__close {
+    width: 20px;
+    height: 20px;
+
+    @include on-tablet {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

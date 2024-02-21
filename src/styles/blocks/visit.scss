@@ -1,0 +1,68 @@
+.visit {
+  background-color: $c-green;
+  display: flex;
+  flex-direction: column;
+
+  @include margin-bottom-small;
+
+  &__wrapper {
+    @include on-tablet {
+      @include page-grid;
+      }
+
+    @include on-desktop {
+      @include max-width;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+      display: flex;
+      height: 800px;
+    }
+  }
+
+  &__container {
+    @include padding-inline;
+
+    max-width: 1200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @include on-tablet {
+      padding-top: 80px;
+      padding-bottom: 80px;
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / span 8;
+    }
+
+    & > * {
+      color: $c-white;
+      margin: 0;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 60px;
+      max-width: 450px;
+      text-align: left;
+    }
+
+    @include on-desktop {
+      max-width: 500px;
+    }
+  }
+}
