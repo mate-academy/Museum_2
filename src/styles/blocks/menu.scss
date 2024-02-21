@@ -1,7 +1,7 @@
 .menu {
   height: 100%;
   background-color: $c-green;
-  overflow-y:scroll;
+
   z-index: 1;
 
   @include on-desktop {
@@ -25,9 +25,15 @@
     flex-direction: column;
     justify-content: space-between;
 
+    @include on-tablet {
+      overflow-y:scroll;
+    }
+
     @include on-desktop {
       @include padding-inline;
       @include page-grid;
+
+      overflow-y:hidden;
     }
   }
 
