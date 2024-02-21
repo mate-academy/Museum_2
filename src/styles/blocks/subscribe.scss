@@ -12,17 +12,17 @@
     margin-bottom: 200px;
   }
 
-  & > * {
-    grid-column: 1 / -1;
-
-    @include on-tablet {
-      grid-column: 1 / -2;
-    }
-  }
-
   &__container {
-    @include on-desktop {
+    @include on-tablet {
       @include page-grid;
+    }
+
+    & > * {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: 1 / span 5;
+      }
     }
   }
 
