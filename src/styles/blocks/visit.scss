@@ -1,7 +1,5 @@
 .visit {
   background-color: $c-green;
-  display: flex;
-  flex-direction: column;
 
   @include margin-bottom-small;
 
@@ -10,9 +8,7 @@
       @include page-grid;
       }
 
-    @include on-desktop {
       @include max-width;
-    }
   }
 
   &__img {
@@ -28,7 +24,7 @@
   &__container {
     @include padding-inline;
 
-    max-width: 1200px;
+    height: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
 
@@ -40,6 +36,11 @@
 
     @include on-desktop {
       grid-column: 6 / span 8;
+      padding-top: 0;
+      padding-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     & > * {

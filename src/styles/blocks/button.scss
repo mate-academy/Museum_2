@@ -20,14 +20,6 @@
     display: block;
   }
 
-  @include on-tablet {
-    width: 330px;
-  }
-
-  @include on-desktop {
-    width: 270px;
-  }
-
   &:hover {
     --color:#AF3419;
 
@@ -42,7 +34,7 @@
   &:disabled {
     --color: #DD836F;
 
-    cursor: default;
+    cursor: none;
 
     &:hover {
       box-shadow: none;
@@ -53,6 +45,14 @@
     background-color: var(--color);
     color: $c-white;
     border: none;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
   }
 
   &__white {
@@ -66,12 +66,8 @@
 
     @include on-tablet {
       margin-top: 0;
-      width: 210px;
+      width: 100%;
    }
-
-    @include on-desktop {
-      width: 270px;
-    }
 
    &--arrow {
       display: block;
@@ -91,6 +87,8 @@
       position: fixed;
       right: 20px;
       bottom: 30px;
+      z-index: 1;
+      border: 1px solid white;
 
       background-color: $c-green;
       display: flex;

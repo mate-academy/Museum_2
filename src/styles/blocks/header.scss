@@ -1,50 +1,36 @@
 .header {
   @include margin-bottom-small;
 
-  display: flex;
-  flex-direction: column;
   height: 100%;
+  width: 100vw;
   background-color: $c-green;
 
-  @include on-desktop {
-    min-height: 800px;
-    height: 100vh;
-  }
-
-  &__top-bar {
-    @include padding-inline;
-  }
-
   &__wrapper {
+    @include padding-inline;
     @include max-width;
 
-    height: 100%;
-    position: relative;
+    height: inherit;
   }
 
   &__container {
-    @include padding-inline;
-
-    margin: 0 auto;
+    height: 100%;
     padding-top: 50px;
-
-    @include on-tablet {
-      @include page-grid;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @include on-desktop {
+      @include page-grid;
+
       padding-top: 47px;
     }
   }
 
   &__middle {
-    padding-bottom: 40px;
-
-    @include on-tablet {
-      grid-column: 1 / 6;
-    }
+    max-width: 569px;
 
     @include on-desktop {
+      padding-right: 0;
       grid-column: 1 / 7;
       padding-top: 43px;
     }
@@ -79,13 +65,15 @@
 
     &--bottom {
       display: none;
-      
+
       @include on-desktop {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: 0;
         margin-top: 135px;
+        margin-bottom: 50px;
 
         &-line {
           width: 469px;
@@ -95,34 +83,27 @@
   }
 
   &__bottom {
-    display: flex;
-    height: 273px;
-    padding: 0;
+    display: block;
+    min-height: 273px;
+    background-image: url(../images/header.png);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    margin-top: 40px;
 
-    @include on-tablet {
-      height: 494px;
+    @include on-tablet  {
+      height: 493px;
+      margin-top: 70px;
+      background-image: url(../images/header--tablet.png);
       grid-column: 1 / -1;
+
     }
 
     @include on-desktop {
-      grid-column: 8 / 12;
+      background-image: url(../images/header--desktop.png);
       height: 100%;
-
-    }
-
-    &--img {
-      object-fit: cover;
-      margin: 0 auto;
-      height: 100%;
-      bottom: 0;
-
-      @include on-desktop {
-        height: 663px;
-        width: 625px;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-      }
+      grid-column: 7 / -1;
+      margin-top: 0;
     }
   }
 }

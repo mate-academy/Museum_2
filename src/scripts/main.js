@@ -5,12 +5,12 @@ const subscribeButton = document.getElementById('subscribe__button');
 
 const clickHandler = function(event) {
   // eslint-disable-next-line no-undef
-  alert('This button works 😉');
+  alert('This button in work');
 };
 
 subscribeButton.addEventListener('click', (event) => {
   // eslint-disable-next-line no-undef
-  alert('You have successfully subscribed to our newsletter 😉');
+  alert('You have successfully subscribed to our newsletter');
 });
 
 for (const button of buttons) {
@@ -42,6 +42,10 @@ const menuIcon = document.getElementById('menu-icon');
 
 menuIcon.addEventListener('click', showMenu);
 
-const menuClose = document.getElementById('menu-close');
+const menuLinks = document.getElementsByClassName('menu-link');
 
-menuClose.addEventListener('click', closeMenu);
+for (const menuLink of menuLinks) {
+  menuLink.addEventListener('click', closeMenu);
+}
+
+// menuClose.addEventListener('click', closeMenu);
