@@ -1,0 +1,142 @@
+.menu {
+  height: 100vh;
+  background-color: $bg;
+  z-index: 1;
+  position: relative;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 20px;
+  }
+
+  &__about {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      @include grid(2, 6, 12);
+      margin-top: 30px;
+    }
+  }
+
+  &__shedule {
+    margin-top: 10px;
+    @include on-tablet {
+      grid-column: 1 / 3;
+      margin-top: 0;
+    }
+  }
+
+  &__address {
+    @include on-tablet {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__shedule > span, p,
+  &__address > span, p {
+    color: $white;
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $white;
+
+    @include on-desktop {
+      width: 40%;
+    }
+  }
+
+  &__grid {
+    @include on-tablet {
+      @include grid(2, 6, 12);
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__painter {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: 100%;
+      margin-top: 30px;
+      grid-column: 2 / 6;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      width: 50vw;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.nav {
+  margin-block: 40px;
+
+  @include on-desktop {
+    margin-block: 70px;
+  }
+
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__link > h5{
+    color: $white;
+    position: relative;
+    display: inline-block;
+
+    @include on-tablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+    &::after {
+      @include after-line;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.page {
+  &__menu {
+    position: fixed;
+    overflow: auto;
+    scrollbar-width: none;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all .3s;
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}
