@@ -1,0 +1,111 @@
+.header {
+  background-color: $bg-color;
+  color: $white-color;
+
+  &__content {
+    background-image: url(../images/header-img.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    padding-block: 50px 313px;
+
+    @media (min-width: $tablet-min-width) {
+      background-size: 70%;
+      padding-block: 99px 564px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0 30px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      background-size: 50%;
+      background-position: right bottom;
+      padding-block: 90px 50px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__date {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 19.6px;
+
+    @media (min-width: $tablet-min-width) {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+
+    @media (min-width: $tablet-min-width) {
+      margin-bottom: 20px;
+      font-size: 72px;
+      line-height: 72px;
+      grid-column: 1 / 6;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      margin-bottom: 30px;
+      font-size: 96px;
+      line-height: 96px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @media (min-width: $tablet-min-width) {
+      margin-bottom: 50px;
+      grid-column: 1 / 4;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      margin-bottom: 81px;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__btn {
+    @media (min-width: $tablet-min-width) {
+      grid-column: 1 / 4;
+      margin-bottom: 108px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      grid-column: 1 / 6;
+      margin-bottom: 135px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @media (min-width: $desktop-min-width) {
+      grid-column: 1 / 7;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    }
+  }
+
+  &__bottom-date {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__line {
+    height: 1px;
+    width: 82%;
+    background-color: $white-color;
+    opacity: 0.3;
+  }
+}
