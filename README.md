@@ -35,3 +35,6 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.
+
+- I`ve used React to implement this task
+- Here is the [DEMO](https://github.com/Vovchukkul/Museum_2.git)
