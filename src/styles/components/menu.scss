@@ -1,0 +1,61 @@
+.menu {
+  @include flex {
+    gap: 40px;
+  }
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 1;
+
+  height: 100vh;
+
+  background-color: $bg;
+  pointer-events: none;
+  overflow-y: scroll;
+
+
+  &__container {
+    padding: $pad-initial;
+  }
+
+  &__top {
+    @include flex;
+
+    &--text:nth-child(even) {
+      @include font-style ("Raleway", sans-serif, 600, 16px, 24px, $white);
+    }
+
+    &--text:nth-child(odd) {
+      @include font-style ("Raleway", sans-serif, 400, 14px, 20px, $white);
+    }
+  }
+
+  &__content {
+    @include flex {
+      gap: 40px;
+    }
+  }
+
+  &__list {
+    @include flex;
+  }
+
+  &__link {
+    @include font-style ("Playfair Display", serif, 700, 20px, 30px, $white);
+  }
+
+  &__line {
+    @extend %line;
+  }
+
+  &__btn {
+    @extend %button;
+  }
+
+  &__bottom {
+    display: none;
+  }
+}

@@ -1,0 +1,39 @@
+.top-bar {
+  @include flex {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  background-color: $bg;
+
+  &__block {
+    @include flex {
+      flex-direction: initial;
+      align-items: center;
+    }
+  }
+
+  &__box {
+    @include flex {
+      flex-direction: inherit;
+      gap: 5px;
+    }
+
+    cursor: pointer;
+
+    &:first-child {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include font-style ("Raleway", sans-serif, 600, 16px, 24px, $white);
+    
+    text-transform: uppercase;
+  }
+
+  &__close {
+    display: none;
+  }
+ }

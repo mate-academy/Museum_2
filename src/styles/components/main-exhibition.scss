@@ -1,0 +1,48 @@
+.exhibitions {
+  @include grid (2);
+
+  margin-top: 80px;
+
+  &__top {
+    grid-column: 1 / -1;
+
+    @include flex {
+      align-items: center;
+        gap: 0;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include flex {
+      gap: 50px
+    }
+  }
+
+  &__block {
+    @include flex;
+  }
+
+  &__row {
+    @include flex;
+
+    &--text {
+      @extend %font-texts;
+
+      &:first-child {
+        color: $pink;
+      }
+    }
+  }
+
+  &__link {
+    @extend %button-link;
+    
+    visibility: hidden;
+  }
+
+  &__btn {
+    margin: 10px 0;
+  }
+}

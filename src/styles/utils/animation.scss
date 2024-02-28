@@ -1,0 +1,26 @@
+:root {
+  --transition: .5s;
+  --transform: scale(1.2);
+}
+
+.menu {
+  transition: var(--transition);
+  transform: translateY(-100%);
+
+  &:target {
+    pointer-events: all;
+    transform: translateY(0);
+    opacity: 1;
+
+    .top-bar {
+
+      &__close {
+        display: block;
+      }
+
+      &__menu {
+        display: none;
+      }
+    }
+  }
+ }

@@ -1,0 +1,43 @@
+.header {
+  @include flex;
+
+  gap: 80px;
+  background-color: $bg;
+
+
+  &__container {
+    padding: $pad-initial;
+  }
+
+  &__content {
+    @include flex;
+
+    gap: 40px;
+  }
+
+  &__inner {
+    @include flex;
+  }
+
+  &__bottom {
+    transform: translateY(24px);
+  }
+
+  &__row {
+    display: none;
+    align-items: center;
+    flex-direction: row;
+
+    &--text {
+      flex-basis: 20%;
+    }
+
+    &--line {
+      @extend %line;
+    }
+  }
+
+  &__text {
+    @include font-style ("Raleway", sans-serif, 400, 14px, 20px, $white);
+  }
+}
