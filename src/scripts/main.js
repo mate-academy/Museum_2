@@ -1,6 +1,6 @@
 'use strict';
 
-window.addEventListener('hashchange', function() {
+window.addEventListener('hashchange', function () {
   if (window.location.hash === '#menu') {
     document.body.classList.add('page-body');
   } else {
@@ -19,5 +19,4 @@ const swiper = new Swiper('.swiper', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-
 });
