@@ -6,13 +6,13 @@
 }
 
 @mixin on-tablet {
-  @media (min-width:$width-tablet) {
+  @media (min-width: $width-tablet) {
     @content;
   }
 }
 
 @mixin on-desktop {
-  @media (min-width:$width-desktop) {
+  @media (min-width: $width-desktop) {
     @content;
   }
 }
@@ -26,5 +26,49 @@
 
   @include on-desktop {
     padding-inline: $padding-container + 16px;
+  }
+}
+
+@mixin template {
+  display: grid;
+  align-items: center;
+  column-gap: 30px;
+  @content;
+}
+
+@mixin second-button {
+  text-indent: -10px;
+  padding: 0;
+  margin-top: 30px;
+  background-color: transparent;
+  border: 1px solid $c-main;
+  color: $c-main;
+
+  &-arrow {
+    display: inline;
+    position: absolute;
+    margin-left: 8px;
+    width: 20px;
+    height: 20px;
+    background-image: url(/src/icons/button/arrow.png);
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border-color: $hover-main;
+    color: $hover-main;
+  }
+
+  &:active {
+    background-color: transparent;
+    border-color: $active-main;
+    color: $active-main;
+  }
+
+  &:focus {
+    background-color: transparent;
+    border-color: $pressed-main;
+    color: $pressed-main;
   }
 }
