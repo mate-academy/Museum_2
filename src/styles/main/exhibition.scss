@@ -1,8 +1,30 @@
 .exhibition {
-  @include container;
-
   display: block;
   margin-top: 90px;
+
+  @include container;
+
+  @include on-tablet {
+    .section {
+      &-first {
+        grid-area: 2 / 1 / auto / span 3;
+      }
+
+      &-second {
+        grid-area: 2 / 4 / auto / span 3;
+      }
+
+      &__title {
+        text-align: left;
+        margin: 0;
+        grid-area: 1 / 1 / auto / span 4;
+      }
+    }
+
+    @include template {
+      grid-template-columns: repeat(6, 1fr);
+    };
+  }
 
   &__card {
     &-1 {

@@ -15,7 +15,83 @@
     padding: 0;
   }
 
+  .list-info__item {
+    margin-bottom: 10px;
+  }
+
+  .nav-bar {
+    &__item {
+      margin-bottom: 10px;
+    }
+  }
+
   p {
     margin: 0;
+  }
+
+  &__back {
+    display: block;
+    position: absolute;
+
+    right: 10px;
+    height: 26px;
+    width: 26px;
+
+    background-image: url(/src/icons/logo/scroll\ up.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    &:visited {
+      text-decoration: none;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    gap: 22px;
+  }
+
+
+  @include on-tablet {
+    &____bottom {
+      flex-direction: row;
+    }
+
+    &__top {
+      @include template {
+        align-items: start;
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    h5 {
+      margin-bottom: 30px;
+    }
+
+    .list-info__item {
+      margin-bottom: 10px;
+    }
+
+    .nav-bar {
+      &__item {
+        margin-bottom: 10px;
+      }
+    }
+
+    .indent {
+      margin: 0;
+    }
+
+    .indent:nth-child(1) {
+      grid-column: 1 / span 2;
+    }
+
+    .indent:nth-child(2) {
+      grid-column: 3 / span 2;
+    }
+
+    .indent:nth-child(3) {
+      grid-column: 5 / span 2;
+    }
   }
 }

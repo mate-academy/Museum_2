@@ -18,16 +18,50 @@
 
   &__card {
     &-1 {
-      height: 281px;
+      height: 280px;
       background-image: url(/src/images/main/news/news-img-1.png);
-      background-size: 370px 281px;
     }
 
     &-2 {
       height: 280px;
-      width: 280px;
       background-image: url(/src/images/main/news/news-img-2.png);
-      background-size: 330px 280px;
+    }
+  }
+
+  @include on-tablet {
+    @include template {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    .news__card {
+      &-1 {
+        height: 330px;
+        min-width: 280px;
+      }
+
+      &-2 {
+        height: 330px;
+        min-width: 280px;
+      }
+    }
+    .section {
+      &__title {
+        text-align: left;
+        margin: 0;
+        grid-area: 1 / 1 / auto / span 4;
+      }
+
+      &__button {
+        grid-area: 1 / 5 / auto / span 2;
+      }
+
+      &-first {
+        grid-area: 2 / 1 / auto / span 3;
+      }
+
+      &-second {
+        grid-area: 2 / 4 / auto / span 3;
+      }
     }
   }
 }

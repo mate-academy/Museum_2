@@ -4,14 +4,59 @@
   display: block;
   margin-top: 120px;
 
+  @include on-tablet {
+    &__section {
+      display: flex;
+      gap: 30px;
+    }
+
+    &__card-1 {
+      width: 330px;
+      height: 360px;
+    }
+
+    &__card-2 {
+      width: 330px;
+      height: 360px;
+    }
+
+    .section {
+      &__block {
+        width: 330px;
+      }
+
+      &-first {
+        grid-area: 2 / 1 / auto / 12;
+      }
+
+      &-second {
+        grid-area: 3 / 1 / auto / 12;
+      }
+
+      &__title {
+        text-align: left;
+        margin: 0;
+        grid-area: 1 / 1 / auto / span 4;
+      }
+
+      &__button {
+        grid-area: 1 / 5 / auto / span 6;
+      }
+    }
+
+    @include template {
+      grid-template-columns: repeat(6, 1fr);
+    };
+  }
+
   &__card {
     &-1 {
-      background-size: 280px 358px;
       background-image: url(/src/images/main/events/event-img-1.png);
+      margin: 0;
     }
 
     &-2 {
-      background-size: 280px 358px;
+      margin: 0;
       background-image: url(/src/images/main/events/event-img-2.png);
     }
   }
