@@ -1,7 +1,12 @@
 .exhibitions {
-  @include grid (2);
+  position: relative;
+  
+  @include grid (2) {
+    row-gap: 60px;
+  }
 
   margin-top: 80px;
+  padding-bottom: 80px;
 
   &__top {
     grid-column: 1 / -1;
@@ -16,12 +21,15 @@
     grid-column: 1 / -1;
 
     @include flex {
-      gap: 50px
+      gap: 50px;
     }
   }
 
   &__block {
-    @include flex;
+    @include flex {
+      justify-content: space-between;
+    }
+
   }
 
   &__row {
@@ -37,9 +45,10 @@
   }
 
   &__link {
+    position: absolute;
+    bottom: 0;
+
     @extend %button-link;
-    
-    visibility: hidden;
   }
 
   &__btn {

@@ -1,11 +1,22 @@
 :root {
   --transition: .5s;
-  --transform: scale(1.2);
+  --main-transform: scale(1.2);
+  --secondary-transform: scale(1.05);
+  --b-radius: 10px;
 }
 
 .menu {
   transition: var(--transition);
   transform: translateY(-100%);
+
+  &__item {
+    transition: var(--transition);
+
+    &:hover {
+      transform: var(--secondary-transform);
+      text-shadow: 0 0 10px $white;
+    }
+  }
 
   &:target {
     pointer-events: all;
@@ -23,4 +34,104 @@
       }
     }
   }
+ }
+
+ .top-bar__icon {
+    transition: var(--transition);
+
+    &:hover {
+      transform: var(--main-transform);
+    }
+  }
+
+
+ .exhibitions {
+
+  &__block {
+     transition: var(--transition);
+
+    &:hover {
+      transform: var(--secondary-transform);
+      padding: 0 10px;
+      box-shadow: 0 0 20px $black;
+      border-radius: var(--b-radius);
+
+      .exhibitions__btn {
+        border-radius: var(--b-radius);
+      }
+    }
+  }
+ }
+
+ button {
+  transition: var(--transition);
+
+  &:hover {
+    transform: var(--secondary-transform);
+    border-radius: 10px;
+    box-shadow: 0 0 10px $pink, 0 0 10px $black;
+    text-shadow: 0 0 10px $white;
+  }
+ }
+
+ .button-link {
+  transition: var(--transition);
+
+  &:hover {
+    transform: var(--secondary-transform);
+    border-radius: 10px;
+    box-shadow: 0 0 10px $pink, 0 0 10px $black;
+  }
+ }
+
+ .subscription {
+
+  &__input {
+    transition: var(--transition);
+
+    &:hover {
+      transform: var(--secondary-transform);
+      box-shadow: 0 -5px 10px $black;
+    }
+  }
+ }
+
+ .footer {
+
+   &__contact-us {
+
+     :hover {
+       transition: var(--transition);
+       transform: var(--secondary-transform);
+       text-shadow: 0 0 15px $white;
+     }
+    }
+
+    &__icon {
+      transition: var(--transition);
+
+      &:hover {
+        transform: var(--main-transform);
+        filter: drop-shadow(0 0 10px $white);
+      }
+    }
+
+    &__item {
+      transition: var(--transition);
+
+      &:hover {
+        transform: var(--main-transform);
+        text-shadow: 0 0 15px $white;
+      }
+    }
+
+    &__scroll-up {
+      transition: var(--transition);
+
+      &:hover {
+        transform: var(--main-transform);
+        filter: drop-shadow(0 0 10px $white);
+
+      }
+    }
  }
