@@ -1,0 +1,66 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-block: 60px 30px;
+  width: 100%;
+  transition: all $time-hover;
+
+  &:hover {
+    @include on-desktop {
+      transform: scale(1.05);
+    }
+  }
+
+  &__img {
+    height: 360px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-1 {
+      background-image: url(../images/actuals/actuals-1.svg);
+      height: 420px;
+    }
+
+    &-2 {
+      background-image: url(../images/actuals/actuals-2.svg);
+      height: 420px;
+    }
+
+    &-3 {
+      background-image: url(../images/future_events/future_events-1.svg);
+    }
+
+    &-4 {
+      background-image: url(../images/future_events/future_events-2.svg);
+    }
+
+    &-5 {
+      background-image: url(../images/news/news-1.svg);
+    }
+
+    &-6 {
+      background-image: url(../images/news/news-2.svg);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+
+    @include on-tablet {
+      height: 734px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__text {
+    color: $color-card-text;
+  }
+}
