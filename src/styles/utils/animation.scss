@@ -1,7 +1,7 @@
 :root {
   --transition: .5s;
   --main-transform: scale(1.2);
-  --secondary-transform: scale(1.05);
+  --secondary-transform: scale(1.03);
   --b-radius: 10px;
 }
 
@@ -44,23 +44,24 @@
     }
   }
 
-
  .exhibitions {
+  @include media-breakpoint ($desktop) {
 
-  &__block {
-     transition: var(--transition);
+    &__block {
+       transition: var(--transition);
 
-    &:hover {
-      transform: var(--secondary-transform);
-      padding: 0 10px;
-      box-shadow: 0 0 20px $black;
-      border-radius: var(--b-radius);
-
-      .exhibitions__btn {
+      &:hover {
+        transform: var(--secondary-transform);
+        box-shadow: 0 0 20px $black;
         border-radius: var(--b-radius);
+
+        .exhibitions__btn {
+          border-radius: var(--b-radius);
+        }
       }
     }
   }
+
  }
 
  button {
@@ -68,9 +69,14 @@
 
   &:hover {
     transform: var(--secondary-transform);
-    border-radius: 10px;
-    box-shadow: 0 0 10px $pink, 0 0 10px $black;
+    box-shadow: 0 0 10px $black;
     text-shadow: 0 0 10px $white;
+  }
+
+  &:active {
+    transition: 10ms;
+    text-shadow: none;
+    box-shadow: inset 0 0 20px $black;
   }
  }
 
@@ -81,6 +87,12 @@
     transform: var(--secondary-transform);
     border-radius: 10px;
     box-shadow: 0 0 10px $pink, 0 0 10px $black;
+  }
+
+  &:active {
+    transition: 10ms;
+    text-shadow: none;
+    box-shadow: inset 0 0 10px $pink;
   }
  }
 
