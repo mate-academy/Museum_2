@@ -1,15 +1,15 @@
 /* #region menu-aside */
 .menu {
+  background-color: $background;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: $background;
   color: $white;
   height: 100vh;
-  overflow-y: scroll;
+  overflow: hidden;
 
   @include on-desktop {
-    overflow: hidden;
+    background-image: url(../imagewasp/bg-header-small.jpg);
   }
 
   &__content {
@@ -25,11 +25,11 @@
     grid-column: 1 / -1;
 
     @include on-tablet {
-      padding-block: 24px;
+      padding-block: 20px;
     }
 
     @include on-desktop {
-      padding-block: 30px;
+      padding-block: 20px;
     }
   }
 
@@ -42,12 +42,13 @@
     display: block;
     width: max-content;
     height: 30px;
-    color: $white;
+    color: #fff;
     background-color: $background;
     font-size: 16px;
     font-weight: 500;
     line-height: 150%;
     cursor: pointer;
+    border-radius: 50%;
     border: none;
     outline: none;
 
@@ -57,14 +58,12 @@
   &__info {
     grid-column: 1 / -1;
     width: 207px;
-    margin-top: 10px;
-    margin-bottom: 20px;
     align-items: start;
     text-align: left;
 
     @include on-tablet {
       grid-column: 1 / 3;
-      margin-bottom: 50px;
+
     }
   }
 
@@ -84,17 +83,15 @@
   &__contact {
     grid-column: 1 / -1;
     margin-top: 0;
-    margin-bottom: 20px;
     align-items: start;
     text-align: left;
 
     @include on-tablet {
-      margin-top: 10px;
       grid-column: 3 / -1;
     }
 
     @include on-desktop {
-      margin-bottom: 70px;
+      margin-bottom: 0;
     }
   }
 
@@ -117,18 +114,20 @@
   &__line {
     grid-column: 1 / -1;
     width: 100%;
-    height: 1px;
+    height: 3px;
     background-color: $white;
     opacity: 0.6;
-    margin-block: 40px;
+    margin-block: 20px;
 
     @include on-tablet {
-      margin-block: 50px;
+      margin-block: 20px;
     }
 
     @include on-desktop {
+      display: none;
       grid-column: 1 / 7;
-      margin-block: 60px;
+      margin-block: 30px;
+      background-color: $black;
     }
   }
 
@@ -137,7 +136,7 @@
 
     position: relative;
     width: 280px;
-    margin-bottom: 238px;
+    margin-bottom: 30px;
     grid-column: 1 / -1;
 
     @include on-tablet {
@@ -147,8 +146,8 @@
     }
 
     @include on-desktop {
-      width: 270px;
-      margin-bottom: 108px;
+      width: 240px;
+      margin-bottom: 40px;
     }
 
     &--container {
@@ -168,41 +167,48 @@
   }
 
   &__image {
-    display: none;
-    background-image: url(../images/boy.svg);
-    background-position: top center;
+    background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../imagewasp/on-table.jpg);
+    display: block;
+    width: 100%;
+      height: 466px;
+      grid-column: 1 / -1;
+      justify-self: center;
 
     @include on-tablet {
+      background-image: url(../imagewasp/bg-header.jpg);
       display: block;
-      width: 422px;
+      width: 100%;
       height: 466px;
-      grid-column: 2 / -2;
+      grid-column: 1 / -1;
       justify-self: center;
     }
 
     @include on-desktop {
-      width: 624px;
-      height: 697px;
+      background-image: none;
+      width: 100%;
+      height: 30%;
       position: absolute;
       right: 0;
       bottom: 0;
-      grid-column: 7 / -1;
+      grid-column: 1 / -1;
     }
   }
 }
 
 .nav {
   grid-column: 1 / -1;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 
   @include on-tablet {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
   }
 
   @include on-desktop {
     grid-column: 1 / 7;
-    margin-bottom: 60px;
+    margin-bottom: 180px;
   }
 
   &__list {
@@ -218,7 +224,7 @@
     }
 
     @include on-desktop {
-      gap: 60px;
+      gap: 30px;
     }
   }
 
@@ -235,6 +241,10 @@
       font-size: 48px;
       font-weight: bolder;
       line-height: 120%;
+    }
+
+    @include on-desktop {
+      color: $black;
     }
   }
 }

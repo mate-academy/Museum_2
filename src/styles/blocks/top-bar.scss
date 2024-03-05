@@ -4,23 +4,31 @@
   justify-content: space-between;
   align-items: center;
   gap: 127px;
-  padding-block: 20px;
+  padding-block: 10px;
   grid-column: 1 / -1;
 
   @include on-tablet {
-    padding-block: 24px;
+    padding-block: 15px;
   }
 
   @include on-desktop {
-    padding-block: 30px;
+    padding-block: 20px;
   }
 
   &__logo {
-    width: 123px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     transition: $effect-duration;
 
-    @include hover(transform, scale(1.2));
+    @include hover(transform, scale(1.15));
+
+    @include on-tablet {
+      @include hover(transform, scale(1.3));
+    }
+
+    @include on-desktop {
+      @include hover(transform, scale(1.5));
+    }
   }
 
   &__logo-link {
@@ -34,8 +42,8 @@
 
   &__icon-menu {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     transition: $effect-duration;
 
     @include hover(transform, scale(1.2));
@@ -49,16 +57,21 @@
       width: max-content;
       height: 30px;
       color: $white;
-      background-color: $background;
+      background-color: #8fa0b0;
       font-family: inherit;
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 700;
       line-height: 150%;
       cursor: pointer;
+      border-radius: 50%;
       border: none;
       outline: none;
 
       @include hover(scale, 1.1);
+    }
+
+    @include on-desktop {
+      background-color: #b3c2d0;
     }
   }
 
