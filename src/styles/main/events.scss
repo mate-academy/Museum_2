@@ -49,6 +49,55 @@
     };
   }
 
+  @include on-desktop {
+    @include template {
+      grid-template-columns: repeat(12, 1fr);
+    };
+
+    .section {
+      &-first {
+        grid-area: 2 / 1 / auto / 12;
+      }
+
+      &__button {
+        grid-column: 10 / span 3;
+      }
+
+      &__title {
+        grid-column: 1 / span 6;
+      }
+
+      &-second {
+        grid-area: 3 / 1 / auto / 12;
+      }
+
+      &__img {
+        width: 370px;
+        height: 475px;
+      }
+
+      &__block {
+        width: 570px;
+      }
+
+      &__timer {
+        margin: 0 0 10px;
+      }
+    }
+
+    h4 {
+      margin: 10px 0 20px;
+    }
+
+    p {
+      margin: 0 0 50px;
+    }
+
+    button {
+      width: 270px;
+    }
+  }
+
   &__card {
     &-1 {
       background-image: url(/src/images/main/events/event-img-1.png);

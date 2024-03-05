@@ -21,9 +21,65 @@
       }
     }
 
+    button {
+      width: 330px;
+    }
+
     @include template {
       grid-template-columns: repeat(6, 1fr);
     };
+  }
+
+  @include on-desktop {
+    @include template {
+      grid-template-columns: repeat(12, 1fr);
+    };
+
+    .section {
+      &__button {
+        grid-column: 10 / span 3;
+      }
+
+      &__title {
+        grid-column: 1 / span 7;
+      }
+
+      &-first {
+        grid-column: 1 / span 6;
+      }
+
+      &-second {
+        grid-column: 7 / span 6;
+      }
+
+      &__img {
+        width: 570px;
+        height: 484px;
+        margin: 0;
+      }
+
+      &__timer {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      &__subtitle {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        height: 100%;
+      }
+
+      &__info {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        height: 100%;
+      }
+
+    }
+
+    button {
+      max-width: 270px;
+    }
   }
 
   &__card {

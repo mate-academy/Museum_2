@@ -54,4 +54,29 @@
       max-width: 330px;
     }
   }
+
+  @include on-desktop {
+    max-width: 100%;
+
+    @include template {
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    &__form {
+      grid-area: 2 / 1 / auto / span 5;
+    }
+
+    .section {
+      &__title {
+        grid-area: 1 / 1 / auto / span 5;
+        text-align: left;
+        margin-bottom: 50px;
+      }
+
+      &__info {
+        grid-area: 1 / 7 / auto / span 5;
+      }
+    }
+
+  }
 }
