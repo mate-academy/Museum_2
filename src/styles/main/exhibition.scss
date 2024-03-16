@@ -5,6 +5,10 @@
   @include container;
 
   @include on-tablet {
+    @include template {
+      grid-template-columns: repeat(6, 1fr);
+    };
+
     .section {
       &-first {
         grid-area: 2 / 1 / auto / span 3;
@@ -19,18 +23,21 @@
         margin: 0;
         grid-area: 1 / 1 / auto / span 4;
       }
+
+      &__button {
+        min-width: 210px;
+        grid-area: 1 / 5 / auto / span 2;
+      }
     }
 
     button {
-      width: 330px;
+      max-width: 330px;
     }
-
-    @include template {
-      grid-template-columns: repeat(6, 1fr);
-    };
   }
 
   @include on-desktop {
+    @include hover(transition, all 0.3s ease);
+
     @include template {
       grid-template-columns: repeat(12, 1fr);
     };
@@ -45,10 +52,12 @@
       }
 
       &-first {
+        width: 570px;
         grid-column: 1 / span 6;
       }
 
       &-second {
+        width: 570px;
         grid-column: 7 / span 6;
       }
 
@@ -83,6 +92,8 @@
   }
 
   &__card {
+
+
     &-1 {
       background-image: url(/src/images/main/exhibition/exhibition-img-1.png);
     }

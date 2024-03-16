@@ -17,6 +17,12 @@
   }
 }
 
+@mixin on-large {
+  @media (min-width: $width-large) {
+    @content;
+  }
+}
+
 @mixin container {
   padding-inline: $padding-container;
 
@@ -26,6 +32,10 @@
 
   @include on-desktop {
     padding-inline: 55px;
+  }
+
+  @include on-large {
+    padding-inline: 140px;
   }
 }
 
@@ -49,6 +59,7 @@
     position: absolute;
     text-align: center;
     margin-left: 8px;
+    z-index: 0;
     width: 20px;
     height: 20px;
     background-image: url(/src/icons/button/arrow.png);
