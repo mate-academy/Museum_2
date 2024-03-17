@@ -1,12 +1,15 @@
 .header {
-  display: none !important;
-  box-sizing: border-box;
   background-color: $c-background;
-  height: 100vh;
-  height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+
+  &__content {
+    @include content-padding-inline;
+
+    display: flex;
+    height: 100vh;
+    height: 100svh;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   &__top {
     margin-bottom: 50px;
@@ -16,10 +19,8 @@
     }
   }
 
-  &__content {
+  &__middle {
     padding-bottom: 40px;
-
-    @include content-padding-inline;
 
     @include on-tablet {
       padding-bottom: 70px;
@@ -51,7 +52,7 @@
     width: 100%;
     background-image: url(../images/img_main_01.png);
     background-repeat: no-repeat;
-    background-position: 50%;
+    background-position: bottom;
     background-size: contain;
     margin: 0 auto;
   }
