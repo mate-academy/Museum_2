@@ -1,0 +1,105 @@
+.exhibition {
+  display: block;
+  margin-top: 90px;
+
+  @include container;
+
+  @include on-tablet {
+    @include template {
+      grid-template-columns: repeat(6, 1fr);
+    };
+
+    .section {
+      &-first {
+        grid-area: 2 / 1 / auto / span 3;
+      }
+
+      &-second {
+        grid-area: 2 / 4 / auto / span 3;
+      }
+
+      &__title {
+        text-align: left;
+        margin: 0;
+        grid-area: 1 / 1 / auto / span 4;
+      }
+
+      &__button {
+        min-width: 210px;
+        grid-area: 1 / 5 / auto / span 2;
+      }
+    }
+
+    button {
+      max-width: 330px;
+    }
+  }
+
+  @include on-desktop {
+    @include hover(transition, all 0.3s ease);
+
+    @include template {
+      grid-template-columns: repeat(12, 1fr);
+    };
+
+    .section {
+      &__button {
+        grid-column: 10 / span 3;
+      }
+
+      &__title {
+        grid-column: 1 / span 7;
+      }
+
+      &-first {
+        width: 570px;
+        grid-column: 1 / span 6;
+      }
+
+      &-second {
+        width: 570px;
+        grid-column: 7 / span 6;
+      }
+
+      &__img {
+        width: 570px;
+        height: 484px;
+        margin: 0;
+      }
+
+      &__timer {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      &__subtitle {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        height: 100%;
+      }
+
+      &__info {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        height: 100%;
+      }
+
+    }
+
+    button {
+      max-width: 270px;
+    }
+  }
+
+  &__card {
+
+
+    &-1 {
+      background-image: url(/src/images/main/exhibition/exhibition-img-1.png);
+    }
+
+    &-2 {
+      background-image: url(/src/images/main/exhibition/exhibition-img-2.png);
+    }
+  }
+}
