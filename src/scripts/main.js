@@ -9,4 +9,9 @@ function enable() {
 }
 
 document.querySelector('#prevent').addEventListener('click', disable);
-document.querySelector('#allow').addEventListener('click', enable);
+
+const allowElements = document.querySelectorAll('.allow');
+
+allowElements.forEach(function (element) {
+  element.addEventListener('click', enable);
+});
