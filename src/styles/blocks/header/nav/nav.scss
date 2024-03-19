@@ -1,0 +1,55 @@
+.nav {
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  line-height: 30px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $c-white;
+
+  @include on-tablet {
+    font-size: 48px;
+    line-height: 57.6px;
+    padding-bottom: 50px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    width: fit-content;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $c-white;
+
+      transition: transform $animation-time;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
