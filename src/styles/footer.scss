@@ -1,0 +1,132 @@
+.footer {
+  background-color: $bg;
+  padding: 34px 0 30px;
+
+  &__box {
+    @include grid(2, 6, 12);
+
+    row-gap: 50px;
+    margin-bottom: 50px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__rights {
+    display: flex;
+    gap: 22px;
+
+    @include on-desktop {
+      gap: 100px;
+    }
+
+    span {
+      color: $white;
+    }
+  }
+}
+
+.contacts {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: 1 / 3;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 5;
+  }
+
+  &__title, &__link {
+    color: $white;
+  }
+
+  &__ref {
+    margin: 10px 0 30px;
+  }
+
+  &__link {
+    line-height: 24px;
+    position: relative;
+    &::after {
+      @include after-line;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+
+    &--log {
+    &:hover::after {
+      transform: scale(1);
+      color: blue;
+    }
+   }
+  }
+}
+
+.shedule {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: 3 / 5;
+  }
+
+  @include on-desktop {
+    grid-column: 5 / 9;
+  }
+
+  &__title, ul > li {
+    color: $white;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  ul > li {
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+.navigation {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: 5 / 7;
+  }
+
+  @include on-desktop {
+    grid-column: 9 / 13;
+  }
+
+  &__title, ul > li > a {
+    color: $white;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  ul > li > a {
+    font-weight: 400;
+    line-height: 24px;
+    position: relative;
+    &::after {
+      @include after-line;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
