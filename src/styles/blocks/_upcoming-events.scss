@@ -1,0 +1,156 @@
+.upcoming-events {
+  margin-top: 120px;
+
+  @include tablet {
+    margin-top: 160px;
+
+    @include grid;
+
+    width: 690px;
+  }
+
+  @include desktop {
+    margin-top: 200px;
+    width: 1170px;
+  }
+
+  &__title {
+    @include tablet {
+      grid-column: span 3;
+      grid-row: 1;
+      max-height: 50px;
+      align-self: center;
+
+      font-size: 40px;
+      line-height: 50px;
+      width: 570px;
+    }
+
+    @include desktop {
+      grid-column: span 5;
+
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+  }
+
+  &__article {
+    @include tablet {
+      display: flex;
+      gap: 30px;
+      width: 690px;
+      margin-top: 76px;
+    }
+
+    @include desktop {
+      gap: 40px;
+      width: 1170px;
+      margin-top: 70px;
+    }
+
+    &--first {
+      @include tablet {
+        grid-column: span 6;
+        grid-row: 2;
+      }
+    }
+
+    &--second {
+      @include tablet {
+        grid-column: span 6;
+        grid-row: 3;
+      }
+
+      @include desktop {
+        grid-column: span 12;
+      }
+    }
+  }
+
+  &__content {
+    @include tablet {
+      width: 330px;
+    }
+
+    @include desktop {
+      width: 570px;
+    }
+  }
+
+  &__image--link {
+    margin-top: 60px;
+
+    @include hover(transform, scale(1.03));
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__image {
+    height: 356px;
+    width: 100%;
+    object-fit: cover;
+
+    @include tablet {
+      width: 330px;
+      height: 422px;
+    }
+
+    @include desktop {
+      width: 370px;
+      height: 475px;
+    }
+  }
+
+  &__date {
+    margin-top: 20px;
+    color: $main-color;
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__name {
+    margin-top: 10px;
+
+    font-family: $bold-font-family;
+    font-size: 20px;
+    line-height: 25px;
+    color: $black-color;
+
+    @include tablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+
+    color: $gray-color;
+
+    @include desktop {
+      max-width: 570px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 50px;
+    }
+
+    &--arrow {
+      @include tablet {
+        grid-column: 5/6;
+      }
+
+      @include desktop {
+        grid-column: 10/12;
+      }
+    }
+  }
+}
