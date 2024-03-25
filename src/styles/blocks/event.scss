@@ -1,7 +1,65 @@
 .event {
-  display: grid;
+
+  @include on-tablet {
+    grid-template-columns: repeat(6, 1fr);
+    margin-inline: auto;
+    column-gap: 30px;
+    margin-bottom: 100px;
+  }
 
   @include content-padding-inline;
+
+   &__title-wraper {
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-tablet {
+      display: flex;
+    }
+  }
+
+&__title {
+    color: $black-color;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+
+    @include on-tablet {
+      font-size: 40px;
+      width: 450px;
+    }
+  }
+
+  &__wrapper-one {
+    justify-content: space-between;
+
+    @include on-tablet {
+      display: flex;
+      gap: 29px;
+      margin-top: 76px;
+    }
+  }
+
+  &__wrapper-two {
+    justify-content: space-between;
+
+    @include on-tablet {
+      display: flex;
+      margin-top: 70px;
+    }
+  }
+
+  //  &__title-wraper {
+  //   justify-content: space-between;
+  //   align-items: center;
+
+  //   @include on-tablet {
+  //     display: flex;
+  //   }
+  // }
+
+
 
   &__img {
     background-position: 50%;
@@ -10,20 +68,42 @@
     grid-column: 1/-1;
     width: 280px;
     height: 356px;
+
+    @include on-tablet {
+      width: 330px;
+      height: 422px;
+    }
   }
 
   &__img--one {
     background-image: url(../images/event__img--one.svg);
-    margin-top: 60px;
+    // margin-top: 60px;
   }
 
   &__img--two {
     background-image: url(../images/event__img--two.svg);
-    margin-top: 60px;
+    // margin-top: 60px;
   }
 
   &__content {
     grid-column: 1 / -1;
+
+     @include on-tablet {
+      width: 330px;
+    }
+  }
+
+  &__title-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+
+
+    @include on-tablet {
+      flex-direction: column;
+      display: flex;
+    }
   }
 
   &__details {
@@ -32,6 +112,10 @@
     grid-column: 1 / -1;
     column-gap: 20px;
     align-items: center;
+
+    @include on-tablet {
+
+    }
   }
 
   &__details-when {
@@ -41,6 +125,11 @@
     font-size: 16px;
     line-height: 150%;
     margin: 20px 0 10px;
+
+    @include on-tablet {
+      margin: 0;
+    }
+
   }
 
   &__title {
@@ -57,6 +146,11 @@
     text-align: left;
     color: $black-color;
     line-height: 125%;
+
+    @include on-tablet {
+      font-size: 24px;
+      margin: 10px 0 20px;
+    }
   }
 
   &__description {
@@ -67,6 +161,12 @@
     line-height: 150%;
     margin: 20px 0 30px;
     width: 280px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      margin-top: 0;
+      width: 330px;
+    }
   }
 
   &__tickets-link {
@@ -78,7 +178,7 @@
     align-items: center;
     text-decoration: none;
     height: 16px;
-    padding: 22px;
+    padding: 22px 0 22px;
     color: $white-color;
     background-color: $main-color ;
     font-size: 16px;
@@ -86,6 +186,8 @@
     line-height: 60px;
     letter-spacing: 0.32px;
     cursor: pointer;
+    width: 280px;
+
 
     &:hover {
      background-color: $hover-color;
@@ -96,9 +198,13 @@
       background-color: $pressed-color;
       color: $white-color;
     }
+
+     @include on-tablet {
+      width: 330px;
+    }
   }
 
-  &__exhibition-archive {
+  &__exhibition-archive-phone {
     display: flex;
     font-family: "Raleway", sans-serif;
     font-weight: 600;
@@ -119,6 +225,7 @@
     cursor: pointer;
     margin: 30px 0 120px;
     gap: 8px;
+    width: 280px;
 
     &::after {
       content: "";
@@ -163,6 +270,80 @@
         background-position: 50%;
         background-repeat: no-repeat;
         padding-bottom: 20px;
+      }
+    }
+
+    @include on-tablet {
+        display: none;
+      }
+  }
+
+  &__exhibition-archive-tablet {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      font-family: "Raleway", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      height: 16px;
+      padding: 22px 0 22px;
+      color: $main-color;
+      border: 1px solid $main-color;
+      font-size: 16px;
+      font-style: normal;
+      width: 210px;
+      line-height: 60px;
+      letter-spacing: 0.32px;
+      cursor: pointer;
+      gap: 8px;
+
+      &::after {
+        content: "";
+        background-image: url(../images/icons/icon--arrow-default.png);
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        padding-bottom: 20px;
+      }
+
+      &:hover {
+        border: 1px solid $hover-color;
+        color: $hover-color;
+
+        &::after {
+          content: "";
+          background-image: url(../images/icons/icon--arrow-hover.png);
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-size: contain;
+          background-position: 50%;
+          background-repeat: no-repeat;
+          padding-bottom: 20px;
+       }
+     }
+
+      &:focus {
+        border: 1px solid $pressed-color;
+        color: $pressed-color;
+
+        &::after {
+          content: "";
+          background-image: url(../images/icons/icon--arrow-pressed.png);
+          display: block;
+          width: 20px;
+          height: 20px;
+          background-size: contain;
+          background-position: 50%;
+          background-repeat: no-repeat;
+          padding-bottom: 20px;
+        }
       }
     }
   }
