@@ -3,12 +3,39 @@
   height: 416px;
   margin-bottom: 100px;
   width: 100%;
+  display: flex;
 
     @include on-tablet {
       padding-bottom: 80px;
     }
 
-  @include content-padding-inline;
+    @include on-desktop {
+      height: 800px;
+      padding-bottom: 0;
+    }
+
+    &__box {
+
+      @include content-padding-inline;
+
+      @include on-desktop {
+        max-width: 670px;
+        text-align: left;
+        padding-inline: 0;
+      }
+    }
+
+  &__img {
+
+    @include on-desktop {
+      background-image: url(../images/exhibition__img.svg);
+      height: 800px;
+      width: 578px;
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      min-height: 800px;
+    }
+  }
 
   &__title {
     color: $white-color;
