@@ -16,7 +16,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 354px;
   }
 
   &__content-wrapper {
@@ -111,7 +110,15 @@
     border: none;
     text-align: left;
     height: 28px;
-    width: 1;
+    width: 280px;
+
+     @include on-tablet {
+      width: 450px;
+    }
+
+    @include on-desktop {
+      width: 470px;
+    }
   }
 
   &__for-you {
@@ -132,6 +139,8 @@
     letter-spacing: 0.32px;
     cursor: pointer;
     margin-top: 30px;
+
+    @include hover (transform, scale(1.05));
 
     &:hover {
      background-color: $hover-color;

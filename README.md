@@ -32,6 +32,7 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
   [DEMO LINK](https://Anastasiia-Tatarchenko.github.io/Museum_2/).
-14. Copy `DEMO LINK` to the PR description.
+14. Copy `DEMO LINK` to the PR description.np
 
 > To update you PR repeat steps 7-11.
+1

@@ -9,7 +9,7 @@
 
   @include content-padding-inline;
 
-   &__title-wraper {
+  &__title-wraper {
     justify-content: space-between;
     align-items: center;
 
@@ -22,7 +22,7 @@
     }
   }
 
-&__title {
+  &__title {
     color: $black-color;
     font-family: "Playfair Display", serif;
     font-size: 28px;
@@ -42,6 +42,7 @@
   }
 
   &__wrapper-one {
+    margin-top: 60px;
 
     @include on-tablet {
       display: flex;
@@ -72,17 +73,6 @@
     }
   }
 
-  //  &__title-wraper {
-  //   justify-content: space-between;
-  //   align-items: center;
-
-  //   @include on-tablet {
-  //     display: flex;
-  //   }
-  // }
-
-
-
   &__img {
     background-position: 50%;
     background-repeat: no-repeat;
@@ -104,12 +94,16 @@
 
   &__img--one {
     background-image: url(../images/event__img--one.svg);
-    // margin-top: 60px;
+
+    @include hover (transform, scale(1.05));
+
   }
 
   &__img--two {
     background-image: url(../images/event__img--two.svg);
-    // margin-top: 60px;
+
+    @include hover (transform, scale(1.05));
+
   }
 
   &__content {
@@ -143,10 +137,6 @@
     grid-column: 1 / -1;
     column-gap: 20px;
     align-items: center;
-
-    // @include on-tablet {
-
-    // }
   }
 
   &__details-when {
@@ -183,9 +173,9 @@
       margin: 10px 0 20px;
     }
 
-    // @include on-desktop {
-    //   width: 570px;
-    // }
+    @include on-desktop {
+      margin: 0;
+    }
   }
 
   &__description {
@@ -227,6 +217,7 @@
     cursor: pointer;
     width: 280px;
 
+    @include hover (transform, scale(1.05));
 
     &:hover {
      background-color: $hover-color;
@@ -263,7 +254,6 @@
     padding: 22px 0 22px;
     color: $main-color;
     border: 1px solid $main-color;
-    // background-color: $main-color ;
     font-size: 16px;
     font-style: normal;
     width: 280px;
@@ -274,13 +264,14 @@
     gap: 8px;
     width: 280px;
 
+    @include hover (transform, scale(1.05));
+
     &::after {
       content: "";
       background-image: url(../images/icons/icon--arrow-default.png);
       display: block;
       width: 20px;
       height: 20px;
-      // background-size: contain;
       background-position: 50%;
       background-repeat: no-repeat;
       padding-bottom: 20px;
@@ -347,6 +338,8 @@
       letter-spacing: 0.32px;
       cursor: pointer;
       gap: 8px;
+
+      @include hover (transform, scale(1.05));
 
       &::after {
         content: "";

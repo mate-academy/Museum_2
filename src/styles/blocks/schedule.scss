@@ -41,7 +41,6 @@
     font-size: 18px;
     text-align: left;
     line-height: 150%;
-    // padding-top: 34px;
     margin-bottom: 10px;
     text-decoration: none;
 
@@ -65,22 +64,21 @@
     list-style: none;
   }
 
-    &__work {
-      margin-bottom: 50px;
-      width: 210px;
+  &__work {
+    margin-bottom: 50px;
+    width: 210px;
 
-      @include on-tablet {
-        margin-right: 30px;
-        margin-bottom: 0;
-
-      }
-
-      @include on-desktop {
-        width: 370px;
-        margin-right: 30px;
-        margin-bottom: 0;
-      }
+    @include on-tablet {
+      margin-right: 30px;
+      margin-bottom: 0;
     }
+
+    @include on-desktop {
+      width: 370px;
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
 
   &__href {
     text-decoration: none;
@@ -92,6 +90,10 @@
     color: $white-color;
   }
 
+  &__info:hover {
+    color: #a0a0a0;
+  }
+
   &__adres {
     all: initial;
     color: $white-color;
@@ -99,7 +101,6 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-
   }
 
   &__item {
@@ -125,7 +126,8 @@
     line-height: 150%;
     text-decoration: none;
     list-style: none;
-   }
+    transition: all 0.5s;
+  }
 
   &__social {
     display: flex;
@@ -134,7 +136,7 @@
     align-items: center;
     margin-top: 30px;
 
-     @include on-tablet {
+    @include on-tablet {
       margin-top: 50px;
     }
   }
@@ -142,6 +144,10 @@
   &__social--link {
     width: 20px;
     height: 20px;
+
+    &:hover {
+      transform: translateY(-10px)
+    }
   }
 
   &__days {
@@ -161,9 +167,6 @@
     list-style: none;
     margin-bottom: 88px;
 
-    //  @include on-tablet {
-    //   margin-bottom: 30px;
-    // }
     @include on-desktop {
       margin-bottom: 0;
     }
@@ -195,13 +198,13 @@
   }
 
   &__footer-back-to-top {
-  position: absolute;
-  top: 100vh;
-  right: 0.25rem;
-  bottom: -5em;
-  width: 3em;
-  pointer-events: none;
-}
+    position: absolute;
+    top: 100vh;
+    right: 0.25rem;
+    bottom: -5em;
+    width: 3em;
+    pointer-events: none;
+  }
 
   &__footer-back-to-top-link {
     background-image: url(../images/icons/icon--scroll-up.png);
@@ -233,6 +236,33 @@
     &:focus {
       -webkit-transform: scale(1.1);
       transform: scale(1.1);
+    }
+  }
+
+  &__text--link {
+    position: relative;
+    color: $white-color;
+    text-decoration: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -5px;
+      width: 0;
+      height: 1px;
+      background-color: $white-color;
+    }
+
+    &:hover {
+      color: #a0a0a0;
+    }
+
+    &:hover:before {
+      width: 100%;
+    }
+
+    &::before {
+      transition: width 0.35s;
     }
   }
 }
