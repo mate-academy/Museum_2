@@ -1,0 +1,172 @@
+.menu {
+  background-color: $c-green;
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 20px 20px 0;
+
+  @include on-tablet {
+    padding: 20px 39px 0;
+  }
+
+  @include on-desktop {
+    padding: 26px 55px 0;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 30px;
+  }
+
+  .icons--close {
+    background-image: url(../images/cross.png);
+    background-size: cover;
+    width: 22px;
+    height: 22px;
+  }
+
+  .icons--language {
+    background-image: url(../images/language.png);
+    width: 34px;
+    height: 24px;
+  }
+
+  &__text {
+    @include on-tablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 123px;
+
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 40px;
+    }
+  }
+
+  &__part1 {
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__text--1 {
+    font-family: Raleway, sans-serif;
+    color: $c-white;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+
+    padding-top: 20px;
+
+    @include on-tablet {
+      padding: 0;
+    }
+  }
+
+  &__text--bold {
+    font-family: Raleway, sans-serif;
+    color: $c-white;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__section {
+    padding-top: 40px;
+
+    @include on-tablet {
+      padding-top: 50px;
+    }
+
+    @include on-desktop {
+      padding-top: 70px;
+    }
+  }
+
+  &__section--item {
+    display: flex;
+    text-decoration: none;
+    padding-top: 20px;
+
+    color: $c-white;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    @include on-tablet {
+      padding-top: 30px;
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+
+    @include on-desktop {
+      padding-top: 60px;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $c-white;
+
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      width: 51%;
+      margin-top: 60px;
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      align-items: start;
+      width: 330px;
+
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+      margin-top: 60px;
+    }
+  }
+
+  &__img {
+    @include on-tablet {
+      background-image: url(../images/img_menu.png);
+      margin: 0 auto;
+      background-size: cover;
+      background-position: center;
+      width: 422px;
+      height: 466px;
+
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      width: 624px;
+      height: 697px;
+      top: 50px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
+
+.page__body:has(.page__menu:target) {
+  overflow: hidden;
+}
