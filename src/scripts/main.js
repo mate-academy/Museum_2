@@ -1,6 +1,5 @@
 // 'use strict';
 
-
 // const burger = document.querySelector('.burger');
 // const mobileMenu = document.querySelector('.mobile-menu');
 // const html = document.querySelector('html');
@@ -12,7 +11,6 @@
 //   mobileMenu.classList.toggle('active');
 //   html.classList.toggle('active');
 // })
-
 
 // mobileMenu.addEventListener('transitionend', function () {
 //   if (window.location.hash === '#mobile-menu') {
