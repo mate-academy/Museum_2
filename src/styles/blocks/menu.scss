@@ -15,13 +15,22 @@
   pointer-events: none;
   transform: translateX(-100%);
   transition: all 0.3s;
-  height: 100vh;
+  min-height: 100vh;
   overflow: auto;
 
   &:target {
     opacity: 1;
     pointer-events: all;
     transform: translateX(0);
+  }
+
+  &__inner {
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100vh;
+    }
   }
 
   &__top-bar {
@@ -33,10 +42,14 @@
   }
 
   &__content {
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
     @include on-desctop {
       @include grid;
-
-      position: relative;
     }
   }
 
@@ -104,7 +117,7 @@
       line-height: 1.2;
 
       @include on-desctop {
-        position: relative;
+        // position: relative;
         width: fit-content;
       }
 
@@ -152,22 +165,22 @@
     background-image: url(/src/images/blocks/menu/bg-image.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
-    height: 494px;
-    width: 100%;
+    background-position: bottom;
 
     @include on-tablet {
+      height: 494px;
+      width: 100%;
       display: block;
       z-index: 3;
     }
 
     @include on-desctop {
-      position: absolute;
       right: 0;
       bottom: 0;
-      height: calc(100% - 103px);
+      height: 670px;
       background-position: right;
-      width: 50%;
+      position: absolute;
+      background-size: contain;
     }
   }
 }

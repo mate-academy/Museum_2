@@ -20,11 +20,17 @@
 .header {
   background-color: $color-green;
   color: $color-white;
-  height: 100vh;
-  overflow: auto;
+  overflow: hidden;
+
+  &__inner {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   &__top-bar {
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
 
     @include on-tablet {
       margin-bottom: 99px;
@@ -114,7 +120,7 @@
     background-image: url(/src/images/blocks/header/bg-image.png);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     height: 273px;
     width: 100%;
 
@@ -127,8 +133,8 @@
       bottom: 0;
       right: 0;
       background-position: right;
-      height: calc(100% - 140px);
-      width: 50%;
+      height: 670px;
+      background-size: contain;
     }
   }
 
