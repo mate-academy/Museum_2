@@ -1,0 +1,86 @@
+%h1 {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+}
+
+%title-blue {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.15em;
+  text-align: left;
+
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $blue;
+}
+
+%title-black {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.15em;
+  text-align: left;
+}
+
+%title-light {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.15em;
+  text-align: left;
+
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $l-white;
+
+}
+
+%secondary-text {
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 9px;
+  line-height: 12px;
+  color: $l-gray;
+}
+
+%slash {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 46px;
+  background-color: $d-gray;
+  transform: rotate(22deg);
+  margin-right: 10px;
+}
+
+%vertical-text {
+  line-height: 18px;
+
+  transform: rotate(90deg);
+  transform-origin: top;
+}
+
+%vertical-text-reverse {
+  line-height: 18px;
+
+  transform: rotate(-90deg);
+  transform-origin: bottom;
+}
+
+%animated-underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: $blue;
+    transition: $effect-duration;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  &:active::after {
+    background-color: $blue;
+  }
+}

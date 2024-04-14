@@ -8,6 +8,8 @@
 
     @include on-tablet {
       @include page-grid;
+
+      height: 75px;
     }
   }
 
@@ -19,19 +21,19 @@
 
       width: 210px;
       display: flex;
-      grid-column: 5 / -1;
+      grid-column: 6 / -1;
 
       &--arrow {
-        width: 20px;
-        height: 20px;
-        background-image: url(../images/arrow.png);
+        width: 160px;
+        height: 40px;
+        background-image: url(../imagewasp/fire-grass.png);
         background-position: center;
         background-size: cover;
       }
     }
 
     @include on-desktop {
-      width: 270px;
+      width: 210px;
       grid-column: 10 / -1;
     }
 
@@ -42,17 +44,18 @@
       display: flex;
       margin-bottom: 40px;
 
-      &--arrow {
-        width: 20px;
-        height: 20px;
-        background-image: url(../images/arrow.png);
-        background-position: center;
-        background-size: cover;
-      }
-
       @include on-tablet {
         display: none;
+
       }
+    }
+
+    &--arrow {
+      width: 160px;
+      height: 40px;
+      background-image: url(../imagewasp/fire-grass.png);
+      background-position: center;
+      background-size: cover;
     }
 
     &--end-2 {
@@ -63,9 +66,9 @@
       margin-bottom: 0;
 
       &--arrow {
-        width: 20px;
-        height: 20px;
-        background-image: url(../images/arrow.png);
+        width: 160px;
+        height: 40px;
+        background-image: url(../imagewasp/fire-grass.png);
         background-position: center;
         background-size: cover;
       }
@@ -85,34 +88,36 @@
   }
 }
 
-.events__author {
+.events__text {
   background-size: cover;
   background-position: center;
 
   @include hover(transform, scale(1.05));
   &::before {
-    transition: $effect-duration;
-    display: inline-block;
-    position: absolute;
-    z-index: 2;
-    right: 2rem;
-    bottom: 2rem;
-    font-family: "Playfair Display", sans-serif;
-    font-size: 0.6rem;
-    font-weight: bold;
-    content: attr(data-author);
-    color: $hover;
-    opacity: 0;
-    text-shadow: 0 0 5px $white;
-    transform: translateY(-265px);
+    display: none;
+
+    transform: translateY(-600px);
 
     @include on-tablet {
-      transform: translateY(-280px);
+      transition: $effect-duration;
+      display: inline-block;
+      position: absolute;
+      z-index: 2;
+      right: 2rem;
+      bottom: 2rem;
+      font-family: Roboto, sans-serif;
+      font-size: 0.6rem;
+      font-weight: bold;
+      content: attr(data-author);
+      color: $hover;
+      opacity: 0;
+      text-shadow: 0 0 5px $white;
+      transform: translateY(-420px);
     }
 
     @include on-desktop {
       grid-column: 1 / 7;
-      transform: translateY(-260px);
+      transform: translateY(-380px);
     }
   }
 
@@ -128,39 +133,39 @@
 }
 
 .events {
-  &__angels {
+  &__dream {
     grid-column: 1 / -1;
     margin-bottom: 60px;
 
     @include on-tablet {
       grid-column: 1 / 4;
-      margin-bottom: 165px;
+      margin-bottom: 20px;
     }
 
     @include on-desktop {
-      grid-column: 1/7;
-      margin-bottom: 200px;
+      grid-column: 1 / 7;
+      margin-bottom: 10px;
     }
   }
 
-  &__artists {
+  &__tests {
     grid-column: 1 / -1;
     margin-bottom: 33px;
 
     @include on-tablet {
       grid-column: 4 / -1;
-      margin-bottom: 165px;
+      margin-bottom: 20px;
     }
 
     @include on-desktop {
       grid-column: 7 / -1;
-      margin-bottom: 200px;
+      margin-bottom: 10px;
     }
   }
 
   &__image {
     width: 280px;
-    height: 256px;
+    height: 260px;
     transition: all $effect-duration;
 
     @include hover(transform, scale(1.05));
@@ -168,14 +173,15 @@
     @include on-tablet {
       grid-column: span 3;
       width: 330px;
-      height: 320px;
+      height: 220px;
     }
 
     @include on-desktop {
       grid-column: span 6;
       object-fit: cover;
-      height: 484px;
-      width: 370px;
+      width: 480px;
+      height: 300px;
+
       transition: all $effect-duration;
 
       @include hover(transform, scale(1.05));
@@ -187,7 +193,11 @@
     height: 100%;
     transition: $effect-duration;
 
-    @include hover(transform, scale(1.02));
+    @include hover(transform, scale(1.1));
+
+    @include on-desktop {
+      @include hover(transform, scale(1.1));
+    }
   }
 
   &__about {
@@ -200,7 +210,7 @@
     }
 
     @include on-desktop {
-      width: 570px;
+      width: 480px;
     }
   }
 
@@ -218,14 +228,14 @@
     margin-bottom: 20px;
 
     @include on-tablet {
-      font-size: 24px;
+      font-size: 22px;
       width: 330px;
-      height: 60px;
+      height: 20px;
     }
 
     @include on-desktop {
-      height: 30px;
-      width: 570px;
+      height: 20px;
+      width: 480px;
     }
   }
 
@@ -235,14 +245,14 @@
 
     @include on-tablet {
       width: 330px;
-      height: 70px;
-      margin: 0 0 40px;
+      height: 400px;
+      margin: 0 0 20px;
     }
 
     @include on-desktop {
-      width: 570px;
-      height: 50px;
-      margin: 0 0 50px;
+      width: 480px;
+      height: 260px;
+      margin: 0 0 20px;
     }
   }
 
@@ -254,7 +264,7 @@
     width: 280px;
 
     @include on-tablet {
-      width: 330px;
+      width: 260px;
     }
 
     @include on-desktop {
@@ -284,7 +294,7 @@
     width: 100%;
   }
 
-  &__gudimov {
+  &__herson {
     grid-column: 1 / -1;
     margin-bottom: 60px;
 
@@ -292,10 +302,11 @@
       @include page-grid;
 
       width: 100%;
+      margin-bottom: 20px;
     }
   }
 
-  &__australia {
+  &__bakhmut {
     grid-column: 1 / -1;
     margin-bottom: 33px;
 
@@ -309,7 +320,7 @@
   &__image-left {
     grid-column: 1 / -1;
     width: 280px;
-    height: 256px;
+    height: 260px;
     transition: all $effect-duration;
 
     @include hover(transform, scale(1.02));
@@ -317,16 +328,16 @@
     @include on-tablet {
       grid-column: 1 / 4;
       width: 330px;
-      height: 224px;
+      height: 320px;
     }
 
     @include on-desktop {
       grid-column: 1 / 5;
-      height: 475px;
-      width: 270px;
+      height: 480px;
+      width: 480px;
       transition: all $effect-duration;
 
-      @include hover(transform, scale(1.1));
+      @include hover(transform, scale(1.05));
     }
   }
 
@@ -364,13 +375,13 @@
     margin-bottom: 20px;
 
     @include on-tablet {
-      font-size: 24px;
+      font-size: 22px;
       width: 330px;
-      height: 60px;
+      height: 40px;
     }
 
     @include on-desktop {
-      height: 30px;
+      height: 50px;
       width: 570px;
     }
   }
@@ -381,14 +392,14 @@
 
     @include on-tablet {
       width: 330px;
-      height: 270px;
-      margin: 0 0 40px;
+      height: 210px;
+      margin: 0 0 20px;
     }
 
     @include on-desktop {
       width: 570px;
-      height: 350px;
-      margin: 0 0 50px;
+      height: 200px;
+      margin: 0 0 20px;
     }
   }
 
@@ -400,12 +411,13 @@
     width: 280px;
 
     @include on-tablet {
-      width: 330px;
+      width: 260px;
+      margin-bottom: 20px;
     }
 
     @include on-desktop {
       width: 270px;
-      margin-bottom: 135px;
+
     }
 
     &--container {

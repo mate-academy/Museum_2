@@ -19,15 +19,15 @@
   }
 
   &__title {
-    font-family: "Playfair Display", serif;
+    font-family: Roboto, sans-serif;
     font-size: 18px;
-    font-weight: bolder;
+    font-weight: bold;
     margin-bottom: 30px;
 
     @include on-tablet {
       margin-bottom: 30px;
-      width: 210px;
-      font-size: 20px;
+      width: 190px;
+      font-size: 18px;
     }
   }
 
@@ -46,23 +46,13 @@
     }
   }
 
-  &__addresses {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-
-    @include on-tablet {
-      row-gap: 30px;
-    }
-  }
-
   &__nets {
     display: flex;
     gap: 20px;
     margin-top: 30px;
 
     @include on-tablet {
-      margin-top: 50px;
+      margin-top: 20px;
     }
 
     &--logo {
@@ -113,20 +103,43 @@
     }
   }
 
-  &__schedule {
+  &__nav-addresses {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include on-tablet {
+      row-gap: 30px;
+    }
+  }
+
+  &__nav-schedule {
     display: flex;
     row-gap: 10px;
     flex-direction: column;
     grid-column: 1 / -1;
 
     @include on-tablet {
-      width: 210px;
       grid-column: 3 / 5;
       row-gap: 30px;
     }
 
     @include on-desktop {
       grid-column: 5 / 8;
+    }
+  }
+
+  .nav-schedule {
+    &__item {
+      margin-bottom: 20px;
+
+      @include on-tablet {
+        width: 220px;
+      }
+
+      @include on-desktop {
+        width: 350px;
+      }
     }
   }
 
@@ -147,11 +160,7 @@
     }
   }
 
-  .nav-schedule {
-    &__item {
-      margin-bottom: 15px;
-    }
-  }
+
 
   .nav-addresses,
   .nav-schedule,

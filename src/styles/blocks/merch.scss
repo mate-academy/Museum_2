@@ -25,9 +25,9 @@
       grid-column: 5 / -1;
 
       &--arrow {
-        width: 20px;
-        height: 20px;
-        background-image: url(../images/arrow.png);
+        width: 200px;
+        height: 40px;
+        background-image: url(../imagewasp/fire-grass.png);
         background-position: center;
         background-size: cover;
       }
@@ -72,21 +72,23 @@
       margin-inline: 0;
       padding-inline: 0;
       width: 100%;
+      height: 900px;
       flex-direction: row;
       justify-content: center;
       gap: 30px;
-      margin-bottom: 90px;
+      margin-bottom: 20px;
     }
 
     @include on-desktop {
-      margin-bottom: 90px;
+      margin-bottom: 20px;
+      height: 700px;
     }
   }
 
   .news {
     @include page-grid;
 
-    &__cards {
+    &__kamikadze {
       grid-column: 1 / -1;
 
       @include on-tablet {
@@ -99,7 +101,7 @@
       }
     }
 
-    &__cat {
+    &__bomber {
       grid-column: 1 / -1;
       margin-bottom: 33px;
 
@@ -121,6 +123,16 @@
       transition: $effect-duration;
 
       @include hover(transform, scale(1.05));
+
+      @include on-desktop {
+        video {
+          width: 50%; /* Установка ширины видеоплеера */
+          height: auto; /* Автоматическое вычисление высоты */
+          border: 1px solid #ccc; /* Добавление рамки вокруг видеоплеера */
+        }
+      }
+
+
     }
 
     &__image {
@@ -134,7 +146,7 @@
       @include on-tablet {
         grid-column: span 3;
         width: 330px;
-        height: 220px;
+        height: 320px;
       }
 
       @include on-desktop {
@@ -193,12 +205,12 @@
 
       @include on-tablet {
         width: 330px;
-        height: 150px;
+        height: 360px;
       }
 
       @include on-desktop {
         width: 570px;
-        height: 150px;
+        height: 200px;
       }
     }
   }
