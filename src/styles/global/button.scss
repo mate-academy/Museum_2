@@ -1,0 +1,49 @@
+.button_red {
+  cursor: pointer;
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+  line-height: 16px;
+  color: #f1f5f4;
+  background-color: #cd4d31;
+  border: none;
+  padding: 22px;
+  min-width: 280px;
+}
+
+.button_transparent {
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: Raleway, sans-serif;
+  line-height: 16px;
+  color: #cd4d31;
+  background-color: transparent;
+  border: 1px solid #cd4d31;
+  padding: 22px;
+  min-width: 280px;
+
+  &::after {
+    content: '';
+    background-image: url(../images/svg/arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
+  @include on-tablet {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    min-width: 210px;
+  }
+
+  @include on-desktop {
+    min-width: 270px;
+    right: 95px;
+  }
+}
