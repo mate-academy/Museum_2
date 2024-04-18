@@ -308,14 +308,31 @@
               запрошення на події та читайте статті від кураторів
             </p>
           </div>
-          <input
+          <!-- <input
             class="subscribe__input"
+            autocomplete="off"
             type="email"
             name="email"
             id="email"
             placeholder="e-mail"
           />
-          <button class="button_red">Підписатись</button>
+          <button class="button_red">Підписатись</button> -->
+          <form id="subscribeForm">
+            <input
+              class="subscribe__input"
+              autocomplete="off"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="e-mail"
+            />
+            <button
+              type="submit"
+              class="button_red"
+            >
+              Підписатись
+            </button>
+          </form>
         </div>
       </section>
       <footer class="footer">
@@ -324,20 +341,36 @@
             <h2 class="footer__title">Контакти</h2>
             <div>
               <ul>
-                <li class="footer__info">Київ,</li>
-                <li class="footer__info">вул. М. Грушевського, 6</li>
+                <li class="footer__info">
+                  <a
+                    target="_blank"
+                    class="footer__info"
+                    href="https://maps.app.goo.gl/RpncE77xvwQQGWmF9"
+                  >
+                    Київ,
+                  </a>
+                </li>
+                <li class="footer__info">
+                  <a
+                    target="_blank"
+                    class="footer__info"
+                    href="https://maps.app.goo.gl/RpncE77xvwQQGWmF9"
+                  >
+                    вул. М. Грушевського, 6
+                  </a>
+                </li>
                 <li class="footer__info">
                   тел,
                   <a
                     class="footer__info"
-                    href="#"
+                    href="tel:2781357"
                   >
                     278-13-57
                   </a>
                   ,
                   <a
                     class="footer__info"
-                    href="#"
+                    href="tel:2787454"
                   >
                     278-74-54
                   </a>
@@ -345,7 +378,7 @@
                 <li class="footer__info">
                   <a
                     class="footer__info"
-                    href="#"
+                    href="mailto:info@namu.kiev.ua"
                   >
                     info@namu.kiev.ua
                   </a>
@@ -356,25 +389,29 @@
               <li>
                 <a
                   class="icon icon-fb"
-                  href="#"
+                  href="https://www.facebook.com/"
+                  target="_blank"
                 ></a>
               </li>
               <li>
                 <a
                   class="icon icon-twitter"
-                  href="#"
+                  href="https://twitter.com/"
+                  target="_blank"
                 ></a>
               </li>
               <li>
                 <a
                   class="icon icon-telegram"
-                  href="#"
+                  href="https://web.telegram.org/"
+                  target="_blank"
                 ></a>
               </li>
               <li>
                 <a
                   class="icon icon-instagram"
-                  href="#"
+                  href="https://www.instagram.com/"
+                  target="_blank"
                 ></a>
               </li>
               <li>
@@ -389,13 +426,13 @@
             <h2 class="footer__title">Розклад роботи</h2>
             <div>
               <ul>
-                <li class="footer__info">ПН: вихідний</li>
-                <li class="footer__info">ВТ: вихідний</li>
-                <li class="footer__info">СР: 10:00 - 17:00</li>
-                <li class="footer__info">ЧТ: 10:00 - 17:00</li>
-                <li class="footer__info">ПТ: 12:00 - 19:00</li>
-                <li class="footer__info">СБ: 11:00 - 18:00</li>
-                <li class="footer__info">НД: 10:00 - 17:00</li>
+                <li class="footer__date">ПН: вихідний</li>
+                <li class="footer__date">ВТ: вихідний</li>
+                <li class="footer__date">СР: 10:00 - 17:00</li>
+                <li class="footer__date">ЧТ: 10:00 - 17:00</li>
+                <li class="footer__date">ПТ: 12:00 - 19:00</li>
+                <li class="footer__date">СБ: 11:00 - 18:00</li>
+                <li class="footer__date">НД: 10:00 - 17:00</li>
               </ul>
             </div>
           </div>
@@ -446,5 +483,12 @@
       </footer>
     </main>
     <!-- <script src="scripts/main.js"></script> -->
+    <script>
+      document
+        .getElementById('subscribeForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault();
+        });
+    </script>
   </body>
 </html>
