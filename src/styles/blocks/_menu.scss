@@ -1,26 +1,87 @@
 .menu {
-  height: 100vh;
-  background-color: $background;
-  position: relative;
+  // height: 100vh;
+  background: $background;
 
-  font-weight: 400;
+  // z-index: 1;
   overflow: auto;
 
   &__content {
     height: 100vh;
-    grid-column: 2;
+    grid-column: 1 / -1;
 
     @include on-tablet {
-      grid-column: 6;
+      height: 100vh;
+      grid-column: 1 / -1;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    @include on-tablet {
+      margin-bottom: 0;
+      padding: 36px 0;
+    }
+
+    @include on-desctop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__additional-text {
+    font-family: $font-family-small;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+    color: $c-white;
+    margin: 10px 0 0;
+
+    &--bold {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: left;
+    }
+  }
+
+  &__adress {
+    font-family: $font-family-small;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+    color: $c-white;
+    margin: 20px 0 0;
+
+    &--link {
+      font-family: $font-family-small;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-align: left;
+      color: $c-white;
+      text-decoration: none;
     }
   }
 
   &__nav {
-    font-size: 16px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 24px;
-
-    padding: 0 0 40px;
+    color: $c-white;
+    font-family: $font-family-big;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    margin: 40px 0;
   }
 }
