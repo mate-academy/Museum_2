@@ -148,7 +148,7 @@
     }
 
     @include on-desktop {
-      width: 240px;
+      width: 260px;
       margin-bottom: 40px;
       grid-column: 2 / 4;
       color: $black;
@@ -156,11 +156,19 @@
 
     &--container {
       position: absolute;
-      bottom: -35px;
-      left: -13px;
+      bottom: 0;
+      left: 80px;
       visibility: hidden;
       opacity: 0;
       transition: all $effect-duration ease-in-out;
+
+      @include on-tablet {
+        left: 105px;
+      }
+
+      @include on-desktop {
+        left: 70px;
+      }
     }
 
     &:hover &--container {
@@ -233,7 +241,7 @@
   }
 
   &__link {
-    font-family: Roboto, sans-serif;
+    font-family: "Days One", sans-serif;
     color: $gray;
     text-decoration: none;
     font-size: 20px;
