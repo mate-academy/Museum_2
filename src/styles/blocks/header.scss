@@ -1,0 +1,50 @@
+.header {
+  background-color: #3f5252;
+
+  &__content {
+    padding-block: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include on-desktop {
+      padding-block: 25px;
+    }
+  }
+
+  &__logo {
+    transition: all 0.5s;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__lang {
+    display: none;
+    transition: all 0.5s;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      font-family: Raleway, sans-serif;
+      font-weight: 500;
+      color: #f1f5f4;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      &::after {
+        content: '';
+        background-image: url(../images/svg/down.svg);
+        display: block;
+        width: 10px;
+        height: 7px;
+      }
+    }
+  }
+}
