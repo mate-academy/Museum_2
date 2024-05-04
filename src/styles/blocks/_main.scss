@@ -15,3 +15,80 @@
     }
   }
 }
+
+.products{
+  @include page-grid;
+  flex-direction: column;
+  gap: 60px;
+  grid-column: 1 / -1;
+
+  &--news {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+.product {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: span 3;
+  }
+
+  &__img-container {
+    display: flex;
+    overflow: hidden;
+    height: 356px;
+
+    &--news {
+      display: flex;
+      height: 280px;
+      overflow: hidden;
+      width: 100%;
+    }
+  }
+
+  &__photo {
+    object-fit: cover;
+
+    &--angels {
+      object-fit: cover;
+    }
+
+    &--news {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__date {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-main;
+
+    &--news {
+      font-family: $font-family-small;
+      font-size: 14px;
+      line-height: 19.6px;
+      color: $c-black;
+    }
+  }
+
+  &__title {
+    font-family: $font-family-big;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+
+  &__description {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-gray;
+  }
+}

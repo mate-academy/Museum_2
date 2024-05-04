@@ -27,6 +27,12 @@
     text-align: left;
     color: $c-white;
     margin: 0;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
   }
 
   &__title {
@@ -34,9 +40,20 @@
     font-size: 48px;
     font-weight: 700;
     line-height: 48px;
-    text-align: left;
     color: $c-white;
     margin-top: 10px;
+    margin-bottom: 30px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 72px;
+      margin-bottom: 20px;
+
+
+      grid-column: 1 / -2;
+    }
   }
 
   &__main-text {
@@ -46,29 +63,45 @@
     line-height: 24px;
     text-align: left;
     color: $c-white;
-    margin-top: 30px;
+    grid-column: 1 / -1;
+    margin: 0;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+
+      &--br {
+        display: none;
+      }
+    }
   }
 
   &__button {
-    font-family: $font-family-small;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 16px;
-    text-align: center;
-    background: $c-main;
-    color: $c-white;
 
-    margin: 40px 0;
-    height: 60px;
-    width: 100%;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
   }
 
-  // &__photo-link {
-  //   display: flex;
+  &__bottom {
+    @include page-grid;
 
-  //   height: 100%;
-  //   width: 100%;
-  // }
+  }
+
+  &__photo-link {
+    display: flex;
+
+    height: 100%;
+    width: 100%;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      height: 100%;
+      grid-column: 2 / 6;
+    }
+  }
 
   &__photo {
     display: flex;
@@ -76,5 +109,11 @@
     margin-top: 40px;
 
     width: 88%;
+
+    @include on-tablet {
+      margin-top: 70px;
+      width: 100%;
+      grid-column: 2 / 5;
+    }
   }
 }
