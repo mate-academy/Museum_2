@@ -1,7 +1,37 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import '../styles/header/header';
+@import '../styles/exhibitions/exhibitions';
+@import '../styles/events/events';
+@import '../styles/visit/visit';
+@import '../styles/news/news';
+@import '../styles/subscribe/subscribe';
+@import '../styles/footer/footer';
+
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+  transition: 0.3s;
+}
 
 body {
-  background: $c-gray;
+  background: $white;
+
+  &:has(.header_top__menu:target) {
+    overflow: hidden;
+  }
+}
+
+.container {
+  padding-inline: 20px;
+  padding-top: 20px;
+
+  @include on-tablet {
+    padding-inline: 40px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
 }
