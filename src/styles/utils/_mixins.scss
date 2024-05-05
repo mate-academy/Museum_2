@@ -4,3 +4,92 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet {
+  @media (min-width: $width-tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $width-desktop) {
+    @content;
+  }
+}
+
+@mixin on-large {
+  @media (min-width: $width-large) {
+    @content;
+  }
+}
+
+@mixin container {
+  padding-inline: $padding-container;
+
+  @include on-tablet {
+    padding-inline: 36px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+
+  @include on-large {
+    padding-inline: 140px;
+  }
+}
+
+@mixin template {
+  display: grid;
+  align-items: center;
+  column-gap: 30px;
+  @content;
+}
+
+@mixin second-button {
+  text-indent: -10px;
+  padding: 0;
+  margin-top: 30px;
+  background-color: transparent;
+  border: 1px solid $c-main;
+  color: $c-main;
+
+  &-arrow {
+    display: inline;
+    position: absolute;
+    text-align: center;
+    margin-left: 8px;
+    z-index: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url(/src/icons/button/arrow.png);
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border-color: $hover-main;
+    color: $hover-main;
+  }
+
+  &:active {
+    background-color: transparent;
+    border-color: $active-main;
+    color: $active-main;
+  }
+
+  &:focus {
+    background-color: transparent;
+    border-color: $pressed-main;
+    color: $pressed-main;
+  }
+
+
+  @include on-tablet {
+    & {
+      grid-area: 1 / 5 / auto / span 2;
+      margin: 0;
+      max-width: 330px;
+    }
+  }
+}
