@@ -1,0 +1,438 @@
+.header {
+  background-color: $background;
+  margin-bottom: 90px;
+
+  @include padding;
+
+  &_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &__img {
+        width: 123px;
+        height: 40px;
+      }
+    }
+
+    &__icons {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    &__burger {
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &__img {
+        width: 25px;
+        height: 20px;
+      }
+    }
+
+    &__menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      opacity: 0;
+      transform: translateY(-100%);
+      pointer-events: none;
+      overflow: auto;
+      background-color: $background;
+      height: 100vh;
+      z-index: 5;
+
+      &:target {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+        overflow: auto;
+      }
+
+      &__background {
+        display: none;
+
+        @include on-tablet {
+          display: flex;
+          height: 465px;
+          background: url(../images/pictures/img_menu.png) no-repeat center;
+          background-size: contain;
+        }
+
+        @include on-desktop {
+          grid-column: 8 / -1;
+          height: 697px;
+          background-size: contain;
+          background-position: bottom right;
+        }
+      }
+
+      &__icons {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+
+        @include on-tablet {
+          gap: 40px;
+        }
+      }
+
+      &__language__img {
+        width: 34px;
+        height: 24px;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      &__close__img {
+        height: 22px;
+        width: 22px;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      &__main {
+        @include padding;
+
+        @include on-tablet {
+          @include page-grid;
+        }
+
+        @include on-desktop {
+          grid-column: 1 / 7;
+          margin-top: 20px;
+        }
+
+        &__container {
+          @include on-desktop {
+            @include page-grid;
+          }
+        }
+
+        &__nav {
+          margin-top: 40px;
+
+          @include on-tablet {
+            grid-column: 1 / -1;
+          }
+
+          &__ul {
+            padding-left: 0;
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid $white;
+
+            @include on-desktop {
+              margin-top: 0;
+              margin-bottom: 50px;
+            }
+          }
+
+          &__list {
+            list-style: none;
+            margin-bottom: 20px;
+
+            @include on-desktop {
+              margin-bottom: 50px;
+            }
+          }
+
+          &__link {
+            @include h5;
+
+            display: block;
+            width: fit-content;
+
+            color: $white;
+            text-decoration: none;
+
+            @include on-tablet {
+              font-size: 48px;
+              line-height: 57.6px;
+            }
+
+            &::after {
+              display: block;
+              content: '';
+              border-bottom: solid 1px $white;
+              transform: scaleX(0);
+              transition: transform 250ms ease-in-out;
+              transform-origin: 0 50%;
+            }
+
+            &:hover::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+
+      &__hours {
+        @include on-tablet {
+          grid-column: 1 / 3;
+        }
+
+        @include on-desktop {
+          grid-column: 1 / 5;
+        }
+
+        &__today {
+          @include additional;
+
+          color: $white;
+        }
+
+        &__time {
+          @include main;
+
+          font-weight: 600;
+          color: $white;
+        }
+      }
+
+      &__where {
+        margin-top: 20px;
+
+        @include on-tablet {
+          grid-column: 3 / 6;
+          margin-top: 0;
+        }
+
+        @include on-desktop {
+          grid-column: 5 / -1;
+        }
+
+        &__disc {
+          @include additional;
+
+          color: $white;
+        }
+
+        &__adress {
+          @include main;
+
+          font-weight: 600;
+          color: $white;
+          text-decoration: none;
+          display: block;
+          width: fit-content;
+
+          &::after {
+            display: block;
+            content: '';
+            border-bottom: solid 1px $white;
+            transform: scaleX(0);
+            transition: transform 250ms ease-in-out;
+            transform-origin: 0 50%;
+          }
+
+          &:hover::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+  }
+
+  &_main {
+    padding-top: 50px;
+
+    &__container {
+      @include on-desktop {
+        @include page-grid;
+      }
+    }
+
+    &__date {
+      display: none;
+
+      @include on-desktop {
+        @include h6;
+
+        margin-top: 150px;
+        display: flex;
+        align-items: center;
+        grid-column: 1 / 7;
+        gap: 20px;
+        height: 17px;
+        opacity: 0.7;
+      }
+
+      &__number {
+        font-size: 14px;
+        line-height: 17.5px;
+        color: $white;
+      }
+
+      &__border {
+        height: 2px;
+        width: 469px;
+        border-bottom: 1px solid $white;
+        opacity: 0.7;
+      }
+    }
+
+    @include on-tablet {
+      padding-top: 100px;
+
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      display: block;
+    }
+
+    &__additional {
+      @include additional;
+
+      @include on-tablet {
+        grid-column: 1 / 3;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / -1;
+      }
+
+      color: $white;
+      padding-bottom: 10px;
+    }
+
+    &__h1 {
+      @include h1;
+
+      @include on-tablet {
+        grid-column: 1 / 6;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / -1;
+      }
+
+      color: $white;
+      margin-bottom: 30px;
+    }
+
+    &__main_text {
+      @include main;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / -1;
+      }
+
+      text-align: left;
+      color: $white;
+      margin-bottom: 40px;
+    }
+
+    &__link {
+      display: block;
+      width: 100%;
+      height: 60px;
+
+      &--button {
+        @include on-tablet {
+          grid-column: 1 / 4;
+          margin-top: 50px;
+        }
+
+        @include on-desktop {
+          width: 330px;
+        }
+      }
+
+      &__button {
+        width: 100%;
+        height: 60px;
+        background-color: $main;
+        border: none;
+
+        @include button;
+
+        color: $white;
+
+        &:hover {
+          background-color: $button-hover-color;
+          border-radius: 20px;
+          transform: scale(1.1);
+        }
+
+        &:active {
+          background-color: $button-pressed-color;
+        }
+      }
+    }
+
+    &__background {
+      background: url(../images/pictures/1200px-Girl_from_Podolye_by_V.Tropinin.png)
+        bottom right no-repeat;
+      background-size: contain;
+      height: 273px;
+
+      @include on-tablet {
+        height: 479px;
+        grid-column: 1 / -1;
+        margin-top: 50px;
+      }
+
+      @include on-desktop {
+        height: 660px;
+        grid-column: 7 / -1;
+        position: relative;
+        right: -55px;
+      }
+    }
+  }
+}
+
+.menu {
+  @include padding;
+
+  &__button {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+}
+
+.tablet-view {
+  display: none;
+
+  @include on-tablet {
+    display: block;
+  }
+
+  &__close {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+}
+
+.mobile-view__close {
+  @include on-tablet {
+    display: none;
+  }
+}

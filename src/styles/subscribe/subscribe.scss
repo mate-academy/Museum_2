@@ -1,0 +1,106 @@
+.subscribe {
+  @include padding;
+
+  @include on-tablet {
+    @include page-grid;
+  }
+
+  max-width: 1280px;
+  margin: auto;
+
+  margin-bottom: 150px;
+  margin-top: 10px;
+
+  &__h2 {
+    @include h2;
+
+    font-size: 28px;
+    line-height: 35px;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+  }
+
+  &__main_text {
+    @include main;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+
+    margin-bottom: 50px;
+  }
+
+  &__form {
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      padding-top: 50px;
+    }
+
+    &__input {
+      @include main;
+
+      color: $black;
+      border: none;
+      border-bottom: 2px solid $black;
+      background-color: $white;
+      width: 100%;
+      margin-bottom: 30px;
+
+      &::placeholder {
+        color: $black;
+      }
+
+      @include on-desktop {
+        margin-bottom: 50px;
+      }
+
+      &:hover {
+        border-color: $button-hover-color;
+        background-color: $white;
+
+        &::placeholder {
+          color: $button-hover-color;
+        }
+      }
+
+      &:focus {
+        color: $button-pressed-color;
+        border-color: $button-pressed-color;
+        outline: none;
+
+        &::placeholder {
+          color: $button-pressed-color;
+        }
+      }
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+}

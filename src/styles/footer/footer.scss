@@ -1,0 +1,241 @@
+.footer {
+  @include padding;
+
+  @include on-tablet {
+    @include page-grid;
+
+    padding-block: 55px;
+  }
+
+  background-color: $background;
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
+
+    &__h2 {
+      @include h2;
+
+      @include on-tablet {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 20px;
+      }
+
+      font-size: 18px;
+      line-height: 27px;
+      color: $white;
+      margin-bottom: 10px;
+    }
+
+    &__links {
+      text-decoration: none;
+
+      @include main;
+
+      color: $white;
+      cursor: pointer;
+      display: block;
+      width: fit-content;
+
+      &::after {
+        display: block;
+        content: '';
+        border-bottom: solid 1px $white;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+        transform-origin: 0 50%;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &__social {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+
+      @include on-tablet {
+        margin-top: 50px;
+      }
+
+      &__logo {
+        display: block;
+        width: 20px;
+        height: 20px;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+
+        &--facebook {
+          background: url(../images/logos/facebook.png) no-repeat;
+          background-size: contain;
+        }
+
+        &--twitter {
+          background: url(../images/logos/twitter.png) no-repeat;
+          background-size: contain;
+        }
+
+        &--telegram {
+          background: url(../images/logos/telegram.png) no-repeat;
+          background-size: contain;
+        }
+
+        &--instagram {
+          background: url(../images/logos/instagram.png) no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  &__sheudle {
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: 3 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+
+    &__h2 {
+      @include h2;
+
+      @include on-tablet {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 20px;
+      }
+
+      font-size: 18px;
+      line-height: 27px;
+      color: $white;
+      margin-bottom: 10px;
+    }
+
+    &__main {
+      @include main;
+
+      color: $white;
+    }
+  }
+
+  &__menu {
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 9 / -1;
+    }
+
+    &__h5 {
+      @include h5;
+
+      @include on-tablet {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 20px;
+      }
+
+      color: $white;
+      margin-bottom: 10px;
+    }
+
+    &__ul {
+      padding-left: 0;
+    }
+
+    &__nav {
+      &__list {
+        list-style: none;
+
+        @include on-tablet {
+          margin-bottom: 10px;
+        }
+      }
+
+      &__link {
+        @include main;
+
+        color: $white;
+        text-decoration: none;
+        display: block;
+        width: fit-content;
+
+        &::after {
+          display: block;
+          content: '';
+          border-bottom: solid 1px $white;
+          transform: scaleX(0);
+          transition: transform 250ms ease-in-out;
+          transform-origin: 0 50%;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  &__privacy {
+    display: flex;
+    gap: 22px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include on-desktop {
+      gap: 100px;
+      margin-top: 20px;
+    }
+
+    &__years {
+      @include additional;
+
+      color: $white;
+    }
+
+    &__terms {
+      @include additional;
+
+      color: $white;
+    }
+  }
+
+  &__arrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: url(../images/logos/scroll_up.png) no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+      transform: scale(1.2);
+      border: 1px solid $white;
+      border-radius: 20px;
+    }
+  }
+}
