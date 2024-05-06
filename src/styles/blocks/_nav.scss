@@ -12,13 +12,17 @@
     &::after {
       content: '';
       position: absolute;
-      bottom: -40px;
       display: block;
+      bottom: -40px;
       height: 1px;
       width: 100%;
       background-color: $c-white;
 
       transform: scale(1);
+
+      @include on-tablet {
+        bottom: -50px;
+      }
     }
 
     &--footer {
@@ -39,6 +43,12 @@
     font-size: 22px;
     line-height: 22px;
     letter-spacing: 2px;
+
+    @include on-tablet {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 57.6px;
+    }
 
     &--footer {
       font-family: $font-family-small;
