@@ -11,6 +11,7 @@
   &__nav {
     display: flex;
     gap: 40px;
+    align-items: center;
   }
 
   &__button {
@@ -43,11 +44,12 @@
   &__lang {
     display: none;
 
-    &--menu {
+    @include on-desktop {
       display: block;
     }
 
-    @include on-desktop {
+
+    &--menu {
       display: block;
     }
   }
@@ -55,6 +57,12 @@
   &__button-lang {
     padding-right: 13px;
     position: relative;
+    cursor: pointer;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $white-color;
 
     &::after {
       content: url('../images/dropdown.svg');
