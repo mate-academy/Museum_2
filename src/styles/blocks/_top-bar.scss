@@ -1,0 +1,66 @@
+.top-bar {
+  padding-block: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include on-desktop {
+    padding-block: 32px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__button {
+    background-position: center;
+    background-size: cover;
+
+    &--menu {
+      height: 25px;
+      width: 20px;
+      background-image: url('../images/burger-menu.svg');
+
+      @include on-tablet {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    &--close {
+      height: 22px;
+      width: 22px;
+      background-image: url('../images/close.svg');
+
+      @include on-desktop {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+
+  &__lang {
+    display: none;
+
+    &--menu {
+      display: block;
+    }
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__button-lang {
+    padding-right: 13px;
+    position: relative;
+
+    &::after {
+      content: url('../images/dropdown.svg');
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

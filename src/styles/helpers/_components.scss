@@ -1,0 +1,133 @@
+.button {
+  box-sizing: border-box;
+  display: block;
+  font-weight: 600;
+  line-height: 16px;
+  padding-block: 22px;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+
+  &--orange {
+    background-color: $main-color;
+    border: 1px solid $main-color;
+    color: $white-color;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background: #dd836f;
+    }
+  }
+
+  &--transparent {
+    color: $main-color;
+    border: 1px solid $main-color;
+    text-align: center;
+
+    @include on-tablet {
+      padding-left: 32px;
+    }
+
+    @include on-desktop {
+      padding-left: 62px;
+    }
+
+    &::after {
+      content: url('../images/arrow-btn.svg');
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      color: #af3419;
+      border: 1px solid #af3419;
+
+      &::after {
+        content: url('../images/arrow-btn-hover.svg');
+      }
+    }
+
+    &:active {
+      color: #ea340d;
+      border: 1px solid #ea340d;
+
+      &::after {
+        content: url('../images/arrow-btn-active.svg');
+      }
+    }
+
+    &:disabled {
+      color: #dd836f;
+      border: 1px solid #dd836f;
+
+      &::after {
+        content: url('../images/arrow-btn-disabled.svg');
+      }
+    }
+  }
+}
+
+.title {
+  margin-bottom: 60px;
+
+  @include on-tablet {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    align-items: center;
+  }
+
+  &__button {
+    display: none;
+    align-items: flex-end;
+    column-gap: 8px;
+
+    @include on-tablet {
+      display: flex;
+      max-width: 210px;
+    }
+
+    @include on-desktop {
+      max-width: 270px;
+    }
+
+    &--bottom {
+      display: flex;
+      justify-content: center;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+}
+
+.title-section {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 125%;
+
+  @include on-tablet {
+    font-size: 40px;
+  }
+
+  @include on-desktop {
+    font-size: 48px;
+  }
+}
