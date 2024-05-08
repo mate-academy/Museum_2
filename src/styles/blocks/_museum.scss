@@ -1,0 +1,128 @@
+.museum {
+  margin-bottom: 90px;
+  color: $white-color;
+  background-color: $background;
+
+  @include on-tablet {
+    margin-bottom: 100px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 110px;
+  }
+
+  &__wrapper {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+
+  }
+
+  &__content {
+    box-sizing: border-box;
+    padding-block: 50px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include on-desktop {
+      padding-block: 90px 50px;
+    }
+  }
+
+  &__column {
+    max-width: 570px;
+  }
+
+  &__date {
+    line-height: 19.6px;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 100%;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__photo {
+    display: flex;
+    justify-content: center;
+
+    @include on-desktop {
+    width: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    }
+  }
+
+  &__image {
+    @include on-tablet {
+      max-height: 494px;
+      max-width: 443px;
+    }
+
+    @include on-desktop {
+      max-height: 663px;
+      max-width: 625px;
+    }
+  }
+
+  &__bottom-text {
+    position: relative;
+    display: none;
+    align-items: center;
+
+    @include on-desktop {
+      display: flex;
+
+      &::after {
+        position: absolute;
+        content: '';
+        right: 0;
+        height: 1px;
+        opacity: 30%;
+        width: calc(100% - 110px);
+        background-color: $white-color;
+      }
+    }
+  }
+}
