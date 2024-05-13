@@ -1,0 +1,178 @@
+.page{
+  &__menu {
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    min-height: 100vh;
+    background-color: $background-color;
+    color: $white-color;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition: all 0.3s;
+    overflow: auto;
+  }
+}
+
+.menu{
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  @include content-padding-inline;
+
+  &__info{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    @include on-desktop{
+      justify-content: left;
+      gap: 80px;
+    }
+  }
+
+  &__nav{
+    display: flex;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid white;
+    }
+
+  &__list{
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__item{
+    margin-bottom: 20px;
+  }
+
+  &__link{
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: $white-color;
+    margin-bottom: 30px;
+
+    &:hover {
+      color: $button-disabled-color;
+    }
+
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      line-height: 57.6px;
+      position: relative;
+      width: fit-content;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -4px;
+      transform: scale(0);
+      height: 1px;
+      width: 100%;
+      transform-origin: left;
+      background-color: $white-color;
+      transition: transform 0.3s;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &__image {
+    display: none;
+    background-image: url(../images/pic/img_menu.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    @include on-tablet {
+      height: 466px;
+      width: 100%;
+      display: block;
+      z-index: 3;
+      position: relative;
+      bottom: 0;
+    }
+
+    @include on-desktop {
+      right: 0;
+      bottom: 0;
+      height: 670px;
+      background-position: right;
+      display: block;
+      position: absolute;
+      background-size: contain;
+      width: 50%;
+    }
+  }
+}
+
+
+.schedule{
+  &__text{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  &__time{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__address{
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    color: $white-color;
+    line-height: 24px;
+
+    &:hover {
+      color: $button-disabled-color;
+    }
+  }
+}
+
+.top-bar {
+  &__icons {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+  }
+}
+
+.icon--close {
+  background-image: url(../images/icons/cross.png);
+}
+
+.lang {
+  font-family: Raleway, sans-serif;
+  background-color: $background-color;
+  color: $white-color;
+  font-weight: 500;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}

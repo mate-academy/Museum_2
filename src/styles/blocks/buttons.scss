@@ -1,0 +1,47 @@
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 280px;
+  height: 60px;
+  background-color: $main-color;
+  text-decoration: none;
+  color: $white-color;
+  padding: 30px 0;
+
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+
+
+  &--red{
+   margin-bottom: 30px;
+
+    @include button-transition-red($button-hover-color, $button-pressed-color);
+  }
+
+  &--white{
+    background-color: $white-color;
+    border: 1px solid $main-color;
+    color: $main-color;
+
+    @include button-border-transition(red, $button-disabled-color);
+  }
+}
+
+
+.arch__btn {
+  @include on-tablet {
+    position: absolute;
+    top: 0;
+    right: 39px;
+    padding-inline: 32px;
+  }
+
+  @include on-desktop {
+    right: 0;
+  }
+}
