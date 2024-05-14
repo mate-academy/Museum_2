@@ -5,23 +5,24 @@
     right: 0;
     left: 0;
     position: fixed;
-    min-height: 100vh;
-    background-color: $background-color;
-    color: $white-color;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-100%);
-    transition: all 0.3s;
-    overflow: auto;
-  }
+}
 }
 
 .menu{
-  &:target {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateX(0);
-  }
+  min-height: 100vh;
+  background-color: $background-color;
+  color: $white-color;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+  overflow: auto;
+
+&:target {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(0);
+}
 
   @include content-padding-inline;
 
@@ -175,4 +176,8 @@
   font-size: 16px;
   outline: none;
   border: none;
+}
+
+body:has(.page__menu:target) {
+  overflow: hidden;
 }

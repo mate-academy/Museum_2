@@ -21,6 +21,9 @@
       rel="stylesheet"
       href="./styles/main.scss"
     />
+    <link rel="icon"
+    type="image/x-icon"
+    href="./images/icons/favicon.png">
     <script src="scripts/main.js"></script>
   </head>
 
@@ -187,7 +190,7 @@
                 alt="angel"
                 class="card__photo"
                 >
-                <p class="card__info">
+                <p class="card__info-red">
                   11.07 - 22.09
                 </p>
                 <h3 class="card__subtitle">
@@ -210,7 +213,7 @@
                 class="card__photo"
                 >
 
-                <p class="card__info">
+                <p class="card__info-red">
                   Діє постійно
                 </p>
 
@@ -398,9 +401,10 @@
             </p>
 
             <form
-            action="#"
-            method="post"
+            action="submit-page.php"
+            method="get"
             class="subscription__form"
+            onsubmit="this.reset(); return false;"
             >
 
               <input
@@ -573,15 +577,4 @@
       </div>
     </footer>
   </body>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.querySelector('.form');
-
-      form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        form.reset();
-      });
-    });
-  </script>
 </html>
