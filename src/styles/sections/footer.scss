@@ -1,0 +1,98 @@
+.footer {
+  background-color: $bg;
+  padding: rem(30) 0;
+
+  @media (min-width: $mobile) {
+    padding: rem(50) 0 rem(30);
+  }
+
+  color: $white;
+
+  &__container {
+    @media (min-width: $mobile) {
+      @include page-grid;
+
+      row-gap: rem(60);
+    }
+
+    @media (min-width: $tablet) {
+      row-gap: rem(70);
+    }
+  }
+
+  &__contacts {
+    @media (min-width: $mobile) {
+      grid-column: span 2;
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__info {
+    @media (min-width: $mobile) {
+      grid-column: span 2;
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 5 / 8;
+    }
+  }
+
+  &__nav {
+    @media (min-width: $mobile) {
+      grid-column: span 2;
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 9 / 11;
+    }
+  }
+
+  &__copy {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    column-gap: rem(22);
+
+    @media (min-width: $tablet) {
+      column-gap: rem(100);
+    }
+  }
+
+  &__years {
+    font-size: rem(14);
+    line-height: 140%;
+  }
+
+  &__privacy {
+    font-size: rem(14);
+    line-height: 140%;
+    flex: 1 1 auto;
+  }
+
+  &__link-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(30);
+    width: rem(30);
+    transform: rotate(-90deg);
+
+    &::before {
+      font-size: rem(20);
+      color: $white;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          transition: color $duration;
+
+          color: $main;
+        }
+      }
+    }
+  }
+}

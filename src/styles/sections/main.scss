@@ -1,0 +1,128 @@
+.main {
+  background-color: $bg;
+  position: relative;
+
+  &__container {
+    margin-bottom: rem(40);
+    padding: rem(calc($header-hight + 50)) rem($padding-container-mobile-small)
+      0;
+
+    @media (min-width: $mobile) {
+      @include page-grid;
+
+      padding: rem(calc($header-hight + 50)) rem($padding-container-mobile) 0;
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $tablet) {
+      grid-template-rows: repeat(4, min-content) 1fr;
+      padding: rem(calc($header-hight + 90)) rem($padding-container) rem(56);
+      min-height: calc(100vh - #{$header-hight + 90 + px} - rem(56));
+    }
+  }
+
+  &__text {
+    font-size: rem(14);
+    line-height: 140%;
+    color: $white;
+    margin-bottom: rem(10);
+
+    @media (min-width: $mobile) {
+      grid-column: 1 / 3;
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(30);
+
+    @media (min-width: $mobile) {
+      grid-column: 1 / 6;
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__sub-title {
+    color: $white;
+    margin-bottom: rem(50);
+
+    @media (min-width: $mobile) {
+      grid-column: 1 / 4;
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 1 / 7;
+      margin-bottom: rem(80);
+    }
+  }
+
+  &__link {
+    @media (min-width: $mobile) {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__image {
+    margin: 0 auto;
+    position: relative;
+    width: percent(245, 320);
+    padding-bottom: 85.44%;
+
+    @media (min-width: $mobile) {
+      width: percent(443, 768);
+      padding-bottom: percent(494, 768);
+    }
+
+    @media (min-width: $tablet) {
+      width: percent(625, 1280);
+      padding-bottom: percent(663, 1280);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__decore {
+    display: none;
+
+    @media (min-width: $tablet) {
+      grid-column: 1 / 7;
+      margin-top: auto;
+      opacity: 0.7;
+      font-family: $second-family;
+      font-weight: 700;
+      font-size: rem(14);
+      line-height: 125%;
+      display: flex;
+      align-items: center;
+      gap: rem(20);
+      color: $white;
+      text-wrap: nowrap;
+      padding-top: rem(50);
+
+      &::after {
+        content: '';
+        flex: 1 1 100%;
+        width: 100%;
+        height: rem(1);
+        background-color: $white;
+        opacity: 0.3;
+      }
+    }
+  }
+}

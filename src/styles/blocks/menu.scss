@@ -1,0 +1,201 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  transition: right $duration;
+  width: 100%;
+  z-index: 5;
+  height: 100%;
+  color: $white;
+  overflow: auto;
+  background-color: $bg;
+
+  .menu-open & {
+    right: 0;
+  }
+
+  &__wrapper {
+    @include page-grid;
+
+    align-content: start;
+    height: 100%;
+    overflow: auto;
+    row-gap: rem(40);
+    padding: rem($header-hight-mobile + 20) rem($padding-container-mobile-small)
+      rem(20);
+
+    @media (min-width: $mobile) {
+      padding: rem($header-hight + 20) rem($padding-container-mobile) rem(20);
+      row-gap: rem(50);
+    }
+
+    @media (min-width: $tablet) {
+      padding: rem($header-hight + 20) rem($padding-container) rem(20);
+    }
+  }
+
+  &__info-items {
+    grid-column: span 2;
+
+    @media (min-width: $mobile) {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      column-gap: rem(30);
+    }
+
+    @media (min-width: $tablet) {
+      grid-template-columns: 1fr 5fr;
+    }
+  }
+
+  &__info-item {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__body {
+    grid-column: span 2;
+    padding-bottom: rem(40);
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: rem(1);
+      width: 100%;
+      background-color: $white;
+    }
+
+    @media (min-width: $mobile) {
+      grid-column: 1 / -1;
+      padding-bottom: rem(50);
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__list {
+    display: grid;
+    row-gap: rem(20);
+
+    @media (min-width: $mobile) {
+      row-gap: rem(30);
+    }
+  }
+
+  &__link {
+    font-family: $second-family;
+    font-weight: 700;
+    font-size: rem(20);
+    line-height: 150%;
+    transition: color $duration;
+
+    @media (min-width: $mobile) {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &:active {
+      color: $active;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+
+    @media (min-width: $mobile) {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @media (min-width: $mobile) {
+      margin: 0 auto;
+      pointer-events: none;
+      display: block;
+      position: relative;
+      padding-bottom: 64.02%;
+      width: percent(466, 768);
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @media (min-width: $tablet) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: percent(624, 1280);
+      padding-bottom: 54.5%;
+    }
+  }
+}
+
+.icon-menu {
+  display: block;
+  position: relative;
+  width: rem(25);
+  height: rem(20);
+  cursor: pointer;
+  z-index: 5;
+
+  span,
+  &::before,
+  &::after {
+    content: '';
+    transition: all 0.3s ease 0s;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: rem(2);
+    background-color: $white;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  span {
+    top: calc(50% - rem(1));
+  }
+
+  .menu-open & {
+    span {
+      transform: scale(0);
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+      top: calc(50% - rem(1));
+    }
+
+    &::after {
+      transform: rotate(45deg);
+      bottom: calc(50% - rem(1));
+    }
+  }
+}
