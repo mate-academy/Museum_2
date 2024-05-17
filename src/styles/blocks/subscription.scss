@@ -1,9 +1,17 @@
 .main__subscription{
   padding-top: 120px;
-  padding-bottom: 20px;
+  padding-bottom: 80px;
   background-color: $white-color;
 
   @include content-padding-inline;
+
+  @include on-tablet{
+    padding-bottom: 128px;
+  }
+
+  @include on-desktop{
+    padding-bottom: 200px;
+  }
 }
 
 .subscription{
@@ -54,12 +62,18 @@
 
   @include on-desktop {
     font-size: 16px;
-    grid-column: 7 / -1;
+    grid-column: 7 / span 7;
   }
 }
 
 &__form {
   @include on-tablet {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+  }
+
+  @include on-desktop{
     @include page-grid;
 
     grid-column: 1 / -1;
@@ -88,7 +102,7 @@
   @include on-desktop {
     padding-bottom: 3px;
     margin-bottom: 40px;
-    grid-column: 1 / 7;
+    grid-column: 1 / 6;
   }
 
   &:focus {
@@ -104,6 +118,10 @@
   margin-bottom: 30px;
 
   @include on-tablet {
+    grid-column: 1 / 4;
+  }
+
+  @include on-desktop {
     grid-column: 1 / 4;
   }
 }

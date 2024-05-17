@@ -16,7 +16,7 @@
   pointer-events: none;
   transform: translateX(-100%);
   transition: all 0.3s;
-  overflow: auto;
+  overflow-y: auto;
 
 &:target {
   opacity: 1;
@@ -42,6 +42,10 @@
     margin-bottom: 40px;
     padding-bottom: 40px;
     border-bottom: 1px solid white;
+
+    @include on-desktop {
+      width: 70%;
+    }
     }
 
   &__list{
@@ -148,18 +152,6 @@
 
     &:hover {
       color: $button-disabled-color;
-    }
-  }
-}
-
-.top-bar {
-  &__icons {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 30px;
-
-    @include on-tablet {
-      flex-direction: row;
     }
   }
 }
