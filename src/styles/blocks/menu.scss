@@ -10,28 +10,28 @@
   overflow: auto;
   background-color: $bg;
 
+  padding: rem($header-hight-mobile + 20) 0 rem(20);
+
+  @media (min-width: $mobile) {
+    padding: rem($header-hight + 20) 0 rem(20);
+    row-gap: rem(50);
+  }
+
+  @media (min-width: $tablet) {
+    padding: rem($header-hight + 20) 0 rem(20);
+  }
+
   .menu-open & {
     right: 0;
   }
 
-  &__wrapper {
+  &__container {
     @include page-grid;
 
     align-content: start;
     height: 100%;
     overflow: auto;
     row-gap: rem(40);
-    padding: rem($header-hight-mobile + 20) rem($padding-container-mobile-small)
-      rem(20);
-
-    @media (min-width: $mobile) {
-      padding: rem($header-hight + 20) rem($padding-container-mobile) rem(20);
-      row-gap: rem(50);
-    }
-
-    @media (min-width: $tablet) {
-      padding: rem($header-hight + 20) rem($padding-container) rem(20);
-    }
   }
 
   &__info-items {
