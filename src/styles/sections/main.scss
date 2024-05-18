@@ -1,6 +1,7 @@
 .main {
   background-color: $bg;
   position: relative;
+  overflow: hidden;
 
   &__container {
     margin-bottom: rem(40);
@@ -11,13 +12,13 @@
       @include page-grid;
 
       padding: rem(calc($header-hight + 50)) rem($padding-container-mobile) 0;
-      margin-bottom: 0;
     }
 
     @media (min-width: $tablet) {
       grid-template-rows: repeat(4, min-content) 1fr;
       padding: rem(calc($header-hight + 90)) rem($padding-container) rem(56);
       min-height: calc(100vh - #{$header-hight + 90 + px} - rem(56));
+      margin-bottom: 0;
     }
   }
 
@@ -81,19 +82,20 @@
 
     @media (min-width: $tablet) {
       width: percent(625, 1280);
-      padding-bottom: percent(663, 1280);
+      padding-bottom: 0;
       position: absolute;
-      bottom: 0;
       right: 0;
+      bottom: 0;
+      height: calc(100% - rem($header-hight));
     }
 
     img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
   }
 
