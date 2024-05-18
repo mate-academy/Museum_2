@@ -1,0 +1,62 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $bg;
+  color: $white;
+  z-index: 10;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    background-color: $bg;
+
+    height: rem($header-hight-mobile);
+    padding: 0 rem($padding-container-mobile-small);
+
+    @media (min-width: $mobile) {
+      padding: 0 rem($padding-container-mobile);
+    }
+
+    @media (min-width: $tablet) {
+      padding: 0 rem($padding-container);
+    }
+  }
+
+  &__logo {
+    height: rem(38);
+    width: rem(124);
+  }
+
+  &__acions {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: rem(25);
+  }
+
+  &__icon {
+    height: rem(30);
+    width: rem(30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__select {
+    background: transparent;
+    font-weight: 500;
+    font-size: rem(16);
+    color: $white;
+    outline: none;
+    cursor: pointer;
+
+    option {
+      color: $text-color;
+    }
+  }
+}

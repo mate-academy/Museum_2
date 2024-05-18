@@ -1,0 +1,227 @@
+[class*='__container'] {
+  max-width: rem($max-width-container);
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 rem($padding-container-mobile-small);
+
+  @media (min-width: $mobile) {
+    padding: 0 rem($padding-container-mobile);
+  }
+
+  @media (min-width: $tablet) {
+    padding: 0 rem($padding-container);
+  }
+}
+
+.button {
+  display: block;
+  align-items: center;
+  font-weight: 600;
+  font-size: rem(16);
+  text-align: center;
+  color: $white;
+  padding: rem(22);
+  transition: background-color $duration;
+  height: 60px;
+  background-color: $main;
+
+  @media (any-hover: hover) {
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover;
+    }
+  }
+
+  &:active {
+    background-color: $active;
+  }
+
+  &:disabled {
+    background-color: $disabled;
+  }
+
+  &--secondary {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: rem(8);
+    color: $main;
+    transition:
+      color $duration,
+      border $duration;
+    border: rem(1) solid $main;
+    background-color: transparent;
+
+    &::before {
+      height: rem(20);
+      width: rem(20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color $duration;
+      font-size: rem(20);
+      color: $main;
+      font-weight: 600;
+    }
+
+    @media (any-hover: hover) {
+      border: rem(1) solid $hover;
+
+      &:hover {
+        background-color: transparent;
+        color: $hover;
+
+        &::before {
+          color: $hover;
+        }
+      }
+    }
+
+    &:active {
+      border: rem(1) solid $active;
+      color: $active;
+
+      &::before {
+        color: $active;
+      }
+    }
+
+    &:disabled {
+      border: rem(1) solid $disabled;
+      color: #000;
+
+      &::before {
+        color: $disabled;
+      }
+    }
+  }
+}
+
+input:-internal-autofill-selected,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-box-shadow: inset 0 0 0 50px $white;
+  -webkit-text-fill-color: $text-color;
+}
+
+.input {
+  font-size: rem(16);
+  line-height: 150%;
+  padding: rem(3) 0;
+  width: 100%;
+  border-bottom: rem(1) solid $bg;
+  background-color: transparent;
+  font-weight: 700;
+  transition:
+    border-bottom $duration,
+    color $duration,
+    font-weight $duration;
+
+  &::placeholder {
+    transition: color $duration;
+    font-weight: 400;
+  }
+
+  &:focus {
+    font-weight: 600;
+    color: $main;
+    border-bottom: rem(1) solid $main;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: $main;
+      border-bottom: rem(1) solid $main;
+
+      &::placeholder {
+        color: $main;
+      }
+    }
+  }
+}
+
+.main-title {
+  font-family: $second-family;
+  font-weight: 700;
+  font-size: rem(48);
+  line-height: 100%;
+  color: $white;
+
+  @media (min-width: $mobile) {
+    font-size: rem(72);
+  }
+
+  @media (min-width: $tablet) {
+    font-size: rem(96);
+  }
+
+  &--h2 {
+    font-size: rem(38);
+
+    @media (min-width: $mobile) {
+      font-size: rem(62);
+    }
+
+    @media (min-width: $tablet) {
+      font-size: rem(88);
+    }
+  }
+}
+
+.title {
+  font-family: $second-family;
+  font-weight: 700;
+  font-size: rem(28);
+  line-height: 125%;
+  color: $text-color;
+
+  @media (min-width: $mobile) {
+    font-size: rem(40);
+  }
+
+  @media (min-width: $tablet) {
+    font-size: rem(48);
+  }
+
+  &--h3 {
+    font-size: rem(20);
+
+    @media (min-width: $mobile) {
+      font-size: rem(24);
+    }
+  }
+}
+
+.main-text {
+  font-size: rem(16);
+  line-height: 150%;
+  color: $gray;
+
+  &--white {
+    color: $white;
+  }
+}
+
+.ibg {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.label {
+  font-size: rem(16);
+  line-height: 150%;
+  color: $main;
+}

@@ -1,0 +1,31 @@
+.form {
+  @media (min-width: $mobile) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: rem(30);
+
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__input {
+    margin-bottom: rem(30);
+
+    @media (min-width: $mobile) {
+      grid-column: 1 / -1;
+    }
+
+    @media (min-width: $tablet) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @media (min-width: $mobile) {
+      grid-column: span 3;
+    }
+  }
+}
