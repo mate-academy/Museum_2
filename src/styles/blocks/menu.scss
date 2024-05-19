@@ -1,7 +1,24 @@
 .menu {
   background-color: $main-backgroung-color;
   height: 100vh;
+  overflow-y: auto;
   box-sizing: border-box;
+
+  @include onTable {
+    background-image: url(../images/menu/bg-menu.png);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (min-height: 700px) {
+      background-size: auto;
+    }
+  }
+
+  @include onDesktop {
+    background-position-x: 80%;
+    background-size: auto;
+  }
 
   &__container {
     position: relative;
@@ -79,6 +96,7 @@
 
   &__button {
     grid-column: 1/ -1;
+    margin-bottom: 20px;
 
     @include onTable {
       grid-column: 1 / 4;
@@ -88,17 +106,20 @@
   &__img {
     display: none;
 
-    @include onTable {
-      display: grid;
-      position: fixed;
-      bottom: 0;
-      left: 173px;
-      width: calc(100% - 343px);
-      z-index: -1;
-    }
+    // @include onTable {
+    //   display: grid;
+    //   position: fixed;
+    //   bottom: 0;
+    //   left: 173px;
+    //   width: calc(100% - 343px);
+    //   z-index: -1;
+    // }
 
     @include onDesktop {
+      display: block;
+      position: fixed;
       left: 50%;
+      bottom: 0;
       width: 640px;
     }
   }
