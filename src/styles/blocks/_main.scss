@@ -19,15 +19,32 @@
 .products {
   @include page-grid;
 
+  position: relative;
+  z-index: 0;
+
   flex-direction: column;
   gap: 60px;
   grid-column: 1 / -1;
+
+  &__title {
+    display: grid;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
 
   &--news {
     display: flex;
     flex-direction: column;
     gap: 50px;
   }
+
+  @include on-tablet {
+    z-index: 1;
+  }
+
 }
 
 .product {
@@ -42,6 +59,10 @@
     overflow: hidden;
     height: 356px;
 
+    @include on-tablet {
+      height: 420px;
+    }
+
     &--news {
       display: flex;
       height: 280px;
@@ -51,10 +72,11 @@
   }
 
   &__photo {
-    object-fit: cover;
 
     &--angels {
-      object-fit: cover;
+      height: 100%;
+
+      // width: 100%;
     }
 
     &--news {
