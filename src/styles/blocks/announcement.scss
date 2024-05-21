@@ -9,7 +9,17 @@
     @include on-tablet {
       @include page-grid;
 
+      width: 740px;
       height: 75px;
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      width: 1200px;
+    }
+
+    @include on-design {
+      width: 1260px;
     }
   }
 
@@ -19,21 +29,28 @@
     @include on-tablet {
       @include button-second;
 
-      width: 210px;
+      width: 240px;
       display: flex;
-      grid-column: 6 / -1;
+      font-family: Roboto, Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: 900;
+      align-items: center;
+      text-align: center;
+      grid-column: 5 / -1;
 
       &--arrow {
-        width: 160px;
+        width: 150px;
         height: 40px;
-        background-image: url(../imagewasp/fire-grass.png);
+
+        /* background-image: url(../imagewasp/fire-grass.png); */
+
         background-position: center;
         background-size: cover;
       }
     }
 
     @include on-desktop {
-      width: 210px;
+      width: 240px;
       grid-column: 10 / -1;
     }
 
@@ -42,6 +59,8 @@
 
       width: 280px;
       display: flex;
+      align-items: center;
+      text-align: center;
       margin-bottom: 40px;
 
       @include on-tablet {
@@ -51,9 +70,17 @@
     }
 
     &--arrow {
-      width: 160px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      width: 150px;
       height: 40px;
-      background-image: url(../imagewasp/fire-grass.png);
+      font-family: Roboto, Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+
+      /* background-image: url(../imagewasp/fire-grass.png); */
+
       background-position: center;
       background-size: cover;
     }
@@ -68,7 +95,9 @@
       &--arrow {
         width: 160px;
         height: 40px;
-        background-image: url(../imagewasp/fire-grass.png);
+
+        /* background-image: url(../imagewasp/fire-grass.png); */
+
         background-position: center;
         background-size: cover;
       }
@@ -79,16 +108,24 @@
     }
   }
 
+  &__event {
+    @include page-grid;
+
+    @include on-tablet {
+      gap: 20px;
+    }
+  }
+
   &__events {
     @include page-grid;
 
     @include on-tablet {
-      gap: 30px;
+      gap: 20px;
     }
   }
 }
 
-.events__text {
+/* .events__text {
   background-size: cover;
   background-position: center;
 
@@ -130,7 +167,7 @@
     2px 2px 10px $white;
     font-size: 1rem;
   }
-}
+} */
 
 .events {
   &__dream {
@@ -164,23 +201,34 @@
   }
 
   &__image {
-    width: 280px;
-    height: 240px;
+    width: 360px;
+    height: 270px;
     transition: all $effect-duration;
 
     @include hover(transform, scale(1.05));
 
     @include on-tablet {
       grid-column: span 3;
-      width: 330px;
-      height: 220px;
+      width: 360px;
+      height: 260px;
     }
 
     @include on-desktop {
       grid-column: span 6;
       object-fit: cover;
-      width: 480px;
-      height: 300px;
+      width: 585px;
+      height: 480px;
+
+      transition: all $effect-duration;
+
+      @include hover(transform, scale(1.05));
+    }
+
+    @include on-design {
+      grid-column: span 6;
+      object-fit: cover;
+      width: 615px;
+      height: 480px;
 
       transition: all $effect-duration;
 
@@ -201,22 +249,26 @@
   }
 
   &__about {
-    width: 280px;
+    width: 100%;
     display: flex;
     flex-direction: column;
 
     @include on-tablet {
-      width: 330px;
+      width: 360px;
     }
 
     @include on-desktop {
-      width: 480px;
+      width: 585px;
+    }
+
+    @include on-design {
+      width: 615px;
     }
   }
 
   &__date {
     display: block;
-    color: $coral;
+    color: $light-steel;
     margin-top: 20px;
     margin-bottom: 10px;
   }
@@ -224,18 +276,23 @@
   &__name {
     font-family: "Days One", sans-serif;
     font-size: 20px;
+    font-weight: 800;
     margin-top: 0;
     margin-bottom: 20px;
 
     @include on-tablet {
       font-size: 22px;
-      width: 330px;
+      width: 360px;
       height: 20px;
     }
 
     @include on-desktop {
       height: 20px;
-      width: 480px;
+      width: 585px;
+    }
+
+    @include on-design {
+      width: 615px;
     }
   }
 
@@ -244,31 +301,38 @@
     margin: 0 0 30px;
 
     @include on-tablet {
-      width: 330px;
-      height: 400px;
+      width: 360px;
+      height: 630px;
       margin: 0 0 20px;
     }
 
     @include on-desktop {
-      width: 480px;
-      height: 260px;
+      width: 585px;
+      height: 400px;
       margin: 0 0 20px;
+    }
+
+    @include on-design {
+      width: 615px;
+      height: 360px;
     }
   }
 
   &__button {
     @include button-prime;
 
-    position: relative;
+    margin-left: 40px;
     grid-column: 1 / -1;
     width: 280px;
 
     @include on-tablet {
       width: 260px;
+      margin-left: 50px;
     }
 
     @include on-desktop {
       width: 270px;
+      margin-left: 157px;
     }
 
     &--container {
@@ -303,7 +367,7 @@
       @include page-grid;
 
       width: 100%;
-      margin-bottom: 20px;
+      margin-bottom: 1px;
     }
   }
 
@@ -320,22 +384,33 @@
 
   &__image-left {
     grid-column: 1 / -1;
-    width: 280px;
-    height: 320px;
+    width: 360px;
+    height: 260px;
     transition: all $effect-duration;
 
     @include hover(transform, scale(1.02));
 
     @include on-tablet {
       grid-column: 1 / 4;
-      width: 330px;
-      height: 400px;
+      width: 360px;
+      height: 260px;
     }
 
     @include on-desktop {
       grid-column: 1 / 5;
-      height: 620px;
-      width: 480px;
+      width: 585px;
+      height: 380px;
+      transition: all $effect-duration;
+
+      @include hover(transform, scale(1.05));
+    }
+
+    @include on-design {
+      grid-column: span 6;
+      object-fit: cover;
+      width: 615px;
+      height: 380px;
+
       transition: all $effect-duration;
 
       @include hover(transform, scale(1.05));
@@ -343,26 +418,30 @@
   }
 
   &__about-right {
-    width: 280px;
+    width: 100%;
     display: flex;
     flex-direction: column;
 
     @include on-tablet {
-      width: 330px;
+      width: 390px;
       grid-column: 4 / -1;
     }
 
     @include on-desktop {
-      width: 570px;
-      grid-column: 5 / -1;
+      width: 585px;
+      grid-column: 7 / -1;
+    }
+
+    @include on-design {
+      width: 615px;
     }
   }
 
   &__date {
     display: block;
-    color: $coral;
+    color: $light-steel;
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 
     @include on-tablet {
       margin-top: 0;
@@ -372,18 +451,24 @@
   &__name {
     font-family: "Days One", sans-serif;
     font-size: 20px;
+    font-weight: 800;
     margin-top: 0;
     margin-bottom: 20px;
 
     @include on-tablet {
       font-size: 22px;
-      width: 330px;
-      height: 40px;
+      margin-bottom: 15px;
+      width: 370px;
+      height: 50px;
     }
 
     @include on-desktop {
+      width: 585px;
       height: 50px;
-      width: 570px;
+    }
+
+    @include on-design {
+      width: 615px;
     }
   }
 
@@ -392,15 +477,19 @@
     margin: 0 0 30px;
 
     @include on-tablet {
-      width: 330px;
-      height: 210px;
+      width: 390px;
+      height: 280px;
       margin: 0 0 20px;
     }
 
     @include on-desktop {
-      width: 570px;
+      width: 585px;
       height: 200px;
       margin: 0 0 20px;
+    }
+
+    @include on-design {
+      width: 615px;
     }
   }
 
@@ -410,10 +499,11 @@
     position: relative;
     grid-column: 1 / -1;
     width: 280px;
+    margin-left: 40px;
 
     @include on-tablet {
       width: 260px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     @include on-desktop {

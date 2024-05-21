@@ -10,7 +10,17 @@
     @include on-tablet {
       @include page-grid;
 
-      margin-bottom: 20px;
+      width: 740px;
+      height: 75px;
+      margin-bottom: 60px;
+    }
+
+    @include on-desktop {
+      width: 1200px;
+    }
+
+    @include on-design {
+      width: 1260px;
     }
   }
 
@@ -22,12 +32,21 @@
 
       width: 240px;
       display: flex;
+      font-family: Roboto, Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: 900;
       grid-column: 5 / -1;
 
+      &--link {
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+
       &--arrow {
-        width: 200px;
-        height: 40px;
-        background-image: url(../imagewasp/fire-grass.png);
+        width: 20px;
+        height: 20px;
+        background-image: url(../imagewasp/arrow.png);
         background-position: center;
         background-size: cover;
       }
@@ -41,15 +60,18 @@
     &--end {
       @include button-second;
 
-      width: 280px;
       display: flex;
+      align-items: center;
+      text-align: center;
+      width: 280px;
+      font-size: 24px;
       grid-column: 1 / -1;
       margin-bottom: 30px;
 
       &--arrow {
         width: 20px;
         height: 20px;
-        background-image: url(../images/arrow.png);
+        background-image: url(../imagewasp/arrow.png);
         background-position: center;
         background-size: cover;
       }
@@ -61,18 +83,18 @@
   }
 
   &__news {
+    width: 100%;
     margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 280px;
     gap: 60px;
 
     @include on-tablet {
       margin-inline: 0;
       padding-inline: 0;
-      width: 100%;
-      height: 960px;
+      width: 360px;
+      height: 990px;
       flex-direction: row;
       justify-content: center;
       gap: 30px;
@@ -81,7 +103,7 @@
 
     @include on-desktop {
       margin-bottom: 20px;
-      height: 900px;
+      height: 990px;
     }
   }
 
@@ -117,7 +139,6 @@
 
     &__link {
       display: flex;
-      align-items: center;
       width: 100%;
       height: 100%;
       transition: $effect-duration;
@@ -125,33 +146,42 @@
       @include hover(transform, scale(1.05));
 
       @include on-desktop {
-        video {
-          width: 50%; /* Установка ширины видеоплеера */
-          height: auto; /* Автоматическое вычисление высоты */
-          border: 1px solid #ccc; /* Добавление рамки вокруг видеоплеера */
-        }
+       // video {
+       //  width: 50%; /* Установка ширины видеоплеера */
+       //  height: auto; /* Автоматическое вычисление высоты */
+       //  border: 1px solid #ccc; /* Добавление рамки вокруг видеоплеера */
+       // }
       }
     }
 
     &__image {
-      display: block;
-      width: 280px;
-      height: 280px;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
       transition: all $effect-duration;
 
       @include hover(transform, scale(1.05));
 
       @include on-tablet {
         grid-column: span 3;
-        width: 330px;
-        height: 330px;
+        width: 360px;
+        height: 420px;
       }
 
       @include on-desktop {
         grid-column: span 6;
         object-fit: cover;
-        height: 570px;
-        width: 570px;
+        width: 585px;
+        height: 630px;
+        transition: all $effect-duration;
+
+        @include hover(transform, scale(1.05));
+      }
+
+      @include on-design {
+        width: 615px;
+        height: 645px;
         transition: all $effect-duration;
 
         @include hover(transform, scale(1.05));
@@ -159,22 +189,22 @@
     }
 
     &__about {
-      width: 280px;
+      width: 100%;
       display: flex;
       flex-direction: column;
 
       @include on-tablet {
-        width: 330px;
+        width: 370px;
       }
 
       @include on-desktop {
-        width: 570px;
+        width: 580px;
       }
     }
 
     &__date {
       display: block;
-      color: $coral;
+      color: $light-steel;
       margin-top: 20px;
       margin-bottom: 10px;
     }
@@ -182,33 +212,43 @@
     &__name {
       font-family:"Days One", sans-serif;
       font-size: 20px;
+      font-weight: 800;
       margin-top: 0;
       margin-bottom: 20px;
 
       @include on-tablet {
         font-size: 24px;
-        width: 330px;
+        width: 360px;
         height: 30px;
       }
 
       @include on-desktop {
-        height: 30px;
-        width: 570px;
+        width: 585px;
+      }
+
+      @include on-design {
+        width: 615px;
       }
     }
 
     &__description {
+      width: 100%;
       color: $gray;
       margin: 0;
 
       @include on-tablet {
-        width: 330px;
-        height: 360px;
+        width: 360px;
+        height: 550px;
       }
 
       @include on-desktop {
-        width: 570px;
-        height: 200px;
+        width: 585px;
+        height: 330px;
+      }
+
+      @include on-design {
+        width: 615px;
+        height: 320px;
       }
     }
   }
