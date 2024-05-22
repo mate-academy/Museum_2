@@ -1,6 +1,9 @@
 .header {
   background-color: $background;
-  height: 100vh;
+  height: 100%;
+
+  // z-index: -1;
+  // position: relative;
 
   &__content {
     display: flex;
@@ -11,6 +14,56 @@
     grid-column: 1 / -1;
   }
 
+  &__bottom {
+    @include page-grid;
+  }
+
+  &__article {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bg-photo-box {
+    display: grid;
+    grid-column: 1 / -1;
+    height: 40vh;
+    margin-top: 40px;
+
+    @include on-tablet {
+      grid-column: 2 / 6;
+
+      margin-top: 70px;
+      height: 45vh;
+    }
+
+    @include on-desctop {
+      grid-column: 7 / -1;
+      height: 85vh;
+      margin-top: 40px;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__bg-photo {
+    display: flex;
+    background-image: url(/src/images/header--img-girl-from-Podil.png);
+    background-size: cover;
+    background-position-y: 20%;
+    width: 88%;
+    margin-inline: auto;
+
+    @include on-tablet {
+      display: flex;
+      width: 100%;
+    }
+  }
+}
+
+.article {
   &__additional-text {
     font-family: $font-family-small;
     font-size: 14px;
@@ -24,6 +77,10 @@
 
     @include on-tablet {
       grid-column: 1 / 3;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 7;
     }
   }
 
@@ -45,6 +102,13 @@
 
       grid-column: 1 / -2;
     }
+
+    @include on-desctop {
+      grid-column: 1 / 7;
+      font-size: 96px;
+      font-weight: 700;
+      line-height: 96px;
+    }
   }
 
   &__main-text {
@@ -64,6 +128,10 @@
         display: none;
       }
     }
+
+    @include on-desctop {
+      grid-column: 1 / 7;
+    }
   }
 
   &__button {
@@ -74,37 +142,9 @@
       margin-top: 50px;
       grid-column: 1 / 4;
     }
-  }
 
-  &__bottom {
-    @include page-grid;
-  }
-
-  &__bg-photo-box {
-    display: grid;
-    grid-column: 1 / -1;
-    height: 40vh;
-    margin-top: 40px;
-
-    @include on-tablet {
-      grid-column: 2 / 6;
-
-      margin-top: 70px;
-      height: 45vh;
-    }
-  }
-
-  &__bg-photo {
-    display: flex;
-    background-image: url(/src/images/header--img-girl-from-Podil.png);
-    background-size: cover;
-    background-position-y: 20%;
-    width: 88%;
-    margin-inline: auto;
-
-    @include on-tablet {
-      display: flex;
-      width: 100%;
+    @include on-desctop {
+      margin-top: 80px;
     }
   }
 }
