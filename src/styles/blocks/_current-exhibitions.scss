@@ -10,24 +10,36 @@
     }
 
     @include on-desctop {
+      grid-column: span 6;
+    }
+
+    &__photo {
+      width: 100%;
+      object-fit: cover;
+
+      &--angels {
+        object-position: 30% 50%;
+      }
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
       grid-column: span 4;
     }
   }
 
-  // &__title {
-  //   grid-column: 1 / -1;
+  &__button {
+    grid-column: 1 / -1;
 
-  //   @include on-tablet {
-  //     grid-column: span 4;
-  //   }
+    @include on-tablet {
+      grid-column: 5 / 2 span;
+    }
 
-  // }
-
-  // &__button {
-  //   grid-column: 1 / -1;
-
-  //   @include on-tablet {
-  //     grid-column: span 2;
-  //   }
-  // }
+    @include on-desctop {
+      grid-column: 10 / 3 span;
+    }
+  }
 }

@@ -1,3 +1,56 @@
 .upcoming-events {
-  display: block;
+  @include page-grid;
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / 2 span;
+    }
+
+    @include on-desctop {
+      grid-column: 10 / 3 span;
+    }
+  }
+
+  &__upcoming-product {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+  }
+}
+
+.upcoming-product {
+  &__img-container {
+    @include on-tablet {
+      height: 420px;
+      grid-column: 1 / 3 span;
+    }
+
+    @include on-desctop {
+      height: 484px;
+    }
+  }
+
+  &__wrapper {
+    @include on-tablet {
+      grid-column: 4 / 3 span;
+    }
+  }
+}
+
+.wrapper {
+  &__button {
+    @include on-desctop {
+      width: 30%;
+    }
+  }
 }

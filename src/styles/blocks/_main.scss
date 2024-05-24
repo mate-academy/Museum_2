@@ -30,7 +30,7 @@
   }
 
   @include on-tablet {
-    // z-index: 1;
+    grid-column: 1 / -1;
   }
 }
 
@@ -39,6 +39,10 @@
 
   @include on-tablet {
     grid-column: span 3;
+  }
+
+  @include on-desctop {
+    grid-column: span 6;
   }
 
   &__img-container {
@@ -50,6 +54,10 @@
       height: 420px;
     }
 
+    @include on-desctop {
+      height: 484px;
+    }
+
     &--news {
       display: flex;
       height: 280px;
@@ -59,8 +67,12 @@
   }
 
   &__photo {
+    width: 100%;
+    object-fit: cover;
+    object-position: 30% 50%;
+
     &--angels {
-      object-position: center;
+      object-position: 30% 50%;
     }
 
     &--news {

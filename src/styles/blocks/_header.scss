@@ -1,9 +1,7 @@
 .header {
   background-color: $background;
-  height: 100%;
-
-  // z-index: -1;
-  // position: relative;
+  background-size: cover;
+  background-attachment: fixed;
 
   &__content {
     display: flex;
@@ -22,8 +20,12 @@
     @include page-grid;
 
     grid-column: 1 / -1;
-    position: relative;
-    z-index: 1;
+
+    @include on-desctop {
+      grid-column: 1 / span 6;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__bg-photo-box {
@@ -40,11 +42,10 @@
     }
 
     @include on-desctop {
-      grid-column: 7 / -1;
-      height: 85vh;
+      grid-column: 7 / span 6;
+      height: 80vh;
       margin-top: 40px;
-      position: relative;
-      z-index: 2;
+      overflow: visible;
     }
   }
 
@@ -60,10 +61,20 @@
       display: flex;
       width: 100%;
     }
+
+    @include on-desctop {
+      display: flex;
+      background-size: 110%;
+      margin-inline: 0;
+    }
   }
 }
 
 .article {
+  @include on-desctop {
+    margin-top: 60px;
+  }
+
   &__additional-text {
     font-family: $font-family-small;
     font-size: 14px;
@@ -80,7 +91,7 @@
     }
 
     @include on-desctop {
-      grid-column: 1 / 7;
+      grid-column: 1 / -1;
     }
   }
 
@@ -104,7 +115,7 @@
     }
 
     @include on-desctop {
-      grid-column: 1 / 7;
+      grid-column: 1 / -1;
       font-size: 96px;
       font-weight: 700;
       line-height: 96px;
@@ -130,7 +141,7 @@
     }
 
     @include on-desctop {
-      grid-column: 1 / 7;
+      grid-column: 1 / -1;
     }
   }
 
