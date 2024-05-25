@@ -13,6 +13,10 @@
     @include on-desctop {
       padding: 64px 0 164px;
     }
+
+    &--visit-block {
+      padding: 0;
+    }
   }
 }
 
@@ -59,25 +63,37 @@
     }
 
     &--news {
-      display: flex;
-      height: 280px;
-      overflow: hidden;
-      width: 100%;
+      position: relative;
+      z-index: 0;
+      height: 0;
+      padding-bottom: 100%;
+
+      @include on-desctop {
+        height: 370px;
+        padding-bottom: 0;
+      }
     }
   }
 
   &__photo {
     width: 100%;
     object-fit: cover;
-    object-position: 30% 50%;
 
     &--angels {
       object-position: 30% 50%;
     }
 
     &--news {
-      object-fit: cover;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+
+      &--cats {
+        @include on-desctop {
+          object-position: 50% 0;
+        }
+      }
     }
   }
 
