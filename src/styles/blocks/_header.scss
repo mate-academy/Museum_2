@@ -1,7 +1,6 @@
 .header {
   background-color: $background;
-  background-size: cover;
-  background-attachment: fixed;
+  overflow: hidden;
 
   &__content {
     display: flex;
@@ -30,9 +29,12 @@
 
   &__bg-photo-box {
     display: grid;
+    position: relative;
+    z-index: 0;
     grid-column: 1 / -1;
     height: 40vh;
     margin-top: 40px;
+    overflow: hidden;
 
     @include on-tablet {
       grid-column: 2 / 6;
@@ -43,17 +45,16 @@
 
     @include on-desctop {
       grid-column: 7 / span 6;
-      height: 80vh;
-      margin-top: 40px;
-      overflow: visible;
+      height: 84vh;
+      margin-top: 46px;
+      pointer-events: none;
     }
   }
 
   &__bg-photo {
     display: flex;
-    background-image: url(/src/images/header--img-girl-from-Podil.png);
-    background-size: cover;
-    background-position-y: 20%;
+    position: absolute;
+    top: -15%;
     width: 88%;
     margin-inline: auto;
 
@@ -63,9 +64,12 @@
     }
 
     @include on-desctop {
-      display: flex;
-      background-size: 110%;
-      margin-inline: 0;
+      display: block;
+      top: -8%;
+      left: 5%;
+      width: auto;
+      height: 120%;
+      min-width: 100%;
     }
   }
 }
