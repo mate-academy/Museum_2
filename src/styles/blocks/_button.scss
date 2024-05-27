@@ -1,12 +1,15 @@
 .button {
+  display: flex;
+  align-items: center;
   font-family: $font-family-small;
   font-size: 16px;
   font-weight: 600;
   line-height: 16px;
-  text-align: center;
+  justify-content: center;
   background: $c-main;
   color: $c-white;
   border: 1px solid $c-main;
+  text-decoration: none;
   cursor: pointer;
 
   height: 60px;
@@ -51,6 +54,15 @@
 
     &:hover {
       background: $c-white;
+      color: $button-hover;
+    }
+
+    &:active {
+      color: $button-pressed;
+    }
+
+    &:disabled {
+      color: $button-disabled;
     }
 
     @include on-tablet {

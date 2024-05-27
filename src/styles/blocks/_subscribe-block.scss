@@ -38,23 +38,29 @@
     background-color: $c-white;
     color: $c-black;
     width: 100%;
+    text-decoration: none;
 
-    // position: relative;
-    transform: scale(1);
-    bottom: -40px;
-    text-decoration: underline;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $c-black;
+      transform-origin: bottom left;
+    }
 
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   display: block;
-    //   bottom: -40px;
-    //   height: 1px;
-    //   width: 100%;
-    //   background-color: $c-black;
+    &:hover {
+      color: $button-hover;
+    }
 
-    //   transform: scale(1);
-    // }
+    &:focus {
+      color: $c-main;
+      &::after {
+        background-color: $c-main;
+      }
+    }
 
     grid-column: 1 / -1;
 
@@ -67,15 +73,15 @@
     }
   }
 
-    &__button {
-      grid-column: 1 / -1;
+  &__button {
+    grid-column: 1 / -1;
 
-      @include on-tablet {
-        grid-column: 1 / 4;
-      }
-
-      @include on-desctop {
-        grid-column: 1 / 4;
-      }
+    @include on-tablet {
+      grid-column: 1 / 4;
     }
+
+    @include on-desctop {
+      grid-column: 1 / 4;
+    }
+  }
 }
