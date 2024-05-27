@@ -13,6 +13,8 @@
 
   &__bottom {
     @include page-grid;
+
+    justify-content: space-between;
   }
 
   &__article {
@@ -33,13 +35,11 @@
     z-index: 0;
     grid-column: 1 / -1;
     height: 40vh;
-    margin-top: 40px;
-    overflow: hidden;
+    margin: 0;
+    overflow: visible;
 
     @include on-tablet {
       grid-column: 2 / 6;
-
-      margin-top: 70px;
       height: 45vh;
     }
 
@@ -54,12 +54,14 @@
   &__bg-photo {
     display: flex;
     position: absolute;
-    top: -15%;
+    top: 0;
+    left: 6%;
     width: 88%;
-    margin-inline: auto;
+
 
     @include on-tablet {
       display: flex;
+      left: 0%;
       width: 100%;
     }
 
@@ -86,7 +88,7 @@
     line-height: 19.6px;
 
     color: $c-white;
-    margin: 0;
+    margin: 0 0 10px;
 
     grid-column: 1 / -1;
 
@@ -105,8 +107,7 @@
     font-weight: 700;
     line-height: 48px;
     color: $c-white;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin: 0 0 30px;
     grid-column: 1 / -1;
 
     @include on-tablet {
@@ -120,6 +121,7 @@
 
     @include on-desctop {
       grid-column: 1 / -1;
+      margin-bottom: 30px;
       font-size: 96px;
       font-weight: 700;
       line-height: 96px;
@@ -134,7 +136,7 @@
 
     color: $c-white;
     grid-column: 1 / -1;
-    margin: 0;
+    margin: 0 0 40px;
 
     @include on-tablet {
       grid-column: 1 / 4;
@@ -151,7 +153,7 @@
 
   &__button {
     grid-column: 1 / -1;
-    margin-top: 40px;
+    margin-bottom: 40px;
 
     @include on-tablet {
       margin-top: 50px;

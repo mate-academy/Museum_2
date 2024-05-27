@@ -1,35 +1,33 @@
 .subscribe-block {
+  @include page-grid;
+
   &__title {
-    font-family: $font-family-big;
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 35px;
+    margin: 0 0 20px;
     grid-column: 1 / -1;
 
-    @include on-tablet {
-      font-size: 40px;
-      font-weight: 700;
-      line-height: 50px;
+    @include on-desctop {
+      grid-column: 1 / 6 span;
+      margin: 0 0 50px;
     }
   }
 
-  &__descriptin {
-    font-family: $font-family-small;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+  &__description {
+    display: grid;
+    margin: 0 0 50px;
     grid-column: 1 / -1;
 
     @include on-tablet {
       grid-column: 1 / -2;
+    }
+
+    @include on-desctop {
+      grid-column: 7 / 6 span;
     }
   }
 
   &__input {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
     margin-bottom: 30px;
 
     font-family: $font-family-small;
@@ -40,26 +38,44 @@
     background-color: $c-white;
     color: $c-black;
     width: 100%;
-    position: relative;
 
-    &::after {
-      content: '44444';
-      position: absolute;
-      bottom: 4px;
-      display: block;
-      width: 100px;
-      height: 20px;
-      background-color: yellow;
-      text-decoration-line: underline;
+    // position: relative;
+    transform: scale(1);
+    bottom: -40px;
+    text-decoration: underline;
 
-      visibility: visible;
-      transform: scale(1);
-    }
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   display: block;
+    //   bottom: -40px;
+    //   height: 1px;
+    //   width: 100%;
+    //   background-color: $c-black;
+
+    //   transform: scale(1);
+    // }
 
     grid-column: 1 / -1;
 
     @include on-tablet {
-      grid-column: 1 / 4;
+      grid-column: 1 / 5;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 6;
     }
   }
+
+    &__button {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-desctop {
+        grid-column: 1 / 4;
+      }
+    }
 }
