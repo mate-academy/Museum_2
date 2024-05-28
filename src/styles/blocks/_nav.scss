@@ -44,21 +44,6 @@
     line-height: 22px;
     letter-spacing: 2px;
 
-    @include on-tablet {
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 57.6px;
-    }
-
-    &--footer {
-      font-family: $font-family-small;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 24px;
-      color: $c-white;
-      text-decoration: none;
-    }
-
     &::after {
       content: '';
       position: absolute;
@@ -75,6 +60,40 @@
 
     &:hover::after {
       transform: scale(1);
+    }
+
+    @include on-tablet {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 57.6px;
+    }
+
+    &--footer {
+      position: relative;
+      font-family: $font-family-small;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $c-white;
+      text-decoration: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $c-white;
+
+        transition: $main-transition;
+        transform: scale(0);
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
     }
   }
 }

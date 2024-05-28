@@ -29,7 +29,7 @@
     margin: 0;
     padding: 0;
     margin-bottom: 30px;
-
+    position: relative;
     font-family: $font-family-small;
     font-size: 16px;
     font-weight: 400;
@@ -43,15 +43,18 @@
     &::after {
       content: '';
       position: absolute;
-      bottom: -2px;
-      left: 0;
+      bottom: -4px;
+      display: block;
       height: 1px;
       width: 100%;
-      background-color: $c-black;
-      transform-origin: bottom left;
+      background-color: $c-gray;
+
+      transform: scale(1);
+      transform-origin: left;
     }
 
-    &:hover {
+    &:hover::after {
+      background-color: $c-white;
       color: $button-hover;
     }
 
