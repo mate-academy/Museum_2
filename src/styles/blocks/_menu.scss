@@ -1,0 +1,206 @@
+.menu {
+  background: $background;
+  overflow: auto;
+
+  &__content {
+    height: 100vh;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+      grid-column: 1 / -1;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__bottom {
+    @include page-grid;
+  }
+
+  &__article-menu {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+
+    @include on-desctop {
+      display: flex;
+      flex-direction: column;
+      grid-column: 1 / span 6;
+
+      --columns: 6;
+
+      margin: 0;
+      padding-inline: 0;
+      margin-inline: 0;
+      position: relative;
+      top: 0;
+      z-index: 1;
+    }
+  }
+
+  &__bg-photo-box {
+    display: none;
+
+    @include on-tablet {
+      display: grid;
+      grid-column: 2 / 4 span;
+      margin-top: 30px;
+      position: relative;
+      z-index: 0;
+      height: 45vh;
+      overflow: visible;
+    }
+
+    @include on-desctop {
+      grid-column: span 6;
+      height: 90vh;
+      margin-top: 0;
+    }
+  }
+
+  &__bg-photo {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      position: absolute;
+      top: -15%;
+      left: 0;
+      height: 120%;
+      width: auto;
+      min-width: 120%;
+    }
+
+    @include on-desctop {
+      display: block;
+      top: -14%;
+      left: 0;
+      height: 110%;
+      width: auto;
+      min-width: 110%;
+    }
+  }
+}
+
+.article-menu {
+  &__top-content {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include on-desctop {
+      display: flex;
+      justify-content: flex-start;
+      column-gap: 84px;
+    }
+  }
+
+  &__additional-text {
+    font-family: $font-family-small;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+
+    color: $c-white;
+    margin: 10px 0 0;
+    grid-column: 1 / -1;
+
+    &--bold {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+      margin: 0;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / span 3;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__adress {
+    font-family: $font-family-small;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    color: $c-white;
+    margin: 20px 0 0;
+    grid-column: 1 / -1;
+
+    @include hover(transform, scale(1.1));
+
+    &--link {
+      font-family: $font-family-small;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      color: $c-white;
+      text-decoration: none;
+    }
+
+    @include on-tablet {
+      grid-column: 3 / 6;
+
+      margin: 0;
+    }
+
+    @include on-desctop {
+      grid-column: 4 / span 3;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__nav {
+    color: $c-white;
+    font-family: $font-family-big;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+
+    margin: 40px 0;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+
+      margin: 50px 0;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    margin-top: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+
+      margin-top: 40px;
+    }
+  }
+}

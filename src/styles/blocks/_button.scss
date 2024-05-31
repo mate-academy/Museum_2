@@ -1,0 +1,73 @@
+.button {
+  display: flex;
+  align-items: center;
+  font-family: $font-family-small;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  justify-content: center;
+  background: $c-main;
+  color: $c-white;
+  border: 1px solid $c-main;
+  text-decoration: none;
+  cursor: pointer;
+
+  height: 60px;
+  width: 100%;
+
+  &:hover {
+    background: $button-hover;
+    border-color: $button-hover;
+  }
+
+  &:active {
+    background: $button-pressed;
+    border-color: $button-pressed;
+  }
+
+  &:disabled {
+    background: $button-disabled;
+    border-color: $button-disabled;
+  }
+
+  &--header {
+    @include on-desctop {
+      width: 48%;
+    }
+  }
+
+  &--menu {
+    @include on-desctop {
+      width: 48%;
+    }
+  }
+
+  &--white {
+    background: $c-white;
+    color: $c-main;
+    margin: 30px 0 0;
+    gap: 8px;
+    display: flex;
+    justify-content: center;
+    place-items: center center;
+    order: 2;
+
+    &:hover {
+      background: $c-white;
+      color: $button-hover;
+    }
+
+    &:active {
+      color: $button-pressed;
+    }
+
+    &:disabled {
+      color: $button-disabled;
+    }
+
+    @include on-tablet {
+      order: 0;
+      margin: 0;
+    }
+  }
+}

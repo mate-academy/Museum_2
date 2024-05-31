@@ -1,0 +1,54 @@
+.current-exhib {
+  @include page-grid;
+
+  margin-bottom: 120px;
+
+  @include on-tablet {
+    margin-bottom: 160px;
+  }
+
+  @include on-desctop {
+    margin-bottom: 200px;
+  }
+
+  &__product {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 55% 5% 10% 16% 10%;
+    }
+
+    @include on-desctop {
+      grid-column: span 6;
+    }
+
+    &__photo {
+      &--angels {
+        object-position: 30% 50%;
+      }
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / 2 span;
+    }
+
+    @include on-desctop {
+      grid-column: 10 / 3 span;
+    }
+  }
+}

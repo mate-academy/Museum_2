@@ -1,0 +1,133 @@
+.main {
+  background-color: $c-white;
+  display: grid;
+
+  &__content {
+    grid-column: 1 / -1;
+    padding: 90px 0 120px;
+
+    @include on-tablet {
+      padding: 72px 0 102px;
+    }
+
+    @include on-desctop {
+      padding: 64px 0 164px;
+    }
+
+    &--visit-block {
+      padding: 0;
+    }
+  }
+}
+
+.products {
+  @include page-grid;
+
+  flex-direction: column;
+  gap: 60px;
+  grid-column: 1 / -1;
+
+  &--news {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  @include on-tablet {
+    grid-column: 3fr 3fr;
+  }
+}
+
+.product {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: span 3;
+  }
+
+  @include on-desctop {
+    grid-column: span 6;
+  }
+
+  &__img-container {
+    display: flex;
+    overflow: hidden;
+    height: 356px;
+
+    @include on-tablet {
+      height: 420px;
+    }
+
+    @include on-desctop {
+      height: 484px;
+    }
+
+    &--news {
+      position: relative;
+      z-index: 0;
+      height: 0;
+      padding-bottom: 100%;
+
+      @include on-desctop {
+        height: 370px;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+
+    &--angels {
+      object-position: 30% 50%;
+    }
+
+    &--news {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+
+      &--cats {
+        @include on-desctop {
+          object-position: 50% 0;
+        }
+      }
+    }
+  }
+
+  &__date {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-main;
+
+    &--news {
+      font-family: $font-family-small;
+      font-size: 14px;
+      line-height: 19.6px;
+      color: $c-black;
+    }
+  }
+
+  &__title {
+    font-family: $font-family-big;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+  }
+
+  &__description {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-gray;
+  }
+
+  &__button {
+    margin-top: 30px;
+  }
+}

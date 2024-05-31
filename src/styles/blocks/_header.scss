@@ -1,0 +1,169 @@
+.header {
+  background-color: $background;
+  overflow: auto;
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    grid-column: 1 / -1;
+  }
+
+  &__bottom {
+    @include page-grid;
+
+    justify-content: space-between;
+  }
+
+  &__article {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+
+    @include on-desctop {
+      grid-column: 1 / span 6;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__bg-photo-box {
+    display: grid;
+    position: relative;
+    z-index: 0;
+    grid-column: 1 / -1;
+    height: 40vh;
+    margin: 0;
+    overflow: visible;
+
+    @include on-tablet {
+      grid-column: 2 / 6;
+      height: 45vh;
+    }
+
+    @include on-desctop {
+      grid-column: 7 / span 6;
+      height: 84vh;
+      margin-top: 46px;
+      pointer-events: none;
+    }
+  }
+
+  &__bg-photo {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 6%;
+    width: 88%;
+    height: 88%;
+
+    @include on-tablet {
+      display: flex;
+      left: 0%;
+      height: 100%;
+      width: 100%;
+    }
+
+    @include on-desctop {
+      display: block;
+      top: -8%;
+      left: 5%;
+      width: auto;
+      height: 120%;
+      min-width: 120%;
+    }
+  }
+}
+
+.article {
+  margin-bottom: 40px;
+
+  @include on-desctop {
+    margin-top: 60px;
+  }
+
+  &__additional-text {
+    font-family: $font-family-small;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+
+    color: $c-white;
+    margin: 0 0 10px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__title {
+    font-family: $font-family-big;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    color: $c-white;
+    margin: 0 0 30px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 72px;
+      margin-bottom: 20px;
+
+      grid-column: 1 / -2;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / -1;
+      margin-bottom: 30px;
+      font-size: 96px;
+      font-weight: 700;
+      line-height: 96px;
+    }
+  }
+
+  &__main-text {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    color: $c-white;
+    grid-column: 1 / -1;
+    margin: 0 0 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+
+      &--br {
+        display: none;
+      }
+    }
+
+    @include on-desctop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 50px;
+      grid-column: 1 / 4;
+    }
+
+    @include on-desctop {
+      margin-top: 80px;
+    }
+  }
+}
