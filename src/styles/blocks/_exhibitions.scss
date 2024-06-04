@@ -1,0 +1,161 @@
+.exhibitions {
+  margin-top: 90px;
+
+  @include tablet {
+    @include grid;
+
+    min-width: 690px;
+    margin-top: 100px;
+  }
+
+  @include desktop {
+    width: 1170px;
+    margin-top: 110px;
+  }
+
+  &__article {
+    @include tablet {
+      width: 329px;
+    }
+
+    @include desktop {
+      width: 570px;
+    }
+
+    &--first {
+      @include tablet {
+        grid-column: 1/4;
+        grid-row: 2;
+      }
+
+      @include desktop {
+        grid-column: span 6;
+      }
+    }
+
+    &--second {
+      @include tablet {
+        grid-column: 4/6;
+        grid-row: 2;
+      }
+
+      @include desktop {
+        grid-column: 7 / span 6;
+      }
+    }
+  }
+
+  &__title {
+    @include tablet {
+      grid-column: span 3;
+      grid-row: 1;
+      align-self: center;
+
+      font-size: 40px;
+      line-height: 50px;
+      width: 570px;
+    }
+
+    @include desktop {
+      grid-column: 1/6;
+      font-size: 48px;
+      line-height: 57.6px;
+      width: 570px;
+    }
+  }
+
+  &__image--link {
+    margin-top: 60px;
+
+    @include hover(transform, scale(1.03));
+
+    @include tablet {
+      margin-top: 70px;
+    }
+  }
+
+  &__image {
+    height: 356px;
+    width: 100%;
+    object-fit: fill;
+
+    @include tablet {
+      height: 420px;
+    }
+
+    @include desktop {
+      height: 484px;
+    }
+  }
+
+  &:nth-of-type(1) .exhibitions__image {
+    object-fit: cover;
+    object-position: left;
+  }
+
+  &:nth-of-type(2) .exhibitions__image {
+    object-fit: cover;
+  }
+
+  &__date {
+    margin-top: 20px;
+    color: $main-color;
+
+    @include tablet {
+      margin-top: 30px;
+    }
+  }
+
+  &__name {
+    margin-top: 10px;
+
+    font-family: $bold-font-family;
+    font-size: 20px;
+    line-height: 25px;
+    color: $black-color;
+
+    @include tablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+    min-width: 329px;
+    color: $gray-color;
+
+    &--second {
+      @include tablet {
+        margin-top: 50px;
+      }
+
+      @include desktop {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__button__arrow {
+    @include tablet {
+      grid-column: 5/6;
+      grid-row: 1;
+    }
+
+    @include desktop {
+      grid-column: 10 / span 3;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    @include desktop {
+      margin-top: 50px;
+    }
+  }
+}
