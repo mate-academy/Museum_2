@@ -1,0 +1,203 @@
+.show {
+  padding-top: 90px;
+  box-sizing: border-box;
+
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-top: 140px;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include on-tablet {
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__container {
+    @include on-tablet {
+      padding-top: 50px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 45px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__container1 {
+    padding-top: 60px;
+
+    @include on-tablet {
+      padding: 0;
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__container2 {
+    padding-top: 60px;
+
+    @include on-tablet {
+      padding: 0;
+      grid-column: 4 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__text {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 35px;
+
+    @include on-tablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+
+  &__text1 {
+    padding-top: 20px;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-orenge;
+  }
+
+  &__text2 {
+    padding-top: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+  }
+
+  &__text3 {
+    padding-top: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__img {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 60px;
+
+    @include on-tablet {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: 210px;
+      align-self: center;
+      margin-bottom: 50px;
+      background-color: $c-white;
+      border: 2px solid $c-orenge;
+      color: $c-orenge;
+      position: relative;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+
+  &__button::after {
+    content: url(../images/arrow.png);
+    position: absolute;
+    margin-left: 8px;
+    top: 53%;
+    transform: translateY(-50%);
+  }
+
+  &__button2 {
+    margin-top: 30px;
+
+    @include on-desktop {
+      align-items: start;
+      width: 270px;
+      margin-top: 50px;
+    }
+  }
+
+  &__button1 {
+    margin-top: 30px;
+    background-color: $c-white;
+    border: 2px solid $c-orenge;
+    color: $c-orenge;
+    position: relative;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__button1::after {
+    content: url(../images/arrow.png);
+    position: absolute;
+    margin-left: 8px;
+    top: 53%;
+    transform: translateY(-50%);
+  }
+}
+
+.one {
+  background-image: url(../images/images2.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 356px;
+
+  @include on-tablet {
+    height: 420px;
+  }
+
+  @include on-desktop {
+    height: 484px;
+  }
+}
+
+.two {
+  background-image: url(../images/images1.png);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 356px;
+
+  @include on-tablet {
+    height: 420px;
+  }
+
+  @include on-desktop {
+    height: 484px;
+  }
+}
