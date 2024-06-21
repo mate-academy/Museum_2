@@ -22,7 +22,6 @@ document.querySelector('.header__menu').addEventListener('click', function(event
   event.preventDefault();
   const nav = document.querySelector('.nav');
   nav.classList.toggle('nav--open');
-  // body.style.overflowY  
 });
 
 // Обробник кліку для кнопки закриття меню
