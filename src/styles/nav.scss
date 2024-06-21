@@ -1,0 +1,211 @@
+.nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: 100%;
+  height: 100vh;
+  z-index: 1000;
+  overflow-y: auto;
+
+  box-sizing: border-box;
+  background-color: $background;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &__header {
+    height: 80px;
+
+    @include flex-row-btwn;
+
+    margin-bottom: 10px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    @include desktop {
+      height: 90px;
+      margin-bottom: 30px;
+    }
+
+    &-logo {
+      @include flex-center;
+      height: 40px;
+      width: 123px;
+
+      & img {
+        width: 100%;
+      }
+    }
+
+    &-wrapper {
+      flex-direction: row;
+      @include flex-center;
+
+      @include tablet {
+        flex-direction: row-reverse;
+      }
+
+      @include desktop {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__header-close-button {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__main-info {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 40px;
+
+    @include tablet {
+      flex-direction: row;
+
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      flex-direction: row;
+
+      margin-bottom: 70px;
+    }
+  }
+
+  &__shedule {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-right: 124px;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+      margin-right: 84px;
+    }
+
+    &-title {
+      @include text($font-text-14, 20px, $white);
+    }
+
+    &-text {
+      @include text($font-text-16, 24px, $white);
+      font-weight: 600;
+    }
+  }
+
+  &__location {
+    &-title {
+      @include text($font-text-14, 20px, $white);
+    }
+
+    &-text {
+      @include text($font-text-16, 24px, $white);
+      font-weight: 600;
+    }
+  }
+
+  &__menu-list {
+    margin-bottom: 40px;
+
+    padding-bottom: 1px;
+    border-bottom: 1px solid $white;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
+
+    & a > h5 {
+      @include title(20px, 30px, $white);
+
+      @include tablet {
+        margin-bottom: 50px;
+        @include title(48px, 58px, $white);
+      }
+
+      @include desktop {
+        margin-bottom: 60px;
+        @include title(48px, 58px, $white);
+      }
+    }
+  }
+
+  &__menu-list a {
+    display: block;
+
+    &:hover h5 {
+      transition: border-bottom, ease-out, 0.3s;
+      @include hover(border-bottom, 1px solid $white);
+    }
+  }
+
+  &__menu-list a:nth-child(1),
+  &__menu-list a:nth-child(2) {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__menu-list a:nth-child(3) {//last element
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 30px;
+  }
+
+  &__img-container {
+    display: flex;
+    align-self: center;
+    width: 422px;
+    height: 466px;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include desktop {
+      width: 624px;
+      height: 698px;
+      position: relative;
+      left: 55px;
+      // bottom: 50px;
+    }
+  }
+
+  /* Показуємо .nav коли доданий клас .nav--open */
+  &--open {
+    display: block;
+    // overflow: hidden;
+  }
+
+  &--closed {
+    display: none;
+  }
+}

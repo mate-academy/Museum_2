@@ -1,7 +1,115 @@
 @import "utils";
 @import "fonts";
-@import "typography";
+
+@import "./normalize.css";
+@import "./button.scss";
+@import "./container.scss";
+@import "./nav.scss";
+@import "./header.scss";
+@import "./main-section.scss";
+@import "./actual-events.scss";
+@import "./event.scss";
+@import "./nearest-events.scss";
+@import "./plan-visit.scss";
+@import "./news.scss";
+@import "./subscribe.scss";
+@import "./footer.scss";
+
+main {
+  display: block;
+}
 
 body {
-  background: $c-gray;
+  display: block;
+  box-sizing: border-box;
+  background: $white;
+  margin: 0;
+
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  margin-block: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $white;
+}
+
+p {
+  margin-block: 0;
+}
+
+.language {
+  display: inline-block;
+
+  &--header {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  margin-left: 40px;
+
+  @include mobile {
+    margin-right: 30px;
+  }
+
+  &__changer {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  &__options {
+    display: none;
+    position: absolute;
+    background-color: white;
+    /* stylelint-disable-next-line */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  &__options a {
+    display: block;
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  &__options a:hover {
+    background-color: $main;
+  }
+
+  &:hover &__options {
+    display: block;
+  }
+
+  &.selected &__options {
+    display: none;
+  }
+
+  &__changer span {
+    margin-right: 5px;
+  }
+
+  &__changer a::content {
+    color: $white;
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.active {
+  display: block;
 }

@@ -1,0 +1,101 @@
+.actual-events {
+  width: 100%;
+  height: auto;
+
+  margin-bottom: 120px;
+
+  @include tablet {
+    margin-bottom: 160px;
+  }
+
+  @include desktop {
+    margin-bottom: 200px;
+  }
+
+  &__title-wrapper {
+    margin-top: 90px;
+    margin-bottom: 60px;
+
+    @include tablet {
+      margin-top: 100px;
+      margin-bottom: 75px;
+
+      @include flex-between;
+      flex-direction: row;
+    }
+
+    @include desktop {
+      margin-top: 110px;
+      margin-bottom: 70px;
+
+      @include flex-between;
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    @include title(28px, 35px, $black);
+
+    @include tablet {
+      width: max-content;
+      @include title(40px, 50px, $black);
+    }
+
+    @include desktop {
+      @include title(48px, 57.6px, $black);
+    }
+  }
+
+  &__events-wrapper {
+    display: block;
+
+    @include tablet {
+      @include flex-row-btwn;
+    }
+
+    @include desktop {
+      @include flex-row-btwn;
+    }
+  }
+
+  &__event {
+    &--1 {
+      margin-bottom: 0;
+
+      @include mobile {
+        margin-bottom: 60px;
+      }
+    }
+
+    &--2 {
+      margin-bottom: 0;
+
+      @include mobile {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__event-img-container {
+    display: inline-table;
+
+    max-height: 356px;
+
+    margin-bottom: 20px;
+
+    @include tablet {
+      max-height: 420px;
+      width: $width-tab;
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__archive-button {
+    display: none;
+
+    @include mobile {
+      display: flex;
+    }
+  }
+}

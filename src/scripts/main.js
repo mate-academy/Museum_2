@@ -1,1 +1,44 @@
 'use strict';
+
+const body = document.querySelector('body');
+
+// Change language in menu
+document.querySelectorAll('.language__options a').forEach(option => {
+  option.addEventListener('click', function(event) {
+    event.preventDefault();
+    const selectedLang = this.getAttribute('data-lang');
+    document.querySelector('.selected-language').textContent = this.textContent;
+    document.querySelector('.language').classList.add('selected');
+    alert('Selected language: ' + selectedLang);
+  });
+});
+
+document.querySelector('.language__changer').addEventListener('mouseenter', function() {
+  document.querySelector('.language').classList.remove('selected');
+});
+
+// Обробник кліку для кнопки меню
+document.querySelector('.header__menu').addEventListener('click', function(event) {
+  event.preventDefault();
+  const nav = document.querySelector('.nav');
+  nav.classList.toggle('nav--open');
+  // body.style.overflowY  
+});
+
+// Обробник кліку для кнопки закриття меню
+document.querySelector('.nav__header-close-button').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('.nav').classList.remove('nav--open');
+});
+
+// Закриття після вибору посилання з меню
+document.addEventListener('DOMContentLoaded', function () {
+  const menuLinks = document.querySelectorAll('.nav__menu-list a');
+  const nav = document.querySelector('.nav');
+
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      nav.classList.remove('nav--open');
+    });
+  });
+});

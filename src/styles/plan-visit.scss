@@ -1,0 +1,69 @@
+.plan-visit {
+  display: flex;
+  background-color: $background;
+
+  height: 416px;
+
+  @include tablet {
+    height: 516px;
+  }
+
+  @include desktop {
+    height: 800px;
+  }
+
+  &__title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+
+    @include title(38px, 38px, $white);
+
+    @include tablet {
+      width: $width-desk;
+      margin-top: 80px;
+
+      @include title(62px, 62px, $white);
+    }
+
+    @include desktop {
+      width: calc($width-desk + 100px); // 670px
+      height: 200px;
+      margin-top: 206px;
+      margin-bottom: 10px;
+
+      @include title(80px, 80px, $white);
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    height: 70px;
+
+    @include mobile {
+      height: 120px;
+      width: $width-mob;
+    }
+
+    @include text($font-text-16, 24px, $white);
+
+    @include tablet {
+      margin-bottom: 60px;
+      width: 450px;
+    }
+
+    @include desktop {
+      margin-bottom: 50px;
+      width: 470px;
+      height: 70px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+  }
+}
