@@ -1,0 +1,45 @@
+.exhibitions {
+  &__content {
+    @include tablet {
+      @include page-grid;
+
+      grid-template-rows: 60px 1fr;
+      row-gap: 70px;
+    }
+  }
+
+  &__title {
+    @include tablet {
+      grid-column: 1/5;
+      grid-row: 1/2;
+    }
+
+    @include desktop {
+      grid-column: 1/6;
+    }
+  }
+
+  &__button {
+    @include tablet {
+      grid-column: 5/7;
+      grid-row: 1/2;
+    }
+
+    @include desktop {
+      grid-column: 10/13;
+    }
+  }
+
+  &__article {
+    @include tablet {
+      grid-column: span 3;
+      display: flex;
+      flex-direction: column;
+      justify-items: end;
+    }
+
+    @include desktop {
+      grid-column: span 6;
+    }
+  }
+}

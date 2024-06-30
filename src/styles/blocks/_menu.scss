@@ -1,0 +1,108 @@
+.menu {
+  height: 100vh;
+  background-color: $background-green-color;
+  color: $white-text-color;
+  overflow: hidden;
+
+  &__content {
+    @include tablet {
+      @include page-grid;
+    }
+  }
+
+  &__top-bar {
+    @include tablet {
+      grid-column: 1/-1;
+      margin-bottom: 30px;
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include tablet {
+      grid-column: span 2;
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 19.6px;
+  }
+
+  &__info {
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  &__address {
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 0;
+      grid-column: 3/6;
+    }
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+
+    @include desktop {
+      grid-column: 1/7;
+    }
+  }
+
+  &__button {
+    @include tablet {
+      margin-bottom: 30px;
+      grid-column: span 3;
+    }
+
+    @include desktop {
+      margin-bottom: 108px;
+      grid-column: 1/4;
+    }
+  }
+
+  &__bg-img {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      background-image: url(../images/menu/menu-bg.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      grid-column: 2/-2;
+      height: 466px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include desktop {
+      display: block;
+      background-image: url(../images/menu/menu-bg.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 663px;
+      width: 45vw;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
