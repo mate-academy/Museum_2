@@ -1,0 +1,170 @@
+.menu {
+  background-color: $background-color-section;
+  box-sizing: border-box;
+
+  height: 100vh;
+  overflow: auto;
+
+  &__top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__content {
+    @include content-padding-inline;
+    @include page-grid;
+
+    row-gap: 40px;
+
+    &__textbox {
+      display: grid;
+      grid-column: 1 / -1;
+      row-gap: 20px;
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+      }
+    }
+  }
+
+  &__schedule {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1;
+    }
+
+    &--text {
+      margin: 0;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: $background-color-main;
+    }
+
+    &--info {
+      margin: 0;
+      color: $background-color-main;
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+  }
+
+  &__address {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 3;
+    }
+
+    &--text {
+      margin: 0;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      color: $background-color-main;
+    }
+
+    &--info {
+      margin: 0;
+      color: $background-color-main;
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 24px;
+      text-decoration: none;
+    }
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+
+    padding-bottom: 40px;
+    border-bottom: 1px solid $background-color-main;
+
+    @include on-desktop {
+      grid-column: 1 / 8;
+    }
+  }
+
+  &__btn {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__picture {
+    bottom: 0;
+    width: 70%;
+    position: fixed;
+    justify-self: center;
+
+    @include on-phone {
+      display: none;
+    }
+
+    @include on-tablet {
+      display: block;
+      grid-column: 2 / -2;
+      width: 100%;
+      position: static;
+    }
+
+    @include on-desktop {
+      width: 40%;
+      right: 0;
+    }
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    margin: 0;
+    row-gap: 20px;
+  }
+
+  &__item {
+    &:hover {
+      @include hover(transform, scale(1.1));
+    }
+  }
+
+  &__link {
+    color: $background-color-main;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    cursor: pointer;
+    text-decoration: none;
+
+    @include on-tablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+  }
+}

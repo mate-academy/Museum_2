@@ -1,7 +1,175 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import './blocks/header';
+@import './blocks/top-bar';
+@import './blocks/menu';
+@import './blocks/actual';
+@import './blocks/closest';
+@import './blocks/planning';
+@import './blocks/news';
+@import './blocks/subscribe-form';
+@import './blocks/footer';
 
-body {
-  background: $c-gray;
+.page {
+  scroll-behavior: smooth;
+  font-family: "Playfair Display", sans-serif;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(+100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
+
+.section {
+  &__title {
+    margin: 0 0 60px;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+    color: $color-main-text;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      font-family: "Playfair Display", sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 50px;
+      grid-column: 1 / 5;
+      margin: 0 0 75px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 57.6px;
+      grid-column: 1 / 7;
+      margin: 0 0 71px;
+    }
+
+    &--marg {
+      margin: 0 0 20px;
+      grid-column: 1 / -1;
+
+      @include on-desktop {
+        grid-column: 1 / 6;
+        margin: 0 0 50px;
+      }
+    }
+  }
+}
+
+.button {
+  display: block;
+  padding: 22px 0;
+  background-color: $color-main-accent-button-or-text;
+  color: $background-color-main;
+  text-align: center;
+  line-height: 1;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $color-hover-button;
+  }
+
+  &:active {
+    background-color: $color-pressed-button;
+  }
+
+  &:disabled {
+    background-color: $color-disabled-button;
+  }
+
+  &--white {
+    padding: 22px 0;
+    line-height: 1;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    color: $color-main-accent-button-or-text;
+    border: 1px solid $color-main-accent-button-or-text;
+    gap: 8px;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    text-align: center;
+
+    &:hover {
+      color: $color-hover-button;
+      border: 1px solid $color-hover-button;
+    }
+
+    &:active {
+      color: $color-pressed-button;
+      border: 1px solid $color-pressed-button;
+    }
+
+    &:disabled {
+      color: $color-disabled-button;
+      border: 1px solid $color-disabled-button;
+    }
+
+    @include on-tablet {
+      height: fit-content;
+    }
+
+    @include on-desktop {
+      height: fit-content;
+    }
+  }
+
+  &--phone {
+    @include on-phone {
+      display: none;
+    }
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 10 / -1;
+    }
+  }
+
+  &--tablet-desktop {
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--width {
+    @include on-desktop {
+      width: 50%;
+    }
+  }
 }
