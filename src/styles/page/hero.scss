@@ -1,0 +1,112 @@
+.hero {
+  &__wrapper {
+    min-height: 100vh;
+
+    padding-top: 130px;
+
+    background-color: $colorBackground;
+    color: $colorWhite;
+
+    @include onTablet {
+      padding-top: 180px;
+    }
+    @include onDesktop {
+      padding-top: 150px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 70px;
+    }
+    @include onDesktop {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__background {
+    align-self: center;
+
+    width: 85vw;
+    height: 45vh;
+    max-height: 663px;
+
+    background-image: url('../images/page/hero/background.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @include onTablet {
+      height: 60vh;
+    }
+    @include onDesktop {
+      height: 100vh;
+    }
+  }
+}
+
+.info-block {
+  &__header {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      gap: 20px;
+
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+    @include onDesktop {
+      gap: 30px;
+
+      &:not(:last-child) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 267px;
+    width: 100%;
+
+    @include onTablet {
+      max-width: 330px;
+    }
+  }
+
+  &__title {
+    @include mainTitle;
+
+    color: $colorWhite;
+
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: 1.5px;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+  }
+}

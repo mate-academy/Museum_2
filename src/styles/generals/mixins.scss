@@ -1,0 +1,40 @@
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin onDesktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin mainTitle {
+  font-family: $fontPlayfairDisplay;
+  font-weight: $fontWeightBold;
+  font-size: 28px;
+  line-height: 1.25;
+
+  color: $colorBlack;
+
+  @include onTablet {
+    font-size: 40px;
+  }
+}
+@mixin button {
+  max-width: 330px;
+  width: 100%;
+
+  padding: 22px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 600;
+  line-height: 1;
+
+  color: #f1f5f4;
+  background-color: $colorRed;
+  border: 1px solid transparent;
+
+  transition-duration: 0.3s;
+}

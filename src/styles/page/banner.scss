@@ -1,0 +1,72 @@
+.banner {
+  &__wrapper {
+    height: 70vh;
+    max-height: 600px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $colorBackground;
+    color: $colorWhite;
+
+    @include onDesktop {
+      height: 80vh;
+      max-height: 800px;
+
+      background-image: url('../images/banner.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom left;
+    }
+  }
+
+  &__container {
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__content {
+  }
+
+  &__header {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title {
+    max-width: 530px;
+    width: 100%;
+
+    font-family: $fontPlayfairDisplay;
+    font-weight: $fontWeightBold;
+    font-size: 38px;
+
+    line-height: 1;
+    letter-spacing: 1.5px;
+
+    @include onTablet {
+      font-size: 62px;
+    }
+  }
+
+  &__main {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 470px;
+    width: 100%;
+  }
+}
