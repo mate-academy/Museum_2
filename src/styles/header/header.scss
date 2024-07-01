@@ -31,6 +31,8 @@
   width: 100vw;
   overflow: auto;
 
+  display: flex;
+
   transform: translateX(100%);
   transition-duration: 0.5s;
 
@@ -46,6 +48,8 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 29px;
+
+      flex-grow: 1;
     }
   }
 
@@ -98,22 +102,17 @@
     display: none;
 
     @include onTablet {
-      display: block;
-
-      max-width: 100%;
-      width: 100%;
-      height: 55vh;
-      max-height: 697px;
-
-      background-image: url('../images/header/img_menu.png');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      display: flex;
+      justify-content: end;
+      align-items: end;
     }
-    @include onDesktop {
-      min-height: 100vh;
 
-      background-position: bottom;
+    img{
+      width: 100%;
+      height: 100%;
+
+      object-position: right bottom;
+      object-fit: contain;
     }
   }
 }
