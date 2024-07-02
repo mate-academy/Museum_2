@@ -4,6 +4,8 @@
 
     padding-top: 130px;
 
+    display: flex;
+
     background-color: $colorBackground;
     color: $colorWhite;
 
@@ -15,37 +17,38 @@
     }
   }
 
-  &__content {
+  &__container{
+    flex-grow: 1;
     display: flex;
-    flex-direction: column;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
     gap: 40px;
+
+    flex-grow: 1;
 
     @include onTablet {
       gap: 70px;
     }
     @include onDesktop {
-      flex-direction: row;
+      grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 30px;
     }
   }
 
   &__background {
-    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 
-    width: 85vw;
-    height: 45vh;
-    max-height: 663px;
+    img{
+      width: 100%;
+      height: 100%;
 
-    background-image: url('../images/page/hero/background.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-
-    @include onTablet {
-      height: 60vh;
-    }
-    @include onDesktop {
-      height: 100vh;
+      object-position: center bottom;
+      object-fit: contain;
     }
   }
 }
