@@ -1,0 +1,278 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #504f5e;
+}
+
+[class*='__container'] {
+  max-width: 1280px;
+  width: 100%;
+
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include onTablet {
+    padding: 0 40px;
+  }
+  @include onDesktop {
+    padding: 0 55px;
+  }
+}
+
+.wrapper {
+  min-height: 100svh;
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  & > .page {
+    flex-grow: 1;
+  }
+}
+
+.button-up {
+  position: fixed;
+  right: 20px;
+  bottom: 70px;
+  z-index: 10;
+
+  display: none;
+
+  animation: button-move 0.8s linear infinite alternate-reverse;
+
+  @keyframes button-move {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(24px);
+    }
+  }
+
+  &--active {
+    display: block;
+  }
+
+  &__wrapper {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid $colorBackground;
+    background-color: $colorWhite;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  &__icon {
+    font-size: 20px;
+
+    color: $colorBackground;
+  }
+}
+
+.nav {
+  &__link {
+    position: relative;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+
+      width: 0;
+      height: 1px;
+
+      background-color: $colorWhite;
+      transition-duration: $transitionDuration;
+    }
+
+    &--medium {
+      font-weight: $fontWeightSemiBol;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.logo {
+  width: 123px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.section {
+  &__wrapper {
+    padding: 90px 0 0;
+
+    &--big {
+      padding: 120px 0 85px;
+    }
+
+    @include onTablet {
+      padding: 100px 0 0;
+
+      &--big {
+        padding: 160px 0 100px;
+      }
+    }
+    @include onDesktop {
+      &--big {
+        padding: 200px 0 110px;
+      }
+    }
+  }
+
+  &__header {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+
+      &:not(:last-child) {
+        margin-bottom: 75px;
+      }
+    }
+  }
+
+  &__title {
+    @include mainTitle;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &--grid {
+      @include onTablet {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+      }
+    }
+  }
+
+  &__footer {
+    @include onTablet {
+      display: none;
+    }
+  }
+}
+
+.button {
+  @include button;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: $colorRed;
+    border-color: $colorRed;
+
+    gap: 18px;
+
+    &::after {
+      content: '\e900';
+      font-family: 'icomoon';
+
+      display: block;
+
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+
+      background-color: transparent;
+    }
+
+    &:active {
+      color: #ea340d;
+      border-color: #ea340d;
+    }
+  }
+
+  &--display {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      max-width: 210px;
+    }
+    @include onDesktop {
+      max-width: 370px;
+    }
+  }
+}
+
+.socials {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__item {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition-duration: $transitionDuration;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
