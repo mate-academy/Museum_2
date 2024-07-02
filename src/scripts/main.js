@@ -37,3 +37,5 @@ document.addEventListener('DOMContentLoaded', () => {
   closeMenuOnLinkClick(headerNavLinks, burger, headerNav);
   buttonUpAction(buttonUp)
 });
+
+
