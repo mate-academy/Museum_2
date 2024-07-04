@@ -1,0 +1,60 @@
+.card-events {
+  @include grid-layout;
+
+  row-gap: 20px;
+
+  &__photo {
+    grid-column: 1 / -1;
+    width: 100%;
+    object-fit: cover;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__time-open {
+    margin-bottom: 10px;
+    color: $c-main;
+
+    @include main-text-style;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: $c-black;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    color: $c-gray;
+
+    @include main-text-style;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include on-desktop {
+      width: 47.4%;
+    }
+  }
+}

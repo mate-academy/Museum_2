@@ -1,0 +1,89 @@
+.button {
+  border: none;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-block: 22px;
+
+  background-color: $c-main;
+  color: $c-white;
+
+  font-family: $font-family-content;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  transition: all $transition-duration;
+
+  &:hover {
+    background-color: $c-btn-hover;
+  }
+
+  &:active {
+    background-color: $c-btn-pressed;
+  }
+
+  &:disabled {
+    background-color: $c-btn-disabled;
+  }
+
+  // ----------------------------
+  &--secondary {
+    column-gap: 8px;
+    border: 1px solid $c-main;
+    color: $c-main;
+    background-color: $c-white;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      color: inherit;
+      background-image: url('../images/icons/btn-arrow.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+
+      filter: invert(31%) sepia(35%) saturate(2188%) hue-rotate(338deg)
+        brightness(109%) contrast(87%);
+
+      transition: all $transition-duration;
+    }
+
+    &:hover {
+      background-color: $c-white;
+      border-color: $c-btn-hover;
+      color: $c-btn-hover;
+
+      &::after {
+        filter: invert(20%) sepia(65%) saturate(3051%) hue-rotate(356deg)
+          brightness(92%) contrast(86%);
+      }
+    }
+
+    &:active {
+      background-color: $c-white;
+      border-color: $c-btn-pressed;
+      color: $c-btn-pressed;
+
+      &::after {
+        filter: invert(39%) sepia(65%) saturate(6758%) hue-rotate(355deg)
+          brightness(92%) contrast(99%);
+      }
+    }
+
+    &:disabled {
+      background-color: $c-white;
+      border-color: $c-btn-disabled;
+      color: $c-btn-disabled;
+
+      &::after {
+        filter: invert(74%) sepia(44%) saturate(1844%) hue-rotate(311deg)
+          brightness(93%) contrast(85%);
+      }
+    }
+  }
+}

@@ -1,6 +1,90 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-duration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin main-text-style {
+  font-family: $font-family-content;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin additional-text-style {
+  font-family: $font-family-content;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+}
+
+@mixin inline-content-padding {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
+
+@mixin grid-layout {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 20px;
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+@mixin page-top-style($bg-img, $bg-img-on-mobile: false) {
+  height: 100vh;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto 36.6%;
+
+  @if $bg-img-on-mobile {
+    background-image: $bg-img;
+    min-height: 747px;
+  }
+
+  @include on-tablet {
+    min-height: 1092px;
+
+    background-image: $bg-img;
+    background-size: auto 45%;
+  }
+
+  @include on-desktop {
+    min-height: 800px;
+
+    background-size: auto 85%;
+    background-position: bottom right;
   }
 }

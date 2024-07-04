@@ -1,0 +1,92 @@
+.header {
+  color: $c-white;
+  background-color: $c-bg;
+
+  @include page-top-style(url('../images/header-bg.png'), true);
+
+  &__content {
+    @include inline-content-padding;
+    @include grid-layout;
+
+    margin-top: 50px;
+
+    @include on-tablet {
+      margin-top: 99px;
+    }
+
+    @include on-desktop {
+      margin-top: 90px;
+    }
+  }
+
+  &__additional-text {
+    margin-bottom: 10px;
+    grid-column: 1 / -1;
+
+    @include additional-text-style;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -2;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__main-text {
+    margin-bottom: 40px;
+    grid-column: 1 / -1;
+
+    @include main-text-style;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__date {
+    display: none;
+    text-wrap: nowrap;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+      margin: 135px 0 50px;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: $c-white;
+      }
+    }
+  }
+}

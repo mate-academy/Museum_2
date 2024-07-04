@@ -1,0 +1,49 @@
+.card-news {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  @include on-tablet {
+    row-gap: 30px;
+  }
+
+  @include on-desktop {
+    row-gap: 20px;
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__time-open {
+    color: $c-black;
+
+    @include additional-text-style;
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+    color: $c-black;
+
+    @include on-tablet {
+      margin-bottom: 18px;
+
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+
+  &__text {
+    color: $c-gray;
+
+    @include main-text-style;
+  }
+}
