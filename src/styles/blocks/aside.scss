@@ -2,7 +2,24 @@
   color: $c-white;
   background-color: $c-bg;
 
-  @include page-top-style(url('../images/menu-bg.png'));
+  height: 100vh;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto 36.6%;
+
+  @include on-tablet {
+    min-height: 1092px;
+
+    background-image: url('../images/menu-bg.png');
+    background-size: auto 45%;
+  }
+
+  @include on-desktop {
+    min-height: 800px;
+
+    background-size: auto 85%;
+    background-position: bottom right;
+  }
 
   &__content {
     @include inline-content-padding;

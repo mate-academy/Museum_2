@@ -2,7 +2,25 @@
   color: $c-white;
   background-color: $c-bg;
 
-  @include page-top-style(url('../images/header-bg.png'), true);
+  height: 747px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto 36.6%;
+  background-image: url('../images/header-bg.png');
+
+  @include on-tablet {
+    min-height: 1092px;
+
+    background-size: auto 45%;
+  }
+
+  @include on-desktop {
+    height: 100vh;
+    min-height: 800px;
+
+    background-size: auto 85%;
+    background-position: bottom right;
+  }
 
   &__content {
     @include inline-content-padding;
