@@ -3,10 +3,11 @@
 
   row-gap: 20px;
 
-  &__photo {
+  &__photo-box{
     grid-column: 1 / -1;
     width: 100%;
-    object-fit: cover;
+    box-sizing: border-box;
+    overflow: hidden;
 
     @include on-tablet {
       grid-column: span 3;
@@ -15,6 +16,13 @@
     @include on-desktop {
       grid-column: span 4;
     }
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+
+    @include hover(scale, 1.2);
   }
 
   &__content {
