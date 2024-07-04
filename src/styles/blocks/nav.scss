@@ -1,0 +1,42 @@
+.nav {
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  &__item {
+    width: fit-content;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+
+    @extend %h5;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      background-color: $c-white;
+      width: 100%;
+      height: 1px;
+
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform $transition-duration;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

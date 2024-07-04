@@ -1,0 +1,68 @@
+.card-exhibitions {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  @include on-tablet {
+    row-gap: 30px;
+  }
+
+  @include on-desktop {
+    row-gap: 20px;
+  }
+
+  &__photo-box{
+    min-height: 356px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  &__photo {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    @include hover(scale, 1.2);
+  }
+
+  &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__time-open {
+    margin-bottom: 10px;
+    color: $c-main;
+
+    @include main-text-style;
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    margin-bottom: 20px;
+    color: $c-black;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    color: $c-gray;
+
+    @include main-text-style;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include on-desktop {
+      width: 47.4%;
+    }
+  }
+}
