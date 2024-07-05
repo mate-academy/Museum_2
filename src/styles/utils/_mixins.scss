@@ -2,5 +2,73 @@
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+    transform-origin: center;
+  }
+}
+
+@mixin title($font-size, $line-height, $color) {
+  font-family: PlayfairDisplay, sans-serif;
+  font-weight: 700;
+  font-size: $font-size;
+  line-height: $line-height;
+
+  color: $color;
+}
+
+@mixin text($font-size, $line-height, $color) {
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+  font-size: $font-size;
+
+  color: $color;
+}
+
+@mixin button-text {
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin mobile-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-row-btwn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
   }
 }

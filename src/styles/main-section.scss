@@ -1,0 +1,136 @@
+.main {
+  height: 100%;
+  background-color: $background;
+
+  @include desktop {
+    display: flex;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include mobile {
+      align-items: center;
+    }
+
+    @include desktop {
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    width: $width-desk;
+
+    @include title(48px, 48px, $white);
+
+    @include mobile {
+      width: $width-mob;
+    }
+
+    @include tablet {
+      margin-bottom: 20px;
+
+      @include title(72px, 72px, $white);
+    }
+
+    @include desktop {
+      @include title(96px, 96px, $white);
+    }
+  }
+
+  &__text {
+    margin-bottom: 10px;
+
+    @include text($font-text-14, 20px, $white);
+
+    &--2 {
+      margin-bottom: 40px;
+
+      font-size: 16px;
+
+      color: $white;
+
+      @include tablet {
+        margin-bottom: 50px;
+      }
+
+      @include desktop {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include flex-center;
+
+    @include tablet {
+      margin-bottom: 70px;
+    }
+
+    @include desktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__date-line {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+
+      width: $width-desk;
+    }
+
+    &--text {
+      @include text($font-text-14, 17.5px, $white);
+
+      margin-bottom: 56px;
+      padding-right: 20px;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: block;
+        width: $width-line;
+        height: 1px;
+        background-color: $white;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__img-container {
+    @include flex-center;
+
+    object-fit: contain;
+
+    width: auto;
+
+    @include mobile {
+      height: 274px;
+    }
+
+    @include tablet {
+      height: 494px;
+    }
+
+    @include desktop {
+      align-items: normal;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+}

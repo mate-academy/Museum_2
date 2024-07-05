@@ -1,0 +1,166 @@
+.footer {
+  background-color: $background;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      padding-top: 50px;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      padding-top: 50px;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 50px;
+
+    @include tablet {
+      width: $footer-tab;
+      margin-bottom: 60px;
+    }
+
+    @include desktop {
+      width: 370px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include title(20px, 30px, $white);
+
+    @include mobile {
+      @include title(18px, 27px, $white);
+
+      padding-top: 34px;
+    }
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+
+    & a {
+      margin-right: 20px;
+
+      @include hover(transform, scale(1.2));
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include text($font-text-16, 24px, $white);
+
+    & a {
+      margin-bottom: 10px;
+
+      @include hover(color, $main);
+    }
+  }
+
+  &__shedule {
+    @include tablet {
+      width: $footer-tab;
+    }
+
+    @include desktop {
+      width: $footer-desk;
+    }
+  }
+
+  &__menu {
+    @include mobile {
+      margin-bottom: 60px;
+    }
+
+    @include tablet {
+      width: $footer-tab;
+    }
+
+    @include desktop {
+      width: $footer-desk;
+    }
+
+    &-title {
+      margin-bottom: 10px;
+
+      @include title(20px, 30px, $white);
+
+      @include tablet {
+        margin-bottom: 30px;
+      }
+
+      @include desktop {
+        margin-bottom: 30px;
+      }
+    }
+
+    &-links {
+      @include text($font-text-16, 24px, $white);
+
+      & a {
+        display: block;
+        margin-bottom: 5px;
+
+        @include hover(color, $main);
+
+        @include tablet {
+          margin-bottom: 10px;
+        }
+
+        @include desktop {
+          margin-bottom: 10px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__lower-wrapper {
+    @include flex-row-btwn;
+  }
+
+  &__copyrights {
+    margin-bottom: 30px;
+
+    @include flex-row-btwn;
+
+    & p {
+      @include text($font-text-14, 20px, $white);
+    }
+
+    &-years {
+      margin-right: 22px;
+
+      @include desktop {
+        margin-right: 102px;
+      }
+    }
+  }
+
+  &__up-button {
+    @include hover(transform, scale(1.2));
+  }
+}
