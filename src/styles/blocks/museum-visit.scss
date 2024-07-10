@@ -1,0 +1,72 @@
+.museum-visit {
+  box-sizing: border-box;
+  background-color: $bg-header;
+  padding: 50px 20px;
+  margin-top: 90px;
+
+  display: grid;
+
+  @include on-tablet {
+    padding: 80px 39px;
+  }
+
+  @include on-desktop {
+    padding: 0;
+    height: 100vh;
+  }
+
+  &__content {
+    @include page-grid;
+  }
+}
+
+.content {
+
+  &__image {
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+    object-position: left;
+    display: none;
+
+    @include on-desktop {
+      grid-column: span 5;
+      display: block;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      object-position: left;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / 11;
+      padding: 205px 0;
+    }
+  }
+}
+
+.text {
+  // &__title {
+  //   font-family: 'Playfair Display';
+  //   font-size: 38px;
+  //   font-weight: 700;
+  //   line-height: 38px;
+  //   color: $bg-color;
+  // }
+
+  &__description {
+    color: $bg-color;
+    padding: 20px 0 10px;
+  }
+}
+
+// .button {
+//   grid-column: span 3;
+// }
+// .begin {
+// }

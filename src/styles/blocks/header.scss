@@ -1,0 +1,99 @@
+.header {
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: $bg-header;
+  overflow: hidden;
+
+  background-image: url(../images/img_header.png);
+  width: 100%;
+  background-size: 75%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+
+  @include on-tablet {
+    background-size: 70%;
+  }
+
+  @include on-desktop {
+    background-position: bottom right;
+    background-size: 45%;
+  }
+
+  &__content {
+    height: 100vh;
+  }
+
+  &__bottom {
+    color: $bg-color;
+
+    @include page-grid;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 10px 0 30px;
+  }
+
+  &__period {
+    display: none;
+    position: relative;
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17.5px;
+    color: $bg-color;
+
+    @include on-desktop {
+      display: block;
+      position: relative;
+      margin-top: 45px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 100px;
+      top: 50%;
+      width: 469px;
+      height: 1px;
+      opacity: 30%;
+      background: $bg-color;
+    }
+  }
+}
+
+.bottom {
+
+  &__text {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__image {
+    height: 100vh;
+    object-fit: contain;
+    width: 100%;
+
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+}
+
+.text {
+  &__date {
+    margin: 0;
+    margin-top: 50px;
+  }
+
+  &__description {
+    margin: 0;
+  }
+}
