@@ -9,18 +9,19 @@
   color: $bg-color;
   font-size: 16px;
   font-weight: 600;
+
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: span 3;
+  }
 }
 
 .button-header {
   margin: 40px 0;
-  grid-column: 1 / -1;
 
   @include on-tablet {
-    grid-column: 1 / 6;
-  }
-
-  @include on-desktop {
-    grid-column: span 3;
+    grid-column: 1 / span 3;
   }
 }
 
@@ -45,11 +46,33 @@
   }
 }
 
+.begin {
+  margin: 40px 0 0;
+
+  @include on-tablet {
+   grid-column: 1 / 4;
+  }
+
+  @include on-desktop {
+   grid-column: 6 / 9;
+  }
+}
+
+.buy-tickets {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: span 3;
+    grid-row: 3;
+  }
+}
+
+.buy-tickets--2 {
+   @include on-desktop {
+    grid-column: 7 / span 3;
+  }
+}
+
 .register {
   padding: 22px 72px;
 }
-
-.begin {
- margin: 40px 0 0;
-}
-
