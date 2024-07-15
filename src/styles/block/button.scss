@@ -1,0 +1,118 @@
+.button-orange {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 60px;
+  background-color: $c-button-background-orange;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  @include hover(transform, scale(1.05));
+
+  @include on-tablet {
+    width: 100%;
+    max-width: 330px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+
+  &:hover {
+    background-color: $c-button-hover;
+  }
+
+  &:active {
+    background-color: $c-button-pressed;
+  }
+
+  &__text-header {
+    margin: 0;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    border: none;
+    color: $c-text-white;
+  }
+}
+
+.button-white {
+  display: none;
+  cursor: pointer;
+
+  @include hover(transform, scale(1.05));
+
+  @include on-tablet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 60px;
+    background-color: $c-button-background-white;
+    border: 1px solid #cd4d31;
+    padding: 0;
+
+    &:hover {
+      border-color: $c-button-hover;
+    }
+
+    &:active {
+      border-color: $c-button-pressed;
+    }
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    &--text-button {
+      margin: 0;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      line-height: 16px;
+      font-weight: 600;
+      border: none;
+      color: $c-text-orange;
+
+      &:hover {
+        color: $c-button-hover;
+      }
+
+      &:active {
+        color: $c-button-pressed;
+      }
+    }
+
+    &--arrow-button {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.button-white-mobile {
+  grid-column: 1 / -1;
+
+  margin-top: 30px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 60px;
+  background-color: $c-button-background-white;
+  border: 1px solid #cd4d31;
+
+  @include on-tablet {
+    display: none;
+  }
+}

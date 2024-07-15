@@ -1,0 +1,184 @@
+.footer {
+  @include page-grid;
+
+  background-color: $c-bgc-green;
+
+  &__header {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    margin: 0;
+    padding-bottom: 10px;
+    color: $c-text-white;
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    color: $c-text-white;
+    margin: 0;
+  }
+
+  &__link {
+    text-decoration: none;
+
+    @include hover(transform, scale(1.05));
+
+    transform-origin: left;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    padding-top: 34px;
+
+    @include on-tablet {
+      padding-top: 0;
+    }
+  }
+
+  &--socials {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    padding-top: 30px;
+
+    @include on-tablet {
+      padding-top: 50px;
+    }
+
+    &-size {
+      width: 20px;
+      height: 20px;
+    }
+
+    &-facebook {
+      background-image: url(../images/socials/facebook.svg);
+
+      @include hover(transform, scale(1.2));
+    }
+
+    &-x {
+      background-image: url(../images/socials/twitter.svg);
+
+      @include hover(transform, scale(1.2));
+    }
+
+    &-telegram {
+      background-image: url(../images/socials/telegram.svg);
+
+      @include hover(transform, scale(1.2));
+    }
+
+    &-instagram {
+      background-image: url(../images/socials/instagram.svg);
+
+      @include hover(transform, scale(1.2));
+    }
+  }
+
+  &__hours {
+    padding-top: 50px;
+
+    @include on-tablet {
+      padding-top: 0;
+    }
+
+    &--list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+
+  &__nav {
+    padding-top: 50px;
+
+    @include on-tablet {
+      padding-top: 0;
+    }
+
+    &--list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+
+  &__padding {
+    grid-column: 1 / -1;
+    display: grid;
+
+    @include on-tablet {
+      gap: 30px;
+      padding: 50px 0 60px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column: span 6;
+    }
+
+    @include on-desktop {
+      grid-column: span 12;
+      padding-bottom: 70px;
+    }
+  }
+
+  &__copyright {
+    grid-column: 1 / -1;
+
+    padding: 60px 0 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @include on-tablet {
+      padding-top: 0;
+    }
+
+    &--position {
+      grid-column: 1 / -1;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 22px;
+
+      @include on-desktop {
+        gap: 102px;
+      }
+    }
+
+    &--text {
+      font-family: Raleway, sans-serif;
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 300;
+      color: $c-text-white;
+      margin: 0;
+    }
+  }
+}
+
+.go-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: inherit;
+  right: 20px;
+  bottom: 30px;
+  cursor: pointer;
+
+  &__arrow {
+    background-image: url(../images/go-to-top/scroll-up.svg);
+    background-position: center;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+  }
+}
