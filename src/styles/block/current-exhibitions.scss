@@ -1,0 +1,114 @@
+.current-exhibitions {
+  @include page-grid;
+
+  padding-top: 90px;
+  padding-bottom: 120px;
+
+  @include on-tablet {
+    padding-top: 100px;
+    padding-bottom: 160px;
+  }
+
+  @include on-desktop {
+    padding-top: 110px;
+    padding-bottom: 200px;
+  }
+
+  &__angels {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__art-XX-XXI {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    padding-top: 60px;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-desktop {
+      display: none;
+    }
+
+    &-desktop {
+      display: none;
+
+      @include on-desktop {
+        display: inherit;
+        padding-top: 70px;
+
+        @include hover(transform, scale(1.05));
+      }
+    }
+  }
+
+  &__date {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0;
+    color: $c-text-orange;
+    padding: 20px 0 10px;
+
+    @include on-tablet {
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 20px;
+    }
+  }
+
+  &__h4 {
+    margin: 0;
+  }
+
+  &__description {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    margin: 0;
+    color: $c-text-grey;
+    padding: 20px 0 30px;
+
+    @include on-tablet {
+      padding-bottom: 40px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-grow {
+  @include on-tablet {
+    flex-grow: 1;
+  }
+}

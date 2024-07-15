@@ -1,0 +1,101 @@
+.subscription {
+  @include page-grid;
+
+  margin-bottom: 80px;
+
+  @include on-tablet {
+    margin-bottom: 128px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
+
+  &__h3 {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      padding-bottom: 50px;
+    }
+
+    &--text {
+      margin: 0;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -2;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+
+    &--text {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      margin: 0;
+      color: #1c1b29;
+      padding: 20px 0 50px;
+
+      @include on-desktop {
+        padding: 0;
+      }
+    }
+  }
+
+  &__email {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / -3;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+
+    &--text {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid #1c1b29;
+      background-color: #eee;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: #1c1b29;
+
+      &:hover {
+        border-color: $c-text-orange;
+      }
+
+      &:hover::placeholder {
+        color: $c-text-orange;
+      }
+
+      &:focus::placeholder {
+        color: transparent;
+      }
+
+      &:focus,
+      &:active {
+        border-color: $c-text-orange;
+        color: $c-text-orange;
+        font-weight: 700;
+      }
+    }
+  }
+}
