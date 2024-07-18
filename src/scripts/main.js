@@ -255,6 +255,7 @@ const langObj = {
     "en" : "News",
     "ua" : "Новини",
   },
+
 }
 
 
@@ -289,3 +290,15 @@ function changeLanguage() {
 }
 
 changeLanguage();
+
+
+
+const selectSecond = document.querySelector('.select');
+
+selectSecond.addEventListener('change', changeUrl);
+
+function changeUrl() {
+  let lng = selectSecond.value;
+  location.href = window.location + '#' + lng;
+  // location.reload();
+}
