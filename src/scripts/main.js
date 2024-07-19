@@ -256,7 +256,91 @@ const langObj = {
     "ua" : "Новини",
   },
 
+  'midle-shedule' : {
+    "en" : "News",
+    "ua" : "Новини",
+  },
+
+  'midle-shedule-adres' : {
+    "en" : "Address:",
+    "ua" : "Адреса:",
+  },
+
+  'midle-shedule-street' : {
+    "en" : "Kyiv, str. M. Hrushevsky, 6",
+    "ua" : "Київ, вул. М. Грушевського, 6",
+  },
+
+  'menu-exhibitions' : {
+    "en" : "Actual exhibitions",
+    "ua" : "Актуальні виставки",
+  },
+
+
+  'menu-event' : {
+    "en" : "Upcoming events",
+    "ua" : "Найближчі події",
+  },
+
+
+  'menu-news' : {
+    "en" : "News",
+    "ua" : "Новини",
+  },
+
+
+  'menu-btn' : {
+    "en" : "Buy a ticket",
+    "ua" : "Купити квиток",
+  },
+
 }
+
+
+// const select = document.querySelector('select');
+// const allLang = ['en', 'ua'];
+
+// select.addEventListener('change', changeUrlLanguage);
+
+// function changeUrlLanguage() {
+//   let lang = select.value;
+//   location.href = window.location.pathname + '#' + lang;
+//   location.reload();
+// }
+
+// function changeLanguage() {
+//   let hash = window.location.hash;
+//   hash = hash.substring(1);
+//   console.log(hash);
+
+//   if (!allLang.includes(hash)) {
+//     location.href = window.location.pathname + '#en';
+//     location.reload();
+//   }
+
+//   select.value = hash;
+//   for (let key in langObj) {
+//     let elem = document.querySelector('.lng-' + key);
+//     if (elem) {
+//       elem.innerHTML = langObj[key][hash];
+//     }
+//   }
+// }
+
+// changeLanguage();
+
+
+
+// const selectSecond = document.querySelector('.select');
+
+// selectSecond.addEventListener('change', changeUrl);
+
+// function changeUrl() {
+//   let lng = selectSecond.value;
+//   location.href = window.location + '#' + lng;
+//   location.reload();
+// }
+
 
 
 const select = document.querySelector('select');
@@ -265,40 +349,28 @@ const allLang = ['en', 'ua'];
 select.addEventListener('change', changeUrlLanguage);
 
 function changeUrlLanguage() {
-  let lang = select.value;
-  location.href = window.location.pathname + '#' + lang;
-  location.reload();
+    let lang = select.value;
+    // Оновлюємо тільки хеш URL без перезавантаження сторінки
+    window.location.hash = lang;
+    changeLanguage(); // Викликаємо зміну мови без перезавантаження сторінки
 }
 
 function changeLanguage() {
-  let hash = window.location.hash;
-  hash = hash.substring(1);
-  console.log(hash);
+    let hash = window.location.hash;
+    hash = hash.substring(1);
 
-  if (!allLang.includes(hash)) {
-    location.href = window.location.pathname + '#en';
-    location.reload();
-  }
-
-  select.value = hash;
-  for (let key in langObj) {
-    let elem = document.querySelector('.lng-' + key);
-    if (elem) {
-      elem.innerHTML = langObj[key][hash];
+    if (!allLang.includes(hash)) {
+        hash = 'en'; // Встановлюємо мову за замовчуванням, якщо хеш не вірний
     }
-  }
+
+    select.value = hash;
+    for (let key in langObj) {
+        let elem = document.querySelector('.lng-' + key);
+        if (elem) {
+            elem.innerHTML = langObj[key][hash];
+        }
+    }
 }
 
+// Викликаємо функцію зміни мови при завантаженні сторінки
 changeLanguage();
-
-
-
-const selectSecond = document.querySelector('.select');
-
-selectSecond.addEventListener('change', changeUrl);
-
-function changeUrl() {
-  let lng = selectSecond.value;
-  location.href = window.location + '#' + lng;
-  // location.reload();
-}
