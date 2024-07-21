@@ -294,83 +294,54 @@ const langObj = {
     "ua" : "Купити квиток",
   },
 
-}
-
-
-// const select = document.querySelector('select');
-// const allLang = ['en', 'ua'];
-
-// select.addEventListener('change', changeUrlLanguage);
-
-// function changeUrlLanguage() {
-//   let lang = select.value;
-//   location.href = window.location.pathname + '#' + lang;
-//   location.reload();
-// }
-
-// function changeLanguage() {
-//   let hash = window.location.hash;
-//   hash = hash.substring(1);
-//   console.log(hash);
-
-//   if (!allLang.includes(hash)) {
-//     location.href = window.location.pathname + '#en';
-//     location.reload();
-//   }
-
-//   select.value = hash;
-//   for (let key in langObj) {
-//     let elem = document.querySelector('.lng-' + key);
-//     if (elem) {
-//       elem.innerHTML = langObj[key][hash];
-//     }
-//   }
-// }
-
-// changeLanguage();
+};
 
 
 
-// const selectSecond = document.querySelector('.select');
-
-// selectSecond.addEventListener('change', changeUrl);
-
-// function changeUrl() {
-//   let lng = selectSecond.value;
-//   location.href = window.location + '#' + lng;
-//   location.reload();
-// }
-
-
-
-const select = document.querySelector('select');
 const allLang = ['en', 'ua'];
 
-select.addEventListener('change', changeUrlLanguage);
+// Вибір основних елементів селектора мови
+const mainSelect = document.querySelector('.main-select');
+const sidebarSelect = document.querySelector('.menu__top__lng');
 
+// Додання обробника подій для зміни мови
+mainSelect.addEventListener('change', changeUrlLanguage);
+sidebarSelect.addEventListener('change', changeUrlLanguage);
+
+// Функція для зміни мови та оновлення URL без перезавантаження сторінки
 function changeUrlLanguage() {
-    let lang = select.value;
-    // Оновлюємо тільки хеш URL без перезавантаження сторінки
-    window.location.hash = lang;
-    changeLanguage(); // Викликаємо зміну мови без перезавантаження сторінки
+    let lang = this.value;
+
+    // Оновлення параметрів URL без перезавантаження сторінки
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('lang', lang);
+    const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+    window.history.pushState({}, '', newUrl);
+
+    changeLanguage(); // Виклик функції зміни мови без перезавантаження сторінки
 }
 
+// Функція для зміни мови на основі параметрів URL
 function changeLanguage() {
-    let hash = window.location.hash;
-    hash = hash.substring(1);
+    const urlParams = new URLSearchParams(window.location.search);
+    let lang = urlParams.get('lang');
 
-    if (!allLang.includes(hash)) {
-        hash = 'en'; // Встановлюємо мову за замовчуванням, якщо хеш не вірний
+    if (!allLang.includes(lang)) {
+        lang = 'en'; // Мова за замовчуванням, якщо параметр не вірний
     }
 
-    select.value = hash;
+    // Оновлення вибраної мови в обох селекторах
+    mainSelect.value = lang;
+    sidebarSelect.value = lang;
+
+    // Оновлення текстового вмісту в елементах з класами мови
     for (let key in langObj) {
-        let elem = document.querySelector('.lng-' + key);
+        let elem = document.querySelector(`.lng-${key}`);
         if (elem) {
-            elem.innerHTML = langObj[key][hash];
+            elem.textContent = langObj[key][lang];
         }
     }
 }
 
-// Викликаємо функцію зміни мови при завантаженні сторінки
+// Початковий виклик для встановлення мови на основі параметрів URL
 changeLanguage();
