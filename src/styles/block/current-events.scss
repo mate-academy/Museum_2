@@ -1,0 +1,152 @@
+.current-events {
+  @include page-grid;
+
+  grid-column: 1 / -1;
+
+  &__top {
+    grid-column: 1 / -1;
+
+    padding-top: 90px;
+
+    @include on-tablet {
+      padding-top: 100px;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include on-desctop {
+      padding-top: 110px;
+    }
+  }
+
+  &__section {
+    grid-column: 1 / -1;
+
+    padding: 60px 0 30px;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      padding: 70px 0 0;
+    }
+
+    &--1 {
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-desctop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--2 {
+      @include on-tablet {
+        grid-column: 4 / -1;
+      }
+
+      @include on-desctop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__img {
+    @include hover(transform, scale(1.05));
+    &-photo {
+      width: 100%;
+    }
+
+    &-photo-mobile {
+      width: 100%;
+
+      @include on-desctop {
+        display: none;
+      }
+    }
+
+    &-desctop {
+      width: 100%;
+
+      display: none;
+
+      @include on-desctop {
+        display: block;
+      }
+    }
+  }
+}
+
+.content {
+  &-date,
+  &-text {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: $color-main;
+    margin: 0;
+  }
+
+  &-date {
+    padding-top: 20px;
+
+    @include on-tablet {
+      padding-top: 30px;
+    }
+
+    @include on-desctop {
+      padding-top: 20px;
+    }
+  }
+
+  &-title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    text-align: left;
+    color: $color-black;
+    margin: 0;
+
+    padding: 10px 0 20px;
+
+    @include on-tablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &-text {
+    color: $color-gray;
+  }
+}
+
+.section-title {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 35px;
+  text-align: left;
+  color: $color-black;
+  margin: 0;
+
+  @include on-tablet {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  @include on-desctop {
+    font-size: 48px;
+    line-height: 57.6px;
+  }
+}
+
+.flex-content {
+  @include on-tablet {
+    flex-grow: 1;
+  }
+}
