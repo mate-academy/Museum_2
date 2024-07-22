@@ -1,0 +1,105 @@
+.subscription {
+  @include page-grid;
+
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    padding-top: 160px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 6;
+
+      padding-bottom: 50px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    padding: 20px 0 50px;
+
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin: 0;
+    color: $color-black;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desctop {
+      grid-column: 7 / -1;
+
+      padding: 0;
+    }
+  }
+}
+
+.form {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: 1 / 5;
+  }
+
+  @include on-desctop {
+    grid-column: 1 / 6;
+  }
+
+  &__input {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: $color-black;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: $c-gray;
+    height: 28px;
+    border: none;
+    border-bottom: 1px solid $color-black;
+    outline: none;
+    resize: none;
+
+    &:hover {
+      border-bottom: 1px solid $color-main;
+      color: $color-main;
+    }
+
+    &:focus {
+      color: $color-pressed;
+      border-bottom: 1px solid $color-pressed;
+    }
+
+    &::placeholder {
+      color: $color-black;
+    }
+  }
+
+  input,
+  textarea {
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover {
+      border-bottom: 1px solid $color-black;
+      -webkit-text-fill-color: $color-black;
+      -webkit-box-shadow: 0 0 0 1000px $c-gray inset;
+    }
+
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $color-main;
+      border-bottom: 1px solid $color-main;
+    }
+  }
+}

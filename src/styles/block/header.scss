@@ -1,0 +1,178 @@
+.header {
+  @include page-grid;
+
+  background-color: $color-background;
+  height: 100%;
+  position: relative;
+
+  &__content {
+    grid-column: 1 /-1;
+
+    color: $color-white;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__h6 {
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+    margin: 0;
+    padding-top: 50px;
+
+    @include on-tablet {
+      padding-top: 117px;
+    }
+  }
+
+  &__h1 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+    padding-top: 10px;
+
+    @include on-tablet {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include on-desctop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__p {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin: 0;
+    padding-top: 30px;
+
+    @include on-tablet {
+      padding-top: 20px;
+    }
+
+    @include on-desctop {
+      padding-top: 30px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include on-desctop {
+      grid-column: 1 / 7;
+
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      height: 10px;
+      margin-bottom: 56px;
+      border-bottom: 1px solid $color-white;
+    }
+    &-text {
+      display: none;
+
+      @include on-desctop {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17.5px;
+        text-align: left;
+        color: $color-white;
+        margin: 0;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    background-image: url(../images/header_img.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    height: 273px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include on-tablet {
+      height: 494px;
+    }
+
+    @include on-desctop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      justify-content: end;
+      height: 697px;
+      background-position: bottom right;
+    }
+  }
+}
+
+.text-decoration {
+  text-decoration: none;
+}
+
+.desctop-header {
+  grid-column: 1 / -1;
+
+  @include on-desctop {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+
+    grid-column: 1 / 7;
+  }
+}
+
+.line {
+  display: none;
+
+  @include on-desctop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 135px 0 50px;
+  }
+
+  &-text {
+    @include on-desctop {
+      font-family: Raleway, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17.5px;
+      text-align: left;
+      color: $color-white;
+      margin: 0;
+    }
+  }
+
+  &-line {
+    height: 1px;
+    width: 469px;
+    background-color: $color-white;
+  }
+}

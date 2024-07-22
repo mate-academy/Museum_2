@@ -1,0 +1,123 @@
+.top-bar {
+  grid-column: 1 / -1;
+
+  margin-top: 20px;
+  &__icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__header-left {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+  }
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: center;
+
+    @include on-tablet {
+      gap: 40px;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__select,
+  &__select-text {
+    height: 24px;
+    background-color: $color-background;
+    color: $color-white;
+    border: none;
+    outline: 0;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+}
+
+.logo-namu {
+  width: 123px;
+  height: 40px;
+
+  @include hover(transform, scale(1.05));
+}
+
+.icon__burger-menu {
+  @include on-tablet {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/icons/icon_burger_menu.svg);
+  }
+
+  @include hover(transform, scale(1.05));
+}
+
+.icon__menu {
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-image: url(../images/icons/icon_burger_menu.svg);
+
+  @include on-tablet {
+    display: none;
+  }
+}
+
+.icon__close-menu {
+  display: block;
+  height: 30px;
+  width: 30px;
+  background-image: url(../images/icons/icon_close.svg);
+
+  @include hover(transform, scale(1.05));
+}
+
+.aside__img {
+  display: none;
+
+  @include on-tablet {
+    background-image: url(../images/aside_img.svg);
+    height: 466px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include on-desctop {
+    width: 100%;
+    height: 697px;
+    padding: 0;
+    background-position: bottom right;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.aside__desctop {
+  grid-column: 1 / -1;
+
+  @include on-desctop {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: space-between;
+  }
+}
