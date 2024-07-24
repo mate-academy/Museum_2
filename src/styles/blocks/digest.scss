@@ -1,20 +1,30 @@
 .digest {
-  margin-top: 200px;
-
   @include page-grid;
 
   grid-column: 1 / -1;
+  padding-bottom: 80px;
+
+  @include on-tablet {
+    grid-column: span 5;
+    padding-bottom: 128px;
+  }
 
   @include on-desktop {
     grid-column: span 6;
+    margin-top: 200px;
+    padding-bottom: 200px;
   }
 
   &__form {
     grid-column: 1 / -1;
 
-  @include on-desktop {
-    grid-column: span 5;
-  }
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+    }
   }
 }
 
@@ -66,19 +76,10 @@
   }
 }
 
-
 .email::placeholder {
   color: $section-title-color;
 
   @extend %main-text;
-}
-
-.digest-button {
-  grid-column: 1 / -1;
-
-  @include on-desktop {
-    grid-column: span 3;
-  }
 }
 
 input:-webkit-autofill,
