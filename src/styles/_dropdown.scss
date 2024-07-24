@@ -1,0 +1,39 @@
+.dropdown {
+  position: relative;
+
+  @include hover(transform, scale(1.2));
+
+  &__button {
+    display: inline-block;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: $white-txt-col;
+    font-size: 16px;
+    line-height: 24px;
+    position: relative;
+  }
+
+  &__content {
+    position: absolute;
+    list-style: none;
+    padding-left: 6px;
+    top: 10px;
+
+    display: block;
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform $animDuration;
+  }
+
+  &__item {
+    color: $white-txt-col;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &--active .dropdown__content {
+    transform: scaleY(1);
+  }
+}

@@ -1,0 +1,59 @@
+.button {
+  cursor: pointer;
+  color: $white-txt-col;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: $orange-accent;
+  border: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: $button-size;
+
+  transition: all $animDuration;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  @include on-tablet {
+    width: $button-width-tablet;
+  }
+
+  @include on-desktop {
+    width: $button-width-desktop;
+  }
+
+  &--article {
+    width: 100%;
+
+    @include on-desktop {
+      width: $button-width-desktop;
+    }
+  }
+
+  &--section {
+    background-color: $c-gray;
+    color: $orange-accent;
+    border: 1px solid $orange-accent;
+
+    @include on-tablet {
+      width: auto;
+    }
+
+    &:hover {
+      color: #af3419;
+      background-color: $c-gray;
+      border: 1px solid #af3419;
+    }
+
+    &:active {
+      color: #ea340d;
+      background-color: $c-gray;
+      border: 1px solid #ea340d;
+    }
+  }
+}
