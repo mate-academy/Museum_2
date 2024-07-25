@@ -1,0 +1,67 @@
+.exhibition {
+  margin-top: 90px;
+
+  &__absolut {
+    position: relative;
+  }
+
+  &__wrapper {
+    @include page-grid;
+
+    row-gap: 60px;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+    text-align: center;
+
+    @include on-tablet {
+      text-align: start;
+    }
+  }
+
+  &__card {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+
+    &-image {
+      @include on-tablet {
+        width: auto;
+        height: auto;
+        margin-right: 30px;
+      }
+    }
+
+    &-date {
+      color: $main-button-color;
+    }
+
+    &-title {
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.news-photo {
+  @include on-tablet {
+    width: 430px;
+    height: 430px;
+    object-fit: cover;
+  }
+
+  @include on-desktop {
+    width: 850px;
+    height: 370px;
+  }
+}
