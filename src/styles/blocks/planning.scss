@@ -1,7 +1,21 @@
 .planning {
+  padding-left: 20px;
+  padding-right: 20px;
+
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: $background-color;
+  @include on-tablet {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+  @include on-desktop {
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   &__wrapper {
     @include page-grid;
@@ -10,8 +24,10 @@
   &__img {
     display: none;
 
-    @include on-tablet {
+    @include on-desktop {
       display: block;
+      max-height: 750px;
+      max-width: 700px;
     }
   }
 

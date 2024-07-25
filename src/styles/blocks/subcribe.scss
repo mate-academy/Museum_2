@@ -1,9 +1,17 @@
 .subcribe {
   margin-bottom: 80px;
   &__title {
+    grid-column: span 2;
+    @include on-tablet {
+      grid-column: span 6;
+    }
     margin-bottom: 20px;
   }
   &__text {
+    grid-column: span 2;
+    @include on-tablet {
+      grid-column: span 6;
+    }
     font-family: Raleway, serif;
     font-size: 16px;
     line-height: 1.5;
@@ -13,6 +21,13 @@
   }
 
   &__form {
+    grid-column: span 2;
+    @include on-tablet {
+      grid-column: span 4;
+    }
+    @include on-desktop {
+      grid-column: span 5;
+    }
     &-input {
       width: 100%;
       border: none;
@@ -33,4 +48,8 @@
       border: none;
     }
   }
+}
+
+.grid {
+  @include page-grid;
 }
