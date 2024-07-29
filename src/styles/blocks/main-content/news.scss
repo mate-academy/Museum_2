@@ -67,11 +67,11 @@
     line-height: 16px;
     text-align: center;
     text-decoration: none;
-    color: #CD4D31;
+    color: $special-color;
 
     width: 100%;
 
-    border: 1px solid #CD4D31;
+    border: 1px solid $special-color;
 
     padding-block: 22px;
     margin-top: 20px;
@@ -88,7 +88,7 @@
     @include on-desktop {
       grid-column: 10/-1;
     }
-    
+
     position: relative;
 
     &::before {
@@ -99,6 +99,24 @@
       height: 30px;
       background-repeat: no-repeat;
       background-image: url(/src/images/icons/arrow.svg);
+    }
+
+    &:hover {
+      color: $hover-color;
+      border-color: $hover-color;
+    }
+    &:active {
+      color: $active-color;
+      border-color: $active-color;
+    }
+
+    &:hover::before {
+      background-image: url(/src/images/icons/arrow-hover.svg);
+    }
+
+
+    &:active::before {
+      background-image: url(/src/images/icons/arrow-active.svg);
     }
 
   }

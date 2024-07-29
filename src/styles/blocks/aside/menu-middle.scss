@@ -120,18 +120,39 @@
   }
 
   &__link {
-  font-family: 'Playfair Display', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 30px;
-  text-align: left;
-  text-decoration: none;
-  color: $text-color;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    text-decoration: none;
+    color: $text-color;
 
-  @include on-tablet {
-    font-size: 48px;
-    line-height: 58px;
-  }
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: -8px;
+      height: 1px;
+      background-color: #F1F5F4;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
   }
 }
 
@@ -173,6 +194,13 @@
 
     width: 100%;
     padding-block: 22px;
+
+    &:hover {
+      background-color: #AF3419;
+    }
+    &:active {
+      background-color: #EA340D;
+    }
   }
 }
 

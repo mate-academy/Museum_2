@@ -181,14 +181,9 @@ const langObj = {
     "ua" : "Контакти",
   },
 
-  'contacts-city' : {
-    "en" : "Kyiv,",
-    "ua" : "Київ,",
-  },
-
   'contacts-street' : {
-    "en" : "St. M. Hrushevsky, 6",
-    "ua" : "вул. М. Грушевського, 6",
+    "en": 'Kyiv, str. M. Hrushevsky, 6',
+    "ua": 'Київ, вул. М. Грушевського, 6',
   },
 
   'contacts-num' : {
@@ -345,3 +340,16 @@ function changeLanguage() {
 
 // Початковий виклик для встановлення мови на основі параметрів URL
 changeLanguage();
+
+
+window.addEventListener('hashchange', (event) => {
+  const footer = document.querySelector('footer');
+
+  if (window.location.hash === '#menu') {
+    document.body.classList.add('page__body--with-menu');
+    footer.style.display = 'none';
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+    footer.style.display = '';
+  }
+});
