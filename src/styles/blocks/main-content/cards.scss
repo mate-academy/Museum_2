@@ -1,0 +1,158 @@
+.cards__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 35px;
+  text-align: left;
+  color: $label-color;
+
+
+  @include on-tablet {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  @include on-desktop {
+    font-size: 48px;
+    line-height: 58px;
+  }
+}
+
+.card__img {
+  height: auto;
+  width: 100%;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    border-radius: 15px;
+
+    transform: scale(1.01);
+    box-shadow: 0 0 15px 5px $special-color;
+  }
+}
+
+.card__date {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: $special-color;
+}
+
+.card__title{
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  text-align: left;
+  color: $label-color;
+
+  height: calc(25px * 2);
+
+  @include on-tablet {
+    font-size: 24px;
+    line-height: 30px;
+
+    height: calc(30px * 2);
+  }
+
+  @include on-desktop {
+    height: 25px;
+  }
+}
+
+.card__text {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: $description-color;
+
+  @include on-tablet {
+    height: calc(24px * 3);
+  }
+
+  @include on-desktop {
+    height: calc(24px * 2);
+  }
+}
+
+.card__btn {
+  display: inline-block;
+
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: $text-color;
+  background-color: $special-color;
+
+  width: 100%;
+  padding-block: 22px;
+
+  &:hover {
+    background-color: #AF3419;
+  }
+  &:active {
+    background-color: #EA340D;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+}
+
+.cards__btn {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: $special-color;
+  border: 1px solid $special-color;
+
+  padding-block: 22px;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: $hover-color;
+    border-color: $hover-color;
+  }
+  &:active {
+    color: $active-color;
+    border-color: $active-color;
+  }
+}
+
+
+.cards__btn::before {
+  content: '';
+  position: absolute;
+  right: 30px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/src/images/icons/arrow.svg);
+}
+
+.cards__btn:hover::before {
+  background-image: url(/src/images/icons/arrow-hover.svg);
+}
+
+
+.cards__btn:active::before {
+  background-image: url(/src/images/icons/arrow-active.svg);
+}
