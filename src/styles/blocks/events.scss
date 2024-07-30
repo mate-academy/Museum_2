@@ -1,0 +1,128 @@
+.events {
+  grid-column: 1 / -1;
+
+  margin: 0 0 120px;
+
+  @include on-tablet {
+    margin: 0 0 160px;
+  }
+
+  @include on-desktop {
+    margin: 0 0 200px;
+  }
+
+  &-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include on-tablet {
+      justify-content: space-around;
+      align-items: baseline;
+      gap: 30px;
+    }
+  }
+
+  &__title-section {
+    @include on-mobile {
+      display: block;
+      justify-content: center;
+    }
+
+    @include on-tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-text {
+      color: $c-black;
+      white-space: nowrap;
+
+      @include on-mobile {
+        text-align: center;
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+
+      @include on-mobile {
+        display: none;
+      }
+
+      @include on-tablet {
+        display: flex;
+      }
+
+      &-link {
+        display: flex;
+        justify-content: center;
+        width: 210px;
+
+        @include on-desktop {
+          width: 270px;
+        }
+
+        height: 60px;
+        white-space: nowrap;
+        text-decoration: none;
+        color: $c-main;
+        transition: 0.3s;
+
+        @include on-mobile {
+          display: none;
+        }
+
+        @include on-tablet {
+          display: flex;
+        }
+
+        &--down {
+          @include on-mobile {
+            display: flex;
+          }
+
+          @include on-tablet {
+            display: none;
+          }
+        }
+      }
+
+      &--down {
+        width: 280px;
+        position: relative;
+        bottom: 90;
+
+        @include on-mobile {
+          display: flex;
+        }
+
+        @include on-tablet {
+          display: none;
+        }
+      }
+
+      &-text {
+        position: relative;
+        top: 20;
+        font-weight: 600;
+        font-size: 16px;
+
+        &:hover {
+          color: #af3419;
+        }
+
+        &:active {
+          color: #ea340d;
+        }
+
+        &:disabled {
+          color: #dd836f;
+        }
+      }
+    }
+  }
+}
