@@ -1,7 +1,160 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+.page {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  scroll-behavior: smooth;
+  transition: all 0.3ms;
+  color: $c-white;
+  box-sizing: border-box;
+}
 
-body {
-  background: $c-gray;
+.page:has(.menu:target) {
+  overflow: hidden;
+}
+
+.button-type1,
+.button-type2 {
+  height: 60px;
+  text-align: center;
+  outline: none;
+  padding: unset;
+}
+
+.button-type1 {
+  background-color: $c-main;
+  color: $c-white;
+  border: none;
+
+  &:hover {
+    background-color: $c-button-hover;
+  }
+
+  &:active {
+    background-color: $c-button-pressed;
+  }
+
+  &:disabled {
+    background-color: $c-button-disabled;
+  }
+}
+
+.button-type2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  background-color: $c-white;
+  color: $c-main;
+  border: 1px solid $c-main;
+
+  &:hover {
+    color: $c-button-hover;
+    border: 1px solid $c-button-hover;
+  }
+
+  &:active {
+    color: $c-button-pressed;
+    border: 1px solid $c-button-pressed;
+  }
+
+  &:disabled {
+    color: $c-button-disabled;
+    border: 1px solid $c-button-disabled;
+  }
+}
+
+.section-title {
+  color: $c-black;
+  margin-bottom: 60px;
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    margin-bottom: 75px;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+  }
+
+  @include on-desktop {
+    margin-bottom: 70px;
+    grid-column: 1 / 7;
+  }
+}
+
+.menu-additional-text--sceduale,
+.menu-additional-text--adress {
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.menu-scheduale-text--sceduale,
+.menu-adress-text--adress {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.container {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+
+  @include consten-pudding-in-line;
+
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+.main-text {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $c-grey;
+}
+
+.logo-arrow {
+  height: 20px;
+  width: 20px;
+}
+
+.photo {
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  aspect-ratio: 1 / 1.27;
+  transform: scale(1);
+  transition: all 0.3s;
+
+  @include on-desktop {
+    background-position: center;
+  }
+}
+
+.photo:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.logo {
+  transform: scale(1);
+  transition: all 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
 }
