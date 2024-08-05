@@ -5,4 +5,4 @@ Used [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query
 - Tablet 640px
 - Mobile (> 320px)
 
-[DEMO LINK](https://VerJane23.github.io/Muse/).
+[DEMO LINK](https://VerJane23.github.io/SBU/).
