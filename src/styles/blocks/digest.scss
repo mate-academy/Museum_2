@@ -1,0 +1,133 @@
+.digest {
+  padding-top: 120px;
+
+  @include onTablet {
+    padding-top: 160px;
+  }
+
+  @include onDesktop {
+    padding-top: 200px;
+  }
+
+  &__container {
+    @include pageGrid;
+  }
+
+  &__title {
+    padding-bottom: 20px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+    
+    @include onDesktop {
+      grid-column: 1 / 7;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__description {
+    padding-bottom: 50px;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      gap: 40px;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__input {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    border: none;
+    border-bottom: 1px solid #1C1B29;
+
+    &:hover {
+      border-bottom: 1px solid $buttons-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #1C1B29;
+    }
+
+    &:hover::placeholder {
+      color: $buttons-color;
+    }
+
+    &:focus::placeholder {
+      font-weight: 600;
+      color: $buttons-color;
+      
+    }
+
+    &:not(:placeholder-shown) {
+      color: #1C1B29;
+      font-weight: 600;
+    }
+  }
+
+  &__button {
+    margin-bottom: 80px;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 60px;
+    background-color: $buttons-color;
+    border: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+    @include hover(transform, scale(1.03));
+
+    &:hover {
+      background-color: $hover-buttons-color;
+    }
+
+    &:active {
+      background-color: $active-buttons-color;
+    }
+
+    @include onTablet {
+      margin-bottom: 128px;
+      width: 330px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      margin-bottom: 200px;
+    }
+  }
+}
