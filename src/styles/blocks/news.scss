@@ -52,10 +52,8 @@
       }
     }
 
-    
-
     &::before {
-      content: "";
+      content: '';
       height: 20px;
       width: 20px;
       background-image: url(../images/exhibitions/button.svg);
@@ -64,7 +62,6 @@
       background-position: center;
       display: block;
       transition: 0.3s ease;
-
     }
     &:hover::before {
       background-image: url(../images/exhibitions/button-hover.svg);
@@ -137,7 +134,7 @@
       font-size: 14px;
       font-weight: 400;
       line-height: 20px;
-      color: #1C1B29;
+      color: #1c1b29;
       padding-top: 20px;
 
       @include on-tablet {
@@ -150,7 +147,9 @@
     }
 
     &__title {
-      font-family: Playfair Display, sans-serif;
+      font-family:
+        Playfair Display,
+        sans-serif;
       font-size: 20px;
       font-weight: 700;
       line-height: 25px;
@@ -161,7 +160,7 @@
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
-      color: #504F5E;
+      color: #504f5e;
       padding-top: 20px;
 
       @include on-tablet {
@@ -172,55 +171,54 @@
 
   &__bottom-button {
     display: flex;
-      flex-direction: row-reverse;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      height: 60px;
-      width: 100%;
-      font-family: Raleway, sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      color: $buttons-color;
-      border: 1px solid $buttons-color;
-      background-color: #fff;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 60px;
+    width: 100%;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: $buttons-color;
+    border: 1px solid $buttons-color;
+    background-color: #fff;
+    transition: 0.3s ease;
+    margin-top: 30px;
+    cursor: pointer;
+    @include hover(transform, scale(1.03));
+
+    @include on-tablet {
+      display: none;
+    }
+
+    &:hover {
+      color: $hover-buttons-color;
+      border: 1px solid $hover-buttons-color;
+    }
+
+    &:active {
+      color: $active-buttons-color;
+      border: 1px solid $active-buttons-color;
+    }
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-image: url(../images/exhibitions/button.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
       transition: 0.3s ease;
-      margin-top: 30px;
-      cursor: pointer;
-      @include hover(transform, scale(1.03));
+    }
+    &:hover::before {
+      background-image: url(../images/exhibitions/button-hover.svg);
+    }
 
-      @include on-tablet {
-        display: none;
-      }
-
-      &:hover {
-        color: $hover-buttons-color;
-        border: 1px solid $hover-buttons-color;
-      }
-
-      &:active {
-        color: $active-buttons-color;
-        border: 1px solid $active-buttons-color;
-      }
-
-      &::before {
-        content: "";
-        height: 20px;
-        width: 20px;
-        background-image: url(../images/exhibitions/button.svg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        display: block;
-        transition: 0.3s ease;
-  
-      }
-      &:hover::before {
-        background-image: url(../images/exhibitions/button-hover.svg);
-      }
-  
-      &:active::before {
-        background-image: url(../images/exhibitions/button-active.svg);
-      }
+    &:active::before {
+      background-image: url(../images/exhibitions/button-active.svg);
+    }
   }
 }
