@@ -1,0 +1,97 @@
+.header {
+  background-color: $c-background;
+  height: 100vh;
+  background-image: url(/src/images/header-bottom.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: auto 37%;
+
+  @include on-tablet {
+    background-size: 45% auto;
+  }
+
+  @include on-desktop {
+    background-position: right bottom;
+    background-size: 50% auto;
+  }
+
+  &-bottom {
+    display: none;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      position: absolute;
+      bottom: 0;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-date {
+      opacity: 70%;
+    }
+
+    &-line {
+      @include on-desktop {
+        content: '';
+        height: 1px;
+        background-color: $c-white;
+        opacity: 30%;
+        width: 470px;
+      }
+    }
+  }
+
+  &-additional-text {
+    margin-top: 50px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 99px;
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      margin-top: 90px;
+    }
+  }
+
+  &-title {
+    margin-top: 10px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &-main-text {
+    margin-top: 30px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &-button-type1 {
+    margin-top: 40px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 50px;
+      grid-column: 1 / 4;
+    }
+  }
+}
