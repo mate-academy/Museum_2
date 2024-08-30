@@ -1,0 +1,54 @@
+.menu-button {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &__wrapper {
+    position: relative;
+    width: 25px;
+    height: 20px;
+  }
+
+  &__line {
+    position: absolute;
+    background-color: $c-white;
+    height: 2px;
+    width: 100%;
+    transition: $effectDuration;
+    transform-origin: 0;
+
+    &--top {
+      top: 0;
+      left: 0;
+    }
+
+    &--center {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &--bottom {
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &--close &__line--top {
+    transform: rotate(45deg) scale(1.15);
+    top: -10%;
+    left: 10%;
+  }
+
+  &--close &__line--center {
+    opacity: 0;
+  }
+
+  &--close &__line--bottom {
+    transform: rotate(-45deg) scale(1.15);
+    bottom: -5%;
+    left: 10%;
+  }
+}

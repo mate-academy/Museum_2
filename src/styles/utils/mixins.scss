@@ -1,0 +1,259 @@
+@mixin tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin container() {
+  padding-inline: 20px;
+  margin: 0 auto;
+
+  @include tablet {
+    padding-inline: 39px;
+  }
+
+  @include desktop {
+    padding-inline: 55px;
+    max-width: 1440px;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include desktop {
+    --columns: 12;
+  }
+}
+
+@mixin grid-markup(
+  $columns-mobile,
+  $columns-tablet: $columns-mobile,
+  $columns-desktop: $columns-tablet
+) {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat($columns-mobile, 1fr);
+
+  @include tablet {
+    column-gap: 30px;
+    grid-template-columns: repeat(($columns-tablet), 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(($columns-desktop), 1fr);
+  }
+}
+
+@mixin hover($property, $toValue, $element: false) {
+  @if $element {
+    #{$element} {
+      transition: #{$property} 0.3s;
+    }
+    &:hover #{$element} {
+      #{$property}: $toValue;
+    }
+  } @else {
+    transition: #{$property} 0.3s;
+    &:hover {
+      #{$property}: $toValue;
+    }
+  }
+}
+
+@mixin pressed($property, $toValue, $element: false) {
+  @if $element {
+    #{$element} {
+      transition: #{$property} 0.3s;
+    }
+    &:active #{$element} {
+      #{$property}: $toValue;
+    }
+  } @else {
+    transition: #{$property} 0.3s;
+    &:active {
+      #{$property}: $toValue;
+    }
+  }
+}
+
+@mixin disabled($property, $toValue, $element: false) {
+  @if $element {
+    #{$element} {
+      transition: #{$property} 0.3s;
+    }
+    &:disabled #{$element} {
+      #{$property}: $toValue;
+    }
+  } @else {
+    transition: #{$property} 0.3s;
+    &:disabled {
+      #{$property}: $toValue;
+    }
+  }
+}
+
+@mixin header-height {
+  height: $header-height-mobile;
+
+  @include tablet {
+    height: $header-height-tablet;
+  }
+
+  @include desktop {
+    height: $header-height-desktop;
+  }
+}
+
+@mixin accent($bg-image) {
+  position: absolute;
+  top: 0;
+  background-image: $bg-image;
+  opacity: 0;
+}
+
+@mixin padding-top {
+  padding-top: $header-height-mobile;
+
+  @include tablet {
+    padding-top: $header-height-tablet;
+  }
+
+  @include desktop {
+    padding-top: $header-height-desktop;
+  }
+}
+
+@mixin exhibitions-events-styles {
+  &__content {
+    @include page-grid;
+
+    @include tablet {
+      row-gap: 76px;
+    }
+
+    @include desktop {
+      row-gap: 70px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 60px;
+
+    @include tablet {
+      order: 1;
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      grid-column: span 9;
+    }
+  }
+
+  &__items {
+    grid-column: 1/-1;
+    row-gap: 60px;
+
+    @include grid-markup(2, 6);
+
+    @include tablet {
+      order: 3;
+    }
+  }
+
+  &__button-secondary {
+    grid-column: 1/-1;
+    margin-top: 30px;
+
+    @include tablet {
+      order: 2;
+      grid-column: span 2;
+      margin-top: 0;
+    }
+
+    @include desktop {
+      grid-column: span 3;
+    }
+  }
+}
+
+@mixin items-styles {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/-1;
+
+  @include grid-markup(2, 6);
+
+  &__photo-wrapper {
+    width: 100%;
+    height: 356px;
+    margin-bottom: 20px;
+    grid-column: 1/-1;
+    overflow: hidden;
+
+    @include tablet {
+      height: 420px;
+    }
+
+    @include desktop {
+      height: 484px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__dates {
+    color: $c-main;
+    margin-bottom: 10px;
+    grid-column: 1/-1;
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    grid-column: 1/-1;
+  }
+
+  &__description {
+    color: $c-gray;
+    margin-bottom: 30px;
+    grid-column: 1/-1;
+  }
+
+  &__button {
+    grid-column: 1/-1;
+  }
+}
+
+@mixin autofill {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px $c-white inset;
+    -webkit-text-fill-color: $c-main;
+  }
+}

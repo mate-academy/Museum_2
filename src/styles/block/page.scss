@@ -1,0 +1,40 @@
+.page {
+  color: $c-black;
+  background-color: $c-white;
+
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    position: relative;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__mobile-desktop-hidden {
+    display: none;
+
+    @include tablet {
+      display: inline-block;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__tablet-hidden {
+    display: inline-block;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
