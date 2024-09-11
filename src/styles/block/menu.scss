@@ -1,0 +1,165 @@
+.menu {
+  position: fixed;
+  inset: 0;
+  background-color: $c-background;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: $effectDuration ease-in-out;
+  z-index: 10;
+  box-sizing: border-box;
+
+  height: 100dvh;
+  overflow-y: scroll;
+
+  @include padding-top;
+
+  &--open {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &__wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    box-sizing: border-box;
+
+    @include desktop {
+      width: unset;
+      box-sizing: unset;
+    }
+  }
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__section {
+    grid-column: 1/-1;
+
+    @include tablet {
+      grid-column: span 2;
+      margin-top: 30px;
+    }
+
+    @include desktop {
+      margin-top: 10px;
+    }
+
+    &--address {
+      @include tablet {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__label {
+    color: $c-white;
+    opacity: 0.8;
+
+    &--schedule {
+      margin-top: 10px;
+
+      @include tablet {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-white;
+
+    @include hover(color, $c-main);
+    @include pressed(color, $c-button-pressed);
+  }
+
+  &__text {
+    color: $c-white;
+
+    &--schedule {
+      margin-bottom: 20px;
+
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+    margin: 40px 0;
+
+    @include desktop {
+      grid-column: 1/7;
+    }
+  }
+
+  &__line {
+    grid-column: 1/-1;
+    opacity: 0.3;
+    background-color: #f1f5f4;
+    height: 1px;
+    display: block;
+    width: 100%;
+
+    @include desktop {
+      grid-column: 1/7;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+    margin-top: 40px;
+
+    @include tablet {
+      grid-column: 1/4;
+    }
+  }
+
+  &__image-wrapper {
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 466px;
+    width: 422px;
+    display: none;
+    align-self: center;
+
+    @include tablet {
+      display: inline-block;
+    }
+
+    @include desktop {
+      width: 50%;
+      height: 100%;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      padding-top: $header-height-desktop;
+    }
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-position: bottom;
+
+    @include desktop {
+      width: 100%;
+      height: 100%;
+      object-position: bottom right;
+    }
+  }
+}

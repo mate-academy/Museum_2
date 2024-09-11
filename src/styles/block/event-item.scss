@@ -1,0 +1,49 @@
+.event-item {
+  @include items-styles;
+  @include grid-markup(2, 6);
+
+  @include tablet {
+    grid-column: 1/-1;
+  }
+
+  &__photo-wrapper {
+    @include tablet {
+      margin-bottom: 0;
+      grid-column: span 3;
+    }
+
+    @include desktop {
+      grid-column: span 2;
+    }
+  }
+
+  &__info-wrapper {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/-1;
+
+    @include tablet {
+      grid-column: span 3;
+    }
+
+    @include desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__description {
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      width: 75%;
+    }
+  }
+
+  &__button {
+    @include desktop {
+      width: 35%;
+    }
+  }
+}

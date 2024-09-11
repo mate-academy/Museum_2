@@ -1,0 +1,41 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    &--menu {
+      color: $c-white;
+      gap: 30px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &--menu {
+      position: relative;
+      color: inherit;
+
+      &::after {
+        content: '';
+        background-color: $c-white;
+        width: 100%;
+        height: 1px;
+        display: block;
+        position: absolute;
+        transition: transform 0.3s;
+        transform: scale(0);
+        bottom: 5px;
+        right: 5px;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+}

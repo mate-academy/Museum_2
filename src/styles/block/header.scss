@@ -1,0 +1,54 @@
+.header {
+  background-color: $c-background;
+  position: absolute;
+  width: 100%;
+  z-index: 20;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include header-height;
+  }
+
+  &__left {
+    display: flex;
+    gap: 28px;
+
+    @include tablet {
+      gap: 40px;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    height: 40px;
+    width: 123px;
+
+    @include tablet {
+      height: 37px;
+      width: 124px;
+    }
+  }
+
+  &__language-button {
+    background-color: inherit;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+
+    @include hover(opacity, 0, '.icon--dropdown');
+    @include hover(opacity, 1, '.icon--dropdown-hover');
+    @include hover(color, $c-main, '.text-button-language');
+
+    @include tablet {
+      order: 1;
+    }
+  }
+}
