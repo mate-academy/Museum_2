@@ -1,0 +1,57 @@
+.container {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-inline: 55px;
+  }
+
+  &--header {
+    height: 100vh;
+    min-height: 747px;
+
+    background: url(/src/images/header-bg-phone.png) no-repeat bottom center;
+
+    @include on-tablet {
+      min-height: 1092px;
+
+      background-image: url(/src/images/header-bg-tablet.png);
+    }
+
+    @include on-desktop {
+      min-height: 800px;
+
+      background-image: url(/src/images/header-bg.png);
+      background-position: bottom right;
+    }
+  }
+
+  &--menu {
+    height: 100vh;
+    min-height: 747px;
+
+    @include on-tablet {
+      min-height: 1092px;
+
+      background: url(/src/images/menu-bg-tablet.png) no-repeat bottom center;
+    }
+
+    @include on-desktop {
+      min-height: 800px;
+
+      background: url(/src/images/menu-bg.png) no-repeat bottom right;
+    }
+  }
+
+  &--plan-visit {
+    @include on-desktop {
+      background: url(/src/images/plan-visit-bg.png) no-repeat bottom left /
+        contain;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.header {
+  color: $white;
+  background-color: $bg;
+
+  &__top-bar {
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      margin-bottom: 100px;
+    }
+
+    @include on-tablet {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__main-content {
+    @include page-grid;
+  }
+
+  &__date {
+    grid-column: span 2;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 140%;
+
+    opacity: 80%;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 1/-2;
+
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/7;
+
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    grid-column: 1/-1;
+
+    width: 267px;
+    margin-bottom: 40px;
+
+    font-size: 16px;
+    line-height: 150%;
+
+    opacity: 80%;
+
+    @include on-tablet {
+      grid-column: 1/4;
+
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/7;
+
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__bottom-date {
+    display: none;
+    align-items: center;
+
+    opacity: 60%;
+
+    @include on-desktop {
+      grid-column: 1/7;
+
+      display: flex;
+    }
+
+    &::after {
+      content: '';
+
+      position: relative;
+      left: 20px;
+
+      width: 470px;
+      height: 1px;
+      display: inline-block;
+
+      background-color: $white;
+
+      opacity: 30%;
+    }
+  }
+}

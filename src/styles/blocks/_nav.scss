@@ -1,0 +1,59 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding-block: 40px;
+
+    @include on-tablet {
+      row-gap: 30px;
+      padding-block: 50px;
+    }
+
+    @include on-desktop {
+      row-gap: 60px;
+      padding-block: 70px 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    display: inline-block;
+
+    color: inherit;
+
+    @include link-hover-effect;
+  }
+
+  &__link-text {
+    font-size: 20px;
+    line-height: 150%;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &--footer &__list {
+    row-gap: 5px;
+    padding-block: 0;
+
+    @include on-tablet {
+      row-gap: 10px;
+    }
+  }
+
+  &--footer &__item:first-child {
+    margin-bottom: 5px;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &--footer &__item:not(:first-child) {
+    opacity: 80%;
+  }
+}

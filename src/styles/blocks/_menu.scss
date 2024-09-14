@@ -1,0 +1,104 @@
+.menu {
+  height: 100vh;
+
+  color: $white;
+  background-color: $bg;
+
+  overflow: auto;
+
+  &__top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__content {
+    @include page-grid;
+
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__hours-wrapper {
+    grid-column: span 2;
+
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__hours-label {
+    opacity: 80%;
+  }
+
+  &__hours {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__address-wrapper {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+  }
+
+  &__address-label {
+    opacity: 80%;
+  }
+
+  &__address {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+
+    margin-bottom: 40px;
+
+    border-bottom: 1px solid $white;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/7;
+      margin-bottom: 60px;
+
+      border-color: $white-transparent;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+
+    margin: 0 auto;
+
+    @include on-tablet {
+      grid-column: span 3;
+
+      margin: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 1/4;
+    }
+  }
+}
