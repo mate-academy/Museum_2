@@ -1,0 +1,118 @@
+.header {
+  background-color: $bc-color;
+  box-sizing: border-box;
+
+  &__content {
+    @include on-desktop {
+      @include page-grid
+    }
+  }
+
+  &__description {
+    margin-top: 50px;
+
+    @include on-tablet {
+      margin-top: 99px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      margin-top: 90px;
+    }
+  }
+  
+  &__dates {
+    line-height: 19.6px;
+    font-family: $small-font;
+    font-weight: 400;
+    font-size: 14px;
+    color: $white-color;
+  }
+  
+  &__title {
+    line-height: 48px;
+    margin-top: 10px;
+    font-size: 48px;
+    color: $white-color;
+    font-family: $big-font;
+
+    @include on-tablet {
+      line-height: 72px;
+      font-size: 72px;
+    }
+
+    @include on-desktop {
+      line-height: 86px;
+      font-size: 86px;
+    }
+  }
+  
+  &__contribution {
+    line-height: 24px;
+    font-weight: 400;
+    font-family: $small-font;
+    margin-top: 30px;
+    font-size: 16px;
+    color: $white-color;
+    margin-bottom: 40px;
+
+    @include on-desktop {
+      margin-bottom: 80px;
+    }
+  }
+  
+  &__girl {
+    display: block;
+    text-decoration: none;
+    margin-top: 40px;
+    width: 245px;
+    height: 273px;
+    background-image: url("./img/header-bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-inline: auto;
+
+    @include on-tablet {
+      height: 494px;
+      width: 443px;
+    }
+
+    @include on-desktop {
+      height: 663px;
+      width: 625px;
+
+      @include on-desktop {
+        grid-column: span 6;
+      }
+    }
+  }
+
+  &__desktop-wrapper {
+    display: none;
+
+    @include on-desktop {
+      margin-top: 135px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      align-items: center;
+    }
+  }
+
+  &__desktop-dates {
+    font-family: $small-font;
+    font-size: 10.3px;
+    line-height: 17,5px;
+    font-weight: 400;
+    color: $white-color;
+    grid-column: span 1;
+  }
+
+  &__line {
+    width: 100%;
+    border-bottom: 1px solid $white-color;
+    grid-column: span 5;
+  }
+}
+
+
