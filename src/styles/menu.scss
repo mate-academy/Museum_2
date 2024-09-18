@@ -1,10 +1,13 @@
 .menu {
-  // height: 100vh;
   background-color: $bc-color;
 
   &__icons {
     display: flex;
     gap: 30px;
+
+    @include on-tablet {
+      gap: 40px;
+    }
   }
 
   &__info {
@@ -17,6 +20,7 @@
     }
 
     @include on-desktop {
+      margin-bottom: 70px;
       gap: 83px;
     }
   }
@@ -59,20 +63,53 @@
 
   &__line {
     margin-top: 40px;
-    width: 100ww;
     border-bottom: 1px solid $white-color;
     color: $white-color;
     margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
   }
 
   &__girl {
-    display: block;
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    };
     width: 422px;
     height: 466px;
     margin-inline: auto;
+    margin-top: 30px;
     background-image: url("/src/img/img-menu-tablet.png");
     background-repeat: no-repeat;
     background-size: contain;
+
+    @include on-desktop {
+      margin-top: 0;
+      width: 624px;
+      height: 697px;
+      grid-column: span 6;
+    }
+  }
+
+  &__content {
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__info-and-nav {
+    @include on-desktop {
+      grid-column: span 6;
+    }
   }
 }
 

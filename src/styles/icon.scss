@@ -1,25 +1,38 @@
 .icon {
-  display: block;
   background-repeat: no-repeat;
   background-size: contain;
 
   &--menu--open {
     height: 20px;
     width: 25px;
-  
+
     background-image: url("icons/menu-open.png");
   }
-  
+
   &--lng {
     background-image: url("icons/language-icon.png");
-  
+
     width: 34px;
     height: 24px;
+
+    &--header {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+      }
+    }
+
+    &--menu {
+      @include on-tablet {
+        order: 2;
+      }
+    }
   }
-  
+
   &--menu--close {
     background-image: url("icons/icon-close.png");
-  
+
     width: 22px;
     height: 22px;
   }

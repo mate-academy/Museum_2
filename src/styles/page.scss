@@ -7,27 +7,28 @@
     padding: 0;
   }
 
-  &:has(.page__menu:target) {
-    // overflow: hidden;
-  }
-
-  &__menu {
-    overflow: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    pointer-events: none;
-    transform: translateX(-100%);
-    transition: all 0.3s;
-  }
-
   &__menu:target {
     transform: translateX(0);
-    opacity: 1;
     pointer-events: all;
   }
 }
+
+.page:has(.page__menu:target) {
+  overflow: hidden;
+}
+
+.page__menu {
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+  transition: all 0.3s;
+}
+
 
 
 
