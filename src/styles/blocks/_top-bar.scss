@@ -1,0 +1,67 @@
+.top-bar {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    display: inline-block;
+    height: 40px;
+    width: 123px;
+    background-image: url(../images/header/logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__menus {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &__menu {
+    display: inline-block;
+
+    @include on-desktop {
+      height: 30px;
+      width: 30px;
+    }
+
+    &--burger {
+      height: 20px;
+      width: 25px;
+      background-image: url(../images/header/burger-menu.svg);
+    }
+
+    &--cross {
+      height: 22px;
+      width: 22px;
+      background-image: url();
+    }
+  }
+
+  &__language {
+    text-decoration: none;
+    color: $main-bg-color;
+    align-items: center;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+
+    &--mobile {
+      display: flex;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    &--tablet-pc {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+      }
+    }
+  }
+}

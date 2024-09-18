@@ -1,0 +1,136 @@
+.header {
+  background-color: $header-menu-bg-color;
+  color: $main-bg-color;
+
+  &__main {
+    @include page-grid;
+  }
+
+  &__info {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include on-desktop {
+      --columns: 6;
+
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__date {
+    margin: 0;
+    margin-top: 50px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 100px;
+    }
+
+    @include on-desktop {
+      margin-top: 90px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      font-size: 72px;
+      line-height: 72px;
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 20px;
+    }
+
+    @include on-desktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__short-date {
+    display: none;
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17.5px;
+    }
+
+    &::after {
+      display: inline-block;
+      content: "";
+      width: calc(100% - 101px);
+      height: 1px;
+      margin-left: 20px;
+      border-top: 1px solid $main-bg-color;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+    height: 60px;
+    width: 100%;
+    text-decoration: none;
+    color: $main-bg-color;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 80px;
+    }
+  }
+
+  &__img {
+    grid-column: 1 / -1;
+    width: 100%;
+    align-self: end;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+}
