@@ -1,0 +1,148 @@
+.exhibitions {
+  row-gap: 30px;
+
+  @include on-tablet {
+    row-gap: 70px;
+  }
+
+  &__title {
+    text-align: center;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      text-align: left;
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      line-height: 100%;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 10 / -1;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    grid-auto-rows: min-content;
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 30px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &--1 {
+      @include on-tablet {
+        margin-top: 0;
+        grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--2 {
+      @include on-tablet {
+        grid-column: 4 / -1;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+      }
+    }
+
+    &__image {
+      grid-column: 1 / -1;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      aspect-ratio: 3.3 / 4;
+
+      @include on-desktop {
+        aspect-ratio: 3 / 2.5;
+      }
+
+      @include hover(transform, scale(1.05));
+    }
+
+    &__date {
+      color: $accent-color;
+      grid-column: 1 / -1;
+      margin-top: 20px;
+
+      @include on-tablet {
+        margin-top: 30px;
+      }
+
+      @include on-desktop {
+        margin-top: 20px;
+      }
+    }
+
+    & > h4 {
+      display: inline-block;
+      grid-column: 1 / -1;
+      margin-top: 10px;
+
+      @media (min-width: 754px) {
+        height: 60px;
+      }
+
+      @media (min-width: 864px) {
+        height: 30px;
+      }
+    }
+
+    &__description {
+      grid-column: 1 / -1;
+      margin-top: 20px;
+
+      @include on-tablet {
+        display: inline-block;
+        height: 96px;
+      }
+
+      @media (min-width: 706px) {
+        height: 72px;
+      }
+
+      @media (min-width: 902px) {
+        height: 48px;
+      }
+    }
+
+    &__button {
+      grid-column: 1 / -1;
+      margin-top: 30px;
+
+      @include on-tablet {
+        margin-top: 40px;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 4;
+        margin-top: 50px;
+      }
+    }
+  }
+}
