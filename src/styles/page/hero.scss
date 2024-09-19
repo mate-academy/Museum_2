@@ -1,0 +1,118 @@
+.hero {
+  &__wrapper {
+    min-height: 100vh;
+
+    padding-top: 130px;
+
+    display: flex;
+
+    background-color: $colorBackground;
+    color: $colorWhite;
+
+    @include onTablet {
+      padding-top: 180px;
+    }
+    @include onDesktop {
+      padding-top: 150px;
+    }
+  }
+
+  &__container{
+    flex-grow: 1;
+    display: flex;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0,1fr);
+    gap: 40px;
+
+    flex-grow: 1;
+
+    @include onTablet {
+      gap: 70px;
+    }
+    @include onDesktop {
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 30px;
+    }
+  }
+
+  &__background {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    img{
+      width: 100%;
+      height: 100%;
+
+      object-position: center bottom;
+      object-fit: contain;
+    }
+  }
+}
+
+.info-block {
+  &__header {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      gap: 20px;
+
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+    @include onDesktop {
+      gap: 30px;
+
+      &:not(:last-child) {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 267px;
+    width: 100%;
+
+    @include onTablet {
+      max-width: 330px;
+    }
+  }
+
+  &__title {
+    @include mainTitle;
+
+    color: $colorWhite;
+
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: 1.5px;
+
+    @include onTablet {
+      font-size: 72px;
+    }
+    @include onDesktop{
+      font-size: 96px;
+    }
+  }
+}

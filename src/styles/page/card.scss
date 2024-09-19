@@ -1,0 +1,109 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  &--grid {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+
+      .card__header {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &__header {
+    max-width: 100%;
+    width: 100%;
+    height: 55vh;
+
+    overflow: hidden;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      .card__img {
+        transform: scale(1.1);
+      }
+    }
+
+    @include onTablet {
+      height: auto;
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+    @include onDesktop {
+      max-height: 484px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition-duration: $transitionDuration;
+  }
+
+  &__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    @include onTablet {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+    @include onDesktop {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__date {
+    color: $colorRed;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &--color {
+      color: $colorBlack;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+
+    @include mainTitle;
+    font-size: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+}
