@@ -4,21 +4,9 @@
 
   &__main {
     @include page-grid;
-  }
-
-  &__info {
-    @include page-grid;
-
-    grid-column: 1 / -1;
-
-    @include on-tablet {
-      grid-column: 1 / -1;
-    }
 
     @include on-desktop {
-      --columns: 6;
-
-      grid-column: 1 / 7;
+      height: calc(100vh - 80px);
     }
   }
 
@@ -86,6 +74,8 @@
       font-size: 14px;
       font-weight: 700;
       line-height: 17.5px;
+      align-self: end;
+      margin-bottom: 50px;
     }
 
     &::after {
@@ -99,38 +89,16 @@
   }
 
   &__button {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $main-color;
-    height: 60px;
-    width: 100%;
-    text-decoration: none;
-    color: $main-bg-color;
+    margin-block: 40px;
     grid-column: 1 / -1;
 
     @include on-tablet {
       grid-column: 1 / 4;
-      margin-top: 50px;
+      margin-block: 50px 70px;
     }
 
     @include on-desktop {
-      margin-top: 80px;
-    }
-  }
-
-  &__img {
-    grid-column: 1 / -1;
-    width: 100%;
-    align-self: end;
-
-    @include on-tablet {
-      grid-column: 2 / -2;
-    }
-
-    @include on-desktop {
-      grid-column: 7 / -1;
+      margin-block: 80px 0;
     }
   }
 }
