@@ -1,10 +1,23 @@
 .header {
   background-color: $bc-color;
   box-sizing: border-box;
+  background-image: url("/src/img/header-bg.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 245px 273px;
+
+  @include on-tablet {
+    background-size: 443px 494px;
+  }
+
+  @include on-desktop {
+    background-size: 625px 663px;
+    background-position: right bottom;
+  }
 
   &__content {
     @include on-desktop {
-      @include page-grid
+      @include page-grid;
     }
   }
 
@@ -13,9 +26,12 @@
 
     @include on-tablet {
       margin-top: 99px;
+
+      @include page-grid;
     }
 
     @include on-desktop {
+      display: block;
       grid-column: span 6;
       margin-top: 90px;
     }
@@ -27,6 +43,9 @@
     font-weight: 400;
     font-size: 14px;
     color: $white-color;
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
   }
 
   &__title {
@@ -39,6 +58,7 @@
     @include on-tablet {
       line-height: 72px;
       font-size: 72px;
+      grid-column: 1 / 6;
     }
 
     @include on-desktop {
@@ -56,34 +76,12 @@
     color: $white-color;
     margin-bottom: 40px;
 
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
     @include on-desktop {
       margin-bottom: 80px;
-    }
-  }
-
-  &__girl {
-    display: block;
-    text-decoration: none;
-    margin-top: 40px;
-    width: 245px;
-    height: 273px;
-    background-image: url("./img/header-bg.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-inline: auto;
-
-    @include on-tablet {
-      height: 494px;
-      width: 443px;
-    }
-
-    @include on-desktop {
-      height: 663px;
-      width: 625px;
-
-      @include on-desktop {
-        grid-column: span 6;
-      }
     }
   }
 
@@ -91,7 +89,7 @@
     display: none;
 
     @include on-desktop {
-      margin-top: 135px;
+      margin-bottom: 50px;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       column-gap: 30px;
