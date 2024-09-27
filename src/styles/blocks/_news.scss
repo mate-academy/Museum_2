@@ -1,0 +1,137 @@
+.news {
+  margin-top: 90px;
+
+  @include tablet {
+    margin-top: 120px;
+    width: 690px;
+
+    @include grid;
+  }
+
+  @include desktop {
+    margin-top: 110px;
+    width: 1170px;
+  }
+
+  &__title {
+    @include tablet {
+      grid-column: 1/2;
+      grid-row: 1;
+      max-height: 50px;
+      width: fit-content;
+      align-self: center;
+
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include desktop {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+  }
+
+  &__article {
+    @include tablet {
+      width: 330px;
+    }
+
+    @include desktop {
+      width: 570px;
+    }
+
+    &--first {
+      @include tablet {
+        grid-column: span 3;
+        grid-row: 2;
+      }
+
+      @include desktop {
+        grid-column: span 6;
+        grid-row: 2;
+      }
+    }
+
+    &--second {
+      @include tablet {
+        grid-column: span 3;
+        grid-row: 2;
+      }
+
+      @include desktop {
+        grid-column: 7 / span 5;
+        grid-row: 2;
+      }
+    }
+  }
+
+  &__image--link {
+    margin-top: 60px;
+
+    @include hover(transform, scale(1.03));
+
+    @include tablet {
+      margin-top: 70px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 281px;
+
+    object-fit: cover;
+
+    @include tablet {
+      width: 330px;
+      height: 330px;
+    }
+
+    @include desktop {
+      width: 570px;
+      height: 370px;
+    }
+  }
+
+  &__date {
+    margin-top: 20px;
+
+    font-size: 14px;
+    line-height: 19.6px;
+  }
+
+  &__label {
+    font-family: $bold-font-family;
+    font-size: 20px;
+    line-height: 25px;
+    color: $black-color;
+
+    @include hover(color, $main-color);
+
+    @include tablet {
+      line-height: 30px;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+
+    color: $gray-color;
+
+    @include desktop {
+      width: 570px;
+    }
+  }
+
+  &__button {
+    @include tablet {
+      grid-column: 5/6;
+      grid-row: 1;
+      padding-left: 55px;
+    }
+
+    @include desktop {
+      grid-column: 10/12;
+      padding-left: 80px;
+    }
+  }
+}
