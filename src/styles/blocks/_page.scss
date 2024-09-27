@@ -1,11 +1,11 @@
 .page {
   background: $main-bg-color;
+  scroll-behavior: smooth;
 
   &__menu {
     box-sizing: border-box;
     height: 100vh;
     background-color: $header-menu-bg-color;
-    overflow: auto;
     position: fixed;
     top: 0;
     right: 0;
@@ -17,10 +17,15 @@
     pointer-events: none;
 
     &:target {
+      z-index: 2;
       opacity: 1;
       transform: translateX(0);
       pointer-events: all;
     }
+  }
+  
+  &:has(.page__menu:target) {
+    overflow: hidden;
   }
 }
 
