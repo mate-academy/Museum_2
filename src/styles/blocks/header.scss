@@ -1,0 +1,159 @@
+.header {
+  position: relative;
+  background-color: $background-color;
+
+  @include on-desktop {
+    height: 100vh;
+  }
+
+  &__bottom {
+    @include page-grid;
+    padding-top: 50px;
+
+    @include on-tablet {
+      padding-top: 100px;
+    }
+
+    @include on-desktop {
+      padding-top: 90px;
+    }
+  }
+
+  &__date {
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    grid-column: 1 / -1;
+    color: $text-color;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    grid-column: 1 / -1;
+    color: $text-color;
+    padding-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+      font-size: 72px;
+      padding-bottom: 20px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      font-size: 96px;
+    }
+  }
+
+  &__description {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    grid-column: 1 / -1;
+    color: $text-color;
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+      padding-bottom: 81px;
+    }
+  }
+
+  &__button {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    grid-column: 1 / -1;
+    color: $text-color;
+    height: 60px;
+    background-color: #cd4d31;
+    border: none;
+    margin-bottom: 40px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    @include hover(transform, scale(1.03));
+
+    &:hover {
+      background-color: $hover-buttons-color;
+    }
+
+    &:active {
+      background-color: $active-buttons-color;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      margin: 0;
+    }
+  }
+
+  &__img-wrapper {
+    background-image: url(../images/header-img.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 245px;
+    height: 273px;
+    display: block;
+    margin: 0 auto;
+
+    @include on-tablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      width: 625px;
+      height: 663px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__line-wrapper {
+    display: none;
+
+    @include on-desktop {
+      padding-top: 135px;
+      padding-bottom: 50px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      height: 30px;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__line-date {
+    font-family:
+      Playfair Display,
+      sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17.5px;
+    color: #f1f5f4;
+    opacity: 70%;
+  }
+
+  &__line {
+    width: 469px;
+    opacity: 30%;
+  }
+}
