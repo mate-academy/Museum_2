@@ -1,0 +1,251 @@
+.header {
+  margin: 0;
+  background-color: #3F5252;
+  // z-index: 1;
+
+  position: relative;
+
+  &-top-bar-mobile {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &-top-bar-tablet {
+    display: none;
+
+    @include on-tablet {
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &-top-bar-tablet-burger-and-language {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &-top-bar-logo {
+    display: flex;
+
+    &-img {
+      width: 123px;
+      height: 40px;
+    }
+  }
+
+  &-top-bar-burger-menu {
+    display: flex;
+
+    &-img {
+      width: 25px;
+      height: 20px;
+
+      @include on-tablet {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  &-top-bar-language {
+    display: flex;
+
+    &-img {
+      width: 34px;
+      height: 24px;
+    }
+  }
+
+  &-event {
+    color: #F1F5F4;
+    text-align: left;
+
+    &-dates {
+      margin: 0;
+      margin-top: 70px;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+
+      @include on-tablet {
+        margin-top: 119px;
+      }
+    }
+
+    &-name {
+      margin: 0;;
+      margin-top: 10px;
+      font-family: Playfair Display, sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+
+      @include on-tablet {
+        font-size: 72px;
+      }
+
+      @include on-desktop {
+        font-size: 96px;
+      }
+    }
+
+    &-description {
+      margin: 0;
+      margin-top: 30px;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+
+      @include on-tablet {
+        margin-top: 20px;
+      }
+
+      @include on-desktop {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &-button {
+    margin-top: 40px;
+    width: 100%;
+    height: 60px;
+    background-color: #CD4D31;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+
+    @include on-tablet {
+      margin-top: 50px;
+      width: 100%;
+      // grid-column: 1 / 4;
+      // grid-row: 1;
+    }
+
+    @include on-desktop {
+      margin-top: 60px;
+      // grid-row: 4;
+    }
+  }
+
+  &-bottom-on-desktop {
+    display: none;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+
+      margin-top: 135px;
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+    }
+
+    &-dates {
+      font-family: Playfair Display, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+      color: #F1F5F4;
+      opacity: 0.7;
+
+      // grid-column: 1 / 2;
+      // grid-row: 5;
+    }
+
+    &-line {
+      height: 1px;
+      background-color: #F1F5F4;
+      opacity: 0.3;
+      width: 469px;
+
+      // grid-column: 2 / 7;
+      // grid-row: 5;
+    }
+  }
+
+  &-photo {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin-top: 70px;
+      grid-column: 2 / 6;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      margin-top: 0;
+      padding-top: 0;
+      left: calc((100% / 12) * 6); /* Початок з 7 колонки */
+      right: 0; /* Впирається справа, без падінгу */
+      bottom: 0;
+      top: 137px;
+      overflow: hidden;
+    }
+
+    &-img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+}
+
+
+
+.container {
+  @include content-padding-inline;
+}
+
+.header-container-for-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // @include on-tablet {
+  //   @include page-grid;
+  // }
+
+  @include on-tablet {
+    grid-column: 1 / 4;
+    grid-row: 2;
+  }
+}
+
+.header-container-for-grid {
+
+  @include on-tablet {
+    @include page-grid;
+  }
+}
+
+.header-container-for-text {
+  grid-column: 1 / 6;
+  grid-row: 1;
+
+  @include on-desktop {
+    padding-bottom: 21px;
+    grid-column: 1 / 7;
+  }
+}
+
+
+
