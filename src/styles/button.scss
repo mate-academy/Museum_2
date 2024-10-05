@@ -1,4 +1,5 @@
 .button {
+  border: 0;
   font-weight: 600;
   height: 60px;
   width: 100%;
@@ -10,19 +11,64 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  transition: all 0.3s;
+
+
+  &:hover {
+    background-color:  rgba(175, 52, 25, 1);
+  }
+
+  &:active {
+    background-color: rgba(234, 52, 13, 1);
+  }
+
+  &:disabled {
+    color: rgba(241, 245, 244, 1);
+    background-color: rgba(221, 131, 111, 1);
+  }
 
   &--arrow {
+    box-sizing: border-box;
     font-weight: 600;
     height: 60px;
     width: 100%;
-    background-color: $white-color;
+    background-color: white;
     color: $main-color;
     font-family: $small-font;
+    border: 1px solid $main-color;
 
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color:  rgba(175, 52, 25, 1);
+      border: 1px solid rgba(175, 52, 25, 1);
+    }
+
+    &:hover .icon--arrow--btn {
+    background-image: url("/src/icons/arrow-hov.png");
+    }
+
+    &:active {
+      color:  rgba(234, 52, 13, 1);
+      border: 1px solid rgba(234, 52, 13, 1);
+    }
+
+    &:active .icon--arrow--btn {
+      background-image: url("/src/icons/arrow-active.png");
+      }
+
+    &:disabled {
+      color:  rgba(221, 131, 111, 1);
+      border: 1px solid rgba(221, 131, 111, 1);
+    }
+
+    &:disabled .icon--arrow--btn {
+      background-image: url("/src/icons/arrow-dis.png");
+      }
   }
 }
 
@@ -42,6 +88,7 @@
 
 .button-wrapper--header {
   padding-bottom: 313px;
+
   @include on-tablet {
     grid-column: 1 / 4;
     padding-bottom: 564px;

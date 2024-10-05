@@ -14,12 +14,32 @@
   }
 
   &__link {
+    position: relative;
     font-family: $big-font;
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
     text-decoration: none;
     color: $white-color;
+    transform: scale(0);
+
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -8px;
+      width: 100%;
+      height: 1px;
+      background-color: $white-color;
+      transform: scale(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
 
     @include on-tablet {
       font-size: 48px;
