@@ -1,0 +1,90 @@
+.news {
+  padding: 0 20px;
+  margin-bottom: 120px;
+
+  @include on-tablet {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: row;
+    padding: 0 39px;
+    margin-bottom: 160px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 60px;
+    color: $colorBlack;
+
+    @extend %h3-mobile;
+
+    @include on-tablet {
+      order: 1;
+      width: 450px;
+      margin: 0;
+      margin-right: auto;
+
+      @include h3-tablet;
+    }
+
+    @include on-desktop {
+      @include h3-desktop;
+    }
+  }
+
+  &__parts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      flex-direction: row;
+      column-gap: 30px;
+      order: 3;
+      margin: 0;
+    }
+
+    @include on-tablet {
+      column-gap: 32px;
+    }
+  }
+
+  &__part {
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: max-content;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    color: $colorMain;
+    background-color: $colorPage;
+    border: 1px solid $colorMain;
+
+    @extend %button;
+    @include button-empty;
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      order: 2;
+      width: 210px;
+      margin: 0;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+      margin-bottom: 53px;
+    }
+  }
+}

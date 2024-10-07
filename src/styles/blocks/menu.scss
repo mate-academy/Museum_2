@@ -1,0 +1,281 @@
+.menu {
+  background-color: $colorBg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+  padding-top: 20px;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+
+  @include on-tablet {
+    padding: 0 39px;
+    padding-top: 20px;
+  }
+
+  @include on-desktop {
+    flex-flow: wrap;
+    flex-direction: row;
+    padding: 0;
+    padding-top: 26px;
+    align-items: start;
+  }
+
+  &:target {
+    position: absolute;
+    transform: translateY(0);
+    transition: transform 0.3s ease-in-out;
+    opacity: 1;
+    inset: 0;
+    pointer-events: all;
+    overflow: hidden;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      width: calc(100% - 110px);
+      padding: 0 55px;
+      margin-bottom: 40px;
+    }
+
+    &-title {
+      margin: 0;
+      margin-right: auto;
+
+      &-img {
+        height: 40px;
+        width: 123px;
+
+        @include on-tablet {
+          display: block;
+          height: 37px;
+          width: 124px;
+        }
+      }
+
+      @include hover(transform, scale(1.1));
+    }
+
+    &-form {
+      margin: 0;
+      margin-right: 26px;
+
+      @include on-tablet {
+        order: 3;
+        margin: 0;
+      }
+    }
+
+    &-select {
+      background-color: $colorBg;
+      color: $colorWhite;
+      border: 0;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @extend %main;
+    }
+
+    &-cross {
+      height: 22px;
+      width: 22px;
+
+      @include on-tablet {
+        order: 2;
+        margin-right: 40px;
+      }
+
+      @include hover(transform, scale(1.2));
+    }
+  }
+
+  &__middle {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include on-desktop {
+      width: 570px;
+      padding-left: 55px;
+      padding-bottom: 108px;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    color: $colorWhite;
+
+    @include on-tablet {
+      display: flex;
+      height: 44px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      width: 434px;
+      margin-bottom: 70px;
+    }
+
+    &-schedule {
+      margin-bottom: 20px;
+
+      @include on-tablet {
+        margin-right: 123px;
+      }
+
+      @include on-desktop {
+        width: 117px;
+        margin-right: 83px;
+      }
+
+      &-title {
+        margin: 0;
+        opacity: 0.8;
+
+        @extend %additional;
+      }
+
+      &-description {
+        margin: 0;
+
+        @extend %main;
+
+        font-weight: 600;
+      }
+    }
+
+    &-adress {
+      margin-bottom: 40px;
+
+      &-title {
+        margin: 0;
+        opacity: 0.8;
+
+        @extend %additional;
+      }
+
+      &-description {
+        margin: 0;
+        text-decoration: none;
+        color: $colorWhite;
+
+        @extend %main;
+        @include hover-text(transform, scale(1.2));
+
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__group {
+    margin-bottom: 20px;
+    width: 100%;
+
+    @include on-desktop {
+      width: 570px;
+      margin: 0;
+    }
+
+    &-link {
+      text-decoration: none;
+    }
+
+    &-text {
+      margin: 0;
+      margin-bottom: 20px;
+      color: $colorWhite;
+      width: 240px;
+
+      @extend %h5-mobile;
+      @include hover-text(transform, scale(1.1));
+
+      @include on-tablet {
+        margin-bottom: 30px;
+        width: 370px;
+
+        @include h3-tablet;
+      }
+
+      @include on-desktop {
+        width: max-content;
+        margin-bottom: 60px;
+
+        @include h3-desktop;
+      }
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 40px;
+    background-color: $colorWhite;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      width: 570px;
+    }
+  }
+
+  &__button {
+    display: block;
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    color: $colorWhite;
+    background-color: $colorMain;
+    border: 0;
+
+    @extend %button;
+    @include button-full;
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      margin-bottom: 30px;
+      width: 330px;
+      align-self: flex-start;
+    }
+
+    @include on-desktop {
+      width: 270px;
+      margin: 0;
+    }
+  }
+
+  &__img {
+    display: none;
+    height: 466px;
+    width: 422px;
+    margin-top: auto;
+
+    @include on-tablet {
+      display: block;
+      align-self: center;
+      justify-content: end;
+    }
+
+    @include on-desktop {
+      height: 697px;
+      width: 624px;
+    }
+  }
+}

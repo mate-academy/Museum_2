@@ -1,0 +1,89 @@
+.card {
+  @include on-tablet {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 30px;
+  }
+
+  &__img {
+    height: 358px;
+    width: 280px;
+    margin-bottom: 20px;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      height: 422px;
+      width: 330px;
+      margin: 0;
+    }
+
+    @include on-desktop {
+      height: 475px;
+      width: 370px;
+    }
+  }
+
+  &__info {
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 570px;
+    }
+
+    &-date {
+      margin: 0;
+      margin-bottom: 10px;
+      color: $colorMain;
+
+      @extend %main;
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 20px;
+      color: $colorBlack;
+
+      @extend %h4-mobile;
+
+      @include on-tablet {
+        @include h4-tablet;
+      }
+
+      @include on-desktop {
+        @include h4-desktop;
+      }
+    }
+
+    &-description {
+      margin: 0;
+      margin-bottom: 30px;
+      color: $colorGray;
+
+      @extend %main;
+
+      @include on-tablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    color: $colorWhite;
+    background-color: $colorMain;
+    border: 0;
+
+    @extend %button;
+    @include button-full;
+    @include hover(transform, scale(1.1));
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+}

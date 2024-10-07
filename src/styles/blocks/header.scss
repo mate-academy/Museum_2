@@ -1,0 +1,249 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $colorBg;
+  padding: 0 20px;
+  padding-top: 20px;
+  margin: 0;
+  margin-bottom: 90px;
+
+  @include on-tablet {
+    align-items: start;
+    padding: 0 39px;
+    margin-bottom: 100px;
+  }
+
+  @include on-desktop {
+    flex-flow: wrap;
+    flex-direction: row;
+    padding: 0;
+    margin-bottom: 110px;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 70px;
+
+    @include on-tablet {
+      justify-content: start;
+      margin-bottom: 120px;
+      padding-top: 20px;
+    }
+
+    @include on-desktop {
+      width: calc(100% - 110px);
+      padding: 0 55px;
+      padding-top: 26px;
+    }
+
+    &-title {
+      margin: 0;
+
+      @include on-tablet {
+        margin-right: auto;
+      }
+
+      &-img {
+        height: 40px;
+        width: 123px;
+
+        @include on-tablet {
+          height: 37px;
+          width: 124px;
+        }
+      }
+
+      @include hover(transform, scale(1.1));
+    }
+
+    &-menu {
+      margin: 0;
+
+      @include on-tablet {
+        margin-right: 40px;
+      }
+
+      @include on-desktop {
+        margin-right: 44px;
+      }
+
+      &-img {
+        height: 20px;
+        width: 25px;
+      }
+
+      @include hover(transform, scale(1.1));
+    }
+
+    &-form {
+      display: none;
+      margin: 0;
+      margin-right: 26px;
+
+      @include on-tablet {
+        display: block;
+        margin: 0;
+      }
+    }
+
+    &-select {
+      background-color: $colorBg;
+      color: $colorWhite;
+      border: 0;
+      outline: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      @extend %main;
+    }
+  }
+
+  &__middle {
+    display: flex;
+    flex-flow: wrap;
+    flex-direction: column;
+    width: 100%;
+
+    @include on-desktop {
+      width: 570px;
+      padding-left: 55px;
+    }
+  }
+
+  &__group {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 135px;
+      width: 569px;
+    }
+
+    &-date {
+      margin: 0;
+      color: $colorWhite;
+      margin-bottom: 10px;
+      opacity: 0.8;
+
+      @extend %additional;
+    }
+
+    &-title {
+      margin: 0;
+      color: $colorWhite;
+      margin-bottom: 30px;
+
+      @extend %h1-mobile;
+
+      @include on-tablet {
+        margin-bottom: 20px;
+        width: 569px;
+
+        @include h1-tablet;
+      }
+
+      @include on-desktop {
+        margin-bottom: 30px;
+
+        @include h1-desktop;
+      }
+    }
+
+    &-description {
+      margin: 0;
+      color: $colorWhite;
+      margin-bottom: 40px;
+      opacity: 0.8;
+
+      @extend %main;
+
+      @include on-tablet {
+        margin-bottom: 50px;
+        width: 330px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 81px;
+        width: 569px;
+      }
+    }
+
+    &-button {
+      margin: 0;
+      height: 60px;
+      width: 100%;
+      color: $colorWhite;
+      background-color: $colorMain;
+      border: 0;
+
+      @extend %button;
+      @include button-full;
+      @include hover(transform, scale(1.1));
+
+      @include on-tablet {
+        width: 330px;
+      }
+
+      @include on-desktop {
+        width: 270px;
+      }
+    }
+  }
+
+  &__date {
+    display: none;
+    height: 18px;
+    width: 569px;
+    padding-bottom: 43px;
+
+    @include on-desktop {
+      display: flex;
+      align-items: center;
+    }
+
+    &-text {
+      height: 18px;
+      width: 81px;
+      color: $colorWhite;
+      opacity: 0.8;
+      margin: 0;
+      margin-right: 20px;
+
+      @include h6-desktop;
+    }
+
+    &-line {
+      height: 1px;
+      width: 469px;
+      opacity: 0.7;
+      background-color: $colorWhite;
+    }
+  }
+
+  &__img {
+    width: 245px;
+    height: 273px;
+    bottom: 0;
+    align-self: center;
+
+    @include on-tablet {
+      height: 494px;
+      width: 443px;
+    }
+
+    @include on-desktop {
+      align-self: start;
+      width: 625px;
+      height: 663px;
+    }
+  }
+}
