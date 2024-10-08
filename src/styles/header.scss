@@ -1,0 +1,136 @@
+.header {
+  background-color: $bc-color;
+  box-sizing: border-box;
+
+  @include on-tablet {
+    background-size: 443px 494px;
+  }
+
+  @include on-desktop {
+    background-size: 625px 663px;
+    background-position: right bottom;
+  }
+
+  &__content {
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__container {
+    background-image: url("/src/img/header-bg.png");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 245px 273px;
+
+    @include on-tablet {
+      background-size: 443px 494px;
+    }
+
+    @include on-desktop {
+      background-size: 625px 663px;
+      background-position: right bottom;
+    }
+  }
+
+  &__description {
+    margin-top: 50px;
+
+    @include on-tablet {
+      margin-top: 99px;
+
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      display: block;
+      grid-column: span 6;
+      margin-top: 90px;
+    }
+  }
+
+  &__dates {
+    line-height: 19.6px;
+    font-family: $small-font;
+    font-weight: 400;
+    font-size: 14px;
+    color: $white-color;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__title {
+    line-height: 48px;
+    margin-top: 10px;
+    font-size: 48px;
+    color: $white-color;
+    font-family: $big-font;
+
+    @include on-tablet {
+      line-height: 72px;
+      font-size: 72px;
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      line-height: 86px;
+      font-size: 86px;
+    }
+  }
+
+  &__contribution {
+    line-height: 24px;
+    font-weight: 400;
+    font-family: $small-font;
+    margin-top: 30px;
+    font-size: 16px;
+    color: $white-color;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__desktop-wrapper {
+    display: none;
+
+    @include on-desktop {
+      margin-bottom: 50px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+      align-items: center;
+    }
+  }
+
+  &__desktop-dates {
+    font-family: $small-font;
+    font-size: 10.3px;
+    line-height: 17,5px;
+    font-weight: 400;
+    color: $white-color;
+    grid-column: span 1;
+  }
+
+  &__line {
+    width: 100%;
+    border-bottom: 1px solid $white-color;
+    grid-column: span 5;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+  }
+
+}
+
+
