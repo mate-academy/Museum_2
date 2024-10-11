@@ -1,0 +1,274 @@
+.current-exhibitions {
+
+  &-title {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 90px;
+
+    @include on-tablet {
+      margin-top: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include on-desktop {
+      margin-top: 110px;
+    }
+
+    &-text {
+      font-family: Playfair Display, sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: left;
+      color: #1C1B29;
+
+      @include on-tablet {
+        font-size: 40px;
+      }
+
+      @include on-desktop {
+        font-size: 48px;
+      }
+    }
+
+    &-container {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 8px;
+
+        border: 1px #CD4D31 solid;
+        width: 210px;
+        height: 60px;
+        box-sizing: border-box;
+        cursor: pointer;
+        background-color: white;
+      }
+
+      @include on-desktop {
+        width: 270px;
+      }
+
+      &-for-button-text {
+        margin: 0;
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: #CD4D31;
+      }
+    }
+
+    &-container-for-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 8px;
+
+      border: 1px #CD4D31 solid;
+      width: 100%;
+      height: 60px;
+      box-sizing: border-box;
+      cursor: pointer;
+      margin-top: 30px;
+      background-color: white;
+
+      @include on-tablet {
+        display: none;
+      }
+
+      &-text {
+        margin: 0;
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: #CD4D31;
+      }
+
+      &-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+
+
+  &-container-fog-grid {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &-container-for-first-photo, &-container-for-second-photo {
+    display: flex;
+    flex-direction: column;
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 60px;
+      overflow: hidden;
+
+      @include on-tablet {
+        margin-top: 70px;
+      }
+
+      &-img {
+        width: 100%;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &-dates {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: left;
+      color: #CD4D31;
+      margin-top: 20px;
+
+      @include on-tablet {
+        margin-top: 30px;
+      }
+
+      @include on-desktop {
+        margin-top: 20px;
+      }
+    }
+
+    &-name {
+      font-family: Playfair Display, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      text-align: left;
+      color: #1C1B29;
+      margin-top: 10px;
+
+      @include on-tablet {
+        font-size: 24px;
+      }
+    }
+
+    &-description {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: left;
+      color: #504F5E;
+      margin-top: 20px;
+    }
+
+    &-container-for-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-current-exhibitions-button {
+        margin-top: 30px;
+        width: 100%;
+        height: 60px;
+        background-color: #CD4D31;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        box-sizing: border-box;
+
+        &:hover {
+          background-color: #AF3419;
+        }
+
+        &:focus {
+          background-color: #EA340D;
+        }
+
+        &:disabled {
+          background-color: #DD836F;
+        }
+
+        @include on-tablet {
+          margin-top: 40px;
+        }
+
+        @include on-desktop {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+
+  &-container-for-first-photo {
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      grid-row: 1;
+    }
+  }
+
+  &-container-for-second-photo {
+    @include on-tablet {
+      grid-column: 4 / 7;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 13;
+      grid-row: 1;
+    }
+  }
+
+  &-container-for-first-photo-container-for-button {
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+  }
+
+  &-container-for-second-photo-container-for-button {
+    @include on-tablet {
+      grid-column: 4 / 7;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 10;
+      grid-row: 2;
+    }
+  }
+}
+
+@include hover-styles;
+@include focus-styles;
+@include disabled-styles;
