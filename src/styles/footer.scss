@@ -1,0 +1,223 @@
+.footer {
+  background-color: $bc-color;
+
+  &__content {
+    padding-block: 34px 30px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      padding-block: 50px 30px;
+    }
+
+    @include on-desktop {
+      row-gap: 60px;
+    }
+  }
+
+  &__section-title {
+    font-family: $big-font;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: $white-color;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__section-item {
+    position: relative;
+    font-family: $small-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $white-color;
+
+    &--contacts {
+      display: inline-block;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        width: 100%;
+        height: 1px;
+        background-color: $white-color;
+        transform: scale(0);
+        transition: transform 0.3s;
+        transform-origin: left;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1 / 7;
+
+    @include on-desktop {
+      grid-column: span 12;
+    }
+  }
+
+  &__copy-write {
+    font-family: $small-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+    color: $white-color;
+    display: block;
+  }
+
+  &__privacy {
+    font-family: $small-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+    color: $white-color;
+    display: block;
+  }
+
+  &__copy-privacy-wrapper {
+    display: flex;
+    gap: 22px;
+
+    @include on-desktop {
+      gap: 102px;
+    }
+  }
+
+  &__icon {
+    @include hover(transform, scale(1.2));
+
+    background-image: url("/src/icons/scroll-up.png");
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.contacts {
+  grid-column: 1 / 3;
+
+  @include on-desktop {
+    grid-column: span 4;
+  }
+
+  &__item {
+    font-family: $small-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $white-color;
+    display: block;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__icon {
+    @include hover(transform, scale(1.2));
+
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__icon--facebook {
+    background-image: url("/src/icons/facebook.png");
+  }
+
+  &__icon--twitter {
+    background-image: url("/src/icons/twitter.png");
+  }
+
+  &__icon--telegram {
+    background-image: url("/src/icons/telegram.png");
+  }
+
+  &__icon--instagram {
+    background-image: url("/src/icons/instagram.png");
+  }
+}
+
+.shedule {
+  grid-column: 3 / 5;
+
+  @include on-desktop {
+    grid-column: span 4;
+  }
+
+  &__item {
+    font-family: $small-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $white-color;
+    display: block;
+  }
+}
+
+.footer-nav {
+  grid-column: 5 / 7;
+
+  @include on-desktop {
+    grid-column: span 4;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -1px;
+      width: 100%;
+      height: 1px;
+      background-color: $white-color;
+      transform: scale(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

@@ -1,0 +1,150 @@
+.button {
+  border: 0;
+  font-weight: 600;
+  height: 60px;
+  width: 100%;
+  background-color: $main-color;
+  color: $white-color;
+
+  font-family: $small-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s;
+
+
+  &:hover {
+    background-color:  rgba(175, 52, 25, 1);
+  }
+
+  &:active {
+    background-color: rgba(234, 52, 13, 1);
+  }
+
+  &:disabled {
+    color: rgba(241, 245, 244, 1);
+    background-color: rgba(221, 131, 111, 1);
+  }
+
+  &--arrow {
+    box-sizing: border-box;
+    font-weight: 600;
+    height: 60px;
+    width: 100%;
+    background-color: white;
+    color: $main-color;
+    font-family: $small-font;
+    border: 1px solid $main-color;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color:  rgba(175, 52, 25, 1);
+      border: 1px solid rgba(175, 52, 25, 1);
+    }
+
+    &:hover .icon--arrow--btn {
+    background-image: url("/src/icons/arrow-hov.png");
+    }
+
+    &:active {
+      color:  rgba(234, 52, 13, 1);
+      border: 1px solid rgba(234, 52, 13, 1);
+    }
+
+    &:active .icon--arrow--btn {
+      background-image: url("/src/icons/arrow-active.png");
+      }
+
+    &:disabled {
+      color:  rgba(221, 131, 111, 1);
+      border: 1px solid rgba(221, 131, 111, 1);
+    }
+
+    &:disabled .icon--arrow--btn {
+      background-image: url("/src/icons/arrow-dis.png");
+      }
+  }
+}
+
+.button-wrapper--actual-exhibitions {
+  @include on-desktop {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+}
+
+.button--actual-exhibitions {
+  @include on-desktop {
+    grid-column: span 3;
+  }
+}
+
+.button-wrapper--header {
+  padding-bottom: 313px;
+
+  @include on-tablet {
+    grid-column: 1 / 4;
+    padding-bottom: 564px;
+  }
+
+  @include on-desktop {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+    padding-bottom: 135px;
+  }
+}
+
+.button--header {
+  @include on-desktop {
+    grid-column: 1 / 4;
+  }
+}
+
+.button-wrapper--menu {
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+    padding-bottom: 495px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 108px;
+  }
+}
+
+.button--menu {
+  @include on-tablet {
+    grid-column: span 3;
+  }
+}
+
+.button-wrapper--upcoming {
+  @include on-desktop {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+}
+
+.button--upcoming {
+  @include on-desktop {
+    grid-column: span 3;
+  }
+}
+
+.button-wrapper--registration {
+  grid-column: span 3;
+
+  @include on-desktop {
+    grid-column: 6 / 9;
+  }
+}

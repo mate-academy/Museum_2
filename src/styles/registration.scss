@@ -1,0 +1,70 @@
+.registration {
+  background-color: $bc-color;
+
+  @include on-desktop {
+    display: flex;
+  }
+
+  &__container {
+    @include on-desktop {
+      background-image: url("/src/img/registration-img.png");
+      background-position: left;
+      background-size: 578px 800px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__title {
+    color: $white-color;
+    font-family: $big-font;
+    font-size: 38px;
+    line-height: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    grid-column: span 5;
+
+    @include on-tablet {
+      font-size: 62px;
+      line-height: 62px;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+      font-size: 80px;
+      line-height: 80px;
+    }
+  }
+
+  &__text {
+    color: $white-color;
+    font-family: $small-font;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    grid-column: span 4;
+
+    @include on-tablet {
+      margin-bottom: 60px;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / 11;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__content {
+    padding-block: 50px;
+
+    @include on-tablet {
+      padding-block: 80px;
+
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      padding-block: 205px;
+    }
+  }
+}

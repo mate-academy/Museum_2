@@ -1,0 +1,100 @@
+.upcoming {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 90px;
+
+  @include on-tablet {
+    margin-bottom: 100px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 110px;
+  }
+
+  &__top {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__title {
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button--arrow {
+    display: none;
+    order: 1;
+
+    &--bottom {
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    @include on-tablet {
+      display: flex;
+      order: 0;
+      grid-column: -3 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: -4 / -1;
+    }
+  }
+
+  &__gudimov {
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    margin-bottom: 60px;
+
+    &-content {
+      grid-column: span 3;
+
+      @include on-desktop {
+        grid-column: span 6;
+      }
+    }
+
+    &-link {
+      grid-column: span 3;
+
+      @include on-desktop {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__australia {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      @include page-grid;
+      
+      margin-bottom: 0;
+    }
+
+    &-content {
+      grid-column: span 3;
+
+      @include on-desktop {
+        grid-column: span 6;
+      }
+    }
+
+    &-link {
+      grid-column: span 3;
+
+      @include on-desktop {
+        grid-column: span 4;
+      }
+    }
+  }
+}

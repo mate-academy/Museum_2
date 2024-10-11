@@ -1,0 +1,132 @@
+.menu {
+  background-color: $bc-color;
+
+&__container {
+  @include on-tablet {
+    background-image: url("/src/img/img-menu-tablet.png");
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 422px 466px;
+  }
+
+  @include on-desktop {
+    background-image: url("/src/img/img-menu-tablet.png");
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: 624px 700px;
+  }
+}
+
+  &__icons {
+    display: flex;
+    gap: 30px;
+
+    @include on-tablet {
+      gap: 40px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      display: flex;
+      gap: 123px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 70px;
+      gap: 83px;
+    }
+  }
+
+  &__today-shedule-text {
+    font-family: $small-font;
+    font-size: 14px;
+    color: $white-color;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  &__today-shedule-value {
+    font-family: $small-font;
+    font-size: 16px;
+    color: $white-color;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__today-shedule {
+    margin-bottom: 20px;
+  }
+
+  &__adress-text {
+    font-family: $small-font;
+    font-size: 14px;
+    color: $white-color;
+    font-weight: 400;
+    line-height: 19.6px;
+  }
+
+  &__adress-value {
+    font-family: $small-font;
+    font-size: 16px;
+    color: $white-color;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  &__line {
+    margin-top: 40px;
+    border-bottom: 1px solid $white-color;
+    color: $white-color;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__girl {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    };
+
+    width: 422px;
+    height: 466px;
+    margin-inline: auto;
+    margin-top: 30px;
+    background-image: url("/src/img/img-menu-tablet.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include on-desktop {
+      margin-top: 0;
+      width: 624px;
+      height: 697px;
+      grid-column: span 6;
+    }
+  }
+
+  &__content {
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__info-and-nav {
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+}
+
