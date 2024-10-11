@@ -1,6 +1,16 @@
 .museum-visit {
   background-color: #3F5252;
   display: block;
+  position: relative;
+  margin-top: 30px;
+
+  @include on-tablet {
+    margin-top: 100px;
+  }
+
+  @include on-desktop {
+    margin-top: 110px;
+  }
 
   &-container {
     display: flex;
@@ -91,6 +101,42 @@
       font-weight: 600;
       text-align: center;
       box-sizing: border-box;
+
+      &:hover {
+        background-color: #AF3419;
+      }
+
+      &:focus {
+        background-color: #EA340D;
+      }
+
+      &:disabled {
+        background-color: #DD836F;
+      }
+    }
+  }
+
+  &-photo {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      position: absolute;
+      margin-top: 0;
+      padding-top: 0;
+      right: calc((100% / 12) * 7); /* Початок з 7 колонки */
+      left: 0;
+      bottom: 0;
+      top: 0;
+      overflow: hidden;
+    }
+
+    &-img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: top;
+      // z-index: 2;
     }
   }
 }

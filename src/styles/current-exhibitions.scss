@@ -7,7 +7,10 @@
     margin-top: 90px;
 
     @include on-tablet {
-      margin-top: 105px;
+      margin-top: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     @include on-desktop {
@@ -32,8 +35,78 @@
 
     &-container {
       display: none;
+
+      @include on-tablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 8px;
+
+        border: 1px #CD4D31 solid;
+        width: 210px;
+        height: 60px;
+        box-sizing: border-box;
+        cursor: pointer;
+        background-color: white;
+      }
+
+      @include on-desktop {
+        width: 270px;
+      }
+
+      &-for-button-text {
+        margin: 0;
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: #CD4D31;
+      }
+    }
+
+    &-container-for-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      gap: 8px;
+
+      border: 1px #CD4D31 solid;
+      width: 100%;
+      height: 60px;
+      box-sizing: border-box;
+      cursor: pointer;
+      margin-top: 30px;
+      background-color: white;
+
+      @include on-tablet {
+        display: none;
+      }
+
+      &-text {
+        margin: 0;
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: #CD4D31;
+      }
+
+      &-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-img {
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
   }
+
+
 
   &-container-fog-grid {
     @include on-tablet {
@@ -50,6 +123,7 @@
       justify-content: center;
       width: 100%;
       margin-top: 60px;
+      overflow: hidden;
 
       @include on-tablet {
         margin-top: 70px;
@@ -57,6 +131,11 @@
 
       &-img {
         width: 100%;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.2);
+        }
       }
     }
 
@@ -118,6 +197,18 @@
         text-align: center;
         box-sizing: border-box;
 
+        &:hover {
+          background-color: #AF3419;
+        }
+
+        &:focus {
+          background-color: #EA340D;
+        }
+
+        &:disabled {
+          background-color: #DD836F;
+        }
+
         @include on-tablet {
           margin-top: 40px;
         }
@@ -177,3 +268,7 @@
     }
   }
 }
+
+@include hover-styles;
+@include focus-styles;
+@include disabled-styles;

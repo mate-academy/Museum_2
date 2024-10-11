@@ -1,9 +1,9 @@
-// @mixin hover($_property, $_toValue) {
-//   transition: #{$_property} 0.3s;
-//   &:hover {
-//     #{$_property}: $_toValue;
-//   }
-// }
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
 
 
 @mixin page-grid {
@@ -45,5 +45,57 @@
 
   @include on-desktop {
     padding-inline: 55px;
+  }
+}
+
+@mixin hover-styles {
+  .current-exhibitions-title-container,
+  .current-exhibitions-title-container-for-button {
+    &:hover {
+      border: 1px #AF3419 solid;
+
+      .current-exhibitions-title-container-for-button-text {
+        color: #AF3419;
+      }
+
+      .current-exhibitions-title-container-for-button-link-img {
+        filter: brightness(0) saturate(100%) invert(22%) sepia(55%) saturate(2574%) hue-rotate(350deg) brightness(97%) contrast(93%);
+      }
+    }
+  }
+}
+
+@mixin focus-styles {
+  .current-exhibitions-title-container,
+  .current-exhibitions-title-container-for-button {
+    &:focus {
+      border: 1px #EA340D solid;
+
+      .current-exhibitions-title-container-for-button-text {
+        color: #EA340D;
+      }
+
+      .current-exhibitions-title-container-for-button-link-img {
+        filter: brightness(0) saturate(100%) invert(25%) sepia(84%) saturate(2800%) hue-rotate(355deg) brightness(93%) contrast(95%);
+      }
+    }
+  }
+
+}
+
+@mixin disabled-styles {
+  .current-exhibitions-title-container,
+  .current-exhibitions-title-container-for-button {
+    &:disabled {
+      border: 1px #DD836F solid;
+
+      .current-exhibitions-title-container-for-button-text {
+        color: #DD836F;
+      }
+
+      .current-exhibitions-title-container-for-button-link-img {
+        filter: brightness(0) saturate(100%) invert(48%) sepia(35%) saturate(1000%) hue-rotate(325deg) brightness(90%) contrast(85%);
+      }
+    }
   }
 }

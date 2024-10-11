@@ -1,0 +1,211 @@
+.sign-up {
+
+  margin-top: 120px;
+
+  @include on-tablet {
+    margin-top: 160px;
+  }
+
+  @include on-desktop {
+    margin-top: 200px;
+  }
+
+  &-container-for-grid {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &-title {
+    margin: 0;
+    font-family: Playfair Display, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+    text-align: left;
+    color: #1C1B29;
+
+    @include on-tablet {
+      font-size: 40px;
+      grid-column: 1 / 6;
+      line-height: 50px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      grid-column: 1 / 5;
+      line-height: 59px;
+    }
+  }
+
+  &-description {
+    margin: 0;
+    margin-top: 20px;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #1C1B29;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 13;
+      grid-row: 1;
+      margin-top: 0;
+    }
+  }
+
+  &-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    &-email {
+      width: 100%;
+      margin-top: 50px;
+      border: none;
+      border-bottom: 1px black solid;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: #1C1B29;
+      cursor: pointer;
+      box-sizing: border-box;
+
+      @include on-tablet {
+        grid-column: 1 / 5;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 6;
+      }
+    }
+
+    &-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+        grid-row: 2;
+      }
+
+      &-button {
+        margin-top: 30px;
+        margin-bottom: 80px;
+        width: 100%;
+        height: 60px;
+        background-color: #CD4D31;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        box-sizing: border-box;
+
+        &:hover {
+          background-color: #AF3419;
+        }
+
+        &:focus {
+          background-color: #EA340D;
+        }
+
+        &:disabled {
+          background-color: #DD836F;
+        }
+
+        @include on-tablet {
+          margin-bottom: 128px;
+        }
+
+        @include on-desktop {
+          margin-top: 40px;
+          margin-bottom: 200px;
+        }
+      }
+    }
+  }
+}
+
+/* Стилізація автозаповнення */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset; /* Білий фон */
+  -webkit-text-fill-color: #1C1B29; /* Колір тексту для автозаповнення */
+  border-bottom: 1px solid #CD4D31; /* Червоний бордер */
+}
+
+/* Загальні стилі інпуту */
+input {
+  width: 100%;
+  margin-top: 50px;
+  border: none;
+  border-bottom: 1px solid black; /* Чорний бордер по замовчуванню */
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #1C1B29;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* Стилі плейсхолдера */
+input::placeholder {
+  color: #1C1B29; /* Колір плейсхолдера */
+}
+
+input:hover::placeholder {
+  color: #CD4D31; /* Червоний плейсхолдер при hover */
+}
+
+input:focus::placeholder {
+  color: transparent; /* Плейсхолдер зникає при focus */
+}
+
+/* При фокусі: червона каретка та стиль бордера */
+input:focus {
+  outline: none;
+  border-bottom: 1px solid #CD4D31;
+  caret-color: #CD4D31; /* Червона каретка */
+}
+
+/* При ховері змінюється колір бордера */
+input:hover {
+  border-bottom: 1px solid #CD4D31;
+}
+
+/* При заповненні (якщо плейсхолдер не показується) */
+input:not(:placeholder-shown) {
+  font-weight: 700; /* Жирний текст при заповненні */
+}
+
+/* При валідному значенні */
+input:valid {
+  font-weight: 700; /* Жирний текст при заповненні */
+  border-bottom: 1px solid #1C1B29 !important; /* Темний бордер */
+}
