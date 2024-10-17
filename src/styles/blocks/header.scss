@@ -1,0 +1,118 @@
+.header {
+  background: $bgcolor;
+
+  &__content {
+    color: $main-white-color;
+    height: 100vh;
+  }
+
+  &__top {
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      margin-bottom: 100px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__lang {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 127px);
+
+    @include on-tablet {
+      height: calc(100vh - 177px);
+    }
+
+    @include on-desktop {
+      height: calc(100vh - 180px);
+      flex-direction: row;
+    }
+  }
+
+  &__dates {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 100%;
+    margin-bottom: 30px;
+
+    max-width: 570px;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+      font-size: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 30px;
+      font-size: 96px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 10px 40px 0;
+
+    @include on-tablet {
+      max-width: 330px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      max-width: 570px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__num-dates {
+    display: none;
+    overflow: hidden;
+
+    @include on-desktop {
+      display: block;
+    }
+
+    margin-top: 135px;
+
+    font-size: 14px;
+    line-height: 125%;
+
+    &::after {
+      display: inline-block;
+      vertical-align: middle;
+      width: 100%;
+      margin-right: -100%;
+      margin-left: 20px;
+      content: '';
+      height: 1px;
+      background-color: $main-white-color;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+  }
+}

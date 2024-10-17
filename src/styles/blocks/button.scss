@@ -1,0 +1,57 @@
+.button {
+  display: block;
+  text-align: center;
+  padding-block: 22px;
+  text-decoration: none;
+  max-width: 330px;
+  height: 60px;
+  font-weight: 600;
+  line-height: 100%;
+
+  @include hover(transform, scale($scale-size));
+
+  &--primary {
+    color: $main-white-color;
+    background-color: $main-accent-color;
+
+    &:hover {
+      background-color: $button-hover-color;
+    }
+
+    &:active {
+      background-color: $button-pressed-color;
+    }
+  }
+
+  &--secondary {
+    color: $main-accent-color;
+    border: 1px solid $main-accent-color;
+
+    &::after {
+      display: inline-block;
+      content: url(../images/icons/arrow-main.svg);
+      height: 20px;
+      width: 20px;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    &:hover {
+      color: $button-hover-color;
+      border: 1px solid $button-hover-color;
+
+      &::after {
+        content: url(../images/icons/arrow-hover.svg);
+      }
+    }
+
+    &:active {
+      color: $button-pressed-color;
+      border: 1px solid $button-pressed-color;
+
+      &::after {
+        content: url(../images/icons/arrow-pressed.svg);
+      }
+    }
+  }
+}

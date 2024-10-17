@@ -1,0 +1,60 @@
+.announcement {
+  grid-column: 1/-1;
+
+  @include on-tablet {
+    grid-column: span 3;
+  }
+
+  @include on-desktop {
+    grid-column: span 6;
+  }
+
+  &__img {
+    display: block;
+    grid-column: span 2;
+    margin-bottom: 20px;
+
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+
+    @include hover(transform, scale($scale-size));
+
+    @include on-tablet {
+      grid-column: span 3;
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+      margin-bottom: 20px;
+
+      aspect-ratio: 3/1.95;
+    }
+
+    &--position {
+      object-position: -20px top;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 125%;
+
+    @include on-tablet {
+      margin-bottom: 18px;
+
+      line-height: 150%;
+    }
+  }
+
+  &__description {
+    color: $main-gray-color;
+  }
+}

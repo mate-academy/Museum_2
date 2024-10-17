@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.page {
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  color: $main-black-color;
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    min-width: 320px;
+    background: $main-white-color;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transition: transform $effect-duration;
+    transform: translateX(-100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
