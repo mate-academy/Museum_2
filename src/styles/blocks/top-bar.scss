@@ -1,0 +1,71 @@
+.top-bar {
+  padding: 20px 0;
+
+  @include on-desktop {
+    padding: 26px 0;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo-link {
+    display: flex;
+    height: 37px;
+    width: 124px;
+
+    @include hover(transform, scale($scale-size));
+  }
+
+  &__icons {
+    display: flex;
+    gap: 30px;
+
+    @include on-tablet {
+      gap: 40px;
+    }
+  }
+
+  &__lang {
+    background-color: $bgcolor;
+    border: 0;
+    color: $main-white-color;
+    outline: none;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+
+    @include on-tablet {
+      order: 2;
+    }
+  }
+
+  &__icon {
+    display: block;
+    height: 22px;
+    width: 22px;
+    background-size: cover;
+
+    @include on-desktop {
+      height: 30px;
+      width: 30px;
+    }
+
+    @include hover(transform, scale($scale-size));
+
+    &--menu {
+      background-image: url(../images/icons/icon-burger.svg);
+      height: 20px;
+      width: 25px;
+
+      @include on-tablet {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    &--close {
+      background-image: url(../images/icons/icon-close.svg);
+    }
+  }
+}

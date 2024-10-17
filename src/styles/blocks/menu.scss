@@ -1,0 +1,96 @@
+.menu {
+  background: $bgcolor;
+
+  &__content {
+    color: $main-white-color;
+    height: 100vh;
+  }
+
+  &__top {
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 87px);
+
+    @include on-tablet {
+      height: calc(100vh - 107px);
+    }
+
+    @include on-desktop {
+      height: calc(100vh - 103px);
+      flex-direction: row;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 124px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      gap: 84px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__info-data {
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+
+    @include hover(color, $main-accent-color);
+  }
+
+  &__info-name {
+    @include on-tablet {
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+
+    font-weight: 700;
+    font-size: 20px;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+  }
+}
