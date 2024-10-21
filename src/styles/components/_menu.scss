@@ -1,0 +1,95 @@
+.menu {
+  overflow: auto;
+  position: fixed;
+  left: -100%;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  height: 100vh;
+  background-color: $bgc-gray;
+  color: $color-white;
+  pointer-events: none;
+  transition: ease-in-out $transition-time;
+
+  // TOP
+  &__top {
+    padding-block: 2rem 3rem;
+
+    @include flex-justify-items(center, space-between);
+  }
+
+  &__logo {
+    display: block;
+    width: 12.7rem;
+    height: 4rem;
+  }
+
+  &__icons,
+  &__switch-language {
+    @include flex-justify-items(center);
+  }
+
+  &__icons {
+    column-gap: 3rem;
+  }
+
+  &__switch-language {
+    column-gap: 0.5rem;
+  }
+
+  &__icon-cross {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &__icon,
+  &__switch-language {
+    color: $color-white;
+  }
+
+  &:target {
+    left: 0;
+    pointer-events: all;
+  }
+
+  &__info {
+    margin-bottom: 4rem;
+
+    & :first-child {
+      margin-bottom: 2rem;
+    }
+
+    &-content {
+      font-weight: 600;
+    }
+  }
+
+  &__hr {
+    height: 0.1rem;
+    background-color: $color-white;
+  }
+}
+
+.nav {
+  margin-bottom: 4rem;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  &__link {
+    @extend %font-playfar;
+    @include font(2rem, 3rem, 700);
+
+    color: $color-white;
+  }
+
+  &__item {
+    transition: all $transition-time ease-in-out;
+
+    @include font(2.2rem, 2.2rem, 700, 0.2rem);
+  }
+}

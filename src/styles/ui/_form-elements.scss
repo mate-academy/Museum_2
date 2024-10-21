@@ -1,0 +1,53 @@
+.form {
+  @include flex-justify-items(center, center, column);
+}
+
+.input {
+  box-sizing: content-box;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $color-secondary-input;
+  color: $color-secondary-input;
+  padding-block: 0.3rem;
+
+  @extend %font-raleway;
+  @include font(1.4rem, 2rem, 400);
+
+  &::placeholder {
+    color: $color-secondary-input;
+
+    @include font(1.6rem, 2.4rem, 400);
+    @extend %font-raleway;
+  }
+
+  &:hover {
+    color: $color-secondary-input-hover;
+    border-color: $color-secondary-input-hover;
+
+    &::placeholder {
+      color: $color-secondary-input-hover;
+    }
+  }
+
+  &:focus {
+    color: $color-secondary-input-focus;
+    border-color: $color-secondary-input-focus;
+    font-weight: 600;
+
+    &::placeholder {
+      color: $color-secondary-input-focus;
+      font-weight: 600;
+    }
+  }
+
+  &:valid {
+    color: $color-secondary-input-filled;
+    border-color: $color-secondary-input-filled;
+    font-weight: 700;
+
+    &::placeholder {
+      color: $color-secondary-input-filled;
+      font-weight: 700;
+    }
+  }
+}

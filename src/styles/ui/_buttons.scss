@@ -1,0 +1,71 @@
+.button,
+.secondary__button {
+  display: block;
+  width: 100%;
+  border: none;
+  font-weight: 600;
+  text-align: center;
+
+  @include font(1.6rem, 1.6rem, 600);
+  @extend %font-raleway;
+}
+
+.button {
+  padding-block: 2.2rem;
+  color: $color-white;
+  background-color: $bgc-button-default;
+
+  &:hover {
+    background-color: $bgc-button-hover;
+  }
+  &:focus,
+  &:active {
+    background-color: $bgc-button-pressed;
+  }
+  &:disabled {
+    background-color: $bgc-button-disabled;
+  }
+}
+
+.secondary__button {
+  color: $color-main;
+  background-color: $bgc-secondary-button;
+  column-gap: 0.8rem;
+  padding-block: 2rem;
+
+  @include flex-justify-items(center, center);
+  @include border(0.1rem, $color-secondary-button);
+
+  > .icon {
+    width: 2rem;
+    height: 2rem;
+    background-color: $color-main;
+  }
+
+  &:hover {
+    color: $color-secondary-button-hover;
+    border-color: $color-secondary-button-hover;
+
+    > .icon {
+      background-color: $color-secondary-button-hover;
+    }
+  }
+
+  &:focus,
+  &:active {
+    color: $color-secondary-button-pressed;
+    border-color: $color-secondary-button-pressed;
+
+    > .icon {
+      background-color: $color-secondary-button-pressed;
+    }
+  }
+
+  &:disabled {
+    color: $color-secondary-button-disabled;
+    border-color: $color-secondary-button-disabled;
+    > .icon {
+      background-color: $color-secondary-button-disabled;
+    }
+  }
+}
