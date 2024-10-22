@@ -1,17 +1,53 @@
 .section__digest {
   margin-bottom: $section-mb-xs;
+
+  &--wrapper {
+    @include media-tablet {
+      display: grid;
+
+      @include page-grid(6, $glutter-tablet);
+    }
+  }
 }
 
 .digest {
   &__title {
     margin-bottom: 2rem;
+
+    @include media-tablet {
+      grid-column: span 6;
+    }
   }
 
-  &__discription {
+  &__description {
     margin-bottom: 5rem;
+
+    @include media-tablet {
+      grid-column: span 5;
+    }
   }
 
   &__input {
     margin-bottom: 3rem;
+
+    @include media-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__form {
+    grid-column: span 6;
+
+    @include media-tablet {
+      display: grid;
+
+      @include page-grid(6, $glutter-tablet);
+    }
+  }
+
+  &__button {
+    @include media-tablet {
+      grid-column: span 3;
+    }
   }
 }

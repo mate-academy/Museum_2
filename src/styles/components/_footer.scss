@@ -1,17 +1,32 @@
+.section__footer--wrapper {
+  row-gap: 5rem;
+
+  @include media-tablet {
+    display: grid;
+
+    @include page-grid(6, $glutter-tablet);
+  }
+}
+
 .footer {
-  // height: 100vh;
   background-color: $bgc-gray;
   color: $color-white;
   padding-block: 3.4rem 3rem;
 
-  .section__wrapper {
-    display: grid;
-    row-gap: 5rem;
-
-    @include page-grid(1);
+  &__social {
+    display: flex;
+    column-gap: 2rem;
   }
 
   &__content {
+    margin-bottom: 5rem;
+    &:last-of-type {
+      margin-bottom: 3rem;
+    }
+
+    @include media-tablet {
+      grid-column: span 2;
+    }
     &-text {
       @include flex-justify-items(stretch, normal, column);
     }
@@ -21,19 +36,40 @@
     color: $color-white;
   }
 
+  &__link {
+    display: flex;
+    flex-direction: column;
+
+    &:last-of-type {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__link:hover {
+    color: $color-main;
+  }
+
+  &__link--social:hover {
+    background-color: $color-main;
+  }
+
   &__content-title {
     color: $color-white;
     margin-bottom: 10px;
   }
 
   &__links {
-    @include flex-justify-items(stretch, normal, column);
-
     column-gap: 0.5rem;
+
+    @include flex-justify-items(stretch, normal, column);
   }
 
   &__terms {
     @include flex-justify-items(center, normal);
+
+    @include media-tablet {
+      grid-column: span 6;
+    }
     .footer__term {
       &:first-child {
         margin-right: 2.2rem;

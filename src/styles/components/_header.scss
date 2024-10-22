@@ -1,26 +1,30 @@
 .header {
-  height: 100vh;
+  min-height: 100vh;
   background-color: $bgc-gray;
   color: $color-white;
-  position: relative;
   margin-bottom: $section-mb-x;
 
-  &__date,
-  &__title {
-    color: $color-white;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   // TOP
   &__top {
-    @include flex-justify-items(center, space-between);
-
     padding-block: 2rem;
     margin-bottom: 5rem;
+
+    @include flex-justify-items(center, space-between);
+
+    @include media-tablet {
+      margin-bottom: 10rem;
+    }
   }
 
   &__logo {
     display: block;
-    width: 12.3rem;
+    width: 12.4rem;
     height: 4rem;
   }
 
@@ -44,25 +48,73 @@
   }
 
   // BOTTOM
-  &__time {
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+
+  &__content-container {
+    display: grid;
+
+    @include page-grid(2, $glutter-tablet);
+
+    @include media-tablet {
+      @include page-grid(6, $glutter-tablet);
+    }
+  }
+
+  &__date {
     margin-bottom: 1rem;
+
+    @include media-tablet {
+      grid-column: span 4;
+    }
+  }
+
+  &__date,
+  &__title,
+  &__description,
+  &__button {
+    grid-column: span 2;
+
+    color: $color-white;
   }
 
   &__title {
     margin-bottom: 3rem;
+
+    @include media-tablet {
+      grid-column: span 5;
+    }
   }
 
-  &__description,
+  &__description {
+    margin-bottom: 4rem;
+
+    @include media-tablet {
+      grid-column: span 4;
+    }
+  }
+
   &__button {
     margin-bottom: 4rem;
+
+    @include media-tablet {
+      grid-column: span 3;
+    }
   }
 
   &__image {
-    position: absolute;
-    right: 50%;
-    transform: translateX(50%);
-    bottom: 0;
     width: 24.5rem;
-    height: 27.3rem;
+    margin: auto auto 0;
+    object-fit: contain;
+
+    aspect-ratio: 1/1.12;
+
+    @include media-tablet {
+      grid-column: span 6;
+    }
   }
 }
