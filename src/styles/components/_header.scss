@@ -1,13 +1,10 @@
 .header {
-  min-height: 100vh;
   background-color: $bgc-gray;
   color: $color-white;
   margin-bottom: $section-mb-x;
 
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  @include media-tablet-l {
+    margin-bottom: $section-mb-m;
   }
 
   // TOP
@@ -17,8 +14,8 @@
 
     @include flex-justify-items(center, space-between);
 
-    @include media-tablet {
-      margin-bottom: 10rem;
+    @include media-tablet-l {
+      margin-bottom: $section-mb-m;
     }
   }
 
@@ -35,33 +32,49 @@
 
   &__icons {
     column-gap: 3rem;
+
+    @include media-tablet {
+      column-gap: 4.2rem;
+    }
   }
 
   &__switch-language {
     column-gap: 0.5rem;
-    opacity: 0;
+    display: none;
+
+    @include media-tablet {
+      display: flex;
+    }
   }
 
   &__icon,
   &__switch-language {
     color: $color-white;
+    &:hover {
+      color: $color-main;
+      > .icon {
+        background-color: $color-main;
+      }
+    }
   }
 
   // BOTTOM
+  &__content-container,
   &__bottom {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    flex-grow: 1;
-  }
-
-  &__content-container {
     display: grid;
 
     @include page-grid(2, $glutter-tablet);
 
     @include media-tablet {
       @include page-grid(6, $glutter-tablet);
+    }
+  }
+
+  &__content-container {
+    grid-column: span 2;
+
+    @include media-tablet {
+      grid-column: span 6;
     }
   }
 
@@ -75,7 +88,7 @@
 
   &__date,
   &__title,
-  &__description,
+  &__description--container,
   &__button {
     grid-column: span 2;
 
@@ -87,6 +100,16 @@
 
     @include media-tablet {
       grid-column: span 5;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__description--container {
+    margin-bottom: 5rem;
+
+    @include media-tablet {
+      grid-column: 1/4;
+      margin-bottom: 7rem;
     }
   }
 
@@ -94,27 +117,26 @@
     margin-bottom: 4rem;
 
     @include media-tablet {
-      grid-column: span 4;
+      margin-bottom: 5rem;
+
+      > br {
+        display: none;
+      }
     }
   }
 
-  &__button {
-    margin-bottom: 4rem;
+  &__picture {
+    grid-column: span 2;
+    padding-inline: 1.75rem;
 
     @include media-tablet {
-      grid-column: span 3;
+      grid-column: 2/6;
+      padding-inline: 0.35rem;
     }
   }
 
   &__image {
-    width: 24.5rem;
-    margin: auto auto 0;
-    object-fit: contain;
-
-    aspect-ratio: 1/1.12;
-
-    @include media-tablet {
-      grid-column: span 6;
-    }
+    object-fit: fill;
+    aspect-ratio: 100/107;
   }
 }

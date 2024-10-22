@@ -1,6 +1,10 @@
 .section__footer--wrapper {
   row-gap: 5rem;
 
+  @include media-tablet-l {
+    row-gap: 6rem;
+  }
+
   @include media-tablet {
     display: grid;
 
@@ -13,22 +17,33 @@
   color: $color-white;
   padding-block: 3.4rem 3rem;
 
+  @include media-tablet-l {
+    padding-block: 5rem 3rem;
+  }
+
   &__social {
     display: flex;
     column-gap: 2rem;
+    margin-top: 3rem;
+
+    @include media-tablet-l {
+      margin-top: 5rem;
+    }
   }
 
   &__content {
     margin-bottom: 5rem;
-    &:last-of-type {
-      margin-bottom: 3rem;
-    }
 
     @include media-tablet {
       grid-column: span 2;
     }
+
     &-text {
       @include flex-justify-items(stretch, normal, column);
+    }
+
+    @include media-tablet-l {
+      margin-bottom: 0;
     }
   }
   &__title,
@@ -36,26 +51,17 @@
     color: $color-white;
   }
 
-  &__link {
-    display: flex;
-    flex-direction: column;
-
-    &:last-of-type {
-      margin-bottom: 3rem;
-    }
-  }
-
   &__link:hover {
     color: $color-main;
   }
 
-  &__link--social:hover {
-    background-color: $color-main;
-  }
-
   &__content-title {
     color: $color-white;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
+
+    @include media-tablet-l {
+      margin-bottom: 3rem;
+    }
   }
 
   &__links {
@@ -78,6 +84,16 @@
 
     & :nth-child(2) {
       margin-right: 2.4rem;
+    }
+  }
+
+  &__nav-list {
+    & :not(:last-child) {
+      margin-bottom: 0.5rem;
+
+      @include media-tablet-l {
+        margin-bottom: 1rem;
+      }
     }
   }
 }
