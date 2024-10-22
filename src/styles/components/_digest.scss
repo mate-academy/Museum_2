@@ -5,11 +5,19 @@
     margin-bottom: $section-mb-xl;
   }
 
+  @include media-decstop-xl {
+    margin-bottom: $section-mb-xxl;
+  }
+
   &--wrapper {
     @include media-tablet {
       display: grid;
 
       @include page-grid(6, $glutter-tablet);
+    }
+
+    @include media-decstop-xl {
+      @include page-grid(12, $glutter-desctop);
     }
   }
 }
@@ -21,6 +29,10 @@
     @include media-tablet {
       grid-column: span 6;
     }
+
+    @include media-decstop-xl {
+      margin-bottom: 5rem;
+    }
   }
 
   &__description {
@@ -29,29 +41,32 @@
     @include media-tablet {
       grid-column: span 5;
     }
+
+    @include media-decstop-xl {
+      grid-column: span 6;
+    }
   }
 
   &__input {
     margin-bottom: 3rem;
 
-    @include media-tablet {
-      grid-column: span 4;
+    @include media-decstop-xl {
+      margin-bottom: 4rem;
     }
   }
 
   &__form {
     grid-column: span 6;
 
-    @include media-tablet {
-      display: grid;
-
-      @include page-grid(6, $glutter-tablet);
+    @include media-decstop-xl {
+      grid-column: span 5;
     }
   }
 
   &__button {
     @include media-tablet {
-      grid-column: span 3;
+      max-width: 27rem;
+      margin-right: auto;
     }
   }
 }

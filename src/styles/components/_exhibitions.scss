@@ -5,6 +5,10 @@
     margin-bottom: 16rem;
   }
 
+  @include media-decstop-xl {
+    margin-bottom: $section-mb-xxl;
+  }
+
   &--wrapper {
     display: grid;
 
@@ -14,6 +18,10 @@
       @include page-grid(6, $glutter-tablet);
 
       grid-auto-flow: row dense;
+    }
+
+    @include media-decstop-xl {
+      @include page-grid(12, $glutter-tablet);
     }
   }
 
@@ -29,23 +37,17 @@
     @include media-tablet-l {
       margin-bottom: $section-mb-xs;
     }
+
+    @include media-decstop-xl {
+      grid-column: span 6;
+      margin-bottom: 7rem;
+    }
   }
 }
 
 .exhibition {
   display: flex;
   flex-direction: column;
-
-  &__picture {
-    aspect-ratio: 100/127.15;
-  }
-
-  &__image {
-    &--scale {
-      object-position: -15px 10px;
-      transform: scale(1.1);
-    }
-  }
 }
 
 .exhibitions {
@@ -64,6 +66,10 @@
 
     @include media-tablet-l {
       margin-bottom: 0;
+    }
+
+    @include media-decstop-xl {
+      grid-column: span 12;
     }
   }
 
@@ -85,5 +91,9 @@
   &__link {
     grid-column: span 2;
     align-self: flex-start;
+
+    @include media-decstop-xl {
+      grid-column: 10/-1;
+    }
   }
 }

@@ -11,11 +11,31 @@
   pointer-events: none;
   transition: ease-in-out $transition-time;
 
+  @include media-tablet {
+    background-image: url('../public/images/menu/tablet.png');
+    background-repeat: no-repeat;
+    background-position: 50% 630px;
+    background-attachment: fixed;
+  }
+
+  @include media-decstop-xl {
+    background-image: url('../public/images/menu/decstop.png');
+    background-position: right 103px;
+  }
+
   // TOP
   &__top {
     padding-block: 2rem 3rem;
 
     @include flex-justify-items(center, space-between);
+
+    @include media-tablet {
+      margin-bottom: 2rem;
+    }
+
+    @include media-decstop-xl {
+      margin-bottom: 1rem;
+    }
   }
 
   &__logo {
@@ -31,6 +51,10 @@
 
   &__icons {
     column-gap: 3rem;
+
+    @include media-tablet {
+      column-gap: 4.4rem;
+    }
   }
 
   &__icon,
@@ -50,8 +74,12 @@
   }
 
   &__icon-cross {
-    width: 3rem;
-    height: 3rem;
+    width: 2.2rem;
+    height: 2.2rem;
+
+    @include media-tablet {
+      order: -1;
+    }
   }
 
   &:target {
@@ -62,11 +90,22 @@
   &__link:hover {
     color: $color-main;
   }
+
   &__info {
     margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
 
-    & :first-child {
-      margin-bottom: 2rem;
+    @include media-tablet {
+      flex-direction: row;
+      column-gap: 12.3rem;
+      margin-bottom: 5rem;
+
+      @include media-decstop-xl {
+        column-gap: 8.3rem;
+        margin-bottom: 7rem;
+      }
     }
 
     &-content {
@@ -77,24 +116,71 @@
   &__hr {
     height: 0.1rem;
     background-color: $color-white;
+    width: 100%;
+
+    @include media-decstop-xl {
+      width: calc(100vw - 710px);
+    }
+  }
+
+  &__button {
+    @include media-tablet {
+      max-width: 33rem;
+    }
+
+    @include media-decstop-xl {
+      max-width: 27rem;
+    }
   }
 }
 
+// NAV
+
 .nav {
   margin-bottom: 4rem;
+
+  @include media-tablet {
+    margin-bottom: 5rem;
+  }
+
+  @include media-tablet {
+    margin-bottom: 6rem;
+  }
 
   &__list {
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
     margin-bottom: 4rem;
+
+    @include media-tablet {
+      row-gap: 3rem;
+      margin-bottom: 5rem;
+    }
+
+    @include media-decstop-xl {
+      row-gap: 6rem;
+      margin-bottom: 6rem;
+    }
   }
 
   &__link {
+    position: relative;
+
     @extend %font-playfar;
     @include font(2rem, 3rem, 700);
 
+    &:hover {
+      &::after {
+        @include link-line(0.1rem, $color-white);
+      }
+    }
+
     color: $color-white;
+
+    @include media-tablet {
+      @include font(4.8rem, 5.76rem, 700);
+    }
   }
 
   &__item {

@@ -22,6 +22,19 @@
   flex-direction: $direction;
 }
 
+@mixin link-line($height, $bgc) {
+  content: '';
+  display: block;
+  position: absolute;
+  height: $height;
+  background-color: $bgc;
+  margin-top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: line-view $transition-time ease-in-out;
+}
+
 @mixin page-grid($columns, $gap: 0) {
   column-gap: $gap;
   grid-template-columns: repeat($columns, 1fr);
@@ -42,5 +55,21 @@
 @mixin media-decstop {
   @media (min-width: $media-decstop) {
     @content;
+  }
+}
+
+@mixin media-decstop-xl {
+  @media (min-width: $media-decstop-xl) {
+    @content;
+  }
+}
+
+@keyframes line-view {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
   }
 }

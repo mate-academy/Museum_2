@@ -5,6 +5,10 @@
     margin-bottom: 16rem;
   }
 
+  @include media-decstop-xl {
+    margin-bottom: $section-mb-xxl;
+  }
+
   &-title {
     margin-bottom: 6rem;
 
@@ -14,6 +18,10 @@
 
     @include media-tablet-l {
       margin-bottom: 7rem;
+    }
+
+    @include media-decstop-xl {
+      margin-bottom: 6rem;
     }
   }
 
@@ -26,6 +34,10 @@
       @include page-grid(6, $glutter-tablet);
 
       grid-auto-flow: row dense;
+    }
+
+    @include media-decstop-xl {
+      @include page-grid(12, $glutter-desctop);
     }
   }
 }
@@ -44,6 +56,10 @@
 
     @include media-tablet-l {
       margin-bottom: 0;
+    }
+
+    @include media-decstop-xl {
+      grid-column: span 12;
     }
   }
 
@@ -77,6 +93,10 @@
     @include media-tablet-l {
       margin-bottom: 4rem;
     }
+
+    @include media-decstop-xl {
+      margin-bottom: 2rem;
+    }
   }
 
   &__image {
@@ -86,10 +106,22 @@
       object-fit: fill;
       transform: scale(1.2);
     }
+
+    @include media-decstop-xl {
+      aspect-ratio: 100/64.9;
+    }
   }
 
   &__link {
-    grid-column: span 2;
+    grid-column: 6/-1;
     align-self: start;
+
+    @include media-tablet {
+      grid-column: 5/-1;
+    }
+
+    @include media-decstop-xl {
+      grid-column: 10/-1;
+    }
   }
 }

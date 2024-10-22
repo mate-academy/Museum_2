@@ -3,10 +3,24 @@
   margin-bottom: $section-mb-x;
   padding-block: 5rem;
   color: $color-white;
+  position: relative;
 
   @include media-tablet-l {
     padding-block: 8rem;
     margin-bottom: $section-mb-xl;
+  }
+
+  @include media-decstop-xl {
+    padding-block: 22.5rem 20.5rem;
+    margin-bottom: $section-mb-l;
+  }
+
+  &--wrapper {
+    @include media-decstop-xl {
+      display: grid;
+
+      @include page-grid(12, $glutter-desctop);
+    }
   }
 }
 
@@ -17,33 +31,49 @@
 
       @include page-grid(6, $glutter-tablet);
     }
+
+    @include media-decstop-xl {
+      grid-column: 6/-1;
+
+      @include page-grid(12, $glutter-desctop);
+    }
   }
 
   &__title {
     margin-bottom: 2rem;
     color: $color-white;
 
-    @include media-tablet-l {
-      margin-bottom: 4rem;
-    }
-  }
-
-  &__description {
-    margin-bottom: 4rem;
-
-    @include media-tablet-l {
-      margin-bottom: 6rem;
-    }
-  }
-
-  &__description,
-  &__title {
     @include media-tablet {
       grid-column: span 6;
     }
 
     @include media-tablet-l {
       grid-column: span 4;
+
+      margin-bottom: 4rem;
+    }
+
+    @include media-decstop-xl {
+      grid-column: span 11;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__description {
+    margin-bottom: 4rem;
+
+    @include media-tablet {
+      grid-column: span 6;
+    }
+
+    @include media-tablet-l {
+      grid-column: span 4;
+      margin-bottom: 4rem;
+    }
+
+    @include media-decstop-xl {
+      grid-column: span 9;
+      margin-bottom: 5rem;
     }
   }
 
@@ -51,9 +81,23 @@
     @include media-tablet {
       grid-column: span 3;
     }
+
+    @include media-decstop-xl {
+      grid-column: span 10;
+
+      max-width: 27rem;
+    }
   }
 
   &__image {
     display: none;
+
+    @include media-decstop-xl {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      max-width: 578px;
+    }
   }
 }

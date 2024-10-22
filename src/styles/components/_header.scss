@@ -2,9 +2,14 @@
   background-color: $bgc-gray;
   color: $color-white;
   margin-bottom: $section-mb-x;
+  position: relative;
 
   @include media-tablet-l {
     margin-bottom: $section-mb-m;
+  }
+
+  @include media-decstop-xl {
+    margin-bottom: $section-mb-l;
   }
 
   // TOP
@@ -16,6 +21,11 @@
 
     @include media-tablet-l {
       margin-bottom: $section-mb-m;
+    }
+
+    @include media-decstop-xl {
+      padding-block: 3rem;
+      margin-bottom: $section-mb-x;
     }
   }
 
@@ -70,11 +80,29 @@
     }
   }
 
+  &__bottom {
+    @include media-decstop-xl {
+      @include page-grid(12, $glutter-desctop);
+
+      padding-bottom: 5rem;
+    }
+  }
+
+  &__button {
+    max-width: 27rem;
+  }
+
   &__content-container {
     grid-column: span 2;
 
     @include media-tablet {
       grid-column: span 6;
+      padding-bottom: 520px;
+    }
+
+    @include media-decstop-xl {
+      grid-column: span 6;
+      padding-bottom: 0;
     }
   }
 
@@ -91,7 +119,6 @@
   &__description--container,
   &__button {
     grid-column: span 2;
-
     color: $color-white;
   }
 
@@ -102,6 +129,11 @@
       grid-column: span 5;
       margin-bottom: 2rem;
     }
+
+    @include media-decstop-xl {
+      grid-column: span 6;
+      margin-bottom: 3rem;
+    }
   }
 
   &__description--container {
@@ -110,6 +142,11 @@
     @include media-tablet {
       grid-column: 1/4;
       margin-bottom: 7rem;
+    }
+
+    @include media-decstop-xl {
+      grid-column: span 6;
+      margin-bottom: 13.5rem;
     }
   }
 
@@ -123,6 +160,10 @@
         display: none;
       }
     }
+
+    @include media-decstop-xl {
+      margin-bottom: $section-mb-xs;
+    }
   }
 
   &__picture {
@@ -130,13 +171,47 @@
     padding-inline: 1.75rem;
 
     @include media-tablet {
-      grid-column: 2/6;
+      position: absolute;
+      max-width: 45rem;
+      bottom: -73px;
+      right: 50%;
+      transform: translateX(50%);
       padding-inline: 0.35rem;
+      clip-path: inset(0 0 73px 0);
+    }
+
+    @include media-decstop-xl {
+      max-width: 62.5rem;
+      position: absolute;
+      right: 0;
+      transform: translateX(0);
+      bottom: -105px;
+      clip-path: inset(0 0 105px 0);
     }
   }
 
-  &__image {
-    object-fit: fill;
-    aspect-ratio: 100/107;
+  &__date-desctop {
+    color: $color-white;
+    opacity: 0.7;
+    text-wrap: nowrap;
+
+    &--wrapper {
+      display: none;
+
+      grid-column: span 6;
+
+      @include media-decstop-xl {
+        @include flex-justify-items(center, normal);
+
+        column-gap: 2rem;
+      }
+    }
+
+    &--line {
+      width: calc(100vw - 710px);
+      height: 0.1rem;
+      background-color: $color-white;
+      opacity: 0.3;
+    }
   }
 }
