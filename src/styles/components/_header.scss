@@ -3,12 +3,21 @@
   color: $color-white;
   margin-bottom: $section-mb-x;
   position: relative;
+  min-height: 747px;
+  background-image: url('../public/images/header/mobile.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
 
   @include media-tablet-l {
     margin-bottom: $section-mb-m;
+    min-height: 1092px;
+    background-image: url('../public/images/header/tablet.png');
   }
 
   @include media-decstop-xl {
+    min-height: 800px;
+    background-position: right bottom;
+    background-image: url('../public/images/header/decstop.png');
     margin-bottom: $section-mb-l;
   }
 
@@ -97,7 +106,6 @@
 
     @include media-tablet {
       grid-column: span 6;
-      padding-bottom: 520px;
     }
 
     @include media-decstop-xl {
@@ -163,30 +171,6 @@
 
     @include media-decstop-xl {
       margin-bottom: $section-mb-xs;
-    }
-  }
-
-  &__picture {
-    grid-column: span 2;
-    padding-inline: 1.75rem;
-
-    @include media-tablet {
-      position: absolute;
-      max-width: 45rem;
-      bottom: -73px;
-      right: 50%;
-      transform: translateX(50%);
-      padding-inline: 0.35rem;
-      clip-path: inset(0 0 73px 0);
-    }
-
-    @include media-decstop-xl {
-      max-width: 62.5rem;
-      position: absolute;
-      right: 0;
-      transform: translateX(0);
-      bottom: -105px;
-      clip-path: inset(0 0 105px 0);
     }
   }
 
