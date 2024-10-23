@@ -1,0 +1,106 @@
+.section__footer--wrapper {
+  row-gap: 5rem;
+
+  @include media-tablet-l {
+    row-gap: 6rem;
+  }
+
+  @include media-tablet {
+    display: grid;
+
+    @include page-grid(6, $glutter-tablet);
+  }
+}
+
+.footer {
+  background-color: $bgc-gray;
+  color: $color-white;
+  padding-block: 3.4rem 3rem;
+
+  @include media-tablet-l {
+    padding-block: 5rem 3rem;
+  }
+
+  &__social {
+    display: flex;
+    column-gap: 2rem;
+    margin-top: 3rem;
+
+    @include media-tablet-l {
+      margin-top: 5rem;
+    }
+  }
+
+  &__content {
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+
+    @include media-tablet {
+      grid-column: span 2;
+    }
+
+    &-text {
+      @include flex-justify-items(stretch, normal, column);
+    }
+
+    @include media-tablet-l {
+      margin-bottom: 0;
+    }
+  }
+  &__title,
+  &__link {
+    color: $color-white;
+  }
+
+  &__link:hover {
+    color: $color-main;
+  }
+
+  &__content-title {
+    color: $color-white;
+    margin-bottom: 1rem;
+
+    @include font(1.8rem, 2.7rem, 700);
+
+    @include media-tablet-l {
+      margin-bottom: 3rem;
+
+      @include font(2rem, 3rem, 700);
+    }
+  }
+
+  &__links {
+    column-gap: 0.5rem;
+
+    @include flex-justify-items(stretch, normal, column);
+  }
+
+  &__terms {
+    @include flex-justify-items(center, space-between);
+
+    &-content {
+      & :first-child {
+        margin-right: 2.2rem;
+
+        @include media-decstop-xl {
+          margin-right: 10rem;
+        }
+      }
+    }
+
+    @include media-tablet {
+      grid-column: span 6;
+    }
+  }
+
+  &__nav-list {
+    & :not(:last-child) {
+      margin-bottom: 0.5rem;
+
+      @include media-tablet-l {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
