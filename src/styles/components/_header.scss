@@ -41,7 +41,7 @@
   &__logo {
     display: block;
     width: 12.4rem;
-    height: 4rem;
+    height: 3.7rem;
   }
 
   &__icons,
@@ -78,39 +78,15 @@
   }
 
   // BOTTOM
-  &__content-container,
   &__bottom {
-    display: grid;
-
-    @include page-grid(2, $glutter-tablet);
-
     @include media-tablet {
+      display: grid;
+
       @include page-grid(6, $glutter-tablet);
     }
-  }
 
-  &__bottom {
-    @include media-decstop-xl {
+    @include media-decstop {
       @include page-grid(12, $glutter-desctop);
-
-      padding-bottom: 5rem;
-    }
-  }
-
-  &__button {
-    max-width: 27rem;
-  }
-
-  &__content-container {
-    grid-column: span 2;
-
-    @include media-tablet {
-      grid-column: span 6;
-    }
-
-    @include media-decstop-xl {
-      grid-column: span 6;
-      padding-bottom: 0;
     }
   }
 
@@ -118,43 +94,22 @@
     margin-bottom: 1rem;
 
     @include media-tablet {
-      grid-column: span 4;
+      grid-column: 1/4;
     }
-  }
-
-  &__date,
-  &__title,
-  &__description--container,
-  &__button {
-    grid-column: span 2;
-    color: $color-white;
   }
 
   &__title {
     margin-bottom: 3rem;
+    color: $color-white;
 
     @include media-tablet {
-      grid-column: span 5;
+      grid-column: 1/6;
       margin-bottom: 2rem;
     }
 
     @include media-decstop-xl {
-      grid-column: span 6;
+      grid-column: 1/7;
       margin-bottom: 3rem;
-    }
-  }
-
-  &__description--container {
-    margin-bottom: 5rem;
-
-    @include media-tablet {
-      grid-column: 1/4;
-      margin-bottom: 7rem;
-    }
-
-    @include media-decstop-xl {
-      grid-column: span 6;
-      margin-bottom: 13.5rem;
     }
   }
 
@@ -163,14 +118,22 @@
 
     @include media-tablet {
       margin-bottom: 5rem;
-
-      > br {
-        display: none;
-      }
+      grid-column: 1/4;
     }
 
     @include media-decstop-xl {
+      grid-column: 1/7;
       margin-bottom: $section-mb-xs;
+    }
+  }
+
+  &__button {
+    @include media-tablet {
+      grid-column: 1/4;
+    }
+
+    @include media-decstop-xl {
+      margin-bottom: 13.5rem;
     }
   }
 
@@ -182,8 +145,6 @@
     &--wrapper {
       display: none;
 
-      grid-column: span 6;
-
       @include media-decstop-xl {
         @include flex-justify-items(center, normal);
 
@@ -192,7 +153,7 @@
     }
 
     &--line {
-      width: calc(100vw - 710px);
+      width: calc(100vw - 820px);
       height: 0.1rem;
       background-color: $color-white;
       opacity: 0.3;
