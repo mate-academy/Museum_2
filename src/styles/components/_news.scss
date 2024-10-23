@@ -9,6 +9,20 @@
     margin-bottom: $section-mb-xxl;
   }
 
+  &--wrapper {
+    @include media-tablet {
+      display: grid;
+
+      grid-auto-flow: row dense;
+
+      @include page-grid(6, $glutter-tablet);
+    }
+
+    @include media-decstop-xl {
+      @include page-grid(12, $glutter-desctop);
+    }
+  }
+
   &-title {
     margin-bottom: 6rem;
 
@@ -22,18 +36,6 @@
 
     @include media-decstop-xl {
       margin-bottom: 6rem;
-    }
-  }
-
-  &--wrapper {
-    @include media-tablet {
-      @include page-grid(6, $glutter-tablet);
-
-      grid-auto-flow: row dense;
-    }
-
-    @include media-decstop-xl {
-      @include page-grid(12, $glutter-desctop);
     }
   }
 }
