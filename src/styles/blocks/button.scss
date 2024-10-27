@@ -1,0 +1,65 @@
+.button {
+  width: 280px;
+  height: 60px;
+  gap: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $whiteAccent;
+  cursor: pointer;
+
+  // TODO: Think about how to make effects on hover, active, disabled on phone.
+  transition:
+    background-color $duration,
+    border $duration;
+
+  &--primary {
+    background-color: $redAccent;
+    border: 1px solid $redAccent;
+
+    @include hover((background-color, $redHover), (border-color, $redHover));
+    @include active((background-color, $redActive), (border-color, $redActive));
+
+    // &:hover {
+    //   background-color: $redHover;
+    //   border-color: $redHover;
+    // }
+
+    // &:active {
+    //   background-color: $redActive;
+    //   border-color: $redActive
+    // }
+
+    &:disabled {
+      background-color: $redDisabled;
+      border-color: $redDisabled;
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    background-color: $whiteAccent;
+    border: 1px solid $redAccent;
+    color: $redAccent;
+
+    @include hover((color, $redHover), (border-color, $redHover));
+    @include active((color, $redActive), (border-color, $redActive));
+
+    // &:hover {
+    //   border-color: $redHover;
+    //   color: $redHover;
+    // }
+
+    // &:active {
+    //   border-color: $redActive;
+    //   color: $redActive;
+    // }
+
+    &:disabled {
+      border-color: $redDisabled;
+      color: $redDisabled;
+      cursor: not-allowed;
+    }
+  }
+}

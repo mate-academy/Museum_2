@@ -1,6 +1,86 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@use 'sass:list';
+@use 'sass:string';
+
+@mixin on-tablet() {
+  @media (min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin on-desktop() {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin grid-template() {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: 20px;
+
+  @include on-tablet {
+    --columns: 6;
+
+    gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+
+    gap: 30px;
+  }
+}
+
+@mixin icon-link($_width, $_height) {
+  width: $_width;
+  height: $_height;
+  display: block;
+  text-decoration: none;
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+    fill: $whiteAccent;
+  }
+}
+
+// @mixin hover($_property, $_toValue) {
+//   transition: #{$_property} $duration;
+//   @media (hover: hover) {
+//     &:hover {
+//       #{$_property}: $_toValue;
+//     }
+//   }
+// }
+
+@mixin hover($_properties...) {
+  $transitions: ();
+
+  @each $property, $value in $_properties {
+    $transitions: list.append(
+      $transitions,
+      string.unquote('#{$property} #{$duration}'),
+      comma
+    );
+  }
+
+  transition: $transitions;
+
+  @media (hover: hover) {
+    &:hover {
+      @each $property, $value in $_properties {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+@mixin active($_properties...) {
+  &:active {
+    @each $property, $value in $_properties {
+      #{$property}: $value;
+    }
   }
 }
