@@ -1,0 +1,103 @@
+.subscribe {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 80px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      row-gap: 0;
+      margin-bottom: 128px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 200px;
+      row-gap: 12px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 50px;
+    grid-column: 1 / 6;
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 / 5;
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+      padding-top: 30px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 30px;
+    padding-block: 6px;
+    padding-inline: 0;
+    border: none;
+    position: relative;
+    background-color: $white-color;
+    border-bottom: 1px solid $black-color;
+    outline: none;
+
+    &::placeholder {
+      @extend %maintext;
+
+      text-align: left;
+      color: $black-color;
+      transition: opacity $effectDuration ease-in-out;
+    }
+
+    &:hover {
+      border-color: $main-color;
+
+      &::placeholder {
+        color: $main-color;
+      }
+    }
+
+    &:focus {
+      border-color: $main-color;
+      font-weight: 700;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      font-weight: 700;
+      border-color: $black-color;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / 3;
+    outline: none;
+    cursor: pointer;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include hover(background-color, $hover-color);
+    @include active(background-color, $active-color);
+    @include focus(background-color, $active-color);
+  }
+}
