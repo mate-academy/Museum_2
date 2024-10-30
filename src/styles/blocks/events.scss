@@ -1,0 +1,108 @@
+.events {
+  &__article {
+    @include page-grid;
+
+    &-title {
+      margin: 0;
+    }
+  }
+
+  &__text {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 4/7;
+    }
+
+    @include on-desktop {
+      height: 475px;
+      grid-column: 5/11;
+    }
+  }
+
+  &__photo {
+    grid-column: 1/-1;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      grid-column: 1/5;
+    }
+  }
+
+  &__container-article {
+    display: grid;
+    row-gap: 60px;
+  }
+
+  &__title {
+    margin: 0;
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 10px 60px;
+    }
+  }
+
+  &__button {
+    @include button;
+
+    margin-top: 50px;
+
+    &-white {
+      @include button-white;
+
+      margin-top: 30px;
+      align-items: center;
+      justify-content: center;
+
+      &-top {
+        display: none;
+        width: 210px;
+
+        @include on-tablet {
+          display: flex;
+          gap: 8px;
+        }
+      }
+
+      &-bottom {
+        display: flex;
+        gap: 8px;
+
+        @include on-tablet {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__date {
+    display: block;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #cd4d31;
+
+    @include on-tablet {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #504f5e;
+  }
+}
