@@ -1,0 +1,55 @@
+.header {
+  background-color: $bg-color;
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 90px;
+    background-color: $bg-color;
+    color: $white-color;
+
+    @include on-tablet {
+      margin-bottom: 100px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 110px;
+
+      @include page-grid;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 87.5%;
+    height: auto;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+      width: 105%;
+      margin-right: -10px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      max-width: 625px;
+      width: 110%;
+      margin-right: -55px;
+    }
+
+    &-container {
+      margin: 0 auto;
+      width: 87.5%;
+    }
+  }
+}

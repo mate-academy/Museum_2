@@ -1,7 +1,80 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import '../styles/blocks/icon';
+@import '../styles/blocks/menu';
+@import '../styles/blocks/top-bar';
+@import '../styles/blocks/header';
+@import '../styles/blocks/first-screen';
+@import '../styles/blocks/page';
+@import '../styles/blocks/cards';
+@import '../styles/blocks/plane';
+@import '../styles/blocks/news';
+@import '../styles/blocks/events';
+@import '../styles/blocks/subscribe';
+@import '../styles/blocks/footer';
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
 
 body {
-  background: $c-gray;
+  background: $white-color;
+}
+
+.container {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+
+  @include on-large-desktop {
+    max-width: 1192px;
+    margin-inline: auto;
+    padding-inline: 55px;
+  }
+}
+
+.scrollTop {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.scrollTop__link {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: $white-color;
+  font-size: 30px;
+  text-decoration: none;
 }

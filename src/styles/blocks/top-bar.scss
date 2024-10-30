@@ -1,0 +1,103 @@
+.top-bar {
+  padding-block: 20px;
+  padding-top: 22px;
+  padding-bottom: 21px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include on-tablet {
+    padding-block: 20px;
+  }
+
+  @include on-desktop {
+    padding-top: 26px;
+    padding-bottom: 27px;
+  }
+
+  @include on-large-desktop {
+    padding-block: 32px;
+  }
+
+  &__wrapper {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-tablet {
+      grid-column: span 8;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__language {
+    margin-right: 8px;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-color;
+  }
+
+  &__language-switcher {
+    display: flex;
+    align-items: center;
+    position: relative;
+    appearance: none;
+    overflow: hidden;
+    background: url(../images/icons/union.svg) no-repeat left;
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    height: 37px;
+    transition: transform $effectDuration;
+
+    @include on-tablet {
+      height: 37px;
+    }
+
+    @include hover(transform, scale(1.2));
+  }
+}
+
+.switcher {
+  margin-right: 25px;
+
+  @include on-tablet {
+    margin-right: 0;
+  }
+}
+
+select {
+  border: none;
+  background: $bg-color;
+  font-size: 16px;
+  line-height: 150%;
+  color: $white-color;
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.switcher-main {
+  display: none;
+
+  @include on-tablet {
+    display: block;
+  }
+}

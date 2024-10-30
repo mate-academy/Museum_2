@@ -1,0 +1,160 @@
+@import '../utils/vars';
+
+.exibitions {
+  &__title {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  &__wrapper {
+    margin-bottom: 30px;
+
+    @include page-grid;
+
+    row-gap: 60px;
+
+    @include on-tablet {
+      row-gap: 70;
+      grid-template-rows: 60px 1fr;
+      margin-bottom: 160px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__link {
+    .btn {
+      @include hover(background-color, $hover-color);
+    }
+
+    @include on-desktop {
+      width: 47.37%;
+    }
+  }
+}
+
+.card {
+  display: inline-block;
+  grid-column: span 2;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+
+  @include on-tablet {
+    grid-column: span 3;
+    height: 734px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include on-desktop {
+    grid-column: span 6;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  &__photo {
+    display: block;
+    height: 356px;
+    width: 100%;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      height: 420px;
+    }
+
+    @include on-desktop {
+      height: 484px;
+    }
+  }
+
+  &__date {
+    color: $main-color;
+  }
+
+  &__category {
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 15px;
+  }
+
+  &__description {
+    color: $black-color;
+    margin-top: auto;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    border: none;
+  }
+}
+
+.archive {
+  grid-column: 1 / -1;
+  margin-top: -30px;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: $active-color;
+
+  @include on-tablet {
+    grid-column: 5 / -1;
+    grid-row: 1 / 2;
+    align-self: end;
+  }
+
+  @include on-desktop {
+    grid-column: 10 / -1;
+  }
+
+  &__button {
+    background-color: transparent;
+    color: $main-color;
+    border: 1px solid $main-color;
+
+    @extend %button;
+    @include hover(border-color, $hover-color);
+    @include hover(color, $hover-color);
+    @include active(border-color, $active-color);
+    @include active(color, $active-color);
+
+    &::after {
+      content: '';
+      display: inline-block;
+      margin-left: 9px;
+      padding-top: 4px;
+      width: 14px;
+      height: 8px;
+      transition: background-color $effectDuration;
+      mask-image: url(../images/icons/arrow.svg);
+      mask-size: contain;
+      background-color: $main-color;
+    }
+
+    &:hover::after {
+      background-color: $hover-color;
+    }
+
+    &:focus::after,
+    &:active::after {
+      background-color: $active-color;
+    }
+  }
+}
+
+.link {
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+
+  .btn {
+    @include hover(background-color, $hover-color);
+    @include focus(background-color, $active-color);
+    @include active(background-color, $active-color);
+  }
+}
