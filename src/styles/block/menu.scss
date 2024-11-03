@@ -1,0 +1,87 @@
+.menu {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: #3f5252;
+  overflow: auto;
+
+  &__schedule {
+    @include on-tablet {
+      grid-column: 1/-1;
+      display: flex;
+      gap: 120px;
+    }
+
+    @include on-desctop {
+      gap: 85px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__date {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    color: #f1f5f4;
+
+    &::before {
+      content: 'Розклад сьогодні:';
+
+      font-family: Raleway, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19.6px;
+      text-align: left;
+    }
+  }
+
+  &__address {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    color: #f1f5f4;
+
+    &::before {
+      content: 'Адреса:';
+
+      font-family: Raleway, sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 19.6px;
+      text-align: left;
+    }
+  }
+
+  &__content {
+    @include padding-inline;
+
+    grid-column: 1/-1;
+
+    @include on-desctop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__botton {
+    @include on-tablet {
+      background-image: url(../images/img_menu.svg);
+      grid-column: 1/-1;
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @include on-desctop {
+        grid-area: 2 / 7 / -1 / -1;
+      }
+    }
+  }
+}

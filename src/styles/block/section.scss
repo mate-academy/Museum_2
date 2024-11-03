@@ -1,0 +1,114 @@
+.section {
+  &__exibitions {
+    @include padding-inline;
+    @include page-grit;
+
+    --coluns: 1;
+
+    gap: 60px;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+    }
+  }
+
+  &__events {
+    @include padding-inline;
+    @include page-grit;
+
+    --coluns: 2;
+
+    gap: 60px;
+
+    @include on-tablet {
+      max-width: 690px;
+      grid-column: 1/-1;
+    }
+
+    @include on-desctop {
+      max-width: 1170px;
+    }
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+    text-align: left;
+
+    @include on-tablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    &--subscription {
+      grid-column: 1/-1;
+
+      @include on-desctop {
+        grid-column: 1/6;
+        margin: 0;
+      }
+    }
+  }
+
+  &__name {
+    grid-column: 1/-1;
+    display: flex;
+    place-content: center space-between;
+    align-items: center;
+  }
+
+  &__plan {
+    @include padding-inline;
+
+    padding-bottom: 50px;
+
+    background-color: #3f5252;
+
+    @include on-tablet {
+      @include page-grit;
+
+      padding-bottom: 80px;
+
+      margin-inline: 0;
+      align-items: center;
+    }
+
+    @include on-desctop {
+      min-height: 800px;
+      padding: 0;
+    }
+  }
+
+  &__news {
+    @include padding-inline;
+    @include page-grit;
+
+    --coluns: 1;
+
+    gap: 60px;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+      margin-inline: auto;
+    }
+  }
+
+  &__subscription {
+    @include padding-inline;
+    @include page-grit;
+
+    --coluns: 1;
+
+    @include on-tablet {
+      grid-column: 1/-1;
+      margin-inline: auto;
+      max-width: 690px;
+    }
+
+    @include on-desctop {
+      max-width: 1170px;
+    }
+  }
+}
