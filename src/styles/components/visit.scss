@@ -1,0 +1,67 @@
+.visit {
+  background-color: $c-green;
+  color: $c-white;
+
+  &_wrapper {
+    @include page-grid;
+
+    @include on-desktop {
+      align-items: center;
+    }
+  }
+
+  &_img {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      grid-column: span 5;
+    }
+  }
+
+  &_info {
+    grid-column: span 2;
+    margin: 80px 0;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 7;
+    }
+
+    &_title {
+      font-family: Playfair Display;
+      font-size: 38px;
+      font-weight: 700;
+      line-height: 38px;
+      text-align: left;
+      margin-bottom: 20px;
+
+      @include on-tablet {
+        font-size: 62px;
+        line-height: 62px;
+      }
+
+      &_new-line {
+        display: block;
+      }
+    }
+
+    &_text {
+      font-family: Raleway;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    &_button {
+      @include on-tablet {
+        width: 330px;
+      }
+    }
+  }
+}
