@@ -1,0 +1,78 @@
+.nav {
+  @include on-tablet {
+    grid-column: 1 / -1;
+  }
+
+  @include on-desctop {
+    grid-column: 1 / 7;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desctop {
+      gap: 60px;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      border: 1px solid white;
+      margin-block: 20px;
+    }
+
+    &--footer {
+      margin: 0;
+      gap: 5px;
+
+      &::after {
+        content: '';
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #f1f5f4;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+
+    @include on-desctop {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid #f1f5f4;
+    }
+
+    &--footer {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}
