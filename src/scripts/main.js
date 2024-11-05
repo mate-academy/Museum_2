@@ -8,6 +8,8 @@ const links = document.querySelectorAll('.sidebar_nav_link');
 
 const toTopBtn = document.querySelector('.footer_bottom_to_top');
 
+const form = document.querySelector('.form');
+
 menuBtnOpen.addEventListener('click', function() {
   menu.classList.remove('sidebar--closed');
   htmlTag.classList.add('no-scroll');
@@ -27,4 +29,10 @@ function closeMenu() {
 toTopBtn.addEventListener('click', function () {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+});
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  form.reset();
 });
