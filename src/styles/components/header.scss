@@ -1,0 +1,124 @@
+.header {
+  background-color: $c-green;
+  color: $c-white;
+  min-height: 100vh;
+
+  &_menu {
+    padding: 20px 0;
+  }
+
+  &_main {
+    @include page-grid;
+    align-items: center;
+
+    margin-top: 50px;
+
+    &_left {
+      grid-column: span 2;
+      margin-bottom: 40px;
+
+      @include on-tablet {
+        grid-column: span 6;
+      }
+
+      &_additional {
+        font-family: Raleway;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        margin-bottom: 10px;
+      }
+
+      &_title {
+        font-family: Playfair Display;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 48px;
+        margin-bottom: 30px;
+
+        @include on-tablet {
+          font-size: 72px;
+          line-height: 72px;
+        }
+
+        @include on-desktop {
+          font-size: 96px;
+          line-height: 96px;
+        }
+      }
+
+      &_text {
+        font-family: Raleway;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 40px;
+
+        @include on-desktop {
+          margin-bottom: 80px;
+        }
+      }
+
+      &_desctop {
+        display: none;
+
+        @include on-desktop {
+          display: flex;
+          margin-top: 140px;
+          align-items: center;
+          gap: 20px;
+        }
+
+        &_date {
+          font-family: Playfair Display;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 17.5px;
+          flex: 0 0 auto;
+        }
+
+        &_line {
+          width: 100%;
+          height: 1px;
+          background-color: $c-white;
+        }
+      }
+    }
+
+    &_right {
+      grid-column: span 2;
+      text-align: center;
+      position: relative;
+
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include on-tablet {
+        grid-column: span 6;
+        position: static;
+        transform: none;
+      }
+
+      &_photo {
+        width: 245px;
+
+        @include on-tablet {
+          width: 445px;
+        }
+
+        @include on-desktop {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  &_primary-button {
+    @include on-tablet {
+      width: 330px;
+    }
+  }
+}
+
