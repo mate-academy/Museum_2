@@ -7,12 +7,13 @@
   align-items: center;
   justify-content: center;
   color: $whiteAccent;
-  cursor: pointer;
+
+  @include default-cursor;
 
   // TODO: Think about how to make effects on hover, active, disabled on phone.
-  transition:
-    background-color $duration,
-    border $duration;
+  // transition:
+  //   background-color $duration,
+  //   border $duration;
 
   &--primary {
     background-color: $redAccent;
@@ -20,16 +21,6 @@
 
     @include hover((background-color, $redHover), (border-color, $redHover));
     @include active((background-color, $redActive), (border-color, $redActive));
-
-    // &:hover {
-    //   background-color: $redHover;
-    //   border-color: $redHover;
-    // }
-
-    // &:active {
-    //   background-color: $redActive;
-    //   border-color: $redActive
-    // }
 
     &:disabled {
       background-color: $redDisabled;
@@ -46,15 +37,14 @@
     @include hover((color, $redHover), (border-color, $redHover));
     @include active((color, $redActive), (border-color, $redActive));
 
-    // &:hover {
-    //   border-color: $redHover;
-    //   color: $redHover;
-    // }
-
-    // &:active {
-    //   border-color: $redActive;
-    //   color: $redActive;
-    // }
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: currentColor;
+      mask: url('../images/icons/arrow.svg');
+    }
 
     &:disabled {
       border-color: $redDisabled;

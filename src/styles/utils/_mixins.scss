@@ -55,6 +55,18 @@
 //   }
 // }
 
+@mixin on-touch-devices() {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin on-hover-devices() {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
 @mixin hover($_properties...) {
   $transitions: ();
 
@@ -68,13 +80,21 @@
 
   transition: $transitions;
 
-  @media (hover: hover) {
+  @include on-hover-devices {
     &:hover {
       @each $property, $value in $_properties {
         #{$property}: $value;
       }
     }
   }
+
+  // @media (hover: hover) {
+  //   &:hover {
+  //     @each $property, $value in $_properties {
+  //       #{$property}: $value;
+  //     }
+  //   }
+  // }
 }
 
 @mixin active($_properties...) {
@@ -82,5 +102,17 @@
     @each $property, $value in $_properties {
       #{$property}: $value;
     }
+  }
+}
+
+@mixin default-cursor() {
+  cursor: pointer;
+
+  @include on-touch-devices {
+    cursor: default;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 }
