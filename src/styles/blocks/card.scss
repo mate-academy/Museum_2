@@ -1,0 +1,103 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 6;
+  margin: 0;
+
+  @include on-tablet {
+    grid-column: span 3;
+  }
+
+  @include on-phone {
+    grid-column: span 2;
+  }
+
+  &:nth-of-type(2) {
+    @include on-phone {
+      margin: 60px 0 0;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    object-fit: contain;
+    margin: 0 0 20px;
+    cursor: pointer;
+
+    @include hover(border-radius, 16px);
+
+    @include on-tablet {
+      object-fit: cover;
+      margin: 0 0 30px;
+      height: 420px;
+    }
+
+    @include on-phone {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__details {
+    @include on-tablet {
+      display: grid;
+      height: 286px;
+    }
+
+    @include on-phone {
+      height: unset;
+    }
+  }
+
+  &__date {
+    @include text-styler(Raleway, 400, 16px, 24px, $c-orange-main);
+
+    margin: 0;
+  }
+
+  &__title {
+    @include text-styler(Playfair Display, 700, 24px, 30px, $c-black);
+
+    margin: 10px 0 0;
+
+    @include on-phone {
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+
+  &__subtitle {
+    @include text-styler(Raleway, 400, 16px, 24px, $c-gray);
+
+    margin: 20px 0 0;
+
+    @include on-tablet {
+      align-self: end;
+    }
+  }
+
+  &__button {
+    @include text-styler(Raleway, 600, 16px, 16px, $c-white);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 270px;
+    height: 60px;
+    background-color: $c-orange-main;
+    text-decoration: none;
+    margin: 50px 0 0;
+
+    @include primary-button-effects;
+
+    @include on-tablet {
+      align-self: end;
+      margin: 40px 0 0;
+    }
+
+    @include on-phone {
+      width: 100%;
+      margin: 30px 0 0;
+    }
+  }
+}
