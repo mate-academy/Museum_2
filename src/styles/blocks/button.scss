@@ -10,10 +10,9 @@
 
   @include default-cursor;
 
-  // TODO: Think about how to make effects on hover, active, disabled on phone.
-  // transition:
-  //   background-color $duration,
-  //   border $duration;
+  &:focus-visible {
+    outline: 2px solid $focusAccent;
+  }
 
   &--primary {
     background-color: $redAccent;
@@ -25,7 +24,6 @@
     &:disabled {
       background-color: $redDisabled;
       border-color: $redDisabled;
-      cursor: not-allowed;
     }
   }
 
@@ -49,7 +47,6 @@
     &:disabled {
       border-color: $redDisabled;
       color: $redDisabled;
-      cursor: not-allowed;
     }
   }
 }

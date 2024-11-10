@@ -107,6 +107,7 @@
 
 @mixin default-cursor() {
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   @include on-touch-devices {
     cursor: default;
@@ -114,5 +115,26 @@
 
   &:disabled {
     cursor: not-allowed;
+  }
+}
+
+@mixin header-btn($_width, $_height, $_mask-url) {
+  width: $_width;
+  height: $_height;
+  display: block;
+  text-decoration: none;
+  background-color: white;
+  mask-image: $_mask-url;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-clip: content-box;
+
+  @include default-cursor;
+  @include hover((transform, scale(1.1)));
+  @include active((transform, scale(0.9)));
+
+  &:focus-visible {
+    transform: scale(1.1);
+    background-color: $focusAccent;
   }
 }
