@@ -8,33 +8,80 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
+
+    grid-column: 1 / -1;
   }
 
   &__mainPart {
     margin-top: 50px;
+
+    grid-column: 1 / -1;
+
+    @include grid-template;
+
+    @include on-tablet {
+      margin-top: 129px;
+    }
   }
 
   &__title {
     margin-top: 10px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / span 5;
+    }
+  }
+
+  &__dates {
+    grid-column: 1 / -1;
   }
 
   &__description {
     margin-top: 30px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / span 3;
+
+      margin-top: 20px;
+    }
   }
 
   &__button {
     margin-top: 40px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / span 3;
+
+      margin-top: 50px;
+    }
   }
 
   &__bottomPart {
     // margin-top: 40px;
     padding-inline: 18px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 2 / span 4;
+      padding: 0;
+    }
   }
 
   &__img {
     position: relative;
-    top: 53px;
+    top: 55px;
     width: 100%;
     height: 100%;
+
+    @include on-tablet {
+      top: 110px;
+    }
   }
 }

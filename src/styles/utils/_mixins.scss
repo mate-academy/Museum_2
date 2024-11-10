@@ -2,7 +2,7 @@
 @use 'sass:string';
 
 @mixin on-tablet() {
-  @media (min-width: 768px) and (max-width: 1279px) {
+  @media (min-width: 768px) {
     @content;
   }
 }
@@ -18,33 +18,31 @@
 
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
-  gap: 20px;
+  column-gap: 20px;
 
   @include on-tablet {
     --columns: 6;
 
-    gap: 30px;
+    column-gap: 30px;
   }
 
   @include on-desktop {
     --columns: 12;
-
-    gap: 30px;
   }
 }
 
-@mixin icon-link($_width, $_height) {
-  width: $_width;
-  height: $_height;
-  display: block;
-  text-decoration: none;
+// @mixin icon-link($_width, $_height) {
+//   width: $_width;
+//   height: $_height;
+//   display: block;
+//   text-decoration: none;
 
-  &__svg {
-    width: 100%;
-    height: 100%;
-    fill: $whiteAccent;
-  }
-}
+//   &__svg {
+//     width: 100%;
+//     height: 100%;
+//     fill: $whiteAccent;
+//   }
+// }
 
 // @mixin hover($_property, $_toValue) {
 //   transition: #{$_property} $duration;
