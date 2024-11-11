@@ -1,6 +1,6 @@
 <!doctype html>
 <html
-  lang="en"
+  lang="ua"
   class="page"
 >
   <head>
@@ -16,7 +16,7 @@
     />
   </head>
   <body
-    class="body page__body"
+    class="body page__body body--hidden"
     id="body"
   >
     <header class="header page__header">
@@ -30,6 +30,7 @@
             aria-label="Перейти догори сторінки"
             aria-pressed="false"
             title="Перейти догори сторінки"
+            data-translate="logo"
           ></a>
 
           <article class="header__right">
@@ -41,16 +42,87 @@
               aria-label="Відкрити бічне меню"
               aria-pressed="false"
               title="Відкрити бічне меню"
+              data-translate="menuBtn"
             ></a>
+
+            <div class="language-selector">
+              <button
+                class="language-selector__button"
+                type="button"
+                aria-label="Українська, Вибрати мову"
+                title="Українська, Вибрати мову"
+                aria-expanded="false"
+                aria-controls="language-selector-dropdown"
+                data-translate="languageSelector__button"
+              >
+                UA
+              </button>
+
+              <div
+                class="language-selector__dropdown"
+                aria-describedby="language-selector-description"
+                id="language-selector-dropdown"
+              >
+                <p
+                  class="visually-hidden"
+                  id="language-selector-description"
+                  data-translate="languageSelector__button"
+                >
+                  Оберіть мову
+                </p>
+
+                <ul
+                  class="language-selector__list"
+                  role="listbox"
+                >
+                  <li>
+                    <button
+                      lang="ua"
+                      aria-selected="true"
+                      role="option"
+                      data-value="Українська"
+                      class="language-selector__item"
+                    >
+                      Уркаїнська
+                    </button>
+                  </li>
+
+                  <li>
+                    <button
+                      lang="en"
+                      role="option"
+                      aria-selected="false"
+                      data-value="english"
+                      class="language-selector__item"
+                    >
+                      English
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </article>
         </section>
 
         <section class="header__mainPart">
-          <p class="additional-text header__dates">10 серпня - 10 листопада</p>
+          <p
+            class="additional-text header__dates"
+            data-translate="headerDates"
+          >
+            10 серпня - 10 листопада
+          </p>
 
-          <h1 class="header__title">Мистецтво ХІХ - ХХ ст.</h1>
+          <h1
+            class="header__title"
+            data-translate="headerTitle"
+          >
+            Мистецтво ХІХ - ХХ ст.
+          </h1>
 
-          <p class="main-text header__description">
+          <p
+            class="main-text header__description"
+            data-translate="headerDescription"
+          >
             Внесок українських митців у світову культуру 19-20 ст.
           </p>
 
@@ -60,6 +132,7 @@
             type="button"
             aria-label="Перейти до планування візиту"
             title="Перейти до планування візиту"
+            data-translate="headerButton"
           >
             Купити квиток
           </button>
@@ -79,6 +152,9 @@
 
     <footer class="footer body__footer"></footer>
     <h1>Hello Mate Academy</h1>
-    <script src="scripts/main.js"></script>
+    <script
+      type="module"
+      src="./scripts/main.js"
+    ></script>
   </body>
 </html>

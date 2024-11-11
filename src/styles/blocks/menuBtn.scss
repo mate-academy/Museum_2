@@ -1,5 +1,15 @@
 .menuBtn {
-  @include header-btn(30px, 30px, url('../images/icons/menu.svg'));
+  color: white;
+
+  @include icon(30px, 30px, url('../images/icons/menu.svg'));
+  @include default-cursor;
+  @include hover((transform, scale(1.1)));
+  @include active((transform, scale(0.9)));
+
+  &:focus-visible {
+    transform: scale(1.1);
+    background-color: $focusAccent;
+  }
 
   //   width: 30px;
   //   height: 30px;

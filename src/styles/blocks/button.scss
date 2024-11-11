@@ -5,17 +5,13 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  border: 1px solid $redAccent;
   color: $whiteAccent;
 
   @include default-cursor;
 
-  &:focus-visible {
-    outline: 2px solid $focusAccent;
-  }
-
   &--primary {
     background-color: $redAccent;
-    border: 1px solid $redAccent;
 
     @include hover((background-color, $redHover), (border-color, $redHover));
     @include active((background-color, $redActive), (border-color, $redActive));
@@ -28,19 +24,15 @@
 
   &--secondary {
     background-color: $whiteAccent;
-    border: 1px solid $redAccent;
     color: $redAccent;
 
     @include hover((color, $redHover), (border-color, $redHover));
     @include active((color, $redActive), (border-color, $redActive));
 
     &::after {
+      @include icon(20px, 20px, url('../images/icons/arrow.svg'));
+
       content: '';
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-color: currentColor;
-      mask: url('../images/icons/arrow.svg');
     }
 
     &:disabled {

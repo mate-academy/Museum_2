@@ -1,5 +1,15 @@
 .logo {
-  @include header-btn(123px, 40px, url('../images/icons/logo.svg'));
+  color: white;
+
+  @include icon(123px, 40px, url('../images/icons/logo.svg'));
+  @include default-cursor;
+  @include hover((transform, scale(1.1)));
+  @include active((transform, scale(0.9)));
+
+  &:focus-visible {
+    transform: scale(1.1);
+    background-color: $focusAccent;
+  }
 
   @include on-tablet {
     width: 124px;

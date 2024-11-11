@@ -1,0 +1,101 @@
+.language-selector {
+  &__button {
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: uppercase;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 1px solid $greenAccent;
+
+    color: $whiteAccent;
+
+    background-color: $greenAccent;
+    transition:
+      background-color $duration,
+      color $duration,
+      border-color $duration,
+      tranform $duration;
+
+    @include default-cursor;
+
+    &::after {
+      content: '';
+
+      @include icon(8px, 5px, url('../images/icons/dropdown.svg'));
+
+      transition: transform $duration;
+      transform: rotate(0deg);
+    }
+
+    @include hover((color, $redHover));
+    @include active((color, $redActive));
+
+    &--dropdown-visible {
+      color: $redAccent;
+
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    background-color: $whiteAccent;
+    width: 100%;
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.8),
+      0 1px 3px rgba(0, 0, 0, 0.08);
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition:
+      opacity $duration,
+      transform $duration;
+
+    @include on-tablet {
+      right: 0;
+    }
+
+    &--visible {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(10px);
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    @extend %main-text;
+
+    color: $blackAccent;
+    display: block;
+    width: 100%;
+    padding: 10px 5px;
+    border: 1px solid $whiteAccent;
+
+    @include default-cursor;
+    @include hover((border-color, $redHover), (color, $redHover));
+    @include active((border-color, $redActive), (color, $redActive));
+
+    &[aria-selected='true'] {
+      background-color: $redAccent;
+      color: $whiteAccent;
+      border-color: $redAccent;
+
+      pointer-events: none;
+    }
+
+    @include on-tablet {
+      text-align: right;
+    }
+  }
+}
