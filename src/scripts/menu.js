@@ -63,30 +63,37 @@ export const hideMenu = () => {
 export const makeInvisibleHeaderContent = () => {
   if (!headerMainPart.classList.contains(CLASS_HEADER_MAIN_PART_HIDDEN)) {
     headerMainPart.classList.add(CLASS_HEADER_MAIN_PART_HIDDEN);
+
+    setTimeout(() => {
+      headerMainPart.style.visibility = 'hidden';
+    }, ANIMATION_DURATION);
   }
 
   if (!headerBottomPart.classList.contains(CLASS_HEADER_BOTTOM_PART_HIDDEN)) {
     headerBottomPart.classList.add(CLASS_HEADER_BOTTOM_PART_HIDDEN);
+
+    setTimeout(() => {
+      headerBottomPart.style.visibility = 'hidden';
+    }, ANIMATION_DURATION);
   }
 };
 
 export const makeVisibleHeaderContent = () => {
   if (headerMainPart.classList.contains(CLASS_HEADER_MAIN_PART_HIDDEN)) {
     headerMainPart.classList.remove(CLASS_HEADER_MAIN_PART_HIDDEN);
+    headerMainPart.style.visibility = 'visible';
   }
 
   if (headerBottomPart.classList.contains(CLASS_HEADER_BOTTOM_PART_HIDDEN)) {
     headerBottomPart.classList.remove(CLASS_HEADER_BOTTOM_PART_HIDDEN);
+    headerBottomPart.style.visibility = 'visible';
   }
 };
 
 const hideMenuRevealHeader = () => {
   showMenuButton();
   hideMenu();
-
-  setTimeout(() => {
-    makeVisibleHeaderContent();
-  }, ANIMATION_DURATION);
+  makeVisibleHeaderContent();
 };
 
 const revealMenuHideHeader = () => {
