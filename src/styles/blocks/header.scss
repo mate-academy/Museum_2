@@ -1,7 +1,7 @@
 .header {
   background-color: $greenAccent;
   color: $whiteAccent;
-  overflow: hidden;
+
   position: relative;
 
   &__topBar {
@@ -13,12 +13,23 @@
     grid-column: 1 / -1;
   }
 
-  &__mainPart {
+  &__menu {
+    grid-column: 1 / -1;
+    align-items: start;
+  }
+
+  &__main-part {
     margin-top: 50px;
 
     grid-column: 1 / -1;
 
     @include grid-template;
+
+    &--hidden {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
 
     @include on-tablet {
       margin-top: 99px;
@@ -108,17 +119,19 @@
     }
   }
 
-  &__bottomPart {
-    display: flex;
-    align-items: flex-end;
+  &__bottom-part {
     margin-top: 40px;
-    padding-inline: 18px;
 
     grid-column: 1 / -1;
 
+    &--hidden {
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+    }
+
     @include on-tablet {
       grid-column: 2 / span 4;
-      padding: 0;
       margin-top: 70px;
     }
 
@@ -130,8 +143,11 @@
 
   &__picture {
     display: flex;
-    width: 100%;
-    height: 100%;
+    justify-content: center;
+
+    @include on-desktop {
+      justify-content: flex-start;
+    }
   }
 
   &__right {

@@ -1,0 +1,160 @@
+.menu {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  transform: translateY(-100%);
+  pointer-events: none;
+
+  transition:
+    opacity $duration,
+    transform $duration;
+
+  &--visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  @include grid-template;
+
+  &__main-part {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+
+    @include grid-template;
+
+    row-gap: 40px;
+
+    @include on-tablet {
+      margin-top: 30px;
+      row-gap: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 13px;
+      grid-column: 1 / span 6;
+      align-self: start;
+      row-gap: 60px;
+
+      --columns: 6;
+    }
+  }
+
+  &__bottom-part {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      grid-column: 2 / span 4;
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / span 6;
+      margin-top: 13px;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    justify-content: center;
+
+    @include on-desktop {
+      justify-content: flex-start;
+    }
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 123px;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__item-title {
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+
+    @include default-cursor;
+
+    &::after {
+      content: '';
+      display: none;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      position: absolute;
+      bottom: 10%;
+      pointer-events: none;
+
+      transition: background-color $duration;
+    }
+
+    @include on-hover-devices {
+      &:hover::after {
+        display: block;
+      }
+    }
+
+    &:active::after {
+      display: block;
+      background-color: $redActive;
+    }
+  }
+
+  &__line {
+    grid-column: 1 / -1;
+
+    border: 0;
+    height: 1px;
+    background-color: $whiteAccent;
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / span 3;
+    }
+  }
+}

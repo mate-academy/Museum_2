@@ -10,10 +10,6 @@
       content="width=device-width, initial-scale=1.0"
     />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <meta
       name="description"
       content="Неофіційний веб-сайт Національного художнього музею України. Дізнайтеся про виставки, події та колекції музею."
     />
@@ -67,7 +63,7 @@
     />
     <meta
       http-equiv="Content-Language"
-      content="uk"
+      content="ua"
     />
     <title>NAMU</title>
     <link
@@ -80,7 +76,7 @@
     id="body"
   >
     <header class="header page__header">
-      <div class="page__container">
+      <div class="page__container page__container--top-bar">
         <section class="topBar header__topBar">
           <a
             href="#"
@@ -94,16 +90,13 @@
           ></a>
 
           <article class="header__right">
-            <a
-              href="#menu"
+            <button
               class="menuBtn"
               ontouchstart="true"
-              role="button"
               aria-label="Відкрити бічне меню"
-              aria-pressed="false"
               title="Відкрити бічне меню"
-              data-translate="menuBtn"
-            ></a>
+              data-translate="menuBtnOpen"
+            ></button>
 
             <div class="language-selector">
               <button
@@ -163,8 +156,127 @@
             </div>
           </article>
         </section>
+      </div>
 
-        <section class="header__mainPart">
+      <div class="page__container">
+        <aside
+          class="menu header__menu"
+          id="menu"
+        >
+          <div class="menu__main-part">
+            <section class="menu__info">
+              <article class="menu__shedule">
+                <label
+                  class="additional-text"
+                  data-translate="menuSheduleLabel"
+                >
+                  Розклад сьогодні:
+                </label>
+
+                <p class="main-text menu__text">12:00 - 19:00</p>
+              </article>
+
+              <article class="menu__address">
+                <label
+                  class="additional-text"
+                  data-translate="menuAddressLabel"
+                >
+                  Адреса:
+                </label>
+
+                <p
+                  class="main-text menu__text"
+                  data-translate="menuAddressText"
+                >
+                  Київ, вул. М. Грушевського, 6
+                </p>
+              </article>
+            </section>
+
+            <nav class="menu__nav">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <h5 class="menu__item-title">
+                    <a
+                      href="#exhibitions"
+                      class="menu__link"
+                      ontouchstart="true"
+                      aria-label="Перейти до виставок"
+                      title="Перейти до виставок"
+                      data-translate="menuExhibitions"
+                    >
+                      Актуальні виставки
+                    </a>
+                  </h5>
+                </li>
+
+                <li class="menu__item">
+                  <h5 class="menu__item-title">
+                    <a
+                      href="#events"
+                      class="menu__link"
+                      ontouchstart="true"
+                      aria-label="Перейти до подій"
+                      title="Перейти до подій"
+                      data-translate="menuEvents"
+                    >
+                      Найближчі події
+                    </a>
+                  </h5>
+                </li>
+
+                <li class="menu__item">
+                  <h5 class="menu__item-title">
+                    <a
+                      href="#news"
+                      class="menu__link"
+                      ontouchstart="true"
+                      aria-label="Перейти до новин"
+                      title="Перейти до новин"
+                      data-translate="menuNews"
+                    >
+                      Новини
+                    </a>
+                  </h5>
+                </li>
+              </ul>
+            </nav>
+
+            <hr class="menu__line" />
+
+            <a
+              href="#"
+              ontouchstart="true"
+              class="button button--primary menu__button"
+              role="button"
+              aria-label="Перейти до планування візиту"
+              title="Перейти до планування візиту"
+              data-translate="buyTicketButton"
+            >
+              Купити квиток
+            </a>
+          </div>
+
+          <div class="menu__bottom-part">
+            <picture class="menu__picture">
+              <source
+                srcset="./images/boy_menu/boy_menu_mid.png"
+                media="(max-width: 1279px)"
+              />
+              <source
+                srcset="./images/boy_menu/boy_menu_large.png"
+                media="(min-width: 1280px)"
+              />
+              <img
+                class="menu__img"
+                src="./images/boy_menu/boy_menu_large.png"
+                alt="Ukranian art boy"
+              />
+            </picture>
+          </div>
+        </aside>
+
+        <section class="header__main-part">
           <p
             class="additional-text header__dates"
             data-translate="headerDates"
@@ -186,21 +298,22 @@
             Внесок українських митців у світову культуру 19-20 ст.
           </p>
 
-          <button
+          <a
+            href="#"
             ontouchstart="true"
             class="button button--primary header__button"
-            type="button"
+            role="button"
             aria-label="Перейти до планування візиту"
             title="Перейти до планування візиту"
-            data-translate="headerButton"
+            data-translate="buyTicketButton"
           >
             Купити квиток
-          </button>
+          </a>
 
           <h6 class="header__bottom-dates">10.08 - 10.10</h6>
         </section>
 
-        <section class="header__bottomPart">
+        <section class="header__bottom-part">
           <picture class="header__picture">
             <source
               srcset="./images/woman_header/woman_header_small.png"
