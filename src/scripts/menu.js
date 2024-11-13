@@ -5,7 +5,6 @@ import {
   CLASS_HEADER_MAIN_PART_HIDDEN,
   CLASS_MENU_BTN_CLOSE,
   CLASS_MENU_VISIBLE,
-  // CLASS_MENU_VISIBLE,
   DATA_TRANSLATE_MENU_CLOSE,
   DATA_TRANSLATE_MENU_OPEN,
   LANGUAGE_UA,
@@ -61,7 +60,7 @@ export const hideMenu = () => {
   }, ANIMATION_DURATION);
 };
 
-export const MakeInvisibleHeaderContent = () => {
+export const makeInvisibleHeaderContent = () => {
   if (!headerMainPart.classList.contains(CLASS_HEADER_MAIN_PART_HIDDEN)) {
     headerMainPart.classList.add(CLASS_HEADER_MAIN_PART_HIDDEN);
   }
@@ -71,7 +70,7 @@ export const MakeInvisibleHeaderContent = () => {
   }
 };
 
-export const MakeVisibleHeaderContent = () => {
+export const makeVisibleHeaderContent = () => {
   if (headerMainPart.classList.contains(CLASS_HEADER_MAIN_PART_HIDDEN)) {
     headerMainPart.classList.remove(CLASS_HEADER_MAIN_PART_HIDDEN);
   }
@@ -81,22 +80,29 @@ export const MakeVisibleHeaderContent = () => {
   }
 };
 
+const hideMenuRevealHeader = () => {
+  showMenuButton();
+  hideMenu();
+  makeVisibleHeaderContent();
+};
+
+const revealMenuHideHeader = () => {
+  showCloseButton();
+  showMenu();
+  makeInvisibleHeaderContent();
+};
+
 export const handleMenuBtnclick = (e) => {
   if (menuBtn.classList.contains(CLASS_MENU_BTN_CLOSE)) {
-    showMenuButton();
-    hideMenu();
-    MakeVisibleHeaderContent();
+    hideMenuRevealHeader();
   } else {
-    showCloseButton();
-    showMenu();
-    MakeInvisibleHeaderContent();
+    revealMenuHideHeader();
   }
 };
 
 const handleDocumentClick = (e) => {
   if (e.target.tagName === 'A' && menu.classList.contains(CLASS_MENU_VISIBLE)) {
-    showMenuButton();
-    hideMenu();
+    hideMenuRevealHeader();
   }
 };
 
