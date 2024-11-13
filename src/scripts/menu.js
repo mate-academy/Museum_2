@@ -83,7 +83,10 @@ export const makeVisibleHeaderContent = () => {
 const hideMenuRevealHeader = () => {
   showMenuButton();
   hideMenu();
-  makeVisibleHeaderContent();
+
+  setTimeout(() => {
+    makeVisibleHeaderContent();
+  }, ANIMATION_DURATION);
 };
 
 const revealMenuHideHeader = () => {
