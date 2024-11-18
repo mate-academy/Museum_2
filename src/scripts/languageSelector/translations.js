@@ -60,7 +60,7 @@ const translations = {
     exhibitionDescriptionAngels: {
       text: `Виставковий проект «Ангели» – знакова подія для української культури і водночас наймасштабніший...`,
     },
-    exhibitionDatesAngels: {
+    exhibitionDatesArt: {
       text: 'Діє постійно',
     },
     exhibitionTitleArt: {
