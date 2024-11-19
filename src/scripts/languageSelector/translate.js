@@ -8,6 +8,8 @@ export function translate(language) {
     const key = element.getAttribute('data-translate');
     const currentTranslation = translations[language][key];
 
+    // console.log(currentTranslation);
+
     if ('attr' in currentTranslation) {
       element.setAttribute('aria-label', currentTranslation.attr);
       element.setAttribute('title', currentTranslation.attr);

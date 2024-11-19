@@ -73,12 +73,15 @@ const translations = {
       attr: 'Перейти до архіву виставок',
       text: 'Архів виставок',
     },
+    eventsTitle: {
+      text: 'Найближчі події',
+    },
     eventRegisterButton: {
       attr: 'Перейти до планування візиту',
       text: 'Зареєструватися',
     },
     eventTitleExcursion: {
-      text: 'Кураторські екскурсії від Павла Гудімова ',
+      text: 'Кураторські екскурсії від Павла Гудімова',
     },
     eventDescriptionExcursion: {
       text: `Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...`,
@@ -258,7 +261,7 @@ const translations = {
     exhibitionDescriptionAngels: {
       text: `The exhibition project "Angels" is a landmark event for Ukrainian culture and at the same time the largest...`,
     },
-    exhibitionDatesAngels: {
+    exhibitionDatesArt: {
       text: 'Is permanent',
     },
     exhibitionTitleArt: {
@@ -270,6 +273,9 @@ const translations = {
     goToArchiveExhibitionsButton: {
       attr: 'Go to the archive of exhibitions',
       text: 'Exhibition archive',
+    },
+    eventsTitle: {
+      text: 'Upcoming events',
     },
     eventRegisterButton: {
       attr: 'Go to planning a visit',
