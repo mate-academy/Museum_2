@@ -92,6 +92,49 @@ h6 {
   line-height: 1;
   font-weight: 700;
   letter-spacing: 0%;
+  transition: all var(--transition-duration);
+
+
+  --color-main-hover: #AF3419;
+  --color-main-pressed: #EA340D;
+  --color-main-disabled: #DD836F;
+
+  &--primary {
+    background-color: var(--color-main);
+
+    @include hover {
+      background-color: var(--color-main-hover);
+    }
+
+    &:active {
+      background-color: var(--color-main-pressed);
+    }
+
+    &:disabled {
+      background-color: var(--color-main-disabled);
+    }
+  }
+
+  &--secondary {
+    border: var(--border);
+    color: var(--color-main);
+
+    @include hover {
+      border: 1px solid var(--color-main-hover);
+      color: var(--color-main-hover);
+    }
+
+    &:active {
+      border: var(--color-main-pressed);
+      color: var(--color-main-pressed);
+
+    }
+
+    &:disabled {
+      border: var(--color-main-disabled);
+      color: var(--color-main-disabled);
+    }
+  }
 }
 
 .main-text {
