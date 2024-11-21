@@ -3,5 +3,7 @@ module.exports = {
   plugins: [
     "stylelint-scss"
   ],
-  rules: {}
+  rules: {
+    "scss/at-mixin-pattern": "^[a-zA-Z0-9_]+$"
+  }
 };
