@@ -1,0 +1,29 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  &__link {
+    color: inherit;
+    position: relative;
+    width: fit-content;
+
+    &::before {
+      content: '';
+      width: 100%;
+      position: absolute;
+      height: 1px;
+      background-color: $white;
+      bottom: 3px;
+      transition: 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::before {
+      transform: scale(1);
+    }
+  }
+}

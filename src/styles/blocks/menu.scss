@@ -1,0 +1,131 @@
+.menu {
+  background-color: $background;
+  height: 100vh;
+  color: $white;
+  z-index: 1;
+  overflow: auto; /* to scroll the menu if needed */
+
+  @include on-tablet {
+    background-image: url(/src/images/menu-bg.png);
+    background-repeat: no-repeat;
+    background-size: auto 45%;
+    background-position: center bottom;
+  }
+
+  @include on-desktop {
+    background-position: right bottom;
+    background-size: auto 83%;
+  }
+
+  &__top {
+    position: sticky;
+    top: 0;
+    background-color: $background;
+    z-index: 2;
+  }
+
+  &__bottom {
+    @include page-grid;
+
+    padding-top: 10px;
+
+    @include on-tablet {
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 14px;
+      padding-bottom: 108px;
+    }
+  }
+
+  &__hours {
+    grid-column: span 2;
+    margin-bottom: 20px;
+    grid-row: 1 / 2;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 70px;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__address {
+    grid-column: span 2;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      margin-bottom: 70px;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__description {
+    color: inherit;
+    font-weight: 600;
+  }
+
+  &__nav {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+
+    @include on-desktop {
+      grid-row: 2 / 3;
+    }
+  }
+
+  &__list {
+    font-size: 20px;
+    line-height: 30px;
+    gap: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid $white;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 700;
+
+    @include on-tablet {
+      gap: 30px;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-row: 3 / 4;
+    }
+  }
+}
+
