@@ -26,6 +26,7 @@ document
     event.preventDefault();
     const nav = document.querySelector('.nav');
     nav.classList.toggle('nav--open');
+    body.classList.toggle('no-scroll');
   });
 
 // Обробник кліку для кнопки закриття меню
@@ -34,6 +35,7 @@ document
   .addEventListener('click', function (event) {
     event.preventDefault();
     document.querySelector('.nav').classList.remove('nav--open');
+    document.querySelector('.body').classList.remove('no-scroll');
   });
 
 // Закриття після вибору посилання з меню
