@@ -1,0 +1,123 @@
+.header {
+  background-color: $background;
+  min-height: 747px;
+
+  color: $white;
+  overflow: auto;
+
+  background-image: url(/src/images/header-bg.png);
+  background-repeat: no-repeat;
+  background-size: auto 37%;
+  background-position: center bottom;
+
+  @include on-tablet {
+    background-size: auto 45%;
+    min-height: 1092px;
+  }
+
+  @include on-desktop {
+    background-position: right bottom;
+    background-size: auto 83%;
+    min-height: 800px;
+  }
+
+  &__bottom {
+    @include page-grid;
+
+    padding-block: 50px;
+
+    @include on-tablet {
+      padding-block: 100px 50px;
+    }
+
+    @include on-desktop {
+      padding-block: 90px 50px;
+    }
+  }
+
+  &__period {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+
+    grid-row: 1 / 2;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 30px;
+    grid-row: 2 / 3;
+    grid-column: span 2;
+
+    @include on-tablet {
+      font-size: 72px;
+      margin-bottom: 20px;
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+      margin-bottom: 30px;
+      grid-column: span 6;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    grid-row: 3 / 4;
+    grid-column: span 2;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      margin-bottom: 80px;
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    grid-row: 4 / 5;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__period-decor {
+    display: none;
+    font-family: 'Playfair Display', 'Helvetica Neue', Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 17.5px;
+
+    @include on-desktop {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      grid-row: 5 / 6;
+      grid-column: span 6;
+    }
+
+
+    &::after {
+      content: '';
+      flex-grow: 1;
+      height: 1px;
+      background-color: $white;
+    }
+  }
+}
