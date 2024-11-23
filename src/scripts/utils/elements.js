@@ -7,6 +7,7 @@ import {
   CLASS_LANGUAGE_SELECTOR_ITEM,
   CLASS_MENU,
   CLASS_MENU_BTN,
+  FORM_ID,
 } from './constants';
 
 export const languageSelector = document.querySelector(
@@ -33,6 +34,10 @@ export const headerBottomPart = document.querySelector(
   '.' + CLASS_HEADER_BOTTOM_PART,
 );
 
+export const form = document.getElementById(FORM_ID);
+export const submitButton = form.querySelector('button[type="submit"]');
+export const formInput = form.querySelector('input[type="email"]');
+
 const elements = {
   languageSelector,
   languageSelectorButton,
@@ -40,6 +45,10 @@ const elements = {
   languageSelectorItems,
   menuBtn,
   menu,
+  headerMainPart,
+  headerBottomPart,
+  form,
+  submitButton,
 };
 
 export default elements;

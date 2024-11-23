@@ -110,7 +110,7 @@ const translations = {
     },
     planVisitButton: {
       text: 'Почати',
-      attr: 'Перейти до планування візиту',
+      attr: 'Почати планування візиту',
     },
     newsTitle: {
       text: 'Новини',
@@ -133,7 +133,7 @@ const translations = {
     newsInternationalCatDayDescription: {
       text: `Музей з левами не може просто так взяти і пропустити Міжнародний день котів!`,
     },
-    newsAllNewsButton: {
+    goToAllNewsButton: {
       text: 'Усі новини',
       attr: 'Перейти до всіх новин',
     },
@@ -145,17 +145,26 @@ const translations = {
     },
     digestSubscribeButton: {
       text: 'Підписатись',
-      attr: 'Перейти до підписки на дайджест',
+      attr: 'Підписатися на дайджест',
+    },
+    digestSubscribeInput: {
+      attr: 'Введіть вашу електронну адресу',
     },
     contactsTitle: {
       text: 'Контакти',
     },
-    contactsAdress: {
-      text: 'Київ, вул. М. Грушевського, 6',
+    contactsAddress: {
+      text: 'Київ,<br/>вул. М. Грушевського, 6',
       attr: 'Показати на карті',
     },
     contactsTel: {
       text: 'тел.',
+    },
+    contactsPhone: {
+      attr: 'Подзвонити менеджеру',
+    },
+    contactsEmail: {
+      attr: 'Написати на електронну пошту',
     },
     contactsFacebook: {
       attr: 'Перейти на офіційну сторінку у Facebook',
@@ -169,17 +178,17 @@ const translations = {
     contactsTelegram: {
       attr: 'Перейти в офіційну групу у Telegram',
     },
-    workSheduleTitle: {
+    workSсheduleTitle: {
       text: 'Розклад роботи',
     },
-    workSheduleShedule: {
-      text: `ПН: вихідний
-              ВТ: вихідний
-              СР: 10:00 - 17:00
-              ЧТ: 10:00 - 17:00
-              ПТ: 12:00 - 19:00
-              СБ: 11:00 - 18:00
-              НД: 10:00 - 17:00`,
+    workScheduleDetails: {
+      text: `ПН: вихідний<br/>
+              ВТ: вихідний<br/>
+              СР: 10:00 - 17:00<br/>
+              ЧТ: 10:00 - 17:00<br/>
+              ПТ: 12:00 - 19:00<br/>
+              СБ: 11:00 - 18:00<br/>
+              НД: 10:00 - 17:00<br/>`,
     },
     footerMainLink: {
       text: 'Головна',
@@ -196,6 +205,25 @@ const translations = {
     footerEventsLink: {
       text: 'Події',
       attr: 'Перейти до подій',
+    },
+    footerHome: {
+      text: 'Головна',
+      attr: 'Перейти на головну сторінку',
+    },
+    footerExhibitions: {
+      text: 'Виставки',
+      attr: 'Перейти до виставок',
+    },
+    footerEvents: {
+      text: 'Події',
+      attr: 'Перейти до подій',
+    },
+    footerNews: {
+      text: 'Новини',
+      attr: 'Перейти до новин',
+    },
+    footerPrivacy: {
+      attr: 'Перейти до політики конфіденційності',
     },
     goToTopButton: {
       attr: 'Повернутися догори сторінки',
@@ -311,7 +339,7 @@ const translations = {
     },
     planVisitButton: {
       text: 'Start',
-      attr: 'Go to planning a visit',
+      attr: 'Start planning a visit',
     },
     newsTitle: {
       text: 'News',
@@ -334,7 +362,7 @@ const translations = {
     newsInternationalCatDayDescription: {
       text: `A museum with lions cannot just ignore International Cat Day!`,
     },
-    newsAllNewsButton: {
+    goToAllNewsButton: {
       text: 'All news',
       attr: 'Go to all news',
     },
@@ -346,17 +374,26 @@ const translations = {
     },
     digestSubscribeButton: {
       text: 'Subscribe',
-      attr: 'Go to digest subscription',
+      attr: 'Subscribe to the digest',
+    },
+    digestSubscribeInput: {
+      attr: 'Enter your email',
     },
     contactsTitle: {
       text: 'Contacts',
     },
-    contactsAdress: {
-      text: 'Kyiv, 6, M. Hrushevskoho St.',
+    contactsAddress: {
+      text: 'Kyiv,<br/>M. Hrushevskoho St., 6',
       attr: 'Show on map',
     },
     contactsTel: {
       text: 'tel.',
+    },
+    contactsPhone: {
+      attr: 'Call the manager',
+    },
+    contactsEmail: {
+      attr: 'Write an email',
     },
     contactsFacebook: {
       attr: 'Go to the official Facebook page',
@@ -370,17 +407,17 @@ const translations = {
     contactsTelegram: {
       attr: 'Go to the official Telegram group',
     },
-    workSheduleTitle: {
+    workSсheduleTitle: {
       text: 'Work schedule',
     },
-    workSheduleShedule: {
-      text: `Mon: day off
-              Tue: day off
-              Wed: 10:00 - 17:00
-              Thu: 10:00 - 17:00
-              Fri: 12:00 - 19:00
-              Sat: 11:00 - 18:00
-              Sun: 10:00 - 17:00`,
+    workScheduleDetails: {
+      text: `Mon: day off<br/>
+              Tue: day off<br/>
+              Wed: 10:00 - 17:00<br/>
+              Thu: 10:00 - 17:00<br/>
+              Fri: 12:00 - 19:00<br/>
+              Sat: 11:00 - 18:00<br/>
+              Sun: 10:00 - 17:00<br/>`,
     },
     footerMainLink: {
       text: 'Main',
@@ -397,6 +434,25 @@ const translations = {
     footerEventsLink: {
       text: 'Events',
       attr: 'Go to events',
+    },
+    footerHome: {
+      text: 'Main',
+      attr: 'Go to the main page',
+    },
+    footerExhibitions: {
+      text: 'Exhibitions',
+      attr: 'Go to exhibitions',
+    },
+    footerEvents: {
+      text: 'Events',
+      attr: 'Go to events',
+    },
+    footerNews: {
+      text: 'News',
+      attr: 'Go to news',
+    },
+    footerPrivacy: {
+      attr: 'Go to the privacy policy',
     },
     goToTopButton: {
       attr: 'Go to top of the page',

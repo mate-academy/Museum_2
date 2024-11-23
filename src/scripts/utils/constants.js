@@ -23,6 +23,8 @@ export const ANIMATION_DURATION = 300;
 export const LOCAL_STORAGE_LANGUAGE_KEY = 'language';
 export const LANGUAGE_UA = 'ua';
 
+export const FORM_ID = 'digest-subscribe';
+
 const constants = {
   CLASS_DROPDOWN_VISIBLE,
   CLASS_BUTTON_DROPDOWN_VISIBLE,
@@ -44,6 +46,7 @@ const constants = {
   CLASS_HEADER_MAIN_PART_HIDDEN,
   CLASS_HEADER_BOTTOM_PART,
   CLASS_HEADER_BOTTOM_PART_HIDDEN,
+  FORM_ID,
 };
 
 export default constants;

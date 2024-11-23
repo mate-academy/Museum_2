@@ -1,0 +1,37 @@
+.social-link {
+  color: $whiteAccent;
+  text-decoration: none;
+
+  width: 20px;
+  height: 20px;
+  display: block;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-clip: content-box;
+
+  @include default-cursor;
+  @include hover((transform, scale(1.2)));
+  @include active((transform, scale(0.8)));
+
+  &:focus-visible {
+    transform: scale(1.1);
+    background-color: $focusAccent;
+  }
+
+  &--facebook {
+    mask-image: url('../images/icons/facebook.svg');
+  }
+
+  &--x {
+    mask-image: url('../images/icons/x.svg');
+  }
+
+  &--telegram {
+    mask-image: url('../images/icons/telegram.svg');
+  }
+
+  &--instagram {
+    mask-image: url('../images/icons/instagram.svg');
+  }
+}

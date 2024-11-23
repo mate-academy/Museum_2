@@ -1,0 +1,43 @@
+.input {
+  border: 0;
+  border-bottom: 1px solid $blackAccent;
+  background-color: $whiteAccent;
+  padding-bottom: 3px;
+  font-weight: 700;
+  transition: border-color $duration;
+  cursor: text;
+
+  &::placeholder {
+    font-weight: 400;
+    color: $blackAccent;
+    transition: color $duration;
+  }
+
+  &:-webkit-autofill {
+    -webkit-text-fill-color: $blackAccent;
+    -webkit-box-shadow: 0 0 0 1000px $whiteAccent inset;
+  }
+
+  &:hover {
+    border-color: $redAccent;
+
+    &::placeholder {
+      color: $redAccent;
+    }
+  }
+
+  &:focus {
+    border-color: $redAccent;
+    outline: none;
+    caret-color: $redAccent;
+    font-weight: 400;
+
+    &::placeholder {
+      visibility: hidden;
+    }
+  }
+
+  &:focus-visible {
+    outline: 1px solid $focusAccent;
+  }
+}

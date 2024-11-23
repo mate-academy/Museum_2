@@ -16,7 +16,7 @@ export function translate(language) {
     }
 
     if ('text' in currentTranslation) {
-      element.textContent = currentTranslation.text;
+      element.innerHTML = currentTranslation.text;
     }
   });
 }
