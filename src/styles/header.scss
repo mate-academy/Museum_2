@@ -8,6 +8,9 @@ body {
   background: $c-gray;
   margin: 0;
   font-family: Raleway, sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-width: 320px;
 }
 
 .header {
@@ -146,6 +149,7 @@ body {
 
     &:hover {
       background-color: #af3419;
+      cursor: pointer;
     }
 
     &:active {
@@ -155,17 +159,21 @@ body {
 
   &__container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     align-items: normal;
+    height: 700px;
 
     @include on-tablet {
       justify-content: space-between;
+      height: 1029px;
+      gap: 0;
     }
 
     @include on-desktop {
-      justify-content: space-between;
       flex-direction: row;
+      height: 750px;
+      gap: 70px;
     }
   }
 
@@ -178,20 +186,17 @@ body {
   }
 
   &__img {
-    position: absolute;
-    top: 474px;
     padding-left: 10px;
 
     @include on-tablet {
-      position: absolute;
-      top: 598px;
-      left: 163px;
+      align-content: center;
     }
 
     @include on-desktop {
-      position: absolute;
-      top: 137px;
-      left: 1128px;
+      padding: 0;
+      align-content: end;
+      object-fit: cover;
+      margin-bottom: 19px;
     }
   }
 }
@@ -315,7 +320,6 @@ body {
   right: 0;
   opacity: 0;
   pointer-events: none;
-  scroll-behavior: smooth;
   min-width: 320px;
 
   @include on-tablet {
@@ -449,17 +453,18 @@ body {
     border: none;
 
     @include on-tablet {
-      margin: 101px 0;
+      margin: 101px 0 35px;
       width: 330px;
     }
 
     @include on-desktop {
-      margin: 121px 15px;
+      margin: 121px 15px 108px;
       width: 270px;
     }
 
     &:hover {
       background-color: #af3419;
+      cursor: pointer;
     }
 
     &:active {
@@ -477,7 +482,7 @@ body {
     margin-top: 40px;
 
     @include on-tablet {
-      padding-top: 50px;
+      margin-top: 50px;
       font-size: 48px;
       font-weight: 700;
       line-height: 58px;
@@ -488,6 +493,7 @@ body {
       font-size: 48px;
       font-weight: 700;
       line-height: 58px;
+      margin-top: 0;
     }
   }
 
@@ -497,6 +503,49 @@ body {
     @include on-tablet {
       margin: 0;
     }
+  }
+
+  &__case {
+    display: flex;
+    flex-direction: column;
+
+    @include on-desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+
+      height: 800px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+  }
+
+  &__image {
+    object-fit: cover;
+    margin: 25px 0 0 200px;
+
+    @include on-desktop {
+      margin-top: 33px;
+    }
+  }
+}
+
+.burger__bg {
+  display: none;
+
+  @include on-tablet {
+    width: 422px;
+    height: 466px;
+  }
+
+  @include on-desktop {
+    width: 624px;
+    height: 697px;
+    margin-top: 50px;
   }
 }
 
@@ -525,11 +574,14 @@ body {
     font-size: 16px;
     line-height: 24px;
     margin: 2px 0 0;
+    text-decoration: none;
+    cursor: pointer;
+    color: $main-text-color;
   }
 }
 
 .ex__content {
-  cursor: default;
+  cursor: pointer;
   text-decoration: none;
   color: $main-text-color;
   margin-bottom: 20px;
@@ -551,7 +603,7 @@ body {
 }
 
 .ev__content {
-  cursor: default;
+  cursor: pointer;
   text-decoration: none;
   color: $main-text-color;
   margin-bottom: 20px;
@@ -573,7 +625,7 @@ body {
 }
 
 .ne__content {
-  cursor: default;
+  cursor: pointer;
   text-decoration: none;
   color: $main-text-color;
   margin-bottom: 20px;
@@ -592,7 +644,7 @@ body {
     content: '';
     background-color: $main-text-color;
     position: absolute;
-    top: 388px;
+    top: 408px;
     left: 20px;
     right: 25px;
     height: 1px;
@@ -603,31 +655,17 @@ body {
       right: 40px;
       margin: 0;
       height: 1px;
-      top: 510px;
+      top: 480px;
     }
 
     @include on-desktop {
       position: absolute;
       width: 570px;
       height: 1px;
-      top: 630px;
+      top: 590px;
       left: 57px;
       opacity: 30%;
     }
-  }
-}
-
-.burger__bg {
-  @include on-tablet {
-    position: absolute;
-    bottom: 0;
-    left: 163px;
-  }
-
-  @include on-desktop {
-    position: absolute;
-    top: 103px;
-    left: 1155px;
   }
 }
 

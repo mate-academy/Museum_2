@@ -2,10 +2,13 @@
   background-color: #3f5252;
   height: 751px;
   margin-top: 80px;
-  position: relative;
 
   @include on-tablet {
     height: 388px;
+  }
+
+  @include on-desktop {
+    height: 398px;
   }
 
   &__container {
@@ -14,17 +17,31 @@
 
     @include on-tablet {
       display: flex;
-      flex-direction: row;
-      gap: 30px;
+      flex-direction: column;
       align-items: start;
       padding-top: 0;
       margin-left: 40px;
     }
 
     @include on-desktop {
-      align-items: start;
-      gap: 300px;
+      flex-direction: column;
       margin-left: 55px;
+    }
+  }
+
+  &__case {
+    display: flex;
+    flex-direction: column;
+    align-content: start;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 100px;
+    }
+
+    @include on-desktop {
+      gap: 400px;
     }
   }
 
@@ -55,8 +72,10 @@
     }
   }
 
-  &__address {
-    margin: 10px 0 30px;
+  &__address,
+  &__phone,
+  &__mobile {
+    margin: 0;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -66,6 +85,19 @@
 
     @include on-tablet {
       width: 250px;
+    }
+  }
+
+  &__email {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+    color: $main-text-color;
+    margin-bottom: 30px;
+
+    @include on-tablet {
       margin-bottom: 50px;
     }
   }
@@ -106,7 +138,7 @@
   }
 
   &__main {
-    margin: 50px 0 10px;
+    margin: 50px 0 0;
     color: $main-text-color;
 
     @include on-tablet {
@@ -120,6 +152,7 @@
     font-weight: 700;
     line-height: 30px;
     text-align: left;
+    margin: 0 0 10px;
 
     @include on-tablet {
       margin: 0 0 30px;
@@ -150,24 +183,40 @@
   }
 
   &__bottom {
-    position: absolute;
     display: flex;
     flex-direction: row;
     align-items: start;
     gap: 22px;
     margin: 60px 0 30px;
     color: $main-text-color;
+    justify-content: space-between;
+
+    &--first {
+      display: flex;
+      flex-direction: row;
+      gap: 22px;
+
+      @include on-desktop {
+        gap: 102px;
+      }
+    }
+
+    &--second {
+      display: flex;
+      margin-top: 10px;
+    }
 
     @include on-tablet {
       display: flex;
       justify-content: space-between;
-      bottom: 30px;
-      gap: 22px;
+      bottom: 10px;
+      margin-bottom: 0;
+      gap: 834px;
     }
 
     @include on-desktop {
-      margin: 0;
-      gap: 102px;
+      margin-top: 72px;
+      gap: 1334px;
     }
   }
 
@@ -175,19 +224,8 @@
     width: 30px;
     height: 30px;
     background-repeat: no-repeat;
-    background-image: url(/src/images/icons/arrow.svg);
-    margin: 10px 0 0 50px;
-    cursor: default;
-
-    @include on-tablet {
-      position: absolute;
-      bottom: 10px;
-      left: 790px;
-    }
-
-    @include on-desktop {
-      left: 1600px;
-    }
+    background-image: url(/src/images/icons/scroll-up.png);
+    cursor: pointer;
   }
 
   &__year {
@@ -195,9 +233,11 @@
     font-weight: 400;
     line-height: 19.6px;
     text-align: center;
+    width: 98px;
   }
 
   &__privacy {
+    width: 106px;
     font-size: 14px;
     font-weight: 400;
     line-height: 19.6px;
