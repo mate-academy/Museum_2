@@ -3,12 +3,21 @@ body {
   font-size: 16px;
   font-weight: 400;
   background-color: var(--color-white);
+  color: var(--color-white);
 }
 
 .container {
   max-width: var(--container-width);
   padding-inline: var(--container-padding-x);
   margin: 0 auto;
+
+  @include tablet-above {
+    --container-padding-x: 39px;
+  }
+
+  @include desktop-above {
+    --container-padding-x: 55px;
+  }
 }
 
 h1,
@@ -18,20 +27,26 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-second);
+  font-family: 'Playfair Display';
   font-weight: 700;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 h1 {
+  font-size: 48px;
+  line-height: 1;
 
   @include tablet-above {
     font-size: 72px;
-    line-height: 1;
   }
 
   @include desktop-above {
+    font-size: 78px;
+
+  }
+
+  @include desktop-large-above {
     font-size: 96px;
-    line-height: 1;
 
   }
 }
@@ -89,11 +104,14 @@ h6 {
 .button {
   font-family: var(--font-family-second);
   font-size: 16px;
+  height: var(--button-height);
   line-height: 1;
   font-weight: 700;
-  letter-spacing: 0%;
+  letter-spacing: 0;
   transition: all var(--transition-duration);
-
+  border: none;
+  background-color: transparent;
+  color: var(--color-white);
 
   --color-main-hover: #AF3419;
   --color-main-pressed: #EA340D;
@@ -101,6 +119,8 @@ h6 {
 
   &--primary {
     background-color: var(--color-main);
+    min-width: 270px;
+    max-width: 330px;
 
     @include hover {
       background-color: var(--color-main-hover);
@@ -141,12 +161,12 @@ h6 {
   font-family: var(--font-family-second);
   font-size: 16px;
   line-height: 1.5;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
 
 .additional-text {
   font-family: var(--font-family-second);
   font-size: 14px;
   line-height: 1.4;
-  letter-spacing: 0%;
+  letter-spacing: 0;
 }
