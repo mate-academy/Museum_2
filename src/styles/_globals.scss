@@ -4,6 +4,7 @@ body {
   font-weight: 400;
   background-color: var(--color-white);
   color: var(--color-white);
+  position: relative;
 }
 
 .container {
@@ -119,8 +120,16 @@ h6 {
 
   &--primary {
     background-color: var(--color-main);
-    min-width: 270px;
-    max-width: 330px;
+    max-width: 280px;
+    width: 100%;
+
+    @include tablet-above {
+      min-width: 330px;
+    }
+
+    @include desktop-above {
+      min-width: 270px;
+    }
 
     @include hover {
       background-color: var(--color-main-hover);
