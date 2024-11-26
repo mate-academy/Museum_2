@@ -1,0 +1,71 @@
+@use 'sass:color';
+
+.menu-btn {
+  background-color: $greenAccent;
+  border: 0;
+  color: $whiteAccent;
+
+  transition: all $duration;
+
+  @include default-cursor;
+
+  &__icon {
+    @include icon(30px, 30px, url('../images/icons/menu.svg'));
+
+    transition: all $duration;
+  }
+
+  &--close &__icon {
+    mask-image: url('../images/icons/cross.svg');
+  }
+
+  @include on-hover-devices {
+    &:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        2px 5px 5px rgba($blackAccent, 0.8),
+        5px 5px 5px rgba($blackAccent, 0.08);
+    }
+
+    &:hover &__icon {
+      opacity: 0.8;
+    }
+  }
+
+  &:active {
+    transform: translateY(1px); // Зміщення вниз
+    box-shadow:
+      1px 2px 4px rgba($blackAccent, 0.8),
+      // Менша тінь для ефекту натискання
+      2px 2px 4px rgba($blackAccent, 0.08);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible &__icon {
+    transform: scale(1.1);
+    background-color: $focusAccent;
+  }
+
+  //   width: 30px;
+  //   height: 30px;
+  //   display: block;
+  //   background-color: white;
+  //   mask: url('../images/icons/menu.svg');
+  //   mask-repeat: no-repeat;
+  //   mask-position: center;
+  //   mask-clip: content-box;
+  //   text-decoration: none;
+
+  //   @include default-cursor;
+  //   @include hover((transform, scale(1.1)));
+  //   @include active((transform, scale(0.9)));
+
+  //   &:focus-visible {
+  //     transform: scale(1.1);
+  //     background-color: $focusAccent;
+  //   }
+}

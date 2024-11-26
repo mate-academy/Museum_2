@@ -1,19 +1,67 @@
 .logo {
   color: $whiteAccent;
+  position: relative;
 
-  @include icon(123px, 40px, url('../images/icons/logo.svg'));
-  @include default-cursor;
-  @include hover((transform, scale(1.1)));
-  @include active((transform, scale(0.9)));
+  transition:
+    box-shadow $duration,
+    transform $duration;
 
-  &:focus-visible {
-    transform: scale(1.1);
-    background-color: $focusAccent;
+  // &::before {
+  //   content: '';
+  //   display: block;
+  //   position: absolute;
+  //   inset: -5px;
+  //   z-index: -1;
+  //   transition: box-shadow $duration;
+  // }
+
+  &__icon {
+    @include icon(123px, 40px, url('../images/icons/logo.svg'));
+    @include default-cursor;
+
+    transition: transform $duration;
+
+    @include on-tablet {
+      width: 124px;
+      height: 37px;
+    }
   }
 
-  @include on-tablet {
-    width: 124px;
-    height: 37px;
+  @include on-hover-devices {
+    &:hover {
+      transform: translateY(-5px);
+      opacity: 0.8;
+    }
+
+    // &:hover::before {
+    //   box-shadow: 5px 5px 5px $blackAccent;
+    // }
+  }
+
+  &:active {
+    transform: translateY(5px);
+  }
+
+  // &:active::before {
+  //   // box-shadow: 0 0 0 $blackAccent;
+  //   box-shadow: -1px -1px 5px $blackAccent;
+  // }
+
+  // &:hover &__icon {
+  //   transform: scale(1.2);
+  // }
+
+  // &:active &__icon {
+  //   transform: scale(0.8);
+  // }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible &__icon {
+    transform: scale(1.2);
+    background-color: $focusAccent;
   }
 
   // @include icon-link(123px, 40px);

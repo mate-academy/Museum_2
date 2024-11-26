@@ -250,7 +250,7 @@ const translations = {
       text: 'August 10 - November 10',
     },
     headerTitle: {
-      text: 'Art of the XIX - XX centuries',
+      text: '19th-20th Century Art',
     },
     headerDescription: {
       text: `Contribution of Ukrainian artists to world culture of the 19-20 centuries.`,
@@ -293,7 +293,7 @@ const translations = {
       text: 'Is permanent',
     },
     exhibitionTitleArt: {
-      text: 'Art of the XX century — XXI century',
+      text: '19th-20th Century Art',
     },
     exhibitionDescriptionArt: {
       text: `Iconic works by Alla Horska, Mykola Samokysh, Fedir Krychevsky and other artists.`,

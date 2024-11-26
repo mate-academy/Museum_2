@@ -7,9 +7,12 @@
     text-transform: uppercase;
 
     height: 100%;
+    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     gap: 5px;
     border: 1px solid $greenAccent;
 
@@ -17,10 +20,8 @@
 
     background-color: $greenAccent;
     transition:
-      background-color $duration,
       color $duration,
-      border-color $duration,
-      tranform $duration;
+      transform $duration;
 
     @include default-cursor;
 
@@ -29,18 +30,26 @@
 
       @include icon(8px, 5px, url('../images/icons/dropdown.svg'));
 
-      transition: transform $duration;
+      transition:
+        transform $duration,
+        color $duration;
       transform: rotate(0deg);
     }
 
-    @include hover((color, $redHover));
-    @include active((color, $redActive));
+    @include on-hover-devices {
+      &:hover::after {
+        color: $redHover;
+      }
+    }
+
+    &:active::after {
+      color: $redActive;
+    }
 
     &--dropdown-visible {
-      color: $redAccent;
-
       &::after {
         transform: rotate(180deg);
+        color: $redAccent;
       }
     }
   }
@@ -49,9 +58,10 @@
     position: absolute;
     background-color: $whiteAccent;
     width: 100%;
+
     box-shadow:
-      0 4px 6px rgba(0, 0, 0, 0.8),
-      0 1px 3px rgba(0, 0, 0, 0.08);
+      2px 5px 5px rgba($blackAccent, 0.8),
+      5px 5px 5px rgba($blackAccent, 0.08);
 
     visibility: hidden;
     opacity: 0;
@@ -82,11 +92,11 @@
     display: block;
     width: 100%;
     padding: 10px 5px;
-    border: 1px solid $whiteAccent;
+    border: 0;
 
     @include default-cursor;
-    @include hover((border-color, $redHover), (color, $redHover));
-    @include active((border-color, $redActive), (color, $redActive));
+    @include hover((color, $redHover));
+    @include active((color, $redActive));
 
     &[aria-selected='true'] {
       background-color: $redAccent;

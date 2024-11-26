@@ -4,8 +4,8 @@ export const CLASS_BUTTON_DROPDOWN_VISIBLE =
 export const CLASS_BODY_HIDDEN = 'body--hidden';
 export const CLASS_MENU_VISIBLE = 'menu--visible';
 export const CLASS_MENU = 'menu';
-export const CLASS_MENU_BTN_CLOSE = 'menuBtn--close';
-export const CLASS_MENU_BTN = 'menuBtn';
+export const CLASS_MENU_BTN_CLOSE = 'menu-btn--close';
+export const CLASS_MENU_BTN = 'menu-btn';
 export const CLASS_LANGUAGE_SELECTOR = 'language-selector';
 export const CLASS_LANGUAGE_SELECTOR_BUTTON = 'language-selector__button';
 export const CLASS_LANGUAGE_SELECTOR_ITEM = 'language-selector__item';
@@ -14,6 +14,9 @@ export const CLASS_HEADER_MAIN_PART = 'header__main-part';
 export const CLASS_HEADER_MAIN_PART_HIDDEN = 'header__main-part--hidden';
 export const CLASS_HEADER_BOTTOM_PART = 'header__bottom-part';
 export const CLASS_HEADER_BOTTOM_PART_HIDDEN = 'header__bottom-part--hidden';
+export const CLASS_HEADER = 'header';
+export const CLASS_SCROLL_UP_BTN = 'scroll-up-btn';
+export const CLASS_SCROLL_UP_BTN_VISIBLE = 'scroll-up-btn--visible';
 
 export const DATA_TRANSLATE_MENU_OPEN = 'menuBtnOpen';
 export const DATA_TRANSLATE_MENU_CLOSE = 'menuBtnClose';
@@ -47,6 +50,9 @@ const constants = {
   CLASS_HEADER_BOTTOM_PART,
   CLASS_HEADER_BOTTOM_PART_HIDDEN,
   FORM_ID,
+  CLASS_SCROLL_UP_BTN,
+  CLASS_SCROLL_UP_BTN_VISIBLE,
+  CLASS_HEADER,
 };
 
 export default constants;

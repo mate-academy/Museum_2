@@ -1,4 +1,5 @@
 import {
+  CLASS_HEADER,
   CLASS_HEADER_BOTTOM_PART,
   CLASS_HEADER_MAIN_PART,
   CLASS_LANGUAGE_SELECTOR,
@@ -7,6 +8,7 @@ import {
   CLASS_LANGUAGE_SELECTOR_ITEM,
   CLASS_MENU,
   CLASS_MENU_BTN,
+  CLASS_SCROLL_UP_BTN,
   FORM_ID,
 } from './constants';
 
@@ -26,6 +28,7 @@ export const languageSelectorItems = languageSelectorDropdown.querySelectorAll(
 export const menuBtn = document.querySelector('.' + CLASS_MENU_BTN);
 export const menu = document.querySelector('.' + CLASS_MENU);
 
+export const header = document.querySelector('.' + CLASS_HEADER);
 export const headerMainPart = document.querySelector(
   '.' + CLASS_HEADER_MAIN_PART,
 );
@@ -33,6 +36,8 @@ export const headerMainPart = document.querySelector(
 export const headerBottomPart = document.querySelector(
   '.' + CLASS_HEADER_BOTTOM_PART,
 );
+
+export const scrollUpBtn = document.querySelector('.' + CLASS_SCROLL_UP_BTN);
 
 export const form = document.getElementById(FORM_ID);
 export const submitButton = form.querySelector('button[type="submit"]');
