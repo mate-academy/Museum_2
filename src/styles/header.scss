@@ -8,9 +8,12 @@ body {
   background: $c-gray;
   margin: 0;
   font-family: Raleway, sans-serif;
-  scroll-behavior: smooth;
   overflow-x: hidden;
   min-width: 320px;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
 }
 
 .header {
@@ -19,6 +22,7 @@ body {
   height: 747px;
   background-color: #3f5252;
   position: relative;
+  scroll-behavior: smooth;
 
   @include on-tablet {
     padding: 20px 0 0 40px;
