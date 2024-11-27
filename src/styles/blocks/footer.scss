@@ -4,7 +4,7 @@
   padding-top: 34px;
   padding-bottom: 30px;
 
-  color: $whiteAccent;
+  color: $white-accent;
 
   background-color: $green-accent;
 
@@ -22,31 +22,67 @@
 
   &__address {
     @include default-cursor;
-    @include hover((color, $red-hover), (text-decoration, underline));
-    @include active((color, $red-active), (text-decoration, underline));
 
     display: block;
 
     text-decoration: none;
-    color: $whiteAccent;
+    color: $white-accent;
+
+    transition: all $duration;
+
+    @include on-hover-devices {
+      &:hover {
+        text-decoration: underline;
+        color: $red-hover;
+      }
+    }
+
+    &:active {
+      text-decoration: underline;
+      color: $red-active;
+    }
   }
 
   &__phone-link {
     @include default-cursor;
-    @include hover((color, $red-hover), (text-decoration, underline));
-    @include active((color, $red-active), (text-decoration, underline));
 
     text-decoration: none;
-    color: $whiteAccent;
+    color: $white-accent;
+
+    transition: all $duration;
+
+    @include on-hover-devices {
+      &:hover {
+        text-decoration: underline;
+        color: $red-hover;
+      }
+    }
+
+    &:active {
+      text-decoration: underline;
+      color: $red-active;
+    }
   }
 
   &__email {
     @include default-cursor;
-    @include hover((color, $red-hover), (text-decoration, underline));
-    @include active((color, $red-active), (text-decoration, underline));
 
     text-decoration: none;
-    color: $whiteAccent;
+    color: $white-accent;
+
+    transition: all $duration;
+
+    @include on-hover-devices {
+      &:hover {
+        text-decoration: underline;
+        color: $red-hover;
+      }
+    }
+
+    &:active {
+      text-decoration: underline;
+      color: $red-active;
+    }
   }
 
   &__social-links {
@@ -102,13 +138,27 @@
   &__link {
     @extend %main-text;
     @include default-cursor;
-    @include hover((transform, scale(1.1)), (color, $red-hover));
-    @include active((transform, scale(1)), (color, $red-active));
 
     display: block;
 
     text-decoration: none;
-    color: $whiteAccent;
+    color: $white-accent;
+
+    transition: all $duration;
+
+    @include on-hover-devices {
+      &:hover {
+        color: $red-hover;
+
+        transform: scale(1.1);
+      }
+    }
+
+    &:active {
+      color: $red-active;
+
+      transform: scale(1);
+    }
 
     &--active {
       font-family: 'Playfair Display', serif;
@@ -170,10 +220,22 @@
 
   &__privacy {
     @include default-cursor;
-    @include hover((color, $red-hover), (text-decoration, underline));
-    @include active((color, $red-active), (text-decoration, underline));
 
     text-decoration: none;
-    color: $whiteAccent;
+    color: $white-accent;
+
+    transition: all $duration;
+
+    @include on-hover-devices {
+      &:hover {
+        text-decoration: underline;
+        color: $red-hover;
+      }
+    }
+
+    &:active {
+      text-decoration: underline;
+      color: $red-active;
+    }
   }
 }

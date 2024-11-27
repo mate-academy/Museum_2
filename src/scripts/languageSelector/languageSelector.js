@@ -1,9 +1,11 @@
 'use strict';
+import { isMenuVisible } from '../menu.js';
 import {
   ANIMATION_DURATION,
   CLASS_BODY_HIDDEN,
-  CLASS_BUTTON_DROPDOWN_VISIBLE,
-  CLASS_DROPDOWN_VISIBLE,
+  CLASS_LANGUAGE_SELECTOR_BUTTON_DROPDOWN_VISIBLE,
+  CLASS_LANGUAGE_SELECTOR_BUTTON_HIDDEN,
+  CLASS_LANGUAGE_SELECTOR_DROPDOWN_VISIBLE,
   LANGUAGE_UA,
   LOCAL_STORAGE_LANGUAGE_KEY,
 } from '../utils/constants.js';
@@ -15,8 +17,13 @@ import {
 import { translate } from './translate.js';
 
 export const hideDropdown = () => {
-  languageSelectorDropdown.classList.remove(CLASS_DROPDOWN_VISIBLE);
-  languageSelectorButton.classList.remove(CLASS_BUTTON_DROPDOWN_VISIBLE);
+  languageSelectorDropdown.classList.remove(
+    CLASS_LANGUAGE_SELECTOR_DROPDOWN_VISIBLE,
+  );
+
+  languageSelectorButton.classList.remove(
+    CLASS_LANGUAGE_SELECTOR_BUTTON_DROPDOWN_VISIBLE,
+  );
 
   setTimeout(() => {
     languageSelectorDropdown.style.visibility = 'hidden';
@@ -25,12 +32,40 @@ export const hideDropdown = () => {
 
 export const showDropdown = () => {
   languageSelectorDropdown.style.visibility = 'visible';
-  languageSelectorDropdown.classList.add(CLASS_DROPDOWN_VISIBLE);
-  languageSelectorButton.classList.add(CLASS_BUTTON_DROPDOWN_VISIBLE);
+
+  languageSelectorDropdown.classList.add(
+    CLASS_LANGUAGE_SELECTOR_DROPDOWN_VISIBLE,
+  );
+
+  languageSelectorButton.classList.add(
+    CLASS_LANGUAGE_SELECTOR_BUTTON_DROPDOWN_VISIBLE,
+  );
+};
+
+export const toggleLanguageSelectorButtonVisibility = () => {
+  if (window.innerWidth < 768) {
+    if (isMenuVisible()) {
+      languageSelectorButton.classList.remove(
+        CLASS_LANGUAGE_SELECTOR_BUTTON_HIDDEN,
+      );
+    } else {
+      languageSelectorButton.classList.add(
+        CLASS_LANGUAGE_SELECTOR_BUTTON_HIDDEN,
+      );
+    }
+  } else {
+    languageSelectorButton.classList.remove(
+      CLASS_LANGUAGE_SELECTOR_BUTTON_HIDDEN,
+    );
+  }
 };
 
 const handleLanguageButtonClick = (e) => {
-  if (languageSelectorDropdown.classList.contains(CLASS_DROPDOWN_VISIBLE)) {
+  if (
+    languageSelectorDropdown.classList.contains(
+      CLASS_LANGUAGE_SELECTOR_DROPDOWN_VISIBLE,
+    )
+  ) {
     hideDropdown();
   } else {
     showDropdown();
@@ -79,10 +114,12 @@ export const initializeLanguageSelector = () => {
   document.body.classList.remove(CLASS_BODY_HIDDEN);
 };
 
-export const handleDocumentClick = () => {
+export const handleDocumentClick = (e) => {
   if (
-    !languageSelectorDropdown.classList.contains(CLASS_DROPDOWN_VISIBLE) ||
-    event.target.closest('.language-selector')
+    !languageSelectorDropdown.classList.contains(
+      CLASS_LANGUAGE_SELECTOR_DROPDOWN_VISIBLE,
+    ) ||
+    e.target.closest('.language-selector')
   ) {
     return;
   }
@@ -91,6 +128,8 @@ export const handleDocumentClick = () => {
 };
 
 export const addLanguageSelectorEventListeners = () => {
+  toggleLanguageSelectorButtonVisibility();
+  window.addEventListener('resize', toggleLanguageSelectorButtonVisibility);
   languageSelectorButton.addEventListener('click', handleLanguageButtonClick);
   languageSelectorDropdown.addEventListener('click', handleLanguageItemClick);
   document.addEventListener('click', handleDocumentClick);

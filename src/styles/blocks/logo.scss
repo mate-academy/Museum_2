@@ -1,11 +1,11 @@
 .logo {
+  @include default-cursor;
+
   position: relative;
 
-  color: $whiteAccent;
+  color: $white-accent;
 
-  transition:
-    box-shadow $duration,
-    transform $duration;
+  transition: all $duration;
 
   @include on-hover-devices {
     &:hover {
@@ -13,24 +13,10 @@
 
       transform: translateY(-5px);
     }
-
-    // &:hover::before {
-    //   box-shadow: 5px 5px 5px $black-accent;
-    // }
   }
-
-  // &::before {
-  //   content: '';
-  //   display: block;
-  //   position: absolute;
-  //   inset: -5px;
-  //   z-index: -1;
-  //   transition: box-shadow $duration;
-  // }
 
   &__icon {
     @include icon(123px, 40px, url('../images/icons/logo.svg'));
-    @include default-cursor;
 
     transition: transform $duration;
 
@@ -44,19 +30,6 @@
     transform: translateY(5px);
   }
 
-  // &:active::before {
-  //   // box-shadow: 0 0 0 $black-accent;
-  //   box-shadow: -1px -1px 5px $black-accent;
-  // }
-
-  // &:hover &__icon {
-  //   transform: scale(1.2);
-  // }
-
-  // &:active &__icon {
-  //   transform: scale(0.8);
-  // }
-
   &:focus-visible {
     outline: none;
   }
@@ -66,25 +39,4 @@
 
     transform: scale(1.2);
   }
-
-  // @include icon-link(123px, 40px);
-  // width: 140px;
-  // height: 50px;
-  // display: block;
-  // text-decoration: none;
-  // background-color: white;
-  // mask-image: url('../images/icons/logo.svg');
-  // mask-repeat: no-repeat;
-  // mask-position: center;
-
-  // mask-clip: content-box;
-
-  // @include default-cursor;
-  // @include hover((transform, scale(1.1)));
-  // @include active((transform, scale(0.9)));
-
-  // &:focus-visible {
-  //   transform: scale(1.1);
-  //   background-color: $focus-accent;
-  // }
 }

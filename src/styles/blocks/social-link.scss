@@ -1,20 +1,21 @@
 .social-link {
+  @include icon(20px, 20px, none);
   @include default-cursor;
-  @include hover((transform, scale(1.2)));
-  @include active((transform, scale(0.8)));
-
-  display: block;
-  width: 20px;
-  height: 20px;
 
   text-decoration: none;
-  color: $whiteAccent;
+  color: $white-accent;
 
-  background-color: currentcolor;
+  transition: all $duration;
 
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-clip: content-box;
+  @include on-hover-devices {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &:active {
+    transform: scale(0.8);
+  }
 
   &:focus-visible {
     background-color: $focus-accent;

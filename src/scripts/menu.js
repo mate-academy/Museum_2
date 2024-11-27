@@ -1,3 +1,5 @@
+// eslint-disable-next-line max-len
+import { toggleLanguageSelectorButtonVisibility } from './languageSelector/languageSelector.js';
 import translations from './languageSelector/translations.js';
 import {
   ANIMATION_DURATION,
@@ -60,6 +62,8 @@ export const hideMenu = () => {
   }, ANIMATION_DURATION);
 };
 
+export const isMenuVisible = () => menu.classList.contains(CLASS_MENU_VISIBLE);
+
 export const makeInvisibleHeaderContent = () => {
   if (!headerMainPart.classList.contains(CLASS_HEADER_MAIN_PART_HIDDEN)) {
     headerMainPart.classList.add(CLASS_HEADER_MAIN_PART_HIDDEN);
@@ -117,6 +121,9 @@ const handleDocumentClick = (e) => {
 };
 
 export const addMenuBtnEventListener = () => {
-  menuBtn.addEventListener('click', handleMenuBtnclick);
+  menuBtn.addEventListener('click', () => {
+    handleMenuBtnclick();
+    toggleLanguageSelectorButtonVisibility();
+  });
   document.addEventListener('click', handleDocumentClick);
 };

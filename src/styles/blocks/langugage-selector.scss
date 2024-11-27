@@ -12,7 +12,7 @@
     font-weight: 500;
     line-height: 150%;
     text-transform: uppercase;
-    color: $whiteAccent;
+    color: $white-accent;
 
     justify-content: center;
     align-items: center;
@@ -47,6 +47,10 @@
       color: $red-active;
     }
 
+    &--hidden {
+      display: none;
+    }
+
     &--dropdown-visible {
       &::after {
         color: $red-accent;
@@ -64,7 +68,7 @@
 
     width: 100%;
 
-    background-color: $whiteAccent;
+    background-color: $white-accent;
 
     box-shadow:
       2px 5px 5px rgba($black-accent, 0.8),
@@ -94,8 +98,6 @@
   &__item {
     @extend %main-text;
     @include default-cursor;
-    @include hover((color, $red-hover));
-    @include active((color, $red-active));
 
     display: block;
     width: 100%;
@@ -106,14 +108,24 @@
 
     border: 0;
 
+    @include on-hover-devices {
+      &:hover {
+        color: $red-hover;
+      }
+    }
+
     @include on-tablet {
       text-align: right;
+    }
+
+    &:active {
+      color: $red-active;
     }
 
     &[aria-selected='true'] {
       pointer-events: none;
 
-      color: $whiteAccent;
+      color: $white-accent;
 
       background-color: $red-accent;
 

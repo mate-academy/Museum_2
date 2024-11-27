@@ -6,7 +6,7 @@
   height: 60px;
 
   text-decoration: none;
-  color: $whiteAccent;
+  color: $white-accent;
 
   justify-content: center;
   align-items: center;
@@ -14,14 +14,24 @@
 
   border: 1px solid $red-accent;
 
-  &--primary {
-    @include hover((background-color, $red-hover), (border-color, $red-hover));
-    @include active(
-      (background-color, $red-active),
-      (border-color, $red-active)
-    );
+  transition: all $duration;
 
+  &--primary {
     background-color: $red-accent;
+
+    @include on-hover-devices {
+      &:hover {
+        background-color: $red-hover;
+
+        border-color: $red-hover;
+      }
+    }
+
+    &:active {
+      background-color: $red-active;
+
+      border-color: $red-active;
+    }
 
     &:disabled {
       background-color: $red-disabled;
@@ -31,12 +41,23 @@
   }
 
   &--secondary {
-    @include hover((color, $red-hover), (border-color, $red-hover));
-    @include active((color, $red-active), (border-color, $red-active));
-
     color: $red-accent;
 
-    background-color: $whiteAccent;
+    background-color: $white-accent;
+
+    @include on-hover-devices {
+      &:hover {
+        color: $red-hover;
+
+        border-color: $red-hover;
+      }
+    }
+
+    &:active {
+      color: $red-active;
+
+      border-color: $red-active;
+    }
 
     &::after {
       @include icon(20px, 20px, url('../images/icons/arrow.svg'));
