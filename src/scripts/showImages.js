@@ -2,9 +2,9 @@ export const showImagesOnScroll = () => {
   const images = document.querySelectorAll('.fade-img');
 
   const observerOptions = {
-    root: null, // Відслідковувати в контексті viewport
-    rootMargin: '10% 50%', // Можна додати відступи, якщо потрібно
-    threshold: 0.2, // Коли 10% елемента в полі видимості
+    root: null,
+    rootMargin: '10% 50%',
+    threshold: 0,
   };
 
   const observer = new IntersectionObserver((entries) => {
