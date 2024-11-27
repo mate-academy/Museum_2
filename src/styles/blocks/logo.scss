@@ -1,10 +1,23 @@
 .logo {
-  color: $whiteAccent;
   position: relative;
+
+  color: $whiteAccent;
 
   transition:
     box-shadow $duration,
     transform $duration;
+
+  @include on-hover-devices {
+    &:hover {
+      opacity: 0.8;
+
+      transform: translateY(-5px);
+    }
+
+    // &:hover::before {
+    //   box-shadow: 5px 5px 5px $black-accent;
+    // }
+  }
 
   // &::before {
   //   content: '';
@@ -27,24 +40,13 @@
     }
   }
 
-  @include on-hover-devices {
-    &:hover {
-      transform: translateY(-5px);
-      opacity: 0.8;
-    }
-
-    // &:hover::before {
-    //   box-shadow: 5px 5px 5px $blackAccent;
-    // }
-  }
-
   &:active {
     transform: translateY(5px);
   }
 
   // &:active::before {
-  //   // box-shadow: 0 0 0 $blackAccent;
-  //   box-shadow: -1px -1px 5px $blackAccent;
+  //   // box-shadow: 0 0 0 $black-accent;
+  //   box-shadow: -1px -1px 5px $black-accent;
   // }
 
   // &:hover &__icon {
@@ -60,8 +62,9 @@
   }
 
   &:focus-visible &__icon {
+    background-color: $focus-accent;
+
     transform: scale(1.2);
-    background-color: $focusAccent;
   }
 
   // @include icon-link(123px, 40px);
@@ -82,6 +85,6 @@
 
   // &:focus-visible {
   //   transform: scale(1.1);
-  //   background-color: $focusAccent;
+  //   background-color: $focus-accent;
   // }
 }

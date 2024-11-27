@@ -1,10 +1,12 @@
 .footer {
-  background-color: $greenAccent;
-  color: $whiteAccent;
+  position: relative;
+
   padding-top: 34px;
   padding-bottom: 30px;
 
-  position: relative;
+  color: $whiteAccent;
+
+  background-color: $green-accent;
 
   @include on-tablet {
     padding-top: 50px;
@@ -19,38 +21,41 @@
   }
 
   &__address {
-    display: block;
-    color: $whiteAccent;
-    text-decoration: none;
-
     @include default-cursor;
-    @include hover((color, $redHover), (text-decoration, underline));
-    @include active((color, $redActive), (text-decoration, underline));
+    @include hover((color, $red-hover), (text-decoration, underline));
+    @include active((color, $red-active), (text-decoration, underline));
+
+    display: block;
+
+    text-decoration: none;
+    color: $whiteAccent;
   }
 
   &__phone-link {
-    color: $whiteAccent;
-    text-decoration: none;
-
     @include default-cursor;
-    @include hover((color, $redHover), (text-decoration, underline));
-    @include active((color, $redActive), (text-decoration, underline));
+    @include hover((color, $red-hover), (text-decoration, underline));
+    @include active((color, $red-active), (text-decoration, underline));
+
+    text-decoration: none;
+    color: $whiteAccent;
   }
 
   &__email {
-    color: $whiteAccent;
-    text-decoration: none;
-
     @include default-cursor;
-    @include hover((color, $redHover), (text-decoration, underline));
-    @include active((color, $redActive), (text-decoration, underline));
+    @include hover((color, $red-hover), (text-decoration, underline));
+    @include active((color, $red-active), (text-decoration, underline));
+
+    text-decoration: none;
+    color: $whiteAccent;
   }
 
   &__social-links {
     display: flex;
+
+    margin-top: 30px;
+
     align-items: center;
     gap: 20px;
-    margin-top: 30px;
 
     @include on-tablet {
       margin-top: 50px;
@@ -82,10 +87,12 @@
   }
 
   &__list {
-    list-style: none;
     display: flex;
+
     flex-direction: column;
     gap: 5px;
+
+    list-style: none;
 
     @include on-tablet {
       gap: 10px;
@@ -94,27 +101,28 @@
 
   &__link {
     @extend %main-text;
+    @include default-cursor;
+    @include hover((transform, scale(1.1)), (color, $red-hover));
+    @include active((transform, scale(1)), (color, $red-active));
 
     display: block;
-    color: $whiteAccent;
+
     text-decoration: none;
+    color: $whiteAccent;
 
     &--active {
       font-family: 'Playfair Display', serif;
       font-size: 20px;
-      line-height: 150%;
       font-weight: 700;
+      line-height: 150%;
     }
-
-    @include default-cursor;
-    @include hover((transform, scale(1.1)), (color, $redHover));
-    @include active((transform, scale(1)), (color, $redActive));
   }
 
   &__item {
     &--active {
-      order: -1;
       margin-bottom: 5px;
+
+      order: -1;
 
       @include on-tablet {
         margin-bottom: 20px;
@@ -140,11 +148,13 @@
 
   &__bottom-part {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+
     margin-top: 60px;
 
     grid-column: 1 / -1;
+
+    justify-content: space-between;
+    align-items: center;
 
     @include on-desktop {
       margin-top: 70px;
@@ -153,16 +163,17 @@
 
   &__privacy-rights {
     display: flex;
+
     align-items: center;
     gap: 22px;
   }
 
   &__privacy {
-    color: $whiteAccent;
-    text-decoration: none;
-
     @include default-cursor;
-    @include hover((color, $redHover), (text-decoration, underline));
-    @include active((color, $redActive), (text-decoration, underline));
+    @include hover((color, $red-hover), (text-decoration, underline));
+    @include active((color, $red-active), (text-decoration, underline));
+
+    text-decoration: none;
+    color: $whiteAccent;
   }
 }

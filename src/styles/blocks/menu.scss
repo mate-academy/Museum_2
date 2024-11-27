@@ -1,51 +1,60 @@
 .menu {
-  background-color: $greenAccent;
+  @include grid-template;
+
+  z-index: 10;
   position: absolute;
   inset: 0;
-  visibility: hidden;
+
   opacity: 0;
-  z-index: 10;
-  transform: translateY(-100%);
+  visibility: hidden;
   pointer-events: none;
 
+  background-color: $green-accent;
+
+  transform: translateY(-100%);
   transition:
     opacity $duration ease-in,
     transform $duration ease-in;
 
   &--visible {
+    opacity: 1;
     visibility: visible;
     pointer-events: all;
-    opacity: 1;
+
     transform: translateY(0);
   }
 
-  @include grid-template;
-
   &__address {
     display: flex;
+
     flex-direction: column;
   }
 
   &__main-part {
-    grid-column: 1 / -1;
+    @include grid-template;
+
     margin-top: 10px;
 
-    @include grid-template;
+    grid-column: 1 / -1;
 
     row-gap: 40px;
 
     @include on-tablet {
       margin-top: 30px;
+
       row-gap: 50px;
     }
 
     @include on-desktop {
-      margin-top: 13px;
-      grid-column: 1 / span 6;
-      align-self: start;
-      row-gap: 60px;
-
       --columns: 6;
+
+      margin-top: 13px;
+
+      grid-column: 1 / span 6;
+
+      align-self: start;
+
+      row-gap: 60px;
     }
   }
 
@@ -54,18 +63,22 @@
 
     @include on-tablet {
       display: block;
-      grid-column: 2 / span 4;
+
       margin-top: 30px;
+
+      grid-column: 2 / span 4;
     }
 
     @include on-desktop {
-      grid-column: 7 / span 6;
       margin-top: 13px;
+
+      grid-column: 7 / span 6;
     }
   }
 
   &__picture {
     display: flex;
+
     justify-content: center;
 
     @include on-desktop {
@@ -74,9 +87,10 @@
   }
 
   &__info {
+    display: flex;
+
     grid-column: 1 / -1;
 
-    display: flex;
     flex-direction: column;
     gap: 20px;
 
@@ -95,10 +109,12 @@
   }
 
   &__list {
-    list-style: none;
     display: flex;
+
     flex-direction: column;
     gap: 20px;
+
+    list-style: none;
 
     @include on-tablet {
       gap: 30px;
@@ -117,10 +133,10 @@
   }
 
   &__address-link {
-    color: $whiteAccent;
-    text-decoration: none;
-
     @include default-cursor;
+
+    text-decoration: none;
+    color: $whiteAccent;
 
     &:hover {
       text-decoration: underline;
@@ -132,24 +148,12 @@
   }
 
   &__link {
-    color: inherit;
-    text-decoration: none;
-    position: relative;
-
     @include default-cursor;
 
-    &::after {
-      content: '';
-      display: none;
-      width: 100%;
-      height: 2px;
-      background-color: currentColor;
-      position: absolute;
-      bottom: 10%;
-      pointer-events: none;
+    position: relative;
 
-      transition: background-color $duration;
-    }
+    text-decoration: none;
+    color: inherit;
 
     @include on-hover-devices {
       &:hover::after {
@@ -157,18 +161,38 @@
       }
     }
 
+    &::after {
+      position: absolute;
+      bottom: 10%;
+
+      pointer-events: none;
+
+      display: none;
+      width: 100%;
+      height: 2px;
+
+      background-color: currentcolor;
+
+      transition: background-color $duration;
+
+      content: '';
+    }
+
     &:active::after {
       display: block;
-      background-color: $redActive;
+
+      background-color: $red-active;
     }
   }
 
   &__line {
+    height: 1px;
+
     grid-column: 1 / -1;
 
-    border: 0;
-    height: 1px;
     background-color: $whiteAccent;
+
+    border: 0;
   }
 
   &__button {

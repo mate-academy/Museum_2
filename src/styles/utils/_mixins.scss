@@ -2,13 +2,13 @@
 @use 'sass:string';
 
 @mixin on-tablet() {
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     @content;
   }
 }
 
 @mixin on-desktop() {
-  @media (min-width: 1280px) {
+  @media (width >= 1280px) {
     @content;
   }
 }
@@ -17,7 +17,9 @@
   --columns: 2;
 
   display: grid;
+
   grid-template-columns: repeat(var(--columns), 1fr);
+
   column-gap: 20px;
 
   @include on-tablet {
@@ -76,16 +78,16 @@
     );
   }
 
-  & {
-    transition: $transitions;
-  }
-
   @include on-hover-devices {
     &:hover {
       @each $property, $value in $_properties {
         #{$property}: $value;
       }
     }
+  }
+
+  & {
+    transition: $transitions;
   }
 
   // @media (hover: hover) {
@@ -107,6 +109,7 @@
 
 @mixin default-cursor() {
   cursor: pointer;
+
   -webkit-tap-highlight-color: transparent;
 
   @include on-touch-devices {
@@ -119,10 +122,12 @@
 }
 
 @mixin icon($_width, $_height, $_mask-url) {
+  display: block;
   width: $_width;
   height: $_height;
-  display: block;
-  background-color: currentColor;
+
+  background-color: currentcolor;
+
   mask-image: $_mask-url;
   mask-repeat: no-repeat;
   mask-position: center;

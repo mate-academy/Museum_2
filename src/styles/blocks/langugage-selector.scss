@@ -2,69 +2,74 @@
   z-index: 20;
 
   &__button {
-    font-weight: 500;
-    line-height: 150%;
-    text-transform: uppercase;
+    @include default-cursor;
 
-    height: 100%;
     position: relative;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
 
-    gap: 5px;
-    border: 1px solid $greenAccent;
-
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: uppercase;
     color: $whiteAccent;
 
-    background-color: $greenAccent;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    background-color: $green-accent;
+
+    border: 1px solid $green-accent;
+
     transition:
       color $duration,
       transform $duration;
 
-    @include default-cursor;
-
-    &::after {
-      content: '';
-
-      @include icon(8px, 5px, url('../images/icons/dropdown.svg'));
-
-      transition:
-        transform $duration,
-        color $duration;
-      transform: rotate(0deg);
-    }
-
     @include on-hover-devices {
       &:hover::after {
-        color: $redHover;
+        color: $red-hover;
       }
     }
 
+    &::after {
+      @include icon(8px, 5px, url('../images/icons/dropdown.svg'));
+
+      transform: rotate(0deg);
+      transition:
+        transform $duration,
+        color $duration;
+
+      content: '';
+    }
+
     &:active::after {
-      color: $redActive;
+      color: $red-active;
     }
 
     &--dropdown-visible {
       &::after {
+        color: $red-accent;
+
         transform: rotate(180deg);
-        color: $redAccent;
       }
     }
   }
 
   &__dropdown {
     position: absolute;
-    background-color: $whiteAccent;
+
+    opacity: 0;
+    visibility: hidden;
+
     width: 100%;
 
-    box-shadow:
-      2px 5px 5px rgba($blackAccent, 0.8),
-      5px 5px 5px rgba($blackAccent, 0.08);
+    background-color: $whiteAccent;
 
-    visibility: hidden;
-    opacity: 0;
+    box-shadow:
+      2px 5px 5px rgba($black-accent, 0.8),
+      5px 5px 5px rgba($black-accent, 0.08);
+
     transform: translateY(-50%);
     transition:
       opacity $duration,
@@ -75,8 +80,9 @@
     }
 
     &--visible {
-      visibility: visible;
       opacity: 1;
+      visibility: visible;
+
       transform: translateY(10px);
     }
   }
@@ -87,27 +93,31 @@
 
   &__item {
     @extend %main-text;
+    @include default-cursor;
+    @include hover((color, $red-hover));
+    @include active((color, $red-active));
 
-    color: $blackAccent;
     display: block;
     width: 100%;
+
     padding: 10px 5px;
+
+    color: $black-accent;
+
     border: 0;
-
-    @include default-cursor;
-    @include hover((color, $redHover));
-    @include active((color, $redActive));
-
-    &[aria-selected='true'] {
-      background-color: $redAccent;
-      color: $whiteAccent;
-      border-color: $redAccent;
-
-      pointer-events: none;
-    }
 
     @include on-tablet {
       text-align: right;
+    }
+
+    &[aria-selected='true'] {
+      pointer-events: none;
+
+      color: $whiteAccent;
+
+      background-color: $red-accent;
+
+      border-color: $red-accent;
     }
   }
 }

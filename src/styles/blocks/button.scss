@@ -1,37 +1,42 @@
 .button {
   @extend %buttons;
-
-  height: 60px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 8px;
-  border: 1px solid $redAccent;
-  color: $whiteAccent;
-  text-decoration: none;
-
   @include default-cursor;
 
-  &--primary {
-    background-color: $redAccent;
+  display: flex;
+  height: 60px;
 
-    @include hover((background-color, $redHover), (border-color, $redHover));
-    @include active((background-color, $redActive), (border-color, $redActive));
+  text-decoration: none;
+  color: $whiteAccent;
+
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border: 1px solid $red-accent;
+
+  &--primary {
+    @include hover((background-color, $red-hover), (border-color, $red-hover));
+    @include active(
+      (background-color, $red-active),
+      (border-color, $red-active)
+    );
+
+    background-color: $red-accent;
 
     &:disabled {
-      background-color: $redDisabled;
-      border-color: $redDisabled;
+      background-color: $red-disabled;
+
+      border-color: $red-disabled;
     }
   }
 
   &--secondary {
-    background-color: $whiteAccent;
-    color: $redAccent;
+    @include hover((color, $red-hover), (border-color, $red-hover));
+    @include active((color, $red-active), (border-color, $red-active));
 
-    @include hover((color, $redHover), (border-color, $redHover));
-    @include active((color, $redActive), (border-color, $redActive));
+    color: $red-accent;
+
+    background-color: $whiteAccent;
 
     &::after {
       @include icon(20px, 20px, url('../images/icons/arrow.svg'));
@@ -40,8 +45,9 @@
     }
 
     &:disabled {
-      border-color: $redDisabled;
-      color: $redDisabled;
+      color: $red-disabled;
+
+      border-color: $red-disabled;
     }
   }
 }
