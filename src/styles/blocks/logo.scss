@@ -1,0 +1,42 @@
+.logo {
+  @include default-cursor;
+
+  position: relative;
+
+  color: $white-accent;
+
+  transition: all $duration;
+
+  @include on-hover-devices {
+    &:hover {
+      opacity: 0.8;
+
+      transform: translateY(-5px);
+    }
+  }
+
+  &__icon {
+    @include icon(123px, 40px, url('../images/icons/logo.svg'));
+
+    transition: transform $duration;
+
+    @include on-tablet {
+      width: 124px;
+      height: 37px;
+    }
+  }
+
+  &:active {
+    transform: translateY(5px);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible &__icon {
+    background-color: $focus-accent;
+
+    transform: scale(1.2);
+  }
+}

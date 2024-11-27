@@ -1,6 +1,73 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@use 'sass:list';
+@use 'sass:string';
+
+@mixin on-tablet() {
+  @media (width >= 768px) {
+    @content;
   }
+}
+
+@mixin on-desktop() {
+  @media (width >= 1280px) {
+    @content;
+  }
+}
+
+@mixin grid-template() {
+  --columns: 2;
+
+  display: grid;
+
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  column-gap: 20px;
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+@mixin on-touch-devices() {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin on-hover-devices() {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+@mixin default-cursor() {
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+  @include on-touch-devices {
+    cursor: default;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@mixin icon($_width, $_height, $_mask-url) {
+  display: block;
+  width: $_width;
+  height: $_height;
+
+  background-color: currentcolor;
+
+  mask-image: $_mask-url;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-clip: content-box;
 }

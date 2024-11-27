@@ -1,0 +1,74 @@
+.button {
+  @extend %buttons;
+  @include default-cursor;
+
+  display: flex;
+  height: 60px;
+
+  text-decoration: none;
+  color: $white-accent;
+
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  border: 1px solid $red-accent;
+
+  transition: all $duration;
+
+  &--primary {
+    background-color: $red-accent;
+
+    @include on-hover-devices {
+      &:hover {
+        background-color: $red-hover;
+
+        border-color: $red-hover;
+      }
+    }
+
+    &:active {
+      background-color: $red-active;
+
+      border-color: $red-active;
+    }
+
+    &:disabled {
+      background-color: $red-disabled;
+
+      border-color: $red-disabled;
+    }
+  }
+
+  &--secondary {
+    color: $red-accent;
+
+    background-color: $white-accent;
+
+    @include on-hover-devices {
+      &:hover {
+        color: $red-hover;
+
+        border-color: $red-hover;
+      }
+    }
+
+    &:active {
+      color: $red-active;
+
+      border-color: $red-active;
+    }
+
+    &::after {
+      @include icon(20px, 20px, url('../images/icons/arrow.svg'));
+
+      content: '';
+    }
+
+    &:disabled {
+      color: $red-disabled;
+
+      border-color: $red-disabled;
+    }
+  }
+}

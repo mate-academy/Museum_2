@@ -1,0 +1,135 @@
+.language-selector {
+  z-index: 20;
+
+  &__button {
+    @include default-cursor;
+
+    position: relative;
+
+    display: flex;
+    height: 100%;
+
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $white-accent;
+
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+    background-color: $green-accent;
+
+    border: 1px solid $green-accent;
+
+    transition:
+      color $duration,
+      transform $duration;
+
+    @include on-hover-devices {
+      &:hover::after {
+        color: $red-hover;
+      }
+    }
+
+    &::after {
+      @include icon(8px, 5px, url('../images/icons/dropdown.svg'));
+
+      transform: rotate(0deg);
+      transition:
+        transform $duration,
+        color $duration;
+
+      content: '';
+    }
+
+    &:active::after {
+      color: $red-active;
+    }
+
+    &--hidden {
+      display: none;
+    }
+
+    &--dropdown-visible {
+      &::after {
+        color: $red-accent;
+
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+
+    opacity: 0;
+    visibility: hidden;
+
+    width: 100%;
+
+    background-color: $white-accent;
+
+    box-shadow:
+      2px 5px 5px rgba($black-accent, 0.8),
+      5px 5px 5px rgba($black-accent, 0.08);
+
+    transform: translateY(-50%);
+    transition:
+      opacity $duration,
+      transform $duration;
+
+    @include on-tablet {
+      right: 0;
+    }
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translateY(10px);
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    @extend %main-text;
+    @include default-cursor;
+
+    display: block;
+    width: 100%;
+
+    padding: 10px 5px;
+
+    color: $black-accent;
+
+    border: 0;
+
+    @include on-hover-devices {
+      &:hover {
+        color: $red-hover;
+      }
+    }
+
+    @include on-tablet {
+      text-align: right;
+    }
+
+    &:active {
+      color: $red-active;
+    }
+
+    &[aria-selected='true'] {
+      pointer-events: none;
+
+      color: $white-accent;
+
+      background-color: $red-accent;
+
+      border-color: $red-accent;
+    }
+  }
+}

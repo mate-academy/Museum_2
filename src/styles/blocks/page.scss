@@ -1,0 +1,50 @@
+.page {
+  overscroll-behavior-x: none;
+  scroll-behavior: smooth;
+
+  &__container {
+    position: relative;
+
+    min-width: 320px;
+    max-width: 320px;
+
+    margin: 0 auto;
+    padding-inline: 20px;
+
+    @include on-tablet {
+      min-width: 768px;
+      max-width: 768px;
+
+      padding-inline: 39px;
+    }
+
+    @include on-desktop {
+      min-width: 1280px;
+      max-width: 1280px;
+
+      padding-inline: 55px;
+    }
+
+    &--top-bar {
+      z-index: 20;
+      position: sticky;
+      top: 0;
+
+      background-color: #3f5252;
+    }
+  }
+
+  &__scroll-up-btn {
+    position: fixed;
+    right: 0;
+    bottom: 3%;
+
+    @include on-tablet {
+      bottom: 5%;
+    }
+
+    @include on-desktop {
+      bottom: 10%;
+    }
+  }
+}

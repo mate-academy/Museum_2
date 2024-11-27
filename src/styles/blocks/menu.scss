@@ -1,0 +1,205 @@
+.menu {
+  @include grid-template;
+
+  z-index: 10;
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  background-color: $green-accent;
+
+  transform: translateY(-100%);
+  transition:
+    opacity $duration ease-in,
+    transform $duration ease-in;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    transform: translateY(0);
+  }
+
+  &__address {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  &__main-part {
+    @include grid-template;
+
+    margin-top: 10px;
+
+    grid-column: 1 / -1;
+
+    row-gap: 40px;
+
+    @include on-tablet {
+      margin-top: 30px;
+
+      row-gap: 50px;
+    }
+
+    @include on-desktop {
+      --columns: 6;
+
+      margin-top: 13px;
+
+      grid-column: 1 / span 6;
+
+      align-self: start;
+
+      row-gap: 60px;
+    }
+  }
+
+  &__bottom-part {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+
+      margin-top: 30px;
+
+      grid-column: 2 / span 4;
+    }
+
+    @include on-desktop {
+      margin-top: 13px;
+
+      grid-column: 7 / span 6;
+    }
+  }
+
+  &__picture {
+    display: flex;
+
+    justify-content: center;
+
+    @include on-desktop {
+      justify-content: flex-start;
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    grid-column: 1 / -1;
+
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 123px;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+  }
+
+  &__list {
+    display: flex;
+
+    flex-direction: column;
+    gap: 20px;
+
+    list-style: none;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__item-title {
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__address-link {
+    @include default-cursor;
+
+    text-decoration: none;
+    color: $white-accent;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: underline;
+    }
+  }
+
+  &__link {
+    @include default-cursor;
+
+    position: relative;
+
+    text-decoration: none;
+    color: inherit;
+
+    @include on-hover-devices {
+      &:hover::after {
+        display: block;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 10%;
+
+      pointer-events: none;
+
+      display: none;
+      width: 100%;
+      height: 2px;
+
+      background-color: currentcolor;
+
+      transition: background-color $duration;
+
+      content: '';
+    }
+
+    &:active::after {
+      display: block;
+
+      background-color: $red-active;
+    }
+  }
+
+  &__line {
+    height: 1px;
+
+    grid-column: 1 / -1;
+
+    background-color: $white-accent;
+
+    border: 0;
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / span 3;
+    }
+  }
+}

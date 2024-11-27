@@ -1,0 +1,48 @@
+.input {
+  cursor: text;
+
+  padding-bottom: 3px;
+
+  font-weight: 700;
+
+  background-color: $white-accent;
+
+  border: 0;
+  border-bottom: 1px solid $black-accent;
+
+  transition: border-color $duration;
+
+  &::placeholder {
+    font-weight: 400;
+    color: $black-accent;
+
+    transition: color $duration;
+  }
+
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 1000px $white-accent inset;
+
+    -webkit-text-fill-color: $black-accent;
+  }
+
+  &:hover {
+    border-color: $red-accent;
+
+    &::placeholder {
+      color: $red-accent;
+    }
+  }
+
+  &:focus {
+    font-weight: 400;
+
+    border-color: $red-accent;
+
+    caret-color: $red-accent;
+    outline: none;
+
+    &::placeholder {
+      visibility: hidden;
+    }
+  }
+}

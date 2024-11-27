@@ -1,0 +1,93 @@
+.event-card {
+  @include grid-template;
+
+  align-items: start;
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 360px;
+
+    grid-column: 1 / -1;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include on-tablet {
+      height: 420px;
+
+      grid-row: span 5;
+      grid-column: 1 / span 3;
+    }
+
+    @include on-desktop {
+      height: 475px;
+
+      grid-column: 1 / span 4;
+    }
+  }
+
+  &__dates {
+    margin-top: 20px;
+
+    color: $red-accent;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 0;
+
+      grid-column: 4 / span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 4 / span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 4 / span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 50px;
+
+      grid-column: 4 / span 3;
+    }
+
+    @include on-desktop {
+      margin-top: 50px;
+
+      grid-column: 5 / span 3;
+    }
+  }
+}

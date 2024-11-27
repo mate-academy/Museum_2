@@ -1,0 +1,96 @@
+.plan-visit {
+  position: relative;
+
+  overflow: hidden;
+
+  padding-block: 50px;
+
+  color: $white-accent;
+
+  background-color: $green-accent;
+
+  @include on-tablet {
+    padding-block: 80px;
+  }
+
+  @include on-desktop {
+    padding-block: 205px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    display: none;
+    height: 100%;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__container {
+    @include grid-template;
+  }
+
+  &__title {
+    display: flex;
+
+    grid-column: 1 / -1;
+
+    align-items: center;
+
+    @include on-tablet {
+      height: 145px;
+
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      height: 200px;
+
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__description {
+    height: 120px;
+
+    margin-top: 20px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      height: 70px;
+
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      margin-top: 10px;
+
+      grid-column: 6 / span 5;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 60px;
+
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      margin-top: 50px;
+
+      grid-column: 6 / span 3;
+    }
+  }
+}

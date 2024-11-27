@@ -1,0 +1,55 @@
+@use 'sass:color';
+
+.menu-btn {
+  @include default-cursor;
+
+  color: $white-accent;
+
+  background-color: $green-accent;
+
+  border: 0;
+
+  transition: all $duration;
+
+  @include on-hover-devices {
+    &:hover {
+      box-shadow:
+        2px 5px 5px rgba($black-accent, 0.8),
+        5px 5px 5px rgba($black-accent, 0.08);
+
+      transform: translateY(-2px);
+    }
+
+    &:hover &__icon {
+      opacity: 0.8;
+    }
+  }
+
+  &__icon {
+    @include icon(30px, 30px, url('../images/icons/menu.svg'));
+
+    transition: all $duration;
+  }
+
+  &--close &__icon {
+    mask-image: url('../images/icons/cross.svg');
+  }
+
+  &:active {
+    box-shadow:
+      1px 2px 4px rgba($black-accent, 0.8),
+      2px 2px 4px rgba($black-accent, 0.08);
+
+    transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible &__icon {
+    background-color: $focus-accent;
+
+    transform: scale(1.1);
+  }
+}

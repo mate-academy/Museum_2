@@ -1,0 +1,62 @@
+.scroll-up-btn {
+  @include default-cursor;
+
+  z-index: 5;
+
+  opacity: 0;
+  pointer-events: none;
+
+  padding: 10px;
+
+  background-color: $green-accent;
+
+  box-shadow:
+    2px 5px 5px rgba($black-accent, 0.8),
+    5px 5px 5px rgba($black-accent, 0.08);
+  border-radius: 10% 0 0 10%;
+
+  transform: translateX(100%);
+  transition: all $duration;
+
+  @include on-hover-devices {
+    &:hover &__icon {
+      color: $red-accent;
+
+      transform: scale(1.2);
+    }
+  }
+
+  &--visible {
+    opacity: 1;
+    pointer-events: all;
+
+    transform: translateX(0);
+  }
+
+  &__icon {
+    @include icon(30px, 30px, url('../images/icons/scroll-up.svg'));
+
+    color: $white-accent;
+
+    transition:
+      transform $duration,
+      color $duration,
+      background-color $duration;
+  }
+
+  &:active &__icon {
+    color: $red-active;
+
+    transform: scale(0.8);
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible &__icon {
+    background-color: $focus-accent;
+
+    transform: scale(1.1);
+  }
+}
