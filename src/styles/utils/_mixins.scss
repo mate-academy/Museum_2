@@ -5,6 +5,9 @@
 //   }
 // }
 // Штука которая убирает єффект залипания (кнопки) на touch-экранах
+@use "sass:math";
+$base-font-size-for-mixin: 16;
+
 @mixin hover {
   @media (hover: hover) {
     &:hover {
@@ -94,3 +97,19 @@
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
+
+
+
+
+@function rem($px) {
+  $result: math.div($px, $base-font-size-for-mixin) + rem;
+  @return $result;
+}
+
+// @function px2rem($px) {
+//   @if unit($px)==rem {
+//     @return $px;
+//   }
+
+//   @return px2em($px, 'rem');
+// }
