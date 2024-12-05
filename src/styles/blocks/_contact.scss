@@ -1,0 +1,40 @@
+.contact {
+  margin-bottom: 50px;
+
+  @include on-tablet {
+    grid-column: span 2;
+    margin-bottom: 60px;
+  }
+
+  @include on-desktop {
+    grid-column: span 4;
+  }
+
+  &__connection {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__item {
+    width: 20px;
+    height: 20px;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__link {
+    &:hover {
+      fill: $accent-color;
+    }
+  }
+}
