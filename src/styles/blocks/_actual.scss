@@ -1,0 +1,29 @@
+.actual {
+  &:last-child {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: span 3;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  @include on-desktop {
+    grid-column: span 6;
+  }
+
+  &__button {
+    @include on-desktop {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}

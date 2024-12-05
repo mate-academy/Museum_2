@@ -1,0 +1,49 @@
+.coming-event {
+  @include on-tablet {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+    margin-bottom: 70px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 60px;
+  }
+
+  &__img {
+    @include on-tablet {
+      min-height: 422px;
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      min-height: 475px;
+      grid-column: span 4;
+    }
+  }
+
+  &__info {
+    @include on-tablet {
+      grid-column: span 3;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__data {
+    @include on-tablet {
+      margin-block: 0 10px;
+    }
+  }
+
+  &__button {
+    @include on-desktop {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}
