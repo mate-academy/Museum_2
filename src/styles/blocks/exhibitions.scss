@@ -1,0 +1,285 @@
+.main {
+  padding-top: 90px;
+  background-color: $c-white;
+
+  @include onTablet {
+    padding-top: 100px;
+  }
+
+  @include onDesktop {
+    padding-top: 110px;
+  }
+}
+
+.exhibitions {
+  &__container {
+    @include pageGrid;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+    }
+
+    &-title {
+      color: $c-black;
+    }
+  }
+
+  &__top-button {
+    display: none;
+
+    @include hover(transform, scale(1.03));
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 60px;
+      width: 210px;
+      font-family: $text-font;
+      font-size: 16px;
+      font-weight: 600;
+      color: $c-orange;
+      border: 1px solid $c-orange;
+      background-color: $c-white;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    &:hover {
+      color: $c-orange-hover;
+      border: 1px solid $c-orange-hover;
+    }
+
+    &:active {
+      color: $c-orange-pressed;
+      border: 1px solid $c-orange-pressed;
+    }
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-image: url(/images/icons/button.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      transition: 0.3s ease;
+    }
+    &:hover::before {
+      background-image: url(/images/icons/button-hover.svg);
+    }
+
+    &:active::before {
+      background-image: url(/images/icons/button-active.svg);
+    }
+  }
+
+  &-cart {
+    height: 100%;
+
+    &-angels {
+      grid-column: 1 / -1;
+      margin-bottom: 60px;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &-art {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 4 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+
+    &__img-wrapper {
+      width: 100%;
+      height: 356px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include onTablet {
+        height: 420px;
+      }
+
+      @include onDesktop {
+        height: 484px;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left;
+      cursor: pointer;
+
+      @include hover(transform, scale(1.03));
+
+      &-art {
+        object-position: center;
+      }
+    }
+
+    &__date {
+      font-family: $text-font;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $c-orange;
+      padding-top: 20px;
+
+      @include onTablet {
+        padding-top: 30px;
+      }
+
+      @include onDesktop {
+        padding-top: 20px;
+      }
+    }
+
+    &__title {
+      font-family: $main-font;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 30px;
+      padding-top: 10px;
+      color: $c-black;
+    }
+
+    &__description {
+      font-family: $text-font;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $c-gray;
+      padding-top: 10px;
+    }
+
+    &__button {
+      margin: 0;
+      margin-top: 30px;
+      width: 100%;
+      height: 60px;
+      padding: 0;
+      background-color: $c-orange;
+
+      text-align: center;
+      color: $c-white;
+      font-family: $text-font;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+      border: none;
+      cursor: pointer;
+
+      @include hover(transform, scale(1.03));
+
+      @include onTablet {
+        grid-column: 1 / 4;
+        margin-top: 40px;
+      }
+
+      @include onDesktop {
+        margin-top: 50px;
+        width: 270px;
+      }
+
+      &:hover {
+        background-color: $c-orange-hover;
+      }
+
+      &:active {
+        background-color: $c-orange-pressed;
+      }
+
+      &:disabled {
+        background-color: $c-orange-disable;
+      }
+    }
+  }
+
+  &__bottom-button {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 60px;
+    width: 100%;
+
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 600;
+    color: $c-orange;
+    border: 1px solid $c-orange;
+    background-color: $c-white;
+    transition: 0.3s ease;
+    margin-top: 30px;
+
+    @include hover(transform, scale(1.03));
+
+    cursor: pointer;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &:hover {
+      color: $c-orange-hover;
+      border: 1px solid $c-orange-hover;
+    }
+
+    &:active {
+      color: $c-orange-pressed;
+      border: 1px solid $c-orange-pressed;
+    }
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-image: url(/images/icons/button.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      transition: 0.3s ease;
+    }
+    &:hover::before {
+      background-image: url(/images/icons/button-hover.svg);
+    }
+
+    &:active::before {
+      background-image: url(/images/icons/button-active.svg);
+    }
+  }
+}

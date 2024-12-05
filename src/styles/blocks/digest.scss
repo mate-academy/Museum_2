@@ -1,0 +1,140 @@
+.digest {
+  position: relative;
+  margin-top: 120px;
+  padding-bottom: 120px;
+  background-color: $c-white;
+
+  @include onTablet {
+    margin-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+    padding-bottom: 200px;
+  }
+
+  &__container {
+    @include pageGrid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-family: $main-font;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+    color: $c-black;
+
+    @include onTablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      font-size: 48px;
+      line-height: 56.7px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-black;
+    margin-top: 20px;
+
+    @include onDesktop {
+      margin-top: 0;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 50px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      gap: 40px;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__input {
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    border: none;
+    background-color: $c-white;
+    border-bottom: 1px solid $c-black;
+
+    &:hover {
+      border-bottom: 1px solid $c-orange;
+    }
+
+    &:hover::placeholder {
+      color: $c-orange;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $c-orange;
+    }
+
+    &:focus::placeholder {
+      font-weight: 600;
+      color: $c-orange;
+    }
+
+    &:not(:placeholder-shown) {
+      color: $c-black;
+      font-weight: 600;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+    color: $c-white;
+    width: 100%;
+    height: 60px;
+    background-color: $c-orange;
+    border: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.03));
+
+    &:hover {
+      background-color: $c-orange-hover;
+    }
+
+    &:active {
+      background-color: $c-orange-pressed;
+    }
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+      width: 270px;
+    }
+  }
+}
