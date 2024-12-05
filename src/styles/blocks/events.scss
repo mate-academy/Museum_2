@@ -1,0 +1,281 @@
+.events {
+  &__container {
+    margin-top: 120px;
+
+    @include pageGrid;
+
+    @include onTablet {
+      margin-top: 160px;
+    }
+
+    @include onDesktop {
+      margin-top: 200px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+    }
+
+    &-title {
+      color: $c-black;
+    }
+  }
+
+  &__top-button {
+    display: none;
+
+    @include hover(transform, scale(1.03));
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 60px;
+      width: 210px;
+      font-family: $text-font;
+      font-size: 16px;
+      font-weight: 600;
+      color: $c-orange;
+      border: 1px solid $c-orange;
+      background-color: $c-white;
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    &:hover {
+      color: $c-orange-hover;
+      border: 1px solid $c-orange-hover;
+    }
+
+    &:active {
+      color: $c-orange-pressed;
+      border: 1px solid $c-orange-pressed;
+    }
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-image: url(/images/icons/button.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      transition: 0.3s ease;
+    }
+    &:hover::before {
+      background-image: url(/images/icons/button-hover.svg);
+    }
+
+    &:active::before {
+      background-image: url(/images/icons/button-active.svg);
+    }
+  }
+
+  &__img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    &-curators {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+        padding-bottom: 70px;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+        padding-bottom: 60px;
+      }
+    }
+
+    &-masterclass {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 4;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.03));
+  }
+
+  &__content {
+    &-curators {
+      grid-column: 1 / -1;
+      padding-bottom: 60px;
+
+      @include onTablet {
+        grid-column: 4 / -1;
+        padding: 0;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / -1;
+      }
+    }
+
+    &-masterclass {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 4 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / -1;
+      }
+    }
+  }
+
+  &__date {
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-orange;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $main-font;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    color: $c-black;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      line-height: 30px;
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-gray;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__button {
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    text-align: center;
+    color: $c-white;
+    width: 100%;
+    height: 60px;
+    background-color: $c-orange;
+    border: none;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.03));
+
+    &:hover {
+      background-color: $c-orange-hover;
+    }
+
+    &:active {
+      background-color: $c-orange-pressed;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__bottom-button {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 60px;
+    width: 100%;
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 600;
+    color: $c-orange;
+    border: 1px solid $c-orange;
+    background-color: $c-white;
+    transition: 0.3s ease;
+    margin-top: 30px;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.03));
+
+    @include onTablet {
+      display: none;
+    }
+
+    &:hover {
+      color: $c-orange-hover;
+      border: 1px solid $c-orange-hover;
+    }
+
+    &:active {
+      color: $c-orange-pressed;
+      border: 1px solid $c-orange-pressed;
+    }
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-image: url(/images/icons/button.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      transition: 0.3s ease;
+    }
+
+    &:hover::before {
+      background-image: url(/images/icons/button-hover.svg);
+    }
+
+    &:active::before {
+      background-image: url(/images/icons/button-active.svg);
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.top-bar {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+
+  @include onTablet {
+    margin-bottom: 99px;
+  }
+
+  @include onDesktop {
+    height: 90px;
+    margin-bottom: 90px;
+  }
+
+  &__logo {
+    width: 123px;
+    height: 40px;
+    filter: brightness(0) invert(1);
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__nav {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__menu-icon {
+    background-image: url(/images/icons/menu.svg);
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(1);
+
+    @include hover(transform, scale(1.2));
+
+    @include onTablet {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__language {
+    position: relative;
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__language-button {
+    background-color: $c-green;
+    border: none;
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #f1f5f4;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.2));
+
+    &-img {
+      width: 35px;
+      height: 24px;
+    }
+  }
+
+  &__language-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $c-white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    width: max-content;
+  }
+
+  &__language-option {
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $c-green;
+      color: $c-white;
+    }
+  }
+}
+
+.top-bar__language:hover .top-bar__language-menu {
+  display: block;
+}
