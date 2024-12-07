@@ -1,23 +1,72 @@
 .exhibitions {
+  padding-top: 110px;
+
   &__container {
-    // display: flex;
-    // flex-direction: column;
+
+    display: flex;
+    flex-direction: column;
   }
 
-  &__header {}
+  &__header {
+
+    display: contents;
+
+    @include tablet-above {
+      @include grid-template;
+      margin-bottom: 69px;
+    }
+
+    @include desktop-above {}
+
+  }
 
   &__title {
     font-weight: 700;
-    font-size: rem(48/16);
-    /* 48/16 */
+    font-size: rem(28);
     line-height: 120%;
+    color: var(--color-black);
+    margin-bottom: 60px;
+
+    @include mobile-above {
+      font-size: rem(36);
+    }
+
+    @include tablet-above {
+      font-size: rem(40);
+      grid-column: 1/6;
+      margin-bottom: 0;
+    }
+
+    @include desktop-above {
+      font-size: rem(48);
+      grid-column: 1/11;
+    }
   }
 
-  &__header-button {}
+  &__header-button {
+    order: 2;
+
+    @include tablet-above {
+      grid-column: -2/-1;
+    }
+
+    @include desktop-above {
+      grid-column: -3/-1;
+    }
+  }
 
   &__header-decor {}
 
-  &__main {}
+  &__main {
+    margin-bottom: 30px;
+    @include grid-template;
+
+    @include tablet-above {
+      margin-bottom: 0;
+    }
+
+
+  }
 
   &__card {}
 }

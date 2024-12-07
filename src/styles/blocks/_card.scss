@@ -1,15 +1,50 @@
 .card {
+  grid-column: span 2;
 
-  &__image {}
+  @include tablet-above {
+    grid-column: span 3;
+  }
 
-  &__time {}
+  @include desktop-above {
+    grid-column: span 6;
+  }
 
-  &__title {}
+  &__image {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
 
-  &__descritprion {}
+  &__time {
+    color: var(--color-main);
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    color: var(--color-black);
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__descritprion {
+    color: var(--color-gray);
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
 
   &__button {
-    font-size: 4800;
-    /* 48px/1px */
+    // min-width: 210px;
+    // width: 100%;
+
+    @include tablet-above {
+      // max-width: fit-content;
+    }
   }
 }
