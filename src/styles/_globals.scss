@@ -115,15 +115,17 @@ h6 {
   color: var(--color-white);
   cursor: pointer;
 
-  max-width: 280px;
-  width: 100%;
-
   --color-main-hover: #AF3419;
   --color-main-pressed: #EA340D;
   --color-main-disabled: #DD836F;
+  max-width: 100%;
+  width: 100%;
+
 
   &--primary {
     background-color: var(--color-main);
+
+
 
     @include hover {
       background-color: var(--color-main-hover);
@@ -137,9 +139,14 @@ h6 {
       background-color: var(--color-main-disabled);
     }
 
+    @include mobile-above {
+      max-width: 280px;
+      width: 100%;
+    }
 
     @include tablet-above {
-      min-width: 330px;
+      max-width: 330px;
+      width: 100%;
     }
 
     @include desktop-above {
@@ -155,8 +162,8 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 210px;
-    max-width: 270px;
+    // min-width: 210px;
+    // max-width: 270px;
 
     @include hover {
       border: 1px solid var(--color-main-hover);
@@ -173,15 +180,22 @@ h6 {
       border: var(--color-main-disabled);
       color: var(--color-main-disabled);
     }
+
+    @include mobile-above {
+      max-width: 280px;
+      width: 100%;
+    }
+
+
+    @include tablet-above {
+      max-width: 210px;
+    }
+
+    @include desktop-above {
+      min-width: 270px;
+    }
   }
 
-  @include tablet-above {
-    max-width: 210px;
-  }
-
-  @include desktop-above {
-    min-width: 270px;
-  }
 }
 
 .main-text {
