@@ -7,55 +7,25 @@
     flex-direction: column;
   }
 
-  &__header {
-
-    display: contents;
-
-    @include tablet-above {
-      @include grid-template;
-      margin-bottom: 69px;
-    }
-
-    @include desktop-above {}
-
-  }
+  &__header {}
 
   &__title {
-    font-weight: 700;
-    font-size: rem(28);
-    line-height: 120%;
-    color: var(--color-black);
     margin-bottom: 60px;
 
-    @include mobile-above {
-      font-size: rem(40);
-    }
-
     @include tablet-above {
-      font-size: rem(36);
       grid-column: 1/5;
       margin-bottom: 0;
     }
 
     @include desktop-above {
-      font-size: rem(48);
       grid-column: 1/11;
     }
   }
 
   &__header-button {
-    order: 2;
 
-    @include tablet-above {
-      grid-column: -3/-1;
-    }
 
-    @include desktop-above {
-      grid-column: -3/-1;
-    }
   }
-
-  &__header-decor {}
 
   &__main {
     margin-bottom: 30px;
@@ -68,5 +38,20 @@
 
   }
 
-  &__card {}
+  &__card {
+
+    grid-column: span 2;
+
+    @include tablet-above {
+      grid-column: span 3;
+    }
+
+    @include desktop-above {
+      grid-column: span 6;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
 }
