@@ -1,16 +1,25 @@
 .section-top {
   display: contents;
 
+  @include mobile-above {
+    margin-bottom: 70px;
+  }
+
   @include tablet-above {
     @include grid-template;
-    margin-bottom: 69px;
+    align-items: center;
+    margin-bottom: 68px;
   }
+
+  @include desktop-above {}
+
 
   &__title {
     font-weight: 700;
     font-size: rem(28);
     line-height: 120%;
     color: var(--color-black);
+    margin-bottom: 70px;
 
     @include mobile-above {
       font-size: rem(40);
@@ -19,6 +28,7 @@
     @include tablet-above {
       grid-column: 1/5;
       font-size: rem(36);
+      margin-bottom: 0;
     }
 
     @include desktop-above {

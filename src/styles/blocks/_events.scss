@@ -1,24 +1,22 @@
 .events {
-  padding-top: 120px;
+  margin-bottom: 90px;
 
   @include tablet-above {
     font-size: 16px;
-
-    &:not(:last-child) {
-      padding-top: 160px;
-    }
+    margin-bottom: 100px;
   }
 
   @include desktop-above {
-    padding-top: 200px;
+    margin-bottom: 110px;
   }
-
 
   &__container {
     display: flex;
     flex-direction: column;
-
   }
+
+  &__header {}
+
 
   &__main {
     @include grid-template;
@@ -74,6 +72,8 @@
 
     &-image {
       grid-column: span 2;
+      max-height: 425px;
+      object-fit: cover;
 
       &:not(:last-child) {
         margin-bottom: 0;
@@ -85,10 +85,12 @@
 
       @include tablet-above {
         grid-column: span 3;
+
       }
 
       @include desktop-above {
         grid-column: 1/5;
+        max-height: 475px;
       }
     }
 
@@ -112,25 +114,17 @@
 
 
   &__title {
-    // font-size: rem(20);
 
-    @include mobile-above {
-      // font-size: rem(18);
-    }
 
-    @include tablet-above {
-      // font-size: rem(36);
-    }
+    @include mobile-above {}
+
+    @include tablet-above {}
 
     @include desktop-above {
-      // font-size: rem(48);
+
       grid-column: 1/11;
     }
 
-
-    &:not(:last-child) {
-      margin-bottom: 10px;
-    }
 
   }
 

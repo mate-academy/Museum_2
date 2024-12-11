@@ -1,16 +1,15 @@
-.exhibitions {
-  margin-bottom: 120px;
+.news {
+  margin-bottom: 200px;
 
   @include tablet-above {
     margin-bottom: 160px;
   }
 
   @include desktop-above {
-    margin-bottom: 200px;
+    grid-column: span 6;
   }
 
   &__container {
-
     display: flex;
     flex-direction: column;
   }
@@ -21,15 +20,14 @@
 
   &__header-button {}
 
+  &__header-decor {}
+
   &__main {
-
     @include grid-template;
-
   }
 
   &__card {
-
-    grid-column: span 2;
+    grid-column: 1/-1;
 
     @include tablet-above {
       grid-column: span 3;
@@ -39,8 +37,24 @@
       grid-column: span 6;
     }
 
-    &:not(:last-child) {
-      margin-bottom: 60px;
+    &-image {
+      object-fit: cover;
+      // aspect-ratio: 570/370;
     }
+
+    &-info {}
+
+    &-time {}
+
+    &-title {
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+    }
+
+    &-description {}
   }
+
+
+
 }
