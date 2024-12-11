@@ -20,35 +20,41 @@ document
   });
 
 // Обробник кліку для кнопки меню
-document
-  .querySelector('.header__menu')
-  .addEventListener('click', function (event) {
+const menuButton = document.querySelector('.header__menu');
+const closeButton = document.querySelector('.nav__header-close-button');
+const menuLinks = document.querySelectorAll('.nav__menu-list a');
+const nav = document.querySelector('.nav');
+
+if (menuButton) {
+  menuButton.addEventListener('click', (event) => {
     event.preventDefault();
-    const nav = document.querySelector('.nav');
-    nav.classList.toggle('nav--open');
-    body.classList.toggle('no-scroll');
+    toggleMenu();
   });
+}
 
-// Обробник кліку для кнопки закриття меню
-document
-  .querySelector('.nav__header-close-button')
-  .addEventListener('click', function (event) {
+if (closeButton) {
+  closeButton.addEventListener('click', (event) => {
     event.preventDefault();
-    document.querySelector('.nav').classList.remove('nav--open');
-    document.querySelector('.body').classList.remove('no-scroll');
+    closeMenu();
   });
+}
 
-// Закриття після вибору посилання з меню
-document.addEventListener('DOMContentLoaded', function () {
-  const menuLinks = document.querySelectorAll('.nav__menu-list a');
-  const nav = document.querySelector('.nav');
-
-  menuLinks.forEach((link) => {
-    link.addEventListener('click', function () {
-      nav.classList.remove('nav--open');
-    });
+menuLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    closeMenu();
+    body.classList.remove('no-scroll');
   });
 });
+
+function toggleMenu() {
+  nav.classList.toggle('nav--open');
+  body.classList.toggle('no-scroll');
+}
+
+function closeMenu() {
+  nav.classList.remove('nav--open');
+  body.classList.remove('no-scroll');
+}
 
 // e-mail error message
 document.getElementById('subscribeForm').addEventListener('submit', function (event) {
