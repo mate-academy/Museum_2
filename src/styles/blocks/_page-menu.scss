@@ -1,0 +1,33 @@
+.page {
+  scroll-behavior: smooth;
+
+  height: 100vh;
+  z-index: 1;
+  overflow: auto;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: all 0.3s ease;
+    opacity: 1;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    @include on-tablet {
+      transform: translateX(-100%);
+    }
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}

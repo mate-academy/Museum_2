@@ -1,0 +1,95 @@
+button {
+  width: 100%;
+
+  @include hover(transform, scale(1.1));
+}
+
+.button {
+  &-primary {
+    cursor: pointer;
+    display: block;
+    max-width: 280px;
+    padding-block: 22px;
+    border: none;
+    color: $color-white;
+    background-color: $color-main;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      max-width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+
+    &:hover {
+      background-color: $color-hover;
+    }
+
+    &:active {
+      background-color: $color-pressed;
+    }
+
+    &:disabled {
+      background-color: $color-disabled;
+    }
+  }
+
+  &-secondary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 278px;
+    height: 58px;
+    color: $color-main;
+    border: 1px solid $color-main;
+
+    order: 1;
+    grid-column: 1 / -1;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      width: 208px;
+      justify-self: end;
+
+      order: 0;
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      width: 268px;
+
+      grid-column: 10 / -1;
+    }
+
+    &::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-image: url('../images/icons/arrow-main.svg');
+    }
+
+    &:hover {
+      border-color: $color-hover;
+      color: $color-hover;
+    }
+
+    &:active {
+      border-color: $color-pressed;
+      color: $color-pressed;
+    }
+
+    &:disabled {
+      border-color: $color-disabled;
+      color: $color-disabled;
+    }
+  }
+}

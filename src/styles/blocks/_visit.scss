@@ -1,0 +1,53 @@
+.visit {
+  background-color: $color-background;
+
+  &__content {
+    @include page-grid;
+
+    position: relative;
+    color: $color-white;
+  }
+
+  &__image {
+    display: none;
+    height: 800px;
+    object-fit: cover;
+
+    grid-column: 1 / 6;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__main {
+    grid-column: 1 / -1;
+
+    padding-block: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+
+      padding-block: 80px;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+
+      padding-block: 205px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    color: $color-white;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 60px;
+    }
+  }
+}
