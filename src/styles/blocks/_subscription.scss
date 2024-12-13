@@ -1,0 +1,104 @@
+.subscription {
+  @include page-grid;
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    margin-bottom: 20px;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    max-width: 100%;
+    height: 28px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-bottom: solid 1px;
+    transition: all 0.3s ease;
+    color: $color-black;
+
+    @include hover(transform, scale(1.1));
+
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      color: $color-black;
+      font-family: $font-secondary;
+    }
+
+    &:hover {
+      color: $color-main;
+
+      &::placeholder {
+        color: $color-main;
+      }
+    }
+
+    &:focus {
+      color: $color-black;
+      border-color: $color-main;
+
+      &::placeholder {
+        color: $color-main;
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      color: $color-black;
+      border-color: $color-black;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+}

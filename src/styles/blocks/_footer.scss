@@ -1,0 +1,168 @@
+.footer {
+  color: $color-white;
+  background-color: $color-background;
+
+  &__content {
+    padding: 34px 0 30px;
+
+    @include on-tablet {
+      padding: 50px 0 30px;
+    }
+  }
+
+  &__top {
+    @include page-grid;
+
+    margin-bottom: 60px;
+    row-gap: 50px;
+
+    @include on-desktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contact {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
+
+    &-address {
+      margin-bottom: 30px;
+
+      @include on-tablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &-link {
+      @extend %main-font;
+    }
+
+    &-info,
+    &-link {
+      @include hover(transform, scale(1.1));
+
+      &:hover {
+        color: $color-main;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__shedule {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 3 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__worktime-item p {
+    @extend %main-font;
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 9 / -1;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      @include on-tablet {
+        gap: 10px;
+      }
+    }
+
+    &-link {
+      @extend %main-font;
+
+      position: relative;
+
+      &:hover {
+        color: $color-main;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        opacity: 0;
+        background-color: $color-main;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    grid-column: 1 / -1;
+
+    p {
+      color: $color-white;
+    }
+
+    &--left {
+      display: flex;
+      gap: 22px;
+      font-size: 14px;
+
+      @include on-desktop {
+        gap: 102px;
+      }
+    }
+  }
+
+  &__go-up-img {
+    display: block;
+
+    &:hover {
+      border-radius: 50%;
+      border: 1px solid $color-main;
+      background-color: $color-main;
+    }
+  }
+}
