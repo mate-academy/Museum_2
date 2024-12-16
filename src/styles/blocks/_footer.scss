@@ -1,0 +1,136 @@
+.footer {
+  background-color: var(--color-background);
+  padding-block: 50px 30px;
+
+  &__container {
+    @include grid-template;
+    row-gap: 60px;
+  }
+
+  &__contacts {
+    grid-column: span 4;
+  }
+
+  &__title {
+
+    margin-bottom: 10px;
+
+    @include tablet-above {
+      margin-bottom: 30px;
+    }
+
+    @include desktop-above {}
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 50px;
+  }
+
+  &__soc1al {}
+
+  &__schedule {
+    grid-column: span 4;
+
+
+  }
+
+  &__main {
+    grid-column: span 4;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px
+  }
+
+  &__menu-item {}
+
+  &__menu-link {
+    display: block;
+    padding-block: 4px;
+    width: max-content;
+    position: relative;
+    transition: all var(--transition-duration);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-main);
+      transition: all var(--transition-duration);
+    }
+
+    @include hover {
+      color: var(--color-main-hover);
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &__bottom {
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 102px;
+  }
+
+  &__copyright {}
+
+  &__privacy {
+    margin-right: auto;
+  }
+
+  &__scroll-up {
+    transition: all var(--transition-duration);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include hover {
+      color: var(--color-main-hover);
+      scale: 1.2;
+    }
+  }
+}
+
+
+.soc1al {
+  display: flex;
+  gap: 25px;
+
+  &__link {
+    transition: all var(--transition-duration);
+
+    @include hover {
+      color: var(--color-main);
+      scale: 1.15;
+    }
+  }
+
+  &__telegram {}
+
+  &__instagram {}
+}
+
+.schedule {
+
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__item {}
+}

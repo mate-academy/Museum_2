@@ -28,7 +28,6 @@ h4,
 h5,
 h6 {
   font-family: var(--font-family-second);
-  font-family: 'Playfair Display';
   font-weight: 700;
   letter-spacing: 0;
 }
@@ -104,7 +103,7 @@ h6 {
 }
 
 .button {
-  font-family: var(--font-family-second);
+  font-family: var(--font-family-main);
   font-size: rem(16);
   height: var(--button-height);
   line-height: 1;
@@ -198,7 +197,7 @@ h6 {
 }
 
 .main-text {
-  font-family: var(--font-family-second);
+  font-family: var(--font-family-main);
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0;
@@ -210,4 +209,39 @@ h6 {
   /* 14/16 */
   line-height: 1.4;
   letter-spacing: 0;
+}
+
+.input {
+  border: none;
+  outline: none;
+  color: var(--color-black);
+  border-bottom: 1px solid var(--color-black);
+  background-color: transparent;
+  transition: all var(--transition-duration);
+  font-weight: 700;
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-black);
+    transition: all var(--transition-duration);
+  }
+
+  @include hover {
+    border-bottom: 1px solid var(--color-main);
+    color: var(--color-main);
+
+
+    &::placeholder {
+      color: var(--color-main);
+    }
+  }
+
+  &:focus {
+    border-bottom: 1px solid var(--color-main);
+    color: var(--color-main);
+  }
+
+
 }
