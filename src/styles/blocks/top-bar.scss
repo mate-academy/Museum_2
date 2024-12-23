@@ -1,0 +1,80 @@
+.top-bar {
+  box-sizing: border-box;
+  background-color: $background-color;
+  padding-block: 20px;
+  padding-inline: 20px;
+  text-decoration: $effect-duration;
+
+  @include on-desktop {
+    padding-block: 26px;
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-block: 26px;
+    padding-inline: 55px;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    display: flex;
+    text-decoration: $effect-duration;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
+
+  &__icons-list {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+
+    @include on-tablet {
+      flex-direction: row-reverse;
+      gap: 40px;
+    }
+
+    @include on-desktop {
+      flex-direction: row-reverse;
+      gap: 40px;
+    }
+  }
+
+  &__language {
+    border: none;
+    background-color: inherit;
+    color: $white-color;
+    font-size: inherit;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+
+    cursor: pointer;
+
+    &:focus {
+      background-color: $background-color;
+    }
+
+    &--mob--hide {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+      }
+    }
+  }
+}

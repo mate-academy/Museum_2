@@ -1,0 +1,107 @@
+.exhibition {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+
+  &__link {
+    position: relative;
+    height: 356px;
+    margin-bottom: 20px;
+    transition-duration: $effect-duration;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--1 {
+      background-image: url(../images/Angels-small.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include on-desktop {
+        background-image: url(../images/Angels-big.svg);
+      }
+    }
+
+    &--2 {
+      background-image: url(../images/Portrait-small.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include on-desktop {
+        background-image: url(../images/Portrait-big.svg);
+      }
+    }
+
+    @include on-tablet {
+      height: 420px;
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      height: 484px;
+      margin-bottom: 20px;
+    }
+
+    @include hover-scale;
+  }
+
+  &--1 {
+    grid-column: 1/ -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &--2 {
+    grid-column: 1/ -1;
+  }
+
+  @include on-tablet {
+    grid-column: span 3;
+  }
+
+  @include on-desktop {
+    grid-column: span 6;
+  }
+
+  &__period {
+    margin-bottom: 10px;
+    color: $main-color;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__buy-button {
+    margin-bottom: 0;
+    text-decoration: $effect-duration;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include on-desktop {
+      width: calc(50% - (30px / 2));
+    }
+  }
+}
