@@ -1,7 +1,60 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import './blocks/header';
+@import './blocks/top-bar';
+@import './blocks/aside-menu';
+@import './blocks/current-exhibitions';
+@import './blocks/card';
+@import './blocks/upcoming-events';
+@import './blocks/visit';
+@import './blocks/news';
+@import './blocks/subscribe';
+@import './blocks/footer';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  background: #eee;
+  font-family: Raleway, serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $c-white;
+}
+
+.button {
+  font-family: Raleway, serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: $c-white;
+  cursor: pointer;
+
+  border: none;
+  box-sizing: border-box;
+  width: 279px;
+  background-color: #cd4d31;
+  padding-block: 22px;
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+
+  @include hover(background-color, #af3419);
+
+  &:focus {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
 }
