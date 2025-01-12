@@ -1,9 +1,13 @@
 .menu {
-  display: none;
+  // display: none;
   background-color: var(--color-background);
   position: absolute;
   inset: 0;
+  left: -1000%;
   overflow-y: auto;
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
 
   &__top {
     margin-bottom: 10px;
@@ -40,7 +44,6 @@
   &__content {
     @include grid-template;
     position: relative;
-
   }
 
   &__info {
@@ -59,19 +62,11 @@
     @include desktop-above {
       grid-column: 1/8;
       margin-bottom: 70px;
-
     }
   }
 
-  &__info-item {}
-
-  &__info-sub {}
-
-  &__info-text {}
-
   &__nav {
     grid-column: 1/-1;
-
 
     @include tablet-above {}
 
@@ -83,7 +78,6 @@
   &__button {
     grid-column: 1/-1;
 
-
     @include tablet-above {
       margin-bottom: 30px;
     }
@@ -91,11 +85,9 @@
     @include desktop-above {
       grid-column: 1/7;
     }
-
   }
 
   &__image {
-
     display: none;
 
     @include tablet-above {
@@ -112,48 +104,12 @@
       right: calc(var(--container-padding-x) * -1);
       max-width: 100%;
     }
-
-
   }
 }
 
-.navigation {
-
-  &__list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
-
-    @include tablet-above {
-      gap: 30px;
-      padding-bottom: 50px;
-      margin-bottom: 50px;
-    }
-
-    @include desktop-above {
-      gap: 60px;
-      padding-bottom: 60px;
-      margin-bottom: 60px;
-    }
-
-  }
-
-  &__item {}
-
-  &__link {
-
-    font-family: var(--font-family-second);
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 150%;
-
-    @include tablet-above {
-      font-size: 48px;
-      line-height: 120%;
-    }
-  }
+.active {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
 }
