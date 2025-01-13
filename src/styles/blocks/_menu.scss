@@ -1,13 +1,14 @@
 .menu {
   // display: none;
   background-color: var(--color-background);
-  position: absolute;
+  position: fixed;
   inset: 0;
-  left: -1000%;
   overflow-y: auto;
   z-index: 0;
   opacity: 0;
-  visibility: hidden;
+  // visibility: hidden;
+  pointer-events: none;
+  transition: all var(--transition-duration);
 
   &__top {
     margin-bottom: 10px;
@@ -23,6 +24,7 @@
     &-button {
       order: 2;
       margin-left: 0;
+      cursor: pointer;
 
       @include tablet-above {
         order: 1;
@@ -108,8 +110,7 @@
 }
 
 .active {
-  left: 0;
   opacity: 1;
-  visibility: visible;
   z-index: 2;
+  pointer-events: all;
 }
