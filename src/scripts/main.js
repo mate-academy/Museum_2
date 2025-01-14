@@ -1,5 +1,6 @@
 'use strict';
 
+
 const topBar = document.querySelector('.header__top');
 const menuBurger = topBar.querySelector('.header__top-button');
 const menu = document.querySelector('.menu');
