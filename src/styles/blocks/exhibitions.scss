@@ -1,0 +1,69 @@
+.exhibitions {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  @include page-grid;
+
+  &__content {
+    margin-bottom: 120px;
+    padding-inline: 20px;
+
+    @include on-tablet {
+      margin-bottom: 160px;
+      padding-inline: 39px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 200px;
+      padding-inline: 55px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 9;
+    }
+  }
+
+  &__button {
+    text-decoration: none;
+    grid-column: 1/ -1;
+
+    @include on-tablet {
+      grid-column: 5 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 10 / 13;
+    }
+
+    &--top {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+      }
+
+      @include on-desktop {
+        display: flex;
+      }
+    }
+
+    &--bottom {
+      @include on-tablet {
+        display: none;
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+  }
+}
