@@ -310,6 +310,10 @@
     justify-content: space-between;
     align-items: center;
 
+    @include on-tablet {
+      align-items: start;
+    }
+
     @include on-desktop {
       gap: 30px;
       object-fit: cover;
@@ -840,12 +844,23 @@
     margin-left: 40px;
   }
 
+  @include on-desktop {
+    margin-left: 55px;
+  }
+
   &__case {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 20px;
+    padding-top: 120px;
+
     @include on-desktop {
-      display: flex;
+      justify-content: start;
       flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
+      gap: 130px;
+      padding-bottom: 50px;
     }
   }
 
@@ -854,24 +869,25 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    width: 280px;
     height: 60px;
     background-color: #cd4d31;
     color: $main-text-color;
     font-size: 16px;
-    line-height: 16px;
-    font-weight: 600;
-
-    border: none;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    width: 280px;
 
     @include on-tablet {
       width: 330px;
     }
 
     @include on-desktop {
-      margin: 0;
       width: 270px;
+      height: 60px;
     }
+
+    border: none;
 
     &:hover {
       background-color: #af3419;
@@ -883,20 +899,25 @@
     }
   }
 
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include on-desktop {
+      gap: 40px;
+    }
+  }
+
   &__text {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left;
-    margin-bottom: 50px;
+    margin: 0;
+    padding-bottom: 50px;
     width: 280px;
+    height: 96px;
 
     @include on-tablet {
       width: 570px;
-    }
-
-    @include on-desktop {
-      margin-top: 200px;
+      height: 48px;
     }
   }
 
@@ -909,14 +930,9 @@
     outline: none;
     border: 0;
     border-bottom: 1px solid #1c1b29;
-    margin-bottom: 30px;
 
     @include on-tablet {
       width: 470px;
-    }
-
-    @include on-desktop {
-      margin-bottom: 40px;
     }
 
     &::placeholder {
@@ -960,19 +976,18 @@
 
   .center__text {
     font-family: 'Playfair Display', sans-serif;
-    margin: 120px 0 20px;
     font-size: 28px;
     font-weight: 700;
     line-height: 35px;
     text-align: left;
     width: 280px;
+    margin: 0;
 
     @include on-tablet {
       font-size: 40px;
       font-weight: 700;
       line-height: 50px;
       width: 690px;
-      margin: 160px 0 20px;
     }
 
     @include on-desktop {
@@ -980,7 +995,6 @@
       font-weight: 700;
       line-height: 57.6px;
       width: 570px;
-      margin: 200px 0 50px;
     }
   }
 }
