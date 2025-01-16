@@ -1,33 +1,38 @@
-import { I18n } from "i18n-js";
-import en from "./en";
-import ua from "./ua";
+import { I18n } from 'i18n-js';
+import en from './en';
+import ua from './ua';
 
-const translations = { en, ua }
+const translations = { en, ua };
 const i18n = new I18n(translations);
-i18n.locale = 'ua'
-i18n.defaultLocale = 'ua'
+i18n.locale = 'ua';
+i18n.defaultLocale = 'ua';
 
-const changeButton = document.querySelector('.top-bar__lang')
-const langUa = changeButton.querySelectorAll('span')[0];
-const langEn = changeButton.querySelectorAll('span')[1];
+const langButtons = document.querySelectorAll('[data-lang]');
 
-langUa.addEventListener('click', (e) => {
-  changeLanguage('ua')
-  console.log(e.target);
+console.log(langButtons);
 
-})
-langEn.addEventListener('click', (e) => {
-  changeLanguage('en')
-  console.log(e.target);
-})
+if (langButtons.length) {
+  langButtons.forEach((langButton) => {
+    langButton.addEventListener('click', (e) => {
+      langButton.textContent === 'UA'
+        ? changeLanguage('ua')
+        : changeLanguage('en');
+    });
+  });
+} else {
+  console.warn('Language buttons not found.');
+}
 
 function updateTranslations() {
-  document.querySelector('[data-header-top-data-start]').textContent = i18n.t('data-header-top-data-start')
-
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    el.textContent = i18n.t(key);
+  });
 }
 
 function changeLanguage(lang) {
-  I18n.locale = lang;
+  i18n.locale = lang;
   updateTranslations();
 }
+
 updateTranslations();
