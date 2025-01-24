@@ -1,0 +1,42 @@
+.input {
+  background: none;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $black;
+  padding: 0;
+  padding-bottom: 3px;
+
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: $black;
+
+  transition: all linear $during;
+
+  &::placeholder {
+    @extend %p;
+
+    transition: color linear $during;
+    color: $black;
+  }
+
+  &:focus {
+    caret-color: $main;
+    border-color: $main;
+    outline: none;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    border-color: $main;
+
+    &::placeholder {
+      color: $main;
+    }
+  }
+}

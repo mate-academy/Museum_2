@@ -1,0 +1,66 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  &__block--img {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 30%;
+
+
+    @include hover(scale, 1.2);
+  }
+
+  &__date {
+    color: $main;
+    margin-top: 20px;
+
+    &--black {
+      color: $black;
+
+      @extend %additional;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+
+    &__no-margin {
+      margin-top: 0;
+    }
+  }
+
+  &__block--bottom {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      height: 100%;
+      justify-content: end;
+    }
+  }
+
+  &__description {
+    color: $gray;
+    margin-top: 20px;
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 40px;
+    }
+
+    @include on-desktop {
+      margin-top: 50px;
+    }
+  }
+}

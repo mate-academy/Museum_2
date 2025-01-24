@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include on-tablet {
+    @include page-grid;
+  }
+
+  &__column {
+    row-gap: 60px;
+
+    @include on-tablet {
+      row-gap: 70px;
+    }
+
+    @include on-desktop {
+      row-gap: 60px;
+    }
+  }
+
+  &__card--row {
+    @include on-tablet {
+      @include page-grid;
+
+      grid-column: 1 / -1;
+    }
+
+    &-image {
+      grid-column: 1 / 4 ;
+
+      @include on-desktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &-button {
+      @include on-tablet {
+        margin-top: 50px;
+      }
+    }
+
+    &-date {
+      @include on-tablet {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__card--block-right {
+    grid-column: 4 / -1;
+
+    @include on-desktop {
+      grid-column: 5 / -3;
+    }
+  }
+
+  &__card--column {
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+
+  }
+}
+

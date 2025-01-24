@@ -1,0 +1,47 @@
+.page {
+  @extend %p;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background-color: $white;
+    min-width: $phone-min-width;
+  }
+
+  &__menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
+
+  &__main {
+    padding-block: 90px;
+
+    @include on-tablet {
+      padding-top: 100px;
+      padding-bottom: 128px;
+    }
+
+    @include on-desktop {
+      padding-top: 110px;
+      padding-bottom: 200px;
+    }
+  }
+}
+
+.page:has(.page__menu:target) {
+  overflow: hidden; /* not to scroll the page */
+}
