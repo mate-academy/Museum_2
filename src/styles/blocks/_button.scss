@@ -1,0 +1,100 @@
+.button {
+  width: 100%;
+  display: block;
+  padding-block: 22px;
+  border: none;
+  text-align: center;
+
+  @extend %button;
+
+  @include on-desktop {
+    max-width: 270px;
+  }
+
+  &__primary {
+    background-color: $main;
+
+    @include hover(background-color, #AF3419);
+
+    &:active {
+      background-color: #EA340D;
+    }
+
+    &:disabled {
+      background-color: #DD836F;
+    }
+  }
+
+  &__secondary {
+    background: none;
+    box-sizing: border-box;
+    border: 1px solid $main;
+    color: $main;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    transition: all 0.3s;
+
+    &::after {
+      content: '';
+      mask-image: url(../images/arrows/arrow.svg);
+      mask-size: cover;
+      background-color: $main;
+      width: 20px;
+      height: 20px;
+      transition: all linear 0.3s;
+    }
+
+    &:hover {
+      border-color: #AF3419;
+      color: #AF3419;
+
+      &::after {
+        background-color: #AF3419;
+      }
+    }
+
+    &:active {
+      border-color: #EA340D;
+      color: #EA340D;
+
+      &::after {
+        background-color: #EA340D;
+      }
+    }
+
+    &:disabled {
+      border-color: #DD836F;
+      color: #DD836F;
+
+      &::after {
+        background-color: #DD836F;
+      }
+    }
+
+
+
+    &--phone {
+      margin-top: 30px;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    &--section {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+        grid-column: -3 / -1;
+      }
+
+      @include on-desktop {
+        display: flex;
+        grid-column: -4 / -1;
+      }
+    }
+  }
+}

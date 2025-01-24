@@ -1,0 +1,79 @@
+.visit {
+  padding-block: 50px;
+  background-color: $background;
+  margin-top: 90px;
+  box-sizing: border-box;
+
+  @include on-tablet {
+    padding-block: 80px;
+    margin-top: 100px;
+  }
+
+  @include on-desktop {
+    margin-top: 110px;
+    height: 800px;
+    position: relative;
+  }
+
+  &__container {
+    @include on-desktop {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
+
+  &__info {
+    color: $white;
+    place-self: center center;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -2;
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -3;
+    margin-top: 20px;
+
+    @include on-desktop {
+      margin-top: 10px;
+      grid-column: 6 / -3;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin-top: 60px;
+      grid-column: 1 / -4;
+    }
+
+    @include on-desktop {
+      margin-top: 50px;
+      grid-column: 6 / 9;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.header {
+  position: relative;
+  min-height: max-content;
+  background-color: $background;
+
+  @include on-desktop {
+      min-height: 800px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    color: $white;
+
+    @include on-tablet {
+      @include page-grid;
+
+      margin-top: 100px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 50px;
+      margin-top: 90px;
+    }
+  }
+
+  &__date {
+    @extend %additional;
+
+    grid-column: 1 / 3;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+    grid-column: 1 / -2;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__description {
+    margin-top: 30px;
+    grid-column: 1 / 4;
+
+    @include on-tablet {
+      margin-top: 20px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / 4;
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-tablet {
+      margin-top: 80px;
+    }
+  }
+
+  &__image {
+    margin-top: 40px;
+    width: 245px;
+    place-self: center end;
+    grid-column: 2 / -2;
+
+    @include on-tablet {
+      width: 100%;
+    }
+
+    @include on-desktop {
+      margin-top: 0;
+      position: absolute;
+      max-width: 625px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__line {
+    display: none;
+    grid-column: 1 / 7;
+
+
+    @include on-desktop {
+      margin-top: 135px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      opacity: 70%;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: $white;
+      opacity: 60%;
+    }
+  }
+
+}
