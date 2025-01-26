@@ -9,14 +9,36 @@ i18n.defaultLocale = 'ua';
 
 const langButtons = document.querySelectorAll('[data-lang]');
 
-console.log(langButtons);
+function showLang(lang) {
+  langButtons.forEach((item) => {
+    item.classList.add('hide');
+
+    if (item.textContent !== lang) {
+      item.classList.add('show');
+    } else {
+      item.classList.remove('hide');
+    }
+  });
+}
 
 if (langButtons.length) {
   langButtons.forEach((langButton) => {
     langButton.addEventListener('click', (e) => {
-      langButton.textContent === 'UA'
-        ? changeLanguage('ua')
-        : changeLanguage('en');
+      if (e.target.textContent.trim() === i18n.locale) {
+        return;
+      }
+      switch (e.target.textContent.trim()) {
+        case 'UA':
+          changeLanguage('ua');
+          showLang(e.target.textContent.trim());
+          return;
+        case 'EN':
+          changeLanguage('en');
+          showLang(e.target.textContent.trim());
+          return;
+        default:
+          return;
+      }
     });
   });
 } else {
