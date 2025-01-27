@@ -13,9 +13,7 @@ function showLang(lang) {
   langButtons.forEach((item) => {
     item.classList.add('hide');
 
-    if (item.textContent !== lang) {
-      item.classList.add('show');
-    } else {
+    if (item.getAttribute('data-lang') !== lang) {
       item.classList.remove('hide');
     }
   });
@@ -24,17 +22,19 @@ function showLang(lang) {
 if (langButtons.length) {
   langButtons.forEach((langButton) => {
     langButton.addEventListener('click', (e) => {
-      if (e.target.textContent.trim() === i18n.locale) {
+      const target = e.target.getAttribute('data-lang');
+
+      if (target === i18n.locale) {
         return;
       }
-      switch (e.target.textContent.trim()) {
-        case 'UA':
+      switch (target) {
+        case 'ua':
           changeLanguage('ua');
-          showLang(e.target.textContent.trim());
+          showLang(target);
           return;
-        case 'EN':
+        case 'en':
           changeLanguage('en');
-          showLang(e.target.textContent.trim());
+          showLang(target);
           return;
         default:
           return;
@@ -58,3 +58,4 @@ function changeLanguage(lang) {
 }
 
 updateTranslations();
+showLang(i18n.locale)
