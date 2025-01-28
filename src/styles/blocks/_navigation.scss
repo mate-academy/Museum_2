@@ -1,0 +1,36 @@
+@use "./utils/media";
+
+.navigation {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    @include media.tablet-above {
+      gap: 30px;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
+
+    @include media.desktop-above {
+      gap: 60px;
+      padding-bottom: 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    font-family: var(--font-family-second);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include media.tablet-above {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}

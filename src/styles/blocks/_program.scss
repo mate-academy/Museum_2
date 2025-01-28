@@ -1,0 +1,103 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
+.program {
+  background-color: var(--color-background);
+  padding-block: 50px;
+  margin-bottom: 90px;
+
+  @include media.tablet-above {
+    grid-column: span 5;
+    padding-block: 80px;
+    margin-bottom: 120px;
+  }
+
+  @include media.desktop-above {
+    grid-column: span 7;
+    padding-block: 0;
+    margin-bottom: 110px;
+  }
+
+  &__container {
+    align-items: center;
+
+    @include mixins.grid-template;
+  }
+
+  &__picture {
+    display: none;
+
+    @include media.desktop-above {
+      display: flex;
+      grid-column: span 5;
+      margin-left: -55px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__main {
+    grid-column: 1/-1;
+
+    @include media.tablet-above {
+      display: contents;
+
+      @include mixins.grid-template;
+    }
+
+    @include media.desktop-above {
+      grid-column: span 7;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 20px;
+
+    @include media.tablet-above {
+      grid-column: span 5;
+    }
+
+    @include media.desktop-above {
+      grid-column: span 6;
+      font-size: mixins.rem(64);
+    }
+
+    @include media.desktop-large-above {
+      margin-bottom: 10px;
+      font-size: mixins.rem(80);
+    }
+  }
+
+  &__text {
+    grid-column: 1/-1;
+    margin-bottom: 40px;
+
+    @include media.tablet-above {
+      margin-bottom: 60px;
+      grid-column: span 4;
+    }
+
+    @include media.desktop-above {
+      grid-column: span 5;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+
+    @include media.tablet-above {
+      grid-column: span 3;
+    }
+
+    @include media.desktop-above {
+      grid-column: span 3;
+    }
+  }
+}

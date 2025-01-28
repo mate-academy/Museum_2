@@ -1,0 +1,51 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
+.section-top {
+  display: contents;
+
+  @include media.mobile-above {
+    margin-bottom: 70px;
+  }
+
+  @include media.tablet-above {
+    @include mixins.grid-template;
+    align-items: center;
+    margin-bottom: 68px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: mixins.rem(28);
+    line-height: 120%;
+    color: var(--color-black);
+    margin-bottom: 70px;
+
+    @include media.mobile-above {
+      font-size: mixins.rem(40);
+    }
+
+    @include media.tablet-above {
+      grid-column: 1/5;
+      font-size: mixins.rem(36);
+      margin-bottom: 0;
+    }
+
+    @include media.desktop-above {
+      grid-column: 1/11;
+      font-size: mixins.rem(48);
+    }
+  }
+
+  &__button {
+    order: 2;
+
+    @include media.tablet-above {
+      grid-column: -3/-1;
+    }
+  }
+
+  &__decor {
+    padding-left: 8px;
+  }
+}

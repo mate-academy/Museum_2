@@ -1,0 +1,115 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
+.menu {
+  background-color: var(--color-background);
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-duration);
+
+  &__top {
+    margin-bottom: 10px;
+
+    @include media.tablet-above {
+      margin-bottom: 30px;
+    }
+
+    @include media.desktop-above {
+      margin-bottom: 40px;
+    }
+
+    &-button {
+      order: 2;
+      margin-left: 0;
+      cursor: pointer;
+
+      @include media.tablet-above {
+        order: 1;
+        margin-left: auto;
+      }
+    }
+
+    &-lang {
+      order: 1;
+      margin-left: auto;
+
+      @include media.tablet-above {
+        order: 2;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    @include mixins.grid-template;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    grid-column: 1/-1;
+
+    @include media.tablet-above {
+      flex-direction: row;
+      gap: 83px;
+      margin-bottom: 50px;
+    }
+
+    @include media.desktop-above {
+      grid-column: 1/8;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+
+    @include media.desktop-above {
+      grid-column: 1/8;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+
+    @include media.tablet-above {
+      margin-bottom: 30px;
+    }
+
+    @include media.desktop-above {
+      grid-column: 1/7;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include media.tablet-above {
+      display: block;
+      justify-self: center;
+      grid-column: 1/-1;
+      position: static;
+      max-width: 422px;
+    }
+
+    @include media.desktop-above {
+      grid-column: none;
+      position: absolute;
+      right: calc(var(--container-padding-x) * -1);
+      max-width: 100%;
+    }
+  }
+}
+
+.active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: all;
+}

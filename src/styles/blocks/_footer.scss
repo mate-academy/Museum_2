@@ -1,0 +1,132 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
+.footer {
+  background-color: var(--color-background);
+  padding-block: 50px 30px;
+
+  &__container {
+    row-gap: 60px;
+
+    @include mixins.grid-template;
+
+  }
+
+  &__contacts {
+    grid-column: 1/-1;
+
+    @include media.tablet-above {
+      grid-column: span 2;
+    }
+
+    @include media.desktop-above {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+
+    @include media.tablet-above {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 50px;
+  }
+
+  &__schedule {
+    grid-column: 1/-1;
+
+    @include media.tablet-above {
+      grid-column: span 2;
+    }
+
+    @include media.desktop-above {
+      grid-column: span 4;
+    }
+  }
+
+  &__main {
+    grid-column: 1/-1;
+
+    @include media.tablet-above {
+      grid-column: span 2;
+    }
+
+    @include media.desktop-above {
+      grid-column: span 4;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__menu-link {
+    display: block;
+    padding-block: 4px;
+    width: max-content;
+    position: relative;
+    transition: all var(--transition-duration);
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--color-main);
+      transition: all var(--transition-duration);
+    }
+
+    @include mixins.hover {
+      color: var(--color-main-hover);
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &__bottom {
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+
+    @include media.tablet-above {
+      gap: 102px;
+    }
+  }
+
+  &__privacy {
+    margin-right: auto;
+  }
+
+  &__scroll-up {
+    transition: all var(--transition-duration);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 30px;
+
+    right: var(--container-padding-x);
+
+    @include mixins.hover {
+      color: var(--color-main-hover);
+      scale: 1.2;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
+.news {
+  margin-bottom: 120px;
+
+  @include media.tablet-above {
+    margin-bottom: 160px;
+  }
+
+  @include media.desktop-above {
+    margin-bottom: 200px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main {
+    row-gap: 50px;
+
+    @include mixins.grid-template;
+  }
+
+  &__card {
+    grid-column: 1/-1;
+
+    @include media.tablet-above {
+      grid-column: span 3;
+    }
+
+    @include media.desktop-above {
+      grid-column: span 6;
+    }
+
+    &-image {
+      object-fit: cover;
+    }
+
+    &-title {
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+    }
+  }
+}
