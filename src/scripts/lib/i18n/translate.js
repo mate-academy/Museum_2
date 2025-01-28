@@ -48,7 +48,7 @@ if (langButtons.length) {
 function updateTranslations() {
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
-    el.textContent = i18n.t(key);
+    el.innerHTML = i18n.t(key);
   });
 }
 
