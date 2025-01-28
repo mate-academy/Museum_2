@@ -3,8 +3,15 @@
   color: #F1F5F4;
   padding: 0 20px;
 
-  &__content {
+  @include on-tablet {
+    padding: 0 38px;
+  }
 
+  @include on-desktop {
+   padding: 0 55px 0 0;
+  }
+
+  &__content {
     @include on-tablet {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -13,20 +20,10 @@
 
     @include on-desktop {
       grid-template-columns: repeat(12, 1fr);
-    }
-  }
-
-  &__photo {
-    display: none;
-
-    @include on-tablet {
-      display: none;
-    }
-
-    @include on-desktop {
-      display: block;
+      background-image: url(/src/images/visit-img.png);
+      background-repeat: no-repeat;
+      background-size: contain;
       width: 100%;
-      grid-column: 1 / 7;
     }
   }
 
@@ -46,7 +43,7 @@
     }
 
     @include on-desktop {
-      grid-column: 7 / -1;
+      grid-column: 6 / -1;
       font-size: 80px;
       padding-top: 205px;
     }
@@ -66,7 +63,7 @@
     }
 
     @include on-desktop {
-      grid-column: 7 / 11;
+      grid-column: 6 / 11;
       padding-top: 10px;
     }
   }
@@ -84,7 +81,7 @@
     }
 
     @include on-desktop {
-      grid-column: 7 / 9;
+      grid-column: 6 / 9;
       padding: 50px 0 205px;
     }
 

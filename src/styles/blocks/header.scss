@@ -4,12 +4,15 @@
 
   &__top {
     @include content-paddig-inline;
+
     height: 100vh;
   }
 
 
   &__content {
-    @include page-grid;
+    @include on-tablet {
+      @include page-grid;
+    }
   }
 
   a {
@@ -19,7 +22,6 @@
   &__middle {
     color: #F1F5F4;
     padding-top: 50px;
-    grid-column: span 2;
 
     @include on-tablet {
       grid-column: span 5;
@@ -90,7 +92,6 @@
       justify-content: center;
       align-items: center;
       display: block;
-      grid-column: span 2;
       height: 60px;
 
     @include on-tablet {
@@ -167,8 +168,6 @@
   }
 
   &__bottom {
-    padding: 0 18px;
-    grid-column: span 2;
 
     @include on-tablet {
       grid-column: 2 / 6;
