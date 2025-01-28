@@ -1,11 +1,14 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
 .exhibitions {
   margin-bottom: 120px;
 
-  @include tablet-above {
+  @include media.tablet-above {
     margin-bottom: 160px;
   }
 
-  @include desktop-above {
+  @include media.desktop-above {
     margin-bottom: 200px;
   }
 
@@ -15,17 +18,17 @@
   }
 
   &__main {
-    @include grid-template;
+    @include mixins.grid-template;
   }
 
   &__card {
     grid-column: span 2;
 
-    @include tablet-above {
+    @include media.tablet-above {
       grid-column: span 3;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: span 6;
     }
 

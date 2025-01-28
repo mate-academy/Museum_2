@@ -1,29 +1,32 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
 .program {
   background-color: var(--color-background);
   padding-block: 50px;
   margin-bottom: 90px;
 
-  @include tablet-above {
+  @include media.tablet-above {
     grid-column: span 5;
     padding-block: 80px;
     margin-bottom: 120px;
   }
 
-  @include desktop-above {
+  @include media.desktop-above {
     grid-column: span 7;
     padding-block: 0;
     margin-bottom: 110px;
   }
 
   &__container {
-    @include grid-template;
+    @include mixins.grid-template;
     align-items: center;
   }
 
   &__picture {
     display: none;
 
-    @include desktop-above {
+    @include media.desktop-above {
       display: flex;
       grid-column: span 5;
       margin-left: -55px;
@@ -37,12 +40,12 @@
   &__main {
     grid-column: 1/-1;
 
-    @include tablet-above {
+    @include media.tablet-above {
       display: contents;
-      @include grid-template;
+      @include mixins.grid-template;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: span 7;
       display: grid;
       grid-template-columns: repeat(7, 1fr);
@@ -54,18 +57,18 @@
     grid-column: 1/-1;
     margin-bottom: 20px;
 
-    @include tablet-above {
+    @include media.tablet-above {
       grid-column: span 5;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: span 6;
-      font-size: rem(64);
+      font-size: mixins.rem(64);
     }
 
-    @include desktop-large-above {
+    @include media.desktop-large-above {
       margin-bottom: 10px;
-      font-size: rem(80);
+      font-size: mixins.rem(80);
     }
   }
 
@@ -73,12 +76,12 @@
     grid-column: 1/-1;
     margin-bottom: 40px;
 
-    @include tablet-above {
+    @include media.tablet-above {
       margin-bottom: 60px;
       grid-column: span 4;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: span 5;
       margin-bottom: 50px;
     }
@@ -87,11 +90,11 @@
   &__button {
     grid-column: 1/-1;
 
-    @include tablet-above {
+    @include media.tablet-above {
       grid-column: span 3;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: span 3;
     }
   }

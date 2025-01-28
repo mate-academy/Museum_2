@@ -1,20 +1,23 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
 .footer {
   background-color: var(--color-background);
   padding-block: 50px 30px;
 
   &__container {
-    @include grid-template;
+    @include mixins.grid-template;
     row-gap: 60px;
   }
 
   &__contacts {
     grid-column: 1/-1;
 
-    @include tablet-above {
+    @include media.tablet-above {
       grid-column: span 2;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: span 4;
     }
   }
@@ -22,11 +25,11 @@
   &__title {
     margin-bottom: 10px;
 
-    @include tablet-above {
+    @include media.tablet-above {
       margin-bottom: 30px;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
     }
   }
 
@@ -40,11 +43,11 @@
   &__schedule {
     grid-column: 1/-1;
 
-    @include tablet-above {
+    @include media.tablet-above {
       grid-column: span 2;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: span 4;
     }
   }
@@ -52,11 +55,11 @@
   &__main {
     grid-column: 1/-1;
 
-    @include tablet-above {
+    @include media.tablet-above {
       grid-column: span 2;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: span 4;
     }
   }
@@ -86,7 +89,7 @@
       transition: all var(--transition-duration);
     }
 
-    @include hover {
+    @include mixins.hover {
       color: var(--color-main-hover);
 
       &::before {
@@ -102,7 +105,7 @@
     justify-content: space-between;
     gap: 22px;
 
-    @include tablet-above {
+    @include media.tablet-above {
       gap: 102px;
     }
   }
@@ -122,7 +125,7 @@
 
     right: var(--container-padding-x);
 
-    @include hover {
+    @include mixins.hover {
       color: var(--color-main-hover);
       scale: 1.2;
     }

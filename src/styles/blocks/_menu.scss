@@ -1,3 +1,6 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
 .menu {
   background-color: var(--color-background);
   position: fixed;
@@ -11,11 +14,11 @@
   &__top {
     margin-bottom: 10px;
 
-    @include tablet-above {
+    @include media.tablet-above {
       margin-bottom: 30px;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       margin-bottom: 40px;
     }
 
@@ -24,7 +27,7 @@
       margin-left: 0;
       cursor: pointer;
 
-      @include tablet-above {
+      @include media.tablet-above {
         order: 1;
         margin-left: auto;
       }
@@ -34,7 +37,7 @@
       order: 1;
       margin-left: auto;
 
-      @include tablet-above {
+      @include media.tablet-above {
         order: 2;
         margin-left: 0;
       }
@@ -42,7 +45,7 @@
   }
 
   &__content {
-    @include grid-template;
+    @include mixins.grid-template;
     position: relative;
   }
 
@@ -53,13 +56,13 @@
     margin-bottom: 40px;
     grid-column: 1/-1;
 
-    @include tablet-above {
+    @include media.tablet-above {
       flex-direction: row;
       gap: 83px;
       margin-bottom: 50px;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: 1/8;
       margin-bottom: 70px;
     }
@@ -68,10 +71,10 @@
   &__nav {
     grid-column: 1/-1;
 
-    @include tablet-above {
+    @include media.tablet-above {
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: 1/8;
     }
   }
@@ -79,11 +82,11 @@
   &__button {
     grid-column: 1/-1;
 
-    @include tablet-above {
+    @include media.tablet-above {
       margin-bottom: 30px;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: 1/7;
     }
   }
@@ -91,7 +94,7 @@
   &__image {
     display: none;
 
-    @include tablet-above {
+    @include media.tablet-above {
       display: block;
       justify-self: center;
       grid-column: 1/-1;
@@ -99,7 +102,7 @@
       max-width: 422px;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: none;
       position: absolute;
       right: calc(var(--container-padding-x) * -1);

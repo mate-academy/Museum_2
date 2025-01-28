@@ -1,46 +1,46 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
 .section-top {
   display: contents;
 
-  @include mobile-above {
+  @include media.mobile-above {
     margin-bottom: 70px;
   }
 
-  @include tablet-above {
-    @include grid-template;
+  @include media.tablet-above {
+    @include mixins.grid-template;
     align-items: center;
     margin-bottom: 68px;
   }
 
-  @include desktop-above {
-  }
-
   &__title {
     font-weight: 700;
-    font-size: rem(28);
+    font-size: mixins.rem(28);
     line-height: 120%;
     color: var(--color-black);
     margin-bottom: 70px;
 
-    @include mobile-above {
-      font-size: rem(40);
+    @include media.mobile-above {
+      font-size: mixins.rem(40);
     }
 
-    @include tablet-above {
+    @include media.tablet-above {
       grid-column: 1/5;
-      font-size: rem(36);
+      font-size: mixins.rem(36);
       margin-bottom: 0;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: 1/11;
-      font-size: rem(48);
+      font-size: mixins.rem(48);
     }
   }
 
   &__button {
     order: 2;
 
-    @include tablet-above {
+    @include media.tablet-above {
       grid-column: -3/-1;
     }
   }

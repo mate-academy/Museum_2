@@ -1,5 +1,7 @@
-// @use 'sass:math';
-// $base-font-size-for-mixin: 16;
+@use 'sass:math';
+$base-font-size-for-mixin: 16;
+@use './media';
+
 
 @mixin hover {
   @media (hover: hover) {
@@ -23,13 +25,13 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
 
-  @include tablet-above {
+  @include media.tablet-above {
     --grid-columns: 6;
 
     column-gap: 30px;
   }
 
-  @include desktop-above {
+  @include media.desktop-above {
     --grid-columns: 12;
   }
 }

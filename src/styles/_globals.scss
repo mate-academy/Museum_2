@@ -1,3 +1,4 @@
+@use "./utils/media";
 @use "./utils/mixins";
 
 body {
@@ -14,11 +15,11 @@ body {
   padding-inline: var(--container-padding-x);
   margin: 0 auto;
 
-  @include tablet-above {
+  @include media.tablet-above {
     --container-padding-x: 39px;
   }
 
-  @include desktop-above {
+  @include media.desktop-above {
     --container-padding-x: 55px;
   }
 }
@@ -35,65 +36,65 @@ h6 {
 }
 
 h1 {
-  font-size: rem(48);
+  font-size: mixins.rem(48);
   line-height: 1;
 
-  @include tablet-above {
-    font-size: rem(72);
+  @include media.tablet-above {
+    font-size: mixins.rem(72);
   }
 
-  @include desktop-above {
-    font-size: rem(78);
+  @include media.desktop-above {
+    font-size: mixins.rem(78);
   }
 
-  @include desktop-large-above {
-    font-size: rem(96);
+  @include media.desktop-large-above {
+    font-size: mixins.rem(96);
   }
 }
 
 h2 {
-  font-size: rem(38);
+  font-size: mixins.rem(38);
   line-height: 1;
   letter-spacing: -1px;
 
-  @include tablet-above {
-    font-size: rem(62);
+  @include media.tablet-above {
+    font-size: mixins.rem(62);
     line-height: 1;
   }
 
-  @include desktop-above {
-    font-size: rem(80);
+  @include media.desktop-above {
+    font-size: mixins.rem(80);
     line-height: 1;
   }
 }
 
 h3 {
-  font-size: rem(28);
+  font-size: mixins.rem(28);
   line-height: 1.2;
 
-  @include tablet-above {
-    font-size: rem(40);
+  @include media.tablet-above {
+    font-size: mixins.rem(40);
     line-height: 1.25;
   }
 
-  @include desktop-above {
-    font-size: rem(58);
+  @include media.desktop-above {
+    font-size: mixins.rem(58);
     line-height: 1.2;
   }
 }
 
 h4 {
-  font-size: rem(24);
+  font-size: mixins.rem(24);
   line-height: 1.25;
 }
 
 h5 {
-  font-size: rem(20);
+  font-size: mixins.rem(20);
   line-height: 1.5;
 }
 
 h6 {
-  font-size: rem(14);
+  font-size: mixins.rem(14);
   line-height: 1.25;
 }
 
@@ -103,7 +104,7 @@ h6 {
   --color-main-disabled: #dd836f;
 
   font-family: var(--font-family-main);
-  font-size: rem(16);
+  font-size: mixins.rem(16);
   height: var(--button-height);
   line-height: 1;
   font-weight: 700;
@@ -119,7 +120,7 @@ h6 {
   &--primary {
     background-color: var(--color-main);
 
-    @include hover {
+    @include mixins.hover {
       background-color: var(--color-main-hover);
     }
 
@@ -131,17 +132,17 @@ h6 {
       background-color: var(--color-main-disabled);
     }
 
-    @include mobile-above {
+    @include media.mobile-above {
       max-width: 280px;
       width: 100%;
     }
 
-    @include tablet-above {
+    @include media.tablet-above {
       max-width: 330px;
       width: 100%;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       min-width: 270px;
     }
   }
@@ -154,7 +155,7 @@ h6 {
     align-items: center;
     justify-content: center;
 
-    @include hover {
+    @include mixins.hover {
       border: 1px solid var(--color-main-hover);
       color: var(--color-main-hover);
     }
@@ -169,16 +170,16 @@ h6 {
       color: var(--color-main-disabled);
     }
 
-    @include mobile-above {
+    @include media.mobile-above {
       max-width: 280px;
       width: 100%;
     }
 
-    @include tablet-above {
+    @include media.tablet-above {
       max-width: 210px;
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       min-width: 270px;
     }
   }
@@ -215,7 +216,7 @@ h6 {
     transition: all var(--transition-duration);
   }
 
-  @include hover {
+  @include mixins.hover {
     border-bottom: 1px solid var(--color-main);
     color: var(--color-main);
 

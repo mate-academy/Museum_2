@@ -1,12 +1,15 @@
+@use "./utils/media";
+@use "./utils/mixins";
+
 .events {
   margin-bottom: 90px;
 
-  @include tablet-above {
+  @include media.tablet-above {
     font-size: 16px;
     margin-bottom: 100px;
   }
 
-  @include desktop-above {
+  @include media.desktop-above {
     margin-bottom: 110px;
   }
 
@@ -16,23 +19,23 @@
   }
 
   &__main {
-    @include grid-template;
+    @include mixins.grid-template;
   }
 
   &__card {
     grid-column: 1/-1;
-    @include grid-template;
+    @include mixins.grid-template;
 
     &:not(:last-child) {
       margin-bottom: 60px;
     }
 
-    @include mobile-above {
+    @include media.mobile-above {
       font-size: 14px;
       margin-bottom: 35px;
     }
 
-    @include tablet-above {
+    @include media.tablet-above {
       font-size: 16px;
 
       &:not(:last-child) {
@@ -40,7 +43,7 @@
       }
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       &:not(:last-child) {
         margin-bottom: 60px;
       }
@@ -49,12 +52,12 @@
     &-descritprion {
       font-size: 16px;
 
-      @include mobile-above {
+      @include media.mobile-above {
         font-size: 14px;
         margin-bottom: 35px;
       }
 
-      @include tablet-above {
+      @include media.tablet-above {
         font-size: 16px;
       }
 
@@ -74,15 +77,15 @@
         margin-bottom: 0;
       }
 
-      @include mobile-above {
+      @include media.mobile-above {
         grid-column: span 1;
       }
 
-      @include tablet-above {
+      @include media.tablet-above {
         grid-column: span 3;
       }
 
-      @include desktop-above {
+      @include media.desktop-above {
         grid-column: 1/5;
         max-height: 475px;
       }
@@ -91,28 +94,28 @@
     &-info {
       grid-column: span 2;
 
-      @include mobile-above {
+      @include media.mobile-above {
         grid-column: span 1;
       }
 
-      @include tablet-above {
+      @include media.tablet-above {
         grid-column: span 3;
       }
 
-      @include desktop-above {
+      @include media.desktop-above {
         grid-column: span 6;
       }
     }
   }
 
   &__title {
-    @include mobile-above {
+    @include media.mobile-above {
     }
 
-    @include tablet-above {
+    @include media.tablet-above {
     }
 
-    @include desktop-above {
+    @include media.desktop-above {
       grid-column: 1/11;
     }
   }
