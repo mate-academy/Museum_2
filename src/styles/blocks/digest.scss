@@ -1,7 +1,6 @@
 .digest {
 
   &__content {
-
     @include on-tablet {
       @include page-grid;
     }
@@ -52,9 +51,33 @@
       line-height: 150%;
       text-align: left;
 
+      &:hover {
+        border-bottom: 1px solid #CD4D31;
+      }
+
+      &:focus {
+        border-bottom: 1px solid #CD4D31;
+        caret-color: #CD4D31;
+      }
+
+      &:focus::placeholder {
+        opacity: 0;
+      }
+
+      &:not(:placeholder-shown) {
+        font-weight: bold;
+        color: #1C1B29;
+        border-bottom: 1px solid #1C1B29;
+      }
+
       &::placeholder {
         color:#1C1B29;
       }
+    }
+
+    &--content:hover::placeholder,
+    &--content:focus::placeholder {
+      color: #CD4D31;
     }
   }
 
@@ -87,6 +110,8 @@
       background-color: #CD4D31;
       color: #F1F5F4;
       width: 100%;
+
+      @include button-states;
     }
   }
 }
