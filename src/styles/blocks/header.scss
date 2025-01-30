@@ -13,6 +13,10 @@
     @include on-tablet {
       @include page-grid;
     }
+
+    @include on-desktop {
+      grid-template-rows: auto auto auto;
+    }
   }
 
   a {
@@ -29,9 +33,10 @@
     }
 
     @include on-desktop {
-      grid-row: 1;
       grid-column: 1 / 7;
       padding-top: 90px;
+      height: auto;
+      max-height: fit-content;
     }
 
   }
@@ -91,7 +96,6 @@
       padding-bottom: 40px;
       justify-content: center;
       align-items: center;
-      display: block;
       height: 60px;
 
     @include on-tablet {
@@ -100,9 +104,8 @@
     }
 
     @include on-desktop {
-      padding-top: 447px;
-      grid-row: 1;
-      padding-bottom: 135px;
+      padding-bottom: 0;
+      padding-top: 50px;
       grid-column: 1 / 4;
     }
 
@@ -131,9 +134,7 @@
     }
 
     @include on-desktop {
-      padding-top: 642px;
       grid-column: 1 / 3;
-      grid-row: 1;
       display: block;
     }
 
@@ -156,9 +157,6 @@
     }
 
     @include on-desktop {
-      padding-top: 653px;
-      display: block;
-      grid-row: 1;
       grid-column: 2 / 7;
     }
 
@@ -176,7 +174,6 @@
     }
 
     @include on-desktop {
-      grid-row: 1;
       grid-column: 7 / 13;
       padding: 47px 0 0;
     }
@@ -185,7 +182,7 @@
   &__img {
     background-image: url(/src/images/header_img.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     height: 100vh;
     width: 100%;
   }
