@@ -1,0 +1,119 @@
+.digest {
+
+  &__content {
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__main {
+    padding-top: 20px;
+    margin: 0;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      padding-top: 0;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+
+    &--content {
+      padding-top: 50px;
+      width: 100%;
+      background-color: #F1F5F4;
+      border: none;
+      border-bottom: 1px solid #000;
+      outline: none;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      text-align: left;
+      cursor: pointer;
+
+      &:hover {
+        border-bottom: 1px solid #CD4D31;
+      }
+
+      &:focus {
+        border-bottom: 1px solid #CD4D31;
+        caret-color: #CD4D31;
+      }
+
+      &::placeholder {
+        color:#1C1B29;
+      }
+
+      &:focus::placeholder {
+        opacity: 0;
+      }
+
+      &:not(:placeholder-shown) {
+        font-weight: bold;
+        color: #1C1B29;
+        border-bottom: 1px solid #1C1B29;
+      }
+    }
+
+    &--content:hover::placeholder,
+    &--content:focus::placeholder {
+      color: #CD4D31;
+    }
+  }
+
+
+  &__button {
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    height: 60px;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      padding-top: 40px;
+      grid-column: 1 / 4;
+    }
+
+    &--content {
+      padding: 0;
+      border: none;
+      height: 60px;
+      font-family: Raleway, serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+      text-align: center;
+      background-color: #CD4D31;
+      color: #F1F5F4;
+      width: 100%;
+      cursor: pointer;
+
+      @include button-states;
+    }
+  }
+}
