@@ -1,0 +1,55 @@
+.input {
+  width: 100%;
+
+  @include main-text-style;
+
+  color: $c-black;
+
+  background-color: inherit;
+  border: none;
+  outline: none;
+
+  padding-bottom: 3px;
+  border-bottom: 1px solid $c-black;
+  transition: all $transition-duration;
+
+  &::placeholder {
+    @include main-text-style;
+
+    color: $c-black;
+    transition: all $transition-duration;
+  }
+
+  &:hover,
+  &:focus {
+    color: $c-main;
+    border-bottom-color: $c-main;
+
+    &::placeholder {
+      color: $c-main;
+    }
+  }
+
+  &:-webkit-autofill {
+    border: inherit;
+    border-bottom: 1px solid $c-black;
+    -webkit-text-fill-color: $c-black;
+    background-color: inherit;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  &:valid {
+    color: $c-black;
+    font-weight: 700;
+    border-bottom: 1px solid $c-black;
+  }
+
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    border: inherit;
+    border-bottom: 1px solid $c-main;
+    -webkit-text-fill-color: $c-main;
+    background-color: inherit;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
