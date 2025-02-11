@@ -1,0 +1,73 @@
+.info-block {
+  @include page-grid;
+
+  &__title {
+    grid-column: 1 / -1;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+    color: $c-black;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      font-size: 40px;
+      grid-row: 1;
+      grid-column: 1 / 5;
+      margin-bottom: 75px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: 1;
+      grid-column: -3 / -1;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      grid-column: -4 / -1;
+    }
+  }
+  &__content {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+    row-gap: 60px;
+    margin-bottom: 30px;
+
+    &--wide {
+      @include on-tablet {
+        row-gap: 70px;
+      }
+
+      @include on-desktop {
+        row-gap: 60px;
+      }
+    }
+  }
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+
+    &--wide {
+      @include on-tablet {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+}
