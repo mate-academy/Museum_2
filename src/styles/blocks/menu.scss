@@ -1,0 +1,204 @@
+.menu {
+  box-sizing: border-box;
+  max-width: 100vw;
+  background-color: $color-background;
+  backdrop-filter: blur(0);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.05) translateY(-10px);
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s,
+    backdrop-filter 0.5s ease-in-out,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+    backdrop-filter: blur(30px);
+  }
+
+  &__top-bar {
+    @include inline-content-wrapper;
+  }
+
+  &__bottom {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+    @include inline-content-wrapper;
+
+    @include on-tablet {
+      padding-top: 30px;
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      gap: 50px;
+    }
+
+    @include on-desktop {
+      flex: 1;
+      gap: 60px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 124px;
+    }
+
+    @include on-desktop {
+      gap: 84px;
+    }
+  }
+
+  &__schedule {
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+      @include typography-additional;
+
+      color: $color-white;
+    }
+
+    &-time {
+      color: $color-white;
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0%;
+      margin: 0;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+      @include typography-additional;
+
+      color: $color-white;
+    }
+
+    &-place {
+      position: relative;
+      color: $color-white;
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0%;
+      margin: 0;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease-in-out;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $color-white;
+        transition: width 0.3s ease-in-out;
+      }
+
+      &:hover {
+        transform: scale(1.02) translateX(5px);
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link {
+    position: relative;
+
+    color: $color-white;
+
+    @include typography-h5;
+
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-white;
+      transition: width 0.3s ease-in-out;
+    }
+
+    @include on-tablet {
+      @include typography-h4;
+    }
+
+    &:hover {
+      transform: scale(1.02) translateX(5px);
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background-color: $color-white;
+  }
+
+  &__person {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      flex: 1;
+    }
+
+    &-img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}

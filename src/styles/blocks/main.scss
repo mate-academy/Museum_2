@@ -1,0 +1,198 @@
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  padding-top: 90px;
+  padding-bottom: 80px;
+
+  @include on-tablet {
+    padding-top: 100px;
+    padding-bottom: 128px;
+  }
+
+  @include on-desktop {
+    padding-top: 110px;
+    padding-bottom: 200px;
+  }
+
+  &__visit {
+    display: flex;
+    background-color: $color-background;
+
+    @include inline-content-wrapper;
+
+    padding-block: 50px;
+
+    @include on-tablet {
+      padding-block: 80px;
+      justify-content: flex-start;
+    }
+
+    @include on-desktop {
+      padding-block: 200px;
+      justify-content: flex-end;
+      background-image: url('../images/main/img_start.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: contain;
+    }
+
+    &-card {
+      @include on-tablet {
+        max-width: 570px;
+      }
+
+      @include on-desktop {
+        max-width: 670px;
+      }
+    }
+
+    &-title {
+      @include typography-h2;
+
+      color: $color-white;
+    }
+
+    &-description {
+      color: $color-white;
+    }
+
+    &-buy-link {
+      width: 100%;
+
+      @include on-tablet {
+        width: 330px;
+      }
+
+      @include on-desktop {
+        width: 270px;
+      }
+    }
+
+    &-buy-bth {
+      width: 100%;
+    }
+  }
+
+  &__subscribe {
+    @include inline-content-wrapper;
+
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        'subscribe-title subscribe-title subscribe-title subscribe-title . .'
+        'subscribe-text subscribe-text subscribe-text subscribe-text . .'
+        'subscribe-form subscribe-form subscribe-form subscribe-form . .';
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+      grid-template-areas:
+        'subscribe-title subscribe-title subscribe-title subscribe-title subscribe-title subscribe-title subscribe-text subscribe-text subscribe-text subscribe-text subscribe-text subscribe-text'
+        'subscribe-form subscribe-form subscribe-form subscribe-form . . . . . . . . ';
+    }
+
+    &-title {
+      @include typography-h3;
+
+      grid-area: subscribe-title;
+    }
+
+    &-text {
+      @include typography-main;
+
+      padding-bottom: 30px;
+      grid-area: subscribe-text;
+    }
+
+    &-form {
+      display: flex;
+      gap: 30px;
+      flex-direction: column;
+      grid-area: subscribe-form;
+
+      @include on-desktop {
+        gap: 40px;
+        padding-top: 20px;
+      }
+    }
+
+    &-input {
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid $color-black;
+      width: 100%;
+      padding-bottom: 3px;
+      transition: 0.3s;
+
+      &::placeholder {
+        color: $color-black;
+
+        @include typography-main;
+      }
+
+      &:hover {
+        border-bottom-color: $color-main;
+
+        &::placeholder {
+          color: $color-main;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom-color: $color-main;
+        color: $color-main;
+      }
+
+      &--error {
+        border-color: red;
+        animation: shake 0.3s ease-in-out 2;
+        color: red;
+
+        &::placeholder {
+          color: red;
+        }
+      }
+    }
+
+    &-bth-link {
+      width: 100%;
+
+      @include on-tablet {
+        width: 330px;
+      }
+
+      @include on-desktop {
+        width: 270px;
+      }
+    }
+
+    &-button {
+      width: 100%;
+    }
+  }
+}

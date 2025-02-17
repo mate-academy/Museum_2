@@ -1,0 +1,46 @@
+.secondary-btn {
+  text-decoration: none;
+
+  &__btn {
+    width: 270px;
+    height: 60px;
+    transition: all 0.3s ease-in-out;
+    border: solid 1px $color-main;
+    padding: 16px 24px;
+    text-align: center;
+    color: $color-main;
+    cursor: pointer;
+
+    @include typography-button;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+
+    svg path {
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      border-color: $color-deep-orange;
+      color: $color-deep-orange;
+      transform: scale(1.02);
+
+      svg path {
+        transform: translateX(2px);
+        stroke: $color-deep-orange;
+      }
+    }
+
+    &:active {
+      border-color: $color-vibrant-red;
+      color: $color-vibrant-red;
+      transform: scale(0.98);
+
+      svg path {
+        stroke: $color-vibrant-red;
+      }
+    }
+  }
+}
