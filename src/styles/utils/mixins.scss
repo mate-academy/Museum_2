@@ -1,0 +1,79 @@
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) and (max-width: #{$desktop-min-width - 1}) {
+    @content;
+  }
+}
+
+@mixin on-mobile {
+  @media (min-width: $mobile-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline(){
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+}
+
+@mixin page-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  @include on-tablet{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include on-desktop{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin button-transition-red($hover-color, $pressed-color, $transition-time: 0.3s) {
+  transition: background-color $transition-time;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+
+  &:active {
+    background-color: $pressed-color;
+  }
+}
+
+@mixin button-border-transition($hover-border, $pressed-border, $transition-time: 0.3s) {
+  transition: border-color $transition-time;
+
+  &:hover {
+    border-color: red;
+  }
+
+  &:active {
+    border-color: $button-disabled-color;
+  }
+}
+
+@mixin hover($property, $toValue, $transition-time: 0.3s) {
+  transition: #{$property} $transition-time;
+
+  &:hover {
+    #{$property}: $toValue;
+  }
+}

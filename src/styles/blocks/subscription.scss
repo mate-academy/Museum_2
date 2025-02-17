@@ -1,0 +1,128 @@
+.main__subscription{
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background-color: $white-color;
+
+  @include content-padding-inline;
+
+  @include on-tablet{
+    padding-bottom: 128px;
+  }
+
+  @include on-desktop{
+    padding-bottom: 200px;
+  }
+}
+
+.subscription{
+  color: $black-color;
+
+&__info{
+  @include on-tablet{
+    @include page-grid;
+  }
+
+  @include on-desktop{
+    @include page-grid;
+  }
+}
+
+&__title{
+  font-family:'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 35px;
+  text-align: left;
+  padding-bottom: 20px;
+
+  @include on-tablet {
+    font-size: 40px;
+    grid-column:  1 / -1;
+  }
+
+  @include on-desktop {
+    font-size: 48px;
+    grid-column: 1 / 5;
+    line-height: 57.6px;
+    margin-bottom: 50px;
+  }
+}
+
+&__text{
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 50px;
+
+  @include on-tablet {
+    grid-column: span 5;
+  }
+
+  @include on-desktop {
+    font-size: 16px;
+    grid-column: 7 / span 7;
+  }
+}
+
+&__form {
+  @include on-tablet {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+  }
+
+  @include on-desktop{
+    @include page-grid;
+
+    grid-column: 1 / -1;
+  }
+}
+
+&__input{
+  width: 100%;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid $black-color;
+  background-color: $white-color;
+  color: $black-color;
+  outline: none;
+  transition: border-bottom-color 0.3s;
+
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $white-color inset;
+    -webkit-text-fill-color: $black-color;
+  }
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-desktop {
+    padding-bottom: 3px;
+    margin-bottom: 40px;
+    grid-column: 1 / 6;
+  }
+
+  &:focus {
+    border-color: $button-hover-color;
+  }
+}
+
+&__button {
+  width: auto;
+  height: 60px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 30px;
+
+  @include on-tablet {
+    grid-column: 1 / 4;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 4;
+  }
+}
+}

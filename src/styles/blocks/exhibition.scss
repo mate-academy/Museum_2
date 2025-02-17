@@ -1,0 +1,121 @@
+.main__exhibition{
+  background-color: $white-color;
+  padding: 90px 40px 120px;
+
+  @include content-padding-inline;
+}
+
+
+.exhibition{
+  &__content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__title{
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 35px;
+  text-align: left;
+  padding-bottom: 60px;
+  max-width: 100%;
+  }
+
+  &__cards{
+    width: 100%;
+
+   @include on-tablet{
+    @include page-grid;
+   }
+
+   @include on-desktop{
+    @include page-grid;
+   }
+  }
+}
+
+.card{
+  &__photo{
+    width: 100%;
+    height: 356px;
+    object-fit: cover;
+
+    @include on-tablet {
+    width: 330px;
+    height: 420px;
+    }
+
+    @include on-desktop {
+    width: 570px;
+    height: 484px;
+    }
+  }
+
+
+  &__info-red{
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: $main-color;
+      padding: 20px 0 10px;
+  }
+
+  &__subtitle{
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    color: $black-color;
+    text-align: left;
+  }
+
+  &__text{
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $grey-color;
+    padding: 20px 0 30px;
+    text-align: left;
+  }
+}
+
+.arch-btn{
+  font-family: Raleway, sans-serif;
+  background-color: $white-color;
+  border: 1px solid $main-color;
+  color: $main-color;
+  width: 280px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
+
+  @include button-border-transition(red, $button-disabled-color);
+
+  @include on-mobile{
+    margin: 0;
+  }
+
+  @include on-tablet {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-inline: 49px;
+    width: 210px;
+  }
+
+  @include on-desktop{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-inline: 49px;
+    width: 270px;
+  }
+}
