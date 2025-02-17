@@ -11,8 +11,6 @@ const input = document.querySelector('.main__subscribe-input');
 const form = document.querySelector('.main__subscribe-form');
 const html = document.documentElement;
 
-
-
 const openMenuHandler = () => {
   menu.classList.add('menu--open');
   html.classList.add('no-scroll');
@@ -31,7 +29,6 @@ menuLinks.forEach((link) => {
   link.addEventListener('click', closeMenuHandler);
 });
 
-
 languageSelector.forEach((lan) => {
   lan.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -46,7 +43,6 @@ document.addEventListener('click', (event) => {
     }
   });
 });
-
 
 input.addEventListener('focus', function () {
   this.placeholder = '';
@@ -69,5 +65,8 @@ form.addEventListener('submit', function (event) {
     );
 
     return;
+  } else {
+    input.value = '';
+    input.placeholder = 'e-mail';
   }
 });
