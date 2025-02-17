@@ -1,0 +1,154 @@
+.exhibitions {
+  @include padding;
+
+  max-width: 1280px;
+  margin: auto;
+
+  @include on-tablet {
+    @include page-grid;
+  }
+
+  &__h2 {
+    @include h2;
+
+    font-size: 28px;
+    line-height: 35px;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      @include h3;
+
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__card {
+    margin-bottom: 60px;
+
+    @include on-desktop {
+      @include page-grid;
+    }
+
+    &--1 {
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+        height: 590px;
+      }
+    }
+
+    &--2 {
+      @include on-tablet {
+        grid-column: 4 / -1;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+      }
+    }
+
+    &__img {
+      height: 356px;
+      width: 100%;
+      margin-bottom: 20px;
+      object-fit: cover;
+
+      &:hover {
+        transform: scale(1.05);
+        border-radius: 20px;
+      }
+
+      @include on-tablet {
+        height: 420px;
+      }
+
+      @include on-desktop {
+        height: 550px;
+        grid-column: 1 / -1;
+      }
+    }
+
+    &__date {
+      @include main;
+
+      color: $main;
+      margin-bottom: 10px;
+
+      @include on-desktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &__h4 {
+      @include h4;
+
+      padding-bottom: 20px;
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+      }
+
+      &--2 {
+        @include on-tablet {
+          padding-bottom: 50px;
+        }
+
+        @include on-desktop {
+          padding-bottom: 20px;
+        }
+      }
+    }
+
+    &__main-text {
+      @include main;
+
+      color: $gray;
+      margin-bottom: 30px;
+
+      @include on-desktop {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &__button {
+      @include on-desktop {
+        grid-column: 1 / 6;
+      }
+    }
+  }
+
+  &__button {
+    background-color: $white;
+    color: $main;
+    border: 1px solid $main;
+
+    &__link {
+      @include on-tablet {
+        grid-row: 1;
+        grid-column: 5 / -1;
+      }
+
+      @include on-desktop {
+        grid-column: 10 / -1;
+      }
+    }
+
+    &:hover {
+      color: $button-hover-color;
+      border-color: $button-hover-color;
+      background-color: $white;
+    }
+
+    &:active {
+      color: $button-pressed-color;
+      border-color: $button-pressed-color;
+    }
+  }
+}
