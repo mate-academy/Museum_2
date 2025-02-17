@@ -1,0 +1,105 @@
+@import '../utils';
+
+.footer {
+  background-color: $main-green;
+  color: $main-white;
+  margin-top: 80px;
+
+  &__container {
+    @include grid;
+
+    gap: 60px;
+  }
+
+  &__contacts,
+  &__main,
+  &__list,
+  &__schedule,
+  &__links {
+    @include column-flex;
+  }
+
+  &__contacts {
+    gap: 20px;
+  }
+
+  &__main {
+    grid-column: 1 / -1;
+    gap: 50px;
+    margin-top: 30px;
+  }
+
+  &__title {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__list {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    gap: 5px;
+
+    &--icons {
+      flex-direction: row;
+      gap: 25px;
+    }
+  }
+
+  &__schedule {
+    gap: 10px;
+  }
+
+  &__links {
+    gap: 10px;
+  }
+
+  &__copyright {
+    grid-column: 1 / -1;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__copy {
+    display: flex;
+    gap: 22px;
+  }
+
+  &__link {
+    transition: $all-transition;
+    &::after {
+      background-color: $main-white;
+    }
+
+    &:hover {
+      color: #a39b9b;
+    }
+
+  }
+
+  &__image {
+    transition: $main-transition;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+
+  &__button {
+    transition: $all-transition;
+    border: 1px solid transparent;
+    padding: 15px;
+    border-radius: 50%;
+
+    &:hover {
+      transform: scale(1.2);
+      border: 1px solid $main-white;
+    }
+  }
+}
