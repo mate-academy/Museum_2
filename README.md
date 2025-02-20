@@ -1,37 +1,25 @@
-# Museum 2 landing page
-Implement landing page according to [Figma design](https://www.figma.com/file/HL3XGt5ZatvJoYBhOaWY5x/museum-prototype?node-id=323%3A1957) - Use BEM and SCSS
+# NAMU 2
 
-Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
+## 🎮 About the Project
+Created a landing page for **NAMU** (National Art Museum of Ukraine), designed to showcase museum exhibits and provide users with a visually rich and engaging experience. The page is fully adaptive and optimized for a smooth browsing experience across all devices.
 
-- The design 1440px
-- Desktop 1280px
-- Tablet 640px
-- Mobile (> 320px)
+## 🚀 Tech Stack
+- **HTML (BEM)** – For clear structure and reusable components
+- **CSS (SCSS)** – For modular and scalable styling
+- **JS** – For dynamic features and interactivity
+- **Adaptive** – Ensures the site is responsive and optimized for different devices
 
-1. Implement the header with menu.
-1. Implement `Актуальтні виставки` block.
-1. Implement `Найближчі події` block.
-1. Implement `Сплануйте візит до музею` block.
-1. Implement `Новини` block with the three cards.
-1. Implement `Підпишіться на дайджест` block.
-1. Implement footer.
+## 🛠️ Tools & Dependencies
+- **ESLint** – For maintaining code consistency
+- **Jest** – For unit and functional testing
+- **Prettier** – For automatic code formatting
+- **Parcel** – Bundler for efficient development and build process
 
+## 🌐 Demo Link
+🔗 [Demo](https://AndriiZakharenko.github.io/namu-2/)
 
-## Github flow
-1. **Fork** the repo.
-2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
-3. Run `npm install` (or just `npm i`).
-4. Run `npm start`.
-5. Open one more terminal window for the next steps.
-6. `git checkout -b develop` - to create new branch and switch on it.
-7. Write you code in `src` folder.
-8. Run `npm run lint` and fix code style errors.
-9. Run `npm run deploy` to deploy your solution to `gh-pages`.
-10. `git add . && git commit -m 'write a short description of the changes you made'` to save your changes.
-11. `git push origin develop` - to send you code for PR.
-12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
-13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Museum_2/).
-14. Copy `DEMO LINK` to the PR description.
+## 🎨 Figma
+🔗 [Figma](https://www.figma.com/file/HL3XGt5ZatvJoYBhOaWY5x/museum-prototype?node-id=323%3A1957)
 
-> To update you PR repeat steps 7-11.
+## 📜 License
+This project is forked from 💻 [Mate Academy](https://github.com/mate-academy/Museum_2)

@@ -1,0 +1,101 @@
+.button {
+  text-decoration: none;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 16px;
+
+  &--width {
+    @include desktop {
+      width: 270px;
+    }
+  }
+
+  &--header {
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 70px;
+      width: 100%;
+    }
+
+    @include desktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__events {
+    @include tablet {
+      grid-column: span 3;
+    }
+
+    @include desktop {
+      grid-column: 6/9;
+    }
+  }
+
+  &--red {
+    color: white;
+    background-color: $button-color;
+
+    @include hover(background-color, $button-hover-color);
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $button-color;
+    transition: color $effect-duration ease;
+  }
+
+  &--white {
+    box-sizing: border-box;
+    border: 1 solid $button-color;
+    transition: background-color $effect-duration ease;
+
+    &:hover {
+      background-color: $button-color;
+
+      .button__link {
+        color: white;
+      }
+
+      .icon--arrow-right {
+        background-image: url(../images/icons/icon-arrow-right-hover.svg);
+      }
+    }
+  }
+
+  &--article {
+    margin-bottom: 90px;
+  }
+
+  &--mb {
+    margin-bottom: 120px;
+
+    @include tablet {
+      margin-bottom: 70px;
+    }
+
+    @include desktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &--form {
+    border: none;
+    font-weight: normal;
+
+    @include tablet {
+      width: calc(100% - 90px);
+    }
+
+    @include desktop {
+      width: 270px;
+    }
+  }
+}

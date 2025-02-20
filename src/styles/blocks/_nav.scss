@@ -1,0 +1,79 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    width: fit-content;
+
+    @include tablet {
+      gap: 30px;
+    }
+
+    @include desktop {
+      gap: 60px;
+    }
+
+    &--footer {
+      gap: 5px;
+    }
+  }
+
+  &--after {
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: $background-white-color;
+      display: block;
+      margin-block: 40px;
+
+      @include tablet {
+        margin-block: 50px;
+      }
+
+      @include desktop {
+        margin-block: 60px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    width: fit-content;
+
+    &--menu {
+      font-size: 20px;
+      line-height: 30px;
+
+      @include tablet {
+        font-size: 48px;
+        line-height: 57.6px;
+      }
+    }
+
+    &--fotter {
+      line-height: 24px;
+      font-weight: 400;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white-text-color;
+      transition: transform $effect-duration;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
