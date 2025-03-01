@@ -1,0 +1,62 @@
+.page {
+  position: relative;
+  min-width: 320px;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    padding: 0;
+    background: $white;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &__main {
+    margin: 0 auto;
+  }
+
+  &__section {
+    padding-top: 160px;
+
+    &--pad-top-120 {
+      padding-top: 120px;
+    }
+
+    &--pad-top-100 {
+      padding-top: 100px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+.section-title {
+  color: $black;
+}

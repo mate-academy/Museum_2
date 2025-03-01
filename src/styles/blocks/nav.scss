@@ -1,0 +1,52 @@
+.nav {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $white;
+    font-family: Playfair-Display, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+
+    @include on-tablet {
+      font-family: Playfair-Display, sans-serif;
+      font-weight: bold;
+      font-size: 40px;
+      line-height: 125%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.top-bar {
+  height: 80px;
+  padding-block: 20px;
+
+  @include on-phone {
+    .top-bar__lang-switcher {
+      display: none;
+    }
+  }
+
+  @include on-tablet {
+    height: 77px;
+    padding-block: 24px;
+
+    .top-bar__lang-switcher {
+      display: block;
+    }
+  }
+
+  @include on-desktop {
+    height: 90px;
+    padding-block: 30px;
+
+    .top-bar__lang-switcher {
+      display: block;
+    }
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 124px;
+    height: 36px;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 30px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    @include on-desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__lang-switcher {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+.lang-switcher {
+  &__wrapper {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__button {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    background-color: $bg-color;
+    border: none;
+    color: $white;
+    padding: 0;
+  }
+
+  &__list {
+    position: absolute;
+    list-style: none;
+    top: 100%;
+    left: 25%;
+    background: $bg-color;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  &:hover &__list,
+  &__button:focus + &__list {
+    display: block;
+  }
+}
