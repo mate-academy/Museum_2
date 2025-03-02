@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+}
+
+.page {
+  background-color: $main-white;
+  color: $main-white;
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  scroll-behavior: smooth;
+
+  &__body {
+    height: 100%;
+    position: relative;
+  }
+
+  &__menu {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transform: translateX(-100%);
+    transition: transform 300ms;
+  }
+
+  &:has(.page__menu:target) .page__menu {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  &__header {
+    position: relative;
+  }
+}

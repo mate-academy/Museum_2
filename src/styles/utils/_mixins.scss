@@ -4,3 +4,50 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin padding-inline {
+  padding-inline: 20px;
+  max-width: 280px;
+  margin-inline: auto;
+
+  @include on-tablet {
+    padding-inline: 39px;
+    max-width: 690px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+    max-width: 1170px;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin hover-line {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  display: block;
+  height: 1px;
+  bottom: -8px;
+  background-color: $main-white;
+  transition: transform 0.3s;
+  transform: scale(0);
+  transform-origin: left;
+}
+
+@mixin hover-line-transform {
+  &:hover::after {
+    transform: scale(1);
+  }
+}
