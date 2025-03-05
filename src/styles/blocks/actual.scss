@@ -1,0 +1,52 @@
+.actual {
+  padding-block: 90px 120px;
+
+  @include on-tablet {
+    padding-block: 100px 160px;
+  }
+
+  @include on-desktop {
+    padding-block: 110px 200px;
+  }
+
+  &__content {
+    @include my-grid;
+    
+    row-gap: 60px;
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__description {
+    @include on-desktop {
+      max-width: 85%;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      position: relative;
+      max-width: 270px;
+    }
+  }
+
+  &__link {
+    grid-column: 1 / -1;
+  }
+}
