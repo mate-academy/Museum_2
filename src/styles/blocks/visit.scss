@@ -1,0 +1,86 @@
+.visit {
+  box-sizing: border-box;
+  background-color: $dark-green-bg;
+  padding-block: 50px;
+  margin-bottom: 90px;
+
+  @include on-tablet {
+    padding-block: 80px;
+    margin-bottom: 120px;
+  }
+
+  @include on-desktop {
+    padding-top: 10px;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    @include on-desktop {
+      @include my-grid;
+    }
+  }
+
+  &__left {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    object-fit: cover;
+    min-height: 100%;
+  }
+
+  &__right {
+    @include my-grid;
+
+    row-gap: 20px;
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $white;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__info {
+    margin-bottom: 40px;
+    grid-column: 1 / -1;
+    color: $white;
+
+    @extend %main-text;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+}
