@@ -12,7 +12,7 @@
 }
 
 @mixin on-phone {
-  @media (min-width: $phone-min-width) {
+  @media (max-width: $phone-min-width) {
     @content;
   }
 }
@@ -42,9 +42,11 @@
   display: block;
   object-fit: cover;
   object-position: center;
+  width: 100%;
+  height: 100%;
 }
 
-.container {
+@mixin padding-inline {
   padding-inline: 20px;
 
   @include on-tablet {
@@ -53,9 +55,5 @@
 
   @include on-desktop {
     padding-inline: 55px;
-  }
-
-  &--gray {
-    background-color: $bg-color;
   }
 }

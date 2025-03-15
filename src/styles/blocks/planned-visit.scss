@@ -1,0 +1,64 @@
+.planned-visit {
+  @include page-grid;
+  @include padding-inline;
+
+  position: relative;
+  row-gap: 20px;
+  padding-block: 50px;
+  color: $white;
+
+  @include on-tablet {
+    padding-block: 80px;
+  }
+
+  @include on-desktop {
+    padding-block: 205px;
+  }
+
+  width: 100%;
+  background-color: $bg-color;
+
+  &__title {
+    grid-column: span 3;
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / 12;
+    }
+  }
+
+  &__text {
+    grid-column: span 3;
+    padding-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      padding-bottom: 40px;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  &__button {
+    grid-column: span 3;
+
+    @include on-desktop {
+      grid-column: 6 / 10;
+    }
+  }
+}

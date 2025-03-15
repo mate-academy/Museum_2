@@ -1,7 +1,9 @@
 .events {
   @include page-grid;
+  @include padding-inline;
 
   row-gap: 30px;
+  width: 100%;
 
   @include on-tablet {
     row-gap: 60px;
@@ -15,19 +17,23 @@
     @include on-tablet {
       grid-column: 1 / 4;
     }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
   }
 
   &__image {
     padding-top: 30px;
     grid-column: 1 / 3;
-    justify-self: center;
 
     @include on-tablet {
       padding-top: 0;
-      justify-self: left;
       grid-column: 1 / 4;
+    }
 
-      // grid-row: 2 / 3;
+    @include on-desktop {
+      grid-column: 1 / 5;
     }
   }
 
@@ -37,22 +43,23 @@
     @include on-tablet {
       grid-column: 4 / 7;
     }
-  }
-
-  &__img {
-    @include image;
-    
-    width: 280px;
-    height: 358px;
-
-    @include on-tablet {
-      width: 330px;
-      height: 422px;
-    }
 
     @include on-desktop {
-      width: 370px;
-      height: 475px;
+      grid-column: 5 / 11;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+    &--top {
+      @include on-tablet {
+        grid-row: 1 / 2;
+        grid-column: 5 / 7;
+      }
+
+      @include on-desktop {
+        grid-column: 10 / 13;
+      }
     }
   }
 }

@@ -14,6 +14,10 @@
     @include on-desktop {
       gap: 60px;
     }
+
+    &--footer {
+      gap: 10px;
+    }
   }
 
   &__link {
@@ -25,11 +29,33 @@
     font-size: 20px;
     line-height: 150%;
 
+    &--footer {
+      font-weight: normal;
+      font-size: 16px;
+    }
+
+    &--main {
+      font-size: 20px;
+    }
+
     @include on-tablet {
       font-family: Playfair-Display, sans-serif;
       font-weight: bold;
       font-size: 40px;
       line-height: 125%;
+
+      &--footer {
+        font-weight: normal;
+        font-size: 16px;
+      }
+
+      &--main {
+        font-size: 20px;
+      }
+
+      &--top {
+        padding-bottom: 20px;
+      }
     }
 
     &::after {
@@ -47,6 +73,14 @@
 
     &:hover::after {
       transform: scale(1);
+    }
+  }
+
+  &__item {
+    @include on-tablet {
+      &--top {
+        padding-bottom: 20px;
+      }
     }
   }
 }
