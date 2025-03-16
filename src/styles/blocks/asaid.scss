@@ -1,0 +1,166 @@
+.menu {
+  display: flex;
+  position: fixed;
+  box-sizing: border-box;
+  flex-direction: column;
+  background-color: $Backround;
+  overflow-y: auto;
+  align-items: center;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  opacity: 0;
+  height: 100vh;
+  pointer-events: none;
+
+  transition: transform 1s;
+  transform: translateY(-100%);
+  transition-timing-function: ease-out;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  &__center {
+    &-p-1 {
+      width: 117px;
+      color: $White;
+      font-size: 14px;
+      margin-top: 30px;
+      line-height: 19px;
+      font-family: Raleway, sans-serif;
+
+      @include on-tablet {
+        margin-top: 30px;
+      }
+    }
+
+    &-p-2 {
+      width: 278px;
+      color: $White;
+      font-size: 14px;
+      margin-top: 30px;
+      line-height: 19px;
+      font-family: Raleway, sans-serif;
+
+      @include on-tablet {
+        margin-top: 30px;
+      }
+    }
+
+    @include on-tablet {
+      gap: 120px;
+      display: flex;
+      align-items: center;
+    }
+
+    @include on-desktop {
+      gap: 80px;
+    }
+  }
+
+  &-nav {
+    gap: 20px;
+    width: 280px;
+    display: flex;
+    margin-top: 40px;
+    position: relative;
+    align-items: center;
+
+    box-sizing: border-box;
+    flex-direction: column;
+
+    & :nth-child(3) {
+      margin-bottom: 80px;
+    }
+
+    &__item {
+      color: $White;
+      position: relative;
+      text-decoration: none;
+      box-sizing: border-box;
+      align-self: flex-start;
+      transition: color 300ms;
+
+      &::after {
+        content: '';
+        width: auto;
+        height: 0.5px;
+        display: block;
+        border-radius: 50%;
+        transform: scale(0);
+        transform-origin: left;
+        background-color: $White;
+        transition: transform 300ms ease-in-out;
+      }
+
+      &:hover {
+        &::after {
+          transform: scale(1); // Розширюємо лінію до 100%
+        }
+      }
+
+      &:active {
+        color: $Main;
+      }
+
+      @include on-tablet {
+        font-size: 48px;
+        line-height: 128%;
+      }
+    }
+
+    &::before {
+      content: '';
+      height: 1px;
+      bottom: 45px;
+      width: 280px;
+      position: absolute;
+      background-color: $White;
+
+      @include on-tablet {
+        width: 100%;
+      }
+
+      @include on-desktop {
+        width: 570px;
+        align-self: flex-start;
+      }
+    }
+
+    @include on-tablet {
+      width: auto;
+
+      &::after {
+        content: '';
+        top: 142%;
+        left: 50%;
+        width: 422px;
+        height: 466px;
+        display: block;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        transform: translateX(-50%);
+        background-image: url('../images/img_menu.png');
+
+        @include on-desktop {
+          width: 624px;
+          height: 700px;
+          top: -55%;
+          left: 100%;
+          transform: translateX(-100%);
+        }
+      }
+    }
+  }
+
+  @include on-tablet {
+    display: grid;
+    overflow-y: auto;
+  }
+}
