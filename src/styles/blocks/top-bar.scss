@@ -1,0 +1,159 @@
+.top-bar {
+  width: 278px;
+  display: flex;
+  padding-top: 20px;
+  align-self: center;
+  justify-content: space-between;
+
+  &__logo {
+    cursor: pointer;
+  }
+
+  &__rigth {
+    display: flex;
+    align-items: center;
+
+    &-item-1 {
+      color: $White;
+      font-size: 16px;
+      line-height: 24px;
+
+      font-family: Raleway, sans-serif;
+      margin-right: 43px;
+      position: relative;
+
+      transition: color 300ms;
+
+      &:hover {
+        color: $Main;
+      }
+
+      &::after {
+        content: '';
+        display: inline;
+        width: 6px;
+        height: 6px;
+        position: absolute;
+
+        left: 32px;
+        top: 25%;
+        cursor: pointer;
+
+        border-bottom: 2px solid $White;
+        border-right: 2px solid $White;
+
+        transform: rotate(45deg);
+      }
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    &-item-2 {
+      width: 22px;
+      height: 22px;
+      box-sizing: border-box;
+
+      &:hover {
+        @include hover(transform, scale(1.07));
+      }
+
+      background-image: url('../icon/cross.svg');
+    }
+
+    &-item-3 {
+      color: $White;
+      font-size: 16px;
+      line-height: 24px;
+
+      font-family: Raleway, sans-serif;
+      margin-right: 30px;
+      margin-left: 41px;
+      position: relative;
+      display: none;
+
+      transition: color 300ms;
+
+      &:hover {
+        color: $Main;
+      }
+
+      &::after {
+        content: '';
+        display: inline;
+        width: 6px;
+        height: 6px;
+        position: absolute;
+
+        left: 32px;
+        top: 25%;
+        cursor: pointer;
+
+        border-bottom: 2px solid $White;
+        border-right: 2px solid $White;
+
+        transform: rotate(45deg);
+      }
+
+      @include on-tablet {
+        display: inline;
+      }
+    }
+
+    /* #region */
+
+    &-icon-menu {
+      width: 25px;
+      height: 20px;
+      background-image: url('../icon/menu-icon.svg');
+
+      @include hover(transform, scale(1.07));
+
+      @include on-tablet {
+        background-repeat: no-repeat;
+      }
+    }
+
+    &-ua {
+      display: none;
+      color: $White;
+      font-size: 16px;
+      line-height: 24px;
+      margin-left: 40px;
+      margin-right: 20px;
+
+      position: relative;
+      transition: color 300ms;
+      font-family: Raleway, sans-serif;
+
+      &:hover {
+        color: $Main;
+      }
+
+      &::after {
+        content: '';
+        top: 25%;
+        left: 32px;
+        width: 6px;
+        height: 6px;
+        display: inline;
+        cursor: pointer;
+        position: absolute;
+        transform: rotate(45deg);
+        border-right: 2px solid $White;
+        border-bottom: 2px solid $White;
+      }
+
+      @include on-tablet {
+        display: inline;
+      }
+    }
+
+    /* #endregion */
+  }
+
+  @include on-tablet {
+    width: 100%;
+  }
+}

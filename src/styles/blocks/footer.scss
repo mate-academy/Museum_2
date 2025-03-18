@@ -1,0 +1,196 @@
+.footer {
+  background-color: $Backround;
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    grid-template-areas:
+      'top center bottom'
+      'dow dow dow';
+  }
+
+  &-top {
+    width: 250px;
+    padding-top: 34px;
+
+    @include on-tablet {
+      align-self: center;
+      grid-area: top;
+    }
+
+    &__h2 {
+      color: $White;
+      font-size: 18px;
+      line-height: 27px;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', sans-serif;
+
+      @include on-tablet {
+        font-size: 20px;
+        line-height: 150%;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__p {
+      color: $White;
+      line-height: 24px;
+      margin-bottom: 30px;
+      font-family: Raleway, sans-serif;
+
+      @include on-tablet {
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 400px;
+        margin-bottom: 50px;
+      }
+    }
+
+    &__icons-block {
+      gap: 20px;
+      display: flex;
+
+      &-img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-center {
+    margin-top: 50px;
+
+    @include on-tablet {
+      margin-top: auto;
+      align-self: center;
+      grid-area: center;
+    }
+
+    &__h2 {
+      color: $White;
+      font-size: 18px;
+      line-height: 18px;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', sans-serif;
+
+      @include on-tablet {
+        font-size: 20px;
+        line-height: 150%;
+        font-weight: 700;
+        margin-bottom: 30px;
+      }
+    }
+
+    &__schedule {
+      color: $White;
+      line-height: 24px;
+      font-size: 16px;
+      font-family: Raleway, sans-serif;
+
+      @include on-tablet {
+        font-size: 16px;
+        line-height: 150%;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &-bottom {
+    margin-top: 50px;
+
+    @include on-tablet {
+      grid-area: bottom;
+    }
+
+    @include on-desktop {
+      margin-left: 15vw;
+    }
+
+    &__nav {
+      gap: 5px;
+      display: grid;
+
+      & :first-child {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        margin-bottom: 5px;
+        font-family: 'Playfair Display', sans-serif;
+
+        @include on-tablet {
+          font-size: 20px;
+          line-height: 150%;
+          font-weight: 700;
+          margin-top: -16.8px;
+          margin-bottom: 24px;
+        }
+
+        @include on-desktop {
+          margin-top: -16px;
+        }
+      }
+
+      &-item {
+        width: 0;
+        color: $White;
+        cursor: pointer;
+        line-height: 24px;
+        text-decoration: none;
+        transition: color, 300ms;
+        font-family: Raleway, sans-serif;
+
+        @include on-tablet {
+          font-size: 16px;
+          line-height: 150%;
+        }
+
+        &:hover {
+          color: $Main;
+        }
+      }
+    }
+
+    /* ========================= */
+
+    &__down {
+      gap: 22px;
+      display: flex;
+      margin-top: 60px;
+      padding-bottom: 30px;
+
+      @include on-tablet {
+        grid-area: dow;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      & :nth-child(n - 2) {
+        align-self: end;
+      }
+
+      &-div {
+        gap: 22px;
+        display: flex;
+
+        &-date {
+          color: $White;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 400;
+          font-family: Raleway, sans-serif;
+        }
+
+        &-privacy-terms {
+          color: $White;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 400;
+          font-family: Raleway, sans-serif;
+        }
+      }
+    }
+  }
+}

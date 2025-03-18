@@ -1,0 +1,268 @@
+.news {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $White;
+
+  @include on-tablet {
+    gap: 40px;
+    display: grid;
+    justify-content: space-around;
+
+    grid-template-areas:
+      'top center'
+      'bottom bottom';
+  }
+
+  &__top {
+    width: 280px;
+
+    @include on-tablet {
+      grid-area: top;
+    }
+
+    @include on-desktop {
+      width: auto;
+    }
+
+    &-h2 {
+      font-size: 28px;
+      margin-top: 90px;
+      line-height: 35px;
+    }
+
+    &-img {
+      width: 280px;
+      height: 280px;
+      margin-top: 60px;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      @include on-tablet {
+        width: 330px;
+        height: 330px;
+      }
+
+      @include on-desktop {
+        width: 568px;
+        height: 370px;
+      }
+    }
+
+    &-p1 {
+      color: $Gray;
+      font-size: 15px;
+      line-height: 20px;
+      font-family: Raleway, sans-serif;
+    }
+
+    &-h3 {
+      font-size: 20px;
+      line-height: 25px;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', sans-serif;
+
+      @include on-desktop {
+        width: auto;
+      }
+    }
+
+    &-p2 {
+      color: $Gray;
+      line-height: 24px;
+      font-family: Raleway, sans-serif;
+
+      @include on-desktop {
+        width: 570px;
+      }
+    }
+  }
+
+  &__center {
+    width: 280px;
+    position: relative;
+
+    @include on-tablet {
+      grid-area: center;
+      align-self: self-end;
+    }
+
+    @include on-desktop {
+      width: auto;
+      justify-self: end;
+    }
+
+    &-img {
+      width: 280px;
+      height: 280px;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      @include on-tablet {
+        width: 330px;
+        height: 330px;
+      }
+
+      @include on-desktop {
+        width: 568px;
+        height: 370px;
+      }
+    }
+
+    &-p1 {
+      color: $Gray;
+      font-size: 15px;
+      line-height: 20px;
+      font-family: Raleway, sans-serif;
+    }
+
+    &-h3 {
+      font-size: 20px;
+      line-height: 25px;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', sans-serif;
+    }
+
+    &-p2 {
+      color: $Gray;
+      line-height: 24px;
+      margin-bottom: 30px;
+      font-family: Raleway, sans-serif;
+
+      @include on-tablet {
+        margin-bottom: 0;
+      }
+
+      @include on-desktop {
+        width: 570px;
+      }
+    }
+
+    &-button {
+      width: 280px;
+      height: 60px;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      box-sizing: border-box;
+      justify-content: center;
+      border: 1px solid $Main;
+
+      @include hover(transform, scale(1.05));
+
+      @include on-tablet {
+        top: -60px;
+        width: 210px;
+        right: -50px;
+        position: absolute;
+      }
+
+      @include on-desktop {
+        right: 0;
+      }
+
+      & :first-child {
+        color: $Main;
+        height: 20px;
+        margin-right: 6px;
+        box-sizing: border-box;
+        font-family: Raleway, sans-serif;
+      }
+
+      & :last-child {
+        height: 16px;
+      }
+    }
+  }
+
+  &__bottom {
+    width: 280px;
+    padding-bottom: 80px;
+    box-sizing: border-box;
+    position: relative;
+
+    @include on-tablet {
+      grid-area: bottom;
+    }
+
+    &-h2 {
+      margin-top: 120px;
+
+      @include on-tablet {
+        font-size: 44px;
+        line-height: 120%;
+        font-weight: 700px;
+        width: 690px;
+      }
+
+      @include on-desktop {
+        font-size: 48px;
+        width: 500px;
+      }
+    }
+
+    &-p {
+      color: $Gray;
+      margin-top: 20px;
+      line-height: 24px;
+      font-family: Raleway, sans-serif;
+
+      @include on-tablet {
+        width: 570px;
+        line-height: 150%;
+      }
+
+      @include on-desktop {
+        position: absolute;
+        left: 48vw;
+        bottom: 66%;
+      }
+    }
+
+    &-form {
+      &-email {
+        border: 0;
+        height: 28px;
+        width: 280px;
+        margin-top: 50px;
+        background-color: $White;
+        border-bottom: 1px solid;
+
+        @include on-tablet {
+          width: 450px;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &-button {
+        border: 0;
+        height: 60px;
+        width: 280px;
+        color: $White;
+        display: flex;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 30px;
+
+        align-items: center;
+        box-sizing: border-box;
+        justify-content: center;
+        background-color: $Main;
+
+        @include hover(transform, scale(1.05));
+
+        @include on-tablet {
+          width: 330px;
+        }
+
+        @include on-desktop {
+          width: 270px;
+        }
+      }
+    }
+  }
+}
