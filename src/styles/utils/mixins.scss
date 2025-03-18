@@ -5,6 +5,20 @@
   }
 }
 
+@mixin active($property, $toValue) {
+  transition: #{$property} 0.3s;
+  &:active {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin disabled($property, $toValue) {
+  transition: #{$property} 0.3s;
+  &:disabled {
+    #{$property}: $toValue;
+  }
+}
+
 @mixin on-tablet {
   @media (min-width: $tablet-min-width) {
     @content;

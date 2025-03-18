@@ -1,5 +1,5 @@
 .button {
-  @include hover(transform, scale(1.1));
+  @include hover(scale, 1.1);
 
   padding: 0;
 
@@ -19,6 +19,10 @@
     background-color: $main-color;
     border: none;
     color: $white;
+
+    @include hover(background-color, $button-hover);
+    @include active(background-color, $button-active);
+    @include disabled(background-color, $button-disabled);
   }
 
   &--inform {
@@ -28,5 +32,12 @@
     border: 1px solid $main-color;
     color: $main-color;
     text-align: center;
+
+    @include hover(border-color, $button-hover);
+    @include hover(color, $button-hover);
+    @include active(border-color, $button-active);
+    @include active(color, $button-active);
+    @include disabled(border-color, $button-disabled);
+    @include disabled(color, $button-disabled);
   }
 }
