@@ -1,0 +1,124 @@
+.subscribe {
+  margin-block-end: 19px;
+
+  @include on-tablet {
+    margin-block-end: 70px;
+  }
+
+  @include on-desktop {
+    margin-block-end: 139px;
+  }
+
+  .subscribe-box {
+    @include on-desktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-block-end: 28px;
+    }
+  }
+
+  .subscribe-title {
+    margin-block-end: 20px;
+
+    font-family: $font-family-Playfair-Display;
+    font-size: clamp(28px, 5.2vw, 48px);
+    font-weight: $font-weight-bold;
+    line-height: 125%;
+
+    @include on-desktop {
+      width: 50%;
+    }
+  }
+
+  .subscribe-description {
+    margin: 0;
+    margin-block-end: 50px;
+
+    @include on-tablet {
+      width: 79%;
+    }
+
+    @include on-desktop {
+      width: 50%;
+    }
+  }
+
+  .subscribe__form {
+    @include on-tablet {
+      width: 65%;
+    }
+
+    @include on-desktop {
+      width: 40%;
+    }
+
+    .subscribe__input {
+      box-sizing: border-box;
+      width: 100%;
+      background-color: transparent;
+      outline: none;
+      border-style: none;
+      border-block-end: 1px solid $color-text-black;
+      margin-block-end: 30px;
+      padding-inline-start: 0;
+
+      font-family: $font-family-Raleway;
+      font-size: $font-size-md;
+      font-weight: $font-weight-regular;
+      line-height: 150%;
+
+      &:hover {
+        border-block-end: 1px solid #cd4d31;
+      }
+
+      &:active {
+        border-block-end: 1px solid #1c1b29;
+        font-weight: 700;
+        color: #1c1b29;
+        outline: none;
+      }
+
+      &:disabled {
+        border-block-end: 1px solid #dd836f;
+      }
+
+      .error-message {
+        display: none;
+        color: red;
+        border: 1px solid red;
+
+        font-size: 16px;
+      }
+    }
+
+    .subscribe__btn {
+      @include on-tablet {
+        width: 330px;
+      }
+
+      @include on-desktop {
+        width: 270px;
+      }
+    }
+
+    .success-message {
+      color: #fff;
+      background-color: #4caf50;
+      text-align: center;
+      opacity: 0;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      transform: translateY(-10px);
+      transition:
+        opacity 0.5s ease-in-out,
+        transform 0.5s ease-in-out;
+    }
+
+    .success-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.actual-exhibitions {
+  @include on-tablet {
+    margin-block-end: 103px;
+  }
+
+  @include on-desktop {
+    display: flex;
+    flex-direction: column;
+    margin-block-end: 140px;
+  }
+
+  .actual-exhibitions__article-box {
+    min-width: 260px;
+
+    .article__box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+  }
+
+  .article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .article__content {
+    flex-grow: 1;
+    flex-direction: column;
+  }
+
+  .article__description {
+    margin-top: auto;
+  }
+
+  .article__img-box {
+    position: relative;
+    aspect-ratio: 280 / 356;
+    overflow: hidden;
+    margin-block-end: 20px;
+
+    @include on-tablet {
+      aspect-ratio: 330 / 420;
+      margin-block-end: 31px;
+    }
+
+    @include on-desktop {
+      margin-block-end: 18px;
+    }
+
+    .article__img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .image-1 {
+    object-position: 10% center;
+    transform: scale(1.08) translateY(13px);
+
+    @include on-tablet {
+      object-position: 11% center;
+    }
+
+    @include on-desktop {
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .actual-exhibitions--title {
+    margin-block-end: 17px;
+
+    @include on-tablet {
+      font-size: $font-size-2xl;
+      line-height: 30px;
+    }
+  }
+
+  .actual-exhibitions--description {
+    margin-block-end: 32px;
+
+    @include on-tablet {
+      margin-block-end: 42px;
+    }
+
+    @include on-desktop {
+      margin-block-end: 42px;
+    }
+  }
+
+  .article__content--actual-exhibitions {
+    display: flex;
+    flex-direction: column;
+
+    .actual-exhibitions--description-2 {
+      margin-top: auto;
+      margin-block-end: 30px;
+
+      @include on-tablet {
+        margin-block-end: 42px;
+      }
+    }
+  }
+}
