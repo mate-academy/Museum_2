@@ -1,0 +1,45 @@
+@import 'content';
+@import 'menu-nav';
+@import 'top-bar';
+@import 'aside-image';
+
+.menu {
+  box-sizing: border-box;
+  min-width: 320px;
+  max-height: 1095px;
+  color: $color-text-white;
+  background-color: $background-dark;
+  padding-inline: 20px;
+  padding-block: 4px 238px;
+  margin-inline: auto;
+  margin-block-end: 90px;
+
+  @include on-tablet {
+    padding-inline: $padding-inline-tablet;
+    padding-block: 1px 0;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+    padding-block: 6px 40px;
+  }
+}
+
+.page-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.3s;
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.page-menu.menu-open {
+  display: block;
+  opacity: 1;
+  transition: all 0.3s;
+  transform: translateX(0);
+  pointer-events: all;
+}
