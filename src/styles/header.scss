@@ -1,0 +1,226 @@
+.header {
+  padding: 20px 20px 0;
+  background-color: rgba(63, 82, 82, 1);
+  position: relative;
+
+  @include on-tablet {
+    padding: 24px 39px 0;
+  }
+
+  @include on-desktop {
+    padding: 30px 55px 50px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 70px;
+
+    @include on-desktop {
+      padding-bottom: 74px;
+    }
+  }
+
+  &__logo {
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__burger {
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__icons {
+    @include on-tablet {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  &__lag {
+    display: none;
+    transition: all $timeAnimation;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include on-tablet {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+  }
+
+  &__lag-text {
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(241, 245, 244, 1);
+  }
+
+  &__lag-ico {
+    width: 8px;
+    height: 4.6px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__content {
+    align-self: start;
+  }
+
+  &__main-text {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: rgba(241, 245, 244, 1);
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: rgba(241, 245, 244, 1);
+    padding-bottom: 30px;
+
+    @include on-tablet {
+      font-size: 72px;
+      padding-bottom: 20px;
+      width: 570px;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+      padding-bottom: 30px;
+      width: 570px;
+    }
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: rgba(241, 245, 244, 1);
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 81px;
+    }
+  }
+
+  &__button {
+    background-color: rgba(205, 77, 49, 1);
+    border: 0;
+    height: 60px;
+    width: 100%;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(241, 245, 244, 1);
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: all $timeAnimation;
+
+    &:hover {
+      background-color: rgba(175, 52, 25, 1);
+    }
+
+    &:active {
+      background-color: rgba(234, 52, 13, 1);
+    }
+
+    &:disabled {
+      background-color: rgba(221, 131, 111, 1);
+    }
+
+    @include on-tablet {
+      width: 330px;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+      margin-bottom: 203px;
+    }
+  }
+
+  &__image {
+    width: 245px;
+    height: 273px;
+
+    @include on-tablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      width: 625px;
+      height: 663px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__bottom-text {
+    display: none;
+
+    @include on-desktop {
+      position: relative;
+      display: block;
+      font-family: 'Playfair Display', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      letter-spacing: 0%;
+      color: rgb(177, 179, 178);
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 469px;
+        height: 1px;
+        background-color: rgb(177, 179, 178);
+        bottom: 6px;
+        right: 0;
+      }
+    }
+  }
+}

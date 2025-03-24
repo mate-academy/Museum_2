@@ -1,0 +1,303 @@
+.menu {
+  padding: 20px 20px 0;
+  background-color: rgba(63, 82, 82, 1);
+  height: 100vh;
+  z-index: 1;
+  position: relative;
+
+  @include on-tablet {
+    padding: 26px 39px 0;
+  }
+
+  @include on-desktop {
+    padding: 26px 55px 108px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 70px;
+
+    @include on-tablet {
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__logo {
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__burger {
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include on-tablet {
+      flex-direction: row-reverse;
+      gap: 44px;
+    }
+
+    @include on-desktop {
+      gap: 41px;
+    }
+  }
+
+  &__lag {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include on-tablet {
+      gap: 3px;
+    }
+
+    @include on-desktop {
+      gap: 2px;
+    }
+  }
+
+  &__lag-text {
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(241, 245, 244, 1);
+  }
+
+  &__lag-ico {
+    width: 8px;
+    height: 4.6px;
+  }
+
+  &__main {
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      display: flex;
+      gap: 123px;
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop {
+      gap: 83px;
+      padding-bottom: 70px;
+    }
+  }
+
+  &__title {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: rgba(241, 245, 244, 1);
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: rgba(241, 245, 244, 1);
+    text-decoration: none;
+    padding-bottom: 20px;
+
+    @include on-tablet {
+      padding: 0;
+    }
+  }
+
+  &__text--ref {
+    transition: all $timeAnimation;
+
+    &:hover {
+      color: rgb(189, 195, 193);
+    }
+  }
+
+  &__refs {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+    padding-bottom: 81px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 40px;
+      height: 1px;
+      width: 100%;
+      background-color: rgba(241, 245, 244, 1);
+    }
+
+    @include on-tablet {
+      gap: 30px;
+      padding-bottom: 101px;
+
+      &::after {
+        bottom: 50px;
+      }
+    }
+
+    @include on-desktop {
+      gap: 60px;
+      padding-bottom: 121px;
+
+      &::after {
+        width: 571px;
+        bottom: 60px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: rgba(241, 245, 244, 1);
+    text-decoration: none;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      height: 2px;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(240, 240, 240);
+      border-radius: 4px;
+
+      transition: all $timeAnimation;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__button {
+    background-color: rgba(205, 77, 49, 1);
+    border: 0;
+    height: 60px;
+    width: 100%;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(241, 245, 244, 1);
+    cursor: pointer;
+    transition: all $timeAnimation;
+
+    &:hover {
+      background-color: rgba(175, 52, 25, 1);
+    }
+
+    &:active {
+      background-color: rgba(234, 52, 13, 1);
+    }
+
+    &:disabled {
+      background-color: rgba(221, 131, 111, 1);
+    }
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+
+  &__image-block {
+    display: none;
+
+    @include on-tablet {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__image {
+    @include on-tablet {
+      position: absolute;
+      bottom: 0;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include on-desktop {
+      bottom: 0;
+      right: 0;
+      width: 624px;
+      height: 697px;
+    }
+  }
+}
+
+.page__menu {
+  opacity: 0;
+  pointer-events: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all $timeAnimation;
+  transform: translateX(100%);
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+}
