@@ -1,0 +1,198 @@
+.news {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 20px 120px;
+
+  @include on-tablet {
+    padding: 100px 39px 160px;
+  }
+
+  @include on-desktop {
+    padding: 110px 55px 200px;
+  }
+
+  &__container {
+    width: 100%;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    padding-bottom: 60px;
+    align-self: start;
+
+    @include on-tablet {
+      font-size: 40px;
+      line-height: 125%;
+      padding-bottom: 75px;
+      align-self: start;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      line-height: 120%;
+      padding-bottom: 71px;
+    }
+  }
+
+  &__blocks {
+    @include on-tablet {
+      display: flex;
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 32px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+
+    &:first-child {
+      padding-bottom: 50px;
+    }
+
+    @include on-tablet {
+      &:first-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    transition: all $timeAnimation;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    @include on-tablet {
+      width: 100%;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__block-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__main-text {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: rgba(28, 27, 41, 1);
+  }
+
+  &__block-title {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    color: rgba(28, 27, 41, 1);
+    width: 100%;
+    padding-bottom: 20px;
+
+    @include on-tablet {
+      width: 100%;
+      font-size: 24px;
+      padding-bottom: 18px;
+    }
+
+    @include on-desktop {
+      width: 570px;
+    }
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: rgba(80, 79, 94, 1);
+    width: 100%;
+
+    @include on-tablet {
+      width: 100%;
+    }
+
+    @include on-desktop {
+      width: 570px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 30px;
+    width: 90%;
+    height: 60px;
+    background-color: none;
+    border: 1px solid rgba(205, 77, 49, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(205, 77, 49, 1);
+    cursor: pointer;
+    transition: all $timeAnimation;
+
+    &:hover {
+      border: 1px solid rgba(175, 52, 25, 1);
+      color: rgba(175, 52, 25, 1);
+    }
+
+    &:active {
+      border: 1px solid rgba(234, 52, 13, 1);
+      color: rgba(234, 52, 13, 1);
+    }
+
+    &:disabled {
+      border: 1px solid rgba(221, 131, 111, 1);
+      color: rgba(221, 131, 111, 1);
+    }
+
+    @include on-tablet {
+      width: 210px;
+      top: 100px;
+      right: 39px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+      top: 110px;
+      right: 55px;
+    }
+  }
+}
