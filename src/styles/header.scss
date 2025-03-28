@@ -2,31 +2,21 @@
   background-color: $main-green;
 
   &__content {
-    @include padding-inline;
-
-    display: grid;
-    grid-template-columns: 1fr;
-
-    @include on-desktop {
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 30px;
-    }
+    @include page-grid;
   }
 
-  &__center {
+  &__description {
     grid-column: 1/-1;
-    padding-top: 50px;
-    padding-bottom: 40px;
+    margin-bottom: 40px;
 
     @include on-tablet {
-      padding-top: 99px;
-      padding-bottom: 50px;
+      margin-bottom: 50px;
+      grid-column: 1/4;
     }
 
     @include on-desktop {
-      padding-top: 90px;
-      padding-bottom: 81px;
-      grid-column: 1/2;
+      margin-bottom: 81px;
+      grid-column: 1/6;
     }
   }
 
@@ -34,36 +24,63 @@
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 10px;
+    margin-top: 50px;
+    grid-column: span 2;
+
+    @include on-tablet{
+      margin-top: 99px;
+    }
+
+    @include on-desktop{
+      margin-top: 90px;
+    }
   }
 
   &__title {
+    grid-column: 1/-1;
     font-size: 48px;
-    line-height: 48px;
+    line-height: 100%;
     font-family: 'Playfair Display', sans-serif;
     margin-bottom: 30px;
     font-weight: 700;
 
     @include on-tablet {
+      grid-column: 1/6;
       font-size: 72px;
-      line-height: 72px;
       margin-bottom: 20px;
     }
 
     @include on-desktop {
+      grid-column: 1/7;
       font-size: 96px;
-      line-height: 96px;
       margin-bottom: 30px;
     }
   }
 
+  &__button{
+    grid-column: 1/-1;
+    justify-self: center;
+    margin-bottom: 40px;
+
+    @include on-tablet{
+      grid-column: 1/4;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop{
+      margin-bottom: 135px;
+    }
+  }
+
   &__background {
+    grid-column: 1/-1;
     background-image: url(/src/images/header-bg.png);
     height: 273px;
     width: 245px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-inline: auto;
+    justify-self: center;
 
     @include on-tablet {
       height: 494px;
@@ -71,11 +88,13 @@
     }
 
     @include on-desktop {
+      grid-column: 7/-1;
+      grid-row: 2/8;
       position: absolute;
-      top: 137px;
+      top: 136px;
+      right: 0;
       height: 663px;
       width: 625px;
-      right: 0;
     }
   }
 
@@ -83,14 +102,14 @@
     display: none;
 
     @include on-desktop {
-      display: block;
+      display: flex;
       position: relative;
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-size: 14px;
-      line-height: 18px;
-      grid-column: 1/2;
-      margin-bottom: 50px;
+      line-height: 125%;
+      grid-column: 1/6;
+      padding-bottom: 50px;
 
       &::after {
         content: '';
