@@ -1,0 +1,126 @@
+.header {
+  background-color: $main-green;
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__description {
+    grid-column: 1/-1;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      margin-bottom: 81px;
+      grid-column: 1/6;
+    }
+  }
+
+  &__time {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    grid-column: span 2;
+
+    @include on-tablet{
+      margin-top: 99px;
+    }
+
+    @include on-desktop{
+      margin-top: 90px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    font-size: 48px;
+    line-height: 100%;
+    font-family: 'Playfair Display', sans-serif;
+    margin-bottom: 30px;
+    font-weight: 700;
+
+    @include on-tablet {
+      grid-column: 1/6;
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/7;
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__button{
+    grid-column: 1/-1;
+    justify-self: center;
+    margin-bottom: 40px;
+
+    @include on-tablet{
+      grid-column: 1/4;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop{
+      margin-bottom: 135px;
+    }
+  }
+
+  &__background {
+    grid-column: 1/-1;
+    background-image: url(/src/images/header-bg.png);
+    height: 273px;
+    width: 245px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-self: center;
+
+    @include on-tablet {
+      height: 494px;
+      width: 443px;
+    }
+
+    @include on-desktop {
+      grid-column: 7/-1;
+      grid-row: 2/8;
+      position: absolute;
+      top: 136px;
+      right: 0;
+      height: 663px;
+      width: 625px;
+    }
+  }
+
+  &__time-line {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      position: relative;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      grid-column: 1/6;
+      padding-bottom: 50px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 1px;
+        left: 101px;
+        background-color: $main-white;
+        width: 469px;
+        top: 10px;
+      }
+    }
+  }
+}

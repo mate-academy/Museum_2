@@ -1,0 +1,93 @@
+.button {
+  width: 279px;
+  height: 60px;
+  background-color: $main-red;
+  color: $main-white;
+  text-align: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hovered-button;
+  }
+
+  &:active {
+    background-color: $active-button;
+  }
+
+  &:disabled {
+    background-color: $disabled-button;
+  }
+
+  @include hover(transform, scale(1.05));
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+
+  &--digest {
+    margin-top: 30px;
+    justify-self: center;
+    border: none;
+
+    @include on-tablet {
+      justify-self: left;
+    }
+
+    @include on-desktop {
+      margin-top: 40px;
+    }
+  }
+
+  &--section{
+    grid-column: 1/-1;
+    color: $main-red;
+    background-color: $main-white;
+    border: 1px solid $main-red;
+    justify-self: center;
+
+    @include hover(transform, scale(1.05));
+
+    &:hover {
+      color: $hovered-button;
+      background-color: $main-white;
+      border: 1px solid $hovered-button;
+    }
+
+    &:active {
+      color: $active-button;
+      background-color: $main-white;
+      border: 1px solid $active-button;
+    }
+
+    &:disabled {
+      color: $disabled-button;
+      background-color: $main-white;
+      border: 1px solid $disabled-button;
+    }
+
+    @include on-tablet {
+      grid-column: 5/-1;
+      grid-row: 1/2;
+      width: 210px;
+      justify-self: end;
+    }
+
+    @include on-desktop {
+      grid-column: 10/-1;
+      grid-row: 1/2;
+      width: 280px;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+.menu {
+  background-color: $main-green;
+
+  &__content {
+    height: 100%;
+
+    @include page-grid;
+    
+    @include on-desktop{
+      padding-bottom: 78px;
+    }
+  }
+
+  &__schedule{
+    grid-column: span 2;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @include on-tablet{
+      margin-top: 30px;
+    }
+
+    @include on-desktop{
+      margin-top: 14px;
+    }
+  }
+
+  &__address{
+    grid-column: span 2;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @include on-tablet{
+      margin-top: 30px;
+      grid-column: span 3;
+    }
+
+    @include on-desktop{
+      margin-top: 14px;
+    }
+  }
+
+  &__text-bold{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__address-link {
+    text-decoration: none;
+    color: $main-white;
+
+    &:hover {
+      color: $main-red;
+    }
+  }
+
+  &__nav {
+    position: relative;
+    grid-column: 1/-1;
+    margin-top: 40px;
+
+    @include on-tablet{
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/7;
+      margin-top: 70px;
+    }
+  }
+
+  &__button{
+    grid-column: 1/-1;
+    margin-inline: auto;
+    margin-top: 81px;
+
+    @include on-tablet {
+      margin-top: 101px;
+      margin-bottom: 30px;
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      margin-top: 121px;
+    }
+  }
+
+  &__background {
+    background-image: url(/src/images/menu-bg.png);
+    width: 422px;
+    height: 466px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-inline: auto;
+    display: none;
+
+
+    @include on-tablet {
+      display: block;
+      grid-column: 1/-1;
+    }
+
+    @include on-desktop {
+      grid-column: 7/-1;
+      position: absolute;
+      top: 113px;
+      height: 697px;
+      width: 624px;
+      right: 0;
+    }
+  }
+}

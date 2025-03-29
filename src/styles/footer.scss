@@ -1,0 +1,136 @@
+.footer {
+  background-color: $main-green;
+
+  &__content {
+    @include page-grid;
+
+    padding-top: 34px;
+    padding-bottom: 30px;
+    row-gap: 50px;
+
+    @include on-tablet {
+      padding-top: 50px;
+      row-gap: 60px;
+    }
+
+    @include on-desktop{
+      row-gap: 70px;
+    }
+  }
+
+  &__contacts {
+    grid-column: 1/-1;
+
+    @include on-tablet{
+      grid-column: 1/3;
+    }
+
+    @include on-desktop{
+      grid-column: 1/4;
+    }
+  }
+
+  &__schedule {
+    grid-column: 1/-1;
+
+    @include on-tablet{
+      grid-column: 3/5;
+    }
+
+    @include on-desktop{
+      grid-column: 5/8;
+    }
+  }
+
+  &__main{
+    grid-column: 1/-1;
+
+    @include on-tablet{
+      grid-column: 5/-1;
+    }
+
+    @include on-desktop{
+      grid-column: 9/12;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contacts-links {
+    text-decoration: none;
+    color: $main-white;
+
+    &:hover {
+      color: $main-red;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+
+    &--main {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      @include on-tablet {
+        gap: 10px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__bottom-left {
+    display: flex;
+    gap: 22px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+
+    @include on-desktop {
+      gap: 102px;
+    }
+  }
+
+  &__item-link {
+    position: relative;
+    color: $main-white;
+    text-decoration: none;
+
+    @include hover-line;
+  }
+}
