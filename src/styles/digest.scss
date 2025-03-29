@@ -41,27 +41,32 @@
     width: 100%;
     padding-bottom: 3px;
     border-bottom: 1px solid $main-black;
-    font-weight: 700;
+    font-weight: 400;
 
     &::placeholder {
       color: $main-black;
-      font-weight: 400;
+    }
 
-      &:hover {
-        color: $main-red;
-      }
+    &:valid{
+      font-weight: 700;
     }
 
     &:hover,
     &:focus {
       border-bottom: 1px solid $main-red;
+      border-color: $main-red;
+      color: $main-red;
+    }
+
+    &:hover::placeholder{
+      color: $main-red;
     }
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus{
-    -webkit-text-fill-color: $main-black;
-    -webkit-box-shadow: 1000px $main-black;
+    -webkit-text-fill-color: $main-red;
+    -webkit-box-shadow: 1000px $main-white;
     transition: background-color 5000s ease-in-out 0s;
     }
   }
