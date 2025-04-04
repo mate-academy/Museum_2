@@ -1,0 +1,39 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  overflow-y: auto;
+  min-width: 320px;
+  height: 100vh;
+  margin: 0;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+
+  &__menu {
+    pointer-events: none;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    transform: translateY(-100%);
+
+    width: 100%;
+
+    opacity: 0;
+
+    transition: all 0.3s;
+
+    &:target {
+      pointer-events: all;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    &:target ~ .page {
+      overflow: hidden;
+    }
+  }
+}
