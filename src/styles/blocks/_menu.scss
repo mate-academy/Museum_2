@@ -1,0 +1,94 @@
+.menu {
+  background-color: $bg-color;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s;
+  height: 100%;
+  overflow-y: auto;
+
+  &:target {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__wrapper {
+    padding-inline: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    @media (min-width: 768px) {
+      padding-inline: 39px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 30px;
+    }
+
+    @media (min-width: 1280px) {
+      padding-inline: 55px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__container {
+    grid-column: 1 / -1;
+
+    @media (min-width: 1280px) {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  }
+
+  &__top {
+    color: $white-accent;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @media (min-width: 768px) {
+      margin-top: 30px;
+      margin-bottom: 50px;
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @media (min-width: 1280px) {
+      margin-top: 10px;
+      margin-bottom: 70px;
+      gap: 83px;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    font-size: 14px;
+    font-family: $text-font;
+    line-height: 140%;
+  }
+
+  &__schedule-today,
+  &__address {
+    color: $white-accent;
+    text-decoration: none;
+    margin: 0;
+    font-family: $text-font;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__divider {
+    height: 1px;
+    border: none;
+    background-color: $white-accent;
+    margin: 0;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 50px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    font-weight: 400;
+
+    &:has(.menu:target) {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    height: 100%;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
