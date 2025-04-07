@@ -1,0 +1,46 @@
+.exhibitions {
+  padding: 90px 20px 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  @media (min-width: 768px) {
+    padding: 100px 39px 160px;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @media (min-width: 1280px) {
+    padding: 110px 55px 200px;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+
+  &__title {
+    @extend %grid-title;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+      margin-bottom: 75px;
+      font-size: 40px;
+    }
+
+    @media (min-width: 1280px) {
+      margin-bottom: 70px;
+      font-size: 48px;
+    }
+  }
+
+  &__catalog {
+    @extend %grid-list;
+    @extend %flex-center;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 29px;
+      justify-content: space-between;
+    }
+  }
+}

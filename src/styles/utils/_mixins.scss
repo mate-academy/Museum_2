@@ -1,6 +1,70 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin button($bg-color: $button-main-color, $text-color: $white-accent, $border: none, $padding: 0, $width: 280px, $height: 60px) {
+  height: $height;
+  width: $width;
+  padding: $padding;
+  border: $border;
+  color: $text-color;
+  background-color: $bg-color;
+  font-size: 16px;
+  font-family: $text-font;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
   &:hover {
-    #{$_property}: $_toValue;
+    background-color: $button-main-color-hover;
+  }
+
+  &:active {
+    background-color: $button-main-color-pressed;
   }
 }
+
+@mixin transparent-button($bg-color: transparent, $text-color: $button-main-color, $border-color: $button-main-color, $hover-color: $button-main-color-hover, $active-color: $button-main-color-pressed, $border: 2px solid $button-main-color, $padding: 0, $width: 280px, $height: 60px, $gap: 8px) {
+  height: $height;
+  width: $width;
+  padding: $padding;
+  border: $border;
+  color: $text-color;
+  grid-column: 1 / -1;
+  margin-top: 30px;
+  margin-bottom: 0;
+  justify-self: center;
+  background-color: $bg-color;
+  font-size: 16px;
+  font-family: $text-font;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    background-color: $bg-color;
+    color: $hover-color;
+    border-color: $hover-color;
+
+    .arrow {
+      background-image: url('../images/icons/arrow-hover.svg');
+    }
+  }
+
+  &:active {
+    background-color: $bg-color;
+    color: $hover-color;
+    border-color: $active-color;
+
+    .arrow {
+      background-image: url('../images/icons/arrow-pressed.svg');
+    }
+  }
+}
+
+@mixin positioned-right {
+  position: absolute;
+  margin-top: 0;
+  justify-self: right;
+  width: 210px;
+}
+

@@ -1,0 +1,100 @@
+.digest {
+  grid-column: 1 / -1;
+  padding-inline: 20px;
+  padding-bottom: 80px;
+
+  @media (min-width: 768px) {
+    padding-inline: 39px;
+    padding-bottom: 128px;
+  }
+
+  @media (min-width: 1280px) {
+    padding-inline: 55px;
+    padding-bottom: 200px;
+
+    &__wrapper {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    @extend %grid-title;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      font-size: 40px;
+    }
+
+    @media (min-width: 1280px) {
+      font-size: 48px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__info {
+    @extend %text-info;
+    margin-bottom: 50px;
+
+    @media (min-width: 768px) {
+      width: 570px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__email {
+    width: 280px;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #1C1B29;
+    margin-bottom: 30px;
+    padding-bottom: 3px;
+    transition: border-color 0.3s ease;
+    outline: none;
+
+    &::placeholder {
+      color: #1C1B29;
+      transition: color 0.3s ease;
+    }
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $button-main-color;
+
+      &::placeholder {
+        color:  $button-main-color;
+      }
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    @media (min-width: 768px) {
+      width: 450px;
+    }
+
+    @media (min-width: 1280px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__button {
+    @include button;
+    margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      width: 330px;
+    }
+  }
+}
+
+
+
+
+
+
