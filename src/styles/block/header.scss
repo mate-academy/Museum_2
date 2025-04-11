@@ -1,0 +1,168 @@
+.header {
+  background-color: $header-color;
+  color: $white-color;
+  position: relative;
+  overflow: hidden;
+
+  &__content {
+    display: grid;
+
+    @include page-grid;
+  }
+
+  &__info {
+    grid-column: 1/-1;
+
+    @include on-desctop {
+      grid-column: span 6;
+    }
+  }
+
+  &__img {
+    grid-column: 1 / -1;
+    place-self: center end;
+    margin-top: 40px;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+      margin-top: 70px;
+    }
+  }
+
+  &__foto {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    @include on-desctop {
+      width: 50%;
+      height: 85%;
+      object-fit: contain;
+      object-position: right;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__date {
+    padding-top: 50px;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      padding-top: 100px;
+    }
+
+    @include on-desctop {
+      padding-top: 90px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__title {
+    padding-top: 10px;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      font-size: 72px;
+      line-height: 72px;
+      width: 569px;
+      grid-column: 1/-1;
+    }
+
+    @include on-desctop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__text {
+    padding-block: 30px 40px;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      padding-block: 20px 50px;
+      grid-column: 1/3;
+    }
+
+    @include on-desctop {
+      padding-block: 30px 80px;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/3;
+    }
+
+    @include on-desctop {
+      max-width: 270px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include on-desctop {
+      display: flex;
+      grid-column: span 6;
+      gap: 10px;
+      align-items: center;
+    }
+  }
+
+  &__data {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 14px;
+    line-height: 125%;
+    font-weight: 700;
+    margin-top: 135px;
+    white-space: nowrap;
+  }
+
+  &__line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: $white-color;
+    margin-top: 135px;
+  }
+}
+
+.button {
+  display: block;
+  height: 60px;
+  width: 279px;
+  background-color: $button-color;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: $white-color;
+
+  &:hover {
+    background-color: $hover-color;
+    transform: scale(1.05);
+  }
+
+  @include on-tablet {
+    width: 330px;
+  }
+}

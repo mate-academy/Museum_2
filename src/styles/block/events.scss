@@ -1,0 +1,139 @@
+.events {
+  margin-top: 120px;
+
+  @include on-tablet {
+    margin-top: 160px;
+  }
+
+  @include on-desctop {
+    margin-top: 200px;
+  }
+
+  &__content {
+    display: grid;
+
+    @include page-grid;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 28px;
+    line-height: 35px;
+    font-weight: 700;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/5;
+      line-height: 50px;
+      font-size: 40px;
+    }
+  }
+
+  &__card {
+    height: 668px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      width: 690px;
+      height: 422px;
+    }
+
+    @include on-desctop {
+      width: 970px;
+      height: 475px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+
+    @include page-grid;
+  }
+
+  &__img {
+    height: 358px;
+    grid-column: 1/-1;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      width: 330px;
+      height: 422px;
+      grid-column: span 3;
+    }
+
+    @include on-desctop {
+      width: 370px;
+      height: 475px;
+      grid-column: span 4;
+    }
+  }
+
+  &__right {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desctop {
+      grid-column: span 8;
+    }
+  }
+
+  &__date {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $button-color;
+    margin: 20px 0 10px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__subtitle {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    line-height: 125%;
+    font-weight: 700;
+    color: $black-color;
+    margin-bottom: 20px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    color: $d-grey;
+    margin-bottom: 30px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+
+    &:hover {
+      border-color: $hover-color;
+      color: $hover-color;
+      transform: scale(1.05);
+    }
+
+    @include on-desctop {
+      max-width: 270px;
+    }
+  }
+}

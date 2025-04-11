@@ -1,0 +1,90 @@
+.subscribe {
+  margin-top: 120px;
+
+  @include on-tablet {
+    margin-top: 160px;
+  }
+
+  @include on-desctop {
+    margin-top: 200px;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 28px;
+    line-height: 35px;
+    font-weight: 700;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include on-desctop {
+      line-height: 120%;
+      font-size: 48px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 20px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/6;
+    }
+
+    @include on-desctop {
+      margin-top: 0;
+      grid-column: 7/-1;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desctop {
+      grid-column: span 5;
+    }
+  }
+
+  &__input {
+    border: 0;
+    background-color: inherit;
+    border-bottom: 1px solid $black-color;
+    padding-bottom: 5px;
+    outline: none;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include on-desctop {
+      max-width: 270px;
+      margin-top: 40px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+
+    @include page-grid;
+  }
+}

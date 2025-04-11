@@ -1,0 +1,91 @@
+.visit {
+  background-color: $header-color;
+  margin-top: 90px;
+
+  @include on-tablet {
+    margin-top: 100px;
+  }
+
+  @include on-desctop {
+    margin-top: 110px;
+    background-image: url(/images/visit__img.png);
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+  }
+
+  &__left {
+    display: none;
+
+    @include on-desctop {
+      display: flex;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    min-height: 100%;
+  }
+
+  &__content {
+    padding: 50px 0;
+    display: grid;
+
+    @include page-grid;
+
+    @include on-tablet {
+      padding: 80px 0;
+    }
+
+    @include on-desctop {
+      padding-block: 205px;
+    }
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 38px;
+    line-height: 38px;
+    font-weight: 700;
+    color: $white-color;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      font-size: 62px;
+      line-height: 117%;
+      grid-column: 1/-1;
+    }
+
+    @include on-desctop {
+      grid-column: 6/-1;
+    }
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $white-color;
+    margin: 20px 0 40px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/5;
+      margin: 20px 0 60px;
+      line-height: 23px;
+    }
+
+    @include on-desctop {
+      grid-column: 6/-3;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+
+    @include on-desctop {
+      grid-column: 6/-1;
+      max-width: 270px;
+    }
+  }
+}
