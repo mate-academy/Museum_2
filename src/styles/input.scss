@@ -1,0 +1,38 @@
+.input {
+  background: none;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid $border-color;
+  padding: 0;
+  padding-bottom: 3px;
+
+  @extend %main;
+
+  color: $text-color-black;
+
+  transition: all linear $transition;
+
+  &::placeholder {
+    transition: all linear $transition;
+    color: $text-color-black;
+  }
+
+  &:hover {
+    border-color: $input-hover-active-color;
+
+    &::placeholder {
+      color: $text-color-orange;
+    }
+  }
+
+  &:focus {
+    border-color: $input-hover-active-color;
+    caret-color: $text-color-orange;
+    outline: none;
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}

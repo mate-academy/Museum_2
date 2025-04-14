@@ -1,0 +1,196 @@
+.menu {
+  height: 100vh;
+  background-color: $bg-color-green-gray;
+  color: $text-color-white;
+
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    min-height: 800px;
+  }
+
+  &__container {
+    height: 100%;
+    min-height: 1050px;
+
+    @include on-desktop {
+      position: unset;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 10px;
+    min-height: max-content;
+
+    @include content-padding-inline;
+
+    @include on-tablet {
+      margin-top: 30px;
+      gap: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 10px;
+    }
+  }
+
+  &__box {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__info {
+    margin-bottom: 20px;
+
+    &-schedule {
+      padding-bottom: 20px;
+      white-space: nowrap;
+      grid-column: 1 / 2;
+
+      @include on-tablet {
+        padding-bottom: 0;
+      }
+    }
+
+    &-location {
+      grid-column: 3 / 5;
+
+      @include on-desktop {
+        grid-column: 3 / 6;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    @extend %additional;
+  }
+
+  &__description {
+    margin: 0;
+    white-space: nowrap;
+
+    @extend %additional;
+
+    &-address {
+      text-decoration: none;
+      transition: text-decoration $transition ease;
+      color: $text-color-white;
+
+      @include hover(opacity, 0.5);
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+      }
+    }
+  }
+
+  &__bottom {
+    @include page-grid;
+  }
+
+  &__line {
+    background-color: $underline-color;
+    height: 1px;
+    width: 100%;
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      opacity: 30%;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-top: 50px;
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__image {
+    display: none;
+    grid-column: 2 / -2;
+
+    @include on-tablet {
+      justify-self: center;
+      display: block;
+      position: absolute;
+      bottom: 0;
+
+      width: 422px;
+      margin-top: -20px;
+    }
+
+    @include on-desktop {
+      width: 624px;
+      margin-top: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__nav {
+    row-gap: 20px;
+  }
+}
+
+.nav {
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    padding-bottom: 20px;
+
+    @include on-tablet {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__link {
+    @extend %h5;
+
+    text-decoration: none;
+    color: $text-color-white;
+    position: relative;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 58px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $underline-color;
+
+      transition: transform $transition;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
