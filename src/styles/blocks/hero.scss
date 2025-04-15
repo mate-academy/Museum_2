@@ -1,0 +1,134 @@
+.hero {
+  background-color: $c-background;
+  color: $c-white;
+  padding-top: 50px;
+
+  @include on-tablet {
+    padding-top: 99px;
+  }
+
+  @include on-desktop {
+    padding-top: 90px;
+    background-image: url('../images/hero/01.png');
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+  }
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__date {
+    font-size: 14px;
+    line-height: 140%;
+    align-self: center;
+    margin-bottom: 10px;
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+      margin-bottom: 30px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.5;
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      margin-bottom: 81px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    margin-bottom: 62px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 92px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__decor {
+    display: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 125%;
+    align-self: center;
+    white-space: nowrap;
+    grid-column: 1 / 7;
+
+    @include on-desktop {
+      display: flex;
+      column-gap: 20px;
+      padding-bottom: 50px;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: $c-white;
+        align-self: center;
+      }
+    }
+  }
+
+  &__image-container {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    padding-inline: 17px;
+    max-width: 443px;
+    max-height: 494px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+
+    @include on-tablet {
+      padding-inline: 0;
+    }
+  }
+}
