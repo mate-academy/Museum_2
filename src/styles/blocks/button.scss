@@ -1,0 +1,68 @@
+.button {
+  width: 100%;
+  padding-block: 22px;
+  margin: 0 auto;
+  max-width: 280px;
+
+  background-color: $c-main;
+  color: $c-white;
+
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  align-self: center;
+
+  @include on-tablet {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  transition: all $transition-duration;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &--outline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    background-color: transparent;
+    color: $c-main;
+    border: 1px solid $c-main;
+
+    &::after {
+      content: url('../images/icons/arrows/arrow-right.svg');
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      background-color: inherit;
+      color: #af3419;
+      border-color: #af3419;
+
+      &::after {
+        filter: brightness(0.8);
+        transition: all $transition-duration;
+      }
+    }
+
+    &:active {
+      background-color: inherit;
+      color: #ea340d;
+      border-color: #ea340d;
+
+      &::after {
+        filter: brightness(1.2);
+        transition: all $transition-duration;
+      }
+    }
+  }
+}

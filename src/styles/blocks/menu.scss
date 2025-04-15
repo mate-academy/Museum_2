@@ -1,0 +1,130 @@
+.menu {
+  background-color: $c-background;
+  height: 100vh;
+
+  @include on-desktop {
+    background-image: url('../images/menu/01.png');
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+  }
+
+  &__top {
+    padding-block: 20px;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      padding-block: 26px;
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      padding-block: 32px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__bottom {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: span 2;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 150%;
+
+    &--link {
+      @include change-color-on-hover;
+    }
+  }
+
+  &__text--semibold {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__address {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__decor {
+    width: 100%;
+    height: 1px;
+    background-color: $c-white;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      grid-column: 1 / -1;
+      max-width: 422px;
+      max-height: 466px;
+      margin: 0 auto;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+}
