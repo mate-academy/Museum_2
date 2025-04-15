@@ -1,4 +1,166 @@
-%h1 {
-  font-family: Roboto, sans-serif;
+%color-white {
+  color: $c-white;
+}
+
+%color-black {
+  color: $c-black;
+}
+
+%color-gray {
+  color: $c-gray;
+}
+
+%color-main {
+  color: $c-main;
+}
+
+%playfair-display {
+  font-family: 'Playfair Display', serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  line-height: 100%;
+  margin: 0;
+}
+
+%raleway {
+  font-family: Raleway, sans-serif;
+  font-optical-sizing: auto;
+  margin: 0;
+}
+
+%buttons-text {
+  @extend %raleway;
+  @include hover(transform, scale(1.03));
+
+  @include on-tablet {
+    @include hover(transform, scale(1.07));
+  }
+
+  font-weight: 600;
+  font-size: 16px;
+  height: 60px;
+  text-decoration: none;
+  text-align: center;
+  align-content: center;
+}
+
+%main-text {
+  @extend %raleway;
+
   font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+%menu-text {
+  @extend %raleway;
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+%additional-text {
+  @extend %raleway;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+%footer-title-text {
+  @extend %playfair-display;
+
+  font-size: 18px;
+  line-height: 150%;
+
+  @include on-tablet {
+    font-size: 20px;
+  }
+}
+
+%h1 {
+  @extend %playfair-display;
+
+  font-size: 48px;
+
+  @include on-tablet {
+    font-size: 72px;
+  }
+
+  @include on-desktop {
+    font-size: 96px;
+  }
+}
+
+%h2 {
+  @extend %playfair-display;
+
+  font-size: 38px;
+
+  @include on-tablet {
+    font-size: 62px;
+  }
+
+  @include on-desktop {
+    font-size: 80px;
+  }
+}
+
+%h3 {
+  @extend %playfair-display;
+
+  font-size: 28px;
+  line-height: 125%;
+
+  @include on-tablet {
+    font-size: 40px;
+  }
+
+  @include on-desktop {
+    font-size: 48px;
+    line-height: 120%;
+  }
+}
+
+%h4 {
+  @extend %playfair-display;
+
+  font-size: 20px;
+  line-height: 125%;
+
+  @include on-tablet {
+    font-size: 24px;
+  }
+
+  @include on-desktop {
+    font-size: 24px;
+  }
+}
+
+%h5 {
+  @extend %playfair-display;
+
+  font-size: 20px;
+  line-height: 150%;
+}
+
+%h6 {
+  @extend %playfair-display;
+
+  font-size: 14px;
+  line-height: 125%;
+}
+
+%button-base {
+  @extend %buttons-text;
+  @include hover(transform, scale(1.07));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid $c-main;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
