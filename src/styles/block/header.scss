@@ -2,7 +2,7 @@
   background-color: $header-color;
   color: $white-color;
   position: relative;
-  overflow: hidden;
+  min-height: max-content;
 
   &__content {
     display: grid;
@@ -10,49 +10,12 @@
     @include page-grid;
   }
 
-  &__info {
-    display: grid;
-    grid-column: 1/-1;
-
-    @include on-desctop {
-      grid-column: span 6;
-    }
-  }
-
-  &__img {
-    grid-column: 1 / -1;
-    place-self: center end;
-    margin-top: 40px;
-
-    @include on-tablet {
-      grid-column: 2 / -2;
-      margin-top: 70px;
-    }
-  }
-
-  &__foto {
-    display: block;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-
-    @include on-desctop {
-      width: 50%;
-      height: 85%;
-      object-fit: contain;
-      object-position: right;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-    }
-  }
-
   &__date {
     padding-top: 50px;
     font-family: Raleway, sans-serif;
-    font-weight: 400;
     font-size: 14px;
-    line-height: 19.6px;
+    line-height: 140%;
+    font-weight: 400;
     grid-column: 1/-1;
 
     @include on-tablet {
@@ -60,26 +23,27 @@
     }
 
     @include on-desctop {
+      grid-column: span 6;
       padding-top: 90px;
-      grid-column: 1/7;
     }
   }
 
   &__title {
     padding-top: 10px;
-    font-family: 'Playfair Display', sans-serif;
-    font-weight: 700;
+    font-family: 'Playfair Display', serif;
     font-size: 48px;
-    line-height: 48px;
+    line-height: 100%;
+    font-weight: 700;
     grid-column: 1/-1;
 
     @include on-tablet {
       font-size: 72px;
       line-height: 72px;
-      grid-column: 1/5;
+      grid-column: span 5;
     }
 
     @include on-desctop {
+      grid-column: 1/7;
       font-size: 96px;
       line-height: 96px;
     }
@@ -88,17 +52,19 @@
   &__text {
     padding-block: 30px 40px;
     font-family: Raleway, sans-serif;
-    font-weight: 400;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 150%;
+    font-weight: 400;
+
     grid-column: 1/-1;
 
     @include on-tablet {
       padding-block: 20px 50px;
-      grid-column: 1/2;
+      grid-column: span 3;
     }
 
     @include on-desctop {
+      grid-column: 1/7;
       padding-block: 30px 80px;
     }
   }
@@ -106,39 +72,59 @@
   &__button {
     grid-column: 1/-1;
 
+    @include on-desctop {
+      width: 270px;
+    }
+  }
+
+  &__foto {
+    padding-top: 40px;
+    width: 245px;
+    place-self: center;
+    grid-column: 1/-1;
+
     @include on-tablet {
-      grid-column: 1/3;
+      width: 100%;
+      margin: 0;
+      padding-top: 70px;
+      grid-column: 2/-2;
     }
 
     @include on-desctop {
-      max-width: 270px;
+      margin-top: 0;
+      position: absolute;
+      max-width: 625px;
+      padding-top: 0;
+      bottom: 0;
+      right: 0;
     }
-  }
-
-  &__bottom {
-    display: none;
-
-    @include on-desctop {
-      display: flex;
-      grid-column: span 6;
-      gap: 10px;
-      align-items: center;
-    }
-  }
-
-  &__data {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 14px;
-    line-height: 125%;
-    font-weight: 700;
-    margin-top: 135px;
-    white-space: nowrap;
   }
 
   &__line {
-    flex-grow: 1;
-    height: 1px;
-    background-color: $white-color;
-    margin-top: 135px;
+    display: none;
+
+    @include on-desctop {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17.5px;
+      text-align: left;
+      grid-column: 1 / 7;
+      padding-top: 135px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      opacity: 70%;
+      margin-bottom: 50px;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #f1f5f4;
+        opacity: 60%;
+      }
+    }
   }
 }

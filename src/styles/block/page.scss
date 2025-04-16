@@ -2,26 +2,21 @@
   scroll-behavior: smooth;
   overflow-x: hidden;
 
-  &:has(.page__menu:target) {
-    overflow: hidden;
-    height: 100vh;
-  }
-
   &__menu {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-
     opacity: 0;
     pointer-events: none;
-    transform: translateX(-100%);
-    transition: all 0.3s ease;
 
     &:target {
       opacity: 1;
-      transform: translateX(0);
       pointer-events: all;
     }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
   }
 }
