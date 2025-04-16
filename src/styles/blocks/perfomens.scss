@@ -1,15 +1,62 @@
 .perfomens {
-  @include page-grid;
+  position: relative;
 
   &__title {
-    grid-column: 1/-1;
+
+   }
+
+  &__carts {
+    display: grid;
+    row-gap: 60px;
 
     @include onTablet {
-      grid-column: 1/5;
+      @include page-grid;
+
+    }
+
+  }
+
+  &__cart {
+    display: grid;
+    gap: 60px;
+
+    @include onTablet {
+    gap: 0;
+    }
+
+    // @include onDesktop {
+    //   column-gap: 30px;
+    //   justify-items: stretch;
+    // }
+
+
+    &-left {
+      grid-column: 1/-1;
+
+      @include onTablet {
+        grid-column: 1/4;
+      }
+
+      @include onDesktop {
+        grid-column: span 6;
+      }
+    }
+
+    &-right {
+      grid-column: 1/-1;
+      margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 4/7;
+      margin-bottom: 0;
+
+    }
+
+    @include onDesktop {
+        grid-column: span 6;
+    }
+
     }
   }
 
-  &__carts {
-    //  display: grid;
-  }
 }
