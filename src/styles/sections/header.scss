@@ -1,0 +1,126 @@
+:root {
+  --phone-img-bg: 37%;
+  --tablet-img-bg: 45%;
+  --desk-img-bg: 40%;
+}
+
+.header {
+  background-color: $head-foot-color-bg;
+  background-image: url(../images/header/header-cover-img.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: auto var(--phone-img-bg);
+  height: 100vh;
+
+  @include on-tablet {
+    background-size: auto var(--tablet-img-bg);
+    height: 1092px;
+  }
+
+  @include on-desktop {
+    background-size: var(--desk-img-bg) auto;
+    background-position: bottom right;
+    height: 100vh;
+  }
+
+  &__content {
+    @include on-desktop {
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
+    }
+  }
+
+  &__middle {
+    padding-top: 50px;
+    padding-bottom: calc(var(--phone-img-bg) + 40px);
+
+    @include page-grid;
+
+    @include on-tablet {
+      padding-top: 99px;
+      padding-bottom: calc(var(--tablet-img-bg) + 70px);
+    }
+
+    @include on-desktop {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__date {
+    padding-bottom: 10px;
+    margin: 0;
+    grid-column: 1 / -1;
+    color: $white-bg;
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    color: $white-bg;
+    padding: 0;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    color: $white-bg;
+    margin: 0;
+    padding: 30px 0 40px;
+
+    @include on-tablet {
+      padding: 20px 0 50px;
+    }
+
+    @include on-desktop {
+      padding: 30px 0 81px;
+    }
+  }
+
+  &__button-link {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      width: 330px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      width: 40%;
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: row;
+    color: $white-bg;
+    min-width: 81px;
+    height: 18px;
+  }
+
+  &__divider {
+    justify-content: flex-end;
+    display: flex;
+    padding-top: 11px;
+    padding-bottom: 6px;
+  }
+}

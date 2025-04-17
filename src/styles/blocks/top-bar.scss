@@ -1,0 +1,50 @@
+.top-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-block: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  @include on-desktop {
+    padding: 26px 0 27px;
+  }
+
+  &__logo-link {
+    height: 40px;
+    width: 123px;
+    box-sizing: border-box;
+
+    @include on-tablet {
+      height: 37px;
+    }
+  }
+
+  &__logo {
+    height: 40px;
+    width: 123px;
+    transition-duration: $efferctDuration;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      height: 37px;
+    }
+  }
+
+  &__nav-icons {
+    display: flex;
+    column-gap: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-tablet {
+      gap: 40px;
+      flex-direction: row-reverse;
+    }
+  }
+}

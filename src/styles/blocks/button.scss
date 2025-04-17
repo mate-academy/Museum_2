@@ -1,0 +1,88 @@
+.button {
+  cursor: pointer;
+  background-color: $button-color;
+  color: $white-bg;
+  height: 60px;
+  width: 100%;
+  border: 0 solid transparent;
+  transition: $efferctDuration;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+
+  &:active {
+    background-color: $button-active;
+  }
+
+  &:disabled {
+    background-color: $button-disabled;
+  }
+
+  &--section-mob {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &--section-tab {
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    @include on-tablet {
+      display: flex;
+      width: 210px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+
+  &-secondary {
+    display: flex;
+    color: $button-color;
+    background-color: transparent;
+    border: 1px solid $button-color;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+
+    &:hover {
+      border: 1px solid $button-hover;
+      color: $button-hover;
+      background-color: transparent;
+
+      path {
+        stroke: $button-hover;
+      }
+    }
+
+    &:active {
+      border: 1px solid $button-active;
+      color: $button-active;
+      background-color: transparent;
+
+      path {
+        stroke: $button-active;
+      }
+    }
+
+    &:disabled {
+      border: 1px solid $button-disabled;
+      color: $button-disabled;
+      background-color: transparent;
+
+      path {
+        stroke: $button-disabled;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.soon-events {
+  padding-bottom: 90px;
+
+  @include on-tablet {
+    padding-bottom: 100px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 110px;
+  }
+
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px;
+
+    @include on-tablet {
+      justify-content: space-between;
+      height: 60px;
+      padding-bottom: 70px;
+    }
+  }
+
+  &__cards {
+    gap: 60px;
+
+    @include page-grid;
+
+    @include on-tablet {
+      gap: 70px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -3;
+    }
+  }
+}
