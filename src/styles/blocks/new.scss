@@ -1,0 +1,41 @@
+.new {
+  transition-duration: $efferctDuration;
+
+  &__img {
+    width: 100%;
+    padding-bottom: 20px;
+
+    @include on-tablet {
+      padding-bottom: 30px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 20px;
+      object-fit: cover;
+      object-position: top;
+      height: 370px;
+    }
+  }
+
+  &__img--differ-position {
+    @include on-desktop {
+      object-position: center;
+    }
+  }
+
+  &:hover .new__img {
+    @include hover(transform, scale(1.05));
+  }
+
+  &__date {
+    padding: 0;
+  }
+
+  &__about {
+    padding-top: 20px;
+
+    @include on-tablet {
+      padding-top: 18px;
+    }
+  }
+}

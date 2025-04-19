@@ -1,0 +1,93 @@
+.page {
+  scroll-behavior: smooth;
+  transition: $efferctDuration;
+
+  &__body {
+    min-width: 320px;
+    width: 100%;
+    background-color: $white-bg;
+    padding: 0;
+    box-sizing: border-box;
+    margin: auto;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transition: all $efferctDuration;
+    transform: translateX(-100%);
+    opacity: 1;
+    pointer-events: all;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &::before {
+    content: '';
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $efferctDuration;
+  }
+
+  &:has(.page__menu:target)::before {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.page,
+.page__body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.page:has(.page__menu:target) {
+  overflow: hidden;
+  pointer-events: all;
+}
+
+.main {
+  width: 100%;
+}
+
+.container {
+  max-width: 100%;
+  height: 100%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: $efferctDuration;
+}
+
+a:hover {
+  color: $button-hover;
+}
+
+* {
+  margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $button-color;
+  -webkit-box-shadow: 0 0 0 1000px $white-bg inset;
+}
+
+input:-webkit-autofill:not(:placeholder-shown) {
+  -webkit-text-fill-color: $black-color;
+}

@@ -1,0 +1,52 @@
+.actual-exhibs {
+  padding-top: 90px;
+  padding-bottom: 120px;
+
+  @include on-tablet {
+    padding-top: 100px;
+    padding-bottom: 160px;
+  }
+
+  @include on-desktop {
+    padding-top: 110px;
+    padding-bottom: 200px;
+  }
+
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding-bottom: 60px;
+
+    @include on-tablet {
+      padding-bottom: 70px;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .section-title {
+      width: max-content;
+      align-items: center;
+      align-content: center;
+    }
+  }
+
+  &__cards {
+    @include page-grid;
+
+    height: max-content;
+    row-gap: 60px;
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+}
