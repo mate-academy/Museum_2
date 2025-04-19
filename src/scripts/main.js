@@ -7,17 +7,33 @@ document.getElementById('subscription__form').addEventListener('submit', functio
 
 })
 
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLanguage = localStorage.getItem("selectedLanguage") || "uk";
+  updateLanguage(savedLanguage);
+});
 
 document.querySelectorAll(".language-switcher").forEach(switcher => {
+  switcher.value = localStorage.getItem("selectedLanguage") || "uk";
+
   switcher.addEventListener("change", function () {
     const selectedLanguage = this.value;
-
-    document.querySelectorAll("[data-key]").forEach(el => {
-      const key = el.dataset.key;
-      el.innerHTML = translations[selectedLanguage][key];
-    });
+    localStorage.setItem("selectedLanguage", selectedLanguage);
+    updateLanguage(selectedLanguage);
   });
 });
+
+function updateLanguage(language) {
+  document.querySelectorAll("[data-key]").forEach(el => {
+    const key = el.dataset.key;
+    el.innerHTML = translations[language][key];
+  });
+
+  document.querySelectorAll(".language-switcher").forEach(switcher => {
+    switcher.value = language;
+  });
+}
+
+
 
 const translations = {
   uk: {
