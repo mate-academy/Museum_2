@@ -1,21 +1,22 @@
-@import 'utils.scss';
-@import 'fonts.scss';
-@import 'typography.scss';
+@import 'utils';
+@import 'fonts';
+@import 'typography';
 
 * {
-  box-sizing: border-box;
   @include set-spaces(0, 0);
+
+  box-sizing: border-box;
   transition: all $element-transition ease;
 }
 
 html {
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background: $c-gray;
   margin: 0;
+  background: $c-gray;
   max-width: $page-max-width;
   box-sizing: border-box;
   margin-inline: auto;
@@ -23,6 +24,7 @@ body {
 
 img {
   cursor: pointer;
+
   &:hover {
     box-shadow: 10px 10px $c-grey-blue;
   }
@@ -34,9 +36,11 @@ article {
 
 .button {
   display: block;
+
   @include flex-center;
   @include set-font($font-raleway, 16px, 600, $c-font-white, 100%);
   @include set-size(100%, 60px);
+
   text-decoration: none;
   grid-column: 1 / 4;
   background-color: $c-button-main;
@@ -45,9 +49,11 @@ article {
   &:hover {
     background-color: $c-button-hover;
   }
+
   &:active {
     background-color: $c-button-passed;
   }
+
   &:disabled {
     background-color: $c-button-disabled;
   }
@@ -68,11 +74,13 @@ article {
       border-color: $c-button-hover;
       color: $c-button-hover;
     }
+
     &:active {
       background-color: inherit;
       border-color: $c-button-passed;
       color: $c-button-passed;
     }
+
     &:disabled {
       background-color: inherit;
       border-color: $c-button-disabled;
@@ -85,7 +93,6 @@ article {
 
     @include on-phone {
       grid-column: 1 / -1;
-
       margin-top: 30px;
     }
   }
@@ -97,10 +104,11 @@ a {
 }
 
 .top-bar {
+  @include flex-center;
   @include set-size(100%, 90px);
+
   grid-column: 1 / -1;
   grid-row: 1 / 1;
-  @include flex-center;
   justify-content: space-between;
 
   @include on-tablet {
@@ -114,13 +122,16 @@ a {
     cursor: pointer;
     height: 40%;
     object-fit: contain;
+
     &:hover {
       transform: scale($element-scale);
     }
   }
+
   &__wrappper {
     @include flex-center;
     @include set-spaces(0, 0);
+
     flex-wrap: nowrap;
     gap: 40px;
     flex-direction: row;
@@ -132,25 +143,27 @@ a {
   }
   &__link {
     @include set-size(30px, 30px);
+
     display: block;
   }
+
   &__select {
     @include flex-center;
   }
+
   &__lang {
+    @include set-font($font-raleway, 16px, 500, $c-font-white, 150%);
+
     background: transparent;
     border: none;
     outline: none;
-
-    @include set-font($font-raleway, 16px, 500, $c-font-white, 150%);
     cursor: pointer;
-
     padding: 8px 12px;
     border-radius: 4px;
     box-shadow: none;
     appearance: none;
-    -webkit-appearance: none; // для Safari
-    -moz-appearance: none; // для Firefox
+    -webkit-appearance: none;
+    -moz-appearance: none;
 
     &:focus,
     &:active,
@@ -165,6 +178,7 @@ a {
 
 .front-image {
   @include set-size(50vw, 80vh);
+
   position: absolute;
   bottom: 0;
   right: 0;
@@ -172,6 +186,7 @@ a {
 
   @include on-tablet {
     @include set-size(55vw, 45vh);
+
     background-position: bottom;
     position: inherit;
     grid-column: 1 / -1;
@@ -182,19 +197,22 @@ a {
 
   @include on-phone {
     @include set-size(80vw, 40vh);
+
     grid-column: 1 / -1;
   }
 }
 
 .section {
-  width: 100%;
   @include set-padding-inline;
+
+  width: 100%;
   margin-top: 13vh;
   max-width: $content-max-width;
   margin-inline: auto;
 
   &__title {
     @include set-font($font-playFair, 48px, 700, $c-font-black, 120%);
+
     margin: 0;
     grid-column: 1 / 7;
 
@@ -225,7 +243,7 @@ a {
   }
 
   &__decription {
-    @include set-font($font-raleway, 16px, 400, $c-font-black, 150%);
+    @include set-font($font-raleway, 16px, 400, $c-font-grey, 150%);
   }
 }
 
@@ -235,22 +253,25 @@ a {
 
 .header {
   @include set-size(100%, 100vh);
+
   background-color: $c-grey-blue;
   overflow: hidden;
   min-height: 650px;
 
   &__content {
-    position: relative;
-    @include set-grid;
-    grid-template-rows: repeat(4, auto);
     @include set-size(100%, 100%);
     @include set-padding-inline;
+    @include set-grid;
+
+    position: relative;
+    grid-template-rows: repeat(4, auto);
     max-width: $content-max-width;
     margin-inline: auto;
   }
 
   &__title {
     @include set-font($font-playFair, 96px, 700, $c-font-white, 100%);
+
     letter-spacing: 0;
     margin: 0;
 
@@ -265,6 +286,7 @@ a {
 
   &__info {
     @include set-font($font-raleway, 14px, 400, $c-font-white, 140%);
+
     padding: 0;
     letter-spacing: 0;
 
@@ -299,6 +321,7 @@ a {
 
   &__decorationLine {
     @include set-size(100%, 1px);
+
     background-color: $c-font-white;
     margin-top: 8px;
     grid-column: 2 / 7;
@@ -310,8 +333,9 @@ a {
   }
 
   &__wrapper {
-    align-self: start;
     @include set-flex(column, center, start);
+
+    align-self: start;
     grid-column: 1 / 7;
     grid-row: 2 / 2;
 
@@ -338,14 +362,15 @@ a {
     @include set-image('../images/header_image.png', right bottom, contain);
 
     @include on-tablet {
-      background-position: bottom center
+      background-position: bottom center;
     }
   }
 }
 
 .aside {
-  overflow: scroll;
   @include set-size(100vw, 100vh);
+
+  overflow: scroll;
   max-width: $page-max-width;
   background-color: $c-grey-blue;
   position: fixed;
@@ -373,10 +398,11 @@ a {
   }
 
   &__content {
-    position: relative;
     @include set-grid;
     @include set-size(100%, 100%);
     @include set-padding-inline;
+
+    position: relative;
     grid-template-rows: 90px auto auto auto;
     max-width: $content-max-width;
     margin-inline: auto;
@@ -395,25 +421,28 @@ a {
     }
 
     &--title {
-      display: inline-block;
       @include set-spaces(0, 0);
       @include set-font($font-raleway, 14px, 400, $c-font-white, 100%);
+
+      display: inline-block;
       letter-spacing: 0%;
     }
 
     &--subtitle {
-      display: inline-block;
       @include set-spaces(0, 0);
       @include set-font($font-raleway, 16px, 600, $c-font-white, 100%);
+
+      display: inline-block;
       letter-spacing: 0%;
     }
   }
 
   &__links {
+    @include set-flex(column, start, stretch);
+
     grid-column: 1 / 6;
     grid-row: 3 / 3;
     align-self: start;
-    @include set-flex(column, start, stretch);
     gap: 60px;
 
     @include on-tablet {
@@ -427,6 +456,7 @@ a {
 
     &--link {
       @include set-font($font-playFair, 47px, 700, $c-font-white, 120%);
+
       position: relative;
       text-decoration: none;
 
@@ -472,6 +502,7 @@ a {
 
   &__decoration-line {
     @include set-size(100%, 1px);
+
     background-color: $c-font-white;
     grid-column: 1 / 7;
     grid-row: 3 / 3;
@@ -488,8 +519,9 @@ a {
   width: 100%;
 
   &__exibition {
-    width: 100%;
     @include set-flex(column, space-between, start);
+
+    width: 100%;
     margin-top: 10vh;
     gap: 10px;
 
@@ -561,7 +593,6 @@ a {
     justify-content: space-between;
     max-height: none;
     height: auto;
-
     grid-column: 1 / 11;
 
     @include on-tablet {
@@ -577,7 +608,6 @@ a {
 
   &__image {
     aspect-ratio: 1 / 1.2;
-
     height: auto;
 
     @include on-phone {
@@ -586,8 +616,9 @@ a {
   }
 
   &__wrapper {
-    max-width: 55%;
     @include set-flex(column, flex-start, start);
+
+    max-width: 55%;
     gap: 10px;
 
     @include on-tablet {
@@ -620,6 +651,7 @@ a {
 
 .board {
   @include set-size(100vw, 100vh);
+
   max-width: none;
   padding-inline: 0;
   margin-inline: 0;
@@ -652,14 +684,16 @@ a {
 
   &__content {
     @include set-padding-inline;
+
     grid-template-rows: auto auto auto;
     align-content: center;
     row-gap: 0;
   }
 
   &__title {
-    grid-column: 6 / -1;
     @include set-font($font-playFair, 80px, 700, $c-font-white, 100%);
+
+    grid-column: 6 / -1;
 
     @include on-tablet {
       grid-column: 1 / 5;
@@ -673,9 +707,10 @@ a {
   }
 
   &__text {
+    @include set-font($font-raleway, 16px, 400, $c-font-white, 150%);
+
     margin-top: 20px;
     grid-column: 6 / 11;
-    @include set-font($font-raleway, 16px, 400, $c-font-white, 150%);
 
     @include on-tablet {
       grid-column: 1 / 5;
@@ -712,9 +747,10 @@ a {
   }
 
   &__article {
+    @include set-flex(column, flex-start, start);
+
     margin-top: 60px;
     width: 100%;
-    @include set-flex(column, flex-start, start);
     gap: 20px;
 
     &--first {
@@ -801,6 +837,7 @@ a {
 
     &::placeholder {
       @include set-font($font-raleway, 16px, 400, $c-input, 150%);
+
       transition: all $element-transition ease;
     }
     &:hover {
@@ -834,6 +871,7 @@ a {
 
   &__text {
     @include set-font($font-raleway, 16px, 400, $c-font-black, 150%);
+
     grid-column: 7 / -1;
     grid-row: 1 / 1;
 
@@ -858,6 +896,7 @@ a {
 
 .footer {
   @include set-size(100vw, 50vh);
+
   background-color: $c-grey-blue;
   margin-top: 200px;
   min-height: 400px;
@@ -874,6 +913,7 @@ a {
     @include set-size(100%, 100%);
     @include set-grid;
     @include set-padding-inline;
+
     position: relative;
     margin-inline: auto;
     max-width: $content-max-width;
@@ -890,8 +930,9 @@ a {
   }
 
   &__item {
-    grid-row: 1 / 1;
     @include set-flex(column, flex-start, start);
+
+    grid-row: 1 / 1;
     gap: 30px;
 
     @include on-phone {
@@ -949,11 +990,13 @@ a {
 
   &__nav {
     @include set-font($font-raleway, 16px, 400, $c-font-white, 150%);
+
     text-decoration: none;
   }
 
   &__links {
     @include flex-center;
+
     justify-content: start;
     gap: 20px;
     grid-column: 1 / 3;
@@ -969,21 +1012,24 @@ a {
     }
 
     &--link {
-      display: block;
       @include set-size(20px, 20px);
+
+      display: block;
     }
   }
 
   &__icon {
     @include set-size(100%, 100%);
+
     object-fit: contain;
     object-position: center;
   }
 
   &__privacy {
+    @include set-font($font-raleway, 14px, 400, $c-font-white, 140%);
+
     grid-column: 1 / 3;
     grid-row: 3 / 3;
-    @include set-font($font-raleway, 14px, 400, $c-font-white, 140%);
 
     @include on-tablet {
       grid-column: 1 / 3;
@@ -1010,10 +1056,11 @@ a {
   }
 
   &__to-top {
+    @include set-size(30px, 30px);
+
     grid-column: 12 / 12;
     grid-row: 3 / 3;
     display: block;
-    @include set-size(30px, 30px);
 
     @include on-tablet {
       grid-column: 6 / 6;
@@ -1031,9 +1078,8 @@ a {
   }
 
   &__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+    @include set-flex(column, flex-start, start);
+
     gap: 10px;
 
     @include on-phone {
