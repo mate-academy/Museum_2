@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <title>NAMU</title>
     <link
       rel="stylesheet"
       href="./styles/main.scss"
@@ -44,11 +44,18 @@
                 alt="menu"
               />
             </a>
-            <select class="top-bar__lang">
-              <option class="top-bar__lang--option">UA</option>
-              <option class="top-bar__lang--option">EN</option>
-              <option class="top-bar__lang--option">PL</option>
-            </select>
+            <div class="top-bar__select">
+              <select class="top-bar__lang">
+                <option class="top-bar__lang--option">UA</option>
+                <option class="top-bar__lang--option">EN</option>
+                <option class="top-bar__lang--option">PL</option>
+              </select>
+              <img
+                src="/src/images/select_arrow.svg"
+                alt=" "
+                class="top-bar__lang--arrow"
+              />
+            </div>
           </div>
         </nav>
 
@@ -96,11 +103,18 @@
                 alt="menu"
               />
             </a>
-            <select class="top-bar__lang">
-              <option class="top-bar__lang--option">UA</option>
-              <option class="top-bar__lang--option">EN</option>
-              <option class="top-bar__lang--option">PL</option>
-            </select>
+            <div class="top-bar__select">
+              <select class="top-bar__lang">
+                <option class="top-bar__lang--option">UA</option>
+                <option class="top-bar__lang--option">EN</option>
+                <option class="top-bar__lang--option">PL</option>
+              </select>
+              <img
+                src="/src/images/select_arrow.svg"
+                alt=" "
+                class="top-bar__lang--arrow"
+              />
+            </div>
           </div>
         </nav>
         <div class="aside__dates">
@@ -116,9 +130,24 @@
           </div>
         </div>
         <div class="aside__links">
-          <a href="#actual" class="aside__links--link">Актуальні виставки</a>
-          <a href="#events" class="aside__links--link">Найближчі події</a>
-          <a href="#news" class="aside__links--link">Новини</a>
+          <a
+            href="#actual"
+            class="aside__links--link"
+          >
+            Актуальні виставки
+          </a>
+          <a
+            href="#events"
+            class="aside__links--link"
+          >
+            Найближчі події
+          </a>
+          <a
+            href="#news"
+            class="aside__links--link"
+          >
+            Новини
+          </a>
         </div>
         <div class="decorationLine"></div>
         <div class="aside__decoration-line"></div>
@@ -133,7 +162,10 @@
     </aside>
 
     <main>
-      <section id="actual" class="section actual">
+      <section
+        id="actual"
+        class="section actual"
+      >
         <div class="section__content">
           <h1 class="section__title">Актуальні виставки</h1>
           <a
@@ -184,7 +216,10 @@
         </div>
       </section>
 
-      <section id="events" class="section events">
+      <section
+        id="events"
+        class="section events"
+      >
         <div class="section__content events__content">
           <h1 class="section__title">Найближчі події</h1>
           <a
@@ -208,7 +243,12 @@
                 Таємниці підготовки, історії експонатів, магія дійства до і в
                 момент вашої присутності – розгортатиметься...
               </p>
-              <button class="button events__button">Зареєструватись</button>
+              <a
+                href="#"
+                class="button events__button"
+              >
+                Зареєструватись
+              </a>
             </div>
           </article>
 
@@ -227,13 +267,18 @@
                 Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт
                 кругосвітньої подорожі - Австралія.
               </p>
-              <button class="button events__button">Зареєструватись</button>
+              <a
+                href="#"
+                class="button events__button"
+              >
+                Зареєструватись
+              </a>
             </div>
           </article>
         </div>
       </section>
 
-      <section  class="section board">
+      <section class="section board">
         <img
           src="/src/images/board_image.png"
           class="board__image"
@@ -259,7 +304,10 @@
         </div>
       </section>
 
-      <section id="news" class="section news">
+      <section
+        id="news"
+        class="section news"
+      >
         <div class="section__content news__content">
           <h3 class="section__title">Новини</h3>
           <a
@@ -300,12 +348,17 @@
       </section>
 
       <section class="section subscribe">
-        <div class="section__content subscribe__content">
+        <form
+          id="form"
+          class="section__content subscribe__content"
+        >
           <h3 class="section__title subscribe__title">
             Підпишіться на дайджест
           </h3>
           <input
-            type="text"
+            required
+            id="form_input"
+            type="email"
             class="subscribe__input"
             placeholder="e-mail"
           />
@@ -319,7 +372,7 @@
             Першими дізнавайтесь про новини музею та розіграші, отримуйте
             запрошення на події та читайте статті від кураторів
           </p>
-        </div>
+        </form>
       </section>
     </main>
 
@@ -361,19 +414,19 @@
           <h5 class="footer__title">Головна</h5>
           <div class="footer__wrapper">
             <a
-              href="#"
+              href="#actual"
               class="footer__nav"
             >
               Виставки
             </a>
             <a
-              href="#"
+              href="#events"
               class="footer__nav"
             >
               Події
             </a>
             <a
-              href="#"
+              href="#news"
               class="footer__nav"
             >
               Новини
@@ -424,8 +477,18 @@
           </a>
         </div>
 
-        <p class="footer__privacy">© 2010 — 2020</p>
-        <p class="footer__privacy footer__privacy--title">Privacy — Terms</p>
+        <a
+          href="#"
+          class="footer__privacy"
+        >
+          © 2010 — 2020
+        </a>
+        <a
+          href="#"
+          class="footer__privacy footer__privacy--title"
+        >
+          Privacy — Terms
+        </a>
 
         <a
           href="#"

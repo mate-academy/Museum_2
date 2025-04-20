@@ -21,6 +21,17 @@ body {
   margin-inline: auto;
 }
 
+img {
+  cursor: pointer;
+  &:hover {
+    box-shadow: 10px 10px $c-grey-blue;
+  }
+}
+
+article {
+  cursor: pointer;
+}
+
 .button {
   display: block;
   @include flex-center;
@@ -80,6 +91,11 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+  color: $c-font-white;
+}
+
 .top-bar {
   @include set-size(100%, 90px);
   grid-column: 1 / -1;
@@ -95,8 +111,12 @@ body {
   }
 
   &__logo {
+    cursor: pointer;
     height: 40%;
     object-fit: contain;
+    &:hover {
+      transform: scale($element-scale);
+    }
   }
   &__wrappper {
     @include flex-center;
@@ -114,6 +134,9 @@ body {
     @include set-size(30px, 30px);
     display: block;
   }
+  &__select {
+    @include flex-center;
+  }
   &__lang {
     background: transparent;
     border: none;
@@ -122,14 +145,17 @@ body {
     @include set-font($font-raleway, 16px, 500, $c-font-white, 150%);
     cursor: pointer;
 
-    // додаткові стилі для зовнішнього вигляду (опціонально)
     padding: 8px 12px;
     border-radius: 4px;
     box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none; // для Safari
+    -moz-appearance: none; // для Firefox
 
     &:focus,
     &:active,
     &:hover {
+      transform: scale($element-scale);
       outline: none;
       border: none;
       box-shadow: none;
@@ -138,7 +164,6 @@ body {
 }
 
 .front-image {
-
   @include set-size(50vw, 80vh);
   position: absolute;
   bottom: 0;
@@ -205,13 +230,14 @@ body {
 }
 
 .icon:hover {
-  transform: scale(1.2);
+  transform: scale($element-scale);
 }
 
 .header {
   @include set-size(100%, 100vh);
   background-color: $c-grey-blue;
   overflow: hidden;
+  min-height: 650px;
 
   &__content {
     position: relative;
@@ -310,10 +336,15 @@ body {
 
   &__image {
     @include set-image('../images/header_image.png', right bottom, contain);
+
+    @include on-tablet {
+      background-position: bottom center
+    }
   }
 }
 
 .aside {
+  overflow: scroll;
   @include set-size(100vw, 100vh);
   max-width: $page-max-width;
   background-color: $c-grey-blue;
@@ -325,6 +356,7 @@ body {
   pointer-events: none;
   transform: translateX(-100%);
   z-index: 999;
+  min-height: 650px;
 
   &:target {
     opacity: 1;
@@ -363,12 +395,14 @@ body {
     }
 
     &--title {
+      display: inline-block;
       @include set-spaces(0, 0);
       @include set-font($font-raleway, 14px, 400, $c-font-white, 100%);
       letter-spacing: 0%;
     }
 
     &--subtitle {
+      display: inline-block;
       @include set-spaces(0, 0);
       @include set-font($font-raleway, 16px, 600, $c-font-white, 100%);
       letter-spacing: 0%;
@@ -395,7 +429,6 @@ body {
       @include set-font($font-playFair, 47px, 700, $c-font-white, 120%);
       position: relative;
       text-decoration: none;
-      transition: color 0.3s ease;
 
       &::after {
         content: '';
@@ -405,6 +438,7 @@ body {
         width: 0%;
         height: 2px;
         background-color: $c-font-white;
+        transition: all 0.3s ease;
       }
 
       &:hover::after {
@@ -521,6 +555,7 @@ body {
   }
 
   &__event {
+    cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -590,6 +625,7 @@ body {
   margin-inline: 0;
   background-color: $c-grey-blue;
   position: relative;
+  min-height: 400px;
 
   @include on-tablet {
     height: 50vh;
@@ -608,12 +644,16 @@ body {
     @include on-tablet {
       display: none;
     }
+    &:hover {
+      cursor: auto;
+      box-shadow: none;
+    }
   }
 
   &__content {
     @include set-padding-inline;
     grid-template-rows: auto auto auto;
-    align-content: center; // центрує весь блок по вертикалі
+    align-content: center;
     row-gap: 0;
   }
 
@@ -786,6 +826,10 @@ body {
     @include on-phone {
       grid-column: 1 / -1;
     }
+
+    &--submitted {
+      background-color: lightskyblue;
+    }
   }
 
   &__text {
@@ -816,6 +860,7 @@ body {
   @include set-size(100vw, 50vh);
   background-color: $c-grey-blue;
   margin-top: 200px;
+  min-height: 400px;
 
   @include on-tablet {
     height: 35vh;
