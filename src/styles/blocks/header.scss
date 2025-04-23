@@ -4,16 +4,27 @@
   background-color: $background-color;
 
   &__container {
+    height: 100%;
     @include contentPaddingInline;
   }
 
   &__contant {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @include onDesktop {
+      flex-direction: row;
+          }
   }
 
   &__bottom {
     margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+      }
   }
 
   &__top {
@@ -59,12 +70,11 @@
   }
 
   &__photo {
-    // display: flex;
-    // justify-content: center;
+    display: flex;
+    justify-content: center;
 
     &--position {
       display: block;
-      // justify-content: center;
 
 
 
@@ -78,5 +88,26 @@
       }
     }
 
+  }
+
+
+  // &__icons {
+  //   display: flex;
+  //   gap: 40px;
+
+  // }
+
+  //  &__icon {
+  //   cursor: pointer;
+  //  }
+
+  &__language{
+    display: none;
+
+    // @include onTablet {
+    //   display: flex;
+    //   align-items: center;
+    //   gap: 5px;
+    // }
   }
 }
