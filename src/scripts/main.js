@@ -11,3 +11,8 @@ form.addEventListener('submit', (e) => {
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+window.addEventListener("hashchange", () => {
+  const isMenuOpen = location.hash === "#menu";
+  document.body.classList.toggle("no-scroll", isMenuOpen);
+});
