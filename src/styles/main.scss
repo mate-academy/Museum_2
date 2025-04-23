@@ -2,6 +2,1094 @@
 @import 'fonts';
 @import 'typography';
 
-body {
+* {
+  @include set-spaces(0, 0);
+
+  box-sizing: border-box;
+  transition: all $element-transition ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
+.page {
+  margin: 0;
   background: $c-gray;
+  max-width: $page-max-width;
+  box-sizing: border-box;
+  margin-inline: auto;
+}
+
+img {
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 10px 10px $c-grey-blue;
+  }
+}
+
+article {
+  cursor: pointer;
+}
+
+.button {
+  display: block;
+
+  @include flex-center;
+  @include set-font($font-raleway, 16px, 600, $c-font-white, 100%);
+  @include set-size(100%, 60px);
+
+  text-decoration: none;
+  grid-column: 1 / 4;
+  background-color: $c-button-main;
+  border: none;
+
+  &:hover {
+    background-color: $c-button-hover;
+  }
+
+  &:active {
+    background-color: $c-button-passed;
+  }
+
+  &:disabled {
+    background-color: $c-button-disabled;
+  }
+
+  @include on-phone {
+    grid-column: 1 / -1;
+  }
+
+  &--light {
+    margin: 0;
+    grid-column: 10 / -1;
+    background-color: transparent;
+    border: 1px solid $c-button-main;
+    color: $c-button-main;
+
+    &:hover {
+      background-color: inherit;
+      border-color: $c-button-hover;
+      color: $c-button-hover;
+    }
+
+    &:active {
+      background-color: inherit;
+      border-color: $c-button-passed;
+      color: $c-button-passed;
+    }
+
+    &:disabled {
+      background-color: inherit;
+      border-color: $c-button-disabled;
+      color: $c-button-disabled;
+    }
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      margin-top: 30px;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $c-font-white;
+}
+
+.top-bar {
+  @include flex-center;
+  @include set-size(100%, 90px);
+
+  grid-column: 1 / -1;
+  grid-row: 1 / 1;
+  justify-content: space-between;
+
+  @include on-tablet {
+    height: 77px;
+  }
+  @include on-phone {
+    height: 80px;
+  }
+
+  &__logo {
+    cursor: pointer;
+    height: 40%;
+    object-fit: contain;
+
+    &:hover {
+      transform: scale($element-scale);
+    }
+  }
+
+  &__wrappper {
+    @include flex-center;
+    @include set-spaces(0, 0);
+
+    flex-wrap: nowrap;
+    gap: 40px;
+    flex-direction: row;
+
+    @include on-phone {
+      flex-direction: row-reverse;
+      gap: 20px;
+    }
+  }
+  &__link {
+    @include set-size(30px, 30px);
+
+    display: block;
+  }
+
+  &__select {
+    @include flex-center;
+  }
+
+  &__lang {
+    @include set-font($font-raleway, 16px, 500, $c-font-white, 150%);
+
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    box-shadow: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &:focus,
+    &:active,
+    &:hover {
+      transform: scale($element-scale);
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.front-image {
+  @include set-size(50vw, 80vh);
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+
+  @include on-tablet {
+    @include set-size(55vw, 45vh);
+
+    background-position: bottom;
+    position: inherit;
+    grid-column: 1 / -1;
+    grid-row: 4 / 4;
+    align-self: end;
+    justify-self: center;
+  }
+
+  @include on-phone {
+    @include set-size(80vw, 40vh);
+
+    grid-column: 1 / -1;
+  }
+}
+
+.section {
+  @include set-padding-inline;
+
+  width: 100%;
+  margin-top: 13vh;
+  max-width: $content-max-width;
+  margin-inline: auto;
+
+  &__title {
+    @include set-font($font-playFair, 48px, 700, $c-font-black, 120%);
+
+    margin: 0;
+    grid-column: 1 / 7;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      font-size: 40px;
+    }
+
+    @include on-phone {
+      font-size: 28px;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__content {
+    @include set-size(100%, 100%);
+    @include set-grid;
+  }
+}
+
+.article {
+  &__date {
+    @include set-font($font-raleway, 16px, 400, $c-button-main, 150%);
+  }
+
+  &__title {
+    @include set-font($font-playFair, 24px, 700, $c-font-black, 125%);
+  }
+
+  &__decription {
+    @include set-font($font-raleway, 16px, 400, $c-font-grey, 150%);
+  }
+}
+
+.icon:hover {
+  transform: scale($element-scale);
+}
+
+.header {
+  @include set-size(100%, 100vh);
+
+  background-color: $c-grey-blue;
+  overflow: hidden;
+  min-height: 650px;
+
+  &__content {
+    @include set-size(100%, 100%);
+    @include set-padding-inline;
+    @include set-grid;
+
+    position: relative;
+    grid-template-rows: repeat(4, auto);
+    max-width: $content-max-width;
+    margin-inline: auto;
+  }
+
+  &__title {
+    @include set-font($font-playFair, 96px, 700, $c-font-white, 100%);
+
+    letter-spacing: 0;
+    margin: 0;
+
+    @include on-tablet {
+      font-size: 72px;
+    }
+
+    @include on-phone {
+      font-size: 48px;
+    }
+  }
+
+  &__info {
+    @include set-font($font-raleway, 14px, 400, $c-font-white, 140%);
+
+    padding: 0;
+    letter-spacing: 0;
+
+    @include on-phone {
+      margin-top: 50px;
+    }
+
+    &--subtitle {
+      margin: 30px 0 0;
+      font-size: 16px;
+      line-height: 150%;
+
+      @include on-tablet {
+        max-width: 330px;
+      }
+
+      @include on-phone {
+        max-width: 260px;
+      }
+    }
+  }
+
+  &__date {
+    @include set-font($font-raleway, 14px, 700, $c-gray, 125%);
+    grid-column: 1 / 3;
+    grid-row: 4 / 4;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__decorationLine {
+    @include set-size(100%, 1px);
+
+    background-color: $c-font-white;
+    margin-top: 8px;
+    grid-column: 2 / 7;
+    grid-row: 4 / 4;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    @include set-flex(column, center, start);
+
+    align-self: start;
+    grid-column: 1 / 7;
+    grid-row: 2 / 2;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    grid-row: 3 / 3;
+
+    @include on-tablet {
+      grid-row: 3 / 3;
+      align-self: end;
+    }
+  }
+
+  &__image {
+    @include set-image('../images/header_image.png', right bottom, contain);
+
+    @include on-tablet {
+      background-position: bottom center;
+    }
+  }
+}
+
+.aside {
+  @include set-size(100vw, 100vh);
+
+  overflow: auto;
+  max-width: $page-max-width;
+  background-color: $c-grey-blue;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+  z-index: 999;
+  min-height: 650px;
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(0);
+  }
+
+  @include on-tablet {
+    padding-inline: 40px;
+  }
+
+  @include on-phone {
+    padding-inline: 20px;
+  }
+
+  &__content {
+    @include set-grid;
+    @include set-size(100%, 100%);
+    @include set-padding-inline;
+
+    position: relative;
+    grid-template-rows: 90px auto auto auto;
+    max-width: $content-max-width;
+    margin-inline: auto;
+  }
+
+  &__dates {
+    grid-column: 1 / 6;
+    grid-row: 2 / 2;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      flex-wrap: wrap;
+    }
+
+    &--title {
+      @include set-spaces(0, 0);
+      @include set-font($font-raleway, 14px, 400, $c-font-white, 100%);
+
+      display: inline-block;
+      letter-spacing: 0%;
+    }
+
+    &--subtitle {
+      @include set-spaces(0, 0);
+      @include set-font($font-raleway, 16px, 600, $c-font-white, 100%);
+
+      display: inline-block;
+      letter-spacing: 0%;
+    }
+  }
+
+  &__links {
+    @include set-flex(column, start, stretch);
+
+    grid-column: 1 / 6;
+    grid-row: 3 / 3;
+    align-self: start;
+    gap: 60px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-phone {
+      gap: 20px;
+      grid-column: 1 / -1;
+    }
+
+    &--link {
+      @include set-font($font-playFair, 47px, 700, $c-font-white, 120%);
+
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0%;
+        height: 2px;
+        background-color: $c-font-white;
+        transition: all 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      @include on-phone {
+        font-size: 20px;
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__button {
+    grid-column: 1 / 4;
+    grid-row: 4 / 4;
+    margin: 0;
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__image {
+    @include set-image('../images/aside_image.png', right bottom, contain);
+
+    @include on-phone {
+      display: none;
+    }
+  }
+
+  &__decoration-line {
+    @include set-size(100%, 1px);
+
+    background-color: $c-font-white;
+    grid-column: 1 / 7;
+    grid-row: 3 / 3;
+    align-self: end;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.actual {
+  width: 100%;
+
+  &__exibition {
+    @include set-flex(column, space-between, start);
+
+    width: 100%;
+    margin-top: 10vh;
+    gap: 10px;
+
+    &--first {
+      grid-column: 1 / 7;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+        grid-row: 2 / 2;
+      }
+    }
+
+    &--second {
+      grid-column: 7 / -1;
+
+      @include on-tablet {
+        grid-column: 4 / -1;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+        grid-row: 3 / 3;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 0.8;
+
+    @include on-tablet {
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  &__button {
+    width: 50%;
+    margin-top: 50px;
+
+    @include on-tablet {
+      width: 100%;
+      margin-top: 40px;
+    }
+    @include on-phone {
+      margin-top: 30px;
+    }
+  }
+}
+
+.events {
+  width: 100%;
+  margin-top: 100px;
+
+  &__content {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 40px;
+  }
+
+  &__event {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-height: none;
+    height: auto;
+    grid-column: 1 / 11;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include on-phone {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+
+  &__image {
+    aspect-ratio: 1 / 1.2;
+    height: auto;
+
+    @include on-phone {
+      width: 100%;
+    }
+  }
+
+  &__wrapper {
+    @include set-flex(column, flex-start, start);
+
+    max-width: 55%;
+    gap: 10px;
+
+    @include on-tablet {
+      max-width: 45%;
+    }
+
+    @include on-phone {
+      max-width: 100%;
+    }
+  }
+
+  &__button {
+    border: none;
+    width: 50%;
+    margin-top: 40px;
+
+    @include on-tablet {
+      width: 100%;
+    }
+  }
+
+  &__button-link {
+    grid-row: 1 / 1;
+
+    @include on-phone {
+      grid-row: -1 / -1;
+    }
+  }
+}
+
+.board {
+  @include set-size(100vw, 100vh);
+
+  max-width: none;
+  padding-inline: 0;
+  margin-inline: 0;
+  background-color: $c-grey-blue;
+  position: relative;
+  min-height: 400px;
+
+  @include on-tablet {
+    height: 50vh;
+  }
+
+  @include on-phone {
+    height: 60vh;
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+
+    @include on-tablet {
+      display: none;
+    }
+    &:hover {
+      cursor: auto;
+      box-shadow: none;
+    }
+  }
+
+  &__content {
+    @include set-padding-inline;
+
+    grid-template-rows: auto auto auto;
+    align-content: center;
+    row-gap: 0;
+  }
+
+  &__title {
+    @include set-font($font-playFair, 80px, 700, $c-font-white, 100%);
+
+    grid-column: 6 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      font-size: 62px;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      font-size: 38px;
+    }
+  }
+
+  &__text {
+    @include set-font($font-raleway, 16px, 400, $c-font-white, 150%);
+
+    margin-top: 20px;
+    grid-column: 6 / 11;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__button {
+    grid-column: 6 / 9;
+    margin-top: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.news {
+  width: 100%;
+
+  &__content {
+    grid-template-rows: auto auto;
+
+    @include on-phone {
+      grid-template-rows: repeat(4, auto);
+    }
+  }
+
+  &__article {
+    @include set-flex(column, flex-start, start);
+
+    margin-top: 60px;
+    width: 100%;
+    gap: 20px;
+
+    &--first {
+      grid-column: 1 / 7;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &--second {
+      grid-column: 7 / -1;
+
+      @include on-tablet {
+        grid-column: 4 / -1;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+
+    @include on-tablet {
+      aspect-ratio: 1 / 1;
+    }
+
+    &--second {
+      object-position: center 10%;
+    }
+  }
+
+  &__button {
+    grid-row: 1 / 1;
+
+    @include on-phone {
+      grid-row: -1 / -1;
+    }
+  }
+}
+
+.subscribe {
+  width: 100%;
+  margin-top: 200px;
+
+  &__content {
+    grid-template-rows: repeat(3, auto);
+    row-gap: 40px;
+
+    @include on-tablet {
+      grid-template-rows: repeat(4, auto);
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 6;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      grid-row: 1 / 1;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__input {
+    grid-column: 1 / 6;
+    background-color: inherit;
+    border: none;
+    border-bottom: 1px solid $c-input;
+    caret-color: $c-input-actvie;
+
+    &::placeholder {
+      @include set-font($font-raleway, 16px, 400, $c-input, 150%);
+
+      transition: all $element-transition ease;
+    }
+    &:hover {
+      border-color: $c-input-actvie;
+
+      &::placeholder {
+        color: $c-input-actvie;
+      }
+    }
+    &:focus {
+      outline: none;
+      border-color: $c-input-actvie;
+      &::placeholder {
+        color: $c-input-actvie;
+      }
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      grid-row: 3 / 3;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+
+    &--submitted {
+      background-color: lightskyblue;
+    }
+  }
+
+  &__text {
+    @include set-font($font-raleway, 16px, 400, $c-font-black, 150%);
+
+    grid-column: 7 / -1;
+    grid-row: 1 / 1;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+      grid-row: 2 / 2;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__button {
+    margin: 0;
+
+    @include on-tablet {
+      grid-row: 4 / 4;
+    }
+  }
+}
+
+.footer {
+  @include set-size(100vw, 50vh);
+
+  background-color: $c-grey-blue;
+  margin-top: 200px;
+  min-height: 400px;
+
+  @include on-tablet {
+    height: 35vh;
+  }
+
+  @include on-phone {
+    height: 100vh;
+  }
+
+  &__content {
+    @include set-size(100%, 100%);
+    @include set-grid;
+    @include set-padding-inline;
+
+    position: relative;
+    margin-inline: auto;
+    max-width: $content-max-width;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 40px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+
+    @include on-phone {
+      grid-template-rows: repeat(5, auto);
+      padding-top: 34px;
+      row-gap: 30px;
+    }
+  }
+
+  &__item {
+    @include set-flex(column, flex-start, start);
+
+    grid-row: 1 / 1;
+    gap: 30px;
+
+    @include on-phone {
+      gap: 10px;
+    }
+
+    &--contacts {
+      grid-column: 1 / 4;
+
+      @include on-tablet {
+        grid-column: 1 / 3;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+        grid-row: 1 / 1;
+      }
+    }
+
+    &--grafik {
+      grid-column: 5 / 8;
+      grid-row: 1 / 3;
+
+      @include on-tablet {
+        grid-column: 3 / 5;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+        grid-row: 3 / 3;
+      }
+    }
+
+    &--main {
+      grid-column: 9 / 11;
+
+      @include on-tablet {
+        grid-column: 5 / 6;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+        grid-row: 4 / 4;
+      }
+    }
+  }
+
+  &__title {
+    @include set-font($font-playFair, 20px, 700, $c-font-white, 150%);
+  }
+
+  &__text {
+    @include set-font($font-raleway, 16px, 400, $c-font-white, 150%);
+  }
+
+  &__nav {
+    @include set-font($font-raleway, 16px, 400, $c-font-white, 150%);
+
+    text-decoration: none;
+  }
+
+  &__links {
+    @include flex-center;
+
+    justify-content: start;
+    gap: 20px;
+    grid-column: 1 / 3;
+    grid-row: 2 / 2;
+
+    @include on-tablet {
+      align-self: start;
+    }
+
+    @include on-phone {
+      grid-column: 1 / -1;
+      grid-row: 2 / 2;
+    }
+
+    &--link {
+      @include set-size(20px, 20px);
+
+      display: block;
+    }
+  }
+
+  &__icon {
+    @include set-size(100%, 100%);
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__privacy {
+    @include set-font($font-raleway, 14px, 400, $c-font-white, 140%);
+
+    grid-column: 1 / 3;
+    grid-row: 3 / 3;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include on-phone {
+      grid-column: 1 / 1;
+      grid-row: 5 / 5;
+    }
+
+    &--title {
+      grid-column: 3 / 5;
+
+      @include on-tablet {
+        grid-column: 2 / 4;
+      }
+
+      @include on-phone {
+        grid-column: 1 / -1;
+        margin-left: 120px;
+        grid-row: 5 / 5;
+      }
+    }
+  }
+
+  &__to-top {
+    @include set-size(30px, 30px);
+
+    grid-column: 12 / 12;
+    grid-row: 3 / 3;
+    display: block;
+
+    @include on-tablet {
+      grid-column: 6 / 6;
+      align-self: end;
+    }
+
+    @include on-phone {
+      align-self: end;
+      justify-content: end;
+      margin-left: 120px;
+      margin-bottom: 45px;
+      grid-column: 2 / -1;
+      grid-row: 5 / 5;
+    }
+  }
+
+  &__wrapper {
+    @include set-flex(column, flex-start, start);
+
+    gap: 10px;
+
+    @include on-phone {
+      gap: 5px;
+    }
+  }
 }

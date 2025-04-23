@@ -4,3 +4,84 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin set-size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin on-desktop() {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+@mixin on-tablet() {
+  @media (max-width: 1279px) {
+    @content;
+  }
+}
+@mixin on-phone() {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin set-flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin set-grid() {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0 30px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include on-phone {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 20px;
+  }
+}
+
+@mixin set-spaces($margin, $padding) {
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin set-font($family, $size, $weight, $color: #000, $line-height) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin set-padding-inline() {
+  padding-inline: $content-padding-inline;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-phone {
+    padding-inline: 20px;
+  }
+}
+
+@mixin set-image($url, $position, $size) {
+  background-image: url($url);
+  background-position: $position;
+  background-size: $size;
+  background-repeat: no-repeat;
+}
