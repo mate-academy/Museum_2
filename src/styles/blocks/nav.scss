@@ -3,8 +3,10 @@
   flex-direction: column;
 
   &__list {
-    display: grid;
-    // flex-direction: column;
+    display: flex;
+
+    // display: grid;
+    flex-direction: column;
     gap: 20px;
     list-style: none;
     margin: 0;
@@ -38,6 +40,7 @@
   // }
 
   &__link {
+    position: relative;
     font-size: 20px;
     line-height: 150%;
     color: $white-color;
@@ -45,10 +48,28 @@
     font-weight: 700;
     text-decoration: none;
 
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: right;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
 
     @include onTablet {
       font-size: 48px;
       line-height: 120%;
     }
+
   }
 }

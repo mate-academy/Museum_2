@@ -28,10 +28,32 @@
   &__text {
     font-family: Raleway;
     font-weight: 500;
-    // font-size: 16px;
-    // line-height: 150%;
-    color: #f1f5f4;
+    color: $white-color;
     padding-right: 5px;
+
+
+
+    &--tooltip {
+      position: absolute;
+      right: 105%;
+
+      width: 160px;
+      padding: 5px 0;
+      border-radius: 6px;
+
+      color: #fff;
+      text-align: center;
+
+      visibility: hidden;
+      background-color:$white-color;
+
+      transition: 300ms;
+    }
+
+    &:hover .top-bar__text--tooltip {
+      visibility: visible;
+
+    }
   }
 
   &__icons {
@@ -67,6 +89,7 @@
     // display: none;
     // display: flex;
     // order: -10;
+    cursor: pointer;
 
     @include onTablet {
       display: flex;
@@ -74,6 +97,8 @@
       gap: 5px;
 
     // order: 10;
+  @include hover(transform, scale(1.2));
+
 
     }
 

@@ -51,6 +51,16 @@
       font-size: 16px;
       line-height: 150%;
       margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
+
+      }
     }
   }
 
@@ -83,6 +93,10 @@
     &--position {
       display: block;
 
+      @include onDesktop {
+        margin-right: -55px;
+      }
+
 
 
       &-menu {
@@ -90,6 +104,10 @@
 
       @include onTablet {
         display: block;
+      }
+
+      @include onDesktop {
+        margin-right: -55px;
       }
 
       }
@@ -110,11 +128,39 @@
 
   &__language{
     display: none;
+  }
 
-    // @include onTablet {
-    //   display: flex;
-    //   align-items: center;
-    //   gap: 5px;
-    // }
+  &__data {
+    display: none;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 125%;
+    color: $white-color;
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: $white-color;
+      left: 100px;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+      margin-top: 135px;
+    }
   }
 }
