@@ -1,0 +1,102 @@
+.nearest {
+  margin-bottom: 90px;
+
+  @include padding-inline;
+
+  @include on-tablet {
+    margin-bottom: 100px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 110px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 30px;
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__picture-man {
+    background-image: url(../images/pictures/man-with-glasses.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 358px;
+    width: 100%;
+
+    @include on-tablet {
+      flex-basis: 50%;
+      height: 422px;
+    }
+
+    @include on-desktop {
+      height: 475px;
+    }
+  }
+
+  &__picture-girl {
+    background-image: url(../images/pictures/girl.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 358px;
+    width: 100%;
+
+    @include on-tablet {
+      flex-basis: 50%;
+      height: 422px;
+    }
+
+    @include on-desktop {
+      height: 475px;
+    }
+  }
+
+  &__description {
+    @include on-tablet {
+      flex-basis: 50%;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  &__h4-title {
+    grid-row: 1;
+  }
+
+  &__text {
+    grid-row: 2, 3;
+  }
+
+  &__button {
+    grid-row: 4;
+  }
+
+  &__second-button {
+    @include on-tablet {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

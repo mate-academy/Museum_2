@@ -1,0 +1,119 @@
+.subscribe {
+  margin-bottom: 80px;
+
+  @include padding-inline;
+
+  @include on-tablet {
+    margin-bottom: 128px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    font-family: $title-font;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $title-color;
+
+    @include on-tablet {
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      line-height: 120%;
+      flex-basis: 50%;
+
+    }
+  }
+
+  &__info {
+    font-family: $text-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $title-color;
+
+    @include on-tablet {
+      max-width: 65%;
+    }
+
+    @include on-desktop {
+      flex-basis: 50%;
+    }
+  }
+
+  &__form-field {
+    margin-bottom: 30px;
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form-input {
+    cursor: pointer;
+    height: 28px;
+    width: 100%;
+    background-color: $c-gray;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $title-color;
+    font-family: $text-font;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $title-color;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 150%;
+      color: $title-color;
+    }
+
+    &:hover {
+      color: $info-color;
+      border-color: $info-color;
+
+      &::placeholder {
+        color: $info-color;
+      }
+    }
+
+    &:focus {
+      color: $info-color;
+      border-color: $info-color;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    @include on-tablet {
+      width: 450px;
+    }
+
+    @include on-desktop {
+      width: 470px;
+    }
+  }
+}

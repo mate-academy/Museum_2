@@ -1,0 +1,115 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-green-color;
+  height: 100vh;
+  color: $text-white-color;
+  z-index: 1;
+  overflow-y: auto;
+
+  transition: all 0.3s;
+  opacity: 0;
+  transform: translateX(-100%);
+  pointer-events: none;
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  @include padding-inline;
+
+  &__wrapper {
+    @include on-tablet {
+      position: relative;
+    }
+  }
+
+  &__top-bar {
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 123px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      gap: 83px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    font-family: $text-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__text {
+    font-family: $text-font;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__divider {
+    color: $text-white-color;
+    margin-block: 40px;
+
+    @include on-tablet {
+      margin-block: 50px;
+    }
+
+    @include on-desktop {
+      margin-block: 60px;
+      max-width: 570px;
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      background-image: url(../images/pictures/painter.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+      width: 58%;
+      padding-bottom: 60%;
+      margin: 0 auto;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      width: 48%;
+      padding-bottom: 52%;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
