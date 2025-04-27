@@ -35,25 +35,19 @@
 
     &--tooltip {
       position: absolute;
-      right: 105%;
+      bottom: -80%;
 
-      width: 160px;
       padding: 5px 0;
-      border-radius: 6px;
 
-      color: #fff;
+      color: $white-color;
       text-align: center;
 
       visibility: hidden;
-      background-color:$white-color;
 
       transition: 300ms;
     }
 
-    &:hover .top-bar__text--tooltip {
-      visibility: visible;
 
-    }
   }
 
   &__icons {
@@ -86,18 +80,21 @@
   // }
 
   &__language {
-    // display: none;
-    // display: flex;
-    // order: -10;
     cursor: pointer;
+    position: relative;
+
 
     @include onTablet {
       display: flex;
       align-items: center;
       gap: 5px;
 
-    // order: 10;
-  @include hover(transform, scale(1.2));
+  // @include hover(transform, scale(1.2));
+
+  &:hover .top-bar__text--tooltip {
+    visibility: visible;
+
+  }
 
 
     }

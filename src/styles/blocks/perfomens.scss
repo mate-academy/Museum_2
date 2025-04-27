@@ -1,60 +1,90 @@
 .perfomens {
   position: relative;
+  // padding-top: 90px;
+  // padding-bottom: 120px;
+
+  margin-bottom: 120px;
+
+  @include onTablet {
+    margin-bottom: 160px;
+  }
 
   &__title {
 
    }
 
   &__carts {
-    display: grid;
-    row-gap: 60px;
+    // display: grid;
+    // row-gap: 60px;
+
+    // @include onTablet {
+    //   @include page-grid;
+
+    // }
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-bottom: 30px;
 
     @include onTablet {
-      @include page-grid;
+      flex-direction: row;
+      gap: 30px;
 
     }
 
   }
 
   &__cart {
-    display: grid;
-    gap: 60px;
 
-    @include onTablet {
-    gap: 0;
+    // width: 100%;
+    // max-width: 330px;
+
+    @include onDesktop {
+
+      // max-width: 570px;
     }
+    // display: grid;
+    // gap: 60px;
+
+    // @include onTablet {
+    // gap: 0;
+    // }
 
     // @include onDesktop {
     //   column-gap: 30px;
     //   justify-items: stretch;
     // }
 
+    &--photo {
+      // width: 100%;
+    }
+
 
     &-left {
-      grid-column: 1/-1;
+      // grid-column: 1/-1;
 
-      @include onTablet {
-        grid-column: 1/4;
-      }
+      // @include onTablet {
+      //   grid-column: 1/4;
+      // }
 
-      @include onDesktop {
-        grid-column: span 6;
-      }
+      // @include onDesktop {
+      //   grid-column: span 6;
+      // }
     }
 
     &-right {
-      grid-column: 1/-1;
-      margin-bottom: 30px;
+    //   grid-column: 1/-1;
+    //   margin-bottom: 30px;
 
-    @include onTablet {
-      grid-column: 4/7;
-      margin-bottom: 0;
+    // @include onTablet {
+    //   grid-column: 4/7;
+    //   margin-bottom: 0;
 
-    }
+    // }
 
-    @include onDesktop {
-        grid-column: span 6;
-    }
+    // @include onDesktop {
+    //     grid-column: span 6;
+    // }
 
     }
   }
