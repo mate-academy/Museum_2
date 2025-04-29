@@ -1,14 +1,14 @@
 .top-bar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding-block: 20px;
 
-  @include onTablet {
+  @include on-tablet {
     padding-block: 20px;
   }
 
-  @mixin onDesktop {
+  @include on-desktop {
     padding-block: 26px;
   }
 
@@ -18,20 +18,15 @@
 
   &__logo {
     height: 40px;
-    @include hover(transform, scale(1.2));
 
-    // @include on-tablet {
-    //   height: 24px;
-    // }
+    @include hover(transform, scale(1.2));
   }
 
   &__text {
-    font-family: Raleway;
+    padding-right: 5px;
+    font-family: Raleway, sans-serif;
     font-weight: 500;
     color: $white-color;
-    padding-right: 5px;
-
-
 
     &--tooltip {
       position: absolute;
@@ -46,67 +41,46 @@
 
       transition: 300ms;
     }
-
-
   }
 
   &__icons {
     display: flex;
-    // gap: 40px;
 
-    @include onTablet {
+    @include on-tablet {
       display: flex;
       gap: 40px;
     }
-
   }
 
   &__icon {
-    padding-right: 20px;
     cursor: pointer;
+    padding-right: 20px;
 
-    @include onTablet {
+    @include on-tablet {
       padding-right: 0;
-
     }
   }
-
-  // &__position {
-  //   display: none;
-
-  //   @include onTablet {
-  //     display: block;
-  //   }
-  // }
 
   &__language {
     cursor: pointer;
     position: relative;
 
-
-    @include onTablet {
+    @include on-tablet {
       display: flex;
-      align-items: center;
       gap: 5px;
+      align-items: center;
 
-  // @include hover(transform, scale(1.2));
-
-  &:hover .top-bar__text--tooltip {
-    visibility: visible;
-
-  }
-
-
+      &:hover .top-bar__text--tooltip {
+        visibility: visible;
+      }
     }
 
     &-position {
-    order: -10;
+      order: -10;
 
-    @include onTablet {
-    order: 10;
-
-    }
-
+      @include on-tablet {
+        order: 10;
+      }
     }
   }
 }

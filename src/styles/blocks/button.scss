@@ -1,25 +1,21 @@
 .button {
-  // display: grid;
-  // @include page-grid;
+  &__sing {
+    display: grid;
+    grid-column: 1/-1;
 
-  &__position {
-    // width: 100%;
-    // display: grid;
-    // grid-column: 1/-1;
-
-    // @include onTablet {
-    //   grid-column: 1/4;
-    // }
+    @include on-tablet {
+      grid-column: 1/4;
+    }
   }
 
-
   &__style {
+    cursor: pointer;
+
     width: 280px;
     height: 60px;
     border: 1px solid transparent;
-    outline: none;
 
-    font-family: 'Raleway', sans-serif;
+    font-family: Raleway, sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 100%;
@@ -27,7 +23,7 @@
     text-align: center;
 
     background-color: #cd4d31;
-    cursor: pointer;
+    outline: none;
 
     &:hover {
       background-color: #af3419;
@@ -38,10 +34,13 @@
       background-color: #ea340d;
     }
 
-    @include onTablet {
-      max-width: 330px;
+    @include on-tablet {
       width: 100%;
+      max-width: 330px;
+    }
 
+    @include on-desktop {
+      max-width: 270px;
     }
   }
 }

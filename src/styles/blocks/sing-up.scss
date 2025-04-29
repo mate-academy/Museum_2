@@ -1,0 +1,76 @@
+.sing {
+  margin: 0;
+  margin-bottom: 80px;
+
+  @include page-grid;
+
+  &__section-title {
+    grid-column: 1/-1;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: 1/6;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+
+    margin: 0;
+    margin-bottom: 50px;
+
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include on-tablet {
+      grid-column: 1/6;
+    }
+
+    @include on-desktop {
+      grid-column: 7/13;
+    }
+  }
+
+  &__address {
+    position: relative;
+
+    grid-column: 1/-1;
+
+    margin: 0;
+    margin-bottom: 30px;
+
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+      margin-bottom: 40px;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background: $black-color;
+    }
+  }
+}

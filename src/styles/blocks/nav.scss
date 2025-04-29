@@ -3,73 +3,74 @@
   flex-direction: column;
 
   &__list {
-    display: flex;
+    position: relative;
 
-    // display: grid;
+    display: flex;
     flex-direction: column;
     gap: 20px;
-    list-style: none;
+
     margin: 0;
     margin-bottom: 100px;
     padding: 0;
-    position: relative;
+
+    list-style: none;
 
     &::after {
       content: '';
+
       position: absolute;
-      height: 1px;
-      width: 100%;
-      background: $white-color;
       bottom: -50px;
+
+      width: 100%;
+      height: 1px;
+
+      background: $white-color;
     }
 
-    @include onTablet {
+    @include on-tablet {
       gap: 30px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       gap: 60px;
     }
-
-
-
   }
-
-  // &__item {
-
-  // }
 
   &__link {
     position: relative;
+
+    font-family: 'Playfair Display', sans-serif;
     font-size: 20px;
+    font-weight: 700;
     line-height: 150%;
     color: $white-color;
-    font-family: Playfair Display;
-    font-weight: 700;
     text-decoration: none;
 
     &::after {
       content: '';
+
       position: absolute;
       bottom: -8px;
+      transform-origin: right;
+      transform: scale(0);
+
       display: block;
-      height: 1px;
+
       width: 100%;
+      height: 1px;
+
       background-color: $white-color;
 
       transition: transform 0.3s;
-      transform: scale(0);
-      transform-origin: right;
     }
 
     &:hover::after {
       transform: scale(1);
     }
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 48px;
       line-height: 120%;
     }
-
   }
 }

@@ -1,14 +1,34 @@
 .visit {
-  margin: 0;
-  background-color: $background-color;
   height: 416px;
+  margin: 0;
+  margin-bottom: 120px;
+  background-color: $background-color;
 
-  @include onTablet {
+  @include on-tablet {
     height: 515px;
   }
 
-  @include onDesktop {
+  @include on-desktop {
     height: 800px;
+  }
+
+  &__container {
+    padding-inline: 20px;
+
+    @include on-tablet {
+      max-width: 768px;
+      padding-inline: 39px;
+    }
+
+    @include on-desktop {
+      max-width: 1280px;
+      padding-inline: 55px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
   }
 
   &__text {
@@ -17,44 +37,44 @@
     padding-top: 50px;
 
     font-family: 'Playfair Display', sans-serif;
-    font-weight: 700;
     font-size: 38px;
+    font-weight: 700;
     line-height: 100%;
-
     color: $white-color;
 
-    @include onTablet {
-    padding-top: 80px;
-    font-size: 62px;
+    @include on-tablet {
+      padding-top: 80px;
+      font-size: 62px;
+    }
 
-
+    @include on-desktop {
+      font-size: 80px;
     }
 
     &--info {
-    margin: 0;
-    margin-bottom: 40px;
+      margin: 0;
+      margin-bottom: 40px;
 
-    font-family: 'Raleway',sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      color: $white-color;
 
-    color: $white-color;
-
-      @include onTablet {
+      @include on-tablet {
         margin-bottom: 60px;
       }
-
     }
   }
 
   &__photo {
-    display: none;
+    &--position {
+      display: none;
 
-    @include onDesktop {
-      display: block;
-      position: absolute;
+      @include on-desktop {
+        display: block;
+        margin-left: -55px;
+      }
     }
   }
-
 }
