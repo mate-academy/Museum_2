@@ -41,6 +41,10 @@
       cursor: pointer;
       color: $text-white-color;
       text-decoration: none;
+
+      &:hover {
+        color: aqua;
+      }
     }
   }
 
@@ -75,6 +79,9 @@
     display: block;
     height: 20px;
     width: 20px;
+
+    @include hover(transform, scale(1.6));
+
 
     &--facebook {
       background-image: url(../images/icons/facebook.svg);
@@ -111,6 +118,7 @@
   }
 
   &__link {
+    position: relative;
     cursor: pointer;
     color: $text-white-color;
     text-decoration: none;
@@ -118,6 +126,24 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: -3px;
+      display: block;
+      height: 1px;
+      background-color: #fff;
+
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+      transform-origin: left;
+    }
   }
 
   &__bottom {
@@ -153,6 +179,10 @@
     cursor: pointer;
     font-size: 20px;
     font-weight: bold;
+
+    &:hover {
+      color: aqua;
+    }
 
     @include on-tablet {
       font-size: 30px;
