@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #3f5252;
+  height: 100vh;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+
+    @include content-space-inline;
+  }
+
+  &__image-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 75%;
+    object-position: center;
+    align-self: center;
+
+    @include on-tablet {
+      width: 57%;
+    }
+
+    @include on-large-desktop {
+      width: 41%;
+      right: 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+}

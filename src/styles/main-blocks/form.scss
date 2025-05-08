@@ -1,0 +1,98 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+
+  @include on-large-desktop {
+    grid-column: span 6;
+    gap: 40px;
+  }
+
+  &__input {
+    all: unset;
+
+    display: block;
+    width: 280px;
+    height: 28px;
+    border-bottom: 1px solid #1c1b29;
+
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #1c1b29;
+
+    @include on-tablet {
+      width: 450px;
+    }
+
+    @include on-large-desktop {
+      width: 470px;
+    }
+
+    &::placeholder {
+      @include main-text;
+
+      color: #1c1b29;
+
+      &:hover {
+        color: #cd4d31;
+      }
+    }
+
+    &:hover {
+      border-bottom: 1px solid #cd4d31;
+    }
+
+    &:focus {
+      border-bottom: 1px solid #cd4d31;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-bottom: 1px solid #1c1b29;
+      -webkit-text-fill-color: #1c1b29;
+      -webkit-box-shadow: 0 0 0 1000px $c-gray inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  &__button {
+    all: unset;
+
+    display: block;
+    background-color: #cd4d31;
+    width: 280px;
+    height: 60px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 60px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #f1f5f4;
+    text-decoration: none;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include hover(transform, scale(1.1));
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+  }
+}
