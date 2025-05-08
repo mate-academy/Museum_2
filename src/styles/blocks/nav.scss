@@ -1,0 +1,76 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  &__list {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin: 0;
+    margin-bottom: 100px;
+    padding: 0;
+
+    list-style: none;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -50px;
+
+      width: 100%;
+      height: 1px;
+
+      background: $white-color;
+    }
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $white-color;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -8px;
+      transform-origin: right;
+      transform: scale(0);
+
+      display: block;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $white-color;
+
+      transition: transform 0.3s;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+}
