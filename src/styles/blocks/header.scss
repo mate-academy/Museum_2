@@ -1,0 +1,132 @@
+.header {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: $bg-green-color;
+  color: $text-white-color;
+  margin-bottom: 90px;
+
+  @include on-tablet {
+    margin-bottom: 100px;
+  }
+
+  @include on-desktop {
+    height: 100vh;
+  }
+
+  @include padding-inline;
+
+  &__top-bar {
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      margin-bottom: 99px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__announce {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__dates {
+    font-family: $text-font;
+    line-height: 140%;
+    font-weight: 400;
+    font-size: 14px;
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-family: $title-font;
+    line-height: 100%;
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      max-width: 569px;
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    font-family: $text-font;
+    line-height: 150%;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      gap: 20px;
+      font-family: $text-font;
+      color: $text-white-color;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 125%;
+
+      &::after {
+        content: '';
+        width: 469px;
+        height: 1px;
+        background-color: $text-white-color;
+        align-self: center;
+      }
+    }
+  }
+
+  &__picture {
+    background-image: url(../images/pictures/girl_from_Podolye_by_V.Tropinin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    width: 75%;
+    padding-bottom: 75%;
+    margin: 0 auto;
+
+    @include on-tablet {
+      width: 58%;
+      padding-bottom: 60%;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      width: 48%;
+      padding-bottom: 46%;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
