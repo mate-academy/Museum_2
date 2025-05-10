@@ -1,0 +1,113 @@
+.header {
+  background-color: $green;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__top {
+    margin: 0;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__bottom {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__bottom-content {
+    @include on-tablet {
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__pretitle {
+    display: grid;
+    margin: 0 0 10px;
+
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    color: $white;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+
+    font-family: Playfair, sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    color: $white;
+
+    @include on-tablet {
+      font-size: 72px;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 40px;
+
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    color: $white;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__button {
+    margin: 0 0 40px;
+    width: 100%;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+
+  &__pic {
+    display: block;
+    height: 270px;
+    margin: 0 auto;
+
+    @include on-tablet {
+      height: 495px;
+      grid-column: 1 / -1;
+    }
+
+    @include on-desktop {
+      height: 663px;
+      grid-column: 7 / -1;
+    }
+  }
+}
