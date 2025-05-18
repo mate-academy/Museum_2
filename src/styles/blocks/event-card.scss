@@ -41,6 +41,10 @@
     object-fit: cover;
     transition: all $time-transform-medium;
 
+    &--small {
+      object-position: top;
+    }
+
     &:hover {
       transform: scale(1.08);
       box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
@@ -91,17 +95,24 @@
   &__title {
     @include font-playfair-bold;
 
+    margin: 0;
     margin-top: 10px;
+
     font-size: 20px;
     line-height: 125%;
     color: $color-text-primary;
 
     @include on-tablet {
+      height: 80px;
       font-size: 24px;
     }
 
+    @include on-desktop {
+      height: 50px;
+    }
+
     &--without-top {
-      margin-top: 0;
+      height: 30px;
       font-size: 20px;
     }
   }
@@ -118,18 +129,29 @@
     color: $color-text-secondary;
 
     @include on-tablet {
-      margin-bottom: 40px;
+      height: 110px;
+      margin: 0;
     }
 
     @include on-desktop {
-      margin-bottom: 50px;
+      height: 98px;
     }
 
     &--without-bottom {
-      margin-bottom: 0;
+      height: 50px;
 
       @include on-tablet {
         margin-top: 18px;
+      }
+    }
+
+    &--big {
+      @include on-tablet {
+        height: 120px;
+      }
+
+      @include on-desktop {
+        height: 100px;
       }
     }
   }
