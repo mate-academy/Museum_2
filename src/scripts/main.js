@@ -19,33 +19,30 @@ menu.addEventListener('click', (event) => {
   }
 })
 
-const langSwitcher = document.querySelector('.language-switcher');
+const langSwitcher = document.querySelectorAll('.language-switcher');
 const langElements = document.querySelectorAll('[data-lang]');
-const langDropDown = document.querySelector('.language-switcher__dropdown-content')
 let currentLang = 'ua';
 
-langSwitcher.addEventListener('click', () => {
-   currentLang = currentLang === 'ua' ? 'en' : 'ua';
+langSwitcher.forEach(switcher => {
+  const langDropDown = switcher.querySelector('.language-switcher__dropdown-content');
+  const langOptions = document.querySelectorAll('.language-switcher__lang-options');
 
-   langElements.forEach(element => {
-    if (element.dataset.lang === currentLang) {
-      element.classList.remove('hidden');
-    } else {
-      element.classList.add('hidden');
-    }
-   })
-})
+  switcher.addEventListener('click', () => {
+    langDropDown.classList.toggle('hidden');
+  })
 
-const langSwitcherMenu = document.querySelector('.language-switcher--menu');
-
-langSwitcherMenu.addEventListener('click', () => {
-   currentLang = currentLang === 'ua' ? 'en' : 'ua';
-
-   langElements.forEach(element => {
-    if (element.dataset.lang === currentLang) {
-      element.classList.remove('hidden');
-    } else {
-      element.classList.add('hidden');
-    }
-   })
-})
+  langOptions.forEach(option => {
+    option.addEventListener('click', (event) => {
+      event.stopPropagation();
+      currentLang = option.dataset.option;
+      langElements.forEach(element => {
+        if (element.dataset.lang === currentLang) {
+          element.classList.remove('hidden');
+        } else {
+          element.classList.add('hidden');
+        }
+      });
+      langDropDown.classList.add('hidden');
+    });
+  });
+});

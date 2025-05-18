@@ -1,6 +1,8 @@
 .language-switcher {
   cursor: pointer;
 
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17,7 +19,7 @@
     }
   }
 
-  @include hover(transform, scale(1.2));
+  @include hover(transform, scale(1.1));
 
   &__indicator {
     @include font-raleway-medium;
@@ -39,60 +41,39 @@
   }
 
   &__dropdown-content {
-    position: absolute;
-    top: 0;
-    right: 10px;
+    cursor: default;
 
-    display: none;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+
+    display: flex;
+    flex-direction: column;
 
     margin: 0;
-    padding: 10;
+    padding: 5px;
     border: 1px solid $color-background-base;
     border-radius: 10px;
 
     list-style: none;
+
+    background-color: $color-background-contrast;
   }
 
-  &__dropdown-header {
-    @include font-raleway-regular;
-
-    font-size: 12px;
-    text-transform: uppercase;
-  }
-
-  &__dropdown-item {
-    margin: 0;
-    padding-top: 10px;
-  }
-
-  &__dropdown-link {
+  &__lang-options {
     @include font-raleway-medium;
 
-    position: relative;
+    cursor: pointer;
+
+    margin: 5px;
+
     font-size: 14px;
+    line-height: 150%;
     color: inherit;
-    text-decoration: none;
 
-    &::after {
-      content: '';
+    transition: $time-transform;
 
-      position: absolute;
-      transform-origin: left;
-      transform: scale(0);
-
-      display: block;
-
-      width: 100%;
-      height: 1px;
-
-      background-color: $color-background-base;
-
-      transition: $time-transform;
-    }
-
-    &:hover::after {
-      transform: scale(1);
-    }
+    @include hover(color, $color-button-active);
   }
 
   @include on-tablet {
