@@ -1,0 +1,101 @@
+.language-switcher {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  order: -1;
+
+  width: 35px;
+  height: 24px;
+
+  &--mobile-hidden {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+    }
+  }
+
+  @include hover(transform, scale(1.2));
+
+  &__indicator {
+    @include font-raleway-medium;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-text-contrast;
+    letter-spacing: 0%;
+  }
+
+  &__dropdown-trigger {
+    display: block;
+
+    width: 10px;
+    height: 7px;
+
+    background-image: url(../images/dropdown-arrow.png);
+    background-size: cover;
+  }
+
+  &__dropdown-content {
+    position: absolute;
+    top: 0;
+    right: 10px;
+
+    display: none;
+
+    margin: 0;
+    padding: 10;
+    border: 1px solid $color-background-base;
+    border-radius: 10px;
+
+    list-style: none;
+  }
+
+  &__dropdown-header {
+    @include font-raleway-regular;
+
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__dropdown-item {
+    margin: 0;
+    padding-top: 10px;
+  }
+
+  &__dropdown-link {
+    @include font-raleway-medium;
+
+    position: relative;
+    font-size: 14px;
+    color: inherit;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      transform-origin: left;
+      transform: scale(0);
+
+      display: block;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $color-background-base;
+
+      transition: $time-transform;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  @include on-tablet {
+    order: 0;
+  }
+}

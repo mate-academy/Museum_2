@@ -1,0 +1,71 @@
+.contacts {
+  @include on-tablet {
+    grid-column: 1/3;
+  }
+
+  @include on-desktop {
+    grid-column: 1/5;
+  }
+
+  &__list {
+    margin: 10px 0 30px;
+    padding: 0;
+    list-style: none;
+
+    @include on-tablet {
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__item {
+    padding: 0;
+  }
+
+  &__link {
+    @include font-raleway-regular;
+
+    display: block;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-text-contrast;
+    text-decoration: none;
+
+    transition: all $time-transform;
+
+    &:hover {
+      transform: scale(1.01);
+      color: $color-button-active;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__social-media-link {
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+
+    &--facebook {
+      background-image: url(../images/icons/icon-facebook.svg);
+    }
+
+    &--x {
+      background-image: url(../images/icons/icon-twitter.svg);
+    }
+
+    &--telegram {
+      background-image: url(../images/icons/icon-telegram.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/icon-instagram.svg);
+    }
+
+    @include hover(transform, scale(1.3));
+  }
+}

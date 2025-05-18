@@ -1,0 +1,109 @@
+.button {
+  @include font-raleway-semibold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 280px;
+  height: 60px;
+
+  font-size: 16px;
+  color: $color-text-contrast;
+  text-decoration: none;
+
+  background: $color-button-default;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+
+  transition: all $time-transform;
+
+  &:hover {
+    background-color: $color-button-hover;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  &:active {
+    background-color: $color-button-active;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+
+  &__arrow {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icons/button-arrow.svg);
+    transition: all $time-transform;
+  }
+
+  &--inverted {
+    border: 1px solid $color-button-default;
+    color: $color-button-default;
+    background: $color-text-contrast;
+    box-shadow: 1px 1px 3px rgba(100, 15, 10, 0.4);
+
+    &:hover {
+      border-color: $color-button-hover;
+      color: $color-button-hover;
+      background: $color-text-contrast;
+      box-shadow: 3px 3px 6px rgba(100, 15, 10, 0.6);
+    }
+
+    &:active {
+      border-color: $color-button-active;
+      color: $color-button-active;
+      box-shadow: 1px 1px 3px rgba(100, 15, 10, 0.6);
+    }
+
+    &:hover .button__arrow {
+      background-image: url(../images/icons/button-arrow-hower.svg);
+    }
+
+    &:active .button__arrow {
+      background-image: url(../images/icons/button-arrow-active.svg);
+    }
+
+    @include on-tablet {
+      grid-column: 5/7;
+      justify-self: end;
+      width: 210px;
+    }
+
+    @include on-desktop {
+      grid-column: 10/13;
+      width: 270px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--booking {
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      grid-column: 6/13;
+    }
+  }
+
+  &--subscribe {
+    cursor: pointer;
+    border: none;
+
+    @include on-desktop {
+      grid-column: 1/4;
+    }
+  }
+}

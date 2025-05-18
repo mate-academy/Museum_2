@@ -1,0 +1,162 @@
+.event-card {
+  &__image-wrapper {
+    max-width: 570px;
+    height: 356px;
+
+    @include on-tablet {
+      height: 420px;
+    }
+
+    @include on-desktop {
+      height: 484px;
+    }
+
+    &--short {
+      height: 280px;
+
+      @include on-tablet {
+        height: 330px;
+      }
+
+      @include on-desktop {
+        height: 370px;
+      }
+    }
+
+    &--side {
+      @include on-tablet {
+        grid-column: 1/4;
+      }
+
+      @include on-desktop {
+        grid-column: 1/5;
+        height: 475px;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all $time-transform-medium;
+
+    &:hover {
+      transform: scale(1.08);
+      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    &--move {
+      object-position: -25px top;
+
+      @include on-desktop {
+        object-position: 0 0;
+      }
+    }
+
+    &--side {
+      object-position: center 20%;
+    }
+  }
+
+  &__time {
+    @include font-raleway-regular;
+
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-additional;
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      margin-top: 20px;
+    }
+
+    &--side {
+      @include on-tablet {
+        margin-top: 0;
+      }
+    }
+
+    &--dark {
+      font-size: 14px;
+      line-height: 140%;
+      color: $color-text-primary;
+    }
+  }
+
+  &__title {
+    @include font-playfair-bold;
+
+    margin-top: 10px;
+    font-size: 20px;
+    line-height: 125%;
+    color: $color-text-primary;
+
+    @include on-tablet {
+      font-size: 24px;
+    }
+
+    &--without-top {
+      margin-top: 0;
+      font-size: 20px;
+    }
+  }
+
+  &__description {
+    @include font-raleway-regular;
+
+    max-width: 570px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-text-secondary;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 50px;
+    }
+
+    &--without-bottom {
+      margin-bottom: 0;
+
+      @include on-tablet {
+        margin-top: 18px;
+      }
+    }
+  }
+
+  &--row {
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &--image-side {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__content--side {
+    @include on-tablet {
+      grid-column: 4/7;
+    }
+
+    @include on-desktop {
+      grid-column: 5/13;
+    }
+  }
+}
