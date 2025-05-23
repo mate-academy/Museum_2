@@ -1,0 +1,91 @@
+.subscribe {
+  @include on-tablet {
+    @include page-grid;
+  }
+
+  &__main-text {
+    @include font-raleway-regular;
+
+    max-width: 570px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-text-primary;
+
+    @include on-tablet {
+      grid-column: 1/6;
+    }
+
+    @include on-desktop {
+      grid-column: 7/13;
+      margin-block: 0;
+    }
+  }
+
+  &__form {
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+
+    @include on-desktop {
+      grid-column: 1/6;
+      margin-top: 50px;
+    }
+  }
+
+  &__email {
+    @include font-raleway-bold;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+    width: 280px;
+    height: 28px;
+    margin-bottom: 30px;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid $color-text-primary;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-text-primary;
+
+    background: transparent;
+    outline: none;
+
+    @include on-tablet {
+      width: 450px;
+    }
+
+    @include on-desktop {
+      width: 470px;
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      @include font-raleway-regular;
+    }
+
+    &:hover {
+      border-color: $color-button-hover;
+      color: $color-button-hover;
+
+      &::placeholder {
+        color: $color-button-hover;
+      }
+    }
+
+    &:active {
+      border-color: $color-button-active;
+      color: $color-button-active;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $color-background-base inset;
+
+      -webkit-text-fill-color: rgba($color-button-hover, 1);
+    }
+  }
+}
