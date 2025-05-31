@@ -1,0 +1,55 @@
+.form {
+  &__input {
+    @extend%main-text;
+    @extend%raleway-700;
+
+    color: $main-color;
+    box-sizing: border-box;
+    padding: 0;
+    margin-bottom: 30px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $main-color;
+    background-color: $white-color;
+    width: 100%;
+    cursor: pointer;
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      @extend%raleway-400;
+
+      color: $main-color;
+    }
+
+    @include focus(border-bottom, 1px solid $accent-color);
+    @include hover(border-bottom, 1px solid $accent-color);
+
+    &:focus::placeholder {
+      color: $accent-color;
+    }
+
+    &:hover::placeholder {
+      color: $accent-color;
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $main-color;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  &__btn {
+    border: none;
+
+    @include on-tablet {
+      width: 72%;
+    }
+
+    @include on-desktop {
+      width: 57%;
+    }
+  }
+}
