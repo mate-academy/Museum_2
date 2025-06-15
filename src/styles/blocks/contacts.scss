@@ -1,0 +1,56 @@
+.contacts {
+
+  @include on-tablet {
+    grid-column: 1 / 3;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 4;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 150%;
+    color: $white-color;
+
+    @include on-tablet {
+      font-size: 20px;
+    }
+  }
+
+  &__container {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include on-tablet {
+      padding-top: 30px;
+      gap: 50px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    width: fit-content;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-color;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

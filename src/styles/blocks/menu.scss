@@ -1,0 +1,91 @@
+.menu {
+  background-color: $background-color;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  transform: translateX(-100%);
+  opacity: 0;
+
+  &:target {
+    pointer-events: all;
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &__logo {
+    display: flex;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include on-desktop {
+      position: relative;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between; ;
+    padding: 20px;
+
+    @include on-tablet {
+      padding: 20px 39px;
+    }
+
+    @include on-desktop {
+      padding: 30px 55px;
+    }
+  }
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 10px;
+
+    @include on-tablet {
+      padding-top: 30px;
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @include on-desktop {
+      padding-top: 40px;
+      gap: 83px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      margin: 0 auto;
+      width: 422px;
+      height: 466px;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      position: absolute;
+      width: 624px;
+      height: 697px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

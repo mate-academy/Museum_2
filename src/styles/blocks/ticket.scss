@@ -1,0 +1,89 @@
+.ticket {
+  background-color: $background-color;
+
+  @include on-desktop {
+    position: relative;
+    height: 800px;
+  }
+
+  &__container {
+    max-width: 280px;
+    padding-inline: 20px;
+    margin-inline: auto;
+
+    @include on-tablet {
+      max-width: 690px;
+      padding-inline: 40px;
+    }
+
+    @include on-desktop {
+      max-width: 1170px;
+      padding-inline: 55px;
+    }
+  }
+
+  &__content {
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include on-desktop {
+      position: absolute;
+      display: block;
+      left: 0;
+      width: 578px;
+      height: 800px;
+    }
+  }
+
+  &__info {
+    padding-block: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      padding-block: 80px;
+    }
+
+    @include on-desktop {
+      padding-block: 0;
+      padding-top: 205px;
+      gap: 10px;
+      grid-column: 7 / -1;
+    }
+  }
+
+
+  &__title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    color: $white-color;
+
+    @include on-tablet {
+      font-size: 62px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $white-color;
+  }
+}
