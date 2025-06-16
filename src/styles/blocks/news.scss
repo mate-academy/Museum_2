@@ -1,0 +1,46 @@
+.news {
+  padding-top: 90px;
+  padding-bottom: 120px;
+
+  @include on-tablet {
+    padding-top: 120px;
+    padding-bottom: 160px;
+  }
+
+  @include on-tablet {
+    padding-top: 110px;
+    padding-bottom: 200px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $black-color;
+
+    @include on-tablet {
+      font-size: 40px;
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__content {
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}
