@@ -11,13 +11,15 @@
     color: $main-text-color;
     min-width: 320px;
     box-sizing: border-box;
+
+    &--menu-open {
+      overflow: hidden;
+    }
   }
 
   &__menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: fixed;
+    inset: 0;
 
     opacity: 0;
     transition: all 0.3s;
@@ -28,6 +30,7 @@
       opacity: 1;
       transform: translateX(0);
       pointer-events: all;
+      overflow-y: auto;
     }
   }
 }
