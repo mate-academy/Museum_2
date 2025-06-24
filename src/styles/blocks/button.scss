@@ -1,24 +1,38 @@
 .button {
-  @extend %base-button-mb;
-
-  font-family: Raleway, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  vertical-align: middle;
+  width: 279px;
+  height: 60px;
+  background-color: $main-color;
   color: $text-color;
+  text-align: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 
-    &:hover {
-      background-color: $c-hover;
-    }
+  &:hover {
+    background-color: $hovered-button;
+  }
 
-    &:active {
-      background-color: $c-pressed;
-    }
+  &:active {
+    background-color: $active-button;
+  }
 
-    &:disabled {
-      background-color: $c-disabled;
-    }
+  &:disabled {
+    background-color: $disabled-button;
+  }
+
+   @include hover(transform, scale(1.05));
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
 }

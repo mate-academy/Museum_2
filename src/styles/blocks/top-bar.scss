@@ -1,0 +1,46 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 20px;
+  grid-column: 1/-1;
+
+  @include on-desktop {
+    padding-block: 26px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    @include on-tablet{
+      gap: 40px;
+    }
+
+    &--menu {
+      @include on-tablet {
+        flex-direction: row-reverse;
+        gap: 44px;
+      }
+
+      @include on-desktop{
+        gap: 41px;
+      }
+    }
+  }
+
+  &__language-change {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+
+    &--header {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+      }
+    }
+  }
+}
