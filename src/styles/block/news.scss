@@ -5,29 +5,70 @@
     margin-top: 120px;
   }
 
+  @include on-desctop {
+    margin-top: 110px;
+  }
+
   &__title {
     font-family: 'Playfair Display', sans-serif;
-    font-weight: 700;
     font-size: 28px;
     line-height: 35px;
+    font-weight: 700;
     grid-column: 1/-1;
+    grid-row: 1;
 
     @include on-tablet {
-      grid-column: 1/5;
       line-height: 50px;
       font-size: 40px;
+      grid-column: 1/-1;
     }
 
     @include on-desctop {
-      grid-column: 1/6;
-      line-height: 120%;
+      grid-column: 1/8;
       font-size: 48px;
     }
   }
 
   &__wrapper {
+    @include on-tablet {
+      display: grid;
+
+      @include page-grid;
+
+      grid-column: 1/7;
+      order: 2;
+      padding-bottom: 0;
+    }
+  }
+
+  &__card {
     display: grid;
 
-    @include page-grid;
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desctop {
+      grid-column: span 6;
+      padding-top: 55px;
+    }
+
+    &--date {
+      margin-block: 20px 0;
+      font-size: 14px;
+      line-height: 20px;
+
+      @include on-tablet {
+        margin-block: 30px 0;
+      }
+
+      @include on-desctop {
+        margin-block: 20px 0;
+      }
+    }
+
+    &--text {
+      margin-bottom: 0;
+    }
   }
 }

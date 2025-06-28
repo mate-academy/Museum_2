@@ -1,7 +1,8 @@
 .menu {
   background-color: $header-color;
+  overflow: auto;
+  box-sizing: border-box;
   height: 100vh;
-  overflow: hidden;
 
   &__content {
     display: grid;
@@ -86,6 +87,10 @@
 
   &__button {
     grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
 
     @include on-desctop {
       margin-bottom: 108px;

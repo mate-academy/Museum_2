@@ -1,4 +1,5 @@
 .events {
+  position: relative;
   margin-top: 120px;
 
   @include on-tablet {
@@ -9,10 +10,9 @@
     margin-top: 200px;
   }
 
-  &__content {
-    display: grid;
-
-    @include page-grid;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -21,118 +21,73 @@
     line-height: 35px;
     font-weight: 700;
     grid-column: 1/-1;
+    grid-row: 1;
 
     @include on-tablet {
-      grid-column: 1/5;
       line-height: 50px;
       font-size: 40px;
+      margin-bottom: 76px;
     }
   }
 
   &__card {
-    height: 668px;
-    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
 
     @include on-tablet {
-      width: 690px;
-      height: 422px;
+      display: grid;
+
+      @include page-grid;
     }
 
-    @include on-desctop {
-      width: 970px;
-      height: 475px;
+    &--content {
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-desctop {
+        grid-column: span 6;
+      }
+    }
+
+    &--date {
+      @include on-tablet {
+        margin-top: 0;
+      }
+    }
+
+    &--text {
+      margin-bottom: 30px;
+
+      @include on-tablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--2 {
+      @include on-tablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &--img {
+      @include on-tablet {
+        grid-column: 1/4;
+      }
+
+      @include on-desctop {
+        grid-column: 1/5;
+      }
     }
   }
 
-  &__wrapper {
-    display: grid;
-
-    @include page-grid;
-  }
-
-  &__img {
-    height: 358px;
-    grid-column: 1/-1;
-
-    @include hover(transform, scale(1.05));
-
+  &__bottom {
     @include on-tablet {
-      width: 330px;
-      height: 422px;
-      grid-column: span 3;
-    }
-
-    @include on-desctop {
-      width: 370px;
-      height: 475px;
-      grid-column: span 4;
-    }
-  }
-
-  &__right {
-    grid-column: 1/-1;
-
-    @include on-tablet {
-      grid-column: span 3;
-    }
-
-    @include on-desctop {
-      grid-column: span 8;
-    }
-  }
-
-  &__date {
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    color: $button-color;
-    margin: 20px 0 10px;
-    grid-column: 1/-1;
-
-    @include on-tablet {
-      margin-top: 0;
-    }
-  }
-
-  &__subtitle {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 20px;
-    line-height: 125%;
-    font-weight: 700;
-    color: $black-color;
-    margin-bottom: 20px;
-    grid-column: 1/-1;
-
-    @include on-tablet {
-      font-size: 24px;
-    }
-  }
-
-  &__text {
-    font-family: Raleway, sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    font-weight: 400;
-    color: $d-grey;
-    margin-bottom: 30px;
-    grid-column: 1/-1;
-
-    @include on-tablet {
-      margin-bottom: 50px;
-    }
-  }
-
-  &__button {
-    grid-column: 1/-1;
-
-    &:hover {
-      border-color: $hover-color;
-      transform: scale(1.05);
-    }
-
-    @include on-desctop {
-      max-width: 270px;
+      position: absolute;
+      top: 0;
+      right: 40px;
+      width: 210px;
     }
   }
 }

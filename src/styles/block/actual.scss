@@ -5,21 +5,49 @@
     line-height: 35px;
     font-weight: 700;
     grid-column: 1/-1;
+    grid-row: 1;
 
     @include on-tablet {
-      grid-column: 1/5;
       line-height: 50px;
       font-size: 40px;
     }
 
     @include on-desctop {
       grid-column: 1/8;
+      font-size: 48px;
     }
   }
 
   &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      display: grid;
+
+      @include page-grid;
+
+      grid-column: 1/7;
+      order: 2;
+      padding-bottom: 0;
+    }
+  }
+
+  &__card {
     display: grid;
 
-    @include page-grid;
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desctop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    @include on-desctop {
+      max-width: 270px;
+    }
   }
 }
