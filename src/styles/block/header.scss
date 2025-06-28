@@ -1,0 +1,130 @@
+.header {
+  background-color: $header-color;
+  color: $white-color;
+  position: relative;
+  min-height: max-content;
+
+  &__content {
+    display: grid;
+
+    @include page-grid;
+  }
+
+  &__date {
+    padding-top: 50px;
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    line-height: 140%;
+    font-weight: 400;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      padding-top: 100px;
+    }
+
+    @include on-desctop {
+      grid-column: span 6;
+      padding-top: 90px;
+    }
+  }
+
+  &__title {
+    padding-top: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    line-height: 100%;
+    font-weight: 700;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      font-size: 72px;
+      line-height: 72px;
+      grid-column: span 5;
+    }
+
+    @include on-desctop {
+      grid-column: 1/7;
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__text {
+    padding-block: 30px 40px;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      padding-block: 20px 50px;
+      grid-column: span 3;
+    }
+
+    @include on-desctop {
+      grid-column: 1/7;
+      padding-block: 30px 80px;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+  }
+
+  &__foto {
+    padding-top: 40px;
+    width: 245px;
+    place-self: center;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      width: 100%;
+      margin: 0;
+      padding-top: 70px;
+      grid-column: 2/-2;
+    }
+
+    @include on-desctop {
+      margin-top: 0;
+      position: absolute;
+      max-width: 625px;
+      padding-top: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include on-desctop {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17.5px;
+      text-align: left;
+      grid-column: 1 / 7;
+      padding-top: 135px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      opacity: 70%;
+      margin-bottom: 50px;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #f1f5f4;
+        opacity: 60%;
+      }
+    }
+  }
+}

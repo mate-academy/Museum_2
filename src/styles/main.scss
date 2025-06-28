@@ -1,7 +1,57 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import '/styles/block/header';
+@import '/styles/block/top-bar';
+@import '/styles/block/icon';
+@import '/styles/block/menu';
+@import '/styles/block/page';
+@import '/styles/block/nav';
+@import '/styles/block/actual';
+@import '/styles/block/card';
+@import '/styles/block/events';
+@import '/styles/block/visit';
+@import '/styles/block/news';
+@import '/styles/block/subscribe';
+@import '/styles/block/footer';
+@import '/styles/block/button';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background: $c-gray;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desctop {
+    padding-inline: 55px;
+  }
+}
+
+.main {
+  &__content {
+    padding-block: 90px 80px;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      padding-block: 100px 128px;
+    }
+
+    @include on-desctop {
+      padding-block: 110px 200px;
+    }
+  }
 }

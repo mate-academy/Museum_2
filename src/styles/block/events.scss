@@ -1,0 +1,93 @@
+.events {
+  position: relative;
+  margin-top: 120px;
+
+  @include on-tablet {
+    margin-top: 160px;
+  }
+
+  @include on-desctop {
+    margin-top: 200px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 28px;
+    line-height: 35px;
+    font-weight: 700;
+    grid-column: 1/-1;
+    grid-row: 1;
+
+    @include on-tablet {
+      line-height: 50px;
+      font-size: 40px;
+      margin-bottom: 76px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+
+    @include on-tablet {
+      display: grid;
+
+      @include page-grid;
+    }
+
+    &--content {
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-desctop {
+        grid-column: span 6;
+      }
+    }
+
+    &--date {
+      @include on-tablet {
+        margin-top: 0;
+      }
+    }
+
+    &--text {
+      margin-bottom: 30px;
+
+      @include on-tablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--2 {
+      @include on-tablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &--img {
+      @include on-tablet {
+        grid-column: 1/4;
+      }
+
+      @include on-desctop {
+        grid-column: 1/5;
+      }
+    }
+  }
+
+  &__bottom {
+    @include on-tablet {
+      position: absolute;
+      top: 0;
+      right: 40px;
+      width: 210px;
+    }
+  }
+}

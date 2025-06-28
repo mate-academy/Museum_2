@@ -1,0 +1,132 @@
+.card {
+  padding-top: 60px;
+
+  @include on-tablet {
+    padding-top: 70px;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    object-fit: cover;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-desctop {
+      height: 484px;
+    }
+  }
+
+  &__date {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $button-color;
+    margin: 20px 0 10px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      margin: 30px 0 10px;
+    }
+
+    @include on-desctop {
+      margin: 20px 0 10px;
+    }
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    line-height: 25px;
+    font-weight: 700;
+    color: $black-color;
+    margin-bottom: 20px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    &--right {
+      @include on-tablet {
+        margin-bottom: 45px;
+      }
+
+      @include on-desctop {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $d-grey;
+    margin-bottom: 30px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include on-desctop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 60px;
+    border: 1px solid $button-color;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    font-weight: 600;
+    color: $button-color;
+    grid-column: 1/-1;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      background-image: url('/images/icons/arrow-right.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      margin-left: 8px;
+    }
+
+    &:hover {
+      border-color: $hover-color;
+      color: $hover-color;
+      transform: scale(1.05);
+    }
+
+    @include on-tablet {
+      grid-row: 1;
+      grid-column: 5/-1;
+      max-width: 210px;
+      margin-top: 0;
+    }
+
+    @include on-desctop {
+      grid-column: 10/-1;
+      max-width: 270px;
+    }
+  }
+}
