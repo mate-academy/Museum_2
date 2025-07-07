@@ -1,0 +1,116 @@
+.aside {
+  min-height: 100vh;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      gap: 50px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__info-block {
+    @include page-grid;
+
+    gap: 20px;
+    margin-top: 10px;
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+
+    &:first-child {
+      @include on-tablet {
+        grid-column: span 2;
+      }
+    }
+
+    &:nth-child(2) {
+      @include on-tablet {
+        grid-column: span 3;
+      }
+    }
+
+    &-label {
+      margin: 0;
+
+      @include font-additional;
+    }
+
+    &-text {
+      margin: 0;
+
+      @include font-main-bold;
+    }
+  }
+
+  &__divider-line {
+    @include page-grid;
+  }
+
+  &__divider {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 1px;
+    background-color: $c-white;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__button-box {
+    @include page-grid;
+
+    @include on-desktop {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__button {
+    @include button-red;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+  &__image {
+    overflow: auto;
+    display: none;
+
+    background-image: url(../images/img_menu.png);
+    background-position: center;
+    background-size: cover;
+
+    @include on-tablet {
+      display: flex;
+
+      width: 422px;
+      height: 466px;
+      margin-top: 30px;
+      margin-inline: auto;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      z-index: 0;
+      right: 0;
+      bottom: 0;
+      left: auto;
+      transform: translateX(0);
+
+      width: 624px;
+      height: 697px;
+    }
+  }
+}

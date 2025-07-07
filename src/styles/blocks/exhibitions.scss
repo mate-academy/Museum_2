@@ -1,0 +1,193 @@
+.exhibitions {
+  &__block {
+    position: relative;
+  }
+
+  &__title {
+    @include font-h3;
+
+    margin-top: 90px;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      margin-top: 105px;
+      margin-bottom: 75px;
+    }
+
+    @include on-desktop {
+      margin-top: 110px;
+      margin-bottom: 71px;
+    }
+  }
+
+  &__section {
+    @include page-grid;
+
+    gap: 60px;
+  }
+
+  &__card {
+    @include page-grid;
+
+    grid-column: 1 / -1;
+    justify-items: start;
+
+    &-block {
+      grid-column: 1 / -1;
+      margin-top: 20px;
+
+      @include on-tablet {
+        margin-top: 30px;
+      }
+
+      @include on-desktop {
+        margin-top: 20px;
+      }
+
+      &--column {
+        @include on-tablet {
+          grid-column: span 3;
+          margin-top: 0;
+        }
+
+        @include on-desktop {
+          grid-column: span 6;
+        }
+      }
+    }
+
+    &-date {
+      @include font-main($c-main);
+    }
+
+    &-date-news {
+      @include font-additional($c-black);
+    }
+
+    &-title {
+      @include font-h4;
+
+      margin-top: 10px;
+
+      @include on-tablet {
+        height: 60px;
+      }
+    }
+
+    &-text {
+      @include font-main($c-dark-gray);
+
+      margin-top: 20px;
+    }
+
+    &--column {
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-desktop {
+        grid-column: span 6;
+      }
+    }
+  }
+
+  &__photo {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    @include hover-zoom-shadow;
+
+    &--column {
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-desktop {
+        grid-column: span 4;
+      }
+    }
+  }
+
+  &__button {
+    @include button-red;
+
+    width: 100%;
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 40px;
+    }
+
+    @include on-desktop {
+      width: calc(
+        (100% / 6) * 3 - 2 * 30px
+      ); // если 6 колонок, 2 из них, минус gap
+      /* stylelint-disable-next-line declaration-empty-line-before */
+      margin-top: 50px;
+    }
+  }
+
+  &__button-icon {
+    background-image: url(../images/icon/default.svg);
+
+    @include icon(20px, 20px);
+
+    @include hover-property(transform, scale(1));
+  }
+
+  &__button-white {
+    display: flex;
+    grid-column: 1 / -1;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    height: 60px;
+    margin-top: 30px;
+    border: 1px solid $c-main;
+
+    text-decoration: none;
+
+    box-shadow: 1px 1px 3px rgba(88, 13, 9, 0.4);
+
+    transition: all 0.3s;
+
+    @include font-button($c-main);
+
+    &:hover {
+      border: 1px solid $c-hover;
+      color: $c-hover;
+      box-shadow: 3px 3px 6px rgba(88, 13, 9, 0.6);
+    }
+
+    &:active {
+      border: 1px solid $c-active;
+      color: $c-active;
+      box-shadow: 1px 1px 3px rgba(88, 13, 9, 0.6);
+    }
+
+    &:hover .exhibitions__button-icon {
+      background-image: url(../images/icon/hover.svg);
+    }
+
+    &:active .exhibitions__button-icon {
+      background-image: url(../images/icon/Pressed.svg);
+    }
+
+    @include on-tablet {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: calc((100% / 6) * 2 - 30px); // если 6 колонок, 2 из них, минус gap
+      margin: 0;
+    }
+
+    @include on-desktop {
+      width: calc(
+        (100% / 12) * 3 - 2 * 30px
+      ); // если 12 колонок, 3 из них, минус gap
+    }
+  }
+}

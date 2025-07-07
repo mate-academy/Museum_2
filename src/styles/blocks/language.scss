@@ -1,0 +1,114 @@
+.language {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: 0;
+
+  box-sizing: border-box;
+  width: 34px;
+  height: 24px;
+
+  &--mobile-hidden {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+    }
+  }
+
+  &__dropdown {
+    position: relative;
+    z-index: 1;
+
+    &-trigger {
+      cursor: pointer; /* Изменяет курсор на "указатель" при наведении */
+
+      display: flex; /* Делает кнопку Flex-контейнером для содержимого (текст + иконка) */
+      align-items: center; /* Выравнивает элементы внутри кнопки по центру по вертикали */
+      justify-content: flex-start; /* Выравнивает элементы внутри кнопки по левому краю */
+
+      box-sizing: border-box; /* Учитывает padding и border в общей ширине элемента */
+      width: 100%; /* Кнопка занимает всю доступную ширину своего родителя (.dropdown) */
+
+      /* Сама кнопка, на которую нажимает пользователь */
+      padding: 0; /* Внутренние отступы внутри кнопки: 10px сверху/снизу, 20px слева/справа */
+      border: none; /* Удаляет стандартную рамку кнопки */
+
+      font: inherit; /* Наследует настройки шрифта от родительского элемента (body) */
+      text-align: center; /* Центрирует текст внутри кнопки */
+
+      background-color: transparent; /* Делает фон кнопки прозрачным */
+    }
+
+    &-selected-value {
+      /* Элемент, который показывает "UA" или "EN" на кнопке */
+      margin-right: 3px; /* Отступ справа от текста, отделяющий его от иконки */
+      white-space: nowrap; /* Запрещает перенос текста на новую строку */
+
+      @include font-main-medium;
+    }
+
+    &-icon {
+      flex-shrink: 0; /* Предотвращает сжатие иконки, если места мало */
+
+      /* иконка стрелки */
+      width: 10px;
+      height: 7px;
+      background-image: url(../images/icon/dropdown.svg);
+    }
+
+    &-content {
+      pointer-events: none; /* Делает элемент некликабельным, когда он скрыт (opacity: 0) */
+
+      position: absolute; /* Позиционирует элемент абсолютно относительно ближайшего родителя с position: relative (.dropdown) */
+      transform: translateY(
+        -20px
+      ); /* Смещает элемент на 20px вверх от его нормального положения (изначально скрыт) */
+
+      overflow: hidden; /* Скрывает содержимое, которое выходит за границы элемента (важно для анимации высоты) */
+
+      box-sizing: border-box; /* Учитывает padding и border в общей ширине элемента */
+      width: max-content; /* Ширина элемента будет равна ширине его содержимого (самого широкого li) */
+      margin-top: 10px;
+      border: none; /* Удаляет рамку */
+      border-radius: 8px; /* Скругляет углы выпадающего меню */
+
+      opacity: 0; /* Изначально делает элемент полностью прозрачным (невидимым) */
+      background-color: transparent; /* Цвет фона, совпадающий с фоном страницы */
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1); /* Добавляет легкую тень для выделения */
+
+      transition: /* Добавляет плавные переходы для указанных свойств */
+        height 0.2s ease-out,
+        /* Анимация высоты за 0.2 секунды */ opacity 0.2s ease-out,
+        /* Анимация прозрачности за 0.2 секунды */ transform 0.2s ease-out; /* Анимация трансформации за 0.2 секунды */
+    }
+
+    /* Стили для активного выпадающего меню */
+    &.dropdown--active &-content {
+      pointer-events: auto;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    margin: 0; /* Убирает внешние отступы у списка */
+    padding: 0; /* Убирает внутренние отступы у всего списка */
+    list-style: none; /* Убирает стандартные маркеры (точки) у элементов списка */
+  }
+
+  &__options {
+    cursor: pointer;
+    padding: 5px;
+
+    @include font-main-medium;
+
+    @include hover-property(color, $c-active);
+  }
+
+  @include on-tablet {
+    order: 0; /* чтоб поменялись местами меню и язык */
+  }
+}
