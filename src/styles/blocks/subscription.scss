@@ -1,0 +1,129 @@
+.subscription {
+  margin-block: 120px 80px;
+
+  @include on-tablet {
+    margin-block: 160px 128px;
+  }
+
+  @include on-desktop {
+    margin-block: 200px;
+  }
+
+  &__block {
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin: 0;
+
+    @include font-h3;
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    margin-block: 20px 0;
+
+    @include font-main($c-black);
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      margin: 0;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+    gap: 30px;
+    margin-top: 50px;
+
+    @include page-grid;
+
+    @include on-desktop {
+      gap: 40px;
+    }
+  }
+
+  &__form-group {
+    position: relative;
+    grid-column: 1 / -1;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      display: block;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $c-black;
+
+      transition: background 0.3s;
+    }
+
+    &:hover::after,
+    &:focus-within::after {
+      background-color: $c-main;
+    }
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    font-weight: 700;
+    background-color: inherit;
+
+    @include font-main($c-black);
+
+    &::placeholder {
+      @include font-main($c-black);
+
+      transition: color 0.3s;
+    }
+
+    &:hover::placeholder,
+    &:focus::placeholder {
+      color: $c-main;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include button-red;
+
+    border: none;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-row: 2;
+    }
+  }
+}

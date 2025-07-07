@@ -1,0 +1,49 @@
+.page {
+  scroll-behavior: smooth; /* чтоб навигация происходила плавно */
+
+  &__body {
+    margin: 0;
+    background: $c-gray;
+
+    &-go-to-back {
+      position: fixed;
+      right: 20px;
+      bottom: 30px;
+      background-image: url(../images/icon/scroll_up.svg);
+
+      @include icon;
+
+      @include on-tablet {
+        right: 40px;
+      }
+
+      @include on-desktop {
+        right: 55px;
+      }
+    }
+  }
+
+  &__menu {
+    pointer-events: none; /* чтоб меню было недоступно, пока нет таргета */
+
+    position: fixed; /* чтоб меню было зафиксировано */
+    top: 0; /* чтоб меню было зафиксировано наверху */
+    right: 0; /* чтоб меню растянулось на весь экран */
+    left: 0; /* чтоб меню растянулось на весь экран */
+    transform: translateX(100%);
+
+    opacity: 0; /* по умолчанию меню не видно */
+
+    transition: all 0.3s;
+
+    &:target {
+      pointer-events: all; /* чтоб можно было взаимодействовать с меню */
+      transform: translateX(0);
+      opacity: 1; /* при нажатии меню видно */
+    }
+  }
+  &:has(.page__menu:target) {
+    /* для блокировки прокрутки всей страницы (класс page), когда открыто меню */
+    overflow: hidden;
+  }
+}

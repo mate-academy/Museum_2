@@ -1,0 +1,35 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    transform-origin: left;
+    text-decoration: none;
+
+    @include font-h5;
+
+    @include hover-underline(
+      $c-white
+    ); /* рисуем появляющуюся линию под навигацией */
+
+    @include on-tablet {
+      @include font-h3-static;
+    }
+  }
+}

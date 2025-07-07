@@ -1,0 +1,122 @@
+.footer {
+  padding-block: 34px 30px;
+  background-color: $c-background;
+
+  @include on-tablet {
+    padding-block: 50px 30px;
+  }
+
+  &__contents {
+    @include page-grid;
+
+    gap: 50px;
+  }
+
+  &__section {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    @include font-h5;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    margin-block: 10px 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include on-tablet {
+      margin-block: 30px 0;
+    }
+
+    &-link {
+      display: inline-block;
+      text-decoration: none;
+
+      @include font-main;
+
+      @include hover-property(color, $c-active);
+
+      @include hover-property(transform, scale(1.1));
+    }
+
+    &-item {
+      text-decoration: none;
+
+      @include font-main;
+    }
+
+    &-nav {
+      gap: 5px;
+
+      @include on-tablet {
+        gap: 10px;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__icon-link {
+    text-decoration: none;
+
+    @include icon(20px, 20px);
+
+    &--facebook {
+      background-image: url(../images/icon/facebook.svg);
+    }
+
+    &--x {
+      background-image: url(../images/icon/twitter.svg);
+    }
+
+    &--tg {
+      background-image: url(../images/icon/telegram.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icon/instagram.svg);
+    }
+  }
+
+  &__legal {
+    display: flex;
+    gap: 22px;
+    margin-top: 60px;
+
+    @include font-additional;
+
+    @include on-desktop {
+      gap: 102px;
+      margin-top: 70px;
+    }
+
+    &-link {
+      color: $c-white;
+      text-decoration: none;
+
+      @include hover-property(color, $c-active);
+    }
+  }
+}

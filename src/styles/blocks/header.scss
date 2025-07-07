@@ -1,0 +1,123 @@
+.header {
+  position: relative;
+  min-height: 100vh;
+  background-color: $c-background;
+
+  &__wrapper {
+    @include page-grid;
+  }
+
+  &__dates {
+    grid-column: 1 / -1;
+    margin-top: 50px;
+
+    @include font-additional;
+
+    @include on-tablet {
+      margin-top: 90px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    max-width: 320px;
+    margin-top: 10px;
+
+    @include font-h1;
+
+    @include on-tablet {
+      max-width: 640px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 6;
+      max-width: none;
+    }
+  }
+
+  &__subtitle {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+
+    @include font-main;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      max-width: 330px;
+      margin-top: 20px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      max-width: none;
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include button-red;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 81px;
+    }
+  }
+
+  &__info {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      grid-column: 1 / 7;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-block: 135px 50px;
+
+      @include font-h6;
+    }
+  }
+
+  &__duration {
+    width: max-content;
+    white-space: nowrap;
+  }
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background-color: $c-white;
+  }
+
+  &__image {
+    width: 245px;
+    height: 273px;
+    margin-top: 40px;
+    margin-inline: auto;
+
+    background-image: url(../images/Girl_from_Podolye_by_V.Tropinin.png);
+    background-position: center;
+    background-size: cover;
+
+    @include on-tablet {
+      width: 443px;
+      height: 494px;
+      margin-top: 70px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 625px;
+      height: 663px;
+    }
+  }
+}
