@@ -1,0 +1,118 @@
+.menu {
+  background-color: $bg-color;
+  color: $header-menu-color;
+
+  &__content {
+    height: 100%;
+
+    @include pageGrid;
+
+    @include onDesktop {
+      padding-bottom: 78px;
+    }
+  }
+
+  &__schedule {
+    grid-column: span 2;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 14px;
+    }
+  }
+
+  &__address {
+    grid-column: span 2;
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 140%;
+
+    @include onTablet {
+      margin-top: 30px;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      margin-top: 14px;
+    }
+  }
+
+  &__time-text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__address-link {
+    color: $header-menu-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  &__nav {
+    position: relative;
+    grid-column: 1/-1;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/7;
+      margin-top: 70px;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+    margin-inline: auto;
+    margin-top: 81px;
+    cursor: pointer;
+    transition: $effectDuration;
+
+    @include onTablet {
+      margin-top: 101px;
+      margin-bottom: 30px;
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      margin-top: 121px;
+    }
+  }
+
+  &__background {
+    background-image: url(../images/menu-bg.png);
+    width: 422px;
+    height: 466px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-inline: auto;
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 1/-1;
+    }
+
+    @include onDesktop {
+      grid-column: 7/-1;
+      position: absolute;
+      top: 113px;
+      height: 697px;
+      width: 624px;
+      right: 0;
+    }
+  }
+}
