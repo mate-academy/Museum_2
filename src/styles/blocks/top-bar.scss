@@ -1,0 +1,59 @@
+.top-bar {
+  grid-column: 1 / -1;
+  padding-block: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include onDesktop {
+    padding-block: 26px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 30px;
+
+    @include onTablet {
+      gap: 40px;
+    }
+
+    &--menu {
+      @include onTablet {
+        flex-direction: row-reverse;
+        gap: 44px;
+      }
+
+      @include onDesktop {
+        gap: 41px;
+      }
+    }
+  }
+
+  &__language-change {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+
+    &--header {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    height: 40px;
+
+    @include hover(transform, scale(1.2));
+
+    @include onTablet {
+      height: 37px;
+    }
+  }
+}

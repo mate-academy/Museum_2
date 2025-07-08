@@ -1,0 +1,126 @@
+.header {
+  background-color: $bg-color;
+  color: $header-menu-color;
+  padding-inline: 20px;
+
+  &__content {
+    @include pageGrid;
+
+    @include onDesktop {
+      position: relative;
+    }
+  }
+
+  & > .container {
+    position: relative;
+    max-width: 1280px;
+  }
+
+  &__image {
+     grid-column: 1/-1;
+    height: 273px;
+    width: 245px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-self: center;
+
+    @include onTablet {
+      height: 494px;
+      width: 443px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      height: 663px;
+      width: 625px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__subtitle {
+    grid-column: 1/-1;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      margin-bottom: 81px;
+      grid-column: 1/6;
+    }
+  }
+
+  &__time {
+    grid-column: span 2;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    color: inherit;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include onTablet {
+      margin-top: 99px;
+    }
+
+    @include onDesktop {
+      margin-top: 90px;
+    }
+  }
+
+   &__time-line {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      position: relative;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 125%;
+      grid-column: 1/6;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+
+    @include onTablet {
+      grid-column: 1/6;
+      font-size: 72px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/7;
+      font-size: 96px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__bottom {
+    grid-column: 1/-1;
+    margin-bottom: 40px;
+    justify-self: center;
+
+    @include onTablet {
+      grid-column: 1/4;
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 135px;
+    }
+  }
+}
+

@@ -1,0 +1,73 @@
+.digest {
+  @include pageGrid;
+
+  &__title {
+    grid-column: 1/-1;
+
+    @include onDesktop {
+      grid-column: 1/6;
+    }
+  }
+
+  &__description {
+    grid-column: 1/-1;
+    margin-top: 20px;
+
+    @include onTablet {
+      grid-column: 1/5;
+    }
+
+    @include onDesktop {
+      grid-column: 7/-1;
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+    grid-column: 1/-1;
+
+    @include onTablet {
+      grid-column: 1/5;
+    }
+
+    @include onDesktop {
+      grid-column: 1/6;
+    }
+  }
+
+  &__email {
+    all: unset;
+    width: 100%;
+    padding-bottom: 3px;
+    border-bottom: 1px solid $main-text-color;
+    font-weight: 400;
+
+    &::placeholder {
+      color: $main-text-color;
+    }
+
+    &:valid {
+      font-weight: 700;
+    }
+
+    &:hover,
+    &:focus {
+      border-bottom: 1px solid $main-color;
+      border-color: $main-color;
+      color: $main-color;
+    }
+
+    &:hover::placeholder {
+      color: $main-color;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $main-color;
+      -webkit-box-shadow: 1000px $header-menu-color;
+      transition: $bg-color 5000s ease-in-out 0s;
+    }
+  }
+}
