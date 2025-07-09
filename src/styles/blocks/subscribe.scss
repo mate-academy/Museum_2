@@ -1,0 +1,95 @@
+@use '../utils' as *;
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  &__text-content {
+    @include page-grid;
+
+    row-gap: 20px;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    white-space: normal;
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    @extend %main;
+
+    grid-column: 1/-1;
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__input-content {
+    @include page-grid;
+
+    row-gap: 30px;
+  }
+
+  &__input {
+    @extend %main;
+
+    color: $input-text-color;
+    border: 0;
+    border-bottom: 1px solid $subscribe-border-color;
+    background-color: inherit;
+
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/5;
+    }
+
+    @include on-desktop {
+      grid-column: 1/6;
+    }
+
+    &::placeholder {
+      @extend %main;
+
+      color: inherit;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $input-hover-color;
+
+      &::placeholder {
+        color: $input-hover-color;
+      }
+    }
+
+    &:focus-visible {
+      outline: 0;
+      border-color: $input-hover-color;
+      color: $input-hover-color;
+
+      &::placeholder {
+        color: $input-hover-color;
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      color: inherit;
+      border-color: $subscribe-border-color;
+    }
+  }
+
+  &__button {
+    width: auto;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+  }
+}

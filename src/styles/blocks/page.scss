@@ -1,0 +1,37 @@
+@use '../utils' as *;
+
+.page {
+  font-size: $root-font-size;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+  &__body {
+    margin: 0;
+    background: $main-bg-color;
+    color: $main-text-color;
+    min-width: 320px;
+    box-sizing: border-box;
+
+    &--menu-open {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    inset: 0;
+
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+      
+      // overflow-y: auto;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@use '../utils' as *;
+
+.events {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 60px;
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 60px;
+  }
+
+  &__card {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__card-picture {
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__card-content {
+    @include on-tablet {
+      grid-column: span 3;
+    }
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+}

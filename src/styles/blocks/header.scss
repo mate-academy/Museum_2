@@ -1,0 +1,128 @@
+@use '../utils' as *;
+
+.header {
+  background-color: $header-bg-color;
+  color: $header-text-color;
+  margin-bottom: 90px;
+
+  @include on-tablet {
+    margin-bottom: 100px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 110px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      row-gap: 99px;
+      transition: all 0.3s;
+    }
+
+    @include on-desktop {
+      row-gap: 90px;
+      transition: all 0.3s;
+    }
+  }
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 40px;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      row-gap: 70px;
+      transition: all 0.3s;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+
+    grid-column: 1/-1;
+    row-gap: 40px;
+    transition: all 0.3s;
+
+    @include on-tablet {
+      grid-column: 1/-2;
+      row-gap: 50px;
+      transition: all 0.3s;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      row-gap: 81px;
+      transition: all 0.3s;
+    }
+  }
+
+  &__text-content {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    transition: all 0.3s;
+  }
+
+  &__line-content {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 0;
+    opacity: 0;
+
+    @include on-desktop {
+      position: relative;
+      width: 100%;
+      opacity: 1;
+      gap: 20px;
+
+      transition: gap 1s;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+  }
+
+  &__text {
+    @extend %additional;
+
+    &--line {
+      @extend %h6;
+
+      white-space: nowrap;
+    }
+  }
+
+  &__picture {
+    position: relative;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 2/-2;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__button {
+    @include on-tablet {
+      width: 50%;
+    }
+  }
+}

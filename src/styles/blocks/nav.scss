@@ -1,0 +1,61 @@
+@use '../utils' as *;
+
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 20px;
+
+    @include on-tablet {
+      row-gap: 30px;
+    }
+
+    @include on-desktop {
+      row-gap: 60px;
+    }
+
+    &--footer {
+      row-gap: 5px;
+
+      @include on-tablet {
+        row-gap: 10px;
+      }
+
+      @include on-desktop {
+        row-gap: 10px;
+      }
+    }
+  }
+
+  &__link {
+    @extend %h5;
+
+    position: relative;
+    color: inherit;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      display: flex;
+      width: 100%;
+      height: 1px;
+
+      background-color: $header-text-color;
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+      transform-origin: left;
+    }
+    
+    &--footer {
+      @extend %main;
+    }
+  }
+}
