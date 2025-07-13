@@ -1,0 +1,151 @@
+.header {
+  display: flex;
+  background-color: #3f5252;
+  flex-direction: column;
+
+  &__wrapper {
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__main {
+    padding: 47px 20px 40px;
+
+    @include on-tablet {
+      padding: 99px 39px 70px;
+    }
+
+    @include on-desktop {
+      max-width: 570px;
+      padding: 90px 30px 50px 55px;
+    }
+
+    &-bottom {
+      @include on-desktop {
+        background-image: url(../images/date.svg);
+        width: 100%;
+        height: 18px;
+      }
+    }
+  }
+
+  &__date {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: #f1f5f4;
+
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #f1f5f4;
+    margin: 0;
+    padding-bottom: 30px;
+
+    @include on-tablet {
+      font-size: 72px;
+      padding-bottom: 20px;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__description {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: #f1f5f4;
+
+    margin: 0;
+    padding-bottom: 40px;
+
+    @include on-tablet {
+      padding-bottom: 50px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 81px;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    background-color: #cd4d31;
+    width: 100%;
+    height: 60px;
+    border: none;
+    transition: transform 0.3s;
+    cursor: pointer;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+      margin-bottom: 135px;
+    }
+
+    &:active {
+      background-color: #ea340d;
+      transform: scale(1.1);
+      border-radius: 10px;
+    }
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+
+    &-text {
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      color: #f1f5f4;
+    }
+  }
+
+  &__image {
+    margin: 0;
+    background-image: url(../images/header-image.png);
+    background-repeat: no-repeat;
+    width: 245px;
+    height: 273px;
+    background-size: cover;
+    margin-inline: auto;
+
+    @include on-tablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include on-desktop {
+      width: 625px;
+      height: 663px;
+      margin-top: 47px;
+    }
+  }
+}

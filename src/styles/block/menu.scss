@@ -1,0 +1,242 @@
+.menu {
+  box-sizing: border-box;
+  background-color: #3f5252;
+
+  &__wrapper {
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__top {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include on-tablet {
+      padding-inline: 39px;
+    }
+
+    @include on-desktop {
+      padding: 30px 55px 0;
+    }
+
+    &--block {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+
+      @include on-desktop {
+        gap: 41px;
+      }
+    }
+  }
+
+  &__translater {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+
+    @include on-tablet {
+      order: 2;
+    }
+
+    &-text {
+      margin: 0;
+
+      font-family: Raleway, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      color: #f1f5f4;
+    }
+
+    &-arrow {
+      cursor: pointer;
+      background-image: url(../images/icons/arrow-down.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 8px;
+      height: 5px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+        background-image: url(../images/icons/hover/dropdown\ \(1\).png);
+        background-position: center;
+      }
+    }
+  }
+
+  &__logo {
+    background-image: url(../images/icons/NAMU.svg);
+    width: 123px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-image: url(../images/icons/hover/logo.svg);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__main {
+    padding: 10px 20px;
+
+    @include on-tablet {
+      padding: 30px 39px;
+    }
+
+    @include on-desktop {
+      width: 570px;
+      padding: 40px 29px 108px 55px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-bottom: 1px solid #f1f5f4;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      gap: 50px;
+    }
+
+    @include on-desktop {
+      gap: 70px;
+      margin-bottom: 60px;
+    }
+
+    &--top {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include on-tablet {
+        flex-direction: row;
+        gap: 123px;
+      }
+
+      @include on-desktop {
+        gap: 83px;
+      }
+    }
+  }
+
+  &__block {
+    &--text {
+      font-family: Raleway, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: 0%;
+      vertical-align: middle;
+      color: #f1f5f4;
+
+      margin: 0;
+    }
+
+    &--description {
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0%;
+      vertical-align: middle;
+      color: #f1f5f4;
+      text-decoration: none;
+
+      margin: 0;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+        color: #1c1b29;
+      }
+    }
+  }
+
+  &__nav {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    background-color: #cd4d31;
+    width: 100%;
+    height: 60px;
+    border: none;
+    transition: transform 0.3s;
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+
+    &:active {
+      background-color: #ea340d;
+      transform: scale(1.1);
+      border-radius: 10px;
+    }
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+
+    &--text {
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      color: #f1f5f4;
+    }
+  }
+
+  &__image {
+    @include on-tablet {
+      background-image: url(../images/img_menu.png);
+      width: 422px;
+      height: 466px;
+      margin-inline: auto;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @include on-desktop {
+      margin: 43px 0 0;
+      width: 624px;
+      height: 697px;
+    }
+  }
+}

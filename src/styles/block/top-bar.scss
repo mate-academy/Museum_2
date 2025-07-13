@@ -1,0 +1,80 @@
+.top-bar {
+  display: flex;
+  padding: 30px 20px;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  &__translater {
+    display: none;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-image: url(../images/icons/hover/dropdown\ \(1\).png);
+    }
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 2px;
+      align-items: center;
+    }
+
+    &-text {
+      margin: 0;
+
+      font-family: Raleway, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      color: #f1f5f4;
+    }
+
+    &-arrow {
+      cursor: pointer;
+      background-image: url(../images/icons/arrow-down.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 8px;
+      height: 5px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__logo {
+    background-image: url(../images/icons/NAMU.svg);
+    width: 123px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      background-image: url(../images/icons/hover/logo.svg);
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
