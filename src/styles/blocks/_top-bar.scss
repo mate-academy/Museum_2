@@ -11,13 +11,50 @@
     grid-column: 1 / 7;
   }
 
+  @media (min-width: 1280px) {
+    grid-column: 1 / 13;
+  }
+
+  &--menu {
+    @media (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+
   &__menu-block {
     display: flex;
     flex-direction: row;
+    width: 84px;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+      width: 104px;
+      flex-direction: row-reverse;
+    }
   }
 
   &__language-block {
     visibility: hidden;
+    font-weight: 500;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 5px;
+      background-image: url(/images/Union.svg);
+      background-size: cover;
+      margin-left: 1px;
+      vertical-align: 3px;
+    }
+
+    @media (min-width: 768px) {
+      visibility: visible;
+    }
+
+    &--menu {
+      visibility: visible;
+    }
   }
 
   &__icon-menu {
@@ -28,9 +65,9 @@
   }
 
   &__icon-close {
+    width: 22px;
+    height: 22px;
     display: block;
-    width: 25px;
-    height: 20px;
     background-image: url('/images/icons/close.svg');
   }
 }

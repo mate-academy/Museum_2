@@ -1,35 +1,176 @@
 .section {
-  grid-column: 1 / 3;
-  justify-items: center;
-
-  @media (min-width: 768px) {
-    grid-column: 1 / 4;
-  }
-
-  &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
   &__item {
+    grid-column: 1 / 3;
     padding-top: 60px;
-    width: 280px;
 
-    @media (min-width: 768px) {
-      width: 330px;
+    &--gudimov {
+      padding-top: 0;
+
+      @media (min-width: 768px) {
+        margin-top: 40px;
+      }
+    }
+
+    &--australia {
+      padding-top: 0;
+
+      @media (min-width: 768px) {
+        margin-top: 50px;
+      }
     }
 
     &--cats {
       padding-top: 50px;
     }
+
+    @media (min-width: 768px) {
+      grid-column: 1 / 4;
+
+      &--art {
+        grid-column: 4 / 7;
+        grid-row: 2 / 3;
+      }
+
+      &--gudimov {
+        grid-column: 4 / 7;
+        padding: 0;
+      }
+
+      &--australia {
+        grid-column: 4 / 7;
+        grid-row: 5 / 6;
+      }
+
+      &--cats {
+        grid-column: 4 / 7;
+        grid-row: 2 / 3;
+        padding-top: 60px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      grid-column: 1 / 7;
+
+      &--art {
+        grid-column: 7 / 13;
+      }
+
+      &--gudimov {
+        grid-column: 5 / 11;
+      }
+
+      &--australia {
+        grid-column: 5 / 11;
+      }
+
+      &--cats {
+        grid-column: 7 / 13;
+      }
+    }
   }
 
-  &__title-container {
-    width: 280px;
+  &__image {
+    height: 356px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (min-width: 768px) {
+      height: 420px;
+    }
+
+    @media (min-width: 1280px) {
+      height: 484px;
+      width: 100%;
+    }
+
+    &--heaven {
+      background-image: url(../images/heaven.png);
+
+      @media (min-width: 1280px) {
+        background-image: url(../images/heaven2.png);
+        background-size: cover;
+      }
+    }
+
+    &--art {
+      background-image: url(../images/art.png);
+
+      @media (min-width: 1280px) {
+        background-size: cover;
+      }
+    }
+
+    &--gudimov {
+      background-image: url(../images/gudimov.png);
+      grid-column: 1 / 3;
+      margin-top: 60px;
+
+      @media (min-width: 768px) {
+        grid-column: 1 / 4;
+        grid-row: 2 / 5;
+      }
+
+      @media (min-width: 1280px) {
+        height: 475px;
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--australia {
+      background-image: url(../images/australia.png);
+      grid-column: 1 / 3;
+      margin-top: 60px;
+
+      @media (min-width: 768px) {
+        grid-column: 1 / 4;
+        grid-row: 5 / 8;
+        margin-top: 70px;
+      }
+
+      @media (min-width: 1280px) {
+        height: 475px;
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--cat {
+      height: 280px;
+      background-image: url(../images/cat.png);
+
+      @media (min-width: 768px) {
+        height: 330px;
+      }
+
+      @media (min-width: 1280px) {
+        background-image: url(../images/cat2.png);
+
+        height: 370px;
+        background-size: cover;
+        background-position: top;
+      }
+    }
+
+    &--winner {
+      height: 280px;
+      background-image: url(../images/winner.png);
+
+      @media (min-width: 768px) {
+        height: 330px;
+      }
+
+      @media (min-width: 1280px) {
+        background-image: url(../images/winner2.png);
+
+        background-size: cover;
+        background-position: center;
+        height: 370px;
+      }
+    }
   }
 
   &__title {
+    grid-column: 1 / 3;
     margin: 0;
     font-family: 'Playfair Display', Arial, sans-serif;
     font-weight: 700;
@@ -37,8 +178,19 @@
     line-height: 125%;
     justify-self: start;
 
+    @media (min-width: 768px) {
+      grid-column: 1 / 5;
+      font-size: 40px;
+    }
+
+    @media (min-width: 1280px) {
+      grid-column: 1 / 6;
+      font-size: 48px;
+    }
+
     &--digest {
       margin-bottom: 20px;
+      grid-column: 1 / 6;
     }
   }
 
@@ -55,12 +207,43 @@
     margin: 0;
     margin-bottom: 30px;
 
-    &--cat {
+    @media (min-width: 1280px) {
+      margin-bottom: 50px;
+    }
+
+    &--cats {
       margin-bottom: 0;
     }
 
     &--digest {
       margin-bottom: 50px;
+      grid-column: 1 / 3;
+
+      @media (min-width: 768px) {
+        grid-column: 1 / 6;
+      }
+
+      @media (min-width: 1280px) {
+        grid-column: 7 / 13;
+      }
+    }
+
+    &--gudimov {
+      @media (min-width: 768px) {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--australia {
+      @media (min-width: 768px) {
+        margin-bottom: 50px;
+      }
+    }
+
+    &--plan-block {
+      @media (min-width: 1280px) {
+        grid-column: 6 / 11;
+      }
     }
   }
 
@@ -76,13 +259,79 @@
     }
   }
 
+  &__email {
+    grid-column: 1 / 3;
+
+    &:hover,
+    &:focus {
+      color: #cd4d31;
+    }
+
+    @media (min-width: 768px) {
+      grid-column: 1 / 5;
+    }
+
+    @media (min-width: 1280px) {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__input {
+    border: none;
+    width: 100%;
+
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    color: #cd4d31;
+    margin: 0;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 30px;
+    }
+
+    &:hover,
+    &:focus {
+      border-bottom-color: #cd4d31;
+
+      &::placeholder {
+        color: #cd4d31;
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      color: black;
+      border-bottom-color: black;
+    }
+
+    &:-webkit-autofill {
+      background-color: white !important;
+      -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    }
+  }
+
   &--current {
     padding-top: 90px;
+
+    @media (min-width: 769px) {
+      padding-top: 100px;
+      padding-bottom: 160px;
+    }
+
+    @media (min-width: 1280px) {
+      padding-top: 110px;
+      padding-bottom: 200px;
+    }
   }
 
   &--events {
     padding-top: 120px;
     padding-bottom: 90px;
+
+    @media (min-width: 769px) {
+      padding-top: 0;
+      padding-bottom: 100px;
+    }
   }
 
   &--news {
@@ -92,5 +341,18 @@
 
   &--digest {
     padding-bottom: 80px;
+
+    @media (min-width: 768px) {
+      grid-column: 1 / 7;
+      padding-bottom: 128px;
+    }
+  }
+
+  &__container {
+    grid-column: 1 / 3;
+
+    @media (min-width: 768px) {
+      grid-column: 1 / 6;
+    }
   }
 }
