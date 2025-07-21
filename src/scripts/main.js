@@ -23,5 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       input.reportValidity();
       return;
     }
+
+    input.value = '';
   }
 });
