@@ -24,6 +24,10 @@
     background-color: #ea340d;
   }
 
+  &__arrow-icon {
+    margin-left: 8px;
+  }
+
   &--total {
     background-color: white;
     margin-top: 30px;
@@ -35,17 +39,6 @@
       margin-top: 30px;
     }
 
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-image: url(/images/arrow.svg);
-      background-size: cover;
-      margin-left: 3px;
-      vertical-align: -5px;
-    }
-
     @media (min-width: 768px) {
       grid-column: 5 / 7;
       grid-row: 1 / 2;
@@ -54,6 +47,28 @@
 
     @media (min-width: 1280px) {
       grid-column: 10 / 13;
+    }
+
+    &:hover {
+      background-color: white;
+      border-color: #af3419;
+      color: #af3419;
+
+      &::after {
+        color: #af3419;
+      }
+    }
+
+    &:disabled {
+      background-color: white;
+      border-color: #dd836f;
+      color: #dd836f;
+    }
+
+    &:active {
+      background-color: white;
+      border-color: #ea340d;
+      color: #ea340d;
     }
   }
 
