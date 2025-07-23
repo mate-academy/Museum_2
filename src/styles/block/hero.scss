@@ -1,0 +1,160 @@
+.hero {
+  background-color: $c-background;
+  height: 100dvh;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  @include padding-top;
+
+  &__wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+
+    @include tablet {
+      gap: 70px;
+    }
+
+    @include desktop {
+      display: block;
+      position: relative;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    box-sizing: border-box;
+
+    @include desktop {
+      width: unset;
+      box-sizing: unset;
+    }
+  }
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__upcoming-top {
+    margin-top: 50px;
+    color: $c-white;
+    opacity: 0.8;
+    grid-column: 1/-1;
+
+    @include tablet {
+      margin-top: 99px;
+    }
+
+    @include desktop {
+      margin-top: 90px;
+      grid-column: 1/7;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    color: $c-white;
+    margin-top: 10px;
+
+    @include desktop {
+      grid-column: 1/7;
+    }
+  }
+
+  &__subtitle {
+    grid-column: 1/-1;
+    color: $c-white;
+    margin-top: 30px;
+    opacity: 0.8;
+
+    @include tablet {
+      margin-top: 20px;
+      grid-column: 1/4;
+    }
+
+    @include desktop {
+      margin-top: 30px;
+      grid-column: 1/-1;
+    }
+  }
+
+  &__button {
+    margin-top: 50px;
+    grid-column: 1/-1;
+
+    @include tablet {
+      grid-column: 1/4;
+    }
+
+    @include desktop {
+      margin-top: 81px;
+      grid-column: 1/4;
+    }
+  }
+
+  &__upcoming-bottom-wrapper {
+    display: none;
+    margin: 135px 0 50px;
+    grid-column: 1/7;
+    gap: 20px;
+    align-items: center;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background-color: $c-white;
+      opacity: 0.3;
+      flex-grow: 1;
+    }
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  &__upcoming-bottom-text {
+    color: $c-white;
+    opacity: 0.7;
+  }
+
+  &__image-wrapper {
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 75%;
+    align-self: center;
+    display: flex;
+
+    @include tablet {
+      flex-grow: 1;
+      width: 100%;
+      max-height: 494px;
+    }
+
+    @include desktop {
+      flex-grow: unset;
+      max-height: unset;
+      width: 50%;
+      height: 100%;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      padding-top: $header-height-desktop;
+    }
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    object-position: bottom;
+
+    @include desktop {
+      width: 100%;
+      height: 100%;
+      object-position: bottom right;
+    }
+  }
+}

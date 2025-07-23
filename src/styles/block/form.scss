@@ -1,0 +1,33 @@
+.form {
+  &__input {
+    @include autofill;
+
+    box-sizing: border-box;
+    padding-bottom: 3px;
+    border: none;
+    border-bottom: 1px solid $c-black;
+    background-color: $c-white;
+
+    &::placeholder {
+      color: $c-black;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $c-main;
+
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+      color: $c-main;
+      border-bottom: 1px solid $c-main;
+
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+  }
+}
