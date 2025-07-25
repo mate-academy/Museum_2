@@ -1,0 +1,155 @@
+@import '../utils/mixins';
+
+.header {
+  background-color: #3f5252;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+  }
+  &__image-wrapper {
+    margin-bottom: -54px;
+
+    @include on-desktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+
+      // необов’язково, але якщо хочеш притиснути ще трохи
+      margin-right: -55px;
+      margin-bottom: -5px;
+    }
+  }
+  &__bottom {
+    align-items: center;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px;
+    position: relative;
+
+    @include on-tablet {
+      max-height: 1100px;
+    }
+
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      display: contents;
+    }
+  }
+  &__number {
+    grid-column: 1 / -1;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #f1f5f4;
+    margin-top: 99px;
+
+    @include on-tablet {
+      grid-row: 1;
+    }
+  }
+  &__tittle {
+    grid-column: 1 / -1;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 48px;
+    line-height: 100%;
+    color: #f1f5f4;
+
+    margin-top: 10px;
+
+    @include on-tablet {
+      grid-column: span 3;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      font-size: 96px;
+    }
+  }
+  &__about {
+    grid-column: 1 / -1;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f1f5f4;
+
+    margin-top: 20px;
+
+    @include on-tablet {
+      grid-column: span 3;
+      grid-row: 3;
+    }
+  }
+  &__image {
+    width: 245px;
+    height: 273px;
+
+    @include on-tablet {
+      height: 400px;
+      width: 345px;
+    }
+
+    @include on-desktop {
+      width: 625px;
+      height: 663px;
+      margin-bottom: -49px;
+    }
+  }
+  &__divider {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      grid-column: 2 / 7;
+      height: 1px;
+      background-color: #f1f5f4;
+      border: none;
+      margin: 20px 0;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      grid-row: 5;
+    }
+  }
+  &__number--bottom {
+    display: none;
+
+    @include on-desktop {
+      width: 90px;
+      display: block;
+      grid-row: 5;
+      font-family: 'Playfair Display', sans-serif;
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 14px;
+      line-height: 125%;
+      color: #f1f5f4;
+    }
+  }
+}

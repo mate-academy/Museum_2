@@ -1,0 +1,265 @@
+@import '../utils/mixins';
+
+.menu {
+  overflow: auto;
+
+  box-sizing: border-box;
+  height: 100vh;
+
+  &__nav {
+    margin-bottom: 48px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    margin-bottom: 32px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__aside--container {
+    text-align: left;
+
+    @include page-grid;
+
+    @include on-desktop {
+      position: relative;
+      height: 100vh;
+    }
+  }
+
+  &__small,
+  &__about {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    vertical-align: middle;
+  }
+
+  &__time,
+  &__adress {
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    line-height: 150%;
+    vertical-align: middle;
+  }
+
+  &__adress {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-column: 3 / 6;
+      grid-row: 3;
+    }
+
+    @include on-desktop {
+      margin-top: -40px;
+    }
+  }
+  &__small {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+
+    @include on-tablet {
+      grid-row: 2;
+    }
+  }
+  &__time {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-row: 3;
+    }
+
+    @include on-desktop {
+      margin-top: -40px;
+    }
+  }
+
+  &__about {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+
+    @include on-tablet {
+      grid-column: 3 / 6;
+      grid-row: 2;
+      margin-top: 30px;
+    }
+  }
+
+  &__button--wrapper {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #cd4d31;
+    width: auto;
+    height: 60px;
+    cursor: pointer;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+      grid-row: 6;
+      margin-bottom: 50px;
+    }
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+  }
+
+  &__button {
+    text-decoration: none;
+  }
+
+  &__button--tittle {
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: #f1f5f4;
+  }
+  &__divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background-color: #f1f5f4;
+    border: none;
+    margin: 20px 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      grid-row: 5;
+    }
+
+    @include on-desktop {
+      grid-column: span 6 !important;
+      grid-row: 4;
+    }
+  }
+  &__image--container {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      grid-column: 1 / -1;
+      justify-self: center;
+      grid-row: 6;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+      margin-right: -55px;
+      margin-bottom: -5px;
+    }
+  }
+  &__image {
+    width: 422px;
+    height: auto;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      width: 650px;
+      height: 697px;
+    }
+  }
+  .top__bar__logo-link {
+    margin-top: 20px;
+  }
+
+  .nav__list {
+    grid-column: 1 / -1;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    @include on-tablet {
+      margin-top: 40px;
+      gap: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: -40px;
+    }
+
+    list-style: none;
+  }
+  .icon--close {
+    margin-top: 30px;
+  }
+
+  .nav__link {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+
+    text-align: left;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    vertical-align: middle;
+
+    color: #f1f5f4;
+
+    @include on-desktop {
+      font-family: 'Playfair Display', sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      vertical-align: middle;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -4px;
+      transform-origin: center;
+      transform: scale(0);
+
+      display: block;
+
+      width: 100%;
+      height: 2px;
+      border-radius: 4px;
+
+      background-color: #f1f5f4;
+
+      transition: transform 0.3s;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
