@@ -414,6 +414,7 @@
             запрошення на події та читайте статті від кураторів
           </div>
           <form
+            id="subscribeForm"
             class="subscribe__form"
             onsubmit="this.reset(); return false;"
           >
@@ -421,6 +422,7 @@
               name="email"
               type="email"
               class="subscribe__input"
+              id="emailInput"
               placeholder="e-mail"
               required
             />
@@ -429,10 +431,12 @@
             <a
               href="#"
               class="subscribe__button"
+              id="subscribeBtn"
             >
               <div class="subscribe__button--tittle">Підписатись</div>
             </a>
           </div>
+          <p id="message"></p>
         </div>
       </div>
     </main>
@@ -441,15 +445,35 @@
         <div class="footer__content">
           <div class="footer__block--contacts">
             <div class="footer__tittle">Контакти</div>
-            <div class="footer__about">
-              Київ,
+            <address class="footer__about">
+              <a
+                href="https://www.google.com/maps/place/Київ,+вул.+М.+Грушевського,+6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="city"
+              >
+                Київ
+              </a>
+              ,
               <br />
-              вул. М. Грушевського, 6
+
+              <a
+                href="https://www.google.com/maps/place/Київ,+вул.+М.+Грушевського,+6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="street"
+              >
+                вул. М. Грушевського, 6
+              </a>
               <br />
-              тел. 278-13-57, 278-74-54
+
+              тел.
+              <a href="tel:+3802781357">278-13-57</a>
+              ,
+              <a href="tel:+3802787454">278-74-54</a>
               <br />
-              info@namu.kiev.ua
-            </div>
+              <a href="mailto:info@namu.kiev.ua">info@namu.kiev.ua</a>
+            </address>
             <div class="footer__block--icons">
               <a
                 href="https://facebook.com"
@@ -618,7 +642,6 @@
           `${lang} <span class="arrow">▼</span>`;
         document.getElementById('languageMenu').style.display = 'none';
         console.log('Обрано мову (aside):', lang);
-        // window.location.href = `/${lang.toLowerCase()}/index.html`;
       }
 
       // Випадаюче меню мов (в header)
@@ -632,7 +655,6 @@
           `${lang} <span class="arrow">▼</span>`;
         document.getElementById('languageMenuHeader').style.display = 'none';
         console.log('Обрано мову (хедер):', lang);
-        // window.location.href = `/${lang.toLowerCase()}/index.html`;
       }
 
       window.toggleLanguageDropdown = toggleLanguageDropdown;
@@ -659,6 +681,30 @@
           if (headerMenu) headerMenu.style.display = 'none';
         }
       });
+
+      // 📩 Обробка підписки на дайджест
+      const form = document.getElementById('subscribeForm');
+      const emailInput = document.getElementById('emailInput');
+      const subscribeBtn = document.getElementById('subscribeBtn');
+      const message = document.getElementById('message');
+
+      if (form && emailInput && subscribeBtn) {
+        subscribeBtn.addEventListener('click', function (e) {
+          e.preventDefault(); // не оновлюємо сторінку
+
+          if (!emailInput.checkValidity()) {
+            message.textContent = 'Введіть коректний e-mail.';
+            emailInput.focus();
+            return;
+          }
+
+          // Тут можеш використати fetch() для відправки на сервер, якщо потрібно
+
+          // message.textContent = "Дякуємо! Ви підписані.";
+
+          form.reset(); // очищення поля
+        });
+      }
     });
   </script>
 </html>
