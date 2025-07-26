@@ -1,0 +1,54 @@
+@import '../utils/mixins';
+
+.top__bar {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+
+  &__logo-link {
+    display: flex;
+
+    &:hover {
+      @include transision;
+    }
+  }
+  &--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  &__logo {
+    width: auto;
+    height: 25px;
+    display: flex;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+
+    .language-dropdown {
+      order: 1;
+    }
+
+    .icon--close {
+      order: 2;
+    }
+  }
+}
+
+@include on-tablet {
+  .top__bar__icons {
+    .language-dropdown {
+      order: 2;
+    }
+
+    .icon--close {
+      order: 1;
+    }
+  }
+}

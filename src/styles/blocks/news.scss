@@ -1,0 +1,146 @@
+@import '../utils/mixins';
+
+.news {
+  &__content {
+    @include page-grid;
+
+    background-color: #f1f5f4;
+  }
+
+  &__tittle {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 28px;
+    line-height: 125%;
+    vertical-align: middle;
+    color: #1c1b29;
+
+    margin-top: 90px;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      grid-row: 1;
+      grid-column: span 2;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+
+    @include on-desktop {
+      height: 500px;
+    }
+  }
+
+  &__wrapper--first {
+    grid-column: 1 / -1;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: span 3;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+      grid-row: 2;
+      margin-bottom: 0;
+    }
+  }
+
+  &__wrapper--second {
+    grid-column: 1 / -1;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-row: 2;
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-row: 2;
+      grid-column: span 6;
+      margin-bottom: 0;
+    }
+  }
+
+  &__num {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: #1c1b29;
+
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  &__about {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 125%;
+    vertical-align: middle;
+    color: #1c1b29;
+
+    margin-bottom: 20px;
+  }
+
+  &__page {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    vertical-align: middle;
+  }
+
+  &__button {
+    text-decoration: none;
+  }
+
+  &__button--wrapper {
+    width: 100% !important;
+    height: 60px;
+    margin-top: 40px;
+    background-color: #f1f5f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    cursor: pointer;
+    border: 1px solid #cd4d31;
+    grid-column: 1 / -1;
+
+    &:hover {
+      border: 1px solid #af3419;
+    }
+
+    &:active {
+      border: 1px solid #ea340d;
+    }
+
+    @include on-tablet {
+      grid-row: 1;
+      grid-column: 5 / 7;
+      margin-top: 80px;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 10 / 13;
+      margin-top: 80px;
+    }
+  }
+  &__button--tittle {
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: #cd4d31;
+  }
+}

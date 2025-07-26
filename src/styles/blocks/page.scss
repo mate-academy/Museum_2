@@ -1,0 +1,49 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  scroll-behavior: smooth;
+
+  size: 16px;
+
+  font-family: Manrope, serif;
+  line-height: 22.4px;
+
+  &__body {
+    background-color: #f1f5f4;
+  }
+  &__menus {
+    z-index: 9999;
+    overflow-y: auto;
+    pointer-events: none;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+
+    opacity: 0;
+
+    transition: all 0.3s;
+    background-color: #3f5252;
+    color: #f1f5f4;
+
+    &.active {
+      pointer-events: all;
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

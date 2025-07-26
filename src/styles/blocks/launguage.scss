@@ -1,0 +1,67 @@
+@import '../utils/mixins';
+
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-family: sans-serif;
+
+  &--header {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+}
+
+.language-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 30px;
+  width: 34px;
+  height: 24px;
+
+  &--header {
+    margin: 0;
+  }
+}
+
+.language-button:focus {
+  outline: 2px solid #2b8df0;
+  border-radius: 4px;
+}
+
+.arrow {
+  font-size: 12px;
+}
+
+.language-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background-color: #2f3f40;
+  border: 1px solid #4b5d5e;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: none;
+  z-index: 100;
+}
+
+.language-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: white;
+}
+
+.language-menu li:hover {
+  background-color: #4e5e5f;
+}

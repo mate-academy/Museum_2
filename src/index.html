@@ -6,14 +6,705 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <title>Museum</title>
+
     <link
       rel="stylesheet"
       href="./styles/main.scss"
     />
-  </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="scripts/main.js"></script>
+  </head>
+  <body class="page__body">
+    <header class="header">
+      <div class="header__content">
+        <div class="container">
+          <div class="top__bar">
+            <div class="top__bar--container">
+              <a
+                href="#"
+                class="top__bar__logo-link"
+              >
+                <img
+                  src="./images/museum-logo.png"
+                  alt="Museum"
+                  class="top__bar__logo"
+                />
+              </a>
+              <div class="top__bar__icons">
+                <a
+                  href="#"
+                  class="icon icon--menu"
+                  id="menuOpen"
+                ></a>
+                <div class="language-dropdown language-dropdown--header">
+                  <button
+                    class="language-button language-button--header"
+                    onclick="toggleLanguageDropdownHeader()"
+                  >
+                    UA
+                    <span class="arrow">▼</span>
+                  </button>
+                  <ul
+                    class="language-menu"
+                    id="languageMenuHeader"
+                  >
+                    <li onclick="selectLanguageHeader('UA')">UA</li>
+                    <li onclick="selectLanguageHeader('EN')">EN</li>
+                    <li onclick="selectLanguageHeader('PL')">PL</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <aside
+              class="menu page__menus"
+              id="menu"
+            >
+              <div class="container">
+                <div class="top-bar menu__top">
+                  <div class="top__bar--container">
+                    <a
+                      href="#"
+                      class="top__bar__logo-link"
+                    >
+                      <img
+                        src="./images/museum-logo.png"
+                        alt="Museum"
+                        class="top__bar__logo"
+                      />
+                    </a>
+
+                    <div class="top__bar__icons">
+                      <div class="language-dropdown">
+                        <button
+                          class="language-button"
+                          onclick="toggleLanguageDropdown()"
+                        >
+                          UA
+                          <span class="arrow">▼</span>
+                        </button>
+                        <ul
+                          class="language-menu"
+                          id="languageMenu"
+                        >
+                          <li onclick="selectLanguage('UA')">UA</li>
+                          <li onclick="selectLanguage('EN')">EN</li>
+                          <li onclick="selectLanguage('PL')">PL</li>
+                        </ul>
+                      </div>
+
+                      <a
+                        href="#"
+                        class="icon icon--close"
+                        id="menuClose"
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="menu__aside--container">
+                  <p class="menu__small">Розклад сьогодні:</p>
+                  <p class="menu__time">12:00 - 19:00</p>
+                  <div class="menu__about">Адреса:</div>
+                  <div class="menu__adress">Київ, вул. М. Грушевського, 6</div>
+                  <nav class="nav top__nav">
+                    <ul class="nav__list">
+                      <li class="nav__item">
+                        <a
+                          href="#Actually"
+                          class="nav__link"
+                        >
+                          Актуальні виставки
+                        </a>
+                      </li>
+                      <li class="nav__item">
+                        <a
+                          href="#Events"
+                          class="nav__link"
+                        >
+                          Найближчі події
+                        </a>
+                      </li>
+                      <li class="nav__item">
+                        <a
+                          href="#News"
+                          class="nav__link"
+                        >
+                          Новини
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <hr class="menu__divider" />
+
+                  <div class="menu__button--wrapper">
+                    <a
+                      href="#"
+                      class="menu__button"
+                    >
+                      <div class="menu__button--tittle">Купити квиток</div>
+                    </a>
+                  </div>
+
+                  <div class="menu__image--container">
+                    <img
+                      src="./images/img_menu.png"
+                      alt="menu__img"
+                      class="menu__image"
+                    />
+                  </div>
+                </div>
+              </div>
+            </aside>
+            <div class="header__bottom">
+              <div class="header__content-wrapper">
+                <p class="header__number">10 серпня - 10 листопада</p>
+                <h1 class="header__tittle">Мистецтво ХІХ - ХХ ст.</h1>
+                <p class="header__about">
+                  Внесок українських митців у світову культуру 19-20 ст.
+                </p>
+                <div class="button__wrapper">
+                  <a
+                    href="#product"
+                    class="button"
+                  >
+                    <div class="button__tittle">Купити квиток</div>
+                  </a>
+                </div>
+                <div class="header__number--bottom">10.08 - 10.10</div>
+                <hr class="header__divider" />
+              </div>
+              <div class="header__image-wrapper">
+                <img
+                  src="./images/header__image.png"
+                  alt="Image"
+                  class="header__image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <div class="main__content">
+          <div
+            class="main__tittle"
+            id="Actually"
+          >
+            Актуальні виставки
+          </div>
+          <div class="main__exhibitions">
+            <div class="main__first--exhibitions">
+              <img
+                src="./images/main--exhibitions--one.png"
+                alt="Angel"
+                class="main__image"
+              />
+              <div class="main__num">11.07 - 22.09</div>
+              <div class="main__exhibitions--tittle">
+                Кураторська виставка “Ангели”
+              </div>
+              <div class="main__exhibitions--about">
+                Виставковий проект «Ангели» – знакова подія для української
+                культури і водночас наймасштабніший...
+              </div>
+              <div class="main__button--wrapper">
+                <a
+                  href="#"
+                  class="main__button"
+                >
+                  <div class="main__button--tittle">Купити квиток</div>
+                </a>
+              </div>
+            </div>
+
+            <div class="main__second--exhibitions">
+              <img
+                src="./images/main--exhibitions--two.png"
+                alt="Angel"
+                class="main__image"
+              />
+              <div class="main__num">Діє постійно</div>
+              <div class="main__exhibitions--tittle">
+                Мистецтво ХХ ст. — XXI ст.
+              </div>
+              <div class="main__exhibitions--about">
+                Знакові роботи Алли Горської, Миколи Самокиша, Федора
+                Кричевського та інших митців.
+              </div>
+              <div class="main__button--wrapper">
+                <a
+                  href="#"
+                  class="main__button"
+                >
+                  <div class="main__button--tittle">Купити квиток</div>
+                </a>
+              </div>
+            </div>
+            <div class="exhibitions__button--wrapper">
+              <a
+                href="#"
+                class="exhibitions__button"
+              >
+                <div class="exhibitions__button--tittle">Архів виставок</div>
+              </a>
+              <div class="arrows"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="events__content">
+          <div
+            class="events__tittle"
+            id="Events"
+          >
+            Найближчі події
+          </div>
+          <div class="events__image--first">
+            <img
+              src="./images/events--image.png"
+              alt="events__image"
+              class="events__img"
+            />
+          </div>
+          <div class="events__one">
+            <div class="events__num">14.08 о 13:00</div>
+            <div class="events__about-tittle">
+              Кураторські екскурсії від Павла Гудімова
+            </div>
+            <div class="events__about">
+              Таємниці підготовки, історії експонатів, магія дійства до і в
+              момент вашої присутності – розгортатиметься...
+            </div>
+          </div>
+          <div class="events__button--wrapper">
+            <a
+              href="#"
+              class="events__button"
+            >
+              <div class="events__button--tittle">Зареєструватись</div>
+            </a>
+          </div>
+
+          <div class="events__image--second">
+            <img
+              src="./images/events__image--2.png"
+              alt="events__image"
+              class="events__img"
+            />
+          </div>
+          <div class="events__two">
+            <div class="events__num">16.08 о 13:00</div>
+            <div class="events__about-tittle">
+              Майстер-клас “Подорож до Австралії”
+            </div>
+            <div class="events__about">
+              Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт
+              ругосвітньої подорожі - Австралія.
+            </div>
+          </div>
+          <div class="events__button--container">
+            <a
+              href="#"
+              class="events__button"
+            >
+              <div class="events__button--tittle">Зареєструватись</div>
+            </a>
+          </div>
+          <div class="events__button--other">
+            <a
+              href="#"
+              class="events__button"
+            >
+              <div class="events__button--tittles">Календар подій</div>
+            </a>
+            <div class="arrows"></div>
+          </div>
+        </div>
+      </div>
+      <div class="visit">
+        <div class="container">
+          <div class="visit__content">
+            <div class="visit__back--image">
+              <img
+                src="./images/visit--image.png"
+                alt="visit--image"
+                class="visit__img"
+              />
+            </div>
+            <div class="visit__tittle">Сплануйте візит до музею</div>
+            <div class="visit__about">
+              Оберіть зручний день, зареєструйтесь на події, що цікавлять,
+              купіть квиток заздалегідь, щоб ніщо не завадило вам
+              насолоджуватись мистецтвом.
+            </div>
+            <div class="visit__button--wrapper">
+              <a
+                href="#"
+                class="visit__button"
+              >
+                <div class="visit__button--tittle">Почати</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="news__content">
+          <div
+            class="news__tittle"
+            id="News"
+          >
+            Новини
+          </div>
+          <div class="news__wrapper--first">
+            <img
+              src="./images/news--first.png"
+              alt="new__first"
+              class="news__img"
+            />
+            <div class="news__num">9 серпня 2019</div>
+            <div class="news__about">Оголошення переможця</div>
+            <div class="news__page">
+              Друзі, сьогодні п'ятниця! А це означає, що час оголосити переможця
+              розіграшу...
+            </div>
+          </div>
+
+          <div class="news__wrapper--second">
+            <img
+              src="./images/news--second.png"
+              alt="new__second"
+              class="news__img"
+            />
+
+            <div class="news__num">9 серпня 2019</div>
+            <div class="news__about">Міжнародний день котів</div>
+            <div class="news__page">
+              Музей з левами не може просто так взяти і пропустити Міжнародний
+              день котів!
+            </div>
+          </div>
+          <div class="news__button--wrapper">
+            <a
+              href="#"
+              class="news__button"
+            >
+              <div class="news__button--tittle">Усі новини</div>
+            </a>
+          </div>
+        </div>
+        <div class="subscribe__content">
+          <div class="subscribe__tittle">Підпишіться на дайджест</div>
+          <div class="subscribe__about">
+            Першими дізнавайтесь про новини музею та розіграші, отримуйте
+            запрошення на події та читайте статті від кураторів
+          </div>
+          <form
+            id="subscribeForm"
+            class="subscribe__form"
+            onsubmit="this.reset(); return false;"
+          >
+            <input
+              name="email"
+              type="email"
+              class="subscribe__input"
+              id="emailInput"
+              placeholder="e-mail"
+              required
+            />
+          </form>
+          <div class="subscribe__button--wrapper">
+            <a
+              href="#"
+              class="subscribe__button"
+              id="subscribeBtn"
+            >
+              <div class="subscribe__button--tittle">Підписатись</div>
+            </a>
+          </div>
+          <p id="message"></p>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__block--contacts">
+            <div class="footer__tittle">Контакти</div>
+            <address class="footer__about">
+              <a
+                href="https://www.google.com/maps/place/Київ,+вул.+М.+Грушевського,+6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="city"
+              >
+                Київ
+              </a>
+              ,
+              <br />
+
+              <a
+                href="https://www.google.com/maps/place/Київ,+вул.+М.+Грушевського,+6"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="street"
+              >
+                вул. М. Грушевського, 6
+              </a>
+              <br />
+
+              тел.
+              <a href="tel:+3802781357">278-13-57</a>
+              ,
+              <a href="tel:+3802787454">278-74-54</a>
+              <br />
+              <a href="mailto:info@namu.kiev.ua">info@namu.kiev.ua</a>
+            </address>
+            <div class="footer__block--icons">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                class="footer__facebook"
+              ></a>
+
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                class="footer__twitter"
+              ></a>
+
+              <a
+                href="https://telegram.com"
+                target="_blank"
+                class="footer__telegram"
+              ></a>
+
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                class="footer__instagram"
+              ></a>
+            </div>
+          </div>
+          <div class="footer__block--schedue">
+            <div class="footer__tittle">Розклад роботи</div>
+            <div class="footer__about">
+              ПН: вихідний
+              <br />
+              ВТ: вихідний
+              <br />
+              СР: 10:00 - 17:00
+              <br />
+              ЧТ: 10:00 - 17:00
+              <br />
+              ПТ: 12:00 - 19:00
+              <br />
+              СБ: 11:00 - 18:00
+              <br />
+              НД: 10:00 - 17:00
+            </div>
+          </div>
+          <div class="footer__main--points">
+            <div class="footer__tittle">Головна</div>
+            <nav class="nav top__nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a
+                    href="#Actually"
+                    class="footer__link"
+                  >
+                    Виставки
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a
+                    href="#Events"
+                    class="footer__link"
+                  >
+                    Події
+                  </a>
+                </li>
+                <li class="nav__item">
+                  <a
+                    href="#News"
+                    class="footer__link"
+                  >
+                    Новини
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__bottom--content">
+              <div class="footer__years">© 2010 — 2020</div>
+              <div class="footer__privacy">Privacy — Terms</div>
+            </div>
+            <a
+              href="#"
+              class="icon icon--scrollup"
+              id="menuUp"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Слайдер
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.querySelector('.prev-button');
+      const nextBtn = document.querySelector('.next-button');
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+      }
+
+      if (prevBtn && nextBtn && slides.length > 0) {
+        prevBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          showSlide(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+        });
+      }
+
+      // Меню
+      const menu = document.getElementById('menu');
+      const openBtn = document.getElementById('menuOpen');
+      const closeBtn = document.getElementById('menuClose');
+      const body = document.body;
+
+      if (openBtn && closeBtn && menu) {
+        openBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          menu.classList.add('active');
+          body.classList.add('no-scroll');
+        });
+
+        closeBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          menu.classList.remove('active');
+          body.classList.remove('no-scroll');
+        });
+      }
+
+      // Закриття меню при кліку на якірні посилання
+      document.querySelectorAll('.page__menus a[href^="#"]').forEach((link) => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href');
+          const target = document.querySelector(targetId);
+
+          menu.classList.remove('active');
+          body.classList.remove('no-scroll');
+          document.body.style.overflow = 'auto';
+          document.documentElement.style.overflow = 'auto';
+
+          if (target) {
+            setTimeout(() => {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              document.body.style.overflow = '';
+              document.documentElement.style.overflow = '';
+            }, 50);
+          }
+        });
+      });
+
+      // Випадаюче меню мов (в aside)
+      function toggleLanguageDropdown() {
+        const menu = document.getElementById('languageMenu');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      }
+
+      function selectLanguage(lang) {
+        document.querySelector('aside .language-button').innerHTML =
+          `${lang} <span class="arrow">▼</span>`;
+        document.getElementById('languageMenu').style.display = 'none';
+        console.log('Обрано мову (aside):', lang);
+      }
+
+      // Випадаюче меню мов (в header)
+      function toggleLanguageDropdownHeader() {
+        const menu = document.getElementById('languageMenuHeader');
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+      }
+
+      function selectLanguageHeader(lang) {
+        document.querySelector('.top__bar .language-button').innerHTML =
+          `${lang} <span class="arrow">▼</span>`;
+        document.getElementById('languageMenuHeader').style.display = 'none';
+        console.log('Обрано мову (хедер):', lang);
+      }
+
+      window.toggleLanguageDropdown = toggleLanguageDropdown;
+      window.selectLanguage = selectLanguage;
+      window.toggleLanguageDropdownHeader = toggleLanguageDropdownHeader;
+      window.selectLanguageHeader = selectLanguageHeader;
+
+      // Закриття обох дропдаунів при кліку поза ними
+      document.addEventListener('click', function (e) {
+        const dropdownAside = document.querySelector(
+          'aside .language-dropdown',
+        );
+        const dropdownHeader = document.querySelector(
+          '.top__bar .language-dropdown',
+        );
+
+        if (dropdownAside && !dropdownAside.contains(e.target)) {
+          const asideMenu = document.getElementById('languageMenu');
+          if (asideMenu) asideMenu.style.display = 'none';
+        }
+
+        if (dropdownHeader && !dropdownHeader.contains(e.target)) {
+          const headerMenu = document.getElementById('languageMenuHeader');
+          if (headerMenu) headerMenu.style.display = 'none';
+        }
+      });
+
+      // 📩 Обробка підписки на дайджест
+      const form = document.getElementById('subscribeForm');
+      const emailInput = document.getElementById('emailInput');
+      const subscribeBtn = document.getElementById('subscribeBtn');
+      const message = document.getElementById('message');
+
+      if (form && emailInput && subscribeBtn) {
+        subscribeBtn.addEventListener('click', function (e) {
+          e.preventDefault(); // не оновлюємо сторінку
+
+          if (!emailInput.checkValidity()) {
+            message.textContent = 'Введіть коректний e-mail.';
+            emailInput.focus();
+            return;
+          }
+
+          // Тут можеш використати fetch() для відправки на сервер, якщо потрібно
+
+          // message.textContent = "Дякуємо! Ви підписані.";
+
+          form.reset(); // очищення поля
+        });
+      }
+    });
+  </script>
 </html>
