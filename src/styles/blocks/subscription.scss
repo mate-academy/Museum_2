@@ -1,0 +1,97 @@
+.subscription {
+  margin-top: 120px;
+  margin-bottom: 80px;
+
+  @include on-tablet {
+    margin-top: 160px;
+    margin-bottom: 128px;
+  }
+
+  @include on-desktop {
+    margin-block: 200px;
+  }
+
+  @include page-grid;
+
+  &__title {
+    grid-column: 1/-1;
+    margin: 0;
+    color: $black-txt-color;
+
+    @include on-desktop {
+      grid-column: 1/7;
+    }
+  }
+
+  &__text {
+    @extend %main-text;
+
+    grid-column: 1/-1;
+    margin: 0;
+    margin-top: 20px;
+
+    @include on-tablet {
+      grid-column: 1/6;
+    }
+
+    @include on-desktop {
+      margin-top: 0;
+      grid-column: 7/13;
+    }
+  }
+
+  &__form {
+    grid-column: 1/-1;
+
+    @include page-grid;
+  }
+
+  &__input {
+    @extend %main-text;
+
+    grid-column: 1/-1;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    padding: 0;
+    width: 100%;
+    border: 0;
+    background-color: $white-txt-bg-color;
+    border-bottom: 1px solid $black-txt-color;
+    transition: $transition;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+      grid-column: 1/5;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+      grid-column: 1/6;
+    }
+
+    &:hover {
+      color: $button-bg-color;
+      border-bottom: 1px solid $button-bg-color;
+
+      &::placeholder {
+        color: $button-bg-color;
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      font-weight: 600;
+      color: $button-bg-color;
+      outline: none;
+    }
+  }
+
+  &__button {
+    border: 0;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+  }
+}

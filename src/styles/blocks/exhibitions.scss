@@ -1,0 +1,123 @@
+.exhibitions {
+  margin-top: 90px;
+  row-gap: 60px;
+
+  @include page-grid;
+
+  @include on-tablet {
+    margin-top: 100px;
+    row-gap: 75px;
+  }
+
+  @include on-desktop {
+    margin-top: 110px;
+    row-gap: 71px;
+  }
+
+  &__button {
+    margin-top: -30px;
+  }
+}
+
+.exhibition {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: span 3;
+    grid-template-rows: 420px 1fr 60px;
+  }
+
+  @include on-desktop {
+    grid-template-rows: 484px 1fr 60px;
+    grid-column: span 6;
+  }
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 356px 1fr 60px;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    max-height: 356px;
+
+    object-fit: cover;
+    object-position: center;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      max-height: 420px;
+      grid-column: span 6;
+    }
+
+    @include on-desktop {
+      max-height: 484px;
+    }
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__block {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+  }
+
+  &__date {
+    @extend %main-text;
+
+    color: $accent-color;
+
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $black-txt-color;
+  }
+
+  &__text {
+    @extend %main-text;
+
+    color: $grey-txt-color;
+
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: 1/7;
+    }
+
+    @include on-desktop {
+      grid-column: 1/4;
+    }
+  }
+}
