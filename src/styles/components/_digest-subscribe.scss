@@ -1,0 +1,135 @@
+@import '../utils';
+
+.digest-subscribe {
+  padding: 0 55px;
+  margin-bottom: 200px;
+
+  &__intro {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    line-height: 120%;
+    font-weight: 700;
+    font-size: 48px;
+    max-width: 470px;
+  }
+
+  &__text {
+    line-height: 150%;
+    font-size: 16px;
+    font-weight: 400;
+    width: calc(50% - 16px);
+    max-width: 570px;
+  }
+}
+
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+  width: 470px;
+
+  &__input-wrapper {
+    position: relative;
+    margin-bottom: 40px;
+    padding: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 470px;
+      height: 1px;
+      background-color: $black;
+    }
+  }
+
+  &__input {
+    padding: 0;
+    outline: none;
+    border: none;
+    background-color: $white;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+  }
+
+  &__button {
+    width: 270px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: $orange;
+    color: $white;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .digest-subscribe {
+    margin-bottom: 128px;
+    padding: 0 20px;
+
+    &__intro {
+      flex-direction: column;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 28px;
+      line-height: 125%;
+    }
+
+    &__text {
+      max-width: 570px;
+      width: auto;
+    }
+  }
+
+  .subscribe-form {
+    width: 100%;
+
+    &__input-wrapper::after {
+      width: 100%;
+    }
+
+    &__button {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .digest-subscribe {
+    margin-bottom: 128px;
+    padding: 0 39px;
+
+    &__intro {
+      flex-direction: column;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+      font-size: 40px;
+      line-height: 125%;
+    }
+
+    &__text {
+      max-width: 570px;
+      width: auto;
+    }
+  }
+
+  .subscribe-form {
+    &__input-wrapper::after {
+      width: 450px;
+    }
+  }
+}

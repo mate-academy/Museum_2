@@ -1,0 +1,283 @@
+@import '../utils';
+
+.header {
+  height: 90px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 55px;
+  background: $green;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: $green;
+    z-index: 8;
+  }
+
+  &__logo {
+    background: url('../images/logo.svg') center/contain no-repeat;
+    width: 124px;
+    height: 37px;
+    z-index: 10;
+  }
+
+  &__hidden-view {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-left: 55px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    margin-top: 103px;
+    background-color: $green;
+    color: $white;
+  }
+
+  &__hidden-view--active {
+    height: calc(100vh - 103px);
+  }
+
+  &__children-art {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__intro {
+    display: flex;
+    align-items: start;
+    gap: 83px;
+    margin-bottom: 70px;
+  }
+
+  &__schedule-item,
+  &__address-item {
+    &:first-of-type {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    &:last-of-type {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__navigation {
+    position: relative;
+    margin-bottom: 120px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+      height: 1px;
+      width: 570px;
+      background-color: $white;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    height: auto;
+  }
+
+  &__element {
+    color: $white;
+    font-family: Playfair, sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 120%;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $white;
+    }
+  }
+
+  &__element:hover &__element::after {
+    display: block;
+  }
+
+  &__buy-tickets {
+    color: $white;
+    font-size: 16px;
+    font-weight: 600;
+    width: 270px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $orange;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    z-index: 10;
+  }
+
+  &__burger-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    width: 25px;
+    height: 20px;
+
+    span {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__burger-menu--active {
+    span:nth-of-type(2) {
+      display: none;
+    }
+
+    span:first-of-type {
+      transform-origin: center center;
+      transform: rotate(-45deg) translateY(6px);
+    }
+
+    span:last-of-type {
+      transform-origin: center center;
+      transform: rotate(45deg) translateY(-6px);
+    }
+  }
+
+  &__burger-menu-part {
+    background-color: white;
+    height: 2px;
+    width: 25px;
+    display: block;
+  }
+
+  &__language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__ua {
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+  }
+
+  &__arrow-down {
+    width: 10px;
+    height: 7px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .header {
+    height: 80px;
+    padding: 0 20px;
+
+    &__right {
+      flex-direction: row-reverse;
+      gap: 30px;
+    }
+
+    &__language {
+      display: none;
+    }
+
+    &__language--active {
+      display: block;
+    }
+
+    &__hidden-view {
+      overflow-y: auto;
+      padding: 0 20px;
+    }
+
+    &__hidden-view--active {
+      height: calc(100vh - 80px);
+    }
+
+    &__navigation {
+      margin-bottom: 100px;
+    }
+
+    &__navigation::after {
+      width: 100%;
+    }
+
+    &__intro {
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    &__list {
+      gap: 20px;
+    }
+
+    &__element {
+      font-size: 20px;
+      line-height: 150%;
+    }
+
+    &__buy-tickets {
+      margin-bottom: 30px;
+    }
+
+    &__children-art {
+      position: relative;
+      max-width: 55%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+  .header {
+    height: 77px;
+    padding: 0 39px;
+
+    &__hidden-view {
+      overflow-y: auto;
+    }
+
+    &__buy-tickets {
+      margin-bottom: 30px;
+    }
+
+    &__children-art {
+      position: relative;
+      max-width: 55%;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
