@@ -1,0 +1,45 @@
+.page {
+  font-family: 'Space Grotesk', sans-serif;
+  size: 32px;
+  line-height: 32px;
+  color: #292929;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    overflow: auto;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition:
+      opacity 1s ease,
+      visibility 1s ease;
+    pointer-events: none;
+
+    @include on-tablet {
+      @include page-grit;
+
+      grid-template-rows: auto auto 1fr;
+    }
+  }
+
+  &__menu:target {
+    opacity: 1;
+    pointer-events: all;
+    height: 100%;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
+
+* {
+  transition: transform 1s;
+}
