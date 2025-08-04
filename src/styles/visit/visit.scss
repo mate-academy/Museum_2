@@ -1,0 +1,88 @@
+.visit {
+  @include padding;
+
+  @include on-tablet {
+    @include page-grid;
+
+    padding-block: 80px;
+    margin-top: 0;
+  }
+
+  @include on-desktop {
+    height: 700px;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+
+  padding-block: 50px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  background-color: $background;
+
+  &__background {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      background: url(../images/pictures/img_07.png) no-repeat bottom left;
+      background-size: contain;
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__main {
+    @include on-tablet {
+      grid-column: 1 / -1;
+
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+      height: 330px;
+      padding-top: 150px;
+    }
+  }
+
+  &__h2 {
+    @include h2;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+    }
+
+    color: $white;
+    padding-bottom: 20px;
+  }
+
+  &__main_text {
+    @include main;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 10;
+    }
+
+    color: $white;
+    padding-bottom: 40px;
+  }
+
+  &__button {
+    &__link {
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 6;
+      }
+    }
+  }
+}
