@@ -1,0 +1,155 @@
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 20px 80px;
+
+  @include on-tablet {
+    align-items: start;
+    padding: 160px 39px 128px;
+    padding-top: 0;
+  }
+
+  @include on-desktop {
+    padding: 200px 55px;
+    padding-top: 0;
+  }
+
+  &__content {
+    @include on-desktop {
+      display: flex;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: rgba(28, 27, 41, 1);
+    padding-bottom: 20px;
+
+    @include on-tablet {
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      line-height: 120%;
+      padding: 0;
+      width: 570px;
+    }
+  }
+
+  &__text {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: rgba(28, 27, 41, 1);
+    padding-bottom: 50px;
+
+    @include on-tablet {
+      width: 570px;
+    }
+
+    @include on-desktop {
+      padding: 0;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+
+    @include on-tablet {
+      width: 450px;
+    }
+
+    @include on-desktop {
+      width: 470px;
+      gap: 40px;
+    }
+  }
+
+  &__email {
+    border: 0;
+    background: none;
+    border-bottom: 2px solid rgba(28, 27, 41, 1);
+    color: rgba(28, 27, 41, 1);
+    height: 28px;
+    font-family: Raleway, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    transition: all $timeAnimation;
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-bottom: 2px solid rgba(205, 77, 49, 1);
+    }
+
+    &:hover::placeholder {
+      color: rgba(205, 77, 49, 1);
+    }
+
+    &:focus {
+      outline: none;
+      color: rgba(205, 77, 49, 1);
+      border-bottom: 2px solid rgba(205, 77, 49, 1);
+    }
+
+    &:focus::placeholder {
+      color: rgba(205, 77, 49, 1);
+    }
+  }
+
+  &__button {
+    height: 60px;
+    border: 0;
+    background-color: rgba(205, 77, 49, 1);
+
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: rgba(241, 245, 244, 1);
+    cursor: pointer;
+    transition: all $timeAnimation;
+
+    &:hover {
+      background-color: rgba(175, 52, 25, 1);
+    }
+
+    &:active {
+      background-color: rgba(234, 52, 13, 1);
+    }
+
+    &:disabled {
+      background-color: rgba(221, 131, 111, 1);
+    }
+
+    @include on-tablet {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+}
