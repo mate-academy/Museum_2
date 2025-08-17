@@ -1,0 +1,99 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 60px;
+
+  color: $white-color;
+  background-color: $main-color;
+
+  border-radius: 0;
+
+  transition-property: background-color, border-radius;
+  transition-duration: $transition-time;
+
+  &:hover {
+    border-radius: 20px;
+    background-color: $button-hover-color;
+  }
+
+  &:active {
+    background-color: $button-active-color;
+  }
+
+  @include tablet {
+    max-width: 330px;
+  }
+
+  @include desktop {
+    width: 270px;
+  }
+
+  &--title {
+    font-weight: 600;
+    line-height: 16px;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 64px;
+    padding-right: 92px;
+    box-sizing: border-box;
+
+    margin-top: 30px;
+    height: 60px;
+    border: 1px solid $main-color;
+
+    color: $main-color;
+
+    transition-property: box-shadow, border-radius, color, border-color;
+    transition-duration: $transition-time;
+
+    &:hover {
+      color: $button-hover-color;
+      border-color: $button-hover-color;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+    }
+
+    &:active {
+      color: $button-active-color;
+      border-color: $button-active-color;
+    }
+
+    @include tablet {
+      justify-content: initial;
+      width: 210px;
+      padding-left: 35px;
+      padding-right: 30px;
+      margin-top: 0;
+    }
+
+    @include desktop {
+      width: 270px;
+      padding-left: 59px;
+    }
+
+    &--title {
+      font-weight: 600;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        top: 2px;
+        right: -30px;
+
+        background-image: url(/src/images/icons/arrow-icon.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.subscribe {
+  margin-top: 120px;
+
+  @include tablet {
+    margin-top: 160px;
+  }
+
+  @include desktop {
+    margin-top: 200px;
+  }
+
+  &__wrapper {
+    @include desktop {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    @include tablet {
+      font-size: 40px;
+      line-height: 50px;
+    }
+
+    @include desktop {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+    color: $gray-color;
+
+    @include tablet {
+      max-width: 570px;
+    }
+
+    @include desktop {
+      margin-top: 0;
+    }
+  }
+
+  &__form {
+    margin-top: 50px;
+
+    @include tablet {
+      max-width: 450px;
+    }
+  }
+
+  &__email {
+    width: 100%;
+    padding: 4 0;
+    outline: none;
+    border: none;
+    background-color: $white-color;
+    border-bottom: 1px solid $black-color;
+
+    font-family: $bold-font-family;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+
+    transition: border-color $transition-time;
+
+    &::placeholder {
+      color: $black-color;
+      font-family: $regular-font-family;
+      font-weight: 400;
+      transition: color $transition-time;
+    }
+
+    &:hover {
+      border-color: $main-color;
+    }
+
+    &:hover::placeholder {
+      color: $main-color;
+    }
+
+    &:focus {
+      border-color: $main-color;
+      caret-color: $main-color;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    width: 100%;
+
+    @include tablet {
+      width: 330px;
+    }
+
+    @include desktop {
+      margin-top: 40px;
+      width: 270px;
+    }
+  }
+}

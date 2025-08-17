@@ -1,0 +1,107 @@
+.menu {
+  height: 100vh;
+  background-color: $bg-color;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: 768px) and (orientation: landscape) {
+    overflow: auto;
+    height: 150vh;
+  }
+
+  @include desktop {
+    background-image: url(/src/images/menu-bg.png);
+    background-size: 600px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+
+  &__bg {
+    display: none;
+    margin: 30px auto 0;
+    width: 422px;
+    height: 390px;
+
+    background-image: url(/src/images/menu-bg.png);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__icon {
+    background-image: url(/src/images/icons/close-icon.svg);
+  }
+
+  &__content {
+    margin-top: 10px;
+    align-items: start;
+
+    @include tablet {
+      display: flex;
+      margin-top: 30px;
+      gap: 123;
+    }
+
+    @include desktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 19.6px;
+    color: $white-color;
+
+    &--address {
+      margin-top: 20px;
+
+      @include tablet {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__span--focus {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+
+    @include hover(color, $main-color);
+  }
+
+  &__line {
+    margin-top: 40px;
+    height: 1px;
+    width: 100%;
+    background-color: $white-color;
+
+    @include tablet {
+      margin-top: 50px;
+    }
+
+    @include desktop {
+      margin-top: 60px;
+      max-width: 570px;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include tablet {
+      margin-top: 50px;
+    }
+
+    @include desktop {
+      margin-top: 60px;
+    }
+  }
+}
