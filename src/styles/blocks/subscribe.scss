@@ -1,0 +1,103 @@
+.subscribe {
+  color: $c-black;
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      font-size: 40px;
+      grid-column: 1 / -2;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      margin-bottom: 50px;
+      grid-column: span 6;
+    }
+  }
+  &__text {
+    grid-column: 1 / -1;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / -2;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+  &__form {
+    display: contents;
+  }
+  &__input {
+    grid-column: 1 / -1;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 30px;
+    background-color: inherit;
+    border-bottom: 1px solid $c-black;
+    outline: none;
+    color: $c-black;
+    transition:
+      border-color,
+      color $transition-duration ease;
+
+    &::placeholder {
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-black;
+      transition: color $transition-duration ease;
+    }
+
+    &:hover {
+      color: $c-main;
+      border-color: $c-main;
+
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:focus {
+      color: $c-main;
+      border-color: $c-main;
+
+      &::placeholder {
+        color: transparent;
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      font-weight: 700;
+      border-color: $c-black;
+      color: $c-black;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+  &__button-submit {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+}
