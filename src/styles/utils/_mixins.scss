@@ -4,3 +4,119 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin content-padding-inline() {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin on-design {
+  @media (min-width: $design-min-width) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+
+    column-gap: 30px;
+  }
+
+  @include on-design {
+    --columns: 12;
+
+    column-gap: 30px;
+  }
+}
+
+@mixin button {
+  display: block;
+  height: 60px;
+  text-decoration: none;
+  background-color: #cd4d31;
+  color: #f1f5f4;
+  border: 1px;
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 60px;
+  text-align: center;
+  width: 280px;
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+
+  &:hover {
+    background: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+}
+
+@mixin button-white {
+  height: 60px;
+  background-color: #fff;
+  color: #cd4d31;
+  border: 1px solid #cd4d31;
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+  width: 280px;
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+
+  &:hover {
+    border: 1px solid #af3419;
+  }
+
+  &:active {
+    border: 1px solid #ea340d;
+  }
+}
