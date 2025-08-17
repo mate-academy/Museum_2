@@ -1,0 +1,85 @@
+.subscribe {
+  &__content {
+    @include my-grid;
+    
+    row-gap: 30px;
+
+    padding-block: 120px 80px;
+
+    @include on-tablet {
+      padding-block: 160px 130px;
+    }
+
+    @include on-desktop {
+      padding-block: 200px;
+    }
+  }
+
+  &__top {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+
+    @extend %main-text;
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__input {
+    border: 0;
+    background-color: inherit;
+    border-bottom: 1px solid $black;
+    padding-bottom: 5px;
+    outline: none;
+
+    &:not(:placeholder-shown) {
+      font-weight: 700;
+    }
+
+    &:hover {
+      border-color: $orange-main;
+      color: $orange-main;
+      font-weight: normal;
+    }
+
+    &:focus {
+      border-color: $orange-main;
+      color: $orange-main;
+      font-weight: normal;
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      max-width: 270px;
+    }
+  }
+}

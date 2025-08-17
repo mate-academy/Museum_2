@@ -1,0 +1,119 @@
+.header {
+  background-color: $dark-green-bg;
+  position: relative;
+  overflow: hidden;
+
+  @include on-desktop {
+    padding-bottom: 50px;
+  }
+
+  &__content {
+    @include my-grid;
+  }
+
+  &__top-bar {
+    grid-column: 1 / -1;
+    margin-bottom: 70px;
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 80px;
+      grid-column: span 6;
+    }
+  }
+
+  &__date {
+    color: $white;
+
+    @extend %additional-text;
+  }
+
+  &__title {
+    color: $white;
+  }
+
+  &__subtitle {
+    color: $white;
+
+    @extend %main-text;
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+    text-decoration: none;
+    cursor: pointer;
+
+    @include on-tablet {
+      grid-column: span 3;
+      margin-bottom: 70px;
+    }
+    
+    @include on-desktop {
+      grid-row: 3;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    place-self: center end;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+    }
+  }
+
+  &__photo {
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    @include on-desktop {
+      width: 50%;
+      height: 85%;
+      object-fit: contain;
+      object-position: right;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      align-items: center;
+      grid-column: 1 / 7;
+      gap: 20px;
+    }
+  }
+
+  &__month {
+    min-width: fit-content;
+    color: rgba($color: $white, $alpha: 0.7);
+
+    @extend %additional-text;
+  }
+
+  &__language {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+    }
+  }
+}

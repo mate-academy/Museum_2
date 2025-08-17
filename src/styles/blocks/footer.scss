@@ -1,0 +1,95 @@
+.footer {
+  background-color: $dark-green-bg;
+  color: $white;
+  padding-block: 35px 30px;
+
+  @include on-tablet {
+    padding-top: 50px;
+  }
+
+  &__content {
+    @include my-grid;
+
+    row-gap: 50px;
+
+    @include on-tablet {
+      row-gap: 70px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 2;
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    @extend %h4;
+  }
+
+  &__links {
+    &--mb {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+
+    @include hover(color, #b1a9a9);
+    @extend %main-text;
+  }
+
+  &__tels {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__icon {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include on-tablet {
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    @extend %main-text;
+  }
+
+  &__bottom {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__rights {
+    display: flex;
+    gap: 22px;
+
+    @extend %additional-text;
+  }
+}
