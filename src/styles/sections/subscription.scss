@@ -1,0 +1,105 @@
+.subscription {
+  padding-top: 120px;
+  padding-bottom: 80px;
+
+  @include on-tablet {
+    padding-top: 160px;
+    padding-bottom: 128px;
+  }
+
+  .container {
+    @include page-grid;
+  }
+
+  .section-title {
+    text-align: left;
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: span 6;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__text {
+    text-align: left;
+    grid-column: 1 / -1;
+    padding: 20px 0 50px;
+
+    @include on-tablet {
+      grid-column: 1 / -2;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__form {
+    grid-column: 1/ -1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    @include on-tablet {
+      grid-column: 1/ 5;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+      gap: 40px;
+    }
+  }
+
+  &__email {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: none;
+    border: 0 solid transparent;
+    border-bottom: 1px solid $black-color;
+    color: $button-color;
+    transition-duration: $efferctDuration;
+
+    @include on-tablet {
+      max-width: 470px;
+    }
+
+    &::placeholder {
+      color: $black-color;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $button-color;
+    }
+
+    &:hover::placeholder {
+      color: $button-color;
+    }
+
+    &:not(:placeholder-shown) {
+      color: $black-color;
+      font-weight: 700;
+      background-color: $white-bg;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $button-color;
+      color: $button-color;
+      font-weight: 600;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+
+    @include on-tablet {
+      width: 50%;
+      max-width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+}
