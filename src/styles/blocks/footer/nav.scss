@@ -1,0 +1,45 @@
+.footer__nav {
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 5px;
+
+    &--home {
+      font-size: 18px;
+      line-height: 27px;
+      margin-bottom: 10px;
+
+      @include on-tablet {
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    width: fit-content;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $c-white;
+
+      transition: transform $animation-time;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
