@@ -1,0 +1,62 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 20px;
+
+  @include on-desktop {
+    padding-block: 26px;
+  }
+
+  &__logo-link {
+    @include hover( transform, scale(1.2));
+
+
+  }
+
+  &__logo {
+    height: 37px;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 40px;
+
+    &--mob--reverse {
+      flex-direction: row-reverse;
+
+      @include on-tablet {
+        flex-direction: row;
+      }
+    }
+
+  }
+
+
+  &__language {
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+
+    @include hover( transform, scale(1.2));
+    
+    cursor: pointer;
+
+    &:focus {
+      background-color: $background;
+    }
+
+    &--mob--hide {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+      }
+    }
+
+
+
+  }
+}
+
+

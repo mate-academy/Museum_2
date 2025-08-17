@@ -1,0 +1,125 @@
+.subscribe {
+  &__content {
+    @include page-grid;
+  }
+
+  &__title {
+    padding-bottom: 0;
+    line-height: 35px;
+    grid-column: span 2;
+    grid-row: 1 / 2;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: span 5;
+      line-height: 50px;
+    }
+
+    @include on-desktop {
+      line-height: 58px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 24px;
+    grid-column: span 2;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 13;
+      grid-row: 1 /2;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+
+    @include page-grid;
+  }
+
+  &__email {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    grid-row: 1 / 2;
+    grid-column: span 2;
+    background-color: inherit;
+    padding-bottom: 2px;
+    border-bottom: 1px solid $black;
+    margin-bottom: 30px;
+    transition: 0.3s;
+
+    &::placeholder {
+      font-weight: 400;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      border-color: $main;
+      color: $main;
+
+      &::placeholder {
+        color: $main;
+      }
+    }
+
+    &:active {
+      border-color: $main;
+      color: $main;
+
+      &::placeholder {
+        color: $main;
+      }
+    }
+
+    &:focus {
+      border-color: $main;
+      color: $main;
+
+      &::placeholder {
+        color: $main;
+      }
+    }
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+      margin-bottom: 40px;
+    }
+
+    &:-webkit-autofill {
+      color: $black;
+      -webkit-box-shadow: 1px 1px 1px 100vh $white inset;
+
+    }
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-text-fill-color: $main;
+      -webkit-box-shadow: 1px 1px 1px 100vh $white inset;
+
+    }
+
+  }
+
+  &__submit {
+    grid-row: 2 / 3;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+  }
+}
+
+
+

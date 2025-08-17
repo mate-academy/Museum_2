@@ -1,0 +1,87 @@
+.button {
+  display: block;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  transition: 0.3s;
+
+  &--clr--main {
+    color: $white;
+    background-color: $main;
+    padding-block: 23px;
+
+    &:hover {
+      background-color: #af3419;
+    }
+
+    &:active {
+      background-color: #ea340d;
+    }
+
+    &:disabled {
+      background-color: #dd836f;
+    }
+
+    &--disabled {
+      background-color: #dd836f;
+      pointer-events: none;
+    }
+  }
+
+  &--transparent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    color: $main;
+    border: 1px solid $main;
+    padding-block: 19px;
+    align-self: start;
+
+    &::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      mask-image: url(/src/images/icon/arrow.svg);
+      background-color: $main;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      color: #af3419;
+      border-color: #af3419;
+
+      &::after {
+        background-color: #af3419;
+      }
+    }
+
+    &:active  {
+      color: #ea340d;
+      border-color: #ea340d;
+
+      &::after {
+        background-color: #ea340d;
+      }
+    }
+
+    &:disabled {
+      color: #dd836f;
+      border-color: #dd836f;
+
+      &::after {
+        background-color: #dd836f;
+      }
+    }
+
+    &--disabled {
+      color: #dd836f;
+      border-color: #dd836f;
+      pointer-events: none;
+
+      &::after {
+        background-color: #dd836f;
+      }
+    }
+  }
+}
