@@ -1,0 +1,94 @@
+.news {
+
+  &-container-for-grid {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &-container-for-first-photo {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+   }
+
+   &-container-for-second-photo {
+    @include on-tablet {
+      grid-column: 4 / 7;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 13;
+    }
+   }
+
+  &-container-for-first-photo, &-container-for-second-photo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      overflow: hidden;
+      margin-top: 60px;
+
+      @include on-tablet {
+        margin-top: 70px;
+      }
+
+      @include on-desktop {
+        margin-top: 53px;
+      }
+
+      &-img {
+        width: 100%;
+
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    &-dates, &-description  {
+      margin: 0;
+      font-family: Raleway, sans-serif;
+      font-weight: 400;
+      text-align: left;
+      color: #1C1B29;
+    }
+
+    &-dates {
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    &-description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &-name {
+      margin: 0;
+      font-family: Playfair Display;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 25px;
+      text-align: left;
+      color: #1C1B29;
+    }
+  }
+}
+
+@include hover-styles;
+@include focus-styles;
+@include disabled-styles;
