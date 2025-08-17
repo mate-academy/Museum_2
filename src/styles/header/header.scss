@@ -1,0 +1,147 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+
+  width: 100%;
+
+  background-color: $colorBackground;
+
+  &__wrapper {
+    position: relative;
+
+    padding: 20px 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nav-menu {
+  position: fixed;
+  left: 0;
+  top: 65px;
+  z-index: 9;
+
+  height: calc(100svh - 65px);
+  width: 100vw;
+  overflow: auto;
+
+  display: flex;
+
+  transform: translateX(100%);
+  transition-duration: 0.5s;
+
+  background-color: $colorBackground;
+  color: $colorWhite;
+
+  &--active {
+    transform: translateY(0);
+  }
+
+  &__container {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 29px;
+
+      flex-grow: 1;
+    }
+  }
+
+  &__wrapper {
+    padding: 20px 0 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+    @include onDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-bottom: 40px;
+    border-bottom: 1px solid $colorWhite;
+
+    @include onTablet {
+      gap: 30px;
+    }
+    @include onDesktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    font-family: $fontPlayfairDisplay;
+    font-weight: $fontWeightBold;
+    font-size: 20px;
+
+    @include onTablet {
+      font-size: 48px;
+    }
+
+    @include onDesktop {
+      font-size: 48px;
+    }
+  }
+
+  &__background {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: end;
+      align-items: end;
+    }
+
+    img{
+      width: 100%;
+      height: 100%;
+
+      object-position: right bottom;
+      object-fit: contain;
+    }
+  }
+}
+
+.nav-menu-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include onTablet {
+    flex-direction: row;
+    align-items: center;
+    gap: 123px;
+  }
+
+  @include onDesktop {
+    gap: 80px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__text {
+    &--medium {
+      font-weight: $fontWeightSemiBol;
+    }
+  }
+}
+
+
