@@ -1,0 +1,146 @@
+.menu {
+  background-color: $background-color;
+  pointer-events: none;
+  color: $white-color;
+  max-width: 100%;
+  transform: translateX(-100%);
+  z-index: 10;
+  transition: all 0.3s;
+  overflow: auto;
+  box-sizing: border-box;
+  height: 100vh;
+
+  &__container {
+    @include on-desktop {
+      background-image: url('../images/img_menu-boy.png');
+      background-repeat: no-repeat;
+      display: block;
+      background-position: 100% 100%;
+      background-size: 625px 663px;
+    }
+  }
+
+  &__content {
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__info {
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__bottom {
+    @include on-tablet {
+      margin-top: 30px;
+
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      display: block;
+      margin-top: 14px;
+    }
+  }
+
+  &__data {
+    @include on-desktop {
+      display: flex;
+      gap: 83px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    line-height: 19.6px;
+    text-align: left;
+
+    @include on-tablet {
+      grid-column: span 2;
+    }
+  }
+
+  &__address {
+    margin: 20px 0 40px;
+
+    @include on-tablet {
+      grid-column: span 3;
+      margin: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 70px;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: $white-color;
+      margin: 20px 0 40px;
+
+      @include on-tablet {
+        margin: 20px 0 50px;
+      }
+
+      @include on-desktop {
+        margin: 0 0 60px;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    color: $white-color;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+    position: relative;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+
+    &::after {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: $white-color;
+      display: block;
+      transform: scale(0);
+      transform-origin: 0;
+      transition: transform 0.3s;
+      position: absolute;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

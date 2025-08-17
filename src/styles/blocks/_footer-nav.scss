@@ -1,0 +1,51 @@
+.footer-nav {
+  margin-bottom: 60px;
+
+  @include on-tablet {
+    grid-column: span 2;
+  }
+
+  @include on-desktop {
+    grid-column: span 4;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item {
+    color: $white-color;
+    position: relative;
+
+    &::after {
+      content: '';
+      transform-origin: 0;
+      background-color: $white-color;
+      width: 100%;
+      height: 1px;
+      transition: transform 0.3s;
+      display: block;
+      position: absolute;
+      bottom: -1px;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__link {
+    @include on-tablet {
+      margin-bottom: 10px;
+    }
+  }
+}

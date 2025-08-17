@@ -1,0 +1,66 @@
+.footer {
+  background-color: $background-color;
+
+  &_container {
+    padding-block: 34px 30px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      padding-block: 50px 30px;
+    }
+  }
+
+  &__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    text-align: left;
+    color: $white-color;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__copy-privacy {
+    display: flex;
+    color: $white-color;
+    gap: 22px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: center;
+
+    @include on-desktop {
+      gap: 102px;
+    }
+  }
+
+  &__button-up {
+    background-image: url('../images/icon/scroll-up.svg');
+    width: 30px;
+    height: 30px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &:hover {
+      @include hover(transform, scale(1.05));
+    }
+  }
+}
