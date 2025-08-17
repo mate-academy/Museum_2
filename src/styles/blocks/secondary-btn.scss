@@ -1,0 +1,47 @@
+.secondary-btn {
+  @extend%raleway-600;
+
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration-line: none;
+  font-size: 16px;
+  line-height: 1;
+  background-color: $white-color;
+  color: $accent-color;
+  border: 1px solid $accent-color;
+  width: 100%;
+  padding: 22px 0;
+
+  &::after {
+    content: '';
+    width: 14px;
+    height: 12px;
+    background-image: url(../images/icons/btn-arrow-icon.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: 8px;
+  }
+
+  @include hover(color, #af3419);
+  @include hover(border, 1px solid #af3419);
+
+  &:hover::after {
+    background-image: url(../images/icons/btn-arrow-icon-hover.svg);
+  }
+
+  @include active(color, #ea340d);
+  @include active(border, 1px solid #ea340d);
+
+  &:active::after {
+    background-image: url(../images/icons/btn-arrow-icon-active.svg);
+  }
+
+  @include disabled(color, #dd836f);
+  @include disabled(border, 1px solid #dd836f);
+
+  &:disabled::after {
+    background-image: url(../images/icons/btn-arrow-icon-disabled.svg);
+  }
+}
