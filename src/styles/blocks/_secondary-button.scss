@@ -1,0 +1,68 @@
+.secondary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+  width: 280px;
+  height: 60px;
+  box-sizing: border-box;
+
+  border: 1px solid $main;
+
+  font-weight: 600;
+  font-size: 16px;
+
+  color: $main;
+
+  @include on-tablet {
+    width: 210px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+
+  transition:
+    background-color $effectDuration,
+    color $effectDuration,
+    border-color $effectDuration;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(/src/images/icons/icon-button-arrow.svg);
+
+    transition:
+      background-image $effectDuration,
+      transform $effectDuration;
+  }
+
+  &:hover {
+    color: $main-dark;
+    border-color: $main-dark;
+  }
+
+  &:hover &__icon {
+    transform: translateX(5px);
+    background-image: url(/src/images/icons/icon-button-arrow-hover.svg);
+  }
+
+  &:active {
+    color: $main-light;
+    border-color: $main-light;
+  }
+
+  &:active &__icon {
+    background-image: url(/src/images/icons/icon-button-arrow-active.svg);
+  }
+
+  &:disabled {
+    color: $main-disabled;
+    border-color: $main-disabled;
+  }
+
+  &:disabled &__icon {
+    background-image: url(/src/images/icons/icon-button-arrow-disabled.svg);
+  }
+}

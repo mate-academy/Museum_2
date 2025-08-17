@@ -1,0 +1,147 @@
+.event {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  &__photo {
+    object-fit: cover;
+    object-position: center;
+
+    width: 100%;
+    height: 356px;
+
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      height: 420px;
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      height: 484px;
+      margin-bottom: 20px;
+    }
+
+    transition:
+      box-shadow $effectDuration,
+      transform $effectDuration;
+
+    &--first {
+      object-position: 33%;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow:
+        1px 1px $main,
+        2px 2px $main,
+        3px 3px $main,
+        4px 4px $main,
+        5px 5px $main,
+        6px 6px $main,
+        7px 7px $main;
+      transform: translateX(-7px) translateY(-7px);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__date {
+    margin-bottom: 10px;
+
+    color: $main;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    color: $black;
+  }
+
+  &__description {
+    margin: auto 0 30px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include on-tablet {
+      margin: 0;
+    }
+  }
+
+  &--upcoming {
+    @include page-grid;
+
+    grid-template-rows: 1fr;
+  }
+
+  &--upcoming &__photo {
+    grid-column: span 3;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      height: 475px;
+
+      grid-column: span 4;
+    }
+  }
+
+  &--upcoming &__info {
+    grid-column: span 3;
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &--upcoming &__description {
+    margin-top: 0;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &--news &__photo {
+    height: 280px;
+
+    @include on-tablet {
+      height: 330px;
+    }
+
+    @include on-desktop {
+      height: 370px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &--news &__info {
+    margin-bottom: 0;
+  }
+
+  &--news &__date {
+    margin-bottom: 0;
+
+    color: $black;
+  }
+
+  &--news &__description {
+    margin-bottom: 0;
+  }
+}

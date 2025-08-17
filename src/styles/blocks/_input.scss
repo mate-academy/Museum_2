@@ -1,0 +1,45 @@
+.input {
+  width: 100%;
+
+  border-bottom: 1px solid $black;
+
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 150%;
+
+  transition: border-color $effectDuration;
+
+  &::placeholder {
+    color: $black;
+
+    transition:
+      color $effectDuration,
+      caret-color $effectDuration;
+  }
+
+  &:hover {
+    border-color: $main;
+  }
+
+  &:hover::placeholder {
+    color: $main;
+  }
+
+  &:focus::placeholder {
+    color: transparent;
+    caret-color: $main;
+  }
+
+  &:focus {
+    font-weight: 700;
+
+    border-color: $main;
+    caret-color: $main;
+  }
+
+  &:valid {
+    font-weight: 700;
+
+    border-color: $black;
+  }
+}
