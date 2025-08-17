@@ -1,0 +1,35 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    font-weight: 400;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &:has(.menu:target) {
+      visibility: hidden;
+      position: fixed;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 1000;
+    height: 100vh;
+    overflow-y: auto;
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      visibility: visible;
+    }
+  }
+}
+

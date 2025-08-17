@@ -1,0 +1,95 @@
+.footer {
+  background-color: $bg-color;
+  color: $white-accent;
+
+  &__wrapper {
+    padding: 30px 20px 34px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+
+    @media (min-width: 768px) {
+      padding: 50px 30px 30px 39px;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+
+    @media (min-width: 1280px) {
+      padding-left: 55px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+
+    @media (min-width: 768px) {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 60px;
+
+    @media (min-width: 768px) {
+      width: 370px;
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-family: $heading-font;
+      line-height: 150%;
+      font-weight: 700;
+
+      @media (min-width: 768px) {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__legal {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $text-font;
+    font-size: 14px;
+    line-height: 140%;
+
+    &-wrapper {
+      display: flex;
+      gap: 22px;
+    }
+
+    &-copyrigh,
+    &-privacy {
+      margin: 0;
+    }
+
+    &-scroll-up {
+      width: 30px;
+      height: 30px;
+      display: block;
+      background-image: url(../images/icons/scroll-up-icon.svg);
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
