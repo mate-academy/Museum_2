@@ -1,0 +1,120 @@
+.article {
+  &__photo {
+    width: 100%;
+    height: 356px;
+    display: flex;
+    object-position: center;
+    object-fit: cover;
+    margin-inline: auto;
+
+    @include hover(transform, scale(1.02));
+
+    @include on-tablet {
+      height: 420px;
+    }
+
+    @include on-desktop {
+      height: 484px;
+    }
+
+    &--events {
+      @include on-tablet {
+        margin-inline: 0;
+      }
+
+      @include on-desktop {
+        height: 475px;
+        width: 370px;
+      }
+    }
+
+    &--news {
+      height: 280px;
+
+      @include on-tablet {
+        height: 330px;
+      }
+
+      @include on-desktop {
+        height: 370px;
+      }
+    }
+
+    &--top-positioned {
+      object-position: top;
+    }
+  }
+
+  &__time {
+    color: $main-color;
+    margin-top: 20px;
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      margin-top: 20px;
+    }
+
+    &--events {
+      @include on-tablet {
+        margin-top: 0;
+      }
+    }
+
+    &--news {
+      color: $black-color;
+      font-size: 14px;
+      line-height: 20px;
+
+      @include on-tablet {
+        margin-top: 30px;
+      }
+
+      @include on-desktop {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px;
+    margin-top: 10px;
+
+    @include on-tablet {
+      line-height: 30px;
+    }
+
+    &--news {
+      margin-top: 0;
+    }
+  }
+
+  &__description {
+    width: 100%;
+    color: $gray-color;
+    margin-top: 20px;
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 40px;
+    }
+
+    @include on-desktop {
+      margin-top: 50px;
+    }
+
+    &--events {
+      @include on-tablet {
+        margin-top: 50px;
+      }
+    }
+  }
+}
