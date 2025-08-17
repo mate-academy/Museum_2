@@ -1,0 +1,63 @@
+.top-bar {
+  @include page-grid;
+
+  grid-column: span 12;
+  height: 90px;
+  align-content: center;
+
+  @include on-tablet {
+    grid-column: span 6;
+  }
+
+  @include on-phone {
+    grid-column: span 2;
+    height: 80px;
+  }
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+    grid-column: span 2;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-phone {
+      grid-column: span 1;
+    }
+  }
+
+  &__logo-image {
+    height: 37px;
+
+    @include on-phone {
+      height: 40px;
+    }
+  }
+
+  &__content-box {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 40px;
+    grid-column: -2 / -1;
+  }
+
+  &__menu-link {
+    width: 30px;
+    height: 30px;
+    place-self: center end;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__menu-image {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__language-switcher {
+    @include on-phone {
+      display: none;
+    }
+  }
+}

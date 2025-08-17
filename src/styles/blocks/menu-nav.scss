@@ -1,0 +1,56 @@
+.menu-nav {
+  grid-column: 1 / 7;
+
+  @include on-phone {
+    grid-column: span 2;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    list-style: none;
+    padding: 0;
+    margin: 70px 0 0;
+
+    @include on-tablet {
+      gap: 30px;
+      margin: 50px 0 0;
+    }
+
+    @include on-phone {
+      gap: 40px;
+      margin: 40px 0 0;
+    }
+  }
+
+  &__link {
+    @include text-styler(Playfair Display, 700, 48px, 57.6px, $c-white);
+
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: $c-white;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      transform: scale(0);
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-in-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    @include on-phone {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+}

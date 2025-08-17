@@ -1,0 +1,81 @@
+.form {
+  grid-column: span 5;
+
+  @include on-tablet {
+    grid-column: span 4;
+  }
+
+  @include on-phone {
+    grid-column: span 2;
+  }
+
+  &__input {
+    @include text-styler(Raleway, 400, 16px, 24px, $c-black);
+
+    width: 100%;
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid $c-black;
+    margin: 50px 0 0;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      color: $c-orange-main;
+      border-bottom: 1px solid $c-orange-main;
+
+      &::placeholder {
+        color: $c-orange-main;
+      }
+    }
+
+    &:focus {
+      color: $c-orange-main;
+      border-bottom: 1px solid $c-orange-main;
+
+      &::placeholder {
+        color: $c-orange-main;
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      border-bottom: 1px solid $c-black;
+      color: $c-black;
+      font-weight: 700;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-bottom-color: $c-orange-main;
+      -webkit-text-fill-color: $c-black;
+      -webkit-box-shadow: 0 0 0 1000px #fff inset;
+      caret-color: $c-black;
+    }
+  }
+
+  &__subscribe {
+    @include text-styler(Raleway, 600, 16px, 16px, $c-white);
+
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 60px;
+    background-color: $c-orange-main;
+    margin: 40px 0 0;
+
+    @include primary-button-effects;
+
+    @include on-tablet {
+      margin: 30px 0 0;
+      width: 330px;
+    }
+
+    @include on-phone {
+      width: 100%;
+    }
+  }
+}
