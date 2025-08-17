@@ -1,0 +1,46 @@
+.header {
+  background-color: $background-color;
+  transition: transform 0.3s;
+
+  @include on-desktop {
+    padding-bottom: 50px;
+    position: relative;
+  }
+
+  &__logo {
+    display: flex;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between; ;
+    padding: 20px;
+
+    @include on-tablet {
+      padding: 20px 39px;
+    }
+
+    @include on-desktop {
+      padding: 30px 55px;
+    }
+
+  }
+
+  &__image {
+    display: none;
+
+    @include on-desktop {
+      position: absolute;
+      display: block;
+      width: 625px;
+      height: 663px;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

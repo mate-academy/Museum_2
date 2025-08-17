@@ -1,0 +1,44 @@
+.exhibition {
+  padding-top: 90px;
+
+  @include on-tablet {
+    padding-top: 100px;
+  }
+
+  @include on-desktop {
+    padding-top: 110px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: $black-color;
+
+    @include on-tablet {
+      font-size: 40px;
+      grid-column: 1 / 5;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      line-height: 120%;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__content {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+}
