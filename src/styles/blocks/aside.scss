@@ -1,0 +1,342 @@
+body {
+  overflow: auto;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+.aside {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  background-color: $c-green;
+  pointer-events: none;
+  opacity: 0;
+
+  transform: translateY(-100%);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  &:target {
+    pointer-events: all;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__topbar {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onDesktop {
+      height: 90px;
+    }
+
+    &-menu-close {
+      background-image: url(/images/icons/cross.svg);
+      background-position: center;
+      background-size: cover;
+      width: 22px;
+      height: 22px;
+      box-sizing: border-box;
+      display: block;
+      filter: brightness(0) invert(1);
+
+      @include hover(transform, scale(1.2));
+
+      @include onTablet {
+        height: 30px;
+        width: 30px;
+      }
+    }
+
+    &-logo {
+      height: 37px;
+      filter: brightness(0) invert(1);
+
+      @include hover(transform, scale(1.2));
+    }
+
+    &-nav {
+      display: flex;
+      gap: 40px;
+
+      @include onTablet {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &-language {
+      position: relative;
+      display: block;
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      &-button {
+        background-color: $c-green;
+        border: none;
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: #f1f5f4;
+        cursor: pointer;
+
+        @include hover(transform, scale(1.2));
+      }
+
+      &-button-img {
+        height: 24px;
+        width: 35px;
+      }
+
+      &-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        width: max-content;
+      }
+
+      &-option {
+        font-family: $text-font;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $c-green;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &__information {
+    @include pageGrid;
+
+    grid-column: 1 / -1;
+
+    padding-top: 10px;
+
+    @include onTablet {
+      padding-top: 30px;
+    }
+
+    @include onDesktop {
+      padding-top: 40px;
+    }
+
+    &-schedule {
+      grid-column: 1 / -1;
+      padding-bottom: 20px;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+        padding: 0;
+      }
+
+      &-text {
+        font-family: Raleway, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        color: $c-white;
+      }
+
+      &-bold-text {
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: $c-white;
+        text-decoration: none;
+      }
+    }
+
+    &-address {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 3 / 6;
+      }
+
+      &-text {
+        font-family: Raleway, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 19.6px;
+        color: $c-white;
+      }
+
+      &-bold-text {
+        font-family: Raleway, sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: $c-white;
+        text-decoration: none;
+
+        @include hover(transform, scale(1.03));
+
+        &:hover {
+          border-bottom: 1px solid $c-white;
+        }
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      background-image: url(/images/boy.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      width: 422px;
+      height: 446px;
+      margin: 0 auto;
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 624px;
+      height: 697px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__nav {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    grid-column: 1 /-1;
+
+    @include onTablet {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-top: 70px;
+      padding-bottom: 60px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+
+      @include onTablet {
+        gap: 30px;
+      }
+
+      @include onDesktop {
+        gap: 60px;
+      }
+    }
+
+    &-link {
+      font-family: $main-font;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+      text-decoration: none;
+      color: $c-white;
+
+      &:hover {
+        border-bottom: 1px solid $c-white;
+      }
+
+      @include onTablet {
+        font-size: 48px;
+        line-height: 57px;
+      }
+    }
+
+    &-item {
+      @include hover(transform, scale(1.01));
+    }
+  }
+
+  &__line {
+    grid-column: 1 /-1;
+    color: $c-white;
+    width: 100%;
+
+    @include onDesktop {
+      opacity: 30%;
+      width: 530px;
+      margin-left: 0;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 238px;
+    width: 279px;
+    height: 60px;
+    padding: 0;
+    background-color: $c-orange;
+
+    text-align: center;
+    color: $c-white;
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    border: none;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.03));
+
+    @include onTablet {
+      width: 330px;
+      grid-column: 1 / 4;
+      margin-top: 40px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+      margin-bottom: 108px;
+    }
+
+    &:hover {
+      background-color: $c-orange-hover;
+    }
+
+    &:active {
+      background-color: $c-orange-pressed;
+    }
+
+    &:disabled {
+      background-color: $c-orange-disable;
+    }
+  }
+}
+
+.aside__topbar-language:hover .aside__topbar-language-menu {
+  display: block;
+}

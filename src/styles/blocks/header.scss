@@ -1,0 +1,163 @@
+.header {
+  position: relative;
+  background-color: $c-green;
+
+  @include onDesktop {
+    height: 100vh;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__text {
+    color: $c-white;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    width: 279px;
+    font-family: $main-font;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: left;
+
+    @include onTablet {
+      font-size: 72px;
+      line-height: 72px;
+      width: 569px;
+    }
+
+    @include onDesktop {
+      font-size: 96px;
+      line-height: 96px;
+    }
+  }
+
+  &__anounce {
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: $text-font;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+  }
+
+  &__information {
+    margin: 0;
+    margin-bottom: 40px;
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  &__button {
+    margin: 0;
+    width: 279px;
+    height: 60px;
+    padding: 0;
+    background-color: $c-orange;
+    text-align: center;
+    color: $c-white;
+    font-family: $text-font;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 16px;
+    border: none;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.03));
+
+    @include onTablet {
+      width: 330px;
+    }
+
+    &:hover {
+      background-color: $c-orange-hover;
+    }
+
+    &:active {
+      background-color: $c-orange-pressed;
+    }
+
+    &:disabled {
+      background-color: $c-orange-disable;
+    }
+  }
+
+  &__image {
+    background-image: url(/images/girl.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 245px;
+    height: 273px;
+    display: block;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 625px;
+      height: 663px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__line-wrapper {
+    display: none;
+    position: absolute;
+    margin-bottom: 50px;
+    bottom: 0;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+      height: 30px;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__line-date {
+    font-family: $text-font;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    opacity: 70%;
+    color: $c-white;
+  }
+
+  &__line {
+    width: 469px;
+    opacity: 30%;
+    margin: 0;
+  }
+}
