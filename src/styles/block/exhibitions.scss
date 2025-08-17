@@ -1,0 +1,179 @@
+.exhibitions {
+  @include content-padding-inline;
+
+  margin: 90px 0 120px;
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+    margin: 100px 0 160px;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(12, 1fr);
+    margin: 110px 0 200px;
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+    color: $color-black;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+    @include on-tablet {
+      grid-column: 1/5;
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      grid-column: 1/7;
+      font-size: 48px;
+    }
+  }
+
+  &__item {
+    margin-top: 60px;
+
+    @include on-tablet {
+      grid-column: span 3;
+      margin-top: 70px;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+
+    &__img {
+      width: 100%;
+      height: auto;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__button {
+    @include button-secondary-styles;
+
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    margin-top: 30px;
+
+    text-decoration: none;
+
+    @include on-tablet {
+      grid-column: 5/-1;
+      grid-row: 1;
+      margin: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 10/-1;
+    }
+
+    &__text {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 100%;
+      text-align: center;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+  }
+
+  &__content {
+    &__date {
+      margin: 20px 0 10px;
+
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      color: $color-orange;
+      letter-spacing: 0%;
+
+      @include on-tablet {
+        margin-top: 30px;
+      }
+
+      @include on-desktop {
+        margin-top: 20px;
+      }
+    }
+
+    &__title {
+      margin: 0;
+
+      font-family: 'Playfair Display', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 125%;
+      color: $color-black;
+      letter-spacing: 0%;
+
+      @include on-tablet {
+        font-size: 24px;
+      }
+    }
+
+    &__description {
+      margin: 20px 0 30px;
+
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      color: $color-gray;
+      letter-spacing: 0%;
+    }
+
+    &__button {
+      @include button-primary-styles;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 100%;
+      height: 60px;
+
+      text-decoration: none;
+    }
+
+    &__text {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 100%;
+      color: $color-white;
+      text-align: center;
+      letter-spacing: 0%;
+      vertical-align: middle;
+    }
+  }
+}
+
+.second-description {
+  @include on-tablet {
+    margin-top: 50px;
+  }
+
+  @include on-desktop {
+    margin-top: 20px;
+  }
+}

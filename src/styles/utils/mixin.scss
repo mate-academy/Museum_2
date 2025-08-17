@@ -1,0 +1,69 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+}
+
+@mixin button-primary-styles {
+  cursor: pointer;
+  background-color: $color-orange;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $color-dark-orange;
+  }
+
+  &:active {
+    transform: scale(0.98);
+    background-color: $color-light-orange;
+  }
+}
+
+@mixin button-secondary-styles {
+  cursor: pointer;
+  border: 1px solid $color-orange;
+  color: $color-orange;
+  transition: all 0.3s ease;
+
+  .icon {
+    background-color: $color-orange;
+    transition: background-color 0.3s ease;
+  }
+
+  &:hover {
+    border: 1px solid $color-dark-orange;
+    color: $color-dark-orange;
+
+    .icon {
+      background-color: $color-dark-orange;
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+    border: 1px solid $color-light-orange;
+    color: $color-light-orange;
+
+    .icon {
+      background-color: $color-light-orange;
+    }
+  }
+}
