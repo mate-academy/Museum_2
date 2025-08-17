@@ -1,0 +1,40 @@
+.events {
+  & .item-card {
+    @media (min-width: $mobile) {
+      @include page-grid;
+
+      grid-template-rows: auto;
+      grid-auto-flow: column;
+    }
+
+    &__image {
+      grid-column: 1 / 4;
+
+      @media (min-width: $tablet) {
+        grid-column: 1 / 5;
+        padding-bottom: percent(475, 370);
+      }
+    }
+
+    &__description {
+      grid-column: 4 / -1;
+      grid-template: repeat(4, min-content) rem(60) / 1fr;
+
+      @media (min-width: $tablet) {
+        grid-template: repeat(4, min-content) rem(60) / repeat(8, 1fr);
+        column-gap: rem(30);
+        grid-column: 5 / -1;
+      }
+    }
+  }
+
+  &__items {
+    @include page-grid;
+
+    row-gap: rem(60);
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+  }
+}

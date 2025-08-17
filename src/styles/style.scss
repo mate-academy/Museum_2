@@ -1,0 +1,105 @@
+@use 'sass:math';
+@import 'utils';
+
+body {
+  .menu-open & {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #f2f6fa;
+  position: relative;
+
+  > main {
+    flex: 1 1 auto;
+  }
+}
+
+// Sections
+@import 'sections/header';
+@import 'sections/main';
+@import 'sections/exibitions';
+@import 'sections/enents';
+@import 'sections/visit';
+@import 'sections/news';
+@import 'sections/subscribe';
+@import 'sections/footer';
+
+// Blocks
+@import 'blocks/menu';
+@import 'blocks/info-menu';
+@import 'blocks/section-top';
+@import 'blocks/form';
+@import 'blocks/item-news';
+@import 'blocks/footer-item';
+@import 'blocks/description';
+@import 'blocks/item-card';
+
+.page {
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    min-height: 100vh;
+  }
+
+  &__exibitions {
+    padding-top: rem(90);
+
+    @media (min-width: $mobile) {
+      padding-top: rem(110);
+    }
+  }
+
+  &__events {
+    padding-top: rem(120);
+
+    @media (min-width: $mobile) {
+      padding-bottom: rem(164);
+    }
+
+    @media (min-width: $tablet) {
+      padding-bottom: rem(200);
+    }
+  }
+
+  &__visit {
+    padding: rem(50) 0;
+
+    @media (min-width: $mobile) {
+      padding: rem(80) 0;
+    }
+
+    @media (min-width: $tablet) {
+      padding: rem(205) 0;
+    }
+  }
+
+  &__news {
+    padding-top: rem(90);
+
+    @media (min-width: $mobile) {
+      padding-top: rem(110);
+    }
+  }
+
+  &__subscribe {
+    padding-top: rem(120);
+    padding-bottom: rem(80);
+
+    @media (min-width: $mobile) {
+      padding-top: rem(160);
+      padding-bottom: rem(125);
+    }
+
+    @media (min-width: $tablet) {
+      padding-top: rem(200);
+      padding-bottom: rem(200);
+    }
+  }
+}

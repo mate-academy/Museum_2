@@ -1,0 +1,63 @@
+.visit {
+  background-color: $bg;
+
+  @media (min-width: $tablet) {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__image {
+    display: none;
+
+    @media (min-width: $tablet) {
+      display: block;
+      padding-bottom: percent(800, 1280);
+      position: absolute;
+      height: 100%;
+      width: percent(578, 1280);
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__container {
+    @media (min-width: $mobile) {
+      @include page-grid;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(10);
+
+    @media (min-width: $mobile) {
+      grid-column: 1 / 5;
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__text {
+    margin-bottom: rem(40);
+
+    @media (min-width: $mobile) {
+      margin-bottom: rem(50);
+      grid-column: 1 / 5;
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 6 / 11;
+    }
+  }
+
+  &__link {
+    @media (min-width: $mobile) {
+      grid-column: 1 / 4;
+    }
+
+    @media (min-width: $tablet) {
+      grid-column: 6 / 10;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.footer-item {
+  line-height: 150%;
+
+  &__title {
+    font-family: $second-family;
+    font-weight: 700;
+    margin-bottom: rem(10);
+    font-size: rem(18);
+
+    @media (min-width: $mobile) {
+      margin-bottom: rem(30);
+      font-size: rem(20);
+    }
+  }
+
+  &__list {
+    &:not(:last-child) {
+      margin-bottom: rem(30);
+
+      @media (min-width: $mobile) {
+        margin-bottom: rem(50);
+      }
+    }
+  }
+
+  &__link {
+    font-size: rem(16);
+    color: inherit;
+
+    @media (any-hover: hover) {
+      transition: all $duration;
+
+      &:hover {
+        color: $main;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+  }
+
+  &__social {
+    a {
+      height: rem(20);
+      width: rem(20);
+      color: inherit;
+      cursor: pointer;
+
+      @media (any-hover: hover) {
+        &::before {
+          transition: all $duration;
+        }
+
+        &:hover {
+          &::before {
+            color: $main;
+          }
+        }
+      }
+    }
+  }
+}
