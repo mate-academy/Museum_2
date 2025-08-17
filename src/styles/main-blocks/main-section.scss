@@ -1,0 +1,205 @@
+.main {
+  padding: 0;
+  margin: 0;
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    margin-block: 90px;
+    gap: 120px;
+
+    @include content-space-inline;
+
+    @include on-tablet {
+      margin-block: 100px;
+      gap: 160px;
+    }
+
+    @include on-large-desktop {
+      margin-block: 110px;
+      gap: 200px;
+    }
+
+    &--down-part {
+      margin-bottom: 80px;
+
+      @include on-tablet {
+        margin-top: 120px;
+        margin-bottom: 128px;
+      }
+
+      @include on-large-desktop {
+        margin-bottom: 200px;
+      }
+    }
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+
+  @include on-tablet {
+    position: relative;
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 30px;
+
+    @include h3;
+  }
+
+  &-actuals__content {
+    @include page-grid;
+
+    width: 100%;
+    row-gap: 60px;
+  }
+
+  &-actuals__news {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-large-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    display: flex;
+    width: 280px;
+    height: 60px;
+    border: 1px solid #cd4d31;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 60px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #cd4d31;
+
+    @include on-tablet {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      @include hover(transform, scale(1.1));
+
+      &:hover {
+        border: 1px solid #af3419;
+        color: #af3419;
+      }
+
+      &:active {
+        border: 1px solid #ea340d;
+        color: #ea340d;
+      }
+
+      &:disabled {
+        border: 1px solid #dd836f;
+        color: #dd836f;
+      }
+    }
+
+    &--image {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url(../images/actuals/arrow.svg);
+
+      &:hover {
+        background-image: url(../images/actuals/arrow-hover.svg);
+      }
+
+      &:active {
+        background-image: url(../images/actuals/arrow-active.svg);
+      }
+
+      &:disabled {
+        background-image: url(../images/actuals/arrow-disabled.svg);
+      }
+    }
+  }
+
+  &-closer-actions {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+      width: 100%;
+
+      @include on-tablet {
+        gap: 70px;
+      }
+
+      @include on-large-desktop {
+        gap: 60px;
+      }
+    }
+
+    &__news {
+      width: 100%;
+
+      @include page-grid;
+    }
+
+    &--images {
+      grid-column: 1/-1;
+
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-large-desktop {
+        grid-column: span 4;
+      }
+    }
+
+    &--news {
+      grid-column: 1/-1;
+
+      @include on-tablet {
+        grid-column: span 3;
+      }
+
+      @include on-large-desktop {
+        grid-column: span 6;
+      }
+    }
+  }
+
+  &-announcement__content {
+    @include page-grid;
+
+    margin: 0;
+    padding: 0;
+    row-gap: 50px;
+  }
+
+  &-announcement__news {
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-large-desktop {
+      grid-column: span 6;
+    }
+  }
+}
