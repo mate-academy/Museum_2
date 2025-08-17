@@ -1,0 +1,95 @@
+.exhibition {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+  &__photo {
+    width: 100%;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__main {
+    margin: 0;
+    padding-top: 20px;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+    color: #CD4D31;
+
+    @include on-tablet {
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 20px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 125%;
+    text-align: left;
+    color: #1C1B29;
+
+    @include on-tablet {
+      font-size: 24px;
+      line-height: 125%;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    padding-top: 20px;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+    color: #504F5E;
+  }
+
+  &__button {
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    height: 60px;
+
+    @include on-tablet {
+      padding-top: 40px;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: span 1;
+      padding-top: 50px;
+    }
+
+    &--content {
+      padding: 0;
+      border: none;
+      height: 60px;
+      font-family: Raleway, serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+      text-align: center;
+      background-color: #CD4D31;
+      color: #F1F5F4;
+      width: 100%;
+      cursor: pointer;
+
+      @include button-states;
+    }
+  }
+}

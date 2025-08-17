@@ -1,0 +1,92 @@
+.news-item {
+
+  &__photo {
+    width: 100%;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-desktop {
+      height: 370px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__additional {
+    padding-top: 20px;
+    margin: 0;
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 140%;
+
+    @include on-tablet {
+      padding-top: 30px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 125%;
+    text-align: left;
+  }
+
+  &__main {
+    padding-top: 20px;
+    margin: 0;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+  }
+
+  &__button {
+
+    &--phone {
+      padding-top: 30px;
+
+      @include on-tablet {
+        display: none;
+      }
+
+      &--content {
+        padding: 0;
+        justify-content: center;
+        display: flex;
+        border: 1px solid #CD4D31;
+        height: 60px;
+        width: 100%;
+        align-items: center;
+        gap: 8px;
+        background-color: #F1F5F4;
+        cursor: pointer;
+
+        @include border-states;
+
+
+        &--text {
+          font-family: Raleway, serif;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 100%;
+          color: #CD4D31;
+
+          @include text-states;
+        }
+
+        &--arrow {
+          background-image: url(/src/images/arrow.svg);
+          width: 20px;
+          height: 20px;
+
+          @include arrow-states;
+        }
+      }
+    }
+  }
+}

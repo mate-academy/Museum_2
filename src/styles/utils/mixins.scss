@@ -1,0 +1,114 @@
+@mixin content-paddig-inline() {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    max-width: 1170px;
+    margin-inline: auto;
+    padding-inline: 55px;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+
+  column-gap: 20px;
+
+  grid-template-columns: repeat(var(--columns, 2), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+@mixin button-states {
+  &:hover {
+    border: 0;
+    background-color: #AF3419;
+  }
+
+  &:active {
+    border: 0;
+    background-color: #EA340D;
+  }
+
+  &:disabled {
+    border: 0;
+    background-color: #DD836F;
+  }
+}
+
+@mixin border-states {
+  &:hover {
+    border: 1px solid #AF3419;
+  }
+
+  &:active {
+    border: 1px solid #EA340D;
+  }
+
+  &:disabled {
+    border: 1px solid #DD836F;
+  }
+}
+
+@mixin text-states {
+  &:hover {
+    color: #AF3419;
+  }
+
+  &:active {
+    color: #EA340D;
+  }
+
+  &:disabled {
+    color: #DD836F;
+  }
+}
+
+@mixin arrow-states {
+  &:hover {
+    background-image: url(/src/images/arrow-hover.svg);
+  }
+
+  &:active {
+    background-image: url(/src/images/arrow-pressed.svg);
+  }
+
+  &:disabled {
+    background-image: url(/src/images/arrow-disabled.svg);
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.5s;
+  &:hover {
+    #{$property}:$toValue;
+  }
+}
+
+
+
