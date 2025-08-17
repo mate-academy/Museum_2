@@ -1,0 +1,61 @@
+.page {
+  background: $c-white;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    background: #fff;
+    box-sizing: border-box;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+      overflow-y: auto;
+
+      // @include on-desktop {
+      //   position: relative;
+      // }
+    }
+  }
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+
+  &__grid-measurer {
+    @include page-grid;
+
+    &__column {
+      grid-column: 1 / 2;
+    }
+  }
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+
+  @include on-tablet {
+    gap: 100px;
+  }
+
+  @include on-desktop {
+    gap: 110px;
+  }
+}

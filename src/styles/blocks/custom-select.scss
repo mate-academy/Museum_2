@@ -1,0 +1,72 @@
+.custom-select {
+  position: relative;
+  cursor: pointer;
+  width: 35px;
+  display: none;
+
+  @include on-tablet {
+    display: block;
+  }
+
+  &--menu {
+    display: block;
+    order: -1;
+
+    @include on-tablet {
+      order: 0;
+    }
+  }
+}
+
+.selected-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include hover(transform, scale(1.15));
+
+  @include on-tablet {
+    @include hover(transform, scale(1.2));
+  }
+}
+
+.arrow-down {
+  width: 10px;
+  height: 7px;
+  background-image: url(../images/menu/dropdown.svg);
+}
+
+.options {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  top: 100%;
+  right: 0;
+  left: 0;
+
+  z-index: 10;
+  border-top: none;
+  display: none;
+  text-align: left;
+}
+
+.options.open {
+  display: block;
+}
+
+.options li {
+  padding: 8px 0;
+  cursor: pointer;
+  transition: color 0.3s;
+
+  @include hover(transform, scale(1.15));
+
+  @include on-tablet {
+    @include hover(transform, scale(1.2));
+  }
+}
+
+.active {
+  color: $c-focus-main;
+}
