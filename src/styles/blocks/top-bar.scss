@@ -1,0 +1,86 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 20px;
+
+  @include on-tablet {
+    padding-block: 20px;
+  }
+
+  @include on-desktop {
+    padding-block: 26px;
+  }
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    height: 40px;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__text {
+    padding-right: 5px;
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    color: $white-color;
+
+    &--tooltip {
+      position: absolute;
+      bottom: -80%;
+
+      padding: 5px 0;
+
+      color: $white-color;
+      text-align: center;
+
+      visibility: hidden;
+
+      transition: 300ms;
+    }
+  }
+
+  &__icons {
+    display: flex;
+
+    @include on-tablet {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    padding-right: 20px;
+
+    @include on-tablet {
+      padding-right: 0;
+    }
+  }
+
+  &__language {
+    cursor: pointer;
+    position: relative;
+
+    @include on-tablet {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+
+      &:hover .top-bar__text--tooltip {
+        visibility: visible;
+      }
+    }
+
+    &-position {
+      order: -10;
+
+      @include on-tablet {
+        order: 10;
+      }
+    }
+  }
+}
