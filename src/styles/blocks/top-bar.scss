@@ -1,0 +1,118 @@
+.top-bar {
+  height: 80px;
+  padding-block: 20px;
+
+  @include on-phone {
+    .top-bar__langSwitcher {
+      display: none;
+    }
+  }
+
+  @include on-tablet {
+    height: 77px;
+    padding-block: 24px;
+
+    .top-bar__langSwitcher {
+      display: block;
+    }
+  }
+
+  @include on-desktop {
+    height: 90px;
+    padding-block: 30px;
+
+    .top-bar__langSwitcher {
+      display: block;
+    }
+  }
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+  &__logo-link {
+    display: flex;
+  }
+
+  &__logo {
+    width: 124px;
+    height: 36px;
+
+    @include hover(scale, 1.1);
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 30px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    @include on-desktop {
+      flex-direction: row;
+    }
+  }
+
+  &__langSwitcher {
+    position: relative;
+    display: inline-block;
+
+    @include hover(scale, 1.1);
+  }
+}
+
+.langSwitcher {
+  position: relative;
+
+  &__trigger {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__button {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    background-color: $bg-color;
+    border: none;
+    color: $white;
+    padding: 0;
+  }
+
+  &__content {
+    position: absolute;
+    list-style: none;
+    left: 25%;
+    background: $bg-color;
+    display: none;
+
+    // height: 0;
+    // overflow: hidden;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white;
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  // &--active &__content {
+  //   height: auto;
+  // }
+
+  &:hover &__content,
+  &__button:focus + &__content {
+    display: block;
+  }
+}
