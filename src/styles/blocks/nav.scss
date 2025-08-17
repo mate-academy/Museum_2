@@ -1,0 +1,54 @@
+.nav {
+  @media (min-width: $tablet-min-width) {
+    grid-column: 1 / 7;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    grid-column: 1 / 13;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+
+    @media (min-width: $tablet-min-width) {
+      font-size: 48px;
+      line-height: 58px;
+      gap: 30px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $white-color;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+
+      transition: 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
