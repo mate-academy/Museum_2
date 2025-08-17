@@ -1,0 +1,87 @@
+.visit {
+  background-color: $background-color;
+  color: white;
+  padding: 50px 0;
+  position: relative;
+
+  @include on-tablet {
+    padding: 80px 0;
+  }
+
+  @include on-desktop {
+    padding: 205px 0;
+  }
+
+  &__content {
+    display: grid;
+    flex-direction: column;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    & > h2 {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: 1 / 6;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &__description {
+      grid-column: 1 / -1;
+      margin-top: 20px;
+
+      @include on-tablet {
+        grid-column: 1 / 5;
+        margin-top: 30px;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 6;
+        margin-top: 30px;
+      }
+    }
+
+    &__button {
+      grid-column: 1 / -1;
+      margin-top: 40px;
+
+      @include on-tablet {
+        margin-top: 60px;
+        grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        margin-top: 50px;
+      }
+    }
+  }
+
+  &__image {
+    grid-column: 1 / 7;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    position: absolute;
+    left: -150;
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+}

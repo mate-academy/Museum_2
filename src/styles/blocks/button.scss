@@ -1,0 +1,60 @@
+.button {
+  display: flex;
+  gap: 11px;
+  place-content: center;
+  height: 60px;
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  line-height: 60px;
+  font-weight: 600;
+  text-align: center;
+  background-color: $accent-color;
+  color: $white;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s;
+
+  & > svg {
+    align-self: center;
+
+    & > path {
+      stroke: $accent-color;
+      transition: all 0.3s;
+    }
+  }
+
+  &:hover {
+    background-color: $accent-color-hover;
+
+    & > svg > path {
+      stroke: $accent-color-hover;
+    }
+  }
+
+  &:focus {
+    background-color: $accent-color-pressed;
+
+    & > svg > path {
+      stroke: $accent-color-pressed;
+    }
+  }
+
+  &--secondary {
+    background-color: $white;
+    color: $accent-color;
+    box-sizing: border-box;
+    border: 1px solid $accent-color;
+
+    &:hover {
+      background-color: $white;
+      color: $accent-color-hover;
+      border: 1px solid $accent-color-hover;
+    }
+
+    &:focus {
+      background-color: $white;
+      color: $accent-color-pressed;
+      border: 1px solid $accent-color-pressed;
+    }
+  }
+}
