@@ -1,6 +1,155 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.3s ease-in-out;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin hover-text($_property, $_toValue) {
+  transition: #{$_property} 0.3s ease-in-out;
+  &:hover {
+    #{$_property}: $_toValue;
+    color: $colorHover;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tabletMinWidth) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktopMinWidgth) {
+    @content;
+  }
+}
+
+@mixin button-full {
+  &:hover {
+    cursor: pointer;
+    background-color: $colorHover;
+  }
+
+  &:active {
+    background-color: $colorPressed;
+  }
+
+  &:disabled {
+    background-color: $colorDisabled;
+  }
+}
+
+@mixin button-empty {
+  &:hover {
+    cursor: pointer;
+    color: $colorHover;
+    border-color: $colorHover;
+  }
+
+  &:active {
+    color: $colorPressed;
+    border-color: $colorPressed;
+  }
+
+  &:disabled {
+    color: $colorDisabled;
+    border-color: $colorDisabled;
+  }
+}
+
+@mixin h1-tablet {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+@mixin h2-tablet {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 62px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+@mixin h3-tablet {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 125%;
+  letter-spacing: 0%;
+}
+
+@mixin h4-tablet {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 0%;
+}
+
+@mixin h5-tablet {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+@mixin h6-tablet {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0%;
+}
+
+@mixin h1-desktop {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 96px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+@mixin h2-desktop {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+@mixin h3-desktop {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 58px;
+  line-height: 120%;
+  letter-spacing: 0%;
+}
+
+@mixin h4-desktop {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 125%;
+  letter-spacing: 0%;
+}
+
+@mixin h5-desktop {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0%;
+}
+
+@mixin h6-desktop {
+  font-family: Playfair-Display, serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 125%;
+  letter-spacing: 0%;
 }

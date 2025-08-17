@@ -1,0 +1,84 @@
+.visit {
+  background-color: $colorBg;
+  padding: 50px 20px;
+  margin-bottom: 90px;
+
+  @include on-tablet {
+    padding: 80px 40px;
+    margin-bottom: 120px;
+  }
+
+  @include on-desktop {
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__group {
+    &-title {
+      margin: 0;
+      margin-bottom: 20px;
+      color: $colorWhite;
+
+      @extend %h2-mobile;
+
+      @include on-tablet {
+        width: 570px;
+
+        @include h2-tablet;
+      }
+
+      @include on-tablet {
+        margin-bottom: 10px;
+
+        @include h2-desktop;
+      }
+    }
+
+    &-descrtiption {
+      margin: 0;
+      margin-bottom: 40px;
+      color: $colorWhite;
+
+      @extend %main;
+
+      @include on-tablet {
+        width: 450px;
+      }
+
+      @include on-desktop {
+        width: 470px;
+        margin-bottom: 50px;
+      }
+    }
+
+    &-button {
+      margin: 0;
+      height: 60px;
+      width: 100%;
+      color: $colorWhite;
+      background-color: $colorMain;
+      border: 0;
+
+      @extend %button;
+      @include button-full;
+      @include hover(transform, scale(1.1));
+
+      @include on-tablet {
+        width: 330px;
+      }
+
+      @include on-desktop {
+        width: 270px;
+      }
+    }
+  }
+}

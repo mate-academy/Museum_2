@@ -1,0 +1,94 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__img {
+    object-fit: cover;
+    object-position: left;
+    height: 356px;
+    width: 280px;
+    margin-bottom: 20px;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      height: 420px;
+      width: 330px;
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      height: 484px;
+      width: 570px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__info {
+    &-date {
+      margin: 0;
+      margin-bottom: 10px;
+      color: $colorMain;
+
+      @extend %main;
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 20px;
+      color: $colorBlack;
+
+      @extend %h4-mobile;
+
+      @include on-tablet {
+        height: 60px;
+        margin-bottom: 20px;
+
+        @include h4-tablet;
+      }
+
+      @include on-desktop {
+        height: 30px;
+
+        @include h4-desktop;
+      }
+    }
+
+    &-description {
+      margin: 0;
+      margin-bottom: 30px;
+      color: $colorGray;
+
+      @extend %main;
+
+      @include on-tablet {
+        margin-bottom: 40px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    color: $colorWhite;
+    background-color: $colorMain;
+    border: 0;
+
+    @extend %button;
+    @include button-full;
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      justify-self: end;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+}

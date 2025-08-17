@@ -1,0 +1,79 @@
+.events {
+  margin: 0;
+  margin-bottom: 60px;
+  padding: 0 20px;
+
+  @include on-tablet {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+    padding: 0 39px;
+  }
+
+  @include on-desktop {
+    padding: 0 55px;
+    margin-bottom: 110px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 60px;
+    color: $colorBlack;
+
+    @extend %h3-mobile;
+
+    @include on-tablet {
+      order: 1;
+      width: 450px;
+      height: 50px;
+      margin: 0;
+      margin-right: auto;
+
+      @include h3-tablet;
+    }
+
+    @include on-desktop {
+      @include h3-desktop;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      row-gap: 70px;
+      order: 3;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      row-gap: 60px;
+    }
+  }
+
+  &__button {
+    margin: 0;
+    height: 60px;
+    width: 100%;
+    color: $colorMain;
+    background-color: $colorPage;
+    border: 1px solid $colorMain;
+
+    @extend %button;
+    @include button-empty;
+    @include hover-text(transform, scale(1.1));
+
+    @include on-tablet {
+      order: 2;
+      width: 210px;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+}

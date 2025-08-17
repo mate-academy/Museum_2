@@ -1,0 +1,61 @@
+.part {
+  &__img {
+    object-fit: cover;
+    height: 281px;
+    width: 280px;
+    margin-bottom: 20px;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      height: 330px;
+      width: 330px;
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      object-position: top;
+      height: 370px;
+      width: 570px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__info {
+    &-date {
+      margin: 0;
+      color: $colorBlack;
+
+      @extend %additional;
+    }
+
+    &-title {
+      margin: 0;
+      margin-bottom: 20px;
+      color: $colorBlack;
+
+      @extend %h4-mobile;
+
+      @include on-tablet {
+        margin-bottom: 18px;
+
+        @include h5-tablet;
+      }
+
+      @include on-desktop {
+        @include h5-desktop;
+      }
+    }
+
+    &-description {
+      margin: 0;
+      color: $colorGray;
+
+      @extend %main;
+
+      @include on-desktop {
+        width: 568px;
+      }
+    }
+  }
+}
