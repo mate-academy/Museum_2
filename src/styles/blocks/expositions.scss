@@ -1,0 +1,44 @@
+.expositions {
+  &__container {
+    position: relative;
+  }
+
+  &__cards {
+    @include page-grid;
+
+    row-gap: 60px;
+    margin-bottom: 30px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include on-tablet {
+      position: absolute;
+      top: 0;
+      right: 39px;
+      max-width: 210px;
+    }
+
+    @include on-desktop {
+      right: 55px;
+      width: 270px;
+    }
+  }
+}
