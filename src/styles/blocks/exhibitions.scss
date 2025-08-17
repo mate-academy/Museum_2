@@ -1,0 +1,272 @@
+.exhibitions {
+  padding-top: 90px;
+
+  @include on-tablet {
+    padding-top: 100px;
+  }
+
+  @include on-desktop {
+    padding-top: 110px;
+  }
+
+  &__container {
+    @include page-grid;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+  }
+
+  &__top-button {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 60px;
+      width: 210px;
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: $buttons-color;
+      border: 1px solid $buttons-color;
+      background-color: #fff;
+      transition: 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: $hover-buttons-color;
+        border: 1px solid $hover-buttons-color;
+      }
+
+      &:active {
+        color: $active-buttons-color;
+        border: 1px solid $active-buttons-color;
+      }
+    }
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-image: url(../images/exhibitions/button.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      transition: 0.3s ease;
+    }
+    &:hover::before {
+      background-image: url(../images/exhibitions/button-hover.svg);
+    }
+
+    &:active::before {
+      background-image: url(../images/exhibitions/button-active.svg);
+    }
+  }
+
+  &-cart {
+    padding-top: 60px;
+    height: 100%;
+
+    @include on-tablet {
+      padding-top: 70px;
+    }
+
+    &1 {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: 1 / 4;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &2 {
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: 4 / -1;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+      }
+    }
+
+    &__img-wrapper {
+      width: 100%;
+      height: 356px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include on-tablet {
+        height: 420px;
+      }
+
+      @include on-desktop {
+        height: 484px;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left;
+      @include hover(transform, scale(1.03));
+
+      &2 {
+        object-position: center;
+      }
+    }
+
+    &__date {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $buttons-color;
+      padding-top: 20px;
+
+      @include on-tablet {
+        padding-top: 30px;
+      }
+
+      @include on-desktop {
+        padding-top: 20px;
+      }
+    }
+
+    &__title {
+      font-family:
+        Playfair Display,
+        sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 25px;
+      padding-top: 10px;
+
+      @include on-tablet {
+        line-height: 30px;
+        font-size: 24px;
+      }
+    }
+
+    &__description {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #504f5e;
+      padding-top: 20px;
+
+      &2 {
+        @include on-tablet {
+          padding-top: 50px;
+        }
+
+        @include on-desktop {
+          padding-top: 20px;
+        }
+      }
+    }
+
+    &__button {
+      font-family: Raleway, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 16px;
+      text-align: center;
+      color: #fff;
+      width: 100%;
+      height: 60px;
+      background-color: $buttons-color;
+      border: none;
+      margin-top: 30px;
+      transition: 0.3s ease;
+      cursor: pointer;
+      @include hover(transform, scale(1.03));
+
+      &:hover {
+        background-color: $hover-buttons-color;
+      }
+
+      &:active {
+        background-color: $active-buttons-color;
+      }
+
+      @include on-tablet {
+        margin-top: 40px;
+      }
+
+      @include on-desktop {
+        margin-top: 50px;
+        width: 270px;
+      }
+    }
+  }
+
+  &__bottom-button {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 60px;
+    width: 100%;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: $buttons-color;
+    border: 1px solid $buttons-color;
+    background-color: #fff;
+    transition: 0.3s ease;
+    margin-top: 30px;
+    @include hover(transform, scale(1.03));
+    cursor: pointer;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    &:hover {
+      color: $hover-buttons-color;
+      border: 1px solid $hover-buttons-color;
+    }
+
+    &:active {
+      color: $active-buttons-color;
+      border: 1px solid $active-buttons-color;
+    }
+
+    &::before {
+      content: '';
+      height: 20px;
+      width: 20px;
+      background-image: url(../images/exhibitions/button.svg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      transition: 0.3s ease;
+    }
+    &:hover::before {
+      background-image: url(../images/exhibitions/button-hover.svg);
+    }
+
+    &:active::before {
+      background-image: url(../images/exhibitions/button-active.svg);
+    }
+  }
+}

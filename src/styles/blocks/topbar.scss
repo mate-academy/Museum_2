@@ -1,0 +1,90 @@
+.topbar {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include on-desktop {
+    height: 90px;
+  }
+
+  &__logo {
+    width: 123px;
+    height: 40px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__menu-icon {
+    background-image: url(../images/topbar/burger-menu.png);
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    @include hover(transform, scale(1.03));
+  }
+
+  &__language {
+    position: relative;
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__language-button {
+    background-color: $background-color;
+    border: none;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #f1f5f4;
+    cursor: pointer;
+
+    &-img {
+      width: 8px;
+      height: 5px;
+    }
+  }
+
+  &__language-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    width: max-content;
+  }
+
+  &__language-option {
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $background-color;
+      color: #fff;
+    }
+  }
+}
+
+.topbar__language:hover .topbar__language-menu {
+  display: block;
+}
