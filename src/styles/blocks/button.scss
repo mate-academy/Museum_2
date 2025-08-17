@@ -1,0 +1,100 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 60px;
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+
+  @include on-tablet {
+    max-width: 270px;
+  }
+
+  @extend %button;
+
+  text-align: center;
+  text-decoration: none;
+
+  &__buy {
+    color: $text-color-white;
+    background-color: $button-buy-color;
+
+    &:hover {
+      background-color: $button-buy-hover-color;
+    }
+
+    &:active {
+      background-color: $button-buy-active-color;
+    }
+
+    &:disabled {
+      background-color: $button-buy-disabled-color;
+    }
+  }
+
+  &__more {
+    background-color: none;
+    color: $button-more-color;
+    border: 1px solid $button-more-color;
+    align-items: center;
+    gap: 8px;
+
+    &--top {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+        grid-column: 5 / 7;
+      }
+
+      @include on-desktop {
+        grid-column: 10 / 13;
+      }
+    }
+
+    &--botomn {
+      margin-top: 30px;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: '';
+      background-image: url(../icons/icon-button-errow.svg);
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      color: $button-more-hover-color;
+      border-color: $button-more-hover-color;
+
+      &::after {
+        background-image: url(../icons/icon-button-errow-hover.svg);
+      }
+    }
+
+    &:active {
+      color: $button-more-active-color;
+      border-color: $button-more-active-color;
+
+      &::after {
+        background-image: url(../icons/icon-button-errow-active.svg);
+      }
+    }
+
+    &:disabled {
+      color: $button-more-disabled-color;
+      border-color: $button-more-disabled-color;
+
+      &::after {
+        background-image: url(../icons/icon-button-errow-disabled.svg);
+      }
+    }
+  }
+}
