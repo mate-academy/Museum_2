@@ -1,0 +1,158 @@
+.menu {
+  box-sizing: border-box;
+  background-color: $background;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: transform 0.3s;
+  transform: translateX(-100%);
+  color: $white-color;
+  height: 100vh;
+  z-index: 100;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__content {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__picture {
+    display: flex;
+    justify-content: center;
+
+    @include on-tablet {
+      display: block;
+      height: 466px;
+      width: 422px;
+      margin: 0 auto;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      max-height: 650px;
+      max-width: 624px;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include on-tablet {
+      flex-direction: row;
+      column-gap: 123px;
+    }
+
+    @include on-desktop {
+      column-gap: 83px;
+    }
+  }
+
+  &__lable {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &__description {
+    font-weight: 600;
+    text-decoration: none;
+    color: $white-color;
+
+    &--hover {
+      position: relative;
+
+      &::after {
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        &::after {
+          content: '';
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          background-color: $white-color;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &__nav {
+    border-bottom: 1px solid #f1f5f43c;
+    max-width: 570px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__nav-item {
+    padding-bottom: 20px;
+
+    @include on-tablet {
+      padding-bottom: 30px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 60px;
+    }
+  }
+
+  &__nav-link {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: $white-color;
+    position: relative;
+
+    &::after {
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: $white-color;
+        bottom: 5px;
+        left: 0;
+      }
+    }
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 57.6px;
+    }
+  }
+}
