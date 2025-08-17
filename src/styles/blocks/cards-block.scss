@@ -1,0 +1,94 @@
+.cards-block {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include inline-content-wrapper;
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    gap: 30px;
+    grid-template-areas:
+      'title title title title archive archive'
+      'cards cards cards cards cards cards';
+  }
+
+  &__title {
+    @include typography-h3;
+
+    color: $color-black;
+    text-align: left;
+    grid-area: title;
+  }
+
+  &__cards {
+    grid-area: cards;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    &--column {
+      @include on-tablet {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 70px;
+        grid-template-areas:
+          'event1 event1 event1 event1 event1 event1'
+          'event2 event2 event2 event2 event2 event2';
+      }
+
+      @include on-tablet {
+        gap: 60px;
+      }
+    }
+  }
+
+  &__buy-link {
+    width: 100%;
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+
+  &__archive-link {
+    grid-area: archive;
+    width: 100%;
+
+    @include on-tablet {
+      justify-self: end;
+      width: 210px;
+    }
+
+    @include on-desktop {
+      justify-self: end;
+      width: 270px;
+    }
+  }
+
+  &__archive {
+    width: 100%;
+  }
+
+  &__buy-bth {
+    width: 100%;
+  }
+
+  &__event {
+    &--1 {
+      grid-area: event1;
+    }
+
+    &--2 {
+      grid-area: event2;
+    }
+  }
+}

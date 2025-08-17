@@ -1,0 +1,111 @@
+.footer {
+  background-color: $color-background;
+  padding-top: 34px;
+  padding-bottom: 30px;
+  color: $color-white;
+
+  @include on-tablet {
+    padding-top: 50px;
+  }
+
+  @include inline-content-wrapper;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 60px;
+
+    @include on-tablet {
+      width: 80%;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      width: 70%;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    &-title {
+      @include typography-h5;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $color-white;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: $color-main;
+      }
+    }
+
+    &-list {
+      color: $color-white;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+
+    &-link {
+      display: inline-flex;
+      transition: transform 0.3s ease;
+
+      svg path {
+        fill: $color-white;
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+
+        svg path {
+          fill: $color-main;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-container {
+      display: flex;
+      gap: 22px;
+
+      @include typography-additional;
+
+      @include on-desktop {
+        gap: 102px;
+      }
+    }
+
+    &-link {
+      transition: all 0.3s ease-in-out;
+
+      :hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

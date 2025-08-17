@@ -1,0 +1,90 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-grow: 1;
+
+  @include on-tablet {
+    gap: 30px;
+  }
+
+  @include on-desktop {
+    gap: 20px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: all 0.3s ease;
+
+    &--height {
+      height: 356px;
+
+      @include on-tablet {
+        height: 420px;
+      }
+
+      @include on-desktop {
+        height: 484px;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    }
+
+    &--gorizontal {
+      @include on-tablet {
+        grid-area: img-event;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      grid-area: info-event;
+    }
+  }
+
+  &__date {
+    @include typography-main;
+
+    color: $color-main;
+  }
+
+  &__title {
+    @include typography-h4;
+
+    text-align: left;
+    color: $color-black;
+  }
+
+  &__description {
+    @include typography-main;
+
+    padding-bottom: 10px;
+
+    @include on-tablet {
+      padding-bottom: 30px;
+    }
+  }
+
+  &--gorizontal {
+    @include on-tablet {
+      display: grid;
+      gap: 30px;
+      grid-template-areas: 'img-event img-event img-event  info-event info-event info-event';
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include on-desktop {
+      grid-template-areas: 'img-event img-event info-event info-event info-event info-event info-event info-event . .';
+    }
+  }
+}

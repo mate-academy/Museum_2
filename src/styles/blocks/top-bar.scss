@@ -1,0 +1,86 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 20px;
+
+  @include on-desktop {
+    padding-block: 26px;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+  }
+
+  &__language {
+    display: none;
+    cursor: pointer;
+    position: relative;
+
+    @include on-tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3px;
+    }
+  }
+
+  &__dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100px;
+    background: $color-background;
+    border-radius: 5px;
+    list-style: none;
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out,
+      visibility 0.3s;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  &__language--open .top-bar__dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    transform: translateY(0);
+  }
+
+  &__option {
+    padding: 8px 12px;
+    color: $color-white;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__button {
+    align-self: center;
+
+    &-link {
+      line-height: normal;
+    }
+  }
+
+  &__lang {
+    line-height: normal;
+    color: $color-white;
+  }
+}
