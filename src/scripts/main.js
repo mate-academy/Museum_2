@@ -71,7 +71,10 @@ const createModalWindow = () => {
 
   const close = () => {
     modal.classList.remove('modal--open');
-    document.body.classList.remove('no-scroll');
+
+    setTimeout(() => {
+      document.body.classList.remove('no-scroll');
+    }, 500);
   };
 
   overlay.addEventListener('click', close);
