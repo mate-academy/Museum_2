@@ -1,0 +1,49 @@
+.secondary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  // translate: 10px 10px;
+  // position: absolute;
+  // right: 55px;
+  // background-color: inherit;
+  height: $button-height;
+  text-decoration: none;
+  text-align: center;
+
+  // border: none;
+  cursor: pointer;
+  border: 1px solid $c-main;
+  box-sizing: border-box;
+  width: 280px;
+  color: $c-main;
+
+  @include hover(color, $c-button-hover);
+  @include pressed(color, $c-button-pressed);
+
+  @include tablet {
+    width: 210px;
+  }
+
+  @include desktop {
+    width: 270px;
+  }
+
+  @include hover(border-color, $c-button-hover);
+  @include hover(color, $c-button-hover, '.button-secondary__text');
+  @include hover(opacity, 0, '.icon--arrow-default');
+  @include hover(opacity, 1, '.icon--arrow-hover');
+  @include pressed(border-color, $c-button-pressed);
+  @include pressed(color, $c-button-pressed, '.button-secondary__text');
+  @include pressed(opacity, 0, '.icon--arrow-hover');
+  @include pressed(opacity, 1, '.icon--arrow-pressed');
+
+  /* &__text {
+    color: $c-main;
+    @include hover(color, $c-button-hover);
+    @include pressed(color, $c-button-pressed);
+    // color: $c-main;
+     // border: none;
+  } */
+}

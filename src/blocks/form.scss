@@ -1,0 +1,68 @@
+.form {
+  &__input {
+    @include autofill;
+
+    box-sizing: border-box;
+    padding-bottom: 3px;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: $c-white;
+
+    // &:placeholder-shown {
+    // background-color: #f8d7da; /* Light red */
+    // background-color: inherit;
+
+    //  border-bottom: 1px solid black;
+    // color: #721c24; /* Dark red */
+    // }
+
+    // &:not(:placeholder-shown) {
+    // background-color: #d4edda; /* Light green */
+    // background-color: inherit;
+    // color: #155724; /* Dark green */
+    // color: $c-main;
+    // border-bottom: 1px solid black;
+    // }
+
+    /* &:disabled {
+      border-bottom: 1px solid black;
+      &:hover {
+        border-bottom: 1px solid black;
+      }
+    } */
+
+    &::placeholder {
+      color: black;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $c-main;
+      color: $c-main;
+      &::placeholder {
+        color: $c-main;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      // color: $c-main;
+      // border-bottom: 1px solid $c-main;
+      &::placeholder {
+        color: #000;
+      }
+    }
+
+    // &:focus:valid {
+    // background-color: #d4edda; /* Light green */
+    // background-color: inherit;
+    // color: #155724; /* Dark green */
+    // color: black;
+    // border-bottom: 1px solid black;
+
+    // &:hover {
+    //  border-bottom: 1px solid black;
+    // }
+    // }
+  }
+}

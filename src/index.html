@@ -1,19 +1,823 @@
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class="page"
+  data-theme="light"
+>
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <title>Національний художній музей України</title>
+    <link
+      rel="favicon"
+      type="image"
+      href="./images/icons/NAMU.png"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=Raleway:wght@100..900&display=swap"
+    />
     <link
       rel="stylesheet"
       href="./styles/main.scss"
     />
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
-    <script src="scripts/main.js"></script>
+  <body class="page__body">
+    <header class="header">
+      <div class="page__container">
+        <div class="header__content">
+          <a
+            class="header__logo-link"
+            href="#"
+            onclick="window.location.href='#'; closeMenu();"
+          >
+            <img
+              class="header__logo"
+              src="./images/icons/logoRectangle.png"
+              alt="logo"
+            />
+          </a>
+
+          <div class="header__right">
+            <button class="header__language-button">
+              <span class="text-button-language">UA</span>
+
+              <div class="icon__wrapper">
+                <span class="icon icon--small icon--dropdown"></span>
+                <span class="icon icon--small icon--dropdown-hover"></span>
+              </div>
+            </button>
+
+            <button
+              class="header__menu-button menu-button"
+              id="menu-button"
+            >
+              <span
+                id="mbom"
+                class="menu-button__open"
+                alt="open menu"
+              ></span>
+              <span
+                id="mbcm"
+                class="menu-button__close"
+                alt="close menu"
+              ></span>
+              <div class="menu-button__wrapper">
+                <span class="menu-button__line menu-button__line--top"></span>
+                <span
+                  class="menu-button__line menu-button__line--center"
+                ></span>
+                <span
+                  class="menu-button__line menu-button__line--bottom"
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="first-screen">
+      <div class="first-screen__wrapper">
+        <div class="page__container first-screen__container">
+          <div class="first-screen__content">
+            <p class="first-screen__upcoming-top text-additional">
+              10 серпня - 10 листопада
+            </p>
+            <h1 class="first-screen__title heading-1">
+              Мистецтво ХІХ
+              <br class="page__mobile-desktop-hidden" />
+              - ХХ ст.
+            </h1>
+            <p class="first-screen__subtitle text-main">
+              Внесок українських митців у
+              <br class="page__tablet-hidden" />
+              світову культуру 19-20 ст.
+            </p>
+
+            <button
+              type="button"
+              onclick="window.location.href='#';"
+              class="first-screen__button primary-button text-button"
+            >
+              Купити квиток
+            </button>
+
+            <!-- <a
+              href="/"
+              class="first-screen__button primary-button text-button"
+            >
+              Купити квиток
+            </a>
+
+            <button onclick="window.location.href='/';" class="first-screen__button primary-button text-button">
+             Купити квиток
+            </button> -->
+
+            <div class="first-screen__upcoming-bottom-wrapper">
+              <span class="first-screen__upcoming-bottom-text heading-6">
+                10.08 - 10.10
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="first-screen__image-wrapper">
+          <img
+            class="first-screen__image"
+            src="./images/img_01.png"
+            alt="first-screen"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!--MENU-->
+    <aside
+      id="menu"
+      class="menu"
+    >
+      <div class="menu__wrapper">
+        <div class="page__container menu__container">
+          <div class="menu__content">
+            <div class="menu__section">
+              <p class="menu__label menu__label--schedule text-additional">
+                Розклад сьогодні:
+              </p>
+              <p class="menu__text menu__text--schedule text-main">
+                12:00 - 19:00
+              </p>
+            </div>
+
+            <div class="menu__section menu__section--address">
+              <p class="menu__label text-additional text-main">Адреса:</p>
+              <a
+                class="menu__link text-main"
+                href="https://maps.app.goo.gl/DpfpHVF1PybJj5g58"
+                target="_blank"
+              >
+                <p class="menu__textmenu__text--address text-main">
+                  Київ, вул. М. Грушевського, 6
+                </p>
+              </a>
+            </div>
+
+            <nav class="nav menu__nav">
+              <ul class="nav__list nav__list--menu">
+                <li class="nav__item">
+                  <a
+                    class="nav__link nav__link--menu heading-3"
+                    href="#exhibitions"
+                    onclick="window.location.href='#exhibitions'; closeMenu();"
+                  >
+                    Актуальні виставки
+                  </a>
+                </li>
+
+                <li class="nav__item">
+                  <a
+                    class="nav__link nav__link--menu heading-3"
+                    href="#events"
+                    onclick="window.location.href='#events'; closeMenu();"
+                  >
+                    Найближчі події
+                  </a>
+                </li>
+
+                <li class="nav__item">
+                  <a
+                    class="nav__link nav__link--menu heading-3"
+                    href="#news"
+                    onclick="window.location.href='#news'; closeMenu();"
+                  >
+                    Новини
+                  </a>
+                </li>
+              </ul>
+            </nav>
+
+            <span class="menu__line"></span>
+
+            <!--<a
+              class="menu__button primary-button text-button"
+              href="/"
+            >
+              Купити квиток
+            </a> -->
+
+            <button
+              onclick="window.location.href='#'; closeMenu();"
+              type="button"
+              class="menu__button primary-button text-button"
+            >
+              Купити квиток
+            </button>
+          </div>
+        </div>
+
+        <div class="menu__image-wrapper">
+          <img
+            class="menu__image"
+            src="./images/e6064afda53bd3491f47dcad02350951b18f2e4e.png"
+            alt="menu"
+          />
+        </div>
+      </div>
+    </aside>
+    <!--END MENU-->
+    <section
+      id="exhibitions"
+      class="exhibitions"
+    >
+      <div class="page__container">
+        <div class="exhibitions__content">
+          <h3 class="exhibitions__title heading-3">Актуальні виставки</h3>
+
+          <div class="exhibitions__items">
+            <div class="exhibitions__exhibition-item exhibition-item">
+              <div class="exhibition-item__photo-wrapper">
+                <img
+                  class="exhibition-item__photo"
+                  src="./images/450c920fe6ff63f30510096898f078ccf80884a5.png"
+                  alt="angels"
+                />
+              </div>
+              <span class="exhibition-item__dates text-main">
+                11.07 - 22.09
+              </span>
+              <h4 class="exhibition-item__name heading-4">
+                Кураторська виставка “Ангели”
+              </h4>
+              <p class="exhibition-item__description text-main">
+                Виставковий проект «Ангели» – знакова подія для української
+                культури і водночас наймасштабніший...
+              </p>
+              <button
+                class="exhibition-item__button primary-button text-button"
+                onclick="window.location.href='/';"
+                type="button"
+              >
+                Купити квиток
+              </button>
+            </div>
+
+            <div class="exhibitions__exhibition-item exhibition-item">
+              <div class="exhibition-item__photo-wrapper">
+                <img
+                  class="exhibition-item__photo"
+                  src="./images/82cd1ea6ad125f0b0e209cafbd76c127b7081a99.png"
+                  alt="art"
+                />
+              </div>
+              <span class="exhibition-item__dates text-main">Діє постійно</span>
+              <h4 class="exhibition-item__name heading-4">
+                Мистецтво ХХ ст. — XXI ст.
+              </h4>
+              <p class="exhibition-item__description text-main">
+                Знакові роботи Алли Горської, Миколи Самокиша, Федора
+                Кричевського та інших митців.
+              </p>
+              <button
+                class="exhibition-item__button primary-button text-button"
+                onclick="window.location.href='#';"
+                type="button"
+              >
+                Купити квиток
+              </button>
+            </div>
+          </div>
+
+          <button
+            class="exhibitions__secondary-button secondary-button"
+            onclick="window.location.href='#';"
+            type="button"
+          >
+            <span class="secondary-button__text text-button">
+              Архів виставок
+            </span>
+
+            <div class="icon__wrapper">
+              <span
+                class="secondary-button__arrow icon icon--medium icon--arrow-default"
+              ></span>
+              <span
+                class="secondary-button__arrow icon icon--medium icon--arrow-hover"
+              ></span>
+              <span
+                class="secondary-button__arrow icon icon--medium icon--arrow-pressed"
+              ></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="events"
+      class="events"
+    >
+      <div class="page__container">
+        <div class="events__content">
+          <h3 class="events__title heading-3">Найближчі події</h3>
+
+          <div class="events__items">
+            <div class="events__event-item event-item">
+              <div class="event-item__photo-wrapper">
+                <img
+                  class="event-item__photo"
+                  src="./images/f760311aeb85deff4224181123dcf89f9f1bde5c.jpg"
+                  alt="event-01"
+                />
+              </div>
+              <div class="event-item__info-wrapper">
+                <span class="event-item__dates text-main">14.08 о 13:00</span>
+                <h4 class="event-item__name heading-4">
+                  Кураторські екскурсії від Павла Гудімова
+                </h4>
+                <p class="event-item__description text-main">
+                  Таємниці підготовки, історії експонатів, магія дійства до і в
+                  момент вашої присутності – розгортатиметься...
+                </p>
+                <button
+                  class="event-item__button primary-button text-button"
+                  onclick="window.location.href='/';"
+                  type="button"
+                >
+                  Зареєструватись
+                </button>
+              </div>
+            </div>
+
+            <div class="events__event-item event-item">
+              <div class="event-item__photo-wrapper">
+                <img
+                  class="event-item__photo"
+                  src="./images/f01e0f74c6fae08453b6697cc1314248fab92903.jpg"
+                  alt="event-02"
+                />
+              </div>
+              <div class="event-item__info-wrapper">
+                <span class="event-item__dates text-main">16.08 о 13:00</span>
+                <h4 class="event-item__name heading-4">
+                  Майстер-клас “Подорож до Австралії”
+                </h4>
+                <p class="event-item__description text-main">
+                  Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт
+                  кругосвітньої подорожі - Австралія.
+                </p>
+                <button
+                  class="event-item__button primary-button text-button"
+                  onclick="window.location.href='#';"
+                  type="button"
+                >
+                  Зареєструватись
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="exhibitions__secondary-button secondary-button"
+            onclick="window.location.href='#';"
+            type="button"
+          >
+            <span class="secondary-button__text text-button">
+              Архів виставок
+            </span>
+
+            <div class="icon__wrapper">
+              <span
+                class="secondary-button__arrow icon icon--medium icon--arrow-default"
+              ></span>
+              <span
+                class="secondary-button__arrow icon icon--medium icon--arrow-hover"
+              ></span>
+              <span
+                class="secondary-button__arrow icon icon--medium icon--arrow-pressed"
+              ></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="plan-visit"
+      class="plan-visit"
+    >
+      <div class="page__container">
+        <div class="plan-visit__content">
+          <h2 class="plan-visit__title heading-2">Сплануйте візит до музею</h2>
+          <p class="plan-visit__description text-main">
+            Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть
+            квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись
+            мистецтвом.
+          </p>
+
+          <button
+            onclick="window.location.href='#';"
+            class="plan-visit__button primary-button text-button"
+          >
+            Почати
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="news"
+      class="news"
+    >
+      <div class="page__container">
+        <div class="news__content">
+          <h3 class="news__title heading-3">Новини</h3>
+
+          <div class="news__items">
+            <div class="news__news-item news-item">
+              <div class="news-item__photo-wrapper">
+                <img
+                  class="news-item__photo"
+                  src="./images/img_08.png"
+                  alt="news"
+                />
+              </div>
+              <span class="news-item__dates text-main">9 серпня 2019</span>
+              <h4 class="news-item__name heading-4">Оголошення переможця</h4>
+              <p class="news-item__description text-main">
+                Друзі, сьогодні п'ятниця! А це означає, що час оголосити
+                переможця розіграшу...
+              </p>
+            </div>
+
+            <div class="news__news-item news-item">
+              <div class="news-item__photo-wrapper">
+                <img
+                  class="news-item__photo2"
+                  src="./images/65cd3766ee3c75bf3a981f0a45f9efeb5dcf9083.jpg"
+                  alt="news"
+                />
+              </div>
+              <span class="news-item__dates text-main">9 серпня 2019</span>
+              <h4 class="news-item__name heading-4">Міжнародний день котів</h4>
+              <p class="news-item__description text-main">
+                Музей з левами не може просто так взяти і пропустити Міжнародний
+                день котів!
+              </p>
+            </div>
+          </div>
+
+          <button
+            class="exhibitions__secondary-button secondary-button"
+            onclick="window.location.href='#';"
+            type="button"
+          >
+            <span class="secondary-button__text text-button">Усі новини</span>
+
+            <div class="icon__wrapper">
+              <span
+                class="secondary-button__arrow icon icon--medium icon--arrow-default"
+              ></span>
+              <span
+                class="secondary-button__arrow icon icon--medium icon--arrow-hover"
+              ></span>
+              <span
+                class="secondary-button__arrow icon icon--medium icon--arrow-pressed"
+              ></span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="subscribe"
+      class="subscribe"
+    >
+      <div class="page__container">
+        <div class="subscribe__content">
+          .
+          <h3 class="subscribe__title heading-3">Підпишіться на дайджест</h3>
+
+          <p class="subscribe__description text-main">
+            Першими дізнавайтесь про новини музею та розіграші, отримуйте
+            запрошення на події та читайте статті від кураторів
+          </p>
+
+          <form
+            class="subscribe__form form"
+            onsubmit="this.reset(); return false;"
+          >
+            <input
+              id="myInput"
+              onfocus="this.placeholder=''"
+              onblur="this.placeholder= this.getAttribute('data-placeholder');"
+              data-placeholder="e-mail"
+              value=" "
+              type="email"
+              class="subscribe__form-input form__input text-main"
+              name="email"
+              placeholder="e-mail"
+              required
+            />
+
+            <button
+              type="submit"
+              class="subscribe__form-button form__button primary-button text-button"
+            >
+              Підписатись
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      id="footer"
+      class="footer"
+    >
+      <div class="page__container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <h5 class="footer__heading heading-5">Контакти</h5>
+
+            <ul class="footer__summary footer__summary--contacts">
+              <li class="footer__summary-item text-main">
+                <a
+                  class="footer__summary-link"
+                  href="https://maps.app.goo.gl/DpfpHVF1PybJj5g58"
+                  target="_blank"
+                >
+                  <p class="footer__summary-text text-main">
+                    Київ,
+                    <br />
+                    вул. М. Грушевського, 6
+                  </p>
+                </a>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <a
+                  class="footer__summary-link"
+                  href="tel: 278-13-57"
+                >
+                  <p class="footer__summary-text text-main">
+                    тел. 278-13-57, 278-74-54
+                  </p>
+                </a>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <a
+                  class="footer__summary-link"
+                  href="mailto:info@namu.kiev.ua"
+                >
+                  <p class="footer__summary-text text-main">
+                    info@namu.kiev.ua
+                  </p>
+                </a>
+              </li>
+            </ul>
+
+            <div class="footer__socials">
+              <ul class="footer__socials-list">
+                <li class="footer__socials-item">
+                  <a
+                    class="footer__socials-link"
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                  >
+                    <button
+                      class="footer__socials-icon-wrapper icon__socials-wrapper"
+                    >
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--facebook icon--static"
+                      ></span>
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--facebook-hover icon--hover"
+                      ></span>
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--facebook-pressed icon--pressed"
+                      ></span>
+                    </button>
+                  </a>
+                </li>
+
+                <li class="footer__socials-item">
+                  <a
+                    class="footer__socials-link"
+                    href="https://x.com/"
+                    target="_blank"
+                  >
+                    <button
+                      class="footer__socials-icon-wrapper icon__socials-wrapper"
+                    >
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--x icon--static"
+                      ></span>
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--x-hover icon--hover"
+                      ></span>
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--x-pressed icon--pressed"
+                      ></span>
+                    </button>
+                  </a>
+                </li>
+
+                <li class="footer__socials-item">
+                  <a
+                    class="footer__socials-link"
+                    href="https://web.telegram.org/"
+                    target="_blank"
+                  >
+                    <button
+                      class="footer__socials-icon-wrapper icon__socials-wrapper"
+                    >
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--telegram icon--static"
+                      ></span>
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--telegram-hover icon--hover"
+                      ></span>
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--telegram-pressed icon--pressed"
+                      ></span>
+                    </button>
+                  </a>
+                </li>
+
+                <li class="footer__socials-item">
+                  <a
+                    class="footer__socials-link"
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                  >
+                    <button
+                      class="footer__socials-icon-wrapper icon__socials-wrapper"
+                    >
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--instagram icon--static"
+                      ></span>
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--instagram-hover icon--hover"
+                      ></span>
+                      <span
+                        class="footer__socials-icon icon icon--medium icon--instagram-pressed icon--pressed"
+                      ></span>
+                    </button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer__section">
+            <h5 class="footer__heading heading-5">Розклад роботи</h5>
+
+            <ul class="footer__summary">
+              <li class="footer__summary-item text-main">
+                <p
+                  class="footer__summary-text footer__summary-text--static text-main"
+                >
+                  ПН: вихідний
+                </p>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <p
+                  class="footer__summary-text footer__summary-text--static text-main"
+                >
+                  ВТ: вихідний
+                </p>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <p
+                  class="footer__summary-text footer__summary-text--static text-main"
+                >
+                  СР: 10:00 - 17:00
+                </p>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <p
+                  class="footer__summary-text footer__summary-text--static text-main"
+                >
+                  ЧТ: 10:00 - 17:00
+                </p>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <p
+                  class="footer__summary-text footer__summary-text--static text-main"
+                >
+                  ПТ: 12:00 - 19:00
+                </p>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <p
+                  class="footer__summary-text footer__summary-text--static text-main"
+                >
+                  СБ: 11:00 - 18:00
+                </p>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <p
+                  class="footer__summary-text footer__summary-text--static text-main"
+                >
+                  НД: 10:00 - 17:00
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__section">
+            <h5 class="footer__heading heading-5">Головна</h5>
+
+            <ul class="footer__summary footer__summary--nav">
+              <li class="footer__summary-item text-main">
+                <a
+                  class="footer__summary-link"
+                  href="#exhibitions"
+                >
+                  <button class="footer__summary-text text-main">
+                    Виставки
+                  </button>
+                </a>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <a
+                  class="footer__summary-link"
+                  href="#events"
+                >
+                  <button class="footer__summary-text text-main">Події</button>
+                </a>
+              </li>
+
+              <li class="footer__summary-item text-main">
+                <a
+                  class="footer__summary-link"
+                  href="#news"
+                >
+                  <button class="footer__summary-text text-main">Новини</button>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__bottom">
+            <div class="footer__copyright-privacy">
+              <button class="footer__copyright text-additional">
+                &copy; 2010 — 2020
+              </button>
+              <button
+                type="button"
+                onclick="window.location.href='#';"
+                class="footer__privacy-terms text-additional"
+                href="#"
+              >
+                Privacy — Terms
+              </button>
+            </div>
+
+            <button
+              class="footer__scroll-up-icon-wrapper"
+              onclick="window.location.href='#';"
+              type="button"
+            >
+              <div class="footer__scroll-up-icon-wrapper icon__scroll-wrapper">
+                <span
+                  class="footer__socials-icon icon icon--big icon--scroll-up icon--static"
+                ></span>
+                <span
+                  class="footer__socials-icon icon icon--big icon--scroll-up-hover icon--hover"
+                ></span>
+                <span
+                  class="footer__socials-icon icon icon--big icon--scroll-up-pressed icon--pressed"
+                ></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./scripts/main.js"></script>
   </body>
 </html>

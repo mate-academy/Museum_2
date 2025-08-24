@@ -1,0 +1,79 @@
+.subscribe {
+  padding: 120px 0 80px;
+
+  @include tablet {
+    padding: 160px 0 130px;
+  }
+
+  @include desktop {
+    padding: 200px 0;
+  }
+
+  &__content {
+    @include page-grid;
+
+    @include desktop {
+      row-gap: 50px;
+    }
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin-bottom: 20px;
+
+    @include desktop {
+      grid-column: 1/5;
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    grid-column: 1/-1;
+    margin-bottom: 50px;
+
+    @include tablet {
+      grid-column: 1/-2;
+    }
+
+    @include desktop {
+      grid-column: 7/-1;
+      margin-bottom: 0;
+      padding-top: 20px;
+    }
+  }
+
+  &__form {
+    grid-column: 1/-1;
+    row-gap: 30px;
+
+    @include grid-markup(2, 6, 12);
+
+    @include desktop {
+      row-gap: 40px;
+    }
+  }
+
+  &__form-input {
+    grid-column: 1/-1;
+
+    @include tablet {
+      grid-column: span 4;
+    }
+
+    @include desktop {
+      grid-column: 1/6;
+    }
+  }
+
+  &__form-button {
+    grid-column: 1/-1;
+
+    @include tablet {
+      grid-column: span 3;
+    }
+
+    @include desktop {
+      grid-column: 1/4;
+    }
+  }
+}
