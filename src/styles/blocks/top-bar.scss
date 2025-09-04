@@ -1,9 +1,8 @@
 .top-bar {
-  padding-block: 20px;
-
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding-block: 20px;
 
   @include on-desktop {
     padding-block: 25px;
@@ -36,29 +35,32 @@
 
   &__content {
     position: absolute;
-
-    height: 0;
     overflow: hidden;
+    height: 0;
   }
   &--active &__content {
-    height: auto;
     overflow: visible;
+    height: auto;
   }
 
   &__trigger {
     cursor: pointer;
     display: flex;
-    align-items: center;
     gap: 3px;
+    align-items: center;
 
     @include ui-states;
 
     &::after {
       content: '';
+
       display: block;
+
       width: 8px;
       height: 8px;
+
       background-color: currentColor;
+
       -webkit-mask: url(../images/icons/dropdown-icon.svg) no-repeat center /
         contain;
       mask: url(../images/icons/dropdown-icon.svg) no-repeat center / contain;

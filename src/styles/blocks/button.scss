@@ -1,18 +1,19 @@
 .button {
   box-sizing: border-box;
+  height: 60px;
   padding-block: 22px;
-  line-height: 100%;
+
   font-size: 16px;
   font-weight: bold;
+  line-height: 100%;
   text-align: center;
-  height: 60px;
 
   @include effects;
 
   &--primary {
     border: none;
-    background-color: $accent-color;
     color: $white;
+    background-color: $accent-color;
 
     &:hover {
       background-color: $hover-color;
@@ -28,18 +29,23 @@
   }
 
   &--secondary {
-    color: $accent-color;
-    border: 1px solid currentColor;
     display: flex;
+    gap: 8px;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+
+    border: 1px solid currentColor;
+
+    color: $accent-color;
 
     &::after {
       content: '';
+
       display: inline-block;
+
       width: 20px;
       height: 20px;
+
       background-color: currentColor;
 
       -webkit-mask: url('../images/icons/arrow-right-icon.svg') center / contain

@@ -1,9 +1,9 @@
 .card {
   display: flex;
+  grid-column: 1 / -1;
   flex-direction: column;
   justify-content: space-between;
 
-  grid-column: 1 / -1;
   margin-bottom: 60px;
 
   @include effects;
@@ -13,16 +13,15 @@
   }
 
   &__img {
-    object-fit: cover;
     width: 100%;
     height: 356px;
-
     margin-bottom: 20px;
+    object-fit: cover;
   }
 
   &__date {
-    color: $accent-color;
     margin-bottom: 10px;
+    color: $accent-color;
   }
 
   &__title {
@@ -34,8 +33,8 @@
   }
 
   &__description {
-    color: $secondary-color;
     margin-bottom: 30px;
+    color: $secondary-color;
 
     @include on-tablet {
       margin-top: 20px;
@@ -93,18 +92,17 @@
 
   &--events {
     @include on-tablet {
+      grid-column: 1 / -1;
       flex-direction: row;
       column-gap: 30px;
-      grid-column: 1 / -1;
       margin-bottom: 70px;
     }
 
     @include on-desktop {
-      grid-column: 1 / -1;
-      margin-bottom: 60px;
-
       display: grid;
+      grid-column: 1 / -1;
       grid-template-columns: repeat(12, 1fr);
+      margin-bottom: 60px;
     }
 
     &:last-of-type {
@@ -116,8 +114,8 @@
     }
 
     .card__info {
-      grid-column: span 6;
       display: flex;
+      grid-column: span 6;
       flex-direction: column;
     }
 
