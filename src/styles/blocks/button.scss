@@ -1,0 +1,53 @@
+.button {
+  box-sizing: border-box;
+  padding-block: 22px;
+  line-height: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  height: 60px;
+
+  @include effects;
+
+  &--primary {
+    border: none;
+    background-color: $accent-color;
+    color: $white;
+
+    &:hover {
+      background-color: $hover-color;
+    }
+
+    &:focus {
+      background-color: $focus-color;
+    }
+
+    &:disabled {
+      background-color: $disable-color;
+    }
+  }
+
+  &--secondary {
+    color: $accent-color;
+    border: 1px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: currentColor;
+
+      -webkit-mask: url('../images/icons/arrow-right-icon.svg') center / contain
+        no-repeat;
+      mask: url('../images/icons/arrow-right-icon.svg') center / contain
+        no-repeat;
+    }
+
+    @include ui-states;
+  }
+}
