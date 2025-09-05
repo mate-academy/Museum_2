@@ -1,0 +1,111 @@
+.menu {
+  color: $white;
+
+  &__wrapper {
+    position: relative;
+
+    @include on-desktop {
+      padding-bottom: 108px;
+    }
+  }
+
+  &__top-bar {
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 40px;
+
+    @include on-tablet {
+      row-gap: 50px;
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      row-gap: 70px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: space-between;
+
+    @include on-desktop {
+      grid-column: span 5;
+      flex-direction: row;
+      column-gap: 83px;
+      justify-content: flex-start;
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+  }
+  &__nav {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+
+    &::after {
+      content: '';
+
+      display: block;
+
+      width: 100%;
+      height: 1px;
+      margin-top: 40px;
+
+      background-color: $white;
+
+      @include on-tablet {
+        margin-top: 50px;
+      }
+
+      @include on-desktop {
+        margin-top: 60px;
+      }
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__background {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      height: 466px;
+      margin: 0 auto;
+      object-fit: cover;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 697px;
+    }
+  }
+}

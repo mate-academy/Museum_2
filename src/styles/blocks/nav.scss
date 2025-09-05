@@ -1,0 +1,39 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $white;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      background-color: currentColor;
+
+      @include effects;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}

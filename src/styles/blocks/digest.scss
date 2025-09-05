@@ -1,0 +1,90 @@
+.digest {
+  &__wrapper {
+    @include page-grid;
+
+    margin-bottom: 80px;
+
+    @include on-tablet {
+      margin-bottom: 128px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__label {
+    @include visually-hidden;
+  }
+
+  &__input {
+    border-bottom: currentColor solid 1px;
+    color: #000;
+
+    &::placeholder {
+      color: currentColor;
+    }
+
+    @include ui-states;
+
+    &:focus {
+      outline: none;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      font-weight: 700;
+      color: currentColor;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+}
