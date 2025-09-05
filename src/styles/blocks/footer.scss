@@ -98,8 +98,25 @@
   }
 
   &__link {
-    &:hover {
-      text-decoration: underline;
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      background-color: currentColor;
+
+      @include effects;
+    }
+
+    &:hover::after {
+      width: 100%;
     }
   }
 }

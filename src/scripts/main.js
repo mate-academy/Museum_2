@@ -1,5 +1,6 @@
 'use strict';
 
+// #region dropdown
 const dropdown = document.querySelector('.dropdown');
 const trigger = dropdown.querySelector('.dropdown__trigger');
 const languageListItems = document.querySelectorAll('.language-list__item');
@@ -22,11 +23,14 @@ languageListItems.forEach((item) => {
     dropdown.classList.remove('dropdown--active');
   });
 });
+// #endregion
 
+// #region aside menu
 const body = document.querySelector('body');
 const menu = document.querySelector('.page__menu');
 const openMenuButton = document.querySelector('.icon--menu');
 const closeMenuButton = document.querySelector('.icon--close');
+const navLinks = menu.querySelectorAll('.nav__link');
 
 function openMenu() {
   menu.classList.add('page__menu--open');
@@ -45,13 +49,12 @@ closeMenuButton.addEventListener('click', (e) => {
   closeMenu();
 });
 
-// navLinks.forEach((link) => {
-//   link.addEventListener('click', closeMenu);
-// });
+navLinks.forEach((link) => {
+  link.addEventListener('click', closeMenu);
+});
+// #endregion
 
-window.addEventListener('hashchange', closeMenu);
-
-// Menu items class change
+// #region menu items class change
 function updateMenuTitleClass() {
   const menuLinks = document.querySelectorAll('.menu__nav .nav__link');
 
@@ -69,3 +72,13 @@ function updateMenuTitleClass() {
 updateMenuTitleClass();
 
 window.addEventListener('resize', updateMenuTitleClass);
+// #endregion
+
+// #region form button
+const form = document.getElementById('digestForm');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.querySelector('input').value = '';
+});
+// #endregion
