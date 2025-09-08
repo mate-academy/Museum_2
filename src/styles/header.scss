@@ -1,0 +1,136 @@
+.header {
+  background-color: $c-green;
+  &__container {
+    @include container-header-nav;
+
+    &__top {
+      @include top-header-and-nav;
+      &__burgers {
+        display: flex;
+        gap: $gap-in-burger;
+        align-items: $alaing-item-center;
+        justify-content: center;
+      }
+    }
+    &__title {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-block: 90px 30px;
+      grid-column: span 2;
+
+      @include on-tablet {
+        grid-column: span 6;
+      }
+
+      @include on-pc {
+        grid-column: 1/ 7;
+      }
+      &--subtitle {
+        @include subtitle;
+      }
+      &--item {
+        font-family: $famly-text-title;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 48px;
+        line-height: 100%;
+
+        @include on-tablet {
+          font-size: 72px;
+        }
+
+        @include on-pc {
+          font-size: 96px;
+        }
+      }
+    }
+    &__text-information {
+      grid-column: span 2;
+
+      @include on-tablet {
+        grid-column: 1 / 6;
+      }
+
+      @include on-pc {
+        grid-column: 1 / 6;
+      }
+      &--item {
+        @include page-text-font;
+      }
+    }
+    &__buttom {
+      padding-block: 40px;
+
+      @include on-tablet {
+        padding-block: 50px;
+      }
+
+      @include on-pc {
+        padding-block: 81px;
+      }
+
+      @include button-grid-nav-header;
+    }
+    &__bottom-line {
+      display: none;
+
+      @include on-pc {
+        position: relative;
+
+        grid-column: 1/3;
+        display: block;
+        padding-block: 49px 54px;
+        &--item--line {
+          position: absolute;
+          top: 59px;
+          height: 1px;
+          background-color: $c-white;
+          opacity: 30%;
+          margin-left: 100px;
+          display: block;
+          width: 469px;
+          min-width: 296px;
+        }
+      }
+      &--item {
+        font-family: $famly-text-title;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 14px;
+
+        line-height: 125%;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.cont--photo {
+  grid-column: span 2;
+
+  @include photo-nav-header;
+}
+
+.header__container__top__burgers__drop-down {
+  display: none;
+
+  @include on-tablet {
+    display: inline-block;
+  }
+
+  @include on-pc {
+    display: inline-block;
+  }
+}
+
+.drop-down__toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: $c-white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

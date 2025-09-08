@@ -4,3 +4,148 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-pc {
+  @media (min-width: $on-pc-min-width) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $on-tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin top-padding {
+  padding-block: 20px;
+
+  @include on-pc {
+    padding-block: 25px;
+  }
+}
+
+@mixin padding-inlain {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-pc {
+    padding-inline: 55px;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+  margin: 0;
+
+  --columns: 2;
+
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-pc {
+    --columns: 12;
+
+    column-gap: 30px;
+    max-width: 1280px;
+    margin-inline: auto;
+  }
+}
+
+@mixin container-header-nav {
+  color: $c-white;
+  position: relative;
+
+  @include padding-inlain;
+  @include page-grid;
+
+  height: fit-content;
+}
+
+@mixin top-header-and-nav {
+  grid-column: span 2;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include top-padding;
+
+  @include on-tablet {
+    height: 77px;
+    grid-column: span 6;
+  }
+
+  @include on-pc {
+    grid-column: span 12;
+    height: 90px;
+  }
+}
+
+@mixin subtitle {
+  font-family: $famaly-text-anaser;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+@mixin button-grid-nav-header {
+  grid-column: span 2;
+
+  @include on-tablet {
+    grid-column: 1 / 4;
+  }
+
+  @include on-pc {
+    grid-column: 1 / 4;
+  }
+  &--link {
+    height: 60px;
+    width: 100%;
+    background-color: $c-red;
+    display: inline-block;
+    text-align: center;
+    align-content: center;
+  }
+  &--item {
+    font-family: $famaly-text-anaser;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+
+@mixin photo-nav-header {
+  @include on-tablet {
+    grid-column: 2 /-2;
+  }
+
+  @include on-pc {
+    grid-column: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 140px;
+    &--item {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@mixin page-text-font {
+  font-family: $famaly-text-anaser;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  vertical-align: middle;
+}

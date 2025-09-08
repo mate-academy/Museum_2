@@ -1,0 +1,167 @@
+.nav {
+  position: fixed;
+  inset: 0;
+
+  opacity: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: $c-green;
+  pointer-events: none;
+
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-100%);
+  &:target {
+    pointer-events: all;
+    opacity: 1;
+    z-index: 3;
+    transform: translateX(0);
+  }
+  &__container {
+    @include container-header-nav;
+
+    &__top {
+      @include top-header-and-nav;
+      &__logo {
+        &--item {
+          width: 100%;
+        }
+      }
+      &__close {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: $gap-in-burger;
+        align-items: $alaing-item-center;
+
+        @include on-tablet {
+          flex-direction: row;
+        }
+
+        @include on-pc {
+          flex-direction: row;
+        }
+      }
+    }
+
+    &__group {
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      grid-column: span 2;
+
+      @include on-tablet {
+        grid-column: 1 / 6;
+        flex-direction: row;
+        gap: 123px;
+        padding-top: 30px;
+      }
+
+      @include on-pc {
+        grid-column: 1 / 6;
+        flex-direction: row;
+        gap: 83px;
+        padding-top: 15px;
+      }
+      &__schedule {
+        display: flex;
+        flex-direction: column;
+
+        &--item-title {
+          @include subtitle;
+
+          vertical-align: middle;
+        }
+        &--item {
+          @include page-text-font;
+
+          font-weight: 600;
+        }
+      }
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      grid-column: span 2;
+      padding-block: 40px;
+      gap: 20px;
+
+      @include on-tablet {
+        padding-block: 50px;
+        grid-column: 1 / 7;
+        gap: 30px;
+      }
+
+      @include on-pc {
+        grid-column: 1 / 7;
+        padding-block: 70px 60px;
+        gap: 60px;
+      }
+      &--item {
+        font-family: $famly-text-title;
+        font-weight: 700;
+        font-size: 20px;
+
+        line-height: 150%;
+        vertical-align: middle;
+
+        @include on-tablet {
+          font-size: 48px;
+          line-height: 120%;
+        }
+
+        @include on-pc {
+          font-size: 48px;
+          line-height: 120%;
+        }
+      }
+    }
+    &--line {
+      grid-column: span 2;
+      opacity: 30%;
+
+      background-color: $c-white;
+      height: 1px;
+
+      @include on-tablet {
+        grid-column: span 6;
+      }
+
+      @include on-pc {
+        grid-column: 1/ 7;
+      }
+    }
+    &__buttom {
+      padding-top: 30px;
+      padding-bottom: 237px;
+
+      @include on-tablet {
+        padding-block: 50px;
+      }
+
+      @include on-pc {
+        padding-block: 60px 108px;
+      }
+
+      @include button-grid-nav-header;
+    }
+  }
+}
+
+.nav--photo {
+  display: none;
+
+  @include photo-nav-header;
+
+  @include on-tablet {
+    display: inline-block;
+  }
+
+  @include on-pc {
+    display: inline-block;
+  }
+}
+
+.nav__container__top__burgers__drop-down {
+  display: inline-block;
+}
