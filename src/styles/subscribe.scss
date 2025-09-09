@@ -1,0 +1,97 @@
+.main__section {
+  &--title {
+    display: block;
+    grid-column: span 2;
+    font-family: $famly-text-title;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 28px;
+    line-height: 125%;
+    align-items: center;
+    color: $c-phiolet;
+
+    @include on-tablet {
+      grid-column: span 6;
+      font-size: 40px;
+    }
+
+    @include on-pc {
+      grid-column: 1 /6;
+      font-size: 48px;
+    }
+  }
+
+  &--text {
+    display: block;
+    grid-column: span 2;
+
+    color: $c-phiolet;
+
+    @include page-text-font;
+
+    @include on-tablet {
+      grid-column: span 6;
+    }
+
+    @include on-pc {
+      grid-column: 7/13;
+    }
+  }
+
+  &__forma {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-column: span 2;
+    gap: 40px;
+    &--email {
+      border: 0;
+      border-bottom: 1px solid $c-red;
+
+      @include page-text-font;
+
+      background-color: $c-gray;
+      vertical-align: middle;
+      color: $c-phiolet;
+      outline: none;
+
+      &:focus,
+      &:hover {
+        border: 0;
+        border-bottom: 1px solid $c-red;
+        color: $c-red;
+      }
+    }
+    &--buttom {
+      width: 100%;
+      height: 60px;
+      background-color: $c-red;
+      border: none;
+      color: $c-white;
+      transition: 0.3s;
+    }
+
+    @include on-tablet {
+      grid-column: 1 /5;
+      &--buttom {
+        width: 100% / 4 * 3;
+      }
+    }
+
+    @include on-pc {
+      grid-column: 1 /6;
+      &--buttom {
+        width: 100% / 5 * 3;
+      }
+    }
+  }
+}
+
+button:hover {
+  background-color: #af3419;
+}
+
+button:focus {
+  transform: scale(1.05);
+  background-color: #ea340d;
+}
