@@ -1,0 +1,75 @@
+.form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  &__email {
+    height: 28px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $main-black-color;
+    color: $main-black-color;
+    grid-column: span 4;
+
+    &:hover {
+      border-bottom-color: $main-red-color;
+      &::placeholder {
+        color: $main-red-color;
+      }
+    }
+
+    &:focus {
+      border-bottom-color: $main-red-color;
+      &::placeholder {
+        color: $main-red-color;
+      }
+    }
+
+    &:valid {
+      font-weight: 700;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 1000px $main-white-color inset;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    background-color: $main-red-color;
+    border: none;
+    text-decoration: none;
+
+    @include button-is-full;
+
+    transition: $effect-duration;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      width: 100%;
+    }
+
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0%;
+    color: $main-white-color;
+  }
+}
