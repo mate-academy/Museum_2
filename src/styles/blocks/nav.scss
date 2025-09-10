@@ -1,0 +1,45 @@
+.nav {
+  display: grid;
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__link {
+    position: relative;
+    width: fit-content;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-decoration: none;
+    color: $main-white-color;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      bottom: -5px;
+      height: 1px;
+      width: 100%;
+      background-color: $main-white-color;
+
+      transition: transform $effect-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

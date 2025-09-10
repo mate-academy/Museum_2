@@ -1,0 +1,129 @@
+.exhibitions {
+  @include page-grid;
+
+  &__header {
+    margin: 0;
+
+    @include page-grid;
+
+    align-items: center;
+  }
+
+  &__card {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 356px;
+    object-fit: cover;
+    margin-top: 60px;
+    margin-bottom: 20px;
+
+    transition: $effect-duration;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      margin-top: 70px;
+      height: 420px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__date {
+    margin: 0;
+
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: $main-red-color;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin: 0;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    color: $main-black-color;
+    margin-bottom: 20px;
+  }
+
+  &__article {
+    margin: 0;
+
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color: $accent-grey-color;
+    margin-bottom: 30px;
+  }
+
+  &__button {
+    grid-column: span 2;
+
+    @include on-tablet {
+      align-items: center;
+
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &--top {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+        width: 100%;
+        height: 60px;
+        justify-self: end;
+        align-items: center;
+        grid-column: 5 / -1;
+      }
+
+      @include on-desktop {
+        width: 100%;
+        grid-column: 10 / -1;
+      }
+    }
+
+    &--bottom {
+      display: block;
+      margin-top: 30px;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+}
