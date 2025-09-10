@@ -1,0 +1,132 @@
+.subscribe {
+  margin-bottom: 80px;
+
+  @include on-tablet {
+    margin-bottom: 128px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    @include on-desktop {
+      @include grid-page;
+
+      row-gap: 50px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 125%;
+    color: $color-black;
+
+    @include on-tablet {
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+
+      max-width: 570px;
+      margin-bottom: 0;
+
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 50px;
+    color: $color-black;
+
+    @include raleway-text-styles;
+
+    @include on-tablet {
+      max-width: 570px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 13;
+      margin-bottom: 0;
+    }
+  }
+
+  &__form--wrapper {
+    @include on-desktop {
+      grid-column: 1 / 7;
+      grid-row: 2;
+    }
+  }
+
+  &__form {
+    &--email {
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 0;
+      border: none;
+      border-bottom: 1px solid $color-black;
+
+      color: $color-black;
+
+      background-color: $color-white;
+
+      @include raleway-text-styles;
+
+      @include on-tablet {
+        max-width: 450px;
+      }
+
+      @include on-desktop {
+        width: 470px;
+        max-width: none;
+      }
+
+      &::placeholder {
+        color: $color-black;
+
+        @include raleway-text-styles;
+      }
+
+      &:hover {
+        border-color: $color-orange;
+        color: $color-orange;
+
+        &::placeholder {
+          color: $color-orange;
+        }
+      }
+
+      &:focus {
+        border-color: $color-orange;
+        color: $color-orange;
+        outline: none;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+
+      &:valid {
+        border-color: $color-black;
+        font-weight: 700;
+        color: $color-black;
+      }
+    }
+  }
+
+  &__btn {
+    @include btn-style;
+
+    cursor: pointer;
+    width: 100%;
+    height: 58px;
+    padding: 0;
+  }
+}

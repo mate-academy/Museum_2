@@ -1,6 +1,202 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin font-raleway {
+  font-family: Raleway, sans-serif;
+}
+
+@mixin grid-page {
+  display: grid;
+  grid-template-columns: repeat($grid-columns-mobile, 1fr);
+  column-gap: $grid-gap-mobile;
+
+  @include on-tablet {
+    grid-template-columns: repeat($grid-columns-tablet, 1fr);
+    column-gap: $grid-gap-tablet;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat($grid-columns-desctop, 1fr);
+  }
+}
+
+@mixin btn-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 278px;
+  height: 58px;
+  border: 1px solid $color-orange;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  color: $color-white;
+  text-decoration: none;
+
+  background-color: $color-orange;
+
+  @include font-raleway;
+
   &:hover {
-    #{$_property}: $_toValue;
+    border-color: $color-btn-hover;
+    background-color: $color-btn-hover;
+  }
+
+  &:active {
+    border-color: $color-btn-active;
+    background-color: $color-btn-active;
+  }
+
+  @include on-tablet {
+    max-width: 328px;
+  }
+
+  @include on-desktop {
+    width: 268px;
+  }
+}
+
+@mixin secondary-btn-style {
+  @include btn-style;
+
+  gap: 8px;
+  height: 58px;
+  color: $color-orange;
+  background-color: $color-white;
+
+  &:hover {
+    border-color: $color-btn-hover;
+    color: $color-btn-hover;
+    background-color: $color-white;
+  }
+
+  &:active {
+    border-color: $color-btn-active;
+    color: $color-btn-active;
+  }
+
+  @include on-tablet {
+    width: 208px;
+  }
+
+  @include on-desktop {
+    width: 268px;
+  }
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin raleway-text-styles {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+
+  @include font-raleway;
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} $animation-speed;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin underline {
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transform-origin: left;
+    transform: scale(0);
+
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: $color-white;
+
+    transition: transform ($animation-speed * 2);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@mixin animation-pulse {
+  &:hover {
+    animation: pulse ($animation-speed * 2) infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin shadow {
+  transition: all $animation-speed;
+
+  &:hover {
+    box-shadow: 0 0 20px $color-orange;
+  }
+}
+
+@mixin icon-pulse {
+  &:hover {
+    animation: icon-pulse ($animation-speed * 3) infinite;
+  }
+}
+
+@keyframes icon-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@mixin blink {
+  &:hover {
+    animation: blink ($animation-speed * 4) infinite ease-in-out;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }

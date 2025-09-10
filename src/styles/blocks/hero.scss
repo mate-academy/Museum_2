@@ -1,0 +1,121 @@
+.hero {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+
+  @include on-desktop {
+    @include grid-page;
+  }
+
+  &__content {
+    // flex: 0 0 auto;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__data {
+    margin: 50px 0 10px;
+    font-size: 14px;
+    line-height: 140%;
+    color: $color-white;
+
+    @include font-raleway;
+
+    @include on-tablet {
+      margin-top: 100px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    font-size: 48px;
+    font-weight: 700;
+    color: $color-white;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+      font-size: 72px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 30px;
+    color: $color-white;
+
+    @include raleway-text-styles;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include on-desktop {
+      margin-bottom: auto;
+    }
+  }
+
+  &__img-wrap {
+    overflow: hidden;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: flex-end;
+    justify-content: center;
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__img {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+
+    object-fit: contain;
+  }
+
+  &__decor {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      margin-top: auto;
+      margin-bottom: 50px;
+    }
+
+    &--data {
+      width: 100px;
+      height: 18px;
+      margin: 0;
+
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 125%;
+      color: $color-white;
+
+      opacity: 70%;
+    }
+
+    &--line {
+      width: 100%;
+      height: 1px;
+      border: none;
+      background-color: $color-white;
+    }
+  }
+}

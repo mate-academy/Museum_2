@@ -1,0 +1,75 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 40px;
+  padding: 20px 0;
+
+  &__logo {
+    order: 0;
+    width: 123px;
+    height: 40px;
+
+    @include blink;
+  }
+
+  &__lang-btn {
+    cursor: pointer;
+
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    order: 1;
+
+    margin-inline: auto 30px;
+    border: none;
+
+    color: $color-white;
+
+    background: transparent;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      order: 2;
+      margin-inline: 0;
+    }
+
+    &--header {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+      }
+    }
+
+    &--text {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 150%;
+      text-transform: uppercase;
+
+      @include font-raleway;
+    }
+
+    &--icon {
+      display: block;
+
+      width: 8px;
+      height: 4px;
+
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__icon {
+    order: 2;
+
+    @include on-tablet {
+      order: 1;
+      margin-inline: auto 44px;
+    }
+  }
+}
