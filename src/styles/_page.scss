@@ -1,0 +1,60 @@
+.page {
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  color: $color-black;
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-black, 0.8);
+    z-index: 998;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    transition: opacity 0.5s;
+
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    transition: all 0.5s;
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+  }
+
+}
+
+.page__menu:target ~ .page__overlay {
+  opacity: 1;
+  pointer-events: all;
+}

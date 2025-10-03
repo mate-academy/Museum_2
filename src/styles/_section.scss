@@ -1,0 +1,388 @@
+.section {
+  width: 100%;
+
+  &[id='current'],
+  &[id='plan'],
+  &[id='news'] {
+    margin-top: 90px;
+
+    @include on-tablet {
+      margin-top: 100px;
+    }
+
+    @include on-desktop {
+      margin-top: 110px;
+    }
+  }
+
+  &[id='events'] {
+    margin-top: 120px;
+
+    @include on-tablet {
+      margin-top: 160px;
+    }
+
+    @include on-desktop {
+      margin-top: 200px;
+    }
+  }
+
+  &[id='subscribe'] {
+    margin-top: 120px;
+    margin-bottom: 80px;
+
+    @include on-tablet {
+      margin-top: 160px;
+      margin-bottom: 128px;
+    }
+
+    @include on-desktop {
+      margin-block: 200px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+
+    button {
+      display: none;
+
+      @include on-tablet {
+        display: inline-flex;
+        width: 210px;
+      }
+
+      @include on-desktop {
+        width: 270px;
+      }
+    }
+  }
+
+  &__current {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+
+    @include on-tablet {
+      grid-template-rows: none;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+
+    &--block {
+      @include on-tablet {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 100%;
+      }
+
+      &:last-of-type {
+        margin-top: 60px;
+        margin-bottom: 30px;
+
+        @include on-tablet {
+          margin-block: 0;
+        }
+      }
+
+      button {
+        width: 100%;
+
+        @include on-desktop {
+          width: 50%;
+        }
+      }
+    }
+
+    &--image {
+      width: 100%;
+      object-fit: cover;
+      transition: transform $transition-time;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &--text {
+      padding-top: 20px;
+      padding-bottom: 30px;
+
+      h4 {
+        margin-top: 10px;
+      }
+
+      p:last-child {
+        margin-top: 20px;
+      }
+
+      &__date {
+        color: $color-main;
+      }
+    }
+
+    > button:last-of-type {
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__events {
+    display: flex;
+    flex-direction: column;
+
+    &--block {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &:last-of-type {
+        margin-top: 60px;
+        margin-bottom: 30px;
+
+        @include on-tablet {
+          margin-bottom: 0;
+        }
+      }
+
+      @include on-tablet {
+        flex-direction: row;
+        gap: 30px;
+      }
+
+      @include on-desktop {
+        width: 75%;
+      }
+    }
+
+    &--image {
+      height: auto;
+      width: 100%;
+      object-fit: contain;
+      transition: transform $transition-time;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include on-tablet {
+        width: 330px;
+      }
+
+      @include on-desktop {
+        width: 370px;
+      }
+    }
+
+    &--text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      h4 {
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+
+      &__date {
+        color: $color-main;
+      }
+
+      button {
+        margin-top: 30px;
+        width: 100%;
+
+        @include on-desktop {
+          margin-top: 50px;
+        }
+
+        @include on-desktop {
+          width: 50%;
+        }
+      }
+    }
+
+    > button:last-of-type {
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__plan {
+    display: flex;
+    align-items: center;
+    background-color: $color-background;
+    padding-block: 50px;
+    color: $color-white;
+    margin-inline: -20px;
+
+    @include on-tablet {
+      padding-block: 80px;
+      margin-inline: -39px;
+    }
+
+    @include on-desktop {
+      padding-block: 0;
+      margin-inline: -55px;
+    }
+
+    &--image {
+      display: none;
+      transition: transform $transition-time;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include on-desktop {
+        display: block;
+        height: 800px;
+        object-fit: cover;
+        margin-left: -55px;
+      }
+    }
+
+    &--text {
+      @include inline-padding;
+
+      width: 100%;
+
+      @include on-tablet {
+        width: 50%;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+
+        @include on-desktop {
+          margin-bottom: 10px;
+        }
+      }
+
+      button {
+        width: 100%;
+        margin-top: 40px;
+
+        @include on-tablet {
+          width: 80%;
+          margin-top: 60px;
+        }
+
+        @include on-desktop {
+          width: 50%;
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+
+  &__news {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+
+    @include on-tablet {
+      grid-template-rows: none;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+
+    &--block {
+      @include on-tablet {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 100%;
+      }
+
+      &:last-of-type {
+        margin-top: 50px;
+        margin-bottom: 30px;
+
+        @include on-tablet {
+          margin-block: 0;
+        }
+      }
+    }
+
+    &--image {
+      width: 100%;
+      object-fit: cover;
+      transition: transform $transition-time;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &--text {
+      padding-top: 20px;
+
+      // padding-bottom: 30px;
+
+      p:last-child {
+        margin-top: 20px;
+      }
+    }
+
+    > button:last-of-type {
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__subscribe {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      width: 80%;
+    }
+
+    @include on-desktop {
+      width: 100%;
+    }
+
+    &--text {
+      display: grid;
+      grid-template-rows: repeat(2, auto);
+      gap: 20px;
+
+      @include on-desktop {
+        grid-template-rows: none;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+    }
+
+    input {
+      width: 100%;
+      margin-top: 50px;
+
+      @include on-tablet {
+        width: 75%;
+      }
+
+      @include on-desktop {
+        width: 40%;
+      }
+    }
+
+    button {
+      width: 100%;
+      margin-top: 30px;
+
+      @include on-tablet {
+        width: 70%;
+      }
+
+      @include on-desktop {
+        margin-top: 40px;
+        width: 40%;
+      }
+    }
+  }
+}

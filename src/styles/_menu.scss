@@ -1,0 +1,91 @@
+.menu {
+  @include inline-padding;
+
+  box-sizing: border-box;
+  overflow: auto;
+  padding-inline: 20px;
+
+  background-color: $color-background;
+  height: 100vh;
+  color: $color-white;
+
+  @include on-desktop {
+    height: auto;
+  }
+
+  &__top {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  &__language {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include on-desktop {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &--options {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-block: 10px;
+    }
+
+    &--contacts{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include on-tablet {
+        flex-direction: row;
+        gap: 120px;
+      }
+
+      @include on-desktop {
+        gap: 80px;
+      }
+    }
+
+    &--image {
+      object-fit: contain;
+      display: none;
+      margin-top: 20px;
+
+      @include on-tablet {
+        width: 58%;
+        display: flex;
+        align-self: center;
+      }
+
+      @include on-desktop {
+        margin-right: -55px;
+        width: 50%;
+      }
+    }
+
+    hr {
+      width: 100%;
+      color: $color-white;
+    }
+
+    button {
+      width: 100%;
+
+      @include on-tablet {
+        width: 50%;
+      }
+    }
+  }
+}

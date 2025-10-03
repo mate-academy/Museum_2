@@ -1,0 +1,98 @@
+.header {
+  @include inline-padding;
+
+  background-color: $color-background;
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 40px;
+
+    @include on-tablet {
+      margin-top: 100px;
+      gap: 70px;
+    }
+
+    @include on-desktop {
+      margin-top: 0;
+      gap: 80px;
+      flex-direction: row;
+    }
+
+    &--text {
+      height: max-content;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      color: $color-white;
+
+      @include on-desktop {
+        height: 100%;
+      }
+
+      p:first-of-type {
+        padding-bottom: 10px;
+      }
+
+      p:last-of-type {
+        padding-top: 30px;
+
+        @include on-tablet {
+          padding-top: 20px;
+        }
+
+        @include on-desktop {
+          padding-top: 30px;
+        }
+      }
+
+      button {
+        margin-top: 40px;
+        width: 100%;
+
+        @include on-tablet {
+          margin-top: 50px;
+          width: 50%;
+        }
+
+        @include on-desktop {
+          margin-top: 80px;
+        }
+      }
+    }
+
+    &--date {
+      position: absolute;
+      bottom: 50px;
+      width: 50%;
+      display: none;
+      color: $color-white;
+
+      @include on-desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      hr {
+        width: 80%;
+      }
+    }
+  }
+
+  &__image {
+    align-self: center;
+    width: 80%;
+
+    @include on-tablet {
+      width: 58%;
+    }
+
+    @include on-desktop {
+      width: 50%;
+      margin-right: -55px;
+    }
+  }
+}

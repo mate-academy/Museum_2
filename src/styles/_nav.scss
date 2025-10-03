@@ -1,0 +1,42 @@
+.nav{
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    color: $color-white;
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      height: 1px;
+      display: block;
+      background-color: currentColor;
+      transform-origin: left;
+      transform: scale(0);
+      transition: transform $transition-time;
+    }
+
+    &:hover::after{
+      transform: scale(1);
+    }
+  }
+}

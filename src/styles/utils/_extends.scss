@@ -1,4 +1,180 @@
 %h1 {
-  font-family: Roboto, sans-serif;
+  margin: 0;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  @include on-tablet {
+    font-size: 72px;
+  }
+
+  @include on-desktop {
+    font-size: 96px;
+  }
+}
+
+%h2 {
+  margin: 0;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0;
+
+  @include on-tablet {
+    font-size: 62px;
+  }
+
+  @include on-desktop {
+    font-size: 80px;
+  }
+}
+
+%h3 {
+  margin: 0;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  @include on-tablet {
+    font-size: 40px;
+  }
+
+  @include on-desktop {
+    font-size: 58px;
+  }
+}
+
+%h4 {
+  margin: 0;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 0;
+
+  @include on-tablet {
+    font-size: 24px;
+  }
+}
+
+%h5 {
+  margin: 0;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+%h6 {
+  margin: 0;
+  font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 125%;
+  letter-spacing: 0;
+}
+
+%button-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+%main-text {
+  margin: 0;
   font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+%additional-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0;
+}
+
+%button-primary {
+  background-color: $color-main;
+  color: $color-white;
+
+  transition: background-color $transition-time;
+
+  &:hover {
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    background-color: #dd836f;
+  }
+}
+
+%button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1px solid $color-main;
+  background: none;
+  color: $color-main;
+
+  transition: all $transition-time;
+
+  &:hover {
+    border-color: #af3419;
+    color: #af3419;
+  }
+
+  &:active {
+    border-color: #ea340d;
+    color: #ea340d;
+  }
+
+  &:disabled {
+    border-color: #dd836f;
+    color: #dd836f;
+  }
+}
+
+%input {
+  margin: 0;
+  padding: 0;
+  padding-block: 3px;
+  border: none;
+  border-bottom: 1px solid $color-black;
+  outline: none;
+
+  transition: all $transition-time;
+
+  &:hover,
+  &:active {
+    border-color: $color-main;
+
+    &::placeholder {
+      color: $color-main;
+    }
+  }
+
+  &:not(:placeholder-shown) {
+    font-weight: bold;
+  }
+
+  &::placeholder {
+    color: $color-black;
+    transition: all $transition-time;
+  }
 }
