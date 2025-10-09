@@ -1,0 +1,55 @@
+.footer {
+  background-color: $color-background-contrast;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    padding-top: 34px;
+    padding-bottom: 30px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      row-gap: 0;
+      padding-top: 50px;
+    }
+  }
+
+  &__copyright {
+    @include font-raleway-regular;
+
+    @include on-tablet {
+      grid-column: 1/7;
+    }
+
+    @include on-desktop {
+      grid-column: 1/13;
+      padding-top: 70px;
+    }
+
+    display: flex;
+    gap: 22px;
+
+    padding-top: 10px;
+
+    font-size: 14px;
+    line-height: 140%;
+    color: $color-text-contrast;
+
+    &-link {
+      font-size: 14px;
+      line-height: 140%;
+      color: $color-text-contrast;
+      text-decoration: none;
+
+      transition: all $time-transform;
+
+      &:hover {
+        transform: scale(1.05);
+        color: $color-button-active;
+      }
+    }
+  }
+}
