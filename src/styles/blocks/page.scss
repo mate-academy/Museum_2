@@ -1,0 +1,72 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__scroll-up {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+
+    display: flex;
+
+    width: 30px;
+    height: 30px;
+
+    text-decoration: none;
+
+    opacity: 0.8;
+    background-image: url(../images/icons/scroll-up.svg);
+    mix-blend-mode: exclusion;
+
+    @include on-tablet {
+      right: 30px;
+    }
+
+    @include on-desktop {
+      right: 55px;
+    }
+  }
+
+  &__body {
+    min-width: $phone-min-width;
+    margin: 0;
+    background-color: $color-background-base;
+  }
+
+  &__menu {
+    pointer-events: none;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+
+    transition: all $time-transform;
+
+    @include on-tablet {
+      transition: all $time-transform-medium;
+    }
+
+    @include on-tablet {
+      transition: all $time-transform-slow;
+    }
+
+    &:target {
+      pointer-events: all;
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  @include content-padding-inline;
+}
