@@ -1,0 +1,88 @@
+.subscribe {
+  @include page-grid;
+
+  &__content {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column: span 12;
+      margin-top: 90px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    letter-spacing: 0%;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      grid-column: span 5;
+      font-size: 48px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    margin-bottom: 50px;
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      align-items: center;
+    }
+  }
+
+  &__form {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: column;
+      grid-column: span 5;
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+
+    @include on-tablet {
+      display: grid;
+      gap: 30px;
+      grid-column: span 3;
+      max-width: 330px;
+    }
+
+    @include on-desktop {
+      @include page-grid;
+
+      grid-column: span 4;
+      max-width: 280px;
+    }
+  }
+}
