@@ -1,0 +1,130 @@
+.header {
+  position: relative;
+  background-color: $background-color;
+  overflow: hidden;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include on-desktop {
+      position: relative;
+      height: auto;
+    }
+  }
+
+  &__block {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    color: $main-white-color;
+
+    @include on-tablet {
+      margin-top: 100px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 90px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__date {
+    margin: 0;
+
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0%;
+  }
+
+  &__title {
+    margin: 0;
+    margin-top: 10px;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    @include on-tablet {
+      font-size: 72px;
+    }
+
+    @include on-desktop {
+      font-size: 96px;
+      width: 570px;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    margin-top: 30px;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+
+    @include on-tablet {
+      margin-top: 20px;
+    }
+
+    @include on-desktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    @include page-grid;
+
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      margin: 0;
+    }
+  }
+
+  &__background {
+    display: flex;
+    margin-bottom: 0;
+    justify-content: center;
+
+    @include on-desktop {
+      position: absolute;
+      right: 0;
+      top: 137px;
+      bottom: 0;
+    }
+
+    &--img {
+      width: 245px;
+      height: 273px;
+
+      background-image: url(../images/header_bg.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include on-tablet {
+        width: 443px;
+        height: 494px;
+      }
+
+      @include on-desktop {
+        width: 625px;
+        height: 663px;
+
+        background-size: contain;
+        background-position: right top;
+      }
+    }
+  }
+}

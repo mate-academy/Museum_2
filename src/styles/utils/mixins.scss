@@ -1,0 +1,87 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline {
+  width: 100%;
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: $tablet-content-padding;
+  }
+
+  @include on-desktop {
+    padding-inline: $desktop-content-padding;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+@mixin hover($property, $to-value) {
+  transition: #{$property} $effect-duration ease-in-out;
+  &:hover {
+    #{$property}: $to-value;
+  }
+}
+
+@mixin hover-text {
+  &:hover {
+    color: $color-hover;
+    border-bottom: 1px solid $color-hover;
+  }
+}
+
+@mixin button-is-full {
+  &:hover {
+    background-color: $color-hover;
+  }
+
+  &:active {
+    background-color: $color-pressed;
+  }
+
+  &:disabled {
+    background-color: $color-disabled;
+  }
+}
+
+@mixin button-border {
+  &:hover {
+    color: $color-hover;
+    border-color: $color-hover;
+  }
+
+  &:active {
+    color: $color-pressed;
+    border-color: $color-pressed;
+  }
+
+  &:disabled {
+    color: $color-disabled;
+    border-color: $color-disabled;
+  }
+}

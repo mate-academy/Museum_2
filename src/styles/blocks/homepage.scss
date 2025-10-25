@@ -1,0 +1,66 @@
+.homepage {
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+
+    color: $main-white-color;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 5px;
+
+    @include on-tablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link {
+    color: $main-white-color;
+
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $main-white-color;
+
+      transition: transform $effect-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+      outline: none;
+    }
+  }
+}
