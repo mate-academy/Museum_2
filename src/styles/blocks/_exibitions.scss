@@ -1,0 +1,232 @@
+.exibitions {
+  margin-top: 90px;
+
+  @include tablet {
+    margin-top: 100px;
+  }
+
+  @include desktop {
+    margin-top: 110px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__list {
+    grid-column: 1 / -1;
+
+    @include tablet {
+      display: contents;
+    }
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 125%;
+    color: var(--color-black);
+
+    grid-column: 1 / -1;
+
+    @include tablet {
+      font-size: 40px;
+      grid-column: 1 / 5;
+    }
+
+    @include desktop {
+      font-size: 48px;
+      line-height: 120%;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__exibition {
+    margin-top: 60px;
+
+    img {
+      width: 280px;
+      height: 356px;
+      object-fit: cover;
+      margin-bottom: 20px;
+      transition: transform var(--transition-duration) ease-in-out;
+
+      @include tablet {
+        width: 330px;
+        height: 420px;
+        margin-bottom: 30px;
+      }
+
+      @include desktop {
+        width: 570px;
+        height: 484px;
+        margin-bottom: 20px;
+      }
+
+      @include hover {
+        transform: translateY(-20px);
+      }
+    }
+
+    @include tablet {
+      margin-top: 75px;
+      &:first-child {
+        grid-column: 1 / 4;
+      }
+
+      &:last-child {
+        grid-column: 4 / -1;
+      }
+    }
+
+    @include desktop {
+      margin-top: 70px;
+
+      &:first-child {
+        grid-column: 1 / 7;
+      }
+
+      &:last-child {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__exibition-date {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-main);
+    margin-bottom: 10px;
+  }
+
+  &__exibition-title {
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 125%;
+    color: var(--color-black);
+    margin-bottom: 20px;
+
+    @include tablet {
+      font-size: 24px;
+      height: 60px;
+    }
+  }
+
+  &__exibition-description {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-gray);
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__exibition-buy {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--color-white);
+
+    background-color: var(--color-main);
+    width: 100%;
+    height: 60px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    transition: background-color var(--transition-duration);
+
+    &:disabled {
+      background-color: var(--button-primary-disabled);
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled) {
+      @include hover {
+        background-color: var(--button-primary-hover);
+      }
+    }
+
+    &:not(:disabled):active {
+      background-color: var(--button-primary-pressed);
+    }
+
+    @include desktop {
+      width: 270px;
+    }
+  }
+
+  &__archive {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--color-main);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    grid-column: 1 / -1;
+    height: 60px;
+    margin-top: 30px;
+    padding: 0;
+    border: 1px solid var(--color-main);
+    background-color: transparent;
+    cursor: pointer;
+
+    transition: var(--transition-duration);
+
+    &:disabled {
+      background-color: var(--button-primary-disabled);
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled) {
+      @include hover {
+        background-color: var(--button-primary-hover);
+        color: var(--color-white);
+      }
+    }
+
+    &:not(:disabled):active {
+      background-color: var(--button-primary-pressed);
+    }
+
+    @include tablet {
+      grid-row: 1;
+      grid-column: 5 / -1;
+      margin-top: 0;
+    }
+
+    @include desktop {
+      grid-column: 10 / 13;
+    }
+  }
+}
