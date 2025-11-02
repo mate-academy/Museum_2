@@ -1,0 +1,352 @@
+.nav-menu {
+  position: relative;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: var(--color-bg);
+
+  @include desktop {
+    overflow: hidden;
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+  }
+
+  &--open {
+    opacity: 1;
+    transform: translateY(0);
+
+    &::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &--closing {
+    opacity: 0;
+
+    &::backdrop {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &:modal {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 80px;
+
+    @include tablet {
+      height: 77px;
+    }
+
+    @include desktop {
+      height: 90px;
+    }
+  }
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      filter: brightness(0) invert(1);
+      transition: transform var(--transition-duration) ease;
+      width: 124px;
+      height: 40px;
+    }
+
+    @include hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    @include tablet {
+      gap: 40px;
+      flex-direction: row-reverse;
+    }
+  }
+  &__dropdown-wrapper {
+    position: relative;
+
+    img {
+      filter: brightness(0) invert(1);
+      transition: transform var(--transition-duration) ease;
+
+      position: absolute;
+      top: 6px;
+      right: 3px;
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+  &__dropdown {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--color-white);
+    font-family: var(--font-family);
+    padding-right: 1rem;
+    cursor: pointer;
+  }
+  &__dropdown-option {
+    background-color: var(--color-bg);
+  }
+  &__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+
+    @include hover {
+      scale: 1.1;
+      transition-duration: var(--transition-duration);
+    }
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+
+    @include desktop {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    padding-top: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(6, 1fr);
+      padding-top: 30px;
+      gap: 50px 30px;
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(12, 1fr);
+      padding-top: 40px;
+      row-gap: 65px;
+    }
+  }
+
+  &__body-schedule {
+    grid-column: 1 / -1;
+    font-family: var(--font-family);
+    color: var(--color-white);
+    margin-bottom: 20px;
+
+    &-today {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+    }
+    &-time {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+      grid-column: 1 / 3;
+    }
+  }
+  &__body-address {
+    grid-column: 1 / -1;
+    font-family: var(--font-family);
+    color: var(--color-white);
+    margin-bottom: 40px;
+
+    &-title {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+    }
+    &-addr {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+      grid-column: 3 / -1;
+    }
+  }
+
+  &__body-nav {
+    grid-column: 1 / -1;
+  }
+
+  &__body-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-family: var(--second-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: var(--color-white);
+
+    @include tablet {
+      gap: 30px;
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    @include desktop {
+      gap: 60px;
+    }
+  }
+
+  &__body-nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 30px;
+
+    @include hover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      translate: 0%;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      transition-duration: inherit;
+    }
+
+    @include tablet {
+      height: 58px;
+    }
+  }
+
+  &__devider {
+    background-color: var(--color-white);
+    height: 1px;
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    opacity: 0.3;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__buyticket {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--color-white);
+
+    background-color: var(--color-main);
+    height: 60px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    grid-column: 1 / -1;
+
+    transition: background-color var(--transition-duration);
+
+    &:not(:disabled) {
+      @include hover {
+        background-color: var(--button-primary-hover);
+      }
+    }
+
+    &:disabled {
+      background-color: var(--button-primary-disabled);
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):active {
+      background-color: var(--button-primary-pressed);
+    }
+
+    @include tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include desktop {
+      width: 270px;
+      margin-bottom: 135px;
+    }
+  }
+
+  &__body-image {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      grid-column: 2 / 6;
+    }
+
+    @include desktop {
+      grid-column: 7/13;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    img {
+      width: 422px;
+      height: 466px;
+      object-fit: cover;
+
+      @include desktop {
+        width: 624px;
+        height: 697px;
+      }
+    }
+  }
+}

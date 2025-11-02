@@ -1,0 +1,98 @@
+.header {
+  background-color: var(--color-bg);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+
+    @include tablet {
+      height: 77px;
+    }
+
+    @include desktop {
+      height: 90px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      filter: brightness(0) invert(1);
+      transition: transform var(--transition-duration) ease;
+      width: 124px;
+      height: 40px;
+    }
+
+    @include hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  &__dropdown-wrapper {
+    position: relative;
+    display: none;
+
+    img {
+      filter: brightness(0) invert(1);
+      transition: transform var(--transition-duration) ease;
+
+      position: absolute;
+      top: 6px;
+      right: 3px;
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__dropdown {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--color-white);
+    font-family: var(--font-family);
+    padding-right: 1rem;
+    cursor: pointer;
+  }
+
+  &__dropdown-option {
+    background-color: var(--color-bg);
+  }
+
+  &__burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 25px;
+    height: 20px;
+
+    @include hover {
+      scale: 1.1;
+      transition-duration: var(--transition-duration);
+    }
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
