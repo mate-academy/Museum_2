@@ -66,9 +66,21 @@
     }
   }
 
-  &__input {
+  &__form {
     grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
 
+    @include tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__input {
     border: none;
     border-bottom: 1px solid var(--color-black);
     background-color: var(--color-white);
@@ -109,12 +121,7 @@
       color: var(--color-black);
     }
 
-    @include tablet {
-      grid-column: 1 / 5;
-    }
-
     @include desktop {
-      grid-column: 1 / 6;
       margin-bottom: 40px;
     }
   }
@@ -128,7 +135,6 @@
     color: var(--color-white);
 
     background-color: var(--color-main);
-    grid-column: 1 / -1;
     height: 60px;
     border: none;
     padding: 0;
@@ -151,13 +157,8 @@
       background-color: var(--button-primary-pressed);
     }
 
-    @include tablet {
-      grid-column: 1 / 4;
-    }
-
     @include desktop {
       width: 270px;
-      grid-row: 3;
     }
   }
 }
