@@ -1,0 +1,43 @@
+.top-bar {
+  display: flex;
+  box-sizing: border-box;
+  padding-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+
+  @include on-tablet {
+    height: 77px;
+  }
+
+  @include on-desktop {
+    height: 90px;
+  }
+
+  &__logo {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__icons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    @include on-tablet {
+      gap: 40px;
+    }
+  }
+
+  &__language {
+    order: 0;
+
+    &--mobile-hidden {
+      display: none;
+    }
+
+    @include on-tablet {
+      display: block;
+      order: 1;
+    }
+  }
+}

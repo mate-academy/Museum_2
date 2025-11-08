@@ -1,0 +1,70 @@
+.menu {
+  overflow: auto;
+  z-index: 10;
+  background-color: #3f5252;
+  color: $white-color;
+
+  @include on-tablet {
+    background-image: url(../images/menu_img.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 422px 466px;
+  }
+
+  @include on-desktop {
+    background-position: bottom right;
+    background-size: 624px 697px;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    height: 100vh;
+    min-height: 747px;
+    display: flex;
+    flex-direction: column;
+
+    @include content-padding-inline;
+
+  }
+
+  &__bottom {
+    padding-top: 10px;
+
+    @include on-desktop {
+      padding-top: 30px;
+      width: 570px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 464px;
+    }
+
+    @include on-desktop {
+      width: 424px;
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+  }
+
+  &__info {
+    font-family: $text-page-font;
+    font-weight: 600;
+    size: 16px;
+    line-height: 150%;
+    letter-spacing: normal;
+
+    &--adress {
+      @include link-hover;
+    }
+  }
+}

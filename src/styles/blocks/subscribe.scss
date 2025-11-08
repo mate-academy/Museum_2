@@ -1,0 +1,99 @@
+.subscribe {
+  @include content-padding-inline;
+
+  box-sizing: border-box;
+
+  @include page-grid;
+
+  &__title {
+    grid-column: span 2;
+    text-align: left;
+    margin-bottom: 0;
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+  }
+
+  &__text {
+    padding-top: 20px;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 5;
+    }
+
+    @include on-desktop {
+      grid-column: 7/13;
+    }
+  }
+
+  &__form {
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 4;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+    }
+  }
+
+  &__email {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    height: 28px;
+    width: 100%;
+    border-bottom: 1px solid $black-text-color;
+    margin-block: 50px 30px;
+    font-weight: 700;
+
+    @include on-desktop {
+      margin-block: 50px 40px;
+    }
+
+    &::placeholder {
+      color: $black-text-color;
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main-color;
+
+      &::placeholder {
+        color: $main-color;
+      }
+    }
+
+    &:active {
+      color: $main-color;
+      border-bottom: 1px solid $main-color;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: $black-text-color;
+      -webkit-box-shadow: 0 0 0 1000px $white-color inset;
+      border-bottom: 1px solid $black-text-color;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    border: none;
+    grid-column: span 2;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: 1/5;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.footer {
+  padding-block: 34px 30px;
+  background-color: $background-color;
+  color: $white-color;
+
+  @include on-tablet {
+    padding-top: 50px;
+  }
+
+  &__content {
+    @include content-padding-inline;
+  }
+
+  &__sections {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-bottom: 60px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__section-title {
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: normal;
+    padding-bottom: 10px;
+
+    @include on-tablet {
+      font-size: 20px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__section-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__contacts {
+    @include on-tablet {
+      grid-column: 1/3;
+    }
+
+    @include on-desktop {
+      grid-column: 1/5;
+    }
+  }
+
+  &__adress {
+    @include link-hover;
+  }
+
+  &__tel {
+    @include link-hover;
+  }
+
+  &__email {
+    @include link-hover;
+  }
+
+  &__media-links {
+    display: flex;
+    padding-top: 30px;
+    gap: 20px;
+
+    @include on-tablet {
+      padding-top: 50px;
+    }
+  }
+
+  &__shedule {
+    @include on-tablet {
+      grid-column: 3/5;
+    }
+
+    @include on-desktop {
+      grid-column: 5/9;
+    }
+  }
+
+  &__nav {
+    @include on-tablet {
+      grid-column: 5/7;
+    }
+
+    @include on-desktop {
+      grid-column: 9/13;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    display: flex;
+    gap: 22px;
+
+    @include on-desktop {
+      gap: 102px;
+    }
+  }
+
+  &__privacy-terms {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $white-color;
+
+      transition: transform $transform-duration-time;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__top-anchor {
+    background-image: url(../images/icons/icon-scroll\ up.svg);
+    background-position: right bottom;
+  }
+}
