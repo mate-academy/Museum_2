@@ -4,3 +4,135 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet{
+  @media (max-width: 768px){
+    @content;
+  }
+}
+
+@mixin on-phone{
+  @media (max-width: 320){
+    @content;
+  }
+}
+
+@mixin on-grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0 30px;
+
+  @include on-tablet{
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include on-phone{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 20px;
+  }
+}
+
+@mixin content-margins{
+  margin: 0 55px;
+
+  @include on-tablet{
+    margin: 0 39px;
+  }
+
+  @include on-phone{
+    margin: 0 20px;
+  }
+}
+
+@mixin content-paddings{
+  padding: 0 55px;
+
+  @include on-tablet{
+    padding: 0 39px;
+  }
+
+  @include on-phone{
+    padding: 0 20px;
+  }
+}
+
+@mixin button-with-icon{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: $main;
+    background-color: $white;
+    border: 1px solid $main;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 8px;
+    transition-duration: .3s;
+
+    & .icon{
+      background-color: $main;
+    }
+
+    &:hover{
+      border-color: $button-hover;
+      color: $button-hover;
+
+      & .icon{
+        background-color: $button-hover;
+      }
+    }
+
+    &:active{
+      border-color: $button-pressed;
+      color: $button-pressed;
+
+      & .icon{
+        background-color: $button-pressed;
+      }
+    }
+
+    &:disabled{
+      border-color: $button-disabled;
+      color: $button-disabled;
+
+      & .icon{
+        background-color: $button-disabled;
+      }
+    }
+}
+
+@mixin button-regular{
+      color: $white;
+      height: 60px;
+      margin-top: 50px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $main;
+      background-color: $main;
+      text-decoration: none;
+      transition-duration: .3s;
+
+      &:hover{
+        border-color: $button-hover;
+        background-color: $white;
+        color: $button-hover;
+      }
+
+      &:active{
+        border-color: $button-pressed;
+        background-color: $white;
+        color: $button-pressed;
+      }
+
+      &:disabled{
+        border-color: $button-disabled;
+        background-color: $white;
+        color: $button-disabled;
+      }
+}
+
+

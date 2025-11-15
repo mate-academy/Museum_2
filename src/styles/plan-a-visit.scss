@@ -1,0 +1,52 @@
+.plan-a-visit{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin-top: 110px;
+  background-color: $background;
+  width: 100%;
+
+  &__wrapper{
+    max-width: 1280px;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+
+    @include content-paddings;
+    @include on-grid;
+  }
+
+  &__bg{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+  }
+
+  &__content{
+    align-self: center;
+    grid-column: 6 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  &__title{
+    color: $white;
+    grid-column: span 7;
+  }
+
+  &__text{
+    color: $white;
+    margin-top: 30px;
+    grid-column: span 5;
+  }
+
+  &__button{
+    grid-column: span 3;
+    margin-top: 50px;
+
+    @include button-regular;
+  }
+}

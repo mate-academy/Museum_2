@@ -1,0 +1,183 @@
+.header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: $background;
+  min-height: 100vh;
+  justify-content: space-between;
+
+
+  &__wrapper{
+    flex: 1;
+    max-width: 1280px;
+    position: relative;
+
+    @include on-grid;
+  }
+
+  &__top{
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 90px;
+
+    @include content-margins;
+  }
+
+  &__logo{
+    width: 124px;
+    height: 37px;
+    background-color: $white;
+    mask-image: url(../images/NAMU-logo.svg);
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+
+    &-item{
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: $white;
+      font-family: Raleway, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+
+  &__dropdown-ua{
+    color: $white;
+      font-family: Raleway, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      vertical-align: middle;
+    text-decoration: none;
+  }
+
+  &__dropdown-en{
+    text-decoration: none;
+    color: $white;
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 10px;
+    opacity: 0;
+    transition-duration: .3s;
+  }
+
+  &__dropdown{
+    position: relative;
+
+    &:hover &-en{
+      position: absolute;
+      opacity: 1;
+      bottom: -20px;
+    }
+  }
+
+  &__content{
+    @include content-margins;
+    @include on-grid;
+
+    grid-column: 1 / -1;
+    margin-top: 90px;
+  }
+
+  &__dates{
+    color: $white;
+    grid-column: span 6;
+
+    @include on-tablet{
+      margin-top: 100px;
+    }
+  }
+
+  &__title{
+    color: $white;
+    grid-column: span 6;
+    margin-top: 10px;
+  }
+
+  &__subtitle{
+    color: $white;
+    grid-column: span 6;
+    margin-top: 30px;
+  }
+
+  &__button{
+    grid-column: span 3;
+    margin-top: 81px;
+
+    @include button-regular;
+  }
+
+  &__blank{
+    grid-column: span 6;
+  }
+
+  &__img{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include on-tablet{
+      position: static;
+      margin-top: 70px;
+      grid-column: 2 / -2;
+
+      & img{
+        width: 100%;
+      }
+    }
+  }
+
+  &__line-wrapper{
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-top: 135px;
+    margin-bottom: 50px;
+
+    @include on-grid;
+
+    align-items: center;
+
+    @include on-tablet{
+      position: absolute;
+      opacity: 0;
+    }
+  }
+
+  &__date{
+    color: $white;
+    grid-column: span 1;
+  }
+
+  &__line {
+    grid-column: span 5;
+    height: 1px;
+    width: 100%;
+    background-color: $white;
+  }
+}

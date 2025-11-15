@@ -1,0 +1,230 @@
+.menu{
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  opacity: 0;
+  right: 0;
+  left: 0;
+  transition-duration: 0.3s;
+  pointer-events: none;
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+
+  &:target{
+    left: 0;
+    right: 0;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__wrapper{
+    flex: 1;
+    width: 100%;
+    max-width: 1280px;
+    box-sizing: border-box;
+
+    @include content-paddings;
+    @include on-grid;
+
+    grid-template-rows: auto 1fr;
+  }
+
+
+  &__top{
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 90px;
+  }
+
+  &__logo{
+    width: 124px;
+    height: 37px;
+    background-color: $white;
+    mask-image: url(../images/NAMU-logo.svg);
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 40px;
+
+    &-item{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: $white;
+      font-family: Raleway, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+
+  &__dropdown-en{
+    text-decoration: none;
+    font-family: Raleway, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 10px;
+    opacity: 0;
+    transition-duration: .3s;
+    color: $white;
+  }
+
+  &__dropdown{
+    position: relative;
+
+    &:hover &-en{
+      position: absolute;
+      opacity: 1;
+      bottom: -20px;
+    }
+  }
+
+  &__dropdown-ua{
+    color: $white;
+      font-family: Raleway, sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      vertical-align: middle;
+    text-decoration: none;
+  }
+
+  &__content{
+    position: relative;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  &__dates{
+    color: $white;
+    margin-top: 23px;
+    grid-column: span 2;
+
+    &-text{
+      color: $white;
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      font-style: SemiBold;
+      font-size: 16px;
+      line-height: 150%;
+      vertical-align: middle;
+      text-decoration: none;
+
+      &-link{
+        font-family: Raleway, sans-serif;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 16px;
+        line-height: 150%;
+        vertical-align: middle;
+        text-decoration: none;
+        display: flex;
+        width: fit-content;
+        color: $white;
+        position: relative;
+
+        &::before{
+          position: absolute;
+          content: "";
+          height: 1px;
+          background-color: $white;
+          bottom: 0;
+          width: 0;
+          transition-duration: 0.3s;
+        }
+
+        &:hover::before{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__adress{
+    color: $white;
+    margin-top: 23px;
+    grid-column: span 3;
+  }
+
+  &__blank{
+    grid-column: span 6;
+  }
+
+  &__nav{
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 70px;
+    gap: 60px;
+
+    &-link{
+      display: flex;
+      width: fit-content;
+      color: $white;
+      text-decoration: none;
+      position: relative;
+
+      &::before{
+        position: absolute;
+        content: "";
+        height: 1px;
+        background-color: $white;
+        bottom: 0;
+        width: 0;
+        transition-duration: 0.3s;
+      }
+
+      &:hover::before{
+        width: 100%;
+      }
+    }
+  }
+
+  &__line{
+    margin-top: 60px;
+    height: 1px;
+    width: 100%;
+    background-color: $white;
+    grid-column: span 6;
+  }
+
+  &__button{
+    margin-top: 60px;
+    grid-column: span 3;
+
+    @include button-regular;
+  }
+
+  &__img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

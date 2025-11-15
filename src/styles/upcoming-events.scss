@@ -1,0 +1,81 @@
+.upcoming-events{
+  margin-top: 200px;
+  grid-column: 1 /-1;
+
+  @include on-grid;
+
+  &__top{
+    grid-column: 1 / -1;
+
+    @include on-grid;
+  }
+
+  &__title{
+    color: $black;
+    grid-column: span 6;
+  }
+
+  &__button{
+    grid-column: 10 / -1;
+
+    @include button-with-icon;
+  }
+
+  &__card{
+    grid-column: 1 / -1;
+    margin-top: 60px;
+
+    @include on-grid;
+
+    grid-template-rows: repeat(4, auto);
+
+    &:first-child{
+      margin-top: 70px;
+    }
+
+    &-img{
+      width: 100%;
+      transition-duration: .3s;
+
+      &:hover{
+        scale: 1.1;
+      }
+
+      &-wrapper {
+        grid-column: span 4;
+        grid-row: span 4;
+        overflow: hidden;
+      }
+    }
+
+    &-content{
+      display: grid;
+      grid-column: span 6;
+      grid-template-columns: subgrid;
+    }
+
+    &-date {
+      grid-column: span 6;
+      color: $main;
+    }
+
+    &-title{
+      grid-column: span 6;
+      margin-top: 10px;
+      color: $black;
+    }
+
+    &-text{
+      color: $grey;
+      grid-column: span 6;
+      margin-top: 20px;
+    }
+
+    &-button{
+      grid-column: span 3;
+      margin-top: 50px;
+
+      @include button-regular;
+    }
+  }
+}

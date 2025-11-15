@@ -1,0 +1,55 @@
+.subscribe{
+  margin-top: 200px;
+  grid-column: 1 / -1;
+
+  @include on-grid;
+
+  &__title {
+    grid-column: span 6;
+    color: $black;
+  }
+
+  &__text{
+    grid-column: span 6;
+    color: $black;
+  }
+
+  &__form {
+    display: grid;
+    grid-column: span 5;
+    grid-template-columns: subgrid;
+    margin-top: 50px;
+  }
+
+  &__input{
+    grid-column: span 5;
+    width: 100%;
+    border: 0;
+    background-color: $white;
+    border-bottom: 1px solid $black;
+    color: $black;
+    transition-duration: .3s;
+
+    &:hover{
+      color: $main;
+      border-color: $main;
+    }
+
+    &:focus{
+      color: $button-pressed;
+      border-color: $button-pressed;
+    }
+
+    &:disabled{
+      color: $button-disabled;
+      border-color: $button-disabled;
+    }
+  }
+
+  &__button{
+    grid-column: span 3;
+    margin-top: 40px;
+
+    @include button-regular;
+  }
+}
