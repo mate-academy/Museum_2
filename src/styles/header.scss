@@ -1,0 +1,114 @@
+.header {
+  color: $white-color;
+  background-color: $background-color;
+
+  @include on-desktop {
+    position: relative;
+
+    &::before {
+      content: '10.08 - 10.10';
+
+      position: absolute;
+      bottom: 50px;
+      left: 55px;
+
+      font-family: PlayfairDisplay, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 125%;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 56px;
+      left: 156px;
+
+      display: block;
+
+      width: 469px;
+      height: 1px;
+
+      opacity: 30%;
+      background-color: $white-color;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+
+  &__data {
+    margin-top: 50px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-top: 99px;
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      margin-top: 90px;
+      margin-bottom: 203px;
+    }
+
+    &-title {
+      margin: 0;
+      margin-top: 10px;
+
+      @include on-tablet {
+        max-width: 570px;
+      }
+    }
+
+    &-main {
+      display: block;
+      max-width: 267px;
+      margin-top: 30px;
+
+      @include on-tablet {
+        max-width: 330px;
+        margin-top: 20px;
+      }
+
+      @include on-desktop {
+        max-width: none;
+        margin-top: 30px;
+      }
+    }
+
+    &-button__link {
+      margin-top: 40px;
+
+      @include on-tablet {
+        margin-top: 50px;
+      }
+
+      @include on-desktop {
+        margin-top: 81px;
+      }
+    }
+  }
+
+  &__background {
+    align-self: center;
+    width: 245px;
+
+    @include on-tablet {
+      width: 433px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 625px;
+    }
+  }
+}
