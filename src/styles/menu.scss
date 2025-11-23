@@ -1,0 +1,132 @@
+.menu {
+  overflow: auto;
+
+  box-sizing: border-box;
+  height: 100vh;
+  padding-bottom: 238px;
+
+  color: $white-color;
+
+  background-color: $background-color;
+
+  @include on-tablet {
+    padding-bottom: 0;
+  }
+
+  @include on-desktop {
+    padding-bottom: 108px;
+  }
+
+  &__wrapper {
+    padding-top: 10px;
+
+    @include on-tablet {
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 13px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 123px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      gap: 83px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__schedule {
+    display: flex;
+    flex-direction: column;
+
+    &-time {
+      font-weight: 600;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+
+    &-info {
+      font-weight: 600;
+    }
+  }
+
+  &__nav {
+    position: relative;
+    margin-bottom: 81px;
+
+    @include on-tablet {
+      margin-bottom: 101px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 121px;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -40px;
+
+      display: block;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $white-color;
+
+      @include on-tablet {
+        bottom: -50px;
+      }
+
+      @include on-desktop {
+        bottom: -60px;
+        width: 570px;
+      }
+    }
+  }
+
+  &-button__link {
+    display: flex;
+    text-decoration: none;
+  }
+
+  &__background {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+
+      width: 422px;
+      height: 466px;
+      margin-top: 30px;
+      padding-inline: 134px;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      right: -0;
+      bottom: 0;
+
+      width: 624px;
+      height: 697px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

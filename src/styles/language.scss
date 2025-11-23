@@ -1,0 +1,59 @@
+.language {
+  display: none;
+
+  font-family: Raleway, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 150%;
+
+  @include on-tablet {
+    display: block;
+  }
+
+  &--menu {
+    display: block;
+  }
+
+  &__select {
+    cursor: pointer;
+    position: relative;
+    width: 35px;
+    height: 24px;
+  }
+
+  &__selected {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  }
+
+  &__arrow {
+    width: 10px;
+    height: 7px;
+    transition: transform $animation-speed;
+  }
+
+  &__options {
+    pointer-events: none;
+
+    position: absolute;
+    transform: translateY(-5px) scale(0.95);
+
+    opacity: 0;
+
+    transition:
+      opacity 0.2s,
+      transform 0.2s;
+  }
+  &__opened {
+    .language__options {
+      pointer-events: auto;
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    .language__arrow {
+      transform: rotate(180deg);
+    }
+  }
+}
