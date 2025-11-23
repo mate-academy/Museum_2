@@ -3,7 +3,5 @@ module.exports = {
   plugins: [
     "stylelint-scss"
   ],
-  rules: {
-    "scss/no-global-function-names": null
-  }
+  rules: {}
 };
