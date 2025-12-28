@@ -1,0 +1,62 @@
+.menu__nav {
+  margin-bottom: 40px;
+
+  @include on-tablet {
+    margin-bottom: 50px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 60px;
+  }
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 20px;
+
+  @include on-tablet {
+    gap: 30px;
+  }
+
+  @include on-desktop {
+    gap: 55px;
+  }
+}
+
+.menu__link {
+  position: relative;
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: $main-color-white;
+  text-decoration: none;
+  margin: 0;
+
+  @include on-tablet {
+    font-size: 48px;
+    line-height: 120%;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: $main-color-white;
+
+    transition: transform 0.3s;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}

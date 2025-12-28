@@ -1,0 +1,97 @@
+.plan-a-visit {
+  box-sizing: border-box;
+  height: 416px;
+  min-width: 320px;
+  background-color: #3f5252;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include on-tablet {
+    height: 515px;
+    min-width: 768px;
+  }
+
+  @include on-desktop {
+    min-width: 1280px;
+    height: 800px;
+  }
+
+  &__image {
+    display: none;
+
+    @include on-desktop {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      margin-left: 0;
+      justify-content: flex-start;
+    }
+
+    &-picture {
+      position: absolute;
+
+      @include on-desktop {
+        height: 800px;
+        width: 578px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 50px 20px;
+
+    @include on-tablet {
+      margin: 80px 280px 80px 38px;
+    }
+
+    @include on-desktop {
+      margin: 205px 55px 395px 555px;
+    }
+  }
+
+  &__section-title-white {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 38px;
+    line-height: 100%;
+    color: $main-color-white;
+    margin: 0;
+
+    @include on-tablet {
+      font-size: 62px;
+    }
+
+    @include on-desktop {
+      font-size: 80px;
+    }
+  }
+
+  &__main-text-white {
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $main-color-white;
+    margin: 20px 0 40px;
+    max-width: 280px;
+
+    @include on-tablet {
+      margin: 25px 0 55px;
+      max-width: 450px;
+    }
+
+    @include on-desktop {
+      margin: 25px 0 45px;
+      max-width: 470px;
+    }
+  }
+}
