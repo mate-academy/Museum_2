@@ -1,0 +1,188 @@
+.menu-top {
+  position: relative;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100dvh;
+
+  visibility: hidden;
+  opacity: 0;
+  background-color: $c-bg-acent;
+
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+
+  &__is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__container {
+    @include make-container;
+
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: min-content min-content min-content;
+
+      @include grid-gap;
+    }
+  }
+
+  &__contacts {
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__desription-list {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+    padding-top: 70px;
+
+    color: $c-bg-main;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 120px;
+      padding-top: 80px;
+    }
+  }
+
+  &__desription-list-item {
+    @extend %p-additional;
+
+    margin-top: 20px;
+  }
+
+  &__desription-list-value {
+    @extend %h-btn;
+
+    margin: 0;
+  }
+
+  &__desription-list-link {
+    font-style: normal;
+    color: $c-bg-main;
+    text-decoration: none;
+  }
+
+  &__nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__unordered-list {
+    margin: 0;
+    padding: 0;
+    color: $c-bg-main;
+    list-style: none;
+  }
+
+  &__link {
+    color: $c-bg-main;
+    text-decoration: dashed;
+  }
+
+  &__title {
+    transform-origin: 30px;
+    margin: 0;
+
+    @include hover(scale, 1.05);
+  }
+
+  &__unordered-list-item {
+    margin: 0;
+    margin-top: 20px;
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__nav-deco {
+    content: '';
+
+    position: absolute;
+    bottom: 100px;
+
+    display: block;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: $c-bg-main;
+
+    @include on-tablet {
+      bottom: 110px;
+    }
+
+    @include on-desktop {
+      bottom: 120px;
+      opacity: 0.3;
+    }
+  }
+
+  &__btn-red {
+    align-self: center;
+    margin-top: 80px;
+
+    @include on-tablet {
+      align-self: flex-start;
+      margin-top: 100px;
+    }
+
+    @include on-desktop {
+      margin-top: 120px;
+    }
+  }
+
+  &__bg-container {
+    display: none;
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-top: 30px;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      max-width: 625px;
+    }
+  }
+
+  &__bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}

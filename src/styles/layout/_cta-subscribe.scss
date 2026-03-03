@@ -1,0 +1,130 @@
+.cta-subscribe {
+  width: 100%;
+
+  &__container {
+    @include make-container;
+
+    display: flex;
+    flex-direction: column;
+    max-width: 330px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      max-width: 1280px;
+
+      @include grid-gap;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      @include grid-gap;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $c-title;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__typo {
+    margin: 0;
+    margin-top: 20px;
+    color: $c-typo;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      grid-row: 1;
+      align-self: start;
+      margin: 0;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      grid-row: 3;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    transition: background-color $transition-time ease-in-out;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+
+      display: block;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $c-form-typo;
+
+      transition: background-color $transition-time ease-in-out;
+    }
+    &:hover::after {
+      background-color: $c-placeholder-hover;
+    }
+
+    &:focus::after {
+      background-color: $c-placeholder-focused;
+    }
+  }
+
+  &__email {
+    @include reset-form;
+    @include placeholder-style;
+
+    width: 100%;
+
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: $c-form-typo;
+  }
+
+  &__btn-red {
+    align-self: center;
+    margin-top: 30px;
+
+    @include on-tablet {
+      align-self: flex-start;
+    }
+
+    @include on-desktop {
+      margin-top: 40px;
+    }
+  }
+}

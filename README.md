@@ -1,37 +1,28 @@
-# Museum 2 landing page
-Implement landing page according to [Figma design](https://www.figma.com/file/HL3XGt5ZatvJoYBhOaWY5x/museum-prototype?node-id=323%3A1957) - Use BEM and SCSS
+# NAMU Landing Page
 
-Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Playfair+Display?query=Playfair+Display), [Raleway](https://fonts.google.com/specimen/Raleway?query=Raleway)
-
-- The design 1440px
-- Desktop 1280px
-- Tablet 640px
-- Mobile (> 320px)
-
-1. Implement the header with menu.
-1. Implement `Актуальтні виставки` block.
-1. Implement `Найближчі події` block.
-1. Implement `Сплануйте візит до музею` block.
-1. Implement `Новини` block with the three cards.
-1. Implement `Підпишіться на дайджест` block.
-1. Implement footer.
+[Live Demo](https://razor5000.github.io/Museum_landing_2/)
 
 
-## Github flow
-1. **Fork** the repo.
-2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
-3. Run `npm install` (or just `npm i`).
-4. Run `npm start`.
-5. Open one more terminal window for the next steps.
-6. `git checkout -b develop` - to create new branch and switch on it.
-7. Write you code in `src` folder.
-8. Run `npm run lint` and fix code style errors.
-9. Run `npm run deploy` to deploy your solution to `gh-pages`.
-10. `git add . && git commit -m 'write a short description of the changes you made'` to save your changes.
-11. `git push origin develop` - to send you code for PR.
-12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
-13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Museum_2/).
-14. Copy `DEMO LINK` to the PR description.
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Sass](https://img.shields.io/badge/Sass-hotpink.svg?style=for-the-badge&logo=Sass&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-> To update you PR repeat steps 7-11.
+## 📋 Описание проекта
+Адаптивный лендинг для национального художественного музея украины. В проекте реализована верстка по макету Figma, использованы современные подходы к стилизации и сборке.
+
+<img src='src/images/preview.png' alt='превью проекта' width='400'>
+
+## 🛠 Технологии
+* **HTML5 / SCSS** (БЭМ методология)
+* **Vite** (сборка проекта)
+* **Cypress** (тестирование)
+* **GitHub Pages** (хостинг)
+
+## 🚀 Как запустить локально
+1. Клонировать репозиторий:
+   `https://github.com/razor5000/Museum_landing_2.git`
+2. Установить зависимости:
+   `npm install`
+3. Запустить режим разработки:
+   `npm run dev`

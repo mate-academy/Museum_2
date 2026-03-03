@@ -1,0 +1,67 @@
+.exposure-card {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 330px;
+  height: 100%;
+
+  @include on-desktop {
+    max-width: 570px;
+  }
+
+  &__img-container {
+    width: 100%;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+
+    @include hover(scale, 1.05);
+  }
+
+  &__date {
+    @extend %p;
+
+    margin: 0;
+    margin-top: 20px;
+    color: $c-btn;
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    margin: 0;
+    margin-top: 10px;
+    color: $c-title;
+  }
+
+  &__typo {
+    margin: 0;
+    margin-top: 20px;
+    color: $c-typo;
+  }
+
+  &__btn-red {
+    align-self: center;
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 40px;
+    }
+
+    @include on-desktop {
+      align-self: flex-start;
+      margin-top: 50px;
+    }
+  }
+}

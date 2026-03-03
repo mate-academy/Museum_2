@@ -1,19 +1,557 @@
 <!doctype html>
 <html lang="en">
+  <!-- #region head -->
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <title>Museum Landing</title>
     <link
       rel="stylesheet"
-      href="src/styles/main.scss"
+      href="src/styles/base/styles.scss"
     />
+    <link rel="icon" href="src/images/icons/na-mu_favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;500;600&display=swap" rel="stylesheet">
+    <script
+    type="module"
+    src="src/scripts/main.js"
+    defer
+    >
+    </script>
   </head>
+  <!-- #endregion -->
   <body>
-    <h1>Hello Mate Academy</h1>
-    <script src="src/scripts/main.js"></script>
+    <!-- #region header -->
+    <header id="header" class="header">
+      <div class="header__container">
+        <div class="header__top">
+          <a href="#" class="header__logo-link">
+            <div class="header__logo"></div>
+          </a>
+          <div id="burger-container" class="header__burger-container">
+            <button
+            id="burger-btn"
+            class="header__burger"
+            aria-label="menu"
+            >
+              <span class="header__burger__burger-line"></span>
+            </button>
+            <label for="lang-select" class="visualy-hiden">Выберите язык</label>
+            <div id="lang-select" class="dropdown header__dropdown">
+              <select
+              onchange="location = this.value;"
+              class="dropdown__select"
+              >
+                <option class="dropdown__option" value="/ua" selected>UA</option>
+                <option class="dropdown__option" value="/ru">RU</option>
+                <option class="dropdown__option" value="/en">EN</option>
+              </select>
+              <div class="dropdown__arrow"></div>
+            </div>
+          </div>
+        </div>
+        <div class="promo header__promo">
+          <p class="promo__date">Период:
+            <time datetime="2026-08-10">10 серпня</time> —
+            <time datetime="2026-11-10">10 листопада</time>
+          </p>
+          <h1 class="promo__title">Мистецтво ХІХ - ХХ ст.
+          </h1>
+          <p class="promo__description">Внесок українських митців у світову культуру 19-20ст</p>
+          <button class="btn-red promo__btn-red">Купити квиток</button>
+          <div class="promo__date-container">
+            <div class="promo__date-bottom">
+              <h6 class="promo__date-container-title">
+                10.08 - 10.10
+              </h6>
+            </div>
+            <span class="promo__decor-date-container"></span>
+          </div>
+        </div>
+        <div class="header__bg-container">
+          <picture class="header__picture">
+            <source media="(min-width: 1024px)" srcset="src/images/bgi/devushka-s-podoliya_vasilyy-toropynyn.png">
+            <source media="(min-width: 576px)" srcset="src/images/bgi/tablet/devushka-s-podoliya_vasilyy-toropynyn.avif">
+            <img
+            src="src/images/bgi/mobile/devushka-s-podoliya_vasilyy-toropynyn.avif"
+            alt="Девушка с подолья"
+            class="header__bg"
+            >
+          </picture>
+        </div>
+      </div>
+      <!-- #region aside -->
+      <aside id="menu" class="menu-top">
+        <div class="menu-top__container">
+          <div class="menu-top__contacts">
+            <dl class="menu-top__desription-list">
+              <div class="menu-top__desription-content-wrapper">
+                <dt class="menu-top__desription-list-item">Розклад сьогодні:</dt>
+                <dd class="menu-top__desription-list-value">
+                  <time
+                  datetime="11:00—19:00"
+                  >
+                  12:00 — 19:00
+                  </time>
+                </dd>
+              </div>
+              <div class="menu-top__desription-content-wrapper">
+                <dt class="menu-top__desription-list-item">Адреса:</dt>
+                <dd class="menu-top__desription-list-value">
+                  <address class="contacts__desription-list-address">
+                    <a
+                    class="menu-top__desription-list-link"
+                    href="https://maps.app.goo.gl/zQLmHFmWxrgsdHEv9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    Київ, вул. М. Грушевського, 6
+                    </a>
+                  </address>
+                </dd>
+              </div>
+            </dl>
+          </div>
+          <nav class="menu-top__nav">
+            <ul class="menu-top__unordered-list">
+              <li class="menu-top__unordered-list-item">
+                <a href="#exposure" class="menu-top__link">
+                  <h5 class="menu-top__title">
+                    Актуальні виставки
+                  </h5>
+                </a>
+              </li>
+              <li class="menu-top__unordered-list-item">
+                <a href="#events" class="menu-top__link">
+                  <h5 class="menu-top__title">
+                    Найближчі події
+                  </h5>
+                </a>
+              </li>
+              <li class="menu-top__unordered-list-item">
+                <a href="#news" class="menu-top__link">
+                  <h5 class="menu-top__title">
+                    Новини
+                  </h5>
+                </a>
+              </li>
+            </ul>
+            <span class="menu-top__nav-deco"></span>
+            <button class="btn-red menu-top__btn-red">Купити квиток</button>
+          </nav>
+          <div class="menu-top__bg-container">
+            <picture class="menu-top__picture">
+              <source media="(min-width: 1024px)" srcset="src/images/bgi/desktop/boris-tomara_gavriil-vas'ko.avif">
+              <source media="(min-width: 576px)" srcset="src/images/bgi/tablet/boris-tomara_gavriil-vas'ko.avif">
+              <img
+              src="src/images/bgi/mobile/boris-tomara_gavriil-vas'ko.avif"
+              alt="Портрет Бориса Томары"
+              class="menu-top__bg"
+              >
+            </picture>
+          </div>
+        </div>
+      </aside>
+      <!-- #endregion -->
+    </header>
+    <!-- #endregion -->
+    <!-- #region main -->
+    <main class="main body__main">
+      <!-- #region exposure -->
+      <section id="exposure" class="exposure main__exposure">
+        <div class="exposure__container">
+          <h3 class="exposure__title">Актуальні виставки</h3>
+          <div class="exposure-card exposure__exposure-card exposure__exposure-card--first">
+            <div class="exposure-card__img-container">
+              <picture class="exposure__picture">
+                <source media="(min-width: 1024px)" srcset="src/images/exposure/desktop/sculpture.avif">
+                <source media="(min-width: 576px)" srcset="src/images/exposure/tablet/sculpture.avif">
+                <img
+                src="src/images/exposure/mobile/sculpture.avif"
+                alt="Скульптура ангела"
+                class="exposure-card__img"
+                >
+              </picture>
+            </div>
+            <div class="exposure-card__date">
+              <time datetime="2026-07-11/2026-09-22">
+                11.07 - 22.09
+              </time>
+            </div>
+            <h4 class="exposure-card__title">Кураторська виставка “Ангели”</h4>
+            <p class="exposure-card__typo">
+              Виставковий проект «Ангели» – знакова подія для української культури і водночас наймасштабніший...
+            </p>
+            <button class="btn-red exposure-card__btn-red">Купити квиток</button>
+          </div>
+          <div class="exposure-card exposure__exposure-card exposure__exposure-card--second">
+            <div class="exposure-card__img-container">
+              <picture class="exposure__picture">
+                <source media="(min-width: 1024px)" srcset="src/images/exposure/desktop/nikolay-pimonenko.avif">
+                <source media="(min-width: 576px)" srcset="src/images/exposure/tablet/nikolay-pimonenko.avif">
+                <img
+                src="src/images/exposure/mobile/nikolay-pimonenko.avif"
+                alt="Николай Пимоненко. Автопортрет"
+                class="exposure-card__img"
+                >
+              </picture>
+            </div>
+            <div class="exposure-card__date exposure-card__date--permanent">
+              <span>Діє постійно</span>
+            </div>
+            <h4 class="exposure-card__title">Мистецтво ХХ ст. — XXI ст.</h4>
+            <p class="exposure-card__typo">
+              Знакові роботи Алли Горської, Миколи Самокиша, Федора Кричевського та інших митців.
+            </p>
+            <button class="btn-red exposure-card__btn-red">Купити квиток</button>
+          </div>
+          <button class="btn-white exposure__btn-white">
+            <div class="btn-white__container">
+              Архів виставок
+              <div class="btn-white__arrow"></div>
+            </div>
+          </button>
+        </div>
+      </section>
+      <!-- #endregion -->
+      <!-- #region events -->
+      <section id="events" class="events main__events">
+        <div class="events__container">
+          <h3 class="events__title">Найближчі події</h3>
+          <div class="events-card events__events-card">
+            <div class="events-card__img-container">
+              <picture class="events__picture">
+                <source media="(min-width: 1024px)" srcset="src/images/events/desktop/pavel-gudimov.avif">
+                <source media="(min-width: 576px)" srcset="src/images/events/tablet/pavel-gudimov.avif">
+                <img
+                src="src/images/events/mobile/pavel-gudimov.avif"
+                alt="Павел Гудимов"
+                class="events-card__img"
+                >
+              </picture>
+            </div>
+            <div class="events-card__typo-container">
+              <div class="events-card__date">
+                <time datetime="2026-08-16-13:00">
+                  16.08 о 13:00
+                </time>
+              </div>
+              <h4 class="events-card__title">Майстер-клас “Подорож до Австралії”</h4>
+              <p class="events-card__typo">
+                Цієї неділі о 14:00 на арт-мандрівників чекає останній пункт кругосвітньої подорожі - Австралія.
+              </p>
+              <button class="btn-red events-card__btn-red">Зареєструватись</button>
+            </div>
+          </div>
+          <div class="events-card events__events-card">
+            <div class="events-card__img-container">
+              <picture class="events__picture">
+                <source media="(min-width: 1024px)" srcset="src/images/events/desktop/australia.avif">
+                <source media="(min-width: 576px)" srcset="src/images/events/tablet/australia.avif">
+                <img
+                src="src/images/events/mobile/australia.avif"
+                alt="Майстер-клас “Подорож до Австралії”"
+                class="events-card__img"
+                >
+              </picture>
+            </div>
+            <div class="events-card__typo-container">
+              <div class="events-card__date">
+                <time datetime="2026-08-14-13:00">
+                  14.08 о 13:00
+                </time>
+              </div>
+              <h4 class="events-card__title">Кураторські екскурсії від Павла Гудімова </h4>
+              <p class="events-card__typo">
+                Таємниці підготовки, історії експонатів, магія дійства до і в момент вашої присутності – розгортатиметься...
+              </p>
+              <button class="btn-red events-card__btn-red">Зареєструватись</button>
+            </div>
+          </div>
+          <button class="btn-white events__btn-white">
+            <div class="btn-white__container">
+              Календар подій
+              <div class="btn-white__arrow"></div>
+            </div>
+          </button>
+        </div>
+      </section>
+      <!-- #endregion -->
+      <!-- #region cta-schelude -->
+      <section class="cta-schedule main__cta-schedule">
+        <div class="cta-schedule__bg"></div>
+        <div class="cta-schedule__container">
+          <div class="cta-schedule__typo-container">
+            <h2 class="cta-schedule__title">Сплануйте візит до музею</h2>
+            <p class="cta-schedule__typo">
+              Оберіть зручний день, зареєструйтесь на події, що цікавлять, купіть квиток заздалегідь, щоб ніщо не завадило вам насолоджуватись мистецтвом.
+            </p>
+            <button class="btn-red cta-schedule__btn-red">Почати</button>
+          </div>
+        </div>
+      </section>
+      <!-- #endregion -->
+      <!-- #region news -->
+      <section id="news" class="news main__news">
+        <div class="news__container">
+          <h3 class="news__title">Новини</h3>
+          <div class="news-card news__news-card news__news-card--first">
+            <div class="news-card__img-container">
+              <picture class="news__picture">
+                <source media="(min-width: 1024px)" srcset="src/images/news/desktop/post-cards.avif">
+                <source media="(min-width: 576px)" srcset="src/images/news/tablet/post-cards.avif">
+                <img
+                src="src/images/news/mobile/post-cards.avif"
+                alt="Маленькие репродукции"
+                class="news-card__img"
+                >
+              </picture>
+            </div>
+            <div class="news-card__date">
+              <time datetime="2019-08-09">
+                9 серпня 2019
+              </time>
+            </div>
+            <h4 class="news-card__title">Оголошення переможця</h4>
+            <p class="news-card__typo">
+              Друзі, сьогодні п'ятниця! А це означає, що час оголосити переможця розіграшу...
+            </p>
+          </div>
+          <div class="news-card news__news-card news__news-card--second">
+            <div class="news-card__img-container">
+              <picture class="news__picture">
+                <source media="(min-width: 1024px)" srcset="src/images/news/desktop/cat.avif">
+                <source media="(min-width: 576px)" srcset="src/images/news/tablet/cat.avif">
+                <img
+                src="src/images/news/mobile/cat.avif"
+                alt="Афиша с рисунком кота"
+                class="news-card__img"
+                >
+              </picture>
+            </div>
+            <div class="news-card__date">
+              <time datetime="2019-08-09">
+                9 серпня 2019
+              </time>
+            </div>
+            <h4 class="news-card__title">Міжнародний день котів</h4>
+            <p class="news-card__typo">
+              Музей з левами не може просто так взяти і пропустити Міжнародний день котів!
+            </p>
+          </div>
+          <button class="btn-white events__btn-white">
+            <div class="btn-white__container">
+              Усі новини
+              <div class="btn-white__arrow"></div>
+            </div>
+          </button>
+        </div>
+      </section>
+      <!-- #endregion -->
+      <!-- #region cta-subscribe -->
+      <section class="cta-subscribe main__cta-subscribe">
+        <div class="cta-subscribe__container">
+          <h3 class="cta-subscribe__title">Підпишіться на дайджест</h3>
+          <p class="cta-subscribe__typo">Першими дізнавайтесь про новини музею та розіграші, отримуйте запрошення на події та читайте статті від кураторів</p>
+          <form
+          onsubmit="this.reset(); return false"
+          method="post"
+          class="cta-subscribe__form"
+          action="#"
+          >
+            <label for="email-field" class="sr-only">Ваш Email</label>
+            <label class="cta-subscribe__input-wrapper">
+              <input
+              id="email-field"
+              type="email"
+              name="email"
+              placeholder="e-mail"
+              required
+              class="cta-subscribe__email"
+              >
+            </label>
+            <button type="submit" class="btn-red cta-subscribe__btn-red">Підписатись</button>
+          </form>
+        </div>
+      </section>
+      <!-- #endregion -->
+    </main>
+    <!-- #endregion -->
+    <!-- #region footer -->
+    <footer id="#footer" class="footer body__footer">
+      <div class="footer__container">
+        <div class="footer__contacts-container">
+          <h5 class="footer__subtitle">Контакти</h5>
+          <ul class="footer__list footer__list--contacts">
+            <li class="footer__list-item">
+              <address class="footer__adress">
+                <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://maps.app.goo.gl/zQLmHFmWxrgsdHEv9"
+                class="footer__link"
+                >
+                  Київ, <br>
+                  вул. М. Грушевського, 6
+                </a>
+              </address>
+            </li>
+            <li class="footer__list-item">
+              <a class="footer__link" href="tel:+123455555555">тел. +38 (044) 278-13-57</a>
+            </li>
+            <li class="footer__list-item">
+              <a class="footer__link" href="mailto:info@namu.kiev.ua">info@namu.kiev.ua</a>
+            </li>
+          </ul>
+
+          <div class="footer__social-container">
+            <div class="footer__social">
+              <a href="#" class="footer__social-link">
+                <svg
+                class="footer__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 20"
+                >
+                  <path fill="#f1f5f4" d="M2.91 10.943V20h3.635v-9.057h2.728L10 7.17H6.545V4.528c0-.566.546-1.132 1.091-1.132H10V0H5.818C4.91 0 2.91 1.32 2.91 3.396V7.17H0v3.773z"/>
+                </svg>
+              </a>
+            </div>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link">
+                <svg
+                class="footer__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 16"
+                >
+                  <path fill="#f1f5f4" d="M3.79 13.967c-.843.488-2.878.474-3.79.406C.421 14.78 3.579 16 6.526 16c2.948 0 5.053-.407 8.632-3.66 2.863-2.601 3.158-6.369 2.947-7.928L20 2.38h-1.684L19.368.347c-.771.474-2.357 1.3-2.526.813-.21-.61-3.158-2.033-5.684-.407-2.021 1.301-1.684 3.05-1.474 4.473C5.894 4.819 1.053.753 1.053.753c-1.176 2.108.41 4.66 1.046 5.682l.006.01L.632 6.04c0 1.789 1.684 3.05 2.526 3.659H1.895c.673 1.789 2.807 2.778 3.79 3.05-.281.202-1.053.731-1.896 1.219"/>
+                </svg>
+              </a>
+            </div>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link">
+                <svg
+                class="footer__svg"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.62887 17.4639L10.9278 14.2887L16.4948 19.0515L20 0L0 8.16495L5.56701 10.8866L7.62887 17.4639ZM8.0412 15.6495V12.0207L16.4948 3.85572L6.18553 10.433L8.0412 16.1031V15.6495Z" fill="#F1F5F4"/>
+                </svg>
+              </a>
+            </div>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link">
+                <svg
+                class="footer__svg"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+                >
+                  <path fill="#f1f5f4" fill-rule="evenodd" d="M1 14.244V3.57C1 2.384 2.384 1 3.767 1h11.466C16.814 1 18 2.581 18 4.36v10.675A3.07 3.07 0 0 1 14.837 18H4.953C2.78 18 1 16.419 1 14.244m8.5-7.702a2.958 2.958 0 1 0 0 5.916 2.958 2.958 0 0 0 0-5.916M5.342 9.5a4.158 4.158 0 1 1 8.316 0 4.158 4.158 0 0 1-8.316 0m8.705-3.953a.988.988 0 1 0 0-1.977.988.988 0 0 0 0 1.977" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__schedule-container">
+          <h5 class="footer__subtitle">Розклад роботи</h5>
+          <div class="footer__schedule">
+            <ul class="footer__list">
+              <li class="footer__list-item footer__list-item--weekend">
+                <abbr title="понедельник">ПН</abbr>: вихідний
+              </li>
+              <li class="footer__list-item footer__list-item--weekend">
+                <abbr title="вторник">ВТ</abbr>: вихідний
+              </li>
+              <li class="footer__list-item">
+                <abbr title="среда">СР</abbr>:
+                <time datetime="10:00" class="footer__time">10:00</time>
+                -
+                <time datetime="17:00" class="footer__time">17:00</time>
+              </li>
+              <li class="footer__list-item">
+                <abbr title="четверг">ЧТ</abbr>:
+                <time datetime="10:00" class="footer__time">10:00</time>
+                -
+                <time datetime="17:00" class="footer__time">17:00</time>
+              </li>
+              <li class="footer__list-item">
+                <abbr title="пятница">ПТ</abbr>:
+                <time datetime="12:00" class="footer__time">12:00</time>
+                -
+                <time datetime="19:00" class="footer__time">19:00</time>
+              </li>
+              <li class="footer__list-item">
+                <abbr title="суббота">СБ</abbr>:
+                <time datetime="11:00" class="footer__time">11:00</time>
+                -
+                <time datetime="18:00" class="footer__time">18:00</time>
+              </li>
+              <li class="footer__list-item">
+                <abbr title="воскресенье">НД</abbr>:
+                <time datetime="10:00" class="footer__time">10:00</time>
+                -
+                <time datetime="17:00" class="footer__time">17:00</time>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <nav class="footer__nav">
+          <a href="#header" class="footer__link">
+            <h5 class="footer__subtitle">Головна</h5>
+          </a>
+          <ul class="footer__list footer__list--nav">
+            <li class="footer__list-item">
+              <a href="#exposure" class="footer__link footer__link--nav">Виставки</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#events" class="footer__link footer__link--nav">Події</a>
+            </li>
+            <li class="footer__list-item">
+              <a href="#news" class="footer__link footer__link--nav">Новини</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__bottom">
+          <div class="footer__copyright">© 2010 — 2020</div>
+          <div class="footer__privacy">Privacy — Terms</div>
+          <a href="#header" class="footer__home-link">
+            <svg
+            class="footer__arrow"
+            width="30"
+            height="30"
+            viewBox="0 0 30 30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+              d="M15 24.9998V4.99976"
+              stroke="#F1F5F4"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              />
+              <path
+              d="M6.25 13.7498L15 4.99976L23.75 13.7498"
+              stroke="#F1F5F4"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              />
+            </svg>
+
+          </a>
+        </div>
+      </div>
+    </footer>
+    <!-- #endregion -->
   </body>
 </html>

@@ -1,6 +1,165 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} #{$transition-time};
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin make-container($max-w: 1280px, $padding: 20px, $display: block) {
+  display: $display;
+
+  width: 100%;
+  max-width: $max-w;
+  margin: 0 auto;
+  padding-right: $padding;
+  padding-left: $padding;
+
+  @include on-tablet {
+    padding-right: 39px;
+    padding-left: 39px;
+  }
+
+  @include on-desktop {
+    padding-right: 55px;
+    padding-left: 55px;
+  }
+}
+
+@mixin btn-base {
+  @extend %h-btn;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 280px;
+  height: 60px;
+  padding: 0;
+  border: none;
+
+  @include hover(scale, 1.05);
+
+  @include on-tablet {
+    width: 330px;
+  }
+
+  @include on-desktop {
+    width: 270px;
+  }
+}
+
+@mixin h1-tablet {
+  font-size: 72px;
+}
+
+@mixin h1-desktop {
+  font-size: 96px;
+}
+
+@mixin h2-tablet {
+  font-size: 62px;
+}
+
+@mixin h2-desktop {
+  font-size: 80px;
+}
+
+@mixin h3-tablet {
+  font-size: 40px;
+}
+
+@mixin h3-desktop {
+  font-size: 48px;
+}
+
+@mixin h4-tablet {
+  font-size: 24px;
+}
+
+@mixin grid-gap {
+  column-gap: 20px;
+
+  @include on-tablet {
+    column-gap: 30px;
+  }
+}
+
+@mixin dropdown-kill {
+  cursor: pointer;
+
+  border: none;
+
+  /* Полный сброс внешнего вида */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Убираем рамки и фон по умолчанию */
+  background: transparent;
+  outline: none;
+}
+
+/* Убираем стандартную стрелку в IE (на всякий случай) */
+.header__dropdown::-ms-expand {
+  display: none;
+}
+
+@mixin reset-form {
+  @extend %p;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+
+  color: $c-placeholder;
+
+  appearance: none;
+  background: none;
+  outline: none;
+  box-shadow: none;
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
+
+    -webkit-shadow-box: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: $c-placeholder !important;
+  }
+}
+
+@mixin placeholder-style {
+  &::placeholder {
+    @extend %p;
+
+    color: $c-placeholder;
+    transition: all $transition-time ease-in-out;
+  }
+  &:hover {
+    &::placeholder {
+      color: $c-placeholder-hover;
+    }
+  }
+  &:focus {
+    &::placeholder {
+      color: $c-placeholder-focused;
+
+      // opacity: 0;
+    }
   }
 }
