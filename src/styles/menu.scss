@@ -1,19 +1,17 @@
 .menu{
+  box-sizing: border-box;
   z-index: 2;
-  position: fixed;
+  position: absolute;
   top: 0;
   opacity: 0;
   right: 0;
   left: 0;
-  transition-duration: 0.3s;
+  transition-duration: .3s;
   pointer-events: none;
   background-color: $background;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 100%;
+  justify-content: center;
 
   &:target{
     left: 0;
@@ -23,15 +21,23 @@
   }
 
   &__wrapper{
-    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
     width: 100%;
+    height: 100%;
     max-width: 1280px;
     box-sizing: border-box;
 
     @include content-paddings;
     @include on-grid;
 
-    grid-template-rows: auto 1fr;
+    align-content: start;
+
+    @include on-tablet{
+      grid-template-rows: auto auto 1fr;
+    }
   }
 
 
@@ -42,7 +48,11 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    height: 90px;
+    min-height: 90px;
+
+    @include on-tablet{
+      min-height: 77px;
+    }
   }
 
   &__logo{
@@ -73,6 +83,11 @@
       line-height: 150%;
       text-align: center;
       vertical-align: middle;
+    }
+
+    @include on-phone{
+      flex-direction: row-reverse;
+      gap: 30px;
     }
   }
 
@@ -113,16 +128,28 @@
   }
 
   &__content{
-    position: relative;
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: subgrid;
+    align-content: start;
+
+    @include on-tablet{
+      margin-bottom: 30px;
+    }
   }
 
   &__dates{
     color: $white;
     margin-top: 23px;
     grid-column: span 2;
+
+    @include on-tablet{
+      margin-top: 30px;
+    }
+
+    @include on-phone{
+      grid-column: span 2;
+    }
 
     &-text{
       color: $white;
@@ -168,13 +195,14 @@
     color: $white;
     margin-top: 23px;
     grid-column: span 3;
-  }
 
-  &__blank{
-    grid-column: span 6;
+    @include on-phone{
+      grid-column: span 2;
+    }
   }
 
   &__nav{
+    grid-row: 2;
     grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
@@ -184,12 +212,32 @@
     margin-top: 70px;
     gap: 60px;
 
+    @include on-phone{
+      margin-top: 40px;
+      grid-row: auto;
+      gap: 20px;
+    }
+
     &-link{
       display: flex;
       width: fit-content;
       color: $white;
       text-decoration: none;
       position: relative;
+
+      h5{
+        display: none;
+      }
+
+      @include on-phone{
+        h5 {
+          display: block;
+        }
+
+        h3 {
+          display: none;
+        }
+      }
 
       &::before{
         position: absolute;
@@ -205,26 +253,77 @@
         width: 100%;
       }
     }
+
+    @include on-tablet{
+      margin-top: 50px;
+      gap: 30px;
+    }
   }
 
   &__line{
+    grid-row: 3;
     margin-top: 60px;
     height: 1px;
     width: 100%;
     background-color: $white;
     grid-column: span 6;
+
+    @include on-tablet{
+      margin-top: 50px;
+    }
+
+    @include on-phone{
+      margin-top: 40px;
+      grid-row: auto;
+    }
   }
 
   &__button{
+    grid-row: 4;
     margin-top: 60px;
     grid-column: span 3;
 
     @include button-regular;
+
+    @include on-tablet{
+      margin-top: 50px;
+    }
+
+    @include on-phone{
+      margin-top: 40px;
+      grid-row: auto;
+    }
   }
 
-  &__img{
+  .menu__img {
+    display: flex;
     position: absolute;
     bottom: 0;
     right: 0;
+
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+      position: relative;
+      height: 100%;
+
+      & img{
+        object-fit: contain;
+        max-height: 100%;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    @include on-phone{
+      display: none;
+    }
   }
+
 }

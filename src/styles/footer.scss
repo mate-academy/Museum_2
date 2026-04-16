@@ -5,6 +5,12 @@
   width: 100%;
   margin-top: 200px;
   background-color: $background;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+
+  @include on-tablet{
+    margin-top: 128px;
+  }
 
   &__wrapper{
     max-width: 1280px;
@@ -13,8 +19,6 @@
 
     @include content-paddings;
     @include on-grid;
-
-    padding-bottom: 30px;
   }
 
   &__title{
@@ -22,6 +26,14 @@
     margin-top: 50px;
     color: $white;
     order: 1;
+
+    @include on-tablet{
+      grid-column: span 2;
+    }
+
+    @include on-phone{
+      order: initial;
+    }
   }
 
   &__list{
@@ -40,6 +52,14 @@
 
     &:last-of-type{
       gap: 10px;
+    }
+
+    @include on-tablet{
+      grid-column: span 2;
+    }
+
+    @include on-phone{
+      order: initial;
     }
   }
 
@@ -96,11 +116,19 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 0 30px;
+      overflow: visible;
+
+      @include on-tablet{
+        display: flex;
+        flex-direction: row;
+        gap: 22px;
+      }
     }
 
   }
 
   &__copyright{
     color: $white;
+    overflow: visible;
   }
 }

@@ -7,11 +7,24 @@
   &__title {
     grid-column: span 6;
     color: $black;
+
+    @include on-phone{
+      grid-column: span 2;
+    }
   }
 
   &__text{
     grid-column: span 6;
     color: $black;
+
+    @include on-tablet{
+      grid-column: span 5;
+      margin-top: 20px;
+    }
+
+    @include on-phone{
+      grid-column: span 2;
+    }
   }
 
   &__form {
@@ -19,6 +32,10 @@
     grid-column: span 5;
     grid-template-columns: subgrid;
     margin-top: 50px;
+
+    @include on-phone{
+      grid-column: span 2;
+    }
   }
 
   &__input{
@@ -29,6 +46,10 @@
     border-bottom: 1px solid $black;
     color: $black;
     transition-duration: .3s;
+
+    @include on-phone{
+      grid-column: span 2;
+    }
 
     &:hover{
       color: $main;
@@ -49,6 +70,11 @@
   &__button{
     grid-column: span 3;
     margin-top: 40px;
+
+    @include on-phone{
+      grid-column: span 2;
+      margin-top: 30px;
+    }
 
     @include button-regular;
   }

@@ -13,10 +13,28 @@
   &__title{
     color: $black;
     grid-column: span 6;
+
+    @include on-tablet{
+      grid-column: span 4;
+    }
+
+    @include on-phone{
+      grid-column: span 2;
+    }
   }
 
   &__button{
     grid-column: 10 / -1;
+
+    @include on-tablet{
+      grid-column: 5 / -1;
+    }
+
+    @include on-phone{
+      margin-top: 30px;
+      grid-column: span 2;
+      order: 3;
+    }
 
     @include button-with-icon;
   }
@@ -26,12 +44,24 @@
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: subgrid;
+
+    @include on-phone{
+      margin-top: 60px;
+    }
   }
 
   &__card{
     grid-column: span 6;
     display: grid;
     grid-template-columns: subgrid;
+
+    @include on-tablet{
+      grid-column: span 3;
+    }
+
+    @include on-phone{
+      grid-column: span 2;
+    }
 
     &-img-wrapper{
       position: relative;
@@ -40,6 +70,10 @@
       width: 100%;
       padding-bottom: 65%;
       overflow: hidden;
+
+      @include on-tablet{
+        padding-bottom: 100%;
+      }
     }
 
     &-img{

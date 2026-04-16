@@ -4,19 +4,31 @@
 
   @include on-grid;
 
-  &__top{
-    grid-column: 1 / -1;
-
-    @include on-grid;
-  }
-
   &__title{
     color: $black;
     grid-column: span 6;
+
+    @include on-tablet{
+      grid-column: span 4;
+    }
+
+    @include on-phone{
+      grid-column: span 2;
+    }
   }
 
   &__button{
     grid-column: 10 / -1;
+
+    @include on-tablet{
+      grid-column: 5 / -1;
+    }
+
+    @include on-phone{
+      margin-top: 30px;
+      grid-column: span 2;
+      order: 3;
+    }
 
     @include button-with-icon;
   }
@@ -31,6 +43,10 @@
 
     &:first-child{
       margin-top: 70px;
+
+      @include on-phone{
+        margin-top: 60px;
+      }
     }
 
     &-img{
@@ -45,6 +61,10 @@
         grid-column: span 4;
         grid-row: span 4;
         overflow: hidden;
+
+        @include on-tablet{
+          grid-column: span 3;
+        }
       }
     }
 
@@ -52,6 +72,10 @@
       display: grid;
       grid-column: span 6;
       grid-template-columns: subgrid;
+
+      @include on-tablet{
+        grid-column: span 3;
+      }
     }
 
     &-date {

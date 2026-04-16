@@ -4,16 +4,26 @@
   align-items: center;
   width: 100%;
   background-color: $background;
-  min-height: 100vh;
+  position: relative;
   justify-content: space-between;
+
+  @include on-tablet{
+    height: 100vh;
+    min-height: 100vh;
+  }
 
 
   &__wrapper{
-    flex: 1;
+    height: 100%;
     max-width: 1280px;
     position: relative;
+    box-sizing: border-box;
 
     @include on-grid;
+    @include content-paddings;
+
+    grid-template-rows: auto auto 1fr;
+    align-content: start;
   }
 
   &__top{
@@ -25,7 +35,15 @@
     box-sizing: border-box;
     height: 90px;
 
-    @include content-margins;
+    // @include content-paddings;
+
+    @include on-tablet{
+      height: 77px;
+    }
+
+    @include on-phone{
+      height: 80px;
+    }
   }
 
   &__logo{
@@ -35,6 +53,11 @@
     mask-image: url(../images/NAMU-logo.svg);
     mask-position: center;
     mask-repeat: no-repeat;
+
+    @include on-phone{
+      width: 123px;
+      height: 40px;
+    }
   }
 
   &__list {
@@ -94,23 +117,36 @@
       opacity: 1;
       bottom: -20px;
     }
+
+    @include on-phone{
+      display: none;
+    }
   }
 
   &__content{
-    @include content-margins;
-    @include on-grid;
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: subgrid;
 
     grid-column: 1 / -1;
     margin-top: 90px;
+    align-content: start;
+
+    @include on-tablet{
+      margin-top: 100px;
+      height: 100%;
+      align-content: start;
+    }
+
+    @include on-phone{
+      margin-top: 50px;
+    }
   }
 
   &__dates{
     color: $white;
     grid-column: span 6;
-
-    @include on-tablet{
-      margin-top: 100px;
-    }
   }
 
   &__title{
@@ -123,6 +159,16 @@
     color: $white;
     grid-column: span 6;
     margin-top: 30px;
+
+    @include on-tablet{
+      grid-column: span 3;
+      margin-top: 20px;
+    }
+
+    @include on-tablet{
+      grid-column: span 2;
+      margin-top: 30px;
+    }
   }
 
   &__button{
@@ -130,6 +176,14 @@
     margin-top: 81px;
 
     @include button-regular;
+
+    @include on-tablet{
+      margin-top: 50px;
+    }
+
+    @include on-phone{
+      margin-top: 40px;
+    }
   }
 
   &__blank{
@@ -141,21 +195,46 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    max-width: 100%;
+    max-height: 100%;
+
+    & img{
+      object-fit: contain;
+    }
 
     @include on-tablet{
-      position: static;
-      margin-top: 70px;
+      position: relative;
+      box-sizing: border-box;
+      padding-top: 70px;
       grid-column: 2 / -2;
+      max-height: 100%;
 
       & img{
+        object-fit: cover;
         width: 100%;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    @include on-phone{
+      display: flex;
+      position: static;
+      margin-top: 40px;
+      grid-column: 1 / -1;
+      justify-content: center;
+      height: 100%;
+
+      & img{
+        display: flex;
+        object-fit: cover;
+        width: 245px;
       }
     }
   }
 
   &__line-wrapper{
     grid-column: 1 / -1;
-    width: 100%;
     margin-top: 135px;
     margin-bottom: 50px;
 

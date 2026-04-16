@@ -4,29 +4,46 @@
 
   @include on-grid;
 
-  &__top{
-    grid-column: 1 / -1;
-
-    @include on-grid;
-  }
-
   &__title{
     color: $black;
     grid-column: span 6;
+
+    @include on-tablet{
+      grid-column: span 4;
+    }
+
+    @include on-phone{
+      grid-column: span 2;
+    }
   }
 
   &__button{
     grid-column: 10 / -1;
+    display: flex;
+
+    @include on-tablet{
+      grid-column: 5 / -1;
+    }
+
+    @include on-phone{
+      margin-top: 30px;
+      grid-column: span 2;
+      order: 3;
+    }
 
     @include button-with-icon;
+
   }
 
   &__content{
     grid-column: 1 / -1;
-
-    @include on-grid;
-
+    display: grid;
+    grid-template-columns: subgrid;
     margin-top: 70px;
+
+    @include on-phone{
+      margin-top: 0;
+    }
   }
 
   &__card{
@@ -34,13 +51,30 @@
     display: grid;
     grid-template-columns: subgrid;
 
+    @include on-tablet{
+      grid-column: span 3;
+    }
+
+    @include on-phone{
+      grid-column: span 2;
+      margin-top: 60px;
+    }
+
     &-img-wrapper{
         grid-column: 1 / -1;
         position: relative;
         width: 100%;
-        padding-top: 75%;
+        height: 484px;
         overflow: hidden;
-      }
+
+        @include on-tablet{
+          height: 420px;
+        }
+
+        @include on-phone{
+          height: 356px;
+        }
+    }
 
     &-img{
       position: absolute;
@@ -66,6 +100,10 @@
       grid-column: 1 / -1;
       color: $black;
       margin-top: 10px;
+
+      @include on-tablet{
+        height: 60px;
+      }
     }
 
     &-text{
