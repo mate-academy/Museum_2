@@ -649,17 +649,21 @@
 
       const buttonScrollUp = document.querySelector('.button-scroll-up');
 
-      window.addEventListener('scroll', () => {
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        console.log(maxScroll);
-
+      const buttonTransform = () => {
+        const maxScroll =
+          document.documentElement.scrollHeight - window.innerHeight;
 
         if (window.scrollY > 90) {
-          buttonScrollUp.style.transform = `translateY(${-window.scrollY / maxScroll * 50 + 20}px)`;
+          buttonScrollUp.style.transform = `translateY(${(-window.scrollY / maxScroll) * 50 + 20}px)`;
         } else {
           console.log(`translateY(${window.scrollY}px)`);
           buttonScrollUp.style.transform = `translateY(180%)`;
         }
+      };
+      buttonTransform();
+
+      window.addEventListener('scroll', () => {
+        buttonTransform();
       });
     </script>
     <script>
