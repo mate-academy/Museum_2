@@ -1,0 +1,26 @@
+.container {
+  --count-columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--count-columns), 1fr);
+  column-gap: 20px;
+  padding-inline: 20px;
+
+  &--no-grid {
+    display: block;
+  }
+
+  @include on-table {
+    --count-columns: 6;
+
+    column-gap: 30px;
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    --count-columns: 12;
+
+    column-gap: 30px;
+    padding-inline: 55px;
+  }
+}
