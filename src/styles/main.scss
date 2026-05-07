@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @import 'utils';
 @import 'fonts';
 @import 'typography';
@@ -19,3 +21,36 @@
 @import './blocks/sections/subscription';
 @import './blocks/footer';
 @import './blocks/menu';
+
+.button-scroll-up {
+  padding: 5px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  margin: 30px 20px;
+  border-radius: 50%;
+  border: 2px solid color.adjust($black, $alpha:  -0.7);
+  background-color: color.adjust($bg, $alpha: -0.5);
+  cursor: pointer;
+
+  transform: translateY(100%);
+
+  transition: background-color $transition, transform $transition;
+
+  @include on-table {
+    margin: 30px 39px;
+  }
+
+  @include on-desktop {
+    margin: 30px 55px;
+  }
+
+  &:hover {
+    background-color: $main
+  }
+
+  &-icon {
+    @include icon(30px, 30px, '../images/icon/scroll-up.svg', $white);
+  }
+}

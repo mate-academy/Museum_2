@@ -32,6 +32,11 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   </head>
   <body class="page__body">
     <header class="header">
@@ -80,17 +85,36 @@
         </div>
       </div>
       <div class="container">
-        <p class="header__p-1">10 серпня - 10 листопада</p>
-        <h1 class="header__title">Мистецтво ХІХ - ХХ ст.</h1>
-        <p class="header__p-2">
+        <p
+          data-aos="fade-right"
+          class="header__p-1"
+        >
+          10 серпня - 10 листопада
+        </p>
+        <h1
+          data-aos="fade-left"
+          class="header__title"
+        >
+          Мистецтво ХІХ - ХХ ст.
+        </h1>
+        <p
+          data-aos="fade-right"
+          class="header__p-2"
+        >
           Внесок українських митців у світову культуру 19-20 ст.
         </p>
-        <a
-          class="header__button button-primary"
-          href="#footer"
+        <div
+          data-aos="fade-up"
+          class="header__button"
         >
-          Купити квиток
-        </a>
+          <a
+            class="header__button button-primary"
+            href="#footer"
+          >
+            Купити квиток
+          </a>
+        </div>
+
         <div class="header__date-box">
           <span class="header__date">10.08 - 10.10</span>
           <div class="header__date-line"></div>
@@ -101,6 +125,8 @@
 
     <main>
       <section
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
         id="exhibitions"
         class="current-exhibitions"
       >
@@ -171,6 +197,8 @@
       </section>
 
       <section
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
         id="events"
         class="upcoming-events"
       >
@@ -242,6 +270,8 @@
       </section>
 
       <section
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
         id="planes"
         class="planes"
       >
@@ -264,6 +294,8 @@
       </section>
 
       <section
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
         id="news"
         class="news"
       >
@@ -330,6 +362,8 @@
       </section>
 
       <section
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
         id="subscription"
         class="subscription"
       >
@@ -486,6 +520,12 @@
           <span>Privacy — Terms</span>
         </div>
       </div>
+      <a
+        href="#"
+        class="button-scroll-up"
+      >
+        <div class="button-scroll-up-icon"></div>
+      </a>
     </footer>
 
     <aside
@@ -605,6 +645,26 @@
         e.preventDefault();
 
         form.reset();
+      });
+
+      const buttonScrollUp = document.querySelector('.button-scroll-up');
+
+      window.addEventListener('scroll', () => {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        console.log(maxScroll);
+
+
+        if (window.scrollY > 90) {
+          buttonScrollUp.style.transform = `translateY(${-window.scrollY / maxScroll * 50 + 20}px)`;
+        } else {
+          console.log(`translateY(${window.scrollY}px)`);
+          buttonScrollUp.style.transform = `translateY(180%)`;
+        }
+      });
+    </script>
+    <script>
+      AOS.init({
+        duration: 1000,
       });
     </script>
   </body>
