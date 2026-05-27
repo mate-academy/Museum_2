@@ -1,0 +1,242 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+
+  padding: 30px 20px;
+
+  color: $main-color;
+
+  background-color: $header-footer-background;
+
+  @include on-tablet {
+    grid-template-columns: repeat(6, 1fr);
+    padding: 50px 30px 30px 40px;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(12, 1fr);
+    padding-left: 55px;
+  }
+
+  &__title {
+    @extend %h5;
+
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @extend %main-text;
+  }
+
+  &__contact {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__address {
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      background-color: $main-color;
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__num {
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      background-color: $main-color;
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__email {
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      background-color: $main-color;
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__social-icon {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include hover(transform, scale(1.2));
+
+    &--facebook {
+      background-image: url('../images/social-media/facebook.svg');
+    }
+
+    &--x {
+      background-image: url('../images/social-media/x.svg');
+    }
+
+    &--telegram {
+      background-image: url('../images/social-media/telegram.svg');
+    }
+
+    &--instagram {
+      background-image: url('../images/social-media/instagram.svg');
+    }
+  }
+
+  &__schedule {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 3 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 9 / -1;
+    }
+  }
+
+  &__nav-item {
+    margin-bottom: 5px;
+
+    @include on-tablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__nav-link {
+    position: relative;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 0;
+      height: 1px;
+
+      background-color: $main-color;
+
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    @include on-desktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__terms {
+    @extend %additional-text;
+
+    display: flex;
+    gap: 22px;
+
+    @include on-desktop {
+      gap: 102px;
+    }
+  }
+
+  &__arrow {
+    display: block;
+
+    width: 30px;
+    height: 30px;
+
+    background-image: url('../images/icons/arrow-up.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include hover(transform, scale(1.2));
+  }
+}

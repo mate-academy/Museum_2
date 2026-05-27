@@ -1,0 +1,81 @@
+.select {
+  position: relative;
+  width: 70px;
+
+  &__button {
+    @extend %additional-bold;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    border: none;
+
+    color: $main-color;
+    text-align: left;
+
+    background: transparent;
+
+    @include hover(transform, scale(1.1));
+
+    &::after {
+      content: '';
+
+      display: block;
+
+      width: 30px;
+      height: 30px;
+
+      background-image: url('../images/icons/dropdown.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+
+      transition: transform 0.3s;
+    }
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    transform: translateY(-10px);
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    visibility: hidden;
+    opacity: 0;
+    background: $header-footer-background;
+
+    transition: all 0.3s;
+  }
+
+  &__item {
+    @extend %additional-bold;
+
+    cursor: pointer;
+    padding: 10px;
+
+    @include hover(background-color, $button-main);
+    @include hover(color, $main-color);
+  }
+
+  &.is-open {
+    .select__list {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .select__button::after {
+      transform: rotate(180deg);
+    }
+  }
+}

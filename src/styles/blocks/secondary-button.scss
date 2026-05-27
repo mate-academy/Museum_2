@@ -1,0 +1,49 @@
+.secondary-button {
+  @extend %additional-bold;
+
+  cursor: pointer;
+
+  display: flex;
+  grid-column: 1 / -1;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  padding-block: 22px;
+  border: 1px solid $button-main;
+
+  color: $button-main;
+  text-align: center;
+
+  background-color: $main-color;
+
+  @include on-tablet {
+    width: 210px;
+  }
+
+  @include on-desktop {
+    min-width: 270px;
+  }
+
+  &__arrow {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(../images/button-arrow/arrow-right.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .secondary-button:hover & {
+      background-image: url(../images/button-arrow/arrow-hover.svg);
+    }
+
+    .secondary-button:active & {
+      background-image: url(../images/button-arrow/arrow-active.svg);
+    }
+  }
+
+  @include hover(color, $button-hover);
+  @include hover(border-color, $button-hover);
+  @include active(color, $button-active);
+  @include active(border-color, $button-active);
+}
