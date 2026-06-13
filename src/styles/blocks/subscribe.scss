@@ -1,0 +1,87 @@
+.subscribe {
+  &__top-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 100px;
+    }
+  }
+
+  &__title {
+    @include title-h2-styling;
+
+    flex: 1;
+    margin-bottom: 20px;
+
+    @include on-desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__info {
+    flex: 1;
+    font-size: 16px;
+    color: $c-black;
+
+    margin-bottom: 50px;
+  }
+
+  &__form-label {
+    @include visually-hidden;
+  }
+
+  &__form-input {
+    font-family: Raleway, sans-serif;
+    background-color: $c-white;
+    border: none;
+    border-bottom: 1px solid $c-black;
+    padding-bottom: 3px;
+    margin-bottom: 30px;
+    width: 100%;
+
+    font-size: 16px;
+    font-weight: $weight-bald;
+    line-height: 150%;
+
+    @include auto-fill-styling;
+
+    &:hover {
+      border-color: $c-red;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+    }
+
+    &:hover::placeholder {
+      color: $c-red;
+    }
+
+    &:focus {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $c-red;
+    }
+
+    @include on-tablet {
+      width: 450px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+      width: 470px;
+    }
+  }
+
+  &__form-submit {
+    @include button-style;
+
+    cursor: pointer;
+    font-family: raleway, sans-serif;
+    font-size: 16px;
+  }
+}

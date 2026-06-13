@@ -1,0 +1,37 @@
+.page {
+  background-color: $c-dark-green;
+  font-family: Raleway, sans-serif;
+  scroll-behavior: smooth;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+    isolation: isolate;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translateX(-100%);
+    transition:
+      transform $effect-duration,
+      opacity $effect-duration;
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
