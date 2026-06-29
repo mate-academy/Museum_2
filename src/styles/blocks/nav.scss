@@ -1,0 +1,57 @@
+@use '../utils' as *;
+
+.nav {
+  &__list {
+    @extend %list-reset-column;
+
+    gap: 20px;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: $c-white;
+    text-decoration: none;
+
+    @include heading-5;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -7px;
+      transform-origin: left;
+      transform: scale(0);
+
+      display: block;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $c-white;
+
+      transition: transform 0.3s;
+    }
+
+    @media (hover: hover) {
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 1.2;
+    }
+  }
+}

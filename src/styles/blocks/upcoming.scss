@@ -1,0 +1,62 @@
+@use '../utils' as *;
+
+.upcoming {
+  &__container {
+    @extend %container-max-width;
+
+    margin-bottom: 90px;
+
+    @include on-tablet {
+      margin-bottom: 160px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__header {
+    @include section-header-margin;
+  }
+
+  &__events {
+    @include on-tablet {
+      flex-direction: column;
+      gap: 70px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__event {
+    @include on-tablet {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__photo {
+    @include on-tablet {
+      width: 330px;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      width: 370px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+
+    @include on-desktop {
+      max-width: 570px;
+    }
+  }
+
+  &__action {
+    @include section-action;
+  }
+}

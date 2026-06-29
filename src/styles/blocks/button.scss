@@ -1,0 +1,58 @@
+@use '../utils' as *;
+
+.button {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  max-width: 330px;
+  height: 60px;
+  border: none;
+
+  color: $c-white;
+  text-decoration: none;
+
+  background-color: $c-main;
+
+  &:not(.button--secondary) {
+    @include hover(background-color, $c-hover);
+    @include active(background-color, $c-active);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.5;
+  }
+
+  &--secondary {
+    gap: 8px;
+    border: 1px solid;
+    color: $c-main;
+    background-color: transparent;
+
+    @include hover(color, $c-hover);
+    @include active(color, $c-active);
+  }
+
+  &__arrow {
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: currentColor;
+
+    -webkit-mask: url('/src/images/icons/arrow.svg') no-repeat center / contain;
+    mask: url('/src/images/icons/arrow.svg') no-repeat center / contain;
+  }
+
+  @include text-button;
+
+  @include on-desktop {
+    max-width: 270px;
+  }
+}
