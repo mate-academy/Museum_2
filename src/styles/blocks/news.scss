@@ -1,0 +1,56 @@
+@use '../utils' as *;
+
+.news {
+  &__container {
+    @extend %container-max-width;
+
+    margin-bottom: 120px;
+
+    @include on-tablet {
+      margin-bottom: 160px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__header {
+    @include section-header-margin;
+
+    @include on-desktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__photo {
+    @include on-tablet {
+      aspect-ratio: 1 / 1;
+    }
+
+    @include on-desktop {
+      aspect-ratio: 570 / 370;
+      object-position: 0%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 18px;
+
+    @include on-tablet {
+      @include heading-5;
+    }
+  }
+
+  &__date {
+    color: $c-black;
+  }
+
+  &__description {
+    margin-bottom: 0;
+  }
+
+  &__action {
+    @include section-action;
+  }
+}

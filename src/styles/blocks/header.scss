@@ -1,0 +1,178 @@
+@use '../utils' as *;
+
+.header {
+  color: $c-white;
+  background-color: $c-bg;
+
+  &__container {
+    @extend %container-max-width;
+
+    margin-bottom: 90px;
+
+    @include on-tablet {
+      margin-bottom: 100px;
+    }
+
+    @include on-desktop {
+      position: relative;
+      margin-bottom: 110px;
+    }
+  }
+
+  &__top-bar {
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      margin-bottom: 99px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__burger-icon {
+    display: block;
+  }
+
+  &__burger-line {
+    transform-origin: right center;
+    transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__burger {
+    @media (hover: hover) {
+      &:hover {
+        .header__burger-line:not(.header__burger-line--mid) {
+          width: 16px;
+        }
+      }
+    }
+  }
+
+  &__lang {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__date {
+    @include text-additional;
+
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include heading-1;
+
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      max-width: 569px;
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      max-width: 330px;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      max-width: none;
+      margin-bottom: 81px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 70px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 135px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+
+    @include heading-6;
+
+    @include on-desktop {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      margin-bottom: 50px;
+
+      line-height: 1;
+
+      opacity: 0.7;
+
+      &::after {
+        content: '';
+
+        display: block;
+
+        width: 469px;
+        height: 1px;
+
+        opacity: 0.3;
+        background-color: $c-white;
+      }
+
+      &-text {
+        transform: translateY(-2px);
+
+        @supports (text-box: trim-both cap alphabetic) {
+          transform: none;
+
+          text-box: trim-both cap alphabetic;
+        }
+      }
+    }
+  }
+
+  &__picture {
+    aspect-ratio: 245 / 273;
+    max-width: 100%;
+    margin-inline: 17px;
+
+    background-image: url(/src/images/header-picture.png);
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    background-size: cover;
+
+    @include on-tablet {
+      margin-inline: 124px;
+      object-fit: contain;
+    }
+
+    @include on-desktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 625px;
+      height: 663px;
+      margin-inline: 0;
+    }
+  }
+}

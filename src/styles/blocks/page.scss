@@ -1,0 +1,57 @@
+@use '../utils' as *;
+
+.page {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+
+  @include text-main;
+
+  background-color: $c-white;
+
+  &__body {
+    min-width: 320px;
+    margin: 0;
+  }
+
+  &__menu {
+    pointer-events: none;
+
+    position: fixed;
+    inset: 0;
+    transform: translateX(-100%);
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition:
+      transform 0.3s,
+      opacity 0.3s,
+      visibility 0.3s;
+
+    &:target {
+      pointer-events: auto;
+
+      z-index: 999;
+      transform: translateX(0);
+
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &,
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use '../utils' as *;
+
+.current {
+  &__container {
+    @extend %container-max-width;
+
+    margin-bottom: 120px;
+
+    @include on-tablet {
+      margin-bottom: 160px;
+    }
+  }
+
+  &__header {
+    @include section-header-margin;
+  }
+
+  &__action {
+    @include section-action;
+  }
+
+  &__events {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 30px;
+    }
+  }
+
+  &__event {
+    @include on-tablet {
+      display: grid;
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+    }
+  }
+
+  &__photo {
+    @include on-desktop {
+      aspect-ratio: 570 / 484;
+    }
+  }
+}

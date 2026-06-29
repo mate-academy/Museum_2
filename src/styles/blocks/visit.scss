@@ -1,0 +1,65 @@
+@use '../utils' as *;
+
+.visit {
+  color: $c-white;
+  background-color: $c-bg;
+
+  @include on-desktop {
+    background-image: url(/src/images/visit-photo/photo-1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__container {
+    @extend %container-max-width;
+
+    margin-bottom: 90px;
+    padding-block: 50px;
+
+    @include on-tablet {
+      margin-bottom: 120px;
+      padding-block: 80px;
+    }
+
+    @include on-desktop {
+      @include page-grid;
+    }
+  }
+
+  &__content {
+    @include on-tablet {
+      max-width: 450px;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+      max-width: none;
+      padding-block: 205px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: inherit;
+
+    @include heading-2;
+
+    @include on-desktop {
+      max-width: 600px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 60px;
+    }
+
+    @include on-desktop {
+      max-width: 470px;
+      margin-bottom: 50px;
+    }
+  }
+}
