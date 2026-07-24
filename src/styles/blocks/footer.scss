@@ -1,0 +1,125 @@
+.footer {
+  --margin-top-title: 10px;
+
+  color: $white;
+
+  @include on-table {
+    --margin-top-title: 30px;
+  }
+
+  &__container {
+    row-gap: 50px;
+  }
+
+  &__container-copyright {
+    display: flex;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    margin-top: 60px;
+    gap: 12vw;
+
+    @include on-table {
+      margin-top: 70px;
+    }
+  }
+
+  &__bg {
+    background-color: $bg;
+    padding-block: 34px 30px;
+
+    @include on-table {
+      padding-block: 50px 30px;
+    }
+  }
+
+  &__contacts,
+  &__work-schedule,
+  &__nav {
+    grid-column: 2 span;
+
+    @include on-table {
+      grid-column: 2 span;
+    }
+
+    @include on-desktop {
+      grid-column: 4 span;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+
+    &-list {
+      display: flex;
+      gap: 2px;
+      flex-direction: column;
+      color: $white;
+      list-style: none;
+      margin-top: var(--margin-top-title);
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $white;
+      font-weight: 400;
+      font-family: Raleway, sans-serif;
+      line-height: 150%;
+      font-size: 16px;
+
+      transition: color $transition;
+
+      &:hover {
+        color: $main;
+      }
+    }
+
+    &-social-list {
+      margin-top: 30px;
+      list-style: none;
+      display: flex;
+      gap: 20px;
+
+      @include on-table {
+        margin-top: auto;
+        margin-bottom: 2px;
+        bottom: 0;
+      }
+    }
+  }
+
+  &__work-schedule {
+    &-p {
+      margin-top: var(--margin-top-title);
+      color: $white;
+    }
+  }
+
+  &__nav {
+    &-list {
+      margin-top: var(--margin-top-title);
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      gap: 5px;
+
+      @include on-table {
+        gap: 10px;
+      }
+    }
+
+    &-link {
+      color: $white;
+      font-family: Raleway, sans-serif;
+      text-decoration: none;
+
+      transition: color $transition;
+
+      &:hover {
+        color: $main;
+      }
+    }
+  }
+}

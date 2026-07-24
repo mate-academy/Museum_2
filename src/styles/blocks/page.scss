@@ -1,0 +1,29 @@
+.page {
+  scroll-behavior: smooth;
+  position: relative;
+  min-width: 320px;
+  font-family: 'Playfair Display', serif;
+  color: $black;
+
+  &__body {
+    background: $white;
+  }
+
+  &:has(&__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    inset: 0;
+    opacity: 0;
+
+    transition: transform $transition, opacity $transition;
+    transform: translateY(-100%);
+
+    &:target {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

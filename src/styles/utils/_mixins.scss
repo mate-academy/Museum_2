@@ -4,3 +4,43 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-table {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin icon($width, $height, $url, $color, $hover-color: false) {
+  display: block;
+
+  width: $width;
+  height: $height;
+
+  background-color: $color;
+
+  -webkit-mask-image: url(#{$url});
+  mask-image: url(#{$url});
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  transition: background-color $transition;
+
+  @if $hover-color {
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+}

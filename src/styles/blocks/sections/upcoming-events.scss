@@ -1,0 +1,101 @@
+.upcoming-events {
+  margin-top: 120px;
+
+  @include on-table {
+    margin-top: 160px;
+  }
+
+  @include on-desktop {
+    margin-top: 200px;
+  }
+}
+
+.event {
+  &__image-wrapper {
+    margin-top: 60px;
+    grid-column: 1/-1;
+    width: 100%;
+    overflow: hidden;
+
+    @include on-table {
+      margin-top: 70px;
+      grid-column: 3 span;
+    }
+
+    @include on-desktop {
+      grid-column: 4 span;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform $transition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__text-box {
+    grid-column: 1/-1;
+
+    @include on-table {
+      margin-top: 70px;
+      grid-column: 3 span;
+    }
+
+    @include on-desktop {
+      grid-column: 6 span;
+    }
+  }
+
+  &__date {
+    display: block;
+    margin-top: 20px;
+    color: $main;
+
+    @include on-table {
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+  }
+
+  &__p {
+    margin-top: 20px;
+
+    @include on-table {
+      margin-top: 20px;
+    }
+
+    @include on-desktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__button-wrapper {
+    margin-top: 30px;
+    width: 100%;
+
+    @include on-table {
+      padding-top: 50px;
+      margin-top: auto;
+      bottom: 0;
+    }
+
+    @include on-desktop {
+      padding-top: 50px;
+      width: calc((100% - 30px * 5) / 6 * 3 + (30px * 2));
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}

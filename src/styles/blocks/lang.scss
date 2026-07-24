@@ -1,0 +1,40 @@
+.lang {
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+
+  &--tb {
+    display: none;
+
+    @include on-table {
+      display: flex;
+    }
+  }
+
+  &--mb {
+    display: flex;
+
+    @include on-table {
+      display: none;
+    }
+  }
+
+  &__span {
+    font-weight: 500;
+    font-size: 16px;
+    display: block;
+    font-family: Raleway, sans-serif;
+
+    transition: color $transition;
+  }
+
+  &:hover .icon--lang {
+    background-color: $main;
+  }
+
+  &:hover &__span {
+    color: $main;
+  }
+}
