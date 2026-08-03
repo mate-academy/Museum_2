@@ -1,0 +1,136 @@
+.subscribe {
+  @include content-padding-inline;
+
+  margin-top: 120px;
+
+  @include on-tablet {
+    margin-top: 160px;
+  }
+
+  @include on-desktop {
+    margin-top: 200px;
+  }
+
+  &__container {
+    padding-top: 20px;
+
+    @include on-desktop {
+      @include page-grid;
+
+      align-items: start;
+    }
+  }
+
+  &__title {
+    @extend %h-2;
+
+    margin: 0;
+
+    @include on-tablet {
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+      grid-column: 1/ 6;
+      grid-row: 1;
+      max-width: 570px;
+    }
+  }
+
+  &__description {
+    @extend %main-text;
+
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    @include on-tablet {
+      width: 570px;
+    }
+
+    @include on-desktop {
+      grid-column: 7/ 13;
+      grid-row: 1;
+    }
+  }
+
+  &__form {
+    display: flex;
+    align-items: start;
+    padding-bottom: 30px;
+    width: 100%;
+
+    &--input {
+      @extend %main-text;
+
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #1c1b29; // Default state
+      background-color: transparent;
+      color: #1c1b29;
+
+      &::placeholder {
+        color: #1c1b29;
+        transition: color 0.3s;
+      }
+
+      &:hover {
+        border-bottom: 1px solid #cd4d31;
+
+        &::placeholder {
+          color: #cd4d31;
+        }
+      }
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid #cd4d31;
+
+        &::placeholder {
+          color: transparent; // прибираємо текст при фокусі
+        }
+      }
+
+      &:not(:placeholder-shown) {
+        font-weight: 700;
+        color: #1c1b29;
+      }
+
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px white inset;
+        -webkit-text-fill-color: #1c1b29;
+        background-color: transparent;
+      }
+
+      &:-webkit-autofill:hover {
+        -webkit-box-shadow: 0 0 0 1000px white inset;
+        -webkit-text-fill-color: #1c1b29;
+      }
+
+      &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px white inset;
+        -webkit-text-fill-color: #1c1b29;
+      }
+    }
+
+    @include on-desktop {
+      padding-top: 50px;
+      padding-bottom: 40px;
+      grid-column: 1/7;
+      grid-row: 2;
+    }
+  }
+
+  .subscribe__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include on-desktop {
+      display: grid;
+      grid-column: 1 / 7;
+      grid-row: 2;
+      grid-template-columns: 1fr;
+    }
+  }
+}

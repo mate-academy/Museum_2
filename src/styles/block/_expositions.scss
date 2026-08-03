@@ -1,0 +1,157 @@
+.expositions {
+  @include content-padding-inline;
+
+  margin-top: 90px;
+  position: relative;
+
+  @include on-tablet {
+    margin-top: 105px;
+  }
+
+  @include on-desktop {
+    margin-top: 110px;
+  }
+
+  &__container {
+    padding-top: 60px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      gap: 29px;
+      padding-top: 70px;
+    }
+  }
+
+  &__title {
+    @extend %h-2;
+
+    margin: 0 auto;
+
+    @include on-tablet {
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+    }
+  }
+
+  &__item {
+    // padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 100%;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+    }
+
+    //  second-item
+    &-2 {
+      padding-top: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      @include on-tablet {
+        padding: 0;
+        grid-column: 4/7;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / 13;
+      }
+    }
+
+    &--image {
+      @include image-hover(1.01, 0.9, 0.5s);
+
+      display: block;
+      background-position: 17%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+
+      width: 100%;
+      height: 356px;
+
+      @include on-tablet {
+        height: 420px;
+      }
+
+      @include on-desktop {
+        background-position: center center;
+
+        height: 484px;
+      }
+
+      &--angels {
+        background-image: url('../images/exibitions/exibitions1.png');
+      }
+
+      &--modern-art {
+        background-image: url('../images/exibitions/exibitions2.png');
+      }
+    }
+
+    &--label {
+      @extend %main-text;
+
+      padding-top: 20px;
+      color: $main;
+    }
+
+    &--name {
+      @extend %h-3;
+
+      padding-top: 10px;
+
+      @include on-tablet {
+        max-width: 309px;
+      }
+
+      @include on-desktop {
+        font-size: 24px;
+        white-space: nowrap;
+      }
+    }
+
+    &--description {
+      @extend %main-text;
+
+      padding-top: 20px;
+      flex-grow: 1;
+    }
+  }
+
+  &--button-1 {
+    margin-top: 30px;
+  }
+
+  &--button-2 {
+    margin-top: 30px;
+
+    @include on-tablet {
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: 39px;
+      margin: 0;
+      width: 210px;
+    }
+
+    @include on-desktop {
+      left: auto;
+      right: 55px;
+      width: 270;
+    }
+  }
+}

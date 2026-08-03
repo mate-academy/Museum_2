@@ -1,0 +1,175 @@
+.icon {
+  display: block;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: 0.4s ease;
+  transform: scale(1.02);
+
+  &--menu {
+    width: 25px;
+    height: 20px;
+    background-image: url('../images/icon/menu-w.svg');
+    transition: 0.3s ease;
+
+    &:hover {
+      width: 35px;
+      height: 35px;
+      background-image: url('../images/icon/menu-r.svg');
+    }
+
+    //  Поведінка іконки при tablet
+    &.icon--header {
+      @include on-tablet {
+        margin-right: 40px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  &--ua {
+    width: 23px;
+    height: 24px;
+    background-image: url('../images/icon/UA-w.svg');
+    transition: 0.4s ease;
+
+    @include on-tablet {
+      order: 2;
+    }
+
+    &:hover {
+      width: 35px;
+      height: 35px;
+      background-image: url('../images/icon/UA-UA.svg');
+    }
+
+    // Ховаємо іконку у HEADER!!! на маленьких екранах
+    &.icon--header {
+      display: none;
+
+      // проявляємо іконку при tablet
+      @include on-tablet {
+        display: block;
+        order: 1;
+        width: 35px;
+        height: 24px;
+      }
+    }
+  }
+
+  &--arrow {
+    background-image: url('../images/icon/dropdown-w.svg');
+    width: 8px;
+    height: 5px;
+    margin-right: 30px;
+    padding-left: 5px;
+
+    @include on-tablet {
+      order: 1;
+      margin: 0;
+      padding-left: 0; // mixin задає 34px додаємо 5px = 39px отримуємо.
+      padding-right: 5px;
+    }
+
+    // Ховаємо іконку у HEADER!!! на маленьких екранах
+    &.icon--header {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+        width: 8px;
+        height: 5px;
+        margin: 0;
+      }
+    }
+  }
+
+  &--close {
+    background-image: url('../images/icon/cross-w.svg');
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+
+    @include on-tablet {
+      order: 3;
+      margin-right: 44px;
+    }
+
+    &:hover {
+      transform: rotateY(180deg);
+      filter: brightness(0.7);
+    }
+  }
+
+  // Соцмережі
+
+  &--facebook {
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/icon/facebook-w.svg');
+
+    &:hover {
+      width: 22px;
+      height: 22px;
+      background-image: url('../images/icon/facebook-r.svg');
+    }
+  }
+
+  // Twitter
+
+  &--twitter {
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/icon/twitter-w.svg');
+
+    &:hover {
+      width: 22px;
+      height: 22px;
+      background-image: url('../images/icon/twitter-r.svg');
+    }
+  }
+
+  // Telegram
+  &--telegram {
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/icon/telegram-w.svg');
+
+    &:hover {
+      width: 22px;
+      height: 22px;
+      background-image: url('../images/icon/telegram-r.svg');
+    }
+  }
+
+  // Instagram
+  &--instagram {
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/icon/instagtam-w.svg');
+
+    &:hover {
+      width: 22px;
+      height: 22px;
+      background-image: url('../images/icon/instagtam-r.svg');
+    }
+  }
+
+  &--footer {
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/icon/Group-w.svg');
+
+    &:hover {
+      background-image: url('../images/icon/Group-r.svg');
+    }
+  }
+
+  &--header {
+    display: block;
+  }
+}
+
+// header on-tablet

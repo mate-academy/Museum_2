@@ -1,0 +1,173 @@
+.news {
+  @include content-padding-inline;
+
+  padding-top: 90px;
+
+  @include on-tablet {
+    padding-top: 120px;
+    height: 621px;
+  }
+
+  &__container {
+    padding-top: 60px;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      @include page-grid;
+
+      padding-top: 55px;
+    }
+  }
+
+  &__title {
+    @extend %h-2;
+
+    margin: 0 auto;
+
+    @include on-tablet {
+      font-size: 40px;
+    }
+
+    @include on-desktop {
+      font-size: 48px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      width: 100%;
+    }
+
+    &-2 {
+      @include on-tablet {
+        grid-column: 4/7;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / 13;
+      }
+    }
+
+    &--image {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 281px;
+      cursor: pointer;
+
+      @include image-hover(1.01, 0.9, 0.5s);
+
+      @include on-tablet {
+        height: 330px;
+      }
+
+      @include on-desktop {
+        height: 370px;
+      }
+
+      &--winner {
+        background-image: url('../images/news/img_08.png');
+
+        @include on-desktop {
+          background-image: url('../images/news/news1.png');
+        }
+      }
+
+      &--cats {
+        background-image: url('../images/news/img_09.png');
+
+        @include on-desktop {
+          background-image: url('../images/news/news2.png');
+        }
+      }
+    }
+
+    &--content {
+      display: flex;
+      flex-direction: column;
+
+      @include on-tablet {
+        grid-column: 1 / 3;
+        max-width: 330px;
+      }
+    }
+
+    &--label {
+      @extend %main-text;
+
+      padding-top: 20px;
+      color: $black;
+
+      @include on-tablet {
+        padding-top: 30px;
+        align-items: start;
+        font-size: 14px;
+      }
+    }
+
+    &--name {
+      @extend %h-3;
+
+      @include on-tablet {
+        font-size: 20px;
+      }
+    }
+
+    &--description {
+      @extend %main-text;
+
+      padding-top: 20px;
+      padding-bottom: 50px;
+
+      &-1 {
+        @extend %main-text;
+
+        padding-bottom: 0;
+      }
+
+      @include on-tablet {
+        padding: 0;
+        padding-top: 18px;
+      }
+    }
+  }
+
+  &__container > div:last-child {
+    .news__item--description {
+      padding-bottom: 0;
+    }
+  }
+
+  &--button {
+    @include on-tablet {
+      position: absolute;
+      right: 40px;
+      top: 3873px;
+      width: 210px;
+      height: 60px;
+      margin: 0;
+      padding: 0;
+    }
+
+    @include on-desktop {
+      right: 55px;
+      top: 4121px;
+      width: 270px;
+      height: 60px;
+    }
+  }
+}
