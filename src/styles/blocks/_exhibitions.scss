@@ -1,0 +1,202 @@
+.exhibitions {
+  padding-top: $section-gap-mobile;
+  color: $c-black;
+  background: $c-white;
+
+  @include on-tablet {
+    padding-top: $section-gap-tablet;
+  }
+
+  @include on-desktop {
+    padding-top: $section-gap-desktop;
+  }
+
+  // Grid areas so the archive button can sit under the list on mobile
+  // and beside the title from tablet up, without duplicating markup
+  &__content {
+    display: grid;
+    grid-template-areas:
+      'title'
+      'list'
+      'archive';
+
+    @include on-tablet {
+      grid-template-areas:
+        'title archive'
+        'list  list';
+      grid-template-columns: 1fr auto;
+      row-gap: 70px;
+      align-items: start;
+    }
+
+    @include on-desktop {
+      row-gap: 69px;
+    }
+  }
+
+  // Semantically h2, visually H3 in the scale
+  &__title {
+    @extend %h3;
+
+    grid-area: title;
+    margin: 0;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__archive {
+    grid-area: archive;
+    margin-top: 29px;
+
+    @include on-tablet {
+      justify-self: end;
+      margin-top: 0;
+    }
+  }
+
+  // Double class so the width wins over .button no matter the import order
+  &__archive.button {
+    width: 100%;
+
+    @include on-tablet {
+      width: columns-tablet(2);
+    }
+
+    @include on-desktop {
+      width: columns-desktop(3);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-area: list;
+    gap: 60px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $grid-gutter-tablet;
+    }
+
+    @include on-desktop {
+      gap: $grid-gutter-desktop;
+    }
+  }
+}
+
+.exhibition-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__picture {
+    display: block;
+    margin-bottom: 22px;
+
+    @include on-tablet {
+      margin-bottom: 31px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 21px;
+    }
+  }
+
+  // Aspect ratio instead of a fixed height: the frame keeps the proportion
+  // of the design at every width, not just at 320 / 768 / 1280
+  &__img {
+    display: block;
+
+    aspect-ratio: 280 / 356;
+    width: 100%;
+    height: auto;
+
+    // Capped at the next breakpoint's height, so the frame never dominates
+    // the card between breakpoints and the seams stay continuous
+    max-height: 420px;
+
+    object-fit: cover;
+
+    @include on-tablet {
+      aspect-ratio: 330 / 420;
+      max-height: 484px;
+    }
+
+    @include on-desktop {
+      aspect-ratio: 570 / 484;
+      max-height: none;
+    }
+  }
+
+  &__date {
+    @extend %text-main;
+
+    margin-bottom: 9px;
+    color: $c-main;
+
+    @include on-tablet {
+      margin-bottom: 10px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 9px;
+    }
+  }
+
+  // Two lines are reserved so descriptions stay on one baseline across
+  // cards even when one title wraps and another does not
+  &__title {
+    @extend %h4;
+
+    margin: 0;
+    margin-bottom: 17px;
+    color: $c-black;
+
+    @include on-tablet {
+      min-height: 2 * 1.25em;
+    }
+
+    @include on-desktop {
+      min-height: 0;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__text {
+    @extend %text-main;
+
+    margin: 0;
+    margin-bottom: 31px;
+    color: $c-gray;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 52px;
+    }
+  }
+
+  // Pushed to the bottom so buttons line up when cards hold different
+  // amounts of text
+  &__button {
+    margin-top: auto;
+  }
+
+  // Full card width until desktop, where the design pins it to 3 columns
+  &__button.button {
+    width: 100%;
+
+    @include on-desktop {
+      width: columns-desktop(3);
+    }
+  }
+}

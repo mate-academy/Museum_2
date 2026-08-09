@@ -1,0 +1,21 @@
+.container {
+  box-sizing: border-box;
+
+  // 1248 = 1170 + 39 * 2. The tablet range keeps its 39px margins, so without
+  // this cap the content kept growing to 1201 and then dropped back to 1170
+  // at 1280 — a 31px step down on the way into desktop. Capping here means
+  // the content reaches its final 1170 before the breakpoint and nothing
+  // moves across the seam.
+  max-width: 1248px;
+  margin: 0 auto;
+  padding: 0 $grid-margin-mobile;
+
+  @include on-tablet {
+    padding: 0 $grid-margin-tablet;
+  }
+
+  @include on-desktop {
+    max-width: $desktop-width;
+    padding: 0 $grid-margin-desktop;
+  }
+}

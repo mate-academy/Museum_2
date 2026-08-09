@@ -1,0 +1,220 @@
+.menu {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+
+  // Height comes from the inner frame, not the viewport, so the panel ends
+  // right under the artwork. Capped at the screen so short windows scroll.
+  overflow-y: auto;
+
+  width: 100%;
+  max-height: 100%;
+
+  visibility: hidden;
+  background: $c-background;
+
+  transition:
+    transform 0.3s,
+    visibility 0.3s;
+
+  &:target {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  // Anchored to the 800px design frame, not to the viewport bottom,
+  // so the layout matches the first screen on any window height
+  // Same role as .hero — keeps the artwork aligned with the container
+  // on screens wider than the design
+  &__inner {
+    position: relative;
+    max-width: $desktop-width;
+    margin: 0 auto;
+    padding-bottom: 60px;
+
+    @include on-tablet {
+      min-height: $page-height-tablet;
+      padding-bottom: 0;
+    }
+
+    @include on-desktop {
+      min-height: $page-height-desktop;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include on-tablet {
+      position: absolute;
+      top: $page-height-tablet - $menu-picture-height-tablet;
+      right: 50%;
+      transform: translateX(50%);
+
+      display: block;
+
+      width: $menu-picture-width-tablet;
+      max-width: 100%;
+      height: $menu-picture-height-tablet;
+    }
+
+    @include on-desktop {
+      top: $page-height-desktop - $menu-picture-height-desktop;
+      right: 0;
+      transform: none;
+
+      width: $menu-picture-width-desktop;
+      height: $menu-picture-height-desktop;
+    }
+  }
+
+  // Tablet crops the artwork slightly differently from desktop, so the box
+  // is sized to the design and the image fills it exactly
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+
+    @include on-desktop {
+      object-fit: cover;
+      object-position: bottom;
+    }
+  }
+
+  // Sits above the painting, which is absolutely positioned
+  &__top-bar,
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+
+    margin: 0;
+    padding-top: 10px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: $grid-gutter-tablet;
+      padding-top: 30px;
+    }
+
+    @include on-desktop {
+      padding-top: 13px;
+    }
+  }
+
+  &__info-item {
+    &:first-child {
+      @include on-tablet {
+        width: columns-tablet(2);
+      }
+
+      @include on-desktop {
+        width: columns-desktop(2);
+      }
+    }
+  }
+
+  &__info-title {
+    @extend %text-additional;
+
+    margin: 0;
+  }
+
+  &__info-value {
+    @extend %text-main;
+
+    margin: 0;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+
+    margin: 0;
+    padding: 0;
+    padding-top: 41px;
+
+    list-style: none;
+
+    @include on-tablet {
+      gap: 30px;
+      padding-top: 50px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+      padding-top: 70px;
+    }
+  }
+
+  // H4 on mobile, H3 from tablet up — so the sizes are set explicitly
+  // rather than extending one scale entry.
+  // Block display keeps the parent's line-height strut from inflating the line box.
+  &__link {
+    display: block;
+
+    font-family: $font-heading;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 125%;
+    color: $c-white;
+    text-decoration-line: none;
+    text-decoration-thickness: 1.5px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 5px;
+    letter-spacing: 0;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+
+  &__divider {
+    // Spans the whole content until desktop, where the design pins it
+    // to 6 of the 12 columns
+    width: 100%;
+    height: 1px;
+    margin: 42px 0 0;
+    border: 0;
+
+    @include on-tablet {
+      margin-top: 49.5px;
+    }
+
+    @include on-desktop {
+      width: columns-desktop(6);
+      margin-top: 60px;
+    }
+
+    background: rgba($c-white, 0.3);
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      margin-top: 60px;
+    }
+  }
+}
