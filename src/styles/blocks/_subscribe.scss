@@ -1,0 +1,103 @@
+.subscribe {
+  @include padding-inline;
+
+  padding-bottom: 80px;
+
+  @include on-tablet {
+    padding-bottom: 128px;
+  }
+
+  @include on-desktop {
+    padding-bottom: 200px;
+  }
+
+  &__content {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      column-gap: 30px;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: 30px;
+    }
+  }
+
+  &__title {
+    @extend %h2-fm-playfair-display-w-700-fs-28-lh-125-c-1c1b29;
+
+    text-align: left;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      font-size: 35px;
+      margin-bottom: 20px;
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      font-size: 48px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    @extend %main-text-black-fm-raleway-w-400-fs-16-lh-150-c-1c1b29;
+
+    text-align: left;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 13;
+      margin-bottom: 0;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      display: contents;
+    }
+  }
+
+  &__input {
+    @extend %input;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      width: 100%;
+      max-width: none;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__button {
+    @extend %button-primary;
+    
+    border: none;
+    margin-top: 30px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      margin-top: 40px;
+    }
+  }
+}

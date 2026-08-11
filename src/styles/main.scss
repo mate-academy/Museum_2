@@ -1,7 +1,75 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import 'blocks/header';
+@import 'blocks/menu';
+@import 'blocks/hero';
+@import 'blocks/exhibitions';
+@import 'blocks/events';
+@import 'blocks/visit';
+@import 'blocks/news';
+@import 'blocks/subscribe';
+@import 'blocks/footer';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  &:has(body.page--menu-open) {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+}
 
 body {
+  margin: 0;
+  font-family: $font-base;
   background: $c-gray;
+  overflow-x: hidden;
+
+  &.page--menu-open {
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate(-40px, 30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
 }
