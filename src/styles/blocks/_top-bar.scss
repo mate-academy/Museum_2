@@ -1,0 +1,154 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height-mobile;
+
+  @include on-tablet {
+    height: $header-height-tablet;
+  }
+
+  @include on-desktop {
+    height: $header-height-desktop;
+  }
+
+  // The design places the logo 2px below centre on mobile
+  &__logo {
+    position: relative;
+    top: 2px;
+
+    display: block;
+
+    width: 124px;
+    height: 37px;
+
+    @include on-tablet {
+      top: 0;
+    }
+  }
+
+  &__logo-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    @include on-tablet {
+      gap: 40px;
+    }
+  }
+
+  // Mobile puts the language switcher before the close icon
+  &--menu &__actions {
+    @include on-mobile-only {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__menu-opener {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+
+    @include on-tablet {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__menu-icon {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: space-between;
+
+    width: 25px;
+    height: 20px;
+
+    &::before,
+    &::after {
+      content: '';
+    }
+
+    &::before,
+    &::after,
+    span {
+      display: block;
+      height: 2px;
+      background: $c-white;
+      transition:
+        transform 0.3s,
+        opacity 0.3s;
+    }
+
+    &--close {
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        width: 100%;
+        margin-top: -1px;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+
+      span {
+        opacity: 0;
+      }
+    }
+  }
+
+  // Only the menu shows the language switcher on mobile
+  &__language {
+    @extend %text-main;
+
+    cursor: pointer;
+
+    display: none;
+    gap: 2px;
+    align-items: center;
+
+    font-weight: 500;
+    color: $c-white;
+    text-decoration: none;
+
+    @include on-tablet {
+      display: flex;
+    }
+  }
+
+  &--menu &__language {
+    display: flex;
+  }
+
+  &__language-arrow {
+    display: block;
+    width: 10px;
+    height: 7px;
+  }
+}

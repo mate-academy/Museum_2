@@ -1,0 +1,84 @@
+.button {
+  @extend %text-button;
+
+  cursor: pointer;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: columns-mobile(2);
+  max-width: 100%;
+  height: 60px;
+  border: 0;
+
+  color: $c-white;
+  text-decoration: none;
+
+  background: $c-main;
+
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s;
+
+  @include on-tablet {
+    width: columns-tablet(3);
+  }
+
+  @include on-desktop {
+    width: columns-desktop(3);
+  }
+
+  &:hover {
+    background: $c-main-hover;
+  }
+
+  &:active {
+    background: $c-main-pressed;
+  }
+
+  &--disabled,
+  &:disabled {
+    pointer-events: none;
+    background: $c-main-disabled;
+  }
+
+  &--secondary {
+    border: 1px solid $c-main;
+    color: $c-main;
+    background: transparent;
+
+    &:hover {
+      border-color: $c-main-hover;
+      color: $c-main-hover;
+      background: transparent;
+    }
+
+    &:active {
+      border-color: $c-main-pressed;
+      color: $c-main-pressed;
+      background: transparent;
+    }
+
+    &.button--disabled,
+    &:disabled {
+      border-color: $c-main-disabled;
+      color: $c-main-disabled;
+      background: transparent;
+    }
+  }
+
+  // Inherits the button's colour, so one icon covers every state
+  &__icon {
+    display: block;
+    flex-shrink: 0;
+
+    width: 16px;
+    height: 14px;
+
+    color: currentColor;
+  }
+}

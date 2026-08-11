@@ -1,0 +1,30 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  @extend %text-main;
+
+  color: $c-white;
+
+  // Only the overlay scrolls while it is open — otherwise a short window
+  // shows two scrollbars at once: the page's and the menu's
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+
+  // Sections between the hero and the footer sit on white; the gap above the
+  // dark "plan" section has to be white too, so the colour lives on <main>
+  &__main {
+    color: $c-black;
+    background: $c-white;
+  }
+
+  &__body {
+    // 320px is the narrowest layout in the design. Below that the page pans
+    // as a whole instead of letting long words break out of the container.
+    min-width: $mobile-width;
+    margin: 0;
+    background: $c-background;
+  }
+}

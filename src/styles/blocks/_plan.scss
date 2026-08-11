@@ -1,0 +1,116 @@
+.plan {
+  // Margin, not padding: the gap must stay white, while the section itself
+  // is dark
+  margin-top: $section-gap-plan-mobile;
+  color: $c-white;
+  background: $c-background;
+
+  @include on-tablet {
+    margin-top: $section-gap-plan-tablet;
+  }
+
+  @include on-desktop {
+    margin-top: $section-gap-plan-desktop;
+  }
+
+  // Same max-width frame as the hero and the menu, so the artwork stays
+  // aligned with the container on screens wider than the design
+  &__inner {
+    position: relative;
+    max-width: $desktop-width;
+    min-height: $plan-height-mobile;
+    margin: 0 auto;
+
+    @include on-tablet {
+      min-height: $plan-height-tablet;
+    }
+
+    @include on-desktop {
+      min-height: $plan-height-desktop;
+    }
+  }
+
+  // Desktop only — the artwork bleeds off the left edge of the frame
+  &__picture {
+    display: none;
+
+    // The artwork is cut off at the frame edge by design, so on screens wider
+    // than 1280 the whole picture shifts left to stay flush with the viewport
+    // edge — otherwise that cut shows up as a vertical seam.
+
+    // It keeps its natural size instead of stretching to fill the gap:
+    // a wider box would make `cover` scale the image up and crop it
+    // vertically, which cuts off the top of the head. Its right-hand side is
+    // the transparent silhouette of the profile, so no seam appears there.
+    @include on-desktop {
+      position: absolute;
+      top: 32.5px;
+      left: calc((100% - 100vw) / 2);
+
+      display: block;
+
+      width: 500px;
+      height: 767.5px;
+    }
+  }
+
+  &__img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: left top;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding-top: 50.5px;
+
+    @include on-tablet {
+      padding-top: 90.5px;
+    }
+
+    @include on-desktop {
+      // Starts at the 6th column, clear of the artwork
+      margin-left: columns-desktop(5) + $grid-gutter-desktop;
+      padding-top: 225.5px;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+
+    margin: 0;
+    margin-bottom: 19.5px;
+
+    @include on-tablet {
+      max-width: columns-tablet(4);
+      margin-bottom: 30.5px;
+    }
+
+    @include on-desktop {
+      max-width: 620px;
+      margin-bottom: 30.5px;
+    }
+  }
+
+  &__text {
+    @extend %text-main;
+
+    margin: 0;
+    margin-bottom: 39.5px;
+
+    @include on-tablet {
+      max-width: columns-tablet(4);
+      margin-bottom: 57.5px;
+    }
+
+    @include on-desktop {
+      max-width: 500px;
+      margin-bottom: 47px;
+    }
+  }
+}

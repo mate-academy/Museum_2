@@ -1,0 +1,120 @@
+.subscribe {
+  // 120 / 160 / 200 — this block has its own gap at every breakpoint, none of
+  // them shared, so all three stay local and _vars.scss needs no edits
+  padding-top: 120px;
+
+  // The gap above the footer lives here, not as a margin on .footer: the
+  // footer sits outside <main> and .page__body is dark, so a transparent
+  // margin would show green instead of the light band the design has. As the
+  // last block inside <main>, this one carries the gap and keeps it light —
+  // and the footer stays exactly 398 tall.
+  padding-bottom: 80px;
+  color: $c-black;
+  background: $c-white;
+
+  @include on-tablet {
+    padding-top: 160px;
+    padding-bottom: 128px;
+  }
+
+  @include on-desktop {
+    padding-top: 200px;
+    padding-bottom: 199px;
+  }
+
+  // Two columns from desktop up: the form on the left (5 columns), the
+  // description on the right (6 columns), starting at the 7th column.
+  // 470 + 130 + 570 = 1170, and the gap is exactly one column plus two
+  // gutters — column 6 is left empty by the design.
+  &__content {
+    @include on-desktop {
+      display: grid;
+      grid-template-areas:
+        'title text'
+        'form  text';
+      grid-template-columns: columns-desktop(5) columns-desktop(6);
+      column-gap: $grid-column-width-desktop + 2 * $grid-gutter-desktop;
+      align-items: start;
+    }
+  }
+
+  // Semantically h2, visually H3 in the scale — at %h2 (80px) the heading
+  // could not break into the two lines the design shows in a 470px column
+  &__title {
+    @extend %h3;
+
+    grid-area: title;
+    margin: 0;
+    margin-bottom: 30px;
+
+    @include on-desktop {
+      margin-bottom: 51px;
+    }
+  }
+
+  &__text {
+    @extend %text-main;
+
+    grid-area: text;
+    margin: 0;
+    margin-bottom: 40px;
+    color: $c-black;
+
+    @include on-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form {
+    grid-area: form;
+  }
+
+  // Underlined field: no box, only the bottom line. 24px line box plus 3px
+  // of padding puts that line 28px below the top of the field, which is
+  // where the design draws it.
+  &__input {
+    @extend %text-main;
+
+    display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 0 0 3px;
+    border: 0;
+    border-bottom: 1px solid $c-black;
+
+    color: $c-black;
+
+    background: transparent;
+    caret-color: $c-main;
+
+    transition: border-color 0.3s;
+
+    &::placeholder {
+      color: $c-black;
+      transition: color 0.3s;
+    }
+
+    &:hover::placeholder {
+      color: $c-main-disabled;
+    }
+
+    &:focus {
+      border-bottom-color: $c-main;
+      outline: none;
+    }
+  }
+
+  &__button.button {
+    width: 100%;
+
+    @include on-tablet {
+      width: columns-tablet(3);
+    }
+
+    @include on-desktop {
+      width: columns-desktop(3);
+    }
+  }
+}

@@ -1,0 +1,161 @@
+.hero {
+  // Absolutely positioned decorations anchor to this box, not to the viewport,
+  // so they stay aligned with the container on screens wider than the design
+  position: relative;
+
+  box-sizing: border-box;
+  max-width: $desktop-width;
+  min-height: $page-height-mobile - $header-height-mobile;
+  margin: 0 auto;
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding-top: 52px;
+
+    @include on-tablet {
+      padding-top: 101px;
+    }
+
+    @include on-desktop {
+      max-width: columns-desktop(6);
+      padding-top: 90px;
+    }
+  }
+
+  &__dates {
+    @extend %text-additional;
+
+    margin-bottom: 9px;
+
+    @include on-desktop {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 27.5px;
+
+    @include on-tablet {
+      max-width: columns-tablet(5);
+      margin-bottom: 17px;
+    }
+
+    @include on-desktop {
+      max-width: none;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    @extend %text-main;
+
+    // 10px under the column so the line breaks after "у" as in the design,
+    // while still growing with the container above 320px
+    max-width: calc(100% - 10px);
+    margin-bottom: 42px;
+
+    @include on-tablet {
+      max-width: columns-tablet(3);
+      margin-bottom: 53px;
+    }
+
+    @include on-desktop {
+      max-width: none;
+      margin-bottom: 81px;
+    }
+  }
+
+  // Centred under the content until desktop, where it pins to the right edge
+  &__picture {
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    transform: translateX(50%);
+
+    display: block;
+
+    width: $hero-picture-width-mobile;
+    max-width: 100%;
+    height: $hero-picture-height-mobile;
+
+    @include on-tablet {
+      width: 443px;
+      height: 471px;
+    }
+
+    @include on-desktop {
+      right: 0;
+      transform: none;
+      width: 625px;
+      height: 663px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+
+    @include on-desktop {
+      object-fit: cover;
+      object-position: bottom;
+    }
+  }
+
+  &__duration {
+    display: none;
+
+    @include on-desktop {
+      position: absolute;
+      right: $desktop-width - $grid-margin-desktop - columns-desktop(6);
+      bottom: 50px;
+      left: $grid-margin-desktop;
+
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  }
+
+  &__duration-text {
+    @extend %h6;
+
+    flex-shrink: 0;
+  }
+
+  &__duration-line {
+    flex-grow: 1;
+    height: 1px;
+    background: $c-white;
+  }
+
+  // The first screen never drops below the design height — at less than that
+  // the picture no longer fits its box and the composition falls apart. On a
+  // window taller than the design it grows to fill the viewport instead of
+  // leaving a strip of the next section above the fold. `dvh` is the mobile
+  // variant, where `vh` also counts the band behind the address bar.
+  @media (min-height: $page-height-mobile) {
+    min-height: calc(100vh - #{$header-height-mobile});
+    min-height: calc(100dvh - #{$header-height-mobile});
+  }
+
+  @include on-tablet {
+    min-height: $page-height-tablet - $header-height-tablet;
+
+    @media (min-height: $page-height-tablet) {
+      min-height: calc(100vh - #{$header-height-tablet});
+      min-height: calc(100dvh - #{$header-height-tablet});
+    }
+  }
+
+  @include on-desktop {
+    min-height: $page-height-desktop - $header-height-desktop;
+
+    @media (min-height: $page-height-desktop) {
+      min-height: calc(100vh - #{$header-height-desktop});
+      min-height: calc(100dvh - #{$header-height-desktop});
+    }
+  }
+}

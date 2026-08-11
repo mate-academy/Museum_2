@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns-desktop, 1fr);
+  column-gap: $grid-gutter-desktop;
+
+  @for $start from 1 through $grid-columns-desktop {
+    @for $end from $start through $grid-columns-desktop {
+      &__item--desktop-#{$start}-#{$end} {
+        grid-column: #{$start} / #{$end + 1};
+      }
+    }
+  }
+}

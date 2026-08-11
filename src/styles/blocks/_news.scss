@@ -1,0 +1,177 @@
+.news {
+  padding-top: $section-gap-mobile;
+  color: $c-black;
+  background: $c-white;
+
+  // 120 on tablet, not the shared $section-gap-tablet (100) — this block is
+  // the only one with that gap, so the value stays local instead of adding
+  // a variable that every other file would have to know about
+  @include on-tablet {
+    padding-top: 120px;
+  }
+
+  @include on-desktop {
+    padding-top: $section-gap-desktop;
+  }
+
+  // Same grid-area trick as the exhibitions and events blocks, so the
+  // "all news" button can drop below the list on narrow screens
+  &__content {
+    display: grid;
+    grid-template-areas:
+      'title'
+      'list'
+      'all';
+
+    @include on-tablet {
+      grid-template-areas:
+        'title all'
+        'list  list';
+      grid-template-columns: 1fr auto;
+      row-gap: 70px;
+
+      // The section title is centred against the 60px button, not top-aligned:
+      // at 40px / 125% its box is 50 tall and the design leaves 5px above it
+      align-items: center;
+    }
+
+    @include on-desktop {
+      row-gap: 53px;
+    }
+  }
+
+  // Semantically h2, visually H3 in the scale
+  &__title {
+    @extend %h3;
+
+    grid-area: title;
+    margin: 0;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__all {
+    grid-area: all;
+    margin-top: 30px;
+
+    @include on-tablet {
+      justify-self: end;
+      margin-top: 0;
+    }
+  }
+
+  // Double class so the width wins over .button no matter the import order
+  &__all.button {
+    width: 100%;
+
+    @include on-tablet {
+      width: columns-tablet(2);
+    }
+
+    @include on-desktop {
+      width: columns-desktop(3);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-area: list;
+    gap: 49px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include on-tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $grid-gutter-tablet;
+    }
+
+    @include on-desktop {
+      gap: $grid-gutter-desktop;
+    }
+  }
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__picture {
+    display: block;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  // Two crops, not one scaled frame: the tablet shot is square (330 x 330)
+  // while the desktop one is landscape (570 x 370) — different crops of the
+  // same photo in Figma, so they are swapped via <picture media>
+  &__img {
+    display: block;
+
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+
+    // Capped at the next breakpoint's height, so the frame never dominates
+    // the card between breakpoints and the seams stay continuous
+    max-height: 330px;
+
+    object-fit: cover;
+
+    @include on-tablet {
+      max-height: 370px;
+    }
+
+    @include on-desktop {
+      aspect-ratio: 570 / 370;
+      max-height: none;
+    }
+  }
+
+  // Unlike the exhibition cards, the date here is 14px and dark, not 16px
+  // and orange — taken from the design, where it reads as a caption
+  &__date {
+    @extend %text-additional;
+
+    margin: 0;
+    color: $c-black;
+  }
+
+  // 20px Playfair at every breakpoint, one step below the exhibition card
+  // title. The leading is the odd part: 125% on mobile, 150% from tablet up.
+  // With 150% everywhere the mobile title sat 2px low and the description
+  // drifted 5px, because the taller box pushes everything under it down.
+  &__title {
+    @extend %h5;
+
+    margin: 0;
+    margin-bottom: 21px;
+    line-height: 125%;
+    color: $c-black;
+
+    @include on-tablet {
+      margin-bottom: 20.5px;
+      line-height: 150%;
+    }
+  }
+
+  &__text {
+    @extend %text-main;
+
+    margin: 0;
+    color: $c-gray;
+  }
+}

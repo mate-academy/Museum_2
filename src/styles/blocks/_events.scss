@@ -1,0 +1,178 @@
+.events {
+  padding-top: 90px;
+  color: $c-black;
+  background: $c-white;
+
+  @include on-tablet {
+    padding-top: $section-gap-events-tablet;
+  }
+
+  @include on-desktop {
+    padding-top: $section-gap-events-desktop;
+  }
+
+  // Same grid-area trick as the exhibitions block, so the calendar button
+  // can drop below the list on narrow screens
+  &__content {
+    display: grid;
+    grid-template-areas:
+      'title'
+      'list'
+      'calendar';
+
+    @include on-tablet {
+      grid-template-areas:
+        'title    calendar'
+        'list     list';
+      grid-template-columns: 1fr auto;
+      row-gap: 70px;
+      align-items: start;
+    }
+
+    @include on-desktop {
+      row-gap: 68px;
+    }
+  }
+
+  // Semantically h2, visually H3 in the scale
+  &__title {
+    @extend %h3;
+
+    grid-area: title;
+    margin: 0;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__calendar {
+    grid-area: calendar;
+    margin-top: 30px;
+
+    @include on-tablet {
+      justify-self: end;
+      margin-top: 0;
+    }
+  }
+
+  &__calendar.button {
+    width: 100%;
+
+    @include on-tablet {
+      width: columns-tablet(2);
+    }
+
+    @include on-desktop {
+      width: columns-desktop(3);
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-area: list;
+    gap: 68px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+}
+
+.event-card {
+  display: grid;
+  gap: 30px;
+
+  // Fractions, not fixed columns, so the card fills the container across
+  // the whole tablet range and not just at 768
+  @include on-tablet {
+    grid-template-columns: 1fr 1fr;
+    column-gap: $grid-gutter-tablet;
+  }
+
+  @include on-desktop {
+    grid-template-columns: columns-desktop(4) columns-desktop(6);
+    column-gap: $grid-gutter-desktop;
+  }
+
+  &__picture {
+    display: block;
+  }
+
+  &__img {
+    display: block;
+
+    // One crop for every breakpoint — unlike the exhibition cards, the frame
+    // keeps the same proportion and is only scaled
+    aspect-ratio: 370 / 475;
+    width: 100%;
+    height: auto;
+
+    // Capped at the next breakpoint's height so the seams stay continuous
+    max-height: 424px;
+
+    object-fit: cover;
+
+    @include on-tablet {
+      max-height: 475px;
+    }
+
+    @include on-desktop {
+      max-height: none;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__date {
+    @extend %text-main;
+
+    margin: 0;
+    margin-bottom: 10.5px;
+    color: $c-main;
+  }
+
+  &__title {
+    @extend %h4;
+
+    margin: 0;
+    margin-bottom: 17.5px;
+    color: $c-black;
+  }
+
+  &__text {
+    @extend %text-main;
+
+    margin: 0;
+    margin-bottom: 52px;
+    color: $c-gray;
+
+    @include on-desktop {
+      margin-bottom: 54px;
+    }
+  }
+
+  // Full width of the text column until desktop, where the design pins it
+  &__button.button {
+    width: 100%;
+
+    @include on-tablet {
+      max-width: columns-tablet(3);
+    }
+
+    @include on-desktop {
+      width: columns-desktop(3);
+      max-width: none;
+    }
+  }
+}
