@@ -8,14 +8,6 @@
   min-height: $page-height-mobile - $header-height-mobile;
   margin: 0 auto;
 
-  @include on-tablet {
-    min-height: $page-height-tablet - $header-height-tablet;
-  }
-
-  @include on-desktop {
-    min-height: $page-height-desktop - $header-height-desktop;
-  }
-
   &__content {
     position: relative;
     z-index: 1;
@@ -137,5 +129,33 @@
     flex-grow: 1;
     height: 1px;
     background: $c-white;
+  }
+
+  // The first screen never drops below the design height — at less than that
+  // the picture no longer fits its box and the composition falls apart. On a
+  // window taller than the design it grows to fill the viewport instead of
+  // leaving a strip of the next section above the fold. `dvh` is the mobile
+  // variant, where `vh` also counts the band behind the address bar.
+  @media (min-height: $page-height-mobile) {
+    min-height: calc(100vh - #{$header-height-mobile});
+    min-height: calc(100dvh - #{$header-height-mobile});
+  }
+
+  @include on-tablet {
+    min-height: $page-height-tablet - $header-height-tablet;
+
+    @media (min-height: $page-height-tablet) {
+      min-height: calc(100vh - #{$header-height-tablet});
+      min-height: calc(100dvh - #{$header-height-tablet});
+    }
+  }
+
+  @include on-desktop {
+    min-height: $page-height-desktop - $header-height-desktop;
+
+    @media (min-height: $page-height-desktop) {
+      min-height: calc(100vh - #{$header-height-desktop});
+      min-height: calc(100dvh - #{$header-height-desktop});
+    }
   }
 }
