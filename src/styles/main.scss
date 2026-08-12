@@ -57,9 +57,27 @@ body {
   background: $c-gray;
   overflow-x: hidden;
 
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background-color: $c-bg;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
+  }
+
   &.page--menu-open {
     overflow: hidden;
     overscroll-behavior: none;
+
+    &::before {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.05s ease-out, visibility 0s;
+    }
   }
 }
 

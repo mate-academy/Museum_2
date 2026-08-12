@@ -92,10 +92,12 @@
     }
   }
 
-  &__button {
-    @extend %button-primary;
-    
+  &__button-wrap {
     margin-bottom: 40px;
+
+    &.reveal {
+      transition-delay: 0.15s;
+    }
 
     @include on-tablet {
       margin-bottom: 70px;
@@ -106,6 +108,15 @@
       width: 100%;
       max-width: 100%;
       margin-bottom: 135px;
+    }
+  }
+
+  &__button {
+    @extend %button-primary;
+
+    @include on-desktop {
+      width: 100%;
+      max-width: 100%;
     }
   }
 

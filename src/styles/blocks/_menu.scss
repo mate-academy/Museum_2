@@ -1,27 +1,31 @@
 .menu {
-  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: $c-bg;
+  @include padding-inline;
 
-  &--open {
-    display: block;
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background-color: $c-bg;
-    @include padding-inline;
+  padding-top: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 
-    padding-top: 20px;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-
-    @include on-desktop {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      column-gap: 30px;
-      padding-top: 32px;
-    }
+  @include on-desktop {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 30px;
+    padding-top: 32px;
   }
 
   &__picture {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    transition-delay: 0s;
     display: none;
 
     @include on-tablet {
@@ -43,6 +47,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.45s ease-out;
+    transition-delay: 0s;
 
     @include on-desktop {
       grid-column: 1 / 13;
@@ -51,8 +58,7 @@
 
   &__info,
   &__list,
-  &__divider,
-  &__button {
+  &__divider {
     @include on-desktop {
       grid-column: 1 / 7;
     }
@@ -76,13 +82,20 @@
     &__close-button {
       order: 1;
     }
-    &__lang {
+    &__lang-wrap {
       order: 2;
     }
   }
 
+  &__lang-wrap {
+    opacity: 0;
+    transition: opacity 0.45s ease-out;
+    transition-delay: 0s;
+  }
+
   &__lang {
     position: relative;
+    z-index: 2;
   }
 
   &__lang-button {
@@ -106,7 +119,13 @@
     margin: 0;
     gap: 8px;
     text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s;
     @extend %menu-lang-fm-raleway-w-500-fs-16-lh-100-c-f1f5f4;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__lang-flag {
@@ -116,12 +135,6 @@
 
   &__lang-item {
     margin: 0;
-    cursor: pointer;
-    transition: transform 0.3s;
-
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 
   &__lang-item:not(:last-child) {
@@ -133,6 +146,7 @@
     position: absolute;
     top: calc(100% + 12px);
     left: 0;
+    z-index: 3;
     flex-direction: column;
     gap: 4px;
   }
@@ -188,6 +202,11 @@
   }
 
   &__info {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    transition-delay: 0s;
+
     @include on-tablet {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
@@ -222,6 +241,10 @@
 
   &__item {
     display: block;
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    transition-delay: 0s;
   }
 
   &__item:not(:last-child) {
@@ -329,11 +352,82 @@
     }
   }
 
-  &__button {
-    @extend %button-primary;
+  &__button-wrap {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    transition-delay: 0s;
 
     @include on-tablet {
       margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &__button {
+    @extend %button-primary;
+
+    @include on-desktop {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  &--open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    .menu__top {
+      opacity: 1;
+      transition-delay: 0.1s;
+    }
+
+    .menu__lang-wrap {
+      opacity: 1;
+      transition-delay: 0.12s;
+    }
+
+    .menu__info {
+      opacity: 1;
+      transform: translate(0);
+      transition-delay: 0.15s;
+    }
+
+    .menu__item:nth-child(1) {
+      opacity: 1;
+      transform: translate(0);
+      transition-delay: 0.2s;
+    }
+
+    .menu__item:nth-child(2) {
+      opacity: 1;
+      transform: translate(0);
+      transition-delay: 0.28s;
+    }
+
+    .menu__item:nth-child(3) {
+      opacity: 1;
+      transform: translate(0);
+      transition-delay: 0.36s;
+    }
+
+    .menu__button-wrap {
+      opacity: 1;
+      transform: translate(0);
+      transition-delay: 0.45s;
+    }
+
+    .menu__picture {
+      opacity: 1;
+      transform: translate(0);
+      transition-delay: 0.5s;
     }
   }
 }
