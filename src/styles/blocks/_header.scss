@@ -1,0 +1,137 @@
+.header {
+  background-color: $c-bg;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include padding-inline;
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @include on-desktop {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__logo-image {
+    display: block;
+    width: 123px;
+    height: auto;
+  }
+
+  &__menu-burger {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 25px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  }
+  
+  &__menu-line {
+    display: block;
+    width: 25px;
+    height: 2px;
+    min-height: 2px;
+    background-color: $h1-color;
+    flex-shrink: 0;
+  }
+
+  &:has(.menu--open) {
+    .header__menu-burger {
+      display: none;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__lang {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    position: relative;
+  }
+
+  &__lang-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: $h1-color;
+  }
+
+  &__lang-code {
+    @extend %menu-lang-fm-raleway-w-500-fs-16-lh-100-c-f1f5f4;
+  }
+
+  &__lang-link {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 8px;
+    text-decoration: none;
+    @extend %menu-lang-fm-raleway-w-500-fs-16-lh-100-c-f1f5f4;
+  }
+
+  &__lang-flag {
+    width: 24px;
+    height: auto;
+  }
+
+  &__lang-item {
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__lang-item:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  &__lang-list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__lang-list--open {
+    display: block;
+  }
+}
