@@ -1,0 +1,124 @@
+.header {
+  position: relative;
+  z-index: 3;
+
+  box-sizing: border-box;
+  height: 100vh;
+  padding-bottom: 20px;
+
+  color: $c-white;
+
+  background-color: $c-dark-green;
+
+  &__flex-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 30px;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &__top-bar {
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__dates {
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__title {
+    max-width: 570px;
+    margin-bottom: 30px;
+    font-size: 48px;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+      font-size: 72px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 30px;
+      font-size: 72px;
+    }
+  }
+
+  &__buy-ticket-link {
+    @include button-style;
+
+    margin-block: 40px;
+
+    @include on-tablet {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__days-lg {
+    position: relative;
+    display: none;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+      transform: translate(20px, 50%);
+
+      width: 450px;
+      height: 1px;
+
+      opacity: 50%;
+      background-color: $c-white;
+    }
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+
+    @include on-desktop {
+      right: 0;
+      left: auto;
+    }
+  }
+
+  &__image {
+    z-index: -1;
+
+    display: block;
+
+    width: 245px;
+    height: 273px;
+
+    object-fit: cover;
+    object-position: center;
+
+    @include on-tablet {
+      width: 443px;
+      height: 494px;
+    }
+
+    @include on-desktop {
+      width: 625px;
+      height: 633px;
+    }
+  }
+}
