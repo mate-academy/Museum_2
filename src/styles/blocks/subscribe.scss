@@ -6,8 +6,8 @@
 
     @include on-desktop {
       flex-direction: row;
-      justify-content: space-between;
       gap: 100px;
+      justify-content: space-between;
     }
   }
 
@@ -24,10 +24,9 @@
 
   &__info {
     flex: 1;
+    margin-bottom: 50px;
     font-size: 16px;
     color: $c-black;
-
-    margin-bottom: 50px;
   }
 
   &__form-label {
@@ -35,26 +34,24 @@
   }
 
   &__form-input {
-    font-family: Raleway, sans-serif;
-    background-color: $c-white;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 3px;
     border: none;
     border-bottom: 1px solid $c-black;
-    padding-bottom: 3px;
-    margin-bottom: 30px;
-    width: 100%;
 
     font-size: 16px;
     font-weight: $weight-bald;
     line-height: 150%;
 
-    @include auto-fill-styling;
-
-    &:hover {
-      border-color: $c-red;
-    }
+    background-color: $c-white;
 
     &::placeholder {
       font-weight: 400;
+    }
+
+    &:hover {
+      border-color: $c-red;
     }
 
     &:hover::placeholder {
@@ -62,18 +59,20 @@
     }
 
     &:focus {
-      outline: none;
       border: none;
       border-bottom: 1px solid $c-red;
+      outline: none;
     }
+
+    @include auto-fill-styling;
 
     @include on-tablet {
       width: 450px;
     }
 
     @include on-desktop {
-      margin-bottom: 40px;
       width: 470px;
+      margin-bottom: 40px;
     }
   }
 
@@ -81,7 +80,6 @@
     @include button-style;
 
     cursor: pointer;
-    font-family: raleway, sans-serif;
     font-size: 16px;
   }
 }

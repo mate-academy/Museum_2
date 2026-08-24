@@ -1,19 +1,16 @@
 .menu {
-  // position: relative;
-  height: 100vh;
-  width: 100vw;
-  box-sizing: border-box;
-  min-width: 320px;
   overflow-y: scroll;
 
-  background-color: $c-dark-green;
+  box-sizing: border-box;
+  width: 100vw;
+  min-width: 320px;
+  height: 100vh;
+
   color: $c-white;
 
-  &__top-bar {
-    // position: sticky; /* to keep cross always visible */
-    // top: 0;
-    // z-index: 1;
+  background-color: $c-dark-green;
 
+  &__top-bar {
     margin-bottom: 30px;
 
     @include on-tablet {
@@ -80,30 +77,29 @@
   }
 
   &__img {
-    display: none;
-    width: 422px;
-    height: 466px;
-
     position: absolute;
+    z-index: -1;
+    right: 0;
     bottom: 0;
     left: 50%;
-    right: 0;
-    z-index: -1;
-
     transform: translateX(-50%);
+
+    display: none;
+
+    width: 422px;
+    height: 466px;
 
     @include on-tablet {
       display: block;
     }
 
     @include on-desktop {
+      right: 0;
+      left: auto;
+      transform: translateX(0);
+
       width: 625px;
       height: 697px;
-
-      left: auto;
-      right: 0;
-
-      transform: translateX(0);
     }
   }
 }
