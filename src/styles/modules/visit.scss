@@ -1,0 +1,103 @@
+@use '../utility/variables' as *;
+@use '../utility/mixins' as *;
+
+.visit {
+  position: relative;
+
+  overflow: hidden;
+
+  margin-bottom: 90px;
+  padding-block: 50px;
+
+  background-color: $color-background;
+
+  @include tablet {
+    margin-bottom: 120px;
+    padding-block: 80px;
+  }
+
+  @include desktop {
+    margin-bottom: 110px;
+    padding-block: 200px;
+  }
+
+  @include hover {
+    &::before {
+      transform: scale(1.05);
+    }
+  }
+
+  &::before {
+    @include desktop {
+      content: '';
+
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      transform-origin: left center;
+
+      width: 40%;
+
+      @include image-cover('/src/images/visit.png');
+      @include animate(transform);
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    color: $color-white;
+
+    @include grid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include text(h2);
+
+    margin-bottom: 20px;
+
+    @include tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include desktop {
+      grid-column: 6 / -1;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+    @include text(main);
+
+    margin-bottom: 40px;
+
+    @include tablet {
+      grid-column: 1 / 5;
+      margin-bottom: 60px;
+    }
+
+    @include desktop {
+      grid-column: 6 / 11;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    @include tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include desktop {
+      grid-column: 6 / 9;
+    }
+  }
+}

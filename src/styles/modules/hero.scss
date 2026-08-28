@@ -1,0 +1,156 @@
+@use '../utility/variables' as *;
+@use '../utility/mixins' as *;
+
+.hero {
+  margin-bottom: 90px;
+  background-color: $color-background;
+
+  @include tablet {
+    margin-bottom: 100px;
+  }
+
+  @include desktop {
+    margin-bottom: 110px;
+  }
+
+  &__container {
+    position: relative;
+
+    @include grid;
+  }
+
+  // --- Navbar --- //
+  &__navbar {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-bottom: 100px;
+    }
+
+    @include desktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  // --- Content --- //
+  &__content {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    grid-template-columns: subgrid;
+    align-content: start;
+
+    margin-bottom: 40px;
+
+    color: $color-white;
+
+    @include tablet {
+      grid-column: 1 / 6;
+      margin-bottom: 70px;
+    }
+
+    @include desktop {
+      grid-column: 1 / 7;
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    grid-column: 1 / -1;
+    margin-bottom: 10px;
+
+    @include text(additional);
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-bottom: 30px;
+
+    @include text(h1);
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+
+    @include text(main);
+
+    @include tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      grid-column: 1 / -1;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    width: 100%;
+
+    @include tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  // --- Date --- //
+  &__date {
+    display: none;
+
+    @include desktop {
+      position: absolute;
+      right: 0;
+      bottom: 50px;
+      left: 0;
+
+      display: flex;
+      grid-column: 1 / 7;
+      flex-wrap: nowrap;
+      gap: 20px;
+      align-items: center;
+
+      font-family: $font-main;
+      color: $color-white;
+      text-wrap: nowrap;
+
+      opacity: 0.5;
+
+      @include text(h6);
+    }
+  }
+
+  &__divider {
+    background-color: $color-white;
+  }
+
+  // --- Image --- //
+  &__image {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-self: center;
+    max-width: 320px;
+
+    @include tablet {
+      grid-column: 2 / 6;
+      max-width: 480px;
+    }
+
+    @include desktop {
+      grid-column: 7 / -1;
+      grid-row: 2;
+      max-width: 100%;
+    }
+  }
+}

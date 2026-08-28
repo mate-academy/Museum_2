@@ -1,0 +1,43 @@
+@use '../utility/variables' as *;
+@use '../utility/mixins' as *;
+
+.form {
+  &__input {
+    width: 100%;
+    padding: 0 0 3px;
+    border-bottom: 1px solid $color-black;
+
+    color: $color-black;
+
+    background-color: transparent;
+    outline: none;
+    caret-color: $color-main;
+
+    @include text(main);
+    @include animate(color, border-color);
+
+    &::placeholder {
+      color: $color-black;
+      opacity: 1;
+
+      @include animate(color);
+    }
+
+    @include hover {
+      border-color: $color-main;
+
+      &::placeholder {
+        color: $color-main;
+      }
+    }
+
+    &:focus {
+      border-color: $color-main;
+    }
+
+    &:not(:placeholder-shown) {
+      font-weight: 700;
+      color: $color-black;
+    }
+  }
+}

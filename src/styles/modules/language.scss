@@ -1,0 +1,72 @@
+@use '../utility/variables' as *;
+@use '../utility/mixins' as *;
+
+.language {
+  cursor: pointer;
+  position: relative;
+
+  &__current {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+
+    font-weight: 500;
+    color: $color-white;
+
+    @include text(main);
+    @include animate(color);
+
+    @include hover {
+      color: $color-main;
+
+      .language__arrow {
+        background-color: $color-main;
+      }
+    }
+  }
+
+  &__arrow {
+    @include animate(background-color, transform);
+  }
+
+  &__list {
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -10px);
+
+    padding: 8px 0 0;
+
+    visibility: hidden;
+    opacity: 0;
+
+    @include animate(opacity, visibility, transform);
+  }
+
+  &__option {
+    color: $color-white;
+    opacity: 0.5;
+
+    @include text(main);
+    @include animate(opacity, color);
+
+    @include hover {
+      color: $color-main;
+      opacity: 1;
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    .language__arrow {
+      transform: rotate(180deg);
+    }
+
+    .language__list {
+      transform: translate(-50%, 0);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

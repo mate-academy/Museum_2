@@ -1,0 +1,151 @@
+@use './variables.scss' as *;
+@use 'sass:list';
+@use 'sass:map';
+
+// Layout & Responsive
+@mixin tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin content-padding {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: $padding-mobile;
+
+  @include tablet {
+    padding-inline: $padding-tablet;
+  }
+
+  @include desktop {
+    padding-inline: $padding-desktop;
+  }
+}
+
+.container {
+  @include content-padding;
+
+  @include desktop {
+    max-width: $bp-desktop;
+  }
+}
+
+// Layouts
+@mixin grid($row-gap: false) {
+  --columns: #{$cols-mobile};
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @if $row-gap {
+    row-gap: $gap-mobile;
+  }
+
+  column-gap: $gap-mobile;
+
+  @include tablet {
+    --columns: #{$cols-tablet};
+
+    @if $row-gap {
+      row-gap: $gap-tablet;
+    }
+
+    column-gap: $gap-tablet;
+  }
+
+  @include desktop {
+    --columns: #{$cols-desktop};
+
+    @if $row-gap {
+      row-gap: $gap-desktop;
+    }
+
+    column-gap: $gap-desktop;
+  }
+}
+
+// Typography
+@mixin text($level) {
+  $config: map.get($type-scale, $level);
+  $desktop-size: list.nth($config, 1);
+  $tablet-size: list.nth($config, 2);
+  $mobile-size: list.nth($config, 3);
+  $desktop-lh: list.nth($config, 4);
+  $tablet-lh: list.nth($config, 5);
+  $mobile-lh: list.nth($config, 6);
+  $weight: list.nth($config, 7);
+  $family: list.nth($config, 8);
+
+  font-family: $family;
+  font-size: $mobile-size;
+  font-weight: $weight;
+  line-height: $mobile-lh;
+  letter-spacing: 0;
+
+  @media (min-width: #{$bp-tablet}) {
+    font-size: $tablet-size;
+    line-height: $tablet-lh;
+  }
+
+  @media (min-width: #{$bp-desktop}) {
+    font-size: $desktop-size;
+    line-height: $desktop-lh;
+  }
+}
+
+// Visuals & Media
+@mixin image-cover($path) {
+  background-image: url($path);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin image-contain($path) {
+  background-image: url($path);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+@mixin mask-contain($url) {
+  -webkit-mask: url($url) no-repeat center / contain;
+  mask: url($url) no-repeat center / contain;
+}
+
+// Interaction & States
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin pressed {
+  &:active {
+    @content;
+  }
+}
+
+@mixin disabled {
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    @content;
+  }
+}
+
+@mixin animate($property...) {
+  transition-timing-function: $transition-function;
+  transition-duration: $transition-speed;
+  transition-property: $property;
+}

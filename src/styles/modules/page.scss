@@ -1,0 +1,55 @@
+@use '../utility/variables' as *;
+@use '../utility/mixins' as *;
+
+.page {
+  scroll-behavior: smooth;
+  scrollbar-color: $color-main $color-background;
+  scrollbar-width: thin;
+
+  font-family: $font-main;
+  color: $color-black;
+
+  background-color: $color-white;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 320px;
+    min-height: 100vh;
+
+    animation: fade-in $transition-speed $transition-function forwards;
+  }
+
+  &__menu {
+    pointer-events: none;
+
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    transform: translateY(-100%);
+
+    opacity: 0;
+
+    @include animate(opacity, transform);
+
+    &:target {
+      pointer-events: all;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}

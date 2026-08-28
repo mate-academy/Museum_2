@@ -1,0 +1,104 @@
+@use '../utility/variables' as *;
+@use '../utility/mixins' as *;
+
+.footer {
+  padding-block: 30px;
+  background-color: $color-background;
+
+  @include tablet {
+    padding-block: 50px 30px;
+  }
+
+  &__container {
+    color: $color-white;
+  }
+
+  // --- Columns --- //
+  &__columns {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+
+    @include tablet {
+      flex-direction: row;
+      column-gap: $gap-tablet;
+    }
+
+    @include desktop {
+      column-gap: $gap-desktop;
+    }
+  }
+
+  &__column {
+    @include tablet {
+      flex: 1;
+    }
+  }
+
+  &__title {
+    @include text(h5);
+
+    margin-bottom: 10px;
+    font-size: 18px;
+
+    @include tablet {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    @include text(main);
+
+    &--nav {
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+
+      @include tablet {
+        row-gap: 10px;
+      }
+    }
+  }
+
+  &__link {
+    @include animate(color);
+
+    @include hover {
+      color: $color-main;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    column-gap: 20px;
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 50px;
+    }
+  }
+
+  // --- Bottom --- //
+  &__bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 60px;
+
+    @include desktop {
+      margin-top: 70px;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    column-gap: 24px;
+
+    @include text(additional);
+
+    @include desktop {
+      column-gap: 100px;
+    }
+  }
+}

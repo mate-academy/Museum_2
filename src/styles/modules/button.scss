@@ -1,0 +1,70 @@
+@use '../utility/variables' as *;
+@use '../utility/mixins' as *;
+
+.button {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  width: $button-width;
+  height: $button-height;
+
+  @include text(button);
+  @include animate(background-color, color, border-color);
+
+  &--primary {
+    color: $color-white;
+    background-color: $color-main;
+
+    @include hover {
+      background-color: $color-hover;
+    }
+
+    @include pressed {
+      background-color: $color-pressed;
+    }
+
+    @include disabled {
+      background-color: $color-disabled;
+    }
+  }
+
+  &--secondary {
+    border: 1px solid $color-main;
+    color: $color-main;
+
+    &::after {
+      content: '';
+
+      display: block;
+
+      width: 20px;
+      height: 20px;
+
+      background-color: currentColor;
+
+      @include mask-contain('/src/images/icons/arrow.svg');
+      @include animate(transform);
+    }
+
+    @include hover {
+      border-color: $color-hover;
+      color: $color-hover;
+
+      &::after {
+        transform: translateX(5px);
+      }
+    }
+
+    @include pressed {
+      border-color: $color-pressed;
+      color: $color-pressed;
+    }
+
+    @include disabled {
+      border-color: $color-disabled;
+      color: $color-disabled;
+    }
+  }
+}
