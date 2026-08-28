@@ -1,0 +1,151 @@
+.footer {
+  padding-top: 34px;
+  padding-bottom: 30px;
+  color: $white-color;
+  background-color: $background-color;
+
+  @include on-tablet {
+    padding-top: 50px;
+  }
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 50px;
+
+    @include on-desktop {
+      row-gap: 60px;
+    }
+  }
+
+  &__section {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    gap: 10px;
+
+    @include on-tablet {
+      grid-column: span 2;
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+
+    &-link {
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &--facebook {
+      background-image: url('../images/icons/icon-facebook.svg');
+    }
+
+    &--instagram {
+      background-image: url('../images/icons/icon-instagram.svg');
+    }
+
+    &--twitter {
+      background-image: url('../images/icons/icon-twitter.svg');
+    }
+
+    &--telegram {
+      background-image: url('../images/icons/icon-telegram.svg');
+    }
+  }
+
+  &__title {
+    &-link {
+      color: $white-color;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__address {
+    & a {
+      color: $white-color;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      &:visited {
+        color: $white-color;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include on-tablet {
+      gap: 10px;
+    }
+  }
+
+  &__nav-link {
+    color: $white-color;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
+
+    &-info {
+      display: flex;
+      flex-direction: row;
+      gap: 22px;
+
+      @include on-desktop {
+        gap: 102px;
+      }
+    }
+
+    &-link {
+      color: $white-color;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-buttonUp {
+      cursor: pointer;
+
+      width: 30px;
+      height: 30px;
+      border: none;
+
+      @include hover(transform, scale(1.2));
+
+      background-color: transparent;
+      background-image: url('../images/icons/icon-arrow-up.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}

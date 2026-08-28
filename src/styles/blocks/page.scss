@@ -1,0 +1,45 @@
+.page {
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: 2fr;
+  gap: 20px;
+
+  @include on-tablet {
+    grid-template-columns: 6fr;
+  }
+
+  @include on-desktop {
+    grid-template-columns: 12fr;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden; /* not to scroll the page */
+  }
+
+  &__body {
+    overflow-x: hidden;
+    min-width: 320px;
+    margin: 0;
+    background-color: $background-color;
+  }
+
+  &__menu {
+    pointer-events: none;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+
+    opacity: 0;
+
+    transition: all $effectDuration;
+
+    &:target {
+      pointer-events: all;
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

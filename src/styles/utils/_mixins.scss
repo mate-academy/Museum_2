@@ -1,6 +1,112 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $effectDuration;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 20px;
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+.container {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 55px;
+  }
+}
+
+@mixin button-primary {
+  display: block;
+
+  width: 100%;
+  height: 60px;
+  border: none;
+
+  line-height: 60px;
+  color: $white-color;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: $main-color;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  :disabled {
+    cursor: not-allowed;
+    background-color: #dd836f;
+  }
+}
+
+@mixin button-secondary {
+  display: block;
+
+  width: 100%;
+  height: 60px;
+  border: none;
+  border: 1px solid $main-color;
+
+  line-height: 60px;
+  color: $main-color;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: $white-color;
+
+  &:hover {
+    cursor: pointer;
+    border-color: #af3419;
+    color: #af3419;
+  }
+
+  &:active {
+    border-color: #ea340d;
+    color: #ea340d;
+  }
+
+  :disabled {
+    cursor: not-allowed;
+    border-color: #dd836f;
+    color: #dd836f;
   }
 }
