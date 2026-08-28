@@ -1,0 +1,29 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} #{$transition};
+
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin respond-to($bp) {
+  @if $bp == desktop {
+    @media (min-width: $bp-desktop) {
+      @content;
+    }
+  } @else if $bp == tablet {
+    @media (min-width: $bp-tablet) {
+      @content;
+    }
+  } @else if $bp == mobile-only {
+    @media (max-width: #{$bp-tablet - 1px}) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

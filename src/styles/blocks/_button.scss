@@ -1,0 +1,40 @@
+@use 'sass:color';
+
+.button {
+  display: inline-block;
+  font-family: $font-body;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    background-color $transition,
+    color $transition,
+    opacity $transition;
+
+  &--primary {
+    background-color: $c-accent;
+    color: $c-white;
+    border: 2px solid $c-accent;
+
+    &:hover {
+      background-color: color.adjust($c-accent, $lightness: -10%);
+      border-color: color.adjust($c-accent, $lightness: -10%);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    color: $c-white;
+    border: 2px solid $c-white;
+
+    &:hover {
+      background-color: $c-white;
+      color: $c-dark;
+    }
+  }
+}

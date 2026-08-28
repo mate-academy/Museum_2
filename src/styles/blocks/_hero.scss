@@ -1,0 +1,111 @@
+.hero {
+  background-color: $c-dark;
+  color: $c-light;
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  align-items: flex-end;
+
+  @include respond-to(tablet) {
+    min-height: 560px;
+  }
+
+  @include respond-to(desktop) {
+    min-height: 640px;
+    align-items: center;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding: 40px 20px;
+    max-width: 560px;
+
+    @include respond-to(tablet) {
+      padding: 60px 40px;
+    }
+
+    @include respond-to(desktop) {
+      padding: 80px;
+    }
+  }
+
+  &__date {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: rgba($c-light, 0.7);
+    margin-bottom: 16px;
+
+    @include respond-to(tablet) {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 36px;
+    font-weight: 700;
+    color: $c-light;
+    margin-bottom: 16px;
+    line-height: 1.15;
+
+    @include respond-to(tablet) {
+      font-size: 52px;
+    }
+
+    @include respond-to(desktop) {
+      font-size: 64px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    color: rgba($c-light, 0.8);
+    margin-bottom: 32px;
+    max-width: 360px;
+
+    @include respond-to(tablet) {
+      font-size: 16px;
+    }
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 40px;
+    font-size: 13px;
+    color: rgba($c-light, 0.6);
+  }
+
+  &__counter-num {
+    font-weight: 700;
+    color: $c-light;
+  }
+
+  &__image-wrap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    @include respond-to(mobile-only) {
+      width: 60%;
+      opacity: 0.4;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+}

@@ -1,0 +1,93 @@
+.subscribe {
+  padding: 60px 20px;
+  background-color: $c-white;
+  border-top: 1px solid $c-border;
+
+  @include respond-to(tablet) {
+    padding: 80px 40px;
+  }
+
+  @include respond-to(desktop) {
+    padding: 100px 80px;
+  }
+
+  &__inner {
+    max-width: 600px;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 28px;
+    font-weight: 700;
+    color: $c-text;
+    margin-bottom: 16px;
+
+    @include respond-to(tablet) {
+      font-size: 36px;
+    }
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: $c-text-muted;
+    line-height: 1.7;
+    margin-bottom: 32px;
+
+    @include respond-to(tablet) {
+      font-size: 16px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+
+  &__input {
+    flex: 1;
+    font-family: $font-body;
+    font-size: 14px;
+    padding: 14px 20px;
+    border: 1px solid $c-border;
+    border-radius: 2px;
+    background-color: $c-white;
+    color: $c-text;
+    outline: none;
+    transition: border-color $transition;
+
+    &::placeholder {
+      color: $c-text-muted;
+    }
+
+    &:focus {
+      border-color: $c-dark;
+    }
+
+    /* Override autocomplete styles */
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $c-text;
+      -webkit-box-shadow: 0 0 0 1000px $c-white inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    @include respond-to(tablet) {
+      border-right: none;
+      border-radius: 2px 0 0 2px;
+    }
+  }
+
+  &__form .button {
+    @include respond-to(tablet) {
+      border-radius: 0 2px 2px 0;
+      white-space: nowrap;
+    }
+  }
+}

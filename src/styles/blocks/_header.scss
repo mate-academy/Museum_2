@@ -1,0 +1,142 @@
+@use 'sass:color';
+
+.header {
+  background-color: $c-dark;
+  color: $c-light;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+
+    @include respond-to(tablet) {
+      padding: 20px 40px;
+    }
+  }
+
+  &__info {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: rgba($c-light, 0.7);
+    display: none;
+
+    @include respond-to(tablet) {
+      display: block;
+      font-size: 12px;
+    }
+  }
+
+  &__date {
+    display: block;
+  }
+
+  &__logo {
+    color: $c-light;
+    cursor: pointer;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__logo-img {
+    height: 20px;
+    filter: brightness(0) invert(1);
+
+    @include respond-to(tablet) {
+      height: 26px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__menu-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__menu-icon {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+  }
+
+  &__lang {
+    font-size: 13px;
+    font-weight: 600;
+    color: $c-light;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity $transition;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.nav {
+  background-color: color.adjust($c-dark, $lightness: -5%);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+
+  &.is-open {
+    max-height: 300px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 20px;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+      padding: 10px 40px 20px;
+      gap: 32px;
+    }
+  }
+
+  &__item {
+    border-bottom: 1px solid rgba($c-light, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    @include respond-to(tablet) {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 12px 0;
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 600;
+    color: $c-light;
+    text-decoration: none;
+    transition: color $transition;
+
+    &:hover {
+      color: $c-accent;
+    }
+  }
+}

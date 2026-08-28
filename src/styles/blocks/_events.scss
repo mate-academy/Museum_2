@@ -1,0 +1,108 @@
+.events {
+  padding: 60px 20px;
+  background-color: $c-white;
+  border-top: 1px solid $c-border;
+
+  @include respond-to(tablet) {
+    padding: 80px 40px;
+  }
+
+  @include respond-to(desktop) {
+    padding: 100px 80px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 16px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__divider {
+    border: none;
+    border-top: 1px solid rgba($c-dark, 0.12);
+    margin: 40px 0;
+  }
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  cursor: pointer;
+
+  @include respond-to(tablet) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  &__image-wrap {
+    overflow: hidden;
+    border-radius: 2px;
+    flex-shrink: 0;
+
+    @include respond-to(tablet) {
+      width: 280px;
+    }
+
+    @include respond-to(desktop) {
+      width: 360px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+
+    .event-card:hover & {
+      transform: scale(1.05);
+    }
+
+    @include respond-to(tablet) {
+      height: 260px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  &__date {
+    font-size: 12px;
+    font-weight: 600;
+    color: $c-text-muted;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-size: 20px;
+    font-weight: 700;
+    color: $c-text;
+
+    @include respond-to(tablet) {
+      font-size: 24px;
+    }
+  }
+
+  &__desc {
+    font-size: 14px;
+    color: $c-text-muted;
+    line-height: 1.6;
+  }
+}
