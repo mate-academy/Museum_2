@@ -1,0 +1,213 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  opacity: 0;
+  pointer-events: none;
+
+  background-color: $bg-main-color;
+  height: 100%;
+
+  transition: all 0.5s;
+  transform: translateX(-100%);
+
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &__bottom {
+    @include page-grid;
+
+    align-items: start;
+    margin-top: 10px;
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      margin-top: 14px;
+    }
+  }
+
+  &__schedule {
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      grid-column: 1 / 3;
+      grid-row: 1;
+    }
+  }
+
+  &__address {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+      grid-column: 3 / 6;
+      grid-row: 1;
+    }
+  }
+
+  &__nav {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 7;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 20px;
+
+      @include on-tablet {
+        gap: 30px;
+      }
+
+      @include on-desktop {
+        gap: 60px;
+      }
+    }
+
+    &-link {
+      position: relative;
+      text-decoration: none;
+      color: $white-main-color;
+
+      font-family: 'Playfair Display', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+
+      line-height: 1.5;
+
+      @include on-tablet {
+        font-size: 48px;
+        line-height: 1.2;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -2px;
+        width: 0;
+        height: 1px;
+        background-color: $white-main-color;
+        transition:
+          width 0.3s ease,
+          left 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+    margin-inline: auto;
+    object-fit: contain;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      display: flex;
+      margin-inline: 0;
+      width: 100%;
+      height: 466px;
+      grid-column: 2 / 6;
+    }
+
+    @include on-desktop {
+      grid-row: 1 / 5;
+      width: 100%;
+      min-height: 100%;
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background-color: $white-main-color;
+    margin-block: 40px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-block: 50px;
+    }
+
+    @include on-desktop {
+      margin-block: 60px;
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__button {
+    display: flex;
+    text-decoration: none;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    margin: 0;
+    color: $white-main-color;
+    background-color: $orange-main-color;
+
+    grid-column: 1 / -1;
+    @include hover(transform, scale(1.07));
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 108px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: $white-main-color;
+    font-family: Raleway, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  &__text {
+    text-decoration: none;
+    margin: 0;
+    color: $white-main-color;
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+html:has(.menu:target),
+body:has(.menu:target) {
+  overflow: hidden;
+}

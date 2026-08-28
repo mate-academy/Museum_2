@@ -1,0 +1,102 @@
+.event-now {
+  margin-top: 90px;
+  margin-bottom: 120px;
+
+  @include on-tablet {
+    margin-top: 100px;
+    margin-bottom: 160px;
+  }
+
+  @include on-desktop {
+    margin-top: 110px;
+    margin-bottom: 200px;
+  }
+
+  &__content {
+    @include page-grid;
+
+    align-items: stretch;
+  }
+
+  &__title {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 0 0 60px;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      font-size: 40px;
+      margin: 0 0 75px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+      font-size: 48px;
+      line-height: 1.2;
+      margin: 0 0 71px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__button {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    height: 60px;
+    border: 1px solid $orange-main-color;
+    margin-top: 30px;
+
+    grid-column: 1 / -1;
+
+    @include hover(transform, scale(1.07));
+
+    cursor: pointer;
+
+    @include on-tablet {
+      margin-top: 0;
+      grid-row: 1;
+      grid-column: 5 / 7;
+    }
+
+    @include on-desktop {
+      grid-column: 10 / 13;
+      margin-top: 0;
+    }
+
+    &__text {
+      color: $orange-main-color;
+      text-decoration: none;
+      font-family: Raleway, sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+    }
+  }
+}
+
+.event-now__card + .event-now__card {
+  margin-top: 60px;
+
+  @include on-tablet {
+    margin-top: 0;
+  }
+}
