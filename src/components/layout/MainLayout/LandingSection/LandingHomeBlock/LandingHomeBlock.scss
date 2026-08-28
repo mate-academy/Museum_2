@@ -1,0 +1,148 @@
+@import '@styles/utils/vars';
+@import '@styles/utils/mixins';
+
+.landing-home-block {
+  width: 100%;
+  background-color: $c-background;
+  display: flex;
+
+  @include viewport-height-minus-header;
+
+  &__container {
+    position: relative;
+    width: 100%;
+
+    @include page-padding;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    @include desktop {
+      max-width: 570px;
+    }
+  }
+
+  &__period {
+    margin-top: 50px;
+
+    @include tablet {
+      margin-top: 100px;
+    }
+
+    @include desktop {
+      margin-top: 90px;
+    }
+  }
+
+  &__heading {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  &__description {
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+
+    @include desktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__actions {
+    margin-top: 40px;
+
+    @include tablet {
+      margin-top: 50px;
+    }
+
+    @include desktop {
+      margin-top: 81px;
+    }
+  }
+
+  &__date {
+    display: none;
+
+    &-text {
+      white-space: nowrap;
+    }
+
+    @include desktop {
+      display: flex;
+      margin-top: auto;
+      margin-bottom: 50px;
+      gap: 20px;
+      align-items: center;
+
+      &-line {
+        position: relative;
+        width: 100%;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+
+          left: 0;
+          top: 0;
+          height: 1px;
+          background-color: $c-white;
+        }
+      }
+    }
+  }
+
+  &__img-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+
+    @include tablet {
+      margin-top: 70px;
+      width: 100%;
+    }
+
+    @include desktop {
+      position: absolute;
+      margin: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0;
+      justify-content: flex-end;
+      align-items: flex-end;
+      width: 45%;
+    }
+  }
+
+  &__image {
+    margin-top: 40px;
+    max-width: 443px;
+    max-height: 493px;
+    width: 100%;
+
+    @include desktop {
+      max-width: 625px;
+      max-height: 663px;
+    }
+  }
+}

@@ -1,6 +1,94 @@
+@import 'vars';
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+// Header height mixin
+
+@mixin header-height {
+  height: $header-height-mobile;
+
+  @include tablet {
+    height: $header-height-tablet;
+  }
+
+  @include desktop {
+    height: $header-height-desktop;
+  }
+}
+
+// Viewport height minus header mixin
+@mixin viewport-height-minus-header {
+  min-height: calc(100vh - #{$header-height-mobile});
+
+  @include tablet {
+    min-height: calc(100vh - #{$header-height-tablet});
+  }
+
+  @include desktop {
+    min-height: calc(100vh - #{$header-height-desktop});
+  }
+}
+
+// Content padding mixin
+@mixin page-padding($mobile-h: 20px, $tablet-h: 40px, $desktop-h: 55px) {
+  padding-inline: $mobile-h;
+
+  @include tablet {
+    padding-inline: $tablet-h;
+  }
+
+  @include desktop {
+    padding-inline: $desktop-h;
+  }
+}
+
+// Hover transition
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
+
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+// Transition shorthand
+@mixin transition($property) {
+  transition: $property 0.3s ease;
+}
+
+// LAYOUT MIXINS
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin button-reset {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }

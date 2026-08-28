@@ -1,0 +1,113 @@
+@import '../../../styles//utils/vars';
+@import '../../../styles//utils/mixins';
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $c-background;
+  transform: translateX(100%);
+  z-index: 999;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: none;
+
+  @include transition(all);
+
+  &--open {
+    transform: translateX(0%);
+    display: flex;
+    scrollbar-width: none;
+    overflow-y: hidden;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    width: 100%;
+    height: 100%;
+
+    @include page-padding;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include tablet {
+      margin-top: 30px;
+      flex-direction: row;
+      gap: 123px;
+    }
+
+    @include desktop {
+      margin-top: 40px;
+      flex-direction: row;
+      gap: 83px;
+    }
+  }
+
+  &__schedule {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 20px;
+
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    @include desktop {
+      margin-top: 70px;
+    }
+  }
+
+  &__navigation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include tablet {
+      gap: 30px;
+    }
+
+    @include desktop {
+      gap: 60px;
+    }
+  }
+
+  &__navigation-link {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: red;
+      transform: scaleX(0);
+      transform-origin: center;
+
+      @include transition(transform);
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+}

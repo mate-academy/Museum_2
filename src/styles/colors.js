@@ -1,0 +1,8 @@
+// Colors matching SCSS variables in utils/_vars.scss
+export const colors = {
+  main: '#cd4d31',
+  white: '#f1f5f4',
+  background: '#3f5252',
+  black: '#1c1b29',
+  gray: '#504f5e',
+};

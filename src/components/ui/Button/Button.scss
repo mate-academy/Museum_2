@@ -1,0 +1,73 @@
+@use 'sass:color';
+@import '../../../styles/utils/vars';
+@import '../../../styles/utils/mixins';
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-family: $font-raleway;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
+  height: $button-height;
+  z-index: 222;
+  cursor: pointer;
+
+  &--primary {
+    background-color: $c-main;
+    color: $c-white;
+    width: $button-width-md;
+
+    @include tablet {
+      width: $button-width-lg;
+    }
+
+    @include desktop {
+      width: $button-width-sm;
+    }
+
+    &:hover:not(&--disabled) {
+      background-color: $c-main-hover;
+      border-color: $c-main-hover;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active:not(&--disabled) {
+      background-color: $c-main-pressed;
+      transform: translate(0);
+    }
+
+    &--disabled {
+      background-color: $c-main-disabled;
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $c-main;
+    border: 1px solid $c-main;
+    width: $button-width-md;
+
+    @include tablet {
+      width: $button-width-xs;
+    }
+
+    @include desktop {
+      width: $button-width-sm;
+    }
+
+    &:hover:not(&--disabled) {
+      color: $c-main-hover;
+      border: 1px solid $c-main-hover;
+    }
+
+    &:active:not(&--disabled) {
+      color: $c-main-pressed;
+      border: 1px solid $c-main-pressed;
+      transform: translate(0);
+    }
+  }
+}

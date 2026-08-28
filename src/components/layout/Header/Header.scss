@@ -1,0 +1,84 @@
+@import '@styles/utils/vars';
+@import '@styles/utils/mixins';
+@import '@styles/utils/extends';
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $c-background;
+  width: 100%;
+  z-index: 11;
+  flex-shrink: 0;
+
+  @include header-height;
+
+  &__content {
+    @include page-padding;
+
+    width: 100%;
+  }
+
+  &__nav {
+    @extend %flex-between;
+
+    width: 100%;
+  }
+
+  // &__brand {
+  //   // Brand container styles if needed
+  // }
+
+  // &__logo {
+  //   // Logo link styles if needed
+  // }
+
+  &__actions {
+    @extend %flex-center;
+
+    gap: 30px;
+
+    @include mobile {
+      .header__btn {
+        order: 2;
+      }
+
+      .language-switcher {
+        order: 1;
+      }
+    }
+  }
+
+  &__btn {
+    @extend %button-reset;
+    @extend %flex-center;
+
+    height: 100%;
+    z-index: 100;
+  }
+
+  &__icon {
+    display: block;
+    height: 22px;
+    width: 22px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    &--close {
+      background-image: url('../../../assets/icons/close.svg');
+    }
+
+    &--menu {
+      background-image: url('../../../assets/icons/menu.svg');
+    }
+
+    @include desktop {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include transition(all);
+    @include hover(transform, scale(1.2));
+  }
+}

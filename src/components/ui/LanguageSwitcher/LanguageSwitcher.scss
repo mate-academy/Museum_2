@@ -1,0 +1,68 @@
+@import '../../../styles/utils';
+
+.language-switcher {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    color: $c-white;
+    border: none;
+    font-family: $font-raleway;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: 0%;
+    cursor: pointer;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    visibility: hidden;
+    max-height: 0;
+    min-width: 80%;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    transition:
+      opacity 0.3s ease-in-out,
+      max-height 0.3s ease-in-out,
+      visibility 0s linear 0.3s;
+
+    &--open {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transition:
+        opacity 0.3s ease-in-out,
+        max-height 0.3s ease-in-out,
+        visibility 0s linear 0s;
+      max-height: 200px;
+    }
+  }
+
+  &__item {
+    list-style-type: none;
+    background-color: $c-background;
+  }
+
+  &__btn {
+    background-color: $c-background;
+    border: none;
+    color: $c-white;
+    font-family: $font-raleway;
+
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: 8px 6px;
+  }
+}
