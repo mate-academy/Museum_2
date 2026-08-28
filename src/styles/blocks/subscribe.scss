@@ -1,0 +1,118 @@
+.subscribe {
+  padding: 0 20px 80px;
+
+  @include on-tablet {
+    padding: 0 40px 128px;
+  }
+
+  @include on-desktop {
+    padding: 0 55px 200px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include on-tablet {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__title {
+    @extend %h3;
+
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    @extend %main-text;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    gap: 30px;
+
+    margin-top: 50px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 40px;
+    }
+  }
+
+  &__input {
+    @extend %additional-bold;
+
+    border: none;
+    border-bottom: 1px solid $text-color;
+    background-color: transparent;
+    outline: none;
+
+    &::placeholder {
+      @extend %main-text;
+
+      color: $text-color;
+      transition: color 0.3s;
+    }
+
+    &:hover::placeholder {
+      color: $button-main;
+    }
+
+    @include hover(border-color, $button-main);
+
+    &:focus {
+      border-color: $button-hover;
+      color: $button-hover;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 6;
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+}
