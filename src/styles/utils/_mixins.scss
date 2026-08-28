@@ -1,6 +1,88 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin btn-primary {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  font-family: Relleway, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f5f4;
+  text-decoration: none;
+
+  background-color: #cd4d31;
+  outline: none;
+
+  transition: background-color color $time-animation linear;
+
   &:hover {
-    #{$_property}: $_toValue;
+    background-color: #af3419;
+  }
+
+  &:active {
+    background-color: #ea340d;
+  }
+
+  &:disabled {
+    color: #f1f5f4;
+    background-color: #dd836f;
+  }
+}
+
+@mixin btn-secondary {
+  cursor: pointer;
+
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #cd4d31;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #cd4d31;
+  text-decoration: none;
+
+  background-color: #fff;
+  outline: none;
+
+  transition: background-color color $time-animation linear;
+
+  &:hover {
+    border-color: #af3419;
+    color: #cd4d31;
+  }
+
+  &:active {
+    border-color: #ea340d;
+    color: #ea340d;
+  }
+
+  &:disabled {
+    border-color: #dd836f;
+    color: #dd836f;
   }
 }

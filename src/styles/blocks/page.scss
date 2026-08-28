@@ -1,0 +1,51 @@
+.page {
+  scroll-behavior: smooth;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+
+    .top-bar__menu {
+      display: none;
+    }
+
+    .top-bar__close {
+      display: block;
+    }
+
+    .top-bar__language {
+      display: flex;
+    }
+  }
+
+  &__body {
+    position: relative;
+
+    overflow-x: hidden;
+
+    margin: 0;
+
+    font-family: Relleway, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 150%;
+    color: $color-black;
+  }
+}
+
+.container {
+  position: relative;
+  margin-inline: $padding-main;
+
+  @include on-tablet {
+    margin-inline: $padding-main-table;
+  }
+
+  @include on-desktop {
+    max-width: $width-desktop;
+    margin-inline: max(
+      #{$padding-main-desktop},
+      calc((100% - #{$width-desktop}) / 2)
+    );
+  }
+}

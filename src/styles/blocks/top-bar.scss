@@ -1,0 +1,130 @@
+.top-bar {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  margin-top: 20px;
+
+  @include on-desktop {
+    margin-top: 26px;
+  }
+
+  &__logo {
+    width: 123px;
+    height: 40px;
+  }
+
+  &__icons {
+    z-index: 11;
+    display: flex;
+    column-gap: 40px;
+    align-items: center;
+
+    &--menu {
+      width: 25px;
+      height: 20px;
+    }
+
+    &--dropdown {
+      width: 10px;
+      height: 7px;
+    }
+
+    &--close {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &__language {
+    cursor: pointer;
+
+    position: relative;
+
+    display: none;
+    column-gap: 2px;
+    align-items: center;
+    order: 1;
+
+    font-family: Relleway, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    color: $color-white;
+    text-decoration: none;
+
+    transition: color $time-animation linear;
+
+    @include on-tablet {
+      display: flex;
+      order: 2;
+    }
+
+    &:hover {
+      color: $color-main;
+
+      svg {
+        color: inherit;
+      }
+    }
+
+    &-list {
+      position: absolute;
+      top: 70%;
+      right: 0;
+      transform-origin: top right;
+      transform: scale(0);
+
+      width: fit-content;
+      padding: 7px 10px;
+
+      text-align: center;
+      list-style: none;
+
+      visibility: hidden;
+      opacity: 0;
+      background-color: $color-white;
+
+      transition:
+        transform $time-animation linear,
+        opacity $time-animation linear,
+        visibility $time-animation linear;
+
+      &.active {
+        transform: scale(1);
+        visibility: visible;
+        opacity: 1;
+      }
+
+      &-item {
+        font-size: 14px;
+        color: $color-black;
+        transition: inherit;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        &:hover a {
+          color: $color-main;
+        }
+      }
+    }
+  }
+
+  &__close {
+    display: none;
+    order: 2;
+
+    @include on-tablet {
+      order: 1;
+    }
+  }
+}

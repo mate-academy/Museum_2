@@ -1,0 +1,112 @@
+.visit {
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-bg;
+
+  &--margin {
+    margin-block: 90px;
+
+    @include on-tablet {
+      margin-block: 100px 120px;
+    }
+
+    @include on-desktop {
+      margin-block: 110px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    display: none;
+    box-sizing: border-box;
+    width: calc((((#{$width-desktop} - (11 * 30px)) / 12) * 6) + (5 * 30px));
+
+    @include on-desktop {
+      display: block;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: flex;
+
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-inline: $padding-main;
+    padding-block: 50px;
+
+    color: $color-white;
+
+    @include on-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      margin-inline: $padding-main-table;
+      padding-block: 80px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(7, 1fr);
+      column-gap: 30px;
+      justify-content: space-between;
+
+      width: calc((((#{$width-desktop} - (11 * 30px)) / 12) * 6) + (7 * 30px));
+      margin-right: max(55px, calc((100% - #{$width-desktop}) / 2));
+      padding-block: 205px;
+    }
+  }
+
+  &__title {
+    grid-column: span 2;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 100%;
+
+    @include on-tablet {
+      grid-column: span 4;
+      font-size: 62px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      font-size: 80px;
+    }
+  }
+
+  &__description {
+    grid-column: span 2;
+
+    margin-block: 20px 40px;
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include on-tablet {
+      grid-column: span 4;
+      margin-block: 20px 60px;
+    }
+
+    @include on-desktop {
+      grid-column: span 5;
+      margin-block: 10px 50px;
+    }
+  }
+
+  &__link {
+    grid-column: span 2;
+
+    @include btn-primary;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+  }
+}
