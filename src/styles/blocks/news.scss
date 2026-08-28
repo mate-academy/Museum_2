@@ -1,0 +1,104 @@
+.news {
+  scroll-margin-top: -70px;
+  padding-block: 90px 120px;
+
+  @include on-tablet {
+    padding-block: 100px 160px;
+  }
+
+  @include on-desktop {
+    padding-block: 110px 200px;
+  }
+
+  &__title {
+    @extend %h3;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    margin: 0 auto;
+    padding-inline: 20px;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 70px;
+      align-items: center;
+
+      padding-inline: 40px;
+    }
+
+    @include on-desktop {
+      padding-inline: 55px;
+    }
+  }
+
+  &__layout {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 30px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__event {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__image {
+    aspect-ratio: 3 / 3;
+    width: 100%;
+    margin-bottom: 20px;
+    object-fit: cover;
+
+    @include hover(transform, scale(1.03));
+
+    @include on-desktop {
+      height: 370px;
+    }
+  }
+
+  &__date {
+    @extend %main-text;
+  }
+
+  &__name {
+    @extend %h5;
+
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    @extend %main-text;
+
+    color: $description-color;
+  }
+
+  &__secondary-button {
+    @include on-tablet {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+}
