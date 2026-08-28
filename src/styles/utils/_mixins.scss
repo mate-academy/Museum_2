@@ -1,6 +1,97 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin padd-inl() {
+  padding-inline: 20px;
+
+  @include tablet {
+    padding-inline: 39px;
+  }
+
+  @include desktop {
+    padding-inline: 55px;
+  }
+}
+
+@mixin tablet() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin font-r {
+  font-family: Raleway, sans-serif;
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+}
+
+@mixin grid {
+  display: grid;
+
+  @include tablet {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@mixin color(
+  $hover-bg: null,
+  $pressed-bg: null,
+  $disabled-bg: null,
+  $hover-cl: null,
+  $pressed-cl: null,
+  $disabled-cl: null
+) {
+  transition: all 0.3s ease;
+
   &:hover {
-    #{$_property}: $_toValue;
+    @if $hover-bg {
+      background-color: $hover-bg;
+    }
+    @if $hover-cl {
+      color: $hover-cl;
+      border: 1px solid $hover-cl;
+    }
+  }
+
+  &:active {
+    @if $pressed-bg {
+      background-color: $pressed-bg;
+    }
+    @if $pressed-cl {
+      color: $pressed-cl;
+      border: 1px solid $pressed-cl;
+    }
+  }
+
+  &:disabled {
+    @if $disabled-bg {
+      background-color: $disabled-bg;
+    }
+    @if $disabled-cl {
+      color: $disabled-cl;
+      border: 1px solid $disabled-cl;
+    }
+  }
+}
+
+@mixin hover($color: null, $scale: null) {
+  transition: all 0.3s ease;
+
+  &:hover {
+    @if $scale {
+      transform: scale($scale);
+    }
+    @if $color {
+      color: $color;
+    }
   }
 }

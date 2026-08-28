@@ -1,0 +1,44 @@
+@use './utils/vars' as *;
+@use './utils/mixins' as *;
+
+.current-exhibitions {
+  @include padd-inl;
+
+  box-sizing: border-box;
+  padding-block: 90px 120px;
+  max-width: 1280px;
+  margin: 0  auto;
+
+  @include tablet {
+    @include grid;
+
+    padding-block: 100px 160px;
+
+    .card-text-two {
+      margin-top: 50px;
+
+      @include desktop {
+        margin-top: 20px;
+      }
+    }
+
+    &__card {
+      grid-column: span 3;
+      padding-top: 45px;
+
+      @include desktop {
+        grid-column: span 6;
+        padding-top: 71px;
+        display: flex;
+      }
+    }
+  }
+
+  @include desktop {
+    padding-block: 110px 200px;
+  }
+
+  &__card-img--first {
+    object-position: left;
+  }
+}

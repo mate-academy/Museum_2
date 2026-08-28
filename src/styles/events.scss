@@ -1,0 +1,49 @@
+@use './utils/vars' as *;
+@use './utils/mixins' as *;
+
+.events {
+  @include padd-inl;
+
+  box-sizing: border-box;
+  padding-bottom: 90px;
+  max-width: 1280px;
+  margin: 0  auto;
+
+  @include tablet {
+    @include grid;
+
+    &__card.card {
+      @include grid;
+
+      grid-column: span 6;
+
+      @include desktop {
+        grid-column: span 12;
+      }
+    }
+
+    &__card {
+      @include grid;
+
+      &-img {
+        grid-column: span 3;
+
+        @include desktop {
+          grid-column: span 4;
+        }
+      }
+
+      &-item {
+        grid-column: span 3;
+
+        @include desktop {
+          grid-column: span 6;
+        }
+      }
+
+      &-date.card-date {
+        margin-top: 0;
+      }
+    }
+  }
+}

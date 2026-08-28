@@ -1,0 +1,186 @@
+@use './utils/vars' as *;
+@use './utils/mixins' as *;
+
+.footer {
+  @include padd-inl;
+
+  position: relative;
+  padding-block: 34px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: $c-back;
+
+  @include tablet {
+    @include grid;
+
+    padding-top: 50px;
+  }
+
+  &__contacts {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      grid-column: span 3;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    color: $c-wh;
+    margin-block: 0 10px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contacts-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__contacts-link {
+    @include font-r;
+
+    font-size: 16px;
+    text-decoration: none;
+    color: $c-wh;
+
+    @include desktop {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__contacts-socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+
+  }
+
+  &__contacts-img {
+    display: block;
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+
+    @include hover($scale: 1.3);
+  }
+
+  &__schedule {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      grid-column: span 2;
+    }
+
+    @include desktop {
+      grid-column: 5 / span 2;
+    }
+  }
+
+  &__schedule-text {
+    @include font-r;
+
+    font-size: 16px;
+    color: $c-wh;
+    margin: 0;
+  }
+
+  &__nav {
+    @include desktop {
+      grid-column: 9;
+    }
+  }
+
+  &__nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @include tablet {
+      gap: 10px;
+    }
+  }
+
+  &__nav-link {
+    @include font-r;
+
+    text-decoration: none;
+    color: $c-wh;
+    font-size: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__link-span {
+    display: block;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    @include tablet {
+      grid-column: span 6;
+      margin-top: 30px;
+    }
+
+    @include desktop {
+      gap: 102px;
+      grid-column: span 12;
+    }
+
+    &-copiright {
+      @include font-r;
+
+      color: $c-wh;
+      margin: 0;
+    }
+
+    &-privacy {
+      @include font-r;
+
+      color: $c-wh;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__button {
+    height: 30px;
+    width: 30px;
+    display: block;
+    object-fit: contain;
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+
+    @include hover($scale: 1.3);
+  }
+}

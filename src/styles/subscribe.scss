@@ -1,0 +1,108 @@
+@use './utils/vars' as *;
+@use './utils/mixins' as *;
+
+.subscribe {
+  @include padd-inl;
+
+  box-sizing: border-box;
+  padding-bottom: 80px;
+  max-width: 1280px;
+  margin: 0  auto;
+
+  @include tablet {
+    @include grid;
+
+    padding-bottom: 128px;
+  }
+
+  @include desktop {
+    padding-block: 40px 200px;
+  }
+
+  &__title {
+    @include tablet {
+      grid-column: span 5;
+    }
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    color: $c-black;
+
+    @include tablet {
+      grid-column: span 5;
+      margin-block: -10px 20px;
+    }
+
+    @include desktop {
+      grid-column: 7 / span 6;
+      margin: 0;
+    }
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__link {
+      border: none;
+
+      @include tablet {
+        max-width: 330px;
+      }
+
+      @include desktop {
+        max-width: 270px;
+        cursor: pointer;
+      }
+    }
+
+    @include tablet {
+      grid-column: span 4;
+    }
+
+    &__input {
+      padding: 0;
+      height: 28px;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid $c-black;
+      background: transparent;
+      outline: none;
+      font-size: 16px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-bottom: 1px solid $c-red;
+
+        &::placeholder {
+          color: $c-red;
+        }
+      }
+
+      &:focus {
+        color: $c-red;
+        border-bottom: 1px solid $c-red;
+
+        &::placeholder {
+          color: transparent;
+        }
+      }
+
+      &:not(:placeholder-shown) {
+        font-weight: 700;
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+        -webkit-text-fill-color: #000 !important;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    }
+  }
+}
+
+

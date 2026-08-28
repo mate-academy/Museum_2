@@ -1,0 +1,53 @@
+@use './utils/vars' as *;
+@use './utils/mixins' as *;
+
+.html {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 20px;
+  scroll-behavior: smooth;
+  font-weight: 700;
+}
+
+.body {
+  margin: 0;
+}
+
+.link-btn {
+  @include font-r;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  font-size: 16px;
+  line-height: 100%;
+  text-decoration: none;
+  color: $c-wh;
+  background-color: $c-red;
+
+  @include desktop {
+    max-width: 270px;
+  }
+
+  @include color(
+    $hover-bg: $c-back-red,
+    $disabled-bg: $c-dissabled-red,
+    $pressed-bg: $c-press-red
+  );
+}
+
+.title {
+  font-size: 28px;
+  line-height: 125%;
+  margin: 0;
+
+  @include tablet {
+    font-size: 40px;
+    grid-column: 1 / 5;
+  }
+
+  @include desktop {
+    font-size: 48px;
+    grid-column: 1 / 7;
+  }
+}

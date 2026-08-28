@@ -1,0 +1,40 @@
+@use './utils/vars' as *;
+@use './utils/mixins' as *;
+
+.news {
+  @include padd-inl;
+
+  box-sizing: border-box;
+  padding-block: 90px 120px;
+  max-width: 1280px;
+  margin: 0  auto;
+
+  @include tablet {
+    @include grid;
+
+    padding-block: 125px 160px;
+  }
+
+  &__card {
+    @include tablet {
+      grid-column: span 3;
+    }
+
+    @include desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__card-date {
+    color: $c-black;
+    margin-bottom: 0;
+  }
+
+  &__card-text {
+    margin-block: 20px 0;
+  }
+
+  &__card-img {
+    @include hover($scale: 1.04);
+  }
+}

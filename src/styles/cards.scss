@@ -1,0 +1,111 @@
+@use './utils/vars' as *;
+@use './utils/mixins' as *;
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+
+  @include tablet {
+    padding-top: 40px;
+  }
+
+  &-img {
+    display: block;
+    min-height: 356px;
+    width: 100%;
+    object-fit: cover;
+
+    @include tablet {
+      min-height: 420px;
+    }
+
+    @include desktop {
+      min-height: 484px;
+      object-fit: contain;
+
+      @include hover($scale: 1.04);
+    }
+  }
+
+  &-date {
+    @include font-r;
+
+    font-size: 16px;
+    color: $c-red;
+    margin-block: 20px 10px;
+  }
+
+  &-title {
+    line-height: 125%;
+    color: $c-black;
+    margin: 0;
+
+    @include tablet {
+      font-size: 24px;
+    }
+  }
+
+  &-text {
+    @include font-r;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray;
+    margin-block: 20px 30px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &-link {
+    margin-block: 0;
+    text-decoration: none;
+  }
+
+  &-arc {
+    @include font-r;
+
+    text-decoration: none;
+    color: $c-red;
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    height: 60px;
+    border: 1px solid $c-red;
+
+    @include tablet {
+      grid-column: 5 / 7;
+      grid-row: 1;
+      margin: 0;
+    }
+
+    @include desktop {
+      grid-column: 10 / 13;
+
+      @include color(
+        $hover-cl: $c-back-red,
+        $pressed-cl: $c-press-red,
+        $disabled-cl: $c-dissabled-red
+      );
+    }
+
+    .arrow {
+      display: block;
+      height: 12px;
+      width: 13px;
+      object-fit: contain;
+    }
+  }
+}
