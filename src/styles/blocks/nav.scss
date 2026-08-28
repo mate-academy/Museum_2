@@ -1,0 +1,47 @@
+.nav {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 20px;
+  }
+
+  &__link {
+    @include playfair-bold;
+
+    text-decoration: none;
+    color: $c-white;
+    font-size: 20px;
+    position: relative;
+    display: block;
+    width: fit-content;
+
+    @include on-tablet {
+      font-size: 48px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2px;
+      background-color: $c-white;
+
+      transition: all 0.3s;
+      transform-origin: left;
+      transform: scale(0);
+
+      @include on-tablet {
+        bottom: 10px;
+      }
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

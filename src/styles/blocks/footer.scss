@@ -1,0 +1,134 @@
+.footer {
+  box-sizing: border-box;
+  padding-block: 34px 30px;
+  background-color: $c-dark-green;
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 50px;
+    align-items: top;
+  }
+
+  &__block {
+    gap: 10px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+  }
+
+  &__contacts {
+    grid-column: 1/-1;
+    display: grid;
+
+    @include on-tablet {
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__title {
+    @include playfair-bold;
+
+    color: $c-white;
+    font-size: 18px;
+    margin: 0;
+
+    @include on-tablet {
+      font-size: 20px;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $c-white;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    @include raleway-thin;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+  &__icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  &__scedule {
+    grid-column: 1/-1;
+    display: grid;
+
+    @include on-tablet {
+      grid-column: span 2;
+    }
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__info {
+    @include raleway-thin;
+
+    color: $c-white;
+  }
+
+  &__nav {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__nav-list {
+    gap: 5px;
+  }
+
+  &__nav-link {
+    @include raleway-thin;
+
+    font-size: 16px;
+
+    &::after {
+      bottom: 2px;
+    }
+  }
+
+  &__bottom {
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__elements {
+    grid-column: 1/-1;
+    display: flex;
+    gap: 20px;
+
+    @include on-desktop {
+      gap: 100px;
+    }
+  }
+
+  &__element {
+    @include raleway-thin;
+
+    color: $c-white;
+
+    width: 125px;
+  }
+}

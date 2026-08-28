@@ -1,0 +1,63 @@
+.news {
+  &__content {
+    @include page-grid;
+
+    gap: 50px;
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 60px;
+
+    @include on-tablet {
+      gap: 75px;
+    }
+  }
+
+  &__article {
+    grid-column: 1/-1;
+    display: grid;
+    gap: 20px;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    height: 0;
+    height: auto;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__middle {
+    display: grid;
+    gap: 20px;
+  }
+
+  &__date {
+    color: $c-text;
+
+    @include raleway-thin;
+  }
+
+  &__title {
+    color: $c-text;
+    margin: 0;
+
+    @include playfair-bold;
+  }
+
+  &__description {
+    color: $c-dark-gray;
+    margin: 0;
+
+    @include raleway-thin;
+  }
+}

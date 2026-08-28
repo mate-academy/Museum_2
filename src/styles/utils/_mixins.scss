@@ -4,3 +4,87 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin playfair-bold {
+  font-family: Playfair, serif;
+  font-weight: 700;
+  font-style: Bold;
+  line-height: 125%;
+  letter-spacing: 0%;
+}
+
+@mixin additional-text {
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+@mixin raleway-thin {
+  font-family: Raleway, sans-serif;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin raleway-bold {
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@mixin raleway-button {
+  font-family: Raleway, sans-serif;
+  font-weight: 500;
+  line-height: 150%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet-size) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-size) {
+    @content;
+  }
+}
+
+@mixin content-padding {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 40px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+.container {
+  @include content-padding;
+}
+
+@mixin page-grid {
+  --count: 2;
+
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(var(--count), 1fr);
+
+  @include on-tablet {
+    --count: 6;
+
+    gap: 30px;
+  }
+
+  @include on-desktop {
+    --count: 12;
+  }
+}

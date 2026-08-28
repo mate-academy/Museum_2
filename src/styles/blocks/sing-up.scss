@@ -1,0 +1,91 @@
+.sing-up {
+  &__content {
+    @include page-grid;
+  }
+
+  &__section-title {
+    grid-column: 1/-1;
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__description {
+    @include raleway-thin;
+
+    margin: 0;
+    grid-column: 1/-1;
+    @include on-desktop {
+      grid-column: span 6;
+      margin: auto;
+    }
+  }
+
+  &__bottom {
+    margin-top: 20px;
+    grid-column: 1/-1;
+    display: grid;
+    gap: 30px;
+  }
+
+  &__email {
+    width: 100%;
+    border: 0;
+    background-color: $c-gray;
+
+
+
+    &::placeholder {
+      @include raleway-thin;
+    }
+
+    &:hover::placeholder {
+      transition: color 0.3s;
+      color: $c-orange;
+    }
+
+    &:focus {
+      outline: 0;
+      background-color: $c-gray;
+    }
+  }
+
+  &__email-wrapper {
+    position: relative;
+
+    &::after {
+      content: '';
+      transition: all 0.3s;
+      width: 100%;
+      position: absolute;
+      display: block;
+      bottom: -8px;
+      right: 0;
+      left: 0;
+      height: 1px;
+      background-color: $c-text;
+
+      @include on-tablet {
+        width: 450px;
+      }
+
+      @include on-desktop {
+        width: 480px;
+      }
+    }
+
+    &:hover::after {
+      background-color: $c-orange;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #eee inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}

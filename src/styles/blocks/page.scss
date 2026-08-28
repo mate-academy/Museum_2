@@ -1,0 +1,53 @@
+.page {
+  scroll-behavior: smooth;
+  &__body {
+    margin: 0;
+    background: $c-gray;
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 3;
+    inset: 0;
+
+    transform: translate(-100%);
+    transition: all 0.3s;
+
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      transform: translate(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__layout-menu {
+    margin-top: 90px;
+
+    @include on-tablet {
+      margin-top: 100px;
+    }
+
+    @include on-desktop {
+      margin-top: 110px;
+    }
+  }
+
+  &__footer {
+    margin-top: 80px;
+
+    @include on-tablet {
+      margin-top: 128px;
+    }
+
+    @include on-desktop {
+      margin-top: 200px;
+    }
+  }
+}
+
+.page:has(.page__menu:target) {
+  overflow: hidden; /* not to scroll the page */
+}

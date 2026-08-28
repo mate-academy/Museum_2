@@ -1,0 +1,91 @@
+.exibitions {
+  display: grid;
+  gap: 60px;
+
+  &__content {
+    @include page-grid;
+
+    row-gap: 60px;
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 60px;
+
+    @include on-tablet {
+      gap: 76px;
+    }
+  }
+
+  &__article {
+    display: grid;
+    gap: 20px;
+    grid-column: 1/-1;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__picture {
+    @include hover(transform, scale(1.05));
+
+    max-height: 360px;
+    width: 100%;
+    object-fit: cover;
+
+    @include on-tablet {
+      max-height: 420px;
+    }
+
+    @include on-desktop {
+      max-height: 480px;
+    }
+  }
+
+  &__top {
+    display: grid;
+    gap: 10px;
+  }
+
+  &__date {
+    @include raleway-thin;
+
+    color: $c-orange;
+  }
+
+  &__title {
+    font-size: 20px;
+    color: $c-text;
+    margin: 0;
+
+    @include playfair-bold;
+
+    @include on-tablet {
+      font-size: 24px;
+    }
+  }
+
+  &__description {
+    color: $c-dark-gray;
+    font-size: 16px;
+    margin: 0;
+
+    @include additional-text;
+  }
+
+  &__button {
+    margin-top: 20px;
+    @include on-tablet {
+      min-width: 100%;
+    }
+
+    @include on-desktop {
+      min-width: 270px;
+    }
+  }
+}
