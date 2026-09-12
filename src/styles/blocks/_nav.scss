@@ -1,0 +1,54 @@
+.nav {
+  &__lists {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+
+    @include on-table {
+      gap: 30px;
+    }
+
+    @include on-desktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $color-text-white;
+    text-decoration: none;
+
+    @include on-table {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      bottom: -2px;
+      transform-origin: left;
+      transform: scale(0);
+
+      display: block;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: $color-text-white;
+
+      transition: all 0.3s;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

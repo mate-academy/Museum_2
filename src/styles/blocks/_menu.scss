@@ -1,0 +1,79 @@
+.menu {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  height: 100vh;
+  background: $menu-color;
+
+  &__top {
+    margin-bottom: 10px;
+
+    @include on-table {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__icons {
+    flex-direction: row-reverse;
+
+    @include on-table {
+      flex-direction: row;
+    }
+  }
+
+  &__bottom {
+    @include page-grid;
+
+    gap: 30px;
+  }
+
+  &__left {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__info-panel {
+    margin-bottom: 40px;
+
+    @include on-table {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    margin: 40px 0;
+    background-color: $line-color;
+  }
+
+  &__right {
+    display: none;
+
+    @include on-table {
+      display: block;
+      grid-column: span 6;
+      justify-self: center;
+    }
+  }
+
+  &__image {
+    @include on-desktop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      width: 500px;
+      height: 697px;
+    }
+
+    @media (min-width: 1250px) {
+      width: max-content;
+    }
+  }
+}

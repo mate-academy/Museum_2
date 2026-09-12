@@ -1,0 +1,73 @@
+.plan-a-visit-to-the-museum {
+  position: relative;
+  background-color: $plan-a-visit-to-the-museum-color;
+
+  @include on-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  &__content {
+    padding-block: 50px;
+
+    @include page-grid;
+  }
+
+  &__image {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      grid-column: span 5;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1115px) {
+      width: 500px;
+      height: 92%;
+    }
+  }
+
+  &__right {
+    grid-column: 1 / -1;
+
+    @include on-desktop {
+      grid-column: 6 / 12;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 100%;
+    color: $color-text-white;
+
+    @include on-table {
+      font-size: 62px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 10px;
+      font-size: 80px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @include on-table {
+      margin-bottom: 60px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 50px;
+    }
+  }
+}

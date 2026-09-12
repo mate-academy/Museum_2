@@ -1,0 +1,111 @@
+.button {
+  cursor: pointer;
+
+  width: 100%;
+  padding-block: 22px;
+  border: none;
+
+  font-family: Raleway, sans-serif;
+  font-weight: 600;
+  line-height: 100%;
+  text-align: center;
+  text-decoration: none;
+
+  transition: all 0.3s;
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    background: url(../images/icons/arrow.svg) no-repeat;
+  }
+
+  &--full {
+    display: block;
+    color: #f1f5f4;
+    background-color: $button-color;
+
+    @include on-table {
+      width: 330px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+
+    &:hover {
+      background: $button-color-hover;
+    }
+
+    &:active {
+      background: $button-color-active;
+    }
+
+    &:disabled {
+      background: $button-color-disabled;
+    }
+  }
+
+  &--empty {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid $button-color;
+
+    color: $button-color;
+
+    background-color: #0000;
+
+    @include on-table {
+      width: 210px;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+
+    &:hover {
+      border-color: $button-color-hover;
+      color: $button-color-hover;
+
+      & .button__icon {
+        background: url(../images/icons/arrow_hover.svg) no-repeat;
+      }
+    }
+
+    &:active {
+      border-color: $button-color-active;
+      color: $button-color-active;
+
+      & .button__icon {
+        background: url(../images/icons/arrow_active.svg) no-repeat;
+      }
+    }
+
+    &:disabled {
+      border-color: $button-color-disabled;
+      color: $button-color-disabled;
+
+      & .button__icon {
+        background: url(../images/icons/arrow_disabled.svg) no-repeat;
+      }
+    }
+  }
+
+  &--mobile-only {
+    margin-top: 30px;
+
+    @include on-table {
+      display: none;
+    }
+  }
+
+  &--hidden-mobile {
+    display: none;
+
+    @include on-table {
+      display: flex;
+    }
+  }
+}

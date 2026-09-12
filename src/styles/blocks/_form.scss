@@ -1,0 +1,61 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include on-desktop {
+    gap: 40px;
+  }
+
+  &__input {
+    width: 100%;
+    padding-block: 3px;
+    border: none;
+    border-bottom: 1px solid $input-color;
+
+    font-family: Raleway, sans-serif;
+    line-height: 150%;
+
+    background-color: #0000;
+
+    transition: all 0.3s;
+
+    @include on-table {
+      width: 450px;
+    }
+
+    @include on-desktop {
+      width: 470px;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $input-color-hover;
+
+      &::placeholder {
+        color: $input-color-hover;
+      }
+    }
+
+    &:focus {
+      border-bottom: 1px solid $input-color-focus;
+      color: $input-color-focus;
+      outline: none;
+    }
+
+    &:-internal-autofill-selected {
+      border-bottom: 1px solid $input-color;
+      font-weight: 700;
+      -webkit-box-shadow: 0 0 0 1000px $color-text-white inset !important;
+
+      -webkit-text-fill-color: $input-color !important;
+    }
+
+    &:-internal-autofill-previewed {
+      border-bottom: 1px solid $input-color;
+      font-weight: 700;
+      -webkit-box-shadow: 0 0 0 1000px $color-text-white inset !important;
+
+      -webkit-text-fill-color: $input-color !important;
+    }
+  }
+}
