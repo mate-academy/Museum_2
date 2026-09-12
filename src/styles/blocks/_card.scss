@@ -1,0 +1,114 @@
+.card {
+  &__photo {
+    overflow: hidden;
+    height: 356px;
+
+    @include tablet {
+      height: 420px;
+    }
+
+    @include desktop {
+      height: 484px;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.3s;
+  }
+
+  @include can-hover {
+    &__photo:hover &__image {
+      transform: scale(1.1);
+    }
+  }
+
+  &__body {
+    margin-top: 20px;
+
+    @include tablet {
+      margin-top: 30px;
+    }
+
+    @include desktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__date {
+    @extend %text-main;
+
+    color: $c-main;
+  }
+
+  &__title {
+    @extend %h4;
+
+    margin-top: 10px;
+
+    @include tablet {
+      min-height: 60px;
+    }
+
+    @include desktop {
+      min-height: 0;
+    }
+  }
+
+  &__text {
+    @extend %text-main;
+
+    margin-top: 20px;
+
+    &--gray {
+      color: $c-gray;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    @include desktop {
+      width: 270px;
+      margin-top: 50px;
+    }
+  }
+
+  &--event {
+    .card__photo {
+      height: 358px;
+
+      @include tablet {
+        height: 422px;
+      }
+
+      @include desktop {
+        height: 475px;
+      }
+    }
+
+    .card__body {
+      @include tablet {
+        margin-top: 0;
+      }
+    }
+
+    .card__button {
+      margin-top: 24px;
+
+      @include tablet {
+        margin-top: 50px;
+      }
+    }
+  }
+}

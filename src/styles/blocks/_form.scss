@@ -1,0 +1,62 @@
+.form {
+  &__field {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 0 0 4px;
+    border: none;
+    border-bottom: 1px solid $c-black;
+
+    font-family: $font-main;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $c-black;
+
+    background-color: transparent;
+
+    &::placeholder {
+      color: $c-black;
+    }
+
+    &:hover {
+      border-bottom-color: $c-main;
+      color: $c-main;
+    }
+
+    &:focus {
+      border-bottom-color: $c-main;
+      font-weight: 600;
+      color: $c-main;
+      outline: none;
+    }
+
+    &:not(:placeholder-shown) {
+      border-bottom-color: $c-black;
+      font-weight: 700;
+      color: $c-black;
+    }
+
+    &:autofill,
+    &:autofill:hover,
+    &:autofill:focus {
+      box-shadow: inset 0 0 0 100px $c-white;
+      transition: background-color 100000s;
+
+      -webkit-text-fill-color: $c-black;
+    }
+  }
+
+  &__button {
+    margin-top: 30px;
+
+    @include tablet {
+      width: 330px;
+    }
+
+    @include desktop {
+      width: 270px;
+      margin-top: 40px;
+    }
+  }
+}
