@@ -1,0 +1,66 @@
+.events {
+  padding-top: 120px;
+
+  @include tablet {
+    padding-top: 160px;
+  }
+
+  @include desktop {
+    padding-top: 200px;
+  }
+
+  &__content {
+    @include tablet {
+      row-gap: 0;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+
+    @include tablet {
+      grid-row: 1;
+      align-self: center;
+    }
+
+    @include desktop {
+      align-self: start;
+    }
+  }
+
+  &__card {
+    margin-top: 60px;
+
+    @include tablet {
+      display: grid;
+      grid-template-columns: 330px minmax(0, 1fr);
+      column-gap: 30px;
+      margin-top: 70px;
+    }
+
+    @include desktop {
+      grid-template-columns: 370px minmax(0, 570px);
+      margin-top: 60px;
+    }
+
+    &:first-of-type {
+      @include desktop {
+        margin-top: 68px;
+      }
+    }
+  }
+
+  &__calendar {
+    margin-top: 30px;
+
+    @include tablet {
+      grid-row: 1;
+      align-self: center;
+      margin-top: 0;
+    }
+
+    @include desktop {
+      align-self: start;
+    }
+  }
+}

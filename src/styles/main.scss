@@ -1,7 +1,60 @@
 @import 'utils';
-@import 'fonts';
 @import 'typography';
 
-body {
-  background: $c-gray;
+@import 'blocks/grid';
+@import 'blocks/button';
+@import 'blocks/nav';
+@import 'blocks/socials';
+@import 'blocks/schedule';
+@import 'blocks/form';
+@import 'blocks/header';
+@import 'blocks/menu';
+@import 'blocks/hero';
+@import 'blocks/card';
+@import 'blocks/exhibitions';
+@import 'blocks/events';
+@import 'blocks/visit';
+@import 'blocks/post';
+@import 'blocks/news';
+@import 'blocks/subscribe';
+@import 'blocks/footer';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html:has(.menu:target),
+body:has(.menu:target) {
+  overflow: hidden;
+}
+
+.page {
+  margin: 0;
+  font-family: $font-main;
+  color: $c-black;
+  background-color: $c-white;
+}
+
+.container {
+  box-sizing: content-box;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding-right: $padding-mobile;
+  padding-left: $padding-mobile;
+
+  @include tablet {
+    padding-right: $padding-tablet;
+    padding-left: $padding-tablet;
+  }
+
+  @include desktop {
+    padding-right: $padding-desktop;
+    padding-left: $padding-desktop;
+  }
 }

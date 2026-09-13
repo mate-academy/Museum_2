@@ -1,0 +1,56 @@
+.post {
+  &__photo {
+    overflow: hidden;
+    height: 280px;
+
+    @include tablet {
+      height: 330px;
+    }
+
+    @include desktop {
+      height: 370px;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.3s;
+  }
+
+  @include can-hover {
+    &__photo:hover &__image {
+      transform: scale(1.1);
+    }
+  }
+
+  &__date {
+    @extend %text-additional;
+
+    margin-top: 20px;
+
+    @include tablet {
+      margin-top: 30px;
+    }
+
+    @include desktop {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    @extend %h4;
+  }
+
+  &__text {
+    @extend %text-main;
+
+    margin-top: 20px;
+    color: $c-gray;
+  }
+}

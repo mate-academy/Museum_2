@@ -1,0 +1,121 @@
+.hero {
+  min-height: 100vh;
+  color: $c-white;
+  background-color: $c-bg;
+
+  @include desktop {
+    padding-bottom: 50px;
+  }
+
+  &__content {
+    @include desktop {
+      position: relative;
+    }
+  }
+
+  &__date {
+    @extend %text-additional;
+
+    margin-top: 50px;
+
+    @include tablet {
+      margin-top: 99px;
+    }
+
+    @include desktop {
+      width: 570px;
+      margin-top: 90px;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+
+    @include tablet {
+      width: 570px;
+    }
+  }
+
+  &__text {
+    @extend %text-main;
+
+    margin-top: 16px;
+
+    @include tablet {
+      width: 330px;
+      margin-top: 20px;
+    }
+
+    @include desktop {
+      width: 570px;
+      margin-top: 30px;
+    }
+  }
+
+  &__button {
+    margin-top: 54px;
+
+    @include tablet {
+      width: 330px;
+      margin-top: 50px;
+    }
+
+    @include desktop {
+      width: 270px;
+      margin-top: 81px;
+    }
+  }
+
+  &__duration {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      width: 570px;
+      margin: 135px 0 0;
+
+      font-family: $font-title;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 125%;
+
+      opacity: 0.7;
+
+      &::after {
+        content: '';
+        flex-grow: 1;
+        height: 1px;
+        background-color: $c-white;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+
+    width: 245px;
+    height: 273px;
+    margin: 40px auto 0;
+
+    object-fit: cover;
+
+    @include tablet {
+      width: 443px;
+      height: 494px;
+      margin-top: 70px;
+    }
+
+    @include desktop {
+      position: absolute;
+      top: 137px;
+      right: 0;
+
+      width: 625px;
+      height: 663px;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.button {
+  @extend %text-button;
+
+  cursor: pointer;
+
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  border: none;
+
+  text-align: center;
+  text-decoration: none;
+
+  &--primary {
+    color: $c-white;
+    background-color: $c-main;
+
+    @include hover(background-color, $c-main-hover);
+
+    &:active {
+      background-color: $c-main-pressed;
+    }
+
+    &:disabled {
+      cursor: default;
+      background-color: $c-main-disabled;
+    }
+  }
+
+  &--secondary {
+    border: 1px solid $c-main;
+    color: $c-main;
+    background-color: transparent;
+
+    @include hover(border-color, $c-main-hover);
+
+    &:hover {
+      color: $c-main-hover;
+    }
+
+    &:active {
+      border-color: $c-main-pressed;
+      color: $c-main-pressed;
+    }
+  }
+
+  &__arrow {
+    width: 20px;
+    height: 20px;
+  }
+}
