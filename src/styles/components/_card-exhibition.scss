@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+.exhibition-card {
+  --margin-block-img-wrapper: 0 10px;
+  --margin-block-content-time: 10px 5px;
+  --margin-block-content-title: 5px 10px;
+  --margin-block-content-description: 10px 30px;
+  --margin-block-button: 20px 0px;
+  --height-title: auto;
+  --height-img: 356px;
+
+  &__img-wrapper {
+    @extend %hover-img;
+
+    display: flex;
+    margin-block: var(--margin-block-img-wrapper);
+
+    picture {
+      width: 100%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: var(--height-img);
+    object-fit: cover;
+  }
+
+  &__date {
+    margin-block: var(--margin-block-content-time);
+    color: var(--color-primary);
+  }
+
+  &__title {
+    height: var(--height-title);
+    margin-block: var(--margin-block-content-title);
+  }
+
+  &__description {
+    margin-block: var(--margin-block-content-description);
+  }
+
+  &__button {
+    margin-block: var(--margin-block-button);
+  }
+
+  @include respond-to('md') {
+    --margin-block-button: auto 0;
+    --height-title: 60px;
+    --height-img: 420px;
+  }
+
+  @include respond-to('lg') {
+    --height-img: 484px;
+  }
+}

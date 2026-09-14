@@ -1,0 +1,51 @@
+@use '../abstracts' as *;
+
+.event-card {
+  --margin-block-img-wrapper: 0 10px;
+  --margin-block-content-time: 10px 5px;
+  --margin-block-content-title: 5px 10px;
+  --margin-block-content-description: 10px 30px;
+  --margin-block-button: 20px 0px;
+  --height-title: auto;
+  --grid-column-button: 1/-1;
+  --width-button: 100%;
+  --width-description: 100%;
+
+  &__img-wrapper {
+    @extend %hover-img;
+
+    margin-block: var(--margin-block-img-wrapper);
+  }
+
+  &__time {
+    margin-block: var(--marginh-block-content-time);
+    color: var(--color-primary);
+  }
+
+  &__title {
+    height: var(--height-title);
+    margin-block: var(--margin-block-content-title);
+  }
+
+  &__description {
+    width: var(--width-description);
+    margin-block: var(--margin-block-content-description);
+  }
+
+  &__button {
+    width: var(--width-button);
+    margin-top: auto;
+    margin-block: var(--margin-block-button);
+  }
+
+  @include respond-to('md') {
+    --margin-block-content-time: 0 10px;
+    --margin-block-content-description: 20px 50px;
+    --width-description: 330px;
+  }
+
+  @include respond-to('lg') {
+    --width-button: 270px;
+    --width-description: 570px;
+  }
+}

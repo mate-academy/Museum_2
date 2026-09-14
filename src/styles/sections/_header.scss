@@ -1,0 +1,50 @@
+@use '../abstracts/mixins/media' as *;
+
+.header {
+  --width-logo: 123px;
+  --height-logo: 40px;
+  --padding-block: 20px;
+  --menu-size: 22px;
+  --display-header-lang: none;
+  --gap-actions: 39px;
+
+  padding-block: var(--padding-block);
+  background-color: var(--color-bg-accent);
+
+  &__lang {
+    display: var(--display-header-lang);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    width: var(--width-logo);
+    height: var(--height-logo);
+  }
+
+  &__actions {
+    display: flex;
+    gap: var(--gap-actions);
+    align-items: center;
+  }
+
+  &__menu {
+    width: var(--menu-size);
+    height: var(--menu-size);
+  }
+
+  @include respond-to('md') {
+    --width-logo: 124px;
+    --height-logo: 37px;
+    --gap-actions: 40px;
+    --display-header-lang: block;
+  }
+
+  @include respond-to('lg') {
+    --padding-block: 26px 27px;
+  }
+}

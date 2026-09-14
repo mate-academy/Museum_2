@@ -1,0 +1,54 @@
+@use '../abstracts/mixins/icons' as *;
+@use '../abstracts/variables/' as *;
+
+.icon {
+  display: block;
+
+  background-color: var(--color-on-accent);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: background-color $transition-duration-normal;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-primary);
+    outline: none;
+  }
+
+  &--logo {
+    @include icon-mask('logo');
+  }
+
+  &--menu {
+    @include icon-mask('menu');
+  }
+
+  &--cross {
+    @include icon-mask('cross');
+  }
+
+  &--dropdown {
+    @include icon-mask('dropdown');
+  }
+
+  &--facebook {
+    @include icon-mask('facebook');
+  }
+
+  &--telegram {
+    @include icon-mask('telegram');
+  }
+
+  &--twitter {
+    @include icon-mask('x');
+  }
+
+  &--instagram {
+    @include icon-mask('instagram');
+  }
+
+  &--scroll-up {
+    @include icon-mask('scroll-up');
+  }
+}

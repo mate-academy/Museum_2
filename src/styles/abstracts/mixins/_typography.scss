@@ -1,0 +1,33 @@
+@use 'sass:map';
+@use '../variables/typography' as *;
+@use '../mixins/media' as *;
+
+// prettier-ignore
+@mixin respond-typography($style-name) {
+  @if map.has-key($typography-base, $style-name) {
+    $base: map.get($typography-base, $style-name);
+    $sm: map.get($typography-sm, $style-name);
+
+    font-family: map.get($base, font-family);
+    font-size: map.get($sm, size);
+    font-weight: map.get($base, font-weight);
+    line-height: map.get($sm, lh);
+    letter-spacing: 0;
+
+    @include respond-to('md') {
+      $md: map.get($typography-md, $style-name);
+
+      font-size: map.get($md, size);
+      line-height: map.get($md, lh);
+    }
+
+    @include respond-to('lg') {
+      $lg: map.get($typography-lg, $style-name);
+
+      font-size: map.get($lg, size);
+      line-height: map.get($lg, lh);
+    }
+  } @else {
+    @warn "#{$style-name} is not found in typography.scss";
+  }
+}

@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+.news-card {
+  --margin-block-img-wrapper: 0 15px;
+  --margin-block-time: 15px 0;
+  --margin-block-title: 0 10px;
+  --margin-block-description: 10px 0px;
+  --height-img: 280px;
+
+  &__img-wrapper {
+    @extend %hover-img;
+
+    margin-block: var(--margin-block-img-wrapper);
+  }
+
+  &__img {
+    width: 100%;
+    height: var(--height-img);
+    object-fit: cover;
+  }
+
+  &__time {
+    margin-block: var(--margin-block-time);
+  }
+
+  &__title {
+    margin-block: var(--margin-block-title);
+  }
+
+  &__description {
+    margin-block: var(--margin-block-description);
+  }
+
+  @include respond-to('md') {
+    --height-img: 330px;
+  }
+
+  @include respond-to('lg') {
+    --height-img: 370px;
+  }
+}

@@ -1,0 +1,42 @@
+@use '../variables' as *;
+
+%rotate-180 {
+  transform: rotate(180deg);
+  transition: transform $transition-duration-normal;
+}
+
+%hover-underline {
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform-origin: left;
+    transform: scaleX(0);
+
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: var(--color-hover-footer);
+
+    transition: transform $transition-duration-normal;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+%hover-img {
+  transition: $transition-duration-normal;
+
+  &:hover {
+    scale: 1.05;
+  }
+}

@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+.cta {
+  --padding-block: 50px;
+  --margin-block-title: 0 20px;
+  --margin-block-description: 20px 40px;
+  --margin-block-button: 40px 0px;
+  --width-description: 100%;
+  --height-image-wrapper: 800px;
+  --width-image-wrapper: 578px;
+  --display-img-wrapper: none;
+  --grid-column-text-wrapper: 1/-1;
+  --width-button: 100%;
+
+  margin-inline: auto;
+  padding-block: var(--padding-block);
+  color: var(--color-on-accent);
+  background-color: var(--color-bg-accent);
+
+  &__content {
+    position: static;
+    align-items: center;
+  }
+
+  &__text-wrapper {
+    grid-column: var(--grid-column-text-wrapper);
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    left: 0;
+
+    display: var(--display-img-wrapper);
+    grid-column: var(--grid-column-image-wrapper);
+    grid-column: 1/6;
+
+    width: var(--width-image-wrapper);
+    height: var(--height-image-wrapper);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-block: var(--margin-block-title);
+    color: var(--color-on-accent);
+    white-space: pre-line;
+  }
+
+  &__description {
+    width: var(--width-description);
+    margin-block: var(--margin-block-description);
+  }
+
+  &__button {
+    grid-column: var(--grid-column-button);
+    width: var(--width-button);
+    margin-block: var(--margin-block-button);
+  }
+
+  @include respond-to('md') {
+    --padding-block: 80px;
+    --margin-block-title: 0 20px;
+    --margin-block-description: 20px 60px;
+    --margin-block-button: 60px 0px;
+    --width-button: 330px;
+    --width-description: 450px;
+  }
+
+  @include respond-to('lg') {
+    --margin-block-title: 0 20px;
+    --margin-block-description: 20px 50px;
+    --margin-block-button: 50px 0px;
+    --display-img-wrapper: block;
+    --padding-block: 0px;
+    --grid-column-description: 1/9;
+    --grid-column-text-wrapper: 6/13;
+    --width-button: 270px;
+    --width-description: 470px;
+
+    &__content {
+      height: var(--height-image-wrapper);
+      padding: 0;
+    }
+  }
+}

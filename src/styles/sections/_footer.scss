@@ -1,0 +1,115 @@
+@use '../abstracts' as *;
+
+.footer {
+  --font-size-title: 18px;
+  --padding-block: 34px 30px;
+  --margin-block-title: 0 10px;
+  --margin-block-contacts: 10px 30px;
+  --gap-menu-list: 5px;
+  --grid-column-section: span 2;
+  --grid-column-section-bottom: 1/-1;
+  --grid-column-nav: span 2;
+  --gap-info: 22px;
+  --gap-content: 50px;
+
+  padding-block: var(--padding-block);
+  color: var(--color-on-accent);
+  background-color: var(--color-bg-accent);
+
+  &__content {
+    gap: var(--gap-content);
+
+    &-title {
+      margin-block: var(--margin-block-title);
+    }
+
+    &-title--nav {
+      transition: $transition-duration-normal;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__section {
+    grid-column: var(--grid-column-section);
+
+    &--wide {
+      display: flex;
+      grid-column: var(--grid-column-section-bottom);
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+
+      font-size: 14px;
+    }
+  }
+
+  &__nav {
+    grid-column: var(--grid-column-nav);
+  }
+
+  &__menu-item {
+    @extend %hover-underline;
+
+    position: relative;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    margin-block: var(--margin-block-contacts);
+    font-style: normal;
+
+    &-address,
+    &-email {
+      align-self: flex-start;
+    }
+
+    &-address {
+      white-space: pre-line;
+    }
+
+    &-address,
+    &-phone,
+    &-email {
+      @extend %hover-underline;
+    }
+  }
+
+  &__menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-menu-list);
+  }
+
+  &__info {
+    display: flex;
+    gap: var(--gap-info);
+  }
+
+  &__scroll-up {
+    width: 30px;
+    height: 30px;
+  }
+
+  @include respond-to('md') {
+    --padding-block: 50px;
+    --grid-column-section: span 2;
+    --grid-column-nav: span 2;
+    --margin-block-title: 0 30px;
+    --margin-block-contacts: 30px 50px;
+    --gap-menu-list: 10px;
+  }
+
+  @include respond-to('lg') {
+    --padding-block: 50px 30px;
+    --grid-column-section: span 4;
+    --grid-column-nav: span 2;
+    --gap-info: 102px;
+    --margin-block-title: 0 30px;
+    --margin-block-contacts: 30px 50px;
+    --gap-content: 72px;
+  }
+}

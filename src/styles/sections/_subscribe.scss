@@ -1,0 +1,61 @@
+@use '../abstracts' as *;
+
+.subscribe {
+  --margin-block-title: 0 20px;
+  --margin-block-description: 20px 50px;
+  --margin-block-input: 50px 30px;
+  --margin-block-button: 30px 0px;
+  --padding-block: 90px 80px;
+  --width-subscribe-description: 100%;
+  --grid-column-title: 1/3;
+  --grid-column-description: 1/3;
+  --grid-column-form: 1/3;
+  --grid-column-form-input: 1/3;
+  --grid-column-form-button: 1/3;
+
+  padding-block: var(--padding-block);
+  color: var(--color-text-title);
+
+  &__title {
+    grid-column: var(--grid-column-title);
+    margin-block: var(--margin-block-title);
+  }
+
+  &__description {
+    grid-column: var(--grid-column-description);
+    width: var(--width-subscribe-description);
+    margin-block: var(--margin-block-description);
+  }
+
+  &__form {
+    grid-column: var(--grid-column-form);
+  }
+
+  &__input {
+    grid-column: var(--grid-column-form-input);
+  }
+
+  &__button {
+    grid-column: var(--grid-column-form-button);
+    margin-top: 30px;
+  }
+
+  @include respond-to('md') {
+    --grid-column-title: 1/6;
+    --grid-column-description: 1/6;
+    --grid-column-form: 1/7;
+    --grid-column-form-input: 1/5;
+    --grid-column-form-button: 1/4;
+    --width-subscribe-description: 570px;
+  }
+
+  @include respond-to('lg') {
+    --margin-block-title: 0 50px;
+    --margin-block-description: 0;
+    --grid-column-title: 1/6;
+    --grid-column-description: 7/13;
+    --grid-column-form: 1/13;
+    --grid-column-form-input: 1/6;
+    --grid-column-form-button: 1/4;
+  }
+}

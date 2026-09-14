@@ -1,0 +1,74 @@
+@use '../abstracts' as *;
+
+.exhibitions {
+  --padding-block: 90px 0px;
+  --margin-block-button: 30px 0px;
+  --flex-direction-list: column;
+  --width-card: 100%;
+  --height-image-wrapper: 356px;
+  --margin-block-title: 30px 0;
+  --margin-block-list: 30px 0;
+  --gap-list: 60px;
+  --grid-colum-title: 1/3;
+  --grid-colum-list: 1/3;
+  --grid-template-rows-exhibitions: 3;
+  --grid-colum-button: 1/3;
+  --grid-row-button: -1;
+
+  flex-direction: var(--flex-direction);
+  padding-block: var(--padding-block);
+
+  &__content {
+    grid-template-rows: repeat(var(--grid-template-rows-exhibitions), auto);
+  }
+
+  &__title {
+    grid-column: var(--grid-colum-title);
+    margin-block: var(--margin-block-title);
+  }
+
+  &__list {
+    display: flex;
+    grid-column: var(--grid-colum-list);
+    flex-direction: var(--flex-direction-list);
+    gap: var(--gap-list);
+
+    margin-block: var(--margin-block-list);
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: var(--width-card);
+  }
+
+  &__button {
+    grid-column: var(--grid-colum-button);
+    grid-row: var(--grid-row-button);
+    margin-block: var(--margin-block-button);
+  }
+
+  @include respond-to('md') {
+    --padding-block: 105px 0px;
+    --margin-block-title: 0 37.5px;
+    --margin-block-list: 37.5px 0;
+    --margin-block-button: 0px;
+    --flex-direction-list: row;
+    --gap-list: 29px;
+    --grid-colum-list: 1/7;
+    --grid-colum-title: 1/5;
+    --grid-colum-button: 5/7;
+    --grid-row-button: 1;
+  }
+
+  @include respond-to('lg') {
+    --padding-block: 110px 0px;
+    --margin-block-title: 0 35.5px;
+    --margin-block-list: 35.5px 0;
+    --gap-list: 30px;
+    --grid-colum-title: 1/7;
+    --grid-colum-list: 1/13;
+    --grid-colum-button: 10/13;
+    --grid-row-button: 1;
+  }
+}
