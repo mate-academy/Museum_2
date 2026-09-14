@@ -14,14 +14,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   let currentLocale = getInitialLocale();
   let currentTranslations = null;
 
-  const summary = document.querySelector('.lang-select__summary');
+  const langSelectSummaries = document.querySelectorAll(
+    '.lang-select__summary',
+  );
+
   const infoScheduleToday = document.getElementById('info-schedule-today');
 
   // Update language selection interface (UA/EN)
   const updateLangSelectUI = (locale) => {
-    if (summary) {
-      summary.textContent = locale.toUpperCase();
-    }
+    langSelectSummaries.forEach(
+      (select) => (select.textContent = locale.toUpperCase()),
+    );
   };
 
   const updateMuseumStatus = (translations) => {
