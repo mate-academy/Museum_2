@@ -1,0 +1,89 @@
+.button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  &__primary {
+    height: 60px;
+    width: 280px;
+    background-color: $b-default;
+    color: $c-white;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $b-hover;
+    }
+
+    &:active {
+      background-color: $b-pressed;
+    }
+
+    @include on-tablet {
+      width: 330px;
+      margin-inline: 0;
+    }
+
+    @include on-desktop {
+      width: 270px;
+    }
+  }
+
+  &__secondary {
+    height: 60px;
+    width: 280px;
+    background-color: $c-white;
+    color: $c-main;
+    margin: 20px auto 80px;
+    border: 1px solid $c-main;
+
+    &:hover {
+      color: $b-hover;
+      border-color: $b-hover;
+    }
+
+    &:active {
+      color: $b-pressed;
+      border-color: $b-pressed;
+    }
+
+    @include on-tablet {
+      display: none;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+        margin: 0;
+        width: 210px;
+      }
+
+      @include on-desktop {
+        width: 270px;
+      }
+    }
+
+    &-icon {
+      display: inline-block;
+
+      width: 20px;
+      height: 20px;
+      margin-left: 6px;
+
+      background-color: currentColor;
+
+      mask-image: url('../images/icons/arrow.svg');
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+    }
+  }
+}
