@@ -1,0 +1,87 @@
+@use '../utils' as *;
+
+.subscription {
+  &__container {
+    @extend %container-max-width;
+
+    margin-bottom: 80px;
+
+    @include on-tablet {
+      @include page-grid;
+
+      margin-bottom: 128px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      margin-bottom: 50px;
+      font-size: 48px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 50px;
+    color: $c-black;
+
+    @include on-tablet {
+      grid-column: 1 / -2;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / 5;
+  }
+
+  &__input {
+    @include text-main;
+
+    width: 100%;
+    height: 28px;
+    margin-bottom: 30px;
+    padding-bottom: 3px;
+    border: none;
+    border-bottom: 1px solid;
+
+    font-weight: 700;
+
+    background-color: transparent;
+
+    @include autofill;
+    @include hover(color, $c-main);
+
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
+
+    &::placeholder {
+      font-weight: 400;
+      color: inherit;
+    }
+
+    &:focus {
+      border-bottom-color: inherit;
+      color: $c-main;
+      outline: none;
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+}

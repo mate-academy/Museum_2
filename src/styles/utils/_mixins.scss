@@ -1,6 +1,184 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@use 'vars' as *;
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
   }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin content-padding-inline() {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 39px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+}
+
+@mixin section-header-margin {
+  margin-bottom: $section-header-gap;
+
+  @include on-tablet {
+    margin-bottom: $section-header-gap-tablet;
+  }
+
+  @include on-desktop {
+    margin-bottom: $section-header-gap-desktop;
+  }
+}
+
+@mixin section-action {
+  margin-top: 30px;
+
+  @include on-tablet {
+    display: none;
+  }
+}
+
+@mixin page-grid {
+  --columns: 6;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 30px;
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.3s;
+
+  @media (hover: hover) {
+    &:hover {
+      #{$property}: $toValue;
+    }
+  }
+}
+
+@mixin active($property, $toValue) {
+  transition: #{$property} 0.3s;
+  &:active {
+    #{$property}: $toValue;
+  }
+}
+
+@mixin full-bleed {
+  margin-inline: calc(50% - 50vw);
+}
+
+@mixin autofill($bg: $c-white, $text: inherit) {
+  &:-webkit-autofill {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      -webkit-box-shadow: 0 0 0 1000px $bg inset;
+      caret-color: $text;
+      transition: background-color 9999s ease-in-out 0s;
+
+      -webkit-text-fill-color: $text;
+    }
+  }
+}
+
+@mixin heading-1 {
+  font-family: $f-display;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+
+  @include on-tablet {
+    font-size: 72px;
+  }
+
+  @include on-desktop {
+    font-size: 96px;
+  }
+}
+
+@mixin heading-2 {
+  font-family: $f-display;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
+
+  @include on-tablet {
+    font-size: 62px;
+  }
+
+  @include on-desktop {
+    font-size: 80px;
+  }
+}
+
+@mixin heading-3 {
+  font-family: $f-display;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+
+  @include on-tablet {
+    font-size: 40px;
+  }
+
+  @include on-desktop {
+    font-size: 58px;
+    line-height: 1.2;
+  }
+}
+
+@mixin heading-4 {
+  font-family: $f-display;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+
+  @include on-tablet {
+    font-size: 24px;
+  }
+}
+
+@mixin heading-5 {
+  font-family: $f-display;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+@mixin heading-6 {
+  font-family: $f-display;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@mixin text-button {
+  font-family: $f-text;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+@mixin text-main {
+  font-family: $f-text;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+@mixin text-additional {
+  font-family: $f-text;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
 }
