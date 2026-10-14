@@ -1,0 +1,165 @@
+.header {
+  background-color: #3f5252;
+  &__content {
+    @include page-grid;
+
+    @include desktop {
+      position: relative;
+    }
+  }
+
+  &__top {
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-bottom: 99px;
+    }
+
+    @include desktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__top-bar__lang {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+
+    @include tablet {
+      grid-column: 1 / -2;
+    }
+
+    @include desktop {
+      grid-column: 1 / 7;
+    }
+  }
+
+  &__events_data {
+    color: #f1f5f4;
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &__title {
+    margin: 10px 0 30px;
+
+    color: #f1f5f4;
+    font-size: 48px;
+    line-height: 100%;
+
+    @include tablet {
+      margin: 10px 0 20px;
+      font-size: 72px;
+    }
+
+    @include desktop {
+      margin: 10px 0 30px;
+      font-size: 96px;
+    }
+  }
+
+  &__contribution {
+    color: #f1f5f4;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include tablet {
+      width: 330px;
+    }
+
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    margin-block: 40px;
+
+    grid-column: 1 / -1;
+    height: 60px;
+
+    @include tablet {
+      margin-block: 0;
+      margin: 50px 0 70px;
+      grid-column: 1 / 4;
+    }
+
+    @include desktop {
+      margin: 0;
+      margin: 81px 0 135px;
+    }
+  }
+
+  &__img {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 245px;
+    height: 273px;
+
+    margin: 0 auto;
+
+    background-image: url(../images/header-girl--mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include tablet {
+      max-width: 443px;
+      height: 494px;
+      grid-column: 2 / -2;
+    }
+
+    @include desktop {
+      grid-column: 7 / -1;
+
+      min-width: 625px;
+      height: 663px;
+      background-image: url(../images/header-girl.png);
+
+      position: absolute;
+      left: 0;
+      right: -55px;
+      bottom: 0;
+    }
+  }
+
+  &__data__line {
+    position: relative;
+    grid-column: 1 / 7;
+
+    height: fit-content;
+    align-items: center;
+
+    display: none;
+
+    @include desktop {
+      display: flex;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__data {
+    font-family: 'Playfair Display', sans-serif;
+    color: #f1f5f4;
+    font-size: 14px;
+    width: 700px;
+    line-height: 125%;
+    white-space: nowrap;
+  }
+
+  &__line {
+    flex-shrink: 0;
+    height: 1px;
+    background-color: #f1f5f4;
+
+    position: absolute;
+    left: 101px;
+    right: 0;
+    top: 60%;
+  }
+}

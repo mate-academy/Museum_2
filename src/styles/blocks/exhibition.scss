@@ -1,0 +1,138 @@
+.exhibition {
+  margin-top: 90px;
+
+  @include tablet {
+    margin-top: 100px;
+  }
+
+  @include desktop {
+    margin-top: 110px;
+  }
+
+  &__content {
+    position: relative;
+
+    @include page-grid;
+  }
+
+  &__title {
+    margin-bottom: 60px;
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+    font-size: 28px;
+    line-height: 125%;
+
+    @include tablet {
+      margin-bottom: 75px;
+
+      grid-column: 1 / 5;
+
+      text-align: left;
+      font-size: 40px;
+    }
+
+    @include desktop {
+      margin-bottom: 71px;
+
+      grid-column: 1 / 7;
+
+      font-size: 48px;
+      line-height: 120%;
+    }
+  }
+
+  &__item {
+    &--1 {
+      grid-column: 1 / -1;
+      margin-bottom: 60px;
+
+      @include tablet {
+        margin-bottom: 0;
+        grid-column: 1 / 4;
+      }
+
+      @include desktop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--2 {
+      grid-column: 1 / -1;
+
+      @include tablet {
+        grid-column: 4 / -1;
+      }
+
+      @include desktop {
+        grid-column: 7 / -1;
+      }
+    }
+
+    @include hover(transform, scale(1.02));
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__info {
+    margin: 20px 0 30px;
+
+    @include tablet {
+      margin: 30px 0 40px;
+    }
+
+    @include desktop {
+      margin: 20px 0 50px;
+    }
+  }
+
+  &__date {
+    color: #cd4d31;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__name {
+    margin: 10px 0 20px;
+
+    color: #1c1b29;
+    font-size: 20px;
+    line-height: 125%;
+
+    @include tablet {
+      min-height: calc(1.25em * 2);
+      font-size: 24px;
+    }
+  }
+
+  &__descr {
+    color: #504f5e;
+    font-size: 16px;
+    line-height: 150%;
+  }
+  &__action-button {
+    @include desktop {
+      max-width: 270px;
+    }
+  }
+
+  &__root-button {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+
+    @include tablet {
+      margin-top: 0;
+
+      position: absolute;
+
+      grid-column: 5 / -1;
+    }
+
+    @include desktop {
+      grid-column: 10 / -1;
+    }
+  }
+}

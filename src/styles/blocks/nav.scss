@@ -1,0 +1,66 @@
+.nav {
+  margin-block: 40px;
+  padding-bottom: 40px;
+  grid-column: 1 / -1;
+
+  border-bottom: 1px solid #f1f5f4;
+
+  @include tablet {
+    margin-block: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include desktop {
+    margin-block: 0;
+    margin: 70px 0 60px;
+    grid-column: 1 / 7;
+  }
+
+  &__list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include tablet {
+      gap: 30px;
+    }
+
+    @include desktop {
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: #f1f5f4;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+
+    @include tablet {
+      font-size: 48px;
+      line-height: 120%;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #f1f5f4;
+
+      transition: all $transition-time linear;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}
