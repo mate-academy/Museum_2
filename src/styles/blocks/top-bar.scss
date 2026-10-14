@@ -1,0 +1,60 @@
+.top-bar {
+  padding-block: 20px;
+  grid-column: 1 / -1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include desktop {
+    padding: 26px 0 27px;
+  }
+
+  &__logo {
+    display: flex;
+
+    &--img {
+      width: 123px;
+      height: 40px;
+
+      @include tablet {
+        width: 124px;
+        height: 37px;
+      }
+    }
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      margin-right: 12px;
+
+      gap: 40px;
+    }
+  }
+
+  &__lang {
+    position: relative;
+
+    color: #f1f5f4;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+
+    &::after {
+      content: '';
+
+      width: 10px;
+      height: 7px;
+      background-image: url(../images/icons/icon-dropdown.png);
+      background-size: cover;
+      position: absolute;
+      top: 7px;
+      right: -12px;
+    }
+  }
+}
