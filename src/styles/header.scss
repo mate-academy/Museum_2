@@ -1,53 +1,76 @@
 .header {
-  padding: 33px 55px;
-  background-color: #3f5252;
+  position: relative;
+  z-index: 4;
   display: flex;
   justify-content: space-between;
+
   box-sizing: border-box;
   margin: 0;
+  padding: 33px 55px;
+
+  background-color: #3f5252;
 
   &-logo {
-    width: 124px;
     display: block;
     box-sizing: border-box;
+    width: 124px;
   }
 
   &-icon {
-    height: 30px;
-    width: 30px;
     box-sizing: border-box;
+    width: 30px;
+    height: 30px;
+  }
+
+  &-menu-toggle {
+    position: relative;
+    z-index: 4;
+  }
+
+  &-menu-close {
+    display: none;
+  }
+
+  &-icon-close {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+
+  &:has(+ .aside:target) .header-menu-open {
+    display: none;
+  }
+
+  &:has(+ .aside:target) .header-menu-close {
+    display: block;
   }
 
   &-link {
-    text-decoration: none;
-    font-family:
-      Raleway Arial,
-      Helvetica,
-      sans-serif;
-    font-weight: 500;
+    font-family: 'Raleway Arial', Helvetica, sans-serif;
     font-size: 16px;
+    font-weight: 500;
     line-height: 150%;
-    letter-spacing: 0%;
-    text-align: center;
-    vertical-align: middle;
     color: #f1f5f4;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0%;
+    vertical-align: middle;
   }
 
-  &-right{
+  &-right {
     display: flex;
     gap: 40px;
     align-items: center;
     justify-content: center;
   }
 
-  &-language{
+  &-language {
     display: flex;
     align-items: center;
     justify-content: center;
-     &-icon{
-    height: 7px;
-    width: 10px;
+    &-icon {
+      width: 10px;
+      height: 7px;
+    }
   }
-  }
-
 }

@@ -1,12 +1,11 @@
-
 # Checklist for preparing a portfolio project
 
 ## Tech review
 
 1. Add [favicon](http://joxi.ru/l2ZoZGJulwX3yA)
 2. Add a smooth scroll for the whole page (`scroll-behavior: smooth;`)
-3. All interactive elements(*links, buttons, pictures, icons*) ***should have a hover effect and cursor pointer***. User must intuitively understand that he can interact with them
-4. Pictures in the blocks "Exhibitions", "Events", "News" should be ***animated*** and somehow move on hover or when scrolling down the page
+3. All interactive elements(_links, buttons, pictures, icons_) **_should have a hover effect and cursor pointer_**. User must intuitively understand that he can interact with them
+4. Pictures in the blocks "Exhibitions", "Events", "News" should be **_animated_** and somehow move on hover or when scrolling down the page
 5. Make sure when you click on logo there is no 404 error (Use `href="#"` in `anchor tag`)
 6. When you try to send the form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
 7. The form shouldn’t submit empty
