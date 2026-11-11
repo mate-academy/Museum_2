@@ -12,7 +12,7 @@
     display: flex;
     gap: 260px;
 
-    @include on-tablet{
+    @include on-tablet {
       gap: 50px;
     }
 
@@ -40,7 +40,7 @@
     color: #f1f5f4;
     transition: color linear 0.3s;
 
-    &:hover{
+    &:hover {
       color: #c5c6c6;
     }
   }
@@ -52,18 +52,14 @@
   &-icon {
     height: 20px;
     width: 20px;
-       transition: transform linear 0.4s;
+    transition: transform linear 0.4s;
 
-      &:hover{
-        transform: scale(1.19)
-      }
+    &:hover {
+      transform: scale(1.19);
+    }
   }
   &-label {
-    font-family:
-      'Playfair Display',
-      Arial,
-      Helvetica,
-      sans-serif;
+    font-family: 'Playfair Display', Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 150%;
@@ -104,17 +100,42 @@
       text-align: center;
       color: #f1f5f4;
     }
-    &-content{
+    &-content {
       display: flex;
       gap: 102px;
 
-      @include on-tablet{
+      @include on-tablet {
         gap: 10px;
       }
     }
-    &-icon{
+    &-icon {
       height: 30px;
       width: 30px;
+
+      &:hover {
+        animation: scrollAnim 1.2s ease-out infinite;
+      }
+
+      @mixin scroll-button($scroll-button) {
+        @keyframes #{$scroll-button} {
+          0% {
+            transform: translateY(0px);
+          }
+          25% {
+            transform: translateY(-7px);
+          }
+          50% {
+            transform: translateY(0px);
+          }
+          75% {
+            transform: translateY(-7px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+      }
+      @include scroll-button('scrollAnim');
     }
   }
 }
