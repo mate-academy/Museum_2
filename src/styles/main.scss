@@ -1,7 +1,181 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import 'header';
+@import 'first';
+@import 'show';
+@import 'events';
+@import 'plan';
+@import 'news';
+@import 'subscribe';
+@import 'footer';
+@import 'aside';
+
+
+html{
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
 
 body {
+  margin: 0;
   background: $c-gray;
+}
+
+body:has(.aside:target) {
+  overflow: hidden;
+}
+
+.container {
+  padding: 0 55px;
+
+  @include on-tablet {
+    padding: 0 39px;
+  }
+
+  @include on-mobile {
+    padding: 0 20px;
+  }
+}
+
+.screen-wrapper {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.label-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 71px;
+
+  @include on-mobile{
+    flex-direction: column;
+  }
+}
+
+.button-for-label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  width: 270px;
+  height: 60px;
+  border: solid 1px #cd4d31;
+
+  font-family: 'Raleway Arial', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  color: #cd4d31;
+  text-align: center;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all linear 0.3s ;
+
+  &:hover{
+    background-color: #e2e1e1;
+  }
+
+  &-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  @include on-tablet{
+    width: 210px;
+    height: 60px;
+  }
+}
+
+.label {
+  padding: 0;
+
+  font-family: 'Playfair Display', Arial, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  @include on-tablet {
+    font-size: 40px;
+  }
+  @include on-mobile {
+    font-size: 28px;
+  }
+}
+
+.default-button {
+  cursor: pointer;
+
+  width: 270px;
+  height: 60px;
+  border: none;
+
+  font-family: 'Raleway Arial', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  color: #f1f5f4;
+  text-align: center;
+  letter-spacing: 0%;
+  vertical-align: middle;
+
+  background-color: #cd4d31;
+  transition: background-color linear 0.4s;
+
+  &:hover{
+    background-color: #ae3a20;
+  }
+
+  @include on-tablet {
+    width: 330px;
+    height: 60px;
+  }
+
+  @include on-mobile {
+    width: 279px;
+    height: 60px;
+  }
+}
+
+.card-text {
+  max-width: 569px;
+  margin-bottom: 50px;
+
+  font-family: Raleway, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #504f5e;
+  letter-spacing: 0%;
+}
+
+.card-label {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 0;
+
+  font-family: 'Playfair Display', Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 125%;
+  color: #1c1b29;
+  letter-spacing: 0%;
+}
+
+.card-micro-label {
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 0;
+
+  font-family: 'Raleway Arial', Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #cd4d31;
+  letter-spacing: 0%;
 }

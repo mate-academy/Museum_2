@@ -1,0 +1,141 @@
+.footer {
+  padding-top: 50px;
+  height: 398px;
+  background-color: #3f5252;
+  box-sizing: border-box;
+
+  @include on-mobile {
+    height: auto;
+  }
+
+  &-content {
+    display: flex;
+    gap: 260px;
+
+    @include on-tablet {
+      gap: 50px;
+    }
+
+    @include on-mobile {
+      flex-direction: column;
+    }
+  }
+  &-contact {
+    display: flex;
+    flex-direction: column;
+
+    &-icon {
+      display: flex;
+      gap: 20px;
+    }
+  }
+  &-link {
+    text-decoration: none;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #f1f5f4;
+    transition: color linear 0.3s;
+
+    &:hover {
+      color: #c5c6c6;
+    }
+  }
+  &-text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  &-icon {
+    height: 20px;
+    width: 20px;
+    transition: transform linear 0.4s;
+
+    &:hover {
+      transform: scale(1.19);
+    }
+  }
+  &-label {
+    font-family: 'Playfair Display', Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #f1f5f4;
+    margin-bottom: 30px;
+  }
+  &-list {
+    list-style: none;
+    padding: 0;
+  }
+  &-item {
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #f1f5f4;
+  }
+  &-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    &-text {
+      font-family: Raleway, Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 140%;
+      letter-spacing: 0%;
+      text-align: center;
+      color: #f1f5f4;
+    }
+    &-content {
+      display: flex;
+      gap: 102px;
+
+      @include on-tablet {
+        gap: 10px;
+      }
+    }
+    &-icon {
+      height: 30px;
+      width: 30px;
+
+      &:hover {
+        animation: scrollAnim 1.2s ease-out infinite;
+      }
+
+      @mixin scroll-button($scroll-button) {
+        @keyframes #{$scroll-button} {
+          0% {
+            transform: translateY(0px);
+          }
+          25% {
+            transform: translateY(-7px);
+          }
+          50% {
+            transform: translateY(0px);
+          }
+          75% {
+            transform: translateY(-7px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+      }
+      @include scroll-button('scrollAnim');
+    }
+  }
+}
