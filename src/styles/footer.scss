@@ -4,9 +4,21 @@
   background-color: #3f5252;
   box-sizing: border-box;
 
+  @include on-mobile {
+    height: auto;
+  }
+
   &-content {
     display: flex;
     gap: 260px;
+
+    @include on-tablet{
+      gap: 50px;
+    }
+
+    @include on-mobile {
+      flex-direction: column;
+    }
   }
   &-contact {
     display: flex;
@@ -85,6 +97,10 @@
     &-content{
       display: flex;
       gap: 102px;
+
+      @include on-tablet{
+        gap: 10px;
+      }
     }
     &-icon{
       height: 30px;

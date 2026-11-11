@@ -14,6 +14,7 @@
 
 html{
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -21,8 +22,20 @@ body {
   background: $c-gray;
 }
 
+body:has(.aside:target) {
+  overflow: hidden;
+}
+
 .container {
   padding: 0 55px;
+
+  @include on-tablet {
+    padding: 0 39px;
+  }
+
+  @include on-mobile {
+    padding: 0 20px;
+  }
 }
 
 .screen-wrapper {
@@ -35,6 +48,10 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 71px;
+
+  @include on-mobile{
+    flex-direction: column;
+  }
 }
 
 .button-for-label {
@@ -55,10 +72,16 @@ body {
   text-align: center;
   letter-spacing: 0%;
   vertical-align: middle;
+  cursor: pointer;
 
   &-icon {
     width: 20px;
     height: 20px;
+  }
+
+  @include on-tablet{
+    width: 210px;
+    height: 60px;
   }
 }
 
@@ -71,6 +94,13 @@ body {
   line-height: 120%;
   letter-spacing: 0%;
   vertical-align: middle;
+
+  @include on-tablet {
+    font-size: 40px;
+  }
+  @include on-mobile {
+    font-size: 28px;
+  }
 }
 
 .default-button {
@@ -90,6 +120,16 @@ body {
   vertical-align: middle;
 
   background-color: #cd4d31;
+
+  @include on-tablet {
+    width: 330px;
+    height: 60px;
+  }
+
+  @include on-mobile {
+    width: 279px;
+    height: 60px;
+  }
 }
 
 .card-text {

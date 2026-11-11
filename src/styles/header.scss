@@ -10,6 +10,13 @@
 
   background-color: #3f5252;
 
+  @include on-tablet {
+      padding: 33px 39px;
+    }
+    @include on-mobile {
+      padding: 33px 20px;
+    }
+
   &-logo {
     display: block;
     box-sizing: border-box;
@@ -25,6 +32,11 @@
   &-menu-toggle {
     position: relative;
     z-index: 4;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
   }
 
   &-menu-close {
@@ -71,6 +83,10 @@
     &-icon {
       width: 10px;
       height: 7px;
+    }
+
+    @include on-mobile {
+      display: none;
     }
   }
 }
