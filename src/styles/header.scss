@@ -1,0 +1,555 @@
+.header{
+  @include on ($bp-small-desktop){
+  height: 1300px;
+   background-color: #3F5252;
+  }
+
+   @include on ($bp-tablet){
+   width: 860px;
+   height: 1170px;
+  }
+
+     @include on ($bp-mobile){
+    width: 520px;
+    height: 900px;
+  }
+}
+
+.hero{
+  height: 800px;
+  background-color: #3F5252;
+
+  @include on ($bp-tablet){
+    padding-left: 40px;
+  }
+
+       @include on ($bp-mobile){
+    height: 100%;
+    padding-left: 0;
+  }
+}
+
+.namu{
+display: flex;
+justify-content: space-between;
+padding-top: 30px;
+padding-inline: 55px;
+
+ @include on ($bp-small-desktop){
+  display: flex;
+  justify-content: space-between;
+ padding-inline: 55px;
+  }
+
+    @include on ($bp-tablet){
+    display: flex;
+    gap: 200px;
+    justify-content: start;
+    }
+
+   @include on ($bp-mobile){
+display: flex;
+gap: 150px;
+justify-content: flex-start;
+
+padding-top: 40px;
+padding-inline: 20px;
+  }
+
+&--menu{
+display: flex;
+justify-content: space-between;
+padding-top: 30px;
+padding-inline: 50px;
+
+   @include on ($bp-tablet){
+    display: flex;
+    gap: 250px;
+    justify-content: start;
+    }
+
+   @include on ($bp-mobile){
+display: flex;
+gap: 100px;
+justify-content: start;
+padding-inline: 20px;
+  }
+
+}
+
+&__logo{
+  display: flex;
+  align-items: center;
+
+}
+
+
+&__block{
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+column-gap: 10px;
+align-items: center;
+}
+
+&__lenguage{
+display: flex;
+flex-direction: row;
+gap: 3px;
+
+  &--text{
+  font-family: var( --font-family);
+  font-size: 16px;
+  font-weight: 500;
+  color: #F1F5F4;
+  }
+
+     @include on ($bp-mobile){
+   display: none;
+
+  }
+
+}
+}
+
+
+.museum{
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  padding-top: 90px;
+
+  background-color: #3F5252;
+
+  @include on ($bp-small-desktop){
+      display: grid;
+      grid-template-columns: 1fr;
+      height: 1100px;
+    }
+
+     @include on ($bp-tablet){
+    height: 1000px;
+    }
+
+     @include on ($bp-mobile){
+ height: 700px;
+
+  }
+
+  &__photo{
+    position: absolute;
+    top:8.8%;
+  right: 0;
+    bottom: 0;
+
+    @include on ($bp-small-desktop){
+  position: absolute;
+    top:46.7%;
+  bottom: 0;
+ left: 50%;
+   transform: translateX(-50%);
+    }
+
+
+    @include on ($bp-tablet){
+    position: absolute;
+    top:56.3%;
+      bottom: 0;
+ left: 30%;
+   transform: translateX(-50%);
+
+    width: 450px;
+    }
+
+         @include on ($bp-mobile){
+    top: 72.3%;
+    width: 245px;
+  }
+  }
+
+  &__block{
+
+  &--text{
+    margin: 0;
+    padding-left: 56px;
+
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 400;
+    color: #F1F5F4;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+
+    @include on ($bp-tablet){
+    padding-left: 40px;
+    }
+
+        @include on ($bp-mobile){
+  width:280px;
+  padding-left: 20px;
+
+  }
+  }
+
+  &--title{
+    width: 570px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 56px;
+
+    font-family: "Playfair Display", sans-serif;
+    font-size: 96px;
+    font-weight: bold;
+    line-height: 0.9;
+    color: #F1F5F4;
+
+      @include on ($bp-tablet){
+    width: 500px;
+    padding-left: 40px;
+    font-size: 72px;
+    }
+
+      @include on ($bp-mobile){
+    width: 280px;
+    padding-left: 20px;
+    font-size: 48px;
+
+  }
+  }
+
+
+  }
+}
+
+
+
+.ticket{
+  padding-top: 81px;
+  padding-bottom: 135px;
+   padding-left: 55px;
+
+  @include on ($bp-tablet){
+    padding-left: 40px;
+    }
+
+       @include on ($bp-mobile){
+  padding-left: 20px;
+  }
+
+&__button{
+  width: 270px;
+  height: 60px;
+  border: none;
+  background-color: #CD4D31;
+}
+
+&__text{
+font-family: var(--font-family);
+font-size: 16px;
+font-weight: 600;
+color: #F1F5F4;
+
+}
+}
+
+.museum__dates{
+  padding-top: 135px;
+  padding-left: 55px;
+
+  font-family: "Playfair Display", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #F1F5F4;
+
+    @include on ($bp-small-desktop){
+      display:none;
+    }
+
+  &::after{
+    content: '';
+
+    position: absolute;
+    top: 99%;
+    left: 10%;
+
+    width: 469px;
+    height: 1px;
+
+    background-color: #F1F5F4;
+
+
+  }
+}
+
+.menu-toggle{
+  display: none;
+}
+
+.menu{
+position: fixed;
+z-index: 100;
+inset: 0;
+
+visibility: hidden;
+opacity: 0;
+background-color: #3F5252;
+
+  transition:
+    opacity 0.4s ease-in-out,
+    visibility 0.4s ease-in-out;
+
+        @include on ($bp-small-desktop){
+scrollbar-width: none;
+    overflow: hidden auto;
+overscroll-behavior: contain;
+    }
+
+&::-webkit-scrollbar{
+  display: none;
+}
+
+&__lenguage{
+display: flex;
+flex-direction: row;
+gap: 3px;
+
+  &--text{
+  font-family: var( --font-family);
+  font-size: 16px;
+  font-weight: 500;
+  color: #F1F5F4;
+  }
+
+     @include on ($bp-mobile){
+    flex-direction: row;
+
+  }
+
+}
+}
+
+.namu__block--menu{
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+column-gap: 0;
+align-items: center;
+
+
+ @include on ($bp-tablet){
+  column-gap: 5px;
+    }
+
+@include on($bp-mobile){
+display: flex;
+flex-direction: row-reverse;
+column-gap: 30px;
+padding-right: 20px;
+}
+
+}
+
+.menu__block{
+  position: relative;
+
+height: 900px;
+  padding-top: 40px;
+  padding-left: 55px;
+
+background-color: #3F5252;
+
+    @include on ($bp-small-desktop){
+      height: 1350px;
+background-color: #3F5252;
+    }
+
+@include on ($bp-tablet){
+ padding-left: 45px;
+    }
+
+@include on($bp-mobile){
+height: 700px;
+padding-left: 20px;
+
+}
+
+  &--text{
+    position: relative;
+
+    width: max-content;
+    margin: 0;
+    padding-top: 60px;
+
+    font-family: "Playfair Display",sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #F1F5F4;
+
+    opacity: 1;
+
+    transition: opacity 0.3s ease-in-out;
+
+
+    &::after{
+  content: '';
+
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background-color: #F1F5F4;
+
+  transition: width 0.4s ease-in-out;
+    }
+
+    &:hover::after{
+    width: 100%;
+    }
+    &:hover{
+      opacity: 0.8;
+    }
+
+@include on($bp-tablet){
+ font-size: 48px;
+}
+
+@include on($bp-mobile){
+ font-size: 20px;
+}
+
+  }
+
+  &--link{
+    text-decoration: none;
+  }
+
+  &--photo{
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 100%;
+
+      @include on ($bp-small-desktop){
+        position: absolute;
+        top: 49.8%;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+    }
+
+@include on($bp-tablet){
+ top: 66%;
+ width: 422px;
+}
+
+@include on($bp-mobile){
+display: none;
+}
+  }
+}
+
+.menu__card{
+ position: 10px;
+  display: flex;
+ flex-direction: row;
+ column-gap:83px ;
+
+  @include on($bp-mobile){
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+}
+
+
+.shedule, .address{
+  display: flex;
+  flex-direction: column;
+
+  &__text{
+  margin: 0;
+
+   font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 400;
+  color: #F1F5F4;
+  }
+
+  &__number{
+        font-family: var(--font-family);
+   font-size: 16px;
+   font-weight: 600;
+   color: #F1F5F4;
+  }
+
+  &__time{
+    font-family: var(--font-family);
+   font-size: 16px;
+   font-weight: 600;
+   color: #F1F5F4;
+  }
+}
+
+.menu--ticket{
+  padding-top: 121px;
+  padding-bottom: 135px;
+
+
+    &::after{
+    content: '';
+
+    position: absolute;
+     top: 55%;
+     bottom: 0;
+     left: 3.6%;
+
+     width: 570px;
+     height: 1px;
+
+     background-color: #F1F5F4;
+
+       @include on ($bp-small-desktop){
+      top: 50%;
+    }
+
+         @include on($bp-tablet){
+ top: 58.7%;
+ left: 10%;
+ width: 422px;
+}
+
+     @include on($bp-mobile){
+     top: 60%;
+     left: 5%;
+     width: 280px;
+  }
+    }
+&__button{
+  width: 270px;
+  height: 60px;
+  border: none;
+  background-color: #CD4D31;
+}
+
+&__text{
+font-family: var(--font-family);
+font-size: 16px;
+font-weight: 600;
+color: #F1F5F4;
+}
+}
+
+.menu-toggle:checked ~ .menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+// блокуємо прокрутку сторінки, поки меню відкрите
+body:has(.menu-toggle:checked) {
+  overflow: hidden;
+}

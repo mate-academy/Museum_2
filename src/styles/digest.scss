@@ -1,0 +1,116 @@
+.digest{
+padding-top: 150px;
+
+       @include on ($bp-mobile){
+    justify-items: center;
+  }
+&__block{
+display:grid;
+grid-template-columns: repeat(2,max-content);
+column-gap: 30px;
+justify-content: center;
+
+   @include on ($bp-small-desktop){
+grid-template-columns: max-content;
+
+ }
+
+        @include on ($bp-mobile){
+    width: 280px;
+
+  }
+
+}
+
+&--card{
+
+   @include on ($bp-small-desktop){
+ display: contents;
+
+ }
+
+   &__form {              // клас самої форми (обгортки поля і кнопки)
+    @include on($bp-small-desktop) {
+      order: 1;          // у заголовка й тексту 0, тому форма стане останньою
+    }
+  }
+&__title{
+  margin: 0;
+  padding-bottom: 50px;
+
+  font-family: "Playfair Display",sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  color: #1C1B29;
+
+       @include on ($bp-mobile){
+    width: 280px;
+   font-size: 28px;
+  }
+}
+
+&__text{
+margin: 0;
+
+font-family: var(--font-family);
+font-size: 16px;
+font-weight: 400;
+color: #1C1B29;
+
+   @include on ($bp-small-desktop){
+  padding-bottom: 20px;
+ }
+
+        @include on ($bp-mobile){
+    width: 280px;
+    padding-left: 0;
+  }
+}
+
+&__email{
+width: 478px;
+height: 28px;
+border: none;
+border-bottom: solid 1px #1C1B29 ;
+
+ background-color: transparent;
+outline: none;
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+ transition: background-color 9999s ease-in-out 0s;
+
+-webkit-text-fill-color: #1f2a44;
+  }
+
+   @include on ($bp-small-desktop){
+ order: 3;
+ }
+
+        @include on ($bp-mobile){
+    width: 280px;
+
+  }
+}
+}
+&--sub{
+padding-top: 62px;
+padding-bottom: 200px;
+
+
+&__button{
+width: 270px;
+height: 60px;
+border: none;
+background-color: #CD4D31;
+}
+
+&__text{
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 600;
+  color: #F1F5F4;
+
+}
+}
+}
