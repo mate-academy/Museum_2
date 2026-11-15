@@ -1,0 +1,213 @@
+.event{
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+padding-top: 160px;
+padding-bottom: 100px;
+
+  @include on($bp-mobile){
+  align-items: center;
+  padding-top: 100px;
+  }
+  &__header{
+    display: flex;
+    justify-content: space-between;
+  padding-inline: 55px;
+
+    @include on($bp-small-desktop){
+   display: flex;
+   gap: 80px;
+   justify-content: start;
+   padding-inline: 20px;
+
+  }
+
+    @include on ($bp-tablet){
+   display: flex;
+   flex-direction: column;
+   gap: 0;
+   padding-inline: 0;
+
+  //  padding-left: 50px;
+    }
+
+    // заголовок і .calendar стають прямими дітьми .event,
+    // тож order працює разом з .event__block
+    @include on($bp-mobile){
+   display: contents;
+  }
+  }
+
+  &__title{
+   margin: 0;
+   padding-bottom: 70px;
+
+    font-family: "Playfair Display" ,sans-serif;
+   font-size: 48px;
+   font-weight: bold;
+   color: #1C1B29;
+
+        @include on($bp-small-desktop){
+  font-size: 40px;
+  }
+
+      @include on($bp-tablet){
+text-align: center;
+  }
+
+     @include on($bp-mobile){
+  order: 1;
+     padding-left: 10px;
+  font-size: 28px;
+  }
+  }
+}
+
+.calendar{
+      @include on($bp-tablet){
+        display: flex;
+        justify-content: center;
+    padding-bottom: 30px;
+    padding-inline: 170px;
+  }
+
+    @include on($bp-mobile){
+   order: 3;
+   padding-top: 30px;
+  padding-right: 0;
+  padding-inline: 0;
+
+  }
+
+   &__button{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content:center;
+
+  width: 270px;
+  height: 60px;
+  margin: 0;
+  border: 1px solid  #CD4D31;
+ }
+
+  &__text, &__arrow{
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: bold;
+  color: #CD4D31;
+ }
+}
+
+.event__block{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+   row-gap: 60px;
+ justify-content: start;
+
+   padding-inline: 55px;
+
+     @include on($bp-small-desktop){
+    padding-inline: 20px;
+  }
+
+     @include on($bp-tablet){
+      justify-content: center;
+    padding-left: 50px;
+  }
+
+    @include on($bp-mobile){
+   justify-content: center;
+   order: 2;
+  }
+}
+
+
+
+.travel, .excursion{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 30px;
+
+  @include on ($bp-small-desktop){
+  gap: 15px;
+  }
+
+     @include on($bp-tablet){
+   display: grid;
+   grid-template-columns: max-content ;
+   padding-left: 50px;
+  }
+
+    @include on($bp-mobile){
+   display: grid;
+   grid-template-columns: max-content ;
+   padding-left: 20px;
+  }
+
+  &__photo{
+    @include on ($bp-tablet){
+    width: 330px;
+    }
+
+     @include on($bp-mobile){
+  width: 280px;
+  }
+  }
+
+  &__date{
+          font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  color: #CD4D31;
+  }
+
+  &__title{
+    margin: 0;
+
+    font-family: "Playfair Display",sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1C1B29;
+
+      @include on($bp-small-desktop){
+    width: 320px;
+  }
+
+   @include on($bp-mobile){
+    width: 280px;
+  font-size: 20px;
+  }
+  }
+
+  &__text{
+  max-width: 570px;
+  margin: 0;
+  padding-block: 10px 50px;
+
+      font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  color: #504F5E;
+
+  @include on($bp-small-desktop){
+    width: 320px;
+  }
+  }
+
+&--sign{
+  &__button{
+    width: 270px;
+    height: 60px;
+    border: none;
+    background-color: #CD4D31;
+  }
+  &__text{
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 600;
+    color:#F1F5F4;
+  }
+}
+}
