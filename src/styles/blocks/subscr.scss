@@ -1,0 +1,107 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+
+.subscr {
+  margin-bottom: 80px;
+
+  @include on-tablet {
+    margin-bottom: 128px;
+  }
+
+  &-wrapper {
+    @include page-grid;
+  }
+
+  &-title {
+    grid-column: 1 / -1;
+    @include headings;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: 1 / span 5;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      margin-bottom: 50px;
+    }
+  }
+
+  &-descr {
+    grid-column: 1 / -1;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / span 5;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 7 / -1;
+      margin-bottom: 0;
+    }
+  }
+
+  &-form {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 5;
+    }
+  }
+
+  &-label {
+    display: block;
+    margin-bottom: 30px;
+    color: $page-font-color;
+
+    @include on-desktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &-email {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 8px 0;
+
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    border-radius: 0;
+    background: transparent;
+
+    font: inherit;
+    color: inherit;
+
+    &::placeholder {
+      color: inherit;
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &-form button {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
+
+    @include on-tablet {
+      width: 73%;
+    }
+  }
+}

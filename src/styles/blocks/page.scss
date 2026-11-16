@@ -1,0 +1,51 @@
+ @use '../utils/mixins' as *;
+ @use '../utils/vars' as *;
+
+
+ .page {
+  @include main-text;
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+  scroll-behavior: auto;
+  }
+
+  &-body {
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: $page-body-color;
+    color: $page-font-color;
+  }
+
+  &-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateY(-100%);
+
+    opacity: 0;
+
+    transition:
+      transform 500ms ease,
+      opacity 500ms ease,
+      visibility 0s linear 500ms;;
+
+    &:target {
+      visibility: visible;
+      pointer-events: auto;
+      opacity: 1;
+      transform: translateY(0);
+
+      transition-delay: 0s;
+    }
+  }
+
+  &:has(.page-menu:target) {
+    overflow: hidden;
+  }
+ }

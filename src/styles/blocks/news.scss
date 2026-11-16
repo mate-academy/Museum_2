@@ -1,0 +1,91 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.news {
+  margin-top: 90px;
+  margin-bottom: 120px;
+
+  &-wrapper {
+    @include page-grid;
+    gap: 50px;
+  }
+
+  &-title {
+    grid-column: 1 / span 1;
+    margin-bottom: 30px;
+    @include headings;
+
+    @include on-tablet {
+      grid-column: 1 / span 4;
+      font-size: 40px;
+      grid-row: 1;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 6;
+    }
+  }
+
+  &-event {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include on-tablet {
+      grid-column: span 3;
+    }
+
+    @include on-desktop {
+      grid-column: span 6;
+    }
+  }
+
+  &-image {
+    margin-bottom: 20px;
+  }
+
+  &-date {
+    margin-bottom: 10px;
+  }
+
+  &-eventtitle {
+    margin-bottom: 20px;
+  }
+
+  &-btn {
+    display: block;
+    grid-column: 1 / -1;
+    background-color: transparent;
+    border: 1px solid $page-button-color;
+    color: $page-button-color;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include on-tablet {
+      grid-row: 1;
+      grid-column: 5 / span 2;
+    }
+
+    @include on-desktop {
+      grid-column: 10 / -1;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+
+      width: 14px;
+      height: 11px;
+      background-image: url('/src/images/icons/arrow.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+}

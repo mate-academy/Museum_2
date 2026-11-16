@@ -1,0 +1,73 @@
+@use './vars' as *;
+
+// Адаптив на планшеті
+@mixin on-tablet {
+  @media(min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+// Адаптив на пк
+@mixin on-desktop{
+  @media(min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+// Стандартні відступи стрінки на всіх пристроях
+@mixin content-padding-inline {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 40px;
+  }
+
+  @include on-desktop {
+    padding-inline: 55px;
+  }
+}
+
+// Параметри сітки
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 20px;
+
+  @include on-tablet {
+    --columns: 6;
+
+    column-gap: 30px;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+  }
+}
+
+// Шрифт основного тексту
+@mixin main-text {
+  font-family: $main-font-style;
+  color: $page-body-color;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+// Шрифт основних заголовків
+
+@mixin headings {
+  font-family: $headings-font-style;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 125%;
+
+  @include on-tablet {
+    font-size: 40px;
+  }
+
+  @include on-desktop {
+    font-size: 48px;
+  }
+}

@@ -1,0 +1,150 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+@use '../utils/common' as *;
+
+
+.header {
+  background-color: $page-bg-color;
+  min-height: 100dvh;
+  margin-bottom: 90px;
+
+  @include on-tablet {
+    margin-bottom: 110px;
+  }
+
+  &-wrapper {
+    @include page-grid;
+
+    min-height: 100dvh;
+    grid-template-rows: auto auto 1fr;
+
+    @include on-desktop {
+      grid-template-rows: auto 1fr;
+    }
+  }
+
+  &-top {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 70px;
+    padding-top: 20px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 40px;
+  }
+
+  .menu-langswitcher--header {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &-info {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+
+
+    @include on-desktop {
+      grid-column: 1 / 7 ;
+      padding-top: 40px;
+    }
+
+  }
+
+  &-toptitle {
+    @include main-text;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  &-title {
+    margin-bottom: 30px;
+
+    font-family: $headings-font-style;
+    font-size: 55px;
+    line-height: 100%;
+    color: $page-body-color;
+    text-align: left;
+    letter-spacing: 1.6%;
+
+    @include on-tablet {
+      font-size: 82px;
+      margin-bottom: 20px;
+    }
+
+    @include on-desktop {
+      font-size: 106px;
+    }
+  }
+
+  &-subtitle {
+    margin-bottom: 40px;
+    @include main-text;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  .header-subtitle-break {
+    display: none;
+
+    @include on-tablet {
+      display: initial;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &-button {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      width: 45%;
+    }
+  }
+
+  &-image {
+    grid-column: 1 / -1;
+    align-self: end;
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+      width: calc(100% + 55px + (100vw - 1280px) / 2);
+    }
+
+    &__item {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      @include on-desktop {
+        max-height: 90dvh;
+        object-fit: contain;
+        object-position: right bottom;
+      }
+    }
+  }
+}
+
