@@ -26,12 +26,13 @@ Check font styles. Use [Playfair Display](https://fonts.google.com/specimen/Play
 6. `git checkout -b develop` - to create new branch and switch on it.
 7. Write you code in `src` folder.
 8. Run `npm run lint` and fix code style errors.
-9. Run `npm run deploy` to deploy your solution to `gh-pages`.
+9. Run `npm run deploy` to build and deploy your solution to `gh-pages` (PowerShell is supported).
+   In GitHub Settings → Pages, select **Deploy from a branch**, branch **gh-pages**, folder **/ (root)**, and save.
 10. `git add . && git commit -m 'write a short description of the changes you made'` to save your changes.
 11. `git push origin develop` - to send you code for PR.
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://github.com/WhiteAshDc/Museum_2).
+  [DEMO LINK](https://whiteashdc.github.io/Museum_2/).
 14. Copy `DEMO LINK` to the PR description.
 
 > To update you PR repeat steps 7-11.
