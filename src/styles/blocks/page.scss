@@ -1,45 +1,41 @@
- @use '../utils/mixins' as *;
- @use '../utils/vars' as *;
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
 
-
- .page {
-  @include main-text;
+.page {
   scroll-behavior: smooth;
-
-  @media (prefers-reduced-motion: reduce) {
-  scroll-behavior: auto;
-  }
 
   &-body {
     min-width: 320px;
     min-height: 100vh;
-    background-color: $page-body-color;
     color: $page-font-color;
+    background-color: $page-body-color;
   }
 
   &-menu {
+    pointer-events: none;
+
     position: fixed;
+    z-index: 2;
     top: 0;
     right: 0;
     left: 0;
-    z-index: 2;
-
-    pointer-events: none;
-    visibility: hidden;
     transform: translateY(-100%);
 
+    visibility: hidden;
     opacity: 0;
 
     transition:
       transform 500ms ease,
       opacity 500ms ease,
-      visibility 0s linear 500ms;;
+      visibility 0s linear 500ms;
 
     &:target {
-      visibility: visible;
       pointer-events: auto;
-      opacity: 1;
+
       transform: translateY(0);
+
+      visibility: visible;
+      opacity: 1;
 
       transition-delay: 0s;
     }
@@ -48,4 +44,10 @@
   &:has(.page-menu:target) {
     overflow: hidden;
   }
- }
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+
+  @include main-text;
+}

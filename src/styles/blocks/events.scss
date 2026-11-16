@@ -3,6 +3,7 @@
 
 .events {
   @include page-grid;
+
   margin-bottom: 90px;
 
   @include on-tablet {
@@ -15,7 +16,9 @@
 
   &-title {
     grid-column: 1 / -1;
+
     @include headings;
+
     margin-bottom: 60px;
 
     @include on-tablet {
@@ -28,10 +31,11 @@
   }
 
   &-card {
-    grid-column: 1 / -1;
     display: flex;
+    grid-column: 1 / -1;
     flex-direction: column;
     justify-content: center;
+
     margin-bottom: 60px;
 
     @include on-tablet {
@@ -47,7 +51,6 @@
   &-image {
     width: 100%;
     min-height: 358px;
-
     margin-bottom: 20px;
 
     @include on-tablet {
@@ -65,8 +68,8 @@
   }
 
   &-content {
-    grid-column: 1 / -1;
     overflow: hidden;
+    grid-column: 1 / -1;
 
     @include on-tablet {
       grid-column: 4 / span 3;
@@ -78,12 +81,13 @@
   }
 
   &-date {
-    color: $page-button-color;
     margin-bottom: 10px;
+    color: $page-button-color;
   }
 
   &-cardtitle {
     @include headings;
+
     margin-bottom: 20px;
   }
 
@@ -101,32 +105,35 @@
   }
 
   &-button--link {
-    display: block;
+    display: flex;
     grid-column: 1 / -1;
-    background-color: transparent;
+    gap: 12px;
+    align-items: center;
+
     border: 1px solid $page-button-color;
+
     color: $page-button-color;
 
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    background-color: transparent;
 
     &::after {
       content: '';
+
       display: block;
       flex-shrink: 0;
 
       width: 14px;
       height: 11px;
+
       background-image: url('/src/images/icons/arrow.png');
-      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-size: cover;
     }
 
     @include on-tablet {
-      grid-row: 1;
       grid-column: 5 / span 2;
+      grid-row: 1;
       margin-bottom: 70px;
     }
 

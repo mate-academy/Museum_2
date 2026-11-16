@@ -7,19 +7,21 @@
 
   &-wrapper {
     @include page-grid;
+
     gap: 50px;
   }
 
   &-title {
     grid-column: 1 / span 1;
     margin-bottom: 30px;
+
     @include headings;
 
     @include on-tablet {
       grid-column: 1 / span 4;
-      font-size: 40px;
       grid-row: 1;
       margin-bottom: 0;
+      font-size: 40px;
     }
 
     @include on-desktop {
@@ -28,8 +30,8 @@
   }
 
   &-event {
-    grid-column: 1 / -1;
     display: flex;
+    grid-column: 1 / -1;
     flex-direction: column;
     justify-content: center;
 
@@ -55,19 +57,20 @@
   }
 
   &-btn {
-    display: block;
+    display: flex;
     grid-column: 1 / -1;
-    background-color: transparent;
+    gap: 12px;
+    align-items: center;
+
     border: 1px solid $page-button-color;
+
     color: $page-button-color;
 
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    background-color: transparent;
 
     @include on-tablet {
-      grid-row: 1;
       grid-column: 5 / span 2;
+      grid-row: 1;
     }
 
     @include on-desktop {
@@ -76,16 +79,17 @@
 
     &::after {
       content: '';
+
       display: block;
       flex-shrink: 0;
 
       width: 14px;
       height: 11px;
+
       background-image: url('/src/images/icons/arrow.png');
-      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-size: cover;
     }
   }
-
 }

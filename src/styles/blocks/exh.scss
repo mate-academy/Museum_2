@@ -4,6 +4,7 @@
 
 .exh {
   @include page-grid;
+
   margin-bottom: 120px;
 
   @include on-tablet {
@@ -11,26 +12,26 @@
   }
 
   @include on-desktop {
-    margin-bottom: 2 00px;
+    margin-bottom: 200px;
   }
 
   &-title {
     grid-column: 1 / -1;
+    margin-bottom: 60px;
     color: $page-font-color;
     text-align: center;
-    @include headings;
 
-    margin-bottom: 60px;
+    @include headings;
 
     @include on-tablet {
       grid-column: 1 / 5;
       grid-row: 1;
-      text-align: left;
       margin-bottom: 71px;
+      text-align: left;
     }
 
     @include on-desktop {
-      grid-column: 1/ span 4;
+      grid-column: 1 / span 4;
     }
 
     @include on-desktop {
@@ -39,9 +40,8 @@
   }
 
   &-item {
-    grid-column: 1 / -1;
-
     display: flex;
+    grid-column: 1 / -1;
     flex-direction: column;
     justify-content: flex-start;
 
@@ -60,8 +60,8 @@
   &-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     flex-grow: 1;
+    justify-content: space-between;
   }
 
   &-content > .exh-button {
@@ -73,9 +73,8 @@
   }
 
   &-image {
-    width: 100%;
     overflow: hidden;
-
+    width: 100%;
     margin-bottom: 20px;
 
     &__item {
@@ -86,36 +85,38 @@
 
   &-date {
     margin-bottom: 10px;
-
-    color: $page-button-color;
     font-size: 16px;
     line-height: 150%;
+    color: $page-button-color;
   }
 
   &-heading {
     @include headings;
-    font-size: 26px;
-    margin-bottom: 20px;
+
     min-height: 2lh;
+    margin-bottom: 20px;
+    font-size: 26px;
   }
 
   &-text {
     @include main-text;
-    color: $page-heading-color;
-    font-size: 20px;
+
     margin-bottom: 30px;
+    font-size: 20px;
+    color: $page-heading-color;
   }
 
   &-button--link {
-    display: block;
+    display: flex;
     grid-column: 1 / -1;
-    background-color: transparent;
+    gap: 12px;
+    align-items: center;
+
     border: 1px solid $page-button-color;
+
     color: $page-button-color;
 
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    background-color: transparent;
 
     @include on-tablet {
       grid-column: 5 / -1;
@@ -128,16 +129,17 @@
 
     &::after {
       content: '';
+
       display: block;
       flex-shrink: 0;
 
       width: 14px;
       height: 11px;
+
       background-image: url('/src/images/icons/arrow.png');
-      background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
+      background-size: cover;
     }
   }
-
 }
