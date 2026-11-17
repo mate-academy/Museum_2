@@ -16,8 +16,12 @@
   &-wrapper {
     @include page-grid;
 
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: auto auto auto;
     min-height: 100dvh;
+
+    @include on-tablet {
+      grid-template-rows: auto auto 1fr;
+    }
 
     @include on-desktop {
       grid-template-rows: auto 1fr;
@@ -76,8 +80,8 @@
 
     font-family: $headings-font-style;
 
-    // Зменшує заголовок на вузьких екранах: мінімум 44px, максимум 55px.
-    font-size: clamp(44px, 14vw, 55px);
+    // Зменшує заголовок на вузьких екранах: мінімум 36px, максимум 48px.
+    font-size: clamp(36px, 10vw, 48px);
     line-height: 100%;
     color: $page-body-color;
     text-align: left;
@@ -85,11 +89,11 @@
 
     @include on-tablet {
       margin-bottom: 20px;
-      font-size: 82px;
+      font-size: 64px;
     }
 
     @include on-desktop {
-      font-size: 106px;
+      font-size: 80px;
     }
   }
 
