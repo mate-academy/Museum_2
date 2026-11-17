@@ -36,6 +36,7 @@
     @include on-desktop {
       // Рядок із контентом і картинкою вміщується в залишок висоти меню.
       grid-template-rows: auto minmax(0, 1fr);
+      height: 100dvh;
     }
   }
 
@@ -151,18 +152,15 @@
 
   &-image {
     display: none;
-    flex-direction: column;
-    justify-content: flex-end;
     align-self: end;
 
     // Обгортка картинки займає висоту свого рядка сітки.
-    height: 100%;
+    height: auto;
 
     // Дозволяє їй стати нижчою за природну висоту картинки.
-    min-height: 0;
 
     @include on-tablet {
-      display: flex;
+      display: block;
       grid-column: 2 / 6;
     }
 
@@ -170,7 +168,7 @@
       grid-column: 7 / -1;
 
       // cqw враховує ширину меню без скролбара, на відміну від vw.
-      width: calc(100% + 55px + (100cqw - 1280px) / 2);
+      width: calc(100% + 55px + (100vw - 1280px) / 2);
     }
 
     &__item {
@@ -178,17 +176,10 @@
 
       width: 100%;
 
-      // Висота картинки залежить від обгортки, а не від її вихідного розміру.
-      height: 100%;
-
-      // Вміщує все зображення в задані розміри без спотворення пропорцій.
-      object-fit: contain;
-      object-position: center bottom;
-
       @include on-desktop {
         // Додатково обмежує висоту картинки до 90% видимої області вікна.
         max-height: 90dvh;
-        object-fit: contain;
+        object-fit: cover;
         object-position: right bottom;
       }
     }
