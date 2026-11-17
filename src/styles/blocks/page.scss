@@ -1,0 +1,60 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+
+.page {
+  scroll-behavior: smooth;
+
+  &-body {
+    min-height: 100vh;
+    color: $page-font-color;
+    background-color: $page-body-color;
+  }
+
+  &-menu {
+    pointer-events: none;
+
+    // Меню поза потоком документа, тому не збільшує висоту сторінки.
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateY(-100%);
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition:
+      transform 500ms ease,
+      opacity 500ms ease,
+      visibility 0s linear 500ms;
+
+    &:target {
+      pointer-events: auto;
+
+      transform: translateY(0);
+
+      visibility: visible;
+      opacity: 1;
+
+      transition-delay: 0s;
+    }
+  }
+
+  // Правило діє, коли адреса містить #menu й меню відповідає :target.
+  &:has(.page-menu:target) {
+    // Блокує прокручування сторінки по обох осях, поки меню відкрите.
+    overflow: hidden;
+
+    .page-body {
+      // Також блокує прокручування на рівні body.
+      overflow: hidden;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+
+  @include main-text;
+}

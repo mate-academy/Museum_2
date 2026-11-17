@@ -1,0 +1,251 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+@use '../utils/common' as *;
+
+.menu {
+  // Дає дочірнім елементам одиницю cqw, прив'язану до ширини меню.
+  container-type: inline-size;
+
+  // Дозволяє скрол усередині меню, якщо на дуже низькому екрані бракує місця.
+  overflow-y: auto;
+
+  // На межі меню прокручування не передається сторінці під ним.
+  overscroll-behavior: contain;
+
+  // Запасний варіант для браузерів без підтримки dvh.
+  height: 100vh;
+
+  // Висота видимої області з урахуванням панелей мобільного браузера.
+  height: 100dvh;
+
+  color: $page-body-color;
+
+  background-color: $page-bg-color;
+
+  &-wrapper {
+    @include page-grid;
+
+    grid-template-rows: auto auto auto;
+    min-height: 100dvh;
+
+    @include on-tablet {
+      // Останній рядок займає залишок висоти й може зменшитися до нуля.
+      grid-template-rows: auto auto 1fr;
+
+      // Обмежує висоту сітки, щоб картинка не розтягувала меню вниз.
+    }
+
+    @include on-desktop {
+      // Рядок із контентом і картинкою вміщується в залишок висоти меню.
+      grid-template-rows: auto 1fr;
+    }
+  }
+
+  &-top {
+    display: flex;
+    grid-column: 1 / -1;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 40px;
+    padding-top: 20px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &-right {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    @include on-tablet {
+      flex-direction: row-reverse;
+      gap: 40px;
+    }
+  }
+
+  &-langswitcher {
+    cursor: pointer;
+
+    display: block;
+
+    margin: 0;
+    padding: 8px 18px 8px 0;
+    border: 0;
+    border-radius: 0;
+
+    font: inherit;
+    color: $page-body-color;
+
+    appearance: none;
+    background-color: transparent;
+    background-image: url('/src/images/icons/Union.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 8px 5px;
+
+    option {
+      color: $page-body-color;
+      background-color: $page-bg-color;
+    }
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+    }
+  }
+
+  &-info {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      margin-bottom: 0;
+    }
+  }
+
+  &-descr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 123px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &-schedule {
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &-toptitle {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  &-time {
+    font-weight: 600;
+  }
+
+  &-adressline {
+    font-size: 14px;
+  }
+
+  &-location {
+    display: inline-flex;
+    font-weight: 600;
+  }
+
+  &-image {
+    display: none;
+    align-self: end;
+
+    // Обгортка картинки займає висоту свого рядка сітки.
+
+    // Дозволяє їй стати нижчою за природну висоту картинки.
+
+    @include on-tablet {
+      display: block;
+      grid-column: 2 / 6;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+
+      // cqw враховує ширину меню без скролбара, на відміну від vw.
+      width: calc(100% + 55px + (100cqw - 1280px) / 2);
+    }
+
+    &__item {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      @include on-desktop {
+        // Додатково обмежує висоту картинки до 90% видимої області вікна.
+        max-height: 90dvh;
+        object-fit: contain;
+        object-position: right bottom;
+      }
+    }
+  }
+}
+
+.nav {
+  grid-column: 1 / -1;
+  margin-bottom: 40px;
+
+  &::after {
+    content: '';
+
+    display: block;
+
+    width: 100%;
+    height: 1px;
+    margin-top: 40px;
+
+    background-color: $page-body-color;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-tablet {
+      gap: 30px;
+    }
+  }
+
+  &-link {
+    display: inline-flex;
+
+    @include headings;
+
+    font-size: 18px;
+
+    @include on-tablet {
+      font-size: 42px;
+      line-height: 120%;
+    }
+
+    @include on-desktop {
+      font-size: 42px;
+    }
+  }
+
+  &-button {
+    @include on-tablet {
+      width: 45%;
+      margin-bottom: 30px;
+    }
+  }
+
+  @include on-tablet {
+    margin-bottom: 50px;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 7;
+  }
+}

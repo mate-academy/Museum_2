@@ -1,0 +1,158 @@
+@use '../utils/mixins' as *;
+@use '../utils/vars' as *;
+@use '../utils/common' as *;
+
+.header {
+  // Робить header контейнером, від ширини якого обчислюються одиниці cqw.
+  container-type: inline-size;
+  min-height: 100dvh;
+  margin-bottom: 90px;
+  background-color: $page-bg-color;
+
+  @include on-tablet {
+    margin-bottom: 110px;
+  }
+
+  &-wrapper {
+    @include page-grid;
+
+    grid-template-rows: auto auto auto;
+    min-height: 100dvh;
+
+    @include on-tablet {
+      grid-template-rows: auto auto 1fr;
+    }
+
+    @include on-desktop {
+      grid-template-rows: auto 1fr;
+    }
+  }
+
+  &-top {
+    display: flex;
+    grid-column: 1 / -1;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 70px;
+    padding-top: 20px;
+
+    @include on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .menu-langswitcher--header {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &-info {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+      padding-top: 40px;
+    }
+  }
+
+  &-toptitle {
+    @include main-text;
+
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  &-title {
+    margin-bottom: 30px;
+
+    font-family: $headings-font-style;
+
+    // Зменшує заголовок на вузьких екранах: мінімум 36px, максимум 48px.
+    font-size: clamp(36px, 10vw, 48px);
+    line-height: 100%;
+    color: $page-body-color;
+    text-align: left;
+    letter-spacing: 1.6%;
+
+    @include on-tablet {
+      margin-bottom: 20px;
+      font-size: 64px;
+    }
+
+    @include on-desktop {
+      font-size: 72px;
+    }
+  }
+
+  &-subtitle {
+    margin-bottom: 40px;
+
+    @include main-text;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+
+    @include on-desktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  .header-subtitle-break {
+    display: none;
+
+    @include on-tablet {
+      display: initial;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &-button {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      width: 45%;
+    }
+  }
+
+  &-image {
+    grid-column: 1 / -1;
+    align-self: end;
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+
+      // 100cqw — ширина header без скролбара; картинка не виходить за край.
+      width: calc(100% + 55px + (100cqw - 1280px) / 2);
+    }
+
+    &__item {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      @include on-desktop {
+        max-height: 90dvh;
+        object-fit: contain;
+        object-position: right bottom;
+      }
+    }
+  }
+}
