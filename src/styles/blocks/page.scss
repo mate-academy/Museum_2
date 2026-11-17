@@ -5,7 +5,6 @@
   scroll-behavior: smooth;
 
   &-body {
-    min-width: 320px;
     min-height: 100vh;
     color: $page-font-color;
     background-color: $page-body-color;
@@ -14,6 +13,7 @@
   &-menu {
     pointer-events: none;
 
+    // Меню поза потоком документа, тому не збільшує висоту сторінки.
     position: fixed;
     z-index: 2;
     top: 0;
@@ -41,8 +41,15 @@
     }
   }
 
+  // Правило діє, коли адреса містить #menu й меню відповідає :target.
   &:has(.page-menu:target) {
+    // Блокує прокручування сторінки по обох осях, поки меню відкрите.
     overflow: hidden;
+
+    .page-body {
+      // Також блокує прокручування на рівні body.
+      overflow: hidden;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {

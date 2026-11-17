@@ -3,9 +3,19 @@
 @use '../utils/common' as *;
 
 .menu {
+  // Дає дочірнім елементам одиницю cqw, прив'язану до ширини меню.
+  container-type: inline-size;
+
+  // Дозволяє скрол усередині меню, якщо на дуже низькому екрані бракує місця.
   overflow-y: auto;
 
+  // На межі меню прокручування не передається сторінці під ним.
+  overscroll-behavior: contain;
+
+  // Запасний варіант для браузерів без підтримки dvh.
   height: 100vh;
+
+  // Висота видимої області з урахуванням панелей мобільного браузера.
   height: 100dvh;
 
   color: $page-body-color;
@@ -16,12 +26,16 @@
     @include page-grid;
 
     @include on-tablet {
-      grid-template-rows: auto auto 1fr;
-      min-height: 100dvh;
+      // Останній рядок займає залишок висоти й може зменшитися до нуля.
+      grid-template-rows: auto auto minmax(0, 1fr);
+
+      // Обмежує висоту сітки, щоб картинка не розтягувала меню вниз.
+      height: 100dvh;
     }
 
     @include on-desktop {
-      grid-template-rows: auto 1fr;
+      // Рядок із контентом і картинкою вміщується в залишок висоти меню.
+      grid-template-rows: auto minmax(0, 1fr);
     }
   }
 
@@ -139,6 +153,12 @@
     display: none;
     align-self: end;
 
+    // Обгортка картинки займає висоту свого рядка сітки.
+    height: 100%;
+
+    // Дозволяє їй стати нижчою за природну висоту картинки.
+    min-height: 0;
+
     @include on-tablet {
       display: block;
       grid-column: 2 / 6;
@@ -146,15 +166,25 @@
 
     @include on-desktop {
       grid-column: 7 / -1;
-      width: calc(100% + 55px + (100vw - 1280px) / 2);
+
+      // cqw враховує ширину меню без скролбара, на відміну від vw.
+      width: calc(100% + 55px + (100cqw - 1280px) / 2);
     }
 
     &__item {
       display: block;
+
       width: 100%;
-      height: auto;
+
+      // Висота картинки залежить від обгортки, а не від її вихідного розміру.
+      height: 100%;
+
+      // Вміщує все зображення в задані розміри без спотворення пропорцій.
+      object-fit: contain;
+      object-position: center bottom;
 
       @include on-desktop {
+        // Додатково обмежує висоту картинки до 90% видимої області вікна.
         max-height: 90dvh;
         object-fit: contain;
         object-position: right bottom;

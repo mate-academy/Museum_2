@@ -3,6 +3,8 @@
 @use '../utils/common' as *;
 
 .header {
+  // Робить header контейнером, від ширини якого обчислюються одиниці cqw.
+  container-type: inline-size;
   min-height: 100dvh;
   margin-bottom: 90px;
   background-color: $page-bg-color;
@@ -73,7 +75,9 @@
     margin-bottom: 30px;
 
     font-family: $headings-font-style;
-    font-size: 55px;
+
+    // Зменшує заголовок на вузьких екранах: мінімум 44px, максимум 55px.
+    font-size: clamp(44px, 14vw, 55px);
     line-height: 100%;
     color: $page-body-color;
     text-align: left;
@@ -130,7 +134,9 @@
 
     @include on-desktop {
       grid-column: 7 / -1;
-      width: calc(100% + 55px + (100vw - 1280px) / 2);
+
+      // 100cqw — ширина header без скролбара; картинка не виходить за край.
+      width: calc(100% + 55px + (100cqw - 1280px) / 2);
     }
 
     &__item {

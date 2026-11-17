@@ -88,6 +88,17 @@
       opacity: 1;
     }
 
+    // Зберігає кольори форми, якщо браузер усе ж автозаповнить поле.
+    &:is(:autofill, :-webkit-autofill) {
+      color: $page-font-color;
+
+      // Внутрішня тінь перекриває стандартний фон автозаповнення.
+      box-shadow: inset 0 0 0 1000px $page-body-color;
+      caret-color: $page-font-color;
+
+      -webkit-text-fill-color: $page-font-color;
+    }
+
     &:focus-visible {
       outline: none;
     }
