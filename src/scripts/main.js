@@ -60,3 +60,22 @@ window.addEventListener('scroll', updateScrollToTopVisibility, {
 });
 
 updateScrollToTopVisibility();
+
+// Перемикаємо мову на сайті
+
+const languageSwitchers = document.querySelectorAll('.menu-langswitcher');
+
+languageSwitchers.forEach((languageSwitcher) => {
+  languageSwitcher.addEventListener('change', (event) => {
+    const selectedLanguage = event.target.value;
+    const isEnglishPage = window.location.pathname.includes('/en');
+
+    if (selectedLanguage === 'en' && !isEnglishPage) {
+      window.location.href = 'en/index.html';
+    }
+
+    if (selectedLanguage === 'uk' && isEnglishPage) {
+      window.location.href = '../index.html';
+    }
+  });
+});
