@@ -116,7 +116,13 @@
 
     color: $page-button-color;
 
-    background-color: transparent;
+    background-color: $page-body-color;
+
+    &:is(:hover, :focus-visible) {
+      color: $page-body-color;
+
+      background-color: $page-button-color;
+    }
 
     @include on-tablet {
       grid-column: 5 / -1;
@@ -140,6 +146,11 @@
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+
+    }
+
+    &:is(:hover, :focus-visible)::after {
+      filter: brightness(0) invert(1);
     }
   }
 }
