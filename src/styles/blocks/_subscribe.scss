@@ -1,0 +1,160 @@
+.subscribe {
+  margin: $space-120 0 $space-80;
+
+  @include on-tablet {
+    margin: 160px 0 128px;
+  }
+
+  @include on-dekstop {
+    margin: 200px 0;
+  }
+
+  &__title {
+    grid-column: $col-full;
+
+    margin: 0 0 $space-20;
+    font-size: $fs-28;
+    line-height: $lh-125;
+
+    @include on-tablet {
+      font-size: $fs-40;
+    }
+
+    @include on-dekstop {
+      grid-column: $col-1-7;
+      grid-row: $row-1;
+
+      margin-bottom: $space-50;
+
+      font-size: $fs-48;
+      line-height: $lh-120;
+    }
+  }
+
+  &__text {
+    grid-column: $col-full;
+
+    margin: 0 0 $space-50;
+
+    font-family: $font-raleway;
+    font-weight: $fw-regular;
+    font-size: $fs-16;
+    line-height: $lh-150;
+
+    @include on-tablet {
+      grid-column: $col-1-6;
+    }
+
+    @include on-dekstop {
+      grid-column: 7 / -1;
+      grid-row: $row-1;
+      align-self: start;
+      margin-bottom: 0;
+    }
+  }
+
+  &__form {
+    grid-column: $col-full;
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: $space-30;
+
+    @include on-dekstop {
+      row-gap: $space-40;
+    }
+  }
+
+  &__input {
+    grid-column: $col-full;
+
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0 3px;
+
+    border: none;
+    border-bottom: $border-width solid $c-dark;
+    color: $c-dark;
+    transition: border-color $transition-duration;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+    appearance: none;
+
+    font-family: $font-raleway;
+    font-weight: $fw-regular;
+    font-size: $fs-16;
+    line-height: $lh-150;
+
+    @include on-tablet {
+      grid-column: $col-1-5;
+    }
+
+    @include on-dekstop {
+      grid-column: $col-1-6;
+    }
+
+    &::placeholder {
+      color: $c-dark;
+      opacity: 1;
+      transition: color $transition-duration;
+    }
+
+    &:hover {
+      border-bottom-color: $c-accent;
+    }
+
+    &:hover::placeholder {
+      color: $c-accent;
+    }
+
+    &:focus {
+      border-bottom-color: $c-accent;
+      caret-color: $c-accent;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    &:not(:placeholder-shown) {
+      font-weight: $fw-semibold;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-text-fill-color: #333;
+      box-shadow: 0 0 0 1000px $c-gray inset;
+      transition: background-color 9999s ease-in-out 0s;
+    }
+  }
+
+  &__button {
+    grid-column: $col-full;
+    display: block;
+    text-align: center;
+    color: $c-white;
+    background-color: $c-accent;
+    width: auto;
+    padding: $space-22 0;
+    border: none;
+    cursor: pointer;
+
+    font-family: $font-raleway;
+    font-weight: $fw-semibold;
+    font-size: $fs-16;
+    line-height: $lh-100;
+
+    @include button-primary-states;
+
+    @include on-tablet {
+      grid-column: $col-1-4;
+    }
+
+    @include on-dekstop {
+      max-width: $button-max-width;
+      grid-column: $col-1-4;
+    }
+  }
+}

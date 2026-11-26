@@ -1,0 +1,342 @@
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  transform: translateY(-100%);
+  transition: $transition-duration;
+  overflow: hidden;
+  background-color: $c-green;
+  color: $c-white;
+
+  &:target {
+    transform: translateY(0);
+  }
+
+  &__top {
+    grid-column: $col-full;
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: center;
+    padding-top: $space-20;
+
+    @include on-tablet {
+      padding-top: $space-26;
+    }
+
+    @include on-dekstop {
+      padding-top: $space-32;
+    }
+  }
+
+  &__logo {
+    grid-column: $col-1;
+
+    @include on-tablet {
+      grid-column: $col-1-3;
+    }
+  }
+
+  &__logo-image {
+    display: block;
+    width: $logo-width;
+    height: $logo-height;
+
+    @include hover-scale(1.1);
+
+    @include on-tablet {
+      width: 117px;
+      height: $logo-height-tablet;
+    }
+  }
+
+  &__actions {
+    grid-column: $col-2;
+    justify-self: end;
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    column-gap: $space-30;
+
+    @include on-tablet {
+      grid-column: $col-5-7;
+      column-gap: $space-40;
+    }
+
+    @include on-dekstop {
+      grid-column: 11 / -1;
+    }
+  }
+
+  &__label {
+    margin: $space-30 0 0;
+
+    font-family: $font-raleway;
+    font-weight: $fw-regular;
+    font-size: $fs-14;
+    line-height: $lh-140;
+
+    @include on-tablet {
+      grid-column: $col-1-3;
+      grid-row: $row-1;
+      margin-top: 57px;
+
+      &:nth-child(3) {
+        grid-column: 3 / -1;
+      }
+    }
+
+    @include on-dekstop {
+      margin-top: $space-40;
+    }
+  }
+
+  &__map-link {
+    display: inline-block;
+    vertical-align: top;
+    line-height: $lh-24;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+
+    @include hover-text-grow;
+  }
+
+  &__value {
+    margin: 0 0 $space-20;
+
+    font-family: $font-raleway;
+    font-weight: $fw-semibold;
+    font-size: $fs-16;
+    line-height: $lh-150;
+
+    @include on-tablet {
+      grid-column: $col-1-3;
+      grid-row: $row-2;
+      margin: 0;
+
+      &:nth-child(4) {
+        grid-column: 3 / -1;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__lang {
+    padding: 0;
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: base-select;
+    justify-content: space-between;
+    width: $lang-width;
+    cursor: pointer;
+    background: transparent;
+
+    font-family: $font-raleway;
+    font-weight: 500;
+    font-size: $fs-16;
+    line-height: $lh-150;
+    color: $c-white;
+
+    &::picker-icon {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: $lang-icon-height;
+      align-self: center;
+      background: url('../images/icons/arrow-lg.svg') no-repeat center;
+      transition: rotate 0.2s;
+    }
+
+    &:open::picker-icon {
+      rotate: -180deg;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background: transparent;
+    }
+
+    &::picker(select) {
+      appearance: base-select;
+      overflow: visible;
+      border: none;
+      background-color: $c-green;
+
+      position-area: block-end span-inline-start;
+      position-try-fallbacks: none;
+      margin-top: 4px;
+    }
+
+    option {
+      color: $c-white;
+      padding-left: 0;
+      transform-origin: left center;
+
+      @include hover-scale(1.1);
+
+      &:hover,
+      &:focus-visible {
+        background: transparent;
+      }
+
+      &:checked,
+      &::checkmark {
+        display: none;
+      }
+    }
+
+    @include hover-scale(1.1);
+  }
+
+  &__list {
+    display: grid;
+    row-gap: $space-20;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include on-tablet {
+      row-gap: $space-30;
+    }
+
+    @include on-dekstop {
+      row-gap: $space-60;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    font-size: $fs-20;
+    line-height: $lh-150;
+    color: $c-white;
+    text-decoration: none;
+
+    @include on-tablet {
+      font-size: $fs-48;
+      line-height: $lh-120;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: $border-width;
+      background-color: currentColor;
+      transform: scaleX(0);
+      transition: transform $transition-duration;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
+    }
+  }
+
+  &__close {
+    @include hover-scale(1.1);
+
+    @include on-tablet {
+      order: -1;
+    }
+  }
+
+  &__close-icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+
+  &__info {
+    grid-column: $col-full;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+  }
+
+  &__nav {
+    grid-column: $col-full;
+    margin-top: $space-40;
+    padding-bottom: $space-40;
+    border-bottom: $border-width solid $c-white;
+
+    @include on-tablet {
+      margin-top: $space-50;
+      padding-bottom: $space-50;
+    }
+
+    @include on-dekstop {
+      grid-column: $col-1-7;
+      margin-top: $space-70;
+      padding-bottom: $space-60;
+    }
+  }
+
+  &__button {
+    grid-column: $col-full;
+    display: block;
+    width: 100%;
+    margin-top: $space-40;
+    padding: $space-22 0;
+    border: none;
+    cursor: pointer;
+    background-color: $c-accent;
+    text-align: center;
+
+    font-family: $font-raleway;
+    font-weight: $fw-semibold;
+    font-size: $fs-16;
+    line-height: $lh-100;
+    color: $c-white;
+
+    @include button-primary-states;
+
+    @include on-tablet {
+      grid-column: $col-1-4;
+
+      margin-top: $space-50;
+    }
+
+    @include on-dekstop {
+      max-width: $button-max-width;
+      margin-top: $space-60;
+    }
+  }
+
+  &__image-wrapper {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      grid-column: 2 / 6;
+      margin-top: $space-30;
+    }
+
+    @include on-dekstop {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin-top: 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 422px;
+    height: 466px;
+    margin: 0 auto;
+
+    @include on-dekstop {
+      width: 624px;
+      height: 697px;
+    }
+  }
+}

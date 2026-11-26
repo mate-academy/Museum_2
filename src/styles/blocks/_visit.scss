@@ -1,0 +1,109 @@
+.visit {
+  margin: 90px 0;
+  background-color: $c-green;
+
+  @include on-tablet {
+    margin: 100px 0 $space-120;
+  }
+
+  @include on-dekstop {
+    margin: 110px 0;
+  }
+
+  &__image {
+    display: none;
+
+    @include on-dekstop {
+      display: block;
+      grid-column: $col-1-6;
+      grid-row: 1 / 4;
+      width: 578px;
+      height: 800px;
+      margin-left: -$container-padding-desktop;
+    }
+  }
+
+  &__title {
+    grid-column: $col-full;
+
+    margin: $space-50 0 $space-20;
+
+    font-size: 38px;
+    line-height: $lh-100;
+    color: $c-white;
+
+    @include on-tablet {
+      grid-column: $col-1-5;
+
+      margin-top: $space-80;
+
+      font-size: 62px;
+    }
+
+    @include on-dekstop {
+      grid-column: 6 / -1;
+      grid-row: $row-1;
+
+      margin: 205px 0 $space-10;
+
+      font-size: 80px;
+    }
+  }
+
+  &__text {
+    grid-column: $col-full;
+    margin: 0 0 $space-40;
+
+    font-family: $font-raleway;
+    font-weight: $fw-regular;
+    font-size: $fs-16;
+    line-height: $lh-150;
+    color: $c-white;
+
+    @include on-tablet {
+      grid-column: $col-1-5;
+
+      margin-bottom: $space-60;
+    }
+
+    @include on-dekstop {
+      grid-column: 6 / 11;
+      grid-row: $row-2;
+    }
+  }
+
+  &__button {
+    grid-column: $col-full;
+    display: block;
+    text-align: center;
+    color: $c-white;
+    background-color: $c-accent;
+    width: auto;
+    padding: $space-22 0;
+    margin-bottom: $space-50;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+
+    font-family: $font-raleway;
+    font-weight: $fw-semibold;
+    font-size: $fs-16;
+    line-height: $lh-100;
+
+    @include button-primary-states;
+
+    @include on-tablet {
+      grid-column: $col-1-4;
+
+      margin-bottom: $space-80;
+    }
+
+    @include on-dekstop {
+      max-width: $button-max-width;
+      grid-column: 6 / 9;
+      grid-row: 3;
+      align-self: start;
+      margin-bottom: 205px;
+    }
+  }
+}
